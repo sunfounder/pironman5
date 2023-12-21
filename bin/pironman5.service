@@ -1,6 +1,6 @@
 # https://www.freedesktop.org/software/systemd/man/systemd.service.html
 [Unit]
-Description=pironman service
+Description=pironman5 service
 After=multi-user.target # Need to start last to avoid gpio being occupied
 
 [Service]

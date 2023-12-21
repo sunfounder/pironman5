@@ -1,16 +1,16 @@
 #!/bin/bash
-# /usr/local/bin/pironman
+# /usr/local/bin/pironman5
 
 ####
 #### Usage:
-####   pironman <OPTION> <input>
+####   pironman5 <OPTION> <input>
 ####
 #### Options:
-####   start                start pironman service
+####   start                start pironman5 service
 ####
-####   stop                 stop pironman service
+####   stop                 stop pironman5 service
 ####
-####   restart              restart pironman service
+####   restart              restart pironman5 service
 ####
 ####   -h,--help            help, show this help
 ####
@@ -44,8 +44,8 @@
 ####
 #!/bin/bash
 
-CONF=/opt/pironman/config.txt
-main='/opt/pironman/main.py'
+CONF=/opt/pironman5/config.txt
+main='/opt/pironman5/main.py'
 # echo $main
 # echo 'config file:'$CONF
 
@@ -67,7 +67,7 @@ run_in_background=true
 
 # Check if user is root
 if [ $(id -u) -ne 0 ]; then
-  echo -e "Script must be run as root. Try 'sudo pironman $@'\n"
+  echo -e "Script must be run as root. Try 'sudo pironman5 $@'\n"
   exit 1
 fi
 
@@ -93,22 +93,22 @@ help() {
 start() {
   if [ $run_in_background == true ]; then
     echo "run in background"
-    python3 $main 1>/dev/null 2>>/opt/pironman/log &
+    python3 $main 1>/dev/null 2>>/opt/pironman5/log &
   else
     echo "run in foreground"
     python3 $main
   fi
   # sudo python3 $main 1>/dev/null 2>&1 &
   if [ $? == '0' ];then
-    echo "pironman start succeed"
+    echo "pironman5 start succeed"
   else
-    echo "pironman start failed"
+    echo "pironman5 start failed"
     echo $?
   fi
 }
 
 stop() {
-  echo "stopping pironman"
+  echo "stopping pironman5"
   # kill $(ps aux | grep $main | awk '{ print $2 }') >/dev/null 2>&1
   pid=$(ps aux | grep $main | awk '{print $2}')
   echo "pid="$pid
@@ -116,7 +116,7 @@ stop() {
 }
 
 restart() {
-  echo "restarting pironman"
+  echo "restarting pironman5"
   stop
   sleep 0.5
   start
@@ -174,23 +174,23 @@ while [[ $# -gt 0 ]]; do
       case "$2" in
         "on"|true)
           echo "enable auto-start at boot"
-          systemctl enable pironman.service
+          systemctl enable pironman5.service
           shift 2
           ;;
         "off"|false)
           echo "disable auto-start at boot"
-          systemctl disable pironman.service
+          systemctl disable pironman5.service
           shift 2
         ;;
         *)
-          echo "usage: pironman -a|--auto [on/off]"
+          echo "usage: pironman5 -a|--auto [on/off]"
           exit 1
           ;;
       esac
       ;;
     -u|--unit)
       if [ $# -lt 2 ] ;then
-        echo "usage: pironman -c|--check [C/F]"
+        echo "usage: pironman5 -c|--check [C/F]"
         exit 1
       else
         if [ $2 == 'C' ] || [ $2 == 'F' ];then
@@ -206,7 +206,7 @@ while [[ $# -gt 0 ]]; do
       ;;
     -f|--fan)
       if [ $# -lt 2 ]; then
-        echo "usage: pironman -f|--fan [temp]"
+        echo "usage: pironman5 -f|--fan [temp]"
         exit 1
       else
         if [[ $2 =~ ^[[:digit:]]+$ ]]; then
@@ -232,7 +232,7 @@ while [[ $# -gt 0 ]]; do
           shift 2
         ;;
         *)
-          echo "usage: pironman -re|--rgb_enable [on|true|off|false]"
+          echo "usage: pironman5 -re|--rgb_enable [on|true|off|false]"
           exit 1
         ;;
       esac
@@ -245,14 +245,14 @@ while [[ $# -gt 0 ]]; do
           shift 2
         ;;
         *)
-          echo "usage: pironman -rs|--rgb_style [breath / leap / flow / raise_up / colorful / colorful_leap]"
+          echo "usage: pironman5 -rs|--rgb_style [breath / leap / flow / raise_up / colorful / colorful_leap]"
           exit 1
         ;;
       esac
       ;;
     -rc|--rgb_color)
       if [ $# -lt 2 ]; then
-        echo "usage: pironman -rc|--rgb_color [color],clolor in HEX. eg: 0a1aff"
+        echo "usage: pironman5 -rc|--rgb_color [color],clolor in HEX. eg: 0a1aff"
         exit 1
       else
         echo "set rgb_color to $2 "
@@ -262,7 +262,7 @@ while [[ $# -gt 0 ]]; do
       ;;
     -rb|--rgb_speed)
       if [ $# -lt 2 ]; then
-        echo "usage: pironman -rb|--rgb_speed [speed],speed in range (0 ~ 100)"
+        echo "usage: pironman5 -rb|--rgb_speed [speed],speed in range (0 ~ 100)"
         exit 1
       else
         if [[ $2 =~ ^[[:digit:]]+$ ]]; then
@@ -282,7 +282,7 @@ while [[ $# -gt 0 ]]; do
       ;;
     -pwm|--rgb_pwm)
       if [ $# -lt 2 ]; then
-        echo "usage: pironman -pwm|--rgb_pwm [frequency],frequency in range (400 ~ 1600) kHz"
+        echo "usage: pironman5 -pwm|--rgb_pwm [frequency],frequency in range (400 ~ 1600) kHz"
         exit 1
       else
         if [[ $2 =~ ^[[:digit:]]+$ ]];
@@ -358,7 +358,7 @@ while [[ $# -gt 0 ]]; do
           shift 2
           ;;
         *)
-          echo "usage: pironman -rp|--rgb_pin [10 / spi / 12 / pwm / 21 / pcm]"
+          echo "usage: pironman5 -rp|--rgb_pin [10 / spi / 12 / pwm / 21 / pcm]"
           exit 1
           ;;
       esac
