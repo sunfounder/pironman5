@@ -1,6 +1,4 @@
 [all]
-# power_key_pin, gpio pin to power key,default pin 26 (BCM)
-#
 # fan_gpio, gpio pin to switch fan, default pin 6 (BCM)
 #
 # temp_unit, the unit of temperature, [ C / F ] (Celsius/Fahrenheit)
