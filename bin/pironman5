@@ -1,0 +1,435 @@
+#!/bin/bash
+# /usr/local/bin/pironman
+
+####
+#### Usage:
+####   pironman <OPTION> <input>
+####
+#### Options:
+####   start                start pironman service
+####
+####   stop                 stop pironman service
+####
+####   restart              restart pironman service
+####
+####   -h,--help            help, show this help
+####
+####   -c,--check           show all configurations
+####
+####   -a,--auto            [ on ],enable auto-start at boot
+####                        [ off ], disable auto-start at boot
+####
+####   -u,--unit            [ C/F ], set the unit of temperature,
+####                        C or F (Celsius/Fahrenheit)
+####
+####   -f,--fan             [ temp ], Temperature at which the fan switches on,
+####                        (default 50℃), in range (30 ~ 80)
+####
+####   -al,--always_on      [on/true/off/false], whether the screen is always on,
+####                        default False
+####
+####   -s,--staty_time      [time], screen display duration in second,
+####                        in second, default 30
+####
+####   -re|--rgb_enable)    [on/true/off/false], whether enable rgb strip,
+####
+####   -rw,--rgb_sw         [on/true/off/false], rgb strip switch
+####
+####   -rs,--rgb_style      rgb strip display style, default: breath,
+####                        in [breath / leap / flow / raise_up / colorful]
+####
+####   -rc,--rgb_color      [(HEX)color], set the color of rgb strip,
+####                        default: 0a1aff
+####
+####   -rb,--rgb_speed      [speed], rgb blink speed (0 ~ 100, default 50)
+####
+####   -pwm,--rgb_pwm       [frequency], rgb signal frequency (400 ~ 1600, default 1000 kHz)
+####
+####   -rp,--rgb_pin        [pin], rgb signal pin, could be [10 / spi/ SPI / 12 / pwm/ PWM] or
+####                        [21 / pcm / PCM], default 10
+####
+####   -F,--foreground      run in foreground
+####
+#!/bin/bash
+
+CONF=/opt/pironman/config.txt
+main='/opt/pironman/main.py'
+# echo $main
+# echo 'config file:'$CONF
+
+# print colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+GRAY='\033[1;30m'
+#
+NC='\033[0m'
+
+# check boot configuration path
+BOOT_CONFIG_1="/boot/config.txt"
+BOOT_CONFIG_2="/boot/firmware/config.txt"
+boot_config=""
+
+run_in_background=true
+
+# Check if user is root
+if [ $(id -u) -ne 0 ]; then
+  echo -e "Script must be run as root. Try 'sudo pironman $@'\n"
+  exit 1
+fi
+
+
+# check boot configuration path
+if [ -f "$BOOT_CONFIG_1" ]; then
+    boot_config=${BOOT_CONFIG_1}
+elif [ -f $BOOT_CONFIG_2 ]; then
+    boot_config=${BOOT_CONFIG_2}
+else
+    boot_config=""
+    echo -e "${RED}Warning: Cannot find boot configuration file${NC}"
+fi
+
+# echo "boot_config: ${boot_config}"
+##################### ---- fuctions ---- #####################
+
+help() {
+  echo -e "\nconfig file:${CONF}"
+  sed -rn 's/^#### //; s/^####$//; T; p;' "$0"
+}
+
+start() {
+  if [ $run_in_background == true ]; then
+    echo "run in background"
+    python3 $main 1>/dev/null 2>>/opt/pironman/log &
+  else
+    echo "run in foreground"
+    python3 $main
+  fi
+  # sudo python3 $main 1>/dev/null 2>&1 &
+  if [ $? == '0' ];then
+    echo "pironman start succeed"
+  else
+    echo "pironman start failed"
+    echo $?
+  fi
+}
+
+stop() {
+  echo "stopping pironman"
+  # kill $(ps aux | grep $main | awk '{ print $2 }') >/dev/null 2>&1
+  pid=$(ps aux | grep $main | awk '{print $2}')
+  echo "pid="$pid
+  kill $pid >/dev/null 2>&1
+}
+
+restart() {
+  echo "restarting pironman"
+  stop
+  sleep 0.5
+  start
+}
+
+want_reboot() {
+  read -e -p "$(echo -e ${GREEN}Do you want to reboot to make the changes take effect? \(Y/N\): ${NC})" choice
+  if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
+    echo "Rebooting now ..."
+    reboot
+  fi
+}
+
+change_config() {
+  # $1: check string
+  # $2: replace string
+  # $3: config file path
+  if grep -q -e "$1" "$3"; then
+    sed -i -e "s:$1:$2:g" "$3"
+  else
+    sed -i -e "$ a[all]\n$2" "$3"
+  fi
+}
+
+##################### ---- main ---- #####################
+
+if [ $# -eq 0 ]; then
+  help
+  exit 0
+fi
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    start)
+      shift
+      ;;
+    stop)
+      stop
+      exit 0
+      ;;
+    restart)
+      restart
+      exit 0
+      ;;
+    -h|--help)
+      help
+      exit 0
+      ;;
+    -c|--check)
+      echo -e "config file:${CONF}\n"
+      grep -E '=.' "${CONF}"
+      exit 0
+      ;;
+    -a|--auto)
+      case "$2" in
+        "on"|true)
+          echo "enable auto-start at boot"
+          systemctl enable pironman.service
+          shift 2
+          ;;
+        "off"|false)
+          echo "disable auto-start at boot"
+          systemctl disable pironman.service
+          shift 2
+        ;;
+        *)
+          echo "usage: pironman -a|--auto [on/off]"
+          exit 1
+          ;;
+      esac
+      ;;
+    -u|--unit)
+      if [ $# -lt 2 ] ;then
+        echo "usage: pironman -c|--check [C/F]"
+        exit 1
+      else
+        if [ $2 == 'C' ] || [ $2 == 'F' ];then
+          sed -i "s/^unit=.*/unit=$2/" $CONF
+          sed -i -e "s:temp_unit.*=.*:temp_unit = $2:g" ${CONF}
+          echo "set temperature unit to "$2
+          shift 2
+        else
+          echo "unit must be C or F"
+          exit 1
+        fi
+      fi
+      ;;
+    -f|--fan)
+      if [ $# -lt 2 ]; then
+        echo "usage: pironman -f|--fan [temp]"
+        exit 1
+      else
+        if [[ $2 =~ ^[[:digit:]]+$ ]]; then
+          echo "set the fan on temperature to $2 "
+          sed -i -e "s:fan_temp.*=.*:fan_temp = $2:g" ${CONF}
+          shift 2
+        else
+          echo "parameter must be integer"
+          exit 1
+        fi
+      fi
+      ;;
+    -al|--always_on)
+      case "$2" in
+        "on"|true)
+          echo "set screen_always_on to on "
+          sed -i -e "s:screen_always_on.*=.*:screen_always_on = True:g" ${CONF}
+          shift 2
+        ;;
+        "off"|false)
+          echo "set screen_always_on to off "
+          sed -i -e "s:screen_always_on.*=.*:screen_always_on = False:g" ${CONF}
+          shift 2
+        ;;
+        *)
+          echo "usage: pironman -al|--always_on [on|off]"
+          exit 1
+      esac
+      ;;
+    -s|--staty_time)
+      if [ $# -lt 2 ]; then
+        echo "usage: pironman -s|--staty_time [time], in seconds"
+        exit 1
+      else
+        if [[ $2 =~ ^[[:digit:]]+$ ]]; then
+          echo "set screen_off_time to $2 "
+          sed -i -e "s:screen_off_time.*=.*:screen_off_time = $2:g" ${CONF}
+          shift 2
+        else
+          echo "parameter must be integer"
+          exit 1
+        fi
+      fi
+      ;;
+    -re|--rgb_enable)
+      case "$2" in
+        "on"|true)
+          echo "set rgb_enable to on "
+          sed -i -e "s:rgb_enable.*=.*:rgb_enable = True:g" ${CONF}
+          shift 2
+        ;;
+        "off"|false)
+          echo "set rgb_enable to off "
+          sed -i -e "s:rgb_enable.*=.*:rgb_enable = False:g" ${CONF}
+          shift 2
+        ;;
+        *)
+          echo "usage: pironman -re|--rgb_enable [on|true|off|false]"
+          exit 1
+        ;;
+      esac
+      ;;
+    -rw|--rgb_sw)
+      case "$2" in
+        "on"|true)
+          echo "set rgb_switch to on "
+          sed -i -e "s:rgb_switch.*=.*:rgb_switch = True:g" ${CONF}
+          shift 2
+        ;;
+        "off"|false)
+          echo "set rgb_switch to off "
+          sed -i -e "s:rgb_switch.*=.*:rgb_switch = False:g" ${CONF}
+          shift 2
+        ;;
+        *)
+          echo "usage: pironman -rw|--rgb_sw [on|true|off|false]"
+          exit 1
+        ;;
+      esac
+      ;;
+    -rs|--rgb_style)
+      case "$2" in
+        breath|leap|flow|raise_up|colorful|colorful_leap)
+          echo "set rgb_style to $2 "
+          sed -i -e "s:rgb_style.*=.*:rgb_style = $2:g" ${CONF}
+          shift 2
+        ;;
+        *)
+          echo "usage: pironman -rs|--rgb_style [breath / leap / flow / raise_up / colorful / colorful_leap]"
+          exit 1
+        ;;
+      esac
+      ;;
+    -rc|--rgb_color)
+      if [ $# -lt 2 ]; then
+        echo "usage: pironman -rc|--rgb_color [color],clolor in HEX. eg: 0a1aff"
+        exit 1
+      else
+        echo "set rgb_color to $2 "
+        sed -i -e "s:rgb_color.*=.*:rgb_color = $2:g" ${CONF}
+        shift 2
+      fi
+      ;;
+    -rb|--rgb_speed)
+      if [ $# -lt 2 ]; then
+        echo "usage: pironman -rb|--rgb_speed [speed],speed in range (0 ~ 100)"
+        exit 1
+      else
+        if [[ $2 =~ ^[[:digit:]]+$ ]]; then
+          if [ $2 -ge 0 ] && [ $2 -le 100 ]; then
+            echo "set rgb_blink_speed to $2 "
+            sed -i -e "s:rgb_blink_speed.*=.*:rgb_blink_speed = $2:g" ${CONF}
+            shift 2
+          else
+            echo "out of range (0 ~ 100) "
+            exit 1
+          fi
+        else
+          echo "parameter must be integer"
+          exit 1
+        fi
+      fi
+      ;;
+    -pwm|--rgb_pwm)
+      if [ $# -lt 2 ]; then
+        echo "usage: pironman -pwm|--rgb_pwm [frequency],frequency in range (400 ~ 1600) kHz"
+        exit 1
+      else
+        if [[ $2 =~ ^[[:digit:]]+$ ]];
+        then
+          if [ $2 -ge 400 ] && [ $2 -le 1600 ];
+          then
+            echo "set rgb_pwm_freq to $2 "
+            sed -i -e "s:rgb_pwm_freq.*=.*:rgb_pwm_freq = $2:g" ${CONF}
+            shift 2
+          else
+            echo "out of range (400 ~ 1600) kHz "
+            exit 1
+          fi
+        else
+          echo "parameter must be integer"
+          exit 1
+        fi
+      fi
+      ;;
+    -rp|--rgb_pin)
+      case "$2" in
+        spi|SPI|10)
+          echo "set rgb io to pin 10 (spi)"
+          # set pin
+          change_config ".*rgb_pin\s*=.*"  "rgb_pin = 10" ${CONF}
+          #
+          if [[ $boot_config != "" ]]; then
+            echo "boot_config: ${boot_config}"
+            ## enable audio
+            change_config ".*dtparam=audio=.*" "dtparam=audio=on" ${boot_config}
+            # enable spi
+            change_config ".*dtparam=spi=.*"  "dtparam=spi=on" ${boot_config}
+            # change core_freq, core_freq_min to stabilize the spi output frequency
+            change_config ".*core_freq=.*"  "core_freq=500" ${boot_config}
+            change_config ".*core_freq_min=.*"  "core_freq_min=500" ${boot_config}
+            # whether reboot to make changes take effect
+            want_reboot
+            # restart program
+          fi
+          shift 2
+          ;;
+        pwm|PWM|12)
+          echo "set rgb io to pin 12 (pwm)"
+          # set io
+          change_config ".*rgb_pin\s*=.*"  "rgb_pin = 12" ${CONF}
+          #
+          if [[ $boot_config != "" ]]; then
+            echo "boot_config: ${boot_config}"
+            # disable audio
+            change_config ".*dtparam=audio=.*" "dtparam=audio=off" ${boot_config}
+            # whether reboot to make changes take effect
+            want_reboot
+          fi
+          # restart program
+          shift 2
+          ;;
+        pcm|PCM|21)
+          echo "set rgb io to pin 21 (pcm)"
+          # set io
+          change_config ".*rgb_pin\s*=.*"  "rgb_pin = 21" ${CONF}
+          #
+          if [[ $boot_config != "" ]]; then
+            echo "boot_config: ${boot_config}"
+              ## enable audio
+            change_config ".*dtparam=audio=.*" "dtparam=audio=on" ${boot_config}
+            # disable i2s
+            change_config ".*dtoverlay=hifiberry-dac$" "#dtoverlay=hifiberry-dac" ${boot_config}
+            change_config ".*dtoverlay=i2s-mmap$" "#dtoverlay=i2s-mmap" ${boot_config}
+            # whether reboot to make changes take effect
+            want_reboot
+          fi
+          # restart program
+          shift 2
+          ;;
+        *)
+          echo "usage: pironman -rp|--rgb_pin [10 / spi / 12 / pwm / 21 / pcm]"
+          exit 1
+          ;;
+      esac
+      ;;
+    -F|--foreground)
+      run_in_background="false"
+      shift
+      ;;
+    *)
+      echo -e "${RED}Invalid argument: $1.${NC}"
+      exit 1
+      ;;
+  esac
+done
+
+restart

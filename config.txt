@@ -1,0 +1,37 @@
+[all]
+# power_key_pin, gpio pin to power key,default pin 26 (BCM)
+#
+# fan_gpio, gpio pin to switch fan, default pin 6 (BCM)
+#
+# temp_unit, the unit of temperature, [ C / F ] (Celsius/Fahrenheit)
+#
+# fan_temp, temperature at which the fan switches on,
+#           in celsius (default 50),in range (30 ~ 80)
+#
+# screen_off_time, screen off after <screen_off_time> seconds
+#
+# always_on,  [on/off], whether the screen is always on, default False
+#
+# rgb_enable, rgb strip enable
+#
+# rgb_style, rgb strip display style, in [breath / leap / flow / raise_up / colorful]
+#
+# rgb_color, color of the RGB indicator inside the case
+#
+# rgb_blink_speed, rgb color change speed (0 ~ 100, default 50)
+#
+# rgb_pwm_freq, rgb signal frequency (400 ~ 1600, default 1000 kHz)
+#
+# rgb_pin, rgb signal pin, could be 10(spi), 12(PWM) or 21(PCM)
+#
+
+temp_unit = C
+fan_temp = 50
+screen_always_on = False
+screen_off_time = 60
+rgb_enable = True
+rgb_style = breath
+rgb_color = 0a1aff
+rgb_blink_speed = 50
+rgb_pwm_freq = 1000
+rgb_pin = 10
