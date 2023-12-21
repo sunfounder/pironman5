@@ -91,12 +91,6 @@ try:
     config.read(config_file)
     temp_unit = config['all']['temp_unit']
     fan_temp = float(config['all']['fan_temp'])
-    screen_always_on = config['all']['screen_always_on']
-    if screen_always_on == 'True':
-        screen_always_on = True
-    else:
-        screen_always_on = False
-    screen_off_time = int(config['all']['screen_off_time'])
     rgb_enable = (config['all']['rgb_enable'])
     if rgb_enable == 'False':
         rgb_enable = False
@@ -112,8 +106,6 @@ except Exception as e:
     config['all'] ={
                     'temp_unit':temp_unit,
                     'fan_temp':fan_temp,
-                    'screen_always_on':screen_always_on,
-                    'screen_off_time':screen_off_time,
                     'rgb_enable':rgb_enable,
                     'rgb_style':rgb_style,
                     'rgb_color':rgb_color,
@@ -129,8 +121,6 @@ log("fan_pin : %s"%fan_pin)
 log("update_frequency : %s"%update_frequency)
 log("temp_unit : %s"%temp_unit)
 log("fan_temp : %s"%fan_temp)
-log("screen_always_on : %s"%screen_always_on)
-log("screen_off_time : %s"%screen_off_time)
 log("rgb_enable: %s"%rgb_enable)
 log("rgb_style : %s"%rgb_style)
 log("rgb_color : %s"%rgb_color)
