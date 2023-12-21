@@ -33,8 +33,6 @@
 ####
 ####   -re|--rgb_enable)    [on/true/off/false], whether enable rgb strip,
 ####
-####   -rw,--rgb_sw         [on/true/off/false], rgb strip switch
-####
 ####   -rs,--rgb_style      rgb strip display style, default: breath,
 ####                        in [breath / leap / flow / raise_up / colorful]
 ####
@@ -273,24 +271,6 @@ while [[ $# -gt 0 ]]; do
         ;;
         *)
           echo "usage: pironman -re|--rgb_enable [on|true|off|false]"
-          exit 1
-        ;;
-      esac
-      ;;
-    -rw|--rgb_sw)
-      case "$2" in
-        "on"|true)
-          echo "set rgb_switch to on "
-          sed -i -e "s:rgb_switch.*=.*:rgb_switch = True:g" ${CONF}
-          shift 2
-        ;;
-        "off"|false)
-          echo "set rgb_switch to off "
-          sed -i -e "s:rgb_switch.*=.*:rgb_switch = False:g" ${CONF}
-          shift 2
-        ;;
-        *)
-          echo "usage: pironman -rw|--rgb_sw [on|true|off|false]"
           exit 1
         ;;
       esac

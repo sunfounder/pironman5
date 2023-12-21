@@ -203,7 +203,6 @@ try:
 except Exception as e:
     log('rgb_strip init failed:\n%s'%e)
     rgb_strip = None
-    rgb_switch = False
 
 def rgb_show():
     log('rgb_show')
@@ -289,11 +288,9 @@ def main():
     # ---- rgb_thread start ----
     if rgb_strip != None:
         if rgb_enable:
-            # rgb_strip thread
-            if rgb_switch == True:
-                rgb_thread = threading.Thread(target=rgb_show)
-                rgb_thread.daemon = True
-                rgb_thread.start()
+            rgb_thread = threading.Thread(target=rgb_show)
+            rgb_thread.daemon = True
+            rgb_thread.start()
         else:
             rgb_strip.clear()
 
