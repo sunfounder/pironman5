@@ -6,10 +6,6 @@
 # fan_temp, temperature at which the fan switches on,
 #           in celsius (default 50),in range (30 ~ 80)
 #
-# screen_off_time, screen off after <screen_off_time> seconds
-#
-# always_on,  [on/off], whether the screen is always on, default False
-#
 # rgb_enable, rgb strip enable
 #
 # rgb_style, rgb strip display style, in [breath / leap / flow / raise_up / colorful]
@@ -25,8 +21,6 @@
 
 temp_unit = C
 fan_temp = 50
-screen_always_on = False
-screen_off_time = 60
 rgb_enable = True
 rgb_style = breath
 rgb_color = 0a1aff

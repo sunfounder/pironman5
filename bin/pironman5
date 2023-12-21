@@ -25,12 +25,6 @@
 ####   -f,--fan             [ temp ], Temperature at which the fan switches on,
 ####                        (default 50℃), in range (30 ~ 80)
 ####
-####   -al,--always_on      [on/true/off/false], whether the screen is always on,
-####                        default False
-####
-####   -s,--staty_time      [time], screen display duration in second,
-####                        in second, default 30
-####
 ####   -re|--rgb_enable)    [on/true/off/false], whether enable rgb strip,
 ####
 ####   -rs,--rgb_style      rgb strip display style, default: breath,
@@ -218,38 +212,6 @@ while [[ $# -gt 0 ]]; do
         if [[ $2 =~ ^[[:digit:]]+$ ]]; then
           echo "set the fan on temperature to $2 "
           sed -i -e "s:fan_temp.*=.*:fan_temp = $2:g" ${CONF}
-          shift 2
-        else
-          echo "parameter must be integer"
-          exit 1
-        fi
-      fi
-      ;;
-    -al|--always_on)
-      case "$2" in
-        "on"|true)
-          echo "set screen_always_on to on "
-          sed -i -e "s:screen_always_on.*=.*:screen_always_on = True:g" ${CONF}
-          shift 2
-        ;;
-        "off"|false)
-          echo "set screen_always_on to off "
-          sed -i -e "s:screen_always_on.*=.*:screen_always_on = False:g" ${CONF}
-          shift 2
-        ;;
-        *)
-          echo "usage: pironman -al|--always_on [on|off]"
-          exit 1
-      esac
-      ;;
-    -s|--staty_time)
-      if [ $# -lt 2 ]; then
-        echo "usage: pironman -s|--staty_time [time], in seconds"
-        exit 1
-      else
-        if [[ $2 =~ ^[[:digit:]]+$ ]]; then
-          echo "set screen_off_time to $2 "
-          sed -i -e "s:screen_off_time.*=.*:screen_off_time = $2:g" ${CONF}
           shift 2
         else
           echo "parameter must be integer"
