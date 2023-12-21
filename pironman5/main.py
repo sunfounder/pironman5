@@ -64,7 +64,7 @@ update_frequency = 0.5  # second
 
 temp_unit = 'C' # 'C' or 'F'
 fan_temp = 50 # celsius
-screen_always_on = False
+screen_always_on = True
 screen_off_time = 60
 rgb_enable = True
 rgb_style = 'breath'  # 'breath', 'leap', 'flow', 'raise_up', 'colorful', 'colorful_leap'
@@ -397,34 +397,7 @@ def main():
                     with power_key_thread_lock:
                         oled_status = False
 
-        # # ---- power off ----
-        # # timing for power key long pressed
-        # with power_key_thread_lock:
-        #     _power_key_status = power_key_status
-
-        # if _power_key_status == POWER_KEY_PRESSED:
-        #     if power_key_timer == 0:
-        #         power_key_timer = time.time()
-        #     elif (time.time()-power_key_timer) > 2:
-        #         oled_display_power_off()
-        #         # wait power key release
-        #         while True:
-        #             with power_key_thread_lock:
-        #                 if(power_key_status == POWER_KEY_RELEASED):
-        #                     break
-        #             time.sleep(0.01)
-        #         # execute power off
-        #         log("POWER OFF")
-        #         oled_status = False
-        #         oled.off()
-        #         # if mode == HOME_ASSISTANT_ADDON:
-        #         #     ha.shutdown() # shutdown homeassistant host
-        #         # else:
-        #         #     os.system('poweroff')
-        #         #     sys.exit(1)
-        #         sys.exit(1)
-        # else:
-        #     power_key_timer = 0
+  
 
 
         # ---- delay ----
