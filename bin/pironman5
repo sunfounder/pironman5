@@ -109,7 +109,7 @@ stop() {
   # kill $(ps aux | grep $main | awk '{ print $2 }') >/dev/null 2>&1
   pid=$(ps aux | grep $main | awk '{print $2}')
   echo "pid="$pid
-  kill $pid >/dev/null 2>&1
+  kill -15 $pid >/dev/null 2>&1
 }
 
 restart() {
