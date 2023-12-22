@@ -2,6 +2,7 @@ import os
 import sys
 import time
 import threading
+import signal
 
 from app_info import __app_name__, __version__, username, config_file
 from configparser import ConfigParser
@@ -250,6 +251,22 @@ def power_key_event_loop():
 
 power_key_thread = threading.Thread(target=power_key_event_loop)
 power_key_thread.daemon = True
+
+# exit handler
+# =================================================================
+def signal_handler(signo, frame):
+    if signo == signal.SIGTERM or signo == signal.SIGINT:
+        log("Received SIGTERM or SIGINT signal. Cleaning up...")
+        # oled off
+        if oled_ok:
+            oled.off()
+        # fan off
+        fan_off()
+        sys.exit(0)
+
+# Register signal handlers
+signal.signal(signal.SIGTERM, signal_handler)
+signal.signal(signal.SIGINT, signal_handler)
 
 # main
 # =================================================================
