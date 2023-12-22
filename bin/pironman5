@@ -22,9 +22,6 @@
 ####   -u,--unit            [ C/F ], set the unit of temperature,
 ####                        C or F (Celsius/Fahrenheit)
 ####
-####   -f,--fan             [ temp ], Temperature at which the fan switches on,
-####                        (default 50℃), in range (30 ~ 80)
-####
 ####   -re|--rgb_enable)    [on/true/off/false], whether enable rgb strip,
 ####
 ####   -rs,--rgb_style      rgb strip display style, default: breath,
@@ -200,21 +197,6 @@ while [[ $# -gt 0 ]]; do
           shift 2
         else
           echo "unit must be C or F"
-          exit 1
-        fi
-      fi
-      ;;
-    -f|--fan)
-      if [ $# -lt 2 ]; then
-        echo "usage: pironman5 -f|--fan [temp]"
-        exit 1
-      else
-        if [[ $2 =~ ^[[:digit:]]+$ ]]; then
-          echo "set the fan on temperature to $2 "
-          sed -i -e "s:fan_temp.*=.*:fan_temp = $2:g" ${CONF}
-          shift 2
-        else
-          echo "parameter must be integer"
           exit 1
         fi
       fi

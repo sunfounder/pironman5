@@ -1,10 +1,6 @@
 [all]
-# fan_gpio, gpio pin to switch fan, default pin 6 (BCM)
 #
 # temp_unit, the unit of temperature, [ C / F ] (Celsius/Fahrenheit)
-#
-# fan_temp, temperature at which the fan switches on,
-#           in celsius (default 50),in range (30 ~ 80)
 #
 # rgb_enable, rgb strip enable
 #
@@ -20,7 +16,6 @@
 #
 
 temp_unit = C
-fan_temp = 50
 rgb_enable = True
 rgb_style = breath
 rgb_color = 0a1aff
