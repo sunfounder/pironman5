@@ -63,7 +63,6 @@ rgb_pin = 10
 update_frequency = 0.5  # second
 
 temp_unit = 'C' # 'C' or 'F'
-fan_temp = 50 # celsius
 screen_always_on = True
 screen_off_time = 60
 rgb_enable = True
@@ -72,7 +71,6 @@ rgb_color = '0a1aff'
 rgb_blink_speed = 50
 rgb_pwm_freq = 1000 # kHz
 
-temp_lower_set = 2 # celsius, lower the fan temperature setting ( fan_temp ), the fan will turn off
 
 config = ConfigParser()
 # check config_file
@@ -90,7 +88,6 @@ if not os.path.exists(config_file):
 try:
     config.read(config_file)
     temp_unit = config['all']['temp_unit']
-    fan_temp = float(config['all']['fan_temp'])
     rgb_enable = (config['all']['rgb_enable'])
     if rgb_enable == 'False':
         rgb_enable = False
@@ -105,7 +102,6 @@ except Exception as e:
     log(f"read config error: {e}")
     config['all'] ={
                     'temp_unit':temp_unit,
-                    'fan_temp':fan_temp,
                     'rgb_enable':rgb_enable,
                     'rgb_style':rgb_style,
                     'rgb_color':rgb_color,
@@ -120,7 +116,6 @@ log("power_key_pin : %s"%power_key_pin)
 log("fan_pin : %s"%fan_pin)
 log("update_frequency : %s"%update_frequency)
 log("temp_unit : %s"%temp_unit)
-log("fan_temp : %s"%fan_temp)
 log("rgb_enable: %s"%rgb_enable)
 log("rgb_style : %s"%rgb_style)
 log("rgb_color : %s"%rgb_color)
@@ -234,14 +229,6 @@ power_key_status = POWER_KEY_RELEASED
 power_key_thread_lock = threading.Lock()
 power_key_timer = 0
 power_off = False
-# def power_key_event_loop():
-#     global power_key_status
-#     while True:
-#         _val = read_rpi5_power_button()
-#         print(f'xxxx: {_val}')
-#         with power_key_thread_lock:
-#             power_key_status = (POWER_KEY_PRESSED if _val == 1 else POWER_KEY_RELEASED)
-#         time.sleep(0.02)
 
 def power_key_event_loop():
     global power_key_status, power_key_timer, oled_status, screen_timer, power_off
@@ -273,7 +260,7 @@ def main():
     ip = 'DISCONNECT'
 
     # ---- power_key_thread start ----
-    power_key_thread.start()
+    # power_key_thread.start()
 
     # ---- rgb_thread start ----
     if rgb_strip != None:
@@ -292,22 +279,13 @@ def main():
         CPU_temp_F = float(CPU_temp_C * 1.8 + 32) # fahrenheit
 
         # ---- fan control ----
-        if temp_unit == 'C':
-            if CPU_temp_C > fan_temp:
-                fan_on()
-            elif CPU_temp_C < fan_temp - temp_lower_set:
-                fan_off()
-        elif temp_unit == 'F':
-            if CPU_temp_F > fan_temp:
-                fan_on()
-            elif CPU_temp_F < fan_temp - temp_lower_set*1.8:
-                fan_off()
+        # get fan1 state
+        fan1_state = get_fan1_state()
+        # fan1_speed = get_fan1_speed()
+        if (fan1_state > 0):
+            fan_on()
         else:
-            log('temp_unit error, use defalut value: 50\'C')
-            if CPU_temp_C > 50:
-                fan_on()
-            elif CPU_temp_C < 40:
-                fan_off()
+            fan_off()
 
         # ---- oled control ----
         with power_key_thread_lock:
@@ -386,8 +364,6 @@ def main():
                     oled.off()
                     with power_key_thread_lock:
                         oled_status = False
-
-  
 
 
         # ---- delay ----
