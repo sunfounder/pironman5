@@ -119,7 +119,14 @@ def get_fan1_state():
         return 0
 
 def get_fan1_speed():
-    path = '/sys/devices/platform/cooling_fan/hwmon/hwmon2/fan1_input'
+    '''
+    path =  '/sys/devices/platform/cooling_fan/hwmon/*/fan1_input'
+    '''
+    dir = '/sys/devices/platform/cooling_fan/hwmon/'
+    secondary_dir = os.listdir(dir)
+    path = f'{dir}/{secondary_dir[0]}/fan1_input'
+
+    os.listdir
     try:
         with open(path, 'r') as f:
             speed = int(f.read())
