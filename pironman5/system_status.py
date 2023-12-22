@@ -108,6 +108,42 @@ def getMAC():
     return MACs
 
 
+def get_fan1_state():
+    path = '/sys/class/thermal/cooling_device0/cur_state'
+    try:
+        with open(path, 'r') as f:
+            cur_state = int(f.read())
+        return cur_state
+    except Exception as e:
+        print(f'read fan1 state error: {e}')
+        return 0
+
+def get_fan1_speed():
+    path = '/sys/devices/platform/cooling_fan/hwmon/hwmon2/fan1_input'
+    try:
+        with open(path, 'r') as f:
+            speed = int(f.read())
+        return speed
+    except Exception as e:
+        print(f'read fan1 speed error: {e}')
+        return 0
+
+
+def set_fan1_state(level: int):
+    '''
+    level: 0 ~ 3
+    '''
+    if (isinstance(level, int)):
+        if level > 3:
+            level = 3
+        elif level < 0:
+            level = 0
+
+        cmd = f"echo '{level}' | sudo tee -a /sys/class/thermal/cooling_device0/cur_state"
+        result = subprocess.check_output(cmd,shell=True)
+
+        return result
+        
 
 if __name__ == '__main__':
     # CPU informatiom
@@ -133,6 +169,10 @@ if __name__ == '__main__':
         wlan0 = IPs['wlan0']
     if 'eth0' in IPs and IPs['eth0'] != None and IPs['eth0'] != '':
         eth0 = IPs['eth0']
+    # fan1
+    fan1_state = get_fan1_state()
+    fan1_speed = get_fan1_speed()
+
 
     print('')
     print('CPU Temperature = %s \'C' % CPU_temp)
@@ -148,6 +188,7 @@ if __name__ == '__main__':
     print('DISK Used Percentage = %s %%'%DISK_perc)
     print('wlan0 : %s'%wlan0)
     print('eth0 : %s'%eth0)
+    print(f'fan1_state: {fan1_state}, fan1_speed: {fan1_speed}')
 
 
 
