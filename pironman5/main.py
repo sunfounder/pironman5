@@ -171,8 +171,18 @@ def oled_display_power_off():
         oled.image(image)
         oled.display()
 
-# io control
+# fan control
 # =================================================================
+TEMP_CONTROL_MAP = {
+    '0': [50 , 0], # 'level': [min temp, level]
+    '1': [50 , 1],
+    '2': [60 , 2],
+    '3': [67.5 , 3],
+    '4': [75 , 4],
+}
+TEMP_HYSTERESIS = 5 # celsius
+cur_fan_level = 0
+
 fan = gpiozero.OutputDevice(fan_pin)
 
 def fan_on():
@@ -180,6 +190,18 @@ def fan_on():
 
 def fan_off():
    fan.off()
+
+def fan1_control(temp):
+    global cur_fan_level
+    if temp < (TEMP_CONTROL_MAP[str(cur_fan_level)][0] - 5):
+        cur_fan_level -= 1
+        if cur_fan_level < 0:
+            cur_fan_level = 0
+        set_fan1_state(cur_fan_level)
+    elif (cur_fan_level < 4) and (temp > TEMP_CONTROL_MAP[str(cur_fan_level+1)][0]):
+        cur_fan_level += 1
+        set_fan1_state(cur_fan_level)
+
 
 # rgb_strip init
 # =================================================================
@@ -296,6 +318,7 @@ def main():
         CPU_temp_F = float(CPU_temp_C * 1.8 + 32) # fahrenheit
 
         # ---- fan control ----
+        fan1_control(CPU_temp_C)
         # get fan1 state
         fan1_state = get_fan1_state()
         # fan1_speed = get_fan1_speed()
@@ -324,20 +347,32 @@ def main():
             RAM_usage = round(RAM_used/RAM_total*100,1)
             # Disk information
             DISK_stats = getDiskSpace()
-            DISK_total = str(DISK_stats[0])
-            DISK_used = str(DISK_stats[1])
+            DISK_total = DISK_stats[0]
+            DISK_used = DISK_stats[1]
             DISK_perc = float(DISK_stats[3])
 
+            DISK_total = 93.22
+            DISK_used = 2.22
+
+            DISK_unit = 'G1'
+      
+            if DISK_total >= 1000:
+                DISK_unit = 'T'
+                DISK_total = round(DISK_total/1000, 3)
+                DISK_used = round(DISK_used/1000, 3)
+            elif DISK_total >= 100:
+                DISK_unit = 'G2'
+  
             # get ip if disconnected
             if ip == 'DISCONNECT':
                 ip = getIPAddress()
 
             # ---- display info ----
-            ip_rect = Rect(48, 0, 81, 10)
-            ram_info_rect = Rect(46, 17, 81, 10)
-            ram_rect = Rect(46, 29, 81, 10)
-            rom_info_rect = Rect(46, 41, 81, 10)
-            rom_rect = Rect(46, 53, 81, 10)
+            ip_rect = Rect(46, 0, 87, 10)
+            ram_info_rect = Rect(45, 17, 87, 10)
+            ram_rect = Rect(45, 29, 87, 10)
+            rom_info_rect = Rect(45, 41, 87, 10)
+            rom_rect = Rect(45, 53, 87, 10)
             # cpu usage
             draw_text('CPU',6,0)
             draw.pieslice((0, 12, 30, 42), start=180, end=0, fill=0, outline=1)
@@ -354,14 +389,25 @@ def main():
                 pcent = (CPU_temp_F-32)/1.8
                 draw.pieslice((0, 33, 30, 63), start=int(180-180*pcent*0.01), end=180, fill=1, outline=1)
             # RAM
-            draw_text('RAM: {}/{} GB'.format(RAM_used,RAM_total),*ram_info_rect.coord())
+            draw_text(f'RAM:  {RAM_used:^4.1f}/{RAM_total:^4.1f} G',*ram_info_rect.coord())
             # draw_text('{:>5.1f}'.format(RAM_usage)+' %',92,0)
             draw.rectangle(ram_rect.rect(), outline=1, fill=0)
             draw.rectangle(ram_rect.rect(RAM_usage), outline=1, fill=1)
             # Disk
-            draw_text('ROM: {}/{} GB'.format(DISK_used ,DISK_total), *rom_info_rect.coord())
-            # draw_text('     ',72,32)
-            # draw_text(''+' G',72,32)
+            # draw_text(f'DISK:{DISK_used:^5.1f}/{DISK_total:^5.1f} {DISK_unit}', *rom_info_rect.coord())
+            if DISK_unit == 'G1':
+                _dec = 1
+                if DISK_used < 10:
+                    _dec = 2              
+                draw_text(f'DISK: {DISK_used:>2.{_dec}f}/{DISK_total:<2.1f} G', *rom_info_rect.coord())
+            elif DISK_unit == 'G2':
+                _dec = 0
+                if DISK_used < 100:
+                    _dec = 1
+                draw_text(f'DISK: {DISK_used:>3.{_dec}f}/{DISK_total:<3.0f} G', *rom_info_rect.coord())
+            elif DISK_unit == 'T':
+                draw_text(f'DISK: {DISK_used:>2.2f}/{DISK_total:<2.2f} T', *rom_info_rect.coord())
+
             draw.rectangle(rom_rect.rect(), outline=1, fill=0)
             draw.rectangle(rom_rect.rect(DISK_perc), outline=1, fill=1)
             # IP
