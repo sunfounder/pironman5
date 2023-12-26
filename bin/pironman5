@@ -34,7 +34,7 @@
 ####
 ####   -rb,--rgb_speed      [speed], rgb blink speed (0 ~ 100, default 50)
 ####
-####   -pwm,--rgb_pwm       [frequency], rgb signal frequency (400 ~ 1600, default 1000 kHz)
+####   -fq,--rgb_freq  [frequency], rgb signal frequency (400 ~ 1600, default 1000 kHz)
 ####
 ####   -rp,--rgb_pin        [pin], rgb signal pin, could be [10 / spi/ SPI / 12 / pwm/ PWM] or
 ####                        [21 / pcm / PCM], default 10
@@ -284,17 +284,17 @@ while [[ $# -gt 0 ]]; do
         fi
       fi
       ;;
-    -pwm|--rgb_pwm)
+    -fq|--rgb_freq)
       if [ $# -lt 2 ]; then
-        echo "usage: pironman5 -pwm|--rgb_pwm [frequency],frequency in range (400 ~ 1600) kHz"
+        echo "usage: pironman5 -fq|--rgb_freq [frequency],frequency in range (400 ~ 1600) kHz"
         exit 1
       else
         if [[ $2 =~ ^[[:digit:]]+$ ]];
         then
           if [ $2 -ge 400 ] && [ $2 -le 1600 ];
           then
-            echo "set rgb_pwm_freq to $2 "
-            sed -i -e "s:rgb_pwm_freq.*=.*:rgb_pwm_freq = $2:g" ${CONF}
+            echo "set rgb_freq to $2 "
+            sed -i -e "s:rgb_freq.*=.*:rgb_freq = $2:g" ${CONF}
             shift 2
           else
             echo "out of range (400 ~ 1600) kHz "

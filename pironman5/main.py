@@ -72,7 +72,7 @@ rgb_enable = True
 rgb_style = 'breath'  # 'breath', 'leap', 'flow', 'raise_up', 'colorful', 'colorful_leap'
 rgb_color = '0a1aff'
 rgb_blink_speed = 50
-rgb_pwm_freq = 1000 # kHz
+rgb_freq = 1000 # kHz
 
 
 config = ConfigParser()
@@ -100,7 +100,7 @@ try:
     rgb_style = str(config['all']['rgb_style'])
     rgb_color = str(config['all']['rgb_color'])
     rgb_blink_speed = int(config['all']['rgb_blink_speed'])
-    rgb_pwm_freq = int(config['all']['rgb_pwm_freq'])
+    rgb_freq = int(config['all']['rgb_freq'])
     rgb_pin = int(config['all']['rgb_pin'])
 except Exception as e:
     log(f"read config error: {e}")
@@ -111,7 +111,7 @@ except Exception as e:
                     'rgb_style':rgb_style,
                     'rgb_color':rgb_color,
                     'rgb_blink_speed':rgb_blink_speed,
-                    'rgb_pwm_freq':rgb_pwm_freq,
+                    'rgb_freq':rgb_freq,
                     'rgb_pin':rgb_pin,
                     }
     with open(config_file, 'w') as f:
@@ -126,7 +126,7 @@ log("rgb_num: %s"%rgb_num)
 log("rgb_style : %s"%rgb_style)
 log("rgb_color : %s"%rgb_color)
 log("rgb_blink_speed : %s"%rgb_blink_speed)
-log("rgb_pwm_freq : %s"%rgb_pwm_freq)
+log("rgb_freq : %s"%rgb_freq)
 log("rgb_pin : %s"%rgb_pin)
 log(">>>", timestamp=False)
 
@@ -226,7 +226,7 @@ def fan1_control(temp):
 # =================================================================
 rgb_strip = None
 try:
-    rgb_strip = WS2812(LED_COUNT=rgb_num, LED_PIN=rgb_pin, LED_FREQ_HZ=rgb_pwm_freq*1000)
+    rgb_strip = WS2812(LED_COUNT=rgb_num, LED_PIN=rgb_pin, LED_FREQ_HZ=rgb_freq*1000)
 except Exception as e:
     log('rgb_strip init failed:\n%s'%e)
     rgb_strip = None
