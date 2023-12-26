@@ -4,6 +4,8 @@
 #
 # rgb_enable, rgb strip enable
 #
+# rgb_num, the number of rgb lamp beads 
+# 
 # rgb_style, rgb strip display style, in [breath / leap / flow / raise_up / colorful]
 #
 # rgb_color, color of the RGB indicator inside the case
@@ -17,6 +19,7 @@
 
 temp_unit = C
 rgb_enable = True
+rgb_num = 4
 rgb_style = breath
 rgb_color = 0a1aff
 rgb_blink_speed = 50
