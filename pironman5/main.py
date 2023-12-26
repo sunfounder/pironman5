@@ -3,6 +3,7 @@ import sys
 import time
 import threading
 import signal
+import platform
 
 from app_info import __app_name__, __version__, username, config_file
 from configparser import ConfigParser
@@ -46,9 +47,9 @@ if status == 0:
     log("\nKernel Version:", timestamp=False)
     log(f"{result}", timestamp=False)
 # OS Version
-status, result = run_command("lsb_release -a|grep Description")
+status, result = run_command("lsb_release -a")
 if status == 0:
-    log("OS Version:", timestamp=False)
+    log("release:", timestamp=False)
     log(f"{result}", timestamp=False)
 # PCB information
 status, result = run_command("cat /proc/cpuinfo|grep -E \'Revision|Model\'")
@@ -61,6 +62,7 @@ if status == 0:
 power_key_pin = 16
 fan_pin = 6
 rgb_pin = 10
+rgb_num = 10
 update_frequency = 0.5  # second
 
 temp_unit = 'C' # 'C' or 'F'
@@ -94,6 +96,7 @@ try:
         rgb_enable = False
     else:
         rgb_enable = True
+    rgb_num = int(config['all']['rgb_num'])
     rgb_style = str(config['all']['rgb_style'])
     rgb_color = str(config['all']['rgb_color'])
     rgb_blink_speed = int(config['all']['rgb_blink_speed'])
@@ -104,6 +107,7 @@ except Exception as e:
     config['all'] ={
                     'temp_unit':temp_unit,
                     'rgb_enable':rgb_enable,
+                    'rgb_num': rgb_num,
                     'rgb_style':rgb_style,
                     'rgb_color':rgb_color,
                     'rgb_blink_speed':rgb_blink_speed,
@@ -118,12 +122,13 @@ log("fan_pin : %s"%fan_pin)
 log("update_frequency : %s"%update_frequency)
 log("temp_unit : %s"%temp_unit)
 log("rgb_enable: %s"%rgb_enable)
+log("rgb_num: %s"%rgb_num)
 log("rgb_style : %s"%rgb_style)
 log("rgb_color : %s"%rgb_color)
 log("rgb_blink_speed : %s"%rgb_blink_speed)
 log("rgb_pwm_freq : %s"%rgb_pwm_freq)
 log("rgb_pin : %s"%rgb_pin)
-log("\n")
+log(">>>", timestamp=False)
 
 # oled init
 # =================================================================
@@ -173,6 +178,16 @@ def oled_display_power_off():
 
 # fan control
 # =================================================================
+_, os_id = run_command("lsb_release -a |grep ID | awk -F ':' '{print $2}'")
+os_id = os_id.strip()
+_, os_code_name = run_command("lsb_release -a |grep Codename | awk -F ':' '{print $2}'")
+os_code_name = os_code_name.strip()
+
+# Systems that need to replace system pwm fan control
+# Please use all lowercase
+TEMP_CONTROL_INTERVENE_OS = [
+    'ubuntu',
+]
 TEMP_CONTROL_MAP = {
     '0': [50 , 0], # 'level': [min temp, level]
     '1': [50 , 1],
@@ -182,6 +197,10 @@ TEMP_CONTROL_MAP = {
 }
 TEMP_HYSTERESIS = 5 # celsius
 cur_fan_level = 0
+enable_fan1_control = False
+
+if os_id.lower() in TEMP_CONTROL_INTERVENE_OS or os_code_name.lower() in TEMP_CONTROL_INTERVENE_OS:
+    enable_fan1_control = True
 
 fan = gpiozero.OutputDevice(fan_pin)
 
@@ -207,7 +226,7 @@ def fan1_control(temp):
 # =================================================================
 rgb_strip = None
 try:
-    rgb_strip = WS2812(LED_COUNT=16, LED_PIN=rgb_pin, LED_FREQ_HZ=rgb_pwm_freq*1000)
+    rgb_strip = WS2812(LED_COUNT=rgb_num, LED_PIN=rgb_pin, LED_FREQ_HZ=rgb_pwm_freq*1000)
 except Exception as e:
     log('rgb_strip init failed:\n%s'%e)
     rgb_strip = None
@@ -234,7 +253,7 @@ def getIPAddress():
         IPs = ha.get_ip()
         if len(IPs) == 0:
             IPs = getIP()
-    log("Got IPs: %s" %IPs)
+    # log("Got IPs: %s" %IPs)
     if 'wlan0' in IPs and IPs['wlan0'] != None and IPs['wlan0'] != '':
         ip = IPs['wlan0']
     elif 'eth0' in IPs and IPs['eth0'] != None and IPs['eth0'] != '':
@@ -297,6 +316,7 @@ def main():
     global oled_status, power_key_status, power_key_timer, screen_timer, power_off
 
     ip = 'DISCONNECT'
+    last_ip = 'DISCONNECT'
 
     # ---- power_key_thread start ----
     # power_key_thread.start()
@@ -318,7 +338,9 @@ def main():
         CPU_temp_F = float(CPU_temp_C * 1.8 + 32) # fahrenheit
 
         # ---- fan control ----
-        fan1_control(CPU_temp_C)
+        if enable_fan1_control:
+            fan1_control(CPU_temp_C)
+
         # get fan1 state
         fan1_state = get_fan1_state()
         # fan1_speed = get_fan1_speed()
@@ -351,11 +373,7 @@ def main():
             DISK_used = DISK_stats[1]
             DISK_perc = float(DISK_stats[3])
 
-            DISK_total = 93.22
-            DISK_used = 2.22
-
             DISK_unit = 'G1'
-      
             if DISK_total >= 1000:
                 DISK_unit = 'T'
                 DISK_total = round(DISK_total/1000, 3)
@@ -364,8 +382,14 @@ def main():
                 DISK_unit = 'G2'
   
             # get ip if disconnected
-            if ip == 'DISCONNECT':
+            if mode == NORMAL:
                 ip = getIPAddress()
+            elif mode == HOME_ASSISTANT_ADDON and ip == 'DISCONNECT':
+                ip = getIPAddress()
+
+            if last_ip != ip:
+                last_ip = ip
+                log("Get IP: %s" %ip)
 
             # ---- display info ----
             ip_rect = Rect(46, 0, 87, 10)
