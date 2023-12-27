@@ -1,6 +1,10 @@
 import time
-import random
-from rpi_ws281x import PixelStrip, Color  # https://github.com/jgarff/rpi_ws281x
+
+# https://github.com/adafruit/Adafruit_CircuitPython_NeoPixel_SPI
+import board
+import neopixel_spi as neopixel
+
+# import random
 from utils import log
 
 # LED strip configuration:
@@ -12,11 +16,11 @@ from utils import log
 # LED_INVERT     = False   # True to invert the signal (when using NPN transistor level shift)
 
 RGB_styles = [
-    'breath', 'leap', 'flow', 'raise_up', 'colorful', 'colorful_leap'
+    'breath', 'leap', 'flow', 'colorful', 'colorful_leap'
 ]
 colorful_leds = [
     "#ff0000",
-    "#e71164",
+    "#00ff00",
     "#ffa500",
     "#0000ff",
     "#ffC800",
@@ -25,53 +29,40 @@ colorful_leds = [
     "#00ffb4",
     "#ff0000",
     "#00ff00",
-    "#00ff00",
+    "#e71164",
     "#8b00ff",
     "#8b00ff",
     "#8b00ff",
     "#0000ff",
+    "#e71164",
     "#0000ff",
 ]
 
 
 class WS2812():
 
-    lights_order = [1, 3, 5, 7, 0, 2, 4, 6, 8, 9, 10, 11, 12, 13, 14, 15]
+
+    lights_order = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,]
+    leap_order = [0, 3, 1, 2, 4, 12, 5, 11, 6, 10, 7, 9, 8, 15, 13, 14]
+
 
     def __init__(
         self,
         LED_COUNT,
-        LED_PIN,
-        LED_BRIGHTNESS=255,
-        LED_FREQ_HZ=1000000,
-        LED_DMA=10,
-        LED_INVERT=False,
     ):
         self.led_count = LED_COUNT
-        self.led_pin = LED_PIN
-        self.led_brightness = LED_BRIGHTNESS
-        self.led_freq_hz = LED_FREQ_HZ
-        self.led_dma = LED_DMA
-        self.led_invert = LED_INVERT
-        self.strip = None
+
         self.init()
 
     def init(self):
-        self.strip = PixelStrip(self.led_count, self.led_pin, self.led_freq_hz,
-                                self.led_dma, self.led_invert,
-                                self.led_brightness)
+        spi = board.SPI()
+        PIXEL_ORDER = neopixel.GRB
+
+        self.strip = neopixel.NeoPixel_SPI(
+                spi, self.led_count, pixel_order=PIXEL_ORDER, auto_write=False
+        )
         time.sleep(0.01)
-        self.strip.begin()
-
-    def reinit(self):
-        # if self.strip is not None:
-        # 	# del self.strip
-        # 	self.strip._cleanup()
-        # 	self.strip = None
-        # self.init()
-
-        if self.strip is None:
-            self.init()
+        self.strip.fill(0)
 
     # str or hex, eg: 'ffffff', '#ffffff', '#FFFFFF'
     def hex_to_rgb(self, hex):
@@ -84,156 +75,147 @@ class WS2812():
         except Exception as e:
             log('color parameter error: \n%s' % e)
 
-    def clear(self, color: str = '#000000'):
-        r, g, b = self.hex_to_rgb(color)
-        self.reinit()
-        self.strip.begin()
-        for i in range(self.led_count):
-            self.strip.setPixelColor(i, Color(r, g, b))
+    def clear(self):
+        self.strip.fill(0)
+        self.strip.show()
+
+    def fill(self, color:str='#000000'):
+        self.strip.fill(color)
         self.strip.show()
 
     def display(self,
                 style: str,
                 color: str = '#0a1aff',
-                speed=50,
-                brightness=255):
+                speed=50):
         color = list(self.hex_to_rgb(color))
         self.clear()
-        # eval is evil, list The list is split into individual characters
-        # eval('self.%s(color="%s", speed=%s)'%(style, color, speed))
         try:
             fuc = getattr(self, style)
             fuc(color, speed)
         except KeyError as e:
             log(f'LED strip parameter error: {e}')
         except Exception as e:
-            log(f'LED display error: {e}')
-
+            log(f'LED display error: {type(e)} {e}')
 
 # styles
-
     def breath(self, color: list = [255, 255, 255], speed=50):
         speed = 101 - speed
         while True:
-            self.reinit()
             for i in range(2, 101):
                 r, g, b = [int(x * i * 0.01) for x in color]
-                for index in self.lights_order:
-                    self.strip.setPixelColor(index, Color(r, g, b))
+                self.strip.fill((r, g, b))
                 self.strip.show()
                 time.sleep(0.001 * speed)
+            time.sleep(0.01 * speed)
             for i in range(100, 1, -1):
                 r, g, b = [int(x * i * 0.01) for x in color]
-                for index in self.lights_order:
-                    self.strip.setPixelColor(index, Color(r, g, b))
+                self.strip.fill((r, g, b))
                 self.strip.show()
                 time.sleep(0.001 * speed)
 
             # --- no breath ---
             # r, g, b =  color
-            # for index in self.lights_order:
-            # 	self.strip.setPixelColor(index, Color(r,g,b))
+            # self.strip.fill((r, g, b))
             # self.strip.show()
             # time.sleep(2)
 
     def leap(self, color: list = [255, 255, 255], speed=50):
         speed = 101 - speed
         r, g, b = color
+
+        # check leap order
+        _leap_order = [0]*self.led_count
+        num = 0
+        for i in self.leap_order:
+            if i < self.led_count:
+                _leap_order[num] = i
+                num += 1
+            else:
+                continue
+            if num == self.led_count:
+                break
+
         while True:
-            self.reinit()
             for i in range(self.led_count):
-                for index in self.lights_order:
-                    self.strip.setPixelColor(index, Color(0, 0, 0))
-                self.strip.setPixelColor(i, Color(r, g, b))
+                self.strip.fill(0)
+                index =_leap_order[i]
+                self.strip[index] = (r, g, b)
                 self.strip.show()
-                time.sleep(0.001 * speed)
+                time.sleep(0.0035 * speed)
 
     def flow(self, color: list = [255, 255, 255], speed=50):
         speed = 101 - speed
         r, g, b = color
         while True:
-            self.reinit()
-            for index in self.lights_order:
-                self.strip.setPixelColor(index, Color(r, g, b))
+            for i in range(self.led_count):
+                index =self.lights_order[i]
+                self.strip[index] = (r, g, b)
                 self.strip.show()
-                time.sleep(0.001 * speed)
-            for j in range(self.led_count):
-                self.strip.setPixelColor(j, Color(0, 0, 0))
+                time.sleep(0.0015 * speed)
+            self.strip.fill(0)
             self.strip.show()
             time.sleep(0.005 * speed)
 
-    def raise_up(self, color: list = [255, 255, 255], speed=50):
+    def colorful(self, color: list = None, speed=50):
         speed = 101 - speed
-        r, g, b = color
+        _color = list(self.hex_to_rgb(colorful_leds[i]) for i in range(self.led_count))
         while True:
-            self.reinit()
             for i in range(2, 101):
-                r, g, b = [int(x * i * 0.01) for x in color]
-                for index in range(0, 4, 1):
-                    self.strip.setPixelColor(self.lights_order[index],
-                                             Color(r, g, b))
+                for j in range(self.led_count):
+                    r, g, b = [int(x * i * 0.01) for x in _color[j]]
+                    index =self.lights_order[j]
+                    self.strip[index] = (r, g, b)
                 self.strip.show()
-                time.sleep(0.0002 * speed)
-            for i in range(2, 101):
-                r, g, b = [int(x * i * 0.01) for x in color]
-                for index in range(4, 8, 1):
-                    self.strip.setPixelColor(self.lights_order[index],
-                                             Color(r, g, b))
-                self.strip.show()
-                time.sleep(0.0002 * speed)
-            for i in range(2, 101):
-                r, g, b = [int(x * i * 0.01) for x in color]
-                for index in range(8, 16, 1):
-                    self.strip.setPixelColor(self.lights_order[index],
-                                             Color(r, g, b))
-                self.strip.show()
-                time.sleep(0.0002 * speed)
-            # turn off
-            time.sleep(10 * 0.0005 * speed)
-            for index in self.lights_order:
-                self.strip.setPixelColor(self.lights_order[index],
-                                         Color(0, 0, 0))
+                time.sleep(0.001 * speed)
+            time.sleep(0.01 * speed)
+            for i in range(100, 1, -1):
+                for j in range(self.led_count):
+                    r, g, b = [int(x * i * 0.01) for x in _color[j]]
+                    index =self.lights_order[j]
+                    self.strip[index] = (r, g, b)
                 self.strip.show()
                 time.sleep(0.001 * speed)
 
-    def colorful(self, color: list = None, speed=50):
-        speed = 101 - speed
-        _color = list(
-            self.hex_to_rgb(colorful_leds[i]) for i in range(self.led_count))
-        while True:
-            self.reinit()
-            for i in range(2, 101):
-                for index in self.lights_order:
-                    r, g, b = [int(x * i * 0.01) for x in _color[index]]
-                    self.strip.setPixelColor(index, Color(r, g, b))
-                self.strip.show()
-                time.sleep(0.001 * speed)
-            for i in range(100, 1, -1):
-                for index in self.lights_order:
-                    r, g, b = [int(x * i * 0.01) for x in _color[index]]
-                    self.strip.setPixelColor(index, Color(r, g, b))
-                self.strip.show()
-                time.sleep(0.001 * speed)
+            # --- no breath ---
+            # for j in range(self.led_count):
+            #     r, g, b = _color[j]
+            #     index =self.lights_order[j]
+            #     self.strip[index] = (r, g, b)
+            # self.strip.show()
+            # time.sleep(2)
 
     def colorful_leap(self, color: list = None, speed=50):
         speed = 101 - speed
+
+        # check leap order
+        _leap_order = [0]*self.led_count
+        num = 0
+        for i in self.leap_order:
+            if i < self.led_count:
+                _leap_order[num] = i
+                num += 1
+            else:
+                continue
+            if num == self.led_count:
+                break
+
         while True:
-            self.reinit()
             for i in range(self.led_count):
                 r, g, b = self.hex_to_rgb(colorful_leds[i])
-                for index in self.lights_order:
-                    self.strip.setPixelColor(index, Color(0, 0, 0))
-                self.strip.setPixelColor(i, Color(r, g, b))
+                self.strip.fill(0)
+                index =_leap_order[i]
+                self.strip[index] = (r, g, b)
                 self.strip.show()
-                time.sleep(0.001 * speed)
+                time.sleep(0.01 * speed)
 
 if __name__ == "__main__":
-    speed = 80
-    strip = WS2812(16, 10)  # LED_COUNT, LED_PIN
-
-    # strip.display('breath','#0000ff', speed=speed)
-    # strip.display(style='leap',color='#0000ff', speed=speed)
-    # strip.display(style='colorful', speed=speed)
-    # strip.display(style='flow',color='#1a1aff', speed=speed)
-    # strip.display(style='raise_up',color='#1a1aff', speed=speed)
-    strip.display(style='colorful_leap', speed=speed)
+    try:
+        speed = 50
+        strip = WS2812(4)  # LED_COUNT, LED_PIN
+        # strip.display('breath','#0000ff', speed=speed)
+        # strip.display(style='leap',color='#0000ff', speed=speed)
+        # strip.display(style='flow',color='#1a1aff', speed=speed)
+        strip.display(style='colorful', speed=speed)
+        # strip.display(style='colorful_leap',  speed=speed)
+    finally:
+        strip.clear()
