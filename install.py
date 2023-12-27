@@ -48,7 +48,8 @@ APT_INSTALL_LIST = [
 
 
 PIP_INSTALL_LIST = [
-    'rpi-ws281x',
+    # 'rpi-ws281x',
+   'adafruit-circuitpython-neopixel-spi',
     # 'pillow --no-binary :all:', # https://pillow.readthedocs.io/en/latest/installation.html
     'pillow --no-cache-dir',
     'requests',
