@@ -22,19 +22,19 @@
 ####   -u,--unit            [ C/F ], set the unit of temperature,
 ####                        C or F (Celsius/Fahrenheit)
 ####  
-####   -re|--rgb_enable    [on/true/off/false], whether enable rgb strip,
+####   -re|--rgb_enable     [on/true/off/false], whether enable rgb strip,
 ####
 ####   -rn|--rgb_num        the number of rgb lamp beads, default 4
 #### 
 ####   -rs,--rgb_style      rgb strip display style, default: breath,
-####                        in [breath / leap / flow / raise_up / colorful]
+####                        in [breath / leap / flow / colorful / colorful_leap]
 ####
 ####   -rc,--rgb_color      [(HEX)color], set the color of rgb strip,
 ####                        default: 0a1aff
 ####
 ####   -rb,--rgb_speed      [speed], rgb blink speed (0 ~ 100, default 50)
 ####
-####   -fq,--rgb_freq  [frequency], rgb signal frequency (400 ~ 1600, default 1000 kHz)
+####   -fq,--rgb_freq       [frequency], rgb signal frequency (400 ~ 1600, default 1000 kHz)
 ####
 ####   -rp,--rgb_pin        [pin], rgb signal pin, could be [10 / spi/ SPI / 12 / pwm/ PWM] or
 ####                        [21 / pcm / PCM], default 10
@@ -111,7 +111,9 @@ stop() {
   # kill $(ps aux | grep $main | awk '{ print $2 }') >/dev/null 2>&1
   pid=$(ps aux | grep $main | awk '{print $2}')
   echo "pid="$pid
-  kill -15 $pid >/dev/null 2>&1
+  kill -15 $pid >/dev/null 2>&1 # send SIGTERM signal
+  python3 $main close_rgb 1>/dev/null 2>>/opt/pironman5/log & # close rgb
+  sleep 0.5 # exit handler
 }
 
 restart() {
@@ -228,6 +230,7 @@ while [[ $# -gt 0 ]]; do
       else
         if [[ $2 =~ ^[[:digit:]]+$ ]]; then
           if [ $2 -ge 0 ]; then
+            stop # stop to close rgb
             echo "set rgb_num to $2 "
             sed -i -e "s:rgb_num.*=.*:rgb_num = $2:g" ${CONF}
             shift 2
@@ -243,13 +246,13 @@ while [[ $# -gt 0 ]]; do
       ;;
     -rs|--rgb_style)
       case "$2" in
-        breath|leap|flow|raise_up|colorful|colorful_leap)
+        breath|leap|flow|colorful|colorful_leap)
           echo "set rgb_style to $2 "
           sed -i -e "s:rgb_style.*=.*:rgb_style = $2:g" ${CONF}
           shift 2
         ;;
         *)
-          echo "usage: pironman5 -rs|--rgb_style [breath / leap / flow / raise_up / colorful / colorful_leap]"
+          echo "usage: pironman5 -rs|--rgb_style [breath / leap / flow / colorful / colorful_leap]"
           exit 1
         ;;
       esac
@@ -372,7 +375,7 @@ while [[ $# -gt 0 ]]; do
       shift
       ;;
     *)
-      echo -e "${RED}Invalid argument: $1.${NC}"
+      echo -e "${RED}Invalid argument: $1 ${NC}"
       exit 1
       ;;
   esac
