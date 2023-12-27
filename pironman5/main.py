@@ -226,17 +226,18 @@ def fan1_control(temp):
 # =================================================================
 rgb_strip = None
 try:
-    rgb_strip = WS2812(LED_COUNT=rgb_num, LED_PIN=rgb_pin, LED_FREQ_HZ=rgb_freq*1000)
+    # rgb_strip = WS2812(LED_COUNT=rgb_num, LED_PIN=rgb_pin, LED_FREQ_HZ=rgb_freq*1000)
+    rgb_strip = WS2812(LED_COUNT=rgb_num)
+    log('WS2812 init success')
 except Exception as e:
     log('rgb_strip init failed:\n%s'%e)
     rgb_strip = None
 
 def rgb_show():
-    log('rgb_show')
     try:
         if rgb_style in RGB_styles:
             log('rgb_show: %s'%rgb_style)
-            rgb_strip.display(rgb_style, rgb_color, rgb_blink_speed, 255)
+            rgb_strip.display(rgb_style, rgb_color, rgb_blink_speed)
         else:
             log('rgb_style not in RGB_styles')
     except Exception as e:
@@ -295,15 +296,23 @@ power_key_thread.daemon = True
 
 # exit handler
 # =================================================================
+def exit_handler():
+    # oled off
+    if oled_ok:
+        oled.off()
+    # fan off
+    fan_off()
+    fan.close() # release gpio resource
+    # rgb off
+    if rgb_strip != None:
+        rgb_strip.clear()
+        time.sleep(0.1)
+    sys.exit(0)
+
 def signal_handler(signo, frame):
     if signo == signal.SIGTERM or signo == signal.SIGINT:
         log("Received SIGTERM or SIGINT signal. Cleaning up...")
-        # oled off
-        if oled_ok:
-            oled.off()
-        # fan off
-        fan_off()
-        sys.exit(0)
+        exit_handler()
 
 # Register signal handlers
 signal.signal(signal.SIGTERM, signal_handler)
@@ -318,6 +327,13 @@ def main():
     ip = 'DISCONNECT'
     last_ip = 'DISCONNECT'
 
+    # close rgb
+    if 'close_rgb' in sys.argv:
+        log('close_rgb in sys.argv')
+        if rgb_strip != None:
+            log('rgb_strip clear')
+            rgb_strip.clear()
+        sys.exit(0)
     # ---- power_key_thread start ----
     # power_key_thread.start()
 
@@ -481,6 +497,6 @@ if __name__ == "__main__":
         log('error')
         log(e)
     finally:
-        fan.close()
+        exit_handler()
 
 
