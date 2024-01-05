@@ -129,23 +129,25 @@ To utilize the IR receiver, verify its connection and install the necessary modu
 
     sudo apt-get install lirc -y
 
-* To test remote controller functionality, execute:
+* Now, test the IR Receiver by running the following command. After running the command, press a button on the remote control, and the code of that button will be printed.
 
   .. code-block:: shell
 
     mode2 -d /dev/lirc0
+  
+
 
 Fans Pins
------------
+-------------
 
 .. image:: img/io_board_fan.png
 
-* **FAN1 and FAN 2**: Two sets of fan pins, directly connected to 5V and GND.
-* **FAN**: The enable pin for fans, with **GPIO6** monitoring Raspberry Pi 5's PWM fan status. Connect a jumper cap for GPIO6 control; remove it to free up GPIO6 if not in use.
+* **FAN1 and FAN 2**: Two sets of fan pins.
+* **FAN**:The enable pins for RGB fans. By default, a jumper is inserted on these pins, allowing control of the fans' on and off state using GPIO6. If the fan operation is not desired, the jumper can be removed to free GPIO6.
 * **D3**: A fan signal indicator that lights up when the fan is active.
 
 Pin Headers
-------------
+--------------
 
 .. image:: img/io_board_pin_header.png
 

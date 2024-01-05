@@ -1,7 +1,7 @@
 Pi5 NVMe PIP
 =================
 
-The Pi5 NVMe PIP (Peripheral Interface Panel), as defined by the Raspberry Pi Foundation, is a PCIe adapter board designed specifically for NVMe solid-state drives. It supports four different sizes of NVMe SSDs: 2230, 2242, 2260, and 2280, all fitting into an M.2 M key slot.
+The Pi5 NVMe PIP (PCIe Peripheral Board), as defined by the Raspberry Pi Foundation, is a PCIe adapter board designed specifically for NVMe solid-state drives. It supports four different sizes of NVMe SSDs: 2230, 2242, 2260, and 2280, all fitting into an M.2 M key slot.
 
 .. image:: img/nvme_pip.jpeg
 
@@ -83,7 +83,7 @@ About the Length
 
 M.2 modules come in different sizes and can also be utilized for Wi-Fi, WWAN, Bluetooth, GPS, and NFC.
 
-Pironman 5 supports four M.2 SATA SSD sizes based on their names: 2230, 2242, 2260, and 2280. The "22" is the width in millimeters (mm), and the two following numbers are the length. The longer the drive, the more NAND flash chips can be mounted; therefore, the more capacity.
+Pironman 5 supports four (PCIE2.0 / PCIE 3.0）NVME M.2 SSD sizes based on their names: 2230, 2242, 2260, and 2280. The "22" is the width in millimeters (mm), and the two following numbers are the length. The longer the drive, the more NAND flash chips can be mounted; therefore, the more capacity.
 
 
 .. image:: img/m2_ssd_size.png

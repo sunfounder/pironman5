@@ -1,8 +1,6 @@
 Tower Cooler
 ===============
 
-.. image:: img/size_tower_cooler.png
-
 
 **Warning**
 

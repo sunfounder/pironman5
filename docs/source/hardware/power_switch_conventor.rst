@@ -5,10 +5,38 @@ This is a module that expands the Raspberry Pi 5 power switch to the outside.
 
 .. image:: img/power_switch_conventor.jpeg
 
-The Raspberry Pi 5 features a **J2** jumper, situated between the RTC battery connector and the board edge. This breakout enables the addition of a custom power button to the Raspberry Pi 5 by connecting a Normally Open (NO) momentary switch across the two pads. Briefly engaging this switch mimics the onboard power button's functionality.
+**Adding the Power Button**
 
-.. image:: img/pi5_j2.jpg
+* The Raspberry Pi 5 features a **J2** jumper, situated between the RTC battery connector and the board edge. This breakout enables the addition of a custom power button to the Raspberry Pi 5 by connecting a Normally Open (NO) momentary switch across the two pads. Briefly engaging this switch mimics the onboard power button's functionality.
 
-On the Pironman 5, there's a **Power Switch Converter** that extends the **J2** jumper to an external power button using two Pogo pins.
+    .. image:: img/pi5_j2.jpg
 
-.. image:: img/power_switch_convertor.png
+* On the Pironman 5, there's a **Power Switch Converter** that extends the **J2** jumper to an external power button using two Pogo pins.
+
+    .. image:: img/power_switch_convertor.png
+
+* Now, the Raspberry Pi 5 can be powered on and off using the Power Button.
+
+    .. image:: img/pironman_button.JPG
+
+**Power Cycling**
+
+Upon initially powering your Raspberry Pi 5, it will automatically turn on and boot into the operating system without the need to press the button.
+
+If running the Raspberry Pi Desktop, a brief press of the power button initiates a clean shutdown process. A menu will appear, offering options to shutdown, reboot, or logout. Selecting an option or pressing the power button again will start a clean shutdown.
+
+.. image:: img/button_shutdown.png
+
+**Shutdown Operations**
+
+* For the **bookworm** system
+
+    * If you run Raspberry Pi Desktop, you can press the power button twice in quick succession to shutdown. 
+    * If you run Raspberry Pi OS Lite without a desktop, press the power button a single time to initiate a shutdown.
+    * To force a hard shutdown, press and hold the power button.
+    * If the Raspberry Pi board is shut down, but still powered, pressing the power button will restart the board.
+
+* For other systems
+
+    Hold for 5 seconds to force a hard shutdown, and single-click to power on from a shutdown state.
+

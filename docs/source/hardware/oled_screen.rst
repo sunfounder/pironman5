@@ -9,7 +9,6 @@ OLED Screen
 * **Material**: PM OLED
 * **Color**: White light
 * **Driver**: SSD1306
-* **Wiring**: Soldered 30pin 0.7mm pitch
 * **Voltage**: 3.3V
 * **Resolution**: 128*64
 * **Display Area**: 21.74x10.86mm

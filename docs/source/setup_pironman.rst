@@ -3,10 +3,6 @@
 5. Setting Up the Pironman
 ===================================
 
-.. note::
-    * The Pironman 5 functions similarly to a PC and requires the power button for powering on/off.
-
-
 Configuring Shutdown to Deactivate GPIO Power
 ------------------------------------------------------------
 To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from remaining active post-shutdown, it's essential to configure the Raspberry Pi for GPIO power deactivation.
@@ -49,10 +45,12 @@ Proceed to download and install the source code from GitHub.
 
 A system reboot is required to activate the installation. Follow the on-screen reboot prompt.
 
-Here are the primary configurations for Pironman:
+Here are the primary configurations for Pironman 5:
 
   * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
-  * You can execute a double press for a safe shutdown or hold for 5 seconds for a forced shutdown.
+  * If you run Raspberry Pi Desktop, you can press the power button twice in quick succession to shutdown. If you run Raspberry Pi OS Lite without a desktop, press the power button a single time to initiate a shutdown.
+  * To force a hard shutdown, press and hold the power button.
+  * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
   
 
 Modifying the Configuration
@@ -62,7 +60,7 @@ The ``pironman5`` module offers basic configurations for Pironman, which you can
 
 .. code-block:: shell
 
-    sudo pironman5 -c
+  sudo pironman5 -c
 
 The standard configurations appear as follows:
 

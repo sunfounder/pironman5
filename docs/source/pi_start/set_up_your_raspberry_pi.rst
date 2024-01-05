@@ -21,11 +21,11 @@ Steps:
 
 #. Insert the Micro SD card with Raspberry Pi OS installed into the Pironman 5.
 
-#. Connect the Mouse and Keyboard to the Raspberry Pi.
+#. Connect the Mouse and Keyboard to the Pironman 5.
 
-#. Use the HDMI cable to link the screen to the Raspberry Pi's HDMI port. Ensure the screen is plugged into a power source and turned on.
+#. Use the HDMI cable to connect the screen to the Pironman 5's HDMI port. Ensure the screen is plugged into a power source and turned on.
 
-#. Power the Raspberry Pi using the power adapter. The Raspberry Pi OS desktop should appear on the screen after a few seconds.
+#. Power the Pironman 5 using the power adapter. The Raspberry Pi OS desktop should appear on the screen after a few seconds.
 
     .. image:: img/bookwarm.png
         :align: center

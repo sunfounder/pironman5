@@ -5,9 +5,13 @@
 
 Before assembling the Pironman, please first verify that all parts and components have been included. If there are any missing or damaged components, please contact SunFounder immediately at service@sunfounder.com to resolve the issue as soon as possible.
 
-Please follow the steps on the following PDF for assembly instructions: 
+**Tips**
 
-* :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0303v20-a0000891-pironman5.pdf>`
+* It is recommended to follow the paper installation instructions step by step.
+* Before installation, sort and stack the components to find them more quickly.
+* Repeatedly check the connections of FFC and FPC cables to avoid poor contact.
+
+.. * :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0303v20-a0000891-pironman5.pdf>`
 
 
 .. **Assemble Tutorial Video**
