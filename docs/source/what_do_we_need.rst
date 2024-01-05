@@ -9,27 +9,26 @@
 
 * 5V/5A Power Adapter
 
-    A 5V/5A power adapter is required to power the Pironman and its components. If you're connecting other power-intensive devices, consider powering the Raspberry Pi 5 separately.
+    A 5V/5A power adapter is required to power the Pironman 5 and its components.
 
 * Micro SD Card
-
-    Given that the Raspberry Pi is fully encased in the Pironman, an additional micro SD port is provided. The micro SD card used should have a minimum capacity of 8GB.
+ 
+    It is recommended to use an SD card with a minimum of 16GB of storage for Raspberry Pi OS. For Raspberry Pi OS Lite, a minimum of 4GB is advised.
 
 **Optional Components**
 
-* M.2 NVME SSD
+* M.2 NVMe SSD
 
-    The Pironman5's NVME PIP includes an M.2 SSD connector for an M.2 SSD. NVMe M.2 SSDs offer superior performance and speed, using the NVMe protocol designed for SSDs and PCIe bus communication. This direct communication with the system CPU offers significantly faster performance compared to traditional SATA SSDs.
+    The Pironman 5 features an NVMe PIP with an M.2 SSD connector, accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. It supports both PCIE2.0 and PCIE 3.0 NVMe M.2 SSDs.
 
 * Screen
 
-    For visual access to the Raspberry Pi's desktop environment, a screen is required. This can be a TV or a computer monitor. If the screen has built-in speakers, the Raspberry Pi can output sound through them.
-
+    To access the Raspberry Pi's desktop environment, a screen such as a TV or a computer monitor is required.
+    
 * HDMI Cable
 
-    The two HDMI ports on the Raspberry Pi 5 have been converted to standard HDMI Type A interfaces using USB HDMI adapter, offering broader compatibility.
+    The Raspberry Pi 5's HDMI ports have been adapted to standard HDMI Type A interfaces via a USB HDMI adapter. Therefore, a standard HDMI to HDMI cable is needed to connect the Pironman 5 to a display.
 
 * Mouse & Keyboard
 
-    A USB keyboard and mouse are necessary when using a screen for interaction.
-
+    Any USB port on the Pironman 5 can be used to connect a wired keyboard and mouse, or a USB Bluetooth receiver for wireless peripherals.

@@ -19,15 +19,20 @@ Thanks for choosing our Pironman 5.
 
 Elevate your Raspberry Pi 5 with the Pironman 5, our top-tier case designed for unmatched style and functionality. It's the perfect blend of aesthetics and performance:
 
-* **Transparent Design with RGB Lighting**: Show off your Pi with a stylish, transparent case, complemented by vibrant RGB LEDs and fans.
-* **Advanced Cooling**: Features three fans, including a tower cooler, to keep your Pi cool under pressure.
-* **OLED Display & Enhanced Controls**: A handy OLED screen displays key information, and a reconfigured layout for HDMI and power ports ensures a sleek setup.
-* **Robust Connectivity:** Equipped with USB Type C, USB 3.0 and 2.0 ports, Gigabit Ethernet, and a 40-pin GPIO header.
-* **Dual 4K HDMI Output**: Supports two 4K displays for an impressive visual experience.
-* **NVMe SSD Ready**: Comes with an NVMe adapter for high-speed storage options.
-* **Compact & Durable**: With dimensions of 111.9 x 78.5 x 117 mm, it's built to last and fit perfectly in any space.
+* Raspberry Pi 5 mini PC
+* 0.96" OLED Display showing Raspberry Pi's CPU usage, temperature, disk usage, IP address, RAM usage etc.
+* Tower cooler can cool a 100% CPU load Pi to 39°C at 25°C room temperature
+* 2 RGB Fans, with GPIO control
+* 1 PWM Fan on the Tower Cooler is controlled by the Raspberry Pi system.
+* Supports four (PCIE2.0 / PCIE 3.0) NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280.
+* 4 WS2812 Addressable RGB LED light up the whole case with cool light effect
+* IR Receiver for multi-media center like Kodi or Volumio
+* Retro metal power button for safe shut down
+* External GPIO extender with pin name label, for easy access.
+* Equipped with a spring-loaded socket for easy card removal.
+* Aluminum main body with clear Acrylic side panel
 
-The Pironman 5 is not just a case; it's an upgrade that transforms your Raspberry Pi into a powerful, efficient, and stylish device. Get yours now and experience the future of Raspberry Pi cases!
+The Pironman 5 is not just a case; it's an upgrade that transforms your Raspberry Pi 5 into a powerful, efficient, and stylish device. Get yours now and experience the future of Raspberry Pi cases!
 
 .. note::
 

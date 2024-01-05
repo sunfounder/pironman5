@@ -8,12 +8,10 @@ The Pi5 NVMe PIP (PCIe Peripheral Board), as defined by the Raspberry Pi Foundat
 * The board connects through a 16P 0.5mm reverse FFC (Flexible Flat Cable) or a custom impedance-matched FPC (Flexible Printed Circuit) cable.
 * **STA**: A Status LED indicator.
 * **PWR**: A Power LED indicator.
-* The onboard 3.3V power supply can support up to 3A output. However, since the Raspberry Pi PCIe interface is limited to providing 1A output (equivalent to 5W), additional power for 3.3V/3A usage can be supplied through the J3 connector from a 5V source.
-
-
+* The onboard 3.3V power supply can support up to 3A output. However, since the Raspberry Pi PCIe interface is limited to providing 5V/1A output (equivalent to 5W), additional power for 3.3V/3A usage can be supplied through the J3 connector from a 5V source.
 
 Configure PCIe
----------------
+-----------------
 
 **Enabling PCIe**
 
@@ -23,7 +21,7 @@ By default the PCIe connector is not enabled.
 
   .. code-block:: shell
   
-      sudo nano /boot/firmware/config.txt
+    sudo nano /boot/firmware/config.txt
   
 * Then add the following line to the file. 
 
@@ -83,11 +81,11 @@ About the Length
 
 M.2 modules come in different sizes and can also be utilized for Wi-Fi, WWAN, Bluetooth, GPS, and NFC.
 
-Pironman 5 supports four (PCIE2.0 / PCIE 3.0）NVME M.2 SSD sizes based on their names: 2230, 2242, 2260, and 2280. The "22" is the width in millimeters (mm), and the two following numbers are the length. The longer the drive, the more NAND flash chips can be mounted; therefore, the more capacity.
+Pironman 5 supports four (PCIE2.0 / PCIE 3.0）NVMe M.2 SSD sizes based on their names: 2230, 2242, 2260, and 2280. The "22" is the width in millimeters (mm), and the two following numbers are the length. The longer the drive, the more NAND flash chips can be mounted; therefore, the more capacity.
 
 
 .. image:: img/m2_ssd_size.png
-    :width: 600
+  :width: 600
 
 Booting from the SSD
 -------------------------
