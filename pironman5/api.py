@@ -48,7 +48,7 @@ def run_in_thread():
 class APIServer(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
-        self.srv = make_server('127.0.0.1', 5000, app)
+        self.srv = make_server('127.0.0.1', 34002, app)
         self.ctx = app.app_context()
         self.ctx.push()
 
