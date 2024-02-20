@@ -406,11 +406,11 @@ def main():
                 log("Get IP: %s" %ip)
 
             # ---- display info ----
-            ip_rect = Rect(46, 0, 87, 10)
-            ram_info_rect = Rect(45, 17, 87, 10)
-            ram_rect = Rect(45, 29, 87, 10)
-            rom_info_rect = Rect(45, 41, 87, 10)
-            rom_rect = Rect(45, 53, 87, 10)
+            ip_rect = Rect(40, 0, 88, 10)
+            ram_info_rect = Rect(40, 17, 88, 10)
+            ram_rect = Rect(40, 29, 88, 10)
+            rom_info_rect = Rect(40, 41, 88, 10)
+            rom_rect = Rect(40, 53, 88, 10)
             # cpu usage
             draw_text('CPU',6,0)
             draw.pieslice((0, 12, 30, 42), start=180, end=0, fill=0, outline=1)
