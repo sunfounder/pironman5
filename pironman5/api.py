@@ -1,5 +1,4 @@
 from flask import Flask, request
-from werkzeug.serving import make_server
 import threading
 import json
 from utils import log
@@ -45,24 +44,9 @@ def run_in_thread():
     thread = threading.Thread(target=run)
     thread.start()
 
-class APIServer(threading.Thread):
-    def __init__(self):
-        threading.Thread.__init__(self)
-        self.srv = make_server('127.0.0.1', 34002, app)
-        self.ctx = app.app_context()
-        self.ctx.push()
-
-    def run(self):
-        print('starting server')
-        self.srv.serve_forever()
-
-    def stop(self):
-        self.srv.shutdown()
-
-    def set_config(self, data):
-        global config
-        config = data
-
-    def set_on_change(self, func):
-        global on_change
-        on_change = func
+def stop():
+    func = request.environ.get('werkzeug.server.shutdown')
+    if func is None:
+        raise RuntimeError('Not running with the Werkzeug Server')
+    func()
+    thread.join()
