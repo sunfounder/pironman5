@@ -1,5 +1,5 @@
 from smbus2 import SMBus
-from time import sleep
+from .utils import run_command
 
 class I2C():
     MASTER = 0
@@ -30,15 +30,16 @@ class I2C():
         return self._smbus.read_i2c_block_data(addr, reg, num)
 
     def is_ready(self, addr):
-        addresses = self.scan()
+        addresses = I2C.scan(self._bus)
         if addr in addresses:
             return True
         else:
             return False
 
-    def scan(self):                                             # scan available i2c devices
-        cmd = "i2cdetect -y %s" % self._bus
-        _, output = self.run_command(cmd)                       # run linux command and return the output of it
+    @staticmethod
+    def scan(bus=1):                                      # scan available i2c devices
+        cmd = "i2cdetect -y %s" % bus
+        _, output = run_command(cmd)                       # run linux command and return the output of it
 
         outputs = output.split('\n')[1:]                        
         addresses = []
