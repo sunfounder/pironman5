@@ -59,6 +59,7 @@ def pwm_fan_control(temp):
 # temp: cpu temp in celsius
 # =================================================================
 def fan_control(temp):
+    global fan, enable_pwm_fan_control
     if enable_pwm_fan_control:
         pwm_fan_control(temp)
 
@@ -72,6 +73,7 @@ def fan_control(temp):
 # fan deinit
 # =================================================================
 def fan_deinit():
+    global fan
     if fan:
         fan.off()
         fan.close()
