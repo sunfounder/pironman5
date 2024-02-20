@@ -1,5 +1,5 @@
 from smbus2 import SMBus
-from .utils import run_command
+from utils import run_command
 
 class I2C():
     MASTER = 0
