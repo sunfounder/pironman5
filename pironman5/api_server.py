@@ -60,7 +60,7 @@ class ServerThread(threading.Thread):
         self.ctx.push()
 
     def run(self):
-        log.info('starting server')
+        log('starting server')
         self.server.serve_forever()
 
     def shutdown(self):
@@ -70,7 +70,7 @@ def run():
     global server
     server = ServerThread(app)
     server.start()
-    log.info('server started')
+    log('server started')
 
 def stop():
     global server
