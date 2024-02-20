@@ -226,7 +226,7 @@ def main():
         sys.exit(0)
 
     print_info()
-    api.onChage = handleConfigChanged()
+    api.onChage = handleConfigChanged
     api.config = {
         'unit': temp_unit,
         'rgb_enable': rgb_enable,
