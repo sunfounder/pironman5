@@ -240,6 +240,8 @@ def main():
 
     fan_init(fan_pin)
     rgb_init()
+    if not oled.is_ready():
+        log('oled not ready', level='WARNING')
     api_server.run()
 
     # ---- main loop ----
