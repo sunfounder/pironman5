@@ -357,9 +357,9 @@ class OLED(object):
         self.image = Image.new('1', (self.width, self.height))
         self.draw = ImageDraw.Draw(self.image)
         self.font_8 = ImageFont.truetype(
-            '/opt/%s/fonts/Minecraftia-Regular.ttf' % __app_name__, 8)
+            '/opt/%s/Minecraftia-Regular.ttf' % __app_name__, 8)
         self.font_12 = ImageFont.truetype(
-            '/opt/%s/fonts/Minecraftia-Regular.ttf' % __app_name__, 12)
+            '/opt/%s/Minecraftia-Regular.ttf' % __app_name__, 12)
 
     def draw_text(self, text, x, y, fill=1):
         text = str(text)
