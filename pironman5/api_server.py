@@ -24,6 +24,10 @@ config = {
 def on_change(config):
     print(f'config: {config}')
 
+@app.route(path_prefix+'/')
+def root():
+    return 'Hello, World!'
+
 @app.route(path_prefix+'/hello')
 def hello():
     return 'Hello, World!'
