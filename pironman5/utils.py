@@ -53,3 +53,29 @@ def read_rpi5_power_button():
             return 1
         else:
             return 0
+
+# print info
+# =================================================================
+def print_info():
+    from app_info import __app_name__, __version__, username, config_file
+    line = '-'*24
+    _time = time.strftime("%y/%m/%d %H:%M:%S", time.localtime())
+    log(f'\n{line}{_time}{line}', timestamp=False)
+    log(f'{__app_name__} version: {__version__}', timestamp=False)
+    log(f'username: {username}', timestamp=False)
+    log(f'config_file: {config_file}', timestamp=False)
+    # Kernel Version
+    status, result = run_command("uname -a")
+    if status == 0:
+        log("\nKernel Version:", timestamp=False)
+        log(f"{result}", timestamp=False)
+    # OS Version
+    status, result = run_command("lsb_release -a")
+    if status == 0:
+        log("release:", timestamp=False)
+        log(f"{result}", timestamp=False)
+    # PCB information
+    status, result = run_command("cat /proc/cpuinfo|grep -E \'Revision|Model\'")
+    if status == 0:
+        log("PCB info:", timestamp=False)
+        log(f"{result}", timestamp=False)

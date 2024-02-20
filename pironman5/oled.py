@@ -353,4 +353,20 @@ class SSD1306_96_16(SSD1306Base):
         self.write_command(SSD1306_NORMALDISPLAY)                 # 0xA6
 
 
+# class Rect
+# =================================================================
+class Rect:
+    def __init__(self, x, y, width, height):
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+        self.x2 = self.x + self.width
+        self.y2 = self.y + self.height
+
+    def coord(self):
+        return (self.x, self.y)
+    def rect(self, pecent=100):
+        return (self.x, self.y, self.x + int(self.width*pecent/100.0), self.y2)
+
 
