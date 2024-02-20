@@ -336,7 +336,7 @@ def getIPAddress():
     elif 'eth0' in IPs and IPs['eth0'] != None and IPs['eth0'] != '':
         ip = IPs['eth0']
     elif 'end0' in IPs and IPs['end0'] != None and IPs['end0'] != '':
-        ip = IPs['eth0']
+        ip = IPs['end0']
     else:
         ip = 'DISCONNECT'
 
