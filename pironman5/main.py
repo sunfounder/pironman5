@@ -76,13 +76,12 @@ log("rgb_style : %s"%rgb_style)
 log("rgb_color : %s"%rgb_color)
 log("rgb_blink_speed : %s"%rgb_blink_speed)
 log("rgb_freq : %s"%rgb_freq)
-log("rgb_pin : %s"%rgb_pin)
-log(">>>", timestamp=False)
 
 rgb_strip = None
 cpu_temp_c = None
 cpu_temp_f = None
 last_ip = 'DISCONNECT'
+rgb_changed = False
 
 # oled init
 # =================================================================
@@ -201,6 +200,17 @@ def rgb_show():
     except Exception as e:
         log(e, level='ERROR')
 
+def handleConfigChanged(data):
+    global rgb_enable, rgb_style, rgb_color, rgb_num, rgb_blink_speed, rgb_freq
+    log(f'handleConfigChanged: {data}')
+    rgb_enable = data['rgb_enable']
+    rgb_style = data['rgb_style']
+    rgb_color = data['rgb_color']
+    rgb_num = data['rgb_num']
+    rgb_blink_speed = data['rgb_speed']
+    rgb_freq = data['rgb_freq']
+
+
 # main
 # =================================================================
 def main():
@@ -216,6 +226,16 @@ def main():
         sys.exit(0)
 
     print_info()
+    api.config = {
+        'unit': temp_unit,
+        'rgb_enable': rgb_enable,
+        'rgb_style': rgb_style,
+        'rgb_color': rgb_color,
+        'rgb_num': rgb_num,
+        'rgb_speed': rgb_blink_speed,
+        'rgb_freq': rgb_freq,
+    }
+    api.onChage = handleConfigChanged()
 
     fan_init(fan_pin)
     rgb_init()
