@@ -22,7 +22,7 @@
 ####   -u,--unit            [ C/F ], set the unit of temperature,
 ####                        C or F (Celsius/Fahrenheit)
 ####  
-####   -re|--rgb_enable     [on/true/off/false], whether enable rgb strip,
+####   -re|--rgb_enable     [on/true/off/false], whether enable rgb strip
 ####
 ####   -rn|--rgb_num        the number of rgb lamp beads, default 4
 #### 
