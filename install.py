@@ -29,8 +29,6 @@ Options:
 
 
 APT_INSTALL_LIST = [
-    # 'libraspberrypi-bin',
-    # 'raspi-config', # http://archive.raspberrypi.org/debian/pool/main/r/raspi-config/
     'python3-gpiozero',
     'net-tools',
     'python3-smbus2',
@@ -48,11 +46,11 @@ APT_INSTALL_LIST = [
 
 
 PIP_INSTALL_LIST = [
-    # 'rpi-ws281x',
    'adafruit-circuitpython-neopixel-spi',
-    # 'pillow --no-binary :all:', # https://pillow.readthedocs.io/en/latest/installation.html
     'pillow --no-cache-dir',
     'requests',
+    'flask',
+    'psutil',
 ]
 
 def run_command(cmd=""):
