@@ -6,7 +6,7 @@ import os
 def is_homeassistant_addon():
     return 'SUPERVISOR_TOKEN' in os.environ
 
-url="http://supervisor/"
+base_url="http://supervisor/"
 token = None
 if is_homeassistant_addon():
     token = os.environ['SUPERVISOR_TOKEN']
@@ -17,7 +17,7 @@ headers = {
 
 def get(endpoint):
     try:
-        url = f"{url}{endpoint}"
+        url = f"{base_url}{endpoint}"
         r = requests.get(url, headers=headers)
         return r.json()
     except Exception as e:
@@ -25,7 +25,7 @@ def get(endpoint):
 
 def set(endpoint, data=None):
     try:
-        url = f"{url}{endpoint}"
+        url = f"{base_url}{endpoint}"
         requests.post(url, headers=headers)
     except Exception as e:
         log(msg=f"home assistant get error: {e}", level='WARNING')
