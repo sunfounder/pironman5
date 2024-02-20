@@ -29,7 +29,7 @@ rgb_color = '0a1aff'
 rgb_blink_speed = 50
 rgb_freq = 1000 # kHz
 
-# api_server = APIServer()
+api_server = APIServer()
 oled = OLED()
 config = ConfigParser()
 
@@ -227,20 +227,20 @@ def main():
         sys.exit(0)
 
     print_info()
-    # api_server.set_on_change(handleConfigChanged)
-    # api_server.set_config({
-    #     'unit': temp_unit,
-    #     'rgb_enable': rgb_enable,
-    #     'rgb_style': rgb_style,
-    #     'rgb_color': rgb_color,
-    #     'rgb_num': rgb_num,
-    #     'rgb_speed': rgb_blink_speed,
-    #     'rgb_freq': rgb_freq,
-    # })
+    api_server.set_on_change(handleConfigChanged)
+    api_server.set_config({
+        'unit': temp_unit,
+        'rgb_enable': rgb_enable,
+        'rgb_style': rgb_style,
+        'rgb_color': rgb_color,
+        'rgb_num': rgb_num,
+        'rgb_speed': rgb_blink_speed,
+        'rgb_freq': rgb_freq,
+    })
 
     fan_init(fan_pin)
     rgb_init()
-    # api_server.run()
+    api_server.run()
 
     # ---- main loop ----
     while True:
