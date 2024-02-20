@@ -221,27 +221,7 @@ def install():
         do(msg="update pip3",
             cmd=f'python3 -m pip install --upgrade pip {_is_bsps}'
         )
-        ##
         print("Install dependencies with apt-get")
-        # do(msg="apt --fix-broken", # Might be stuck in a loop
-        #     cmd="apt --fix-broken install -y"
-        # )
-        # # check & install raspi-config
-        # _status, _ = run_command("raspi-config nonint")
-        # if _status != 0:
-        #     _link = "http://archive.raspberrypi.org/debian/pool/main/r/raspi-config/"
-        #     _cmd = f"curl -s '{_link}' | grep -o '\"raspi-config.*.deb\"' |sort |tail -1"
-        #     _,_last_version = run_command(_cmd)
-        #     _last_version = _last_version.replace('\n', '').replace('\r', '').replace('"', ' ').strip()
-        #     _link = _link + _last_version
-
-        #     do(msg="install raspi-config",
-        #         cmd="apt install lua5.1 alsa-utils triggerhappy curl -y"
-        #         +f" && wget -N {_link}"
-        #         +f" && dpkg -i {_last_version}"
-        #         +"&& apt --fix-broken install -y"
-        #     )
-        #
         for dep in APT_INSTALL_LIST:
             do(msg="install %s"%dep,
                 cmd='apt install %s -y'%dep)
@@ -250,19 +230,15 @@ def install():
         for dep in PIP_INSTALL_LIST:
             do(msg="install %s"%dep,
                 cmd=f'pip3 install {dep} {_is_bsps}')
-    # 
+
     print("Config gpio")
-    #
+
     if "--skip-config-txt" not in options:
         _status, _ = run_command("raspi-config nonint")
         if _status == 0:
-            do(msg="enable i2c ",
-                cmd='raspi-config nonint do_i2c 0'
-            )
-            do(msg="enable spi ",
-                cmd='raspi-config nonint do_spi 0'
-            )
-        #
+            do(msg="enable i2c ", cmd='raspi-config nonint do_i2c 0')
+            do(msg="enable spi ", cmd='raspi-config nonint do_spi 0')
+
         set_config(msg="enable i2c in config",
             name="dtparam=i2c_arm",
             value="on"
@@ -321,10 +297,9 @@ def install():
             cmd='systemctl daemon-reload'
             + f' && systemctl enable {__app_name__}.service'
         )
-    # 
-    do(msg='run the service',
-        cmd=f'{__app_name__} restart'
-    )
+        do(msg='run the service',
+            cmd=f'{__app_name__} restart'
+        )
 
     if len(errors) == 0:
         print("Finished.")
