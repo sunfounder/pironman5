@@ -12,7 +12,7 @@ from system_status import *
 from utils import *
 from ws2812_RGB import WS2812, RGB_styles
 from fan import fan_init, fan_control, fan_deinit
-from api import APIServer
+import api_server
 
 # read config
 # =================================================================
@@ -29,7 +29,6 @@ rgb_color = '0a1aff'
 rgb_blink_speed = 50
 rgb_freq = 1000 # kHz
 
-api_server = APIServer()
 oled = OLED()
 config = ConfigParser()
 
@@ -227,8 +226,8 @@ def main():
         sys.exit(0)
 
     print_info()
-    api_server.set_on_change(handleConfigChanged)
-    api_server.set_config({
+    api_server.on_change = handleConfigChanged
+    api_server.config = {
         'unit': temp_unit,
         'rgb_enable': rgb_enable,
         'rgb_style': rgb_style,
@@ -236,7 +235,7 @@ def main():
         'rgb_num': rgb_num,
         'rgb_speed': rgb_blink_speed,
         'rgb_freq': rgb_freq,
-    })
+    }
 
     fan_init(fan_pin)
     rgb_init()
