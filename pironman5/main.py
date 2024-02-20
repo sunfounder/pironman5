@@ -99,6 +99,8 @@ cur_fan_level = 0
 rgb_strip = None
 cpu_temp_c = None
 cpu_temp_f = None
+last_ip = 'DISCONNECT'
+
 
 TEMP_CONTROL_MAP = {
     '0': [50 , 0], # 'level': [min temp, level]
@@ -149,8 +151,7 @@ def oled_display_power_off():
         oled.display()
 
 def handle_oled():
-    ip = 'DISCONNECT'
-    last_ip = 'DISCONNECT'
+    global last_ip
 
     if oled != None:
         # ---- oled.on() ----
@@ -390,6 +391,7 @@ def exit_handler():
     if rgb_strip != None:
         rgb_strip.clear()
         time.sleep(0.1)
+    log('exit')
     sys.exit(0)
 
 def signal_handler(signo, frame):
@@ -406,8 +408,7 @@ if __name__ == "__main__":
     try:
         main()
     except Exception as e:
-        log('error')
-        log(e)
+        log(f'error: {e}')
     finally:
         exit_handler()
 
