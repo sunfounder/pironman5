@@ -3,7 +3,6 @@ import sys
 import time
 import threading
 import signal
-import platform
 
 from app_info import __app_name__, __version__, username, config_file
 from configparser import ConfigParser
@@ -24,6 +23,7 @@ NORMAL = 0
 HOME_ASSISTANT_ADDON = 1
 
 mode = NORMAL
+ha = None
 
 if 'SUPERVISOR_TOKEN' in os.environ:
     mode = HOME_ASSISTANT_ADDON
@@ -350,7 +350,7 @@ def main():
     while True:
 
         # ---- get CPU temperature ----
-        CPU_temp_C = float(getCPUtemperature()) # celcius
+        CPU_temp_C = float(get_cpu_temperature()) # celcius
         CPU_temp_F = float(CPU_temp_C * 1.8 + 32) # fahrenheit
 
         # ---- fan control ----
@@ -375,32 +375,30 @@ def main():
             oled.on()
             # ---- get system status data ----
             # CPU usage
-            CPU_usage = float(getCPUuse())
+            CPU_usage = float(get_cpu_usage())
             # clear draw buffer
             draw.rectangle((0,0,width,height), outline=0, fill=0)
             # RAM
-            RAM_stats = getRAMinfo()
-            RAM_total = round(int(RAM_stats[0]) / 1024/1024,1)
-            RAM_used = round(int(RAM_stats[1]) / 1024/1024,1)
-            RAM_usage = round(RAM_used/RAM_total*100,1)
+            ram_info = get_ram_info()
+            ram_total = round(ram_info['total'], 1)
+            ram_used = round(ram_info['used'], 1)
+            ram_percent = round(ram_info['percent'], 1)
             # Disk information
-            DISK_stats = getDiskSpace()
-            DISK_total = DISK_stats[0]
-            DISK_used = DISK_stats[1]
-            DISK_perc = float(DISK_stats[3])
+            disk_info = get_disk_info()
+            disk_total = disk_info['total']
+            disk_used = disk_info['used']
+            disk_percent = disk_info['percent']
 
-            DISK_unit = 'G1'
-            if DISK_total >= 1000:
-                DISK_unit = 'T'
-                DISK_total = round(DISK_total/1000, 3)
-                DISK_used = round(DISK_used/1000, 3)
-            elif DISK_total >= 100:
-                DISK_unit = 'G2'
+            disk_unit = 'G1'
+            if disk_total >= 1000:
+                disk_unit = 'T'
+                disk_total = round(disk_total/1000, 3)
+                disk_used = round(disk_used/1000, 3)
+            elif disk_total >= 100:
+                disk_unit = 'G2'
   
             # get ip if disconnected
             if mode == NORMAL:
-                ip = getIPAddress()
-            elif mode == HOME_ASSISTANT_ADDON and ip == 'DISCONNECT':
                 ip = getIPAddress()
 
             if last_ip != ip:
@@ -408,11 +406,11 @@ def main():
                 log("Get IP: %s" %ip)
 
             # ---- display info ----
-            ip_rect = Rect(46, 0, 87, 10)
-            ram_info_rect = Rect(45, 17, 87, 10)
-            ram_rect = Rect(45, 29, 87, 10)
-            rom_info_rect = Rect(45, 41, 87, 10)
-            rom_rect = Rect(45, 53, 87, 10)
+            ip_rect = Rect(40, 0, 88, 10)
+            ram_info_rect = Rect(40, 17, 88, 10)
+            ram_rect = Rect(40, 29, 88, 10)
+            rom_info_rect = Rect(40, 41, 88, 10)
+            rom_rect = Rect(40, 53, 88, 10)
             # cpu usage
             draw_text('CPU',6,0)
             draw.pieslice((0, 12, 30, 42), start=180, end=0, fill=0, outline=1)
@@ -429,27 +427,25 @@ def main():
                 pcent = (CPU_temp_F-32)/1.8
                 draw.pieslice((0, 33, 30, 63), start=int(180-180*pcent*0.01), end=180, fill=1, outline=1)
             # RAM
-            draw_text(f'RAM:  {RAM_used:^4.1f}/{RAM_total:^4.1f} G',*ram_info_rect.coord())
-            # draw_text('{:>5.1f}'.format(RAM_usage)+' %',92,0)
+            draw_text(f'RAM:  {ram_used:^4.1f}/{ram_total:^4.1f} G',*ram_info_rect.coord())
             draw.rectangle(ram_rect.rect(), outline=1, fill=0)
-            draw.rectangle(ram_rect.rect(RAM_usage), outline=1, fill=1)
+            draw.rectangle(ram_rect.rect(ram_percent), outline=1, fill=1)
             # Disk
-            # draw_text(f'DISK:{DISK_used:^5.1f}/{DISK_total:^5.1f} {DISK_unit}', *rom_info_rect.coord())
-            if DISK_unit == 'G1':
+            if disk_unit == 'G1':
                 _dec = 1
-                if DISK_used < 10:
+                if disk_used < 10:
                     _dec = 2              
-                draw_text(f'DISK: {DISK_used:>2.{_dec}f}/{DISK_total:<2.1f} G', *rom_info_rect.coord())
-            elif DISK_unit == 'G2':
+                draw_text(f'DISK: {disk_used:>2.{_dec}f}/{disk_total:<2.1f} G', *rom_info_rect.coord())
+            elif disk_unit == 'G2':
                 _dec = 0
-                if DISK_used < 100:
+                if disk_used < 100:
                     _dec = 1
-                draw_text(f'DISK: {DISK_used:>3.{_dec}f}/{DISK_total:<3.0f} G', *rom_info_rect.coord())
-            elif DISK_unit == 'T':
-                draw_text(f'DISK: {DISK_used:>2.2f}/{DISK_total:<2.2f} T', *rom_info_rect.coord())
+                draw_text(f'DISK: {disk_used:>3.{_dec}f}/{disk_total:<3.0f} G', *rom_info_rect.coord())
+            elif disk_unit == 'T':
+                draw_text(f'DISK: {disk_used:>2.2f}/{disk_total:<2.2f} T', *rom_info_rect.coord())
 
             draw.rectangle(rom_rect.rect(), outline=1, fill=0)
-            draw.rectangle(rom_rect.rect(DISK_perc), outline=1, fill=1)
+            draw.rectangle(rom_rect.rect(disk_percent), outline=1, fill=1)
             # IP
             draw.rectangle((ip_rect.x-13,ip_rect.y,ip_rect.x+ip_rect.width,ip_rect.height), outline=1, fill=1)
             draw.pieslice((ip_rect.x-25,ip_rect.y,ip_rect.x-3,ip_rect.height+10), start=270, end=0, fill=0, outline=0)
