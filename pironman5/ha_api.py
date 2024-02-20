@@ -3,13 +3,6 @@ import requests
 from utils import log
 import os
 
-url="http://supervisor/"
-token = os.environ['SUPERVISOR_TOKEN']
-headers = {
-    "Authorization": f"Bearer {token}",
-    "Content-Type": "application/json",
-}
-
 def is_homeassistant_addon():
     return 'SUPERVISOR_TOKEN' in os.environ
 
@@ -63,3 +56,12 @@ def shutdown():
     log.info(msg="Shutdown home assistant host")
     set("host/shutdown")
 
+
+url="http://supervisor/"
+token = None
+if is_homeassistant_addon():
+    token = os.environ['SUPERVISOR_TOKEN']
+headers = {
+    "Authorization": f"Bearer {token}",
+    "Content-Type": "application/json",
+}
