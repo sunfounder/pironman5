@@ -226,6 +226,7 @@ def main():
         sys.exit(0)
 
     print_info()
+    api.onChage = handleConfigChanged()
     api.config = {
         'unit': temp_unit,
         'rgb_enable': rgb_enable,
@@ -235,7 +236,6 @@ def main():
         'rgb_speed': rgb_blink_speed,
         'rgb_freq': rgb_freq,
     }
-    api.onChage = handleConfigChanged()
 
     fan_init(fan_pin)
     rgb_init()
@@ -281,11 +281,11 @@ signal.signal(signal.SIGINT, signal_handler)
 
 
 if __name__ == "__main__":
-    try:
+    # try:
         main()
     # except Exception as e:
     #     log(f'error: {e}')
-    finally:
-        exit_handler()
+    # finally:
+    #     exit_handler()
 
 
