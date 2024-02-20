@@ -6,6 +6,15 @@ import os
 def is_homeassistant_addon():
     return 'SUPERVISOR_TOKEN' in os.environ
 
+url="http://supervisor/"
+token = None
+if is_homeassistant_addon():
+    token = os.environ['SUPERVISOR_TOKEN']
+headers = {
+    "Authorization": f"Bearer {token}",
+    "Content-Type": "application/json",
+}
+
 def get(endpoint):
     try:
         url = f"{url}{endpoint}"
@@ -56,12 +65,3 @@ def shutdown():
     log.info(msg="Shutdown home assistant host")
     set("host/shutdown")
 
-
-url="http://supervisor/"
-token = None
-if is_homeassistant_addon():
-    token = os.environ['SUPERVISOR_TOKEN']
-headers = {
-    "Authorization": f"Bearer {token}",
-    "Content-Type": "application/json",
-}
