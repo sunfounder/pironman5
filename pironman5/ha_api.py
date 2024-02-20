@@ -12,14 +12,14 @@ def get(endpoint):
         r = requests.get(url, headers=headers)
         return r.json()
     except Exception as e:
-        log(msg="home assistant get error: " + e, level='WARNING')
+        log(msg=f"home assistant get error: {e}", level='WARNING')
 
 def set(endpoint, data=None):
     try:
         url = f"{url}{endpoint}"
         requests.post(url, headers=headers)
     except Exception as e:
-        log(msg="home assistant get error: " + e, level='WARNING')
+        log(msg=f"home assistant get error: {e}", level='WARNING')
 
 def get_ip():
     IPs = {}

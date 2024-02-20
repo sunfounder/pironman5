@@ -263,8 +263,8 @@ signal.signal(signal.SIGINT, signal_handler)
 if __name__ == "__main__":
     try:
         main()
-    except Exception as e:
-        log(f'error: {e}')
+    # except Exception as e:
+    #     log(f'error: {e}')
     finally:
         exit_handler()
 

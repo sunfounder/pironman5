@@ -13,7 +13,7 @@ def hello():
     return 'Hello, World!'
 
 def run():
-    app.run()
+    app.run(host='0.0.0.0', port=34002, debug=False, use_reloader=False)
 
 def run_in_thread():
     global thread
