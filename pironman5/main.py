@@ -291,6 +291,7 @@ def handle_fan():
 # =================================================================
 
 def rgb_init():
+    global rgb_strip
     try:
         # rgb_strip = WS2812(LED_COUNT=rgb_num, LED_PIN=rgb_pin, LED_FREQ_HZ=rgb_freq*1000)
         rgb_strip = WS2812(LED_COUNT=rgb_num)
@@ -316,7 +317,7 @@ def rgb_show():
         else:
             log('rgb_style not in RGB_styles')
     except Exception as e:
-        log(e,level='rgb_strip')
+        log(e, level='ERROR')
 
 
 # get IP
@@ -333,6 +334,8 @@ def getIPAddress():
     if 'wlan0' in IPs and IPs['wlan0'] != None and IPs['wlan0'] != '':
         ip = IPs['wlan0']
     elif 'eth0' in IPs and IPs['eth0'] != None and IPs['eth0'] != '':
+        ip = IPs['eth0']
+    elif 'end0' in IPs and IPs['end0'] != None and IPs['end0'] != '':
         ip = IPs['eth0']
     else:
         ip = 'DISCONNECT'
