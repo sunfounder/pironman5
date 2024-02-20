@@ -4,6 +4,8 @@ import json
 from werkzeug.serving import make_server
 from utils import log
 
+host = '0.0.0.0'
+port = 34002
 path_prefix = '/api/v1'
 app = Flask(__name__)
 thread = None
@@ -36,42 +38,27 @@ def set_config():
     config = json.loads(config_string)
     log(f'set_config: {config}')
 
-# def _run():
-#     app.run(host='0.0.0.0', port=34002, debug=False, use_reloader=False)
-
-# def run():
-#     global thread
-#     thread = threading.Thread(target=_run)
-#     thread.start()
-
-# def stop():
-#     func = request.environ.get('werkzeug.server.shutdown')
-#     if func is None:
-#         raise RuntimeError('Not running with the Werkzeug Server')
-#     func()
-#     thread.join()
-
 class ServerThread(threading.Thread):
 
     def __init__(self, app):
         threading.Thread.__init__(self)
-        self.server = make_server('0.0.0.0', 34002, app)
+        self.server = make_server(host, port, app)
         self.ctx = app.app_context()
         self.ctx.push()
 
     def run(self):
-        log('starting server')
         self.server.serve_forever()
 
     def shutdown(self):
         self.server.shutdown()
 
 def run():
-    global server
+    global server, app
     server = ServerThread(app)
     server.start()
-    log('server started')
+    log(f'API server started at {host}:{port}')
 
 def stop():
     global server
     server.shutdown()
+    log('API server stopped')
