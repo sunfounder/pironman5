@@ -22,12 +22,13 @@
 
 from __future__ import division
 import logging
-import time
 from i2c import I2C
-#import Adafruit_GPIO.SPI as SPI
+from PIL import Image, ImageDraw, ImageFont
+from app_info import __app_name__
 
 # Constants
-SSD1306_I2C_ADDRESS = 0x3C    # 011110+SA0+RW - 0x3C or 0x3D
+SSD1306_I2C_ADDRESS_1 = 0x3C
+SSD1306_I2C_ADDRESS_2 = 0x3D
 SSD1306_SETCONTRAST = 0x81
 SSD1306_DISPLAYALLON_RESUME = 0xA4
 SSD1306_DISPLAYALLON = 0xA5
@@ -70,7 +71,7 @@ class SSD1306Base(object):
     """
 
     def __init__(self, width, height, dc=None, sclk=None, din=None, cs=None,
-                 gpio=None, spi=None, i2c_bus=None, i2c_address=SSD1306_I2C_ADDRESS,
+                 gpio=None, spi=None, i2c_bus=None, i2c_address=SSD1306_I2C_ADDRESS_1,
                  i2c=None):
         self._log = logging.getLogger('Adafruit_SSD1306.SSD1306Base')
         self._spi = None
@@ -82,34 +83,6 @@ class SSD1306Base(object):
         self._buffer = [0]*(width*self._pages)
         # Default to platform GPIO if not provided.
         self._gpio = gpio
-        # if self._gpio is None:
-        #     self._gpio = GPIO.get_platform_gpio()
-        # Setup reset pin.
-        if spi is not None:
-            self._log.debug('Using hardware SPI')
-            self._spi = spi
-            self._spi.set_clock_hz(8000000)
-        # Handle software SPI
-        elif sclk is not None and din is not None and cs is not None:
-            self._log.debug('Using software SPI')
-            self._spi = SPI.BitBang(self._gpio, sclk, din, None, cs)
-        # Handle hardware I2C
-        # elif i2c is not None:
-        #     self._log.debug('Using hardware I2C with custom I2C provider.')
-            # self._i2c = i2c.get_i2c_device(i2c_address)
-        else:
-            self._log.debug('Using hardware I2C with platform I2C provider.')
-            # import Adafruit_GPIO.I2C as I2C
-            # if i2c_bus is None:
-            #     self._i2c = I2C.get_i2c_device(i2c_address)
-            # else:
-            #     self._i2c = I2C.get_i2c_device(i2c_address, busnum=i2c_bus)
-        # Initialize DC pin if using SPI.
-        if self._spi is not None:
-            if dc is None:
-                raise ValueError('DC pin must be provided when using SPI.')
-            self._dc = dc
-            self._gpio.setup(self._dc, GPIO.OUT)
 
     def _initialize(self):
         raise NotImplementedError
@@ -226,7 +199,7 @@ class SSD1306Base(object):
 
 class SSD1306_128_64(SSD1306Base):
     def __init__(self, dc=None, sclk=None, din=None, cs=None, gpio=None,
-                 spi=None, i2c_bus=None, i2c_address=SSD1306_I2C_ADDRESS,
+                 spi=None, i2c_bus=None, i2c_address=SSD1306_I2C_ADDRESS_1,
                  i2c=None):
         # Call base class constructor.
         super(SSD1306_128_64, self).__init__(128, 64, dc, sclk, din, cs,
@@ -271,7 +244,7 @@ class SSD1306_128_64(SSD1306Base):
 
 class SSD1306_128_32(SSD1306Base):
     def __init__(self, dc=None, sclk=None, din=None, cs=None, gpio=None,
-                 spi=None, i2c_bus=None, i2c_address=SSD1306_I2C_ADDRESS,
+                 spi=None, i2c_bus=None, i2c_address=SSD1306_I2C_ADDRESS_1,
                  i2c=None):
         # Call base class constructor.
         super(SSD1306_128_32, self).__init__(128, 32, dc, sclk, din, cs,
@@ -313,7 +286,7 @@ class SSD1306_128_32(SSD1306Base):
 
 class SSD1306_96_16(SSD1306Base):
     def __init__(self, dc=None, sclk=None, din=None, cs=None, gpio=None,
-                 spi=None, i2c_bus=None, i2c_address=SSD1306_I2C_ADDRESS,
+                 spi=None, i2c_bus=None, i2c_address=SSD1306_I2C_ADDRESS_1,
                  i2c=None):
         # Call base class constructor.
         super(SSD1306_96_16, self).__init__(96, 16, dc, sclk, din, cs,
@@ -352,6 +325,55 @@ class SSD1306_96_16(SSD1306Base):
         self.write_command(SSD1306_DISPLAYALLON_RESUME)           # 0xA4
         self.write_command(SSD1306_NORMALDISPLAY)                 # 0xA6
 
+
+class OLED(object):
+    def __init__(self):
+        addresses = self.check_oled()
+        if len(addresses) == 0:
+            self.log.warning("No OLED found")
+        else:
+            self.oled = SSD1306_128_64(i2c_address=addresses[0])
+            self.init()
+
+    def is_ready(self):
+        return self.oled is not None
+
+    def check_oled(self):
+        addressed = I2C.scan()
+        result = []
+        if SSD1306_I2C_ADDRESS_1 in addressed:
+            result.append(SSD1306_I2C_ADDRESS_1)
+        if SSD1306_I2C_ADDRESS_2 in addressed:
+            result.append(SSD1306_I2C_ADDRESS_2)
+        return result
+
+    def init(self):
+        self.width = self.oled.width
+        self.height = self.oled.height
+        self.oled.begin()
+        self.oled.clear()
+        self.oled.on()
+
+        self.image = Image.new('1', (self.width, self.height))
+        self.draw = ImageDraw.Draw(self.image)
+        self.font_8 = ImageFont.truetype(
+            '/opt/%s/fonts/Minecraftia-Regular.ttf' % __app_name__, 8)
+        self.font_12 = ImageFont.truetype(
+            '/opt/%s/fonts/Minecraftia-Regular.ttf' % __app_name__, 12)
+
+    def draw_text(self, text, x, y, fill=1):
+        text = str(text)
+        self.draw.text((x, y), text=text, font=self.font_8, fill=fill)
+
+    def clear(self):
+        self.oled.clear()
+
+    def display(self):
+        self.oled.image(self.image)
+        self.oled.display()
+
+    def off(self):
+        self.oled.off()
 
 # class Rect
 # =================================================================

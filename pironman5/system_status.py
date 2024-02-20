@@ -3,6 +3,8 @@ import subprocess
 import shutil
 import psutil
 
+import ha_api
+
 def get_cpu_temperature():
     return psutil.sensors_temperatures()['cpu_thermal'][0].current
 
@@ -35,7 +37,7 @@ def get_disk_info():
 
 
 # IP address
-def getIP():
+def _get_ip():
     IPs = {}
     NIC_devices = []
     NIC_devices = os.listdir('/sys/class/net/')
@@ -51,6 +53,26 @@ def getIP():
         # print(NIC, IPs[NIC])
 
     return IPs
+
+def get_ip():
+    ip = None
+    if ha_api.is_homeassistant_addon():
+        IPs = ha_api.get_ip()
+        if len(IPs) == 0:
+            IPs = _get_ip()
+    else:
+        IPs = _get_ip()
+    # log("Got IPs: %s" %IPs)
+    if 'wlan0' in IPs and IPs['wlan0'] != None and IPs['wlan0'] != '':
+        ip = IPs['wlan0']
+    elif 'eth0' in IPs and IPs['eth0'] != None and IPs['eth0'] != '':
+        ip = IPs['eth0']
+    elif 'end0' in IPs and IPs['end0'] != None and IPs['end0'] != '':
+        ip = IPs['end0']
+    else:
+        ip = 'DISCONNECT'
+
+    return ip
 
 def getMAC():
     MACs = {}
@@ -70,17 +92,17 @@ def getMAC():
     return MACs
 
 
-def get_fan1_state():
+def get_pwm_fan_state():
     path = '/sys/class/thermal/cooling_device0/cur_state'
     try:
         with open(path, 'r') as f:
             cur_state = int(f.read())
         return cur_state
     except Exception as e:
-        print(f'read fan1 state error: {e}')
+        print(f'read pwm fan state error: {e}')
         return 0
 
-def get_fan1_speed():
+def get_pwm_fan_speed():
     '''
     path =  '/sys/devices/platform/cooling_fan/hwmon/*/fan1_input'
     '''
@@ -98,7 +120,7 @@ def get_fan1_speed():
         return 0
 
 
-def set_fan1_state(level: int):
+def set_pwm_fan_state(level: int):
     '''
     level: 0 ~ 3
     '''
