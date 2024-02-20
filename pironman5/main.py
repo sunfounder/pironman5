@@ -24,6 +24,7 @@ NORMAL = 0
 HOME_ASSISTANT_ADDON = 1
 
 mode = NORMAL
+ha = None
 
 if 'SUPERVISOR_TOKEN' in os.environ:
     mode = HOME_ASSISTANT_ADDON
@@ -401,7 +402,7 @@ def main():
             if mode == NORMAL:
                 ip = getIPAddress()
             elif mode == HOME_ASSISTANT_ADDON and ip == 'DISCONNECT':
-                ip = getIPAddress()
+                ip = ha.get_ip()
 
             if last_ip != ip:
                 last_ip = ip
