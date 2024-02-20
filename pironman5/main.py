@@ -29,7 +29,7 @@ rgb_color = '0a1aff'
 rgb_blink_speed = 50
 rgb_freq = 1000 # kHz
 
-api_server = API()
+api_server = APIServer()
 oled = OLED()
 config = ConfigParser()
 
