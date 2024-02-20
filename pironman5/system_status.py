@@ -126,9 +126,9 @@ if __name__ == '__main__':
     ram_percent = ram_info['percent']
     # Disk information
     disk_info = get_disk_info()
-    disk_total = disk_info[0]
-    disk_used = disk_info[1]
-    disk_perc = disk_info[3]
+    disk_total = disk_info['total']
+    disk_used = disk_info['used']
+    disk_percent = disk_info['percent']
     # IP
     IPs = getIP()
     wlan0 = None
@@ -150,7 +150,7 @@ if __name__ == '__main__':
     print('')
     print(f'DISK Total Space = {disk_total} GB')
     print(f'DISK Used Space = {disk_used} GB')
-    print(f'DISK Used Percentage = {disk_perc} %')
+    print(f'DISK Used Percentage = {disk_percent} %')
     print('')
     print(f'wlan0 : {wlan0}')
     print(f'eth0 : {eth0}')
