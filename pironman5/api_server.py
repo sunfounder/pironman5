@@ -32,11 +32,11 @@ def root():
 def hello():
     return 'Hello, World!'
 
-@app.route(path_prefix + 'get_config', methods=['GET'])
+@app.route(path_prefix + '/get_config', methods=['GET'])
 def get_config():
     return config
 
-@app.route(path_prefix + 'set_config', methods=['POST'])
+@app.route(path_prefix + '/set_config', methods=['POST'])
 def set_config():
     config_string = request.form['config']
     config = json.loads(config_string)
