@@ -195,7 +195,8 @@ class SF_Installer():
 
 DEPENDENCIES = [
     'wget',
-    'unzip'
+    'unzip',
+    "libjpeg-dev", # for Pillow
 ]
 SF_PACKAGES = [
     'pm_auto',
