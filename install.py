@@ -12,6 +12,7 @@ class SF_Installer():
         'python3-pip',
         'python3-venv',
         'python3-build'
+        'influxdb',
     ]
 
     PIP_DEPENDENCIES = [
@@ -35,6 +36,7 @@ class SF_Installer():
         self.venv_path = f'{self.work_dir}/venv'
         self.venv_python = f'{self.venv_path}/bin/python3'
         self.venv_pip = f'{self.venv_path}/bin/pip3'
+        self.custom_install = lambda: None
 
     def get_username(self):
         try:
@@ -164,6 +166,8 @@ class SF_Installer():
             self.do('Copy service file', f'cp bin/{self.name}.service /etc/systemd/system/')
             self.do('Reload systemd', 'systemctl daemon-reload')
 
+        self.custom_install()
+
         print("Finished")
 
     def install(self):
@@ -200,4 +204,5 @@ SF_PACKAGES = [
 installer = SF_Installer('pironman5', description='Install Pironman 5')
 installer.add_dependency(*DEPENDENCIES)
 installer.add_sf_package(*SF_PACKAGES)
+
 installer.install()
