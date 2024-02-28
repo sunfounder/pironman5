@@ -108,6 +108,7 @@ class SF_Installer():
         print(f'Installing {name}...')
         self.do(f'Clone package', f'git clone https://github.com/sunfounder/{name}.git')
         self.do(f'Build package', f'cd {name} && {self.venv_python} -m build')
+        self.do(f'Uninstall old package', f'{self.venv_pip} uninstall -y {name}')
         self.do(f'Install package', f'cd {name}/dist && {self.venv_pip} install *.whl')
 
     def check_admin(self):
@@ -157,6 +158,7 @@ class SF_Installer():
 
         print(f"Installing {self.name} package...")
         self.do(f'Build package', f'{self.venv_python} -m build')
+        self.do(f'Uninstall old package', f'{self.venv_pip} uninstall -y {self.name}')
         self.do(f'Install package', f'{self.venv_pip} install dist/*.whl')
 
         if not self.args.skip_auto_start:
