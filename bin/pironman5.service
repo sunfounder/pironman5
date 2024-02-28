@@ -7,7 +7,7 @@ After=multi-user.target # Need to start last to avoid gpio being occupied
 # ExecStartPre=/bin/sleep 15
 Type=forking
 WorkingDirectory=/opt/pironman5
-ExecStart=/usr/local/bin/pironman5 restart
+ExecStart=/usr/local/bin/pironman5 start
 ExecStop=/usr/local/bin/pironman5 stop
 PrivateTmp=True
 

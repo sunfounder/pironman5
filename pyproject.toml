@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pironman5"
+authors = [
+  { name="SunFounder", email="service@sunfounder.com" },
+]
+description = "Library for monitoring Raspberry Pi system status"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: GNU License",
+  "Operating System :: OS Independent",
+]
+dynamic = ["version"]
+
+dependencies = [
+  'smbus2',
+  'psutil',
+  'influxdb',
+  'adafruit-circuitpython-neopixel-spi',
+]
+
+[project.scripts]
+pironman5-service = "pironman5:main"
+
+[tool.setuptools]
+packages = ["pironman5"]
+
+[project.urls]
+"Homepage" = "https://github.com/sunfounder/pironman5"
+"Bug Tracker" = "https://github.com/sunfounder/pironman5/issues"
+
+[tool.setuptools.dynamic]
+version = {attr = "pironman5.__version__"}

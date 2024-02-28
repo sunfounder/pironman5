@@ -1,335 +1,203 @@
 #!/usr/bin/env python3
-import os
+import argparse
+import subprocess
 import sys
 import time
 import threading
+import os
 
-sys.path.append('./pironman5')
-from app_info import __app_name__, __version__, username, config_file
+class SF_Installer():
+    WORK_DIR = '/opt/{name}'
+    DEPENDENCIES = [
+        'python3-pip',
+        'python3-venv',
+        'python3-build'
+    ]
 
-if os.geteuid() != 0:
-    print("Script must be run as root. Try 'sudo python3 install.py'")
-    sys.exit(1)
+    PIP_DEPENDENCIES = [
+        'build',
+    ]
 
-errors = []
+    def __init__(self, name, description=None):
+        self.name = name
+        self.description = description
+        self.work_dir = self.WORK_DIR.format(name=name)
+        self.parser = argparse.ArgumentParser(description=description)
+        self.parser.add_argument('--no-dep', action='store_true', help='Do not install dependencies')
+        self.parser.add_argument('--skip-reboot', action='store_true', help='Skip reboot even needed')
+        self.parser.add_argument('--skip-auto-start', action='store_true', help='Skip auto start')
+        self.errors = []
+        self.sf_packages = []
+        self.is_running = False
+        self.user = self.get_username()
+        self.need_reboot = False
 
-avaiable_options = ['-h', '--help', '--no-dep', '--skip-config-txt', '--skip-auto-startup', '--skip-reboot']
+        self.venv_path = f'{self.work_dir}/venv'
+        self.venv_python = f'{self.venv_path}/bin/python3'
+        self.venv_pip = f'{self.venv_path}/bin/pip3'
 
-usage = '''
-Usage:
-    python3 install.py [option]
-
-Options:
-               --no-dep             Do not download dependencies
-               --skip-config-txt    Skip config /boot/config.txt
-               --skip-auto-startup  Skip enable auto startup
-               --skip-reboot        Skip reboot after install
-    -h         --help               Show this help text and exit
-'''
-
-
-APT_INSTALL_LIST = [
-    'python3-gpiozero',
-    'net-tools',
-    'python3-smbus2',
-    'i2c-tools',
-    'libtiff5-dev', # https://pillow.readthedocs.io/en/latest/installation.html
-    'libopenjp2-7-dev',
-    'zlib1g-dev',
-    'libfreetype6-dev',
-    'libpng-dev',
-    'libxcb1-dev',
-    'build-essential', # arm-linux-gnueabihf-gcc for pip building
-    'python3-rpi.gpio',
-    'python3-dev', # for RPi.GPIO, rpi-ws281x pip building
-]
-
-
-PIP_INSTALL_LIST = [
-   'adafruit-circuitpython-neopixel-spi',
-    'pillow --no-cache-dir',
-    'requests',
-    'flask',
-    'psutil',
-]
-
-def run_command(cmd=""):
-    import subprocess
-    p = subprocess.Popen(
-        cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
-    p.wait()
-    result = p.stdout.read()
-    status = p.poll()
-    return status, result
-
-at_work_tip_sw = False
-def working_tip():
-    char = ['/', '-', '\\', '|']
-    i = 0
-    global at_work_tip_sw
-    while at_work_tip_sw:  
-            i = (i+1)%4 
-            sys.stdout.write('\033[?25l') # cursor invisible
-            sys.stdout.write('%s\033[1D'%char[i])
-            sys.stdout.flush()
-            time.sleep(0.5)
-
-    sys.stdout.write(' \033[1D')
-    sys.stdout.write('\033[?25h') # cursor visible 
-    sys.stdout.flush() 
-
-def do(msg="", cmd=""):
-    print(" - %s... " % (msg), end='', flush=True)
-    # at_work_tip start 
-    global at_work_tip_sw
-    at_work_tip_sw = True
-    _thread = threading.Thread(target=working_tip)
-    _thread.daemon = True
-    _thread.start()
-    # process run
-    status, result = run_command(cmd)
-    # print(status, result)
-    # at_work_tip stop
-    at_work_tip_sw = False
-    while _thread.is_alive():
-        time.sleep(0.01)
-    # status
-    if status == 0:
-        print('Done')
-    else:
-        print('\033[1;35mError\033[0m')
-        errors.append("%s error:\n  Status:%s\n  Error:%s" %
-                      (msg, status, result))
-
-def set_config(msg="", name="", value=""):
-    print(" - %s... " % (msg), end='', flush=True)
-    try:
-        Config().set(name, value)
-        print('Done')
-    except Exception as e:
-        print('\033[1;35mError\033[0m')
-        errors.append("%s error:\n Error:%s" %(msg, e))       
-
-class Config(object):
-    '''
-        To setup /boot/config.txt (Raspbian, Kali OSMC, etc)
-        /boot/firmware/config.txt (Ubuntu)
-     
-    '''
-    DEFAULT_FILE_1 = "/boot/config.txt" # raspbian
-    DEFAULT_FILE_2 = "/boot/firmware/config.txt" # ubuntu
-
-    def __init__(self, file=None):
-        # check if file exists
-        if file is None:
-            if os.path.exists(self.DEFAULT_FILE_1):
-                self.file = self.DEFAULT_FILE_1
-            elif os.path.exists(self.DEFAULT_FILE_2):
-                self.file = self.DEFAULT_FILE_2
-            else:
-                raise FileNotFoundError(f"{self.DEFAULT_FILE_1} or {self.DEFAULT_FILE_2} are not found.")
-        else:
-            self.file = file
-            if not os.path.exists(file):
-                raise FileNotFoundError(f"{self.file} is not found.")
-        # read config file
-        with open(self.file, 'r') as f:
-            self.configs = f.read()
-        self.configs = self.configs.split('\n')
-
-    def remove(self, expected):
-        for config in self.configs:
-            if expected in config:
-                self.configs.remove(config)
-        return self.write_file()
-
-    def set(self, name, value=None, device="[all]"):
-        '''
-        device : "[all]", "[pi3]", "[pi4]" or other
-        '''
-        have_excepted = False
-        for i in range(len(self.configs)):
-            config = self.configs[i]
-            if name in config:
-                have_excepted = True
-                tmp = name
-                if value != None:
-                    tmp += '=' + value
-                self.configs[i] = tmp
-                break
-
-        if not have_excepted:
-            self.configs.append(device)
-            tmp = name
-            if value != None:
-                tmp += '=' + value
-            self.configs.append(tmp)
-        return self.write_file()
-
-    def write_file(self):
+    def get_username(self):
         try:
-            config = '\n'.join(self.configs)
-            with open(self.file, 'w') as f:
-                f.write(config)
-            return 0, config
-        except Exception as e:
-            return -1, e
+            user = os.getlogin() # can run at boot
+        except:
+            user = os.popen("echo ${SUDO_USER:-$(who -m | awk '{ print $1 }')}").readline().strip()
+        return user
+
+    def add_argument(self, *args, **kwargs):
+        self.parser.add_argument(*args, **kwargs)
+
+    def add_dependency(self, *args):
+        for dep in args:
+            self.DEPENDENCIES.append(dep)
+
+    def add_sf_package(self, *args):
+        for package in args:
+            self.sf_packages.append(package)
 
 
-def install():
-    print(f"{__app_name__} {__version__} install process starts for {username}:\n")
+    def run_command(self, cmd=""):
+        import subprocess
+        p = subprocess.Popen(cmd,
+                            shell=True,
+                            executable="/bin/bash",
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE,
+                            universal_newlines=True)
+        p.wait()
+        result = p.stdout.read()
+        error = p.stderr.read()
+        status = p.poll()
+        return status, result, error
 
-    # print Kernel Version
-    status, result = run_command("uname -a")
-    if status == 0:
-        print(f"Kernel Version:\n{result}")
-    # print OS Version
-    status, result = run_command("lsb_release -a|grep Description")
-    if status == 0:
-        print(f"OS Version:\n{result}")
-    # print PCB information
-    status, result = run_command("cat /proc/cpuinfo|grep -E \'Revision|Model\'")
-    if status == 0:
-        print(f"PCB info:\n{result}")
+    def spinner(self):
+        char = ['/', '-', '\\', '|']
+        i = 0
+        while self.is_running:  
+                i = (i+1)%4 
+                sys.stdout.write('\033[?25l') # cursor invisible
+                sys.stdout.write(f'{char[i]}\033[1D')
+                sys.stdout.flush()
+                time.sleep(0.5)
 
-    options = []
-    if len(sys.argv) > 1:
-        options = sys.argv[1:]
-        for opt in options:
-            if opt not in avaiable_options:
-                print("Option {} is not found.".format(opt))
-                print(usage)
-                sys.exit(1)
-        if "-h" in options or "--help" in options:
-            print(usage)
-            quit()
-    #
-    if "--no-dep" not in options:
-        # update apt
-        do(msg="update apt",
-            cmd='apt update -y'
-        )
-        # check whether pip has the option "--break-system-packages"
-        _is_bsps = ''
-        status, _ = run_command("pip3 help install|grep break-system-packages")
-        if status == 0: # if true
-            _is_bsps = "--break-system-packages"
-            print("pip3 install need --break-system-packages")
-        # update pip
-        do(msg="update pip3",
-            cmd=f'python3 -m pip install --upgrade pip {_is_bsps}'
-        )
-        print("Install dependencies with apt-get")
-        for dep in APT_INSTALL_LIST:
-            do(msg="install %s"%dep,
-                cmd='apt install %s -y'%dep)
-
-        print("Install dependencies with pip3")
-        for dep in PIP_INSTALL_LIST:
-            do(msg="install %s"%dep,
-                cmd=f'pip3 install {dep} {_is_bsps}')
-
-    print("Config gpio")
-
-    if "--skip-config-txt" not in options:
-        _status, _ = run_command("raspi-config nonint")
-        if _status == 0:
-            do(msg="enable i2c ", cmd='raspi-config nonint do_i2c 0')
-            do(msg="enable spi ", cmd='raspi-config nonint do_spi 0')
-
-        set_config(msg="enable i2c in config",
-            name="dtparam=i2c_arm",
-            value="on"
-        )
-        set_config(msg="enable spi in config",
-            name="dtparam=spi",
-            value="on"
-        )
-        # set_config(msg="disable audio",
-        #     name="dtparam=audio",
-        #     value="off"
-        # )
-        set_config(msg="set core_freq to 500",
-            name="core_freq",
-            value="500"
-        )
-        set_config(msg="set core_freq_min to 500",
-            name="core_freq_min",
-            value="500"
-        )     
-        # dtoverlay=gpio-ir,gpio_pin=13
-        set_config(msg="config gpio-ir",
-            name="dtoverlay=gpio-ir,gpio_pin",
-            value="13"
-        )
-    #
-    print('create WorkingDirectory')
-    do(msg="create dir",
-        cmd='mkdir -p /opt/%s'%__app_name__
-        +' && chmod -R 774 /opt/%s'%__app_name__
-        +' && chown %s:%s /opt/%s'%(username, username, __app_name__)
-    )
-    #
-    if "--skip-auto-startup" not in options:
-        do(msg='copy service file',
-            cmd='cp -rpf ./bin/%s.service /usr/lib/systemd/system/%s.service '%(__app_name__, __app_name__)
-        )
-        do(msg="add excutable mode for service file",
-            cmd='chmod +x /usr/lib/systemd/system/%s.service'%__app_name__
-        )
-    do(msg='copy bin file',
-        cmd='cp -rpf ./bin/%s /usr/local/bin/%s'%(__app_name__, __app_name__)
-        +' && cp -rpf ./%s/* /opt/%s/'%(__app_name__, __app_name__)
-    )
-    do(msg="add excutable mode for bin file",
-        cmd='chmod +x /usr/local/bin/%s'%__app_name__
-        +' && chmod -R 774 /opt/%s'%__app_name__
-        +' && chown -R %s:%s /opt/%s'%(username, username, __app_name__)
-    )
-    do(msg='copy config file',
-        cmd=f'cp -rpf ./config.txt {config_file}'
-    )
-    #
-    if "--skip-auto-startup" not in options:
-        do(msg='enable the service to auto-start at boot',
-            cmd='systemctl daemon-reload'
-            + f' && systemctl enable {__app_name__}.service'
-        )
-        do(msg='run the service',
-            cmd=f'{__app_name__} restart'
-        )
-
-    if len(errors) == 0:
-        print("Finished.")
-        if "--skip-reboot" not in options:
-            print("\033[1;32mWhether to restart for the changes to take effect(Y/N):\033[0m")
-            while True:
-                key = input()
-                if key == 'Y' or key == 'y':
-                    print(f'reboot')
-                    run_command('reboot')
-                elif key == 'N' or key == 'n':
-                    print(f'exit')
-                    sys.exit(0)
-                else:
-                    continue
-        else:
-            print("\033[1;32mPlease reboot for the changes to take effect.\033[0m")
-            sys.exit(0)
-    else:
-        print('\n\n\033[1;35mError happened in install process:\033[0m')
-        for error in errors:
-            print(error)
-        print("Try to fix it yourself, or contact service@sunfounder.com with this message")
-        sys.exit(1)
-
-
-if __name__ == "__main__":
-    try:
-       install()
-    except KeyboardInterrupt:
-        print("\n\nCanceled.")
-    finally:
         sys.stdout.write(' \033[1D')
         sys.stdout.write('\033[?25h') # cursor visible 
-        sys.stdout.flush()
+        sys.stdout.flush() 
+    
+    def do(self, msg="", cmd=""):
+        print(f" - {msg}... ", end='', flush=True)
+        self.is_running = True
+        _thread = threading.Thread(target=self.spinner)
+        _thread.daemon = True
+        _thread.start()
+        # process run
+        status, result, error = self.run_command(cmd)
+        # at_work_tip stop
+        self.is_running = False
+        while _thread.is_alive():
+            time.sleep(0.01)
+        # status
+        if status == 0:
+            print('Done')
+        else:
+            print('\033[1;35mError\033[0m')
+            self.errors.append(f"{msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}")
+
+    def install_sf_package(self, name):
+        print(f'Installing {name}...')
+        self.do(f'Clone package', f'git clone https://github.com/sunfounder/{name}.git')
+        self.do(f'Build package', f'cd {name} && {self.venv_python} -m build')
+        self.do(f'Install package', f'cd {name}/dist && {self.venv_pip} install *.whl')
+
+    def check_admin(self):
+        if os.geteuid() != 0:
+            print('This script must be run as root')
+            sys.exit(1)
+
+    def reboot_prompt(self):
+        print("\033[1;32mWhether to restart for the changes to take effect(Y/N):\033[0m")
+        while True:
+            key = input()
+            if key == 'Y' or key == 'y':
+                print(f'reboot')
+                self.run_command('reboot')
+            elif key == 'N' or key == 'n':
+                print(f'canceled')
+                return False
+            else:
+                continue
+
+    def cleanup(self):
+        for package in self.sf_packages:
+            self.do(f'Remove {package}', f'rm -rf {package}')
+        self.do('Remove build files', f'rm -rf pironman5.egg-info dist')
+
+    def _install(self):
+        self.check_admin()
+        self.args = self.parser.parse_args()
+
+        self.do('Create work directory', f'mkdir -p {self.work_dir}')
+        self.do('Change work directory mode', f'chmod 777 {self.work_dir}')
+        self.do('Change work directory owner', f'chown -R {self.user}:{self.user} {self.work_dir}')
+        self.do('Create log directory', f'mkdir -p /var/log/{self.name}')
+        self.do('Change log directory mode', f'chmod 777 /var/log/{self.name}')
+        self.do('Change log directory owner', f'chown -R {self.user}:{self.user} /var/log/{self.name}')
+        self.do('Create virtual environment', f'python3 -m venv {self.venv_path}')
+
+        if not self.args.no_dep:
+            self.do('Update package list', 'apt-get update')
+            for dep in self.DEPENDENCIES:
+                self.do(f'Install {dep}', f'apt-get install -y {dep}')
+            for dep in self.PIP_DEPENDENCIES:
+                self.do(f'Install {dep}', f'{self.venv_pip} install {dep}')
+
+        for package in self.sf_packages:
+            self.install_sf_package(package)
+
+        print(f"Installing {self.name} package...")
+        self.do(f'Build package', f'{self.venv_python} -m build')
+        self.do(f'Install package', f'{self.venv_pip} install dist/*.whl')
+
+        if not self.args.skip_auto_start:
+            print("Setup auto start...")
+            self.do('Copy binary file', f'cp bin/{self.name} /usr/local/bin/')
+            self.do('Change binary file mode', f'chmod +x /usr/local/bin/{self.name}')
+            self.do('Copy service file', f'cp bin/{self.name}.service /etc/systemd/system/')
+            self.do('Reload systemd', 'systemctl daemon-reload')
+
+        print("Finished")
+
+    def install(self):
+        print(f"{self.name} Insataller")
+        try:
+            self._install()
+        except KeyboardInterrupt:
+            print("\n\nCanceled.")
+        finally:
+            sys.stdout.write(' \033[1D')
+            sys.stdout.write('\033[?25h')  # cursor visible
+            sys.stdout.flush()
+            print('Cleanup')
+            self.cleanup()
+            if len(self.errors) == 0:
+                if self.need_reboot and not self.args.skip_reboot:
+                    self.reboot_prompt()
+            else:
+                print("\n\nError happened in install process:")
+                for error in self.errors:
+                    print(error)
+                print("Try to fix it yourself, or contact service@sunfounder.com with this message")
+
+DEPENDENCIES = [
+    'wget',
+    'unzip'
+]
+SF_PACKAGES = [
+    'pm_auto',
+    'pm_dashboard',
+    'sf_rpi_status',
+]
+
+installer = SF_Installer('pironman5', description='Install Pironman 5')
+installer.add_dependency(*DEPENDENCIES)
+installer.add_sf_package(*SF_PACKAGES)
+installer.install()
