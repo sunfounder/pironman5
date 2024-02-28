@@ -36,7 +36,6 @@ def main():
     config = {
         'auto': auto_config,
     }
-    print(len(auto_config))
     if args['command'] == "stop":
         import os
         os.system("kill -15 $(pgrep -f pironman5)")

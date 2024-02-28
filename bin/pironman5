@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # Pass all arguments to the pironman5 script
 /opt/pironman5/venv/bin/pironman5-service "$@"

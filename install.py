@@ -164,6 +164,7 @@ class SF_Installer():
             self.do('Copy binary file', f'cp bin/{self.name} /usr/local/bin/')
             self.do('Change binary file mode', f'chmod +x /usr/local/bin/{self.name}')
             self.do('Copy service file', f'cp bin/{self.name}.service /etc/systemd/system/')
+            self.do('Enable service', f'systemctl enable {self.name}.service')
             self.do('Reload systemd', 'systemctl daemon-reload')
 
         self.custom_install()
