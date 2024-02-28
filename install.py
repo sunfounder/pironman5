@@ -11,7 +11,7 @@ class SF_Installer():
     DEPENDENCIES = [
         'python3-pip',
         'python3-venv',
-        'python3-build'
+        'python3-build',
         'influxdb',
     ]
 
