@@ -27,6 +27,7 @@ class SF_Installer():
         self.parser.add_argument('--no-dep', action='store_true', help='Do not install dependencies')
         self.parser.add_argument('--skip-reboot', action='store_true', help='Skip reboot even needed')
         self.parser.add_argument('--skip-auto-start', action='store_true', help='Skip auto start')
+        self.parser.add_argument('--plain-text', action='store_true', help='Plain text mode')
         self.errors = []
         self.sf_packages = []
         self.is_running = False
@@ -87,16 +88,18 @@ class SF_Installer():
     
     def do(self, msg="", cmd=""):
         print(f" - {msg}... ", end='', flush=True)
-        self.is_running = True
-        _thread = threading.Thread(target=self.spinner)
-        _thread.daemon = True
-        _thread.start()
+        if not self.args.plain_text:
+            self.is_running = True
+            _thread = threading.Thread(target=self.spinner)
+            _thread.daemon = True
+            _thread.start()
         # process run
         status, result, error = self.run_command(cmd)
-        # at_work_tip stop
-        self.is_running = False
-        while _thread.is_alive():
-            time.sleep(0.01)
+        if not self.args.plain_text:
+            # at_work_tip stop
+            self.is_running = False
+            while _thread.is_alive():
+                time.sleep(0.01)
         # status
         if status == 0:
             print('Done')
@@ -138,6 +141,11 @@ class SF_Installer():
         self.check_admin()
         self.args = self.parser.parse_args()
 
+        if not self.args.no_dep:
+            self.do('Update package list', 'apt-get update')
+            for dep in self.DEPENDENCIES:
+                self.do(f'Install {dep}', f'apt-get install -y {dep}')
+
         self.do('Create work directory', f'mkdir -p {self.work_dir}')
         self.do('Change work directory mode', f'chmod 777 {self.work_dir}')
         self.do('Change work directory owner', f'chown -R {self.user}:{self.user} {self.work_dir}')
@@ -147,9 +155,6 @@ class SF_Installer():
         self.do('Create virtual environment', f'python3 -m venv {self.venv_path}')
 
         if not self.args.no_dep:
-            self.do('Update package list', 'apt-get update')
-            for dep in self.DEPENDENCIES:
-                self.do(f'Install {dep}', f'apt-get install -y {dep}')
             for dep in self.PIP_DEPENDENCIES:
                 self.do(f'Install {dep}', f'{self.venv_pip} install {dep}')
 
