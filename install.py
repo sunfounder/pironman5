@@ -107,12 +107,15 @@ class SF_Installer():
             print('\033[1;35mError\033[0m')
             self.errors.append(f"{msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}")
 
+    def compile_and_install_python_package(self, name, subdir='./'):
+        self.do(f'Build package', f'cd {subdir} && {self.venv_python} -m build')
+        self.do(f'Uninstall old package', f'{self.venv_pip} uninstall -y {name}')
+        self.do(f'Install package', f'cd {subdir}/dist && {self.venv_pip} install *.whl')
+
     def install_sf_package(self, name):
         print(f'Installing {name}...')
         self.do(f'Clone package', f'git clone https://github.com/sunfounder/{name}.git')
-        self.do(f'Build package', f'cd {name} && {self.venv_python} -m build')
-        self.do(f'Uninstall old package', f'{self.venv_pip} uninstall -y {name}')
-        self.do(f'Install package', f'cd {name}/dist && {self.venv_pip} install *.whl')
+        self.compile_and_install_python_package(name, subdir=name)
 
     def check_admin(self):
         if os.geteuid() != 0:
@@ -162,9 +165,7 @@ class SF_Installer():
             self.install_sf_package(package)
 
         print(f"Installing {self.name} package...")
-        self.do(f'Build package', f'{self.venv_python} -m build')
-        self.do(f'Uninstall old package', f'{self.venv_pip} uninstall -y {self.name}')
-        self.do(f'Install package', f'{self.venv_pip} install dist/*.whl')
+        self.compile_and_install_python_package(self.name)
 
         if not self.args.skip_auto_start:
             print("Setup auto start...")
@@ -215,4 +216,8 @@ installer = SF_Installer('pironman5', description='Install Pironman 5')
 installer.add_dependency(*DEPENDENCIES)
 installer.add_sf_package(*SF_PACKAGES)
 
+def custom_install():
+    installer.do('Enable influxdb', f'sudo systemctl enable influxdb')
+
+installer.custom_install = custom_install
 installer.install()
