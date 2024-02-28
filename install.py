@@ -191,6 +191,7 @@ class SF_Installer():
                 for error in self.errors:
                     print(error)
                 print("Try to fix it yourself, or contact service@sunfounder.com with this message")
+                sys.exit(1)
 
 DEPENDENCIES = [
     'wget',
