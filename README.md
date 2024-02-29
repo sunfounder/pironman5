@@ -23,21 +23,21 @@ Quick Links:
 
 ## Installation
 
-- For systems that don't have git, python3 and pip pre-installed you need to install them first
+For systems that don't have git, python3 pre-installed you need to install them first
 
-  ```bash
-  sudo apt-get update
-  sudo apt-get install git python3 python3-pip python3-setuptools -y
-  ```
+```bash
+sudo apt-get update
+sudo apt-get install git python3 -y
+```
 
-- Execute the installation script
+Execute the installation script
 
-  ```bash
-  cd ~
-  git clone https://github.com/sunfounder/pironman5.git
-  cd ~/pironman5
-  sudo python3 install.py
-  ```
+```bash
+cd ~
+git clone https://github.com/sunfounder/pironman5.git
+cd ~/pironman5
+sudo python3 install.py
+```
 
 ## Usage
 

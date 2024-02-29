@@ -1,11 +1,6 @@
-# Change Log
+# Changelog
 
-## [1.0.0_Beta] - 2022-12-21
+## [0.0.9] - 2024-2-20
 
-### Basic function
+### Test Realeas
 
-- Oled system status display
-- Auto start at boot
-- Shell commands interaction
-- Cooling Fan Control
-- ...
