@@ -33,6 +33,7 @@ class SF_Installer():
         self.is_running = False
         self.user = self.get_username()
         self.need_reboot = False
+        self.args = None
 
         self.venv_path = f'{self.work_dir}/venv'
         self.venv_python = f'{self.venv_path}/bin/python3'
@@ -215,9 +216,4 @@ SF_PACKAGES = [
 installer = SF_Installer('pironman5', description='Install Pironman 5')
 installer.add_dependency(*DEPENDENCIES)
 installer.add_sf_package(*SF_PACKAGES)
-
-def custom_install():
-    installer.do('Enable influxdb', f'systemctl enable influxdb')
-
-installer.custom_install = custom_install
 installer.install()
