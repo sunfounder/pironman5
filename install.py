@@ -217,7 +217,7 @@ installer.add_dependency(*DEPENDENCIES)
 installer.add_sf_package(*SF_PACKAGES)
 
 def custom_install():
-    installer.do('Enable influxdb', f'sudo systemctl enable influxdb')
+    installer.do('Enable influxdb', f'systemctl enable influxdb')
 
 installer.custom_install = custom_install
 installer.install()
