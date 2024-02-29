@@ -1,10 +1,10 @@
-# pironman5
+# Pironman 5
 
-Code for Raspberry Pi 5 case (Pironman5)
+Pironman 5 case
 
 Quick Links:
 
-- [pironman5](#pironman5)
+- [Pironman 5](#pironman-5)
   - [About Pironman5](#about-pironman5)
   - [Links](#links)
   - [Installation](#installation)
