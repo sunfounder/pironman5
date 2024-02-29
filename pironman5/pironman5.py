@@ -1,9 +1,7 @@
 import json
 import signal
 from pkg_resources import resource_filename
-import os
-# Force blinka to use BCM2XXX
-os.environ["BLINKA_FORCECHIP"] = "BCM2XXX"
+print(os.environ)
 
 from pm_auto.pm_auto import PMAuto
 from pm_dashboard.pm_dashboard import PMDashboard
