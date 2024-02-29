@@ -2,6 +2,8 @@ import json
 import signal
 from pkg_resources import resource_filename
 import os
+# Force blinka to use BCM2XXX
+os.environ["BLINKA_FORCECHIP"] = "BCM2XXX"
 
 from pm_auto.pm_auto import PMAuto
 from pm_dashboard.pm_dashboard import PMDashboard
@@ -10,8 +12,6 @@ from .logger import Logger, create_get_child_logger
 get_child_logger = create_get_child_logger('pironman5')
 __package_name__ = __name__.split('.')[0]
 CONFIG_PATH = resource_filename(__package_name__, 'config.json')
-# Force blinka to use BCM2XXX
-os.environ["BLINKA_FORCECHIP"] = "BCM2XXX"
 
 PERIPHERALS = [
     'ws2812',
