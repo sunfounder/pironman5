@@ -1,6 +1,7 @@
 import json
 import signal
 from pkg_resources import resource_filename
+import os
 print(os.environ)
 
 from pm_auto.pm_auto import PMAuto
