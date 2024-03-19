@@ -1,5 +1,6 @@
 from .version import __version__
 
+
 def main():
     import argparse
     from .pironman5 import Pironman5
@@ -17,14 +18,19 @@ def main():
     ]
 
     parser = argparse.ArgumentParser(description='Pironman5')
-    parser.add_argument("command", choices=["start", "stop"], nargs="?", help="Command")
+    parser.add_argument("command",
+                        choices=["start", "stop"],
+                        nargs="?",
+                        help="Command")
     parser.add_argument("--rgb-color", help="RGB color")
     parser.add_argument("--rgb-brightness", type=int, help="RGB brightness")
     parser.add_argument("--rgb-style", choices=RGB_STYLES, help="RGB style")
     parser.add_argument("--rgb-speed", type=int, help="RGB speed")
     parser.add_argument("--rgb-enable", type=bool, help="RGB enable")
     parser.add_argument("--rgb-led-count", type=int, help="RGB LED count")
-    parser.add_argument("--temperature-unit", choices=["C", "F"], help="Temperature unit")
+    parser.add_argument("--temperature-unit",
+                        choices=["C", "F"],
+                        help="Temperature unit")
     parser.add_argument("--gpio-fan-pin", type=int, help="GPIO fan pin")
 
     args = parser.parse_args()
@@ -41,8 +47,8 @@ def main():
         os.system("kill -15 $(pgrep -f pironman5)")
         pironman5 = Pironman5()
         pironman5.stop()
-        
-    pironman5 = Pironman5()
-    pironman5.update_config(config)
+
+    Pironman5.update_config_file(config)
     if args['command'] == "start":
+        pironman5 = Pironman5()
         pironman5.start()
