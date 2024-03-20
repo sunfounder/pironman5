@@ -5,6 +5,7 @@ def main():
     import argparse
     from .pironman5 import Pironman5
     from pm_auto.ws2812 import RGB_STYLES
+    import sys
 
     AUTO_CONFIG_KEYS = [
         'rgb_color',
@@ -35,6 +36,11 @@ def main():
 
     args = parser.parse_args()
     args = vars(args)
+
+    if not (len(sys.argv) > 1):
+        parser.print_help()
+        quit()
+
     auto_config = {}
     for key in AUTO_CONFIG_KEYS:
         if args[key] is not None:
