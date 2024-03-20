@@ -325,6 +325,7 @@ class SF_Installer():
                         f'cp bin/{service} /etc/systemd/system/')
                 self.do('Enable service', f'systemctl enable {service}')
             self.do('Reload systemd', 'systemctl daemon-reload')
+            self.do('Start service', f'systemctl start {service}')
 
         if 'skip_config_txt' in self.args and not self.args.skip_config_txt:
             for name, value in self.config_txt.items():
