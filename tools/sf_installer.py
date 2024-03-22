@@ -335,9 +335,7 @@ class SF_Installer():
         self.need_reboot = True
 
     def reboot_prompt(self):
-        print(
-            "\033[1;32mWhether to restart for the changes to take effect(Y/N):\033[0m"
-        )
+        print("\033[1;32mWhether to restart for the changes to take effect(Y/N): \033[0m", end='')
         while True:
             key = input()
             if key == 'Y' or key == 'y':
