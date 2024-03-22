@@ -110,6 +110,7 @@ class SF_Installer():
                  config_txt=None,
                  service_files=None,
                  bin_files=None,
+                 dtoverlay=None
                  ):
         if name is None:
             raise ValueError("name is required")
@@ -133,6 +134,7 @@ class SF_Installer():
         self.config_txt = config_txt
         self.service_files = service_files
         self.bin_files = bin_files
+        self.dtoverlay = dtoverlay
 
         self.parser = argparse.ArgumentParser(description=description)
         self.parser.add_argument('--no-dep', action='store_true', help='Do not install dependencies')
@@ -154,7 +156,6 @@ class SF_Installer():
         self.venv_python = f'{self.venv_path}/bin/python3'
         self.venv_pip = f'{self.venv_path}/bin/pip3'
         self.custom_install = lambda: None
-
 
     def set_config(self, name="", value=""):
         msg = f"Setting config.txt: {name}={value}"
@@ -242,6 +243,72 @@ class SF_Installer():
             print('This script must be run as root')
             sys.exit(1)
 
+    def install_apt_dep(self):
+        if not self.args.no_dep:
+            self.do('Update package list', 'apt-get update')
+            deps = [ *self.APT_DEPENDENCIES ]
+            if self.custom_apt_dependencies is not None:
+                deps += self.custom_apt_dependencies
+
+            for dep in deps:
+                self.do(f'Install {dep}', f'apt-get install -y {dep}')
+
+    def create_working_dir(self):
+        self.do('Create work directory', f'mkdir -p {self.work_dir}')
+        self.do('Change work directory mode', f'chmod 777 {self.work_dir}')
+        self.do('Change work directory owner', f'chown -R {self.user}:{self.user} {self.work_dir}')
+        self.do('Create log directory', f'mkdir -p {self.log_dir}')
+        self.do('Change log directory mode', f'chmod 777 {self.log_dir}')
+        self.do('Change log directory owner', f'chown -R {self.user}:{self.user} {self.log_dir}')
+        self.do('Create virtual environment', f'python3 -m venv {self.venv_path}')
+
+    def install_pip_dep(self):
+        if not self.args.no_dep:
+            deps = [ *self.PIP_DEPENDENCIES ]
+            if self.custom_pip_dependencies is not None:
+                deps += self.custom_pip_dependencies
+
+            for dep in deps:
+                self.do(f'Install {dep}', f'{self.venv_pip} install {dep}')
+
+    def install_py_src_pkgs(self):
+        for package, url in self.python_source.items():
+            self.install_python_source(package, url)
+
+    def setup_auto_start(self):
+        if 'skip_auto_start' in self.args and not self.args.skip_auto_start:
+            print("Setup auto start...")
+            for bin in self.bin_files:
+                self.do('Copy binary file', f'cp bin/{bin} /usr/local/bin/')
+                self.do('Change binary file mode', f'chmod +x /usr/local/bin/{bin}')
+            for service in self.service_files:
+                self.do('Copy service file', f'cp bin/{service} /etc/systemd/system/')
+                self.do('Enable service', f'systemctl enable {service}')
+            self.do('Reload systemd', 'systemctl daemon-reload')
+
+    def setup_config_txt(self):
+        if 'skip_config_txt' in self.args and not self.args.skip_config_txt:
+            for name, value in self.config_txt.items():
+                self.set_config(name, value)
+            self.need_reboot = True
+
+    def copy_dtoverlay(self):
+        # Copy device tree overlay
+        if self.dtoverlay is None:
+            return
+        if not os.path.exists('/boot/overlays'):
+            self.errors.append(f"Device tree overlay directory /boot/overlays not found")
+            return
+        if isinstance(self.dtoverlay) == str:
+            self.dtoverlay = [self.dtoverlay]
+        for overlay in self.dtoverlay:
+            if not os.path.exists(overlay):
+                self.errors.append(f"Device tree overlay file {overlay} not found")
+                continue
+            self.do(f'Copy dtoverlay {self.dtoverlay}', f'cp {self.dtoverlay} /boot/overlays/')
+
+        self.need_reboot = True
+
     def reboot_prompt(self):
         print("\033[1;32mWhether to restart for the changes to take effect(Y/N):\033[0m")
         while True:
@@ -263,60 +330,21 @@ class SF_Installer():
             else:
                 self.do(f'Remove {package} build files', f'rm -r {url}/*.egg-info {url}/dist')
 
-    def _install(self):
-        self.check_admin()
-        self.args = self.parser.parse_args()
-
-        if not self.args.no_dep:
-            self.do('Update package list', 'apt-get update')
-            deps = [ *self.APT_DEPENDENCIES ]
-            if self.custom_apt_dependencies is not None:
-                deps += self.custom_apt_dependencies
-
-            for dep in deps:
-                self.do(f'Install {dep}', f'apt-get install -y {dep}')
-
-        self.do('Create work directory', f'mkdir -p {self.work_dir}')
-        self.do('Change work directory mode', f'chmod 777 {self.work_dir}')
-        self.do('Change work directory owner', f'chown -R {self.user}:{self.user} {self.work_dir}')
-        self.do('Create log directory', f'mkdir -p {self.log_dir}')
-        self.do('Change log directory mode', f'chmod 777 {self.log_dir}')
-        self.do('Change log directory owner', f'chown -R {self.user}:{self.user} {self.log_dir}')
-        self.do('Create virtual environment', f'python3 -m venv {self.venv_path}')
-
-        if not self.args.no_dep:
-            deps = [ *self.PIP_DEPENDENCIES ]
-            if self.custom_pip_dependencies is not None:
-                deps += self.custom_pip_dependencies
-
-            for dep in deps:
-                self.do(f'Install {dep}', f'{self.venv_pip} install {dep}')
-
-        for package, url in self.python_source.items():
-            self.install_python_source(package, url)
-
-        if 'skip_auto_start' in self.args and not self.args.skip_auto_start:
-            print("Setup auto start...")
-            for bin in self.bin_files:
-                self.do('Copy binary file', f'cp bin/{bin} /usr/local/bin/')
-                self.do('Change binary file mode', f'chmod +x /usr/local/bin/{bin}')
-            for service in self.service_files:
-                self.do('Copy service file', f'cp bin/{service} /etc/systemd/system/')
-                self.do('Enable service', f'systemctl enable {service}')
-            self.do('Reload systemd', 'systemctl daemon-reload')
-
-        if 'skip_config_txt' in self.args and not self.args.skip_config_txt:
-            for name, value in self.config_txt.items():
-                self.set_config(name, value)
-
-        self.custom_install()
-
-        print("Finished")
-
     def install(self):
         print(f"{self.friendly_name} Insataller")
         try:
-            self._install()
+            self.check_admin()
+            self.args = self.parser.parse_args()
+
+            self.install_apt_dep()
+            self.create_working_dir()
+            self.install_pip_dep()
+            self.install_py_src_pkgs()
+            self.setup_auto_start()
+            self.setup_config_txt()
+            self.copy_dtoverlay()
+            self.custom_install()
+            print("Finished")
         except KeyboardInterrupt:
             print("\n\nCanceled.")
         finally:

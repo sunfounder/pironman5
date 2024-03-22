@@ -40,11 +40,11 @@ installer = SF_Installer(
     },
 
     # - Setup config txt
-    config_txt = {
-        'dtparam=spi': 'on',
-        'dtparam=i2c_arm': 'on',
-        'dtoverlay=gpio-ir,gpio_pin': '13',
-    },
+    # config_txt = {
+    #     'dtparam=spi': 'on',
+    #     'dtparam=i2c_arm': 'on',
+    #     'dtoverlay=gpio-ir,gpio_pin': '13',
+    # },
 
     # - Autostart settings
     # - Set service filenames
@@ -52,5 +52,7 @@ installer = SF_Installer(
     # - Set bin files
     bin_files = ['pironman5'],
 
+    # - Copy device tree overlay to /boot/overlays
+    dtoverlay = ['sunfounder-pironman5.dtbo'],
 )
 installer.install()
