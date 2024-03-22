@@ -5,10 +5,10 @@ After=multi-user.target # Need to start last to avoid gpio being occupied
 
 [Service]
 Type=forking
-WorkingDirectory=/opt/pironman5
+# WorkingDirectory=/opt/pironman5
 ExecStart=/usr/local/bin/pironman5 start --background
 ExecStop=/usr/local/bin/pironman5 stop
-PrivateTmp=True
+# PrivateTmp=False
 
 [Install]
 WantedBy=multi-user.target
