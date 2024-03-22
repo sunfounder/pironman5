@@ -9,6 +9,11 @@ installer = SF_Installer(
     # - Setup install command description if needed, default to "Installer for {friendly_name}""
     # description='Installer for Pironman 5',
 
+    # - Setup venv options if needed, default to []
+    venv_options=[
+        '--system-site-packages',
+    ],
+
     # - Setup Work Dir if needed, default to /opt/{name}
     # work_dir='/opt/pironman5',
 
@@ -34,9 +39,9 @@ installer = SF_Installer(
     # - Install python source code from git
     python_source={
         'pironman5': './',
-        'pm_auto': 'http://github.com/sunfounder/pm_auto.git',
-        'pm_dashboard': 'http://github.com/sunfounder/pm_dashboard.git',
-        'sf_rpi_status': 'http://github.com/sunfounder/sf_rpi_status.git',
+        'pm_auto': 'git+http://github.com/sunfounder/pm_auto.git',
+        'pm_dashboard': 'git+http://github.com/sunfounder/pm_dashboard.git',
+        'sf_rpi_status': 'git+http://github.com/sunfounder/sf_rpi_status.git',
     },
 
     # - Setup config txt
