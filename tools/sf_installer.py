@@ -5,23 +5,19 @@ import time
 import threading
 import os
 
-class ConfigTxt(object):
-    '''
-        To setup /boot/config.txt (Raspbian, Kali OSMC, etc)
-        /boot/firmware/config.txt (Ubuntu)
 
-    '''
-    DEFAULT_FILE_1 = "/boot/config.txt"  # Raspberry Pi OS
-    DEFAULT_FILE_2 = "/boot/firmware/config.txt"  # Ubuntu
+class ConfigTxt(object):
+    DEFAULT_BOOT_FILE = "/boot/firmware/config.txt"
+    BACKUP_BOOT_FILE = "/boot/config.txt"
 
     def __init__(self, file=None):
         # check if file exists
         self.__isready = True
         if file is None:
-            if os.path.exists(self.DEFAULT_FILE_1):
-                self.file = self.DEFAULT_FILE_1
-            elif os.path.exists(self.DEFAULT_FILE_2):
-                self.file = self.DEFAULT_FILE_2
+            if os.path.exists(self.DEFAULT_BOOT_FILE):
+                self.file = self.DEFAULT_BOOT_FILE
+            elif os.path.exists(self.BACKUP_BOOT_FILE):
+                self.file = self.BACKUP_BOOT_FILE
             else:
                 print("No config.txt file found.")
                 self.__isready = False
@@ -87,6 +83,7 @@ class ConfigTxt(object):
         except Exception as e:
             return -1, e
 
+
 class SF_Installer():
     WORK_DIR = '/opt/{name}'
     APT_DEPENDENCIES = [
@@ -137,13 +134,23 @@ class SF_Installer():
         self.dtoverlay = dtoverlay
 
         self.parser = argparse.ArgumentParser(description=description)
-        self.parser.add_argument('--no-dep', action='store_true', help='Do not install dependencies')
-        self.parser.add_argument('--skip-reboot', action='store_true', help='Skip reboot even needed')
-        self.parser.add_argument('--plain-text', action='store_true', help='Plain text mode')
+        self.parser.add_argument('--no-dep',
+                                 action='store_true',
+                                 help='Do not install dependencies')
+        self.parser.add_argument('--skip-reboot',
+                                 action='store_true',
+                                 help='Skip reboot even needed')
+        self.parser.add_argument('--plain-text',
+                                 action='store_true',
+                                 help='Plain text mode')
         if self.service_files is not None and len(self.service_files) > 0:
-            self.parser.add_argument('--skip-auto-start', action='store_true', help='Skip auto start')
+            self.parser.add_argument('--skip-auto-start',
+                                     action='store_true',
+                                     help='Skip auto start')
         if self.config_txt is not None and len(self.config_txt) > 0:
-            self.parser.add_argument('--skip-config-txt', action='store_true', help='Skip config.txt')
+            self.parser.add_argument('--skip-config-txt',
+                                     action='store_true',
+                                     help='Skip config.txt')
 
         self.config_txt_handler = ConfigTxt()
         self.user = self.get_username()
@@ -173,19 +180,20 @@ class SF_Installer():
 
     def get_username(self):
         try:
-            user = os.getlogin() # can run at boot
+            user = os.getlogin()  # can run at boot
         except:
-            user = os.popen("echo ${SUDO_USER:-$(who -m | awk '{ print $1 }')}").readline().strip()
+            user = os.popen("echo ${SUDO_USER:-$(who -m | awk '{ print $1 }')}"
+                            ).readline().strip()
         return user
 
     def run_command(self, cmd=""):
         import subprocess
         p = subprocess.Popen(cmd,
-                            shell=True,
-                            executable="/bin/bash",
-                            stdout=subprocess.PIPE,
-                            stderr=subprocess.PIPE,
-                            universal_newlines=True)
+                             shell=True,
+                             executable="/bin/bash",
+                             stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE,
+                             universal_newlines=True)
         p.wait()
         result = p.stdout.read()
         error = p.stderr.read()
@@ -195,17 +203,17 @@ class SF_Installer():
     def spinner(self):
         char = ['/', '-', '\\', '|']
         i = 0
-        while self.is_running:  
-                i = (i+1)%4 
-                sys.stdout.write('\033[?25l') # cursor invisible
-                sys.stdout.write(f'{char[i]}\033[1D')
-                sys.stdout.flush()
-                time.sleep(0.5)
+        while self.is_running:
+            i = (i + 1) % 4
+            sys.stdout.write('\033[?25l')  # cursor invisible
+            sys.stdout.write(f'{char[i]}\033[1D')
+            sys.stdout.flush()
+            time.sleep(0.5)
 
         sys.stdout.write(' \033[1D')
-        sys.stdout.write('\033[?25h') # cursor visible 
-        sys.stdout.flush() 
-    
+        sys.stdout.write('\033[?25h')  # cursor visible
+        sys.stdout.flush()
+
     def do(self, msg="", cmd=""):
         print(f" - {msg}... ", end='', flush=True)
         if not self.args.plain_text:
@@ -225,7 +233,9 @@ class SF_Installer():
             print('Done')
         else:
             print('\033[1;35mError\033[0m')
-            self.errors.append(f"{msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}")
+            self.errors.append(
+                f"{msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}"
+            )
 
     def install_python_source(self, name, url='./'):
         print(f'Installing {name}...')
@@ -234,9 +244,12 @@ class SF_Installer():
             subdir = url.split('/')[-1].replace('.git', "")
         else:
             subdir = url
-        self.do(f'Build package', f'cd {subdir} && {self.venv_python} -m build')
-        self.do(f'Uninstall old package', f'{self.venv_pip} uninstall -y {name}')
-        self.do(f'Install package', f'cd {subdir}/dist && {self.venv_pip} install *.whl')
+        self.do(f'Build package',
+                f'cd {subdir} && {self.venv_python} -m build')
+        self.do(f'Uninstall old package',
+                f'{self.venv_pip} uninstall -y {name}')
+        self.do(f'Install package',
+                f'cd {subdir}/dist && {self.venv_pip} install *.whl')
 
     def check_admin(self):
         if os.geteuid() != 0:
@@ -285,6 +298,7 @@ class SF_Installer():
                 self.do('Copy service file', f'cp bin/{service} /etc/systemd/system/')
                 self.do('Enable service', f'systemctl enable {service}')
             self.do('Reload systemd', 'systemctl daemon-reload')
+            self.do('Start service', f'systemctl start {service}')
 
     def setup_config_txt(self):
         if 'skip_config_txt' in self.args and not self.args.skip_config_txt:
@@ -310,7 +324,9 @@ class SF_Installer():
         self.need_reboot = True
 
     def reboot_prompt(self):
-        print("\033[1;32mWhether to restart for the changes to take effect(Y/N):\033[0m")
+        print(
+            "\033[1;32mWhether to restart for the changes to take effect(Y/N):\033[0m"
+        )
         while True:
             key = input()
             if key == 'Y' or key == 'y':
@@ -328,7 +344,8 @@ class SF_Installer():
             if url.startswith("http"):
                 self.do(f'Remove {package}', f'rm -r {package}')
             else:
-                self.do(f'Remove {package} build files', f'rm -r {url}/*.egg-info {url}/dist')
+                self.do(f'Remove {package} build files',
+                        f'rm -r {url}/*.egg-info {url}/dist')
 
     def install(self):
         print(f"{self.friendly_name} Insataller")
@@ -360,5 +377,7 @@ class SF_Installer():
                 print("\n\nError happened in install process:")
                 for error in self.errors:
                     print(error)
-                print("Try to fix it yourself, or contact service@sunfounder.com with this message")
+                print(
+                    "Try to fix it yourself, or contact service@sunfounder.com with this message"
+                )
                 sys.exit(1)

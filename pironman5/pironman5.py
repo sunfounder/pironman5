@@ -43,6 +43,7 @@ DASHBOARD_SETTINGS = {
     "spc": False,
 }
 
+
 def merge_dict(dict1, dict2):
     for key in dict2:
         if isinstance(dict2[key], dict):
@@ -56,6 +57,7 @@ def merge_dict(dict1, dict2):
         else:
             dict1[key] = dict2[key]
 
+
 class Pironman5:
 
     def __init__(self):
@@ -67,12 +69,13 @@ class Pironman5:
             config = json.load(f)
         merge_dict(self.config, config)
 
-        self.pm_auto = PMAuto(self.config['auto'], peripherals=PERIPHERALS, get_logger=get_child_logger)
-        self.pm_dashboard = PMDashboard(
-            device_info=DEVICE_INFO,
-            settings=DASHBOARD_SETTINGS,
-            config=self.config,
-            get_logger=get_child_logger)
+        self.pm_auto = PMAuto(self.config['auto'],
+                              peripherals=PERIPHERALS,
+                              get_logger=get_child_logger)
+        self.pm_dashboard = PMDashboard(device_info=DEVICE_INFO,
+                                        settings=DASHBOARD_SETTINGS,
+                                        config=self.config,
+                                        get_logger=get_child_logger)
         self.pm_dashboard.set_on_config_changed(self.update_config)
 
     def update_config(self, config):
@@ -80,6 +83,16 @@ class Pironman5:
         self.pm_auto.update_config(self.config['auto'])
         with open(CONFIG_PATH, 'w') as f:
             json.dump(self.config, f, indent=4)
+
+    # @classmethod
+    @staticmethod
+    def update_config_file(config):
+        current = None
+        with open(CONFIG_PATH, 'r') as f:
+            current = json.load(f)
+        merge_dict(current, config)
+        with open(CONFIG_PATH, 'w') as f:
+            json.dump(current, f, indent=4)
 
     def start(self):
         self.pm_auto.start()
@@ -96,7 +109,6 @@ class Pironman5:
         signal.signal(signal.SIGINT, signal_handler)
         # close before killed
         signal.signal(signal.SIGHUP, signal_handler)
-
 
     def stop(self):
         self.pm_auto.stop()
