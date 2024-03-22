@@ -1,10 +1,10 @@
 import json
-import signal
+import time
 from pkg_resources import resource_filename
 
 from pm_auto.pm_auto import PMAuto
 from pm_dashboard.pm_dashboard import PMDashboard
-from .logger import Logger, create_get_child_logger
+from .logger import create_get_child_logger
 
 get_child_logger = create_get_child_logger('pironman5')
 __package_name__ = __name__.split('.')[0]
@@ -99,16 +99,8 @@ class Pironman5:
         self.log.info('PMAuto started')
         self.pm_dashboard.start()
         self.log.info('PmDashboard started')
-
-        def signal_handler(signo, frame):
-            self.log.info("Received SIGTERM or SIGINT signal. Cleaning up...")
-            self.stop()
-
-        # Register signal handlers
-        signal.signal(signal.SIGTERM, signal_handler)
-        signal.signal(signal.SIGINT, signal_handler)
-        # close before killed
-        signal.signal(signal.SIGHUP, signal_handler)
+        while True:
+            time.sleep(1)
 
     def stop(self):
         self.pm_auto.stop()

@@ -99,6 +99,7 @@ class SF_Installer():
                  name=None,
                  friendly_name=None,
                  description=None,
+                 venv_options=[],
                  apt_dependencies=None,
                  pip_dependencies=None,
                  python_source=None,
@@ -162,6 +163,7 @@ class SF_Installer():
         self.venv_path = f'{self.work_dir}/venv'
         self.venv_python = f'{self.venv_path}/bin/python3'
         self.venv_pip = f'{self.venv_path}/bin/pip3'
+        self.venv_options = venv_options
         self.custom_install = lambda: None
 
     def set_config(self, name="", value=""):
@@ -237,19 +239,26 @@ class SF_Installer():
                 f"{msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}"
             )
 
+    # def install_python_source(self, name, url='./'):
+    #     print(f'Installing {name}...')
+    #     if url.startswith("http"):
+    #         self.do(f'Clone package', f'git clone {url}')
+    #         subdir = url.split('/')[-1].replace('.git', "")
+    #     else:
+    #         subdir = url
+    #     self.do(f'Build package',
+    #             f'cd {subdir} && {self.venv_python} -m build')
+    #     self.do(f'Uninstall old package',
+    #             f'{self.venv_pip} uninstall -y {name}')
+    #     self.do(f'Install package',
+    #             f'cd {subdir}/dist && {self.venv_pip} install *.whl')
+
     def install_python_source(self, name, url='./'):
         print(f'Installing {name}...')
-        if url.startswith("http"):
-            self.do(f'Clone package', f'git clone {url}')
-            subdir = url.split('/')[-1].replace('.git', "")
-        else:
-            subdir = url
-        self.do(f'Build package',
-                f'cd {subdir} && {self.venv_python} -m build')
         self.do(f'Uninstall old package',
                 f'{self.venv_pip} uninstall -y {name}')
         self.do(f'Install package',
-                f'cd {subdir}/dist && {self.venv_pip} install *.whl')
+                f'{self.venv_pip} install {url}')
 
     def check_admin(self):
         if os.geteuid() != 0:
@@ -273,7 +282,9 @@ class SF_Installer():
         self.do('Create log directory', f'mkdir -p {self.log_dir}')
         self.do('Change log directory mode', f'chmod 777 {self.log_dir}')
         self.do('Change log directory owner', f'chown -R {self.user}:{self.user} {self.log_dir}')
-        self.do('Create virtual environment', f'python3 -m venv {self.venv_path}')
+        if os.path.exists(self.venv_path):
+            self.do('Remove old virtual environment', f'rm -r {self.venv_path}')
+        self.do('Create virtual environment', f'python3 -m venv {self.venv_path} {" ".join(self.venv_options)}')
 
     def install_pip_dep(self):
         if not self.args.no_dep:
@@ -313,13 +324,13 @@ class SF_Installer():
         if not os.path.exists('/boot/overlays'):
             self.errors.append(f"Device tree overlay directory /boot/overlays not found")
             return
-        if isinstance(self.dtoverlay) == str:
+        if isinstance(self.dtoverlay, str):
             self.dtoverlay = [self.dtoverlay]
         for overlay in self.dtoverlay:
             if not os.path.exists(overlay):
                 self.errors.append(f"Device tree overlay file {overlay} not found")
                 continue
-            self.do(f'Copy dtoverlay {self.dtoverlay}', f'cp {self.dtoverlay} /boot/overlays/')
+            self.do(f'Copy dtoverlay {overlay}', f'cp {overlay} /boot/overlays/')
 
         self.need_reboot = True
 
@@ -339,13 +350,14 @@ class SF_Installer():
                 continue
 
     def cleanup(self):
-        for package in self.python_source:
-            url = self.python_source[package]
-            if url.startswith("http"):
-                self.do(f'Remove {package}', f'rm -r {package}')
-            else:
-                self.do(f'Remove {package} build files',
-                        f'rm -r {url}/*.egg-info {url}/dist')
+        pass
+        # for package in self.python_source:
+        #     url = self.python_source[package]
+        #     if url.startswith("http"):
+        #         self.do(f'Remove {package}', f'rm -r {package}')
+        #     else:
+        #         self.do(f'Remove {package} build files',
+        #                 f'rm -r {url}/*.egg-info {url}/dist')
 
     def install(self):
         print(f"{self.friendly_name} Insataller")
