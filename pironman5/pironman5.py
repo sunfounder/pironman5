@@ -75,7 +75,9 @@ class Pironman5:
         self.pm_dashboard = PMDashboard(device_info=DEVICE_INFO,
                                         settings=DASHBOARD_SETTINGS,
                                         config=self.config,
+                                        peripherals=PERIPHERALS,
                                         get_logger=get_child_logger)
+        self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
         self.pm_dashboard.set_on_config_changed(self.update_config)
 
     def update_config(self, config):
