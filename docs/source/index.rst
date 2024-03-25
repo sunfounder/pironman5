@@ -53,6 +53,7 @@ If you have any questions, please send an email to service@sunfounder.com and we
     :maxdepth: 2
 
     About this Kit <self>
+    compitable_nvme_ssd
     what_do_we_need    
     assembly_instructions
     pi_start/installing_the_os
