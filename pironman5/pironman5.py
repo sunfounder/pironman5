@@ -5,6 +5,7 @@ from pkg_resources import resource_filename
 from pm_auto.pm_auto import PMAuto
 from pm_dashboard.pm_dashboard import PMDashboard
 from .logger import create_get_child_logger
+from .utils import merge_dict, log_error
 
 get_child_logger = create_get_child_logger('pironman5')
 __package_name__ = __name__.split('.')[0]
@@ -43,23 +44,8 @@ DASHBOARD_SETTINGS = {
     "spc": False,
 }
 
-
-def merge_dict(dict1, dict2):
-    for key in dict2:
-        if isinstance(dict2[key], dict):
-            if key not in dict1:
-                dict1[key] = {}
-            merge_dict(dict1[key], dict2[key])
-        elif isinstance(dict2[key], list):
-            if key not in dict1:
-                dict1[key] = []
-            dict1[key].extend(dict2[key])
-        else:
-            dict1[key] = dict2[key]
-
-
 class Pironman5:
-
+    @log_error
     def __init__(self):
         self.log = get_child_logger('main')
         self.config = {
@@ -80,13 +66,14 @@ class Pironman5:
         self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
         self.pm_dashboard.set_on_config_changed(self.update_config)
 
+    @log_error
     def update_config(self, config):
         merge_dict(self.config, config)
         self.pm_auto.update_config(self.config['auto'])
         with open(CONFIG_PATH, 'w') as f:
             json.dump(self.config, f, indent=4)
 
-    # @classmethod
+    @log_error
     @staticmethod
     def update_config_file(config):
         current = None
@@ -96,6 +83,7 @@ class Pironman5:
         with open(CONFIG_PATH, 'w') as f:
             json.dump(current, f, indent=4)
 
+    @log_error
     def start(self):
         self.pm_auto.start()
         self.log.info('PMAuto started')
@@ -104,6 +92,7 @@ class Pironman5:
         while True:
             time.sleep(1)
 
+    @log_error
     def stop(self):
         self.pm_auto.stop()
         self.pm_dashboard.stop()
