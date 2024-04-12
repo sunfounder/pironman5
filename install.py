@@ -22,8 +22,6 @@ installer = SF_Installer(
 
     # - Install from apt
     apt_dependencies=[
-        'wget',
-        'unzip',
         'influxdb',
         "libjpeg-dev", # for Pillow
         'libfreetype6-dev', # for Pillow
