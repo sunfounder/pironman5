@@ -332,7 +332,7 @@ class SF_Installer():
             overlays_path = OVERLAY_PATH_BACKUP
             if not os.path.exists(overlays_path):
                 self.errors.append(f"Device tree overlay directory {OVERLAY_PATH_DEFAULT} or {OVERLAY_PATH_BACKUP} not found")
-            return
+                return
         
         if isinstance(self.dtoverlay, str):
             self.dtoverlay = [self.dtoverlay]
