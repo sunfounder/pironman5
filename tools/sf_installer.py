@@ -325,16 +325,22 @@ class SF_Installer():
         # Copy device tree overlay
         if self.dtoverlay is None or 'skip_dtoverlay' in self.args and self.args.skip_dtoverlay:
             return
-        if not os.path.exists('/boot/overlays'):
-            self.errors.append(f"Device tree overlay directory /boot/overlays not found")
+        OVERLAY_PATH_DEFAULT = '/boot/overlays'
+        OVERLAY_PATH_BACKUP = '/boot/firmware/overlays'
+        overlays_path = OVERLAY_PATH_DEFAULT
+        if not os.path.exists(overlays_path):
+            overlays_path = OVERLAY_PATH_BACKUP
+            if not os.path.exists(overlays_path):
+                self.errors.append(f"Device tree overlay directory {OVERLAY_PATH_DEFAULT} or {OVERLAY_PATH_BACKUP} not found")
             return
+        
         if isinstance(self.dtoverlay, str):
             self.dtoverlay = [self.dtoverlay]
         for overlay in self.dtoverlay:
             if not os.path.exists(overlay):
                 self.errors.append(f"Device tree overlay file {overlay} not found")
                 continue
-            self.do(f'Copy dtoverlay {overlay}', f'cp {overlay} /boot/overlays/')
+            self.do(f'Copy dtoverlay {overlay}', f'cp {overlay} {overlays_path}/')
 
         self.need_reboot = True
 
