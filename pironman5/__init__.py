@@ -35,7 +35,7 @@ def main():
     parser.add_argument("-re", "--rgb-enable", type=bool, help="RGB enable True/False")
     parser.add_argument("-rl", "--rgb-led-count", type=int, help="RGB LED count int")
     parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], help="Temperature unit")
-    parser.add_argument("-gm", "--gpio-fan-mode", type=int, help=f"GPIO fan mode, 0-4: {GPIO_FAN_MODES}")
+    parser.add_argument("-gm", "--gpio-fan-mode", type=int, help=f"GPIO fan mode, {[f'{k}: {v}' for k, v in GPIO_FAN_MODES.items()]}")
     parser.add_argument("-gp", "--gpio-fan-pin", type=int, help="GPIO fan pin")
 
     args = parser.parse_args()
