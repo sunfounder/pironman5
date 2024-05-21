@@ -25,6 +25,7 @@ def main():
                         choices=["start", "stop"],
                         nargs="?",
                         help="Command")
+    parser.add_argument("--config", help="Print current configs")
     parser.add_argument("--rgb-color", help="RGB color")
     parser.add_argument("--rgb-brightness", type=int, help="RGB brightness")
     parser.add_argument("--rgb-style", choices=RGB_STYLES, help="RGB style")
@@ -51,6 +52,16 @@ def main():
     config = {
         'auto': auto_config,
     }
+
+    if args['config']:
+        from pkg_resources import resource_filename
+        import json
+        CONFIG_PATH = resource_filename('pironman5', 'config.json')
+        with open(CONFIG_PATH, 'r') as f:
+            config = json.load(f)
+        print(json.dumps(config, indent=4))
+        quit()
+
     if args['command'] == "stop":
         import os
         os.system('kill -9 $(pgrep -f "pironman5 start")')
