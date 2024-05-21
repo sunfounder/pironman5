@@ -25,18 +25,16 @@ def main():
                         choices=["start", "stop"],
                         nargs="?",
                         help="Command")
-    parser.add_argument("--config", action="store_true", help="Show config")
-    parser.add_argument("--rgb-color", help="RGB color")
-    parser.add_argument("--rgb-brightness", type=int, help="RGB brightness")
-    parser.add_argument("--rgb-style", choices=RGB_STYLES, help="RGB style")
-    parser.add_argument("--rgb-speed", type=int, help="RGB speed")
-    parser.add_argument("--rgb-enable", type=bool, help="RGB enable")
-    parser.add_argument("--rgb-led-count", type=int, help="RGB LED count")
-    parser.add_argument("--temperature-unit",
-                        choices=["C", "F"],
-                        help="Temperature unit")
-    parser.add_argument("--gpio-fan-mode", type=int, help=f"GPIO fan mode, 0-4, {GPIO_FAN_MODES}")
-    parser.add_argument("--gpio-fan-pin", type=int, help="GPIO fan pin")
+    parser.add_argument("-c", "--config", action="store_true", help="Show config")
+    parser.add_argument("-rc", "--rgb-color", help="RGB color")
+    parser.add_argument("-rb", "--rgb-brightness", type=int, help="RGB brightness")
+    parser.add_argument("-rs", "--rgb-style", choices=RGB_STYLES, help="RGB style")
+    parser.add_argument("-rp", "--rgb-speed", type=int, help="RGB speed")
+    parser.add_argument("-re", "--rgb-enable", type=bool, help="RGB enable")
+    parser.add_argument("-rl", "--rgb-led-count", type=int, help="RGB LED count")
+    parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], help="Temperature unit")
+    parser.add_argument("-gm", "--gpio-fan-mode", type=int, help=f"GPIO fan mode, 0-4, {GPIO_FAN_MODES}")
+    parser.add_argument("-gp", "--gpio-fan-pin", type=int, help="GPIO fan pin")
 
     args = parser.parse_args()
     args = vars(args)
