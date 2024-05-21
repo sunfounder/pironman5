@@ -1,7 +1,7 @@
 from .version import __version__
 
-TRUE_LIST = ['true', 'True', 'TRUE', '1', 1, True]
-FALSE_LIST = ['false', 'False', 'FALSE', '0', 0, False]
+TRUE_LIST = ['true', 'True', 'TRUE', '1', 'on', 'On', 'ON']
+FALSE_LIST = ['false', 'False', 'FALSE', '0', 'off', 'Off', 'OFF']
 
 def main():
     import argparse
@@ -32,10 +32,10 @@ def main():
     parser.add_argument("-rb", "--rgb-brightness", type=int, help="RGB brightness 0-100")
     parser.add_argument("-rs", "--rgb-style", choices=RGB_STYLES, help="RGB style")
     parser.add_argument("-rp", "--rgb-speed", type=int, help="RGB speed 0-100")
-    parser.add_argument("-re", "--rgb-enable", type=bool, help="RGB enable True/False")
+    parser.add_argument("-re", "--rgb-enable", type=str, help="RGB enable True/False")
     parser.add_argument("-rl", "--rgb-led-count", type=int, help="RGB LED count int")
     parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], help="Temperature unit")
-    parser.add_argument("-gm", "--gpio-fan-mode", type=int, help=f"GPIO fan mode, {''.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
+    parser.add_argument("-gm", "--gpio-fan-mode", type=int, help=f"GPIO fan mode, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
     parser.add_argument("-gp", "--gpio-fan-pin", type=int, help="GPIO fan pin")
 
     args = parser.parse_args()
