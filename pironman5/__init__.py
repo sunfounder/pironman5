@@ -1,5 +1,7 @@
 from .version import __version__
 
+TRUE_LIST = ['true', 'True', 'TRUE', '1', 1, True]
+FALSE_LIST = ['false', 'False', 'FALSE', '0', 0, False]
 
 def main():
     import argparse
@@ -26,14 +28,14 @@ def main():
                         nargs="?",
                         help="Command")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
-    parser.add_argument("-rc", "--rgb-color", help="RGB color")
-    parser.add_argument("-rb", "--rgb-brightness", type=int, help="RGB brightness")
+    parser.add_argument("-rc", "--rgb-color", help="RGB color in hex format (e.g. #FF0000)")
+    parser.add_argument("-rb", "--rgb-brightness", type=int, help="RGB brightness 0-100")
     parser.add_argument("-rs", "--rgb-style", choices=RGB_STYLES, help="RGB style")
-    parser.add_argument("-rp", "--rgb-speed", type=int, help="RGB speed")
-    parser.add_argument("-re", "--rgb-enable", type=bool, help="RGB enable")
-    parser.add_argument("-rl", "--rgb-led-count", type=int, help="RGB LED count")
+    parser.add_argument("-rp", "--rgb-speed", type=int, help="RGB speed 0-100")
+    parser.add_argument("-re", "--rgb-enable", type=bool, help="RGB enable True/False")
+    parser.add_argument("-rl", "--rgb-led-count", type=int, help="RGB LED count int")
     parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], help="Temperature unit")
-    parser.add_argument("-gm", "--gpio-fan-mode", type=int, help=f"GPIO fan mode, 0-4, {GPIO_FAN_MODES}")
+    parser.add_argument("-gm", "--gpio-fan-mode", type=int, help=f"GPIO fan mode, 0-4: {GPIO_FAN_MODES}")
     parser.add_argument("-gp", "--gpio-fan-pin", type=int, help="GPIO fan pin")
 
     args = parser.parse_args()
@@ -42,6 +44,11 @@ def main():
     if not (len(sys.argv) > 1):
         parser.print_help()
         quit()
+
+    if args['rgb_enable'] in TRUE_LIST:
+        args['rgb_enable'] = True
+    elif args['rgb_enable'] in FALSE_LIST:
+        args['rgb_enable'] = False
 
     auto_config = {}
     for key in AUTO_CONFIG_KEYS:
