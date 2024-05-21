@@ -289,6 +289,7 @@ class SF_Installer():
         if os.path.exists(self.venv_path):
             self.do('Remove old virtual environment', f'rm -r {self.venv_path}')
         self.do('Create virtual environment', f'python3 -m venv {self.venv_path} {" ".join(self.venv_options)}')
+        self.do('Change virtual environment owner', f'chown -R {self.user}:{self.user} {self.venv_path}')
 
     def install_pip_dep(self):
         if not self.args.no_dep:
