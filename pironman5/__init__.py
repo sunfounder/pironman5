@@ -5,6 +5,7 @@ def main():
     import argparse
     from .pironman5 import Pironman5
     from pm_auto.ws2812 import RGB_STYLES
+    from pm_auto.fan_control import GPIO_FAN_MODES
     import sys
 
     AUTO_CONFIG_KEYS = [
@@ -15,6 +16,7 @@ def main():
         'rgb_enable',
         'rgb_led_count',
         'temperature_unit',
+        'gpio_fan_mode',
         'gpio_fan_pin',
     ]
 
@@ -32,6 +34,7 @@ def main():
     parser.add_argument("--temperature-unit",
                         choices=["C", "F"],
                         help="Temperature unit")
+    parser.add_argument("--gpio-fan-mode", choices=GPIO_FAN_MODES, help="GPIO fan mode")
     parser.add_argument("--gpio-fan-pin", type=int, help="GPIO fan pin")
 
     args = parser.parse_args()
