@@ -25,7 +25,7 @@ def main():
                         choices=["start", "stop"],
                         nargs="?",
                         help="Command")
-    parser.add_argument("--config", help="Print current configs")
+    parser.add_argument("--config", action="store_true", help="Show config")
     parser.add_argument("--rgb-color", help="RGB color")
     parser.add_argument("--rgb-brightness", type=int, help="RGB brightness")
     parser.add_argument("--rgb-style", choices=RGB_STYLES, help="RGB style")
