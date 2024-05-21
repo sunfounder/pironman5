@@ -34,7 +34,7 @@ def main():
     parser.add_argument("--temperature-unit",
                         choices=["C", "F"],
                         help="Temperature unit")
-    parser.add_argument("--gpio-fan-mode", choices=GPIO_FAN_MODES, help="GPIO fan mode")
+    parser.add_argument("--gpio-fan-mode", type=int, help=f"GPIO fan mode, 0-4, {GPIO_FAN_MODES}")
     parser.add_argument("--gpio-fan-pin", type=int, help="GPIO fan pin")
 
     args = parser.parse_args()
