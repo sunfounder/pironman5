@@ -23,7 +23,7 @@ def main():
                         nargs="?",
                         help="Command")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
-    parser.add_argument("-rc", "--rgb-color", nargs='?', default='', help="RGB color in hex format with or without # (e.g. #FF0000 or 00aabb)")
+    parser.add_argument("-rc", "--rgb-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
     parser.add_argument("-rb", "--rgb-brightness", nargs='?', default='', help="RGB brightness 0-100")
     parser.add_argument("-rs", "--rgb-style", choices=RGB_STYLES, nargs='?', default='', help="RGB style")
     parser.add_argument("-rp", "--rgb-speed", nargs='?', default='', help="RGB speed 0-100")
@@ -64,11 +64,17 @@ def main():
             b = int(hex[4:6], 16)
             print(f"RGB color: #{hex} ({r}, {g}, {b})")
         else:
-            if len(args.rgb_color) != 7 or (len(args.rgb_color) == 7 and args.rgb_color[0] != '#'):
-                print(f"Invalid value for RGB color, it should be in hex format with or without # (e.g. #FF0000 or 00aabb)")
+            if len(args.rgb_color) != 6:
+                print(f'Invalid value for RGB color, it should be in hex format without # (e.g. 00aabb)')
                 quit()
-            if args.rgb_color[0] == '#':
-                new_auto['rgb_color'] = args.rgb_color[1:]
+            if len(args.rgb_color) == 6:
+                try:
+                    r = int(args.rgb_color[0:2], 16)
+                    g = int(args.rgb_color[2:4], 16)
+                    b = int(args.rgb_color[4:6], 16)
+                except ValueError:
+                    print(f'Invalid value for RGB color, it should be in hex format without # (e.g. 00aabb)')
+                    quit()
             new_auto['rgb_color'] = args.rgb_color
     if args.rgb_brightness != '':
         if args.rgb_brightness == None:
