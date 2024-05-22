@@ -289,7 +289,6 @@ class SF_Installer():
         if os.path.exists(self.venv_path):
             self.do('Remove old virtual environment', f'rm -r {self.venv_path}')
         self.do('Create virtual environment', f'python3 -m venv {self.venv_path} {" ".join(self.venv_options)}')
-        self.do('Change virtual environment owner', f'chown -R {self.user}:{self.user} {self.venv_path}')
 
     def install_pip_dep(self):
         if not self.args.no_dep:
@@ -345,6 +344,9 @@ class SF_Installer():
 
         self.need_reboot = True
 
+    def change_work_dir_owner(self):
+        self.do('Change work directory owner', f'chown -R {self.user}:{self.user} {self.work_dir}')
+
     def reboot_prompt(self):
         print("\033[1;32mWhether to restart for the changes to take effect(Y/N): \033[0m", end='')
         while True:
@@ -382,6 +384,7 @@ class SF_Installer():
             self.setup_config_txt()
             self.copy_dtoverlay()
             self.custom_install()
+            self.change_work_dir_owner()
             print("Finished")
         except KeyboardInterrupt:
             print("\n\nCanceled.")

@@ -74,6 +74,11 @@ def main():
         if args.rgb_brightness == None:
             print(f"RGB brightness: {current_config['auto']['rgb_brightness']}")
         else:
+            try:
+                args.rgb_brightness = int(args.rgb_brightness)
+            except ValueError:
+                print(f"Invalid value for RGB brightness, it should be an integer between 0 and 100")
+                quit()
             if args.rgb_brightness < 0 or args.rgb_brightness > 100:
                 print(f"Invalid value for RGB brightness, it should be between 0 and 100")
                 quit()
@@ -90,6 +95,11 @@ def main():
         if args.rgb_speed == None:
             print(f"RGB speed: {current_config['auto']['rgb_speed']}")
         else:
+            try:
+                args.rgb_speed = int(args.rgb_speed)
+            except ValueError:
+                print(f"Invalid value for RGB speed, it should be an integer between 0 and 100")
+                quit()
             if args.rgb_speed < 0 or args.rgb_speed > 100:
                 print(f"Invalid value for RGB speed, it should be between 0 and 100")
                 quit()
@@ -109,6 +119,11 @@ def main():
         if args.rgb_led_count == None:
             print(f"RGB LED count: {current_config['auto']['rgb_led_count']}")
         else:
+            try:
+                args.rgb_led_count = int(args.rgb_led_count)
+            except ValueError:
+                print(f"Invalid value for RGB LED count, it should be an integer greater than 0")
+                quit()
             if args.rgb_led_count < 1:
                 print(f"Invalid value for RGB LED count, it should be greater than 0")
                 quit()
@@ -125,6 +140,11 @@ def main():
         if args.gpio_fan_mode == None:
             print(f"GPIO fan mode: {current_config['auto']['gpio_fan_mode']}")
         else:
+            try:
+                args.gpio_fan_mode = int(args.gpio_fan_mode)
+            except ValueError:
+                print(f"Invalid value for GPIO fan mode, it should be an integer between 0 and {len(GPIO_FAN_MODES) - 1}, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
+                quit()
             if args.gpio_fan_mode < 0 or args.gpio_fan_mode >= len(GPIO_FAN_MODES):
                 print(f"Invalid value for GPIO fan mode, it should be between 0 and {len(GPIO_FAN_MODES) - 1}, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
                 quit()
@@ -133,6 +153,11 @@ def main():
         if args.gpio_fan_pin == None:
             print(f"GPIO fan pin: {current_config['auto']['gpio_fan_pin']}")
         else:
+            try:
+                args.gpio_fan_pin = int(args.gpio_fan_pin)
+            except ValueError:
+                print(f"Invalid value for GPIO fan pin, it should be an integer")
+                quit()
             new_auto['gpio_fan_pin'] = args.gpio_fan_pin
 
     new_config = {
