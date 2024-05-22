@@ -8,19 +8,14 @@ def main():
     from .pironman5 import Pironman5
     from pm_auto.ws2812 import RGB_STYLES
     from pm_auto.fan_control import GPIO_FAN_MODES
+    from pkg_resources import resource_filename
+    import json
     import sys
 
-    AUTO_CONFIG_KEYS = [
-        'rgb_color',
-        'rgb_brightness',
-        'rgb_style',
-        'rgb_speed',
-        'rgb_enable',
-        'rgb_led_count',
-        'temperature_unit',
-        'gpio_fan_mode',
-        'gpio_fan_pin',
-    ]
+    CONFIG_PATH = resource_filename('pironman5', 'config.json')
+
+    current_config = None
+    new_auto = {}
 
     parser = argparse.ArgumentParser(description='Pironman5')
     parser.add_argument("command",
@@ -28,53 +23,123 @@ def main():
                         nargs="?",
                         help="Command")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
-    parser.add_argument("-rc", "--rgb-color", help="RGB color in hex format (e.g. #FF0000)")
-    parser.add_argument("-rb", "--rgb-brightness", type=int, help="RGB brightness 0-100")
-    parser.add_argument("-rs", "--rgb-style", choices=RGB_STYLES, help="RGB style")
-    parser.add_argument("-rp", "--rgb-speed", type=int, help="RGB speed 0-100")
-    parser.add_argument("-re", "--rgb-enable", type=str, help="RGB enable True/False")
-    parser.add_argument("-rl", "--rgb-led-count", type=int, help="RGB LED count int")
-    parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], help="Temperature unit")
-    parser.add_argument("-gm", "--gpio-fan-mode", type=int, help=f"GPIO fan mode, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
-    parser.add_argument("-gp", "--gpio-fan-pin", type=int, help="GPIO fan pin")
+    parser.add_argument("-rc", "--rgb-color", nargs='?', default='', help="RGB color in hex format with or without # (e.g. #FF0000 or 00aabb)")
+    parser.add_argument("-rb", "--rgb-brightness", nargs='?', default='', help="RGB brightness 0-100")
+    parser.add_argument("-rs", "--rgb-style", choices=RGB_STYLES, nargs='?', default='', help="RGB style")
+    parser.add_argument("-rp", "--rgb-speed", nargs='?', default='', help="RGB speed 0-100")
+    parser.add_argument("-re", "--rgb-enable", nargs='?', default='', help="RGB enable True/False")
+    parser.add_argument("-rl", "--rgb-led-count", nargs='?', default='', help="RGB LED count int")
+    parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], nargs='?', default='', help="Temperature unit")
+    parser.add_argument("-gm", "--gpio-fan-mode", nargs='?', default='', help=f"GPIO fan mode, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
+    parser.add_argument("-gp", "--gpio-fan-pin", nargs='?', default='', help="GPIO fan pin")
 
     args = parser.parse_args()
-    args = vars(args)
 
     if not (len(sys.argv) > 1):
         parser.print_help()
         quit()
+    
+    with open(CONFIG_PATH, 'r') as f:
+        current_config = json.load(f)
 
-    if args['rgb_enable'] in TRUE_LIST:
-        args['rgb_enable'] = True
-    elif args['rgb_enable'] in FALSE_LIST:
-        args['rgb_enable'] = False
-
-    auto_config = {}
-    for key in AUTO_CONFIG_KEYS:
-        if args[key] is not None:
-            auto_config[key] = args[key]
-    config = {
-        'auto': auto_config,
-    }
-
-    if args['config']:
-        from pkg_resources import resource_filename
-        import json
-        CONFIG_PATH = resource_filename('pironman5', 'config.json')
-        with open(CONFIG_PATH, 'r') as f:
-            config = json.load(f)
-        print(json.dumps(config, indent=4))
+    if args.config:
+        print(json.dumps(current_config, indent=4))
         quit()
 
-    if args['command'] == "stop":
+    if args.command == "stop":
         import os
         os.system('kill -9 $(pgrep -f "pironman5 start")')
         os.system('kill -9 $(pgrep -f "pironman5-service start")')
         pironman5 = Pironman5()
         pironman5.stop()
+        quit()
 
-    Pironman5.update_config_file(config)
-    if args['command'] == "start":
+    if args.rgb_color != '':
+        if args.rgb_color == None:
+            hex = current_config['auto']['rgb_color']
+            if hex[0] == '#':
+                hex = hex[1:]
+            r = int(hex[0:2], 16)
+            g = int(hex[2:4], 16)
+            b = int(hex[4:6], 16)
+            print(f"RGB color: #{hex} ({r}, {g}, {b})")
+        else:
+            if len(args.rgb_color) != 7 or (len(args.rgb_color) == 7 and args.rgb_color[0] != '#'):
+                print(f"Invalid value for RGB color, it should be in hex format with or without # (e.g. #FF0000 or 00aabb)")
+                quit()
+            if args.rgb_color[0] == '#':
+                new_auto['rgb_color'] = args.rgb_color[1:]
+            new_auto['rgb_color'] = args.rgb_color
+    if args.rgb_brightness != '':
+        if args.rgb_brightness == None:
+            print(f"RGB brightness: {current_config['auto']['rgb_brightness']}")
+        else:
+            if args.rgb_brightness < 0 or args.rgb_brightness > 100:
+                print(f"Invalid value for RGB brightness, it should be between 0 and 100")
+                quit()
+            new_auto['rgb_brightness'] = args.rgb_brightness
+    if args.rgb_style != '':
+        if args.rgb_style == None:
+            print(f"RGB style: {current_config['auto']['rgb_style']}")
+        else:
+            if args.rgb_style not in RGB_STYLES:
+                print(f"Invalid value for RGB style, it should be one of {RGB_STYLES}")
+                quit()
+            new_auto['rgb_style'] = args.rgb_style
+    if args.rgb_speed != '':
+        if args.rgb_speed == None:
+            print(f"RGB speed: {current_config['auto']['rgb_speed']}")
+        else:
+            if args.rgb_speed < 0 or args.rgb_speed > 100:
+                print(f"Invalid value for RGB speed, it should be between 0 and 100")
+                quit()
+            new_auto['rgb_speed'] = args.rgb_speed
+    if args.rgb_enable != '':
+        if args.rgb_enable == None:
+            print(f"RGB enable: {current_config['auto']['rgb_enable']}")
+        else:
+            if args.rgb_enable in TRUE_LIST:
+                new_auto['rgb_enable'] = True
+            elif args.rgb_enable in FALSE_LIST:
+                new_auto['rgb_enable'] = False
+            else:
+                print(f"Invalid value for RGB enable, it should be True or False")
+                quit()
+    if args.rgb_led_count != '':
+        if args.rgb_led_count == None:
+            print(f"RGB LED count: {current_config['auto']['rgb_led_count']}")
+        else:
+            if args.rgb_led_count < 1:
+                print(f"Invalid value for RGB LED count, it should be greater than 0")
+                quit()
+            new_auto['rgb_led_count'] = args.rgb_led_count
+    if args.temperature_unit != '':
+        if args.temperature_unit == None:
+            print(f"Temperature unit: {current_config['auto']['temperature_unit']}")
+        else:
+            if args.temperature_unit not in ['C', 'F']:
+                print(f"Invalid value for Temperature unit, it should be C or F")
+                quit()
+            new_auto['temperature_unit'] = args.temperature_unit
+    if args.gpio_fan_mode != '':
+        if args.gpio_fan_mode == None:
+            print(f"GPIO fan mode: {current_config['auto']['gpio_fan_mode']}")
+        else:
+            if args.gpio_fan_mode < 0 or args.gpio_fan_mode >= len(GPIO_FAN_MODES):
+                print(f"Invalid value for GPIO fan mode, it should be between 0 and {len(GPIO_FAN_MODES) - 1}, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
+                quit()
+            new_auto['gpio_fan_mode'] = args.gpio_fan_mode
+    if args.gpio_fan_pin != '':
+        if args.gpio_fan_pin == None:
+            print(f"GPIO fan pin: {current_config['auto']['gpio_fan_pin']}")
+        else:
+            new_auto['gpio_fan_pin'] = args.gpio_fan_pin
+
+    new_config = {
+        'auto': new_auto,
+    }
+
+    Pironman5.update_config_file(new_config)
+    if args.command == "start":
         pironman5 = Pironman5()
         pironman5.start()
