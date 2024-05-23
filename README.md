@@ -19,11 +19,14 @@ Elevate your Raspberry Pi 5 with the Pironman 5, our top-tier case designed for 
 
 <a id="update"></a>
 ## Update:
+2024-05-23:
+- Significantly optimize the entire document content.
+
 2024-01-05:
- - Update some incorrect descriptions.
+- Update some incorrect descriptions.
 
 2024-01-03:
- - First release
+- First release
 
 <a id="trouble"></a>
 ## Trouble Shootings:

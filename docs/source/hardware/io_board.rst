@@ -1,17 +1,3 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 IO Expander
 ================
 
@@ -20,81 +6,48 @@ RGB LEDs
 
 .. image:: img/io_board_rgb.png
 
-The board features 4 WS2812 RGB LEDs, offering customizable control. Users can turn them on or off, change their color (default set to blue), adjust display modes, and modify the change rate.
+The board features 4 WS2812 RGB LEDs, offering customizable control. Users can turn them on or off, change the color, adjust the brightness, switch display modes, and set the speed of changes.
 
-* To turn on the RGB LEDs:
+* To modify the on and off state of the RGB LEDs, ``true`` to turn on the RGB LEDs, ``false`` to turn them off.
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    sudo pironman5 -re on
+  pironman5 -re true
 
-* To turn them off:
+* To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    sudo pironman5 -re off
+  pironman5 -rc fe1a1a
 
-* To change their color, input the desired hexadecimal color values:
+* To change the brightness of the RGB LED (range: 0 ~ 100%):
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    sudo pironman5 -rc fe1a1a
+  pironman5 -rb 100
 
-* To switch display modes, choose from 5 options: ``breath / leap / flow / colorful / colorful_leap``:
+* To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
-  .. code-block:: shell
+.. note::
 
-    sudo pironman5 -rs leap
+  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``pironman5 -rc``.
 
-* To adjust the RGB signal frequency (range: 400 ~ 1600, default 1000 kHz):
+.. code-block:: shell
 
-  .. code-block:: shell
-
-    sudo pironman5 -fq 1600
+  pironman5 -rs breathing
 
 * To modify the speed of change (range: 0 ~ 100%):
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    sudo pironman5 -rb 80
+  pironman5 -rp 80
 
-* For custom RGB LED effects, modify and run the script ``/opt/pironman5/ws2812_RGB.py``:
-
-  * Edit the script:
-
-    .. code-block:: shell
-
-      sudo nano /opt/pironman5/ws2812_RGB.py
-
-  * Save and exit with ``Ctrl+X``, ``Y``, then ``Enter``.
-
-  * Execute the script:
-
-    .. code-block:: shell
-
-      sudo python3 /opt/pironman5/ws2812_RGB.py
-
-RGB Select Pins
+RGB Control Pin
 -------------------------
 
-.. warning::
-
-  As of now, only **SPI (IO10)** can drive the RGB LEDs. Other pins are not operational.
-
-* The Raspberry Pi supports three high-speed signal driving modes for RGB LEDs: SPI (IO10), PWM (IO12), and PCM (IO21). Note that using these for RGB LEDs will disable their primary functions.
+The RGB LED is driven by SPI and connected to **GPIO10**, which is also the SPI MOSI pin. The two pins above J9 are used to connect the RGB to GPIO10. If not needed, the jumper can be removed.
 
   .. image:: img/io_board_rgb_pin.png
-
-  * SPI (IO10) is generally used for the SPI interface.
-  * PWM (IO12) is typically for analog audio.
-  * PCM (IO21) is often for digital audio.
-
-* By default, **SPI (IO10)** is selected for RGB LED control. If you opt for a different pin during assembly, adjust the configuration accordingly:
-
-  .. code-block:: shell
-
-    sudo pironman5 -rp 21
-
 
 RGB OUT Pins
 -------------------------
@@ -107,8 +60,7 @@ The default setup includes 4 RGB LEDs. Connect additional LEDs and update the co
 
 .. code-block:: shell
 
-  sudo pironman5 -rn 8
-
+  pironman5 -rl 12
 
 
 OLED Screen Connector
@@ -118,6 +70,19 @@ The OLED screen connector, with an address of 0x3C, is a key feature.
 
 .. image:: img/io_board_oled.png
 
+If your OLED screen does not display any content, you need to first check if the OLED's FPC cable is connected properly.
+
+Then you can check the program log to see what might be the problem through the following command.
+
+.. code-block:: shell
+
+  cat /var/log/pironman5/pm_auto.oled.log
+
+Or check if the OLED's i2c address 0x3C is recognized:
+
+.. code-block:: shell
+
+  i2cdetect -y 1
 
 Infrared Receiver
 ---------------------------
@@ -143,22 +108,51 @@ To utilize the IR receiver, verify its connection and install the necessary modu
 
     sudo apt-get install lirc -y
 
-* Now, test the IR Receiver by running the following command. After running the command, press a button on the remote control, and the code of that button will be printed.
+* Now, test the IR Receiver by running the following command. 
 
   .. code-block:: shell
 
     mode2 -d /dev/lirc0
-  
+
+* After running the command, press a button on the remote control, and the code of that button will be printed.
 
 
-Fans Pins
--------------
+RGB Fan Pins
+---------------
+
+The IO expansion board supports up to two 5V non-PWM fans. Both fans are controlled together. 
+
+**FAN1** and **FAN 2** are two sets of fan pins. You need to connect the fan's red wire to "+", and the black wire to "-".
 
 .. image:: img/io_board_fan.png
 
-* **FAN1 and FAN 2**: Two sets of fan pins.
-* **FAN**:The enable pins for RGB fans. By default, a jumper is inserted on these pins, allowing control of the fans' on and off state using GPIO6. If the fan operation is not desired, the jumper can be removed to free GPIO6.
-* **D3**: A fan signal indicator that lights up when the fan is active.
+The two pins below J9 are the enable pins for RGB fans. By default, a jumper is inserted on these pins, allowing control of the fans' on and off state using GPIO6. If fan operation is not desired, the jumper can be removed to free GPIO6.
+
+.. image:: img/io_board_fan_j9.png
+
+**D2** is a fan signal indicator that lights up when the fan is active.
+
+.. image:: img/io_board_fan_d2.png
+
+You can use command to configure the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate.
+
+For instance, if set to **1: Performance** mode, the RGB fans will activate at 50°C.
+
+.. code-block:: shell
+
+  pironman5 -gm 3
+
+* **4: Quiet**: The RGB fans will activate at 70°C.
+* **3: Balanced**: The RGB fans will activate at 67.5°C.
+* **2: Cool**: The RGB fans will activate at 60°C.
+* **1: Performance**: The RGB fans will activate at 50°C.
+* **0: Always On**: The RGB fans will always on.
+
+If you connect the control pin of the RGB fan to different pins on the Raspberry Pi, you can use the following command to change the pin number.
+
+.. code-block:: shell
+
+  sudo pironman5 -gp 18
 
 Pin Headers
 --------------

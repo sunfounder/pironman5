@@ -1,17 +1,3 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 Pironman 5- SunFounder Sleek, High-Performance Mini PC for Raspberry Pi 5
 ================================================================================
 
@@ -42,19 +28,21 @@ Elevate your Raspberry Pi 5 with the Pironman 5, our top-tier case designed for 
 * 4 WS2812 Addressable RGB LED light up the whole case with cool light effect
 * IR Receiver for multi-media center like Kodi or Volumio
 * Retro metal power button for safe shut down
-* External GPIO extender with pin name label, for easy access.
-* Equipped with a spring-loaded socket for easy card removal.
+* External GPIO extender with pin name label, for easy access
+* Equipped with a spring-loaded socket for easy card removal
 * Aluminum main body with clear Acrylic side panel
+* Features two standard HDMI ports
 
 The Pironman 5 is not just a case; it's an upgrade that transforms your Raspberry Pi 5 into a powerful, efficient, and stylish device. Get yours now and experience the future of Raspberry Pi cases!
 
 .. note::
 
-    Pironman 5 compatible systems are shown below. If you have other systems installed, some of the Pironman 5 components may not be available.
+    You need to install an OS that supports Raspberry Pi 5. Please use the latest Raspberry Pi Imager tool for system installation. The currently tested systems are:
 
-    * Raspberry Pi OS (bookworm 64 desktop / lite)
-    * Ubuntu Desktop 23.1 
-    * Ubuntu Server 23.1
+    * **Raspberry Pi OS (bookworm 64 desktop / lite)**: Perfectly compatible
+    * **Ubuntu Desktop 23.10**: No SPI, causing LED to not light up
+    * **Kali**: No I2C, causing OLED screen to not light up
+    * **Home Assistant**: Cannot enable I2C and SPI
 
 If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
 
@@ -67,14 +55,15 @@ If you have any questions, please send an email to service@sunfounder.com and we
     :maxdepth: 2
 
     About this Kit <self>
-    compitable_nvme_ssd
     what_do_we_need    
     assembly_instructions
-    pi_start/installing_the_os
+    pi_start/install_the_os
+
     pi_start/set_up_your_raspberry_pi
-    setup_pironman
+    set_up_pironman5
+    dashboard
     hardware/about_hardware
-    appendix/appendix
+    compitable_nvme_ssd
     faq
 
 **Copyright Notice**

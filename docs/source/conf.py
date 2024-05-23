@@ -88,10 +88,6 @@ gettext_compact = False # Support for generating the contents of the folders ins
 
 rst_epilog = """
 
-.. |link_sf_facebook| raw:: html
-
-    <a href="https://bit.ly/3ypPlZv" target="_blank">here</a>
-
 .. |link_german_tutorials| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/pironman5-v2/de/latest/" target="_blank">Deutsch Online-Kurs</a>
@@ -133,6 +129,10 @@ rst_epilog = """
 .. |link_raspberry_pi_imager| raw:: html
 
     <a href="https://www.raspberrypi.org/software/" target="_blank">Raspberry Pi Imager</a>
+
+.. |link_putty| raw:: html
+
+    <a href="https://www.putty.org/" target="_blank">PuTTY</a>
 
 
 """

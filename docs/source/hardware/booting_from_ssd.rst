@@ -1,0 +1,201 @@
+.. _boot_from_ssd:
+
+Booting from NVMe SSD
+=============================
+
+1. Enabling PCIe
+--------------------
+
+By default the PCIe connector is not enabled. 
+
+* To enable it you should open the ``/boot/firmware/config.txt`` file.
+
+  .. code-block:: shell
+  
+    sudo nano /boot/firmware/config.txt
+  
+* Then add the following line to the file. 
+
+  .. code-block:: shell
+  
+    # Enable the PCIe External connector.
+    dtparam=pciex1
+  
+* A more memorable alias for ``pciex1`` exists, so you can alternatively add ``dtparam=nvme`` to the ``/boot/firmware/config.txt`` file.
+
+  .. code-block:: shell
+  
+    dtparam=nvme
+
+
+* The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec) if you add the following lines to your ``/boot/firmware/config.txt``.
+
+  .. code-block:: shell
+  
+    # Force Gen 3.0 speeds
+    dtparam=pciex1_gen=3
+  
+  .. warning::
+  
+    The Raspberry Pi 5 is not certified for Gen 3.0 speeds, and connections to PCIe devices at these speeds may be unstable.
+
+* Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes.
+
+3. Configure boot from the SSD
+---------------------------------------
+
+* To enable boot support, you need to change the ``BOOT_ORDER`` in the bootloader configuration. Edit the EEPROM configuration by:
+
+  .. code-block::
+  
+    sudo rpi-eeprom-config --edit
+  
+* Then, change the ``BOOT_ORDER`` line to be as below. ``0xf416``: Try NVMe SSD first, followed USB and then SD Card.
+
+  .. code-block:: shell
+  
+    BOOT_ORDER=0xf146
+
+The ``BOOT_ORDER`` setting allows flexible configuration for the priority of different boot modes. It is represented as a 32-bit unsigned integer where each nibble represents a boot-mode. The boot modes are attempted in lowest significant nibble to highest significant nibble order.
+
+The ``BOOT_ORDER`` property defines the sequence for the different boot modes. It is read right to left, and up to eight digits may be defined.
+
+.. image:: img/boot_order.png
+    :align: center
+
+* ``0xf41``: Try SD first, followed by USB-MSD then repeat (default if ``BOOT_ORDER`` is empty)
+* ``0xf14``: Try USB first, followed by SD then repeat
+
+
+4. Install the OS on the SSD
+----------------------------------------
+
+There are two ways to install an operating system on the SSD:
+
+**Copying the System from the Micro SD Card to the SSD**
+
+#. Connect a display or access the Raspberry Pi desktop through VNC Viewer. Then click **Raspberry Pi logo** -> **Accessories** -> **SD Card Copier**.
+
+    .. image:: img/ssd_copy.png
+        :align: center
+    
+#. Make sure to select the correct **Copy From** and **Copy To** devices. Be careful not to mix them up.
+
+    .. image:: img/ssd_copy_from.png
+        :align: center
+    
+#. After selection, click **Start**.
+
+    .. image:: img/ssd_copy_start.png
+        :align: center
+    
+#. You will be prompted that the content on the SSD will be erased. Make sure to back up your data before clicking Yes.
+
+    .. image:: img/ssd_copy_erase.png
+        :align: center
+    
+#. Wait for some time, and the copying will be completed.
+
+
+**Installing the System with Raspberry Pi Imager**
+
+If your Micro SD card has a desktop version of the system installed, you can use an imaging tool (like Raspberry Pi Imager) to burn the system to the SSD. This example uses Raspberry Pi OS bookworm, but other systems might require installing the imaging tool first.
+
+#. Connect a display or access the Raspberry Pi desktop through VNC Viewer. Then click **Raspberry Pi logo** -> **Accessories** -> **Imager**.
+
+    .. image:: img/ssd_imager.png
+        :align: center
+    
+#. Within the Imager, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+
+    .. image:: img/ssd_pi5.png
+        :align: center
+    
+#. Select **Operating System** and opt for the recommended operating system version.
+
+    .. image:: img/ssd_os.png
+        :align: center
+    
+#. In the **Storage** option, select your inserted NVMe SSD.
+
+    .. image:: img/nvme_storage.png
+        :align: center
+    
+#. Click **NEXT** and then **EDIT SETTINGS** to tailor your OS settings. 
+
+    .. note::
+
+        If you have a monitor for your Raspberry Pi, you can skip the next steps and click 'Yes' to begin the installation. Adjust other settings later on the monitor.
+
+    .. image:: img/os_enter_setting.png
+        :align: center
+
+#. Define a **hostname** for your Raspberry Pi.
+
+    .. note::
+
+        The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
+
+    .. image:: img/os_set_hostname.png
+        :align: center
+
+#. Create a **Username** and **Password** for the Raspberry Pi's administrator account.
+
+    .. note::
+
+        Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
+
+    .. image:: img/os_set_username.png
+        :align: center
+
+#. Configure the wireless LAN by providing your network's **SSID** and **Password**.
+
+    .. note::
+
+        Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
+
+    .. image:: img/os_set_wifi.png
+        :align: center
+
+
+#. To remotely connect to your Raspberry Pi, **enable SSH** in the **Services** tab.
+
+    * For **password authentication**, use the username and password from the **General** tab.
+    * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
+
+    .. image:: img/os_enable_ssh.png
+        :align: center
+
+#. The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
+
+    .. image:: img/os_options.png
+        :align: center
+
+    
+#. When you've finished entering OS customisation settings, click **Save** to save your customisation. Then, click **Yes** to apply them when writing the image.
+
+    .. image:: img/os_click_yes.png
+        :align: center
+
+#. If the NVMe SSD contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+
+    .. image:: img/nvme_erase.png
+        :align: center
+
+#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the NVMe SSD!
+
+    .. image:: img/nvme_install_finish.png
+        :align: center
+
+
+
+**5. Restart Pironman 5**
+--------------------------------
+
+After restarting the Pironman 5, it will boot from the SSD.
+
+  .. code-block:: shell
+
+    sudo reboot
+
+

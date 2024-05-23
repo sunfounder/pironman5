@@ -1,24 +1,10 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 Fans
 ============
 
 PWM Fan
 -----------
 
-The PWM fan on the Pironman 5 is controlled by the Raspberry Pi system, and its operation influences the two additional RGB fans. These RGB fans activate and deactivate in sync with the PWM fan.
+The PWM fan on the Pironman 5 is controlled by the Raspberry Pi system.
 
 Regarding cooling solutions for the Raspberry Pi 5, especially under heavy load, the design of the Pironman 5 incorporates a smart cooling system. It features a primary PWM fan and two supplementary RGB fans. The cooling strategy is closely integrated with the Raspberry Pi 5's thermal management system.
 
@@ -61,3 +47,4 @@ RGB Fans
 * **Rated Speed**: 3500±10%RPM
 * **Operating Temperature**: -10℃~+70℃
 * **Storage Temperature**: -30℃~+85℃
+
