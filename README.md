@@ -21,6 +21,7 @@ Elevate your Raspberry Pi 5 with the Pironman 5, our top-tier case designed for 
 ## Update:
 2024-05-23:
 - Significantly optimize the entire document content.
+- Add note of join SunFounder Facebook group.
 
 2024-01-05:
 - Update some incorrect descriptions.
