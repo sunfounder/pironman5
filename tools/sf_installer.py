@@ -92,6 +92,8 @@ class SF_Installer():
     ]
 
     PIP_DEPENDENCIES = [
+        'pip',
+        'setuptools',
         'build',
     ]
 
@@ -297,7 +299,7 @@ class SF_Installer():
                 deps += self.custom_pip_dependencies
 
             for dep in deps:
-                self.do(f'Install {dep}', f'{self.venv_pip} install {dep}')
+                self.do(f'Install {dep}', f'{self.venv_pip} install --upgrade {dep}')
 
     def install_py_src_pkgs(self):
         for package, url in self.python_source.items():
