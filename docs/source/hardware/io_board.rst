@@ -84,19 +84,29 @@ The OLED screen connector, with an address of 0x3C, is a key feature.
 
 .. image:: img/io_board_oled.png
 
-If your OLED screen does not display any content, you need to first check if the OLED's FPC cable is connected properly.
+If the OLED Screen is not displaying or displaying incorrectly, you can follow these steps to troubleshoot the issue:
 
-Then you can check the program log to see what might be the problem through the following command.
+Check if the FPC cable of the OLED Screen is properly connected.
 
-.. code-block:: shell
+#. Use the following command to view the program's run logs and check for error messages.
 
-  cat /var/log/pironman5/pm_auto.oled.log
+    .. code-block:: shell
 
-Or check if the OLED's i2c address 0x3C is recognized:
+        cat /opt/pironman5/log
 
-.. code-block:: shell
+#. Alternatively, use the following command to check if the OLED's i2c address 0x3C is recognized:
+    
+    .. code-block:: shell
+        
+        sudo i2cdetect -y 1
 
-  i2cdetect -y 1
+#. If the first two steps don't reveal any issues, try restarting the pironman5 service to see if that resolves the problem.
+
+
+    .. code-block:: shell
+
+        sudo systemctl restart pironman5.service
+
 
 Infrared Receiver
 ---------------------------

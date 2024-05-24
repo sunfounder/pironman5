@@ -203,7 +203,7 @@ Then you can check the program log to see what might be the problem through the 
 
 .. code-block:: shell
 
-  cat /var/log/pironman5/pm_auto.oled.log
+  cat /var/log/pironman5/
 
 Or check if the OLED's i2c address 0x3C is recognized:
 

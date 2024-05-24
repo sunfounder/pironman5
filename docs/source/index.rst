@@ -76,7 +76,7 @@ If you have any questions, please send an email to service@sunfounder.com and we
     pi_start/set_up_your_raspberry_pi
     set_up_pironman5
     dashboard
-    hardware/about_hardware
+    advanced/advanced
     compitable_nvme_ssd
     faq
 

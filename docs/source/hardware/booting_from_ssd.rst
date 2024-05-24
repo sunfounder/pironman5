@@ -58,20 +58,26 @@ By default the PCIe connector is not enabled.
 3. Configure boot from the SSD
 ---------------------------------------
 
+
+* To update the firmware on your Raspberry Pi to the latest version, use ``rpi-update``.
+
+.. code-block:: shell
+
+    sudo rpi-update
+
 * To enable boot support, you need to change the ``BOOT_ORDER`` in the bootloader configuration. Edit the EEPROM configuration by:
 
-  .. code-block::
+.. code-block::
   
     sudo rpi-eeprom-config --edit
   
 * Then, change the ``BOOT_ORDER`` line to be as below. ``0xf416``: Try NVMe SSD first, followed USB and then SD Card.
 
-  .. code-block:: shell
+.. code-block:: shell
   
     BOOT_ORDER=0xf146
 
 The ``BOOT_ORDER`` setting allows flexible configuration for the priority of different boot modes. It is represented as a 32-bit unsigned integer where each nibble represents a boot-mode. The boot modes are attempted in lowest significant nibble to highest significant nibble order.
-
 The ``BOOT_ORDER`` property defines the sequence for the different boot modes. It is read right to left, and up to eight digits may be defined.
 
 .. image:: img/boot_order.png
@@ -80,6 +86,11 @@ The ``BOOT_ORDER`` property defines the sequence for the different boot modes. I
 * ``0xf41``: Try SD first, followed by USB-MSD then repeat (default if ``BOOT_ORDER`` is empty)
 * ``0xf14``: Try USB first, followed by SD then repeat
 
+* Once the update is complete, reboot your Raspberry Pi for these changes to take effect.
+
+.. code-block:: shell
+
+    sudo reboot
 
 4. Install the OS on the SSD
 ----------------------------------------

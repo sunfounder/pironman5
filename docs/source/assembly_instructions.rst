@@ -25,8 +25,7 @@ Before assembling the Pironman, please first verify that all parts and component
 * Before installation, sort and stack the components to find them more quickly.
 * Repeatedly check the connections of FFC and FPC cables to avoid poor contact.
 
-* :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5>`
-
+* :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5.pdf>`
 
 .. **Assemble Tutorial Video**
 

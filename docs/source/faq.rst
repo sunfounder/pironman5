@@ -39,7 +39,7 @@ Check if the FPC cable of the OLED Screen is properly connected.
 
     .. code-block:: shell
 
-        sudo pironman5 restart
+        sudo systemctl restart pironman5.service
 
 .. _openssh_powershell:
 
