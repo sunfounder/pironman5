@@ -33,7 +33,7 @@
 
 * M.2 NVMe SSD
 
-    The |link_pironman5| features an NVMe PIP with an M.2 SSD connector, accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. It supports both PCIE2.0 and PCIE 3.0 NVMe M.2 SSDs.
+    The |link_pironman5| features an NVMe PIP with an M.2 SSD connector, accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec).
 
 * Screen
 
