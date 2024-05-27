@@ -93,13 +93,13 @@ First, you need to update the Raspberry Pi 5 bootloader to boot from NVMe before
     .. image:: img/nvme_boot_finish.png
         :align: center
 
-#. Now, you can insert your Micro SD card or NVMe SSD into the Pironman 5. After powering the Pironman 5 with a Type C adapter, the bootloader from the Micro SD card or NVMe SSD will be written to the Raspberry Pi's EEPROM.
+#. Now, you can insert your Micro SD card or NVMe SSD into the |link_pironman5|. After powering the |link_pironman5| with a Type C adapter, the bootloader from the Micro SD card or NVMe SSD will be written to the Raspberry Pi's EEPROM.
 
 .. note::
 
     Afterward, the Raspberry Pi will boot from NVMe before trying USB and then the SD Card. 
     
-    Power off the Pironman 5 and remove the Micro SD card or NVMe SSD.
+    Power off the |link_pironman5| and remove the Micro SD card or NVMe SSD.
 
 
 3. Install OS to NVMe SSD
@@ -193,7 +193,7 @@ Now you can install the operating system on your NVMe SSD.
         :align: center
 
 
-#. Now, insert the NVMe SSD into the NVMe PiP board of the Pironman 5.
+#. Now, insert the NVMe SSD into the NVMe PiP board of the |link_pironman5|.
 
     .. image:: img/nvme_assemble.png
         :width: 500

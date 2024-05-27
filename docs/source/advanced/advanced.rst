@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _about_hardware:
+.. _advanced:
 
 7. Advanced
 =========================

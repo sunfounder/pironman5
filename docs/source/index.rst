@@ -12,10 +12,10 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-Pironman 5 - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5
+|link_pironman5| - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5
 ================================================================================
 
-Thanks for choosing our |link-pironman5|.
+Thanks for choosing our |link_pironman5|.
 
 .. .. note::
 ..     This document is available in the following languages.
@@ -31,7 +31,7 @@ Thanks for choosing our |link-pironman5|.
     :align: center
 
 
-Elevate your Raspberry Pi 5 with the |link-pironman5|, our top-tier case designed for unmatched style and functionality. It's the perfect blend of aesthetics and performance:
+Elevate your Raspberry Pi 5 with the |link_pironman5|, our top-tier case designed for unmatched style and functionality. It's the perfect blend of aesthetics and performance:
 
 * Raspberry Pi 5 mini PC
 * 0.96" OLED Display showing Raspberry Pi's CPU usage, temperature, disk usage, IP address, RAM usage etc.
@@ -47,7 +47,7 @@ Elevate your Raspberry Pi 5 with the |link-pironman5|, our top-tier case designe
 * Aluminum main body with clear Acrylic side panel
 * Features two standard HDMI ports
 
-The |link-pironman5| is not just a case; it's an upgrade that transforms your Raspberry Pi 5 into a powerful, efficient, and stylish device. Get yours now and experience the future of Raspberry Pi cases!
+The |link_pironman5| is not just a case; it's an upgrade that transforms your Raspberry Pi 5 into a powerful, efficient, and stylish device. Get yours now and experience the future of Raspberry Pi cases!
 
 .. note::
 

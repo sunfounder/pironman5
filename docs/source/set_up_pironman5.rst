@@ -81,7 +81,7 @@ Proceed to download code from GitHub and install the ``pironman5`` module .
 
 After successful installation, a system reboot is required to activate the installation. Follow the on-screen reboot prompt.
 
-Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
+Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for |link_pironman5|:
 
   * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
@@ -99,7 +99,7 @@ You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check
 
 .. note::
 
-  * Next, you can view and control the components of Pironman 5 from dashboard, please refer to :ref:`view_control_dashboard`.
+  * Next, you can view and control the components of |link_pironman5| from dashboard, please refer to :ref:`view_control_dashboard`.
   * If you wish to use commands, please see :ref:`view_control_commands`.
 
 

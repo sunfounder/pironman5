@@ -217,7 +217,7 @@ If your Micro SD card has a desktop version of the system installed, you can use
 **5. Restart Pironman 5**
 --------------------------------
 
-After restarting the Pironman 5, it will boot from the SSD.
+After restarting the |link_pironman5|, it will boot from the SSD.
 
   .. code-block:: shell
 

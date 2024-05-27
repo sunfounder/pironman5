@@ -47,7 +47,7 @@ If you are using an NVMe SSD and have an adapter to connect the NVMe SSD to your
 
 **3. Copy the OS from the Micro SD card to the NVMe SSD**
 
-If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
+If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the |link_pironman5| boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
 
 You will need to follow these steps:
 

@@ -34,7 +34,7 @@ Having a screen simplifies the process of working with your Raspberry Pi.
 
 **Required Components**
 
-* Pironman 5
+* |link_pironman5|
 * Power Adapter
 * Micro SD card
 * Screen Power Adapter
@@ -45,13 +45,13 @@ Having a screen simplifies the process of working with your Raspberry Pi.
 
 Steps:
 
-#. Insert the Micro SD card with Raspberry Pi OS installed into the Pironman 5.
+#. Insert the Micro SD card with Raspberry Pi OS installed into the |link_pironman5|.
 
-#. Connect the Mouse and Keyboard to the Pironman 5.
+#. Connect the Mouse and Keyboard to the |link_pironman5|.
 
-#. Use the HDMI cable to connect the screen to the Pironman 5's HDMI port. Ensure the screen is plugged into a power source and turned on.
+#. Use the HDMI cable to connect the screen to the |link_pironman5|'s HDMI port. Ensure the screen is plugged into a power source and turned on.
 
-#. Power the Pironman 5 using the power adapter. The Raspberry Pi OS desktop should appear on the screen after a few seconds.
+#. Power the |link_pironman5| using the power adapter. The Raspberry Pi OS desktop should appear on the screen after a few seconds.
 
     .. image:: img/bookwarm.png
         :align: center
@@ -71,15 +71,15 @@ For those preferring a graphical user interface (GUI), the remote desktop featur
 
 **Required Components**
 
-* Pironman 5 
+* |link_pironman5| 
 * Power Adapter
 * Micro SD card
 
 Steps:
 
-#. Insert the Micro SD card with Raspberry Pi OS installed into the Pironman 5.
+#. Insert the Micro SD card with Raspberry Pi OS installed into the |link_pironman5|.
 
-#. Power the Pironman 5 using the power adapter. 
+#. Power the |link_pironman5| using the power adapter. 
 
 #. For detailed setup tutorials based on your operating system, refer to the following sections:
 
