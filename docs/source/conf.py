@@ -122,13 +122,10 @@ rst_epilog = """
     <a href="https://www.raspberrypi.com/software/" target="_blank">Raspberry Pi Imager</a>
 
 
-.. |link_pironman5_v1| raw:: html
+.. |link_pironman5| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/pironman5/en/latest/" target="_blank">Pironman 5V1.0</a>
+    <a href="https://www.sunfounder.com/products/pironman-5-nvme-m-2-ssd-pcie-mini-pc-case-for-raspberry-pi-5" target="_blank">Pironman 5</a>
 
-.. |link_pironman5_v2| raw:: html
-
-    <a href="https://docs.sunfounder.com/projects/pironman5-v2/en/latest/" target="_blank">Pironman 5V2.0</a>
 
 .. |link_raspberry_pi_imager| raw:: html
 
