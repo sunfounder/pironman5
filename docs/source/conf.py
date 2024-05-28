@@ -94,15 +94,15 @@ rst_epilog = """
     
 .. |link_german_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/pironman5-v2/de/latest/" target="_blank">Deutsch Online-Kurs</a>
+    <a href="https://docs.sunfounder.com/projects/pironman5/de/latest/" target="_blank">Deutsch Online-Kurs</a>
 
 .. |link_jp_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/pironman5-v2/ja/latest/" target="_blank">日本語オンライン教材</a>
+    <a href="https://docs.sunfounder.com/projects/pironman5/ja/latest/" target="_blank">日本語オンライン教材</a>
 
 .. |link_en_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/pironman5-v2/en/latest/" target="_blank">English Online-tutorials</a>
+    <a href="https://docs.sunfounder.com/projects/pironman5/en/latest/" target="_blank">English Online-tutorials</a>
 
 
 .. |link_kodi| raw:: html
