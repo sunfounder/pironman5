@@ -25,32 +25,7 @@ installer = SF_Installer(
         'influxdb',
         "libjpeg-dev", # for Pillow
         'libfreetype6-dev', # for Pillow
-        # Below are for ubuntu 23 which have no spi in dev, don't know why, but 
-        # according to https://forums.raspberrypi.com/viewtopic.php?t=363505#p2199981
-        # this actually work, so add it here first, will find the exact package enables
-        # spi later.
-        # 'i2c-tools',
-        # 'libblas3',
-        # 'libgfortran5',
-        # 'libi2c0',
-        # 'liblapack3',
-        # 'liblgpio1',
-        # 'python3-cbor2',
-        # 'python3-ftdi',
-        # 'python3-lgpio',
-        # 'python3-luma.core',
-        # 'python3-luma.lcd',
-        # 'python3-luma.oled',
-        # 'python3-numpy',
-        # 'python3-rpi-lgpio',
-        # 'python3-serial',
-        # 'python3-smbus',
-        # 'python3-smbus2',
-        # 'python3-usb',
-        # 'read-edid',
-        # 'swig',
-        # 'swig4.0',
-        # Stops here
+        'python3-gpiozero', # for pm_auto fan control
     ],
 
     # - Install from pip
