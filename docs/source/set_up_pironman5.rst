@@ -56,6 +56,8 @@ To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from 
     POWER_OFF_ON_HALT=1
     BOOT_ORDER=0xf41
 
+* Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes.
+
 
 Downloading and Installing the ``pironman5`` Module
 -----------------------------------------------------------
@@ -85,7 +87,7 @@ Upon reboot, the ``pironman5.service`` will start automatically. Here are the pr
 
   * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
-  * 
+  * The RGB fans will activate at 60°C.
 
 You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5.service``.
 
@@ -97,9 +99,87 @@ You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check
 * ``start/stop``: Enable or disable the ``pironman5.service``.
 * ``status``: Check the operational status of the ``pironman5`` program using the ``systemctl`` tool.
 
+
+View the Basic Configurations
+-----------------------------------
+
+The ``pironman5`` module offers basic configurations for Pironman, which you can review with the following command.
+
+.. code-block:: shell
+
+  pironman5 -c
+
+The standard configurations appear as follows:
+
+.. code-block:: 
+
+  {
+      "auto": {
+          "rgb_color": "#0a1aff",
+          "rgb_brightness": 50,
+          "rgb_style": "breathing",
+          "rgb_speed": 50,
+          "rgb_enable": true,
+          "rgb_led_count": 4,
+          "temperature_unit": "C",
+          "gpio_fan_mode": 2,
+          "gpio_fan_pin": 6
+      }
+  }
+
+Customize these configurations to fit your needs.
+
+Use ``pironman5`` or ``pironman5 -h`` for instructions.
+
+.. code-block::
+
+  usage: pironman5-service [-h] [-c] [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]]
+                          [-rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]] [-rp [RGB_SPEED]]
+                          [-re [RGB_ENABLE]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]]
+                          [{start,stop}]
+
+  Pironman5
+
+  positional arguments:
+    {start,stop}          Command
+
+  options:
+    -h, --help            show this help message and exit
+    -c, --config          Show config
+    -rc [RGB_COLOR], --rgb-color [RGB_COLOR]
+                          RGB color in hex format with or without # (e.g. #FF0000 or 00aabb)
+    -rb [RGB_BRIGHTNESS], --rgb-brightness [RGB_BRIGHTNESS]
+                          RGB brightness 0-100
+    -rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}], --rgb-style [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]
+                          RGB style
+    -rp [RGB_SPEED], --rgb-speed [RGB_SPEED]
+                          RGB speed 0-100
+    -re [RGB_ENABLE], --rgb-enable [RGB_ENABLE]
+                          RGB enable True/False
+    -rl [RGB_LED_COUNT], --rgb-led-count [RGB_LED_COUNT]
+                          RGB LED count int
+    -u [{C,F}], --temperature-unit [{C,F}]
+                          Temperature unit
+    -gm [GPIO_FAN_MODE], --gpio-fan-mode [GPIO_FAN_MODE]
+                          GPIO fan mode, 0: Always On, 1: Performance, 2: Cool, 3: Balanced, 4: Quiet
+    -gp [GPIO_FAN_PIN], --gpio-fan-pin [GPIO_FAN_PIN]
+                          GPIO fan pin
+
+.. note::
+
+  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+
+  .. code-block:: shell
+
+    sudo systemctl restart pironman5.service
+
+* Alternatively, inspect the program-generated log files.
+
+  .. code-block:: shell
+
+    cat /opt/pironman5/log
+
 .. note::
 
   * Next, you can view and control the components of |link_pironman5| from dashboard, please refer to :ref:`view_control_dashboard`.
   * If you wish to use commands, please see :ref:`view_control_commands`.
-
-
