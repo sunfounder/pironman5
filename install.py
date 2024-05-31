@@ -29,7 +29,8 @@ installer = SF_Installer(
         # according to https://forums.raspberrypi.com/viewtopic.php?t=363505#p2199981
         # this actually work, so add it here first, will find the exact package enables
         # spi later.
-        # 'i2c-tools',
+        'i2c-tools',
+        'python3-gpiozero',
         # 'libblas3',
         # 'libgfortran5',
         # 'libi2c0',
@@ -74,6 +75,12 @@ installer = SF_Installer(
     #     'dtparam=i2c_arm': 'on',
     #     'dtoverlay=gpio-ir,gpio_pin': '13',
     # },
+
+    # add modules
+    # sudo modprobe xxx
+    modules = [
+        "i2c-dev",
+    ],
 
     # - Autostart settings
     # - Set service filenames
