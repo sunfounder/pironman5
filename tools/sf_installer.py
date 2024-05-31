@@ -160,6 +160,10 @@ class SF_Installer():
             self.parser.add_argument('--skip-dtoverlay',
                                      action='store_true',
                                      help='Skip dtoverlay')
+        if self.modules is not None:
+            self.parser.add_argument('--skip-modules',
+                                     action='store_true',
+                                     help='Skip probe modules')
 
         self.config_txt_handler = ConfigTxt()
         self.user = self.get_username()
@@ -326,10 +330,11 @@ class SF_Installer():
             self.need_reboot = True
 
     def modules_probe(self):
-        for module in self.modules:
-            self.do(f'modprobe {module}',
-                f'modprobe {module}'
-            )
+        if 'skip_modules' in self.args and not self.args.skip_modules:
+            for module in self.modules:
+                self.do(f'modprobe {module}',
+                    f'modprobe {module}'
+                )
 
     def copy_dtoverlay(self):
         # Copy device tree overlay
