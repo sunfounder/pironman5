@@ -29,6 +29,7 @@ installer = SF_Installer(
         # according to https://forums.raspberrypi.com/viewtopic.php?t=363505#p2199981
         # this actually work, so add it here first, will find the exact package enables
         # spi later.
+        'kmod',
         'i2c-tools',
         'python3-gpiozero', # for pm_auto fan control
         # 'libblas3',
