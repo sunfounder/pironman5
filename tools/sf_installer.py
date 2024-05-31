@@ -108,6 +108,7 @@ class SF_Installer():
                  work_dir=None,
                  log_dir=None,
                  config_txt=None,
+                 modules=None,
                  service_files=None,
                  bin_files=None,
                  dtoverlay=None
@@ -132,6 +133,7 @@ class SF_Installer():
         self.custom_pip_dependencies = pip_dependencies
         self.python_source = python_source
         self.config_txt = config_txt
+        self.modules = modules
         self.service_files = service_files
         self.bin_files = bin_files
         self.dtoverlay = dtoverlay
@@ -323,6 +325,12 @@ class SF_Installer():
                 self.set_config(name, value)
             self.need_reboot = True
 
+    def modules_probe(self):
+        for module in self.modules:
+            self.do(f'modprobe {module}',
+                f'modprobe {module}'
+            )
+
     def copy_dtoverlay(self):
         # Copy device tree overlay
         if self.dtoverlay is None or 'skip_dtoverlay' in self.args and self.args.skip_dtoverlay:
@@ -384,6 +392,7 @@ class SF_Installer():
             self.install_py_src_pkgs()
             self.setup_auto_start()
             self.setup_config_txt()
+            self.modules_probe()
             self.copy_dtoverlay()
             self.custom_install()
             self.change_work_dir_owner()
