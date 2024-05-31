@@ -30,7 +30,7 @@ installer = SF_Installer(
         # this actually work, so add it here first, will find the exact package enables
         # spi later.
         'i2c-tools',
-        'python3-gpiozero',
+        'python3-gpiozero', # for pm_auto fan control
         # 'libblas3',
         # 'libgfortran5',
         # 'libi2c0',
