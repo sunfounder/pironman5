@@ -61,6 +61,11 @@ Systems that passed the test on the Raspberry Pi 5:
   | Kali Linux (64 bit) | &#x2705; |
   | <a href="">HassOS</a> | &#x2705; |
   | Homebridge | &#x2705; |
+
+### ubuntu 24.04 server eth0 and wifi not work
+
+<https://www.reddit.com/r/Ubuntu/comments/1d0s8v5/ubuntu_2404_server_on_my_raspberry_pi_5_and_eth0/>
+
 </font>
 
 ## About SunFounder
