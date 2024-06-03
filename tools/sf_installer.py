@@ -332,8 +332,8 @@ class SF_Installer():
     def modules_probe(self):
         if 'skip_modules' in self.args and not self.args.skip_modules:
             for module in self.modules:
-                self.do(f'modprobe {module}',
-                    f'modprobe {module}'
+                self.do(f'add module: {module}',
+                    f'sh -c "echo {module} >> /etc/modules-load.d/modules.conf"'
                 )
 
     def copy_dtoverlay(self):
