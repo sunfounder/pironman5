@@ -50,14 +50,15 @@ sudo python3 install.py
 ## Compatible Systems
 
 Systems that passed the test on the Raspberry Pi 5:
-<font size=1>
-<!-- https://apps.timwhitlock.info/emoji/tables/unicode#block-6c-other-additional-symbols -->
-  | system |   is compatible ? |
-  | :---   | :---:   |
-  | Raspberry Pi OS Desktop - bookworm (32/64 bit) | &#x2705; |
-  | Raspberry Pi OS lite - bookworm (32/64 bit) | &#x2705; |
-  | Ubuntu Desktop 23.10 (64 bit) | &#x2705; |
-  | Ubuntu Server 23.10 (64 bit) | &#x2705; |
+
+system | is compatible ?
+:---   | :---  
+Raspberry Pi OS Desktop - bookworm (32/64 bit) | &#x2705;
+Raspberry Pi OS lite - bookworm (32/64 bit) | &#x2705;
+Ubuntu Desktop 24.04 (64 bit) | &#x2705;
+Ubuntu Server 24.04 (64 bit) | &#x2705;
+Kali Linux 2024-05-15 | GPIO Fan Not Working
+
 
 </font>
 
