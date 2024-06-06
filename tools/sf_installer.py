@@ -386,7 +386,7 @@ class SF_Installer():
         #                 f'rm -r {url}/*.egg-info {url}/dist')
 
     def install(self):
-        print(f"{self.friendly_name} Insataller")
+        print(f"{self.friendly_name} Installer")
         try:
             self.check_admin()
             self.args = self.parser.parse_args()
