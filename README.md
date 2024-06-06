@@ -11,6 +11,7 @@ Quick Links:
   - [Usage](#usage)
   - [Update](#update)
   - [Compatible Systems](#compatible-systems)
+    - [Ubuntu 24.04 server eth0 and wifi not work](#ubuntu-2404-server-eth0-and-wifi-not-work)
   - [About SunFounder](#about-sunfounder)
   - [Contact us](#contact-us)
 
@@ -51,21 +52,27 @@ sudo python3 install.py
 
 Systems that passed the test on the Raspberry Pi 5:
 
-system | is compatible ?
+System | is compatible ?
 :---   | :---  
 Raspberry Pi OS Desktop - bookworm (32/64 bit) | &#x2705;
 Raspberry Pi OS lite - bookworm (32/64 bit) | &#x2705;
 Ubuntu Desktop 24.04 (64 bit) | &#x2705;
 Ubuntu Server 24.04 (64 bit) | &#x2705;
 Kali Linux 2024-05-15 | GPIO Fan Not Working
+Home Assistant OS 12.3 | &#x2705;
+Homebridge | &#x2705;
 
+### Ubuntu 24.04 server eth0 and wifi not work
 
-</font>
+https://www.reddit.com/r/Ubuntu/comments/1d0s8v5/ubuntu_2404_server_on_my_raspberry_pi_5_and_eth0/
+
 
 ## About SunFounder
+
 SunFounder is a company focused on STEAM education with products like open source robots, development boards, STEAM kit, modules, tools and other smart devices distributed globally. In SunFounder, we strive to help elementary and middle school students as well as hobbyists, through STEAM education, strengthen their hands-on practices and problem-solving abilities. In this way, we hope to disseminate knowledge and provide skill training in a full-of-joy way, thus fostering your interest in programming and making, and exposing you to a fascinating world of science and engineering. To embrace the future of artificial intelligence, it is urgent and meaningful to learn abundant STEAM knowledge.
 
 ## Contact us
+
 website:
     www.sunfounder.com
 

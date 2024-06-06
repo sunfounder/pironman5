@@ -78,7 +78,7 @@ installer = SF_Installer(
     # },
 
     # add modules
-    # sudo modprobe xxx
+    # sudo nano /etc/modules
     modules = [
         "i2c-dev",
     ],
