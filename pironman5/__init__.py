@@ -11,6 +11,7 @@ def main():
     from pkg_resources import resource_filename
     import json
     import sys
+    from os import path
 
     CONFIG_PATH = resource_filename('pironman5', 'config.json')
 
@@ -39,8 +40,12 @@ def main():
         parser.print_help()
         quit()
     
-    with open(CONFIG_PATH, 'r') as f:
-        current_config = json.load(f)
+    if not path.exists(CONFIG_PATH):
+        with open(CONFIG_PATH, 'w') as f:
+            json.dump({'auto': {}}, f, indent=4)
+    else:
+        with open(CONFIG_PATH, 'r') as f:
+            current_config = json.load(f)
 
     if args.config:
         print(json.dumps(current_config, indent=4))
