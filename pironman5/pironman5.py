@@ -1,5 +1,6 @@
 import json
 import time
+import os
 from pkg_resources import resource_filename
 
 from pm_auto.pm_auto import PMAuto
@@ -51,9 +52,14 @@ class Pironman5:
         self.config = {
             'auto': AUTO_DEFAULT_CONFIG,
         }
-        with open(CONFIG_PATH, 'r') as f:
-            config = json.load(f)
-        merge_dict(self.config, config)
+        if not os.path.exists(CONFIG_PATH):
+            with open(CONFIG_PATH, 'w') as f:
+                json.dump(self.config, f, indent=4)
+        else:
+            with open(CONFIG_PATH, 'r') as f:
+                config = json.load(f)
+            merge_dict(self.config, config)
+
 
         self.pm_auto = PMAuto(self.config['auto'],
                               peripherals=PERIPHERALS,
