@@ -41,7 +41,6 @@ By default the PCIe connector is not enabled.
   
     dtparam=nvme
 
-
 * The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec) if you add the following lines to your ``/boot/firmware/config.txt``.
 
   .. code-block:: shell
@@ -55,44 +54,8 @@ By default the PCIe connector is not enabled.
 
 * Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes.
 
-3. Configure boot from the SSD
----------------------------------------
 
-
-* To update the firmware on your Raspberry Pi to the latest version, use ``rpi-update``.
-
-.. code-block:: shell
-
-    sudo rpi-update
-
-* To enable boot support, you need to change the ``BOOT_ORDER`` in the bootloader configuration. Edit the EEPROM configuration by:
-
-.. code-block::
-  
-    sudo rpi-eeprom-config --edit
-  
-* Then, change the ``BOOT_ORDER`` line to be as below. ``0xf416``: Try NVMe SSD first, followed USB and then SD Card.
-
-.. code-block:: shell
-  
-    BOOT_ORDER=0xf146
-
-The ``BOOT_ORDER`` setting allows flexible configuration for the priority of different boot modes. It is represented as a 32-bit unsigned integer where each nibble represents a boot-mode. The boot modes are attempted in lowest significant nibble to highest significant nibble order.
-The ``BOOT_ORDER`` property defines the sequence for the different boot modes. It is read right to left, and up to eight digits may be defined.
-
-.. image:: img/boot_order.png
-    :align: center
-
-* ``0xf41``: Try SD first, followed by USB-MSD then repeat (default if ``BOOT_ORDER`` is empty)
-* ``0xf14``: Try USB first, followed by SD then repeat
-
-* Once the update is complete, reboot your Raspberry Pi for these changes to take effect.
-
-.. code-block:: shell
-
-    sudo reboot
-
-4. Install the OS on the SSD
+2. Install the OS on the SSD
 ----------------------------------------
 
 There are two ways to install an operating system on the SSD:
@@ -212,15 +175,47 @@ If your Micro SD card has a desktop version of the system installed, you can use
     .. image:: img/nvme_install_finish.png
         :align: center
 
+.. _configure_boot_ssd:
+
+3. Configure boot from the SSD
+---------------------------------------
+
+* To update the firmware on your Raspberry Pi to the latest version, use ``rpi-update``.
+
+.. code-block:: shell
+
+    sudo rpi-update
+
+* To enable boot support, you need to change the ``BOOT_ORDER`` in the bootloader configuration. Edit the EEPROM configuration by:
+
+.. code-block::
+  
+    sudo rpi-eeprom-config --edit
+  
+* Then, change the ``BOOT_ORDER`` line to be as below. ``0xf416``: Try NVMe SSD first, followed SD Card and then USB.
+
+.. code-block:: shell
+  
+    BOOT_ORDER=0xf416
+
+.. note::
+    Just change the order the Raspberry Pi starts up in, but don't remove other ways it can start. This helps make sure it always starts up right.
 
 
-**5. Restart Pironman 5**
---------------------------------
+The ``BOOT_ORDER`` setting allows flexible configuration for the priority of different boot modes. It is represented as a 32-bit unsigned integer where each nibble represents a boot-mode. The boot modes are attempted in lowest significant nibble to highest significant nibble order.
+The ``BOOT_ORDER`` property defines the sequence for the different boot modes. It is read right to left, and up to eight digits may be defined.
 
-After restarting the |link_pironman5|, it will boot from the SSD.
+.. image:: img/boot_order.png
+    :align: center
 
-  .. code-block:: shell
+* ``0xf41``: Try SD first, followed by USB-MSD then repeat (default if ``BOOT_ORDER`` is empty).
+* ``0xf14``: Try USB first, followed by SD then repeat.
+
+* Once the update is complete, reboot your Raspberry Pi for these changes to take effect.
+
+.. code-block:: shell
 
     sudo reboot
+
 
 

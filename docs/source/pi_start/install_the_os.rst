@@ -59,7 +59,7 @@ You will need to follow these steps:
 
 * :ref:`set_up_rpi`
 
-3. Set up booting from the NVMe SSD, then copy the system from the Micro SD card to the NVMe SSD, or use the Imager in the Raspberry Pi system to install the system directly to the NVMe SSD.
+3. Copy the system from the Micro SD card to the NVMe SSD, or use the Imager in the Raspberry Pi system to install the system directly to the NVMe SSD, then set up booting from the NVMe SSD. 
 
 * :ref:`boot_from_ssd`
 

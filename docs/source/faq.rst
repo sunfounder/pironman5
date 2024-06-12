@@ -15,6 +15,38 @@
 FAQ
 ============
 
+How to Control Components Using the ``pironman5`` Command
+----------------------------------------------------------------------
+You can refer to the following tutorial to control the components of the Pironman 5 using the ``pironman5`` command.
+
+* :ref:`view_control_commands`
+
+How to Change the Raspberry Pi Boot Order Using Commands
+-------------------------------------------------------------
+
+If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
+
+* :ref:`configure_boot_ssd`
+
+
+How to Modify the Boot Order with Raspberry Pi Imager?
+---------------------------------------------------------------
+
+In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can also use the **Raspberry Pi Imager** to change the boot order of your Raspberry Pi.
+
+It is recommended to use a spare card for this step.
+
+* :ref:`update_bootloader``
+
+How to Copy the System from the SD Card to an NVMe SSD?
+-------------------------------------------------------------
+
+If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the |link_pironman5| boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
+
+
+* :ref:`boot_from_ssd`
+
+
 OLED Screen Not Working?
 --------------------------
 
