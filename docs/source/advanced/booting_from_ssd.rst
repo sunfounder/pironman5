@@ -54,43 +54,7 @@ Standardmäßig ist der PCIe-Anschluss nicht aktiviert.
 
 * Drücken Sie ``Ctrl + X``, ``Y`` und ``Enter``, um die Änderungen zu speichern.
 
-3. Konfigurieren Sie das Booten von der SSD
--------------------------------------------------
-
-* Um die Firmware Ihres Raspberry Pi auf die neueste Version zu aktualisieren, verwenden Sie ``rpi-update``.
-
-.. code-block:: shell
-
-    sudo rpi-update
-
-* Um die Boot-Unterstützung zu aktivieren, müssen Sie die ``BOOT_ORDER`` in der Bootloader-Konfiguration ändern. Bearbeiten Sie die EEPROM-Konfiguration durch:
-
-.. code-block::
-  
-    sudo rpi-eeprom-config --edit
-  
-* Ändern Sie dann die Zeile ``BOOT_ORDER`` wie unten angegeben. ``0xf416``: Versuchen Sie zuerst NVMe SSD, gefolgt von USB und dann SD-Karte.
-
-.. code-block:: shell
-  
-    BOOT_ORDER=0xf146
-
-* Die Einstellung ``BOOT_ORDER`` ermöglicht eine flexible Konfiguration der Priorität der verschiedenen Boot-Modi. Es wird als 32-Bit-unsigned Integer dargestellt, wobei jede Nibble einen Boot-Modus repräsentiert. Die Boot-Modi werden in der Reihenfolge von niedrigstem zu höchstem signifikanten Nibble versucht.
-* Die Eigenschaft ``BOOT_ORDER`` definiert die Reihenfolge für die verschiedenen Boot-Modi. Sie wird von rechts nach links gelesen, und es können bis zu acht Ziffern definiert werden.
-
-.. image:: img/boot_order.png
-    :align: center
-
-* ``0xf41``: Versuchen Sie zuerst SD, gefolgt von USB-MSD und dann wiederholen (Standard, wenn ``BOOT_ORDER`` leer ist)
-* ``0xf14``: Versuchen Sie zuerst USB, gefolgt von SD und dann wiederholen
-
-* Sobald das Update abgeschlossen ist, starten Sie Ihren Raspberry Pi neu, damit diese Änderungen wirksam werden.
-
-.. code-block:: shell
-
-    sudo reboot
-
-4. Installieren Sie das Betriebssystem auf der SSD
+2. Installieren Sie das Betriebssystem auf der SSD
 -----------------------------------------------------------
 
 Es gibt zwei Möglichkeiten, ein Betriebssystem auf der SSD zu installieren:
@@ -207,11 +171,43 @@ Wenn Ihre Micro-SD-Karte eine Desktop-Version des Systems installiert hat, könn
     .. image:: img/nvme_install_finish.png
         :align: center
 
-**5. Pironman 5 neu starten**
-----------------------------------
+.. _configure_boot_ssd:
 
-Nach dem Neustart des |link_pironman5| wird es von der SSD gebootet.
+3. Konfigurieren Sie das Booten von der SSD
+-------------------------------------------------
 
-  .. code-block:: shell
+* Um die Firmware Ihres Raspberry Pi auf die neueste Version zu aktualisieren, verwenden Sie ``rpi-update``.
+
+.. code-block:: shell
+
+    sudo rpi-update
+
+* Um die Boot-Unterstützung zu aktivieren, müssen Sie die ``BOOT_ORDER`` in der Bootloader-Konfiguration ändern. Bearbeiten Sie die EEPROM-Konfiguration durch:
+
+.. code-block::
+  
+    sudo rpi-eeprom-config --edit
+  
+* Ändern Sie dann die Zeile ``BOOT_ORDER`` wie unten angegeben. ``0xf416``: Versuchen Sie zuerst NVMe SSD, gefolgt von SD-Karte und dann USB.
+
+.. code-block:: shell
+  
+    BOOT_ORDER=0xf416
+
+.. note::
+    Ändern Sie nur die Reihenfolge, in der der Raspberry Pi startet, aber entfernen Sie keine anderen Startmöglichkeiten. Dies hilft sicherzustellen, dass er immer richtig startet.
+
+* Die Einstellung ``BOOT_ORDER`` ermöglicht eine flexible Konfiguration der Priorität der verschiedenen Boot-Modi. Es wird als 32-Bit-unsigned Integer dargestellt, wobei jede Nibble einen Boot-Modus repräsentiert. Die Boot-Modi werden in der Reihenfolge von niedrigstem zu höchstem signifikanten Nibble versucht.
+* Die Eigenschaft ``BOOT_ORDER`` definiert die Reihenfolge für die verschiedenen Boot-Modi. Sie wird von rechts nach links gelesen, und es können bis zu acht Ziffern definiert werden.
+
+.. image:: img/boot_order.png
+    :align: center
+
+* ``0xf41``: Versuchen Sie zuerst SD, gefolgt von USB-MSD und dann wiederholen (Standard, wenn ``BOOT_ORDER`` leer ist)
+* ``0xf14``: Versuchen Sie zuerst USB, gefolgt von SD und dann wiederholen
+
+* Sobald das Update abgeschlossen ist, starten Sie Ihren Raspberry Pi neu, damit diese Änderungen wirksam werden.
+
+.. code-block:: shell
 
     sudo reboot

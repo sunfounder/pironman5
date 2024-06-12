@@ -40,6 +40,8 @@ Installation des Betriebssystems auf einer NVMe-SSD
     .. image:: img/os_open_imager.png
         :align: center
 
+.. _update_bootloader:
+
 2. Bootloader aktualisieren
 ------------------------------
 

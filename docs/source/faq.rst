@@ -15,6 +15,35 @@
 FAQ
 ============
 
+Wie man Komponenten mit dem ``pironman5`` Befehl steuert
+----------------------------------------------------------------------
+Sie können das folgende Tutorial verwenden, um die Komponenten des Pironman 5 mit dem ``pironman5`` Befehl zu steuern.
+
+* :ref:`view_control_commands`
+
+Wie man die Startreihenfolge des Raspberry Pi mit Befehlen ändert
+------------------------------------------------------------------------------------
+
+Wenn Sie bereits in Ihren Raspberry Pi eingeloggt sind, können Sie die Startreihenfolge mit Befehlen ändern. Detaillierte Anweisungen sind wie folgt:
+
+* :ref:`configure_boot_ssd`
+
+Wie man die Startreihenfolge mit dem Raspberry Pi Imager ändert
+----------------------------------------------------------------------------
+
+Neben der Änderung der ``BOOT_ORDER`` in der EEPROM-Konfiguration können Sie auch den **Raspberry Pi Imager** verwenden, um die Startreihenfolge Ihres Raspberry Pi zu ändern.
+
+Es wird empfohlen, für diesen Schritt eine Ersatzkarte zu verwenden.
+
+* :ref:`update_bootloader`
+
+Wie man das System von der SD-Karte auf eine NVMe SSD kopiert
+-----------------------------------------------------------------------------
+
+Wenn Sie eine NVMe SSD haben, aber keinen Adapter, um Ihre NVMe mit Ihrem Computer zu verbinden, können Sie das System zuerst auf Ihrer Micro SD-Karte installieren. Sobald der |link_pironman5| erfolgreich hochgefahren ist, können Sie das System von Ihrer Micro SD-Karte auf Ihre NVMe SSD kopieren. Detaillierte Anweisungen sind wie folgt:
+
+* :ref:`boot_from_ssd`
+
 OLED-Bildschirm funktioniert nicht?
 -----------------------------------------------
 
