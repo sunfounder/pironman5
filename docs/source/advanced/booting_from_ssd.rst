@@ -43,7 +43,7 @@ NVMe SSDからの起動
     dtparam=nvme
 
 
-* Gen 2.0の速度（5 GT/秒）で認証されていますが、以下の行を追加することでGen 3.0（10 GT/秒）に強制できます。
+* 接続はGen 2.0速度（5 GT/sec）に認定されていますが、以下の行を ``/boot/firmware/config.txt`` に追加すれば、Gen 3.0（10 GT/sec）に強制することができます。
 
   .. code-block:: shell
   
@@ -56,43 +56,7 @@ NVMe SSDからの起動
 
 * 変更を保存するには、「Ctrl + X」、「Y」、「Enter」を押します。
 
-3. SSDからのブートを設定
----------------------------------------
-
-* Raspberry Piのファームウェアを最新バージョンに更新するには、 ``rpi-update`` を使用します。
-
-.. code-block:: shell
-
-    sudo rpi-update
-
-* ブートサポートを有効にするには、ブートローダー設定の ``BOOT_ORDER`` を変更する必要があります。EEPROM設定を編集します：
-
-.. code-block::
-  
-    sudo rpi-eeprom-config --edit
-  
-* 次に、 ``BOOT_ORDER`` の行を以下のように変更します。 ``0xf416``: 最初にNVMe SSDを試し、次にUSB、その後SDカード。
-
-.. code-block:: shell
-  
-    BOOT_ORDER=0xf146
-
-* ``BOOT_ORDER`` 設定は、異なるブートモードの優先順位を柔軟に設定できます。32ビットの符号なし整数として表され、各ニブルがブートモードを表します。ブートモードは、最も重要でないニブルから最も重要なニブルの順に試みられます。
-* ``BOOT_ORDER`` プロパティは、異なるブートモードのシーケンスを定義します。右から左に読み、最大8桁を定義できます。
-
-.. image:: img/boot_order.png
-    :align: center
-
-* ``0xf41``: 最初にSDを試し、次にUSB-MSD、それを繰り返します（`` BOOT_ORDER``が空の場合のデフォルト）
-* ``0xf14``: 最初にUSBを試し、次にSD、それを繰り返します
-
-* 更新が完了したら、これらの変更を有効にするためにRaspberry Piを再起動します。
-
-.. code-block:: shell
-
-    sudo reboot
-
-4. SSDにOSをインストール
+2. SSDにOSをインストール
 ----------------------------------------
 
 SSDにオペレーティングシステムをインストールする方法は2つあります：
@@ -211,13 +175,43 @@ Micro SDカードにデスクトップバージョンのシステムがインス
     .. image:: img/nvme_install_finish.png
         :align: center
 
+.. _configure_boot_ssd:
 
+3. SSDからのブートを設定
+---------------------------------------
 
-**5. Pironman 5の再起動** 
---------------------------------
+* Raspberry Piのファームウェアを最新バージョンに更新するには、 ``rpi-update`` を使用します。
 
-Pironman 5を再起動すると、SSDから起動します。
+.. code-block:: shell
 
-  .. code-block:: shell
+    sudo rpi-update
+
+* ブートサポートを有効にするには、ブートローダー設定の ``BOOT_ORDER`` を変更する必要があります。EEPROM設定を編集します：
+
+.. code-block::
+  
+    sudo rpi-eeprom-config --edit
+  
+* 次に、 ``BOOT_ORDER`` の行を以下のように変更します。 ``0xf416``: 最初にNVMe SSDを試し、次にSDカード、その後USB。
+
+.. code-block:: shell
+  
+    BOOT_ORDER=0xf416
+
+.. note::
+    Raspberry Piの起動順序を変更するだけで、他の起動方法を削除しないでください。これにより、常に正常に起動することが保証されます。
+
+* ``BOOT_ORDER`` 設定は、異なるブートモードの優先順位を柔軟に設定できます。32ビットの符号なし整数として表され、各ニブルがブートモードを表します。ブートモードは、最も重要でないニブルから最も重要なニブルの順に試みられます。
+* ``BOOT_ORDER`` プロパティは、異なるブートモードのシーケンスを定義します。右から左に読み、最大8桁を定義できます。
+
+.. image:: img/boot_order.png
+    :align: center
+
+* ``0xf41``: 最初にSDを試し、次にUSB-MSD、それを繰り返します（`` BOOT_ORDER``が空の場合のデフォルト）
+* ``0xf14``: 最初にUSBを試し、次にSD、それを繰り返します
+
+* 更新が完了したら、これらの変更を有効にするためにRaspberry Piを再起動します。
+
+.. code-block:: shell
 
     sudo reboot
