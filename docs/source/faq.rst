@@ -36,7 +36,7 @@ In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can
 
 It is recommended to use a spare card for this step.
 
-* :ref:`update_bootloader``
+* :ref:`update_bootloader`
 
 How to Copy the System from the SD Card to an NVMe SSD?
 -------------------------------------------------------------
