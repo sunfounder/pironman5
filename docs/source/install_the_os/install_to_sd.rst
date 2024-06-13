@@ -53,6 +53,11 @@ Installing the OS on a Micro SD Card
 
 #. Select **Operating System** and opt for the recommended operating system version.
 
+    .. note::
+
+        * For **Ubuntu** system, you need to click **Other general-purpose OS** -> **Ubuntu**, and select either **Ubuntu Desktop 24.04 LTS (64 bit)** or **Ubuntu Server 24.04 LTS (64 bit)**.
+        * For **Kali** and **Home Assistant** systems, you need to click **Other specific-purpose OS** and then select the corresponding system.
+           
     .. image:: img/os_choose_os.png
         :align: center
 
@@ -69,51 +74,53 @@ Installing the OS on a Micro SD Card
 
     .. note::
 
+        If you are installing Home Assistant, this step will not appear.
+
         If you have a monitor for your Raspberry Pi, you can skip the next steps and click 'Yes' to begin the installation. Adjust other settings later on the monitor.
 
     .. image:: img/os_enter_setting.png
         :align: center
 
-#. Define a **hostname** for your Raspberry Pi.
+    * Define a **hostname** for your Raspberry Pi.
 
-    .. note::
+        .. note::
 
-        The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
+            The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
 
-    .. image:: img/os_set_hostname.png
-        :align: center
+        .. image:: img/os_set_hostname.png
+            :align: center
 
-#. Create a **Username** and **Password** for the Raspberry Pi's administrator account.
+    * Create a **Username** and **Password** for the Raspberry Pi's administrator account.
 
-    .. note::
+        .. note::
 
-        Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
+            Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
 
-    .. image:: img/os_set_username.png
-        :align: center
+        .. image:: img/os_set_username.png
+            :align: center
 
-#. Configure the wireless LAN by providing your network's **SSID** and **Password**.
+    * Configure the wireless LAN by providing your network's **SSID** and **Password**.
 
-    .. note::
+        .. note::
 
-        Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
+            Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
 
-    .. image:: img/os_set_wifi.png
-        :align: center
+        .. image:: img/os_set_wifi.png
+            :align: center
 
 
-#. To remotely connect to your Raspberry Pi, enable SSH in the Services tab.
+    * To remotely connect to your Raspberry Pi, enable SSH in the Services tab.
 
-    * For **password authentication**, use the username and password from the General tab.
-    * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
+        * For **password authentication**, use the username and password from the General tab.
+        * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
 
-    .. image:: img/os_enable_ssh.png
-        :align: center
+        .. image:: img/os_enable_ssh.png
+            :align: center
 
-#. The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
+    * The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
 
-    .. image:: img/os_options.png
-        :align: center
+        .. image:: img/os_options.png
+            :align: center
 
     
 #. When you've finished entering OS customisation settings, click **Save** to save your customisation. Then, click **Yes** to apply them when writing the image.

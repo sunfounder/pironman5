@@ -15,7 +15,7 @@
 
 .. _view_control_dashboard:
 
-6. View and Control from Dashboard
+5. View and Control from Dashboard
 =========================================
 
 Once you have successfully installed the ``pironman5`` module, the ``pironman5.service`` will start automatically upon reboot.

@@ -14,7 +14,7 @@
 
 .. _advanced:
 
-7. Advanced
+6. Advanced
 =========================
 
 
@@ -35,3 +35,4 @@ This chapter is a detailed description of all the components in Pironman, as wel
     fans
     booting_from_ssd
     control_with_commmands
+    login_rpi/login_rpi

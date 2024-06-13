@@ -18,9 +18,9 @@ Fans
 PWM Fan
 -----------
 
-The PWM fan on the |link_pironman5| is controlled by the Raspberry Pi system.
+The PWM fan on the Pironman 5 is controlled by the Raspberry Pi system.
 
-Regarding cooling solutions for the Raspberry Pi 5, especially under heavy load, the design of the |link_pironman5| incorporates a smart cooling system. It features a primary PWM fan and two supplementary RGB fans. The cooling strategy is closely integrated with the Raspberry Pi 5's thermal management system.
+Regarding cooling solutions for the Raspberry Pi 5, especially under heavy load, the design of the Pironman 5 incorporates a smart cooling system. It features a primary PWM fan and two supplementary RGB fans. The cooling strategy is closely integrated with the Raspberry Pi 5's thermal management system.
 
 The PWM fan's operation is based on the Raspberry Pi 5's temperature:
 
@@ -44,7 +44,7 @@ This temperature-to-speed relationship also applies when the temperature decreas
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-In the |link_pironman5|, the PWM fan is a critical component for maintaining optimal operating temperatures, particularly during intensive tasks, ensuring the Raspberry Pi 5 runs efficiently and reliably.
+In the Pironman 5, the PWM fan is a critical component for maintaining optimal operating temperatures, particularly during intensive tasks, ensuring the Raspberry Pi 5 runs efficiently and reliably.
 
 RGB Fans
 -------------------

@@ -76,18 +76,19 @@ First, you need to update the Raspberry Pi 5 bootloader to boot from NVMe before
         :align: center
 
 
-#. In the **Storage** option, select your inserted NVMe SSD.
+#. In the **Storage** option, select the appropriate storage device for the installation.
+
 
     .. note::
 
         Ensure you select the correct storage device. To avoid confusion, disconnect any additional storage devices if multiple ones are connected.
 
-    .. image:: img/nvme_ssd_storage.png
+    .. image:: img/os_choose_sd.png
         :align: center
 
 #. Now you can click **NEXT**. If the storage device contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
 
-    .. image:: img/nvme_erase.png
+    .. image:: img/os_continue.png
         :align: center
 
 #. Soon, you will be prompted that **NVMe/USB Boot** has been written to your storage device.
@@ -95,13 +96,13 @@ First, you need to update the Raspberry Pi 5 bootloader to boot from NVMe before
     .. image:: img/nvme_boot_finish.png
         :align: center
 
-#. Now, you can insert your Micro SD card or NVMe SSD into the |link_pironman5|. After powering the |link_pironman5| with a Type C adapter, the bootloader from the Micro SD card or NVMe SSD will be written to the Raspberry Pi's EEPROM.
+#. Now, you can insert your Micro SD card or NVMe SSD into the Raspberry Pi. After powering the Raspberry Pi with a Type C adapter, the bootloader from the Micro SD card or NVMe SSD will be written to the Raspberry Pi's EEPROM.
 
 .. note::
 
     Afterward, the Raspberry Pi will boot from NVMe before trying USB and then the SD Card. 
     
-    Power off the |link_pironman5| and remove the Micro SD card or NVMe SSD.
+    Power off the Raspberry Pi and remove the Micro SD card or NVMe SSD.
 
 
 3. Install OS to NVMe SSD
@@ -116,10 +117,15 @@ Now you can install the operating system on your NVMe SSD.
 
 #. Select **Operating System** and opt for the recommended operating system version.
 
+    .. note::
+
+        * For **Ubuntu** system, you need to click **Other general-purpose OS** -> **Ubuntu**, and select either **Ubuntu Desktop 24.04 LTS (64 bit)** or **Ubuntu Server 24.04 LTS (64 bit)**.
+        * For **Kali** and **Home Assistant** systems, you need to click **Other specific-purpose OS** and then select the corresponding system.
+        
     .. image:: img/os_choose_os.png
         :align: center
 
-#. In the **Storage** option, select your inserted NVMe SSD.
+#. In the **Storage** option, select the appropriate storage device for the installation.
 
     .. note::
 
@@ -132,53 +138,54 @@ Now you can install the operating system on your NVMe SSD.
 
     .. note::
 
+        If you are installing Home Assistant, this step will not appear.
+
         If you have a monitor for your Raspberry Pi, you can skip the next steps and click 'Yes' to begin the installation. Adjust other settings later on the monitor.
 
     .. image:: img/os_enter_setting.png
         :align: center
 
-#. Define a **hostname** for your Raspberry Pi.
+    * Define a **hostname** for your Raspberry Pi.
 
-    .. note::
+        .. note::
 
-        The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
+            The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
 
-    .. image:: img/os_set_hostname.png
-        :align: center
+        .. image:: img/os_set_hostname.png
+            :align: center
 
-#. Create a **Username** and **Password** for the Raspberry Pi's administrator account.
+    * Create a **Username** and **Password** for the Raspberry Pi's administrator account.
 
-    .. note::
+        .. note::
 
-        Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
+            Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
 
-    .. image:: img/os_set_username.png
-        :align: center
+        .. image:: img/os_set_username.png
+            :align: center
 
-#. Configure the wireless LAN by providing your network's **SSID** and **Password**.
+    * Configure the wireless LAN by providing your network's **SSID** and **Password**.
 
-    .. note::
+        .. note::
 
-        Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
+            Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
 
-    .. image:: img/os_set_wifi.png
-        :align: center
+        .. image:: img/os_set_wifi.png
+            :align: center
 
 
-#. To remotely connect to your Raspberry Pi, **enable SSH** in the **Services** tab.
+    * To remotely connect to your Raspberry Pi, enable SSH in the Services tab.
 
-    * For **password authentication**, use the username and password from the **General** tab.
-    * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
+        * For **password authentication**, use the username and password from the General tab.
+        * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
 
-    .. image:: img/os_enable_ssh.png
-        :align: center
+        .. image:: img/os_enable_ssh.png
+            :align: center
 
-#. The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
+    * The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
 
-    .. image:: img/os_options.png
-        :align: center
+        .. image:: img/os_options.png
+            :align: center
 
-    
 #. When you've finished entering OS customisation settings, click **Save** to save your customisation. Then, click **Yes** to apply them when writing the image.
 
     .. image:: img/os_click_yes.png
@@ -194,11 +201,5 @@ Now you can install the operating system on your NVMe SSD.
     .. image:: img/nvme_install_finish.png
         :align: center
 
-
-#. Now, insert the NVMe SSD into the NVMe PiP board of the |link_pironman5|.
-
-    .. image:: img/nvme_assemble.png
-        :width: 500
-        :align: center
 
 
