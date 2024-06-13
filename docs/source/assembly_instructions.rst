@@ -28,11 +28,26 @@ Bevor Sie mit dem Zusammenbau des Pironman beginnen, überprüfen Sie bitte zuer
 
 * :download:`[PDF]Komponentenliste und Montage des Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5.pdf>`
 
-.. **Assemble Tutorial Video**
 
-.. .. raw:: html
+**Komplette Montage- und Startanleitung: Pironman 5 mit NVMe SSD**
 
-..     <iframe width="560" height="315" src="https://www.youtube.com/embed/62V85UG-Ocg?si=gNi1rHaPS579Kq7C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Wenn Sie eine NVMe SSD verwenden, folgen Sie diesem Video, um den Pironman 5 zusammenzubauen und zu konfigurieren.
+
+.. raw:: html
+
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+**Komplette Montage- und Startanleitung: Pironman 5 mit Micro-SD-Karte**
+
+Wenn Sie eine Micro-SD-Karte verwenden, folgen Sie diesem Video, um den Pironman 5 zusammenzubauen und zu konfigurieren.
+
+.. raw:: html
+
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/-5rTwJ0oMVM?si=je5SaLccHzjjEhuD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+
 
 .. **Connect the OLED Screen**
 

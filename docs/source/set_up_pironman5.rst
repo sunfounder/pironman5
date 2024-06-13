@@ -14,7 +14,7 @@
 
 .. _set_up_pironman5:
 
-5. Einrichtung des Pironman 5
+4. Einrichtung des Pironman 5
 ===================================
 
 Vor der Konfiguration
@@ -37,148 +37,25 @@ Der Power-Button fungiert wie der Power-Button des Raspberry Pi 5 und funktionie
 
     Wenn Sie ein System verwenden, das keinen Shutdown-Button unterstützt, können Sie ihn 5 Sekunden lang gedrückt halten, um ein erzwungenes Herunterfahren durchzuführen, und einmal drücken, um aus dem Heruntergefahren-Zustand einzuschalten.
 
+Software-Konfiguration
+--------------------------
 
-Konfiguration des Herunterfahrens zur Deaktivierung der GPIO-Stromversorgung
--------------------------------------------------------------------------------------
-Um zu verhindern, dass der OLED-Bildschirm und die RGB-Lüfter, die über den Raspberry Pi GPIO mit Strom versorgt werden, nach dem Herunterfahren aktiv bleiben, ist es wichtig, den Raspberry Pi so zu konfigurieren, dass die GPIO-Stromversorgung deaktiviert wird.
-
-* Bearbeiten Sie die ``EEPROM``-Konfigurationsdatei manuell mit diesem Befehl:
-
-  .. code-block:: shell
-
-    sudo rpi-eeprom-config -e
-
-* Ändern Sie die Einstellung ``POWER_OFF_ON_HALT`` in der Datei auf ``1``. Zum Beispiel:
-
-  .. code-block:: shell
-
-    BOOT_UART=1
-    POWER_OFF_ON_HALT=1
-    BOOT_ORDER=0xf41
-
-* Drücken Sie ``Ctrl + X``, ``Y`` und ``Enter``, um die Änderungen zu speichern.
+1. Wenn Sie Raspberry Pi OS, Ubuntu oder Kali auf Ihrem Raspberry Pi installiert haben, müssen Sie den Pironman 5 über die Kommandozeile konfigurieren. Detaillierte Anleitungen finden Sie unten:
 
 
-Herunterladen und Installieren des ``pironman5`` Moduls
--------------------------------------------------------------
+.. toctree::
+    :maxdepth: 1
+
+    set_up_rpi_os 
+
+2. Wenn Sie das Home Assistant System installiert haben, müssen Sie die notwendigen Add-ons zu Home Assistant hinzufügen und starten, um den Pironman 5 in Betrieb zu nehmen.
 
 .. note::
 
-  Für Lite-Systeme installieren Sie zunächst Werkzeuge wie ``git``, ``python3``, ``pip3``, ``setuptools`` usw.
-  
-  .. code-block:: shell
-  
-    sudo apt-get update
-    sudo apt-get install git -y
-    sudo apt-get install python3 python3-pip python3-setuptools -y
+    Die folgende Methode gilt nur für Systeme mit nativer Installation von Home Assistant. Sie gilt nicht für Raspberry Pi Systeme mit darauf installiertem Home Assistant oder für Docker-Versionen von Home Assistant.
 
-Laden Sie den Code von GitHub herunter und installieren Sie das ``pironman5``-Modul.
 
-.. code-block:: shell
+.. toctree::
+    :maxdepth: 1  
 
-  cd ~
-  git clone https://github.com/sunfounder/pironman5.git
-  cd ~/pironman5
-  sudo python3 install.py
-
-Nach erfolgreicher Installation ist ein Systemneustart erforderlich, um die Installation zu aktivieren. Befolgen Sie die Neustartaufforderung auf dem Bildschirm.
-
-Nach dem Neustart startet der ``pironman5.service`` automatisch. Hier sind die Hauptkonfigurationen für |link_pironman5|:
-
-  * Der OLED-Bildschirm zeigt CPU, RAM, Speichernutzung, CPU-Temperatur und die IP-Adresse des Raspberry Pi an.
-  * Vier WS2812-RGB-LEDs leuchten in Blau im Atemmodus.
-  * Die RGB-Lüfter aktivieren sich bei 60°C.
-
-Sie können das ``systemctl``-Tool verwenden, um ``pironman5.service`` zu ``starten``, ``stoppen``, ``neu zu starten`` oder den ``Status`` zu überprüfen.
-
-.. code-block:: shell
-
-  sudo systemctl restart pironman5.service
-
-* ``restart``: Verwenden Sie diesen Befehl, um Änderungen an den Einstellungen des Pironman 5 anzuwenden.
-* ``start/stop``: Aktivieren oder deaktivieren Sie den ``pironman5.service``.
-* ``status``: Überprüfen Sie den Betriebsstatus des ``pironman5``-Programms mit dem ``systemctl``-Tool.
-
-Grundkonfigurationen anzeigen
------------------------------------
-
-Das Modul ``pironman5`` bietet Grundkonfigurationen für den Pironman, die Sie mit dem folgenden Befehl überprüfen können.
-
-.. code-block:: shell
-
-  pironman5 -c
-
-Die Standardkonfigurationen erscheinen wie folgt:
-
-.. code-block:: 
-
-  {
-      "auto": {
-          "rgb_color": "#0a1aff",
-          "rgb_brightness": 50,
-          "rgb_style": "breathing",
-          "rgb_speed": 50,
-          "rgb_enable": true,
-          "rgb_led_count": 4,
-          "temperature_unit": "C",
-          "gpio_fan_mode": 2,
-          "gpio_fan_pin": 6
-      }
-  }
-
-Passen Sie diese Konfigurationen Ihren Bedürfnissen an.
-
-Verwenden Sie ``pironman5`` oder ``pironman5 -h`` für Anweisungen.
-
-.. code-block::
-
-  usage: pironman5-service [-h] [-c] [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]]
-                          [-rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]] [-rp [RGB_SPEED]]
-                          [-re [RGB_ENABLE]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]]
-                          [{start,stop}]
-
-  Pironman5
-
-  positional arguments:
-    {start,stop}          Command
-
-  options:
-    -h, --help            show this help message and exit
-    -c, --config          Show config
-    -rc [RGB_COLOR], --rgb-color [RGB_COLOR]
-                          RGB color in hex format with or without # (e.g. #FF0000 or 00aabb)
-    -rb [RGB_BRIGHTNESS], --rgb-brightness [RGB_BRIGHTNESS]
-                          RGB brightness 0-100
-    -rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}], --rgb-style [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]
-                          RGB style
-    -rp [RGB_SPEED], --rgb-speed [RGB_SPEED]
-                          RGB speed 0-100
-    -re [RGB_ENABLE], --rgb-enable [RGB_ENABLE]
-                          RGB enable True/False
-    -rl [RGB_LED_COUNT], --rgb-led-count [RGB_LED_COUNT]
-                          RGB LED count int
-    -u [{C,F}], --temperature-unit [{C,F}]
-                          Temperature unit
-    -gm [GPIO_FAN_MODE], --gpio-fan-mode [GPIO_FAN_MODE]
-                          GPIO fan mode, 0: Always On, 1: Performance, 2: Cool, 3: Balanced, 4: Quiet
-    -gp [GPIO_FAN_PIN], --gpio-fan-pin [GPIO_FAN_PIN]
-                          GPIO fan pin
-
-.. note::
-
-  Jedes Mal, wenn Sie den Status von ``pironman5.service`` ändern, müssen Sie den folgenden Befehl verwenden, um die Konfigurationsänderungen wirksam zu machen.
-
-  .. code-block:: shell
-
-    sudo systemctl restart pironman5.service
-
-* Alternativ können Sie die vom Programm generierten Logdateien überprüfen.
-
-  .. code-block:: shell
-
-    cat /opt/pironman5/log
-
-.. note::
-
-  * Als nächstes können Sie die Komponenten des |link_pironman5| über das Dashboard anzeigen und steuern, siehe :ref:`view_control_dashboard`.
-  * Wenn Sie Befehle verwenden möchten, siehe :ref:`view_control_commands`.
+    set_up_home_assistant

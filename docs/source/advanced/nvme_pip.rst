@@ -45,7 +45,7 @@ Im Allgemeinen sind M.2 SATA-SSDs B+M-gekippte (können in Steckplätze für B- 
 
 M.2-Module gibt es in verschiedenen Größen und können auch für Wi-Fi, WWAN, Bluetooth, GPS und NFC genutzt werden.
 
-|link_pironman5| unterstützt vier (PCIE2.0 / PCIE 3.0) NVMe M.2-SSD-Größen basierend auf ihren Bezeichnungen: 2230, 2242, 2260 und 2280. Die "22" ist die Breite in Millimetern (mm) und die beiden folgenden Zahlen die Länge. Je länger das Laufwerk, desto mehr NAND-Flash-Chips können montiert werden; daher mehr Kapazität.
+Pironman 5 unterstützt vier (PCIE2.0 / PCIE 3.0) NVMe M.2-SSD-Größen basierend auf ihren Bezeichnungen: 2230, 2242, 2260 und 2280. Die "22" ist die Breite in Millimetern (mm) und die beiden folgenden Zahlen die Länge. Je länger das Laufwerk, desto mehr NAND-Flash-Chips können montiert werden; daher mehr Kapazität.
 
 .. image:: img/m2_ssd_size.png
   :width: 600

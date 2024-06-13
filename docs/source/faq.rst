@@ -40,7 +40,7 @@ Es wird empfohlen, für diesen Schritt eine Ersatzkarte zu verwenden.
 Wie man das System von der SD-Karte auf eine NVMe SSD kopiert
 -----------------------------------------------------------------------------
 
-Wenn Sie eine NVMe SSD haben, aber keinen Adapter, um Ihre NVMe mit Ihrem Computer zu verbinden, können Sie das System zuerst auf Ihrer Micro SD-Karte installieren. Sobald der |link_pironman5| erfolgreich hochgefahren ist, können Sie das System von Ihrer Micro SD-Karte auf Ihre NVMe SSD kopieren. Detaillierte Anweisungen sind wie folgt:
+Wenn Sie eine NVMe SSD haben, aber keinen Adapter, um Ihre NVMe mit Ihrem Computer zu verbinden, können Sie das System zuerst auf Ihrer Micro SD-Karte installieren. Sobald der Pironman 5 erfolgreich hochgefahren ist, können Sie das System von Ihrer Micro SD-Karte auf Ihre NVMe SSD kopieren. Detaillierte Anweisungen sind wie folgt:
 
 * :ref:`boot_from_ssd`
 

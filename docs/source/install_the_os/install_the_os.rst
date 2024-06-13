@@ -21,33 +21,38 @@ In diesem Kapitel lernen Sie, wie Sie das Betriebssystem installieren.
 
     Sie müssen ein Betriebssystem installieren, das den Raspberry Pi 5 unterstützt. Bitte verwenden Sie das neueste Raspberry Pi Imager-Tool für die Systeminstallation. Die derzeit getesteten Systeme sind:
 
-    * **Raspberry Pi OS (bookworm 64 desktop / lite)**: Vollständig kompatibel
-    * **Ubuntu Desktop 23.10**: Kein SPI, wodurch die LED nicht leuchtet
-    * **Kali**: Kein I2C, wodurch der OLED-Bildschirm nicht leuchtet
-    * **Home Assistant**: Kann I2C und SPI nicht aktivieren
+    .. image:: img/compitable_os.png
 
-**1. Installation des Betriebssystems auf die MicroSD-Karte**
+
+1. 1. Installation des Betriebssystems auf die MicroSD-Karte
+--------------------------------------------------------------------------
 
 Wenn Sie eine MicroSD-Karte verwenden, können Sie dem folgenden Tutorial folgen, um das System auf Ihrer MicroSD-Karte zu installieren.
 
-.. toctree::
-    :maxdepth: 1
+    .. toctree::
+        :maxdepth: 1
 
-    install_to_sd
+        install_to_sd
 
 
-**2. Installation des Betriebssystems auf die NVMe-SSD**
+2. Installation des Betriebssystems auf die NVMe-SSD
+--------------------------------------------------------------
 
 Wenn Sie eine NVMe-SSD verwenden und einen Adapter haben, um die NVMe-SSD für die Systeminstallation an Ihren Computer anzuschließen, können Sie das folgende Tutorial für eine schnelle Installation verwenden.
 
-.. toctree::
-    :maxdepth: 1
+    .. toctree::
+        :maxdepth: 1
 
-    install_to_nvme
+        install_to_nvme
 
-**3. Kopieren des Betriebssystems von der MicroSD-Karte auf die NVMe-SSD**
+3. Kopieren des Betriebssystems von der MicroSD-Karte auf die NVMe-SSD
+----------------------------------------------------------------------------------
 
-Wenn Sie eine NVMe-SSD haben, aber keinen Adapter, um Ihre NVMe-SSD an Ihren Computer anzuschließen, können Sie zunächst das System auf Ihrer MicroSD-Karte installieren. Sobald der |link_pironman5| erfolgreich hochgefahren ist, können Sie das System von Ihrer MicroSD-Karte auf Ihre NVMe-SSD kopieren. Detaillierte Anweisungen sind wie folgt:
+.. note::
+
+    Diese dritte Methode gilt nur für **Raspberry Pi OS**. Wenn Sie ein anderes System verwenden, müssen Sie entsprechende Ressourcen konsultieren, um zu erfahren, wie Sie das System von Ihrer Micro-SD-Karte auf Ihre NVMe-SSD kopieren können.
+
+Wenn Sie eine NVMe-SSD haben, aber keinen Adapter, um Ihre NVMe mit Ihrem Computer zu verbinden, können Sie das System zuerst auf Ihrer Micro-SD-Karte installieren. Sobald der Pironman 5 erfolgreich gestartet ist, können Sie das System von Ihrer Micro-SD-Karte auf Ihre NVMe-SSD kopieren. Detaillierte Anweisungen sind wie folgt:
 
 Sie müssen diese Schritte befolgen:
 
@@ -57,7 +62,7 @@ Sie müssen diese Schritte befolgen:
 
 2. Starten Sie den Raspberry Pi und melden Sie sich an.
 
-* :ref:`set_up_rpi`
+* :ref:`login_rpi`
 
 3. Kopieren Sie das System von der Micro SD-Karte auf die NVMe SSD oder verwenden Sie den Imager im Raspberry Pi-System, um das System direkt auf der NVMe SSD zu installieren. Richten Sie anschließend das Booten von der NVMe SSD ein.
 

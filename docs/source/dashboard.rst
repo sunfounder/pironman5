@@ -14,7 +14,7 @@
 
 .. _view_control_dashboard:
 
-6. Überwachung und Steuerung über das Dashboard
+5. Überwachung und Steuerung über das Dashboard
 =========================================================
 
 Nach erfolgreicher Installation des ``pironman5``-Moduls startet der Dienst ``pironman5.service`` automatisch beim Neustart.

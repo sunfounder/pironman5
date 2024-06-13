@@ -185,7 +185,7 @@ Zwei rechtwinklige Header-Steckverbinder erweitern das GPIO des Raspberry Pi, be
   :widths: 25 25
   :header-rows: 1
 
-  * - |link_pironman5|
+  * - Pironman 5
     - Raspberry Pi 5
   * - IR-Empfänger (Optional)
     - GPIO13

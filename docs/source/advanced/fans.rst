@@ -18,9 +18,9 @@ Lüfter
 PWM-Lüfter
 ---------------
 
-Der PWM-Lüfter des |link_pironman5| wird vom Raspberry Pi System gesteuert.
+Der PWM-Lüfter des Pironman 5 wird vom Raspberry Pi System gesteuert.
 
-Hinsichtlich der Kühlungslösungen für den Raspberry Pi 5, insbesondere unter hoher Last, integriert das Design des |link_pironman5| ein intelligentes Kühlsystem. Es umfasst einen primären PWM-Lüfter und zwei zusätzliche RGB-Lüfter. Die Kühlstrategie ist eng mit dem Wärmemanagementsystem des Raspberry Pi 5 verbunden.
+Hinsichtlich der Kühlungslösungen für den Raspberry Pi 5, insbesondere unter hoher Last, integriert das Design des Pironman 5 ein intelligentes Kühlsystem. Es umfasst einen primären PWM-Lüfter und zwei zusätzliche RGB-Lüfter. Die Kühlstrategie ist eng mit dem Wärmemanagementsystem des Raspberry Pi 5 verbunden.
 
 Der Betrieb des PWM-Lüfters basiert auf der Temperatur des Raspberry Pi 5:
 
@@ -44,7 +44,7 @@ Diese Temperatur-Geschwindigkeits-Beziehung gilt auch beim Abkühlen, wobei eine
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-Im |link_pironman5| ist der PWM-Lüfter ein kritisches Element zur Aufrechterhaltung optimaler Betriebstemperaturen, insbesondere bei intensiven Aufgaben, und gewährleistet, dass der Raspberry Pi 5 effizient und zuverlässig läuft.
+Im Pironman 5 ist der PWM-Lüfter ein kritisches Element zur Aufrechterhaltung optimaler Betriebstemperaturen, insbesondere bei intensiven Aufgaben, und gewährleistet, dass der Raspberry Pi 5 effizient und zuverlässig läuft.
 
 RGB-Lüfter
 -------------------

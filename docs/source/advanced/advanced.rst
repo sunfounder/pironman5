@@ -15,7 +15,7 @@
 
 .. _advanced:
 
-7. Fortgeschrittene
+6. Fortgeschrittene
 =========================
 
 Dieses Kapitel bietet eine detaillierte Beschreibung aller Komponenten des Pironman sowie der dazugehörigen Softwarekonfiguration.
@@ -35,3 +35,4 @@ Dieses Kapitel bietet eine detaillierte Beschreibung aller Komponenten des Piron
     fans
     booting_from_ssd
     control_with_commmands
+    login_rpi/login_rpi

@@ -25,7 +25,7 @@ Dies ist ein Modul, das den Netzschalter des Raspberry Pi 5 nach außen erweiter
 
     .. image:: img/pi5_j2.jpg
 
-* Auf dem |link_pironman5| gibt es einen **Power Switch Converter**, der den **J2**-Jumper zu einem externen Netzschalter mit zwei Pogo-Pins erweitert.
+* Auf dem Pironman 5 gibt es einen **Power Switch Converter**, der den **J2**-Jumper zu einem externen Netzschalter mit zwei Pogo-Pins erweitert.
 
     .. image:: img/power_switch_convertor.png
 

@@ -16,7 +16,7 @@
 
 Anzeigen und Steuern mit Befehlen
 =======================================
-Zusätzlich zur Ansicht von Daten des |link_pironman5| und zur Steuerung verschiedener Geräte über das Dashboard, können Sie auch Befehle zur Steuerung verwenden.
+Zusätzlich zur Ansicht von Daten des Pironman 5 und zur Steuerung verschiedener Geräte über das Dashboard, können Sie auch Befehle zur Steuerung verwenden.
 
 Grundkonfigurationen anzeigen
 -----------------------------------

@@ -64,14 +64,12 @@ Wenn Sie Fragen haben, senden Sie bitte eine E-Mail an service@sunfounder.com un
    <br/>
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     About this Kit <self>
     what_do_we_need    
     assembly_instructions
-    pi_start/install_the_os
-
-    pi_start/set_up_your_raspberry_pi
+    install_the_os/install_the_os
     set_up_pironman5
     dashboard
     advanced/advanced

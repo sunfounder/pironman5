@@ -19,11 +19,11 @@
 
 * Raspberry Pi 5 Model B
 
-    Der |link_pironman5| ist vollständig kompatibel mit dem Raspberry Pi 5 Model B.
+    Der Pironman 5 ist vollständig kompatibel mit dem Raspberry Pi 5 Model B.
 
 * 5V/5A Netzadapter
 
-    Ein 5V/5A Netzadapter ist erforderlich, um den |link_pironman5| und seine Komponenten mit Strom zu versorgen.
+    Ein 5V/5A Netzadapter ist erforderlich, um den Pironman 5 und seine Komponenten mit Strom zu versorgen.
 
 * MicroSD-Karte
 
@@ -33,16 +33,16 @@
 
 * M.2 NVMe SSD
 
-    Der |link_pironman5| verfügt über ein NVMe PIP mit einem M.2 SSD-Anschluss, der vier NVMe M.2 SSD-Größen unterstützt: 2230, 2242, 2260 und 2280. Die Verbindung ist für Gen 2.0 Geschwindigkeiten (5 GT/sec) zertifiziert, kann jedoch auf Gen 3.0 (10 GT/sec) erzwungen werden.
+    Der Pironman 5 verfügt über ein NVMe PIP mit einem M.2 SSD-Anschluss, der vier NVMe M.2 SSD-Größen unterstützt: 2230, 2242, 2260 und 2280. Die Verbindung ist für Gen 2.0 Geschwindigkeiten (5 GT/sec) zertifiziert, kann jedoch auf Gen 3.0 (10 GT/sec) erzwungen werden.
 
 * Bildschirm
 
     Um auf die Desktop-Umgebung des Raspberry Pi zuzugreifen, ist ein Bildschirm wie ein Fernseher oder ein Computermonitor erforderlich.
 
-* HDMI-Kabel
+    The Raspberry Pi 5's HDMI ports have been adapted to standard HDMI Type A interfaces via a USB HDMI adapter. Therefore, a standard HDMI to HDMI cable is needed to connect the Pironman 5 to a display.
 
-    Die HDMI-Anschlüsse des Raspberry Pi 5 wurden über einen USB-HDMI-Adapter auf Standard-HDMI-Typ-A-Schnittstellen angepasst. Daher wird ein Standard-HDMI-zu-HDMI-Kabel benötigt, um den |link_pironman5| an ein Display anzuschließen.
+    Die HDMI-Anschlüsse des Raspberry Pi 5 wurden über einen USB-HDMI-Adapter auf Standard-HDMI-Typ-A-Schnittstellen angepasst. Daher wird ein Standard-HDMI-zu-HDMI-Kabel benötigt, um den Pironman 5 an ein Display anzuschließen.
 
 * Maus und Tastatur
 
-    Jeder USB-Anschluss am |link_pironman5| kann verwendet werden, um eine kabelgebundene Tastatur und Maus oder einen USB-Bluetooth-Empfänger für drahtlose Peripheriegeräte anzuschließen.
+    Jeder USB-Anschluss am Pironman 5 kann verwendet werden, um eine kabelgebundene Tastatur und Maus oder einen USB-Bluetooth-Empfänger für drahtlose Peripheriegeräte anzuschließen.
