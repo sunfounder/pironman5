@@ -47,6 +47,11 @@ Installing the OS on an NVMe SSD
 
 First, you need to update the Raspberry Pi 5 bootloader to boot from NVMe before trying USB and then SD Card.
 
+.. raw:: html
+
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?start=47&end=95&si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 .. note::
 
     At this step, it is recommended to use a spare Micro SD card. First, write the bootloader to this Micro SD card and then immediately insert it into the Raspberry Pi to enable booting from an NVMe device.
@@ -109,6 +114,11 @@ First, you need to update the Raspberry Pi 5 bootloader to boot from NVMe before
 --------------------------------
 
 Now you can install the operating system on your NVMe SSD.
+
+.. raw:: html
+
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?start=96&end=158&si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 #. Within the Imager, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
 
