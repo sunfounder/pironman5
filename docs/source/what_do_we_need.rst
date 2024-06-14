@@ -19,11 +19,11 @@
 
 * Raspberry Pi 5 Model B
 
-    |link_pironman5| はRaspberry Pi 5 Model Bに完全対応しています。
+    Pironman 5 はRaspberry Pi 5 Model Bに完全対応しています。
 
 * 5V/5A電源アダプター
 
-    |link_pironman5| およびそのコンポーネントに電力を供給するには、5V/5Aの電源アダプターが必要です。
+    Pironman 5 およびそのコンポーネントに電力を供給するには、5V/5Aの電源アダプターが必要です。
 
 * Micro SDカード
  
@@ -33,7 +33,7 @@
 
 * M.2 NVMe SSD
 
-    |link_pironman5| にはM.2 SSDコネクタを備えたNVMe PIPがあり、2230、2242、2260、2280の4種類のNVMe M.2 SSDサイズに対応しています。この接続はGen 2.0速度（5 GT/sec）に認定されていますが、より高速なパフォーマンスを得るためにGen 3.0（10 GT/sec）に強制することもできます。
+    Pironman 5 にはM.2 SSDコネクタを備えたNVMe PIPがあり、2230、2242、2260、2280の4種類のNVMe M.2 SSDサイズに対応しています。この接続はGen 2.0速度（5 GT/sec）に認定されていますが、より高速なパフォーマンスを得るためにGen 3.0（10 GT/sec）に強制することもできます。
 
 * スクリーン
 
@@ -41,8 +41,8 @@
     
 * HDMIケーブル
 
-    Raspberry Pi 5のHDMIポートはUSB HDMIアダプターを介して標準のHDMI Type Aインターフェースに適応されています。したがって、|link_pironman5| をディスプレイに接続するには、標準のHDMI to HDMIケーブルが必要です。
+    Raspberry Pi 5のHDMIポートはUSB HDMIアダプターを介して標準のHDMI Type Aインターフェースに適応されています。したがって、Pironman 5 をディスプレイに接続するには、標準のHDMI to HDMIケーブルが必要です。
 
 * マウス＆キーボード
 
-    |link_pironman5| の任意のUSBポートを使用して、有線キーボードとマウス、またはワイヤレス周辺機器用のUSB Bluetoothレシーバーを接続できます。
+    Pironman 5 の任意のUSBポートを使用して、有線キーボードとマウス、またはワイヤレス周辺機器用のUSB Bluetoothレシーバーを接続できます。

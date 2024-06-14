@@ -15,7 +15,7 @@
 
 .. _advanced:
 
-7. 高度な使用方法
+6. 高度な使用方法
 =========================
 
 本章では、Pironmanのすべてのコンポーネントと関連するソフトウェア設定について詳細に説明します。
@@ -35,3 +35,4 @@
     fans
     booting_from_ssd
     control_with_commmands
+    login_rpi/login_rpi

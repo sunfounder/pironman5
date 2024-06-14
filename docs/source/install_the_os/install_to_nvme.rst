@@ -47,6 +47,11 @@ NVMe SSDへのOSインストール
 
 まず、NVMeからの起動を試みる前に、Raspberry Pi 5のブートローダーを更新する必要があります。
 
+.. raw:: html
+
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?start=47&end=95&si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 .. note::
 
     このステップでは、予備のMicro SDカードを使用することをお勧めします。最初にこのMicro SDカードにブートローダーを書き込み、それをすぐにRaspberry Piに挿入してNVMeデバイスからの起動を有効にします。
@@ -75,18 +80,19 @@ NVMe SSDへのOSインストール
     .. image:: img/nvme_nvme_boot.png
         :align: center
 
-#.  **Storage** オプションで、挿入したNVMe SSDを選択します。
+
+#. **Storage** オプションで、インストール用の適切なストレージデバイスを選択します。
 
     .. note::
 
         正しいストレージデバイスを選択してください。混乱を避けるために、複数のストレージデバイスが接続されている場合は他のデバイスを取り外します。
 
-    .. image:: img/nvme_ssd_storage.png
+    .. image:: img/os_choose_sd.png
         :align: center
 
 #.  **NEXT** をクリックします。ストレージデバイスに既存のデータがある場合、データ損失を防ぐためにバックアップを作成してください。バックアップが不要な場合は **Yes** をクリックして進みます。
 
-    .. image:: img/nvme_erase.png
+    .. image:: img/os_continue.png
         :align: center
 
 #.  **NVMe/USB Boot** がストレージデバイスに書き込まれたことを示すプロンプトが表示されます。
@@ -94,18 +100,23 @@ NVMe SSDへのOSインストール
     .. image:: img/nvme_boot_finish.png
         :align: center
 
-#. Micro SDカードまたはNVMe SSDを |link_pironman5| に挿入します。Type Cアダプタで |link_pironman5| に電源を供給すると、Micro SDカードまたはNVMe SSDからブートローダーがRaspberry PiのEEPROMに書き込まれます。
+#. 次に、Micro SDカードまたはNVMe SSDをRaspberry Piに挿入します。Type CアダプタでRaspberry Piに電源を供給すると、Micro SDカードまたはNVMe SSDからのブートローダーがRaspberry PiのEEPROMに書き込まれます。
 
 .. note::
 
     その後、Raspberry PiはUSBやSDカードを試みる前にNVMeから起動します。
     
-    |link_pironman5| の電源を切り、Micro SDカードまたはNVMe SSDを取り外します。
+    Raspberry Pi の電源を切り、Micro SDカードまたはNVMe SSDを取り外します。
 
 3. NVMe SSDにOSをインストール
 ---------------------------------------
 
 これでNVMe SSDにオペレーティングシステムをインストールできます。
+
+.. raw:: html
+
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?start=96&end=158&si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 #. Imager内で、 **Raspberry Pi Device** をクリックし、ドロップダウンリストから **Raspberry Pi 5** モデルを選択します。
 
@@ -114,10 +125,15 @@ NVMe SSDへのOSインストール
 
 #.  **Operating System** を選択し、推奨されるオペレーティングシステムバージョンを選択します。
 
+    .. note::
+
+        * **Ubuntu** システムの場合、 **Other general-purpose OS** -> **Ubuntu** をクリックし、 **Ubuntu Desktop 24.04 LTS (64 bit)** または **Ubuntu Server 24.04 LTS (64 bit)** を選択します。
+        * **Kali** および **Home Assistant** システムの場合、 **Other specific-purpose OS** をクリックし、対応するシステムを選択します。
+
     .. image:: img/os_choose_os.png
         :align: center
 
-#.  **Storage** オプションで、挿入したNVMe SSDを選択します。
+#. **Storage** オプションで、インストール用の適切なストレージデバイスを選択します。
 
     .. note::
 
@@ -130,50 +146,52 @@ NVMe SSDへのOSインストール
 
     .. note::
 
-        Raspberry Pi用のモニターがある場合は、次のステップをスキップして「Yes」をクリックしてインストールを開始できます。その他の設定は後でモニターで調整します。
+        Home Assistantをインストールする場合、この手順は表示されません。
+
+        Raspberry Pi用のモニターがある場合は、次の手順をスキップし、「Yes」をクリックしてインストールを開始できます。他の設定は後でモニター上で調整してください。
 
     .. image:: img/os_enter_setting.png
         :align: center
 
-#. Raspberry Piの **ホスト名** を設定します。
+    * Raspberry Piの **ホスト名** を設定します。
 
-    .. note::
+        .. note::
 
-        ホスト名はRaspberry Piのネットワーク識別子です。 ``<hostname>.local`` または ``<hostname>.lan`` を使用してPiにアクセスできます。
+            ホスト名はRaspberry Piのネットワーク識別子です。 ``<hostname>.local`` または ``<hostname>.lan`` を使用してPiにアクセスできます。
 
-    .. image:: img/os_set_hostname.png
-        :align: center
+            .. image:: img/os_set_hostname.png
+                :align: center
 
-#. Raspberry Piの管理者アカウントの **ユーザー名** と **パスワード** を作成します。
+    * Raspberry Piの管理者アカウントの **ユーザー名** と **パスワード** を作成します。
 
-    .. note::
+        .. note::
 
-        固有のユーザー名とパスワードを設定することは、デフォルトのパスワードがないRaspberry Piを保護するために重要です。
+            固有のユーザー名とパスワードを設定することは、デフォルトのパスワードがないRaspberry Piを保護するために重要です。
 
-    .. image:: img/os_set_username.png
-        :align: center
+            .. image:: img/os_set_username.png
+                :align: center
 
-#. ワイヤレスLANの設定を行い、ネットワークの **SSID** と **パスワード** を入力します。
+    * ワイヤレスLANの設定を行い、ネットワークの **SSID** と **パスワード** を入力します。
 
-    .. note::
+        .. note::
 
-        ``Wireless LAN country`` は、居住地に対応する2文字の `ISO/IEC alpha2コード <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ に設定してください。
+            ``Wireless LAN country`` は、居住地に対応する2文字の `ISO/IEC alpha2コード <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ に設定してください。
 
-    .. image:: img/os_set_wifi.png
-        :align: center
+            .. image:: img/os_set_wifi.png
+                :align: center
 
-#. Raspberry Piにリモート接続するために、 **Services** タブで **SSHを有効** にします。
+    * Raspberry Piにリモート接続するために、 **Services** タブで **SSHを有効** にします。
 
-    * **パスワード認証** の場合、 **General** タブのユーザー名とパスワードを使用します。
-    * 公開鍵認証の場合、「公開鍵認証のみを許可」を選択します。RSAキーがある場合、それが使用されます。ない場合は、「SSH-keygenを実行」をクリックして新しいキーを生成します。
+        * **パスワード認証** の場合、 **General** タブのユーザー名とパスワードを使用します。
+        * 公開鍵認証の場合、「公開鍵認証のみを許可」を選択します。RSAキーがある場合、それが使用されます。ない場合は、「SSH-keygenを実行」をクリックして新しいキーを生成します。
 
-    .. image:: img/os_enable_ssh.png
-        :align: center
+            .. image:: img/os_enable_ssh.png
+                :align: center
 
-#.  **Options** メニューでは、書き込み時のImagerの動作（完了時の音を鳴らす、メディアの取り出し、テレメトリの有効化など）を設定できます。
+    *  **Options** メニューでは、書き込み時のImagerの動作（完了時の音を鳴らす、メディアの取り出し、テレメトリの有効化など）を設定できます。
 
-    .. image:: img/os_options.png
-        :align: center
+            .. image:: img/os_options.png
+                :align: center
 
 #. OSのカスタマイズ設定を入力し終えたら、 **保存** をクリックしてカスタマイズを保存します。その後、イメージを書き込む際に適用するために **Yes** をクリックします。
 
@@ -188,11 +206,5 @@ NVMe SSDへのOSインストール
 #. 「Write Successful」のポップアップが表示されたら、イメージが完全に書き込まれ、検証されたことを意味します。これでNVMe SSDからRaspberry Piを起動する準備が整いました！
 
     .. image:: img/nvme_install_finish.png
-        :align: center
-
-#. NVMe SSDを |link_pironman5| のNVMe PiPボードに挿入します。
-
-    .. image:: img/nvme_assemble.png
-        :width: 500
         :align: center
 

@@ -44,7 +44,7 @@ PWMファンの動作はRaspberry Pi 5の温度に基づいています：
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
- |link_pironman5| link_pironman5|では、PWMファンは特に集中的なタスクを実行中に最適な運用温度を維持するための重要なコンポーネントであり、Raspberry Pi 5が効率的かつ信頼性高く動作することを保証します。
+ Pironman 5 では、PWMファンは特に集中的なタスクを実行中に最適な運用温度を維持するための重要なコンポーネントであり、Raspberry Pi 5が効率的かつ信頼性高く動作することを保証します。
 
 RGBファン
 -------------------

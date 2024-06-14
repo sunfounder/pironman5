@@ -17,7 +17,10 @@
 Micro SDカードにOSをインストールする
 ============================================================
 
- **必要なコンポーネント** 
+.. raw:: html
+
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/-5rTwJ0oMVM?start=343&end=414&si=je5SaLccHzjjEhuD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 * パーソナルコンピュータ
 * Micro SDカードとリーダー
@@ -52,6 +55,11 @@ Micro SDカードにOSをインストールする
 
 #.  **Operating System** を選択し、推奨されるオペレーティングシステムバージョンを選択します。
 
+    .. note::
+
+        * **Ubuntu** システムの場合、 **Other general-purpose OS** -> **Ubuntu**をクリックし、 **Ubuntu Desktop 24.04 LTS (64 bit)** または **Ubuntu Server 24.04 LTS (64 bit)** を選択します。
+        * **Kali** および **Home Assistant** システムの場合、 **Other specific-purpose OS** をクリックし、対応するシステムを選択します。
+
     .. image:: img/os_choose_os.png
         :align: center
 
@@ -68,50 +76,52 @@ Micro SDカードにOSをインストールする
 
     .. note::
 
-        Raspberry Pi用のモニターがある場合は、次のステップをスキップして「Yes」をクリックしてインストールを開始できます。その他の設定は後でモニターで調整します。
+        Home Assistantをインストールする場合、この手順は表示されません。
+
+        Raspberry Pi用のモニターがある場合は、次の手順をスキップし、「Yes」をクリックしてインストールを開始できます。他の設定は後でモニター上で調整してください。
 
     .. image:: img/os_enter_setting.png
         :align: center
 
-#. Raspberry Piの **ホスト名** を設定します。
+    * Raspberry Piの **ホスト名** を設定します。
 
-    .. note::
+        .. note::
 
-        ホスト名はRaspberry Piのネットワーク識別子です。 ``<hostname>.local`` または ``<hostname>.lan`` を使用してPiにアクセスできます。
+            ホスト名はRaspberry Piのネットワーク識別子です。 ``<hostname>.local`` または ``<hostname>.lan`` を使用してPiにアクセスできます。
 
-    .. image:: img/os_set_hostname.png
-        :align: center
+            .. image:: img/os_set_hostname.png
+                :align: center
 
-#. Raspberry Piの管理者アカウントの **ユーザー名** と **パスワード** を作成します。
+    * Raspberry Piの管理者アカウントの **ユーザー名** と **パスワード** を作成します。
 
-    .. note::
+        .. note::
 
-        固有のユーザー名とパスワードを設定することは、デフォルトのパスワードがないRaspberry Piを保護するために重要です。
+            固有のユーザー名とパスワードを設定することは、デフォルトのパスワードがないRaspberry Piを保護するために重要です。
 
-    .. image:: img/os_set_username.png
-        :align: center
+            .. image:: img/os_set_username.png
+                :align: center
 
-#. ワイヤレスLANの設定を行い、ネットワークの **SSID** と **パスワード** を入力します。
+    * ワイヤレスLANの設定を行い、ネットワークの **SSID** と **パスワード** を入力します。
 
-    .. note::
+        .. note::
 
-        ``Wireless LAN country`` は、居住地に対応する2文字の `ISO/IEC alpha2コード <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ に設定してください。
+            ``Wireless LAN country`` は、居住地に対応する2文字の `ISO/IEC alpha2コード <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ に設定してください。
 
-    .. image:: img/os_set_wifi.png
-        :align: center
+            .. image:: img/os_set_wifi.png
+                :align: center
 
-#. Raspberry Piにリモート接続するために、ServicesタブでSSHを有効にします。
+    * Raspberry Piにリモート接続するために、ServicesタブでSSHを有効にします。
 
-    * **パスワード認証** の場合、 **General** タブのユーザー名とパスワードを使用します。
-    * 公開鍵認証の場合、「公開鍵認証のみを許可」を選択します。RSAキーがある場合、それが使用されます。ない場合は、「SSH-keygenを実行」をクリックして新しいキーを生成します。
+        * **パスワード認証** の場合、 **General** タブのユーザー名とパスワードを使用します。
+        * 公開鍵認証の場合、「公開鍵認証のみを許可」を選択します。RSAキーがある場合、それが使用されます。ない場合は、「SSH-keygenを実行」をクリックして新しいキーを生成します。
 
-    .. image:: img/os_enable_ssh.png
-        :align: center
+            .. image:: img/os_enable_ssh.png
+                :align: center
 
-#.  **Options** メニューでは、書き込み時のImagerの動作（完了時の音を鳴らす、メディアの取り出し、テレメトリの有効化など）を設定できます。
+    *  **Options** メニューでは、書き込み時のImagerの動作（完了時の音を鳴らす、メディアの取り出し、テレメトリの有効化など）を設定できます。
 
-    .. image:: img/os_options.png
-        :align: center
+            .. image:: img/os_options.png
+                :align: center
 
 #. OSのカスタマイズ設定を入力し終えたら、 **保存** をクリックしてカスタマイズを保存します。その後、イメージを書き込む際に適用するために **Yes** をクリックします。
 

@@ -1,4 +1,3 @@
-
 .. note::
 
     こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。
@@ -29,6 +28,24 @@ Pironmanを組み立てる前に、すべての部品とコンポーネントが
 * :download:`[PDF] Pironman 5の部品リストと組み立て手順 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5.pdf>`
 
 
+**完全な組み立ておよび起動ガイド：Pironman 5 NVMe SSD搭載**
+
+NVMe SSDを使用する場合は、このビデオを見てPironman 5を組み立てて設定してください。
+
+.. raw:: html
+
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+**完全な組み立ておよび起動ガイド：Pironman 5 Micro SDカード搭載**
+
+Micro SDカードを使用する場合は、このビデオを見てPironman 5を組み立てて設定してください。
+
+.. raw:: html
+
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/-5rTwJ0oMVM?si=je5SaLccHzjjEhuD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
 .. **Assemble Tutorial Video**
 
 .. .. raw:: html
@@ -46,37 +63,3 @@ Pironmanを組み立てる前に、すべての部品とコンポーネントが
 ..         </video>
 ..     </div>
 
-.. .. raw:: html
-    
-..     <br/>
-
-.. **Connect the GPIO Bridge**
-
-
-.. .. raw:: html
-
-..     <div style="text-align: center;">
-..         <video center loop autoplay muted style = "max-width:80%">
-..             <source src="_static/video/connect_gpio_bridge.mp4"  type="video/mp4">
-..             Your browser does not support the video tag.
-..         </video>
-..     </div>
-
-.. .. raw:: html
-    
-..     <br/>
-
-.. **Connect the SD Card Bridge**
-
-.. .. raw:: html
-
-..     <div style="text-align: center;">
-..         <video center loop autoplay muted style = "max-width:80%">
-..             <source src="_static/video/connect_sd_card.mp4"  type="video/mp4">
-..             Your browser does not support the video tag.
-..         </video>
-..     </div>
-
-.. .. raw:: html
-    
-..     <br/>

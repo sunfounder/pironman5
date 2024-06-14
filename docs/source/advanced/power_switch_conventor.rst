@@ -25,7 +25,7 @@
 
     .. image:: img/pi5_j2.jpg
 
-* |link_pironman5| には、 **Power Switch Converter** があり、2つのPogoピンを使用して **J2** ジャンパーを外部の電源ボタンに拡張します。
+* Pironman 5 には、 **Power Switch Converter** があり、2つのPogoピンを使用して **J2** ジャンパーを外部の電源ボタンに拡張します。
 
     .. image:: img/power_switch_convertor.png
 
