@@ -38,7 +38,7 @@ Elevate your Raspberry Pi 5 with the |link_pironman5|, our top-tier case designe
 * Tower cooler can cool a 100% CPU load Pi to 39°C at 25°C room temperature
 * 2 RGB Fans, with GPIO control
 * 1 PWM Fan on the Tower Cooler is controlled by the Raspberry Pi system.
-* Supports four (PCIE2.0 / PCIE 3.0) NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280.
+* Supports four (PCIe Gen 2.0 / PCIe Gen 3.0) NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280.
 * 4 WS2812 Addressable RGB LED light up the whole case with cool light effect
 * IR Receiver for multi-media center like Kodi or Volumio
 * Retro metal power button for safe shut down
