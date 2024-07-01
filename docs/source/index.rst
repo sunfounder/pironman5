@@ -37,7 +37,7 @@ Verleihen Sie Ihrem Raspberry Pi 5 mit dem |link_pironman5|, unserem erstklassig
 * Turmkühler kann einen 100% ausgelasteten Raspberry Pi bei 25°C Raumtemperatur auf 39°C kühlen
 * 2 RGB-Lüfter mit GPIO-Steuerung
 * 1 PWM-Lüfter am Turmkühler wird vom Raspberry Pi-System gesteuert
-* Unterstützt vier NVMe M.2 SSD-Größen (PCIE2.0 / PCIE 3.0): 2230, 2242, 2260 und 2280
+* Unterstützt vier NVMe M.2 SSD-Größen (PCIe Gen 2.0 / PCIe Gen 3.0): 2230, 2242, 2260 und 2280
 * 4 WS2812 adressierbare RGB-LEDs beleuchten das gesamte Gehäuse mit coolen Lichteffekten
 * IR-Empfänger für Multimedia-Zentren wie Kodi oder Volumio
 * Retro-Metall-Power-Button für sicheres Herunterfahren
