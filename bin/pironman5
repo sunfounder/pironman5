@@ -14,7 +14,7 @@ stop() {
 
 restart() {
     stop
-    start
+    start-background
 }
 
 if [ "$1" == "start" ]; then
