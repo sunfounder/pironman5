@@ -16,7 +16,7 @@ PMDashboard = None
 try:
     from pm_dashboard.pm_dashboard import PMDashboard
 except ImportError:
-    log.warning('PM Dashboard not found, skipping...')
+    pass
 
 PERIPHERALS = [
     'ws2812',

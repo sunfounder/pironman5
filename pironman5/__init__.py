@@ -184,6 +184,7 @@ def main():
     }
 
     Pironman5.update_config_file(new_config)
+
     if args.command == "start":
         pironman5 = Pironman5()
         pironman5.start()
