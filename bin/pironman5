@@ -1,20 +1,51 @@
 #!/bin/bash
 
-# Pass all arguments to the pironman5 script
-background=false
-args=()
-for arg in "$@"; do
-    if [ "$arg" == "--background" ]; then
-        background=true
-    else
-        args+=("$arg")
-    fi
-done
+start() {
+    /opt/pironman5/venv/bin/pironman5-service start
+}
 
-if [ $background == true ]; then
-    echo "running at background"
-    /opt/pironman5/venv/bin/pironman5-service "$args" 2>1 1>/dev/null &
+start-background() {
+    /opt/pironman5/venv/bin/pironman5-service start 2>1 1>/dev/null &
+}
+
+stop() {
+    /opt/pironman5/venv/bin/pironman5-service stop
+}
+
+restart() {
+    stop
+    start
+}
+
+if [ "$1" == "start" ]; then
+    if [ "$2" == "--background" ]; then
+        start-background
+    else
+        start
+    fi
+elif [ "$1" == "stop" ]; then
+    stop
+elif [ "$1" == "restart" ]; then
+    restart
 else
     /opt/pironman5/venv/bin/pironman5-service "$@"
 fi
+
+# Pass all arguments to the pironman5 script
+# background=false
+# args=()
+# for arg in "$@"; do
+#     if [ "$arg" == "--background" ]; then
+#         background=true
+#     else
+#         args+=("$arg")
+#     fi
+# done
+
+# if [ $background == true ]; then
+#     echo "running at background"
+#     /opt/pironman5/venv/bin/pironman5-service "$args" 2>1 1>/dev/null &
+# else
+#     /opt/pironman5/venv/bin/pironman5-service "$@"
+# fi
 

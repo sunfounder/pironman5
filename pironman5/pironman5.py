@@ -4,7 +4,6 @@ import os
 from pkg_resources import resource_filename
 
 from pm_auto.pm_auto import PMAuto
-from pm_dashboard.pm_dashboard import PMDashboard
 from .logger import create_get_child_logger
 from .utils import merge_dict, log_error
 
@@ -33,6 +32,9 @@ AUTO_DEFAULT_CONFIG = {
     'rgb_speed': 0,
     'gpio_fan_pin': 6,
 }
+DASHBOARD_DEFAULT_CONFIG = {
+    "enabled": True,
+}
 PERIPHERALS = [
     'ws2812',
     'oled',
@@ -44,13 +46,13 @@ DASHBOARD_SETTINGS = {
     "interval": 1,
     "spc": False,
 }
-
 class Pironman5:
     @log_error
     def __init__(self):
         self.log = get_child_logger('main')
         self.config = {
             'auto': AUTO_DEFAULT_CONFIG,
+            'dashboard': DASHBOARD_DEFAULT_CONFIG,
         }
         if not os.path.exists(CONFIG_PATH):
             with open(CONFIG_PATH, 'w') as f:
@@ -60,17 +62,18 @@ class Pironman5:
                 config = json.load(f)
             merge_dict(self.config, config)
 
-
         self.pm_auto = PMAuto(self.config['auto'],
                               peripherals=PERIPHERALS,
                               get_logger=get_child_logger)
-        self.pm_dashboard = PMDashboard(device_info=DEVICE_INFO,
-                                        settings=DASHBOARD_SETTINGS,
-                                        config=self.config,
-                                        peripherals=PERIPHERALS,
-                                        get_logger=get_child_logger)
-        self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
-        self.pm_dashboard.set_on_config_changed(self.update_config)
+        if self.config['dashboard']['enabled']:
+            from pm_dashboard.pm_dashboard import PMDashboard
+            self.pm_dashboard = PMDashboard(device_info=DEVICE_INFO,
+                                            settings=DASHBOARD_SETTINGS,
+                                            config=self.config,
+                                            peripherals=PERIPHERALS,
+                                            get_logger=get_child_logger)
+            self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
+            self.pm_dashboard.set_on_config_changed(self.update_config)
 
     @log_error
     def update_config(self, config):
@@ -93,12 +96,14 @@ class Pironman5:
     def start(self):
         self.pm_auto.start()
         self.log.info('PMAuto started')
-        self.pm_dashboard.start()
-        self.log.info('PmDashboard started')
+        if self.pm_dashboard:
+            self.pm_dashboard.start()
+            self.log.info('PmDashboard started')
         while True:
             time.sleep(1)
 
     @log_error
     def stop(self):
         self.pm_auto.stop()
-        self.pm_dashboard.stop()
+        if self.pm_dashboard:
+            self.pm_dashboard.stop()

@@ -9,5 +9,8 @@
         "temperature_unit": "C",
         "gpio_fan_mode": 2,
         "gpio_fan_pin": 6
+    },
+    "dashboard": {
+        "enabled": true
     }
 }
