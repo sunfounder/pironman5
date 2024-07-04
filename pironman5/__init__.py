@@ -20,7 +20,7 @@ def main():
 
     parser = argparse.ArgumentParser(description='Pironman5')
     parser.add_argument("command",
-                        choices=["start", "stop"],
+                        choices=["start", "restart", "stop"],
                         nargs="?",
                         help="Command")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
@@ -33,6 +33,7 @@ def main():
     parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], nargs='?', default='', help="Temperature unit")
     parser.add_argument("-gm", "--gpio-fan-mode", nargs='?', default='', help=f"GPIO fan mode, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
     parser.add_argument("-gp", "--gpio-fan-pin", nargs='?', default='', help="GPIO fan pin")
+    parser.add_argument("--background", nargs='?', default='', help="Run in background")
 
     args = parser.parse_args()
 
@@ -49,6 +50,10 @@ def main():
 
     if args.config:
         print(json.dumps(current_config, indent=4))
+        quit()
+
+    if args.command == "restart":
+        print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
         quit()
 
     if args.command == "stop":
@@ -170,6 +175,9 @@ def main():
                 print(f"Invalid value for GPIO fan pin, it should be an integer")
                 quit()
             new_auto['gpio_fan_pin'] = args.gpio_fan_pin
+    if args.background != '':
+        print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
+        quit()
 
     new_config = {
         'auto': new_auto,
