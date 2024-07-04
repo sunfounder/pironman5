@@ -4,16 +4,19 @@ import os
 from pkg_resources import resource_filename
 
 from pm_auto.pm_auto import PMAuto
-try:
-    from pm_dashboard.pm_dashboard import PMDashboard
-except ImportError:
-    PMDashboard = None
 from .logger import create_get_child_logger
 from .utils import merge_dict, log_error
 
 get_child_logger = create_get_child_logger('pironman5')
+log = get_child_logger('main')
 __package_name__ = __name__.split('.')[0]
 CONFIG_PATH = resource_filename(__package_name__, 'config.json')
+
+PMDashboard = None
+try:
+    from pm_dashboard.pm_dashboard import PMDashboard
+except ImportError:
+    log.warning('PM Dashboard not found, skipping...')
 
 PERIPHERALS = [
     'ws2812',
@@ -47,8 +50,9 @@ DASHBOARD_SETTINGS = {
     "interval": 1,
     "spc": False,
 }
+
 class Pironman5:
-    @log_error
+    # @log_error
     def __init__(self):
         self.log = get_child_logger('main')
         self.config = {
@@ -69,7 +73,6 @@ class Pironman5:
             self.pm_dashboard = None
             self.log.warning('PM Dashboard not found skipping')
         else:
-            from pm_dashboard.pm_dashboard import PMDashboard
             self.pm_dashboard = PMDashboard(device_info=DEVICE_INFO,
                                             settings=DASHBOARD_SETTINGS,
                                             config=self.config,

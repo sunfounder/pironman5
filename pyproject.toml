@@ -20,8 +20,8 @@ dynamic = ["version"]
 dependencies = [
   'smbus2',
   'psutil',
-  'influxdb',
   'adafruit-circuitpython-neopixel-spi',
+  'RPi.GPIO',
 ]
 
 [project.scripts]
