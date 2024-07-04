@@ -67,7 +67,7 @@ installer = SF_Installer(
     # - Copy device tree overlay to /boot/overlays
     dtoverlay = ['sunfounder-pironman5.dtbo'],
 )
-installer.parser.add_argument("--disable-dashboard", nargs='?', default='', help="Disable dashboard")
+installer.parser.add_argument("--disable-dashboard", action='store_true', help="Disable dashboard")
 args = installer.parser.parse_args()
 if args.disable_dashboard:
     installer.python_source.pop('pm_dashboard')
