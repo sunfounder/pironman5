@@ -39,12 +39,6 @@ AUTO_DEFAULT_CONFIG = {
     'rgb_speed': 0,
     'gpio_fan_pin': 6,
 }
-PERIPHERALS = [
-    'ws2812',
-    'oled',
-    'gpio_fan',
-    'pwm_fan',
-]
 DASHBOARD_SETTINGS = {
     "database": "pironman5",
     "interval": 1,
