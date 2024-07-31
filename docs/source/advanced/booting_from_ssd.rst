@@ -14,8 +14,8 @@
 
 .. _boot_from_ssd:
 
-Booting from NVMe SSD
-=============================
+Copy OS to SSD and Configure Boot from the SSD
+=====================================================
 
 1. Enabling PCIe
 --------------------

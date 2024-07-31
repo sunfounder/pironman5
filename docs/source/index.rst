@@ -53,10 +53,7 @@ The |link_pironman5| is not just a case; it's an upgrade that transforms your Ra
 
     You need to install an OS that supports Raspberry Pi 5. Please use the latest Raspberry Pi Imager tool for system installation. The currently tested systems are:
 
-    * **Raspberry Pi OS (bookworm 64 desktop / lite)**: Perfectly compatible
-    * **Ubuntu Desktop 23.10**: No SPI, causing LED to not light up
-    * **Kali**: No I2C, causing OLED screen to not light up
-    * **Home Assistant**: Cannot enable I2C and SPI
+    .. image:: img/compitable_os.png
 
 If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
 
