@@ -15,6 +15,11 @@
 FAQ
 ============
 
+Unterstützt der Pironman 5 Retro-Gaming-Systeme?
+----------------------------------------------------
+Ja, er ist kompatibel. Allerdings sind die meisten Retro-Gaming-Systeme abgespeckte Versionen, die keine zusätzliche Software installieren und ausführen können. Diese Einschränkung kann dazu führen, dass einige Komponenten des Pironman 5, wie das OLED-Display, die beiden RGB-Lüfter und der CPU-Lüfter auf dem Tower-Kühler, nicht richtig funktionieren, da diese Komponenten die Installation der Softwarepakete des Pironman 5 erfordern.
+
+
 Wie man Komponenten mit dem ``pironman5`` Befehl steuert
 ----------------------------------------------------------------------
 Sie können das folgende Tutorial verwenden, um die Komponenten des Pironman 5 mit dem ``pironman5`` Befehl zu steuern.
