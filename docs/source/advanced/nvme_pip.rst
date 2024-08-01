@@ -17,12 +17,13 @@ Pi5 NVMe PIP
 
 Das Pi5 NVMe PIP (PCIe Peripheral Board), wie von der Raspberry Pi Foundation definiert, ist eine PCIe-Adapterplatine, die speziell für NVMe-Solid-State-Laufwerke entwickelt wurde. Sie unterstützt vier verschiedene Größen von NVMe-SSDs: 2230, 2242, 2260 und 2280, die alle in einen M.2 M-Key-Slot passen.
 
-.. image:: img/nvme_pip.jpeg
+.. image:: img/nvme_pip.png
 
 * Die Platine wird über ein 16-poliges 0,5mm umgekehrtes FFC (Flexible Flat Cable) oder ein kundenspezifisches impedanzangepasstes FPC (Flexible Printed Circuit) Kabel verbunden.
 * **STA**: Eine Status-LED-Anzeige.
 * **PWR**: Eine Strom-LED-Anzeige.
 * Die integrierte 3,3V-Stromversorgung kann bis zu 3A Ausgang unterstützen. Da die Raspberry Pi PCIe-Schnittstelle jedoch auf die Bereitstellung von 5V/1A Ausgang (entspricht 5W) begrenzt ist, kann zusätzliche Leistung für die Nutzung von 3,3V/3A über den J3-Anschluss von einer 5V-Quelle geliefert werden.
+* **FORCE ENABLE**: Die Onboard-Stromversorgung wird durch das Schaltsignal von der PCIe-Schnittstelle aktiviert. Nachdem der Raspberry Pi eingeschaltet wurde, sendet er ein Signal, um die 3,3V-Stromversorgung einzuschalten. Wenn einige Systeme das Schaltsignal nicht unterstützen oder aus anderen Gründen, können Sie J4 FORCE ENABLE durch Löten eines Drahtes zwischen den beiden schwebenden Pads kurzschließen, um die Onboard-3,3V-Stromversorgung zu erzwingen und die NVMe mit Strom zu versorgen.
 
 Über das Modell
 ---------------------------

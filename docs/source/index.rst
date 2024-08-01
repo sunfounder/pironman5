@@ -52,10 +52,7 @@ Das |link_pironman5| ist nicht nur ein Gehäuse; es ist ein Upgrade, das Ihren R
 
     Sie müssen ein Betriebssystem installieren, das den Raspberry Pi 5 unterstützt. Bitte verwenden Sie das neueste Raspberry Pi Imager-Tool zur Installation des Systems. Die derzeit getesteten Systeme sind:
 
-    * **Raspberry Pi OS (Bookworm 64 Desktop / Lite)**: Perfekt kompatibel
-    * **Ubuntu Desktop 23.10**: Kein SPI, wodurch die LED nicht leuchtet
-    * **Kali**: Kein I2C, wodurch der OLED-Bildschirm nicht leuchtet
-    * **Home Assistant**: Kann I2C und SPI nicht aktivieren
+    .. image:: install_the_os/img/compitable_os.png
 
 Wenn Sie Fragen haben, senden Sie bitte eine E-Mail an service@sunfounder.com und wir werden so schnell wie möglich antworten.
 

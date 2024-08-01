@@ -14,8 +14,8 @@
 
 .. _boot_from_ssd:
 
-Booten von NVMe SSD
-=============================
+Betriebssystem auf SSD kopieren und Booten von der SSD konfigurieren
+===============================================================================
 
 1. PCIe aktivieren
 -----------------------
