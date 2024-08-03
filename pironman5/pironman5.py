@@ -38,6 +38,7 @@ AUTO_DEFAULT_CONFIG = {
     'rgb_style': 'rainbow',
     'rgb_speed': 0,
     'gpio_fan_pin': 6,
+    'oled_enable': True
 }
 DASHBOARD_SETTINGS = {
     "database": "pironman5",
