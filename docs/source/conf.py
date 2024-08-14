@@ -90,6 +90,10 @@ gettext_compact = False # Support for generating the contents of the folders ins
 
 rst_epilog = """
 
+.. |link_batocera_download| raw:: html
+
+    <a href="https://batocera.org/download" target="_blank">Batocera.linux download</a>
+
 .. |link_sf_facebook| raw:: html
 
     <a href="https://bit.ly/raphaelkit" target="_blank">here</a>

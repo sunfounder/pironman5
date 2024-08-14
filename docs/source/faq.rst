@@ -17,7 +17,15 @@ FAQ
 
 Does the Pironman 5 support retro gaming systems?
 ------------------------------------------------------
-Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the CPU fan on the Tower Cooler, to not function properly because these components require the installation of Pironman 5's software packages.
+Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
+
+
+.. note::
+
+    The Batocera.linux system is now fully compatible with Pironman 5. Batocera.linux is an open-source and completely free retro-gaming distribution.
+
+    For more details, please refer to: :ref:`install_batocera`.
+
 
 How to Control Components Using the ``pironman5`` Command
 ----------------------------------------------------------------------
