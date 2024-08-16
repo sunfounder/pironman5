@@ -1,58 +1,56 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    **Why Join?**
+    **Warum mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Fachkundige Unterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
+    - **Sonderrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
-Power Switch Conventor
+Power-Switch-Konverter
 ==============================
 
-This is a module that expands the Raspberry Pi 5 power switch to the outside. 
+Dies ist ein Modul, das den Netzschalter des Raspberry Pi 5 nach außen erweitert.
 
 .. image:: img/power_switch_conventor.jpeg
 
-**Adding the Power Button**
+**Hinzufügen des Netzschalters**
 
-* The Raspberry Pi 5 features a **J2** jumper, situated between the RTC battery connector and the board edge. This breakout enables the addition of a custom power button to the Raspberry Pi 5 by connecting a Normally Open (NO) momentary switch across the two pads. Briefly engaging this switch mimics the onboard power button's functionality.
+* Der Raspberry Pi 5 verfügt über einen **J2**-Jumper, der sich zwischen dem RTC-Batterieanschluss und dem Rand der Platine befindet. Dieser Breakout ermöglicht das Hinzufügen eines benutzerdefinierten Netzschalters zum Raspberry Pi 5, indem ein Normal Open (NO) Momentanschalter über die beiden Pads angeschlossen wird. Ein kurzes Betätigen dieses Schalters imitiert die Funktion des eingebauten Netzschalters.
 
    .. image:: img/pi5_j2.jpg
 
-* On the Pironman 5, there's a **Power Switch Converter** that extends the **J2** jumper to an external power button using two Pogo pins.
+* Auf dem Pironman 5 gibt es einen **Power-Switch-Konverter**, der den **J2**-Jumper über zwei Pogo-Pins mit einem externen Netzschalter verbindet.
 
    .. image:: img/power_switch_convertor.png
 
-* Now, the Raspberry Pi 5 can be powered on and off using the Power Button.
+* Nun kann der Raspberry Pi 5 mit dem Netzschalter ein- und ausgeschaltet werden.
 
    .. image:: img/pironman_button.JPG
 
-**Power Cycling**
+**Stromzyklus**
 
-Upon initially powering your Raspberry Pi 5, it will automatically turn on and boot into the operating system without the need to press the button.
+Beim erstmaligen Einschalten Ihres Raspberry Pi 5 wird er automatisch eingeschaltet und bootet ins Betriebssystem, ohne dass der Schalter gedrückt werden muss.
 
-If running the Raspberry Pi Desktop, a brief press of the power button initiates a clean shutdown process. A menu will appear, offering options to shutdown, reboot, or logout. Selecting an option or pressing the power button again will start a clean shutdown.
+Wenn der Raspberry Pi Desktop ausgeführt wird, führt ein kurzes Drücken des Netzschalters einen sauberen Herunterfahrvorgang ein. Ein Menü erscheint, das Optionen zum Herunterfahren, Neustarten oder Abmelden bietet. Durch die Auswahl einer Option oder durch erneutes Drücken des Netzschalters wird das Herunterfahren eingeleitet.
 
 .. image:: img/button_shutdown.png
 
-**Shutdown**
+**Herunterfahren**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system without a desktop, press the power button a single time to initiate a shutdown.
-    * To force a hard shutdown, press and hold the power button.
+    * Wenn Sie das Raspberry Pi **Bookworm Desktop**-System ausführen, können Sie den Netzschalter zweimal schnell hintereinander drücken, um herunterzufahren.
+    * Wenn Sie das Raspberry Pi **Bookworm Lite**-System ohne Desktop ausführen, drücken Sie den Netzschalter einmal, um das Herunterfahren einzuleiten.
+    * Um ein hartes Herunterfahren zu erzwingen, halten Sie den Netzschalter gedrückt.
 
+**Einschalten**
 
-**Power on**
-
-    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+    * Wenn das Raspberry Pi-Board heruntergefahren, aber noch mit Strom versorgt ist, drücken Sie den Schalter einmal, um aus dem ausgeschalteten Zustand einzuschalten.
 
 .. note::
 
-    If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
-
+    Wenn Sie ein System verwenden, das den Ausschalter nicht unterstützt, können Sie ihn 5 Sekunden lang gedrückt halten, um ein hartes Herunterfahren zu erzwingen, und einmal drücken, um aus dem ausgeschalteten Zustand einzuschalten.

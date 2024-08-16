@@ -1,50 +1,50 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    **Why Join?**
+    **Warum mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Fachkundige Unterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
+    - **Sonderrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
-For Linux/Unix Users
-==========================
+Für Linux/Unix-Benutzer
+============================
 
-#. Locate and open the **Terminal** on your Linux/Unix system.
+#. Suchen und öffnen Sie das **Terminal** auf Ihrem Linux/Unix-System.
 
-#. Ensure your Raspberry Pi is connected to the same network. Verify this by typing `ping <hostname>.local`. For example:
+#. Stellen Sie sicher, dass Ihr Raspberry Pi mit demselben Netzwerk verbunden ist. Überprüfen Sie dies, indem Sie `ping <hostname>.local` eingeben. Zum Beispiel:
 
     .. code-block::
 
         ping raspberrypi.local
 
-    You should see the Raspberry Pi's IP address if it's connected to the network.
+    Sie sollten die IP-Adresse des Raspberry Pi sehen, wenn er mit dem Netzwerk verbunden ist.
 
-    * If the terminal shows a message like ``Ping request could not find host pi.local. Please check the name and try again.``, double-check the hostname you've entered.
-    * If you're unable to retrieve the IP address, inspect your network or WiFi settings on the Raspberry Pi.
+    * Wenn das Terminal eine Nachricht wie ``Ping-Anforderung konnte den Host pi.local nicht finden. Bitte überprüfen Sie den Namen und versuchen Sie es erneut.`` anzeigt, überprüfen Sie den eingegebenen Hostnamen.
+    * Wenn Sie die IP-Adresse nicht abrufen können, überprüfen Sie die Netzwerkeinstellungen oder WiFi-Konfiguration Ihres Raspberry Pi.
 
-#. Initiate an SSH connection by typing ``ssh <username>@<hostname>.local`` or ``ssh <username>@<IP address>``. For instance:
+#. Starten Sie eine SSH-Verbindung, indem Sie ``ssh <username>@<hostname>.local`` oder ``ssh <username>@<IP-Adresse>`` eingeben. Zum Beispiel:
 
     .. code-block::
 
         ssh pi@raspberrypi.local
 
-#. On your first login, you'll encounter a security message. Type ``yes`` to proceed.
+#. Bei Ihrem ersten Login wird eine Sicherheitsmeldung angezeigt. Geben Sie ``yes`` ein, um fortzufahren.
 
     .. code-block::
 
-        The authenticity of host 'raspberrypi.local (2400:2410:2101:5800:635b:f0b6:2662:8cba)' can't be established.
-        ED25519 key fingerprint is SHA256:oo7x3ZSgAo032wD1tE8eW0fFM/kmewIvRwkBys6XRwg.
-        Are you sure you want to continue connecting (yes/no/[fingerprint])?
+        Die Echtheit des Hosts 'raspberrypi.local (2400:2410:2101:5800:635b:f0b6:2662:8cba)' kann nicht bestätigt werden.
+        Der ED25519-Schlüsselfingerabdruck ist SHA256:oo7x3ZSgAo032wD1tE8eW0fFM/kmewIvRwkBys6XRwg.
+        Sind Sie sicher, dass Sie die Verbindung fortsetzen möchten (yes/no/[fingerprint])?
 
-#. Enter the password you previously set. Note that for security reasons, the password won't be visible as you type.
+#. Geben Sie das Passwort ein, das Sie zuvor festgelegt haben. Beachten Sie, dass aus Sicherheitsgründen das Passwort beim Tippen nicht angezeigt wird.
 
     .. note::
-        It's normal for the password characters not to display in the terminal. Just ensure to enter the correct password.
+        Es ist normal, dass die Passwortzeichen nicht im Terminal angezeigt werden. Stellen Sie einfach sicher, dass Sie das korrekte Passwort eingeben.
 
-#. Once you've successfully logged in, your Raspberry Pi is now connected, and you're ready to proceed to the next step.
+#. Sobald Sie sich erfolgreich angemeldet haben, ist Ihr Raspberry Pi verbunden und Sie können mit dem nächsten Schritt fortfahren.

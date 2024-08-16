@@ -1,189 +1,188 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    **Why Join?**
+    **Warum mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Fachkundige Unterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
+    - **Sonderrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
-IO Expander
+IO-Expander
 ================
 
-RGB LEDs
+RGB-LEDs
 ------------
 
 .. image:: img/io_board_rgb.png
 
-The board features 4 WS2812 RGB LEDs, offering customizable control. Users can turn them on or off, change the color, adjust the brightness, switch display modes, and set the speed of changes.
+Das Board verfügt über 4 WS2812 RGB-LEDs, die individuell steuerbar sind. Benutzer können sie ein- oder ausschalten, die Farbe ändern, die Helligkeit anpassen, Anzeige-Modi wechseln und die Geschwindigkeit der Übergänge festlegen.
 
-* To modify the on and off state of the RGB LEDs, ``true`` to turn on the RGB LEDs, ``false`` to turn them off.
+* Um den Ein- oder Ausschaltzustand der RGB-LEDs zu ändern, verwenden Sie ``true``, um die RGB-LEDs einzuschalten, und ``false``, um sie auszuschalten.
 
 .. code-block:: shell
 
   pironman5 -re true
 
-* To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
+* Um die Farbe zu ändern, geben Sie den gewünschten Hexadezimal-Farbwert ein, z. B. ``fe1a1a``.
 
 .. code-block:: shell
 
   pironman5 -rc fe1a1a
 
-* To change the brightness of the RGB LED (range: 0 ~ 100%):
+* Um die Helligkeit der RGB-LED zu ändern (Bereich: 0 ~ 100%):
 
 .. code-block:: shell
 
   pironman5 -rb 100
 
-* To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
+* Um den Anzeigemodus der RGB-LED zu ändern, wählen Sie eine der Optionen: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
 .. note::
 
-  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``pironman5 -rc``.
+  Wenn Sie den RGB-LED-Anzeigemodus auf ``rainbow``, ``rainbow_reverse`` oder ``hue_cycle`` einstellen, können Sie die Farbe nicht mit ``pironman5 -rc`` ändern.
 
 .. code-block:: shell
 
   pironman5 -rs breathing
 
-* To modify the speed of change (range: 0 ~ 100%):
+* Um die Geschwindigkeit der Übergänge anzupassen (Bereich: 0 ~ 100%):
 
 .. code-block:: shell
 
   pironman5 -rp 80
 
-RGB Control Pin
+RGB-Steuerungs-Pin
 -------------------------
 
-The RGB LED is driven by SPI and connected to **GPIO10**, which is also the SPI MOSI pin. The two pins above J9 are used to connect the RGB to GPIO10. If not needed, the jumper can be removed.
+Die RGB-LED wird über SPI gesteuert und ist mit **GPIO10** verbunden, das auch der SPI-MOSI-Pin ist. Die beiden Pins oberhalb von J9 werden verwendet, um die RGB-LED an GPIO10 anzuschließen. Falls nicht benötigt, kann der Jumper entfernt werden.
 
   .. image:: img/io_board_rgb_pin.png
 
-RGB OUT Pins
+RGB-AUS-Pins
 -------------------------
 
 .. image:: img/io_board_rgb_out.png
 
-The WS2812 RGB LEDs support serial connection, allowing for the attachment of an external RGB LED strip. Connect the **SIG** pin to the external strip's **DIN** pin for expansion.
+Die WS2812 RGB-LEDs unterstützen serielle Verbindungen, wodurch ein externer RGB-LED-Streifen angeschlossen werden kann. Verbinden Sie den **SIG**-Pin mit dem **DIN**-Pin des externen Streifens für die Erweiterung.
 
-The default setup includes 4 RGB LEDs. Connect additional LEDs and update the count using:
+Das Standard-Setup umfasst 4 RGB-LEDs. Schließen Sie zusätzliche LEDs an und aktualisieren Sie die Anzahl mit:
 
 .. code-block:: shell
 
   pironman5 -rl 12
 
 
-OLED Screen Connector
+OLED-Bildschirmanschluss
 ----------------------------
 
-The OLED screen connector, with an address of 0x3C, is a key feature.
+Der OLED-Bildschirmanschluss, mit einer Adresse von 0x3C, ist eine wichtige Funktion.
 
 .. image:: img/io_board_oled.png
 
-If the OLED Screen is not displaying or displaying incorrectly, you can follow these steps to troubleshoot the issue:
+Wenn der OLED-Bildschirm nichts anzeigt oder falsch anzeigt, können Sie diese Schritte zur Fehlerbehebung durchführen:
 
-Check if the FPC cable of the OLED Screen is properly connected.
+Überprüfen Sie, ob das FPC-Kabel des OLED-Bildschirms richtig angeschlossen ist.
 
-#. Use the following command to view the program's run logs and check for error messages.
+#. Verwenden Sie den folgenden Befehl, um die Ausführungsprotokolle des Programms anzuzeigen und nach Fehlermeldungen zu suchen.
 
     .. code-block:: shell
 
         cat /opt/pironman5/log
 
-#. Alternatively, use the following command to check if the OLED's i2c address 0x3C is recognized:
+#. Alternativ können Sie den folgenden Befehl verwenden, um zu überprüfen, ob die i2c-Adresse 0x3C des OLED erkannt wird:
     
     .. code-block:: shell
         
         sudo i2cdetect -y 1
 
-#. If the first two steps don't reveal any issues, try restarting the pironman5 service to see if that resolves the problem.
-
+#. Wenn die ersten beiden Schritte keine Probleme aufzeigen, versuchen Sie, den pironman5-Dienst neu zu starten, um zu sehen, ob das Problem dadurch behoben wird.
 
     .. code-block:: shell
 
         sudo systemctl restart pironman5.service
 
 
-Infrared Receiver
+Infrarot-Empfänger
 ---------------------------
 
 .. image:: img/io_board_receiver.png
 
-* **Model**: IRM-56384, operating at 38KHz.
-* **Connection**: The IR receiver connects to **GPIO13**.
-* **D1**: An infrared reception indicator that blinks upon signal detection.
-* **J8**: A pin for enabling the infrared function. By default, a jumper cap is inserted for immediate functionality. Remove the cap to free GPIO13 if the IR receiver is not in use.
+* **Modell**: IRM-56384, arbeitet mit 38KHz.
+* **Verbindung**: Der IR-Empfänger ist mit **GPIO13** verbunden.
+* **D1**: Ein Infrarot-Empfangs-Indikator, der bei Signalerkennung blinkt.
+* **J8**: Ein Pin zur Aktivierung der Infrarotfunktion. Standardmäßig ist eine Jumperkappe eingesetzt, um die Funktion sofort zu ermöglichen. Entfernen Sie die Kappe, um GPIO13 freizugeben, wenn der IR-Empfänger nicht verwendet wird.
 
-To utilize the IR receiver, verify its connection and install the necessary module:
+Um den IR-Empfänger zu nutzen, überprüfen Sie die Verbindung und installieren Sie das erforderliche Modul:
 
-* Test the connection:
+* Überprüfen Sie die Verbindung:
 
   .. code-block:: shell
 
     sudo ls /dev |grep lirc
 
-* Install the ``lirc`` module:
+* Installieren Sie das Modul ``lirc``:
 
   .. code-block:: shell
 
     sudo apt-get install lirc -y
 
-* Now, test the IR Receiver by running the following command. 
+* Testen Sie nun den IR-Empfänger, indem Sie den folgenden Befehl ausführen.
 
   .. code-block:: shell
 
     mode2 -d /dev/lirc0
 
-* After running the command, press a button on the remote control, and the code of that button will be printed.
+* Nachdem Sie den Befehl ausgeführt haben, drücken Sie eine Taste auf der Fernbedienung, und der Code dieser Taste wird angezeigt.
 
 
-RGB Fan Pins
----------------
+RGB-Lüfter-Pins
+------------------
 
-The IO expansion board supports up to two 5V non-PWM fans. Both fans are controlled together. 
+Das IO-Erweiterungsboard unterstützt bis zu zwei 5V-Lüfter ohne PWM-Steuerung. Beide Lüfter werden gemeinsam gesteuert.
 
-**FAN1** and **FAN 2** are two sets of fan pins. You need to connect the fan's red wire to "+", and the black wire to "-".
+**FAN1** und **FAN 2** sind zwei Lüfter-Pinsets. Sie müssen das rote Kabel des Lüfters mit "+" und das schwarze Kabel mit "-" verbinden.
 
 .. image:: img/io_board_fan.png
 
-The two pins below J9 are the enable pins for RGB fans. By default, a jumper is inserted on these pins, allowing control of the fans' on and off state using GPIO6. If fan operation is not desired, the jumper can be removed to free GPIO6.
+Die beiden Pins unterhalb von J9 sind die Aktivierungspins für die RGB-Lüfter. Standardmäßig ist ein Jumper auf diesen Pins eingesetzt, der die Steuerung des Lüfterzustands über GPIO6 ermöglicht. Wenn der Lüfterbetrieb nicht gewünscht ist, kann der Jumper entfernt werden, um GPIO6 freizugeben.
 
 .. image:: img/io_board_fan_j9.png
 
-**D2** is a fan signal indicator that lights up when the fan is active.
+**D2** ist ein Lüfter-Signalanzeiger, der leuchtet, wenn der Lüfter aktiv ist.
 
 .. image:: img/io_board_fan_d2.png
 
-You can use command to configure the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate.
+Sie können einen Befehl verwenden, um den Betriebsmodus der beiden RGB-Lüfter zu konfigurieren. Diese Modi bestimmen, unter welchen Bedingungen die RGB-Lüfter aktiviert werden.
 
-For instance, if set to **1: Performance** mode, the RGB fans will activate at 50°C.
+Zum Beispiel werden im Modus **1: Leistung** die RGB-Lüfter bei 50°C aktiviert.
 
 .. code-block:: shell
 
   pironman5 -gm 3
 
-* **4: Quiet**: The RGB fans will activate at 70°C.
-* **3: Balanced**: The RGB fans will activate at 67.5°C.
-* **2: Cool**: The RGB fans will activate at 60°C.
-* **1: Performance**: The RGB fans will activate at 50°C.
-* **0: Always On**: The RGB fans will always on.
+* **4: Leise**: Die RGB-Lüfter werden bei 70°C aktiviert.
+* **3: Ausgewogen**: Die RGB-Lüfter werden bei 67,5°C aktiviert.
+* **2: Kühl**: Die RGB-Lüfter werden bei 60°C aktiviert.
+* **1: Leistung**: Die RGB-Lüfter werden bei 50°C aktiviert.
+* **0: Immer an**: Die RGB-Lüfter sind immer eingeschaltet.
 
-If you connect the control pin of the RGB fan to different pins on the Raspberry Pi, you can use the following command to change the pin number.
+Wenn Sie den Steuerungs-Pin des RGB-Lüfters mit anderen Pins des Raspberry Pi verbinden, können Sie den folgenden Befehl verwenden, um die Pinnummer zu ändern.
 
 .. code-block:: shell
 
   sudo pironman5 -gp 18
 
-Pin Headers
+Pin-Header
 --------------
 
 .. image:: img/io_board_pin_header.png
 
-Two right-angle header connectors extend the Raspberry Pi's GPIO, but note that the IR receiver, RGB LED, and fan occupy some pins. Remove the corresponding jumper caps to utilize these pins for other functions.
+Zwei rechtwinklige Header-Anschlüsse erweitern die GPIO des Raspberry Pi, jedoch beachten Sie, dass der IR-Empfänger, die RGB-LED und der Lüfter einige Pins belegen. Entfernen Sie die entsprechenden Jumper-Kappen, um diese Pins für andere Funktionen zu nutzen.
 
 .. list-table:: 
   :widths: 25 25
@@ -191,13 +190,13 @@ Two right-angle header connectors extend the Raspberry Pi's GPIO, but note that 
 
   * - Pironman 5
     - Raspberry Pi 5
-  * - IR Receiver(Optional)
+  * - IR-Empfänger(Optional)
     - GPIO13
   * - OLED SDA
     - SDA
   * - OLED SCL
     - SCL
-  * - FAN(Optional)
+  * - Lüfter(Optional)
     - GPIO6
   * - RGB(Optional)
     - GPIO10

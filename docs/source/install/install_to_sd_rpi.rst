@@ -1,99 +1,99 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Fachkundige Unterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
+    - **Sonderrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _install_os_sd_rpi:
 
-Installing the OS on a Micro SD Card
+Installation des Betriebssystems auf einer Micro-SD-Karte
 ============================================================
-If you are using a Micro SD card, you can follow the tutorial below to install the system onto your Micro SD card.
+Wenn Sie eine Micro-SD-Karte verwenden, können Sie der folgenden Anleitung folgen, um das System auf Ihrer Micro-SD-Karte zu installieren.
 
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/-5rTwJ0oMVM?start=343&end=414&si=je5SaLccHzjjEhuD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Required Components**
+**Erforderliche Komponenten**
 
-* A Personal Computer
-* A Micro SD card and Reader
+* Ein PC
+* Eine Micro-SD-Karte und ein Kartenleser
 
-**Steps**
+**Schritte**
 
-#. Insert your SD card into your computer or laptop using a Reader.
+#. Setzen Sie Ihre SD-Karte in Ihren Computer oder Laptop ein, indem Sie einen Kartenleser verwenden.
 
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+#. Klicken Sie im |link_rpi_imager| auf **Raspberry Pi Gerät** und wählen Sie das Modell **Raspberry Pi 5** aus der Dropdown-Liste aus.
 
    .. image:: img/os_choose_device_pi5.png
       :width: 90%
 
-#. Select **Operating System** and opt for the recommended operating system version.
+#. Wählen Sie **Betriebssystem** und entscheiden Sie sich für die empfohlene Betriebssystemversion.
 
    .. image:: img/os_choose_os.png
       :width: 90%
 
-#. Click **Choose Storage** and select the appropriate storage device for the installation.
+#. Klicken Sie auf **Speicher auswählen** und wählen Sie das geeignete Speichermedium für die Installation.
 
    .. image:: img/os_choose_sd.png
       :width: 90%
 
-#. Click **NEXT** and then **EDIT SETTINGS** to tailor your OS settings. 
+#. Klicken Sie auf **Weiter** und dann auf **Einstellungen bearbeiten**, um Ihre Betriebssystemeinstellungen anzupassen. 
 
    .. image:: img/os_enter_setting.png
       :width: 90%
       
 
-   * Define a **hostname** for your Raspberry Pi. The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
+   * Definieren Sie einen **Hostname** für Ihren Raspberry Pi. Der Hostname ist die Netzwerkkennung Ihres Raspberry Pi. Sie können auf Ihren Pi zugreifen, indem Sie ``<hostname>.local`` oder ``<hostname>.lan`` verwenden.
 
      .. image:: img/os_set_hostname.png
    
 
-   * Create a **Username** and **Password** for the Raspberry Pi's administrator account. Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
+   * Erstellen Sie einen **Benutzernamen** und ein **Passwort** für das Administratorkonto des Raspberry Pi. Die Einrichtung eines eindeutigen Benutzernamens und Passworts ist wichtig, um Ihren Raspberry Pi zu sichern, der kein Standardpasswort hat.
 
      .. image:: img/os_set_username.png      
 
-   * Configure the wireless LAN by providing your network's **SSID** and **Password**.
+   * Konfigurieren Sie das drahtlose Netzwerk, indem Sie die **SSID** und das **Passwort** Ihres Netzwerks angeben.
 
      .. note::
 
-       Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
+       Stellen Sie das ``WLAN-Land`` auf den entsprechenden Zwei-Buchstaben `ISO/IEC alpha2-Code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ ein, der Ihrem Standort entspricht.
 
      .. image:: img/os_set_wifi.png
 
 
-   * To remotely connect to your Raspberry Pi, enable SSH in the Services tab.
+   * Um sich remote mit Ihrem Raspberry Pi zu verbinden, aktivieren Sie SSH im Reiter "Dienste".
 
-     * For **password authentication**, use the username and password from the General tab.
-     * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
+     * Für die **Passwortauthentifizierung** verwenden Sie den Benutzernamen und das Passwort aus dem Reiter "Allgemein".
+     * Für die Authentifizierung per öffentlichem Schlüssel wählen Sie "Nur Authentifizierung per öffentlichem Schlüssel zulassen". Wenn Sie einen RSA-Schlüssel haben, wird dieser verwendet. Andernfalls klicken Sie auf "SSH-Keygen ausführen", um ein neues Schlüsselpaar zu generieren.
 
      .. image:: img/os_enable_ssh.png
 
-   * The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
+   * Das **Optionen**-Menü ermöglicht es Ihnen, das Verhalten des Imagers während des Schreibvorgangs zu konfigurieren, einschließlich der Wiedergabe eines Tons bei Abschluss, des Auswerfens der Medien nach Abschluss und der Aktivierung der Telemetrie.
 
      .. image:: img/os_options.png
 
-#. When you've finished entering OS customisation settings, click **Save** to save your customisation. Then, click **Yes** to apply them when writing the image.
+#. Nachdem Sie die Einstellungen für die Betriebssystemanpassung eingegeben haben, klicken Sie auf **Speichern**, um die Anpassung zu speichern. Klicken Sie anschließend auf **Ja**, um sie beim Schreiben des Images anzuwenden.
 
    .. image:: img/os_click_yes.png
       :width: 90%
       
 
-#. If the SD card contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+#. Wenn sich bereits Daten auf der SD-Karte befinden, sichern Sie diese, um Datenverlust zu vermeiden. Klicken Sie auf **Ja**, wenn keine Sicherung erforderlich ist.
 
    .. image:: img/os_continue.png
       :width: 90%
       
 
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the Micro SD Card!
+#. Sobald das Popup "Schreiben erfolgreich" erscheint, wurde Ihr Image vollständig geschrieben und überprüft. Sie sind nun bereit, einen Raspberry Pi von der Micro-SD-Karte zu booten!
 
    .. image:: img/os_finish.png
       :width: 90%
