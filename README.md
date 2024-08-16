@@ -61,6 +61,7 @@ Ubuntu Server 24.04 (64 bit) | &#x2705;
 Kali Linux 2024-05-15 | GPIO Fan Not Working
 Home Assistant OS 12.3 | &#x2705;
 Homebridge | &#x2705;
+Batocera Linux | &#x2705;
 
 ### Ubuntu 24.04 server eth0 and wifi not work
 
