@@ -24,8 +24,8 @@ Yes, it is compatible. However, most retro gaming systems are streamlined versio
 
     The Batocera.linux system is now fully compatible with Pironman 5. Batocera.linux is an open-source and completely free retro-gaming distribution.
 
-    For more details, please refer to: :ref:`install_batocera`.
-
+    * :ref:`install_batocera`
+    * :ref:`set_up_batocera`
 
 How to Control Components Using the ``pironman5`` Command
 ----------------------------------------------------------------------
@@ -56,7 +56,7 @@ How to Copy the System from the SD Card to an NVMe SSD?
 If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
 
 
-* :ref:`boot_from_ssd`
+* :ref:`copy_sd_to_nvme_rpi`
 
 
 OLED Screen Not Working?
@@ -68,20 +68,20 @@ Check if the FPC cable of the OLED Screen is properly connected.
 
 #. Use the following command to view the program's run logs and check for error messages.
 
-    .. code-block:: shell
+   .. code-block:: shell
 
-        cat /opt/pironman5/log
+      cat /opt/pironman5/log
 
 #. Alternatively, use the following command to check if the OLED's i2c address 0x3C is recognized:
     
-    .. code-block:: shell
+   .. code-block:: shell
         
         sudo i2cdetect -y 1
 
 #. If the first two steps don't reveal any issues, try restarting the pironman5 service to see if that resolves the problem.
 
 
-    .. code-block:: shell
+   .. code-block:: shell
 
         sudo systemctl restart pironman5.service
 
@@ -102,18 +102,19 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
 
 #. Type ``powershell`` in the search box of your Windows desktop, right click on the ``Windows PowerShell``, and select ``Run as administrator`` from the menu that appears.
 
-    .. image:: img/powershell_ssh.png
-        :align: center
+   .. image:: img/powershell_ssh.png
+      :width: 90%
+      
 
 #. Use the following command to install ``OpenSSH.Client``.
 
-    .. code-block::
+   .. code-block::
 
         Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
 #. After installation, the following output will be returned.
 
-    .. code-block::
+   .. code-block::
 
         Path          :
         Online        : True
@@ -121,13 +122,13 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
 
 #. Verify the installation by using the following command.
 
-    .. code-block::
+   .. code-block::
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
 #. It now tells you that ``OpenSSH.Client`` has been successfully installed.
 
-    .. code-block::
+   .. code-block::
 
         Name  : OpenSSH.Client~~~~0.0.1.0
         State : Installed
@@ -140,7 +141,7 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
 
 #. Now restart PowerShell and continue to run it as administrator. At this point you will be able to log in to your Raspberry Pi using the ``ssh`` command, where you will be prompted to enter the password you set up earlier.
 
-    .. image:: img/powershell_login.png
+   .. image:: img/powershell_login.png
 
 
 

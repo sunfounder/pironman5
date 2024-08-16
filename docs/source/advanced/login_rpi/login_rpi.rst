@@ -49,8 +49,9 @@ Having a screen attached to your Raspberry Pi makes it easier to interact with t
 
 #. Power up the Pironman 5 using the power adapter. You should see the Raspberry Pi OS desktop appear on the monitor shortly.
 
-    .. image:: img/bookwarm.png
-        :align: center
+   .. image:: img/bookwarm.png
+      :width: 90%
+      
 
 #. Once the desktop is visible, open the Terminal by clicking on the terminal icon or searching for it in the menu to start entering commands.
 

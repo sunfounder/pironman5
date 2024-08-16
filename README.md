@@ -19,6 +19,10 @@ Elevate your Raspberry Pi 5 with the Pironman 5, our top-tier case designed for 
 
 <a id="update"></a>
 ## Update:
+2024-08-16:
+- Add Batocera Linux tutorial
+- Modify overall document structure
+
 2024-05-23:
 - Significantly optimize the entire document content.
 - Add note of join SunFounder Facebook group.

@@ -33,7 +33,4 @@ This chapter is a detailed description of all the components in Pironman, as wel
     tower_cooler
     oled_screen
     fans
-    booting_from_ssd
-    control_with_commmands
-    batocera_os
     login_rpi/login_rpi

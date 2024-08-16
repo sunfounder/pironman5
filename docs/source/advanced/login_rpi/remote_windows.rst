@@ -19,23 +19,24 @@ For Windows 10 or higher users, remote login to a Raspberry Pi can be achieved t
 
 #. Search for ``powershell`` in your Windows search box. Right-click on ``Windows PowerShell`` and select ``Run as administrator``.
 
-    .. image:: img/powershell_ssh.png
-        :align: center
+   .. image:: img/powershell_ssh.png
+      :width: 90%
+      
 
 #. Determine your Raspberry Pi's IP address by typing ``ping -4 <hostname>.local`` in PowerShell.
 
-    .. code-block::
+   .. code-block::
 
-        ping -4 raspberrypi.local
+      ping -4 raspberrypi.local
 
-    .. image:: img/sp221221_145225.png
-        :width: 550
-        :align: center
+   .. image:: img/sp221221_145225.png
+     :width: 90%
+      
 
-    The Raspberry Pi's IP address will be displayed once it's connected to the network.
+   The Raspberry Pi's IP address will be displayed once it's connected to the network.
 
-    * If the terminal displays ``Ping request could not find host pi.local. Please check the name and try again.``, verify the hostname you've entered is correct.
-    * If the IP address still isn't retrievable, check your network or WiFi settings on the Raspberry Pi.
+   * If the terminal displays ``Ping request could not find host pi.local. Please check the name and try again.``, verify the hostname you've entered is correct.
+   * If the IP address still isn't retrievable, check your network or WiFi settings on the Raspberry Pi.
 
 #. Once the IP address is confirmed, log in to your Raspberry Pi using ``ssh <username>@<hostname>.local`` or ``ssh <username>@<IP address>``.
 
@@ -62,6 +63,6 @@ For Windows 10 or higher users, remote login to a Raspberry Pi can be achieved t
 
 #. Once connected, your Raspberry Pi is ready for remote operations.
 
-    .. image:: img/sp221221_140628.png
-        :width: 550
-        :align: center
+   .. image:: img/sp221221_140628.png
+      :width: 90%
+      

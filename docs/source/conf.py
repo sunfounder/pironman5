@@ -19,7 +19,7 @@
 import sphinx_rtd_theme
 import time
 
-project = 'SunFounder Pironman'
+project = 'SunFounder Pironman 5'
 copyright = f'{time.localtime().tm_year}, SunFounder'
 author = 'www.sunfounder.com'
 
@@ -40,12 +40,13 @@ templates_path = ['_templates']
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
+
+html_static_path = ['_static']
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -89,6 +90,19 @@ gettext_compact = False # Support for generating the contents of the folders ins
 # open link in a new window
 
 rst_epilog = """
+
+.. |link_rpi_get_start| raw:: html
+
+    <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" target="_blank">Getting Started with Raspberry Pi</a>
+
+.. |link_rpi_imager| raw:: html
+
+    <a href="https://www.raspberrypi.org/software/" target="_blank">Raspberry Pi Imager</a>
+
+.. |link_batocera| raw:: html
+
+    <a href="https://batocera.org/" target="_blank">Batocera.linux</a>
+
 
 .. |link_batocera_download| raw:: html
 

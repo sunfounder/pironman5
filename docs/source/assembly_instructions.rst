@@ -56,7 +56,7 @@ If you are using a Micro SD card, follow this video to assemble and configure th
 .. .. raw:: html
 
 ..     <div style="text-align: center;">
-..         <video center loop autoplay muted style = "max-width:80%">
+..         <video center loop autoplay muted style = "max-width:90%">
 ..             <source src="_static/video/connect_oled.mp4"  type="video/mp4">
 ..             Your browser does not support the video tag.
 ..         </video>
@@ -72,7 +72,7 @@ If you are using a Micro SD card, follow this video to assemble and configure th
 .. .. raw:: html
 
 ..     <div style="text-align: center;">
-..         <video center loop autoplay muted style = "max-width:80%">
+..         <video center loop autoplay muted style = "max-width:90%">
 ..             <source src="_static/video/connect_gpio_bridge.mp4"  type="video/mp4">
 ..             Your browser does not support the video tag.
 ..         </video>
@@ -87,7 +87,7 @@ If you are using a Micro SD card, follow this video to assemble and configure th
 .. .. raw:: html
 
 ..     <div style="text-align: center;">
-..         <video center loop autoplay muted style = "max-width:80%">
+..         <video center loop autoplay muted style = "max-width:90%">
 ..             <source src="_static/video/connect_sd_card.mp4"  type="video/mp4">
 ..             Your browser does not support the video tag.
 ..         </video>

@@ -37,18 +37,21 @@ VNC service comes pre-installed in the Raspberry Pi OS but is disabled by defaul
 
 #. Navigate to **Interfacing Options** using the down arrow key, then press **Enter**.
 
-    .. image:: img/bookwarm_config_interface.png
-        :align: center
+   .. image:: img/bookwarm_config_interface.png
+      :width: 90%
+      
 
 #. Select **VNC** from the options.
 
-    .. image:: img/bookwarm_vnc.png
-        :align: center
+   .. image:: img/bookwarm_vnc.png
+      :width: 90%
+      
 
 #. Use the arrow keys to choose **<Yes>** -> **<OK>** -> **<Finish>** and finalize the VNC service activation.
 
-    .. image:: img/bookwarn_vnc_yes.png
-        :align: center
+   .. image:: img/bookwarn_vnc_yes.png
+      :width: 90%
+      
 
 **Logging in via VNC Viewer**
 
@@ -56,15 +59,18 @@ VNC service comes pre-installed in the Raspberry Pi OS but is disabled by defaul
 
 #. Once installed, launch VNC Viewer. Enter the hostname or IP address of your Raspberry Pi and press Enter.
 
-    .. image:: img/vnc_viewer1.png
-        :align: center
+   .. image:: img/vnc_viewer1.png
+      :width: 90%
+      
 
 #. When prompted, enter your Raspberry Pi's username and password, then click **OK**.
 
-    .. image:: img/vnc_viewer2.png
-        :align: center
+   .. image:: img/vnc_viewer2.png
+      :width: 90%
+      
 
 #. You'll now have access to your Raspberry Pi's desktop interface.
 
-    .. image:: img/bookwarm.png
-        :align: center
+   .. image:: img/bookwarm.png
+      :width: 90%
+      

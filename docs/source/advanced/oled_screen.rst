@@ -17,7 +17,7 @@ OLED Screen
 
 .. image:: img/oled_screen.png
     :width: 400
-    :align: center
+    
 
 * **Size**: 0.96''
 * **Material**: PM OLED
