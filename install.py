@@ -32,7 +32,7 @@ installer = SF_Installer(
 
     # - Install from pip
     pip_dependencies=[
-        'influxdb',
+        # 'influxdb',
         # 'Pillow',
         # 'adafruit-circuitpython-ssd1306',
     ],
@@ -71,5 +71,5 @@ installer.parser.add_argument("--disable-dashboard", action='store_true', help="
 args = installer.parser.parse_args()
 if args.disable_dashboard:
     installer.python_source.pop('pm_dashboard')
-    installer.custom_pip_dependencies.pop(installer.custom_pip_dependencies.index('influxdb'))
+    installer.custom_apt_dependencies.pop(installer.custom_apt_dependencies.index('influxdb'))
 installer.main()
