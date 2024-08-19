@@ -28,59 +28,77 @@ Konfiguration zum Ausschalten der GPIO-Stromversorgung
 ---------------------------------------------------------------
 Um zu verhindern, dass der OLED-Bildschirm und die RGB-Lüfter, die über die GPIO-Pins des Raspberry Pi mit Strom versorgt werden, nach dem Herunterfahren aktiv bleiben, ist es wichtig, den Raspberry Pi so zu konfigurieren, dass die GPIO-Stromversorgung deaktiviert wird.
 
-* Bearbeiten Sie die ``EEPROM``-Konfigurationsdatei manuell mit diesem Befehl:
+#. Bearbeiten Sie die ``EEPROM``-Konfigurationsdatei manuell mit diesem Befehl:
 
-  .. code-block:: shell
+   .. code-block:: shell
+   
+     sudo rpi-eeprom-config -e
 
-    sudo rpi-eeprom-config -e
+#. Ändern Sie die Einstellung ``POWER_OFF_ON_HALT`` in der Datei auf ``1``. Zum Beispiel:
 
-* Ändern Sie die Einstellung ``POWER_OFF_ON_HALT`` in der Datei auf ``1``. Zum Beispiel:
+   .. code-block:: shell
+   
+     BOOT_UART=1
+     POWER_OFF_ON_HALT=1
+     BOOT_ORDER=0xf41
 
-  .. code-block:: shell
-
-    BOOT_UART=1
-    POWER_OFF_ON_HALT=1
-    BOOT_ORDER=0xf41
-
-* Drücken Sie ``Ctrl + X``, ``Y`` und ``Enter``, um die Änderungen zu speichern.
+#. Drücken Sie ``Ctrl + X``, ``Y`` und ``Enter``, um die Änderungen zu speichern.
 
 
 Herunterladen und Installieren des ``pironman5`` Moduls
 -----------------------------------------------------------
 
-.. note::
-
-  Für Lite-Systeme installieren Sie zunächst Tools wie ``git``, ``python3``, ``pip3``, ``setuptools`` usw.
+#. Für Lite-Systeme installieren Sie zunächst Tools wie ``git``, ``python3``, ``pip3``, ``setuptools`` usw.
   
+   .. code-block:: shell
+  
+     sudo apt-get update
+     sudo apt-get install git -y
+     sudo apt-get install python3 python3-pip python3-setuptools -y
+
+#. Laden Sie anschließend den Code von GitHub herunter und installieren Sie das ``pironman5``-Modul.
+
+   .. code-block:: shell
+
+      cd ~
+      git clone https://github.com/sunfounder/pironman5.git
+      cd ~/pironman5
+      sudo python3 install.py
+
+   .. note::
+    
+      Sobald Sie die Installation des ``pironman5`` Moduls abgeschlossen haben, können Sie auf das :ref:`view_control_dashboard` zugreifen.
+      
+      Wenn Sie diese Funktion nicht benötigen und die CPU- und RAM-Auslastung reduzieren möchten, können Sie das Dashboard während der Installation von ``pironman5`` deaktivieren, indem Sie das Flag ``--disable-dashboard`` hinzufügen.
+      
+      .. code-block:: shell
+      
+        sudo python3 install.py --disable-dashboard
+      
+      Wenn Sie bereits ``pironman 5`` installiert haben, können Sie das ``dashboard`` Modul und ``influxdb`` entfernen und anschließend pironman5 neu starten, um die Änderungen anzuwenden:
+      
+      .. code-block:: shell
+      
+        /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
+        sudo apt purge influxdb
+        sudo systemctl restart pironman5
+
+      
+
+   Nach erfolgreicher Installation ist ein Systemneustart erforderlich, um die Installation zu aktivieren. Befolgen Sie die Bildschirmanweisungen zum Neustart.
+   
+   Nach dem Neustart wird der ``pironman5.service`` automatisch gestartet. Hier sind die Hauptkonfigurationen für den Pironman 5:
+   
+     * Der OLED-Bildschirm zeigt CPU, RAM, Festplattennutzung, CPU-Temperatur und die IP-Adresse des Raspberry Pi an.
+     * Vier WS2812 RGB-LEDs leuchten in Blau im Atmungsmodus auf.
+     * Die RGB-Lüfter werden bei 60°C aktiviert.
+   
+#. Sie können das ``systemctl``-Tool verwenden, um den ``pironman5.service`` zu ``starten``, ``stoppen``, ``neustarten`` oder den ``Status`` zu überprüfen.
+
   .. code-block:: shell
-  
-    sudo apt-get update
-    sudo apt-get install git -y
-    sudo apt-get install python3 python3-pip python3-setuptools -y
 
-Laden Sie anschließend den Code von GitHub herunter und installieren Sie das ``pironman5``-Modul.
+      sudo systemctl restart pironman5.service
 
-.. code-block:: shell
-
-  cd ~
-  git clone https://github.com/sunfounder/pironman5.git
-  cd ~/pironman5
-  sudo python3 install.py
-
-Nach erfolgreicher Installation ist ein Systemneustart erforderlich, um die Installation zu aktivieren. Befolgen Sie die Bildschirmanweisungen zum Neustart.
-
-Nach dem Neustart wird der ``pironman5.service`` automatisch gestartet. Hier sind die Hauptkonfigurationen für den Pironman 5:
-
-  * Der OLED-Bildschirm zeigt CPU, RAM, Festplattennutzung, CPU-Temperatur und die IP-Adresse des Raspberry Pi an.
-  * Vier WS2812 RGB-LEDs leuchten in Blau im Atmungsmodus auf.
-  * Die RGB-Lüfter werden bei 60°C aktiviert.
-
-Sie können das ``systemctl``-Tool verwenden, um den ``pironman5.service`` zu ``starten``, ``stoppen``, ``neustarten`` oder den ``Status`` zu überprüfen.
-
-.. code-block:: shell
-
-  sudo systemctl restart pironman5.service
-
-* ``restart``: Verwenden Sie diesen Befehl, um Änderungen an den Einstellungen von Pironman 5 anzuwenden.
-* ``start/stop``: Aktivieren oder deaktivieren Sie den ``pironman5.service``.
-* ``status``: Überprüfen Sie den Betriebsstatus des ``pironman5``-Programms mit dem ``systemctl``-Tool.
+  * ``restart``: Verwenden Sie diesen Befehl, um Änderungen an den Einstellungen von Pironman 5 anzuwenden.
+  * ``start/stop``: Aktivieren oder deaktivieren Sie den ``pironman5.service``.
+  * ``status``: Überprüfen Sie den Betriebsstatus des ``pironman5``-Programms mit dem ``systemctl``-Tool.
