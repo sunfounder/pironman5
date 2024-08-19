@@ -1,129 +1,128 @@
-
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと共に、Raspberry Pi、Arduino、ESP32の世界をさらに深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティやチームの助けを借りて、アフターサポートや技術的な課題を解決します。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベントやプレゼント企画**: プレゼントや季節のプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探索と創造の旅に出る準備はできましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 .. _view_control_dashboard:
 
-View and Control from Dashboard
+ダッシュボードでの表示と制御
 =========================================
 
-Once you have successfully installed the ``pironman5`` module, the ``pironman5.service`` will start automatically upon reboot.
+``pironman5``モジュールを正常にインストールした後、再起動時に ``pironman5.service`` が自動的に開始されます。
 
-Now you can open the monitoring page in your browser to see the information about your Raspberry Pi, configure the RGB, and control the fan, etc. The page link is: ``http://<ip>:34001``.
+ブラウザでモニタリングページを開くことで、Raspberry Piの情報を確認したり、RGBの設定やファンの制御を行ったりできます。ページリンクは ``http://<ip>:34001`` です。
 
-This page has **Dashboard**, **History**, **Log**, and a **Settings** page.
+このページには **ダッシュボード** 、 **履歴** 、 **ログ** 、そして **設定** ページがあります。
 
 .. image:: img/dashboard_tab.png
   :width: 90%
   
   
-Dashboard
+ダッシュボード
 -----------------------
 
-There are multiple cards to view the relevant status of the Raspberry Pi, including:
+Raspberry Piの関連ステータスを表示する複数のカードがあります。
 
-* **Fan**: View the Raspberry Pi's CPU temperature and the PWM fan speed. **GPIO Fan State** indicates the status of the two side RGB fans. At the current temperature, the two RGB fans are off.
+* **ファン**: Raspberry PiのCPU温度とPWMファンの速度を表示します。 **GPIOファンステータス** は、サイドにあるRGBファン2つの状態を示します。現在の温度では、2つのRGBファンはオフになっています。
 
   .. image:: img/dashboard_pwm_fan.png
     :width: 90%
     
 
-* **Storage**: Displays the storage capacity of a Raspberry Pi, showing various disk partitions with their used and available space.
+* **ストレージ**: Raspberry Piのストレージ容量を表示し、使用済みおよび空き容量のディスクパーティションを示します。
 
   .. image:: img/dashboard_storage.png
     :width: 90%
     
 
-* **Memory**: Shows the Raspberry Pi's RAM usage and percentage.
+* **メモリ**: Raspberry PiのRAM使用量とその割合を表示します。
 
   .. image:: img/dashboard_memory.png
     :width: 90%
     
 
-* **Network**: Displays the current network connection type, upload, and download speeds.
+* **ネットワーク**: 現在のネットワーク接続タイプ、アップロードおよびダウンロード速度を表示します。
 
   .. image:: img/dashboard_network.png
     :width: 90%
     
 
-* **Processor**: Illustrates the Raspberry Pi's CPU performance, including the status of its four cores, operating frequencies, and CPU usage percentage.
+* **プロセッサ**: Raspberry PiのCPUパフォーマンスを示し、4つのコアの状態、動作周波数、およびCPU使用率を表示します。
 
   .. image:: img/dashboard_processor.png
     :width: 90%
     
 
-History
+履歴
 --------------
 
-The History page allows you to view historical data. Check the data you want to view in the left sidebar, then select the time range to see the data for that period, and you can also click to download it.
+履歴ページでは、過去のデータを確認できます。左のサイドバーで表示するデータを選択し、期間を選択してその期間のデータを表示できます。また、データをダウンロードすることも可能です。
 
 .. image:: img/dashboard_history.png
   :width: 90%
   
 
-Log
+ログ
 ------------
 
-The Log page is used to view the logs of the currently running Pironman5 service. The Pironman5 service includes multiple sub-services, each with its own log. Select the log you want to view, and you can see the log data on the right. If it is blank, it may mean there is no log content.
+ログページでは、現在実行中のPironman5サービスのログを確認できます。Pironman5サービスには複数のサブサービスがあり、それぞれに独自のログがあります。表示したいログを選択すると、右側にログデータが表示されます。空白の場合、ログ内容がない可能性があります。
 
-* Each log has a fixed size of 10MB. When it exceeds this size, a second log will be created.
-* The number of logs for the same service is limited to 10. If the number exceeds this limit, the oldest log will be automatically deleted.
-* There are filter tools above the log area on the right. You can select the log level, filter by keywords, and use several convenient tools, including **Line Wrap**, **Auto Scroll** and **Auto Update**.
-* Logs can also be downloaded locally.
+* 各ログのサイズは固定で10MBです。このサイズを超えると、2番目のログが作成されます。
+* 同じサービスのログ数は10個に制限されています。この制限を超えると、最も古いログが自動的に削除されます。
+* 右上にはフィルターツールがあり、ログレベルを選択したり、キーワードでフィルターをかけたり、 **ラインラップ** 、 **オートスクロール** 、 **オートアップデート** などの便利なツールを利用できます。
+* ログはローカルにダウンロードすることもできます。
 
 .. image:: img/dashboard_log.png
   :width: 90%
   
 
-Settings
+設定
 -----------------
 
-There is a settings menu in the upper right corner of the page. 
+ページの右上に設定メニューがあります。
 
 .. note::
     
-    After modifying, you need to click the **SAVE** button at the bottom to save the settings.
+    設定を変更した後、下部にある **保存** ボタンをクリックして設定を保存してください。
 
 .. image:: img/dashboard_settings.png
   :width: 90%
   
 
-* **Dark Mode**: Toggle between light and dark mode themes. The theme option is saved in the browser cache. Changing the browser or clearing the cache will revert to the default light theme.
-* **Temperature Unit**: Set the temperature unit displayed by the system.
-* **Fan Mode**: You can set the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate.
+* **ダークモード**: ライトモードとダークモードのテーマを切り替えます。テーマオプションはブラウザのキャッシュに保存されます。ブラウザを変更したり、キャッシュをクリアすると、デフォルトのライトテーマに戻ります。
+* **温度単位**: システムで表示される温度単位を設定します。
+* **ファンモード**: 2つのRGBファンの動作モードを設定できます。これらのモードは、RGBファンが作動する条件を決定します。
 
-    * **Quiet**: The RGB fans will activate at 70°C.
-    * **Balanced**: The RGB fans will activate at 67.5°C.
-    * **Cool**: The RGB fans will activate at 60°C.
-    * **Performance**: The RGB fans will activate at 50°C.
-    * **Always On**: The RGB fans will always be on.
+    * **静音**: RGBファンは70°Cで作動します。
+    * **バランス**: RGBファンは67.5°Cで作動します。
+    * **クール**: RGBファンは60°Cで作動します。
+    * **パフォーマンス**: RGBファンは50°Cで作動します。
+    * **常時オン**: RGBファンは常にオンになります。
 
-    For instance, if set to **Performance** mode, the RGB fans will activate at 50°C.
+    例えば、 **パフォーマンス** モードに設定すると、RGBファンは50°Cで作動します。
 
-    After saving, if the CPU temperature exceeds 50°C, you will see the **GPIO Fan State** change to ON in the Dashboard, and the side RGB fans will start spinning.
+    保存後、CPU温度が50°Cを超えると、ダッシュボードの**GPIOファンステータス**がONに変わり、サイドのRGBファンが回転を開始します。
 
   .. image:: img/dashboard_rgbfan_on.png
     :width: 300
     
 
-* **RGB Brightness**: You can adjust the brightness of the RGB LEDs with a slider.
-* **RGB Color**: Set the color of the RGB LEDs.
-* **RGB Style**: Choose the RGB LEDs display mode. Options include **Solid**, **Breathing**, **Flow**, **Flow_reverse**, **Rainbow**, **Rainbow Reverse**, and **Hue Cycle**.
+* **RGBの明るさ**: スライダーを使用してRGB LEDの明るさを調整できます。
+* **RGBの色**: RGB LEDの色を設定します。
+* **RGBスタイル**: RGB LEDの表示モードを選択します。オプションには、 **ソリッド** 、 **ブリージング** 、 **フロー** 、 **フローリバース** 、 **レインボー** 、 **レインボーリバース** 、 **ヒューサイクル** があります。
 
 .. note::
 
-  If you set the **RGB Style** to **Rainbow**, **Rainbow Reverse**, and **Hue Cycle**, you will not be able to set the color.
+  **RGBスタイル** を **レインボー** 、 **レインボーリバース** 、 **ヒューサイクル** に設定した場合、色の設定はできません。
 
 
-* **RGB Speed**: Set the speed of the RGB LED changes.
+* **RGB速度**: RGB LEDの変化速度を設定します。

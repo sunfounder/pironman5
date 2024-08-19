@@ -1,34 +1,34 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと共に、Raspberry Pi、Arduino、ESP32の世界をさらに深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティやチームの支援を受けて、アフターサポートや技術的な課題を解決します。
+    - **学びと共有**: スキル向上のためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベントやプレゼント企画**: プレゼント企画や季節のプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探索と創造の旅に出る準備はできましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 .. _view_control_commands:
 
-Control with Commands
+コマンドによる制御
 ========================================
-In addition to viewing data from the Pironman 5 and controlling various devices through the Dashboard, you can also use commands to control them.
+Pironman 5のデータを確認し、さまざまなデバイスをダッシュボードで制御するだけでなく、コマンドを使用しても制御できます。
 
 
-View the Basic Configurations
+基本設定の確認
 -----------------------------------
 
-The ``pironman5`` module offers basic configurations for Pironman, which you can review with the following command.
+``pironman5`` モジュールはPironman用の基本設定を提供しており、以下のコマンドで確認できます。
 
 .. code-block:: shell
 
   pironman5 -c
 
-The standard configurations appear as follows:
+標準の設定は次のように表示されます：
 
 .. code-block:: 
 
@@ -46,9 +46,9 @@ The standard configurations appear as follows:
       }
   }
 
-Customize these configurations to fit your needs.
+これらの設定をニーズに合わせてカスタマイズできます。
 
-Use ``pironman5`` or ``pironman5 -h`` for instructions.
+``pironman5``または ``pironman5 -h`` を使用して指示を確認してください。
 
 .. code-block::
 
@@ -86,153 +86,151 @@ Use ``pironman5`` or ``pironman5 -h`` for instructions.
 
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+  ``pironman5.service`` のステータスを変更するたびに、以下のコマンドを使用して設定変更を反映させる必要があります。
 
   .. code-block:: shell
 
     sudo systemctl restart pironman5.service
 
 
-* Verify the ``pironman5`` program status using the ``systemctl`` tool.
+* ``pironman5``プログラムのステータスを ``systemctl`` ツールを使って確認してください。
 
   .. code-block:: shell
 
     sudo systemctl status pironman5.service
 
-* Alternatively, inspect the program-generated log files.
+* もしくは、プログラムが生成したログファイルを確認してください。
 
   .. code-block:: shell
 
     cat /opt/pironman5/log
 
 
-Control RGB LEDs
+RGB LEDの制御
 ----------------------
-The board features 4 WS2812 RGB LEDs, offering customizable control. Users can turn them on or off, change the color, adjust the brightness, switch RGB LED display modes, and set the speed of changes.
+このボードには4つのWS2812 RGB LEDが搭載されており、カスタマイズが可能です。ユーザーはLEDのオン/オフ、色の変更、明るさの調整、RGB LED表示モードの切り替え、そして変化速度の設定を行うことができます。
 
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+  ``pironman5.service`` のステータスを変更するたびに、以下のコマンドを使用して設定変更を反映させる必要があります。
 
   .. code-block:: shell
 
     sudo systemctl restart pironman5.service
 
-* To modify the on and off state of the RGB LEDs, ``true`` to turn on the RGB LEDs, ``false`` to turn them off.
+* RGB LEDのオン/オフを切り替えるには、 ``true`` でオン、 ``false`` でオフにします。
 
 .. code-block:: shell
 
   pironman5 -re true
 
-* To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
+* 色を変更するには、目的の16進数の色値を入力します。例： ``fe1a1a`` 
 
 .. code-block:: shell
 
   pironman5 -rc fe1a1a
 
-* To change the brightness of the RGB LED (range: 0 ~ 100%):
+* RGB LEDの明るさを変更するには（範囲: 0 ~ 100%）：
 
 .. code-block:: shell
 
   pironman5 -rb 100
 
-* To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
+* RGB LEDの表示モードを切り替えるには、次のオプションから選択します： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` 
 
 .. note::
 
-  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``pironman5 -rc``.
+  RGB LEDの表示モードを ``rainbow`` , ``rainbow_reverse``, ``hue_cycle``に設定した場合、 ``pironman5 -rc`` で色を設定することはできません。
 
 .. code-block:: shell
 
   pironman5 -rs breathing
 
-* To modify the speed of change (range: 0 ~ 100%):
+* 変化速度を変更するには（範囲: 0 ~ 100%）：
 
 .. code-block:: shell
 
   pironman5 -rp 80
 
-* The default setup includes 4 RGB LEDs. Connect additional LEDs and update the count using:
+* デフォルト設定では4つのRGB LEDが含まれています。追加のLEDを接続し、以下のコマンドで数を更新します：
 
 .. code-block:: shell
 
   pironman5 -rl 12
 
-Control RGB Fans
+RGBファンの制御
 ---------------------
-The IO expansion board supports up to two 5V non-PWM fans. Both fans are controlled together. 
+IO拡張ボードは最大2つの5V非PWMファンをサポートしています。両方のファンは一緒に制御されます。
 
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+  ``pironman5.service`` のステータスを変更するたびに、以下のコマンドを使用して設定変更を反映させる必要があります。
 
   .. code-block:: shell
 
     sudo systemctl restart pironman5.service
 
-* You can use command to configure the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate. 
+* 2つのRGBファンの動作モードを設定するためのコマンドを使用できます。これらのモードは、RGBファンが作動する条件を決定します。
 
-For instance, if set to **1: Performance** mode, the RGB fans will activate at 50°C.
-
+例えば、 **1: パフォーマンス** モードに設定すると、RGBファンは50°Cで作動します。
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4: Quiet**: The RGB fans will activate at 70°C.
-* **3: Balanced**: The RGB fans will activate at 67.5°C.
-* **2: Cool**: The RGB fans will activate at 60°C.
-* **1: Performance**: The RGB fans will activate at 50°C.
-* **0: Always On**: The RGB fans will always on.
+* **4: 静音**: RGBファンは70°Cで作動します。
+* **3: バランス**: RGBファンは67.5°Cで作動します。
+* **2: 冷却**: RGBファンは60°Cで作動します。
+* **1: パフォーマンス**: RGBファンは50°Cで作動します。
+* **0: 常時オン**: RGBファンは常に作動します。
 
-* If you connect the control pin of the RGB fan to different pins on the Raspberry Pi, you can use the following command to change the pin number.
+* RGBファンの制御ピンをRaspberry Piの他のピンに接続した場合、次のコマンドでピン番号を変更できます。
 
 .. code-block:: shell
 
   sudo pironman5 -gp 18
 
 
-Check the OLED Screen
+OLEDスクリーンの確認
 -----------------------------------
 
-When you have installed the ``pironman5`` library, the OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address, and it shows this every time you reboot.
+``pironman5`` ライブラリをインストールすると、OLEDスクリーンにCPU、RAM、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示され、再起動するたびにこれが表示されます。
 
-If your OLED screen does not display any content, you need to first check if the OLED's FPC cable is connected properly.
+OLEDスクリーンにコンテンツが表示されない場合は、まずOLEDのFPCケーブルが正しく接続されているか確認してください。
 
-Then you can check the program log to see what might be the problem through the following command.
+次に、以下のコマンドを使用して、プログラムのログを確認し、問題が何であるかを確認できます。
 
 .. code-block:: shell
 
   cat /var/log/pironman5/
 
-Or check if the OLED's i2c address 0x3C is recognized:
+また、OLEDのi2cアドレス0x3Cが認識されているか確認してください：
 
 .. code-block:: shell
 
   i2cdetect -y 1
 
-Checkout the Infrared Receiver
+赤外線受信機の確認
 ---------------------------------------
 
-To utilize the IR receiver, verify its connection and install the necessary module:
+赤外線受信機を利用するには、接続を確認し、必要なモジュールをインストールしてください。
 
-* Test the connection:
+* 接続をテストします：
 
   .. code-block:: shell
 
     sudo ls /dev |grep lirc
 
-* Install the ``lirc`` module:
+* ``lirc`` モジュールをインストールします：
 
   .. code-block:: shell
 
     sudo apt-get install lirc -y
 
-* Now, test the IR Receiver by running the following command. 
+* 次のコマンドを実行して赤外線受信機をテストします。
 
   .. code-block:: shell
 
     mode2 -d /dev/lirc0
 
-* After running the command, press a button on the remote control, and the code of that button will be printed.
-
+* コマンド実行後、リモコンのボタンを押すと、そのボタンのコードが表示されます。

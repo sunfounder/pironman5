@@ -1,36 +1,35 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと共に、Raspberry Pi、Arduino、ESP32の世界をさらに深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティやチームの助けを借りて、アフターサポートや技術的な課題を解決します。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベントやプレゼント企画**: プレゼント企画や季節のプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探索と創造の旅に出る準備はできましたか？[|link_sf_facebook|]をクリックして、今日参加しましょう！
 
-OLED Screen
+OLEDスクリーン
 ===================
 
 .. image:: img/oled_screen.png
     :width: 400
     
 
-* **Size**: 0.96''
-* **Material**: PM OLED
-* **Color**: White light
-* **Driver**: SSD1306
-* **Voltage**: 3.3V
-* **Resolution**: 128*64
-* **Display Area**: 21.74x10.86mm
-* **Panel Size**: 26.70x19.26x1.42mm
-* **Pixel Pitch**: 0.17x0.17mm
-* **Pixel Size**: 0.154x0.154mm
-* **Viewing Angle**: Full view
-* **Operating Temperature**: -20~70°C
-* **Communication Method**: IIC/SPI/Parallel
-* **Connection Method**: 0.5mm pitch plug-in type FPC
-
+* **サイズ**: 0.96インチ
+* **素材**: PM OLED
+* **カラー**: 白色光
+* **ドライバー**: SSD1306
+* **電圧**: 3.3V
+* **解像度**: 128*64
+* **表示領域**: 21.74x10.86mm
+* **パネルサイズ**: 26.70x19.26x1.42mm
+* **ピッチサイズ**: 0.17x0.17mm
+* **ピクセルサイズ**: 0.154x0.154mm
+* **視野角**: 全視野
+* **動作温度**: -20~70°C
+* **通信方式**: IIC/SPI/パラレル
+* **接続方式**: 0.5mmピッチプラグイン型FPC

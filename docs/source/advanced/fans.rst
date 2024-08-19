@@ -1,64 +1,63 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32コミュニティへようこそ！Facebookで他のエンスージアストたちと一緒に、Raspberry Pi、Arduino、ESP32の世界をさらに深めましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティやチームの助けを借りて、アフターセールスの問題や技術的な課題を解決。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換。
+    - **特別なプレビュー**: 新製品の発表や予告編を早期にチェック。
+    - **特別割引**: 最新製品の特別割引を楽しもう。
+    - **イベントプロモーションとプレゼント企画**: プレゼント企画や季節のプロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造の旅に出ませんか？ [|link_sf_facebook|] をクリックして、今日から参加しよう！
 
-Fans
+ファン
 ============
 
-PWM Fan
+PWMファン
 -----------
 
-The PWM fan on the Pironman 5 is controlled by the Raspberry Pi system.
+Pironman 5のPWMファンは、Raspberry Piシステムによって制御されています。
 
-Regarding cooling solutions for the Raspberry Pi 5, especially under heavy load, the design of the Pironman 5 incorporates a smart cooling system. It features a primary PWM fan and two supplementary RGB fans. The cooling strategy is closely integrated with the Raspberry Pi 5's thermal management system.
+特に高負荷時のRaspberry Pi 5の冷却ソリューションとして、Pironman 5の設計にはスマート冷却システムが組み込まれています。主なPWMファンと2つの補助RGBファンを備え、冷却戦略はRaspberry Pi 5の熱管理システムと密接に連携しています。
 
-The PWM fan's operation is based on the Raspberry Pi 5's temperature:
+PWMファンの動作は、Raspberry Pi 5の温度に基づいています：
 
-* Below 50°C, the PWM fan remains off (0% speed).
-* At 50°C, the fan starts at a low speed (30% speed).
-* Reaching 60°C, the fan increases to a medium speed (50% speed).
-* At 67.5°C, the fan ramps up to a high speed (70% speed).
-* At 75°C and above, the fan operates at full speed (100% speed).
+* 50°C以下では、PWMファンはオフ（0%速度）です。
+* 50°Cになると、低速（30%速度）でファンが動作します。
+* 60°Cに達すると、ファンは中速（50%速度）で回転します。
+* 67.5°Cでは、ファンは高速（70%速度）に上がります。
+* 75°C以上になると、ファンは最大速度（100%速度）で動作します。
 
-This temperature-to-speed relationship also applies when the temperature decreases, with a 5°C hysteresis. The fan speed reduces when the temperature falls 5°C below each of these thresholds.
+この温度と速度の関係は、温度が下がるときにも適用され、5°Cのヒステリシスがあります。各閾値よりも5°C下がると、ファン速度も低下します。
 
-* Commands to monitor the PWM fan. To check the PWM fan's status:
+* PWMファンのステータスを監視するためのコマンド。PWMファンの状態を確認するには：
 
   .. code-block:: shell
   
     cat /sys/class/thermal/cooling_device0/cur_state
 
-* To view the PWM fan's speed:
+* PWMファンの速度を確認するには：
 
   .. code-block:: shell
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-In the Pironman 5, the PWM fan is a critical component for maintaining optimal operating temperatures, particularly during intensive tasks, ensuring the Raspberry Pi 5 runs efficiently and reliably.
+Pironman 5では、PWMファンは特に負荷の高い作業中に最適な動作温度を維持するための重要な要素であり、Raspberry Pi 5が効率的かつ信頼性を持って稼働するのを確保します。
 
-RGB Fans
+RGBファン
 -------------------
 
 .. image:: img/size_fan.png
 
-* **Extermal dimension**: 40*40*10MM
-* **Weight**: 13.5±5g/pcs
-* **Life**: 40,000 hours (room temperature 25°C)
-* **Maximum Air Flow**: 2.46CFM
-* **Max.Air Pressure**: 0.62mm-H2O
-* **Accoustic Sound**: 22.31dBA
-* **Rated Input power**: 5V/0.1A
-* **Rated Speed**: 3500±10%RPM
-* **Operating Temperature**: -10℃~+70℃
-* **Storage Temperature**: -30℃~+85℃
-
+* **外形寸法**: 40*40*10MM
+* **重量**: 13.5±5g/個
+* **寿命**: 40,000時間（室温25°C）
+* **最大風量**: 2.46CFM
+* **最大静圧**: 0.62mm-H2O
+* **音響レベル**: 22.31dBA
+* **定格入力電力**: 5V/0.1A
+* **定格速度**: 3500±10%RPM
+* **動作温度**: -10℃~+70℃
+* **保管温度**: -30℃~+85℃

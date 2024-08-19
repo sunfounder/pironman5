@@ -1,58 +1,57 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと共に、Raspberry Pi、Arduino、ESP32の世界をさらに深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティやチームの助けを借りて、アフターサポートや技術的な課題を解決します。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベントやプレゼント企画**: プレゼント企画や季節のプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探索と創造の旅に出る準備はできましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
-Power Switch Conventor
+電源スイッチコンバータ
 ==============================
 
-This is a module that expands the Raspberry Pi 5 power switch to the outside. 
+これは、Raspberry Pi 5の電源スイッチを外部に拡張するためのモジュールです。
 
 .. image:: img/power_switch_conventor.jpeg
 
-**Adding the Power Button**
+**電源ボタンの追加**
 
-* The Raspberry Pi 5 features a **J2** jumper, situated between the RTC battery connector and the board edge. This breakout enables the addition of a custom power button to the Raspberry Pi 5 by connecting a Normally Open (NO) momentary switch across the two pads. Briefly engaging this switch mimics the onboard power button's functionality.
+* Raspberry Pi 5には、RTCバッテリーコネクターと基板の端の間に **J2** ジャンパーがあります。このブレークアウトを使用することで、2つのパッドに通常開（NO）モーメンタリスイッチを接続することにより、Raspberry Pi 5にカスタム電源ボタンを追加できます。このスイッチを短く押すことで、オンボード電源ボタンの機能を模倣します。
 
    .. image:: img/pi5_j2.jpg
 
-* On the Pironman 5, there's a **Power Switch Converter** that extends the **J2** jumper to an external power button using two Pogo pins.
+* Pironman 5には、2つのポゴピンを使用して、 **J2** ジャンパーを外部の電源ボタンに拡張する**電源スイッチコンバータ**があります。
 
    .. image:: img/power_switch_convertor.png
 
-* Now, the Raspberry Pi 5 can be powered on and off using the Power Button.
+* これで、Raspberry Pi 5は電源ボタンを使用してオン・オフできるようになります。
 
    .. image:: img/pironman_button.JPG
 
-**Power Cycling**
+**電源サイクル**
 
-Upon initially powering your Raspberry Pi 5, it will automatically turn on and boot into the operating system without the need to press the button.
+Raspberry Pi 5を初めて起動する際は、ボタンを押すことなく自動的に電源が入り、OSがブートします。
 
-If running the Raspberry Pi Desktop, a brief press of the power button initiates a clean shutdown process. A menu will appear, offering options to shutdown, reboot, or logout. Selecting an option or pressing the power button again will start a clean shutdown.
+Raspberry Piデスクトップを実行している場合、電源ボタンを短く押すとクリーンシャットダウンプロセスが開始されます。メニューが表示され、シャットダウン、再起動、またはログアウトのオプションが表示されます。オプションを選択するか、もう一度電源ボタンを押すとクリーンシャットダウンが開始されます。
 
 .. image:: img/button_shutdown.png
 
-**Shutdown**
+**シャットダウン**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system without a desktop, press the power button a single time to initiate a shutdown.
-    * To force a hard shutdown, press and hold the power button.
+    * Raspberry Pi **Bookworm Desktop** システムを実行している場合、電源ボタンを素早く2回押すとシャットダウンします。
+    * Raspberry Pi **Bookworm Lite** システム（デスクトップなし）を実行している場合は、電源ボタンを1回押すだけでシャットダウンが開始されます。
+    * ハードシャットダウンを強制するには、電源ボタンを押し続けます。
 
 
-**Power on**
+**電源オン**
 
-    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+    * Raspberry Piボードがシャットダウンされていても、電源が供給されている場合、1回押すだけでシャットダウン状態から電源を入れることができます。
 
 .. note::
 
-    If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
-
+    シャットダウンボタンをサポートしていないシステムを実行している場合は、電源ボタンを5秒間押し続けることでハードシャットダウンを強制でき、シャットダウン状態からは1回押すだけで電源を入れることができます。

@@ -1,118 +1,113 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Raspberry Pi、Arduino、ESP32に情熱を注ぐ仲間たちと一緒に、これらの技術をさらに深く探求してみましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティとチームのサポートを活用し、購入後の問題や技術的な課題を解決しましょう。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**: 新製品の発表やプレビューにいち早くアクセス可能です。
+    - **特別割引**: 最新製品に対する特別な割引を楽しめます。
+    - **フェスティブプロモーションとプレゼント**: プレゼント企画やプロモーションに参加してみましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみましょう！今すぐ [|link_sf_facebook|] をクリックして参加してください！
 
 FAQ
 ============
 
-Does the Pironman 5 support retro gaming systems?
-------------------------------------------------------
-Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
-
+Pironman 5はレトロゲームシステムをサポートしていますか？
+------------------------------------------------------------
+はい、対応しています。しかし、多くのレトロゲームシステムはシンプルなバージョンであり、追加のソフトウェアをインストールして実行することができません。この制限により、Pironman 5のOLEDディスプレイ、2つのRGBファン、4つのRGB LEDなどのコンポーネントが正しく動作しない可能性があります。これらのコンポーネントにはPironman 5のソフトウェアパッケージのインストールが必要です。
 
 .. note::
 
-    The Batocera.linux system is now fully compatible with Pironman 5. Batocera.linux is an open-source and completely free retro-gaming distribution.
+    現在、Batocera.linuxシステムはPironman 5と完全に互換性があります。Batocera.linuxは、オープンソースで完全に無料のレトロゲーム向けディストリビューションです。
 
     * :ref:`install_batocera`
     * :ref:`set_up_batocera`
 
-How to Control Components Using the ``pironman5`` Command
+``pironman5`` コマンドを使ってコンポーネントを制御する方法
 ----------------------------------------------------------------------
-You can refer to the following tutorial to control the components of the Pironman 5 using the ``pironman5`` command.
+Pironman 5のコンポーネントを ``pironman5`` コマンドで制御する方法については、次のチュートリアルを参照してください。
 
 * :ref:`view_control_commands`
 
-How to Change the Raspberry Pi Boot Order Using Commands
+Raspberry Piのブート順序をコマンドで変更する方法
 -------------------------------------------------------------
 
-If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
+すでにRaspberry Piにログインしている場合は、コマンドを使用してブート順序を変更できます。詳細な手順は以下のとおりです。
 
 * :ref:`configure_boot_ssd`
 
-
-How to Modify the Boot Order with Raspberry Pi Imager?
+Raspberry Pi Imagerでブート順序を変更する方法
 ---------------------------------------------------------------
 
-In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can also use the **Raspberry Pi Imager** to change the boot order of your Raspberry Pi.
+EEPROM設定で ``BOOT_ORDER`` を変更することに加えて、 **Raspberry Pi Imager** を使用してRaspberry Piのブート順序を変更することもできます。
 
-It is recommended to use a spare card for this step.
+このステップでは、予備のカードを使用することをお勧めします。
 
 * :ref:`update_bootloader`
 
-How to Copy the System from the SD Card to an NVMe SSD?
+SDカードからNVMe SSDにシステムをコピーする方法
 -------------------------------------------------------------
 
-If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
-
+NVMe SSDを持っているが、NVMeをコンピュータに接続するためのアダプターがない場合は、まずMicro SDカードにシステムをインストールします。Pironman 5が正常に起動したら、Micro SDカードからNVMe SSDにシステムをコピーできます。詳細な手順は以下のとおりです。
 
 * :ref:`copy_sd_to_nvme_rpi`
 
 
-OLED Screen Not Working?
---------------------------
+OLEDスクリーンが動作しない場合
+-------------------------------------
 
-If the OLED Screen is not displaying or displaying incorrectly, you can follow these steps to troubleshoot the issue:
+OLEDスクリーンが表示されない、または表示が不正確な場合は、次の手順に従って問題をトラブルシューティングしてください。
 
-Check if the FPC cable of the OLED Screen is properly connected.
+1. OLEDスクリーンのFPCケーブルが正しく接続されているか確認してください。
 
-#. Use the following command to view the program's run logs and check for error messages.
+#. プログラムの実行ログを表示し、エラーメッセージがないか確認します。
 
    .. code-block:: shell
 
       cat /opt/pironman5/log
 
-#. Alternatively, use the following command to check if the OLED's i2c address 0x3C is recognized:
-    
-   .. code-block:: shell
-        
-        sudo i2cdetect -y 1
-
-#. If the first two steps don't reveal any issues, try restarting the pironman5 service to see if that resolves the problem.
-
+#. または、OLEDのi2cアドレス0x3Cが認識されているかを確認するために、次のコマンドを使用します。
 
    .. code-block:: shell
 
-        sudo systemctl restart pironman5.service
+      sudo i2cdetect -y 1
+
+#. 最初の2つの手順で問題が見つからない場合は、pironman5サービスを再起動して問題が解決するかどうかを確認してください。
+
+   .. code-block:: shell
+
+      sudo systemctl restart pironman5.service
 
 .. _openssh_powershell:
 
-Install OpenSSH via Powershell
------------------------------------
+Powershell経由でOpenSSHをインストールする方法
+---------------------------------------------
 
-When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``) to connect to your Raspberry Pi, but the following error message appears.
+``ssh <username>@<hostname>.local``（または ``ssh <username>@<IP address>`` ）を使用してRaspberry Piに接続しようとすると、次のエラーメッセージが表示されることがあります。
 
-    .. code-block::
+   .. code-block::
 
         ssh: The term 'ssh' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
         spelling of the name, or if a path was included, verify that the path is correct and try again.
 
 
-It means your computer system is too old and does not have `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ pre-installed, you need to follow the tutorial below to install it manually.
+これは、コンピュータのシステムが古く、 `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_  が事前にインストールされていないことを意味します。そのため、以下のチュートリアルに従って手動でインストールする必要があります。
 
-#. Type ``powershell`` in the search box of your Windows desktop, right click on the ``Windows PowerShell``, and select ``Run as administrator`` from the menu that appears.
+#. Windowsのデスクトップの検索ボックスに ``powershell`` と入力し、 ``Windows PowerShell`` を右クリックして、表示されるメニューから ``管理者として実行`` を選択します。
 
    .. image:: img/powershell_ssh.png
       :width: 90%
-      
 
-#. Use the following command to install ``OpenSSH.Client``.
+#. 以下のコマンドを使用して ``OpenSSH.Client`` をインストールします。
 
    .. code-block::
 
         Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
-#. After installation, the following output will be returned.
+#. インストールが完了すると、次の出力が返されます。
 
    .. code-block::
 
@@ -120,13 +115,13 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
         Online        : True
         RestartNeeded : False
 
-#. Verify the installation by using the following command.
+#. 次のコマンドを使用してインストールを確認します。
 
    .. code-block::
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. It now tells you that ``OpenSSH.Client`` has been successfully installed.
+#. ``OpenSSH.Client`` が正常にインストールされたことが表示されます。
 
    .. code-block::
 
@@ -136,12 +131,10 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
         Name  : OpenSSH.Server~~~~0.0.1.0
         State : NotPresent
 
-    .. warning:: 
-        If the above prompt does not appear, it means that your Windows system is still too old, and you are advised to install a third-party SSH tool, like |link_putty|.
+   .. warning::
 
-#. Now restart PowerShell and continue to run it as administrator. At this point you will be able to log in to your Raspberry Pi using the ``ssh`` command, where you will be prompted to enter the password you set up earlier.
+        上記のプロンプトが表示されない場合は、Windowsシステムがまだ古すぎるため、|link_putty| のようなサードパーティのSSHツールをインストールすることをお勧めします。
+
+#. PowerShellを再起動し、再度管理者として実行してください。これで``ssh``コマンドを使用してRaspberry Piにログインできるようになります。ログイン時には、以前に設定したパスワードの入力が求められます。
 
    .. image:: img/powershell_login.png
-
-
-

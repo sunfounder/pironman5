@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！他のエンスージアストと一緒に、Raspberry Pi、Arduino、ESP32の世界をさらに深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティやチームのサポートを受け、購入後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や先行プレビューにいち早くアクセスできます。
+    - **特別割引**: 最新製品に対する特別割引をお楽しみください。
+    - **プロモーションやプレゼント企画**: プレゼント企画やフェスティブプロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造を始めましょう！[|link_sf_facebook|]をクリックして、今日から参加してください！
 
-Compitable NVMe SSD
+互換性のあるNVMe SSD
 ========================
 
-Compitable NVMe SSD
+互換性のあるNVMe SSD
 ---------------------------
 
 * ADATA Legend 700
@@ -68,18 +68,18 @@ Compitable NVMe SSD
 * XPG SX8200 Pro
 
 
-Uncompitable NVMe SSD
+互換性のないNVMe SSD
 --------------------------
 
-We recommend avoiding the following NVMe SSD drives which is equipped with a Phison controller due to their proven incompatibility:
+Phisonコントローラーを搭載しているため、以下のNVMe SSDドライブは互換性がないことが確認されていますので、使用を避けることをお勧めします。
 
-* Western Digital Green SN350 series
-* Western Digital Black SN850 series
+* Western Digital Green SN350 シリーズ
+* Western Digital Black SN850 シリーズ
 * Western Digital Black SN770
-* Inland tn446 nvme drive
+* Inland tn446 nvme ドライブ
 * Corsair MP600 SSD
 * Samsung PM991
 * Kingston OM8SEP4256Q-A0
 * Transcend 110Q (TS500GMTE110Q)
-* SN350 and SN570 prevented the RPi 5 from booting at all especially.
-* Other NVMe SSD drivers equipped with the same Phison controller
+* 特にSN350とSN570はRPi 5の起動を完全に妨げました。
+* 同じPhisonコントローラーを搭載した他のNVMe SSDドライバも非推奨です

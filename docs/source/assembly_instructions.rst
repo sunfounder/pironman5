@@ -1,43 +1,43 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと一緒に、Raspberry Pi、Arduino、ESP32についてさらに深く掘り下げていきましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティやチームのサポートを受け、購入後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品発表や先行情報に早期アクセスできます。
+    - **特別割引**: 最新製品の特別割引を楽しめます。
+    - **フェスティブプロモーションとプレゼント企画**: プレゼント企画や季節ごとのプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探索と創造の準備ができましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 .. _assembly_instructions:
 
-2. Assembly Instructions
+2. 組み立て手順
 =============================================
 
-Before assembling the Pironman, please first verify that all parts and components have been included. If there are any missing or damaged components, please contact SunFounder immediately at service@sunfounder.com to resolve the issue as soon as possible.
+Pironmanを組み立てる前に、すべてのパーツとコンポーネントが揃っているか確認してください。部品が不足している、または破損している場合は、SunFounderのサポート（service@sunfounder.com）にすぐに連絡し、問題を解決してください。
 
-**Tips**
+**ヒント**
 
-* It is recommended to follow the paper installation instructions step by step.
-* Before installation, sort and stack the components to find them more quickly.
-* Repeatedly check the connections of FFC and FPC cables to avoid poor contact.
+* 紙の組み立て手順に従って、順を追って作業を進めることをお勧めします。
+* 組み立て前に、部品を整理して並べておくと、作業がスムーズに進みます。
+* FFCおよびFPCケーブルの接続を何度も確認し、接触不良を避けるようにしてください。
 
 * :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5.pdf>`
 
-**Complete Assembly and Boot Guide: Pironman 5 with NVMe SSD**
+**Pironman 5とNVMe SSDの完全組み立てとブートガイド**
 
-If you are using an NVMe SSD, follow this video to assemble and configure the Pironman 5.
+NVMe SSDを使用している場合、このビデオに従ってPironman 5を組み立て、設定してください。
 
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Complete Assembly and Boot Guide: Pironman 5 with Micro SD Card**
+**Pironman 5とMicro SDカードの完全組み立てとブートガイド**
 
-If you are using a Micro SD card, follow this video to assemble and configure the Pironman 5.
+Micro SDカードを使用している場合、このビデオに従ってPironman 5を組み立て、設定してください。
 
 .. raw:: html
 
@@ -45,13 +45,13 @@ If you are using a Micro SD card, follow this video to assemble and configure th
 
 
 
-.. **Assemble Tutorial Video**
+.. **組み立てチュートリアルビデオ**
 
 .. .. raw:: html
 
 ..     <iframe width="560" height="315" src="https://www.youtube.com/embed/62V85UG-Ocg?si=gNi1rHaPS579Kq7C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-.. **Connect the OLED Screen**
+.. **OLED画面の接続**
 
 .. .. raw:: html
 
@@ -66,8 +66,7 @@ If you are using a Micro SD card, follow this video to assemble and configure th
     
 ..     <br/>
 
-.. **Connect the GPIO Bridge**
-
+.. **GPIOブリッジの接続**
 
 .. .. raw:: html
 
@@ -82,7 +81,7 @@ If you are using a Micro SD card, follow this video to assemble and configure th
     
 ..     <br/>
 
-.. **Connect the SD Card Bridge**
+.. **SDカードブリッジの接続**
 
 .. .. raw:: html
 

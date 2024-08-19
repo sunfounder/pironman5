@@ -1,67 +1,67 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと一緒に、Raspberry Pi、Arduino、ESP32についてさらに深く掘り下げていきましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティやチームのサポートを受け、購入後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品発表や先行情報に早期アクセスできます。
+    - **特別割引**: 最新製品の特別割引を楽しめます。
+    - **フェスティブプロモーションとプレゼント企画**: プレゼント企画やシーズンごとのプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探索と創造の準備ができましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 .. _install_to_sd_ubuntu:
 
-Installing the OS on a Micro SD Card
+Micro SDカードにOSをインストールする
 =============================================
 
-If you are using a Micro SD card, you can follow the tutorial below to install the system onto your Micro SD card.
+Micro SDカードを使用している場合は、以下のチュートリアルに従ってMicro SDカードにシステムをインストールできます。
 
 
-**Required Components**
+**必要なコンポーネント**
 
-* A Personal Computer
-* A Micro SD card and Reader
+* パーソナルコンピュータ
+* Micro SDカードおよびリーダー
 
-**Steps**
+**手順**
 
-#. First, navigate to the |link_batocera_download| page, select **Raspberry Pi 5 B**, and click to download.
+#. まず、|link_batocera_download| ページにアクセスし、 **Raspberry Pi 5 B** を選択してダウンロードします。
 
    .. image:: img/batocera_download.png
       :width: 90%
       
 
-#. Insert your SD card into your computer or laptop using a Reader.
+#. リーダーを使用してSDカードをコンピュータまたはノートパソコンに挿入します。
 
-#. Within the |link_rpi_imager|, click on the **Operating System** tab.
+#. |link_rpi_imager| 内で、 **オペレーティングシステム** タブをクリックします。
 
    .. image:: img/os_choose_os.png
       :width: 90%
 
-#. Scroll down to the bottom of the page and select **Use Custom**.
+#. ページの一番下までスクロールして、 **カスタムを使用** を選択します。
 
    .. image:: img/batocera_os_use_custom.png
       :width: 90%
       
 
-#. Choose the system file you have just downloaded, ``batocera-xxx-xx-xxxxxxxx.img.gz``, and then click **Open**.
+#. ダウンロードしたシステムファイル ``batocera-xxx-xx-xxxxxxxx.img.gz`` を選択し、 **開く** をクリックします。
 
    .. image:: img/batocera_os_choose.png
       :width: 90%
       
 
-#. Click **Choose Storage** and select the appropriate storage device for the installation.
+#. **ストレージを選択** をクリックし、インストールする適切なストレージデバイスを選択します。
 
    .. image:: img/os_choose_sd.png
       :width: 90%
       
 
-#. Now you can click **NEXT**. If the storage device contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+#. **次へ** をクリックします。ストレージデバイスに既存のデータが含まれている場合は、データ損失を防ぐためにバックアップを確実に行ってください。バックアップが不要であれば、 **Yes** をクリックして続行します。
 
    .. image:: img/os_continue.png
       :width: 90%
       
 
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the Micro SD Card!
+#. 「書き込み成功」のポップアップが表示されたら、イメージが完全に書き込まれ、検証されています。これでMicro SDカードからRaspberry Piを起動する準備が整いました！

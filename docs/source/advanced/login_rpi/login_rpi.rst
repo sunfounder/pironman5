@@ -1,34 +1,34 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebookで、Raspberry Pi、Arduino、ESP32の世界を他の愛好者と一緒にさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: 購入後の問題や技術的な課題を、コミュニティやチームの支援で解決します。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**: 新製品の発表や先行公開情報に早くアクセスできます。
+    - **特別割引**: 最新製品を特別割引で購入できます。
+    - **イベントとプレゼント**: プレゼントやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に新しい発見と創造を始めませんか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _login_rpi:
 
-Log in to the Raspberry Pi OS
+Raspberry Pi OSへのログイン
 =====================================
 
-In this chapter, you will learn how to log in to the Raspberry Pi. Whether you have a screen attached or need to access it remotely, this section will guide you through opening the terminal, which you will use in later chapters to enter commands.
+この章では、Raspberry Piにログインする方法について学びます。画面が接続されている場合でも、リモートでアクセスする必要がある場合でも、このセクションでは、後の章でコマンドを入力するために使用するターミナルの開き方を説明します。
 
 .. note::
 
-    If you are already familiar with Raspberry Pi operations, you can skip this chapter.
+    Raspberry Piの操作に既に慣れている場合は、この章をスキップすることができます。
 
-Logging in with a Screen
----------------------------
+画面を使用してログインする
+-----------------------------
 
-Having a screen attached to your Raspberry Pi makes it easier to interact with the system directly.
+Raspberry Piに画面を接続することで、システムとの直接的な操作が容易になります。
 
-**Required Components**
+**必要なコンポーネント**
 
 * Pironman 5
 * Power Adapter
@@ -39,44 +39,44 @@ Having a screen attached to your Raspberry Pi makes it easier to interact with t
 * Mouse
 * Keyboard
 
-**Steps**
+**手順**
 
-#. Insert the Micro SD card into the Pironman 5.
+#. Micro SDカードをPironman 5に挿入します。
 
-#. Connect the Mouse and Keyboard to the USB ports of the Pironman 5.
+#. マウスとキーボードをPironman 5のUSBポートに接続します。
 
-#. Use the HDMI cable to connect the monitor to the HDMI port of the Pironman 5. Make sure the monitor is connected to a power source and is turned on.
+#. HDMIケーブルを使用して、モニターをPironman 5のHDMIポートに接続します。モニターが電源に接続され、オンになっていることを確認してください。
 
-#. Power up the Pironman 5 using the power adapter. You should see the Raspberry Pi OS desktop appear on the monitor shortly.
+#. 電源アダプターを使用してPironman 5を起動します。まもなくモニターにRaspberry Pi OSのデスクトップが表示されるはずです。
 
    .. image:: img/bookwarm.png
       :width: 90%
       
 
-#. Once the desktop is visible, open the Terminal by clicking on the terminal icon or searching for it in the menu to start entering commands.
+#. デスクトップが表示されたら、ターミナルアイコンをクリックするか、メニューで検索してターミナルを開き、コマンドの入力を開始します。
 
-Logging in Remotely Without a Screen
-------------------------------------
+画面を使用せずにリモートでログインする
+-----------------------------------------
 
-If you do not have access to a monitor, you can still use your Raspberry Pi by logging in remotely.
+モニターがない場合でも、リモートでRaspberry Piにログインして使用することができます。
 
-For command-line access, you can use SSH to connect to the Raspberry Pi's Bash shell, the default Linux shell which allows for managing the device via commands.
+コマンドラインアクセスには、SSHを使用してRaspberry PiのBashシェルに接続することができます。BashシェルはLinuxの標準シェルで、コマンドを通じてデバイスを管理することができます。
 
-For those who prefer a graphical interface, using a remote desktop application like VNC Viewer offers a visual way to manage files and operations remotely.
+グラフィカルインターフェースを好む方は、VNC Viewerなどのリモートデスクトップアプリケーションを使用して、リモートでファイルや操作を視覚的に管理することができます。
 
-**Required Components**
+**必要なコンポーネント**
 
 * Pironman 5 
-* Power Adapter
-* Micro SD card or NVMe SSD with pre-installed Raspberry Pi OS
+* 電源アダプター
+* Raspberry Pi OSがインストールされたMicro SDカードまたはNVMe SSD
 
-Steps:
+手順：
 
-#. Insert the Micro SD card into the Pironman 5.
+#. Micro SDカードをPironman 5に挿入します。
 
-#. Connect the Pironman 5 to a power source using the power adapter.
+#. 電源アダプターを使用してPironman 5を電源に接続します。
 
-#. For detailed tutorials on setting up remote access depending on your computer's operating system, see the following sections:
+#. お使いのコンピューターのオペレーティングシステムに応じたリモートアクセスの設定に関する詳細なチュートリアルは、以下のセクションをご覧ください。
 
 .. toctree::
 

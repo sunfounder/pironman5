@@ -1,55 +1,53 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと共に、Raspberry Pi、Arduino、ESP32の世界をさらに深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティやチームの助けを借りて、アフターサポートや技術的な課題を解決します。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベントやプレゼント企画**: プレゼント企画や季節のプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探索と創造の旅に出る準備はできましたか？[|link_sf_facebook|]をクリックして、今日参加しましょう！
 
 Pi5 NVMe PIP
 =================
 
-The Pi5 NVMe PIP (PCIe Peripheral Board), as defined by the Raspberry Pi Foundation, is a PCIe adapter board designed specifically for NVMe solid-state drives. It supports four different sizes of NVMe SSDs: 2230, 2242, 2260, and 2280, all fitting into an M.2 M key slot.
+Pi5 NVMe PIP（PCIe周辺機器ボード）は、Raspberry Pi財団によって定義されたNVMeソリッドステートドライブ用のPCIeアダプターボードです。2230、2242、2260、2280の4つの異なるサイズのNVMe SSDに対応しており、すべてM.2 Mキーのスロットに収まります。
 
 .. image:: img/nvme_pip.png
 
-* The board connects through a 16P 0.5mm reverse FFC (Flexible Flat Cable) or a custom impedance-matched FPC (Flexible Printed Circuit) cable.
-* **STA**: A Status LED indicator.
-* **PWR**: A Power LED indicator.
-* The onboard 3.3V power supply can support up to 3A output. However, since the Raspberry Pi PCIe interface is limited to providing 5V/1A output (equivalent to 5W), additional power for 3.3V/3A usage can be supplied through the J3 connector from a 5V source.
-* **FORCE ENABLE**: The onboard power supply is activated by the switch signal from the PCIe interface. After the Raspberry Pi is powered on, it sends a signal to turn on the 3.3V power supply. If some systems do not support the switch signal or for other reasons, you can short-circuit J4 FORCE ENABLE by soldering a wire between the two floating pads to force the onboard 3.3V power supply to power the NVMe.
+* ボードは16P 0.5mmリバースFFC（フレキシブルフラットケーブル）またはカスタムインピーダンスマッチングFPC（フレキシブルプリント回路）ケーブルを介して接続します。
+* **STA**: ステータスLEDインジケーター。
+* **PWR**: 電源LEDインジケーター。
+* ボード上の3.3V電源は最大3Aの出力をサポートします。ただし、Raspberry PiのPCIeインターフェースは5V/1A（5W相当）しか供給できないため、3.3V/3Aの使用にはJ3コネクタを介して5Vから追加電源を供給する必要があります。
+* **FORCE ENABLE**: ボード上の電源はPCIeインターフェースからのスイッチ信号によって動作します。Raspberry Piが起動すると、3.3V電源をオンにする信号が送信されます。一部のシステムがスイッチ信号をサポートしていない場合や他の理由で、J4 FORCE ENABLEをショートさせることでボード上の3.3V電源を強制的にNVMeに供給できます。
 
-About the Model
----------------------------
+モデルについて
+----------------------------
 
-M.2 SSDs, known for their compact size, come in various types mainly differentiated by their keying (notch design on the connector) and the interface they use. Here are the primary types:
+M.2 SSDはコンパクトなサイズで知られ、主にキー（コネクターのノッチデザイン）と使用するインターフェースによって区別されます。以下が主要なタイプです：
 
-* **M.2 SATA SSDs**: These use the SATA interface, similar to 2.5-inch SATA SSDs but in the smaller M.2 form factor. They are limited by the SATA III maximum speeds of around 600 MB/s. These SSDs are compatible with M.2 slots keyed for B and M keys.
-* **M.2 NVMe SSDs**: These SSDs use the NVMe protocol over PCIe lanes and are significantly faster than M.2 SATA SSDs. They are suitable for applications requiring high read/write speeds like gaming, video editing, and data-intensive tasks. These SSDs typically require M-keyed slots. These drives utilize the PCIe (Peripheral Component Interconnect Express) interface, with different versions like 3.0, 4.0, and 5.0. Each new version of PCIe effectively doubles the data transfer speed of its predecessor. However, the Raspberry Pi 5 uses a PCIe 3.0 interface, capable of delivering transfer speeds up to 3,500 MB/s. 
+* **M.2 SATA SSD**: SATAインターフェースを使用しており、2.5インチSATA SSDと同様ですが、M.2フォームファクターに収まります。SATA IIIの最大速度（約600 MB/s）に制限されます。これらのSSDはBキーおよびMキーのソケットに対応しています。
+* **M.2 NVMe SSD**: NVMeプロトコルを使用し、PCIeレーンを介して高速な読み書きが可能です。ゲーム、ビデオ編集、データ集約型のタスクなど、スピードが求められる用途に最適です。これらのSSDは通常Mキーのスロットを必要とします。PCIe（Peripheral Component Interconnect Express）インターフェースを使用し、バージョン3.0、4.0、5.0などがあり、それぞれの新バージョンでデータ転送速度が倍増します。ただし、Raspberry Pi 5はPCIe 3.0インターフェースを使用しており、最大転送速度は3,500 MB/sに達します。
 
-M.2 SSDs come in three key types: B key, M key, and B+M key. However, later on, the B+M key was introduced, combining the functionalities of the B key and M key. As a result, it replaced the standalone B key. Please refer to the image below.
+M.2 SSDには、Bキー、Mキー、B+Mキーの3種類がありますが、後にB+Mキーが導入され、BキーとMキーの機能を組み合わせたため、単独のBキーは廃止されました。以下の画像を参照してください。
 
 .. image:: img/ssd_key.png
 
 
-In general, M.2 SATA SSDs are B+M-keyed (can fit in sockets for B-keyed and M-keyed modules), while M.2 NVMe SSDs for PCIe 3.0 x4 lane are M-keyed.
+一般的に、M.2 SATA SSDはB+Mキーで、BキーおよびMキーのモジュール用ソケットに適合します。一方、PCIe 3.0 x4レーンのM.2 NVMe SSDはMキーです。
 
 .. image:: img/ssd_model2.png
 
-About the Length
+長さについて
 -----------------------
 
-M.2 modules come in different sizes and can also be utilized for Wi-Fi, WWAN, Bluetooth, GPS, and NFC.
+M.2モジュールは、さまざまなサイズがあり、Wi-Fi、WWAN、Bluetooth、GPS、NFCなどの用途にも使用されます。
 
-Pironman 5 supports four (PCIe Gen 2.0 / PCIe Gen 3.0) NVMe M.2 SSD sizes based on their names: 2230, 2242, 2260, and 2280. The "22" is the width in millimeters (mm), and the two following numbers are the length. The longer the drive, the more NAND flash chips can be mounted; therefore, the more capacity.
-
+Pironman 5は、4種類のNVMe M.2 SSDサイズ（PCIe Gen 2.0 / PCIe Gen 3.0）をサポートしており、それぞれ2230、2242、2260、2280と呼ばれます。「22」は幅をミリメートル（mm）で示し、その後の数字は長さです。ドライブが長いほど、多くのNANDフラッシュチップを搭載できるため、容量が増加します。
 
 .. image:: img/m2_ssd_size.png
   :width: 600
-
