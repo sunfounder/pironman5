@@ -1,36 +1,35 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos nouveaux produits.
+    - **Promotions festives et tirages au sort** : Participez à des concours et à des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-OLED Screen
+Écran OLED
 ===================
 
 .. image:: img/oled_screen.png
     :width: 400
     
 
-* **Size**: 0.96''
-* **Material**: PM OLED
-* **Color**: White light
-* **Driver**: SSD1306
-* **Voltage**: 3.3V
-* **Resolution**: 128*64
-* **Display Area**: 21.74x10.86mm
-* **Panel Size**: 26.70x19.26x1.42mm
-* **Pixel Pitch**: 0.17x0.17mm
-* **Pixel Size**: 0.154x0.154mm
-* **Viewing Angle**: Full view
-* **Operating Temperature**: -20~70°C
-* **Communication Method**: IIC/SPI/Parallel
-* **Connection Method**: 0.5mm pitch plug-in type FPC
-
+* **Taille** : 0.96''
+* **Matériau** : PM OLED
+* **Couleur** : Lumière blanche
+* **Pilote** : SSD1306
+* **Tension** : 3.3V
+* **Résolution** : 128*64
+* **Zone d'affichage** : 21.74x10.86mm
+* **Taille du panneau** : 26.70x19.26x1.42mm
+* **Pas de pixel** : 0.17x0.17mm
+* **Taille du pixel** : 0.154x0.154mm
+* **Angle de vue** : Vue complète
+* **Température de fonctionnement** : -20~70°C
+* **Méthode de communication** : IIC/SPI/Parallèle
+* **Méthode de connexion** : FPC enfichable avec un pas de 0,5 mm

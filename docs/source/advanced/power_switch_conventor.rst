@@ -1,58 +1,56 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos nouveaux produits.
+    - **Promotions festives et tirages au sort** : Participez à des concours et à des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Power Switch Conventor
-==============================
+Convertisseur de Bouton d'Alimentation
+==========================================
 
-This is a module that expands the Raspberry Pi 5 power switch to the outside. 
+Il s'agit d'un module qui permet d'étendre le bouton d'alimentation du Raspberry Pi 5 vers l'extérieur.
 
 .. image:: img/power_switch_conventor.jpeg
 
-**Adding the Power Button**
+**Ajout du bouton d'alimentation**
 
-* The Raspberry Pi 5 features a **J2** jumper, situated between the RTC battery connector and the board edge. This breakout enables the addition of a custom power button to the Raspberry Pi 5 by connecting a Normally Open (NO) momentary switch across the two pads. Briefly engaging this switch mimics the onboard power button's functionality.
+* Le Raspberry Pi 5 est équipé d'un cavalier **J2**, situé entre le connecteur de la batterie RTC et le bord de la carte. Cette extension permet d'ajouter un bouton d'alimentation personnalisé au Raspberry Pi 5 en connectant un interrupteur momentané normalement ouvert (NO) sur les deux pastilles. Appuyer brièvement sur cet interrupteur reproduit la fonctionnalité du bouton d'alimentation intégré.
 
    .. image:: img/pi5_j2.jpg
 
-* On the Pironman 5, there's a **Power Switch Converter** that extends the **J2** jumper to an external power button using two Pogo pins.
+* Sur le Pironman 5, il y a un **convertisseur de bouton d'alimentation** qui étend le cavalier **J2** vers un bouton d'alimentation externe à l'aide de deux broches Pogo.
 
    .. image:: img/power_switch_convertor.png
 
-* Now, the Raspberry Pi 5 can be powered on and off using the Power Button.
+* Désormais, le Raspberry Pi 5 peut être alimenté ou éteint en utilisant le bouton d'alimentation.
 
    .. image:: img/pironman_button.JPG
 
-**Power Cycling**
+**Cycle d'alimentation**
 
-Upon initially powering your Raspberry Pi 5, it will automatically turn on and boot into the operating system without the need to press the button.
+Lors de la mise sous tension initiale de votre Raspberry Pi 5, il s'allumera automatiquement et démarrera dans le système d'exploitation sans avoir besoin d'appuyer sur le bouton.
 
-If running the Raspberry Pi Desktop, a brief press of the power button initiates a clean shutdown process. A menu will appear, offering options to shutdown, reboot, or logout. Selecting an option or pressing the power button again will start a clean shutdown.
+Si vous utilisez le bureau Raspberry Pi, une brève pression sur le bouton d'alimentation lance un processus d'arrêt propre. Un menu apparaîtra, offrant des options pour éteindre, redémarrer ou se déconnecter. Sélectionner une option ou appuyer de nouveau sur le bouton d'alimentation déclenchera un arrêt propre.
 
 .. image:: img/button_shutdown.png
 
-**Shutdown**
+**Arrêt**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system without a desktop, press the power button a single time to initiate a shutdown.
-    * To force a hard shutdown, press and hold the power button.
+    * Si vous utilisez le système **Bookworm Desktop** de Raspberry Pi, vous pouvez appuyer deux fois rapidement sur le bouton d'alimentation pour éteindre.
+    * Si vous utilisez le système **Bookworm Lite** de Raspberry Pi sans bureau, appuyez une seule fois sur le bouton d'alimentation pour lancer l'arrêt.
+    * Pour forcer un arrêt brutal, maintenez le bouton d'alimentation enfoncé.
 
+**Mise sous tension**
 
-**Power on**
-
-    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+    * Si la carte Raspberry Pi est éteinte mais toujours sous tension, une simple pression permettra de rallumer la carte depuis l'état d'arrêt.
 
 .. note::
 
-    If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
-
+    Si vous utilisez un système qui ne prend pas en charge le bouton d'arrêt, vous pouvez le maintenir enfoncé pendant 5 secondes pour forcer un arrêt brutal, puis appuyer une seule fois pour rallumer la carte depuis l'état d'arrêt.
