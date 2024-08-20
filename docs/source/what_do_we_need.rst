@@ -17,9 +17,9 @@
 
 **Essential Components**
 
-* Raspberry Pi 5 Model B
+* Raspberry Pi 5 
 
-    The Pironman 5 is fully compatible with the Raspberry Pi 5 Model B.
+    The Pironman 5 is fully compatible with the Raspberry Pi 5 .
 
 * 5V/5A Power Adapter
 
