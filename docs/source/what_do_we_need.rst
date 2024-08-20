@@ -17,9 +17,9 @@
 
 **Wesentliche Komponenten**
 
-* Raspberry Pi 5 Model B
+* Raspberry Pi 5 
 
-    Der Pironman 5 ist vollständig kompatibel mit dem Raspberry Pi 5 Model B.
+    Der Pironman 5 ist vollständig kompatibel mit dem Raspberry Pi 5.
 
 * 5V/5A-Netzadapter
 
