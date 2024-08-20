@@ -17,9 +17,9 @@
 
 **必須コンポーネント**
 
-* Raspberry Pi 5 Model B
+* Raspberry Pi 5 
 
-    Pironman 5はRaspberry Pi 5 Model Bに完全対応しています。
+    Pironman 5はRaspberry Pi 5 に完全対応しています。
 
 
 * 5V/5Aパワーアダプター
