@@ -1,43 +1,43 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _assembly_instructions:
 
-2. Assembly Instructions
+2. Instrucciones de Ensamblaje
 =============================================
 
-Before assembling the Pironman, please first verify that all parts and components have been included. If there are any missing or damaged components, please contact SunFounder immediately at service@sunfounder.com to resolve the issue as soon as possible.
+Antes de ensamblar el Pironman, verifica que todas las piezas y componentes estén incluidos. Si falta algún componente o está dañado, contacta a SunFounder inmediatamente a través de service@sunfounder.com para resolver el problema lo antes posible.
 
-**Tips**
+**Consejos**
 
-* It is recommended to follow the paper installation instructions step by step.
-* Before installation, sort and stack the components to find them more quickly.
-* Repeatedly check the connections of FFC and FPC cables to avoid poor contact.
+* Se recomienda seguir las instrucciones de instalación en papel paso a paso.
+* Antes de la instalación, clasifica y apila los componentes para encontrarlos más rápidamente.
+* Verifica repetidamente las conexiones de los cables FFC y FPC para evitar un mal contacto.
 
 * :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5.pdf>`
 
-**Complete Assembly and Boot Guide: Pironman 5 with NVMe SSD**
+**Guía Completa de Ensamblaje y Arranque: Pironman 5 con SSD NVMe**
 
-If you are using an NVMe SSD, follow this video to assemble and configure the Pironman 5.
+Si estás utilizando un SSD NVMe, sigue este video para ensamblar y configurar el Pironman 5.
 
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Complete Assembly and Boot Guide: Pironman 5 with Micro SD Card**
+**Guía Completa de Ensamblaje y Arranque: Pironman 5 con Tarjeta Micro SD**
 
-If you are using a Micro SD card, follow this video to assemble and configure the Pironman 5.
+Si estás utilizando una tarjeta Micro SD, sigue este video para ensamblar y configurar el Pironman 5.
 
 .. raw:: html
 
@@ -45,20 +45,20 @@ If you are using a Micro SD card, follow this video to assemble and configure th
 
 
 
-.. **Assemble Tutorial Video**
+.. **Video Tutorial de Ensamblaje**
 
 .. .. raw:: html
 
 ..     <iframe width="560" height="315" src="https://www.youtube.com/embed/62V85UG-Ocg?si=gNi1rHaPS579Kq7C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-.. **Connect the OLED Screen**
+.. **Conectar la Pantalla OLED**
 
 .. .. raw:: html
 
 ..     <div style="text-align: center;">
 ..         <video center loop autoplay muted style = "max-width:90%">
 ..             <source src="_static/video/connect_oled.mp4"  type="video/mp4">
-..             Your browser does not support the video tag.
+..             Tu navegador no soporta el video.
 ..         </video>
 ..     </div>
 
@@ -66,7 +66,7 @@ If you are using a Micro SD card, follow this video to assemble and configure th
     
 ..     <br/>
 
-.. **Connect the GPIO Bridge**
+.. **Conectar el Puente GPIO**
 
 
 .. .. raw:: html
@@ -74,7 +74,7 @@ If you are using a Micro SD card, follow this video to assemble and configure th
 ..     <div style="text-align: center;">
 ..         <video center loop autoplay muted style = "max-width:90%">
 ..             <source src="_static/video/connect_gpio_bridge.mp4"  type="video/mp4">
-..             Your browser does not support the video tag.
+..             Tu navegador no soporta el video.
 ..         </video>
 ..     </div>
 
@@ -82,14 +82,14 @@ If you are using a Micro SD card, follow this video to assemble and configure th
     
 ..     <br/>
 
-.. **Connect the SD Card Bridge**
+.. **Conectar el Puente de la Tarjeta SD**
 
 .. .. raw:: html
 
 ..     <div style="text-align: center;">
 ..         <video center loop autoplay muted style = "max-width:90%">
 ..             <source src="_static/video/connect_sd_card.mp4"  type="video/mp4">
-..             Your browser does not support the video tag.
+..             Tu navegador no soporta el video.
 ..         </video>
 ..     </div>
 

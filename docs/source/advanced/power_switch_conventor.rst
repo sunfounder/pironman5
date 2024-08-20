@@ -1,58 +1,58 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola, bienvenido a la comunidad de entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook! Sumérgete aún más en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
-Power Switch Conventor
+Power Switch Converter
 ==============================
 
-This is a module that expands the Raspberry Pi 5 power switch to the outside. 
+Este es un módulo que expande el interruptor de encendido del Raspberry Pi 5 hacia el exterior.
 
 .. image:: img/power_switch_conventor.jpeg
 
-**Adding the Power Button**
+**Añadiendo el Botón de Encendido**
 
-* The Raspberry Pi 5 features a **J2** jumper, situated between the RTC battery connector and the board edge. This breakout enables the addition of a custom power button to the Raspberry Pi 5 by connecting a Normally Open (NO) momentary switch across the two pads. Briefly engaging this switch mimics the onboard power button's functionality.
+* El Raspberry Pi 5 cuenta con un jumper **J2**, ubicado entre el conector de la batería RTC y el borde de la placa. Este punto de conexión permite añadir un botón de encendido personalizado al Raspberry Pi 5 conectando un interruptor momentáneo de Tipo Normalmente Abierto (NO) a las dos almohadillas. Al pulsar brevemente este interruptor, se emula la funcionalidad del botón de encendido integrado.
 
    .. image:: img/pi5_j2.jpg
 
-* On the Pironman 5, there's a **Power Switch Converter** that extends the **J2** jumper to an external power button using two Pogo pins.
+* En el Pironman 5, hay un **Convertidor de Interruptor de Encendido** que extiende el jumper **J2** a un botón de encendido externo usando dos pines Pogo.
 
    .. image:: img/power_switch_convertor.png
 
-* Now, the Raspberry Pi 5 can be powered on and off using the Power Button.
+* Ahora, el Raspberry Pi 5 puede encenderse y apagarse usando el botón de encendido.
 
    .. image:: img/pironman_button.JPG
 
-**Power Cycling**
+**Ciclo de Encendido**
 
-Upon initially powering your Raspberry Pi 5, it will automatically turn on and boot into the operating system without the need to press the button.
+Al encender inicialmente tu Raspberry Pi 5, este se activará automáticamente y arrancará el sistema operativo sin necesidad de pulsar el botón.
 
-If running the Raspberry Pi Desktop, a brief press of the power button initiates a clean shutdown process. A menu will appear, offering options to shutdown, reboot, or logout. Selecting an option or pressing the power button again will start a clean shutdown.
+Si estás ejecutando Raspberry Pi Desktop, una breve pulsación del botón de encendido iniciará un proceso de apagado seguro. Aparecerá un menú que ofrecerá opciones para apagar, reiniciar o cerrar sesión. Seleccionar una opción o pulsar nuevamente el botón de encendido iniciará un apagado seguro.
 
 .. image:: img/button_shutdown.png
 
-**Shutdown**
+**Apagado**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system without a desktop, press the power button a single time to initiate a shutdown.
-    * To force a hard shutdown, press and hold the power button.
+    * Si estás ejecutando el sistema **Bookworm Desktop** de Raspberry Pi, puedes pulsar dos veces rápidamente el botón de encendido para apagar.
+    * Si estás ejecutando el sistema **Bookworm Lite** de Raspberry Pi sin escritorio, presiona el botón de encendido una sola vez para iniciar un apagado.
+    * Para forzar un apagado brusco, mantén presionado el botón de encendido.
 
 
-**Power on**
+**Encendido**
 
-    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+    * Si la placa Raspberry Pi está apagada pero aún con alimentación, pulsa una sola vez para encenderla desde el estado de apagado.
 
 .. note::
 
-    If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
+    Si estás ejecutando un sistema que no admite el botón de apagado, puedes mantenerlo presionado durante 5 segundos para forzar un apagado brusco, y pulsarlo una vez para encenderlo desde el estado de apagado.
 

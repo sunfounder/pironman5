@@ -1,40 +1,40 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 con otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _set_up_pironman5:
 
-Set Up on Raspberry Pi/Ubuntu/Kali/Homebridge OS
-==================================================
+Configuración en Raspberry Pi/Ubuntu/Kali/Homebridge OS
+==========================================================
 
-If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your Raspberry Pi, you will need to configure the Pironman 5 using the command line. Detailed tutorials can be found below:
+Si has instalado Raspberry Pi OS, Ubuntu, Kali Linux o Homebridge en tu Raspberry Pi, necesitarás configurar el Pironman 5 usando la línea de comandos. Puedes encontrar tutoriales detallados a continuación:
 
 .. note::
 
-  Before configuring, you need to boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
+  Antes de configurar, debes encender e iniciar sesión en tu Raspberry Pi. Si no estás seguro de cómo hacerlo, puedes visitar el sitio web oficial de Raspberry Pi: |link_rpi_get_start|.
 
 
-Configuring Shutdown to Deactivate GPIO Power
-------------------------------------------------------------
-To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from remaining active post-shutdown, it's essential to configure the Raspberry Pi for GPIO power deactivation.
+Configurar el apagado para desactivar la alimentación GPIO
+-------------------------------------------------------------
+Para evitar que la pantalla OLED y los ventiladores RGB, alimentados por el GPIO de Raspberry Pi, sigan activos después del apagado, es fundamental configurar Raspberry Pi para desactivar la alimentación del GPIO.
 
-#. Manually edit the ``EEPROM`` configuration file with this command:
+#. Edita manualmente el archivo de configuración del ``EEPROM`` con este comando:
 
    .. code-block:: shell
    
      sudo rpi-eeprom-config -e
 
-#. Modify the ``POWER_OFF_ON_HALT`` setting in the file to ``1``. For instance:
+#. Modifica la configuración ``POWER_OFF_ON_HALT`` en el archivo a ``1``. Por ejemplo:
 
    .. code-block:: shell
    
@@ -42,61 +42,62 @@ To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from 
      POWER_OFF_ON_HALT=1
      BOOT_ORDER=0xf41
 
-#. Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes.
+#. Presiona ``Ctrl + X``, ``Y`` y ``Enter`` para guardar los cambios.
 
 
-Downloading and Installing the ``pironman5`` Module
------------------------------------------------------------
+Descargar e instalar el módulo ``pironman5``
+-----------------------------------------------
 
-#. For lite systems, initially install tools like ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
-  
+#. Para sistemas lite, primero instala herramientas como ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
+
    .. code-block:: shell
-  
+   
      sudo apt-get update
      sudo apt-get install git -y
      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. Proceed to download code from GitHub and install the ``pironman5`` module .
+#. Procede a descargar el código desde GitHub e instalar el módulo ``pironman5``.
 
    .. code-block:: shell
 
-      cd ~
-      git clone https://github.com/sunfounder/pironman5.git
-      cd ~/pironman5
-      sudo python3 install.py
+     cd ~
+     git clone https://github.com/sunfounder/pironman5.git
+     cd ~/pironman5
+     sudo python3 install.py
 
    .. note::
     
-      Once you have completed the installation of the ``pironman5`` module, you will be able to access the :ref:`view_control_dashboard`.
+      Una vez que hayas completado la instalación del módulo ``pironman5``, podrás acceder al :ref:`view_control_dashboard`.
       
-      If you do not need this feature and want to reduce CPU and RAM usage, you can disable the dashboard during the installation of ``pironman5`` by adding the ``--disable-dashboard`` flag.
-      
+      Si no necesitas esta función y quieres reducir el uso de CPU y RAM, puedes deshabilitar el tablero durante la instalación de ``pironman5`` añadiendo la opción ``--disable-dashboard``.
+
       .. code-block:: shell
       
         sudo python3 install.py --disable-dashboard
       
-      If you have already installed ``pironman 5``, you can remove the ``dashboard`` module and ``influxdb``, then restart pironman5 to apply the changes:
-      
+      Si ya has instalado ``pironman5``, puedes eliminar el módulo ``dashboard`` y ``influxdb``, luego reinicia ``pironman5`` para aplicar los cambios:
+
       .. code-block:: shell
       
         /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
         sudo apt purge influxdb
         sudo systemctl restart pironman5
-      
-   After successful installation, a system reboot is required to activate the installation. Follow the on-screen reboot prompt.
 
-   Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
+   Tras la instalación exitosa, se requiere un reinicio del sistema para activar la instalación. Sigue el aviso de reinicio en pantalla.
+
+   Al reiniciar, el servicio ``pironman5.service`` se iniciará automáticamente. Aquí están las configuraciones principales para Pironman 5:
    
-     * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
-     * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
-     * The RGB fans will activate at 60°C.
+     * La pantalla OLED muestra el uso de CPU, RAM, disco, temperatura de la CPU y la dirección IP de Raspberry Pi.
+     * Cuatro LEDs RGB WS2812 se encenderán en azul con un modo de respiración.
+     * Los ventiladores RGB se activarán a 60°C.
 
-#. You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5.service``.
+#. Puedes usar la herramienta ``systemctl`` para ``iniciar``, ``detener``, ``reiniciar`` o verificar el ``estado`` del servicio ``pironman5.service``.
 
    .. code-block:: shell
-     
-      sudo systemctl restart pironman5.service
    
-   * ``restart``: Use this command to apply any changes made to the settings of pironman 5.
-   * ``start/stop``: Enable or disable the ``pironman5.service``.
-   * ``status``: Check the operational status of the ``pironman5`` program using the ``systemctl`` tool.
+      sudo systemctl restart pironman5.service
+
+   * ``restart``: Usa este comando para aplicar cualquier cambio realizado en la configuración de ``pironman5``.
+   * ``start/stop``: Habilita o deshabilita el servicio ``pironman5.service``.
+   * ``status``: Verifica el estado operativo del programa ``pironman5`` usando la herramienta ``systemctl``.
+
