@@ -30,9 +30,10 @@ Pour éviter que l'écran OLED et les ventilateurs RGB, alimentés par le GPIO d
 
 * Modifiez manuellement le fichier de configuration ``EEPROM`` avec cette commande :
 
-  .. code-block:: shell
+   .. code-block:: shell
+   
+     sudo rpi-eeprom-config -e
 
-    sudo rpi-eeprom-config -e
 
 * Modifiez le paramètre ``POWER_OFF_ON_HALT`` dans le fichier en le réglant sur ``1``. Par exemple :
 
@@ -52,20 +53,20 @@ Téléchargement et installation du module ``pironman5``
 
   Pour les systèmes légers, commencez par installer des outils tels que ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
   
-  .. code-block:: shell
+   .. code-block:: shell
   
-    sudo apt-get update
-    sudo apt-get install git -y
-    sudo apt-get install python3 python3-pip python3-setuptools -y
+     sudo apt-get update
+     sudo apt-get install git -y
+     sudo apt-get install python3 python3-pip python3-setuptools -y
 
 Ensuite, téléchargez le code depuis GitHub et installez le module ``pironman5``.
 
-.. code-block:: shell
+   .. code-block:: shell
 
-  cd ~
-  git clone https://github.com/sunfounder/pironman5.git
-  cd ~/pironman5
-  sudo python3 install.py
+      cd ~
+      git clone https://github.com/sunfounder/pironman5.git
+      cd ~/pironman5
+      sudo python3 install.py
 
 Après une installation réussie, un redémarrage du système est nécessaire pour activer l'installation. Suivez l'invite de redémarrage affichée à l'écran.
 
