@@ -65,31 +65,16 @@ Descargar e instalar el módulo ``pironman5``
      cd ~/pironman5
      sudo python3 install.py
 
-   .. note::
-    
-      Una vez que hayas completado la instalación del módulo ``pironman5``, podrás acceder al :ref:`view_control_dashboard`.
-      
-      Si no necesitas esta función y quieres reducir el uso de CPU y RAM, puedes deshabilitar el tablero durante la instalación de ``pironman5`` añadiendo la opción ``--disable-dashboard``.
-
-      .. code-block:: shell
-      
-        sudo python3 install.py --disable-dashboard
-      
-      Si ya has instalado ``pironman5``, puedes eliminar el módulo ``dashboard`` y ``influxdb``, luego reinicia ``pironman5`` para aplicar los cambios:
-
-      .. code-block:: shell
-      
-        /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
-        sudo apt purge influxdb
-        sudo systemctl restart pironman5
-
    Tras la instalación exitosa, se requiere un reinicio del sistema para activar la instalación. Sigue el aviso de reinicio en pantalla.
 
    Al reiniciar, el servicio ``pironman5.service`` se iniciará automáticamente. Aquí están las configuraciones principales para Pironman 5:
    
-     * La pantalla OLED muestra el uso de CPU, RAM, disco, temperatura de la CPU y la dirección IP de Raspberry Pi.
-     * Cuatro LEDs RGB WS2812 se encenderán en azul con un modo de respiración.
-     * Los ventiladores RGB se activarán a 60°C.
+   * La pantalla OLED muestra el uso de CPU, RAM, disco, temperatura de la CPU y la dirección IP de Raspberry Pi.
+   * Cuatro LEDs RGB WS2812 se encenderán en azul con un modo de respiración.
+   
+   .. note::
+    
+     Los ventiladores RGB no girarán a menos que la temperatura alcance los 60°C. Para diferentes temperaturas de activación, consulta :ref:`cc_control_fan`.
 
 #. Puedes usar la herramienta ``systemctl`` para ``iniciar``, ``detener``, ``reiniciar`` o verificar el ``estado`` del servicio ``pironman5.service``.
 

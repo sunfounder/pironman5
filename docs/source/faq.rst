@@ -15,6 +15,27 @@
 Preguntas Frecuentes
 ========================
 
+¿Cómo desactivar el panel de control web?
+-------------------------------------------------------
+
+Una vez que hayas completado la instalación del módulo ``pironman5``, podrás acceder al :ref:`view_control_dashboard`.
+
+Si no necesitas esta función y quieres reducir el uso de CPU y RAM, puedes deshabilitar el tablero durante la instalación de ``pironman5`` añadiendo la opción ``--disable-dashboard``.
+
+.. code-block:: shell
+
+  sudo python3 install.py --disable-dashboard
+
+Si ya has instalado ``pironman5``, puedes eliminar el módulo ``dashboard`` y ``influxdb``, luego reinicia ``pironman5`` para aplicar los cambios:
+
+.. code-block:: shell
+
+  /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
+  sudo apt purge influxdb
+  sudo systemctl restart pironman5
+
+
+
 ¿Es compatible el Pironman 5 con sistemas retro de juegos?
 -----------------------------------------------------------
 Sí, es compatible. Sin embargo, la mayoría de los sistemas retro de juegos son versiones simplificadas que no pueden instalar ni ejecutar software adicional. Esta limitación puede hacer que algunos componentes del Pironman 5, como la pantalla OLED, los dos ventiladores RGB y los 4 LEDs RGB, no funcionen correctamente, ya que estos componentes requieren la instalación de los paquetes de software de Pironman 5.

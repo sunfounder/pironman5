@@ -18,6 +18,11 @@ Control con Comandos
 ========================================
 Además de visualizar datos del Pironman 5 y controlar varios dispositivos a través del Panel de Control, también puedes utilizar comandos para controlarlos.
 
+.. note::
+
+  * Para el sistema **Home Assistant**, solo puedes monitorear y controlar el Pironman 5 a través del panel de control abriendo la página web en ``http://<ip>:34001``.
+  * Para el sistema **Batocera.linux**, solo puedes monitorear y controlar el Pironman 5 mediante comandos. Es importante tener en cuenta que cualquier cambio en la configuración requiere reiniciar el servicio utilizando ``pironman5 restart`` para que los cambios surtan efecto.
+
 
 Ver las Configuraciones Básicas
 -----------------------------------
@@ -157,6 +162,8 @@ La placa cuenta con 4 LEDs RGB WS2812, ofreciendo un control personalizable. Los
 .. code-block:: shell
 
   pironman5 -rl 12
+
+.. _cc_control_fan:
 
 Control de Ventiladores RGB
 --------------------------------
