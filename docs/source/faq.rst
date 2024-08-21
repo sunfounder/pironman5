@@ -15,6 +15,25 @@
 FAQ
 ============
 
+Web-Dashboard deaktivieren?
+------------------------------------------------------
+
+Sobald Sie die Installation des ``pironman5`` Moduls abgeschlossen haben, können Sie auf das :ref:`view_control_dashboard` zugreifen.
+
+Wenn Sie diese Funktion nicht benötigen und die CPU- und RAM-Auslastung reduzieren möchten, können Sie das Dashboard während der Installation von ``pironman5`` deaktivieren, indem Sie das Flag ``--disable-dashboard`` hinzufügen.
+
+.. code-block:: shell
+
+  sudo python3 install.py --disable-dashboard
+
+Wenn Sie bereits ``pironman 5`` installiert haben, können Sie das ``dashboard`` Modul und ``influxdb`` entfernen und anschließend pironman5 neu starten, um die Änderungen anzuwenden:
+
+.. code-block:: shell
+
+  /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
+  sudo apt purge influxdb
+  sudo systemctl restart pironman5
+
 Unterstützt der Pironman 5 Retro-Gaming-Systeme?
 ------------------------------------------------------
 Ja, er ist kompatibel. Allerdings sind die meisten Retro-Gaming-Systeme abgespeckte Versionen, die keine zusätzliche Software installieren und ausführen können. Diese Einschränkung kann dazu führen, dass einige Komponenten des Pironman 5, wie das OLED-Display, die beiden RGB-Lüfter und die 4 RGB-LEDs, nicht ordnungsgemäß funktionieren, da diese Komponenten die Installation von Softwarepaketen des Pironman 5 erfordern.

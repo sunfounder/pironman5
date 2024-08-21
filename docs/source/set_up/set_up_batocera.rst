@@ -55,7 +55,10 @@ Wenn Sie das Batocera.linux Betriebssystem installiert haben, können Sie sich p
 
   * Das OLED-Display zeigt CPU, RAM, Festplattennutzung, CPU-Temperatur und die IP-Adresse des Raspberry Pi an.
   * Vier WS2812 RGB-LEDs leuchten in einem blauen Atemmodus.
-  * Die RGB-Lüfter werden bei einer Temperatur von 60°C aktiviert.
+
+   .. note::
+    
+     RGB-Lüfter drehen sich nicht, bevor die Temperatur 60°C erreicht. Für andere Aktivierungstemperaturen siehe :ref:`cc_control_fan`.
 
 
 Nun können Sie den Pironman 5 mit einem Bildschirm, Gamecontrollern, Kopfhörern und vielem mehr verbinden, um in Ihre Gaming-Welt einzutauchen.

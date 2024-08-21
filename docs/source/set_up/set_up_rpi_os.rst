@@ -65,34 +65,16 @@ Herunterladen und Installieren des ``pironman5`` Moduls
       cd ~/pironman5
       sudo python3 install.py
 
-   .. note::
-    
-      Sobald Sie die Installation des ``pironman5`` Moduls abgeschlossen haben, können Sie auf das :ref:`view_control_dashboard` zugreifen.
-      
-      Wenn Sie diese Funktion nicht benötigen und die CPU- und RAM-Auslastung reduzieren möchten, können Sie das Dashboard während der Installation von ``pironman5`` deaktivieren, indem Sie das Flag ``--disable-dashboard`` hinzufügen.
-      
-      .. code-block:: shell
-      
-        sudo python3 install.py --disable-dashboard
-      
-      Wenn Sie bereits ``pironman 5`` installiert haben, können Sie das ``dashboard`` Modul und ``influxdb`` entfernen und anschließend pironman5 neu starten, um die Änderungen anzuwenden:
-      
-      .. code-block:: shell
-      
-        /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
-        sudo apt purge influxdb
-        sudo systemctl restart pironman5
-
-      
-
    Nach erfolgreicher Installation ist ein Systemneustart erforderlich, um die Installation zu aktivieren. Befolgen Sie die Bildschirmanweisungen zum Neustart.
    
    Nach dem Neustart wird der ``pironman5.service`` automatisch gestartet. Hier sind die Hauptkonfigurationen für den Pironman 5:
    
-     * Der OLED-Bildschirm zeigt CPU, RAM, Festplattennutzung, CPU-Temperatur und die IP-Adresse des Raspberry Pi an.
-     * Vier WS2812 RGB-LEDs leuchten in Blau im Atmungsmodus auf.
-     * Die RGB-Lüfter werden bei 60°C aktiviert.
-   
+   * Der OLED-Bildschirm zeigt CPU, RAM, Festplattennutzung, CPU-Temperatur und die IP-Adresse des Raspberry Pi an.
+   * Vier WS2812 RGB-LEDs leuchten in Blau im Atmungsmodus auf.
+   .. note::
+    
+     RGB-Lüfter drehen sich nicht, bevor die Temperatur 60°C erreicht. Für andere Aktivierungstemperaturen siehe :ref:`cc_control_fan`.
+
 #. Sie können das ``systemctl``-Tool verwenden, um den ``pironman5.service`` zu ``starten``, ``stoppen``, ``neustarten`` oder den ``Status`` zu überprüfen.
 
   .. code-block:: shell

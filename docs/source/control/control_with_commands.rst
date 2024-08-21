@@ -18,6 +18,11 @@ Steuerung mit Befehlen
 ========================================
 Zusätzlich zur Anzeige von Daten des Pironman 5 und der Steuerung verschiedener Geräte über das Dashboard können Sie diese auch über Befehle steuern.
 
+.. note::
+
+  * Für das **Home Assistant**-System können Sie den Pironman 5 nur über das Dashboard überwachen und steuern, indem Sie die Webseite unter ``http://<ip>:34001`` öffnen.
+  * Für das **Batocera.linux**-System können Sie den Pironman 5 nur über Befehle überwachen und steuern. Es ist wichtig zu beachten, dass alle Änderungen an der Konfiguration einen Neustart des Dienstes mit ``pironman5 restart`` erfordern, damit sie wirksam werden.
+
 
 Anzeige der Grundkonfigurationen
 -----------------------------------
@@ -157,6 +162,8 @@ Das Board verfügt über 4 WS2812 RGB-LEDs, die individuell gesteuert werden kö
 .. code-block:: shell
 
   pironman5 -rl 12
+
+.. _cc_control_fan:
 
 Steuerung der RGB-Lüfter
 ------------------------------
