@@ -53,8 +53,8 @@ Batocera.linux OSをインストールした場合、SSH経由でこのシステ
 
 #. 再起動すると、 ``pironman5.service`` が自動的に起動します。ここでは、Pironman 5の主な設定を紹介します：
 
-  * OLED画面には、CPU、RAM、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示されます。
-  * 4つのWS2812 RGB LEDが、青い呼吸モードで点灯します。
+   * OLED画面には、CPU、RAM、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示されます。
+   * 4つのWS2812 RGB LEDが、青い呼吸モードで点灯します。
 
    .. note::
 
