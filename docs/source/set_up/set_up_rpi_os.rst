@@ -71,6 +71,7 @@ Herunterladen und Installieren des ``pironman5`` Moduls
    
    * Der OLED-Bildschirm zeigt CPU, RAM, Festplattennutzung, CPU-Temperatur und die IP-Adresse des Raspberry Pi an.
    * Vier WS2812 RGB-LEDs leuchten in Blau im Atmungsmodus auf.
+   
    .. note::
     
      RGB-Lüfter drehen sich nicht, bevor die Temperatur 60°C erreicht. Für andere Aktivierungstemperaturen siehe :ref:`cc_control_fan`.

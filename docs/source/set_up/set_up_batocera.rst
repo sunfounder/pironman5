@@ -53,8 +53,8 @@ Wenn Sie das Batocera.linux Betriebssystem installiert haben, können Sie sich p
 
 #. Nach dem Neustart wird der Dienst ``pironman5.service`` automatisch gestartet. Hier sind die Hauptkonfigurationen für den Pironman 5:
 
-  * Das OLED-Display zeigt CPU, RAM, Festplattennutzung, CPU-Temperatur und die IP-Adresse des Raspberry Pi an.
-  * Vier WS2812 RGB-LEDs leuchten in einem blauen Atemmodus.
+   * Das OLED-Display zeigt CPU, RAM, Festplattennutzung, CPU-Temperatur und die IP-Adresse des Raspberry Pi an.
+   * Vier WS2812 RGB-LEDs leuchten in einem blauen Atemmodus.
 
    .. note::
     
