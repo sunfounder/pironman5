@@ -18,6 +18,11 @@ Controllo tramite Comandi
 ========================================
 Oltre a visualizzare i dati del Pironman 5 e controllare vari dispositivi tramite la Dashboard, puoi anche utilizzare i comandi per controllarli.
 
+.. note::
+
+  * Per il sistema **Home Assistant**, puoi monitorare e controllare il Pironman 5 solo tramite la dashboard aprendo la pagina web all'indirizzo ``http://<ip>:34001``.
+  * Per il sistema **Batocera.linux**, puoi monitorare e controllare il Pironman 5 solo tramite comandi. È importante notare che qualsiasi modifica alla configurazione richiede il riavvio del servizio utilizzando ``pironman5 restart`` affinché abbia effetto.
+
 
 Visualizza le Configurazioni di Base
 -------------------------------------------
@@ -157,6 +162,8 @@ La scheda è dotata di 4 LED RGB WS2812, offrendo un controllo personalizzabile.
 .. code-block:: shell
 
   pironman5 -rl 12
+
+.. _cc_control_fan:
 
 Controllo delle Ventole RGB
 -----------------------------------

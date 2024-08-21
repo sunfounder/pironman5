@@ -53,9 +53,13 @@ Se hai installato il sistema operativo Batocera.linux, puoi accedere a questo si
 
 #. Al riavvio, il servizio ``pironman5.service`` si avvierà automaticamente. Ecco le principali configurazioni per Pironman 5:
 
-  * Lo schermo OLED mostrerà CPU, RAM, utilizzo del disco, temperatura della CPU e l'indirizzo IP del Raspberry Pi.
-  * Quattro LED RGB WS2812 si illumineranno di blu con una modalità di respirazione.
-  * Le ventole RGB si attiveranno a 60°C.
+   * Lo schermo OLED mostrerà CPU, RAM, utilizzo del disco, temperatura della CPU e l'indirizzo IP del Raspberry Pi.
+   * Quattro LED RGB WS2812 si illumineranno di blu con una modalità di respirazione.
+   
+   .. note::
+    
+     I ventilatori RGB non funzioneranno a meno che la temperatura non raggiunga i 60°C. Per temperature di attivazione diverse, consulta :ref:`cc_control_fan`.
+
 
 Ora puoi collegare il Pironman 5 a uno schermo, controller di gioco, cuffie e molto altro per immergerti nel tuo mondo di gioco.
 
