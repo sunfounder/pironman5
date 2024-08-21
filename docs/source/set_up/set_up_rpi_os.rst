@@ -65,32 +65,17 @@ Raspberry PiのGPIOから供給されるOLED画面やRGBファンがシャット
     cd ~/pironman5
     sudo python3 install.py
 
-   .. note::
-    
-      ``pironman5`` モジュールのインストールが完了すると、 :ref:`view_control_dashboard` にアクセスできるようになります。
-      
-      この機能が不要で、CPUやRAMの使用量を減らしたい場合は、インストール時に ``--disable-dashboard`` フラグを追加して、 ``pironman5`` のダッシュボードを無効にすることができます。
-      
-      .. code-block:: shell
-      
-        sudo python3 install.py --disable-dashboard
-      
-      すでに ``pironman 5`` をインストールしている場合は、 ``dashboard`` モジュールと ``influxdb`` を削除し、pironman5を再起動して変更を適用することができます：
-      
-      .. code-block:: shell
-      
-        /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
-        sudo apt purge influxdb
-        sudo systemctl restart pironman5
-
-
    インストールが成功したら、再起動が必要です。画面の指示に従って再起動してください。
 
    再起動後、 ``pironman5.service`` が自動的に開始されます。Pironman 5の主な設定は次の通りです:
 
    * OLED画面には、CPU、RAM、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示されます。
    * 4つのWS2812 RGB LEDが青色で呼吸モードに点灯します。
-   * RGBファンは60°Cで動作を開始します。
+   
+   .. note::
+
+      RGBファンは温度が60°Cに達しないと回転しません。異なる起動温度については :ref:`cc_control_fan` を参照してください。
+
 
 #. ``systemctl`` ツールを使用して、 ``pironman5.service`` の ``start`` 、 ``stop`` 、 ``restart`` 、または ``status`` を確認することができます。
 

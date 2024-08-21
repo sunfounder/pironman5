@@ -18,11 +18,15 @@
 この度は、|link_pironman5| をお選びいただきありがとうございます。
 
 .. note::
+    
     本書は以下の言語でご利用いただけます。
 
-        * |link_german_tutorials|
-        * |link_jp_tutorials|
-        * |link_en_tutorials|
+    * |link_german_tutorials|
+    * |link_jp_tutorials|
+    * |link_en_tutorials|
+    * |link_fr_tutorials|
+    * |link_es_tutorials|
+    * |link_it_tutorials|
     
     ご希望の言語でドキュメントにアクセスするには、該当のリンクをクリックしてください。
 

@@ -86,10 +86,39 @@ locale_dirs = ['locale/'] # .po files for other languages are placed in the loca
 
 gettext_compact = False # Support for generating the contents of the folders inside source/ into other languages.
 
+# language links
+
+rst_epilog = """
+
+.. |link_german_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/pironman5/de/latest/" target="_blank">Deutsch Online-Kurs</a>
+
+.. |link_jp_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/pironman5/ja/latest/" target="_blank">日本語オンライン教材</a>
+
+.. |link_en_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/pironman5/en/latest/" target="_blank">English Online-tutorials</a>
+
+.. |link_fr_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/pironman5/fr/latest/" target="_blank">Tutoriels en ligne en français</a>
+
+.. |link_es_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/pironman5/es/latest/" target="_blank">Tutoriales en línea en español</a>
+
+.. |link_it_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/pironman5/it/latest/" target="_blank">Corsi di italiano online</a>
+
+"""
 
 # open link in a new window
 
-rst_epilog = """
+rst_epilog += """
 
 .. |link_rpi_get_start| raw:: html
 
@@ -112,19 +141,6 @@ rst_epilog = """
 
     <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
     
-.. |link_german_tutorials| raw:: html
-
-    <a href="https://docs.sunfounder.com/projects/pironman5/de/latest/" target="_blank">Deutsch Online-Kurs</a>
-
-.. |link_jp_tutorials| raw:: html
-
-    <a href="https://docs.sunfounder.com/projects/pironman5/ja/latest/" target="_blank">日本語オンライン教材</a>
-
-.. |link_en_tutorials| raw:: html
-
-    <a href="https://docs.sunfounder.com/projects/pironman5/en/latest/" target="_blank">English Online-tutorials</a>
-
-
 .. |link_kodi| raw:: html
 
     <a href="https://kodi.tv/" target="_blank">Kodi</a>

@@ -15,6 +15,29 @@
 FAQ
 ============
 
+ウェブダッシュボードを無効にする方法
+------------------------------------------------------------
+
+``pironman5`` モジュールのインストールが完了すると、 :ref:`view_control_dashboard` にアクセスできるようになります。
+      
+この機能が不要で、CPUやRAMの使用量を減らしたい場合は、インストール時に ``--disable-dashboard`` フラグを追加して、 ``pironman5`` のダッシュボードを無効にすることができます。
+      
+.. code-block:: shell
+
+  sudo python3 install.py --disable-dashboard
+
+すでに ``pironman 5`` をインストールしている場合は、 ``dashboard`` モジュールと ``influxdb`` を削除し、pironman5を再起動して変更を適用することができます：
+
+.. code-block:: shell
+
+  /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
+  sudo apt purge influxdb
+  sudo systemctl restart pironman5
+
+
+
+
+
 Pironman 5はレトロゲームシステムをサポートしていますか？
 ------------------------------------------------------------
 はい、対応しています。しかし、多くのレトロゲームシステムはシンプルなバージョンであり、追加のソフトウェアをインストールして実行することができません。この制限により、Pironman 5のOLEDディスプレイ、2つのRGBファン、4つのRGB LEDなどのコンポーネントが正しく動作しない可能性があります。これらのコンポーネントにはPironman 5のソフトウェアパッケージのインストールが必要です。
