@@ -4,11 +4,11 @@
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort** : Participez à des concours et à des promotions pendant les fêtes.
+    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales**: Profitez de remises exclusives sur nos nouveaux produits.
+    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
 
     👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
@@ -17,10 +17,10 @@
 Copier l'OS de la carte Micro SD vers le SSD NVMe
 ==================================================================
 
-Si vous disposez d'un SSD NVMe mais que vous n'avez pas d'adaptateur pour le connecter à votre ordinateur, vous pouvez choisir une troisième approche : installez d'abord le système sur votre carte Micro SD. Une fois que le Pironman 5 a démarré avec succès, vous pouvez transférer le système de votre carte Micro SD vers votre SSD NVMe.
+Si vous disposez d'un SSD NVMe mais que vous n'avez pas d'adaptateur pour le connecter à votre ordinateur, vous pouvez choisir une troisième approche: installez d'abord le système sur votre carte Micro SD. Une fois que le Pironman 5 a démarré avec succès, vous pouvez transférer le système de votre carte Micro SD vers votre SSD NVMe.
 
 * Commencez par :ref:`install_os_sd_rpi`.
-* Ensuite, démarrez et connectez-vous à votre Raspberry Pi. Si vous ne savez pas comment vous connecter, vous pouvez consulter le site officiel de Raspberry Pi : |link_rpi_get_start|.
+* Ensuite, démarrez et connectez-vous à votre Raspberry Pi. Si vous ne savez pas comment vous connecter, vous pouvez consulter le site officiel de Raspberry Pi: |link_rpi_get_start|.
 
 Terminez ces étapes avant de poursuivre avec les instructions ci-dessous.
 
@@ -146,7 +146,7 @@ Si votre carte Micro SD a une version de bureau du système installée, vous pou
 
    .. note::
 
-      Réglez le ``pays du réseau sans fil`` sur le code alpha2 à deux lettres `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_correspondant à votre emplacement.
+      Réglez le ``pays du réseau sans fil`` sur le code alpha2 à deux lettres `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ correspondant à votre emplacement.
 
    .. image:: img/os_set_wifi.png
 
@@ -196,7 +196,7 @@ Si votre carte Micro SD a une version de bureau du système installée, vous pou
   
     sudo rpi-eeprom-config --edit
   
-* Ensuite, modifiez la ligne ``BOOT_ORDER`` comme suit. ``0xf416`` : Essayer le SSD NVMe d'abord, suivi de la carte SD puis de l'USB.
+* Ensuite, modifiez la ligne ``BOOT_ORDER`` comme suit. ``0xf416``: Essayer le SSD NVMe d'abord, suivi de la carte SD puis de l'USB.
 
   .. code-block:: shell
   
@@ -214,8 +214,8 @@ La propriété ``BOOT_ORDER`` définit la séquence des différents modes de dé
       :width: 90%
       
 
-* ``0xf41`` : Essayer d'abord la carte SD, suivi de l'USB-MSD puis répéter (par défaut si ``BOOT_ORDER`` est vide).
-* ``0xf14`` : Essayer d'abord l'USB, suivi de la carte SD puis répéter.
+* ``0xf41``: Essayer d'abord la carte SD, suivi de l'USB-MSD puis répéter (par défaut si ``BOOT_ORDER`` est vide).
+* ``0xf14``: Essayer d'abord l'USB, suivi de la carte SD puis répéter.
 
 * Une fois la mise à jour terminée, redémarrez votre Raspberry Pi pour que ces modifications prennent effet.
 

@@ -4,11 +4,11 @@
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort** : Participez à des concours et à des promotions pendant les fêtes.
+    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales**: Profitez de remises exclusives sur nos nouveaux produits.
+    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
 
     👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
@@ -19,7 +19,7 @@ Affichage et Contrôle depuis le Tableau de Bord
 
 Une fois que vous avez installé avec succès le module ``pironman5``, le service ``pironman5.service`` démarrera automatiquement au redémarrage.
 
-Vous pouvez maintenant ouvrir la page de surveillance dans votre navigateur pour consulter les informations sur votre Raspberry Pi, configurer les LEDs RGB, contrôler le ventilateur, etc. Le lien vers la page est : ``http://<ip>:34001``.
+Vous pouvez maintenant ouvrir la page de surveillance dans votre navigateur pour consulter les informations sur votre Raspberry Pi, configurer les LEDs RGB, contrôler le ventilateur, etc. Le lien vers la page est: ``http://<ip>:34001``.
 
 Cette page comprend un **Tableau de Bord**, une section **Historique**, une section **Journal**, ainsi qu'une page **Paramètres**.
 
@@ -32,31 +32,31 @@ Tableau de Bord
 
 Plusieurs cartes vous permettent de consulter l'état pertinent de votre Raspberry Pi, y compris :
 
-* **Ventilateur** : Affiche la température du CPU du Raspberry Pi et la vitesse du ventilateur PWM. **État du Ventilateur GPIO** indique l'état des deux ventilateurs RGB latéraux. À la température actuelle, les deux ventilateurs RGB sont éteints.
+* **Ventilateur**: Affiche la température du CPU du Raspberry Pi et la vitesse du ventilateur PWM. **État du Ventilateur GPIO** indique l'état des deux ventilateurs RGB latéraux. À la température actuelle, les deux ventilateurs RGB sont éteints.
 
   .. image:: img/dashboard_pwm_fan.png
     :width: 90%
     
 
-* **Stockage** : Affiche la capacité de stockage d'un Raspberry Pi, montrant les différentes partitions de disque avec leur espace utilisé et disponible.
+* **Stockage**: Affiche la capacité de stockage d'un Raspberry Pi, montrant les différentes partitions de disque avec leur espace utilisé et disponible.
 
   .. image:: img/dashboard_storage.png
     :width: 90%
     
 
-* **Mémoire** : Montre l'utilisation et le pourcentage de la RAM du Raspberry Pi.
+* **Mémoire**: Montre l'utilisation et le pourcentage de la RAM du Raspberry Pi.
 
   .. image:: img/dashboard_memory.png
     :width: 90%
     
 
-* **Réseau** : Affiche le type de connexion réseau actuel, ainsi que les vitesses de téléchargement et de téléversement.
+* **Réseau**: Affiche le type de connexion réseau actuel, ainsi que les vitesses de téléchargement et de téléversement.
 
   .. image:: img/dashboard_network.png
     :width: 90%
     
 
-* **Processeur** : Illustre les performances du CPU du Raspberry Pi, y compris l'état de ses quatre cœurs, les fréquences de fonctionnement et le pourcentage d'utilisation du CPU.
+* **Processeur**: Illustre les performances du CPU du Raspberry Pi, y compris l'état de ses quatre cœurs, les fréquences de fonctionnement et le pourcentage d'utilisation du CPU.
 
   .. image:: img/dashboard_processor.png
     :width: 90%
@@ -98,15 +98,15 @@ Il y a un menu de paramètres dans le coin supérieur droit de la page.
   :width: 90%
   
 
-* **Mode sombre** : Basculez entre les thèmes clair et sombre. L'option de thème est enregistrée dans le cache du navigateur. Changer de navigateur ou vider le cache réinitialisera le thème par défaut (clair).
-* **Unité de température** : Définissez l'unité de température affichée par le système.
-* **Mode ventilateur** : Vous pouvez définir le mode de fonctionnement des deux ventilateurs RGB. Ces modes déterminent les conditions dans lesquelles les ventilateurs RGB s'activent.
+* **Mode sombre**: Basculez entre les thèmes clair et sombre. L'option de thème est enregistrée dans le cache du navigateur. Changer de navigateur ou vider le cache réinitialisera le thème par défaut (clair).
+* **Unité de température**: Définissez l'unité de température affichée par le système.
+* **Mode ventilateur**: Vous pouvez définir le mode de fonctionnement des deux ventilateurs RGB. Ces modes déterminent les conditions dans lesquelles les ventilateurs RGB s'activent.
 
-    * **Silencieux** : Les ventilateurs RGB s'activent à 70°C.
-    * **Équilibré** : Les ventilateurs RGB s'activent à 67,5°C.
-    * **Cool** : Les ventilateurs RGB s'activent à 60°C.
-    * **Performance** : Les ventilateurs RGB s'activent à 50°C.
-    * **Toujours activés** : Les ventilateurs RGB seront toujours activés.
+    * **Silencieux**: Les ventilateurs RGB s'activent à 70°C.
+    * **Équilibré**: Les ventilateurs RGB s'activent à 67,5°C.
+    * **Cool**: Les ventilateurs RGB s'activent à 60°C.
+    * **Performance**: Les ventilateurs RGB s'activent à 50°C.
+    * **Toujours activés**: Les ventilateurs RGB seront toujours activés.
 
     Par exemple, si vous définissez le mode sur **Performance**, les ventilateurs RGB s'activeront à 50°C.
 
@@ -116,13 +116,13 @@ Il y a un menu de paramètres dans le coin supérieur droit de la page.
     :width: 300
     
 
-* **Luminosité RGB** : Vous pouvez ajuster la luminosité des LEDs RGB à l'aide d'un curseur.
-* **Couleur RGB** : Définissez la couleur des LEDs RGB.
-* **Style RGB** : Choisissez le mode d'affichage des LEDs RGB. Les options incluent **Solide**, **Respiration**, **Flow**, **Flow_reverse**, **Arc-en-ciel**, **Arc-en-ciel inversé**, et **Cycle de teinte**.
+* **Luminosité RGB**: Vous pouvez ajuster la luminosité des LEDs RGB à l'aide d'un curseur.
+* **Couleur RGB**: Définissez la couleur des LEDs RGB.
+* **Style RGB**: Choisissez le mode d'affichage des LEDs RGB. Les options incluent **Solide**, **Respiration**, **Flow**, **Flow_reverse**, **Arc-en-ciel**, **Arc-en-ciel inversé**, et **Cycle de teinte**.
 
 .. note::
 
   Si vous définissez le **Style RGB** sur **Arc-en-ciel**, **Arc-en-ciel inversé** ou **Cycle de teinte**, vous ne pourrez pas définir la couleur.
 
 
-* **Vitesse RGB** : Réglez la vitesse des changements des LEDs RGB.
+* **Vitesse RGB**: Réglez la vitesse des changements des LEDs RGB.

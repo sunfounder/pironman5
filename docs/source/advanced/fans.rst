@@ -4,11 +4,11 @@
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives** : Profitez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales** : Bénéficiez de remises exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort** : Participez à des concours et à des promotions pendant les fêtes.
+    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives**: Profitez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales**: Bénéficiez de remises exclusives sur nos nouveaux produits.
+    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
 
     👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
@@ -51,13 +51,13 @@ Ventilateurs RGB
 
 .. image:: img/size_fan.png
 
-* **Dimensions externes** : 40*40*10MM
-* **Poids** : 13,5±5g/pc
-* **Durée de vie** : 40 000 heures (température ambiante 25°C)
-* **Débit d'air maximal** : 2,46 CFM
-* **Pression d'air maximale** : 0,62 mm-H2O
-* **Niveau sonore** : 22,31 dBA
-* **Puissance nominale d'entrée** : 5V/0.1A
-* **Vitesse nominale** : 3500±10% RPM
-* **Température de fonctionnement** : -10℃~+70℃
-* **Température de stockage** : -30℃~+85℃
+* **Dimensions externes**: 40*40*10MM
+* **Poids**: 13,5±5g/pc
+* **Durée de vie**: 40 000 heures (température ambiante 25°C)
+* **Débit d'air maximal**: 2,46 CFM
+* **Pression d'air maximale**: 0,62 mm-H2O
+* **Niveau sonore**: 22,31 dBA
+* **Puissance nominale d'entrée**: 5V/0.1A
+* **Vitesse nominale**: 3500±10% RPM
+* **Température de fonctionnement**: -10℃~+70℃
+* **Température de stockage**: -30℃~+85℃

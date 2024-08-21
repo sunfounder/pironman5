@@ -4,11 +4,11 @@
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez les problèmes après-vente et surmontez les défis techniques avec l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
-    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux nouvelles annonces de produits et à des aperçus exclusifs.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
-    - **Promotions festives et tirages au sort** : Participez à des concours et à des promotions festives.
+    - **Support d'experts**: Résolvez les problèmes après-vente et surmontez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux nouvelles annonces de produits et à des aperçus exclusifs.
+    - **Réductions spéciales**: Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions festives.
 
     👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
@@ -160,7 +160,7 @@ Vous pouvez maintenant installer le système d'exploitation sur votre SSD NVMe.
 
      .. note::
 
-       Définissez le ``Wireless LAN country`` sur le code à deux lettres  `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_correspondant à votre localisation.
+       Définissez le ``Wireless LAN country`` sur le code à deux lettres  `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ correspondant à votre localisation.
 
      .. image:: img/os_set_wifi.png
          

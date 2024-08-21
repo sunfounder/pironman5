@@ -4,11 +4,11 @@
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort** : Participez à des concours et à des promotions pendant les fêtes.
+    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales**: Profitez de remises exclusives sur nos nouveaux produits.
+    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
 
     👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
@@ -18,6 +18,10 @@ Contrôler avec des Commandes
 ============================================
 En plus de pouvoir consulter les données du Pironman 5 et de contrôler divers appareils via le tableau de bord, vous pouvez également utiliser des commandes pour les gérer.
 
+.. note::
+
+    * Pour le système **Home Assistant**, vous pouvez uniquement surveiller et contrôler le Pironman 5 via le tableau de bord en ouvrant la page web à l'adresse ``http://<ip>:34001``.
+    * Pour le système **Batocera.linux**, vous pouvez uniquement surveiller et contrôler le Pironman 5 via des commandes. Il est important de noter que toute modification de la configuration nécessite un redémarrage du service à l'aide de la commande ``pironman5 restart`` pour être prise en compte.
 
 Consulter les Configurations de Base
 -----------------------------------------
@@ -130,13 +134,13 @@ La carte dispose de 4 LEDs RGB WS2812, offrant un contrôle personnalisable. Vou
 
   pironman5 -rc fe1a1a
 
-* Pour changer la luminosité des LEDs RGB (plage : 0 ~ 100%) :
+* Pour changer la luminosité des LEDs RGB (plage: 0 ~ 100%) :
 
 .. code-block:: shell
 
   pironman5 -rb 100
 
-* Pour changer le mode d'affichage des LEDs RGB, choisissez parmi les options : ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` :
+* Pour changer le mode d'affichage des LEDs RGB, choisissez parmi les options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` :
 
 .. note::
 
@@ -146,7 +150,7 @@ La carte dispose de 4 LEDs RGB WS2812, offrant un contrôle personnalisable. Vou
 
   pironman5 -rs breathing
 
-* Pour modifier la vitesse de changement (plage : 0 ~ 100%) :
+* Pour modifier la vitesse de changement (plage: 0 ~ 100%) :
 
 .. code-block:: shell
 
@@ -157,6 +161,8 @@ La carte dispose de 4 LEDs RGB WS2812, offrant un contrôle personnalisable. Vou
 .. code-block:: shell
 
   pironman5 -rl 12
+
+.. _cc_control_fan:
 
 Contrôler les Ventilateurs RGB
 ---------------------------------------
@@ -172,17 +178,17 @@ La carte d'extension IO prend en charge jusqu'à deux ventilateurs non-PWM 5V. L
 
 * Vous pouvez utiliser des commandes pour configurer le mode de fonctionnement des deux ventilateurs RGB. Ces modes déterminent les conditions dans lesquelles les ventilateurs RGB s'activent. 
 
-Par exemple, si vous réglez le mode sur **1 : Performance**, les ventilateurs RGB s'activeront à 50°C.
+Par exemple, si vous réglez le mode sur **1: Performance**, les ventilateurs RGB s'activeront à 50°C.
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4 : Silencieux** : Les ventilateurs RGB s'activent à 70°C.
-* **3 : Équilibré** : Les ventilateurs RGB s'activent à 67,5°C.
-* **2 : Cool** : Les ventilateurs RGB s'activent à 60°C.
-* **1 : Performance** : Les ventilateurs RGB s'activent à 50°C.
-* **0 : Toujours activé** : Les ventilateurs RGB seront toujours activés.
+* **4: Silencieux**: Les ventilateurs RGB s'activent à 70°C.
+* **3: Équilibré**: Les ventilateurs RGB s'activent à 67,5°C.
+* **2: Cool**: Les ventilateurs RGB s'activent à 60°C.
+* **1: Performance**: Les ventilateurs RGB s'activent à 50°C.
+* **0: Toujours activé**: Les ventilateurs RGB seront toujours activés.
 
 * Si vous connectez la broche de contrôle du ventilateur RGB à d'autres broches du Raspberry Pi, vous pouvez utiliser la commande suivante pour changer le numéro de broche.
 

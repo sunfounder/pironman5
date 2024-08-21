@@ -4,11 +4,11 @@
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
-    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux nouvelles annonces de produits et à des aperçus exclusifs.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
-    - **Promotions festives et concours** : Participez à des tirages au sort et à des promotions spéciales.
+    - **Support d'experts**: Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux nouvelles annonces de produits et à des aperçus exclusifs.
+    - **Réductions spéciales**: Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et concours**: Participez à des tirages au sort et à des promotions spéciales.
 
     👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 

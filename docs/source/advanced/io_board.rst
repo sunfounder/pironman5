@@ -4,11 +4,11 @@
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort** : Participez à des concours et à des promotions pendant les fêtes.
+    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales**: Profitez de remises exclusives sur nos nouveaux produits.
+    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
 
     👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
@@ -34,13 +34,13 @@ La carte dispose de 4 LEDs RGB WS2812, offrant un contrôle personnalisable. Les
 
   pironman5 -rc fe1a1a
 
-* Pour ajuster la luminosité des LEDs RGB (plage : 0 ~ 100 %) :
+* Pour ajuster la luminosité des LEDs RGB (plage: 0 ~ 100 %) :
 
 .. code-block:: shell
 
   pironman5 -rb 100
 
-* Pour modifier les modes d'affichage des LEDs RGB, choisissez parmi les options : ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` :
+* Pour modifier les modes d'affichage des LEDs RGB, choisissez parmi les options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` :
 
 .. note::
 
@@ -50,7 +50,7 @@ La carte dispose de 4 LEDs RGB WS2812, offrant un contrôle personnalisable. Les
 
   pironman5 -rs breathing
 
-* Pour ajuster la vitesse de changement (plage : 0 ~ 100 %) :
+* Pour ajuster la vitesse de changement (plage: 0 ~ 100 %) :
 
 .. code-block:: shell
 
@@ -111,10 +111,10 @@ Récepteur Infrarouge
 
 .. image:: img/io_board_receiver.png
 
-* **Modèle** : IRM-56384, fonctionnant à 38KHz.
-* **Connexion** : Le récepteur IR se connecte au **GPIO13**.
-* **D1** : Un indicateur de réception infrarouge qui clignote lors de la détection d'un signal.
-* **J8** : Une broche pour activer la fonction infrarouge. Par défaut, un cavalier est inséré pour une fonctionnalité immédiate. Retirez le cavalier pour libérer GPIO13 si le récepteur IR n'est pas utilisé.
+* **Modèle**: IRM-56384, fonctionnant à 38KHz.
+* **Connexion**: Le récepteur IR se connecte au **GPIO13**.
+* **D1**: Un indicateur de réception infrarouge qui clignote lors de la détection d'un signal.
+* **J8**: Une broche pour activer la fonction infrarouge. Par défaut, un cavalier est inséré pour une fonctionnalité immédiate. Retirez le cavalier pour libérer GPIO13 si le récepteur IR n'est pas utilisé.
 
 Pour utiliser le récepteur IR, vérifiez sa connexion et installez le module nécessaire :
 
@@ -164,11 +164,11 @@ Par exemple, si le mode est réglé sur **1: Performance**, les ventilateurs RGB
 
   pironman5 -gm 3
 
-* **4: Silencieux** : Les ventilateurs RGB s'activeront à 70°C.
-* **3: Équilibré** : Les ventilateurs RGB s'activeront à 67,5°C.
-* **2: Cool** : Les ventilateurs RGB s'activeront à 60°C.
-* **1: Performance** : Les ventilateurs RGB s'activeront à 50°C.
-* **0: Toujours activés** : Les ventilateurs RGB resteront toujours activés.
+* **4: Silencieux**: Les ventilateurs RGB s'activeront à 70°C.
+* **3: Équilibré**: Les ventilateurs RGB s'activeront à 67,5°C.
+* **2: Cool**: Les ventilateurs RGB s'activeront à 60°C.
+* **1: Performance**: Les ventilateurs RGB s'activeront à 50°C.
+* **0: Toujours activés**: Les ventilateurs RGB resteront toujours activés.
 
 Si vous connectez la broche de contrôle des ventilateurs RGB à différentes broches du Raspberry Pi, vous pouvez utiliser la commande suivante pour modifier le numéro de la broche.
 

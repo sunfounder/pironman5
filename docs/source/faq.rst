@@ -4,16 +4,37 @@
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez vos problèmes après-vente et relevez vos défis techniques avec l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
-    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
-    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
-    - **Promotions festives et tirages au sort** : Participez à des tirages au sort et à des promotions festives.
+    - **Support d'experts**: Résolvez vos problèmes après-vente et relevez vos défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives**: Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales**: Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et tirages au sort**: Participez à des tirages au sort et à des promotions festives.
 
     👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 FAQ
 ============
+
+Comment désactiver le tableau de bord web ?
+------------------------------------------------------
+
+Une fois l'installation du module ``pironman5`` terminée, vous pourrez accéder à :ref:`view_control_dashboard`.
+
+Si vous n'avez pas besoin de cette fonctionnalité et souhaitez réduire l'utilisation du CPU et de la RAM, vous pouvez désactiver le tableau de bord lors de l'installation de ``pironman5`` en ajoutant le drapeau ``--disable-dashboard``.
+
+.. code-block:: shell
+
+   cd ~/pironman5
+   sudo python3 install.py --disable-dashboard
+
+Si vous avez déjà installé ``pironman 5``, vous pouvez retirer le module ``dashboard`` et ``influxdb``, puis redémarrer pironman5 pour appliquer les modifications :
+
+.. code-block:: shell
+
+   /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
+   sudo apt purge influxdb
+   sudo systemctl restart pironman5
+
 
 Le Pironman 5 prend-il en charge les systèmes de jeux rétro ?
 ----------------------------------------------------------------
@@ -116,8 +137,8 @@ Cela signifie que votre système d'exploitation est trop ancien et ne dispose pa
    .. code-block::
 
         Path          :
-        Online        : True
-        RestartNeeded : False
+        Online       : True
+        RestartNeeded: False
 
 #. Vérifiez l'installation en utilisant la commande suivante.
 
@@ -129,11 +150,11 @@ Cela signifie que votre système d'exploitation est trop ancien et ne dispose pa
 
    .. code-block::
 
-        Name  : OpenSSH.Client~~~~0.0.1.0
-        State : Installed
+        Name : OpenSSH.Client~~~~0.0.1.0
+        State: Installed
 
-        Name  : OpenSSH.Server~~~~0.0.1.0
-        State : NotPresent
+        Name : OpenSSH.Server~~~~0.0.1.0
+        State: NotPresent
 
     .. warning:: 
         Si l'invite ci-dessus n'apparaît pas, cela signifie que votre système Windows est encore trop ancien, et il est recommandé d'installer un outil SSH tiers, comme |link_putty|.

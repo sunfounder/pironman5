@@ -4,11 +4,11 @@
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez les problèmes après-vente et surmontez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
-    - **Promotions festives et concours** : Participez à des tirages au sort et à des promotions spéciales.
+    - **Support d'experts**: Résolvez les problèmes après-vente et surmontez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives**: Accédez en avant-première aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales**: Profitez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours**: Participez à des tirages au sort et à des promotions spéciales.
 
     👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
@@ -30,7 +30,7 @@ Si vous avez installé le système d'exploitation Batocera.linux, vous pouvez vo
    .. image:: img/batocera_login.png
       :width: 90%
 
-#. Exécutez la commande : ``/etc/init.d/S92switch setup`` pour accéder à la page des paramètres.
+#. Exécutez la commande: ``/etc/init.d/S92switch setup`` pour accéder à la page des paramètres.
 
    .. image:: img/batocera_configure.png  
       :width: 90%
@@ -53,9 +53,13 @@ Si vous avez installé le système d'exploitation Batocera.linux, vous pouvez vo
 
 #. Au redémarrage, le service ``pironman5.service`` démarrera automatiquement. Voici les principales configurations pour Pironman 5 :
 
-  * L'écran OLED affiche l'utilisation du CPU, de la RAM, du disque, la température du CPU et l'adresse IP du Raspberry Pi.
-  * Quatre LED RGB WS2812 s'allument en bleu avec un mode respiration.
-  * Les ventilateurs RGB s'activeront à 60°C.
+   * L'écran OLED affiche l'utilisation du CPU, de la RAM, du disque, la température du CPU et l'adresse IP du Raspberry Pi.
+   * Quatre LED RGB WS2812 s'allument en bleu avec un mode respiration.
+   
+   .. note::
+    
+      Les ventilateurs RGB ne tourneront pas à moins que la température n'atteigne 60°C. Pour des températures d'activation différentes, voir :ref:`cc_control_fan`.
+
 
 Vous pouvez maintenant connecter le Pironman 5 à un écran, des manettes de jeu, des écouteurs, et bien plus encore, pour vous immerger dans votre univers de jeu.
 

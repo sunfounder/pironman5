@@ -4,11 +4,11 @@
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez vos problèmes après-vente et relevez vos défis techniques avec l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
-    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
-    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
-    - **Promotions festives et tirages au sort** : Participez à des tirages au sort et à des promotions festives.
+    - **Support d'experts**: Résolvez vos problèmes après-vente et relevez vos défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives**: Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales**: Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et tirages au sort**: Participez à des tirages au sort et à des promotions festives.
 
     👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
@@ -39,7 +39,7 @@ Améliorez votre Raspberry Pi 5 avec le |link_pironman5|, notre boîtier haut de
 * Refroidisseur tour capable de maintenir un Pi à 100% de charge CPU à 39°C dans une pièce à 25°C
 * 2 ventilateurs RGB avec contrôle GPIO
 * 1 ventilateur PWM sur le refroidisseur tour contrôlé par le système Raspberry Pi
-* Prend en charge quatre tailles de SSD NVMe M.2 (PCIe Gen 2.0 / PCIe Gen 3.0) : 2230, 2242, 2260 et 2280.
+* Prend en charge quatre tailles de SSD NVMe M.2 (PCIe Gen 2.0 / PCIe Gen 3.0): 2230, 2242, 2260 et 2280.
 * 4 LED RGB WS2812 adressables illuminent tout le boîtier avec un effet lumineux impressionnant
 * Récepteur IR pour centre multimédia comme Kodi ou Volumio
 * Bouton d'alimentation rétro en métal pour un arrêt sécurisé

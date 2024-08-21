@@ -4,11 +4,11 @@
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez les problèmes après-vente et surmontez les défis techniques avec l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
-    - **Promotions festives et concours** : Participez à des tirages au sort et à des promotions spéciales.
+    - **Support d'experts**: Résolvez les problèmes après-vente et surmontez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives**: Accédez en avant-première aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales**: Profitez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours**: Participez à des tirages au sort et à des promotions spéciales.
 
     👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
@@ -24,7 +24,7 @@ Si vous avez installé le système Home Assistant, vous devrez ajouter les add-o
 1. Connexion à Home Assistant
 ---------------------------------
 
-* Après avoir démarré Pironman 5, il est recommandé de brancher directement un câble Ethernet. Vous pouvez ensuite ouvrir le navigateur de votre ordinateur et entrer : ``homeassistant.local:8123`` pour accéder à Home Assistant.
+* Après avoir démarré Pironman 5, il est recommandé de brancher directement un câble Ethernet. Vous pouvez ensuite ouvrir le navigateur de votre ordinateur et entrer: ``homeassistant.local:8123`` pour accéder à Home Assistant.
 
   .. image:: img/home_login.png
       :width: 90%
@@ -61,7 +61,7 @@ Les fonctionnalités de Pironman 5 sont installées sur Home Assistant sous form
    .. image:: img/home_add_res.png
       :width: 90%
 
-#. Entrez l'URL du dépôt d'add-ons **SunFounder** : ``https://github.com/sunfounder/home-assistant-addon``, puis cliquez sur **ADD**.
+#. Entrez l'URL du dépôt d'add-ons **SunFounder**: ``https://github.com/sunfounder/home-assistant-addon``, puis cliquez sur **ADD**.
 
    .. image:: img/home_res_add.png
       :width: 90%
@@ -174,5 +174,5 @@ Passons maintenant à l'installation officielle de l'add-on **Pironman 5**.
 
 .. note::
 
-    Pour plus d'informations et d'utilisation de cette page Web de Pironman 5, veuillez consulter : :ref:`view_control_dashboard`.
+    Pour plus d'informations et d'utilisation de cette page Web de Pironman 5, veuillez consulter: :ref:`view_control_dashboard`.
 

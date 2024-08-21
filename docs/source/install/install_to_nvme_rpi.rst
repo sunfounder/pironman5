@@ -4,18 +4,18 @@
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez les problèmes après-vente et surmontez les défis techniques avec l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
-    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux nouvelles annonces de produits et à des avant-premières.
-    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
-    - **Promotions festives et tirages au sort** : Participez à des concours et à des promotions spéciales.
+    - **Support d'experts**: Résolvez les problèmes après-vente et surmontez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager**: Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux nouvelles annonces de produits et à des avant-premières.
+    - **Réductions spéciales**: Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions spéciales.
 
     👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _install_to_nvme_rpi:
 
 Installation du système d'exploitation sur un SSD NVMe
-=====================================================
+==================================================================
 
 Si vous utilisez un SSD NVMe et disposez d'un adaptateur pour connecter le SSD NVMe à votre ordinateur pour installer le système, vous pouvez suivre le tutoriel suivant pour une installation rapide.
 

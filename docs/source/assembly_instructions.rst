@@ -4,11 +4,11 @@
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
-    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
-    - **Promotions festives et concours** : Participez à des tirages au sort et à des promotions spéciales.
+    - **Support d'experts**: Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales**: Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et concours**: Participez à des tirages au sort et à des promotions spéciales.
 
     👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
@@ -27,7 +27,7 @@ Avant d'assembler le Pironman, veuillez d'abord vérifier que toutes les pièces
 
 * :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5.pdf>`
 
-**Guide complet d'assemblage et de démarrage : Pironman 5 avec NVMe SSD**
+**Guide complet d'assemblage et de démarrage: Pironman 5 avec NVMe SSD**
 
 Si vous utilisez un SSD NVMe, suivez cette vidéo pour assembler et configurer le Pironman 5.
 
@@ -35,7 +35,7 @@ Si vous utilisez un SSD NVMe, suivez cette vidéo pour assembler et configurer l
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Guide complet d'assemblage et de démarrage : Pironman 5 avec carte Micro SD**
+**Guide complet d'assemblage et de démarrage: Pironman 5 avec carte Micro SD**
 
 Si vous utilisez une carte Micro SD, suivez cette vidéo pour assembler et configurer le Pironman 5.
 
