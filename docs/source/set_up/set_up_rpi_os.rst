@@ -69,8 +69,8 @@ Downloading and Installing the ``pironman5`` Module
 
    Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
    
-     * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
-     * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
+   * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
+   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
      
    .. note::
     

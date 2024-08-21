@@ -15,7 +15,7 @@
 FAQ
 ============
 
-Does the Pironman 5 support retro gaming systems?
+How to disable web dashboard?
 ------------------------------------------------------
 
 Once you have completed the installation of the ``pironman5`` module, you will be able to access the :ref:`view_control_dashboard`.
