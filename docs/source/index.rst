@@ -1,61 +1,64 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme agli altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime.
+    - **Sconti speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni speciali per le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-|link_pironman5| - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5
+|link_pironman5| - Case Mini PC NVMe M.2 SSD PCIe per Raspberry Pi 5
 ================================================================================
 
-Thanks for choosing our |link_pironman5|.
+Grazie per aver scelto il nostro |link_pironman5|.
 
 .. note::
-    This document is available in the following languages.
+    Questo documento è disponibile nelle seguenti lingue.
 
         * |link_german_tutorials|
         * |link_jp_tutorials|
         * |link_en_tutorials|
+        * |link_fr_tutorials|
+        * |link_es_tutorials|
+        * |link_it_tutorials|
     
-    Please click on the respective links to access the document in your preferred language.
+    Clicca sui link corrispondenti per accedere al documento nella tua lingua preferita.
 
 .. image:: img/pironman5.JPG
     :width: 400
     
 
 
-Elevate your Raspberry Pi 5 with the |link_pironman5|, our top-tier case designed for unmatched style and functionality. It's the perfect blend of aesthetics and performance:
+Eleva il tuo Raspberry Pi 5 con il |link_pironman5|, il nostro case di punta progettato per unire stile e funzionalità senza pari. È la perfetta combinazione di estetica e prestazioni:
 
 * Raspberry Pi 5 mini PC
-* 0.96" OLED Display showing Raspberry Pi's CPU usage, temperature, disk usage, IP address, RAM usage etc.
-* Tower cooler can cool a 100% CPU load Pi to 39°C at 25°C room temperature
-* 2 RGB Fans, with GPIO control
-* 1 PWM Fan on the Tower Cooler is controlled by the Raspberry Pi system.
-* Supports four (PCIe Gen 2.0 / PCIe Gen 3.0) NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280.
-* 4 WS2812 Addressable RGB LED light up the whole case with cool light effect
-* IR Receiver for multi-media center like Kodi or Volumio
-* Retro metal power button for safe shut down
-* External GPIO extender with pin name label, for easy access
-* Equipped with a spring-loaded socket for easy card removal
-* Aluminum main body with clear Acrylic side panel
-* Features two standard HDMI ports
+* Display OLED da 0,96" che mostra l'utilizzo della CPU, la temperatura, l'uso del disco, l'indirizzo IP, l'uso della RAM e altro del Raspberry Pi
+* Il tower cooler mantiene il Pi con il 100% di carico della CPU a 39°C con una temperatura ambiente di 25°C
+* 2 ventole RGB con controllo GPIO
+* 1 ventola PWM sul Tower Cooler è controllata dal sistema Raspberry Pi
+* Supporta quattro formati di NVMe M.2 SSD (PCIe Gen 2.0 / PCIe Gen 3.0): 2230, 2242, 2260 e 2280.
+* 4 LED RGB indirizzabili WS2812 illuminano tutto il case con un effetto luce spettacolare
+* Ricevitore IR per centri multimediali come Kodi o Volumio
+* Pulsante di accensione retrò in metallo per uno spegnimento sicuro
+* Estensore GPIO esterno con etichetta del nome del pin, per un facile accesso
+* Equipaggiato con un socket a molla per una facile rimozione della scheda
+* Corpo principale in alluminio con pannello laterale in acrilico trasparente
+* Dispone di due porte HDMI standard
 
-The |link_pironman5| is not just a case; it's an upgrade that transforms your Raspberry Pi 5 into a powerful, efficient, and stylish device. Get yours now and experience the future of Raspberry Pi cases!
+Il |link_pironman5| non è solo un case; è un aggiornamento che trasforma il tuo Raspberry Pi 5 in un dispositivo potente, efficiente e stiloso. Acquista il tuo ora e scopri il futuro dei case per Raspberry Pi!
 
 .. note::
 
-    You need to install an OS that supports Raspberry Pi 5. Please use the latest Raspberry Pi Imager tool for system installation. The currently tested systems are:
+    Devi installare un sistema operativo compatibile con Raspberry Pi 5. Si consiglia di utilizzare l'ultima versione di Raspberry Pi Imager per l'installazione del sistema. I sistemi attualmente testati sono:
 
    .. image:: install/img/compitable_os.png
 
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
+Se hai domande, invia un'email a service@sunfounder.com e ti risponderemo al più presto.
 
 
 .. raw:: html
@@ -75,7 +78,7 @@ If you have any questions, please send an email to service@sunfounder.com and we
     compitable_nvme_ssd
     faq
 
-**Copyright Notice**
+**Nota sul Copyright**
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+Tutti i contenuti inclusi, ma non limitati a testi, immagini e codice in questo manuale, sono di proprietà della SunFounder Company. L'uso è consentito solo per studio personale, ricerca, intrattenimento o altri scopi non commerciali o senza scopo di lucro, in conformità con le normative vigenti e le leggi sul copyright, senza violare i diritti legali dell'autore e dei titolari dei diritti. Per qualsiasi individuo o organizzazione che utilizzi questi contenuti per scopi commerciali senza autorizzazione, l'azienda si riserva il diritto di intraprendere azioni legali.
 

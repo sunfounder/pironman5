@@ -1,47 +1,46 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-Features
+Caratteristiche
 ======================
 
-**Parameters**
+**Parametri**
 
-* Dimension: 111.9x78.5x117mm
-* Material
-    * Main body: aluminum alloy
-    * Two side panel: acrylic
-* Support Platform: Raspberry Pi 5B
-* Power Input: USB Type C, 5V/5A
-* Interfaces
-    * Raspberry Pi standard 40-Pin GPIO
-    * spring-loaded Micro SD socket
-    * USB Type C power input
+* Dimensioni: 111.9x78.5x117mm
+* Materiale
+    * Corpo principale: lega di alluminio
+    * Due pannelli laterali: acrilico
+* Piattaforma supportata: Raspberry Pi 5B
+* Ingresso alimentazione: USB Type C, 5V/5A
+* Interfacce
+    * GPIO standard 40-Pin per Raspberry Pi
+    * Slot Micro SD a molla
+    * Ingresso alimentazione USB Type C
     * 2 x USB 2.0
     * 2 x USB 3.0
-    * Gigabit LAN port
-    * 2 x 4Kp60 HDMI Type A
-* Metal Power button
-* OLED screen: 0.96'' 128x64 resolution
-* 1 x PWM Fan, 2 x RGB Fans: 40x40x10mm
-* 4 x WS2812-5050 RGB LED
-* 38KHz IR Receiver
-* Tower Cooler
-* PCIe 3.0 x1 M.2 M key 2230, 2242, 2260, 2280 for NVMe SSD
-* 1220 Battery for RTC
+    * Porta LAN Gigabit
+    * 2 x HDMI Type A 4Kp60
+* Pulsante di accensione in metallo
+* Schermo OLED: 0.96'' risoluzione 128x64
+* 1 x Ventola PWM, 2 x Ventole RGB: 40x40x10mm
+* 4 x LED RGB WS2812-5050
+* Ricevitore IR a 38KHz
+* Dissipatore a torre
+* PCIe 3.0 x1 M.2 M key 2230, 2242, 2260, 2280 per NVMe SSD
+* Batteria 1220 per RTC
 
-**Dimensional Drawing**
+**Disegno quotato**
 
 .. image:: img/pironman5_dimension.png
     :width: 800
-

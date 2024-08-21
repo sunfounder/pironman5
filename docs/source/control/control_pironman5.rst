@@ -1,28 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-5. Control with Commands or Dashboard
+5. Controllo tramite Comandi o Dashboard
 =======================================================
 
-Once you have successfully installed the ``pironman5`` module, the ``pironman5.service`` will automatically start upon reboot.
+Una volta installato con successo il modulo ``pironman5``, il servizio ``pironman5.service`` si avvierà automaticamente al riavvio.
 
-You can monitor and control the Pironman 5 via commands, or by accessing the dashboard through the webpage at ``http://<ip>:34001``.
+Puoi monitorare e controllare il Pironman 5 tramite comandi oppure accedendo alla dashboard tramite la pagina web all'indirizzo ``http://<ip>:34001``.
 
 .. note::
 
-    * For the **Home Assistant** system, you can only monitor and control the Pironman 5 through the dashboard by opening the webpage at ``http://<ip>:34001``.
-    * For the **Batocera.linux** system, you can only monitor and control the Pironman 5 via commands. It is important to note that any changes to the configuration require a restart of the service using ``pironman5 restart`` to take effect.
+    * Per il sistema **Home Assistant**, puoi monitorare e controllare il Pironman 5 solo tramite la dashboard aprendo la pagina web all'indirizzo ``http://<ip>:34001``.
+    * Per il sistema **Batocera.linux**, puoi monitorare e controllare il Pironman 5 solo tramite comandi. È importante notare che qualsiasi modifica alla configurazione richiede il riavvio del servizio utilizzando ``pironman5 restart`` affinché abbia effetto.
 
 
 .. toctree::

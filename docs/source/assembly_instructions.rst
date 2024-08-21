@@ -1,43 +1,43 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme agli altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime.
+    - **Sconti speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni speciali per le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _assembly_instructions:
 
-2. Assembly Instructions
+2. Istruzioni per il montaggio
 =============================================
 
-Before assembling the Pironman, please first verify that all parts and components have been included. If there are any missing or damaged components, please contact SunFounder immediately at service@sunfounder.com to resolve the issue as soon as possible.
+Prima di assemblare il Pironman, verifica che tutte le parti e i componenti siano presenti. Se mancano componenti o se alcuni sono danneggiati, contatta immediatamente SunFounder all'indirizzo service@sunfounder.com per risolvere il problema il prima possibile.
 
-**Tips**
+**Consigli**
 
-* It is recommended to follow the paper installation instructions step by step.
-* Before installation, sort and stack the components to find them more quickly.
-* Repeatedly check the connections of FFC and FPC cables to avoid poor contact.
+* Si consiglia di seguire le istruzioni di installazione cartacee passo dopo passo.
+* Prima dell'installazione, ordina e impila i componenti per trovarli più velocemente.
+* Controlla ripetutamente i collegamenti dei cavi FFC e FPC per evitare cattivi contatti.
 
 * :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5.pdf>`
 
-**Complete Assembly and Boot Guide: Pironman 5 with NVMe SSD**
+**Guida Completa all'Assemblaggio e Avvio: Pironman 5 con NVMe SSD**
 
-If you are using an NVMe SSD, follow this video to assemble and configure the Pironman 5.
+Se utilizzi un NVMe SSD, segui questo video per assemblare e configurare il Pironman 5.
 
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Complete Assembly and Boot Guide: Pironman 5 with Micro SD Card**
+**Guida Completa all'Assemblaggio e Avvio: Pironman 5 con Micro SD Card**
 
-If you are using a Micro SD card, follow this video to assemble and configure the Pironman 5.
+Se utilizzi una Micro SD card, segui questo video per assemblare e configurare il Pironman 5.
 
 .. raw:: html
 
@@ -45,13 +45,13 @@ If you are using a Micro SD card, follow this video to assemble and configure th
 
 
 
-.. **Assemble Tutorial Video**
+.. **Video Tutorial di Assemblaggio**
 
 .. .. raw:: html
 
 ..     <iframe width="560" height="315" src="https://www.youtube.com/embed/62V85UG-Ocg?si=gNi1rHaPS579Kq7C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-.. **Connect the OLED Screen**
+.. **Collegare lo Schermo OLED**
 
 .. .. raw:: html
 
@@ -66,7 +66,7 @@ If you are using a Micro SD card, follow this video to assemble and configure th
     
 ..     <br/>
 
-.. **Connect the GPIO Bridge**
+.. **Collegare il Ponte GPIO**
 
 
 .. .. raw:: html
@@ -82,7 +82,7 @@ If you are using a Micro SD card, follow this video to assemble and configure th
     
 ..     <br/>
 
-.. **Connect the SD Card Bridge**
+.. **Collegare il Ponte della Scheda SD**
 
 .. .. raw:: html
 

@@ -1,53 +1,53 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 Pi5 NVMe PIP
 =================
 
-The Pi5 NVMe PIP (PCIe Peripheral Board), as defined by the Raspberry Pi Foundation, is a PCIe adapter board designed specifically for NVMe solid-state drives. It supports four different sizes of NVMe SSDs: 2230, 2242, 2260, and 2280, all fitting into an M.2 M key slot.
+Il Pi5 NVMe PIP (PCIe Peripheral Board), come definito dalla Raspberry Pi Foundation, è una scheda adattatore PCIe progettata specificamente per dischi a stato solido NVMe. Supporta quattro dimensioni diverse di SSD NVMe: 2230, 2242, 2260 e 2280, tutte compatibili con uno slot M.2 M key.
 
 .. image:: img/nvme_pip.png
 
-* The board connects through a 16P 0.5mm reverse FFC (Flexible Flat Cable) or a custom impedance-matched FPC (Flexible Printed Circuit) cable.
-* **STA**: A Status LED indicator.
-* **PWR**: A Power LED indicator.
-* The onboard 3.3V power supply can support up to 3A output. However, since the Raspberry Pi PCIe interface is limited to providing 5V/1A output (equivalent to 5W), additional power for 3.3V/3A usage can be supplied through the J3 connector from a 5V source.
-* **FORCE ENABLE**: The onboard power supply is activated by the switch signal from the PCIe interface. After the Raspberry Pi is powered on, it sends a signal to turn on the 3.3V power supply. If some systems do not support the switch signal or for other reasons, you can short-circuit J4 FORCE ENABLE by soldering a wire between the two floating pads to force the onboard 3.3V power supply to power the NVMe.
+* La scheda si collega tramite un cavo FFC (Flexible Flat Cable) inverso da 16P 0.5mm o un cavo FPC (Flexible Printed Circuit) con impedenza abbinata.
+* **STA**: Indicatore LED di stato.
+* **PWR**: Indicatore LED di alimentazione.
+* L'alimentazione integrata da 3,3V può supportare fino a 3A di uscita. Tuttavia, poiché l'interfaccia PCIe del Raspberry Pi è limitata a fornire un'uscita di 5V/1A (equivalente a 5W), è possibile fornire alimentazione aggiuntiva per l'uso di 3,3V/3A tramite il connettore J3 da una fonte di alimentazione a 5V.
+* **FORCE ENABLE**: L'alimentazione integrata è attivata dal segnale di commutazione dell'interfaccia PCIe. Dopo l'accensione del Raspberry Pi, viene inviato un segnale per attivare l'alimentazione da 3,3V. Se alcuni sistemi non supportano il segnale di commutazione o per altri motivi, è possibile cortocircuitare J4 FORCE ENABLE saldando un filo tra i due pad flottanti per forzare l'alimentazione da 3,3V integrata per alimentare l'NVMe.
 
-About the Model
+Informazioni sul modello
 ---------------------------
 
-M.2 SSDs, known for their compact size, come in various types mainly differentiated by their keying (notch design on the connector) and the interface they use. Here are the primary types:
+Gli SSD M.2, noti per le loro dimensioni compatte, esistono in vari tipi, principalmente differenziati dalla loro configurazione delle chiavi (design della tacca sul connettore) e dall'interfaccia che utilizzano. Ecco i tipi principali:
 
-* **M.2 SATA SSDs**: These use the SATA interface, similar to 2.5-inch SATA SSDs but in the smaller M.2 form factor. They are limited by the SATA III maximum speeds of around 600 MB/s. These SSDs are compatible with M.2 slots keyed for B and M keys.
-* **M.2 NVMe SSDs**: These SSDs use the NVMe protocol over PCIe lanes and are significantly faster than M.2 SATA SSDs. They are suitable for applications requiring high read/write speeds like gaming, video editing, and data-intensive tasks. These SSDs typically require M-keyed slots. These drives utilize the PCIe (Peripheral Component Interconnect Express) interface, with different versions like 3.0, 4.0, and 5.0. Each new version of PCIe effectively doubles the data transfer speed of its predecessor. However, the Raspberry Pi 5 uses a PCIe 3.0 interface, capable of delivering transfer speeds up to 3,500 MB/s. 
+* **SSD SATA M.2**: Questi utilizzano l'interfaccia SATA, simile agli SSD SATA da 2,5 pollici ma nel formato più piccolo M.2. Sono limitati dalle velocità massime del SATA III, intorno ai 600 MB/s. Questi SSD sono compatibili con slot M.2 con chiave B e M.
+* **SSD NVMe M.2**: Questi SSD utilizzano il protocollo NVMe su corsie PCIe e sono significativamente più veloci degli SSD SATA M.2. Sono adatti per applicazioni che richiedono elevate velocità di lettura/scrittura, come il gaming, l'editing video e attività che richiedono molta elaborazione dati. Questi SSD richiedono generalmente slot con chiave M. Questi dischi utilizzano l'interfaccia PCIe (Peripheral Component Interconnect Express), con versioni diverse come 3.0, 4.0 e 5.0. Ogni nuova versione di PCIe raddoppia effettivamente la velocità di trasferimento dati della precedente. Tuttavia, il Raspberry Pi 5 utilizza un'interfaccia PCIe 3.0, in grado di offrire velocità di trasferimento fino a 3.500 MB/s.
 
-M.2 SSDs come in three key types: B key, M key, and B+M key. However, later on, the B+M key was introduced, combining the functionalities of the B key and M key. As a result, it replaced the standalone B key. Please refer to the image below.
+Gli SSD M.2 sono disponibili in tre tipi principali di chiavi: B key, M key e B+M key. Successivamente è stata introdotta la chiave B+M, che combina le funzionalità delle chiavi B e M. Di conseguenza, ha sostituito la chiave B autonoma. Si prega di fare riferimento all'immagine qui sotto.
 
 .. image:: img/ssd_key.png
 
 
-In general, M.2 SATA SSDs are B+M-keyed (can fit in sockets for B-keyed and M-keyed modules), while M.2 NVMe SSDs for PCIe 3.0 x4 lane are M-keyed.
+In generale, gli SSD SATA M.2 hanno chiave B+M (possono adattarsi a socket per moduli con chiave B e M), mentre gli SSD NVMe M.2 per PCIe 3.0 x4 lane hanno chiave M.
 
 .. image:: img/ssd_model2.png
 
-About the Length
------------------------
+Informazioni sulla lunghezza
+--------------------------------------
 
-M.2 modules come in different sizes and can also be utilized for Wi-Fi, WWAN, Bluetooth, GPS, and NFC.
+I moduli M.2 sono disponibili in diverse dimensioni e possono essere utilizzati anche per Wi-Fi, WWAN, Bluetooth, GPS e NFC.
 
-Pironman 5 supports four (PCIe Gen 2.0 / PCIe Gen 3.0) NVMe M.2 SSD sizes based on their names: 2230, 2242, 2260, and 2280. The "22" is the width in millimeters (mm), and the two following numbers are the length. The longer the drive, the more NAND flash chips can be mounted; therefore, the more capacity.
+Pironman 5 supporta quattro dimensioni di SSD NVMe M.2 (PCIe Gen 2.0 / PCIe Gen 3.0) in base ai loro nomi: 2230, 2242, 2260 e 2280. Il "22" indica la larghezza in millimetri (mm), e i due numeri successivi rappresentano la lunghezza. Più lungo è il drive, più chip di memoria NAND può ospitare; quindi, maggiore sarà la capacità.
 
 
 .. image:: img/m2_ssd_size.png

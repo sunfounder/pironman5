@@ -1,84 +1,83 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme agli altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime.
+    - **Sconti speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni speciali per le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 FAQ
 ============
 
-Does the Pironman 5 support retro gaming systems?
+Il Pironman 5 supporta i sistemi di gioco retrò?
 ------------------------------------------------------
-Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
+Sì, è compatibile. Tuttavia, la maggior parte dei sistemi di gioco retrò sono versioni semplificate che non possono installare ed eseguire software aggiuntivi. Questa limitazione può causare il malfunzionamento di alcuni componenti del Pironman 5, come lo schermo OLED, le due ventole RGB e i 4 LED RGB, poiché richiedono l'installazione dei pacchetti software di Pironman 5.
 
 
 .. note::
 
-    The Batocera.linux system is now fully compatible with Pironman 5. Batocera.linux is an open-source and completely free retro-gaming distribution.
+    Il sistema Batocera.linux è ora completamente compatibile con Pironman 5. Batocera.linux è una distribuzione open-source e completamente gratuita per il retro-gaming.
 
     * :ref:`install_batocera`
     * :ref:`set_up_batocera`
 
-How to Control Components Using the ``pironman5`` Command
+Come controllare i componenti usando il comando ``pironman5``
 ----------------------------------------------------------------------
-You can refer to the following tutorial to control the components of the Pironman 5 using the ``pironman5`` command.
+Puoi fare riferimento al seguente tutorial per controllare i componenti del Pironman 5 utilizzando il comando ``pironman5``.
 
 * :ref:`view_control_commands`
 
-How to Change the Raspberry Pi Boot Order Using Commands
--------------------------------------------------------------
+Come modificare l'ordine di avvio del Raspberry Pi utilizzando i comandi
+----------------------------------------------------------------------------
 
-If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
+Se hai già effettuato l'accesso al tuo Raspberry Pi, puoi modificare l'ordine di avvio utilizzando i comandi. Le istruzioni dettagliate sono le seguenti:
 
 * :ref:`configure_boot_ssd`
 
 
-How to Modify the Boot Order with Raspberry Pi Imager?
+Come modificare l'ordine di avvio con Raspberry Pi Imager?
 ---------------------------------------------------------------
 
-In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can also use the **Raspberry Pi Imager** to change the boot order of your Raspberry Pi.
+Oltre a modificare il ``BOOT_ORDER`` nella configurazione dell'EEPROM, puoi anche utilizzare **Raspberry Pi Imager** per cambiare l'ordine di avvio del tuo Raspberry Pi.
 
-It is recommended to use a spare card for this step.
+È consigliato utilizzare una scheda di riserva per questo passaggio.
 
 * :ref:`update_bootloader`
 
-How to Copy the System from the SD Card to an NVMe SSD?
+Come copiare il sistema dalla scheda SD a un NVMe SSD?
 -------------------------------------------------------------
 
-If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
-
+Se possiedi un NVMe SSD ma non hai un adattatore per collegarlo al tuo computer, puoi prima installare il sistema sulla tua scheda Micro SD. Una volta che il Pironman 5 si è avviato con successo, puoi copiare il sistema dalla tua scheda Micro SD al tuo NVMe SSD. Le istruzioni dettagliate sono le seguenti:
 
 * :ref:`copy_sd_to_nvme_rpi`
 
 
-OLED Screen Not Working?
---------------------------
+Lo schermo OLED non funziona?
+---------------------------------
 
-If the OLED Screen is not displaying or displaying incorrectly, you can follow these steps to troubleshoot the issue:
+Se lo schermo OLED non viene visualizzato correttamente o non funziona affatto, segui questi passaggi per risolvere il problema:
 
-Check if the FPC cable of the OLED Screen is properly connected.
+Controlla se il cavo FPC dello schermo OLED è collegato correttamente.
 
-#. Use the following command to view the program's run logs and check for error messages.
+#. Usa il seguente comando per visualizzare i log di esecuzione del programma e controllare i messaggi di errore.
 
    .. code-block:: shell
 
       cat /opt/pironman5/log
 
-#. Alternatively, use the following command to check if the OLED's i2c address 0x3C is recognized:
+#. In alternativa, usa il seguente comando per verificare se l'indirizzo i2c dello schermo OLED 0x3C è riconosciuto:
     
    .. code-block:: shell
         
         sudo i2cdetect -y 1
 
-#. If the first two steps don't reveal any issues, try restarting the pironman5 service to see if that resolves the problem.
+#. Se i primi due passaggi non rivelano problemi, prova a riavviare il servizio pironman5 per vedere se il problema viene risolto.
 
 
    .. code-block:: shell
@@ -87,32 +86,31 @@ Check if the FPC cable of the OLED Screen is properly connected.
 
 .. _openssh_powershell:
 
-Install OpenSSH via Powershell
------------------------------------
+Installare OpenSSH tramite Powershell
+---------------------------------------
 
-When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``) to connect to your Raspberry Pi, but the following error message appears.
+Quando utilizzi ``ssh <username>@<hostname>.local`` (oppure ``ssh <username>@<indirizzo IP>``) per connetterti al tuo Raspberry Pi, ma compare il seguente messaggio di errore.
 
     .. code-block::
 
-        ssh: The term 'ssh' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
-        spelling of the name, or if a path was included, verify that the path is correct and try again.
+        ssh: Il termine 'ssh' non è riconosciuto come il nome di un cmdlet, una funzione, un file di script o un programma eseguibile. Controlla l'ortografia del nome o, se è incluso un percorso, verifica che il percorso sia corretto e riprova.
 
 
-It means your computer system is too old and does not have `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ pre-installed, you need to follow the tutorial below to install it manually.
+Significa che il tuo sistema operativo è troppo vecchio e non ha `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ preinstallato. Dovrai seguire il tutorial qui sotto per installarlo manualmente.
 
-#. Type ``powershell`` in the search box of your Windows desktop, right click on the ``Windows PowerShell``, and select ``Run as administrator`` from the menu that appears.
+#. Digita ``powershell`` nella barra di ricerca del tuo desktop Windows, fai clic con il pulsante destro su ``Windows PowerShell`` e seleziona ``Esegui come amministratore`` dal menu che appare.
 
    .. image:: img/powershell_ssh.png
       :width: 90%
       
 
-#. Use the following command to install ``OpenSSH.Client``.
+#. Usa il seguente comando per installare ``OpenSSH.Client``.
 
    .. code-block::
 
         Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
-#. After installation, the following output will be returned.
+#. Dopo l'installazione, verrà restituito il seguente output.
 
    .. code-block::
 
@@ -120,13 +118,13 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
         Online        : True
         RestartNeeded : False
 
-#. Verify the installation by using the following command.
+#. Verifica l'installazione utilizzando il seguente comando.
 
    .. code-block::
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. It now tells you that ``OpenSSH.Client`` has been successfully installed.
+#. Ora ti verrà indicato che ``OpenSSH.Client`` è stato installato correttamente.
 
    .. code-block::
 
@@ -137,11 +135,9 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
         State : NotPresent
 
     .. warning:: 
-        If the above prompt does not appear, it means that your Windows system is still too old, and you are advised to install a third-party SSH tool, like |link_putty|.
+        Se il prompt sopra non appare, significa che il tuo sistema Windows è ancora troppo vecchio e ti consigliamo di installare uno strumento SSH di terze parti, come |link_putty|.
 
-#. Now restart PowerShell and continue to run it as administrator. At this point you will be able to log in to your Raspberry Pi using the ``ssh`` command, where you will be prompted to enter the password you set up earlier.
+#. Ora riavvia PowerShell e continua a eseguirlo come amministratore. A questo punto sarai in grado di accedere al tuo Raspberry Pi utilizzando il comando ``ssh``, dove ti verrà richiesto di inserire la password che hai impostato in precedenza.
 
    .. image:: img/powershell_login.png
-
-
 

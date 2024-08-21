@@ -1,61 +1,61 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme agli altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime.
+    - **Sconti speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni speciali per le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _set_up_batocera:
 
-Set up on Batocera.linux
+Configurazione su Batocera.linux
 =========================================================
 
-If you have installed the Batocera.linux OS, you can remotely log in to this system via SSH and then follow the steps below to complete the configuration.
+Se hai installato il sistema operativo Batocera.linux, puoi accedere a questo sistema in remoto tramite SSH e seguire i passaggi seguenti per completare la configurazione.
 
-#. Once the system boots up, use ssh to remotely connect to Pironman5. For Windows, you can open **Powershell**, and for Mac OS X and Linux, you can directly open **Terminal**.
+#. Una volta avviato il sistema, usa ssh per connetterti in remoto a Pironman5. Per Windows, puoi aprire **Powershell**, mentre per Mac OS X e Linux puoi aprire direttamente **Terminale**.
 
    .. image:: img/batocera_powershell.png
       :width: 90%
       
 
-#. The default hostname for the batocera system is ``batocera``, with the default username as ``root`` and the password as ``linux``. Therefore, you can log in by typing ``ssh root@batocera.local`` and entering the password ``linux``.
+#. Il nome host predefinito per il sistema Batocera è ``batocera``, con l'utente predefinito ``root`` e la password ``linux``. Puoi quindi accedere digitando ``ssh root@batocera.local`` ed inserendo la password ``linux``.
 
    .. image:: img/batocera_login.png
       :width: 90%
 
-#. Execute the command: ``/etc/init.d/S92switch setup`` to enter the menu settings page.
+#. Esegui il comando: ``/etc/init.d/S92switch setup`` per accedere alla pagina delle impostazioni del menu.
 
    .. image:: img/batocera_configure.png  
       :width: 90%
 
-#. Use the down arrow key to navigate to the end, select and activate the **Pironman5** services.
+#. Usa la freccia verso il basso per navigare fino alla fine, seleziona e attiva i servizi **Pironman5**.
 
    .. image:: img/batocera_configure_pironman5.png
       :width: 90%
 
-#. After activating the pironman5 service, select **OK**.
+#. Dopo aver attivato il servizio Pironman5, seleziona **OK**.
 
    .. image:: img/batocera_configure_pironman5_ok.png
       :width: 90%
 
-#. Execute the command ``reboot`` to restart Pironman5.
+#. Esegui il comando ``reboot`` per riavviare Pironman5.
 
    .. code-block:: shell
 
       reboot
 
-#. Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
+#. Al riavvio, il servizio ``pironman5.service`` si avvierà automaticamente. Ecco le principali configurazioni per Pironman 5:
 
-  * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
-  * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
-  * The RGB fans will activate at 60°C.
+  * Lo schermo OLED mostrerà CPU, RAM, utilizzo del disco, temperatura della CPU e l'indirizzo IP del Raspberry Pi.
+  * Quattro LED RGB WS2812 si illumineranno di blu con una modalità di respirazione.
+  * Le ventole RGB si attiveranno a 60°C.
 
+Ora puoi collegare il Pironman 5 a uno schermo, controller di gioco, cuffie e molto altro per immergerti nel tuo mondo di gioco.
 
-Now, you can connect the Pironman 5 to a screen, game controllers, headphones, and more to immerse yourself in your gaming world.
