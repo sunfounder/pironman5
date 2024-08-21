@@ -18,11 +18,15 @@
 Thanks for choosing our |link_pironman5|.
 
 .. note::
+
     This document is available in the following languages.
 
-        * |link_german_tutorials|
-        * |link_jp_tutorials|
-        * |link_en_tutorials|
+    * |link_german_tutorials|
+    * |link_jp_tutorials|
+    * |link_en_tutorials|
+    * |link_fr_tutorials|
+    * |link_es_tutorials|
+    * |link_it_tutorials|
     
     Please click on the respective links to access the document in your preferred language.
 

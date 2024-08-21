@@ -18,6 +18,10 @@ Control with Commands
 ========================================
 In addition to viewing data from the Pironman 5 and controlling various devices through the Dashboard, you can also use commands to control them.
 
+.. note::
+
+  * For the **Home Assistant** system, you can only monitor and control the Pironman 5 through the dashboard by opening the webpage at ``http://<ip>:34001``.
+  * For the **Batocera.linux** system, you can only monitor and control the Pironman 5 via commands. It is important to note that any changes to the configuration require a restart of the service using ``pironman5 restart`` to take effect.
 
 View the Basic Configurations
 -----------------------------------
@@ -157,6 +161,8 @@ The board features 4 WS2812 RGB LEDs, offering customizable control. Users can t
 .. code-block:: shell
 
   pironman5 -rl 12
+
+.. _cc_control_fan:
 
 Control RGB Fans
 ---------------------

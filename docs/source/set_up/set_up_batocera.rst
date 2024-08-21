@@ -52,10 +52,12 @@ If you have installed the Batocera.linux OS, you can remotely log in to this sys
       reboot
 
 #. Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
-
-  * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
-  * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
-  * The RGB fans will activate at 60°C.
-
+   
+   * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
+   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
+   
+   .. note::
+    
+     RGB fans won't spin unless the temperature hits 60°C. For different activation temperatures, see :ref:`cc_control_fan`.
 
 Now, you can connect the Pironman 5 to a screen, game controllers, headphones, and more to immerse yourself in your gaming world.

@@ -17,6 +17,26 @@ FAQ
 
 Does the Pironman 5 support retro gaming systems?
 ------------------------------------------------------
+
+Once you have completed the installation of the ``pironman5`` module, you will be able to access the :ref:`view_control_dashboard`.
+      
+If you do not need this feature and want to reduce CPU and RAM usage, you can disable the dashboard during the installation of ``pironman5`` by adding the ``--disable-dashboard`` flag.
+      
+.. code-block:: shell
+      
+   cd ~/pironman5
+   sudo python3 install.py --disable-dashboard
+      
+If you have already installed ``pironman 5``, you can remove the ``dashboard`` module and ``influxdb``, then restart pironman5 to apply the changes:
+      
+.. code-block:: shell
+      
+   /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
+   sudo apt purge influxdb
+   sudo systemctl restart pironman5
+
+Does the Pironman 5 support retro gaming systems?
+------------------------------------------------------
 Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
 
 
