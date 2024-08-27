@@ -25,10 +25,12 @@ PERIPHERALS = [
     "memory",
     "history",
     "log",
-    'ws2812',
-    'oled',
+    "ws2812",
+    "temperature_unit",
+    "oled",
     "pwm_fan_speed",
     "gpio_fan_state",
+    "gpio_fan_mode",
 ]
 
 DEVICE_INFO = {
