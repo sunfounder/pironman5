@@ -35,7 +35,7 @@ def main():
     parser.add_argument("-gm", "--gpio-fan-mode", nargs='?', default='', help=f"GPIO fan mode, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
     parser.add_argument("-gp", "--gpio-fan-pin", nargs='?', default='', help="GPIO fan pin")
     parser.add_argument("-od", "--oled-disk", nargs='?', default='', help="Set to display which disk on OLED. 'total' or the name of the disk, like mmbclk or nvme")
-    parser.add_argument("-oi", "--oled-ip", nargs='?', default='', help="Set to display which IP address on OLED, 'all' or the interface name, like eth0 or wlan0")
+    parser.add_argument("-oi", "--oled-network-interface", nargs='?', default='', help="Set to display which ip of network interface on OLED, 'all' or the interface name, like eth0 or wlan0")
     parser.add_argument("--background", nargs='?', default='', help="Run in background")
 
     args = parser.parse_args()
@@ -182,15 +182,27 @@ def main():
                 quit()
             new_auto['gpio_fan_pin'] = args.gpio_fan_pin
     if args.oled_disk != '':
+        from sf_rpi_status import get_disks
+        disks = ['total']
+        disks.extend(get_disks().keys())
         if args.oled_disk == None:
-            print(f"OLED disk: {current_config['system']['oled_disk']}")
+            print(f"OLED disk: {current_config['system']['oled_disk']}, options: {disks}")
         else:
+            if args.oled_disk not in disks:
+                print(f"Invalid value for OLED disk, it should be in {disks}")
+                quit()
             new_auto['oled_disk'] = args.oled_disk
-    if args.oled_ip != '':
-        if args.oled_ip == None:
-            print(f"OLED IP: {current_config['system']['oled_ip']}")
+    if args.oled_network_interface != '':
+        from sf_rpi_status import get_ips
+        interfaces = ['all']
+        interfaces.extend(get_ips().keys())
+        if args.oled_network_interface == None:
+            print(f"OLED Network Interface: {current_config['system']['oled_network_interface']}, options: {interfaces}")
         else:
-            new_auto['oled_ip'] = args.oled_ip
+            if args.oled_network_interface not in interfaces:
+                print(f"Invalid value for OLED Network Interface, it should be in {interfaces}")
+                quit()
+            new_auto['oled_network_interface'] = args.oled_network_interface
     if args.background != '':
         print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
         quit()

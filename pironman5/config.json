@@ -10,6 +10,6 @@
         "gpio_fan_mode": 2,
         "gpio_fan_pin": 6,
         "oled_disk": "total",
-        "oled_ip": "all"
+        "oled_network_interface": "all"
     }
 }
