@@ -1,5 +1,5 @@
 {
-    "auto": {
+    "system": {
         "rgb_color": "#0a1aff",
         "rgb_brightness": 50,
         "rgb_style": "breathing",
@@ -8,6 +8,8 @@
         "rgb_led_count": 4,
         "temperature_unit": "C",
         "gpio_fan_mode": 2,
-        "gpio_fan_pin": 6
+        "gpio_fan_pin": 6,
+        "oled_disk": "total",
+        "oled_ip": "all"
     }
 }

@@ -19,11 +19,18 @@ except ImportError:
     pass
 
 PERIPHERALS = [
+    'storage',
+    "cpu",
+    "network",
+    "memory",
+    "history",
+    "log",
     'ws2812',
     'oled',
-    'gpio_fan',
-    'pwm_fan',
+    "pwm_fan_speed",
+    "gpio_fan_state",
 ]
+
 DEVICE_INFO = {
     'name': 'Pironman 5',
     'id': 'pironman5',
@@ -50,7 +57,7 @@ class Pironman5:
     def __init__(self):
         self.log = get_child_logger('main')
         self.config = {
-            'auto': AUTO_DEFAULT_CONFIG,
+            'system': AUTO_DEFAULT_CONFIG,
         }
         if not os.path.exists(CONFIG_PATH):
             with open(CONFIG_PATH, 'w') as f:
@@ -58,9 +65,10 @@ class Pironman5:
         else:
             with open(CONFIG_PATH, 'r') as f:
                 config = json.load(f)
+            self.config = self.upgrade_config(config)
             merge_dict(self.config, config)
 
-        self.pm_auto = PMAuto(self.config['auto'],
+        self.pm_auto = PMAuto(self.config['system'],
                               peripherals=PERIPHERALS,
                               get_logger=get_child_logger)
         if PMDashboard is None:
@@ -75,10 +83,16 @@ class Pironman5:
             self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
             self.pm_dashboard.set_on_config_changed(self.update_config)
 
+    def upgrade_config(self, config):
+        ''' upgrade old config to new config converting 'auto' to'system' '''
+        if 'auto' in config:
+            return {'system': config['auto']}
+        return config
+
     @log_error
     def update_config(self, config):
         merge_dict(self.config, config)
-        self.pm_auto.update_config(self.config['auto'])
+        self.pm_auto.update_config(self.config['system'])
         with open(CONFIG_PATH, 'w') as f:
             json.dump(self.config, f, indent=4)
 

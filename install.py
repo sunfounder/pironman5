@@ -40,8 +40,8 @@ installer = SF_Installer(
     # - Install python source code from git
     python_source={
         'pironman5': './',
-        'pm_auto': 'git+http://github.com/sunfounder/pm_auto.git',
-        'pm_dashboard': 'git+http://github.com/sunfounder/pm_dashboard.git',
+        'pm_auto': 'git+http://github.com/sunfounder/pm_auto.git@v1.1',
+        'pm_dashboard': 'git+http://github.com/sunfounder/pm_dashboard.git@v1.1',
         'sf_rpi_status': 'git+http://github.com/sunfounder/sf_rpi_status.git',
     },
 
