@@ -25,6 +25,7 @@ def main():
                         help="Command")
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
+    parser.add_argument("-dl", "--debug-level", choices=['debug', 'info', 'warning', 'error', 'critical'], help="Debug level")
     parser.add_argument("-rc", "--rgb-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
     parser.add_argument("-rb", "--rgb-brightness", nargs='?', default='', help="RGB brightness 0-100")
     parser.add_argument("-rs", "--rgb-style", choices=RGB_STYLES, nargs='?', default='', help="RGB style")
@@ -54,6 +55,9 @@ def main():
     if args.config:
         print(json.dumps(current_config, indent=4))
         quit()
+
+    if args.debug_level != None:
+        debug_level = args.debug_level.upper()
 
     if args.command == "restart":
         print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
@@ -215,4 +219,5 @@ def main():
 
     if args.command == "start":
         pironman5 = Pironman5()
+        pironman5.set_debug_level(debug_level)
         pironman5.start()

@@ -85,6 +85,13 @@ class Pironman5:
             self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
             self.pm_dashboard.set_on_config_changed(self.update_config)
 
+    @log_error
+    def set_debug_level(self, level):
+        self.log.setLevel(level)
+        self.pm_auto.set_debug_level(level)
+        self.pm_dashboard.set_debug_level(level)
+
+    @log_error
     def upgrade_config(self, config):
         ''' upgrade old config to new config converting 'auto' to'system' '''
         if 'auto' in config:
@@ -93,8 +100,8 @@ class Pironman5:
 
     @log_error
     def update_config(self, config):
+        self.pm_auto.update_config(config['system'])
         merge_dict(self.config, config)
-        self.pm_auto.update_config(self.config['system'])
         with open(CONFIG_PATH, 'w') as f:
             json.dump(self.config, f, indent=4)
 
