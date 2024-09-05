@@ -183,13 +183,6 @@ Si votre carte Micro SD a une version de bureau du système installée, vous pou
 
 3. Configurer le démarrage depuis le SSD
 -------------------------------------------------
-
-* Pour mettre à jour le firmware de votre Raspberry Pi vers la dernière version, utilisez ``rpi-update``.
-
-  .. code-block:: shell
-
-    sudo rpi-update
-
 * Pour activer la prise en charge du démarrage, vous devez modifier le ``BOOT_ORDER`` dans la configuration du bootloader. Modifiez la configuration de l'EEPROM en :
 
   .. code-block:: shell
