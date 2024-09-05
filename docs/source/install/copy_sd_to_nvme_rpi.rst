@@ -183,13 +183,6 @@ Si tu tarjeta Micro SD tiene una versión de escritorio del sistema instalado, p
 
 3. Configurar el inicio desde el SSD
 ---------------------------------------
-
-* Para actualizar el firmware de tu Raspberry Pi a la versión más reciente, utiliza ``rpi-update``.
-
-  .. code-block:: shell
-
-    sudo rpi-update
-
 * Para habilitar el soporte de inicio, necesitas cambiar el ``BOOT_ORDER`` en la configuración del bootloader. Edita la configuración de la EEPROM mediante:
 
   .. code-block:: shell
