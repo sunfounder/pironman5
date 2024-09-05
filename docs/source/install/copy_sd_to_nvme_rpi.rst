@@ -183,13 +183,6 @@ Se la tua Micro SD contiene una versione desktop del sistema, puoi utilizzare un
 
 3. Configura l'avvio dall'SSD
 ---------------------------------------
-
-* Per aggiornare il firmware del tuo Raspberry Pi all'ultima versione, usa ``rpi-update``.
-
-  .. code-block:: shell
-
-    sudo rpi-update
-
 * Per abilitare il supporto di avvio, devi modificare il ``BOOT_ORDER`` nella configurazione del bootloader. Modifica la configurazione dell'EEPROM tramite:
 
   .. code-block:: shell
