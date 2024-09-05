@@ -183,13 +183,6 @@ Micro SDカードにデスクトップ版のシステムがインストールさ
 
 3. SSDからの起動を設定
 ---------------------------------------
-
-* Raspberry Piのファームウェアを最新バージョンに更新するには、 ``rpi-update`` を使用します。
-
-  .. code-block:: shell
-
-    sudo rpi-update
-
 * 起動サポートを有効にするには、ブートローダー構成で ``BOOT_ORDER`` を変更する必要があります。EEPROM構成を編集します。
 
   .. code-block:: shell
