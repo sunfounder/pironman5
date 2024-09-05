@@ -183,13 +183,6 @@ If your Micro SD card has a desktop version of the system installed, you can use
 
 3. Configure boot from the SSD
 ---------------------------------------
-
-* To update the firmware on your Raspberry Pi to the latest version, use ``rpi-update``.
-
-  .. code-block:: shell
-
-    sudo rpi-update
-
 * To enable boot support, you need to change the ``BOOT_ORDER`` in the bootloader configuration. Edit the EEPROM configuration by:
 
   .. code-block:: shell
