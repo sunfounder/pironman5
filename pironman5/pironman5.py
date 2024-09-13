@@ -6,6 +6,7 @@ from pkg_resources import resource_filename
 from pm_auto.pm_auto import PMAuto
 from .logger import create_get_child_logger
 from .utils import merge_dict, log_error
+from .version import __version__
 
 get_child_logger = create_get_child_logger('pironman5')
 log = get_child_logger('main')
@@ -37,16 +38,22 @@ DEVICE_INFO = {
     'name': 'Pironman 5',
     'id': 'pironman5',
     'peripherals': PERIPHERALS,
+    'version': __version__,
 }
 AUTO_DEFAULT_CONFIG = {
-    'temperature_unit': 'C',
-    'rgb_led_count': 4,
-    'rgb_enable': True,
-    'rgb_color': '#ff00ff',
-    'rgb_brightness': 100,
-    'rgb_style': 'rainbow',
-    'rgb_speed': 0,
-    'gpio_fan_pin': 6,
+    "rgb_color": "#0a1aff",
+    "rgb_brightness": 50,
+    "rgb_style": "breathing",
+    "rgb_speed": 50,
+    "rgb_enable": True,
+    "rgb_led_count": 4,
+    "temperature_unit": "C",
+    "gpio_fan_mode": 2,
+    "gpio_fan_led": "follow",
+    "oled_enable": True,
+    "oled_rotation": 0,
+    "oled_disk": "total",
+    "oled_network_interface": "all"
 }
 DASHBOARD_SETTINGS = {
     "database": "pironman5",
