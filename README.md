@@ -91,8 +91,8 @@ sudo /opt/pironman5/venv/bin/pip3 uninstall sf_rpi_status -y
 sudo /opt/pironman5/venv/bin/pip3 install .
 
 sudo systemctl stop pironman5
+sudo systemctl start pironman5
 sudo pironman5 start
-
 
 sudo /opt/pironman5/venv/bin/python3
 

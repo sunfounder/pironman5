@@ -1,32 +1,29 @@
 #!/bin/bash
 
-start() {
-    /opt/pironman5/venv/bin/pironman5-service start
-}
+args=("$@")
+new_args=()
+background_found=false
+restart_found=false
 
-start-background() {
-    /opt/pironman5/venv/bin/pironman5-service start 2>1 1>/dev/null &
-}
-
-stop() {
-    /opt/pironman5/venv/bin/pironman5-service stop
-}
-
-restart() {
-    stop
-    start-background
-}
-
-if [ "$1" == "start" ]; then
-    if [ "$2" == "--background" ]; then
-        start-background
+for arg in "${args[@]}"; do
+    if [ "$arg" == "--background" ]; then
+        background_found=true
+    elif [ "$arg" == "restart" ]; then
+        restart_found=true
+        new_args+=("start")
     else
-        start
+        new_args+=("$arg")
     fi
-elif [ "$1" == "stop" ]; then
-    stop
-elif [ "$1" == "restart" ]; then
-    restart
-else
-    /opt/pironman5/venv/bin/pironman5-service "$@"
+done
+
+if $restart_found; then
+    /opt/pironman5/venv/bin/pironman5-service stop
+    sleep 5
 fi
+
+if $background_found; then
+    /opt/pironman5/venv/bin/pironman5-service "${new_args[@]}" 2>1 1>/dev/null &
+else
+    /opt/pironman5/venv/bin/pironman5-service "${new_args[@]}"
+fi
+

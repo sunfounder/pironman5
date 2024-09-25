@@ -1,9 +1,9 @@
 from .version import __version__
 
-TRUE_LIST = ['true', 'True', 'TRUE', '1', 'on', 'On', 'ON']
-FALSE_LIST = ['false', 'False', 'FALSE', '0', 'off', 'Off', 'OFF']
-
 def main():
+    TRUE_LIST = ['true', 'True', 'TRUE', '1', 'on', 'On', 'ON']
+    FALSE_LIST = ['false', 'False', 'FALSE', '0', 'off', 'Off', 'OFF']
+
     import argparse
     from .pironman5 import Pironman5
     from pm_auto.ws2812 import RGB_STYLES
@@ -16,6 +16,7 @@ def main():
     CONFIG_PATH = resource_filename('pironman5', 'config.json')
 
     current_config = None
+    debug_level = 'INFO'
     new_auto = {}
 
     parser = argparse.ArgumentParser(description='Pironman5')
