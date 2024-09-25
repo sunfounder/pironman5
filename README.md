@@ -12,6 +12,7 @@ Quick Links:
   - [Update](#update)
   - [Compatible Systems](#compatible-systems)
     - [Ubuntu 24.04 server eth0 and wifi not work](#ubuntu-2404-server-eth0-and-wifi-not-work)
+    - [Debug](#debug)
   - [About SunFounder](#about-sunfounder)
   - [Contact us](#contact-us)
 
@@ -67,6 +68,35 @@ Batocera Linux | &#x2705;
 
 https://www.reddit.com/r/Ubuntu/comments/1d0s8v5/ubuntu_2404_server_on_my_raspberry_pi_5_and_eth0/
 
+
+### Debug
+
+Command log:
+
+```bash
+cd ~/pironman5
+sudo /opt/pironman5/venv/bin/pip3 uninstall pironman5 -y
+sudo /opt/pironman5/venv/bin/pip3 install .
+
+cd ~/pm_dashboard
+sudo /opt/pironman5/venv/bin/pip3 uninstall pm_dashboard -y
+sudo /opt/pironman5/venv/bin/pip3 install .
+
+cd ~/pm_auto
+sudo /opt/pironman5/venv/bin/pip3 uninstall pm_auto -y
+sudo /opt/pironman5/venv/bin/pip3 install .
+
+cd ~/sf_rpi_status
+sudo /opt/pironman5/venv/bin/pip3 uninstall sf_rpi_status -y
+sudo /opt/pironman5/venv/bin/pip3 install .
+
+sudo systemctl stop pironman5
+sudo pironman5 start
+
+
+sudo /opt/pironman5/venv/bin/python3
+
+```
 
 ## About SunFounder
 
