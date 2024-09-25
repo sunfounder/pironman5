@@ -92,6 +92,7 @@ sudo /opt/pironman5/venv/bin/pip3 install .
 
 sudo systemctl stop pironman5
 sudo systemctl start pironman5
+sudo systemctl restart pironman5
 sudo pironman5 start
 
 sudo /opt/pironman5/venv/bin/python3
