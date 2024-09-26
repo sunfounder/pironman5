@@ -7,7 +7,7 @@ After=basic.target
 [Service]
 Type=forking
 # WorkingDirectory=/opt/pironman5
-ExecStart=/usr/local/bin/pironman5 start --background
+ExecStart=/usr/local/bin/pironman5 start --background --debug-level=DEBUG
 ExecStop=/usr/local/bin/pironman5 stop
 # PrivateTmp=False
 
