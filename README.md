@@ -74,23 +74,17 @@ https://www.reddit.com/r/Ubuntu/comments/1d0s8v5/ubuntu_2404_server_on_my_raspbe
 Command log:
 
 ```bash
-cd ~/pironman5
-sudo /opt/pironman5/venv/bin/pip3 uninstall pironman5 -y
-sudo /opt/pironman5/venv/bin/pip3 install .
-
+cd ~/pironman5 && sudo /opt/pironman5/venv/bin/pip3 uninstall pironman5 -y && sudo /opt/pironman5/venv/bin/pip3 install .
 cd ~/pm_dashboard && sudo /opt/pironman5/venv/bin/pip3 uninstall pm_dashboard -y && sudo /opt/pironman5/venv/bin/pip3 install .
-
 cd ~/pm_auto && sudo /opt/pironman5/venv/bin/pip3 uninstall pm_auto -y && sudo /opt/pironman5/venv/bin/pip3 install .
-
 cd ~/sf_rpi_status && sudo /opt/pironman5/venv/bin/pip3 uninstall sf_rpi_status -y && sudo /opt/pironman5/venv/bin/pip3 install .
 
-sudo systemctl stop pironman5
-sudo systemctl start pironman5
-sudo systemctl restart pironman5
+sudo systemctl stop pironman5.service
+sudo systemctl start pironman5.service
+sudo systemctl restart pironman5.service
 sudo pironman5 start
 
 sudo /opt/pironman5/venv/bin/python3
-
 ```
 
 ## About SunFounder

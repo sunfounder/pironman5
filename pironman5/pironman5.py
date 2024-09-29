@@ -29,6 +29,8 @@ PERIPHERALS = [
     "ws2812",
     "temperature_unit",
     "oled",
+    "claer_history",
+    "delete_log_file",
     "pwm_fan_speed",
     "gpio_fan_state",
     "gpio_fan_mode",
