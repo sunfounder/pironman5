@@ -21,7 +21,7 @@ Caratteristiche
 * Materiale
     * Corpo principale: lega di alluminio
     * Due pannelli laterali: acrilico
-* Piattaforma supportata: Raspberry Pi 5B
+* Piattaforma supportata: Raspberry Pi 5
 * Ingresso alimentazione: USB Type C, 5V/5A
 * Interfacce
     * GPIO standard 40-Pin per Raspberry Pi
