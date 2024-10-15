@@ -21,7 +21,7 @@
 * 素材
     * 本体: アルミニウム合金
     * 両側パネル: アクリル
-* 対応プラットフォーム: Raspberry Pi 5B
+* 対応プラットフォーム: Raspberry Pi 5
 * 電源入力: USB Type C, 5V/5A
 * インターフェース
     * Raspberry Pi標準40ピンGPIO
