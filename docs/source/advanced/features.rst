@@ -21,7 +21,7 @@ Características
 * Material
     * Cuerpo principal: aleación de aluminio
     * Dos paneles laterales: acrílico
-* Plataforma compatible: Raspberry Pi 5B
+* Plataforma compatible: Raspberry Pi 5
 * Entrada de energía: USB Tipo C, 5V/5A
 * Interfaces
     * GPIO estándar de 40 pines para Raspberry Pi
