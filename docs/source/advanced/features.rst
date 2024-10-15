@@ -21,7 +21,7 @@ Features
 * Material
     * Main body: aluminum alloy
     * Two side panel: acrylic
-* Support Platform: Raspberry Pi 5B
+* Support Platform: Raspberry Pi 5
 * Power Input: USB Type C, 5V/5A
 * Interfaces
     * Raspberry Pi standard 40-Pin GPIO
