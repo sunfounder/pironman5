@@ -6,6 +6,7 @@ def main():
 
     import argparse
     from .pironman5 import Pironman5
+    from .utils import get_hat_version
     from pm_auto.ws2812 import RGB_STYLES
     from pm_auto.fan_control import GPIO_FAN_MODES
     from pkg_resources import resource_filename
@@ -36,6 +37,9 @@ def main():
     parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], nargs='?', default='', help="Temperature unit")
     parser.add_argument("-gm", "--gpio-fan-mode", nargs='?', default='', help=f"GPIO fan mode, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
     parser.add_argument("-gp", "--gpio-fan-pin", nargs='?', default='', help="GPIO fan pin")
+    if get_hat_version() >= 11:
+        parser.add_argument("-fl", "--gpio-fan-led", nargs='?', default='', help="GPIO fan LED state on/off/follow")
+        parser.add_argument("-fp", "--gpio-fan-led-pin", nargs='?', default='', help="GPIO fan LED pin")
     parser.add_argument("-od", "--oled-disk", nargs='?', default='', help="Set to display which disk on OLED. 'total' or the name of the disk, like mmbclk or nvme")
     parser.add_argument("-oi", "--oled-network-interface", nargs='?', default='', help="Set to display which ip of network interface on OLED, 'all' or the interface name, like eth0 or wlan0")
     parser.add_argument("--background", nargs='?', default='', help="Run in background")
@@ -186,6 +190,25 @@ def main():
                 print(f"Invalid value for GPIO fan pin, it should be an integer")
                 quit()
             new_auto['gpio_fan_pin'] = args.gpio_fan_pin
+    if args.gpio_fan_led != '':
+        if args.gpio_fan_led == None:
+            print(f"GPIO fan LED state: {current_config['system']['gpio_fan_led']}")
+        else:
+            state = args.gpio_fan_led.lower()
+            if state not in ['on', 'off', 'follow']:
+                print(f"Invalid value for GPIO fan LED state, it should be on, off or follow")
+                quit()
+            new_auto['gpio_fan_led'] = state
+    if args.gpio_fan_led_pin != '':
+        if args.gpio_fan_led_pin == None:
+            print(f"GPIO fan LED pin: {current_config['system']['gpio_fan_led_pin']}")
+        else:
+            try:
+                args.gpio_fan_led_pin = int(args.gpio_fan_led_pin)
+            except ValueError:
+                print(f"Invalid value for GPIO fan LED pin, it should be an integer")
+                quit()
+            new_auto['gpio_fan_led_pin'] = args.gpio_fan_led_pin
     if args.oled_disk != '':
         from sf_rpi_status import get_disks
         disks = ['total']

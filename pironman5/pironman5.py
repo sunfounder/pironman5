@@ -55,13 +55,16 @@ AUTO_DEFAULT_CONFIG = {
     "rgb_enable": True,
     "rgb_led_count": 4,
     "temperature_unit": "C",
-    "gpio_fan_mode": 2,
-    "gpio_fan_led": "follow",
     "oled_enable": True,
     "oled_rotation": 0,
     "oled_disk": "total",
-    "oled_network_interface": "all"
+    "oled_network_interface": "all",
+    'gpio_fan_pin': 6,
+    'gpio_fan_mode': 1,
+    'gpio_fan_led': 'follow',
+    'gpio_fan_led_pin': 5,
 }
+
 DASHBOARD_SETTINGS = {
     "database": "pironman5",
     "interval": 1,
@@ -75,14 +78,13 @@ class Pironman5:
         self.config = {
             'system': AUTO_DEFAULT_CONFIG,
         }
-        if not os.path.exists(CONFIG_PATH):
-            with open(CONFIG_PATH, 'w') as f:
-                json.dump(self.config, f, indent=4)
-        else:
+        if os.path.exists(CONFIG_PATH):
             with open(CONFIG_PATH, 'r') as f:
                 config = json.load(f)
             self.config = self.upgrade_config(config)
             merge_dict(self.config, config)
+        with open(CONFIG_PATH, 'w') as f:
+            json.dump(self.config, f, indent=4)
 
         self.pm_auto = PMAuto(self.config['system'],
                               peripherals=PERIPHERALS,

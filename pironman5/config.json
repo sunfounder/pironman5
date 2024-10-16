@@ -7,11 +7,13 @@
         "rgb_enable": true,
         "rgb_led_count": 4,
         "temperature_unit": "C",
-        "gpio_fan_mode": 2,
-        "gpio_fan_led": "follow",
         "oled_enable": true,
         "oled_rotation": 0,
         "oled_disk": "total",
-        "oled_network_interface": "all"
+        "oled_network_interface": "all",
+        "gpio_fan_pin": 6,
+        "gpio_fan_mode": 2,
+        "gpio_fan_led": "follow",
+        "gpio_fan_led_pin": 5
     }
 }
