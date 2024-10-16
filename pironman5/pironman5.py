@@ -5,7 +5,7 @@ from pkg_resources import resource_filename
 
 from pm_auto.pm_auto import PMAuto
 from .logger import create_get_child_logger
-from .utils import merge_dict, log_error
+from .utils import merge_dict, log_error, get_hat_version
 from .version import __version__
 
 get_child_logger = create_get_child_logger('pironman5')
@@ -29,12 +29,16 @@ PERIPHERALS = [
     "ws2812",
     "temperature_unit",
     "oled",
-    "claer_history",
+    "clear_history",
     "delete_log_file",
     "pwm_fan_speed",
     "gpio_fan_state",
     "gpio_fan_mode",
+    "gpio_fan_led",
 ]
+
+if get_hat_version() < 11:
+    PERIPHERALS.remove('gpio_fan_led')
 
 DEVICE_INFO = {
     'name': 'Pironman 5',
@@ -42,6 +46,7 @@ DEVICE_INFO = {
     'peripherals': PERIPHERALS,
     'version': __version__,
 }
+
 AUTO_DEFAULT_CONFIG = {
     "rgb_color": "#0a1aff",
     "rgb_brightness": 50,

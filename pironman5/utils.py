@@ -19,3 +19,18 @@ def log_error(func):
         except Exception as e:
             self.log.error(str(e))
     return wrapper
+
+
+def get_hat_version():
+    from os import listdir
+    hat_path = None
+    for file in listdir('/proc/device-tree/'):
+        if file.startswith('hat'):
+            hat_path = f"/proc/device-tree/{file}"
+            break
+    product_ver = 0
+    with open(f"{hat_path}/product_ver", "r") as f:
+        product_ver = f.read()[:-1]
+        product_ver = int(product_ver, 16)
+    
+    return product_ver
