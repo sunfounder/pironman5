@@ -190,25 +190,26 @@ def main():
                 print(f"Invalid value for GPIO fan pin, it should be an integer")
                 quit()
             new_auto['gpio_fan_pin'] = args.gpio_fan_pin
-    if args.gpio_fan_led != '':
-        if args.gpio_fan_led == None:
-            print(f"GPIO fan LED state: {current_config['system']['gpio_fan_led']}")
-        else:
-            state = args.gpio_fan_led.lower()
-            if state not in ['on', 'off', 'follow']:
-                print(f"Invalid value for GPIO fan LED state, it should be on, off or follow")
-                quit()
-            new_auto['gpio_fan_led'] = state
-    if args.gpio_fan_led_pin != '':
-        if args.gpio_fan_led_pin == None:
-            print(f"GPIO fan LED pin: {current_config['system']['gpio_fan_led_pin']}")
-        else:
-            try:
-                args.gpio_fan_led_pin = int(args.gpio_fan_led_pin)
-            except ValueError:
-                print(f"Invalid value for GPIO fan LED pin, it should be an integer")
-                quit()
-            new_auto['gpio_fan_led_pin'] = args.gpio_fan_led_pin
+    if get_hat_version() >= 11:
+        if args.gpio_fan_led != '':
+            if args.gpio_fan_led == None:
+                print(f"GPIO fan LED state: {current_config['system']['gpio_fan_led']}")
+            else:
+                state = args.gpio_fan_led.lower()
+                if state not in ['on', 'off', 'follow']:
+                    print(f"Invalid value for GPIO fan LED state, it should be on, off or follow")
+                    quit()
+                new_auto['gpio_fan_led'] = state
+        if args.gpio_fan_led_pin != '':
+            if args.gpio_fan_led_pin == None:
+                print(f"GPIO fan LED pin: {current_config['system']['gpio_fan_led_pin']}")
+            else:
+                try:
+                    args.gpio_fan_led_pin = int(args.gpio_fan_led_pin)
+                except ValueError:
+                    print(f"Invalid value for GPIO fan LED pin, it should be an integer")
+                    quit()
+                new_auto['gpio_fan_led_pin'] = args.gpio_fan_led_pin
     if args.oled_disk != '':
         from sf_rpi_status import get_disks
         disks = ['total']
