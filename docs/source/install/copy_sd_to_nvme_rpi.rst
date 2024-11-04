@@ -181,38 +181,39 @@ Micro SDカードにデスクトップ版のシステムがインストールさ
 
 .. _configure_boot_ssd:
 
-3. SSDからの起動を設定
+3. SSDからの起動を設定する
 ---------------------------------------
-* 起動サポートを有効にするには、ブートローダー構成で ``BOOT_ORDER`` を変更する必要があります。EEPROM構成を編集します。
+
+このセクションでは、Raspberry PiがNVMe SSDから直接起動するように設定します。これにより、SDカードに比べてブート時間が短縮され、パフォーマンスが向上します。次の手順を慎重に実行してください。
+
+#. まず、Raspberry Pi上でターミナルを開き、以下のコマンドを実行して設定インターフェースにアクセスします:
 
   .. code-block:: shell
-  
-    sudo rpi-eeprom-config --edit
-  
-* 次に、 ``BOOT_ORDER`` 行を以下のように変更します。 ``0xf416`` : 最初にNVMe SSDを試し、次にSDカード、最後にUSBを試します。
 
-  .. code-block:: shell
-  
-    BOOT_ORDER=0xf416
+      sudo raspi-config
 
-  .. note::
-    
-    Raspberry Piの起動順序を変更するだけで、他の起動方法を削除しないでください。これにより、常に正しく起動できるようになります。
+#. ``raspi-config``メニューで矢印キーを使用して**Advanced Options**を選択します。**Enter**を押して高度な設定にアクセスしてください。
 
+   .. image:: img/nvme_open_config.png
 
-``BOOT_ORDER`` 設定により、異なるブートモードの優先順位を柔軟に構成できます。32ビットの符号なし整数として表され、各ニブルがブートモードを表します。ブートモードは、最下位ビットから最上位ビットの順に試行されます。
-``BOOT_ORDER`` プロパティは、異なるブートモードの順序を定義します。右から左に読み、最大8桁まで定義できます。
+#. **Advanced Options**のメニュー内で**Boot Order**を選択します。この設定により、Raspberry Piがブート可能なデバイスの順序を指定できます。
 
-.. image:: img/boot_order.png
-      :width: 90%
-      
+   .. image:: img/nvme_boot_order.png
 
-* ``0xf41``: 最初にSDカードを試し、その後USB-MSDを試し、繰り返す（ ``BOOT_ORDER`` が空の場合のデフォルト）。
-* ``0xf14``: 最初にUSBを試し、その後SDカードを試し、繰り返す。
+#. 次に、**NVMe/USB boot**を選択します。これにより、Raspberry PiはUSB接続のSSDまたはNVMeドライブからの起動をSDカードよりも優先するようになります。
 
-* 更新が完了したら、これらの変更を有効にするためにRaspberry Piを再起動します。
+   .. image:: img/nvme_boot_nvme.png
 
-.. code-block:: shell
+#. 起動順序を選択した後、**Finish**を押して``raspi-config``を終了します。または、**Escape**キーを使用して設定ツールを閉じることもできます。
 
-    sudo reboot
+   .. image:: img/nvme_boot_ok.png
 
+#. 新しい起動設定を適用するために、次のコマンドでRaspberry Piを再起動します:
+
+   .. code-block:: shell
+
+      sudo reboot
+
+   .. image:: img/nvme_boot_reboot.png
+
+再起動後、Raspberry Piは接続されたNVMe SSDからの起動を試みるはずです。これにより、システムのパフォーマンスと耐久性が向上します。
