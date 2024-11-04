@@ -188,7 +188,7 @@ Dans cette section, nous allons configurer votre Raspberry Pi pour démarrer dir
 
 #. Tout d'abord, ouvrez un terminal sur votre Raspberry Pi et exécutez la commande suivante pour accéder à l'interface de configuration :
 
-  .. code-block:: shell
+   .. code-block:: shell
 
       sudo raspi-config
 
