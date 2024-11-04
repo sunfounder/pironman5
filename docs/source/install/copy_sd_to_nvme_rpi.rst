@@ -188,7 +188,7 @@ In diesem Abschnitt konfigurieren wir Ihr Raspberry Pi so, dass es direkt von ei
 
 #. Öffnen Sie zunächst ein Terminal auf Ihrem Raspberry Pi und führen Sie den folgenden Befehl aus, um die Konfigurationsoberfläche zu öffnen:
 
-  .. code-block:: shell
+   .. code-block:: shell
 
       sudo raspi-config
 
