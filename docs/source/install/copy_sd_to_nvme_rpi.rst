@@ -188,7 +188,7 @@ In questa sezione configureremo il Raspberry Pi per avviarsi direttamente da un 
 
 #. Prima di tutto, apri un terminale sul tuo Raspberry Pi ed esegui il seguente comando per accedere all'interfaccia di configurazione:
 
-  .. code-block:: shell
+   .. code-block:: shell
 
       sudo raspi-config
 
