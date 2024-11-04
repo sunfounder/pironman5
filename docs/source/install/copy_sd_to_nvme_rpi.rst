@@ -188,7 +188,7 @@ En esta sección, configuraremos su Raspberry Pi para que inicie directamente de
 
 #. Primero, abra una terminal en su Raspberry Pi y ejecute el siguiente comando para acceder a la interfaz de configuración:
 
-  .. code-block:: shell
+   .. code-block:: shell
 
       sudo raspi-config
 
