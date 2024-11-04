@@ -188,23 +188,23 @@ Micro SDカードにデスクトップ版のシステムがインストールさ
 
 #. まず、Raspberry Pi上でターミナルを開き、以下のコマンドを実行して設定インターフェースにアクセスします:
 
-  .. code-block:: shell
+   .. code-block:: shell
 
       sudo raspi-config
 
-#. ``raspi-config``メニューで矢印キーを使用して**Advanced Options**を選択します。**Enter**を押して高度な設定にアクセスしてください。
+#. ``raspi-config`` メニューで矢印キーを使用して **Advanced Options** を選択します。 **Enter** を押して高度な設定にアクセスしてください。
 
    .. image:: img/nvme_open_config.png
 
-#. **Advanced Options**のメニュー内で**Boot Order**を選択します。この設定により、Raspberry Piがブート可能なデバイスの順序を指定できます。
+#. **Advanced Options** のメニュー内で **Boot Order** を選択します。この設定により、Raspberry Piがブート可能なデバイスの順序を指定できます。
 
    .. image:: img/nvme_boot_order.png
 
-#. 次に、**NVMe/USB boot**を選択します。これにより、Raspberry PiはUSB接続のSSDまたはNVMeドライブからの起動をSDカードよりも優先するようになります。
+#. 次に、 **NVMe/USB boot** を選択します。これにより、Raspberry PiはUSB接続のSSDまたはNVMeドライブからの起動をSDカードよりも優先するようになります。
 
    .. image:: img/nvme_boot_nvme.png
 
-#. 起動順序を選択した後、**Finish**を押して``raspi-config``を終了します。または、**Escape**キーを使用して設定ツールを閉じることもできます。
+#. 起動順序を選択した後、 **Finish** を押して ``raspi-config`` を終了します。または、 **Escape** キーを使用して設定ツールを閉じることもできます。
 
    .. image:: img/nvme_boot_ok.png
 
