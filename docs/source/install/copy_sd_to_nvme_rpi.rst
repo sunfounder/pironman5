@@ -188,7 +188,7 @@ In this section, we'll configure your Raspberry Pi to boot directly from an NVMe
 
 #. First, open a terminal on your Raspberry Pi and run the following command to access the configuration interface:.
 
-  .. code-block:: shell
+   .. code-block:: shell
 
       sudo raspi-config
 
