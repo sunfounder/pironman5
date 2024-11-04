@@ -181,38 +181,39 @@ Si tu tarjeta Micro SD tiene una versión de escritorio del sistema instalado, p
 
 .. _configure_boot_ssd:
 
-3. Configurar el inicio desde el SSD
+3. Configuración de inicio desde la SSD
 ---------------------------------------
-* Para habilitar el soporte de inicio, necesitas cambiar el ``BOOT_ORDER`` en la configuración del bootloader. Edita la configuración de la EEPROM mediante:
+
+En esta sección, configuraremos su Raspberry Pi para que inicie directamente desde un SSD NVMe, proporcionando tiempos de arranque más rápidos y un mejor rendimiento en comparación con una tarjeta SD. Siga estos pasos con atención:
+
+#. Primero, abra una terminal en su Raspberry Pi y ejecute el siguiente comando para acceder a la interfaz de configuración:
 
   .. code-block:: shell
-  
-    sudo rpi-eeprom-config --edit
-  
-* Luego, cambia la línea ``BOOT_ORDER`` de la siguiente manera. ``0xf416``: Intentar primero el NVMe SSD, seguido por la tarjeta SD y luego USB.
 
-  .. code-block:: shell
-  
-    BOOT_ORDER=0xf416
+      sudo raspi-config
 
-  .. note::
-    
-    Simplemente cambia el orden en que arranca el Raspberry Pi, pero no elimines otras formas de iniciar. Esto asegura que siempre arranque correctamente.
+#. En el menú ``raspi-config``, use las teclas de flecha para navegar y seleccionar **Advanced Options**. Presione ``Enter`` para acceder a la configuración avanzada.
 
+   .. image:: img/nvme_open_config.png
 
-La configuración ``BOOT_ORDER`` permite una configuración flexible de la prioridad de los diferentes modos de inicio. Se representa como un entero sin signo de 32 bits donde cada nibble representa un modo de inicio. Los modos de inicio se intentan en el orden del nibble menos significativo al más significativo.
-La propiedad ``BOOT_ORDER`` define la secuencia de los diferentes modos de inicio. Se lee de derecha a izquierda y se pueden definir hasta ocho dígitos.
+#. Dentro de **Advanced Options**, seleccione **Boot Order**. Esta configuración le permite especificar el orden en el que su Raspberry Pi busca dispositivos de arranque.
 
-.. image:: img/boot_order.png
-      :width: 90%
-      
+   .. image:: img/nvme_boot_order.png
 
-* ``0xf41``: Intentar primero SD, seguido por USB-MSD y luego repetir (predeterminado si ``BOOT_ORDER`` está vacío).
-* ``0xf14``: Intentar primero USB, seguido por SD y luego repetir.
+#. Luego, elija **NVMe/USB boot**. Esto indica al Raspberry Pi que priorice el arranque desde SSDs conectados por USB o unidades NVMe sobre otras opciones, como la tarjeta SD.
 
-* Una vez que la actualización esté completa, reinicia tu Raspberry Pi para que estos cambios surtan efecto.
+   .. image:: img/nvme_boot_nvme.png
 
-.. code-block:: shell
+#. Después de seleccionar el orden de arranque, presione **Finish** para salir de ``raspi-config``. También puede utilizar la tecla **Escape** para cerrar la herramienta de configuración.
 
-    sudo reboot
+   .. image:: img/nvme_boot_ok.png
 
+#. Para aplicar la nueva configuración de arranque, reinicie su Raspberry Pi ejecutando:
+
+   .. code-block:: shell
+
+      sudo reboot
+
+   .. image:: img/nvme_boot_reboot.png
+
+Después de reiniciar, su Raspberry Pi debería intentar arrancar desde el SSD NVMe conectado, brindándole un rendimiento y durabilidad mejorados para su sistema.
