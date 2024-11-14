@@ -62,7 +62,7 @@
 * Western Digital SN570
 * Western Digital SN530
 * Western Digital Black SN750 SE (Phison Controller)
-* Western Digital Blue SN550/SN580 series (If you know how to install latest rpi-eeprom-updates, pieeprom-2024-01-24.bin fixed the Western Digital Blue SN550 nvme boot issue Refer to https://forums.raspberrypi.com/viewtopic.php?t=364327.)
+* Western Digital Blue SN550 シリーズ（最新の rpi-eeprom-updates のインストール方法がわかる場合、pieeprom-2024-01-24.bin は Western Digital Blue SN550 の NVMe ブート問題を修正しました。詳細については、https://forums.raspberrypi.com/viewtopic.php?t=364327 を参照してください。）
 
 * XPG GAMMIX S70 BLADE
 * XPG SX8200 Pro
@@ -73,6 +73,7 @@
 
 Phisonコントローラーを搭載しているため、以下のNVMe SSDドライブは互換性がないことが確認されていますので、使用を避けることをお勧めします。
 
+* WD Blue SN580 シリーズ
 * Western Digital Green SN350 シリーズ
 * Western Digital Black SN850 シリーズ
 * Western Digital Black SN770
