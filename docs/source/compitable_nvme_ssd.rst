@@ -63,6 +63,7 @@ Compitable NVMe SSD
 * Western Digital SN530
 * Western Digital Black SN750 SE (Phison Controller)
 * Western Digital Blue SN550 series (If you know how to install latest rpi-eeprom-updates, pieeprom-2024-01-24.bin fixed the Western Digital Blue SN550 nvme boot issue Refer to https://forums.raspberrypi.com/viewtopic.php?t=364327.)
+
 * XPG GAMMIX S70 BLADE
 * XPG SX8200 Pro
 
