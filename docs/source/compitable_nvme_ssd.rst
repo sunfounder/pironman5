@@ -62,7 +62,7 @@ NVMe SSD Compatibili
 * Western Digital SN570
 * Western Digital SN530
 * Western Digital Black SN750 SE (Phison Controller)
-* Western Digital Blue SN550/SN580 series (Se sai come installare gli ultimi aggiornamenti rpi-eeprom, il file pieeprom-2024-01-24.bin ha risolto il problema di avvio del Western Digital Blue SN550. Fai riferimento a https://forums.raspberrypi.com/viewtopic.php?t=364327.)
+* Serie Western Digital Blue SN550 (Se sai come installare gli ultimi aggiornamenti di rpi-eeprom, pieeprom-2024-01-24.bin ha risolto il problema di avvio NVMe della Western Digital Blue SN550. Consulta https://forums.raspberrypi.com/viewtopic.php?t=364327.)
 
 * XPG GAMMIX S70 BLADE
 * XPG SX8200 Pro
@@ -73,6 +73,7 @@ NVMe SSD Non Compatibili
 
 Si consiglia di evitare i seguenti dischi NVMe SSD dotati di un controller Phison a causa della loro comprovata incompatibilità:
 
+* WD Blue SN580 series
 * Western Digital Green SN350 series
 * Western Digital Black SN850 series
 * Western Digital Black SN770
