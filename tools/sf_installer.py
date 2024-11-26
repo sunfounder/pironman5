@@ -102,6 +102,7 @@ class SF_Installer():
                  friendly_name=None,
                  description=None,
                  venv_options=[],
+                 run_commands_before_install={},
                  apt_dependencies=None,
                  pip_dependencies=None,
                  python_source=None,
@@ -129,6 +130,7 @@ class SF_Installer():
         self.friendly_name = friendly_name
         self.work_dir = work_dir
         self.log_dir = log_dir
+        self.before_install_commands = run_commands_before_install
         self.custom_apt_dependencies = apt_dependencies
         self.custom_pip_dependencies = pip_dependencies
         self.python_source = python_source
@@ -255,20 +257,6 @@ class SF_Installer():
                     f"{msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}"
                 )
 
-    # def install_python_source(self, name, url='./'):
-    #     print(f'Installing {name}...')
-    #     if url.startswith("http"):
-    #         self.do(f'Clone package', f'git clone {url}')
-    #         subdir = url.split('/')[-1].replace('.git', "")
-    #     else:
-    #         subdir = url
-    #     self.do(f'Build package',
-    #             f'cd {subdir} && {self.venv_python} -m build')
-    #     self.do(f'Uninstall old package',
-    #             f'{self.venv_pip} uninstall -y {name}')
-    #     self.do(f'Install package',
-    #             f'cd {subdir}/dist && {self.venv_pip} install *.whl')
-
     def install_python_source(self, name, url='./'):
         print(f'Installing {name}...')
         self.do(f'Uninstall old package',
@@ -280,6 +268,11 @@ class SF_Installer():
         if os.geteuid() != 0:
             print('This script must be run as root')
             sys.exit(1)
+
+    def run_commands_before_install(self):
+        for name in self.before_install_commands:
+            command = self.before_install_commands[name]
+            self.do(f'Run command before install: {name}', f'{command}')
 
     def install_apt_dep(self):
         if not self.args.no_dep:
@@ -425,6 +418,7 @@ class SF_Installer():
 
     def install(self):
         print(f"{self.friendly_name} Installer")
+        self.run_commands_before_install()
         self.install_apt_dep()
         self.create_working_dir()
         self.install_pip_dep()
