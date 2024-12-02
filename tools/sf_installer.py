@@ -89,6 +89,7 @@ class SF_Installer():
     APT_DEPENDENCIES = [
         'python3-pip',
         'python3-venv',
+        'git',
     ]
 
     PIP_DEPENDENCIES = [
@@ -102,6 +103,7 @@ class SF_Installer():
                  friendly_name=None,
                  description=None,
                  venv_options=[],
+                 build_dependencies=None,
                  run_commands_before_install={},
                  apt_dependencies=None,
                  pip_dependencies=None,
@@ -130,6 +132,7 @@ class SF_Installer():
         self.friendly_name = friendly_name
         self.work_dir = work_dir
         self.log_dir = log_dir
+        self.build_dependencies = build_dependencies
         self.before_install_commands = run_commands_before_install
         self.custom_apt_dependencies = apt_dependencies
         self.custom_pip_dependencies = pip_dependencies
@@ -257,17 +260,21 @@ class SF_Installer():
                     f"{msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}"
                 )
 
-    def install_python_source(self, name, url='./'):
-        print(f'Installing {name}...')
-        self.do(f'Uninstall old package',
-                f'{self.venv_pip} uninstall -y {name}')
-        self.do(f'Install package',
-                f'{self.venv_pip} install {url}')
-
     def check_admin(self):
         if os.geteuid() != 0:
             print('This script must be run as root')
             sys.exit(1)
+
+    def install_build_dep(self):
+        self.do('Update package list', 'apt-get update')
+        deps = [ *self.APT_DEPENDENCIES ]
+
+        if self.build_dependencies is not None:
+            deps += self.build_dependencies
+
+        deps = " ".join(deps)
+        self.do(f'Install build dependencies: {deps}',
+                f'apt-get install -y {deps}')
 
     def run_commands_before_install(self):
         for name in self.before_install_commands:
@@ -275,14 +282,13 @@ class SF_Installer():
             self.do(f'Run command before install: {name}', f'{command}')
 
     def install_apt_dep(self):
-        if not self.args.no_dep:
-            self.do('Update package list', 'apt-get update')
-            deps = [ *self.APT_DEPENDENCIES ]
-            if self.custom_apt_dependencies is not None:
-                deps += self.custom_apt_dependencies
-
-            for dep in deps:
-                self.do(f'Install {dep}', f'apt-get install -y {dep}')
+        if self.args.no_dep:
+            return
+        # for dep in self.custom_apt_dependencies:
+        #     self.do(f'Install {dep}', f'apt-get install -y {dep}')
+        deps = " ".join(self.custom_apt_dependencies)
+        self.do(f'Install APT dependencies: {deps}',
+                f'apt-get install -y {deps}')
 
     def create_working_dir(self):
         self.do('Create work directory', f'mkdir -p {self.work_dir}')
@@ -294,6 +300,13 @@ class SF_Installer():
         if os.path.exists(self.venv_path):
             self.do('Remove old virtual environment', f'rm -r {self.venv_path}')
         self.do('Create virtual environment', f'python3 -m venv {self.venv_path} {" ".join(self.venv_options)}')
+
+    def install_python_source(self, name, url='./'):
+        print(f'Installing {name}...')
+        self.do(f'Uninstall old package',
+                f'{self.venv_pip} uninstall -y {name}')
+        self.do(f'Install package',
+                f'{self.venv_pip} install {url}')
 
     def remove_work_dir(self):
         if not os.path.exists(self.work_dir):
@@ -418,6 +431,7 @@ class SF_Installer():
 
     def install(self):
         print(f"{self.friendly_name} Installer")
+        self.install_build_dep()
         self.run_commands_before_install()
         self.install_apt_dep()
         self.create_working_dir()

@@ -20,6 +20,11 @@ installer = SF_Installer(
     # - Setup log dir if needed, default to /var/log/{name}
     # log_dir='/var/log/pironman5',
 
+    # - Build required apt dependencies, default to []
+    build_dependencies=[
+        'curl', # for influxdb key download
+    ],
+
     # - Before install script, default to {}
     run_commands_before_install={
         # download influxdb key and add to trusted key list https://docs.influxdata.com/influxdb/v2/install/?t=Linux
@@ -29,7 +34,8 @@ installer = SF_Installer(
 
     # - Install from apt
     apt_dependencies=[
-        'influxdb',
+        'influxdb', # for pm_dashboard
+        'lsof', # for pm_dashboard
         # "libjpeg-dev", # for Pillow (No longer needed for 2024-10-22)
         # 'libfreetype6-dev', # for Pillow (No longer needed for 2024-10-22)
         'kmod',
@@ -78,5 +84,9 @@ installer.parser.add_argument("--disable-dashboard", action='store_true', help="
 args = installer.parser.parse_args()
 if args.disable_dashboard:
     installer.python_source.pop('pm_dashboard')
+    installer.build_dependencies.pop(installer.build_dependencies.index('curl'))
+    installer.run_commands_before_install.pop(installer.run_commands_before_install.index('Download influxdb key'))
+    installer.run_commands_before_install.pop(installer.run_commands_before_install.index('Setup influxdb install source'))
     installer.custom_apt_dependencies.pop(installer.custom_apt_dependencies.index('influxdb'))
+    installer.custom_apt_dependencies.pop(installer.custom_apt_dependencies.index('lsof'))
 installer.main()
