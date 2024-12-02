@@ -48,6 +48,7 @@ installer = SF_Installer(
         # 'influxdb',
         # 'Pillow',
         # 'adafruit-circuitpython-ssd1306',
+        'gpiozero',
     ],
 
     # - Install python source code from git
