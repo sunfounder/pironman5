@@ -31,7 +31,7 @@ installer = SF_Installer(
         'Download influxdb key': 'curl --silent --location -O https://repos.influxdata.com/influxdata-archive.key',
         'Setup influxdb install source': 'echo "943666881a1b8d9b849b74caebf02d3465d6beb716510d86a39f6c8e8dac7515  influxdata-archive.key" | sha256sum --check - && cat influxdata-archive.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/influxdata-archive.gpg > /dev/null && echo "deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive.gpg] https://repos.influxdata.com/debian stable main" | tee /etc/apt/sources.list.d/influxdata.list',
         # This is to fix the gpiozero 2.0.1 not working on Pi 5. Try remove this patch on future releases. TODO
-        'fix gpiozero': 'sudo ln -s /dev/gpiochip0 /dev/gpiochip4'
+        'Fix gpiozero': 'ln -s /dev/gpiochip0 /dev/gpiochip4'
     },
 
     # - Install from apt
@@ -55,8 +55,8 @@ installer = SF_Installer(
     # - Install python source code from git
     python_source={
         'pironman5': './',
-        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@v1.1',
-        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@v1.1',
+        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git',
+        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git',
         'sf_rpi_status': 'git+https://github.com/sunfounder/sf_rpi_status.git',
     },
 
