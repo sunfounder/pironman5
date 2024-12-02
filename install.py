@@ -30,8 +30,6 @@ installer = SF_Installer(
         # download influxdb key and add to trusted key list https://docs.influxdata.com/influxdb/v2/install/?t=Linux
         'Download influxdb key': 'curl --silent --location -O https://repos.influxdata.com/influxdata-archive.key',
         'Setup influxdb install source': 'echo "943666881a1b8d9b849b74caebf02d3465d6beb716510d86a39f6c8e8dac7515  influxdata-archive.key" | sha256sum --check - && cat influxdata-archive.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/influxdata-archive.gpg > /dev/null && echo "deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive.gpg] https://repos.influxdata.com/debian stable main" | tee /etc/apt/sources.list.d/influxdata.list',
-        # This is to fix the gpiozero 2.0.1 not working on Pi 5. Try remove this patch on future releases. TODO
-        'Fix gpiozero': 'ln -s /dev/gpiochip0 /dev/gpiochip4'
     },
 
     # - Install from apt
