@@ -19,6 +19,7 @@ def main():
     current_config = None
     debug_level = 'INFO'
     new_auto = {}
+    hat_version = get_hat_version()
 
     parser = argparse.ArgumentParser(description='Pironman5')
     parser.add_argument("command",
@@ -37,7 +38,7 @@ def main():
     parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], nargs='?', default='', help="Temperature unit")
     parser.add_argument("-gm", "--gpio-fan-mode", nargs='?', default='', help=f"GPIO fan mode, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
     parser.add_argument("-gp", "--gpio-fan-pin", nargs='?', default='', help="GPIO fan pin")
-    if get_hat_version() >= 11:
+    if hat_version != None and hat_version >= 11:
         parser.add_argument("-fl", "--gpio-fan-led", nargs='?', default='', help="GPIO fan LED state on/off/follow")
         parser.add_argument("-fp", "--gpio-fan-led-pin", nargs='?', default='', help="GPIO fan LED pin")
     parser.add_argument("-od", "--oled-disk", nargs='?', default='', help="Set to display which disk on OLED. 'total' or the name of the disk, like mmbclk or nvme")
