@@ -37,7 +37,8 @@ PERIPHERALS = [
     "gpio_fan_led",
 ]
 
-if get_hat_version() < 11:
+hat_version = get_hat_version()
+if hat_version == None or hat_version < 11:
     PERIPHERALS.remove('gpio_fan_led')
 
 DEVICE_INFO = {
