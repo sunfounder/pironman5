@@ -25,7 +25,7 @@ def get_hat_version():
     from os import listdir, path
     hat_path = None
     if not path.exists('/proc/device-tree/hat'):
-        return None
+        return 10
     for file in listdir('/proc/device-tree/'):
         if file.startswith('hat'):
             hat_path = f"/proc/device-tree/{file}"
