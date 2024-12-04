@@ -24,11 +24,14 @@ def log_error(func):
 def get_hat_version():
     from os import listdir, path
     hat_path = None
-    if not path.exists('/proc/device-tree/hat'):
-        return 10
-    for file in listdir('/proc/device-tree/'):
+    device_tree_path = '/proc/device-tree'
+    if not path.exists(device_tree_path):
+        device_tree_path = '/device-tree'
+        if not path.exists(device_tree_path):
+            return 10
+    for file in listdir(device_tree_path):
         if file.startswith('hat'):
-            hat_path = f"/proc/device-tree/{file}"
+            hat_path = f"{device_tree_path}/{file}"
             break
     product_ver = 0
     with open(f"{hat_path}/product_ver", "r") as f:
