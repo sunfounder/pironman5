@@ -36,7 +36,7 @@ installer = SF_Installer(
     apt_dependencies=[
         'influxdb', # for pm_dashboard
         'lsof', # for pm_dashboard
-        # "libjpeg-dev", # for Pillow (No longer needed for 2024-10-22)
+        'libjpeg-dev', # for Pillow
         # 'libfreetype6-dev', # for Pillow (No longer needed for 2024-10-22)
         'kmod',
         'i2c-tools',
