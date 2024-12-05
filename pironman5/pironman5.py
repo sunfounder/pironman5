@@ -1,7 +1,7 @@
 import json
 import time
 import os
-from pkg_resources import resource_filename
+from importlib.resources import files as resource_files
 
 from pm_auto.pm_auto import PMAuto
 from .logger import create_get_child_logger
@@ -11,7 +11,7 @@ from .version import __version__
 get_child_logger = create_get_child_logger('pironman5')
 log = get_child_logger('main')
 __package_name__ = __name__.split('.')[0]
-CONFIG_PATH = resource_filename(__package_name__, 'config.json')
+CONFIG_PATH = resource_files(__package_name__).joinpath('config.json')
 
 PMDashboard = None
 try:

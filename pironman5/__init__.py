@@ -9,12 +9,12 @@ def main():
     from .utils import get_hat_version
     from pm_auto.ws2812 import RGB_STYLES
     from pm_auto.fan_control import GPIO_FAN_MODES
-    from pkg_resources import resource_filename
+    from importlib.resources import files as resource_files
     import json
     import sys
     from os import path
 
-    CONFIG_PATH = resource_filename('pironman5', 'config.json')
+    CONFIG_PATH = resource_files('pironman5').joinpath('config.json')
 
     current_config = None
     debug_level = 'INFO'
