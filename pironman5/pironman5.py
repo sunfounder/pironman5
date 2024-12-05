@@ -71,6 +71,10 @@ DASHBOARD_SETTINGS = {
     "spc": False,
 }
 
+
+# This is to fix the gpiozero 2.0.1 not working on Pi 5. Try remove this patch on future releases. TODO
+if not os.path.exists('/dev/gpiochip4'):
+    os.symlink('/dev/gpiochip0', '/dev/gpiochip4')
 class Pironman5:
     # @log_error
     def __init__(self):
