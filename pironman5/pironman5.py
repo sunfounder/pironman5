@@ -11,7 +11,7 @@ from .version import __version__
 get_child_logger = create_get_child_logger('pironman5')
 log = get_child_logger('main')
 __package_name__ = __name__.split('.')[0]
-CONFIG_PATH = resource_files(__package_name__).joinpath('config.json')
+CONFIG_PATH = str(resource_files(__package_name__).joinpath('config.json'))
 
 PMDashboard = None
 try:

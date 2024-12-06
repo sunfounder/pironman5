@@ -14,7 +14,7 @@ def main():
     import sys
     from os import path
 
-    CONFIG_PATH = resource_files('pironman5').joinpath('config.json')
+    CONFIG_PATH = str(resource_files('pironman5').joinpath('config.json'))
 
     current_config = None
     debug_level = 'INFO'
