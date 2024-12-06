@@ -73,11 +73,11 @@ DASHBOARD_SETTINGS = {
 
 
 # This is to fix the gpiozero 2.0.1 not working on Pi 5. Try remove this patch on future releases. TODO
-try:
-    if not os.path.exists('/dev/gpiochip4'):
-        os.symlink('/dev/gpiochip0', '/dev/gpiochip4')
-except Exception:
-    log.warning('Failed to create gpiochip4 symlink')
+# try:
+#     if not os.path.exists('/dev/gpiochip4'):
+#         os.symlink('/dev/gpiochip0', '/dev/gpiochip4')
+# except Exception:
+#     log.warning('Failed to create gpiochip4 symlink')
 
 class Pironman5:
     # @log_error
