@@ -62,12 +62,10 @@ def get_hat_version():
         return product_ver
     try:
         with open(product_ver_file, "r") as f:
-            product_ver = f.read().strip()
+            product_ver = f.read()[:-1]
             product_ver = int(product_ver, 16)
     except Exception as e:
+        # print(f"Error: {e}")
         pass
     
     return product_ver
-
-def get_hat_version():
-    return 10

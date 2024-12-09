@@ -4,9 +4,10 @@ import os
 from importlib.resources import files as resource_files
 
 from pm_auto.pm_auto import PMAuto
+from pm_auto import __version__ as pm_auto_version
 from .logger import create_get_child_logger
 from .utils import merge_dict, log_error, get_hat_version
-from .version import __version__
+from .version import __version__ as pironman5_version
 
 get_child_logger = create_get_child_logger('pironman5')
 log = get_child_logger('main')
@@ -16,6 +17,7 @@ CONFIG_PATH = str(resource_files(__package_name__).joinpath('config.json'))
 PMDashboard = None
 try:
     from pm_dashboard.pm_dashboard import PMDashboard
+    from pm_dashboard import __version__ as pm_dashboard_version
 except ImportError:
     pass
 
@@ -37,14 +39,16 @@ PERIPHERALS = [
     "gpio_fan_led",
 ]
 
-if get_hat_version() < 11:
+hat_version = get_hat_version()
+if hat_version < 11:
     PERIPHERALS.remove('gpio_fan_led')
+
 
 DEVICE_INFO = {
     'name': 'Pironman 5',
     'id': 'pironman5',
     'peripherals': PERIPHERALS,
-    'version': __version__,
+    'version': pironman5_version,
 }
 
 AUTO_DEFAULT_CONFIG = {
@@ -94,6 +98,11 @@ class Pironman5:
         with open(CONFIG_PATH, 'w') as f:
             json.dump(self.config, f, indent=4)
 
+        self.log.debug(f"Hat version: {hat_version}")
+        self.log.debug(f"Pironman5 version: {pironman5_version}")
+        self.log.debug(f"PM_Auto version: {pm_auto_version}")
+        if PMDashboard is not None:
+            self.log.debug(f"PM_Dashboard version: {pm_dashboard_version}")
         self.pm_auto = PMAuto(self.config['system'],
                               peripherals=PERIPHERALS,
                               get_logger=get_child_logger)
