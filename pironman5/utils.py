@@ -21,25 +21,50 @@ def log_error(func):
     return wrapper
 
 
-def get_hat_version():
-    from os import listdir, path
-    hat_path = None
+def get_device_tree_path() -> Optional[str]:
+    """
+    获取设备树路径。
+    
+    Returns:
+        str: 设备树路径，如果不存在则返回None。
+    """
+    from os import path
     device_tree_path = '/proc/device-tree'
     if not path.exists(device_tree_path):
         device_tree_path = '/device-tree'
         if not path.exists(device_tree_path):
-            return 10
+            return None
+    return device_tree_path
+
+def get_hat_version() -> int:
+    """
+    获取HAT设备的版本号。
+    
+    如果未发现HAT设备或发生错误，则返回错误码。
+    
+    Returns:
+        int: HAT版本号或错误码。
+    """
+    from os import listdir, path
+    device_tree_path = get_device_tree_path()
+    product_ver = 0
+    if device_tree_path is None:
+        return product_ver
+    hat_path = None
     for file in listdir(device_tree_path):
         if file.startswith('hat'):
             hat_path = f"{device_tree_path}/{file}"
             break
-    else:
-        return 10
     if hat_path is None:
-        return 10
-    product_ver = 0
-    with open(f"{hat_path}/product_ver", "r") as f:
-        product_ver = f.read()[:-1]
-        product_ver = int(product_ver, 16)
+        return product_ver
+    product_ver_file = f"{hat_path}/product_ver"
+    if not path.exists(product_ver_file):
+        return product_ver
+    try:
+        with open(product_ver_file, "r") as f:
+            product_ver = f.read().strip()
+            product_ver = int(product_ver, 16)
+    except Exception as e:
+        pass
     
     return product_ver
