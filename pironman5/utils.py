@@ -21,7 +21,7 @@ def log_error(func):
     return wrapper
 
 
-def get_device_tree_path() -> Optional[str]:
+def get_device_tree_path():
     """
     获取设备树路径。
     
@@ -36,7 +36,7 @@ def get_device_tree_path() -> Optional[str]:
             return None
     return device_tree_path
 
-def get_hat_version() -> int:
+def get_hat_version():
     """
     获取HAT设备的版本号。
     
