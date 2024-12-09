@@ -33,6 +33,10 @@ def get_hat_version():
         if file.startswith('hat'):
             hat_path = f"{device_tree_path}/{file}"
             break
+    else:
+        return 10
+    if hat_path is None:
+        return 10
     product_ver = 0
     with open(f"{hat_path}/product_ver", "r") as f:
         product_ver = f.read()[:-1]
