@@ -68,3 +68,6 @@ def get_hat_version():
         pass
     
     return product_ver
+
+def get_hat_version():
+    return 10
