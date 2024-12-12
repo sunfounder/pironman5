@@ -16,35 +16,60 @@ Fans
 ============
 
 PWM Fan
------------
+-----------------
 
-The PWM fan on the Pironman 5 is controlled by the Raspberry Pi system.
+The PWM fan in the Pironman 5 is managed by the Raspberry Pi system and forms the cornerstone of its smart cooling solution, especially under heavy loads. This system combines a primary PWM fan with two supplementary RGB fans for enhanced cooling performance, closely integrated with the Raspberry Pi 5's thermal management system.  
 
-Regarding cooling solutions for the Raspberry Pi 5, especially under heavy load, the design of the Pironman 5 incorporates a smart cooling system. It features a primary PWM fan and two supplementary RGB fans. The cooling strategy is closely integrated with the Raspberry Pi 5's thermal management system.
+.. image:: img/fan_tower_cooler.png  
+  :width: 600  
+  :align: center  
 
-The PWM fan's operation is based on the Raspberry Pi 5's temperature:
+**Electrical Characteristics**
 
-* Below 50°C, the PWM fan remains off (0% speed).
-* At 50°C, the fan starts at a low speed (30% speed).
-* Reaching 60°C, the fan increases to a medium speed (50% speed).
-* At 67.5°C, the fan ramps up to a high speed (70% speed).
-* At 75°C and above, the fan operates at full speed (100% speed).
+* **Rated Voltage**: 5 VDC  
+* **Starting Voltage**: 4.0 V (at 25°C Power ON/OFF)  
+* **Operating Voltage Range**: 4.0 ~ 5.5 VDC  
+* **Rated Current**: 0.05 A / MAX. 0.08 A  
+* **Rated Power**: 0.25 W / MAX. 0.40 W  
+* **Rated Speed**: 3500±10% RPM (at 25°C, tested after 3 minutes of operation)  
+* **Maximum Airflow**: 2.46 (MIN. 2.21) CFM (at zero static pressure)  
+* **Maximum Static Pressure**: 0.62 (MIN. 0.496) mmH2O (at zero airflow)  
+* **Acoustical Noise**: 22.31 dB(A) MAX. 25.31 dB(A)  
+* **Life Expectancy**: 40,000 hours (at 25°C, 65% humidity, normal room conditions)  
 
-This temperature-to-speed relationship also applies when the temperature decreases, with a 5°C hysteresis. The fan speed reduces when the temperature falls 5°C below each of these thresholds.
+**Mechanical Characteristics**
 
-* Commands to monitor the PWM fan. To check the PWM fan's status:
+* **Dimensions**: 40x10.4x40 mm (LxWxH)  
+* **Frame Material**: PBT Plastic  
+* **Impeller Material**: PBT Plastic  
+* **Bearing Type**: Hydraulic Bearing  
 
-  .. code-block:: shell
-  
-    cat /sys/class/thermal/cooling_device0/cur_state
+**Environmental Parameters**
 
-* To view the PWM fan's speed:
+* **Operating Temperature**: -10°C ~ 70°C  
+* **Storage Temperature**: -40°C ~ 75°C  
+* **Operating Humidity**: 5% ~ 90% RH  
+* **Storage Humidity**: 5% ~ 95% RH  
 
-  .. code-block:: shell
+**Fan Speed Control Based on Temperature**  
 
-    cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
+The PWM fan operates dynamically, adjusting its speed according to the Raspberry Pi 5's temperature:  
 
-In the Pironman 5, the PWM fan is a critical component for maintaining optimal operating temperatures, particularly during intensive tasks, ensuring the Raspberry Pi 5 runs efficiently and reliably.
+* **Below 50°C**: Fan remains off (0% speed).  
+* **At 50°C**: Fan operates at low speed (30% speed).  
+* **At 60°C**: Fan increases to medium speed (50% speed).  
+* **At 67.5°C**: Fan ramps up to high speed (70% speed).  
+* **At 75°C and above**: Fan operates at full speed (100% speed).  
+
+This temperature-to-speed control includes a 5°C hysteresis to prevent frequent speed changes. For instance, the fan will reduce its speed only after the temperature drops 5°C below each threshold.  
+
+The following commands allow users to monitor the PWM fan's operation:  
+
+To check the fan's current state:  
+
+.. code-block:: shell
+
+  cat /sys/class/thermal/cooling_device0/cur_state
 
 RGB Fans
 -------------------

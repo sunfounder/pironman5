@@ -15,7 +15,179 @@
 FAQ
 ============
 
-How to disable web dashboard?
+1. About Compatible Systems
+-------------------------------
+
+Systems that passed the test on the Raspberry Pi 5:
+
+.. image:: img/compitable_os.png
+   :width: 600
+   :align: center
+
+2. About Power Button
+--------------------------
+
+The power button brings out the power button of the Raspberry Pi 5, and it functions just like the power button of the Raspberry Pi 5.
+
+.. image:: img/power_button.jpg
+    :width: 400
+    :align: center
+
+* **Shutdown**
+
+    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
+    * If you run Raspberry Pi **Bookworm Lite** system, press the power button a single time to initiate a shutdown.
+    * To force a hard shutdown, press and hold the power button.
+
+* **Power on**
+
+    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+
+* If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
+
+3. About Airflow Direction
+-------------------------------
+
+The airflow in the Pironman 5 chassis is carefully engineered to maximize cooling efficiency. Cool air enters the case primarily through the GPIO interface and other small openings, ensuring an even intake. It then passes through the Tool Cooler, equipped with a high-performance fan to regulate internal temperatures, and is finally expelled through the two RGB fans on the side panel.
+
+For a detailed demonstration, please refer to the video:
+
+.. raw:: html
+
+    <div style="text-align: center;">
+        <video center loop autoplay style = "max-width:90%">
+            <source src="_static/video/airflow_direction.mp4"  type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+
+4. Does the Pironman 5 support retro gaming systems?
+------------------------------------------------------
+Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
+
+
+.. note::
+
+   The Batocera.linux system is now fully compatible with Pironman 5. Batocera.linux is an open-source and completely free retro-gaming distribution.
+
+   * :ref:`install_batocera`
+   * :ref:`set_up_batocera`
+
+5. OLED Screen Not Working?
+-----------------------------------
+
+If the OLED screen is not displaying or displaying incorrectly, follow these troubleshooting steps:
+
+#. Ensure the FPC cable of the OLED screen is securely connected. It is recommended to reconnect the OLED screen and then power on the device.  
+
+   .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="_static/video/connect_oled_screen.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+       </div>
+
+#. Confirm that the Raspberry Pi is running a compatible operating system. The Pironman 5 only supports the following systems:  
+
+   .. image:: img/compitable_os.png  
+      :width: 600  
+      :align: center  
+
+   If you have installed an unsupported system, follow the guide to install a compatible OS: :ref:`install_the_os`.
+
+#. When the OLED screen is powered on for the first time, it may only display pixel blocks. You need to follow the instructions in :ref:`set_up_pironman5` to complete the configuration before it can display proper information.
+
+#. Use the following command to check if the OLED's I2C address ``0x3C`` is detected:  
+
+   .. code-block:: shell
+
+      sudo i2cdetect -y 1
+
+   * If the I2C address ``0x3C`` is detected, restart the Pironman 5 service using this command:
+
+   .. code-block:: shell
+
+      sudo systemctl restart pironman5.service
+
+   * Enable I2C if the address is not detected:
+
+     * Edit the configuration file by executing:
+
+       .. code-block:: shell
+
+         sudo nano /boot/firmware/config.txt
+
+     * Add the following line at the end of the file:
+
+       .. code-block:: shell
+
+
+         dtparam=i2c_arm=on
+
+     * Save the file by pressing ``Ctrl+X``, then ``Y``, and exit. Reboot the Pironman 5 and check if the issue is resolved.
+
+If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
+
+6. NVMe PIP Module Not Working?
+---------------------------------------
+
+1. Ensure the FPC cable connecting the NVMe PIP module to the Raspberry Pi 5 is securely attached.  
+
+   .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="_static/video/connect_nvme_pip1.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+       </div>
+
+   .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="_static/video/connect_nvme_pip2.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+       </div>
+
+2. Confirm that your SSD is properly secured to the NVMe PIP module.  
+
+   .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="_static/video/connect_ssd.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+       </div>
+
+3. Check the status of the NVMe PIP Module's LEDs:
+
+   After confirming all connections, power on the Pironman 5 and observe the two indicators on the NVMe PIP Module:  
+
+   * **PWR LED**: Should be lit.  
+   * **STA LED**: Should blink to indicate normal operation.  
+
+   .. image:: img/nvme_pip_leds.png  
+
+   * If the **PWR LED** is on but the **STA LED** is not blinking, it indicates the NVMe SSD is not recognized by the Raspberry Pi.  
+   * If the **PWR LED** is off, short the "Force Enable" pins (J4) on the module. If the **PWR LED** lights up, it could indicate a loose FPC cable or unsupported system configuration for NVMe.
+
+     .. image:: img/nvme_pip_j4.png  
+
+     
+4. Confirm that your NVMe SSD has a properly installed operating system. Refer to: :ref:`install_the_os`.
+
+5. If the wiring is correct and the OS is installed, but the NVMe SSD still fails to boot, try booting from a Micro SD card to verify the functionality of other components. Once confirmed, proceed to: :ref:`configure_boot_ssd`.
+
+If the problem persists after performing the above steps, please contact us at `service@sunfounder.com`. We will respond as soon as possible.  
+
+
+7. How to disable web dashboard?
 ------------------------------------------------------
 
 Once you have completed the installation of the ``pironman5`` module, you will be able to access the :ref:`view_control_dashboard`.
@@ -35,25 +207,13 @@ If you have already installed ``pironman 5``, you can remove the ``dashboard`` m
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-Does the Pironman 5 support retro gaming systems?
-------------------------------------------------------
-Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
-
-
-.. note::
-
-    The Batocera.linux system is now fully compatible with Pironman 5. Batocera.linux is an open-source and completely free retro-gaming distribution.
-
-    * :ref:`install_batocera`
-    * :ref:`set_up_batocera`
-
-How to Control Components Using the ``pironman5`` Command
+8. How to Control Components Using the ``pironman5`` Command
 ----------------------------------------------------------------------
 You can refer to the following tutorial to control the components of the Pironman 5 using the ``pironman5`` command.
 
 * :ref:`view_control_commands`
 
-How to Change the Raspberry Pi Boot Order Using Commands
+9. How to Change the Raspberry Pi Boot Order Using Commands
 -------------------------------------------------------------
 
 If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
@@ -61,7 +221,7 @@ If you are already logged into your Raspberry Pi, you can change the boot order 
 * :ref:`configure_boot_ssd`
 
 
-How to Modify the Boot Order with Raspberry Pi Imager?
+10. How to Modify the Boot Order with Raspberry Pi Imager?
 ---------------------------------------------------------------
 
 In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can also use the **Raspberry Pi Imager** to change the boot order of your Raspberry Pi.
@@ -70,7 +230,7 @@ It is recommended to use a spare card for this step.
 
 * :ref:`update_bootloader`
 
-How to Copy the System from the SD Card to an NVMe SSD?
+11. How to Copy the System from the SD Card to an NVMe SSD?
 -------------------------------------------------------------
 
 If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
@@ -78,37 +238,21 @@ If you have an NVMe SSD but do not have an adapter to connect your NVMe to your 
 
 * :ref:`copy_sd_to_nvme_rpi`
 
+12. How to Remove the Protective Film from the Acrylic Plates
+-----------------------------------------------------------------
 
-OLED Screen Not Working?
---------------------------
+Two acrylic panels are included in the package, both covered with yellow/transparent protective film on both sides to prevent scratches. The protective film may be a bit difficult to remove. Use a screwdriver to gently scrape at the corners, then carefully peel off the entire film.
 
-If the OLED Screen is not displaying or displaying incorrectly, you can follow these steps to troubleshoot the issue:
-
-Check if the FPC cable of the OLED Screen is properly connected.
-
-#. Use the following command to view the program's run logs and check for error messages.
-
-   .. code-block:: shell
-
-      cat /opt/pironman5/log
-
-#. Alternatively, use the following command to check if the OLED's i2c address 0x3C is recognized:
-    
-   .. code-block:: shell
-        
-        sudo i2cdetect -y 1
-
-#. If the first two steps don't reveal any issues, try restarting the pironman5 service to see if that resolves the problem.
+.. image:: img/peel_off_film.jpg
+    :width: 500
+    :align: center
 
 
-   .. code-block:: shell
-
-        sudo systemctl restart pironman5.service
 
 .. _openssh_powershell:
 
-Install OpenSSH via Powershell
------------------------------------
+13. How to Install OpenSSH via Powershell?
+----------------------------------------------
 
 When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``) to connect to your Raspberry Pi, but the following error message appears.
 

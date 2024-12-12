@@ -19,6 +19,10 @@ Installing the OS on an NVMe SSD
 
 If you are using an NVMe SSD and have an adapter to connect the NVMe SSD to your computer for system installation, you can use the following tutorial for a quick installation.
 
+    .. image:: img/m2_nvme_adapter.png
+        :width: 300
+        :align: center  
+
 **Required Components**
 
 * A Personal Computer

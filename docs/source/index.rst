@@ -30,7 +30,7 @@ Thanks for choosing our |link_pironman5|.
     
     Please click on the respective links to access the document in your preferred language.
 
-.. image:: img/pironman5.JPG
+.. image:: img/pironman5.jpg
     :width: 400
     
 
@@ -57,7 +57,9 @@ The |link_pironman5| is not just a case; it's an upgrade that transforms your Ra
 
     You need to install an OS that supports Raspberry Pi 5. Please use the latest Raspberry Pi Imager tool for system installation. The currently tested systems are:
 
-   .. image:: install/img/compitable_os.png
+    .. image:: img/compitable_os.png
+        :width: 600
+        :align: center
 
 If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
 
