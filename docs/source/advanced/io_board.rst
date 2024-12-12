@@ -59,7 +59,7 @@ La scheda è dotata di 4 LED RGB WS2812, che offrono un controllo personalizzabi
 Pin di Controllo RGB
 -------------------------
 
-I LED RGB sono gestiti tramite SPI e collegati a **GPIO10**, che è anche il pin SPI MOSI. I due pin sopra J9 sono utilizzati per collegare i LED RGB a GPIO10. Se non necessario, il ponticello può essere rimosso.
+I LED RGB sono controllati tramite SPI e collegati a **GPIO10**, che è anche il pin SPI MOSI. I due pin sopra J9 vengono utilizzati per collegare i LED RGB a GPIO10. Se non necessario, il ponticello può essere rimosso.
 
   .. image:: img/io_board_rgb_pin.png
 
