@@ -79,9 +79,13 @@ There are two ways to install an operating system on the SSD:
 
    .. image:: img/ssd_copy_from.png
       
+#. Remember to select "NEW Partition UUIDs" to ensure the system can correctly distinguish devices, avoiding mounting conflicts and boot issues.
+
+   .. image:: img/ssd_copy_uuid.png
+    
 #. After selection, click **Start**.
 
-   .. image:: img/ssd_copy_start.png
+   .. image:: img/ssd_copy_click_start.png
 
 #. You will be prompted that the content on the SSD will be erased. Make sure to back up your data before clicking Yes.
 
