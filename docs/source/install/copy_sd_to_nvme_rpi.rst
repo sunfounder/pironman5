@@ -79,9 +79,14 @@ SSDにOSをインストールする方法は2つあります：
 
    .. image:: img/ssd_copy_from.png
       
+#. デバイスを正しく区別し、マウントの競合や起動の問題を回避するために、「NEW Partition UUIDs」を選択することを忘れないでください。
+
+   .. image:: img/ssd_copy_uuid.png
+    
 #. 選択後、 **開始** をクリックします。
 
-   .. image:: img/ssd_copy_start.png
+   .. image:: img/ssd_copy_click_start.png
+
 
 #. SSD上のコンテンツが消去されるというプロンプトが表示されます。データをバックアップしてから **Yes** をクリックしてください。
 

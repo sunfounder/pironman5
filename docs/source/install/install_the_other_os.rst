@@ -15,9 +15,19 @@
 Ubuntu/Kali Linux/Homebridge/Home Assistantのインストール
 ============================================================
 
-Micro SDカードまたはNVMe SSDのいずれかをお持ちの場合、その状況に応じてインストール方法を選択できます。
+使用するデバイスがMicro SDカードかNVMe SSDかに応じて、インストール方法を選択できます。
 
-NVMe SSDへの直接インストールは、Micro SDカードへのインストールに比べて追加の手順が必要です。それは、Raspberry Piのブートローダーを更新し、デフォルトのMicro SDカードからのブートではなく、NVMe SSDからのブートを優先するように設定することです。
+**Micro SDカードのみを使用する場合**
+
+  Micro SDカードを使用している場合は、以下の最初の方法に従うだけで簡単にインストールできます。
+
+**M.2 NVMe SSDを使用する場合**
+
+  * M.2 NVMe SSDを使用する場合は、 **M.2 NVMe SSDエンクロージャーアダプター** が必要です。このアダプターを使用してSSDをコンピュータに接続し、2番目の方法に従ってOSをインストールしてください。
+  
+    .. image:: img/m2_nvme_adapter.png
+        :width: 300
+        :align: center
 
 
 .. toctree::
