@@ -30,7 +30,7 @@ Thanks for choosing our |link_pironman5|.
     
     Please click on the respective links to access the document in your preferred language.
 
-.. image:: img/pironman5.jpg
+.. image:: img/pironman5_pic.jpg
     :width: 400
     :align: center
     
