@@ -19,6 +19,11 @@ Installation des Betriebssystems auf einer NVMe-SSD
 
 Wenn Sie eine NVMe-SSD verwenden und über einen Adapter verfügen, um die NVMe-SSD für die Systeminstallation mit Ihrem Computer zu verbinden, können Sie das folgende Tutorial für eine schnelle Installation nutzen.
 
+   .. image:: img/m2_nvme_adapter.png
+        :width: 300
+        :align: center  
+
+
 **Erforderliche Komponenten**
 
 * Ein PC

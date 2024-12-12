@@ -73,7 +73,7 @@ Inkompatible NVMe SSDs
 
 Wir empfehlen, die folgenden NVMe SSDs, die mit einem Phison-Controller ausgestattet sind, zu vermeiden, da deren Inkompatibilität nachgewiesen ist:
 
-*WD Blue SN580 series
+* WD Blue SN580 series
 * Western Digital Green SN350-Serie
 * Western Digital Black SN850-Serie
 * Western Digital Black SN770

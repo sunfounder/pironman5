@@ -17,7 +17,17 @@ Installation von Ubuntu/Kali Linux/Homebridge/Home Assistant
 
 Sie können die Installationsmethode basierend auf der Verfügbarkeit einer Micro-SD-Karte oder einer NVMe-SSD wählen.
 
-Die direkte Installation auf der NVMe-SSD erfordert einen zusätzlichen Schritt im Vergleich zur Installation auf der Micro-SD-Karte: Sie müssen den Bootloader des Raspberry Pi aktualisieren, da dieser standardmäßig vom Micro-SD-Kartenslot bootet. Aktualisieren Sie den Bootloader, um das Booten von der NVMe-SSD zu priorisieren.
+**Nur mit einer Micro-SD-Karte**
+
+  Wenn Sie eine Micro-SD-Karte verwenden, können Sie einfach der ersten Methode unten folgen.
+
+**Verwendung einer M.2 NVMe SSD**
+
+  * Wenn Sie eine M.2 NVMe SSD verwenden, benötigen Sie zusätzlich einen **M.2 NVMe SSD-Gehäuseadapter**, um Ihre SSD mit Ihrem Computer zu verbinden, und folgen Sie der zweiten Methode, um das Betriebssystem zu installieren.
+  
+    .. image:: img/m2_nvme_adapter.png
+        :width: 300
+        :align: center
 
 .. toctree::
     :maxdepth: 1

@@ -17,9 +17,19 @@ Installieren Sie das Raspberry Pi OS
 
 Sie können die Installationsmethode basierend auf der Verfügbarkeit einer Micro-SD-Karte oder einer NVMe-SSD wählen.
 
-* Die direkte Installation auf der NVMe-SSD erfordert einen zusätzlichen Schritt im Vergleich zur Installation auf der Micro-SD-Karte: Sie müssen den Bootloader des Raspberry Pi aktualisieren, da dieser standardmäßig vom Micro-SD-Kartenslot bootet. Aktualisieren Sie den Bootloader, um das Booten von der NVMe-SSD zu priorisieren.
-* Wenn Sie eine NVMe-SSD haben, aber keinen Adapter, um diese mit Ihrem Computer zu verbinden, sollten Sie die dritte Option in Betracht ziehen: Installieren Sie das System zuerst auf Ihrer Micro-SD-Karte. Sobald der Pironman 5 erfolgreich hochgefahren ist, können Sie das System von der Micro-SD-Karte auf Ihre NVMe-SSD kopieren.
+**Nur mit einer Micro-SD-Karte**
 
+  Wenn Sie nur eine Micro-SD-Karte verwenden, können Sie einfach der ersten Methode unten folgen.
+
+**Verwendung einer M.2 NVMe SSD**
+
+  * Wenn Sie einen **M.2 NVMe SSD-Gehäuseadapter** besitzen, können Sie Ihre SSD mit diesem Adapter an Ihren Computer anschließen und der zweiten Methode folgen, um das Betriebssystem zu installieren.  
+
+    .. image:: img/m2_nvme_adapter.png  
+        :width: 300  
+        :align: center  
+
+  * Wenn Sie den oben gezeigten Adapter nicht besitzen, können Sie das Betriebssystem zunächst mit der ersten Methode auf einer Micro-SD-Karte installieren und anschließend mit der dritten Methode das System von der Micro-SD-Karte auf Ihre M.2 NVMe SSD kopieren.  
 
 .. toctree::
     :maxdepth: 1

@@ -30,11 +30,10 @@ Vielen Dank, dass Sie sich für unser |link_pironman5| entschieden haben.
     
     Bitte klicken Sie auf die jeweiligen Links, um das Dokument in Ihrer bevorzugten Sprache aufzurufen.
 
-.. image:: img/pironman5.JPG
+.. image:: img/pironman5_pic.jpg
     :width: 400
+    :align: center
     
-
-
 Verleihen Sie Ihrem Raspberry Pi 5 mit dem |link_pironman5|, unserem erstklassigen Gehäuse, einen neuen Look und eine verbesserte Funktionalität. Es vereint Stil und Leistung auf perfekte Weise:
 
 * Raspberry Pi 5 Mini-PC
@@ -57,7 +56,9 @@ Das |link_pironman5| ist nicht nur ein Gehäuse; es ist ein Upgrade, das Ihren R
 
     Sie müssen ein Betriebssystem installieren, das den Raspberry Pi 5 unterstützt. Bitte verwenden Sie das neueste Raspberry Pi Imager-Tool zur Installation des Systems. Die derzeit getesteten Systeme sind:
 
-   .. image:: install/img/compitable_os.png
+    .. image:: img/compitable_os.png
+        :width: 600
+        :align: center
 
 Wenn Sie Fragen haben, senden Sie bitte eine E-Mail an service@sunfounder.com und wir werden so schnell wie möglich antworten.
 
