@@ -59,7 +59,7 @@ The board features 4 WS2812 RGB LEDs, offering customizable control. Users can t
 RGB Control Pin
 -------------------------
 
-The RGB LED is driven by SPI and connected to **GPIO10**, which is also the SPI MOSI pin. The two pins above J9 are used to connect the RGB to GPIO10. If not needed, the jumper can be removed.
+The RGB LEDs are driven by SPI and connected to **GPIO10**, which is also the SPI MOSI pin. The two pins above J9 are used to connect the RGB LEDs to GPIO10. If not needed, the jumper can be removed.
 
   .. image:: img/io_board_rgb_pin.png
 

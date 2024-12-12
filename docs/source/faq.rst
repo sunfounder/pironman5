@@ -35,13 +35,13 @@ The power button brings out the power button of the Raspberry Pi 5, and it funct
 
 * **Shutdown**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system, press the power button a single time to initiate a shutdown.
-    * To force a hard shutdown, press and hold the power button.
+  * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
+  * If you run Raspberry Pi **Bookworm Lite** system, press the power button a single time to initiate a shutdown.
+  * To force a hard shutdown, press and hold the power button.
 
 * **Power on**
 
-    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+  * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
 
 * If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
 
@@ -108,9 +108,9 @@ If the OLED screen is not displaying or displaying incorrectly, follow these tro
 
    * If the I2C address ``0x3C`` is detected, restart the Pironman 5 service using this command:
 
-   .. code-block:: shell
+     .. code-block:: shell
 
-      sudo systemctl restart pironman5.service
+        sudo systemctl restart pironman5.service
 
    * Enable I2C if the address is not detected:
 
@@ -184,10 +184,30 @@ If the problem persists after performing the above steps, please send an email t
 
 5. If the wiring is correct and the OS is installed, but the NVMe SSD still fails to boot, try booting from a Micro SD card to verify the functionality of other components. Once confirmed, proceed to: :ref:`configure_boot_ssd`.
 
-If the problem persists after performing the above steps, please contact us at `service@sunfounder.com`. We will respond as soon as possible.  
+If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
 
+7. RGB LEDs Not Working?
+--------------------------
 
-7. How to disable web dashboard?
+#. The two pins on the IO Expander above J9 are used to connect the RGB LEDs to GPIO10. Ensure that the jumper cap on these two pins are properly in place.
+
+   .. image:: advanced/img/io_board_rgb_pin.png
+      :width: 300
+      :align: center
+
+#. Verify that the Raspberry Pi is running a compatible operating system. The Pironman 5 only supports the following OS versions:
+
+   .. image:: img/compitable_os.png
+      :width: 600
+      :align: center
+
+   If you have installed an unsupported OS, follow the guide to install a compatible operating system: :ref:`install_the_os`.
+
+#. Run the command ``sudo raspi-config`` to open the configuration menu. Navigate to **3 Interfacing Options** -> **I3 SPI** -> **YES**, then click **OK** and **Finish** to enable SPI. After enabling SPI, restart the Pironman 5.
+
+If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
+
+8. How to disable web dashboard?
 ------------------------------------------------------
 
 Once you have completed the installation of the ``pironman5`` module, you will be able to access the :ref:`view_control_dashboard`.
@@ -207,13 +227,13 @@ If you have already installed ``pironman 5``, you can remove the ``dashboard`` m
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-8. How to Control Components Using the ``pironman5`` Command
+9. How to Control Components Using the ``pironman5`` Command
 ----------------------------------------------------------------------
 You can refer to the following tutorial to control the components of the Pironman 5 using the ``pironman5`` command.
 
 * :ref:`view_control_commands`
 
-9. How to Change the Raspberry Pi Boot Order Using Commands
+10. How to Change the Raspberry Pi Boot Order Using Commands
 -------------------------------------------------------------
 
 If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
@@ -221,7 +241,7 @@ If you are already logged into your Raspberry Pi, you can change the boot order 
 * :ref:`configure_boot_ssd`
 
 
-10. How to Modify the Boot Order with Raspberry Pi Imager?
+11. How to Modify the Boot Order with Raspberry Pi Imager?
 ---------------------------------------------------------------
 
 In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can also use the **Raspberry Pi Imager** to change the boot order of your Raspberry Pi.
@@ -230,7 +250,7 @@ It is recommended to use a spare card for this step.
 
 * :ref:`update_bootloader`
 
-11. How to Copy the System from the SD Card to an NVMe SSD?
+12. How to Copy the System from the SD Card to an NVMe SSD?
 -------------------------------------------------------------
 
 If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
@@ -238,7 +258,7 @@ If you have an NVMe SSD but do not have an adapter to connect your NVMe to your 
 
 * :ref:`copy_sd_to_nvme_rpi`
 
-12. How to Remove the Protective Film from the Acrylic Plates
+13. How to Remove the Protective Film from the Acrylic Plates
 -----------------------------------------------------------------
 
 Two acrylic panels are included in the package, both covered with yellow/transparent protective film on both sides to prevent scratches. The protective film may be a bit difficult to remove. Use a screwdriver to gently scrape at the corners, then carefully peel off the entire film.
@@ -251,7 +271,7 @@ Two acrylic panels are included in the package, both covered with yellow/transpa
 
 .. _openssh_powershell:
 
-13. How to Install OpenSSH via Powershell?
+14. How to Install OpenSSH via Powershell?
 ----------------------------------------------
 
 When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``) to connect to your Raspberry Pi, but the following error message appears.

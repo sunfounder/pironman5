@@ -32,9 +32,8 @@ Thanks for choosing our |link_pironman5|.
 
 .. image:: img/pironman5.jpg
     :width: 400
+    :align: center
     
-
-
 Elevate your Raspberry Pi 5 with the |link_pironman5|, our top-tier case designed for unmatched style and functionality. It's the perfect blend of aesthetics and performance:
 
 * Raspberry Pi 5 mini PC
