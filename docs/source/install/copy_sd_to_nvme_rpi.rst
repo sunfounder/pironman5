@@ -79,9 +79,13 @@ Il existe deux façons d'installer un système d'exploitation sur le SSD :
 
    .. image:: img/ssd_copy_from.png
       
-#. Après avoir fait la sélection, cliquez sur **Démarrer**.
+#. N'oubliez pas de sélectionner "NOUVEAUX UUID de partition" pour garantir que le système peut distinguer correctement les périphériques, évitant ainsi les conflits de montage et les problèmes de démarrage.
 
-   .. image:: img/ssd_copy_start.png
+   .. image:: img/ssd_copy_uuid.png
+    
+#. Après la sélection, cliquez sur **Démarrer**.
+
+   .. image:: img/ssd_copy_click_start.png
 
 #. Un message vous avertira que le contenu du SSD sera effacé. Sauvegardez vos données avant de cliquer sur Oui.
 
