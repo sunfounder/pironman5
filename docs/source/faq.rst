@@ -55,7 +55,7 @@ For a detailed demonstration, please refer to the video:
 .. raw:: html
 
     <div style="text-align: center;">
-        <video center loop autoplay style = "max-width:90%">
+        <video center loop autoplay muted style="max-width:90%">
             <source src="_static/video/airflow_direction.mp4"  type="video/mp4">
             Your browser does not support the video tag.
         </video>
