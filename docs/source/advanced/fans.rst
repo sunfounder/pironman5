@@ -16,35 +16,60 @@ Ventiladores
 ===============
 
 Ventilador PWM
-----------------
+-----------------
 
-El ventilador PWM del Pironman 5 está controlado por el sistema de Raspberry Pi.
+El ventilador PWM en el Pironman 5 es gestionado por el sistema Raspberry Pi y constituye la base de su solución de enfriamiento inteligente, especialmente bajo cargas pesadas. Este sistema combina un ventilador PWM principal con dos ventiladores RGB suplementarios para un rendimiento de enfriamiento mejorado, integrados estrechamente con el sistema de gestión térmica del Raspberry Pi 5.
 
-En cuanto a las soluciones de refrigeración para la Raspberry Pi 5, especialmente bajo cargas intensas, el diseño del Pironman 5 incorpora un sistema de enfriamiento inteligente. Cuenta con un ventilador PWM principal y dos ventiladores RGB adicionales. La estrategia de refrigeración está estrechamente integrada con el sistema de gestión térmica de la Raspberry Pi 5.
+.. image:: img/fan_tower_cooler.png  
+  :width: 600  
+  :align: center  
 
-El funcionamiento del ventilador PWM se basa en la temperatura de la Raspberry Pi 5:
+**Características Eléctricas**
 
-* Por debajo de 50°C, el ventilador PWM permanece apagado (velocidad del 0%).
-* A 50°C, el ventilador comienza a baja velocidad (30% de velocidad).
-* Al llegar a 60°C, el ventilador aumenta a una velocidad media (50% de velocidad).
-* A 67.5°C, el ventilador se eleva a alta velocidad (70% de velocidad).
-* A 75°C o más, el ventilador funciona a máxima velocidad (100% de velocidad).
+* **Voltaje Nominal**: 5 VDC  
+* **Voltaje de Inicio**: 4.0 V (a 25°C Encendido/Apagado)  
+* **Rango de Voltaje Operativo**: 4.0 ~ 5.5 VDC  
+* **Corriente Nominal**: 0.05 A / MÁX. 0.08 A  
+* **Potencia Nominal**: 0.25 W / MÁX. 0.40 W  
+* **Velocidad Nominal**: 3500±10% RPM (a 25°C, probado después de 3 minutos de operación)  
+* **Flujo de Aire Máximo**: 2.46 (MÍN. 2.21) CFM (a presión estática cero)  
+* **Presión Estática Máxima**: 0.62 (MÍN. 0.496) mmH2O (a flujo de aire cero)  
+* **Ruido Acústico**: 22.31 dB(A) MÁX. 25.31 dB(A)  
+* **Expectativa de Vida Útil**: 40,000 horas (a 25°C, 65% de humedad, condiciones normales de habitación)  
 
-Esta relación temperatura-velocidad también se aplica cuando la temperatura disminuye, con una histéresis de 5°C. La velocidad del ventilador se reduce cuando la temperatura cae 5°C por debajo de cada uno de estos umbrales.
+**Características Mecánicas**
 
-* Comandos para monitorear el estado del ventilador PWM. Para comprobar el estado del ventilador PWM:
+* **Dimensiones**: 40x10.4x40 mm (LxAxH)  
+* **Material del Marco**: Plástico PBT  
+* **Material del Impulsor**: Plástico PBT  
+* **Tipo de Rodamiento**: Rodamiento Hidráulico  
 
-  .. code-block:: shell
-  
-    cat /sys/class/thermal/cooling_device0/cur_state
+**Parámetros Ambientales**
 
-* Para ver la velocidad del ventilador PWM:
+* **Temperatura Operativa**: -10°C ~ 70°C  
+* **Temperatura de Almacenamiento**: -40°C ~ 75°C  
+* **Humedad Operativa**: 5% ~ 90% RH  
+* **Humedad de Almacenamiento**: 5% ~ 95% RH  
 
-  .. code-block:: shell
+**Control de Velocidad del Ventilador Según la Temperatura**  
 
-    cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
+El ventilador PWM opera de manera dinámica, ajustando su velocidad de acuerdo con la temperatura del Raspberry Pi 5:
 
-En el Pironman 5, el ventilador PWM es un componente crítico para mantener temperaturas óptimas de funcionamiento, especialmente durante tareas intensivas, asegurando que la Raspberry Pi 5 funcione de manera eficiente y confiable.
+* **Por debajo de 50°C**: El ventilador permanece apagado (0% de velocidad).  
+* **A 50°C**: El ventilador opera a baja velocidad (30% de velocidad).  
+* **A 60°C**: El ventilador aumenta a velocidad media (50% de velocidad).  
+* **A 67.5°C**: El ventilador incrementa a alta velocidad (70% de velocidad).  
+* **A 75°C y más**: El ventilador opera a velocidad máxima (100% de velocidad).  
+
+Este control de temperatura a velocidad incluye una histéresis de 5°C para evitar cambios frecuentes en la velocidad. Por ejemplo, el ventilador reducirá su velocidad solo después de que la temperatura baje 5°C por debajo de cada umbral.  
+
+Los siguientes comandos permiten a los usuarios monitorear la operación del ventilador PWM:  
+
+Para verificar el estado actual del ventilador:  
+
+.. code-block:: shell
+
+  cat /sys/class/thermal/cooling_device0/cur_state
 
 Ventiladores RGB
 ----------------------

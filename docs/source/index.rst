@@ -30,8 +30,9 @@ Gracias por elegir nuestro |link_pironman5|.
     
     Haz clic en los enlaces respectivos para acceder al documento en tu idioma preferido.
 
-.. image:: img/pironman5.JPG
+.. image:: img/pironman5_pic.jpg
     :width: 400
+    :align: center
     
 
 
@@ -57,7 +58,9 @@ El |link_pironman5| no es solo una caja; es una mejora que transforma tu Raspber
 
     Necesitas instalar un sistema operativo que sea compatible con Raspberry Pi 5. Utiliza la última herramienta Raspberry Pi Imager para la instalación del sistema. Los sistemas actualmente probados son:
 
-   .. image:: install/img/compitable_os.png
+    .. image:: img/compitable_os.png
+        :width: 600
+        :align: center
 
 Si tienes alguna pregunta, envía un correo a service@sunfounder.com y te responderemos lo antes posible.
 

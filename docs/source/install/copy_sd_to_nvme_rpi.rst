@@ -79,9 +79,14 @@ Existen dos maneras de instalar un sistema operativo en el SSD:
 
    .. image:: img/ssd_copy_from.png
       
-#. Después de la selección, haz clic en **Iniciar**.
+#. Recuerde seleccionar **"NEW Partition UUIDs"** para asegurarse de que el sistema pueda distinguir correctamente los dispositivos, evitando conflictos de montaje y problemas de inicio.
 
-   .. image:: img/ssd_copy_start.png
+   .. image:: img/ssd_copy_uuid.png
+    
+#. Después de la selección, haga clic en **Start**.
+
+   .. image:: img/ssd_copy_click_start.png
+
 
 #. Se te advertirá que el contenido del SSD será borrado. Asegúrate de hacer una copia de seguridad de tus datos antes de hacer clic en Sí.
 

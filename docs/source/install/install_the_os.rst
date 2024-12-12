@@ -12,6 +12,8 @@
 
     👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
+.. _install_the_os:
+
 3. Instalación del Sistema Operativo
 =======================================
 
@@ -19,7 +21,9 @@
 
     Necesitas instalar un sistema operativo que sea compatible con Raspberry Pi 5. Por favor, utiliza la herramienta más reciente de Raspberry Pi Imager para la instalación del sistema. Los sistemas actualmente probados son:
 
-   .. image:: img/compitable_os.png
+   .. image:: ../img/compitable_os.png
+        :width: 600
+        :align: center
 
 
 En este capítulo, aprenderás cómo instalar los sistemas operativos. Todos los pasos de instalación dependen de |link_rpi_imager|, que debes instalar primero.

@@ -12,8 +12,6 @@
 
     👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-.. _set_up_pironman5:
-
 Configuración en Raspberry Pi/Ubuntu/Kali/Homebridge OS
 ==========================================================
 
