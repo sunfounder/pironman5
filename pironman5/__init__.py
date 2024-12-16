@@ -41,7 +41,8 @@ def main():
         parser.add_argument("-fl", "--gpio-fan-led", nargs='?', default='', help="GPIO fan LED state on/off/follow")
         parser.add_argument("-fp", "--gpio-fan-led-pin", nargs='?', default='', help="GPIO fan LED pin")
     parser.add_argument("-od", "--oled-disk", nargs='?', default='', help="Set to display which disk on OLED. 'total' or the name of the disk, like mmbclk or nvme")
-    parser.add_argument("-oi", "--oled-network-interface", nargs='?', default='', help="Set to display which ip of network interface on OLED, 'all' or the interface name, like eth0 or wlan0")
+    parser.add_argument("-oi", "--oled-network-interface", nargs='?', help="Set to display which ip of network interface on OLED, 'all' or the interface name, like eth0 or wlan0")
+    parser.add_argument("-or", "--oled-rotation", nargs='?', default='', choices=[0, 180], help="Set to rotate OLED display, 0, 180")
     parser.add_argument("--background", nargs='?', default='', help="Run in background")
 
     args = parser.parse_args()
@@ -232,6 +233,19 @@ def main():
                 print(f"Invalid value for OLED Network Interface, it should be in {interfaces}")
                 quit()
             new_auto['oled_network_interface'] = args.oled_network_interface
+    if args.oled_rotation != '':
+        if args.oled_rotation == None:
+            print(f"OLED rotation: {current_config['system']['oled_rotation']}")
+        else:
+            try:
+                args.oled_rotation = int(args.oled_rotation)
+            except ValueError:
+                print(f"Invalid value for OLED rotation, it should be an integer of 0 or 180")
+                quit()
+            if args.oled_rotation not in [0, 180]:
+                print(f"Invalid value for OLED rotation, it should be 0 or 180")
+                quit()
+            new_auto['oled_rotation'] = args.oled_rotation
     if args.background != '':
         print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
         quit()
