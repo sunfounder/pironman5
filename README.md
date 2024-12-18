@@ -78,14 +78,27 @@ https://www.reddit.com/r/Ubuntu/comments/1d0s8v5/ubuntu_2404_server_on_my_raspbe
 
 ### Debug
 
-Command log:
+Clone the dependency you want to debug or edit
+
+```bash
+git clone https://github.com/sunfounder/pironman5.git
+git clone https://github.com/sunfounder/pm_dashboard.git
+git clone https://github.com/sunfounder/pm_auto.git
+git clone https://github.com/sunfounder/sf_rpi_status.git
+```
+
+Make adjustments, and manually install the package
 
 ```bash
 cd ~/pironman5 && sudo /opt/pironman5/venv/bin/pip3 uninstall pironman5 -y && sudo /opt/pironman5/venv/bin/pip3 install .
 cd ~/pm_dashboard && sudo /opt/pironman5/venv/bin/pip3 uninstall pm_dashboard -y && sudo /opt/pironman5/venv/bin/pip3 install .
 cd ~/pm_auto && sudo /opt/pironman5/venv/bin/pip3 uninstall pm_auto -y && sudo /opt/pironman5/venv/bin/pip3 install .
 cd ~/sf_rpi_status && sudo /opt/pironman5/venv/bin/pip3 uninstall sf_rpi_status -y && sudo /opt/pironman5/venv/bin/pip3 install .
+```
 
+Start/stop the service for debug
+
+```
 sudo systemctl stop pironman5.service
 sudo systemctl start pironman5.service
 sudo systemctl restart pironman5.service
