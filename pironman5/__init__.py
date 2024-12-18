@@ -40,6 +40,7 @@ def main():
     if get_hat_version() >= 11:
         parser.add_argument("-fl", "--gpio-fan-led", nargs='?', default='', help="GPIO fan LED state on/off/follow")
         parser.add_argument("-fp", "--gpio-fan-led-pin", nargs='?', default='', help="GPIO fan LED pin")
+    parser.add_argument("-oe", "--oled-enable", nargs='?', default='', help="OLED enable True/true/on/On/1 or False/false/off/Off/0")
     parser.add_argument("-od", "--oled-disk", nargs='?', default='', help="Set to display which disk on OLED. 'total' or the name of the disk, like mmbclk or nvme")
     parser.add_argument("-oi", "--oled-network-interface", nargs='?', default='', help="Set to display which ip of network interface on OLED, 'all' or the interface name, like eth0 or wlan0")
     parser.add_argument("-or", "--oled-rotation", nargs='?', default=-1, type=int, choices=[0, 180], help="Set to rotate OLED display, 0, 180")
@@ -223,6 +224,19 @@ def main():
                     quit()
                 new_auto['gpio_fan_led_pin'] = args.gpio_fan_led_pin
                 print(f"Set GPIO fan LED pin: {args.gpio_fan_led_pin}")
+    if args.oled_enable != '':
+        if args.oled_enable == None:
+            print(f"OLED enable: {'enabled' if current_config['system']['oled_enable'] else 'disabled'}")
+        else:
+            if args.oled_enable in TRUE_LIST:                
+                new_auto['oled_enable'] = True
+                print(f"Set OLED enable: Enabled")
+            elif args.oled_enable in FALSE_LIST:
+                new_auto['oled_enable'] = False
+                print(f"Set OLED enable: Disabled")
+            else:
+                print(f"Invalid value for OLED enable, it should be {', '.join(TRUE_LIST)} or {', '.join(FALSE_LIST)}")
+                quit()
     if args.oled_disk != '':
         from sf_rpi_status import get_disks
         disks = ['total']
