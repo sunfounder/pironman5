@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
 from tools.sf_installer import SF_Installer
+from pironman5.version import __version__
+from pironman5.variants import NAME, DT_OVERLAYS
 
 installer = SF_Installer(
     name='pironman5',
-    friendly_name='Pironman 5',
+    friendly_name=NAME,
 
     # - Setup install command description if needed, default to "Installer for {friendly_name}""
     # description='Installer for Pironman 5',
@@ -79,8 +81,9 @@ installer = SF_Installer(
     bin_files = ['pironman5'],
 
     # - Copy device tree overlay to /boot/overlays
-    dtoverlay = ['sunfounder-pironman5.dtbo'],
+    dtoverlay = DT_OVERLAYS,
 )
+
 installer.parser.add_argument("--disable-dashboard", action='store_true', help="Disable dashboard")
 args = installer.parser.parse_args()
 if args.disable_dashboard:

@@ -28,11 +28,11 @@ dependencies = [
 pironman5-service = "pironman5:main"
 
 [tool.setuptools]
-packages = ["pironman5"]
+packages = ["pironman5", "pironman5.variants"]
 
 [project.urls]
 "Homepage" = "https://github.com/sunfounder/pironman5"
 "Bug Tracker" = "https://github.com/sunfounder/pironman5/issues"
 
 [tool.setuptools.dynamic]
-version = {attr = "pironman5.__version__"}
+version = {attr = "pironman5.version.__version__"}
