@@ -25,10 +25,10 @@ class Pironman5Mini:
         'rgb_brightness': 100,
         'rgb_style': 'rainbow',
         'rgb_speed': 0,
-        'gpio_fan_pin': 5,
+        'gpio_fan_pin': 6,
         'gpio_fan_mode': 1,
         'gpio_fan_led': 'follow',
-        'gpio_fan_led_pin': 6,
+        'gpio_fan_led_pin': 5,
     }
     DT_OVERLAYS = [
         'sunfounder-pironman5mini.dtbo',
