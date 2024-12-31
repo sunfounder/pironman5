@@ -43,6 +43,7 @@ Compitable NVMe SSD
 * Netac NV2000 NVMe SSD
 
 * Origin Inception TLC830 Pro NVMe SSD
+* Ortial ON-750-128 NVME SSD
 
 * Pineberry Pi Pinedrive (2280)
 

@@ -62,7 +62,14 @@ For a detailed demonstration, please refer to the video:
     </div>
 
 
-4. Does the Pironman 5 support retro gaming systems?
+4. About the Copper Pipe Ends of Tower Cooler
+----------------------------------------------------------
+
+The U-shaped heat pipes at the top of the tower cooler are compressed to facilitate the copper pipes passing through the aluminum fins, which is part of the normal production process for copper pipes.
+
+   .. image::  img/tower_cooler1.png
+
+5. Does the Pironman 5 support retro gaming systems?
 ------------------------------------------------------
 Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
 
@@ -74,7 +81,7 @@ Yes, it is compatible. However, most retro gaming systems are streamlined versio
    * :ref:`install_batocera`
    * :ref:`set_up_batocera`
 
-5. OLED Screen Not Working?
+6. OLED Screen Not Working?
 -----------------------------------
 
 If the OLED screen is not displaying or displaying incorrectly, follow these troubleshooting steps:
@@ -131,7 +138,7 @@ If the OLED screen is not displaying or displaying incorrectly, follow these tro
 
 If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
 
-6. NVMe PIP Module Not Working?
+7. NVMe PIP Module Not Working?
 ---------------------------------------
 
 1. Ensure the FPC cable connecting the NVMe PIP module to the Raspberry Pi 5 is securely attached.  
@@ -186,7 +193,7 @@ If the problem persists after performing the above steps, please send an email t
 
 If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
 
-7. RGB LEDs Not Working?
+8. RGB LEDs Not Working?
 --------------------------
 
 #. The two pins on the IO Expander above J9 are used to connect the RGB LEDs to GPIO10. Ensure that the jumper cap on these two pins are properly in place.
@@ -207,7 +214,24 @@ If the problem persists after performing the above steps, please send an email t
 
 If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
 
-8. How to disable web dashboard?
+9. CPU fan not working?
+----------------------------------------------
+
+When the CPU temperature has not reached the set threshold, the CPU fan will not working.
+
+**Fan Speed Control Based on Temperature**  
+
+The PWM fan operates dynamically, adjusting its speed according to the Raspberry Pi 5's temperature:  
+
+* **Below 50°C**: Fan remains off (0% speed).  
+* **At 50°C**: Fan operates at low speed (30% speed).  
+* **At 60°C**: Fan increases to medium speed (50% speed).  
+* **At 67.5°C**: Fan ramps up to high speed (70% speed).  
+* **At 75°C and above**: Fan operates at full speed (100% speed).  
+
+For more detail please refer to : :ref:`Fans`
+
+10. How to disable web dashboard?
 ------------------------------------------------------
 
 Once you have completed the installation of the ``pironman5`` module, you will be able to access the :ref:`view_control_dashboard`.
@@ -227,13 +251,13 @@ If you have already installed ``pironman 5``, you can remove the ``dashboard`` m
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-9. How to Control Components Using the ``pironman5`` Command
+11. How to Control Components Using the ``pironman5`` Command
 ----------------------------------------------------------------------
 You can refer to the following tutorial to control the components of the Pironman 5 using the ``pironman5`` command.
 
 * :ref:`view_control_commands`
 
-10. How to Change the Raspberry Pi Boot Order Using Commands
+12. How to Change the Raspberry Pi Boot Order Using Commands
 -------------------------------------------------------------
 
 If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
@@ -241,7 +265,7 @@ If you are already logged into your Raspberry Pi, you can change the boot order 
 * :ref:`configure_boot_ssd`
 
 
-11. How to Modify the Boot Order with Raspberry Pi Imager?
+13. How to Modify the Boot Order with Raspberry Pi Imager?
 ---------------------------------------------------------------
 
 In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can also use the **Raspberry Pi Imager** to change the boot order of your Raspberry Pi.
@@ -250,7 +274,7 @@ It is recommended to use a spare card for this step.
 
 * :ref:`update_bootloader`
 
-12. How to Copy the System from the SD Card to an NVMe SSD?
+14. How to Copy the System from the SD Card to an NVMe SSD?
 -------------------------------------------------------------
 
 If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
@@ -258,7 +282,7 @@ If you have an NVMe SSD but do not have an adapter to connect your NVMe to your 
 
 * :ref:`copy_sd_to_nvme_rpi`
 
-13. How to Remove the Protective Film from the Acrylic Plates
+15. How to Remove the Protective Film from the Acrylic Plates
 -----------------------------------------------------------------
 
 Two acrylic panels are included in the package, both covered with yellow/transparent protective film on both sides to prevent scratches. The protective film may be a bit difficult to remove. Use a screwdriver to gently scrape at the corners, then carefully peel off the entire film.
@@ -271,7 +295,7 @@ Two acrylic panels are included in the package, both covered with yellow/transpa
 
 .. _openssh_powershell:
 
-14. How to Install OpenSSH via Powershell?
+16. How to Install OpenSSH via Powershell?
 ----------------------------------------------
 
 When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``) to connect to your Raspberry Pi, but the following error message appears.
@@ -328,4 +352,37 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
    .. image:: img/powershell_login.png
 
 
+
+
+17. How to turn OFF/ON the OLED Screen?
+----------------------------------------------------------
+
+You can choose to turn off the OLED Screen via the dashboard or the command line.
+
+1. Turn OFF/ON the OLED Screen by the dash board.
+
+   .. note::
+
+    Before using the dashboard, you need to set it up on Home Assistant. Please refer to: :ref:`view_control_dashboard`.
+
+- After you have completed the setup, you can follow these steps to turn on, turn off, or configure your OLED Screen.
+
+   .. image::  img/set_up_on_dashboard.jpg
+      :width: 90%
+
+2.Turn OFF/ON the OLED Screen by the command line.
+
+- Use the following command to turn the OLED Screen on or off.
+
+.. code-block::
+
+    sudo pironman5 -oe on/off
+
+.. note::
+
+    You may need to restart the pironman5 service for the changes to take effect. You can use the following command to restart the service:
+
+      .. code-block::
+
+        sudo systemctl restart pironman5.service
 
