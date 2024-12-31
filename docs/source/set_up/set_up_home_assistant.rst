@@ -169,7 +169,7 @@ Ahora comienza la instalación oficial del complemento **Pironman 5**.
 
 #. Ahora puedes ver la información sobre tu Raspberry Pi, configurar los LEDs RGB y controlar el ventilador, etc.
 
-   .. image:: img/home_web.png
+   .. image:: img/home_web_new.png
       :width: 90%
 
 .. note::
