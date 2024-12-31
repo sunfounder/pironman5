@@ -171,7 +171,7 @@ Pironman 5の機能は、Home Assistantにアドオンの形でインストー�
 
 #. これで、Raspberry Piの情報を確認したり、RGBの設定やファンの制御などが行えます。
 
-   .. image:: img/home_web.png
+   .. image:: img/home_web_new.png
       :width: 90%
 
 .. note::
