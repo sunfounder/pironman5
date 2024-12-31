@@ -169,7 +169,7 @@ Nun starten Sie die Installation des **Pironman 5** Add-ons.
 
 #. Nun können Sie die Informationen über Ihren Raspberry Pi einsehen, die RGB-LEDs konfigurieren und den Lüfter steuern usw.
 
-   .. image:: img/home_web.png
+   .. image:: img/home_web_new.png
       :width: 90%
 
 .. note::
