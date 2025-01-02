@@ -60,7 +60,7 @@ Raspberry PiのGPIOから供給されるOLED画面やRGBファンがシャット
    .. code-block:: shell
 
     cd ~
-    git clone https://github.com/sunfounder/pironman5.git
+    git clone https://github.com/sunfounder/pironman5.git --depth 1
     cd ~/pironman5
     sudo python3 install.py
 

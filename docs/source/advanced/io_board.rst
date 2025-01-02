@@ -44,7 +44,7 @@ RGB LED
 
 .. note::
 
-  RGB LEDの表示モードを``rainbow``, ``rainbow_reverse``, ``hue_cycle``に設定した場合、 ``pironman5 -rc`` で色を設定することはできません。
+  RGB LEDの表示モードを ``rainbow`` , ``rainbow_reverse`` , ``hue_cycle`` に設定した場合、 ``pironman5 -rc`` で色を設定することはできません。
 
 .. code-block:: shell
 
@@ -68,7 +68,7 @@ RGB OUTピン
 
 .. image:: img/io_board_rgb_out.png
 
-WS2812 RGB LEDはシリアル接続をサポートしており、外部のRGB LEDストリップを接続することが可能です。**SIG**ピンを外部ストリップの **DIN** ピンに接続して拡張できます。
+WS2812 RGB LEDはシリアル接続をサポートしており、外部のRGB LEDストリップを接続することが可能です。 **SIG** ピンを外部ストリップの **DIN** ピンに接続して拡張できます。
 
 デフォルト設定では4つのRGB LEDが含まれています。追加のLEDを接続し、以下のコマンドで数を更新します：
 
