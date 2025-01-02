@@ -169,7 +169,7 @@ Ora inizia ufficialmente l'installazione del componente aggiuntivo **Pironman 5*
 
 #. Ora puoi vedere le informazioni sul tuo Raspberry Pi, configurare i LED RGB e controllare la ventola, ecc.
 
-   .. image:: img/home_web.png
+   .. image:: img/home_web_new.png
       :width: 90%
 
 .. note::

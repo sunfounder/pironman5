@@ -12,6 +12,8 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
+.. _fans:
+
 Ventole
 ============
 
