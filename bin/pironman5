@@ -22,7 +22,7 @@ if $restart_found; then
 fi
 
 if $background_found; then
-    /opt/pironman5/venv/bin/pironman5-service "${new_args[@]}" 2>1 1>/dev/null &
+    /opt/pironman5/venv/bin/pironman5-service "${new_args[@]}" 2>&1 1>/dev/null &
 else
     /opt/pironman5/venv/bin/pironman5-service "${new_args[@]}"
 fi
