@@ -88,10 +88,11 @@ def get_variant(variant_id, version=None):
     else:
         return None
     
-varient_id, part_number = get_varient_id_and_version()
-VARIENT = get_variant(varient_id)
+varient_id, version = get_varient_id_and_version()
+VARIENT = get_variant(varient_id, version)
 NAME = VARIENT.NAME
 ID = VARIENT.ID
+PRODUCT_VERSION = VARIENT.PRODUCT_VERSION
 PERIPHERALS = VARIENT.PERIPHERALS
 AUTO_DEFAULT_CONFIG = VARIENT.AUTO_DEFAULT_CONFIG
 DT_OVERLAYS = VARIENT.DT_OVERLAYS

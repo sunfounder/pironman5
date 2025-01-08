@@ -1,6 +1,7 @@
 class Pironman5:
     NAME = "Pironman 5"
     ID = "pironman5"
+    PRODUCT_VERSION = "V2"
     PERIPHERALS = [
         'storage',
         "cpu",

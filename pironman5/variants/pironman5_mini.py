@@ -1,6 +1,7 @@
 class Pironman5Mini:
     NAME = "Pironman 5 Mini"
     ID = "pironman5-mini"
+    PRODUCT_VERSION = ""
     PERIPHERALS = [
         "storage",
         "cpu",

@@ -8,7 +8,7 @@ from pm_auto import __version__ as pm_auto_version
 from .logger import create_get_child_logger
 from .utils import merge_dict, log_error
 from .version import __version__ as pironman5_version
-from .variants import NAME, ID, PERIPHERALS, AUTO_DEFAULT_CONFIG
+from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, AUTO_DEFAULT_CONFIG
 
 get_child_logger = create_get_child_logger('pironman5')
 log = get_child_logger('main')
@@ -51,6 +51,7 @@ class Pironman5:
             json.dump(self.config, f, indent=4)
 
         self.log.debug(f"Pironman5 version: {pironman5_version}")
+        self.log.debug(f"Variant: {NAME} {PRODUCT_VERSION}")
         self.log.debug(f"PM_Auto version: {pm_auto_version}")
         if PMDashboard is not None:
             self.log.debug(f"PM_Dashboard version: {pm_dashboard_version}")
