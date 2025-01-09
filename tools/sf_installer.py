@@ -408,7 +408,6 @@ class SF_Installer():
                 continue
             self.do(f'Remove dtoverlay {overlay}', f'rm {overlays_path}/{overlay}')
             self.need_reboot = True
-        
 
     def change_work_dir_owner(self):
         self.do('Change work directory owner', f'chown -R {self.user}:{self.user} {self.work_dir}')
@@ -430,7 +429,7 @@ class SF_Installer():
         self.do(f'Remove build', f'rm -r ./build', ignore_error=True)
 
     def install(self):
-        print(f"{self.friendly_name} Installer")
+        print(f"Installing pironman5 for {self.friendly_name}")
         self.install_build_dep()
         self.run_commands_before_install()
         self.install_apt_dep()
@@ -446,7 +445,7 @@ class SF_Installer():
         print("Finished")
 
     def uninstall(self):
-        print(f"Uninstall {self.friendly_name}")
+        print(f"Uninstall pironman5 for {self.friendly_name}")
         self.remove_auto_start()
         self.remove_work_dir()
         self.remove_dtoverlay()

@@ -6,8 +6,9 @@ from importlib.resources import files as resource_files
 from pm_auto.pm_auto import PMAuto
 from pm_auto import __version__ as pm_auto_version
 from .logger import create_get_child_logger
-from .utils import merge_dict, log_error, get_hat_version
+from .utils import merge_dict, log_error
 from .version import __version__ as pironman5_version
+from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, AUTO_DEFAULT_CONFIG
 
 get_child_logger = create_get_child_logger('pironman5')
 log = get_child_logger('main')
@@ -21,67 +22,18 @@ try:
 except ImportError:
     pass
 
-PERIPHERALS = [
-    'storage',
-    "cpu",
-    "network",
-    "memory",
-    "history",
-    "log",
-    "ws2812",
-    "temperature_unit",
-    "oled",
-    "clear_history",
-    "delete_log_file",
-    "pwm_fan_speed",
-    "gpio_fan_state",
-    "gpio_fan_mode",
-    "gpio_fan_led",
-]
-
-hat_version = get_hat_version()
-if hat_version < 11:
-    PERIPHERALS.remove('gpio_fan_led')
-
-
 DEVICE_INFO = {
-    'name': 'Pironman 5',
-    'id': 'pironman5',
+    'name': NAME,
+    'id': ID,
     'peripherals': PERIPHERALS,
     'version': pironman5_version,
 }
 
-AUTO_DEFAULT_CONFIG = {
-    "rgb_color": "#0a1aff",
-    "rgb_brightness": 50,
-    "rgb_style": "breathing",
-    "rgb_speed": 50,
-    "rgb_enable": True,
-    "rgb_led_count": 4,
-    "temperature_unit": "C",
-    "oled_enable": True,
-    "oled_rotation": 0,
-    "oled_disk": "total",
-    "oled_network_interface": "all",
-    'gpio_fan_pin': 6,
-    'gpio_fan_mode': 1,
-    'gpio_fan_led': 'follow',
-    'gpio_fan_led_pin': 5,
-}
-
 DASHBOARD_SETTINGS = {
-    "database": "pironman5",
+    "database": ID,
     "interval": 1,
-    "spc": False,
+    "spc": True if 'spc' in PERIPHERALS else False,
 }
-
-
-# This is to fix the gpiozero 2.0.1 not working on Pi 5. Try remove this patch on future releases. TODO
-# try:
-#     if not os.path.exists('/dev/gpiochip4'):
-#         os.symlink('/dev/gpiochip0', '/dev/gpiochip4')
-# except Exception:
-#     log.warning('Failed to create gpiochip4 symlink')
 
 class Pironman5:
     # @log_error
@@ -98,8 +50,8 @@ class Pironman5:
         with open(CONFIG_PATH, 'w') as f:
             json.dump(self.config, f, indent=4)
 
-        self.log.debug(f"Hat version: {hat_version}")
         self.log.debug(f"Pironman5 version: {pironman5_version}")
+        self.log.debug(f"Variant: {NAME} {PRODUCT_VERSION}")
         self.log.debug(f"PM_Auto version: {pm_auto_version}")
         if PMDashboard is not None:
             self.log.debug(f"PM_Dashboard version: {pm_dashboard_version}")
@@ -122,7 +74,8 @@ class Pironman5:
     def set_debug_level(self, level):
         self.log.setLevel(level)
         self.pm_auto.set_debug_level(level)
-        self.pm_dashboard.set_debug_level(level)
+        if self.pm_dashboard:
+            self.pm_dashboard.set_debug_level(level)
 
     @log_error
     def upgrade_config(self, config):
