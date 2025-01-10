@@ -82,7 +82,7 @@ Raspberry PiのGPIOから供給されるOLED画面やRGBファンがシャット
 
      sudo systemctl restart pironman5.service
 
-   * ``restart``: pironman 5の設定に変更を加えた場合、このコマンドを使用して変更を適用します。
-   * ``start/stop``: ``pironman5.service`` を有効または無効にします。
-   * ``status``: ``systemctl`` ツールを使用して、 ``pironman5`` プログラムの稼働状況を確認します。
+   * ``restart`` : pironman 5の設定に変更を加えた場合、このコマンドを使用して変更を適用します。
+   * ``start/stop`` : ``pironman5.service`` を有効または無効にします。
+   * ``status`` : ``systemctl`` ツールを使用して、 ``pironman5`` プログラムの稼働状況を確認します。
 
