@@ -55,6 +55,7 @@ Compitable NVMe SSD
 * Samsung 970 EVO Plus
 * Samsung 980
 * Samsung 980 Pro
+* Samsung 990 Pro
 
 * Team MP33
 
@@ -78,6 +79,7 @@ We recommend avoiding the following NVMe SSD drives which is equipped with a Ph
 * Western Digital Green SN350 series
 * Western Digital Black SN850 series
 * Western Digital Black SN770
+* WD BLACK 8TB SN850X
 * Inland tn446 nvme drive
 * Corsair MP600 SSD
 * Samsung PM991

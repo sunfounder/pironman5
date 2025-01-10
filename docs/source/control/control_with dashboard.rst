@@ -80,7 +80,7 @@ Log
 The Log page is used to view the logs of the currently running Pironman5 service. The Pironman5 service includes multiple sub-services, each with its own log. Select the log you want to view, and you can see the log data on the right. If it is blank, it may mean there is no log content.
 
 * Each log has a fixed size of 10MB. When it exceeds this size, a second log will be created.
-* The number of logs for the same service is limited to 10. If the number exceeds this limit, the oldest log will be automatically deleted.
+* The number of logs for the same service is limited to 10. If the number exceeds this limit, the oldest log will be automatically deleted. You can also delete logs manually.
 * There are filter tools above the log area on the right. You can select the log level, filter by keywords, and use several convenient tools, including **Line Wrap**, **Auto Scroll** and **Auto Update**.
 * Logs can also be downloaded locally.
 
