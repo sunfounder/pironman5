@@ -354,10 +354,11 @@ Das bedeutet, dass Ihr Betriebssystem zu alt ist und `OpenSSH <https://learn.mic
         Name  : OpenSSH.Server~~~~0.0.1.0
         State : NotPresent
 
-    .. warning:: 
-        Wenn die obige Ausgabe nicht erscheint, bedeutet dies, dass Ihr Windows-System weiterhin zu alt ist. In diesem Fall wird empfohlen, ein Drittanbieter-SSH-Tool wie |link_putty| zu verwenden.
+  .. warning:: 
 
-#. Starten Sie PowerShell neu und führen Sie es weiterhin als Administrator aus. Ab diesem Punkt können Sie sich mit dem Befehl ``ssh`` in Ihren Raspberry Pi einloggen. Sie werden aufgefordert, das zuvor festgelegte Passwort einzugeben.
+    Wenn die obige Ausgabe nicht erscheint, bedeutet dies, dass Ihr Windows-System weiterhin zu alt ist. In diesem Fall wird empfohlen, ein Drittanbieter-SSH-Tool wie |link_putty| zu verwenden.
+
+6. Starten Sie PowerShell neu und führen Sie es weiterhin als Administrator aus. Ab diesem Punkt können Sie sich mit dem Befehl ``ssh`` in Ihren Raspberry Pi einloggen. Sie werden aufgefordert, das zuvor festgelegte Passwort einzugeben.
 
    .. image:: img/powershell_login.png
 
