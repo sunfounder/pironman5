@@ -40,7 +40,7 @@ installer = SF_Installer(
         'lsof', # for pm_dashboard
         'libjpeg-dev', # for Pillow on 32 bit OS
         'libfreetype6-dev', # for Pillow on 32 bit OS
-        'libopenjp2-7' # for Pillow on 32 bit OS
+        'libopenjp2-7', # for Pillow on 32 bit OS
         'kmod',
         'i2c-tools',
         'python3-gpiozero', # for pm_auto fan control
