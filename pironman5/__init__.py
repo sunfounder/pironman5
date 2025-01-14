@@ -21,7 +21,7 @@ def main():
 
     current_config = None
     debug_level = 'INFO'
-    new_auto = {}
+    new_sys_config = {}
 
     parser = argparse.ArgumentParser(description=f'{NAME} command line interface')
     parser.add_argument("command",
@@ -64,7 +64,7 @@ def main():
     
     if not path.exists(CONFIG_PATH):
         with open(CONFIG_PATH, 'w') as f:
-            json.dump({'auto': {}}, f, indent=4)
+            json.dump({'system': {}}, f, indent=4)
     else:
         with open(CONFIG_PATH, 'r') as f:
             current_config = json.load(f)
@@ -134,7 +134,7 @@ def main():
                     except ValueError:
                         print(f'Invalid value for RGB color, it should be in hex format without # (e.g. 00aabb)')
                         quit()
-                new_auto['rgb_color'] = args.rgb_color
+                new_sys_config['rgb_color'] = args.rgb_color
                 print(f"Set RGB color: #{args.rgb_color} ({r}, {g}, {b})")
         if args.rgb_brightness != '':
             if args.rgb_brightness == None:
@@ -148,7 +148,7 @@ def main():
                 if args.rgb_brightness < 0 or args.rgb_brightness > 100:
                     print(f"Invalid value for RGB brightness, it should be between 0 and 100")
                     quit()
-                new_auto['rgb_brightness'] = args.rgb_brightness
+                new_sys_config['rgb_brightness'] = args.rgb_brightness
                 print(f"Set RGB brightness: {args.rgb_brightness}")
         if args.rgb_style != '':
             if args.rgb_style == None:
@@ -157,7 +157,7 @@ def main():
                 if args.rgb_style not in RGB_STYLES:
                     print(f"Invalid value for RGB style, it should be one of {RGB_STYLES}")
                     quit()
-                new_auto['rgb_style'] = args.rgb_style
+                new_sys_config['rgb_style'] = args.rgb_style
                 print(f"Set RGB style: {args.rgb_style}")
         if args.rgb_speed != '':
             if args.rgb_speed == None:
@@ -171,17 +171,17 @@ def main():
                 if args.rgb_speed < 0 or args.rgb_speed > 100:
                     print(f"Invalid value for RGB speed, it should be between 0 and 100")
                     quit()
-                new_auto['rgb_speed'] = args.rgb_speed
+                new_sys_config['rgb_speed'] = args.rgb_speed
                 print(f"Set RGB speed: {args.rgb_speed}")
         if args.rgb_enable != '':
             if args.rgb_enable == None:
                 print(f"RGB enable: {current_config['system']['rgb_enable']}")
             else:
                 if args.rgb_enable in TRUE_LIST:
-                    new_auto['rgb_enable'] = True
+                    new_sys_config['rgb_enable'] = True
                     print(f"Set RGB enable: True")
                 elif args.rgb_enable in FALSE_LIST:
-                    new_auto['rgb_enable'] = False
+                    new_sys_config['rgb_enable'] = False
                     print(f"Set RGB enable: False")
                 else:
                     print(f"Invalid value for RGB enable, it should be True or False")
@@ -198,7 +198,7 @@ def main():
                 if args.rgb_led_count < 1:
                     print(f"Invalid value for RGB LED count, it should be greater than 0")
                     quit()
-                new_auto['rgb_led_count'] = args.rgb_led_count
+                new_sys_config['rgb_led_count'] = args.rgb_led_count
                 print(f"Set RGB LED count: {args.rgb_led_count}")
     if is_included(PERIPHERALS, "temperature_unit"):
         if args.temperature_unit != '':
@@ -208,7 +208,7 @@ def main():
                 if args.temperature_unit not in ['C', 'F']:
                     print(f"Invalid value for Temperature unit, it should be C or F")
                     quit()
-                new_auto['temperature_unit'] = args.temperature_unit
+                new_sys_config['temperature_unit'] = args.temperature_unit
                 print(f"Set Temperature unit: {args.temperature_unit}")
     if is_included(PERIPHERALS, FANS):
         if args.gpio_fan_mode != '':
@@ -223,7 +223,7 @@ def main():
                 if args.gpio_fan_mode < 0 or args.gpio_fan_mode >= len(GPIO_FAN_MODES):
                     print(f"Invalid value for GPIO fan mode, it should be between 0 and {len(GPIO_FAN_MODES) - 1}, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
                     quit()
-                new_auto['gpio_fan_mode'] = args.gpio_fan_mode
+                new_sys_config['gpio_fan_mode'] = args.gpio_fan_mode
                 print(f"Set GPIO fan mode: {args.gpio_fan_mode}")
         if args.gpio_fan_pin != '':
             if args.gpio_fan_pin == None:
@@ -234,7 +234,7 @@ def main():
                 except ValueError:
                     print(f"Invalid value for GPIO fan pin, it should be an integer")
                     quit()
-                new_auto['gpio_fan_pin'] = args.gpio_fan_pin
+                new_sys_config['gpio_fan_pin'] = args.gpio_fan_pin
                 print(f"Set GPIO fan pin: {args.gpio_fan_pin}")
     if is_included(PERIPHERALS, "gpio_fan_led"):
         if args.gpio_fan_led != '':
@@ -245,7 +245,7 @@ def main():
                 if state not in ['on', 'off', 'follow']:
                     print(f"Invalid value for GPIO fan LED state, it should be on, off or follow")
                     quit()
-                new_auto['gpio_fan_led'] = state
+                new_sys_config['gpio_fan_led'] = state
                 print(f"Set GPIO fan LED state: {args.gpio_fan_led}")
         if args.gpio_fan_led_pin != '':
             if args.gpio_fan_led_pin == None:
@@ -256,7 +256,7 @@ def main():
                 except ValueError:
                     print(f"Invalid value for GPIO fan LED pin, it should be an integer")
                     quit()
-                new_auto['gpio_fan_led_pin'] = args.gpio_fan_led_pin
+                new_sys_config['gpio_fan_led_pin'] = args.gpio_fan_led_pin
                 print(f"Set GPIO fan LED pin: {args.gpio_fan_led_pin}")
     if is_included(PERIPHERALS, "oled"):
         if args.oled_enable != '':
@@ -264,10 +264,10 @@ def main():
                 print(f"OLED enable: {'enabled' if current_config['system']['oled_enable'] else 'disabled'}")
             else:
                 if args.oled_enable in TRUE_LIST:                
-                    new_auto['oled_enable'] = True
+                    new_sys_config['oled_enable'] = True
                     print(f"Set OLED enable: Enabled")
                 elif args.oled_enable in FALSE_LIST:
-                    new_auto['oled_enable'] = False
+                    new_sys_config['oled_enable'] = False
                     print(f"Set OLED enable: Disabled")
                 else:
                     print(f"Invalid value for OLED enable, it should be {', '.join(TRUE_LIST)} or {', '.join(FALSE_LIST)}")
@@ -282,7 +282,7 @@ def main():
                 if args.oled_disk not in disks:
                     print(f"Invalid value for OLED disk, it should be in {disks}")
                     quit()
-                new_auto['oled_disk'] = args.oled_disk
+                new_sys_config['oled_disk'] = args.oled_disk
                 print(f"Set OLED disk: {args.oled_disk}")
         if args.oled_network_interface != '':
             from sf_rpi_status import get_ips
@@ -294,7 +294,7 @@ def main():
                 if args.oled_network_interface not in interfaces:
                     print(f"Invalid value for OLED Network Interface, it should be in {interfaces}")
                     quit()
-                new_auto['oled_network_interface'] = args.oled_network_interface
+                new_sys_config['oled_network_interface'] = args.oled_network_interface
                 print(f"Set OLED Network Interface: {args.oled_network_interface}")
         if args.oled_rotation != -1:
             if args.oled_rotation == None:
@@ -308,11 +308,11 @@ def main():
                 if args.oled_rotation not in [0, 180]:
                     print(f"Invalid value for OLED rotation, it should be 0 or 180")
                     quit()
-                new_auto['oled_rotation'] = args.oled_rotation
+                new_sys_config['oled_rotation'] = args.oled_rotation
                 print(f"SetOLED rotation: {args.oled_rotation}")
 
     new_config = {
-        'system': new_auto,
+        'system': new_sys_config,
     }
 
     Pironman5.update_config_file(new_config)

@@ -429,7 +429,7 @@ class SF_Installer():
         self.do(f'Remove build', f'rm -r ./build', ignore_error=True)
 
     def install(self):
-        print(f"Installing pironman5 for {self.friendly_name}")
+        print(f"Installing for {self.friendly_name}")
         self.install_build_dep()
         self.run_commands_before_install()
         self.install_apt_dep()
@@ -445,7 +445,7 @@ class SF_Installer():
         print("Finished")
 
     def uninstall(self):
-        print(f"Uninstall pironman5 for {self.friendly_name}")
+        print(f"Uninstall for {self.friendly_name}")
         self.remove_auto_start()
         self.remove_work_dir()
         self.remove_dtoverlay()
