@@ -10,6 +10,7 @@ class Pironman5:
         "history",
         "log",
         "ws2812",
+        "temperature",
         "temperature_unit",
         "oled",
         "clear_history",
@@ -19,7 +20,7 @@ class Pironman5:
         "gpio_fan_mode",
         "gpio_fan_led",
     ]
-    AUTO_DEFAULT_CONFIG = {
+    SYSTEM_DEFAULT_CONFIG = {
         "rgb_color": "#0a1aff",
         "rgb_brightness": 50,
         "rgb_style": "breathing",

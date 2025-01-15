@@ -8,7 +8,7 @@ from pm_auto import __version__ as pm_auto_version
 from .logger import create_get_child_logger
 from .utils import merge_dict, log_error
 from .version import __version__ as pironman5_version
-from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, AUTO_DEFAULT_CONFIG
+from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, SYSTEM_DEFAULT_CONFIG
 
 get_child_logger = create_get_child_logger('pironman5')
 log = get_child_logger('main')
@@ -40,7 +40,7 @@ class Pironman5:
     def __init__(self):
         self.log = get_child_logger('main')
         self.config = {
-            'system': AUTO_DEFAULT_CONFIG,
+            'system': SYSTEM_DEFAULT_CONFIG,
         }
         if os.path.exists(CONFIG_PATH):
             with open(CONFIG_PATH, 'r') as f:

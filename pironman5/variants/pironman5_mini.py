@@ -10,6 +10,7 @@ class Pironman5Mini:
         "history",
         "log",
         "ws2812",
+        "temperature",
         "temperature_unit",
         "clear_history",
         "delete_log_file",
@@ -18,7 +19,7 @@ class Pironman5Mini:
         "gpio_fan_mode",
         "gpio_fan_led",
     ]
-    AUTO_DEFAULT_CONFIG = {
+    SYSTEM_DEFAULT_CONFIG = {
         'temperature_unit': 'C',
         'rgb_led_count': 4,
         'rgb_enable': True,
