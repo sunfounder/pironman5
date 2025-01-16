@@ -99,49 +99,44 @@ class SF_Installer():
     ]
 
     def __init__(self,
-                 name=None,
-                 friendly_name=None,
-                 description=None,
-                 venv_options=[],
-                 build_dependencies=None,
-                 run_commands_before_install={},
-                 apt_dependencies=None,
-                 pip_dependencies=None,
-                 python_source=None,
-                 work_dir=None,
-                 log_dir=None,
-                 config_txt=None,
-                 modules=None,
-                 service_files=None,
-                 bin_files=None,
-                 dtoverlay=None
-                 ):
+                name=None,
+                friendly_name=None,
+                description=None,
+                work_dir=None,
+                log_dir=None,):
         if name is None:
-            raise ValueError("name is required")
+            print("Please specify a name for the software")
+            sys.exit(1)
+        else:
+            self.name = name
         if friendly_name is None:
-            friendly_name = name
+            self.friendly_name = name
+        else:
+            self.friendly_name = friendly_name
         if description is None:
-            description = "Installer for {self._friendly_name}"
-        self.name = name
-
+            self.description = f'Installer for {self.friendly_name}'
+        else:
+            self.description = description
         if work_dir is None:
-            work_dir = self.WORK_DIR.format(name=self.name)
+            self.work_dir = self.WORK_DIR.format(name=self.name)
+        else:
+            self.work_dir = work_dir
         if log_dir is None:
-            log_dir = f'/var/log/{self.name}'
+            self.log_dir = f'/var/log/{self.name}'
+        else:
+            self.log_dir = log_dir
 
-        self.friendly_name = friendly_name
-        self.work_dir = work_dir
-        self.log_dir = log_dir
-        self.build_dependencies = build_dependencies
-        self.before_install_commands = run_commands_before_install
-        self.custom_apt_dependencies = apt_dependencies
-        self.custom_pip_dependencies = pip_dependencies
-        self.python_source = python_source
-        self.config_txt = config_txt
-        self.modules = modules
-        self.service_files = service_files
-        self.bin_files = bin_files
-        self.dtoverlay = dtoverlay
+        self.build_dependencies = []
+        self.before_install_commands = {}
+        self.custom_apt_dependencies = []
+        self.custom_pip_dependencies = []
+        self.python_source = {}
+        self.config_txt = {}
+        self.modules = []
+        self.service_files = []
+        self.bin_files = []
+        self.dtoverlay = []
+        self.venv_options = []
 
         self.parser = argparse.ArgumentParser(description=description)
         self.parser.add_argument('--uninstall', action='store_true', help='Uninstall')
@@ -181,10 +176,33 @@ class SF_Installer():
         self.venv_path = f'{self.work_dir}/venv'
         self.venv_python = f'{self.venv_path}/bin/python3'
         self.venv_pip = f'{self.venv_path}/bin/pip3'
-        self.venv_options = venv_options
         self.custom_install = lambda: None
 
-    def set_config(self, name="", value=""):
+    def update_settings(self, settings):
+        if 'build_dependencies' in settings:
+            self.build_dependencies.extend(settings['build_dependencies'])
+        if 'run_commands_before_install' in settings:
+            self.before_install_commands.update(settings['run_commands_before_install'])
+        if 'apt_dependencies' in settings:
+            self.custom_apt_dependencies.extend(settings['apt_dependencies'])
+        if 'pip_dependencies' in settings:
+            self.custom_pip_dependencies.extend(settings['pip_dependencies'])
+        if 'python_source' in settings:
+            self.python_source.update(settings['python_source'])
+        if 'config_txt' in settings:
+            self.config_txt.update(settings['config_txt'])
+        if 'modules' in settings:
+            self.modules.extend(settings['modules'])
+        if 'service_files' in settings:
+            self.service_files.extend(settings['service_files'])
+        if 'bin_files' in settings:
+            self.bin_files.extend(settings['bin_files'])
+        if 'dtoverlay' in settings:
+            self.dtoverlay.extend(settings['dtoverlay'])
+        if 'venv_options' in settings:
+            self.venv_options.extend(settings['venv_options'])
+
+    def set_config_txt(self, name="", value=""):
         msg = f"Setting config.txt: {name}={value}"
         print(" - %s... " % (msg), end='', flush=True)
         try:
@@ -357,7 +375,7 @@ class SF_Installer():
     def setup_config_txt(self):
         if 'skip_config_txt' in self.args and not self.args.skip_config_txt:
             for name, value in self.config_txt.items():
-                self.set_config(name, value)
+                self.set_config_txt(name, value)
             self.need_reboot = True
 
     def modules_probe(self):
