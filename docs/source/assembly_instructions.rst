@@ -17,7 +17,13 @@
 2. Assembly Instructions
 =============================================
 
-Before assembling the Pironman, please first verify that all parts and components have been included. If there are any missing or damaged components, please contact SunFounder immediately at service@sunfounder.com to resolve the issue as soon as possible.
+Please refer to the printed assembly guide included in the kit for instructions. For the Pironman 5, an assembly video is already available, and we are working on releasing assembly videos for other products in the Pironman 5 series soon.
+
+
+Assembly Videos for Pironman 5
+----------------------------------
+
+Before assembling the Pironman 5, please first verify that all parts and components have been included. If there are any missing or damaged components, please contact SunFounder immediately at service@sunfounder.com to resolve the issue as soon as possible.
 
 **Tips**
 

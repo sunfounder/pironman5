@@ -14,17 +14,19 @@
 
 .. _advanced:
 
-6. Advanced
-=========================
+Hardwares of Pironman 5
+==============================
 
+.. image:: img/pironman5_pic.jpg
+    :width: 400
+    :align: center
 
-This chapter is a detailed description of all the components in Pironman, as well as the associated software configuration.
+This chapter is a detailed description of all the components in Pironman 5, as well as the associated software configuration.
 
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     
-    features
     io_board
     hdmi_adapter
     nvme_pip
@@ -33,4 +35,3 @@ This chapter is a detailed description of all the components in Pironman, as wel
     tower_cooler
     oled_screen
     fans
-    login_rpi/login_rpi

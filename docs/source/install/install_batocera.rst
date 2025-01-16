@@ -14,7 +14,7 @@
 
 .. _install_batocera:
 
-Install the Batocera Linux
+Install Batocera Linux
 ======================================================
 
 |link_batocera| is an open-source and completely free retro-gaming distribution that can be copied to a USB stick or an SD card with the aim of turning any computer/nano computer into a gaming console during a game or permanently.

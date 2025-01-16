@@ -14,7 +14,7 @@
 
 .. _install_to_sd_ubuntu:
 
-Installing the OS on a Micro SD Card
+Installing OS on a Micro SD Card
 =============================================
 
 If you are using a Micro SD card, you can follow the tutorial below to install the system onto your Micro SD card.

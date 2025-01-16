@@ -14,7 +14,7 @@
 
 .. _install_the_os:
 
-3. Installing the Operating System
+3. Installing Operating Systems
 =======================================
 
 .. note::

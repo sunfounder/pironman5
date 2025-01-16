@@ -14,7 +14,7 @@
 
 .. _install_to_nvme_home_bridge:
 
-Installing the OS on an NVMe SSD
+Installing OS on an NVMe SSD
 ============================================
 
 If you are using an NVMe SSD and have an adapter to connect the NVMe SSD to your computer for system installation, you can use the following tutorial for a quick installation.
