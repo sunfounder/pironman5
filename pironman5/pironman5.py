@@ -22,19 +22,6 @@ try:
 except ImportError:
     pass
 
-DEVICE_INFO = {
-    'name': NAME,
-    'id': ID,
-    'peripherals': PERIPHERALS,
-    'version': pironman5_version,
-}
-
-DASHBOARD_SETTINGS = {
-    "database": ID,
-    "interval": 1,
-    "spc": True if 'spc' in PERIPHERALS else False,
-}
-
 class Pironman5:
     # @log_error
     def __init__(self):
@@ -50,6 +37,13 @@ class Pironman5:
         with open(CONFIG_PATH, 'w') as f:
             json.dump(self.config, f, indent=4)
 
+        device_info = {
+            'name': NAME,
+            'id': ID,
+            'peripherals': PERIPHERALS,
+            'version': pironman5_version,
+        }
+
         self.log.debug(f"Pironman5 version: {pironman5_version}")
         self.log.debug(f"Variant: {NAME} {PRODUCT_VERSION}")
         self.log.debug(f"PM_Auto version: {pm_auto_version}")
@@ -62,10 +56,10 @@ class Pironman5:
             self.pm_dashboard = None
             self.log.warning('PM Dashboard not found skipping')
         else:
-            self.pm_dashboard = PMDashboard(device_info=DEVICE_INFO,
-                                            settings=DASHBOARD_SETTINGS,
+            self.pm_dashboard = PMDashboard(device_info=device_info,
+                                            database=ID,
+                                            spc_enabled=True if 'spc' in PERIPHERALS else False,
                                             config=self.config,
-                                            peripherals=PERIPHERALS,
                                             get_logger=get_child_logger)
             self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
             self.pm_dashboard.set_on_config_changed(self.update_config)
