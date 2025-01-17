@@ -63,7 +63,7 @@ settings = {
     'bin_files': ['pironman5'],
 
     # - Copy device tree overlay to /boot/overlays
-    'dtoverlay': DT_OVERLAYS,
+    'dtoverlays': DT_OVERLAYS,
 }
 
 dashboard_settings = {
