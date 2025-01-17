@@ -56,7 +56,7 @@ For a detailed demonstration, please refer to the video:
 
     <div style="text-align: center;">
         <video center loop autoplay muted style="max-width:90%">
-            <source src="_static/video/airflow_direction.mp4"  type="video/mp4">
+            <source src="../_static/video/airflow_direction.mp4"  type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -110,7 +110,7 @@ If the OLED screen is not displaying or displaying incorrectly, follow these tro
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_oled_screen.mp4" type="video/mp4">
+               <source src="../_static/video/connect_oled_screen.mp4" type="video/mp4">
                Your browser does not support the video tag.
            </video>
        </div>
@@ -165,7 +165,7 @@ If the problem persists after performing the above steps, please send an email t
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_nvme_pip1.mp4" type="video/mp4">
+               <source src="../_static/video/connect_nvme_pip1.mp4" type="video/mp4">
                Your browser does not support the video tag.
            </video>
        </div>
@@ -174,7 +174,7 @@ If the problem persists after performing the above steps, please send an email t
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_nvme_pip2.mp4" type="video/mp4">
+               <source src="../_static/video/connect_nvme_pip2.mp4" type="video/mp4">
                Your browser does not support the video tag.
            </video>
        </div>
@@ -185,7 +185,7 @@ If the problem persists after performing the above steps, please send an email t
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_ssd.mp4" type="video/mp4">
+               <source src="../_static/video/connect_ssd.mp4" type="video/mp4">
                Your browser does not support the video tag.
            </video>
        </div>
