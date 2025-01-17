@@ -97,16 +97,8 @@ If you have any questions, please send an email to service@sunfounder.com and we
     :maxdepth: 1
 
     About Pironman 5 Series <self>
-    intro_pironman5
-    intro_pironman5_mini
-    what_do_we_need    
-    assembly_instructions
-    install/install_the_os
-    set_up/set_up_pironman5
-    control/control_pironman5
-    6_hardware
-    compitable_nvme_ssd
-    faq
+    pironman5/intro_pironman5
+    pironman5_mini/intro_pironman5_mini
 
 **Copyright Notice**
 
