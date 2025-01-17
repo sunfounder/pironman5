@@ -12,8 +12,8 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-Install the Ubuntu/Kali Linux/Homebridge/Home Assistant
-=========================================================
+Installing Ubuntu, Kali Linux, Homebridge, or Home Assistant
+=======================================================================
 
 You can choose the installation method based on whether you have a Micro SD or an NVMe SSD at hand.
 

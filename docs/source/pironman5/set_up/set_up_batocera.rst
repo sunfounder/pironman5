@@ -14,7 +14,7 @@
 
 .. _set_up_batocera:
 
-Set up on Batocera.linux
+Seting up on Batocera.linux
 =========================================================
 
 If you have installed the Batocera.linux OS, you can remotely log in to this system via SSH and then follow the steps below to complete the configuration.

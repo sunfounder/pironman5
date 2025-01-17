@@ -14,7 +14,7 @@
 
 .. _set_up_pironman5_mini:
 
-4. Set up or Install Software
+4. Setting Up or Installing Software
 ================================================
 
 Now that the system has been written to either the Micro SD or NVMe SSD, you can insert them into the Raspberry Pi slot. Then press the power button to turn on the device.

@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-Install the Raspberry Pi OS
+Installing Raspberry Pi OS
 ================================================================================
 
 You can choose an installation method based on whether you have a Micro SD card or an NVMe SSD available.

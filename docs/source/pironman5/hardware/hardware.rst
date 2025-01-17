@@ -14,7 +14,7 @@
 
 .. _advanced:
 
-6. About Hardwares
+6. Hardware Overview
 =========================
 
 

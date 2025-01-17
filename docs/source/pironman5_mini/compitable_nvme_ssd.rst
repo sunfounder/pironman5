@@ -12,10 +12,10 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-Compitable NVMe SSD
+Compatible NVMe SSDs
 ========================
 
-Compitable NVMe SSD
+Compatible NVMe SSDs
 ---------------------------
 
 * ADATA Legend 700

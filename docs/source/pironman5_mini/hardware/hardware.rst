@@ -14,7 +14,7 @@
 
 .. _about_hardware_mini:
 
-6. About Hardwares
+6. Hardware Overview
 =========================
 
 .. image:: ../img/pironman5mini.png

@@ -13,8 +13,8 @@
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
 
-Set Up on Raspberry Pi/Ubuntu/Kali/Homebridge OS
-==================================================
+Setting Up on Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge
+==================================================================
 
 If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your Raspberry Pi, you will need to configure the Pironman 5 using the command line. Detailed tutorials can be found below:
 

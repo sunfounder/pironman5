@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-5. Control with Commands or Dashboard
+5. Controlling with Commands or the Dashboard
 =======================================================
 
 Once you have successfully installed the ``pironman5`` module, the ``pironman5.service`` will automatically start upon reboot.
@@ -22,6 +22,7 @@ You can monitor and control the Pironman 5 Mini via commands, or by accessing th
 .. note::
 
     * For the **Home Assistant** system, you can only monitor and control the Pironman 5 Mini through the dashboard by opening the webpage at ``http://<ip>:34001``.
+
     .. * For the **Batocera.linux** system, you can only monitor and control the Pironman 5 Mini via commands. It is important to note that any changes to the configuration require a restart of the service using ``pironman5 restart`` to take effect.
 
 

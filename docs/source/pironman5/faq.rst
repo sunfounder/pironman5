@@ -247,7 +247,7 @@ The PWM fan operates dynamically, adjusting its speed according to the Raspberry
 * **At 67.5°C**: Fan ramps up to high speed (70% speed).  
 * **At 75°C and above**: Fan operates at full speed (100% speed).  
 
-For more detail please refer to : :ref:`Fans`
+For more detail please refer to : :ref:`fan`
 
 11. How to disable web dashboard?
 ------------------------------------------------------

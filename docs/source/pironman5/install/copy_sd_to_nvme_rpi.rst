@@ -14,7 +14,7 @@
 
 .. _copy_sd_to_nvme_rpi:
 
-Copy OS from Micro SD to NVMe SSD
+Copying the OS from a Micro SD Card to an NVMe SSD
 ==================================================================
 
 If you have an NVMe SSD but lack an adapter to connect it to your computer, you can opt for a third approach: initially install the system on your Micro SD card. After the Pironman 5 successfully boots up, you can then transfer the system from your Micro SD card to your NVMe SSD.
