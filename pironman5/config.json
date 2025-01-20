@@ -14,6 +14,7 @@
         "gpio_fan_pin": 6,
         "gpio_fan_mode": 2,
         "gpio_fan_led": "follow",
-        "gpio_fan_led_pin": 5
+        "gpio_fan_led_pin": 5,
+        "interval": 1
     }
 }
