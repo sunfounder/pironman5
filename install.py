@@ -2,7 +2,7 @@
 
 from tools.sf_installer import SF_Installer
 from pironman5.version import __version__
-from pironman5.variants import NAME, DT_OVERLAYS
+from pironman5.variants import NAME, DT_OVERLAYS, PERIPHERALS
 
 settings = {
     # - Setup venv options if needed, default to []
@@ -23,19 +23,13 @@ settings = {
     # },
 
     # - Install from apt
-    'apt_dependencies': [
-        'libjpeg-dev', # for Pillow on 32 bit OS
-        'libfreetype6-dev', # for Pillow on 32 bit OS
-        'libopenjp2-7', # for Pillow on 32 bit OS
-        'kmod',
-        'i2c-tools',
-        'python3-gpiozero', # for pm_auto fan control
-    ],
+    # 'apt_dependencies': [
+    # ],
 
     # - Install from pip
-    'pip_dependencies': [
-        'gpiozero',
-    ],
+    # 'pip_dependencies': [
+    #     'gpiozero',
+    # ],
 
     # - Install python source code from git
     'python_source': {
@@ -52,9 +46,9 @@ settings = {
 
     # add modules
     # sudo nano /etc/modules
-    'modules': [
-        "i2c-dev",
-    ],
+    # 'modules': [
+    #     "i2c-dev",
+    # ],
 
     # - Autostart settings
     # - Set service filenames
@@ -64,6 +58,33 @@ settings = {
 
     # - Copy device tree overlay to /boot/overlays
     'dtoverlays': DT_OVERLAYS,
+}
+
+oled_settings = {
+    # - Install from apt
+    'apt_dependencies': [
+        'libjpeg-dev', # for Pillow on 32 bit OS
+        'libfreetype6-dev', # for Pillow on 32 bit OS
+        'libopenjp2-7', # for Pillow on 32 bit OS
+        'kmod',
+        'i2c-tools',
+    ],
+    # add modules
+    # sudo nano /etc/modules
+    'modules': [
+        "i2c-dev",
+    ],
+}
+
+fan_settings = {
+    # - Install from apt
+    'apt_dependencies': [
+        'python3-gpiozero', # for pm_auto fan control
+    ],
+    # - Install from pip
+    'pip_dependencies': [
+        'gpiozero',
+    ],
 }
 
 dashboard_settings = {
@@ -102,4 +123,8 @@ installer.update_settings(settings)
 args = installer.parser.parse_args()
 if not args.disable_dashboard:
     installer.update_settings(dashboard_settings)
+if 'oled' in PERIPHERALS:
+    installer.update_settings(oled_settings)
+if 'fan' in PERIPHERALS:
+    installer.update_settings(fan_settings)
 installer.main()

@@ -126,17 +126,17 @@ class SF_Installer():
         else:
             self.log_dir = log_dir
 
-        self.build_dependencies = []
+        self.build_dependencies = set()
         self.before_install_commands = {}
-        self.custom_apt_dependencies = []
-        self.custom_pip_dependencies = []
+        self.custom_apt_dependencies = set()
+        self.custom_pip_dependencies = set()
         self.python_source = {}
         self.config_txt = {}
-        self.modules = []
-        self.service_files = []
-        self.bin_files = []
-        self.dtoverlays = []
-        self.venv_options = []
+        self.modules = set()
+        self.service_files = set()
+        self.bin_files = set()
+        self.dtoverlays = set()
+        self.venv_options = set()
 
         self.parser = argparse.ArgumentParser(description=description)
         self.parser.add_argument('--uninstall', action='store_true', help='Uninstall')
@@ -164,27 +164,27 @@ class SF_Installer():
 
     def update_settings(self, settings):
         if 'build_dependencies' in settings:
-            self.build_dependencies.extend(settings['build_dependencies'])
+            self.build_dependencies.update(settings['build_dependencies'])
         if 'run_commands_before_install' in settings:
             self.before_install_commands.update(settings['run_commands_before_install'])
         if 'apt_dependencies' in settings:
-            self.custom_apt_dependencies.extend(settings['apt_dependencies'])
+            self.custom_apt_dependencies.update(settings['apt_dependencies'])
         if 'pip_dependencies' in settings:
-            self.custom_pip_dependencies.extend(settings['pip_dependencies'])
+            self.custom_pip_dependencies.update(settings['pip_dependencies'])
         if 'python_source' in settings:
             self.python_source.update(settings['python_source'])
         if 'config_txt' in settings:
             self.config_txt.update(settings['config_txt'])
         if 'modules' in settings:
-            self.modules.extend(settings['modules'])
+            self.modules.update(settings['modules'])
         if 'service_files' in settings:
-            self.service_files.extend(settings['service_files'])
+            self.service_files.update(settings['service_files'])
         if 'bin_files' in settings:
-            self.bin_files.extend(settings['bin_files'])
+            self.bin_files.update(settings['bin_files'])
         if 'dtoverlays' in settings:
-            self.dtoverlays.extend(settings['dtoverlays'])
+            self.dtoverlays.update(settings['dtoverlays'])
         if 'venv_options' in settings:
-            self.venv_options.extend(settings['venv_options'])
+            self.venv_options.update(settings['venv_options'])
 
 
         if len(self.service_files) > 0 and 'skip_auto_start' not in self.parser_added:
@@ -475,7 +475,6 @@ class SF_Installer():
                 return False
             else:
                 continue
-
 
     def cleanup(self):
         self.do(f'Remove build', f'rm -r ./build', ignore_error=True)
