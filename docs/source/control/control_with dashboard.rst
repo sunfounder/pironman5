@@ -1,61 +1,61 @@
-.. note::
+.. nota:: 
 
-    Ciao, benvenuto nella community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Scopri di più su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Perché unirti a noi?**
+    **Perché unirsi a noi?**
 
-    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
-    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
-    - **Anteprime esclusive**: Ottieni l'accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
-    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
-    - **Promozioni e omaggi festivi**: Partecipa a concorsi e promozioni speciali.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotto e anteprime.
+    - **Sconti Speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a concorsi e promozioni per le festività.
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _view_control_dashboard:
 
-Visualizza e controlla dal Dashboard
-=========================================
+Visualizzazione e Controllo dalla Dashboard
+==============================================
 
-Dopo aver installato correttamente il modulo ``pironman5``, il servizio ``pironman5.service`` verrà avviato automaticamente al riavvio.
+Una volta installato correttamente il modulo ``pironman5``, il servizio ``pironman5.service`` si avvierà automaticamente al riavvio.
 
-Ora puoi aprire la pagina di monitoraggio nel tuo browser per visualizzare le informazioni sul tuo Raspberry Pi, configurare l'RGB, controllare la ventola, ecc. Il link alla pagina è: ``http://<ip>:34001``.
+Ora puoi aprire la pagina di monitoraggio nel browser per visualizzare le informazioni sul tuo Raspberry Pi, configurare gli RGB e controllare le ventole. Il link della pagina è: ``http://<ip>:34001``.
 
-Questa pagina include le sezioni **Dashboard**, **Cronologia**, **Log** e **Impostazioni**.
+Questa pagina include **Dashboard**, **Cronologia**, **Log** e una sezione **Impostazioni**.
 
 .. image:: img/dashboard_tab_new.jpg
 
-  
+
 Dashboard
 -----------------------
 
-La Dashboard contiene varie schede per visualizzare lo stato rilevante del Raspberry Pi, tra cui:
+La Dashboard presenta diverse schede per visualizzare lo stato del Raspberry Pi, inclusi:
 
-* **Ventola**: Visualizza la temperatura della CPU del Raspberry Pi e la velocità PWM della ventola. **Stato GPIO Fan** indica lo stato delle due ventole RGB laterali. Alla temperatura attuale, le due ventole RGB sono spente.
+* **Ventola**: Visualizza la temperatura della CPU del Raspberry Pi e la velocità della ventola PWM. **Stato Ventola GPIO** indica lo stato delle due ventole RGB laterali. Alla temperatura attuale, le ventole RGB sono spente.
 
   .. image:: img/dashboard_pwm_fan.png
     :width: 90%
     
 
-* **Archiviazione**: Mostra la capacità di archiviazione del Raspberry Pi, visualizzando le varie partizioni del disco con lo spazio utilizzato e disponibile.
+* **Archiviazione**: Mostra la capacità di archiviazione del Raspberry Pi, con le varie partizioni del disco, lo spazio utilizzato e quello disponibile.
 
   .. image:: img/dashboard_storage.png
     :width: 90%
     
 
-* **Memoria**: Mostra l'uso della RAM del Raspberry Pi e la percentuale di utilizzo.
+* **Memoria**: Mostra l'uso della RAM del Raspberry Pi e la percentuale occupata.
 
   .. image:: img/dashboard_memory.png
     :width: 90%
     
 
-* **Rete**: Visualizza il tipo di connessione di rete corrente, la velocità di upload e download.
+* **Rete**: Mostra il tipo di connessione di rete attuale, le velocità di upload e download.
 
   .. image:: img/dashboard_network.png
     :width: 90%
     
 
-* **Processore**: Illustra le prestazioni della CPU del Raspberry Pi, inclusi lo stato dei quattro core, le frequenze operative e la percentuale di utilizzo della CPU.
+* **Processore**: Illustra le prestazioni della CPU del Raspberry Pi, includendo lo stato dei quattro core, le frequenze operative e la percentuale di utilizzo della CPU.
 
   .. image:: img/dashboard_processor.png
     :width: 90%

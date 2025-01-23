@@ -1,152 +1,172 @@
 .. note::
 
-    Ciao, benvenuto nella comunità Facebook degli appassionati di SunFounder Raspberry Pi, Arduino ed ESP32! Unisciti a noi per approfondire Raspberry Pi, Arduino ed ESP32 con altri appassionati.
+    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
 
-    **Perché unirsi?**
+    **Why Join?**
 
-    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
-    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
-    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e alle anteprime speciali.
-    - **Sconti esclusivi**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
-    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni festive.
+    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
+    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
+    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
+    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
+    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
 
-    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti subito!
+    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
 FAQ
 ============
 
-1. Sistemi compatibili
+1. About Compatible Systems
 -------------------------------
 
-Sistemi testati su Raspberry Pi 5:
+Systems that passed the test on the Raspberry Pi 5:
 
 .. image:: img/compitable_os.png
    :width: 600
    :align: center
 
-2. Pulsante di accensione
-----------------------------
+2. About Power Button
+--------------------------
 
-Il pulsante di accensione riprende la funzionalità del pulsante del Raspberry Pi 5 e opera nello stesso modo.
+The power button brings out the power button of the Raspberry Pi 5, and it functions just like the power button of the Raspberry Pi 5.
 
 .. image:: img/power_button.jpg
     :width: 400
     :align: center
 
-* **Spegnimento**
+* **Shutdown**
 
-  * Se utilizzi il sistema Raspberry Pi **Bookworm Desktop**, premi due volte rapidamente il pulsante di accensione per spegnere.
-  * Se utilizzi il sistema Raspberry Pi **Bookworm Lite**, premi una volta per avviare lo spegnimento.
-  * Per uno spegnimento forzato, tieni premuto il pulsante.
+  * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
+  * If you run Raspberry Pi **Bookworm Lite** system, press the power button a single time to initiate a shutdown.
+  * To force a hard shutdown, press and hold the power button.
 
-* **Accensione**
+* **Power on**
 
-  * Se il Raspberry Pi è spento ma alimentato, premi una volta per accenderlo.
+  * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
 
-* Per sistemi che non supportano il pulsante di spegnimento, tieni premuto per 5 secondi per forzare lo spegnimento e premi una volta per accenderlo.
+* If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
 
-3. Direzione del flusso d'aria
----------------------------------
+3. About Airflow Direction
+-------------------------------
 
-Il flusso d'aria nel case Pironman 5 è progettato per massimizzare l'efficienza di raffreddamento. L'aria fresca entra principalmente attraverso l'interfaccia GPIO e altre piccole aperture, per poi attraversare il Tool Cooler dotato di una ventola ad alte prestazioni. Infine, l'aria viene espulsa attraverso le due ventole RGB sul pannello laterale.
+The airflow in the Pironman 5 chassis is carefully engineered to maximize cooling efficiency. Cool air enters the case primarily through the GPIO interface and other small openings, ensuring an even intake. It then passes through the Tool Cooler, equipped with a high-performance fan to regulate internal temperatures, and is finally expelled through the two RGB fans on the side panel.
 
-Per una dimostrazione dettagliata, consulta il video:
+For a detailed demonstration, please refer to the video:
 
 .. raw:: html
 
     <div style="text-align: center;">
         <video center loop autoplay muted style="max-width:90%">
             <source src="_static/video/airflow_direction.mp4"  type="video/mp4">
-            Il tuo browser non supporta il tag video.
+            Your browser does not support the video tag.
         </video>
     </div>
 
-4. Estremità dei tubi di rame del Tower Cooler
+
+4. About the Copper Pipe Ends of Tower Cooler
 ----------------------------------------------------------
 
-I tubi a forma di U nella parte superiore del Tower Cooler sono compressi per consentire il passaggio attraverso le alette di alluminio, una fase normale del processo di produzione.
+The U-shaped heat pipes at the top of the tower cooler are compressed to facilitate the copper pipes passing through the aluminum fins, which is part of the normal production process for copper pipes.
 
    .. image::  img/tower_cooler1.png
 
-5. Il Pironman 5 supporta i sistemi retro gaming?
-------------------------------------------------------
+5. About the Raspberry Pi AI HAT+
+----------------------------------------------------------
 
-Sì, è compatibile. Tuttavia, la maggior parte dei sistemi retro gaming sono versioni ottimizzate che non consentono l'installazione di software aggiuntivo. Questa limitazione potrebbe impedire il funzionamento di alcuni componenti del Pironman 5, come il display OLED, le due ventole RGB e i 4 LED RGB, che richiedono l'installazione dei pacchetti software del Pironman 5.
+The Raspberry Pi AI HAT+ is not compatible with the Pironman 5.
+
+   .. image::  img/output3.png
+        :width: 400
+
+The Raspberry Pi AI Kit combines the Raspberry Pi M.2 HAT+ and the Hailo AI accelerator module.
+
+   .. image::  img/output2.jpg
+        :width: 400
+
+You can detach the Hailo AI accelerator module from the Raspberry Pi AI Kit and directly insert it into the NVMe PIP module of the Pironman 5.
+
+   .. image::  img/output4.png
+        :width: 800
+
+6. Does the Pironman 5 support retro gaming systems?
+------------------------------------------------------
+Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
+
 
 .. note::
 
-   Il sistema Batocera.linux è ora pienamente compatibile con Pironman 5. Batocera.linux è una distribuzione retro-gaming open-source completamente gratuita.
+   The Batocera.linux system is now fully compatible with Pironman 5. Batocera.linux is an open-source and completely free retro-gaming distribution.
 
    * :ref:`install_batocera`
    * :ref:`set_up_batocera`
 
-6. Lo schermo OLED non funziona?
+7. OLED Screen Not Working?
 -----------------------------------
 
-Se lo schermo OLED non visualizza nulla o visualizza in modo errato, segui questi passaggi:
+If the OLED screen is not displaying or displaying incorrectly, follow these troubleshooting steps:
 
-#. Assicurati che il cavo FPC dello schermo OLED sia collegato saldamente. Si consiglia di ricollegare lo schermo OLED e poi accendere il dispositivo.
+#. Ensure the FPC cable of the OLED screen is securely connected. It is recommended to reconnect the OLED screen and then power on the device.  
 
    .. raw:: html
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
                <source src="_static/video/connect_oled_screen.mp4" type="video/mp4">
-               Il tuo browser non supporta il tag video.
+               Your browser does not support the video tag.
            </video>
        </div>
 
-#. Conferma che il Raspberry Pi stia utilizzando un sistema operativo compatibile. Il Pironman 5 supporta solo i seguenti sistemi:
+#. Confirm that the Raspberry Pi is running a compatible operating system. The Pironman 5 only supports the following systems:  
 
    .. image:: img/compitable_os.png  
       :width: 600  
       :align: center  
 
-   Se hai installato un sistema non supportato, segui la guida per installare un OS compatibile: :ref:`install_the_os`.
+   If you have installed an unsupported system, follow the guide to install a compatible OS: :ref:`install_the_os`.
 
-#. Alla prima accensione dello schermo OLED, potrebbe visualizzare solo blocchi di pixel. Segui le istruzioni in :ref:`set_up_pironman5` per completare la configurazione e consentire una corretta visualizzazione.
+#. When the OLED screen is powered on for the first time, it may only display pixel blocks. You need to follow the instructions in :ref:`set_up_pironman5` to complete the configuration before it can display proper information.
 
-#. Usa il seguente comando per verificare se l'indirizzo I2C ``0x3C`` dello schermo OLED è rilevato:
+#. Use the following command to check if the OLED's I2C address ``0x3C`` is detected:  
 
    .. code-block:: shell
 
       sudo i2cdetect -y 1
 
-   * Se l'indirizzo I2C ``0x3C`` viene rilevato, riavvia il servizio Pironman 5 con questo comando:
+   * If the I2C address ``0x3C`` is detected, restart the Pironman 5 service using this command:
 
      .. code-block:: shell
 
         sudo systemctl restart pironman5.service
 
-   * Abilita I2C se l'indirizzo non viene rilevato:
+   * Enable I2C if the address is not detected:
 
-     * Modifica il file di configurazione eseguendo:
+     * Edit the configuration file by executing:
 
        .. code-block:: shell
 
          sudo nano /boot/firmware/config.txt
 
-     * Aggiungi la seguente riga alla fine del file:
+     * Add the following line at the end of the file:
 
        .. code-block:: shell
 
+
          dtparam=i2c_arm=on
 
-     * Salva il file premendo ``Ctrl+X``, quindi ``Y`` e chiudi. Riavvia il Pironman 5 e verifica se il problema è risolto.
+     * Save the file by pressing ``Ctrl+X``, then ``Y``, and exit. Reboot the Pironman 5 and check if the issue is resolved.
 
-Se il problema persiste dopo aver seguito i passaggi sopra indicati, invia un'email a service@sunfounder.com. Risponderemo il prima possibile.
+If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
 
-7. Modulo NVMe PIP non funzionante?
+8. NVMe PIP Module Not Working?
 ---------------------------------------
 
-1. Assicurati che il cavo FPC che collega il modulo NVMe PIP al Raspberry Pi 5 sia saldamente collegato.
+1. Ensure the FPC cable connecting the NVMe PIP module to the Raspberry Pi 5 is securely attached.  
 
    .. raw:: html
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
                <source src="_static/video/connect_nvme_pip1.mp4" type="video/mp4">
-               Il tuo browser non supporta il tag video.
+               Your browser does not support the video tag.
            </video>
        </div>
 
@@ -155,93 +175,93 @@ Se il problema persiste dopo aver seguito i passaggi sopra indicati, invia un'em
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
                <source src="_static/video/connect_nvme_pip2.mp4" type="video/mp4">
-               Il tuo browser non supporta il tag video.
+               Your browser does not support the video tag.
            </video>
        </div>
 
-2. Conferma che il tuo SSD sia correttamente fissato al modulo NVMe PIP.
+2. Confirm that your SSD is properly secured to the NVMe PIP module.  
 
    .. raw:: html
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
                <source src="_static/video/connect_ssd.mp4" type="video/mp4">
-               Il tuo browser non supporta il tag video.
+               Your browser does not support the video tag.
            </video>
        </div>
 
-3. Controlla lo stato dei LED del modulo NVMe PIP:
+3. Check the status of the NVMe PIP Module's LEDs:
 
-   Dopo aver verificato tutte le connessioni, accendi il Pironman 5 e osserva i due indicatori sul modulo NVMe PIP:
+   After confirming all connections, power on the Pironman 5 and observe the two indicators on the NVMe PIP Module:  
 
-   * **LED PWR**: Dovrebbe essere acceso.
-   * **LED STA**: Dovrebbe lampeggiare per indicare il funzionamento normale.
+   * **PWR LED**: Should be lit.  
+   * **STA LED**: Should blink to indicate normal operation.  
 
    .. image:: img/nvme_pip_leds.png  
 
-   * Se il **LED PWR** è acceso ma il **LED STA** non lampeggia, significa che l'SSD NVMe non è riconosciuto dal Raspberry Pi.
-   * Se il **LED PWR** è spento, cortocircuita i pin "Force Enable" (J4) sul modulo. Se il **LED PWR** si accende, potrebbe indicare un cavo FPC allentato o una configurazione di sistema non supportata per NVMe.
+   * If the **PWR LED** is on but the **STA LED** is not blinking, it indicates the NVMe SSD is not recognized by the Raspberry Pi.  
+   * If the **PWR LED** is off, short the "Force Enable" pins (J4) on the module. If the **PWR LED** lights up, it could indicate a loose FPC cable or unsupported system configuration for NVMe.
 
      .. image:: img/nvme_pip_j4.png  
 
-4. Conferma che il tuo SSD NVMe abbia un sistema operativo correttamente installato. Consulta: :ref:`install_the_os`.
+     
+4. Confirm that your NVMe SSD has a properly installed operating system. Refer to: :ref:`install_the_os`.
 
-5. Se il cablaggio è corretto e l'OS è installato, ma l'SSD NVMe non si avvia ancora, prova ad avviare da una scheda Micro SD per verificare la funzionalità degli altri componenti. Una volta confermato, procedi con: :ref:`configure_boot_ssd`.
+5. If the wiring is correct and the OS is installed, but the NVMe SSD still fails to boot, try booting from a Micro SD card to verify the functionality of other components. Once confirmed, proceed to: :ref:`configure_boot_ssd`.
 
-Se il problema persiste dopo aver seguito i passaggi precedenti, invia un'email a service@sunfounder.com. Ti risponderemo al più presto.
+If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
 
+9. RGB LEDs Not Working?
+--------------------------
 
-8. LED RGB non funzionanti?
--------------------------------
-
-#. I due pin sull'IO Expander sopra J9 sono utilizzati per collegare i LED RGB a GPIO10. Assicurati che il ponticello su questi due pin sia correttamente posizionato.
+#. The two pins on the IO Expander above J9 are used to connect the RGB LEDs to GPIO10. Ensure that the jumper cap on these two pins are properly in place.
 
    .. image:: advanced/img/io_board_rgb_pin.png
       :width: 300
       :align: center
 
-#. Verifica che il Raspberry Pi stia utilizzando un sistema operativo compatibile. Il Pironman 5 supporta solo le seguenti versioni di OS:
+#. Verify that the Raspberry Pi is running a compatible operating system. The Pironman 5 only supports the following OS versions:
 
    .. image:: img/compitable_os.png
       :width: 600
       :align: center
 
-   Se hai installato un OS non supportato, segui la guida per installare un sistema operativo compatibile: :ref:`install_the_os`.
+   If you have installed an unsupported OS, follow the guide to install a compatible operating system: :ref:`install_the_os`.
 
-#. Esegui il comando ``sudo raspi-config`` per aprire il menu di configurazione. Naviga su **3 Interfacing Options** -> **I3 SPI** -> **YES**, quindi clicca su **OK** e **Finish** per abilitare SPI. Dopo aver abilitato SPI, riavvia il Pironman 5.
+#. Run the command ``sudo raspi-config`` to open the configuration menu. Navigate to **3 Interfacing Options** -> **I3 SPI** -> **YES**, then click **OK** and **Finish** to enable SPI. After enabling SPI, restart the Pironman 5.
 
-Se il problema persiste dopo aver eseguito i passaggi precedenti, invia un'email a service@sunfounder.com. Ti risponderemo al più presto.
+If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
 
-9. La ventola della CPU non funziona?
+10. CPU fan not working?
 ----------------------------------------------
 
-Quando la temperatura della CPU non ha raggiunto la soglia impostata, la ventola della CPU non si attiva.
+When the CPU temperature has not reached the set threshold, the CPU fan will not working.
 
-**Controllo della velocità della ventola in base alla temperatura**  
+**Fan Speed Control Based on Temperature**  
 
-La ventola PWM opera dinamicamente, regolando la velocità in base alla temperatura del Raspberry Pi 5:
+The PWM fan operates dynamically, adjusting its speed according to the Raspberry Pi 5's temperature:  
 
-* **Sotto i 50°C**: La ventola rimane spenta (0% di velocità).
-* **A 50°C**: La ventola opera a bassa velocità (30% di velocità).
-* **A 60°C**: La ventola aumenta a velocità media (50% di velocità).
-* **A 67,5°C**: La ventola raggiunge alta velocità (70% di velocità).
-* **A 75°C e oltre**: La ventola opera a piena velocità (100% di velocità).
+* **Below 50°C**: Fan remains off (0% speed).  
+* **At 50°C**: Fan operates at low speed (30% speed).  
+* **At 60°C**: Fan increases to medium speed (50% speed).  
+* **At 67.5°C**: Fan ramps up to high speed (70% speed).  
+* **At 75°C and above**: Fan operates at full speed (100% speed).  
 
-Per maggiori dettagli consulta: :ref:`Fans`
+For more detail please refer to : :ref:`Fans`
 
-10. Come disabilitare la dashboard web?
+11. How to disable web dashboard?
 ------------------------------------------------------
 
-Dopo aver completato l'installazione del modulo ``pironman5``, potrai accedere alla :ref:`view_control_dashboard`.
+Once you have completed the installation of the ``pironman5`` module, you will be able to access the :ref:`view_control_dashboard`.
       
-Se non hai bisogno di questa funzionalità e desideri ridurre l'uso della CPU e della RAM, puoi disabilitare la dashboard durante l'installazione di ``pironman5`` aggiungendo il flag ``--disable-dashboard``.
+If you do not need this feature and want to reduce CPU and RAM usage, you can disable the dashboard during the installation of ``pironman5`` by adding the ``--disable-dashboard`` flag.
       
 .. code-block:: shell
       
    cd ~/pironman5
    sudo python3 install.py --disable-dashboard
       
-Se hai già installato ``pironman5``, puoi rimuovere il modulo ``dashboard`` e ``influxdb``, quindi riavviare pironman5 per applicare le modifiche:
+If you have already installed ``pironman 5``, you can remove the ``dashboard`` module and ``influxdb``, then restart pironman5 to apply the changes:
       
 .. code-block:: shell
       
@@ -249,72 +269,76 @@ Se hai già installato ``pironman5``, puoi rimuovere il modulo ``dashboard`` e `
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-11. Come controllare i componenti usando il comando ``pironman5``
+12. How to Control Components Using the ``pironman5`` Command
 ----------------------------------------------------------------------
-
-Puoi fare riferimento al seguente tutorial per controllare i componenti del Pironman 5 usando il comando ``pironman5``:
+You can refer to the following tutorial to control the components of the Pironman 5 using the ``pironman5`` command.
 
 * :ref:`view_control_commands`
 
-12. Come modificare l'ordine di avvio del Raspberry Pi utilizzando i comandi
-----------------------------------------------------------------------------------
+13. How to Change the Raspberry Pi Boot Order Using Commands
+-------------------------------------------------------------
 
-Se sei già collegato al tuo Raspberry Pi, puoi modificare l'ordine di avvio utilizzando i comandi. Le istruzioni dettagliate sono le seguenti:
+If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
 
 * :ref:`configure_boot_ssd`
 
-13. Come modificare l'ordine di avvio con Raspberry Pi Imager?
------------------------------------------------------------------
 
-Oltre a modificare il parametro ``BOOT_ORDER`` nella configurazione EEPROM, puoi anche utilizzare il **Raspberry Pi Imager** per cambiare l'ordine di avvio del tuo Raspberry Pi.
+14. How to Modify the Boot Order with Raspberry Pi Imager?
+---------------------------------------------------------------
 
-Si consiglia di utilizzare una scheda di riserva per questo passaggio.
+In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can also use the **Raspberry Pi Imager** to change the boot order of your Raspberry Pi.
+
+It is recommended to use a spare card for this step.
 
 * :ref:`update_bootloader`
 
-14. Come copiare il sistema dalla scheda SD a un SSD NVMe?
---------------------------------------------------------------
+15. How to Copy the System from the SD Card to an NVMe SSD?
+-------------------------------------------------------------
 
-Se possiedi un SSD NVMe ma non disponi di un adattatore per collegare l'SSD NVMe al tuo computer, puoi prima installare il sistema sulla tua scheda Micro SD. Una volta che il Pironman 5 si è avviato correttamente, puoi copiare il sistema dalla scheda Micro SD all'SSD NVMe. Le istruzioni dettagliate sono le seguenti:
+If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
+
 
 * :ref:`copy_sd_to_nvme_rpi`
 
-15. Come rimuovere la pellicola protettiva dai pannelli acrilici
---------------------------------------------------------------------
+16. How to Remove the Protective Film from the Acrylic Plates
+-----------------------------------------------------------------
 
-Nel pacchetto sono inclusi due pannelli acrilici, entrambi ricoperti da una pellicola protettiva gialla/trasparente su entrambi i lati per prevenire graffi. La pellicola protettiva potrebbe essere un po' difficile da rimuovere. Usa un cacciavite per raschiare delicatamente gli angoli, quindi rimuovi con cura l'intera pellicola.
+Two acrylic panels are included in the package, both covered with yellow/transparent protective film on both sides to prevent scratches. The protective film may be a bit difficult to remove. Use a screwdriver to gently scrape at the corners, then carefully peel off the entire film.
 
 .. image:: img/peel_off_film.jpg
     :width: 500
     :align: center
 
 
+
 .. _openssh_powershell:
 
-16. Come installare OpenSSH tramite PowerShell
-----------------------------------------------------
+17. How to Install OpenSSH via Powershell?
+----------------------------------------------
 
-Quando tenti di usare ``ssh <username>@<hostname>.local`` (o ``ssh <username>@<IP address>``) per connetterti al tuo Raspberry Pi, potrebbe apparire il seguente messaggio di errore:
+When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``) to connect to your Raspberry Pi, but the following error message appears.
 
     .. code-block::
 
         ssh: The term 'ssh' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
         spelling of the name, or if a path was included, verify that the path is correct and try again.
 
-Ciò significa che il tuo sistema operativo è troppo vecchio e non ha `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ preinstallato. Segui il tutorial sottostante per installarlo manualmente.
 
-#. Digita ``powershell`` nella barra di ricerca del tuo desktop Windows, fai clic con il pulsante destro su ``Windows PowerShell`` e seleziona ``Esegui come amministratore`` dal menu che appare.
+It means your computer system is too old and does not have `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ pre-installed, you need to follow the tutorial below to install it manually.
+
+#. Type ``powershell`` in the search box of your Windows desktop, right click on the ``Windows PowerShell``, and select ``Run as administrator`` from the menu that appears.
 
    .. image:: img/powershell_ssh.png
       :width: 90%
+      
 
-#. Usa il seguente comando per installare ``OpenSSH.Client``:
+#. Use the following command to install ``OpenSSH.Client``.
 
    .. code-block::
 
         Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
-#. Dopo l'installazione, verrà mostrata la seguente uscita:
+#. After installation, the following output will be returned.
 
    .. code-block::
 
@@ -322,13 +346,13 @@ Ciò significa che il tuo sistema operativo è troppo vecchio e non ha `OpenSSH 
         Online        : True
         RestartNeeded : False
 
-#. Verifica l'installazione usando il seguente comando:
+#. Verify the installation by using the following command.
 
    .. code-block::
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. Ora dovrebbe indicarti che ``OpenSSH.Client`` è stato installato correttamente:
+#. It now tells you that ``OpenSSH.Client`` has been successfully installed.
 
    .. code-block::
 
@@ -338,41 +362,51 @@ Ciò significa che il tuo sistema operativo è troppo vecchio e non ha `OpenSSH 
         Name  : OpenSSH.Server~~~~0.0.1.0
         State : NotPresent
 
-    .. warning::
-        Se non appare la suddetta informazione, significa che il tuo sistema Windows è ancora troppo vecchio. Si consiglia di installare uno strumento SSH di terze parti, come |link_putty|.
+    .. warning:: 
+        If the above prompt does not appear, it means that your Windows system is still too old, and you are advised to install a third-party SSH tool, like |link_putty|.
 
-#. Riavvia PowerShell ed eseguilo nuovamente come amministratore. Ora sarai in grado di accedere al tuo Raspberry Pi usando il comando ``ssh``, dove ti verrà richiesto di inserire la password configurata in precedenza.
+#. Now restart PowerShell and continue to run it as administrator. At this point you will be able to log in to your Raspberry Pi using the ``ssh`` command, where you will be prompted to enter the password you set up earlier.
 
    .. image:: img/powershell_login.png
 
-17. Come accendere/spegnere lo schermo OLED
------------------------------------------------
 
-Puoi scegliere di accendere o spegnere lo schermo OLED tramite il pannello di controllo o la riga di comando.
 
-1. Accendere/spegnere lo schermo OLED dal pannello di controllo.
+
+18. How to turn OFF/ON the OLED Screen?
+----------------------------------------------------------
+
+You can choose to turn off the OLED Screen via the dashboard or the command line.
+
+1. Turn OFF/ON the OLED Screen by the dash board.
 
    .. note::
 
-    Prima di usare il pannello di controllo, è necessario configurarlo in Home Assistant. Consulta: :ref:`view_control_dashboard`.
+    Before using the dashboard, you need to set it up on Home Assistant. Please refer to: :ref:`view_control_dashboard`.
 
-- Una volta completata la configurazione, segui questi passaggi per accendere, spegnere o configurare il tuo schermo OLED.
+- After you have completed the setup, you can follow these steps to turn on, turn off, or configure your OLED Screen.
 
-   .. image:: img/set_up_on_dashboard.jpg
+   .. image::  img/set_up_on_dashboard.jpg
       :width: 90%
 
-2. Accendere/spegnere lo schermo OLED dalla riga di comando.
+2.Turn OFF/ON the OLED Screen by the command line.
 
-- Usa il seguente comando per accendere o spegnere lo schermo OLED:
+- Use any one of the following five commands to turn on the OLED screen.
 
 .. code-block::
 
-    sudo pironman5 -oe on/off
+    sudo pironman5 -oe True/true/on/On/1
+
+- Use any one of the following five commands to turn off the OLED screen.
+
+.. code-block::
+
+    sudo pironman5 -oe False/false/off/Off/0
 
 .. note::
 
-    Potresti dover riavviare il servizio pironman5 affinché le modifiche abbiano effetto. Usa il seguente comando per riavviare il servizio:
+    You may need to restart the pironman5 service for the changes to take effect. You can use the following command to restart the service:
 
       .. code-block::
 
         sudo systemctl restart pironman5.service
+
