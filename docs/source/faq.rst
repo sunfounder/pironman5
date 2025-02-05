@@ -265,7 +265,7 @@ If you have already installed ``pironman 5``, you can remove the ``dashboard`` m
       
 .. code-block:: shell
       
-   /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
+   /opt/pironman5/venv/bin/pip3 uninstall pm-dashboard influxdb
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
