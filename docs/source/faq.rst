@@ -62,12 +62,38 @@ Pour une démonstration détaillée, veuillez consulter la vidéo :
     </div>
 
 
-4. À propos des extrémités des tuyaux en cuivre du refroidisseur tour
---------------------------------------------------------------------------
+4. À propos du refroidisseur tour
+----------------------------------------------------------
 
-Les tuyaux en cuivre en forme de U au sommet du refroidisseur tour sont comprimés pour faciliter leur passage à travers les ailettes en aluminium. Cela fait partie du processus normal de production.
+#. Les caloducs en forme de U situés en haut du refroidisseur tour sont comprimés pour faciliter le passage des tubes en cuivre à travers les ailettes en aluminium. Il s'agit d'une étape normale du processus de fabrication des tubes en cuivre.
 
-   .. image:: img/tower_cooler1.png
+   .. image::  img/tower_cooler1.png
+
+#. Précautions à prendre lors de l’installation d’un refroidisseur tour :
+
+**Fixation des tampons** : Avant d’installer le refroidisseur tour, assurez-vous de fixer des tampons sur le Raspberry Pi afin d’éviter tout dommage ou rayure.
+
+ .. image::  img/tower_cooler_thermal.png
+
+**Orientation correcte** : Faites attention au sens de placement du refroidisseur tour. Alignez-le avec les trous de positionnement du Raspberry Pi avant d’appuyer sur les vis à ressort pour le fixer.
+
+ .. image::  img/tower_cooler_place.jpg
+
+**Retrait précautionneux** : Si le refroidisseur tour a été installé dans le mauvais sens ou si les tampons n’ont pas été appliqués, ne forcez pas son retrait.
+
+- Pour retirer le refroidisseur tour en toute sécurité, suivez ces étapes :
+
+  Utilisez une pince fine ou une pince à épiler pour saisir l’extrémité de l’écrou à ressort et poussez-le doucement vers le haut pour le détacher.
+
+     .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="_static/video/remove_tower_cooler.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+       </div>
+
 
 5. À propos du Raspberry Pi AI HAT+
 ---------------------------------------
