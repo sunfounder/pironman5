@@ -62,12 +62,38 @@ For a detailed demonstration, please refer to the video:
     </div>
 
 
-4. About the Copper Pipe Ends of Tower Cooler
+
+4. About the Tower Cooler
 ----------------------------------------------------------
 
-The U-shaped heat pipes at the top of the tower cooler are compressed to facilitate the copper pipes passing through the aluminum fins, which is part of the normal production process for copper pipes.
+#. The U-shaped heat pipes at the top of the tower cooler are compressed to facilitate the copper pipes passing through the aluminum fins, which is part of the normal production process for copper pipes.
 
    .. image::  img/tower_cooler1.png
+
+#. Precautions for Installing a Tower Cooler:
+
+**Attach Pads**: Before installing the tower cooler, make sure to attach pads to the Raspberry Pi to prevent damage or scratches.
+
+ .. image::  img/tower_cooler_thermal.png
+
+**Correct Orientation**: Pay attention to the placement direction of the tower cooler. Align it with the positioning holes on the Raspberry Pi before pressing down the spring screws to secure it.
+
+ .. image::  img/tower_cooler_place.jpg
+
+**Careful Removal**: If the tower cooler is installed in the wrong direction or the pads were not applied, do not forcibly remove it.
+
+- To safely remove the tower cooler, follow these steps:
+
+  Use tweezers or pliers to grip the tip of the spring nut and gently push upward to detach it.
+
+     .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="_static/video/remove_tower_cooler.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+       </div>
 
 5. About the Raspberry Pi AI HAT+
 ----------------------------------------------------------
