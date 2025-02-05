@@ -61,12 +61,37 @@ Eine detaillierte Demonstration finden Sie im folgenden Video:
         </video>
     </div>
 
-4. Über die Enden der Kupferrohre des Tower Coolers
+4. Über den Tower-Kühler
 ----------------------------------------------------------
 
-Die U-förmigen Wärmerohre am oberen Ende des Tower Coolers sind zusammengedrückt, um den Durchgang der Kupferrohre durch die Aluminiumlamellen zu erleichtern. Dies ist Teil des normalen Produktionsprozesses.
+#. Die U-förmigen Heatpipes an der Oberseite des Tower-Kühlers sind gepresst, um das Durchführen der Kupferrohre durch die Aluminiumlamellen zu erleichtern. Dies ist ein normaler Bestandteil des Herstellungsprozesses für Kupferrohre.
 
-   .. image:: img/tower_cooler1.png
+   .. image::  img/tower_cooler1.png
+
+#. Wichtige Hinweise zur Installation eines Tower-Kühlers:
+
+**Pads anbringen**: Vor der Installation des Tower-Kühlers sollten Pads auf dem Raspberry Pi angebracht werden, um Schäden oder Kratzer zu vermeiden.
+
+ .. image::  img/tower_cooler_thermal.png
+
+**Richtige Ausrichtung**: Achte auf die korrekte Platzierung des Tower-Kühlers. Richte ihn an den Positionierungslöchern des Raspberry Pi aus, bevor du die Federschrauben festziehst.
+
+ .. image::  img/tower_cooler_place.jpg
+
+**Vorsicht beim Entfernen**: Falls der Tower-Kühler falsch ausgerichtet installiert wurde oder die Pads nicht angebracht wurden, darf er nicht mit Gewalt entfernt werden.
+
+- Um den Tower-Kühler sicher zu entfernen, folge diesen Schritten:
+
+  Greife die Spitze der Feder-Mutter mit einer Pinzette oder Zange und drücke sie vorsichtig nach oben, um sie zu lösen.
+
+     .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="_static/video/remove_tower_cooler.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+       </div>
 
 5. Über den Raspberry Pi AI HAT+
 ----------------------------------------------------------
