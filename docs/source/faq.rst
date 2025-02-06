@@ -61,12 +61,38 @@ Para una demostración detallada, consulta el video:
         </video>
     </div>
 
-4. Sobre los extremos de los tubos de cobre del Tower Cooler
------------------------------------------------------------------
+4. Sobre el Disipador en Torre
+----------------------------------------------------------
 
-Los tubos de calor en forma de U en la parte superior del Tower Cooler están comprimidos para facilitar el paso de los tubos de cobre a través de las aletas de aluminio, lo cual forma parte del proceso normal de fabricación.
+#. Los tubos de calor en forma de U en la parte superior del disipador en torre están comprimidos para facilitar el paso de los tubos de cobre a través de las aletas de aluminio. Esto es una parte normal del proceso de producción de los tubos de cobre.
 
    .. image::  img/tower_cooler1.png
+
+#. Precauciones para la instalación de un disipador en torre:
+
+**Colocar las Almohadillas**: Antes de instalar el disipador en torre, asegúrese de colocar las almohadillas en la Raspberry Pi para evitar daños o arañazos.
+
+ .. image::  img/tower_cooler_thermal.png
+
+**Orientación Correcta**: Preste atención a la dirección de colocación del disipador en torre. Alinee el disipador con los orificios de posicionamiento en la Raspberry Pi antes de presionar los tornillos de resorte para fijarlo.
+
+ .. image::  img/tower_cooler_place.jpg
+
+**Extracción Cuidadosa**: Si el disipador en torre ha sido instalado en la dirección incorrecta o no se han colocado las almohadillas, no lo retire a la fuerza.
+
+- Para extraerlo de forma segura, siga estos pasos:
+
+  Use pinzas o alicates para sujetar la punta de la tuerca de resorte y empuje suavemente hacia arriba para desacoplarla.
+
+     .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="_static/video/remove_tower_cooler.mp4" type="video/mp4">
+               Su navegador no soporta la etiqueta de video.
+           </video>
+       </div>
+
 
 5. Sobre el Raspberry Pi AI HAT+
 ------------------------------------------------------------
