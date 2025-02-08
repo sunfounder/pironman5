@@ -155,14 +155,12 @@ class SF_Installer():
         self.parser.add_argument('--skip-config-txt',
                                     action='store_true',
                                     help='Skip config.txt')
-        self.parser_added.append('skip_config_txt')
         self.parser.add_argument('--skip-dtoverlay',
                                     action='store_true',
                                     help='Skip dtoverlay')
         self.parser.add_argument('--skip-modules',
                                     action='store_true',
                                     help='Skip probe modules')
-        self.parser_added = []
         self.config_txt_handler = ConfigTxt()
         self.user = self.get_username()
         self.errors = []
