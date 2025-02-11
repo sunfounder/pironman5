@@ -74,6 +74,7 @@ Si vous avez des questions, envoyez un email à service@sunfounder.com et nous v
     control/control_pironman5
     advanced/advanced
     compitable_nvme_ssd
+    assemble_camera
     faq
 
 **Avis de Copyright**
