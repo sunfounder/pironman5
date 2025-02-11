@@ -14,6 +14,12 @@
 
 特徴
 ======================
+**インターフェース**
+
+.. image:: img/pironman5_interfaces1.png
+.. image:: img/pironman5_interfaces2.png
+
+
 
 **パラメータ**
 

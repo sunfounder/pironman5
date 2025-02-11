@@ -12,7 +12,6 @@
 
     👉 探索と創造の準備ができましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
-.. _set_up_pironman5:
 
 Raspberry Pi/Ubuntu/Kali/Homebridge OSでのセットアップ
 ===========================================================
@@ -61,7 +60,7 @@ Raspberry PiのGPIOから供給されるOLED画面やRGBファンがシャット
    .. code-block:: shell
 
     cd ~
-    git clone https://github.com/sunfounder/pironman5.git
+    git clone https://github.com/sunfounder/pironman5.git --depth 1
     cd ~/pironman5
     sudo python3 install.py
 
@@ -83,7 +82,7 @@ Raspberry PiのGPIOから供給されるOLED画面やRGBファンがシャット
 
      sudo systemctl restart pironman5.service
 
-   * ``restart``: pironman 5の設定に変更を加えた場合、このコマンドを使用して変更を適用します。
-   * ``start/stop``: ``pironman5.service`` を有効または無効にします。
-   * ``status``: ``systemctl`` ツールを使用して、 ``pironman5`` プログラムの稼働状況を確認します。
+   * ``restart`` : pironman 5の設定に変更を加えた場合、このコマンドを使用して変更を適用します。
+   * ``start/stop`` : ``pironman5.service`` を有効または無効にします。
+   * ``status`` : ``systemctl`` ツールを使用して、 ``pironman5`` プログラムの稼働状況を確認します。
 

@@ -56,7 +56,7 @@ RTCバッテリーの取り付けを簡単にするために、1220RTCバッテ�
     
       sudo nano /boot/firmware/config.txt
       
-  * ``rtc_bbat_vchg``を ``/boot/firmware/config.txt`` に追加します。
+  * ``rtc_bbat_vchg`` を ``/boot/firmware/config.txt`` に追加します。
   
     .. code-block:: shell
     

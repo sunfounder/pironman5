@@ -53,7 +53,7 @@ Pironman 5のデータを確認し、さまざまなデバイスをダッシュ�
 
 これらの設定をニーズに合わせてカスタマイズできます。
 
-``pironman5``または ``pironman5 -h`` を使用して指示を確認してください。
+``pironman5`` または ``pironman5 -h`` を使用して指示を確認してください。
 
 .. code-block::
 
@@ -98,7 +98,7 @@ Pironman 5のデータを確認し、さまざまなデバイスをダッシュ�
     sudo systemctl restart pironman5.service
 
 
-* ``pironman5``プログラムのステータスを ``systemctl`` ツールを使って確認してください。
+* ``pironman5`` プログラムのステータスを ``systemctl`` ツールを使って確認してください。
 
   .. code-block:: shell
 
@@ -145,7 +145,7 @@ RGB LEDの制御
 
 .. note::
 
-  RGB LEDの表示モードを ``rainbow`` , ``rainbow_reverse``, ``hue_cycle``に設定した場合、 ``pironman5 -rc`` で色を設定することはできません。
+  RGB LEDの表示モードを ``rainbow`` , ``rainbow_reverse`` , ``hue_cycle`` に設定した場合、 ``pironman5 -rc`` で色を設定することはできません。
 
 .. code-block:: shell
 

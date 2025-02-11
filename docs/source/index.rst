@@ -30,8 +30,9 @@
     
     ご希望の言語でドキュメントにアクセスするには、該当のリンクをクリックしてください。
 
-.. image:: img/pironman5.JPG
+.. image:: img/pironman5_pic.jpg
     :width: 400
+    :align: center
     
 
 Raspberry Pi 5 をスタイリッシュかつ高性能にアップグレードする |link_pironman5| 。美しさと機能性が絶妙に融合した、最高級のケースです。
@@ -56,7 +57,9 @@ Raspberry Pi 5 をスタイリッシュかつ高性能にアップグレード�
 
     Raspberry Pi 5に対応するOSをインストールする必要があります。最新のRaspberry Pi Imagerツールを使用してシステムをインストールしてください。現在テスト済みのシステムは次の通りです。
 
-   .. image:: install/img/compitable_os.png
+    .. image:: img/compitable_os.png
+        :width: 600
+        :align: center
 
 ご質問がある場合は、service@sunfounder.comまでメールをお送りください。可能な限り早急に対応いたします。
 
