@@ -169,7 +169,7 @@ Passons maintenant à l'installation officielle de l'add-on **Pironman 5**.
 
 #. Vous pouvez maintenant voir les informations concernant votre Raspberry Pi, configurer le RGB et contrôler le ventilateur, etc.
 
-   .. image:: img/home_web.png
+   .. image:: img/home_web_new.png
       :width: 90%
 
 .. note::

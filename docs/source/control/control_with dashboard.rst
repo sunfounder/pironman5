@@ -1,62 +1,57 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de remises exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-goûts.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et à des promotions spéciales pour les fêtes.
 
     👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _view_control_dashboard:
 
-Affichage et Contrôle depuis le Tableau de Bord
-===================================================
+Afficher et contrôler depuis le tableau de bord
+=================================================
 
-Une fois que vous avez installé avec succès le module ``pironman5``, le service ``pironman5.service`` démarrera automatiquement au redémarrage.
+Une fois que vous avez installé le module ``pironman5`` avec succès, le service ``pironman5.service`` démarrera automatiquement au redémarrage.
 
-Vous pouvez maintenant ouvrir la page de surveillance dans votre navigateur pour consulter les informations sur votre Raspberry Pi, configurer les LEDs RGB, contrôler le ventilateur, etc. Le lien vers la page est: ``http://<ip>:34001``.
+Vous pouvez maintenant ouvrir la page de surveillance dans votre navigateur pour consulter les informations sur votre Raspberry Pi, configurer les LEDs RGB et contrôler le ventilateur. Le lien de la page est : ``http://<ip>:34001``.
 
-Cette page comprend un **Tableau de Bord**, une section **Historique**, une section **Journal**, ainsi qu'une page **Paramètres**.
+Cette page comprend **Tableau de bord**, **Historique**, **Journal** et une page de **Paramètres**.
 
-.. image:: img/dashboard_tab.png
-  :width: 90%
-  
-  
-Tableau de Bord
------------------------
+.. image:: img/dashboard_tab_new.jpg
 
-Plusieurs cartes vous permettent de consulter l'état pertinent de votre Raspberry Pi, y compris :
 
-* **Ventilateur**: Affiche la température du CPU du Raspberry Pi et la vitesse du ventilateur PWM. **État du Ventilateur GPIO** indique l'état des deux ventilateurs RGB latéraux. À la température actuelle, les deux ventilateurs RGB sont éteints.
+Tableau de bord
+-------------------------
+
+Plusieurs cartes sont disponibles pour consulter l'état pertinent de votre Raspberry Pi, notamment :
+
+* **Ventilateur** : Consultez la température du CPU du Raspberry Pi et la vitesse du ventilateur PWM. **GPIO Fan State** indique l'état des deux ventilateurs RGB latéraux. À la température actuelle, les deux ventilateurs RGB sont arrêtés.
 
   .. image:: img/dashboard_pwm_fan.png
     :width: 90%
     
-
-* **Stockage**: Affiche la capacité de stockage d'un Raspberry Pi, montrant les différentes partitions de disque avec leur espace utilisé et disponible.
+* **Stockage** : Affiche la capacité de stockage d'un Raspberry Pi, montrant les différentes partitions de disque avec l'espace utilisé et disponible.
 
   .. image:: img/dashboard_storage.png
     :width: 90%
     
-
-* **Mémoire**: Montre l'utilisation et le pourcentage de la RAM du Raspberry Pi.
+* **Mémoire** : Affiche l'utilisation de la RAM du Raspberry Pi ainsi que le pourcentage utilisé.
 
   .. image:: img/dashboard_memory.png
     :width: 90%
     
-
-* **Réseau**: Affiche le type de connexion réseau actuel, ainsi que les vitesses de téléchargement et de téléversement.
+* **Réseau** : Affiche le type de connexion réseau actuel, ainsi que les vitesses de téléchargement et de téléversement.
 
   .. image:: img/dashboard_network.png
     :width: 90%
     
-
-* **Processeur**: Illustre les performances du CPU du Raspberry Pi, y compris l'état de ses quatre cœurs, les fréquences de fonctionnement et le pourcentage d'utilisation du CPU.
+* **Processeur** : Illustre les performances du CPU du Raspberry Pi, y compris l'état de ses quatre cœurs, les fréquences d'opération et le pourcentage d'utilisation du CPU.
 
   .. image:: img/dashboard_processor.png
     :width: 90%
@@ -65,64 +60,89 @@ Plusieurs cartes vous permettent de consulter l'état pertinent de votre Raspber
 Historique
 --------------
 
-La page Historique vous permet de consulter les données historiques. Sélectionnez les données que vous souhaitez consulter dans la barre latérale gauche, puis choisissez la période pour afficher les données correspondantes. Vous pouvez également cliquer pour les télécharger.
+La page Historique vous permet de visualiser des données historiques. Sélectionnez les données que vous souhaitez consulter dans la barre latérale gauche, puis choisissez la plage de temps pour voir les données correspondantes. Vous pouvez également cliquer pour les télécharger.
 
-.. image:: img/dashboard_history.png
+.. image:: img/dashboard_history1.png
   :width: 90%
   
+.. image:: img/dashboard_history2.png
+  :width: 90%
 
 Journal
-------------
+----------
 
-La page Journal permet de consulter les journaux du service Pironman5 actuellement en cours d'exécution. Le service Pironman5 comprend plusieurs sous-services, chacun ayant son propre journal. Sélectionnez le journal que vous souhaitez consulter et les données du journal s'afficheront à droite. Si l'écran est vide, cela peut signifier qu'il n'y a pas de contenu de journal.
+La page Journal est utilisée pour consulter les journaux du service Pironman5 en cours d'exécution. Le service Pironman5 comprend plusieurs sous-services, chacun ayant son propre journal. Sélectionnez le journal que vous souhaitez consulter, et vous pourrez voir les données correspondantes sur la droite. Si aucun contenu n'apparaît, cela peut signifier qu'il n'y a pas de journal disponible.
 
 * Chaque journal a une taille fixe de 10 Mo. Lorsqu'il dépasse cette taille, un deuxième journal est créé.
-* Le nombre de journaux pour un même service est limité à 10. Si ce nombre est dépassé, le plus ancien journal sera automatiquement supprimé.
-* Des outils de filtre se trouvent au-dessus de la zone de journal à droite. Vous pouvez sélectionner le niveau du journal, filtrer par mots-clés, et utiliser plusieurs outils pratiques, notamment **Retour à la ligne**, **Défilement automatique** et **Mise à jour automatique**.
+* Le nombre de journaux pour un même service est limité à 10. Si ce nombre est dépassé, le journal le plus ancien est automatiquement supprimé. Vous pouvez également supprimer les journaux manuellement.
+* Des outils de filtrage sont disponibles au-dessus de la zone de journal sur la droite. Vous pouvez sélectionner le niveau de journalisation, filtrer par mots-clés et utiliser plusieurs outils pratiques, notamment **Retour à la ligne**, **Défilement automatique** et **Mise à jour automatique**.
 * Les journaux peuvent également être téléchargés localement.
 
-.. image:: img/dashboard_log.png
+.. image:: img/dashboard_log1.png
   :width: 90%
   
+.. image:: img/dashboard_log2.png
+  :width: 90%
 
 Paramètres
------------------
+------------
 
-Il y a un menu de paramètres dans le coin supérieur droit de la page. 
+Dans le coin supérieur droit de la page, vous trouverez un menu de paramètres où vous pourrez personnaliser les réglages selon vos préférences. Après avoir effectué des modifications, elles seront enregistrées automatiquement. Si nécessaire, vous pouvez cliquer sur le bouton EFFACER en bas pour supprimer les données historiques.
 
-.. note::
-    
-    Après modification, vous devez cliquer sur le bouton **SAUVEGARDER** en bas pour enregistrer les paramètres.
+.. image:: img/Dark_mode_and_Temperature.jpg
+  :width: 600
 
-.. image:: img/dashboard_settings.png
-  :width: 90%
-  
+* **Mode sombre** : Basculez entre les thèmes clair et sombre. L'option de thème est enregistrée dans le cache du navigateur. Changer de navigateur ou effacer le cache rétablira le thème clair par défaut.
+* **Unité de température** : Définissez l'unité de température affichée par le système.
 
-* **Mode sombre**: Basculez entre les thèmes clair et sombre. L'option de thème est enregistrée dans le cache du navigateur. Changer de navigateur ou vider le cache réinitialisera le thème par défaut (clair).
-* **Unité de température**: Définissez l'unité de température affichée par le système.
-* **Mode ventilateur**: Vous pouvez définir le mode de fonctionnement des deux ventilateurs RGB. Ces modes déterminent les conditions dans lesquelles les ventilateurs RGB s'activent.
+**À propos de l'écran OLED**
 
-    * **Silencieux**: Les ventilateurs RGB s'activent à 70°C.
-    * **Équilibré**: Les ventilateurs RGB s'activent à 67,5°C.
-    * **Cool**: Les ventilateurs RGB s'activent à 60°C.
-    * **Performance**: Les ventilateurs RGB s'activent à 50°C.
-    * **Toujours activés**: Les ventilateurs RGB seront toujours activés.
+.. image:: img/OLED_Sreens.jpg
+  :width: 600
 
-    Par exemple, si vous définissez le mode sur **Performance**, les ventilateurs RGB s'activeront à 50°C.
+* **Activer l'OLED** : Déterminez si l'écran OLED doit être activé.
+* **Disque OLED** : Configurez le disque OLED.
+* **Interface réseau OLED** :
 
-    Après avoir enregistré les modifications, si la température du CPU dépasse 50°C, vous verrez l'**État du Ventilateur GPIO** passer à ON dans le Tableau de Bord, et les ventilateurs RGB latéraux commenceront à tourner.
+  * **all** : Alterne entre l'affichage de l'adresse IP Ethernet et Wi-Fi.
+  * **eth0** : Affiche uniquement l'adresse IP Ethernet.
+  * **wlan0** : Affiche uniquement l'adresse IP Wi-Fi.
 
-  .. image:: img/dashboard_rgbfan_on.png
-    :width: 300
-    
+* **Rotation de l'OLED** : Configurez la rotation de l'écran OLED.
 
-* **Luminosité RGB**: Vous pouvez ajuster la luminosité des LEDs RGB à l'aide d'un curseur.
-* **Couleur RGB**: Définissez la couleur des LEDs RGB.
-* **Style RGB**: Choisissez le mode d'affichage des LEDs RGB. Les options incluent **Solide**, **Respiration**, **Flow**, **Flow_reverse**, **Arc-en-ciel**, **Arc-en-ciel inversé**, et **Cycle de teinte**.
+**À propos des LEDs RGB**
 
-.. note::
+.. image:: img/RGB_LEDS.jpg
+  :width: 600
 
-  Si vous définissez le **Style RGB** sur **Arc-en-ciel**, **Arc-en-ciel inversé** ou **Cycle de teinte**, vous ne pourrez pas définir la couleur.
+* **Activer les RGB** : Déterminez si les LEDs RGB doivent être activées.
+* **Couleur RGB** : Configurez la couleur des LEDs RGB.
+* **Luminosité RGB** : Ajustez la luminosité des LEDs RGB à l'aide d'un curseur.
+* **Style RGB** : Choisissez le mode d'affichage des LEDs RGB. Les options incluent **Solid**, **Breathing**, **Flow**, **Flow_reverse**, **Rainbow**, **Rainbow Reverse**, et **Hue Cycle**.
 
+  .. note::
 
-* **Vitesse RGB**: Réglez la vitesse des changements des LEDs RGB.
+     Si vous définissez le **Style RGB** sur **Rainbow**, **Rainbow Reverse**, ou **Hue Cycle**, vous ne pourrez pas configurer la couleur.
+
+* **Vitesse RGB** : Définissez la vitesse des changements des LEDs RGB.
+
+**À propos des ventilateurs RGB**
+
+.. image:: img/RGB_fans.png
+  :width: 600
+
+* **LED du ventilateur** : Configurez les LEDs du ventilateur en mode ON, OFF ou FOLLOW.
+* **Mode ventilateur** : Configurez le mode de fonctionnement des deux ventilateurs RGB. Ces modes déterminent les conditions dans lesquelles les ventilateurs s'activent.
+
+    * **Silencieux** : Les ventilateurs RGB s'activent à 70°C.
+    * **Équilibré** : Les ventilateurs RGB s'activent à 67.5°C.
+    * **Froid** : Les ventilateurs RGB s'activent à 60°C.
+    * **Performance** : Les ventilateurs RGB s'activent à 50°C.
+    * **Toujours activé** : Les ventilateurs RGB restent toujours activés.
+
+Par exemple, si le mode **Performance** est activé, les ventilateurs RGB s'activent à 50°C.
+
+Après avoir enregistré les réglages, si la température du CPU dépasse 50°C, vous verrez l'état **GPIO Fan State** passer à ON dans le tableau de bord, et les ventilateurs RGB latéraux commenceront à tourner.
+
+.. image:: img/dashboard_rgbfan_on.png
+  :width: 300

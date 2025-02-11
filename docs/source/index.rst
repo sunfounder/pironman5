@@ -28,8 +28,9 @@ Merci d'avoir choisi notre |link_pironman5|.
     
     Veuillez cliquer sur les liens correspondants pour accéder au document dans la langue de votre choix.
 
-.. image:: img/pironman5.JPG
+.. image:: img/pironman5_pic.jpg
     :width: 400
+    :align: center
     
 
 Améliorez votre Raspberry Pi 5 avec le |link_pironman5|, notre boîtier haut de gamme conçu pour allier style et fonctionnalité. C'est le parfait équilibre entre esthétique et performance :
@@ -54,7 +55,9 @@ Le |link_pironman5| n'est pas seulement un boîtier ; c'est une mise à niveau q
 
     Vous devez installer un système d'exploitation compatible avec le Raspberry Pi 5. Veuillez utiliser la dernière version de l'outil Raspberry Pi Imager pour l'installation du système. Les systèmes actuellement testés sont :
 
-   .. image:: install/img/compitable_os.png
+    .. image:: img/compitable_os.png
+        :width: 600
+        :align: center
 
 Si vous avez des questions, envoyez un email à service@sunfounder.com et nous vous répondrons dès que possible.
 

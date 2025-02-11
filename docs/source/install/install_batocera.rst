@@ -17,11 +17,21 @@
 Installer Batocera Linux
 ======================================================
 
-|link_batocera| est une distribution de rétro-gaming open source et entièrement gratuite qui peut être copiée sur une clé USB ou une carte SD afin de transformer temporairement ou définitivement n'importe quel ordinateur/nano-ordinateur en console de jeu.
+|link_batocera| est une distribution open-source et totalement gratuite dédiée au rétro-gaming. Elle peut être copiée sur une clé USB ou une carte SD dans le but de transformer n'importe quel ordinateur/nano-ordinateur en console de jeux, de manière temporaire ou permanente.
 
-Vous pouvez choisir la méthode d'installation en fonction du support que vous avez à disposition, que ce soit une carte Micro SD ou un SSD NVMe.
+Vous pouvez choisir la méthode d'installation en fonction du matériel dont vous disposez : une carte Micro SD ou un SSD NVMe.
 
-L'installation directe sur le SSD NVMe implique une étape supplémentaire par rapport à l'installation sur la carte Micro SD: vous devez mettre à jour le bootloader du Raspberry Pi, car celui-ci est configuré par défaut pour démarrer à partir de la carte Micro SD. Mettez à jour le bootloader pour prioriser le démarrage à partir du SSD NVMe.
+**Utilisation d'une carte Micro SD uniquement**
+
+  Si vous utilisez une carte Micro SD, il vous suffit de suivre la première méthode ci-dessous.
+
+**Utilisation d'un SSD M.2 NVMe**
+
+  * Si vous utilisez un SSD M.2 NVMe, vous aurez également besoin d'un **adaptateur de boîtier SSD M.2 NVMe** pour connecter votre SSD à votre ordinateur et suivre la deuxième méthode pour installer le système d'exploitation.
+  
+    .. image:: img/m2_nvme_adapter.png
+        :width: 300
+        :align: center
 
 .. toctree::
     :maxdepth: 1

@@ -15,6 +15,12 @@
 Caractéristiques
 ======================
 
+**Interfaces**
+
+.. image:: img/pironman5_interfaces1.png
+.. image:: img/pironman5_interfaces2.png
+
+
 **Paramètres**
 
 * Dimensions: 111,9x78,5x117mm

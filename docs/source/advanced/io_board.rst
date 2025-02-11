@@ -59,7 +59,7 @@ La carte dispose de 4 LEDs RGB WS2812, offrant un contrôle personnalisable. Les
 Broche de contrôle RGB
 ----------------------------
 
-Les LEDs RGB sont pilotées par SPI et connectées au **GPIO10**, qui est également la broche SPI MOSI. Les deux broches au-dessus de J9 sont utilisées pour connecter les LEDs RGB à GPIO10. Si elles ne sont pas nécessaires, le cavalier peut être retiré.
+Les LED RGB sont pilotées par SPI et connectées au **GPIO10**, qui est également la broche SPI MOSI. Les deux broches au-dessus de J9 sont utilisées pour connecter les LED RGB au GPIO10. Si elles ne sont pas nécessaires, le cavalier peut être retiré.
 
   .. image:: img/io_board_rgb_pin.png
 

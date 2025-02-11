@@ -19,6 +19,10 @@ Installer le système d'exploitation sur un SSD NVMe
 
 Si vous utilisez un SSD NVMe et disposez d'un adaptateur pour connecter le SSD NVMe à votre ordinateur pour l'installation du système, vous pouvez suivre le tutoriel suivant pour une installation rapide.
 
+   .. image:: img/m2_nvme_adapter.png
+        :width: 300
+        :align: center  
+
 **Composants requis**
 
 * Un ordinateur personnel
