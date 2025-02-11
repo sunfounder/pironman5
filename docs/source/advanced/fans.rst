@@ -12,39 +12,66 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
+.. _fans:
+
 Ventole
 ============
 
 Ventola PWM
---------------
+-----------------
 
-La ventola PWM nel Pironman 5 è controllata dal sistema Raspberry Pi.
+La ventola PWM nel Pironman 5 è gestita dal sistema Raspberry Pi e rappresenta il fulcro della soluzione di raffreddamento intelligente, soprattutto sotto carichi pesanti. Questo sistema combina una ventola PWM principale con due ventole RGB supplementari per migliorare le prestazioni di raffreddamento, strettamente integrate con il sistema di gestione termica del Raspberry Pi 5.
 
-Per quanto riguarda le soluzioni di raffreddamento per il Raspberry Pi 5, specialmente sotto carichi pesanti, il design del Pironman 5 incorpora un sistema di raffreddamento intelligente. Esso include una ventola PWM principale e due ventole RGB supplementari. La strategia di raffreddamento è strettamente integrata con il sistema di gestione termica del Raspberry Pi 5.
+.. image:: img/fan_tower_cooler.png  
+  :width: 600  
+  :align: center  
 
-Il funzionamento della ventola PWM è basato sulla temperatura del Raspberry Pi 5:
+**Caratteristiche Elettriche**
 
-* Sotto i 50°C, la ventola PWM rimane spenta (velocità 0%).
-* A 50°C, la ventola si avvia a bassa velocità (velocità 30%).
-* Al raggiungimento di 60°C, la ventola aumenta a velocità media (velocità 50%).
-* A 67,5°C, la ventola accelera ad alta velocità (velocità 70%).
-* A 75°C e oltre, la ventola funziona alla massima velocità (velocità 100%).
+* **Tensione Nominale**: 5 VDC  
+* **Tensione di Avviamento**: 4.0 V (a 25°C accensione/spegnimento)  
+* **Gamma di Tensione Operativa**: 4.0 ~ 5.5 VDC  
+* **Corrente Nominale**: 0.05 A / MAX. 0.08 A  
+* **Potenza Nominale**: 0.25 W / MAX. 0.40 W  
+* **Velocità Nominale**: 3500±10% RPM (a 25°C, test effettuato dopo 3 minuti di funzionamento)  
+* **Flusso d'Aria Massimo**: 2.46 (MIN. 2.21) CFM (a pressione statica zero)  
+* **Pressione Statica Massima**: 0.62 (MIN. 0.496) mmH2O (a flusso d'aria zero)  
+* **Rumore Acustico**: 22.31 dB(A) MAX. 25.31 dB(A)  
+* **Durata Prevista**: 40.000 ore (a 25°C, 65% di umidità, condizioni normali di ambiente)  
 
-Questo rapporto temperatura-velocità si applica anche quando la temperatura diminuisce, con una isteresi di 5°C. La velocità della ventola si riduce quando la temperatura scende di 5°C al di sotto di ciascuna di queste soglie.
+**Caratteristiche Meccaniche**
 
-* Comandi per monitorare la ventola PWM. Per controllare lo stato della ventola PWM:
+* **Dimensioni**: 40x10.4x40 mm (LxPxH)  
+* **Materiale del Telaio**: Plastica PBT  
+* **Materiale della Girante**: Plastica PBT  
+* **Tipo di Cuscinetto**: Cuscinetto Idraulico  
 
-  .. code-block:: shell
-  
-    cat /sys/class/thermal/cooling_device0/cur_state
+**Parametri Ambientali**
 
-* Per visualizzare la velocità della ventola PWM:
+* **Temperatura Operativa**: -10°C ~ 70°C  
+* **Temperatura di Conservazione**: -40°C ~ 75°C  
+* **Umidità Operativa**: 5% ~ 90% RH  
+* **Umidità di Conservazione**: 5% ~ 95% RH  
 
-  .. code-block:: shell
+**Controllo della Velocità della Ventola in Base alla Temperatura**  
 
-    cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
+La ventola PWM opera dinamicamente, regolando la velocità in base alla temperatura del Raspberry Pi 5:  
 
-Nel Pironman 5, la ventola PWM è un componente critico per mantenere temperature operative ottimali, specialmente durante compiti intensivi, garantendo che il Raspberry Pi 5 funzioni in modo efficiente e affidabile.
+* **Sotto i 50°C**: La ventola rimane spenta (velocità 0%).  
+* **A 50°C**: La ventola opera a bassa velocità (velocità 30%).  
+* **A 60°C**: La ventola aumenta a velocità media (velocità 50%).  
+* **A 67.5°C**: La ventola accelera a velocità alta (velocità 70%).  
+* **A 75°C e oltre**: La ventola opera alla massima velocità (velocità 100%).  
+
+Questo controllo temperatura-velocità include una isteresi di 5°C per evitare cambiamenti di velocità frequenti. Ad esempio, la ventola ridurrà la sua velocità solo dopo che la temperatura scende di 5°C sotto ogni soglia.
+
+I seguenti comandi consentono agli utenti di monitorare il funzionamento della ventola PWM:
+
+Per controllare lo stato corrente della ventola:
+
+.. code-block:: shell
+
+  cat /sys/class/thermal/cooling_device0/cur_state
 
 Ventole RGB
 -------------------

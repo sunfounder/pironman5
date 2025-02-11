@@ -15,10 +15,21 @@
 Installa Raspberry Pi OS
 ================================================================================
 
-Puoi scegliere il metodo di installazione in base al fatto che tu disponga di una Micro SD o di un SSD NVMe.
+Puoi scegliere un metodo di installazione in base alla disponibilità di una scheda Micro SD o di un SSD NVMe.
 
-* L'installazione diretta sull'SSD NVMe comporta un passaggio aggiuntivo rispetto all'installazione su Micro SD: è necessario aggiornare il bootloader del Raspberry Pi perché, per impostazione predefinita, avvia il sistema dalla Micro SD. Aggiorna il bootloader per dare priorità all'avvio dall'SSD NVMe.
-* Se hai un SSD NVMe ma non hai un adattatore per collegare il tuo NVMe al computer, considera la terza opzione di installare prima il sistema sulla tua scheda Micro SD. Una volta che il Pironman 5 si avvia correttamente, puoi copiare il sistema dalla tua Micro SD al tuo SSD NVMe.
+**Utilizzo di una Scheda Micro SD**
+
+  Se utilizzi solo una scheda Micro SD, puoi semplicemente seguire il primo metodo riportato di seguito.
+
+**Utilizzo di un SSD M.2 NVMe**
+
+  * Se possiedi un **Adattatore per Enclosure SSD M.2 NVMe**, puoi collegare il tuo SSD al computer utilizzando l'adattatore e seguire il secondo metodo per installare il sistema operativo.  
+
+    .. image:: img/m2_nvme_adapter.png  
+        :width: 300
+        :align: center
+  
+  * Se non disponi dell'adattatore mostrato sopra, puoi prima installare il sistema operativo su una scheda Micro SD utilizzando il primo metodo, quindi utilizzare il terzo metodo per copiare il sistema dalla scheda Micro SD al tuo SSD M.2 NVMe.  
 
 .. toctree::
     :maxdepth: 1

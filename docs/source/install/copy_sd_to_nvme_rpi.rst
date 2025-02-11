@@ -79,9 +79,13 @@ Ci sono due modi per installare un sistema operativo sull'SSD:
 
    .. image:: img/ssd_copy_from.png
       
-#. Dopo aver selezionato, fai clic su **Start**.
+#. Ricordati di selezionare "NUOVI UUID di Partizione" per garantire che il sistema possa distinguere correttamente i dispositivi, evitando conflitti di montaggio e problemi di avvio.
 
-   .. image:: img/ssd_copy_start.png
+   .. image:: img/ssd_copy_uuid.png
+    
+#. Dopo aver effettuato la selezione, fai clic su **Avvia**.
+
+   .. image:: img/ssd_copy_click_start.png
 
 #. Verrà visualizzato un avviso che il contenuto dell'SSD verrà cancellato. Assicurati di eseguire il backup dei tuoi dati prima di fare clic su Sì.
 
