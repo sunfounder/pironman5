@@ -76,6 +76,7 @@ Raspberry Pi 5 をスタイリッシュかつ高性能にアップグレード�
     control/control_pironman5
     advanced/advanced
     compitable_nvme_ssd
+    assemble_camera
     faq
 
 **著作権に関する注意事項**
