@@ -79,9 +79,14 @@ Es gibt zwei Möglichkeiten, ein Betriebssystem auf der SSD zu installieren:
 
    .. image:: img/ssd_copy_from.png
       
-#. Klicken Sie nach der Auswahl auf **Starten**.
+#. Denken Sie daran, **"NEW Partition UUIDs"** auszuwählen, um sicherzustellen, dass das System Geräte korrekt unterscheiden kann und so Montagekonflikte und Startprobleme vermieden werden.
 
-   .. image:: img/ssd_copy_start.png
+   .. image:: img/ssd_copy_uuid.png
+    
+#. Nach der Auswahl klicken Sie auf **Start**.
+
+   .. image:: img/ssd_copy_click_start.png
+
 
 #. Sie werden aufgefordert, dass der Inhalt auf der SSD gelöscht wird. Sichern Sie Ihre Daten, bevor Sie auf Ja klicken.
 

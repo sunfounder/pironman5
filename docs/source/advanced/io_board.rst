@@ -59,8 +59,7 @@ Das Board verfügt über 4 WS2812 RGB-LEDs, die individuell steuerbar sind. Benu
 RGB-Steuerungs-Pin
 -------------------------
 
-Die RGB-LED wird über SPI gesteuert und ist mit **GPIO10** verbunden, das auch der SPI-MOSI-Pin ist. Die beiden Pins oberhalb von J9 werden verwendet, um die RGB-LED an GPIO10 anzuschließen. Falls nicht benötigt, kann der Jumper entfernt werden.
-
+Die RGB-LEDs werden über SPI angesteuert und sind mit GPIO10 verbunden, das auch der SPI-MOSI-Pin ist. Die beiden Pins oberhalb von J9 werden verwendet, um die RGB-LEDs mit GPIO10 zu verbinden. Falls nicht benötigt, kann der Jumper entfernt werden.
   .. image:: img/io_board_rgb_pin.png
 
 RGB-AUS-Pins

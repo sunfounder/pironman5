@@ -12,6 +12,8 @@
 
     👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
+.. _install_the_os:
+
 3. Installation des Betriebssystems
 =======================================
 
@@ -19,8 +21,9 @@
 
     Sie müssen ein Betriebssystem installieren, das den Raspberry Pi 5 unterstützt. Bitte verwenden Sie das neueste Raspberry Pi Imager-Tool zur Systeminstallation. Die aktuell getesteten Systeme sind:
 
-   .. image:: img/compitable_os.png
-
+   .. image:: ../img/compitable_os.png
+        :width: 600
+        :align: center
 
 In diesem Kapitel lernen Sie, wie Sie das Betriebssystem installieren. Alle Installationsschritte hängen von |link_rpi_imager| ab, das Sie zuerst installieren müssen.
 

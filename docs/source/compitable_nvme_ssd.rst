@@ -1,22 +1,22 @@
-.. note::
+.. note:: 
 
     Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
     **Warum beitreten?**
 
-    - **Fachkundige Unterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit der Hilfe unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.
-    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
-    - **Sonderrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
-    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und festlichen Aktionen teil.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Unterstützung unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu Produktankündigungen und exklusiven Einblicken.
+    - **Sonderrabatte**: Profitieren Sie von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
-
-Kompatible NVMe SSDs
-============================
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 Kompatible NVMe SSDs
---------------------------------
+=========================
+
+Kompatible NVMe SSDs
+----------------------------
 
 * ADATA Legend 700
 * ADATA Legend 800
@@ -43,6 +43,7 @@ Kompatible NVMe SSDs
 * Netac NV2000 NVMe SSD
 
 * Origin Inception TLC830 Pro NVMe SSD
+* Ortial ON-750-128 NVME SSD
 
 * Pineberry Pi Pinedrive (2280)
 
@@ -54,6 +55,7 @@ Kompatible NVMe SSDs
 * Samsung 970 EVO Plus
 * Samsung 980
 * Samsung 980 Pro
+* Samsung 990 Pro
 
 * Team MP33
 
@@ -62,25 +64,25 @@ Kompatible NVMe SSDs
 * Western Digital SN570
 * Western Digital SN530
 * Western Digital Black SN750 SE (Phison-Controller)
-* Western Digital Blue SN550-Serie (Wenn Sie wissen, wie man die neuesten rpi-eeprom-updates installiert, hat pieeprom-2024-01-24.bin das Boot-Problem der Western Digital Blue SN550 NVMe-Festplatte behoben. Weitere Informationen finden Sie unter https://forums.raspberrypi.com/viewtopic.php?t=364327.)
+* Western Digital Blue SN550-Serie (Wenn Sie die neuesten rpi-eeprom-updates und die pieeprom-2024-01-24.bin installieren können, wird das Boot-Problem der Western Digital Blue SN550 NVMe behoben. Weitere Informationen finden Sie unter https://forums.raspberrypi.com/viewtopic.php?t=364327.)
 
 * XPG GAMMIX S70 BLADE
 * XPG SX8200 Pro
 
-
 Inkompatible NVMe SSDs
 --------------------------
 
-Wir empfehlen, die folgenden NVMe SSDs, die mit einem Phison-Controller ausgestattet sind, zu vermeiden, da deren Inkompatibilität nachgewiesen ist:
+Wir empfehlen, die folgenden NVMe SSDs zu vermeiden, die mit einem Phison-Controller ausgestattet sind, da ihre Inkompatibilität nachgewiesen wurde:
 
-*WD Blue SN580 series
+* WD Blue SN580 series
 * Western Digital Green SN350-Serie
 * Western Digital Black SN850-Serie
 * Western Digital Black SN770
+* WD BLACK 8TB SN850X
 * Inland tn446 NVMe-Laufwerk
 * Corsair MP600 SSD
 * Samsung PM991
 * Kingston OM8SEP4256Q-A0
 * Transcend 110Q (TS500GMTE110Q)
-* Besonders SN350 und SN570 verhinderten, dass der RPi 5 überhaupt bootet.
-* Andere NVMe SSDs mit dem gleichen Phison-Controller
+* SN350 und SN570 verhinderten insbesondere, dass der Raspberry Pi 5 überhaupt bootete.
+* Andere NVMe SSDs mit demselben Phison-Controller
