@@ -25,7 +25,7 @@ Antes de ensamblar el Pironman, verifica que todas las piezas y componentes est�
 * Antes de la instalación, clasifica y apila los componentes para encontrarlos más rápidamente.
 * Verifica repetidamente las conexiones de los cables FFC y FPC para evitar un mal contacto.
 
-* :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5.pdf>`
+.. * :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5.pdf>`
 
 **Guía Completa de Ensamblaje y Arranque: Pironman 5 con SSD NVMe**
 
@@ -42,57 +42,3 @@ Si estás utilizando una tarjeta Micro SD, sigue este video para ensamblar y con
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/-5rTwJ0oMVM?si=je5SaLccHzjjEhuD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-
-
-.. **Video Tutorial de Ensamblaje**
-
-.. .. raw:: html
-
-..     <iframe width="560" height="315" src="https://www.youtube.com/embed/62V85UG-Ocg?si=gNi1rHaPS579Kq7C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-.. **Conectar la Pantalla OLED**
-
-.. .. raw:: html
-
-..     <div style="text-align: center;">
-..         <video center loop autoplay muted style = "max-width:90%">
-..             <source src="_static/video/connect_oled.mp4"  type="video/mp4">
-..             Tu navegador no soporta el video.
-..         </video>
-..     </div>
-
-.. .. raw:: html
-    
-..     <br/>
-
-.. **Conectar el Puente GPIO**
-
-
-.. .. raw:: html
-
-..     <div style="text-align: center;">
-..         <video center loop autoplay muted style = "max-width:90%">
-..             <source src="_static/video/connect_gpio_bridge.mp4"  type="video/mp4">
-..             Tu navegador no soporta el video.
-..         </video>
-..     </div>
-
-.. .. raw:: html
-    
-..     <br/>
-
-.. **Conectar el Puente de la Tarjeta SD**
-
-.. .. raw:: html
-
-..     <div style="text-align: center;">
-..         <video center loop autoplay muted style = "max-width:90%">
-..             <source src="_static/video/connect_sd_card.mp4"  type="video/mp4">
-..             Tu navegador no soporta el video.
-..         </video>
-..     </div>
-
-.. .. raw:: html
-    
-..     <br/>

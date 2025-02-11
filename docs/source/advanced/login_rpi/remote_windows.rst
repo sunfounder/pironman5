@@ -46,7 +46,7 @@ Para los usuarios de Windows 10 o superior, el inicio de sesión remoto en una R
 
     .. warning::
 
-        Si aparece un error que dice ``The term 'ssh' is not recognized as the name of a cmdlet...``, es posible que tu sistema no tenga las herramientas SSH preinstaladas. En este caso, deberás instalar OpenSSH manualmente siguiendo :ref:`openssh_powershell`, o usar una herramienta de terceros como |link_putty|.
+        Si aparece un error que dice ``The term 'ssh' is not recognized as the name of a cmdlet...``, es posible que tu sistema no tenga las herramientas SSH preinstaladas. En este caso, deberás instalar OpenSSH manualmente siguiendo :ref:`openssh_powershell` , o usar una herramienta de terceros como |link_putty|.
 
 #. Aparecerá un mensaje de seguridad en tu primer inicio de sesión. Escribe ``yes`` para continuar.
 

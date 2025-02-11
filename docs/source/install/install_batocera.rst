@@ -20,7 +20,18 @@ Instalar Batocera Linux
 
 Puedes elegir el método de instalación según si tienes a mano una tarjeta Micro SD o un NVMe SSD.
 
-Instalar directamente en el NVMe SSD implica un paso adicional en comparación con la instalación en la tarjeta Micro SD: debes actualizar el bootloader del Raspberry Pi, ya que, de forma predeterminada, arranca desde la tarjeta Micro SD. Actualiza el bootloader para priorizar el arranque desde el NVMe SSD.
+**Using a Micro SD Card Only**
+
+  If you are using a Micro SD card, you can simply follow the first method below.
+
+**Using an M.2 NVMe SSD**
+
+  * If you are using an M.2 NVMe SSD, you will also need an **M.2 NVMe SSD Enclosure Adapter** to connect your SSD to your computer and follow the second method to install the OS.
+  
+    .. image:: img/m2_nvme_adapter.png
+        :width: 300
+        :align: center  
+
 
 .. toctree::
     :maxdepth: 1
