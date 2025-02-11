@@ -102,8 +102,8 @@ dashboard_settings = {
         'lsof', # for pm_dashboard
     ],
     'python_source': {
-        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@dev',
-        'sf_rpi_status': 'git+https://github.com/sunfounder/sf_rpi_status.git@dev',
+        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git',
+        'sf_rpi_status': 'git+https://github.com/sunfounder/sf_rpi_status.git',
     },
 }
 
