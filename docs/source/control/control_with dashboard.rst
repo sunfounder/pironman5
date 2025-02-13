@@ -126,10 +126,11 @@ Raspberry Piの状態を確認できる複数のカードが用意されてい�
 
 **RGBファンについて**
 
-.. image:: img/RGB_fans.png
+.. image:: img/RGB_FAN2.jpg
   :width: 600
 
-* **ファンLED**: ファンLEDをON、OFF、またはFOLLOWモードに設定できます。
+.. * **ファンLED**: ファンLEDをON、OFF、またはFOLLOWモードに設定できます。
+
 * **ファンモード**: 2つのRGBファンの動作モードを設定します。これらのモードは、RGBファンが作動する条件を決定します。
 
     * **静音**: RGBファンは70°Cで作動します。
