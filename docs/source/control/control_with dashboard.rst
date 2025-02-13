@@ -128,10 +128,11 @@ Dans le coin supérieur droit de la page, vous trouverez un menu de paramètres 
 
 **À propos des ventilateurs RGB**
 
-.. image:: img/RGB_fans.png
+.. image:: img/RGB_FAN2.jpg
   :width: 600
 
-* **LED du ventilateur** : Configurez les LEDs du ventilateur en mode ON, OFF ou FOLLOW.
+.. * **LED du ventilateur** : Configurez les LEDs du ventilateur en mode ON, OFF ou FOLLOW.
+
 * **Mode ventilateur** : Configurez le mode de fonctionnement des deux ventilateurs RGB. Ces modes déterminent les conditions dans lesquelles les ventilateurs s'activent.
 
     * **Silencieux** : Les ventilateurs RGB s'activent à 70°C.
