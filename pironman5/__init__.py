@@ -83,7 +83,14 @@ def main():
             json.dump({'system': {}}, f, indent=4)
     else:
         with open(config_path, 'r') as f:
-            current_config = json.load(f)
+            try:
+                content = f.read()
+                if content == '':
+                    current_config = {'system': {}}
+                current_config = json.loads(content)
+            except json.JSONDecodeError:
+                print(f"Invalid config file: {config_path}")
+                quit()
 
     if args.config:
         print(json.dumps(current_config, indent=4))
