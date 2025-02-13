@@ -20,6 +20,7 @@ class Pironman5:
         "gpio_fan_state",
         "gpio_fan_mode",
         "gpio_fan_led",
+        "vibration_switch",
     ]
     SYSTEM_DEFAULT_CONFIG = {
         "rgb_color": "#0a1aff",
@@ -37,6 +38,9 @@ class Pironman5:
         'gpio_fan_mode': 1,
         'gpio_fan_led': 'follow',
         'gpio_fan_led_pin': 5,
+        'oled_sleep_timeout': 2,
+        'vibration_switch_pin': 26,
+        'vibration_switch_pull_up': False,
     }
     DT_OVERLAYS = [
         'sunfounder-pironman5.dtbo',

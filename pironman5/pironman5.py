@@ -32,6 +32,7 @@ class Pironman5:
         if os.path.exists(CONFIG_PATH):
             with open(CONFIG_PATH, 'r') as f:
                 config = json.load(f)
+            self.log.debug(f"config file: {json.dumps(config, indent=4)}")
             self.config = self.upgrade_config(config)
             merge_dict(self.config, config)
         with open(CONFIG_PATH, 'w') as f:
@@ -43,9 +44,11 @@ class Pironman5:
             'peripherals': PERIPHERALS,
             'version': pironman5_version,
         }
-
         self.log.debug(f"Pironman5 version: {pironman5_version}")
         self.log.debug(f"Variant: {NAME} {PRODUCT_VERSION}")
+        self.log.debug(f"Config: {json.dumps(self.config, indent=4)}")
+        self.log.debug(f"Device info: {json.dumps(device_info, indent=4)}")
+        self.log.debug(f"Peripherals: {json.dumps(PERIPHERALS, indent=4)}")
         self.log.debug(f"PM_Auto version: {pm_auto_version}")
         if PMDashboard is not None:
             self.log.debug(f"PM_Dashboard version: {pm_dashboard_version}")
