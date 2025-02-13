@@ -134,11 +134,12 @@ There is a settings menu in the upper right corner of the page where you can cus
 
 **About RGB Fans**
 
-.. image:: img/RGB_fans.png
+.. image:: img/RGB_FAN2.png
   :width: 600
 
-* **Fan LED**: You can set the FAN LED to ON, OFF, or FOLLOW mode.
-* **Fan Mode**: You can set the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate.
+.. * **Fan LED**: You can set the FAN LED to ON, OFF, or FOLLOW mode.
+
+* **GPIO Fan Mode**: You can set the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate.
 
     * **Quiet**: The RGB fans will activate at 70°C.
     * **Balanced**: The RGB fans will activate at 67.5°C.
