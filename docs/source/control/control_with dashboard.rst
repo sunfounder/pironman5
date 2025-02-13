@@ -126,10 +126,11 @@ Im oberen rechten Bereich der Seite befindet sich ein Einstellungsmenü, in dem 
 
 **Über RGB-Lüfter**
 
-.. image:: img/RGB_fans.png
+.. image:: img/RGB_FAN2.jpg
   :width: 600
 
-* **Lüfter-LED**: Sie können die Lüfter-LED auf EIN, AUS oder FOLGEN-Modus einstellen.
+.. * **Lüfter-LED**: Sie können die Lüfter-LED auf EIN, AUS oder FOLGEN-Modus einstellen.
+
 * **Lüftermodus**: Legen Sie den Betriebsmodus der beiden RGB-Lüfter fest. Diese Modi bestimmen die Bedingungen, unter denen die RGB-Lüfter aktiviert werden.
 
     * **Leise**: Die RGB-Lüfter werden bei 70°C aktiviert.
