@@ -1,4 +1,14 @@
 
+def update_config_file(config, config_path):
+    import json
+    from .utils import merge_dict
+    current = None
+    with open(config_path, 'r') as f:
+        current = json.load(f)
+    merge_dict(current, config)
+    with open(config_path, 'w') as f:
+        json.dump(current, f, indent=4)
+
 def main():
     from .variants import NAME, ID, PERIPHERALS
     
@@ -6,7 +16,6 @@ def main():
     from .pironman5 import Pironman5
     from .version import __version__
     from .utils import is_included
-    from pm_auto.fan_control import FANS
     from importlib.resources import files as resource_files
     import json
     import sys
@@ -33,6 +42,7 @@ def main():
     parser.add_argument("-dl", "--debug-level", choices=['debug', 'info', 'warning', 'error', 'critical'], help="Debug level")
     parser.add_argument("--background", nargs='?', default='', help="Run in background")
     parser.add_argument("-rd", "--remove-dashboard", action="store_true", help="Remove dashboard")
+    parser.add_argument("-cp", "--config-path", nargs='?', default='', help="Config path")
     if is_included(PERIPHERALS, "ws2812"):
         from pm_auto.ws2812 import RGB_STYLES
         parser.add_argument("-rc", "--rgb-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
@@ -43,7 +53,7 @@ def main():
         parser.add_argument("-rl", "--rgb-led-count", nargs='?', default='', help="RGB LED count int")
     if is_included(PERIPHERALS, "temperature_unit"):
         parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], nargs='?', default='', help="Temperature unit")
-    if is_included(PERIPHERALS, FANS):
+    if is_included(PERIPHERALS, "gpio_fan_mode"):
         from pm_auto.fan_control import GPIO_FAN_MODES
         parser.add_argument("-gm", "--gpio-fan-mode", nargs='?', default='', help=f"GPIO fan mode, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
         parser.add_argument("-gp", "--gpio-fan-pin", nargs='?', default='', help="GPIO fan pin")
@@ -62,11 +72,20 @@ def main():
         parser.print_help()
         quit()
     
-    if not path.exists(CONFIG_PATH):
-        with open(CONFIG_PATH, 'w') as f:
+    config_path = CONFIG_PATH
+    if args.config_path != '':
+        if args.config_path == None:
+            print(f"Config path: {config_path}")
+        else:
+            if not path.exists(args.config_path):
+                print(f"Config path {args.config_path} does not exist")
+                quit()
+            config_path = args.config_path
+    if not path.exists(config_path):
+        with open(config_path, 'w') as f:
             json.dump({'system': {}}, f, indent=4)
     else:
-        with open(CONFIG_PATH, 'r') as f:
+        with open(config_path, 'r') as f:
             current_config = json.load(f)
 
     if args.config:
@@ -210,7 +229,7 @@ def main():
                     quit()
                 new_sys_config['temperature_unit'] = args.temperature_unit
                 print(f"Set Temperature unit: {args.temperature_unit}")
-    if is_included(PERIPHERALS, FANS):
+    if is_included(PERIPHERALS, "gpio_fan_mode"):
         if args.gpio_fan_mode != '':
             if args.gpio_fan_mode == None:
                 print(f"GPIO fan mode: {current_config['system']['gpio_fan_mode']}")
@@ -315,9 +334,9 @@ def main():
         'system': new_sys_config,
     }
 
-    Pironman5.update_config_file(new_config)
+    update_config_file(new_config, config_path)
 
     if args.command == "start":
-        pironman5 = Pironman5()
+        pironman5 = Pironman5(config_path=config_path)
         pironman5.set_debug_level(debug_level)
         pironman5.start()

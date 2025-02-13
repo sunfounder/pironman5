@@ -24,17 +24,18 @@ except ImportError:
 
 class Pironman5:
     # @log_error
-    def __init__(self):
+    def __init__(self, config_path=CONFIG_PATH):
         self.log = get_child_logger('main')
         self.config = {
             'system': SYSTEM_DEFAULT_CONFIG,
         }
-        if os.path.exists(CONFIG_PATH):
-            with open(CONFIG_PATH, 'r') as f:
+        self.config_path = config_path
+        if os.path.exists(self.config_path):
+            with open(self.config_path, 'r') as f:
                 config = json.load(f)
             self.config = self.upgrade_config(config)
             merge_dict(self.config, config)
-        with open(CONFIG_PATH, 'w') as f:
+        with open(self.config_path, 'w') as f:
             json.dump(self.config, f, indent=4)
 
         device_info = {
@@ -82,18 +83,8 @@ class Pironman5:
     def update_config(self, config):
         self.pm_auto.update_config(config['system'])
         merge_dict(self.config, config)
-        with open(CONFIG_PATH, 'w') as f:
+        with open(self.config_path, 'w') as f:
             json.dump(self.config, f, indent=4)
-
-    @log_error
-    @staticmethod
-    def update_config_file(config):
-        current = None
-        with open(CONFIG_PATH, 'r') as f:
-            current = json.load(f)
-        merge_dict(current, config)
-        with open(CONFIG_PATH, 'w') as f:
-            json.dump(current, f, indent=4)
 
     @log_error
     def start(self):
