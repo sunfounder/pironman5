@@ -132,10 +132,11 @@ Nel menu Impostazioni in alto a destra della pagina, puoi personalizzare le impo
 
 **Informazioni sulle Ventole RGB**
 
-.. image:: img/RGB_fans.png
+.. image:: img/RGB_FAN2.jpg
   :width: 600
 
-* **LED Ventola**: Puoi impostare il LED della ventola su ON, OFF o FOLLOW.
+.. * **LED Ventola**: Puoi impostare il LED della ventola su ON, OFF o FOLLOW.
+
 * **Modalità Ventola**: Imposta la modalità operativa delle due ventole RGB. Queste modalità determinano le condizioni di attivazione delle ventole RGB.
 
     * **Silenziosa**: Le ventole RGB si attivano a 70°C.
