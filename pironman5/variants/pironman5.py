@@ -21,6 +21,7 @@ class Pironman5:
         "gpio_fan_mode",
     ]
     SYSTEM_DEFAULT_CONFIG = {
+        'interval': 1,
         "rgb_color": "#0a1aff",
         "rgb_brightness": 50,
         "rgb_style": "breathing",

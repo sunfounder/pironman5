@@ -33,8 +33,8 @@ class Pironman5:
         if os.path.exists(self.config_path):
             with open(self.config_path, 'r') as f:
                 config = json.load(f)
-            self.config = self.upgrade_config(config)
-            merge_dict(self.config, config)
+            config = self.upgrade_config(config)
+            self.config = merge_dict(self.config, config)
         with open(self.config_path, 'w') as f:
             json.dump(self.config, f, indent=4)
 
@@ -45,6 +45,8 @@ class Pironman5:
             'version': pironman5_version,
         }
 
+        self.log.debug(f"Config: {self.config}")
+        self.log.debug(f"Device info: {device_info}")
         self.log.debug(f"Pironman5 version: {pironman5_version}")
         self.log.debug(f"Variant: {NAME} {PRODUCT_VERSION}")
         self.log.debug(f"PM_Auto version: {pm_auto_version}")
@@ -82,7 +84,7 @@ class Pironman5:
     @log_error
     def update_config(self, config):
         self.pm_auto.update_config(config['system'])
-        merge_dict(self.config, config)
+        self.config = merge_dict(self.config, config)
         with open(self.config_path, 'w') as f:
             json.dump(self.config, f, indent=4)
 

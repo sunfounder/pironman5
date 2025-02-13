@@ -5,7 +5,7 @@ def update_config_file(config, config_path):
     current = None
     with open(config_path, 'r') as f:
         current = json.load(f)
-    merge_dict(current, config)
+    current = merge_dict(current, config)
     with open(config_path, 'w') as f:
         json.dump(current, f, indent=4)
 
