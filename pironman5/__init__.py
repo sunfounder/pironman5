@@ -77,9 +77,6 @@ def main():
         if args.config_path == None:
             print(f"Config path: {config_path}")
         else:
-            if not path.exists(args.config_path):
-                print(f"Config path {args.config_path} does not exist")
-                quit()
             config_path = args.config_path
     if not path.exists(config_path):
         with open(config_path, 'w') as f:
