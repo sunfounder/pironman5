@@ -19,6 +19,8 @@ class Pironman5:
         "pwm_fan_speed",
         "gpio_fan_state",
         "gpio_fan_mode",
+        "gpio_fan_led",
+        "vibration_switch",
     ]
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
@@ -35,6 +37,11 @@ class Pironman5:
         "oled_network_interface": "all",
         'gpio_fan_pin': 6,
         'gpio_fan_mode': 1,
+        'gpio_fan_led': 'follow',
+        'gpio_fan_led_pin': 5,
+        'oled_sleep_timeout': 2,
+        'vibration_switch_pin': 26,
+        'vibration_switch_pull_up': False,
     }
     DT_OVERLAYS = [
         'sunfounder-pironman5.dtbo',

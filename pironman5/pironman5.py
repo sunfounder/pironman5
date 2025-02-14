@@ -44,11 +44,11 @@ class Pironman5:
             'peripherals': PERIPHERALS,
             'version': pironman5_version,
         }
-
-        self.log.debug(f"Config: {self.config}")
-        self.log.debug(f"Device info: {device_info}")
         self.log.debug(f"Pironman5 version: {pironman5_version}")
         self.log.debug(f"Variant: {NAME} {PRODUCT_VERSION}")
+        self.log.debug(f"Config: {json.dumps(self.config, indent=4)}")
+        self.log.debug(f"Device info: {json.dumps(device_info, indent=4)}")
+        self.log.debug(f"Peripherals: {json.dumps(PERIPHERALS, indent=4)}")
         self.log.debug(f"PM_Auto version: {pm_auto_version}")
         if PMDashboard is not None:
             self.log.debug(f"PM_Dashboard version: {pm_dashboard_version}")
