@@ -365,7 +365,6 @@ class SF_Installer():
             self.do('Copy service file', f'cp bin/{service} /etc/systemd/system/')
             self.do('Enable service', f'systemctl enable {service}')
             self.do('Reload systemd', 'systemctl daemon-reload')
-            self.do('Start service', f'systemctl start {service}')
 
     def setup_config_txt(self):
         if ('skip_config_txt' in self.args and self.args.skip_config_txt) or \
