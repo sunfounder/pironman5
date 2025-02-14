@@ -65,7 +65,10 @@ def main():
         parser.add_argument("-od", "--oled-disk", nargs='?', default='', help="Set to display which disk on OLED. 'total' or the name of the disk, like mmbclk or nvme")
         parser.add_argument("-oi", "--oled-network-interface", nargs='?', default='', help="Set to display which ip of network interface on OLED, 'all' or the interface name, like eth0 or wlan0")
         parser.add_argument("-or", "--oled-rotation", nargs='?', default=-1, type=int, choices=[0, 180], help="Set to rotate OLED display, 0, 180")
-
+    if is_included(PERIPHERALS, "vibration_switch"):
+        parser.add_argument("-vp", "--vibration-switch-pin", nargs='?', default='', help="Vibration switch pin")
+        parser.add_argument("-vu", "--vibration-switch-pull-up", nargs='?', default='', help="Vibration switch pull up True/False")
+        parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds")
     args = parser.parse_args()
 
     if not (len(sys.argv) > 1):
@@ -333,7 +336,48 @@ def main():
                     quit()
                 new_sys_config['oled_rotation'] = args.oled_rotation
                 print(f"SetOLED rotation: {args.oled_rotation}")
-
+    if is_included(PERIPHERALS, "vibration_switch"):
+        if args.vibration_switch_pin != '':
+            if args.vibration_switch_pin == None:
+                print(f"Vibration switch pin: {current_config['system']['vibration_switch_pin']}")
+            else:
+                try:
+                    pin = int(args.vibration_switch_pin)
+                except ValueError:
+                    print(f"Invalid value for Vibration switch pin, it should be an integer")
+                    quit()
+                if pin < 0 or pin > 40:
+                    print(f"Invalid value for Vibration switch pin, it should be between 0 and 40")
+                    quit()
+                new_sys_config['vibration_switch_pin'] = pin
+                print(f"Set Vibration switch pin: {pin}")
+        if args.vibration_switch_pull_up != '':
+            if args.vibration_switch_pull_up == None:
+                print(f"Vibration switch pull up: {current_config['system']['vibration_switch_pull_up']}")
+            else:
+                if args.vibration_switch_pull_up in TRUE_LIST:
+                    new_sys_config['vibration_switch_pull_up'] = True
+                    print(f"Set Vibration switch pull up: True")
+                elif args.vibration_switch_pull_up in FALSE_LIST:
+                    new_sys_config['vibration_switch_pull_up'] = False
+                    print(f"Set Vibration switch pull up: False")
+                else:
+                    print(f"Invalid value for Vibration switch pull up, it should be {', '.join(TRUE_LIST)} or {', '.join(FALSE_LIST)}")
+                    quit()
+        if args.oled_sleep_timeout != '':
+            if args.oled_sleep_timeout == None:
+                print(f"OLED sleep timeout: {current_config['system']['oled_sleep_timeout']}")
+            else:
+                try:
+                    args.oled_sleep_timeout = int(args.oled_sleep_timeout)
+                except ValueError:
+                    print(f"Invalid value for OLED sleep timeout, it should be an integer")
+                    quit()
+                if args.oled_sleep_timeout < 0:
+                    print(f"Invalid value for OLED sleep timeout, it should be greater than or equal to 0")
+                    quit()
+                new_sys_config['oled_sleep_timeout'] = args.oled_sleep_timeout
+                print(f"Set OLED sleep timeout: {args.oled_sleep_timeout}")
     new_config = {
         'system': new_sys_config,
     }
