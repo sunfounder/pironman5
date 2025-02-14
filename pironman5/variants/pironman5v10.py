@@ -34,7 +34,7 @@ class Pironman5V10:
         "oled_disk": "total",
         "oled_network_interface": "all",
         'gpio_fan_pin': 6,
-        'gpio_fan_mode': 1,
+        'gpio_fan_mode': 0,
     }
     DT_OVERLAYS = [
         'sunfounder-pironman5.dtbo',

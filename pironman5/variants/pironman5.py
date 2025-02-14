@@ -36,7 +36,7 @@ class Pironman5:
         "oled_disk": "total",
         "oled_network_interface": "all",
         'gpio_fan_pin': 6,
-        'gpio_fan_mode': 1,
+        'gpio_fan_mode': 0,
         'gpio_fan_led': 'follow',
         'gpio_fan_led_pin': 5,
         'oled_sleep_timeout': 2,

@@ -30,7 +30,7 @@ class Pironman5Mini:
         'rgb_style': 'rainbow',
         'rgb_speed': 0,
         'gpio_fan_pin': 6,
-        'gpio_fan_mode': 1,
+        'gpio_fan_mode': 0,
         'gpio_fan_led': 'follow',
         'gpio_fan_led_pin': 5,
     }
