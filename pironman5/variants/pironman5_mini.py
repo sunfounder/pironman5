@@ -21,7 +21,7 @@ class Pironman5Mini:
         "gpio_fan_led",
     ]
     SYSTEM_DEFAULT_CONFIG = {
-        'interval': 1,
+        'data_interval': 1,
         'temperature_unit': 'C',
         'rgb_led_count': 4,
         'rgb_enable': True,
