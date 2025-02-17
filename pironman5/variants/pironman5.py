@@ -21,6 +21,7 @@ class Pironman5:
         "gpio_fan_mode",
         "gpio_fan_led",
         "vibration_switch",
+        "oled_sleep",
     ]
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
