@@ -2,6 +2,7 @@ import json
 import time
 import os
 from importlib.resources import files as resource_files
+import signal
 
 from pm_auto.pm_auto import PMAuto
 from pm_auto import __version__ as pm_auto_version
@@ -89,6 +90,11 @@ class Pironman5:
 
     @log_error
     def start(self):
+        signal.signal(signal.SIGINT, self.stop)
+        signal.signal(signal.SIGTERM, self.stop)
+        signal.signal(signal.SIGABRT, self.stop)
+        signal.signal(signal.SIGBREAK, self.stop)
+        signal.signal(signal.SIGKILL, self.stop)
         self.pm_auto.start()
         self.log.info('PMAuto started')
         if self.pm_dashboard:
@@ -102,3 +108,8 @@ class Pironman5:
         self.pm_auto.stop()
         if self.pm_dashboard:
             self.pm_dashboard.stop()
+
+    @log_error
+    def signal_handler(self, signum, frame):
+        self.log.info(f"Received signal {signal.strsignal(signum)}, cleaning up...")
+        self.stop()
