@@ -90,9 +90,9 @@ class Pironman5:
 
     @log_error
     def start(self):
-        signal.signal(signal.SIGINT, self.stop)
-        signal.signal(signal.SIGTERM, self.stop)
-        signal.signal(signal.SIGABRT, self.stop)
+        signal.signal(signal.SIGINT, self.signal_handler)
+        signal.signal(signal.SIGTERM, self.signal_handler)
+        signal.signal(signal.SIGABRT, self.signal_handler)
         self.pm_auto.start()
         self.log.info('PMAuto started')
         if self.pm_dashboard:
