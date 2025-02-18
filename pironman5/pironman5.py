@@ -113,5 +113,5 @@ class Pironman5:
 
     @log_error
     def signal_handler(self, signum, frame):
-        self.log.info(f"Received signal {signal.strsignal(signum)}, cleaning up...")
+        self.log.info(f'Received signal "{signal.strsignal(signum)}", cleaning up...')
         self.stop()
