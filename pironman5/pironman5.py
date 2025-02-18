@@ -103,9 +103,13 @@ class Pironman5:
 
     @log_error
     def stop(self):
+        self.log.info('Stopping Pironman5')
+        self.log.info('Stopping PMAuto')
         self.pm_auto.stop()
         if self.pm_dashboard:
+            self.log.info('Stopping PmDashboard')
             self.pm_dashboard.stop()
+        self.log.info('Pironman5 stopped')
 
     @log_error
     def signal_handler(self, signum, frame):
