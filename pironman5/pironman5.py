@@ -93,7 +93,6 @@ class Pironman5:
         signal.signal(signal.SIGINT, self.stop)
         signal.signal(signal.SIGTERM, self.stop)
         signal.signal(signal.SIGABRT, self.stop)
-        signal.signal(signal.SIGBREAK, self.stop)
         signal.signal(signal.SIGKILL, self.stop)
         self.pm_auto.start()
         self.log.info('PMAuto started')
