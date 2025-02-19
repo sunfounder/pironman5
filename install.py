@@ -16,11 +16,9 @@ settings = {
     # ],
 
     # - Before install script, default to {}
-    # 'run_commands_before_install': {
-    #     # download influxdb key and add to trusted key list https://docs.influxdata.com/influxdb/v2/install/?t=Linux
-    #     'Download influxdb key': 'curl --silent --location -O https://repos.influxdata.com/influxdata-archive.key',
-    #     'Setup influxdb install source': 'echo "943666881a1b8d9b849b74caebf02d3465d6beb716510d86a39f6c8e8dac7515  influxdata-archive.key" | sha256sum --check - && cat influxdata-archive.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/influxdata-archive.gpg > /dev/null && echo "deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive.gpg] https://repos.influxdata.com/debian stable main" | tee /etc/apt/sources.list.d/influxdata.list',
-    # },
+    'run_commands_before_install': {
+        'Install LGPIO': 'bash install_lgpio.sh',
+    },
 
     # - Install from apt
     # 'apt_dependencies': [
