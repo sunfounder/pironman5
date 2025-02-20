@@ -462,6 +462,7 @@ class SF_Installer():
                 print(f'canceled')
                 return False
             else:
+                print("\033[1;35mPlease enter Y or N: \033[0m", end='')
                 continue
 
     def cleanup(self):
