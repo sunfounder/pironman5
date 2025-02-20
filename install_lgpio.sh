@@ -17,8 +17,7 @@ fi
 echo "- Updating package list"
 apt-get update
 echo "- Installing dependencies"
-apt-get install -y swig python-dev python3-dev
-apt-get install -y python-setuptools python3-setuptools
+apt-get install -y swig python3-dev python3-setuptools
 
 echo "- Downloading and installing LGPIO"
 wget http://abyz.me.uk/lg/lg.zip
@@ -26,6 +25,9 @@ unzip lg.zip
 cd lg
 make
 make install
+cd ..
 
 echo "- Cleanup"
-rm -rf lg.zip
+rm -rf lg.zip* lg
+
+echo "LGPIO install complete"
