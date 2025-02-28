@@ -110,6 +110,12 @@ class Pironman5:
             self.log.info('Stopping PmDashboard')
             self.pm_dashboard.stop()
         self.log.info('Pironman5 stopped')
+        # Check if there's any thread still alive
+        import threading
+        for t in threading.enumerate():
+            if t is not threading.main_thread():
+                self.log.warning(f"Thread {t.name} is still alive")
+        quit()
 
     @log_error
     def signal_handler(self, signum, frame):
