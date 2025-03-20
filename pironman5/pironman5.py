@@ -11,7 +11,8 @@ from .utils import merge_dict, log_error
 from .version import __version__ as pironman5_version
 from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, SYSTEM_DEFAULT_CONFIG
 
-get_child_logger = create_get_child_logger('pironman5')
+APP_NAME = 'pironman5'
+get_child_logger = create_get_child_logger(APP_NAME)
 log = get_child_logger('main')
 __package_name__ = __name__.split('.')[0]
 CONFIG_PATH = str(resource_files(__package_name__).joinpath('config.json'))
@@ -44,6 +45,7 @@ class Pironman5:
             'id': ID,
             'peripherals': PERIPHERALS,
             'version': pironman5_version,
+            'app_name': APP_NAME,
         }
         self.log.debug(f"Pironman5 version: {pironman5_version}")
         self.log.debug(f"Variant: {NAME} {PRODUCT_VERSION}")
