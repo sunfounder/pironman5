@@ -43,6 +43,7 @@ def main():
     parser.add_argument("--background", nargs='?', default='', help="Run in background")
     parser.add_argument("-rd", "--remove-dashboard", action="store_true", help="Remove dashboard")
     parser.add_argument("-cp", "--config-path", nargs='?', default='', help="Config path")
+    parser.add_argument("-eh", "--enable-history", nargs='?', default='', help="Enable history, True/true/on/On/1 or False/false/off/Off/0")
     if is_included(PERIPHERALS, "ws2812"):
         from pm_auto.ws2812 import RGB_STYLES
         parser.add_argument("-rc", "--rgb-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
@@ -137,6 +138,20 @@ def main():
                 print("Invalid input, please enter y or n")
         print("Dashboard removed, restart pironman5 to apply changes: sudo systemctl restart pironman5.service")
         quit()
+
+    if args.enable_history != '':
+        if args.enable_history == None:
+            print(f"Enable history: {current_config['system']['enable_history']}")
+        else:
+            if args.enable_history in TRUE_LIST:
+                new_sys_config['enable_history'] = True
+                print(f"Set enable history: True")
+            elif args.enable_history in FALSE_LIST:
+                new_sys_config['enable_history'] = False
+                print(f"Set enable history: False")
+            else:
+                print(f"Invalid value for enable history, it should be True/true/on/On/1 or False/false/off/Off/0")
+                quit()
 
     if is_included(PERIPHERALS, "ws2812"):
         if args.rgb_color != '':

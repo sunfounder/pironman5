@@ -11,7 +11,8 @@ from .utils import merge_dict, log_error
 from .version import __version__ as pironman5_version
 from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, SYSTEM_DEFAULT_CONFIG
 
-get_child_logger = create_get_child_logger('pironman5')
+APP_NAME = 'pironman5'
+get_child_logger = create_get_child_logger(APP_NAME)
 log = get_child_logger('main')
 __package_name__ = __name__.split('.')[0]
 CONFIG_PATH = str(resource_files(__package_name__).joinpath('config.json'))
@@ -26,6 +27,7 @@ except ImportError:
 class Pironman5:
     # @log_error
     def __init__(self, config_path=CONFIG_PATH):
+        self.peripherals = PERIPHERALS
         self.log = get_child_logger('main')
         self.config = {
             'system': SYSTEM_DEFAULT_CONFIG,
@@ -39,11 +41,22 @@ class Pironman5:
         with open(self.config_path, 'w') as f:
             json.dump(self.config, f, indent=4)
 
+        if 'enable_history' in self.config['system']:
+            _p = set(self.peripherals)
+            if self.config['system']['enable_history']:
+                _p.add('history')
+                _p.add('clear_history')
+            else:
+                _p.remove('history')
+                _P.remove('clear_history')
+            self.peripherals = list(_p)
+
         device_info = {
             'name': NAME,
             'id': ID,
-            'peripherals': PERIPHERALS,
+            'peripherals': self.peripherals,
             'version': pironman5_version,
+            'app_name': APP_NAME,
         }
         self.log.debug(f"Pironman5 version: {pironman5_version}")
         self.log.debug(f"Variant: {NAME} {PRODUCT_VERSION}")
@@ -53,7 +66,7 @@ class Pironman5:
         if PMDashboard is not None:
             self.log.debug(f"PM_Dashboard version: {pm_dashboard_version}")
         self.pm_auto = PMAuto(self.config['system'],
-                              peripherals=PERIPHERALS,
+                              peripherals=self.peripherals,
                               get_logger=get_child_logger)
         if PMDashboard is None:
             self.pm_dashboard = None
@@ -61,7 +74,7 @@ class Pironman5:
         else:
             self.pm_dashboard = PMDashboard(device_info=device_info,
                                             database=ID,
-                                            spc_enabled=True if 'spc' in PERIPHERALS else False,
+                                            spc_enabled=True if 'spc' in self.peripherals else False,
                                             config=self.config,
                                             get_logger=get_child_logger)
             self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
