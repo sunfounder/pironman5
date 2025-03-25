@@ -27,6 +27,7 @@ Gracias por elegir nuestro |link_pironman5|.
     * |link_fr_tutorials|
     * |link_es_tutorials|
     * |link_it_tutorials|
+    * |link_zh_tutorials|
     
     Haz clic en los enlaces respectivos para acceder al documento en tu idioma preferido.
 
