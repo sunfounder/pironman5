@@ -27,6 +27,7 @@
     * |link_fr_tutorials|
     * |link_es_tutorials|
     * |link_it_tutorials|
+    * |link_zh_tutorials|
     
     ご希望の言語でドキュメントにアクセスするには、該当のリンクをクリックしてください。
 
