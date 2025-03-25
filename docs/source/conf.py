@@ -121,6 +121,10 @@ rst_epilog = """
 
     <a href="https://docs.sunfounder.com/projects/pironman5/it/latest/" target="_blank">Corsi di italiano online</a>
 
+.. |link_zh_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/pironman5/zh-cn/latest/" target="_blank">中文在线教程</a>
+    
 """
 
 
