@@ -13,6 +13,7 @@
     * |link_fr_tutorials|
     * |link_es_tutorials|
     * |link_it_tutorials|
+    * |link_zh_tutorials|
     
     请点击相应链接以获取你偏好的语言版本。
 
