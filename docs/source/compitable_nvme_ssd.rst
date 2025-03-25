@@ -1,21 +1,7 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Compitable NVMe SSD
+兼容的 NVMe SSD
 ========================
 
-Compitable NVMe SSD
+兼容的 NVMe SSD
 ---------------------------
 
 * ADATA Legend 700
@@ -63,27 +49,27 @@ Compitable NVMe SSD
 * Western Digital SN740
 * Western Digital SN570
 * Western Digital SN530
-* Western Digital Black SN750 SE (Phison Controller)
-* Western Digital Blue SN550 series (If you know how to install latest rpi-eeprom-updates, pieeprom-2024-01-24.bin fixed the Western Digital Blue SN550 nvme boot issue Refer to https://forums.raspberrypi.com/viewtopic.php?t=364327.)
+* Western Digital Black SN750 SE (Phison 控制器)
+* Western Digital Blue SN550 系列（如果你知道如何安装最新的 rpi-eeprom-updates，pieeprom-2024-01-24.bin 修复了 Western Digital Blue SN550 nvme 启动问题，参考 https://forums.raspberrypi.com/viewtopic.php?t=364327。）
 
 * XPG GAMMIX S70 BLADE
 * XPG SX8200 Pro
 
 
-Uncompitable NVMe SSD
+不兼容的 NVMe SSD
 --------------------------
 
-We recommend avoiding the following NVMe SSD drives which is equipped with a Phison controller due to their proven incompatibility:
+我们建议避免使用以下配备 Phison 控制器的 NVMe SSD 驱动器，因为它们已被证明与系统不兼容：
 
-* WD Blue SN580 series
-* Western Digital Green SN350 series
-* Western Digital Black SN850 series
+* WD Blue SN580 系列
+* Western Digital Green SN350 系列
+* Western Digital Black SN850 系列
 * Western Digital Black SN770
 * WD BLACK 8TB SN850X
-* Inland tn446 nvme drive
+* Inland tn446 nvme 驱动器
 * Corsair MP600 SSD
 * Samsung PM991
 * Kingston OM8SEP4256Q-A0
 * Transcend 110Q (TS500GMTE110Q)
-* SN350 and SN570 prevented the RPi 5 from booting at all especially.
-* Other NVMe SSD drivers equipped with the same Phison controller
+* SN350 和 SN570 特别会导致 RPi 5 无法启动。
+* 其他配备相同 Phison 控制器的 NVMe SSD 驱动器

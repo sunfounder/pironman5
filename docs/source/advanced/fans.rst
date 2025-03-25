@@ -1,89 +1,75 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Fans
+风扇
 ============
 
-PWM Fan
+PWM风扇
 -----------------
 
-The PWM fan in the Pironman 5 is managed by the Raspberry Pi system and forms the cornerstone of its smart cooling solution, especially under heavy loads. This system combines a primary PWM fan with two supplementary RGB fans for enhanced cooling performance, closely integrated with the Raspberry Pi 5's thermal management system.  
+Pironman 5中的PWM风扇由Raspberry Pi系统管理，是其智能散热方案的核心，尤其在高负载时。该系统结合了一个主PWM风扇和两个辅助RGB风扇，以增强散热性能，紧密集成于Raspberry Pi 5的热管理系统中。
 
 .. image:: img/fan_tower_cooler.png  
   :width: 600  
   :align: center  
 
-**Electrical Characteristics**
+**电气特性**
 
-* **Rated Voltage**: 5 VDC  
-* **Starting Voltage**: 4.0 V (at 25°C Power ON/OFF)  
-* **Operating Voltage Range**: 4.0 ~ 5.5 VDC  
-* **Rated Current**: 0.05 A / MAX. 0.08 A  
-* **Rated Power**: 0.25 W / MAX. 0.40 W  
-* **Rated Speed**: 3500±10% RPM (at 25°C, tested after 3 minutes of operation)  
-* **Maximum Airflow**: 2.46 (MIN. 2.21) CFM (at zero static pressure)  
-* **Maximum Static Pressure**: 0.62 (MIN. 0.496) mmH2O (at zero airflow)  
-* **Acoustical Noise**: 22.31 dB(A) MAX. 25.31 dB(A)  
-* **Life Expectancy**: 40,000 hours (at 25°C, 65% humidity, normal room conditions)  
+* **额定电压**：5 VDC  
+* **起动电压**：4.0 V（在25°C下开机/关机）  
+* **工作电压范围**：4.0 ~ 5.5 VDC  
+* **额定电流**：0.05 A / 最大0.08 A  
+* **额定功率**：0.25 W / 最大0.40 W  
+* **额定转速**：3500±10% RPM（在25°C下，运行3分钟后测试）  
+* **最大气流**：2.46（最小2.21）CFM（在零静压下）  
+* **最大静压**：0.62（最小0.496）mmH2O（在零气流下）  
+* **噪音**：最大22.31 dB(A)，最小25.31 dB(A)  
+* **使用寿命**：40,000小时（在25°C、65%湿度、正常环境下）
 
-**Mechanical Characteristics**
+**机械特性**
 
-* **Dimensions**: 40x10.4x40 mm (LxWxH)  
-* **Frame Material**: PBT Plastic  
-* **Impeller Material**: PBT Plastic  
-* **Bearing Type**: Hydraulic Bearing  
+* **尺寸**：40x10.4x40 mm（长x宽x高）  
+* **框架材质**：PBT塑料  
+* **叶轮材质**：PBT塑料  
+* **轴承类型**：液压轴承  
 
-**Environmental Parameters**
+**环境参数**
 
-* **Operating Temperature**: -10°C ~ 70°C  
-* **Storage Temperature**: -40°C ~ 75°C  
-* **Operating Humidity**: 5% ~ 90% RH  
-* **Storage Humidity**: 5% ~ 95% RH  
+* **工作温度**：-10°C ~ 70°C  
+* **存储温度**：-40°C ~ 75°C  
+* **工作湿度**：5% ~ 90% RH  
+* **存储湿度**：5% ~ 95% RH  
 
-**Fan Speed Control Based on Temperature**  
+**基于温度的风扇速度控制**
 
-The PWM fan operates dynamically, adjusting its speed according to the Raspberry Pi 5's temperature:  
+PWM风扇根据Raspberry Pi 5的温度动态调整其速度：
 
-* **Below 50°C**: Fan remains off (0% speed).  
-* **At 50°C**: Fan operates at low speed (30% speed).  
-* **At 60°C**: Fan increases to medium speed (50% speed).  
-* **At 67.5°C**: Fan ramps up to high speed (70% speed).  
-* **At 75°C and above**: Fan operates at full speed (100% speed).  
+* **低于50°C**：风扇保持关闭（0%速度）。  
+* **50°C时**：风扇以低速运行（30%速度）。  
+* **60°C时**：风扇以中速运行（50%速度）。  
+* **67.5°C时**：风扇以高速运行（70%速度）。  
+* **75°C及以上**：风扇全速运行（100%速度）。  
 
-This temperature-to-speed control includes a 5°C hysteresis to prevent frequent speed changes. For instance, the fan will reduce its speed only after the temperature drops 5°C below each threshold.  
+此温度到速度的控制包括5°C的滞后，以防止频繁的速度变化。例如，风扇仅在温度低于每个阈值5°C时才会减少速度。
 
-The following commands allow users to monitor the PWM fan's operation:  
+以下命令允许用户监控PWM风扇的工作状态：
 
-To check the fan's current state:  
+查看风扇的当前状态：
 
 .. code-block:: shell
 
   cat /sys/class/thermal/cooling_device0/cur_state
 
-RGB Fans
+RGB风扇
 -------------------
 
 .. image:: img/size_fan.png
 
-* **Extermal dimension**: 40*40*10MM
-* **Weight**: 13.5±5g/pcs
-* **Life**: 40,000 hours (room temperature 25°C)
-* **Maximum Air Flow**: 2.46CFM
-* **Max.Air Pressure**: 0.62mm-H2O
-* **Accoustic Sound**: 22.31dBA
-* **Rated Input power**: 5V/0.1A
-* **Rated Speed**: 3500±10%RPM
-* **Operating Temperature**: -10℃~+70℃
-* **Storage Temperature**: -30℃~+85℃
+* **外部尺寸**：40*40*10MM  
+* **重量**：13.5±5g/个  
+* **寿命**：40,000小时（室温25°C）  
+* **最大气流**：2.46CFM  
+* **最大气压**：0.62mm-H2O  
+* **噪音**：22.31dBA  
+* **额定输入功率**：5V/0.1A  
+* **额定转速**：3500±10%RPM  
+* **工作温度**：-10℃~+70℃  
+* **存储温度**：-30℃~+85℃
 

@@ -1,64 +1,64 @@
-Assembling the Camera Module
+组装摄像头模块
 ===========================================
 
-Follow these steps to assemble the Camera Module:
+按照以下步骤组装摄像头模块：
 
-1. Remove the two acrylic panels from the case.
+1. 从机箱中取下两个亚克力面板。
 
    .. image:: img/IN_CMR/IN.CMR.1.png
       :width: 500
       :align: center
 
-2. Detach the 2-pin wire and FPC as shown in the image.
+2. 如图所示，拆下 2 针线和 FPC。
 
    .. image:: img/IN_CMR/IN.CMR.2.png
       :width: 500
       :align: center
 
-3. Unscrew the four screws to remove the NVMe PIP and Power Switch Converter module group.
+3. 拆卸四颗螺丝，移除 NVMe PIP 和电源开关转换模块组。
 
    .. image:: img/IN_CMR/IN.CMR.3.png
       :width: 500
       :align: center
 
-4. Disassemble the module group. This involves removing a rivet, which should be done by pushing the central shaft of the rivet out with a screwdriver, then removing the entire rivet.
+4. 拆解模块组。这需要移除一个铆钉，使用螺丝刀推开铆钉的中央轴心，然后取出整个铆钉。
 
    .. image:: img/IN_CMR/IN.CMR.4.png
       :width: 500
       :align: center
 
-5. Connect the Camera Module to the FPC cable.
+5. 将摄像头模块连接到 FPC 电缆。
 
    .. image:: img/IN_CMR/IN.CMR.5.png
       :width: 500
       :align: center
 
-6. Thread the FPC through the CAMERA hole in the case.
+6. 将 FPC 电缆穿过机箱中的摄像头孔。
 
    .. image:: img/IN_CMR/IN.CMR.6.png
       :width: 500
       :align: center
 
-7. Continue to thread the FPC through the CAMERA hole in the case.
+7. 继续将 FPC 电缆穿过机箱中的摄像头孔。
 
    .. image:: img/IN_CMR/IN.CMR.7.png
       :width: 500
       :align: center
 
-8. Connect the FPC to the Raspberry Pi. This step is very compact and requires careful handling.
+8. 将 FPC 电缆连接到 Raspberry Pi。此步骤非常紧凑，需要小心操作。
 
    .. image:: img/IN_CMR/IN.CMR.8.png
       :width: 500
       :align: center
 
-9. Power on the host and check if the Camera Module is properly connected.
+9. 打开主机并检查摄像头模块是否正确连接。
 
-   * First, connect a display to the Raspberry Pi or establish a VNC connection.
-   * Once the display is set up, open a terminal and run the following command:  ``raspistill -o test.jpg``
-   * If the Camera Module is functioning correctly, this command will capture an image and save it as ``test.jpg``.
-   * Open ``test.jpg`` to verify that the image has been successfully captured.
+   * 首先，将显示器连接到 Raspberry Pi 或建立 VNC 连接。
+   * 设置好显示器后，打开终端并运行以下命令： ``raspistill -o test.jpg``
+   * 如果摄像头模块正常工作，此命令将拍摄一张照片并保存为 ``test.jpg`` 。
+   * 打开 ``test.jpg`` ，验证图片是否成功捕获。
 
-10. Reassemble the Power Switch Converter back into the case.
+10. 将电源开关转换器重新组装回机箱。
 
    .. image:: img/IN_CMR/IN.CMR.9.png
       :width: 500
@@ -68,7 +68,7 @@ Follow these steps to assemble the Camera Module:
       :width: 500
       :align: center
 
-11. Reassemble the NVMe PIP back into the case.
+11. 将 NVMe PIP 模块重新组装回机箱。
 
    .. image:: img/IN_CMR/IN.CMR.11.png
       :width: 500
@@ -78,7 +78,7 @@ Follow these steps to assemble the Camera Module:
       :width: 500
       :align: center
 
-12. Reassemble the case cover.
+12. 重新组装机箱盖。
 
    .. image:: img/IN_CMR/IN.CMR.13.png
       :width: 500

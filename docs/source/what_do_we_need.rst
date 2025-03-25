@@ -1,48 +1,34 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-1. What Else Should We Prepare?
+1. 我们还需要准备什么？
 ===================================
 
-**Essential Components**
+**必备组件**
 
 * Raspberry Pi 5 
 
-    The Pironman 5 is fully compatible with the Raspberry Pi 5.
+    Pironman 5 完全兼容 Raspberry Pi 5。
 
-* 5V/5A Power Adapter
+* 5V/5A 电源适配器
 
-    A 5V/5A power adapter is required to power the Pironman 5 and its components.
+    Pironman 5 及其组件需要一个 5V/5A 电源适配器来供电。
 
-* Micro SD Card
- 
-    It is recommended to use an SD card with a minimum of 16GB of storage for Raspberry Pi OS. For Raspberry Pi OS Lite, a minimum of 4GB is advised.
+* Micro SD 卡
 
-**Optional Components**
+    推荐使用至少 16GB 存储空间的 SD 卡来安装 Raspberry Pi OS。如果是 Raspberry Pi OS Lite，建议使用至少 4GB 的卡。
+
+**可选组件**
 
 * M.2 NVMe SSD
 
-    The Pironman 5 features an NVMe PIP with an M.2 SSD connector, accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec).
+    Pironman 5 配备了一个带 M.2 SSD 接口的 NVMe PIP，支持四种 M.2 SSD 尺寸：2230、2242、2260 和 2280。该接口支持 Gen 2.0 速度（5 GT/sec），但你可以强制将其设置为 Gen 3.0（10 GT/sec）。
 
-* Screen
+* 显示屏
 
-    To access the Raspberry Pi's desktop environment, a screen such as a TV or a computer monitor is required.
-    
-* HDMI Cable
+    若要访问 Raspberry Pi 的桌面环境，需要一个屏幕，如电视或计算机显示器。
 
-    The Raspberry Pi 5's HDMI ports have been adapted to standard HDMI Type A interfaces via a USB HDMI adapter. Therefore, a standard HDMI to HDMI cable is needed to connect the Pironman 5 to a display.
+* HDMI 电缆
 
-* Mouse & Keyboard
+    Raspberry Pi 5 的 HDMI 接口通过 USB HDMI 适配器已适配为标准 HDMI Type A 接口。因此，需要一条标准的 HDMI 转 HDMI 电缆来将 Pironman 5 连接到显示器。
 
-    Any USB port on the Pironman 5 can be used to connect a wired keyboard and mouse, or a USB Bluetooth receiver for wireless peripherals.
+* 鼠标与键盘
+
+    可以通过 Pironman 5

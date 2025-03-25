@@ -1,35 +1,21 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Install the Raspberry Pi OS
+安装Raspberry Pi操作系统
 ================================================================================
 
-You can choose an installation method based on whether you have a Micro SD card or an NVMe SSD available.
+你可以根据是否拥有Micro SD卡或NVMe SSD来选择合适的安装方法。
 
-**Using a Micro SD Card Only**
+**仅使用Micro SD卡**
 
-  If you are only using a Micro SD card, you can simply follow the first method below.
+  如果你只使用Micro SD卡，可以按照下面的第一种方法进行安装。
 
-**Using an M.2 NVMe SSD**
+**使用M.2 NVMe SSD**
 
-  * If you have an **M.2 NVMe SSD Enclosure Adapter**, you can connect your SSD to your computer using the adapter and follow the second method to install the OS.  
+  * 如果你有 **M.2 NVMe SSD外接适配器** ，可以通过适配器将SSD连接到电脑，然后按照第二种方法安装操作系统。
 
     .. image:: img/m2_nvme_adapter.png  
         :width: 300
         :align: center
   
-  * If you do not have the adapter shown above, you can first install the OS on a Micro SD card using the first method, then use the third method to copy the system from the Micro SD card to your M.2 NVMe SSD.  
+  * 如果你没有上述适配器，可以先使用第一种方法在Micro SD卡上安装操作系统，然后使用第三种方法将系统从Micro SD卡复制到你的M.2 NVMe SSD。
 
 .. toctree::
     :maxdepth: 1

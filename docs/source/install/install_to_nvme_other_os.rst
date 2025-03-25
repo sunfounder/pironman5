@@ -1,196 +1,183 @@
-.. note::
+.. _install_to_nvme_home_bridge: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-.. _install_to_nvme_home_bridge:
-
-Installing the OS on an NVMe SSD
+在NVMe SSD上安装操作系统
 ============================================
 
-If you are using an NVMe SSD and have an adapter to connect the NVMe SSD to your computer for system installation, you can use the following tutorial for a quick installation.
+如果你使用的是NVMe SSD，并且有适配器将其连接到电脑进行系统安装，可以按照以下教程进行快速安装。
 
     .. image:: img/m2_nvme_adapter.png
         :width: 300
         :align: center  
 
-**Required Components**
+**所需组件**
 
-* A Personal Computer
-* A NVMe SSD
-* A NVMe to USB Adapter
-* Micro SD Card and Reader
+* 一台个人电脑
+* 一块NVMe SSD
+* 一个NVMe转USB适配器
+* 一张Micro SD卡和读卡器
 
 .. _update_bootloader:
 
-1. Update the Bootloader
+1. 更新启动引导程序
 ----------------------------------
 
-First, you need to update the Raspberry Pi 5 bootloader to boot from NVMe before trying USB and then SD Card.
+首先，你需要更新Raspberry Pi 5的启动引导程序，使其能够优先从NVMe启动，然后再尝试USB和SD卡。
 
-.. raw:: html
+.. 
+   .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?start=47&end=95&si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 .. note::
 
-    At this step, it is recommended to use a spare Micro SD card. First, write the bootloader to this Micro SD card and then immediately insert it into the Raspberry Pi to enable booting from an NVMe device.
+    在此步骤中，建议使用备用的Micro SD卡。首先将引导程序写入此Micro SD卡，然后立即将其插入Raspberry Pi，以启用从NVMe设备启动。
     
-    Alternatively, you can write the bootloader directly to your NVMe device first, then insert it into the Raspberry Pi to change its boot method. Afterwards, connect the NVMe SSD to a computer to install the operating system, and once the installation is complete, reinsert it back into the Raspberry Pi.
+    另外，你也可以直接将引导程序写入NVMe设备，然后将其插入Raspberry Pi，修改启动方式。之后，将NVMe SSD连接到电脑安装操作系统，安装完成后，再将其插回Raspberry Pi。
 
-#. Insert your spare Micro SD card or NVMe SSD into your computer or laptop using a Reader.
+#. 使用读卡器将备用的Micro SD卡或NVMe SSD插入到你的电脑或笔记本中。
 
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+#. 在 |link_rpi_imager| 中，点击 **Raspberry Pi设备** ，并从下拉列表中选择 **Raspberry Pi 5** 型号。
 
-   .. image:: img/os_choose_device_pi5.png
+   .. image:: img/os_choose_device_pi5.jpg
       :width: 90%
       
-#. On the **Operating System** tab, scroll down and select **Misc utility images**.
+#. 在 **操作系统** 选项卡中，向下滚动并选择 **Misc utility images** 。
 
    .. image:: img/nvme_misc.png
       :width: 90%
 
-#. Select **Bootloader (Pi 5 family)**.
+#. 选择 **Bootloader (Pi 5 family)** 。
 
-   .. image:: img/nvme_bootloader.png
+   .. image:: img/nvme_bootloader.jpg
       :width: 90%
-      
 
-#. Select **NVMe/USB Boot** to enable Raspberry Pi 5 to boot from NVMe before trying USB and then SD Card.
+
+#. 选择 **NVMe/USB Boot**，使Raspberry Pi 5能够从NVMe启动，然后再尝试USB和SD卡。
 
    .. image:: img/nvme_nvme_boot.png
       :width: 90%
-      
 
 
-#. In the **Storage** option, select the appropriate storage device for the installation.
+
+#. 在 **存储** 选项中，选择适合安装的存储设备。
 
    .. note::
 
-      Ensure you select the correct storage device. To avoid confusion, disconnect any additional storage devices if multiple ones are connected.
+      确保选择正确的存储设备。为避免混淆，如果连接了多个存储设备，建议断开其他设备。
 
    .. image:: img/os_choose_sd.png
       :width: 90%
-      
 
-#. Now you can click **NEXT**. If the storage device contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+
+#. 现在你可以点击 **下一步** 。如果存储设备中已有数据，请确保备份，以防数据丢失。如果不需要备份，可以点击 **是** 继续。
 
    .. image:: img/os_continue.png
       :width: 90%
-      
 
-#. Soon, you will be prompted that **NVMe/USB Boot** has been written to your storage device.
+
+#. 很快，你会看到提示，表示 **NVMe/USB Boot** 已成功写入存储设备。
 
    .. image:: img/nvme_boot_finish.png
       :width: 90%
-      
 
-#. Now, you can insert your Micro SD card or NVMe SSD into the Raspberry Pi. After powering the Raspberry Pi with a Type C adapter, the bootloader from the Micro SD card or NVMe SSD will be written to the Raspberry Pi's EEPROM.
+
+#. 现在，你可以将Micro SD卡或NVMe SSD插入Raspberry Pi。为Raspberry Pi提供电源，使用Type C适配器，Micro SD卡或NVMe SSD上的引导程序将被写入Raspberry Pi的EEPROM。
 
 .. note::
 
-   Afterward, the Raspberry Pi will boot from NVMe before trying USB and then the SD Card. 
+    之后，Raspberry Pi将从NVMe启动，然后再尝试USB和SD卡。
     
-   Power off the Raspberry Pi and remove the Micro SD card or NVMe SSD.
+    关闭Raspberry Pi并移除Micro SD卡或NVMe SSD。
 
 
-2. Install OS to NVMe SSD
+2. 将操作系统安装到NVMe SSD
 ---------------------------------
 
-Now you can install the operating system on your NVMe SSD.
+现在你可以将操作系统安装到NVMe SSD上。
 
-**Steps**
+**步骤**
 
-#. Insert your SD card into your computer or laptop using a Reader.
+#. 使用读卡器将SD卡插入电脑或笔记本。
 
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+#. 在 |link_rpi_imager| 中，点击 **Raspberry Pi设备**，并从下拉列表中选择 **Raspberry Pi 5** 型号。
 
-   .. image:: img/os_choose_device_pi5.png
-      :width: 90%
-      
-
-#. Click on the **Operating System** tab.
-
-   .. image:: img/os_choose_os.png
+   .. image:: img/os_choose_device_pi5.jpg
       :width: 90%
 
-#. Scroll down to the bottom of the page and select the your operating system.
+
+#. 点击 **操作系统** 选项卡。
+
+   .. image:: img/os_choose_os.jpg
+      :width: 90%
+
+#. 向下滚动到页面底部并选择你要安装的操作系统。
 
    .. note::
 
-      * For **Ubuntu** system, you need to click **Other general-purpose OS** -> **Ubuntu**, and select either **Ubuntu Desktop 24.04 LTS (64 bit)** or **Ubuntu Server 24.04 LTS (64 bit)**.
-      * For **Kali Linux**, **Home Assistant** and **Homebridge** systems, you need to click **Other specific-purpose OS** and then select the corresponding system.
+      * 对于 **Ubuntu** 系统，点击 **其他通用操作系统** -> **Ubuntu**，并选择 **Ubuntu Desktop 24.04 LTS (64位)** 或 **Ubuntu Server 24.04 LTS (64位)**。
+      * 对于 **Kali Linux** 、 **Home Assistant** 和 **Homebridge** 系统，点击 **其他特定用途操作系统** ，然后选择相应的系统。
 
    .. image:: img/os_other_os.png
       :width: 90%
 
-#. In the **Storage** option, select the appropriate storage device for the installation.
+#. 在 **存储** 选项中，选择适合安装的存储设备。
 
    .. image:: img/nvme_ssd_storage.png
       :width: 90%
-      
 
-#. Click **NEXT**.
+
+#. 点击 **NEXT**。
 
    .. note::
 
-      * For systems that cannot be configured in advance, after clicking **NEXT**, you will be prompted whether to save the data within the device. If you have confirmed that a backup has been made, select **Yes**.
+      * 对于无法预先配置的系统，点击 **NEXT** 后，系统会提示是否保存设备中的数据。如果你确认已备份，请选择 **是**。
 
-      * For systems where the Hostname, WiFi, and Enable SSH can be configured in advance, a pop-up will appear prompting whether to apply the OS's custom settings. You can choose **Yes** or **No**, or go back to edit further.
+      * 对于可以预先配置主机名、WiFi和启用SSH的系统，弹出窗口会询问是否应用操作系统的自定义设置。你可以选择 **是** 或 **否**，或者返回编辑。
 
-   .. image:: img/os_enter_setting.png
+   .. image:: img/os_enter_setting.jpg
       :width: 90%
-      
 
-   * Define a **hostname** for your Raspberry Pi. The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
 
-     .. image:: img/os_set_hostname.png
+   * 为你的Raspberry Pi定义一个 **主机名**。主机名是你Raspberry Pi在网络中的标识符。你可以通过 ``<hostname>.local`` 或 ``<hostname>.lan`` 访问你的Pi。
 
-   * Create a **Username** and **Password** for the Raspberry Pi's administrator account. Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
+     .. image:: img/os_set_hostname.jpg
 
-     .. image:: img/os_set_username.png
+   * 为Raspberry Pi的管理员账户创建一个 **用户名** 和 **密码**。为Raspberry Pi设置唯一的用户名和密码非常重要，因为默认情况下没有密码。
 
-   * Configure the wireless LAN by providing your network's **SSID** and **Password**.
+     .. image:: img/os_set_username.jpg
+
+   * 配置无线局域网，提供你网络的 **热点名** 和 **密码**。
 
      .. note::
 
-       Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
+       将 ``无线局域网国家/Wireless LAN country`` 设置为与你所在地区对应的两字母 `ISO/IEC alpha2代码 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ 。
 
-     .. image:: img/os_set_wifi.png
+     .. image:: img/os_set_wifi.jpg
          
-   * To remotely connect to your Raspberry Pi, enable SSH in the Services tab.
+   * 为了远程连接到你的Raspberry Pi，在服务选项卡中启用SSH。
 
-     * For **password authentication**, use the username and password from the General tab.
-     * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
+     * 对于 **密码认证** ，使用常规选项卡中的用户名和密码。
+     * 对于公钥认证，选择“仅允许公钥认证”。如果你有RSA密钥，它将被使用。如果没有，点击“运行SSH-keygen”生成一个新的密钥对。
 
      .. image:: img/os_enable_ssh.png
 
-   * The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
+   * **选项** 菜单允许你配置Imager在写入过程中的行为，包括写入完成时播放声音、写入完成时弹出媒体和启用遥测。
 
      .. image:: img/os_options.png
 
-         
-    
-#. When you've finished entering OS customisation settings, click **Save** to save your customisation. Then, click **Yes** to apply them when writing the image.
 
-   .. image:: img/os_click_yes.png
+
+#. 完成操作系统自定义设置后，点击 **保存/Save** 以保存你的设置。然后点击 **是** ，在写入镜像时应用这些设置。
+
+   .. image:: img/os_click_yes.jpg
       :width: 90%
-      
 
-#. If the NVMe SSD contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+
+#. 如果NVMe SSD上已有数据，请确保备份，以防数据丢失。如果不需要备份，可以点击 **是** 继续。
 
    .. image:: img/nvme_erase.png
       :width: 90%
-      
 
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the NVMe SSD!
+
+#. 当你看到“写入成功”的弹窗时，说明镜像已经完全写入并验证完成。现在，你可以从NVMe SSD启动Raspberry Pi了！

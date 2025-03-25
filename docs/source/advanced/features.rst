@@ -1,51 +1,37 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Features
+产品特性
 ======================
-**Interfaces**
+**接口**
 
 .. image:: img/pironman5_interfaces1.png
 .. image:: img/pironman5_interfaces2.png
 
 
-**Parameters**
+**参数**
 
-* Dimension: 111.9x78.5x117mm
-* Material
-    * Main body: aluminum alloy
-    * Two side panel: acrylic
-* Support Platform: Raspberry Pi 5
-* Power Input: USB Type C, 5V/5A
-* Interfaces
-    * Raspberry Pi standard 40-Pin GPIO
-    * spring-loaded Micro SD socket
-    * USB Type C power input
+* 尺寸：111.9x78.5x117mm
+* 材质
+    * 主体：铝合金
+    * 两侧面板：丙烯酸
+* 支持平台：Raspberry Pi 5
+* 电源输入：USB Type C，5V/5A
+* 接口
+    * Raspberry Pi 标准40针GPIO
+    * 弹簧加载Micro SD卡插槽
+    * USB Type C电源输入
     * 2 x USB 2.0
     * 2 x USB 3.0
-    * Gigabit LAN port
+    * 千兆LAN端口
     * 2 x 4Kp60 HDMI Type A
-* Metal Power button
-* OLED screen: 0.96'' 128x64 resolution
-* 1 x PWM Fan, 2 x RGB Fans: 40x40x10mm
+* 金属电源按钮
+* OLED屏幕：0.96'' 128x64分辨率
+* 1 x PWM风扇，2 x RGB风扇：40x40x10mm
 * 4 x WS2812-5050 RGB LED
-* 38KHz IR Receiver
-* Tower Cooler
-* PCIe 3.0 x1 M.2 M key 2230, 2242, 2260, 2280 for NVMe SSD
-* 1220 Battery for RTC
+* 38KHz红外接收器
+* 塔式散热器
+* PCIe 3.0 x1 M.2 M键2230, 2242, 2260, 2280用于NVMe SSD
+* RTC 1220电池
 
-**Dimensional Drawing**
+**尺寸图**
 
 .. image:: img/pironman5_dimension.png
     :width: 800

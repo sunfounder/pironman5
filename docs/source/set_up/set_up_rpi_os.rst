@@ -1,39 +1,24 @@
-.. note::
+在 Raspberry Pi/Ubuntu/Kali/Homebridge OS 上设置
+===================================================
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-
-Set Up on Raspberry Pi/Ubuntu/Kali/Homebridge OS
-==================================================
-
-If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your Raspberry Pi, you will need to configure the Pironman 5 using the command line. Detailed tutorials can be found below:
+如果你已在 Raspberry Pi 上安装了 Raspberry Pi OS、Ubuntu、Kali Linux 或 Homebridge，你需要使用命令行来配置 Pironman 5。详细教程请参见下文：
 
 .. note::
 
-  Before configuring, you need to boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
+  在配置之前，你需要启动并登录到你的 Raspberry Pi。如果你不确定如何登录，可以访问 Raspberry Pi 官方网站： |link_rpi_get_start|。
 
 
-Configuring Shutdown to Deactivate GPIO Power
+配置关机以禁用 GPIO 电源
 ------------------------------------------------------------
-To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from remaining active post-shutdown, it's essential to configure the Raspberry Pi for GPIO power deactivation.
+为了防止由 Raspberry Pi GPIO 提供电源的 OLED 屏幕和 RGB 风扇在关机后仍然保持开启，必须配置 Raspberry Pi 以禁用 GPIO 电源。
 
-#. Manually edit the ``EEPROM`` configuration file with this command:
+#. 使用以下命令手动编辑 ``EEPROM`` 配置文件：
 
    .. code-block:: shell
    
      sudo rpi-eeprom-config -e
 
-#. Modify the ``POWER_OFF_ON_HALT`` setting in the file to ``1``. For instance:
+#. 修改文件中的 ``POWER_OFF_ON_HALT`` 设置为 ``1`` 。例如：
 
    .. code-block:: shell
    
@@ -41,13 +26,13 @@ To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from 
      POWER_OFF_ON_HALT=1
      BOOT_ORDER=0xf41
 
-#. Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes.
+#. 按 ``Ctrl + X`` ，然后按 ``Y`` 和 ``Enter`` 保存更改。
 
 
-Downloading and Installing the ``pironman5`` Module
+下载并安装 ``pironman5`` 模块
 -----------------------------------------------------------
 
-#. For lite systems, initially install tools like ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
+#. 对于轻量系统，首先安装如 ``git`` 、 ``python3`` 、 ``pip3`` 、 ``setuptools`` 等工具。
   
    .. code-block:: shell
   
@@ -55,7 +40,7 @@ Downloading and Installing the ``pironman5`` Module
      sudo apt-get install git -y
      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. Proceed to download code from GitHub and install the ``pironman5`` module .
+#. 然后从 GitHub 下载代码并安装 ``pironman5`` 模块。
 
    .. code-block:: shell
 
@@ -64,23 +49,23 @@ Downloading and Installing the ``pironman5`` Module
       cd ~/pironman5
       sudo python3 install.py
 
-   After successful installation, a system reboot is required to activate the installation. Follow the on-screen reboot prompt.
+   安装成功后，需要重启系统以激活安装。请按照屏幕上的重启提示操作。
 
-   Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
-   
-   * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
-   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
+   重启后， ``pironman5.service`` 会自动启动。以下是 Pironman 5 的主要配置：
+
+   * OLED 屏幕显示 CPU、RAM、磁盘使用情况、CPU 温度以及 Raspberry Pi 的 IP 地址。
+   * 四个 WS2812 RGB LED 灯将以呼吸模式亮起，颜色为蓝色。
      
-   .. note::
-    
-     RGB fans won't spin unless the temperature hits 60°C. For different activation temperatures, see :ref:`cc_control_fan`.
+   .. note:: 
+   
+     RGB 风扇只有在温度达到 60°C 时才会开始转动。如需调整激活温度，请参见 :ref:`cc_control_fan`。
 
-#. You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5.service``.
+#. 你可以使用 ``systemctl`` 工具来 ``start`` 、 ``stop`` 、 ``restart`` 或查看 ``pironman5.service`` 的 ``status`` 。
 
    .. code-block:: shell
      
       sudo systemctl restart pironman5.service
    
-   * ``restart``: Use this command to apply any changes made to the settings of pironman 5.
-   * ``start/stop``: Enable or disable the ``pironman5.service``.
-   * ``status``: Check the operational status of the ``pironman5`` program using the ``systemctl`` tool.
+   * ``restart`` ：使用此命令应用对 pironman5 设置所做的任何更改。
+   * ``start/stop`` ：启用或禁用 ``pironman5.service`` 。
+   * ``status`` ：使用 ``systemctl`` 工具检查 ``pironman5`` 程序的运行状态。

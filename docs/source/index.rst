@@ -1,25 +1,11 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-|link_pironman5| - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5
+|link_pironman5| - NVMe M.2 SSD PCIe Raspberry Pi 5 迷你 PC 机箱
 ================================================================================
 
-Thanks for choosing our |link_pironman5|.
+感谢选择我们的 |link_pironman5|。
 
 .. note::
 
-    This document is available in the following languages.
+    本文档提供以下语言版本：
 
     * |link_german_tutorials|
     * |link_jp_tutorials|
@@ -28,40 +14,39 @@ Thanks for choosing our |link_pironman5|.
     * |link_es_tutorials|
     * |link_it_tutorials|
     
-    Please click on the respective links to access the document in your preferred language.
+    请点击相应链接以获取你偏好的语言版本。
 
 .. image:: img/pironman5_pic.jpg
     :width: 400
     :align: center
     
-Elevate your Raspberry Pi 5 with the |link_pironman5|, our top-tier case designed for unmatched style and functionality. It's the perfect blend of aesthetics and performance:
+使用 |link_pironman5| 提升你的 Raspberry Pi 5 体验，这是我们为您设计的顶级机箱，兼具独特的外观与卓越的功能性。它完美融合了美学与性能：
 
-* Raspberry Pi 5 mini PC
-* 0.96" OLED Display showing Raspberry Pi's CPU usage, temperature, disk usage, IP address, RAM usage etc.
-* Tower cooler can cool a 100% CPU load Pi to 39°C at 25°C room temperature
-* 2 RGB Fans, with GPIO control
-* 1 PWM Fan on the Tower Cooler is controlled by the Raspberry Pi system.
-* Supports four (PCIe Gen 2.0 / PCIe Gen 3.0) NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280.
-* 4 WS2812 Addressable RGB LED light up the whole case with cool light effect
-* IR Receiver for multi-media center like Kodi or Volumio
-* Retro metal power button for safe shut down
-* External GPIO extender with pin name label, for easy access
-* Equipped with a spring-loaded socket for easy card removal
-* Aluminum main body with clear Acrylic side panel
-* Features two standard HDMI ports
+* Raspberry Pi 5 迷你 PC
+* 0.96 英寸 OLED 显示屏，显示 Raspberry Pi 的 CPU 使用率、温度、磁盘使用情况、IP 地址、RAM 使用率等信息
+* 塔式散热器能够在 25°C 房间温度下将 100% CPU 负载的 Pi 温度降低至 39°C
+* 2 个 RGB 风扇，可通过 GPIO 控制
+* 塔式散热器上的 1 个 PWM 风扇由 Raspberry Pi 系统控制
+* 支持四种（PCIe Gen 2.0 / PCIe Gen 3.0）NVMe M.2 SSD 尺寸：2230、2242、2260 和 2280
+* 4 个 WS2812 可编址 RGB LED 灯效点亮整个机箱，呈现酷炫灯光效果
+* 多媒体中心（如 Kodi 或 Volumio）用的红外接收器
+* 复古金属电源按钮，支持安全关机
+* 外接 GPIO 扩展器，带有引脚名称标签，方便接入
+* 配有弹簧式插槽，便于轻松拔卡
+* 铝制主机身，透明亚克力侧面板
+* 配备两个标准 HDMI 接口
 
-The |link_pironman5| is not just a case; it's an upgrade that transforms your Raspberry Pi 5 into a powerful, efficient, and stylish device. Get yours now and experience the future of Raspberry Pi cases!
+|link_pironman5| 不仅仅是一个机箱；它是一个升级，能够将你的 Raspberry Pi 5 转变为一个强大、高效、时尚的设备。立即购买，体验 Raspberry Pi 机箱的未来！
 
 .. note::
 
-    You need to install an OS that supports Raspberry Pi 5. Please use the latest Raspberry Pi Imager tool for system installation. The currently tested systems are:
+    你需要安装一个支持 Raspberry Pi 5 的操作系统。请使用最新的 Raspberry Pi Imager 工具进行系统安装。目前已测试的操作系统包括：
 
     .. image:: img/compitable_os.png
         :width: 600
         :align: center
 
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
-
+如有任何问题，请发送电子邮件至 service@sunfounder.com，我们会尽快回复您。
 
 .. raw:: html
 
@@ -81,7 +66,7 @@ If you have any questions, please send an email to service@sunfounder.com and we
     assemble_camera
     faq
 
-**Copyright Notice**
+**版权声明**
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+本手册中的所有内容，包括但不限于文本、图片和代码，均为 SunFounder 公司所有。您仅可在相关法规和版权法下，将其用于个人学习、研究、娱乐或其他非商业或非营利用途，不得侵犯作者和相关权利持有人的合法权益。任何个人或组织未经许可将其用于商业盈利，SunFounder 公司保留采取法律行动的权利。
 

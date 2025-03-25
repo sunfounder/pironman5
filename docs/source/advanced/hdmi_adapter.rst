@@ -1,43 +1,29 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-USB HDMI Adapter
+USB HDMI适配器
 ==========================================
 
 .. image:: img/hdmi_adapter.jpeg
 
-This USB HDMI adapter board is specifically designed for the Raspberry Pi 5. Its primary function is to reposition the USB and HDMI connections to align with the USB interface side of the Raspberry Pi, enhancing accessibility and cable management.
+该USB HDMI适配器板专为Raspberry Pi 5设计，其主要功能是将USB和HDMI连接端口重新定位，使其与Raspberry Pi的USB接口侧对齐，从而提高可接入性和电缆管理的便利性。
 
-Additionally, the HDMI port is converted to a standard HDMI Type A interface, offering broader compatibility.
+此外，HDMI端口被转换为标准的HDMI Type A接口，提供更广泛的兼容性。
 
-**NVMe Additional Power Supply**
+**NVMe额外电源供应**
 
-The board features a 5V power header specifically for NVMe PIP power supply. Coupled with an extension header, it can be connected to the NVMe's additional power interface to provide extra power.
+该板配有专门用于NVMe PIP电源的5V电源引脚。配合扩展头，可以连接到NVMe的额外电源接口，以提供额外的电力。
 
-**1220RTC Battery Holder**
+**1220RTC电池座**
 
-A 1220RTC battery holder is incorporated for convenient installation of an RTC battery. It connects to the Raspberry Pi's RTC interface via an SH1.0 2P reverse cable. 
+板上集成了一个1220RTC电池座，便于安装RTC电池。它通过SH1.0 2P反向电缆连接到Raspberry Pi的RTC接口。
 
-The battery holder is compatible with both CR1220 and ML1220 batteries. If using an ML1220 (Lithium Manganese Dioxide battery), charging can be configured directly on the Raspberry Pi. Note that the CR1220 is not rechargeable.
+该电池座兼容CR1220和ML1220电池。如果使用ML1220（锂锰二氧化物电池），可以直接在Raspberry Pi上配置充电。请注意，CR1220电池不可充电。
 
-**Enabling Trickle Charging**
+**启用涓流充电**
 
 .. warning::
 
-  If you're using a CR1220 battery, do not enable trickle charging as it can cause irreparable damage to the battery and risk damaging the board.
+  如果使用CR1220电池，请不要启用涓流充电功能，因为这可能会对电池造成无法修复的损害，并且有可能损坏电路板。
 
-By default, the trickle charging feature for the battery is disabled. The ``sysfs`` files indicate the current trickle charging voltage and limits:
+默认情况下，电池的涓流充电功能是禁用的。 ``sysfs`` 文件显示当前的涓流充电电压和限制：
 
 .. code-block:: shell
 
@@ -48,21 +34,21 @@ By default, the trickle charging feature for the battery is disabled. The ``sysf
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-To enable trickle charging, add ``rtc_bbat_vchg`` to ``/boot/firmware/config.txt``:
+要启用涓流充电，请将 ``rtc_bbat_vchg`` 添加到 ``/boot/firmware/config.txt`` ：
 
-  * Open the ``/boot/firmware/config.txt``.
-  
+  * 打开 ``/boot/firmware/config.txt`` 。
+
     .. code-block:: shell
     
       sudo nano /boot/firmware/config.txt
-      
-  * Add ``rtc_bbat_vchg`` to ``/boot/firmware/config.txt``.
-  
+          
+  * 将 ``rtc_bbat_vchg`` 添加到 ``/boot/firmware/config.txt`` 。
+
     .. code-block:: shell
     
       dtparam=rtc_bbat_vchg=3000000
   
-After rebooting, the system will display:
+重启后，系统会显示：
 
 .. code-block:: shell
 
@@ -73,5 +59,5 @@ After rebooting, the system will display:
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-This confirms the battery is now under trickle charging. To disable this feature, simply remove the ``dtparam`` line from ``config.txt``.
+这确认了电池现在正在进行涓流充电。要禁用此功能，只需从 ``config.txt`` 中删除 ``dtparam`` 行。
 

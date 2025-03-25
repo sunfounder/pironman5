@@ -1,58 +1,43 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Power Switch Conventor
+Power Switch Converter
 ==============================
 
-This is a module that expands the Raspberry Pi 5 power switch to the outside. 
+这是一个将Raspberry Pi 5的电源开关扩展到外部的模块。
 
 .. image:: img/power_switch_conventor.jpeg
 
-**Adding the Power Button**
+**添加电源按钮**
 
-* The Raspberry Pi 5 features a **J2** jumper, situated between the RTC battery connector and the board edge. This breakout enables the addition of a custom power button to the Raspberry Pi 5 by connecting a Normally Open (NO) momentary switch across the two pads. Briefly engaging this switch mimics the onboard power button's functionality.
+* Raspberry Pi 5配有一个 **J2** 跳线，位于RTC电池连接器与板边之间。通过连接一个常开（NO）瞬时开关到两个焊盘之间，可以为Raspberry Pi 5添加自定义电源按钮。短暂按下该开关，可以模拟板载电源按钮的功能。
 
    .. image:: img/pi5_j2.jpg
 
-* On the Pironman 5, there's a **Power Switch Converter** that extends the **J2** jumper to an external power button using two Pogo pins.
+* 在Pironman 5上，有一个 **电源开关转换器** ，它通过两个Pogo针将 **J2** 跳线扩展到外部电源按钮。
 
    .. image:: img/power_switch_convertor.png
 
-* Now, the Raspberry Pi 5 can be powered on and off using the Power Button.
+* 现在，可以使用电源按钮打开和关闭Raspberry Pi 5。
 
    .. image:: img/pironman_button.JPG
 
-**Power Cycling**
+**电源循环**
 
-Upon initially powering your Raspberry Pi 5, it will automatically turn on and boot into the operating system without the need to press the button.
+在首次为Raspberry Pi 5供电时，它会自动开机并启动操作系统，无需按下按钮。
 
-If running the Raspberry Pi Desktop, a brief press of the power button initiates a clean shutdown process. A menu will appear, offering options to shutdown, reboot, or logout. Selecting an option or pressing the power button again will start a clean shutdown.
+如果运行Raspberry Pi Desktop，简短按下电源按钮将启动干净的关机过程。将出现一个菜单，提供关机、重启或注销的选项。选择一个选项或再次按下电源按钮将启动干净的关机。
 
 .. image:: img/button_shutdown.png
 
-**Shutdown**
+**关机**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system without a desktop, press the power button a single time to initiate a shutdown.
-    * To force a hard shutdown, press and hold the power button.
+    * 如果你运行的是Raspberry Pi **Bookworm Desktop** 系统，可以快速连续按下电源按钮两次进行关机。
+    * 如果你运行的是没有桌面的Raspberry Pi **Bookworm Lite** 系统，按一次电源按钮即可启动关机。
+    * 要强制硬关机，按住电源按钮。
 
+**开机**
 
-**Power on**
-
-    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+    * 如果Raspberry Pi板已关机，但仍有电源供应，单次按下按钮即可从关机状态开机。
 
 .. note::
 
-    If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
+    如果你运行的系统不支持关机按钮，你可以按住电源按钮5秒钟以强制硬关机，并单次按下按钮从关机状态开机。
 

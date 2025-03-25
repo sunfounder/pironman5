@@ -1,33 +1,19 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _install_batocera:
 
-Install the Batocera Linux
+安装Batocera Linux
 ======================================================
 
-|link_batocera| is an open-source and completely free retro-gaming distribution that can be copied to a USB stick or an SD card with the aim of turning any computer/nano computer into a gaming console during a game or permanently.
+|link_batocera| 是一个开源且完全免费的复古游戏发行版，可以复制到USB闪存盘或SD卡上，旨在将任何计算机/单板计算机转换为游戏主机，进行临时或永久的游戏体验。
 
-You can choose the installation method based on whether you have a Micro SD or an NVMe SSD at hand.
+你可以根据手头是否有Micro SD卡或NVMe SSD来选择安装方法。
 
-**Using a Micro SD Card Only**
+**仅使用Micro SD卡**
 
-  If you are using a Micro SD card, you can simply follow the first method below.
+  如果你使用的是Micro SD卡，可以按照下面的第一种方法进行安装。
 
-**Using an M.2 NVMe SSD**
+**使用M.2 NVMe SSD**
 
-  * If you are using an M.2 NVMe SSD, you will also need an **M.2 NVMe SSD Enclosure Adapter** to connect your SSD to your computer and follow the second method to install the OS.
+  * 如果你使用的是M.2 NVMe SSD，你还需要一个 **M.2 NVMe SSD外接适配器** ，通过该适配器将SSD连接到电脑，然后按照第二种方法安装操作系统。
   
     .. image:: img/m2_nvme_adapter.png
         :width: 300
@@ -38,4 +24,4 @@ You can choose the installation method based on whether you have a Micro SD or a
 
     install_to_sd_batocera
     install_to_nvme_batocera
-
+  

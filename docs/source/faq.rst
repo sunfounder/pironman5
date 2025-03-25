@@ -1,56 +1,42 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-FAQ
+FAQ 
 ============
 
-1. About Compatible Systems
+1. 关于兼容的系统
 -------------------------------
 
-Systems that passed the test on the Raspberry Pi 5:
+通过 Raspberry Pi 5 测试的系统：
 
 .. image:: img/compitable_os.png
    :width: 600
    :align: center
 
-2. About Power Button
+2. 关于电源按钮
 --------------------------
 
-The power button brings out the power button of the Raspberry Pi 5, and it functions just like the power button of the Raspberry Pi 5.
+电源按钮可以启用 Raspberry Pi 5 的电源按钮功能，操作方式与 Raspberry Pi 5 的电源按钮相同。
 
 .. image:: img/power_button.jpg
     :width: 400
     :align: center
 
-* **Shutdown**
+* **关机**
 
-  * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-  * If you run Raspberry Pi **Bookworm Lite** system, press the power button a single time to initiate a shutdown.
-  * To force a hard shutdown, press and hold the power button.
+  * 如果你运行的是 Raspberry Pi **Bookworm Desktop** 系统，可以快速连续按下电源按钮两次进行关机。
+  * 如果你运行的是 Raspberry Pi **Bookworm Lite** 系统，按一次电源按钮即可启动关机。
+  * 若要强制关机，按住电源按钮不放。
 
-* **Power on**
+* **开机**
 
-  * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+  * 如果 Raspberry Pi 主板已关机，但仍有电源供应，单次按压即可从关机状态开机。
 
-* If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
+* 如果你运行的系统不支持关机按钮，可以按住电源按钮 5 秒钟来强制关机，单次按压即可从关机状态开机。
 
-3. About Airflow Direction
+3. 关于气流方向
 -------------------------------
 
-The airflow in the Pironman 5 chassis is carefully engineered to maximize cooling efficiency. Cool air enters the case primarily through the GPIO interface and other small openings, ensuring an even intake. It then passes through the Tool Cooler, equipped with a high-performance fan to regulate internal temperatures, and is finally expelled through the two RGB fans on the side panel.
+Pironman 5 机箱的气流设计经过精心调整，以最大化散热效率。冷空气主要通过 GPIO 接口和其他小开口进入机箱，确保空气均匀流入。然后，空气通过配备高性能风扇的工具散热器，调节内部温度，最终通过侧面板上的两个 RGB 风扇排出。
 
-For a detailed demonstration, please refer to the video:
+详细演示请参考视频：
 
 .. raw:: html
 
@@ -63,28 +49,28 @@ For a detailed demonstration, please refer to the video:
 
 
 
-4. About the Tower Cooler
+4. 关于塔式散热器
 ----------------------------------------------------------
 
-#. The U-shaped heat pipes at the top of the tower cooler are compressed to facilitate the copper pipes passing through the aluminum fins, which is part of the normal production process for copper pipes.
+#. 塔式散热器顶部的 U 形热管被压缩，以便铜管通过铝制散热片，这是铜管生产过程中正常的一部分。
 
    .. image::  img/tower_cooler1.png
 
-#. Precautions for Installing a Tower Cooler:
+#. 安装塔式散热器的注意事项：
 
-**Attach Pads**: Before installing the tower cooler, make sure to attach pads to the Raspberry Pi to prevent damage or scratches.
+**安装垫片**：在安装塔式散热器之前，确保将垫片贴在 Raspberry Pi 上，以防止损坏或刮伤。
 
  .. image::  img/tower_cooler_thermal.png
 
-**Correct Orientation**: Pay attention to the placement direction of the tower cooler. Align it with the positioning holes on the Raspberry Pi before pressing down the spring screws to secure it.
+**正确方向**：注意塔式散热器的安装方向。将其与 Raspberry Pi 上的定位孔对齐后，再按下弹簧螺丝将其固定。
 
  .. image::  img/tower_cooler_place.jpg
 
-**Careful Removal**: If the tower cooler is installed in the wrong direction or the pads were not applied, do not forcibly remove it.
+**小心拆卸**：如果塔式散热器安装方向错误或未贴上垫片，请勿强行拆卸。
 
-- To safely remove the tower cooler, follow these steps:
+- 安全拆卸塔式散热器的步骤：
 
-  Use tweezers or pliers to grip the tip of the spring nut and gently push upward to detach it.
+  使用镊子或钳子夹住弹簧螺母的尖端，轻轻向上推动以将其拆卸。
 
      .. raw:: html
 
@@ -95,42 +81,42 @@ For a detailed demonstration, please refer to the video:
            </video>
        </div>
 
-5. About the Raspberry Pi AI HAT+
+5. 关于 Raspberry Pi AI HAT+
 ----------------------------------------------------------
 
-The Raspberry Pi AI HAT+ is not compatible with the Pironman 5.
+Raspberry Pi AI HAT+ 与 Pironman 5 不兼容。
 
    .. image::  img/output3.png
         :width: 400
 
-The Raspberry Pi AI Kit combines the Raspberry Pi M.2 HAT+ and the Hailo AI accelerator module.
+Raspberry Pi AI Kit 结合了 Raspberry Pi M.2 HAT+ 和 Hailo AI 加速模块。
 
    .. image::  img/output2.jpg
         :width: 400
 
-You can detach the Hailo AI accelerator module from the Raspberry Pi AI Kit and directly insert it into the NVMe PIP module of the Pironman 5.
+你可以将 Hailo AI 加速模块从 Raspberry Pi AI Kit 中拆卸下来，并直接插入 Pironman 5 的 NVMe PIP 模块中。
 
    .. image::  img/output4.png
         :width: 800
 
-6. Does the Pironman 5 support retro gaming systems?
+6. Pironman 5 支持复古游戏系统吗？
 ------------------------------------------------------
-Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
+是的，它是兼容的。然而，大多数复古游戏系统是精简版本，无法安装和运行额外的软件。这个限制可能导致 Pironman 5 上的一些组件（例如 OLED 显示屏、两个 RGB 风扇和 4 个 RGB LED）无法正常工作，因为这些组件需要安装 Pironman 5 的软件包。
 
 
 .. note::
 
-   The Batocera.linux system is now fully compatible with Pironman 5. Batocera.linux is an open-source and completely free retro-gaming distribution.
+   Batocera.linux 系统现在完全兼容 Pironman 5。Batocera.linux 是一个开源且完全免费的复古游戏操作系统。
 
    * :ref:`install_batocera`
    * :ref:`set_up_batocera`
 
-7. OLED Screen Not Working?
+7. OLED 屏幕无法工作？
 -----------------------------------
 
-If the OLED screen is not displaying or displaying incorrectly, follow these troubleshooting steps:
+如果 OLED 屏幕没有显示或显示不正确，请按照以下步骤进行故障排除：
 
-#. Ensure the FPC cable of the OLED screen is securely connected. It is recommended to reconnect the OLED screen and then power on the device.  
+#. 确保 OLED 屏幕的 FPC 电缆连接牢固。建议重新连接 OLED 屏幕，然后重新启动设备。
 
    .. raw:: html
 
@@ -141,51 +127,51 @@ If the OLED screen is not displaying or displaying incorrectly, follow these tro
            </video>
        </div>
 
-#. Confirm that the Raspberry Pi is running a compatible operating system. The Pironman 5 only supports the following systems:  
+#. 确认 Raspberry Pi 运行的是兼容的操作系统。Pironman 5 仅支持以下系统：
 
    .. image:: img/compitable_os.png  
       :width: 600  
       :align: center  
 
-   If you have installed an unsupported system, follow the guide to install a compatible OS: :ref:`install_the_os`.
+   如果你安装了不支持的系统，请按照指南安装兼容的操作系统： :ref:`install_the_os`。
 
-#. When the OLED screen is powered on for the first time, it may only display pixel blocks. You need to follow the instructions in :ref:`set_up_pironman5` to complete the configuration before it can display proper information.
+#. 当 OLED 屏幕首次启动时，可能只会显示像素块。你需要按照 :ref:`set_up_pironman5` 中的说明完成配置，才能正常显示信息。
 
-#. Use the following command to check if the OLED's I2C address ``0x3C`` is detected:  
+#. 使用以下命令检查 OLED 的 I2C 地址 ``0x3C`` 是否被检测到：
 
    .. code-block:: shell
 
       sudo i2cdetect -y 1
 
-   * If the I2C address ``0x3C`` is detected, restart the Pironman 5 service using this command:
+   * 如果检测到 I2C 地址 ``0x3C`` ，请使用以下命令重启 Pironman 5 服务：
 
      .. code-block:: shell
 
         sudo systemctl restart pironman5.service
 
-   * Enable I2C if the address is not detected:
+   * 如果未检测到地址，请启用 I2C：
 
-     * Edit the configuration file by executing:
+     * 编辑配置文件，执行以下命令：
 
        .. code-block:: shell
 
          sudo nano /boot/firmware/config.txt
 
-     * Add the following line at the end of the file:
+     * 在文件末尾添加以下行：
 
        .. code-block:: shell
 
 
          dtparam=i2c_arm=on
 
-     * Save the file by pressing ``Ctrl+X``, then ``Y``, and exit. Reboot the Pironman 5 and check if the issue is resolved.
+     * 按 ``Ctrl+X`` 保存文件，然后按 ``Y`` 确认，退出。重启 Pironman 5，检查问题是否解决。
 
-If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
+如果问题仍然存在，请发送电子邮件至 service@sunfounder.com，我们会尽快回复。
 
-8. NVMe PIP Module Not Working?
+8. NVMe PIP 模块无法工作？
 ---------------------------------------
 
-1. Ensure the FPC cable connecting the NVMe PIP module to the Raspberry Pi 5 is securely attached.  
+1. 确保将 NVMe PIP 模块与 Raspberry Pi 5 连接的 FPC 电缆连接牢固。
 
    .. raw:: html
 
@@ -205,7 +191,7 @@ If the problem persists after performing the above steps, please send an email t
            </video>
        </div>
 
-2. Confirm that your SSD is properly secured to the NVMe PIP module.  
+2. 确认 SSD 已正确固定在 NVMe PIP 模块上。
 
    .. raw:: html
 
@@ -216,120 +202,120 @@ If the problem persists after performing the above steps, please send an email t
            </video>
        </div>
 
-3. Check the status of the NVMe PIP Module's LEDs:
+3. 检查 NVMe PIP 模块的 LED 状态：
 
-   After confirming all connections, power on the Pironman 5 and observe the two indicators on the NVMe PIP Module:  
+   确认所有连接正确后，打开 Pironman 5，观察 NVMe PIP 模块上的两个指示灯：
 
-   * **PWR LED**: Should be lit.  
-   * **STA LED**: Should blink to indicate normal operation.  
+   * **PWR LED**：应亮起。
+   * **STA LED**：应闪烁，表示正常工作。
 
-   .. image:: img/nvme_pip_leds.png  
+   .. image:: img/nvme_pip_leds.png
 
-   * If the **PWR LED** is on but the **STA LED** is not blinking, it indicates the NVMe SSD is not recognized by the Raspberry Pi.  
-   * If the **PWR LED** is off, short the "Force Enable" pins (J4) on the module. If the **PWR LED** lights up, it could indicate a loose FPC cable or unsupported system configuration for NVMe.
+   * 如果 **PWR LED** 亮起但 **STA LED** 不闪烁，表示 Raspberry Pi 没有识别到 NVMe SSD。
+   * 如果 **PWR LED** 不亮，请短接模块上的 "Force Enable" 引脚（J4）。如果 **PWR LED** 亮起，可能表示 FPC 电缆松动或系统配置不支持 NVMe。
 
-     .. image:: img/nvme_pip_j4.png  
+     .. image:: img/nvme_pip_j4.png
 
-     
-4. Confirm that your NVMe SSD has a properly installed operating system. Refer to: :ref:`install_the_os`.
 
-5. If the wiring is correct and the OS is installed, but the NVMe SSD still fails to boot, try booting from a Micro SD card to verify the functionality of other components. Once confirmed, proceed to: :ref:`configure_boot_ssd`.
+4. 确认你的 NVMe SSD 已安装操作系统。参考 :ref:`install_the_os`。
 
-If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
+5. 如果接线正确且操作系统已安装，但 NVMe SSD 仍无法启动，请尝试通过 Micro SD 卡启动，验证其他组件是否正常工作。确认后，请继续执行 :ref:`configure_boot_ssd`。
 
-9. RGB LEDs Not Working?
+如果问题仍然存在，请发送电子邮件至 service@sunfounder.com，我们会尽快回复。
+
+9. RGB LED 无法工作？
 --------------------------
 
-#. The two pins on the IO Expander above J9 are used to connect the RGB LEDs to GPIO10. Ensure that the jumper cap on these two pins are properly in place.
+#. IO 扩展器上 J9 引脚的两个引脚用于将 RGB LED 连接到 GPIO10。确保这两个引脚上的跳线帽安装正确。
 
    .. image:: advanced/img/io_board_rgb_pin.png
       :width: 300
       :align: center
 
-#. Verify that the Raspberry Pi is running a compatible operating system. The Pironman 5 only supports the following OS versions:
+#. 验证 Raspberry Pi 是否运行兼容的操作系统。Pironman 5 仅支持以下操作系统版本：
 
    .. image:: img/compitable_os.png
       :width: 600
       :align: center
 
-   If you have installed an unsupported OS, follow the guide to install a compatible operating system: :ref:`install_the_os`.
+   如果你安装了不支持的操作系统，请参考指南安装兼容的操作系统： :ref:`install_the_os`。
 
-#. Run the command ``sudo raspi-config`` to open the configuration menu. Navigate to **3 Interfacing Options** -> **I3 SPI** -> **YES**, then click **OK** and **Finish** to enable SPI. After enabling SPI, restart the Pironman 5.
+#. 运行命令 ``sudo raspi-config`` 打开配置菜单。导航到 **3 Interfacing Options** -> **I3 SPI** -> **YES**，然后点击 **OK** 和 **Finish** 来启用 SPI。启用 SPI 后，重启 Pironman 5。
 
-If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
+如果问题仍然存在，请发送电子邮件至 service@sunfounder.com，我们会尽快回复。
 
-10. CPU fan not working?
+10. CPU 风扇无法工作？
 ----------------------------------------------
 
-When the CPU temperature has not reached the set threshold, the CPU fan will not working.
+当 CPU 温度未达到设定的阈值时，CPU 风扇不会工作。
 
-**Fan Speed Control Based on Temperature**  
+**根据温度控制风扇转速**
 
-The PWM fan operates dynamically, adjusting its speed according to the Raspberry Pi 5's temperature:  
+PWM 风扇会根据 Raspberry Pi 5 的温度动态调整转速：
 
-* **Below 50°C**: Fan remains off (0% speed).  
-* **At 50°C**: Fan operates at low speed (30% speed).  
-* **At 60°C**: Fan increases to medium speed (50% speed).  
-* **At 67.5°C**: Fan ramps up to high speed (70% speed).  
-* **At 75°C and above**: Fan operates at full speed (100% speed).  
+* **低于 50°C**：风扇关闭（0% 转速）。
+* **50°C**：风扇以低速运行（30% 转速）。
+* **60°C**：风扇以中速运行（50% 转速）。
+* **67.5°C**：风扇以高速运行（70% 转速）。
+* **75°C 及以上**：风扇全速运行（100% 转速）。
 
-For more detail please refer to : :ref:`Fans`
+更多详细信息请参考： :ref:`Fans`
 
-11. How to disable web dashboard?
+11. 如何禁用网页控制面板？
 ------------------------------------------------------
 
-Once you have completed the installation of the ``pironman5`` module, you will be able to access the :ref:`view_control_dashboard`.
-      
-If you do not need this feature and want to reduce CPU and RAM usage, you can disable the dashboard during the installation of ``pironman5`` by adding the ``--disable-dashboard`` flag.
-      
+完成 ``pironman5`` 模块的安装后，你将能够访问 :ref:`view_control_dashboard`。
+
+如果不需要此功能并希望减少 CPU 和 RAM 使用，可以在安装 ``pironman5`` 时添加 ``--disable-dashboard`` 标志来禁用面板。
+
 .. code-block:: shell
-      
+
    cd ~/pironman5
    sudo python3 install.py --disable-dashboard
-      
-If you have already installed ``pironman 5``, you can remove the ``dashboard`` module and ``influxdb``, then restart pironman5 to apply the changes:
-      
+
+如果你已经安装了 ``pironman5`` ，可以移除 ``dashboard`` 模块和 ``influxdb`` ，然后重启 pironman5 以应用更改：
+
 .. code-block:: shell
-      
+
    /opt/pironman5/venv/bin/pip3 uninstall pm-dashboard influxdb
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-12. How to Control Components Using the ``pironman5`` Command
+12. 如何使用 ``pironman5`` 命令控制组件
 ----------------------------------------------------------------------
-You can refer to the following tutorial to control the components of the Pironman 5 using the ``pironman5`` command.
+你可以参考以下教程，使用 ``pironman5`` 命令来控制 Pironman 5 的组件。
 
 * :ref:`view_control_commands`
 
-13. How to Change the Raspberry Pi Boot Order Using Commands
+13. 如何使用命令更改 Raspberry Pi 的启动顺序
 -------------------------------------------------------------
 
-If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
+如果你已登录 Raspberry Pi，可以使用命令更改启动顺序。详细说明如下：
 
 * :ref:`configure_boot_ssd`
 
 
-14. How to Modify the Boot Order with Raspberry Pi Imager?
+14. 如何使用 Raspberry Pi Imager 修改启动顺序？
 ---------------------------------------------------------------
 
-In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can also use the **Raspberry Pi Imager** to change the boot order of your Raspberry Pi.
+除了修改 EEPROM 配置中的 ``BOOT_ORDER`` ，你还可以使用 **Raspberry Pi Imager** 来更改 Raspberry Pi 的启动顺序。
 
-It is recommended to use a spare card for this step.
+建议使用备用卡进行此步骤。
 
 * :ref:`update_bootloader`
 
-15. How to Copy the System from the SD Card to an NVMe SSD?
+15. 如何将系统从 SD 卡复制到 NVMe SSD？
 -------------------------------------------------------------
 
-If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
+如果你有 NVMe SSD，但没有适配器将 NVMe 连接到计算机，可以先将系统安装到 Micro SD 卡上。一旦 Pironman 5 成功启动，你可以将系统从 Micro SD 卡复制到 NVMe SSD。详细说明如下：
 
 
 * :ref:`copy_sd_to_nvme_rpi`
 
-16. How to Remove the Protective Film from the Acrylic Plates
+16. 如何移除亚克力板的保护膜
 -----------------------------------------------------------------
 
-Two acrylic panels are included in the package, both covered with yellow/transparent protective film on both sides to prevent scratches. The protective film may be a bit difficult to remove. Use a screwdriver to gently scrape at the corners, then carefully peel off the entire film.
+包装中包含两个亚克力面板，两面都覆盖有黄色/透明保护膜，以防刮伤。保护膜可能有些难以移除。可以使用螺丝刀轻轻刮开角落，然后小心地撕掉整个保护膜。
 
 .. image:: img/peel_off_film.jpg
     :width: 500
@@ -339,10 +325,10 @@ Two acrylic panels are included in the package, both covered with yellow/transpa
 
 .. _openssh_powershell:
 
-17. How to Install OpenSSH via Powershell?
+17. 如何通过 Powershell 安装 OpenSSH？
 ----------------------------------------------
 
-When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``) to connect to your Raspberry Pi, but the following error message appears.
+当你使用 ``ssh <username>@<hostname>.local``（或 ``ssh <username>@<IP address>``）连接 Raspberry Pi，但出现以下错误信息：
 
     .. code-block::
 
@@ -350,21 +336,21 @@ When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP addres
         spelling of the name, or if a path was included, verify that the path is correct and try again.
 
 
-It means your computer system is too old and does not have `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ pre-installed, you need to follow the tutorial below to install it manually.
+这意味着你的计算机系统过于陈旧，未预装 `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_，你需要按照以下教程手动安装。
 
-#. Type ``powershell`` in the search box of your Windows desktop, right click on the ``Windows PowerShell``, and select ``Run as administrator`` from the menu that appears.
+#. 在 Windows 桌面上的搜索框中输入 ``powershell`` ，右键点击 ``Windows PowerShell``，从弹出的菜单中选择 ``以管理员身份运行`` 。
 
    .. image:: img/powershell_ssh.png
       :width: 90%
-      
 
-#. Use the following command to install ``OpenSSH.Client``.
+
+#. 使用以下命令安装 ``OpenSSH.Client`` 。
 
    .. code-block::
 
         Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
-#. After installation, the following output will be returned.
+#. 安装完成后，会返回以下输出：
 
    .. code-block::
 
@@ -372,13 +358,13 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
         Online        : True
         RestartNeeded : False
 
-#. Verify the installation by using the following command.
+#. 使用以下命令验证安装：
 
    .. code-block::
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. It now tells you that ``OpenSSH.Client`` has been successfully installed.
+#. 现在，它会告诉你 ``OpenSSH.Client`` 已成功安装。
 
    .. code-block::
 
@@ -390,40 +376,40 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
 
    .. warning:: 
 
-        If the above prompt does not appear, it means that your Windows system is still too old, and you are advised to install a third-party SSH tool, like |link_putty|.
+        如果上述提示没有出现，说明你的 Windows 系统仍然过于陈旧，建议安装第三方 SSH 工具，如 |link_putty| 。
 
-6. Now restart PowerShell and continue to run it as administrator. At this point you will be able to log in to your Raspberry Pi using the ``ssh`` command, where you will be prompted to enter the password you set up earlier.
+6. 现在重启 PowerShell，并继续以管理员身份运行。此时，你就可以使用 ``ssh`` 命令登录 Raspberry Pi，系统会提示你输入先前设置的密码。
 
    .. image:: img/powershell_login.png
 
 
 
 
-18. How to turn OFF/ON the OLED Screen?
+18. 如何关闭/开启 OLED 屏幕？
 ----------------------------------------------------------
 
-You can choose to turn off the OLED Screen via the dashboard or the command line.
+你可以选择通过控制面板或命令行关闭/开启 OLED 屏幕。
 
-1. Turn OFF/ON the OLED Screen by the dash board.
+1. 通过控制面板关闭/开启 OLED 屏幕。
 
    .. note::
 
-    Before using the dashboard, you need to set it up on Home Assistant. Please refer to: :ref:`view_control_dashboard`.
+    在使用控制面板之前，你需要在 Home Assistant 上进行设置。请参考： :ref:`view_control_dashboard`。
 
-- After you have completed the setup, you can follow these steps to turn on, turn off, or configure your OLED Screen.
+- 设置完成后，你可以按照以下步骤打开、关闭或配置 OLED 屏幕。
 
    .. image::  img/set_up_on_dashboard.jpg
       :width: 90%
 
-2.Turn OFF/ON the OLED Screen by the command line.
+2. 通过命令行关闭/开启 OLED 屏幕。
 
-- Use any one of the following five commands to turn on the OLED screen.
+- 使用以下五个命令中的任意一个来打开 OLED 屏幕。
 
 .. code-block::
 
     sudo pironman5 -oe True/true/on/On/1
 
-- Use any one of the following five commands to turn off the OLED screen.
+- 使用以下五个命令中的任意一个来关闭 OLED 屏幕。
 
 .. code-block::
 
@@ -431,7 +417,7 @@ You can choose to turn off the OLED Screen via the dashboard or the command line
 
 .. note::
 
-    You may need to restart the pironman5 service for the changes to take effect. You can use the following command to restart the service:
+    你可能需要重启 pironman5 服务以使更改生效。你可以使用以下命令重启服务：
 
       .. code-block::
 

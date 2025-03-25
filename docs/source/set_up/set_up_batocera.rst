@@ -1,63 +1,49 @@
-.. note::
+.. _set_up_batocera: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-.. _set_up_batocera:
-
-Set up on Batocera.linux
+在 Batocera.linux 上设置
 =========================================================
 
-If you have installed the Batocera.linux OS, you can remotely log in to this system via SSH and then follow the steps below to complete the configuration.
+如果你已经安装了 Batocera.linux 操作系统，可以通过 SSH 远程登录该系统，然后按照以下步骤完成配置。
 
-#. Once the system boots up, use ssh to remotely connect to Pironman5. For Windows, you can open **Powershell**, and for Mac OS X and Linux, you can directly open **Terminal**.
+#. 系统启动后，使用 ssh 远程连接到 Pironman5。对于 Windows 用户，可以打开 **Powershell**，对于 Mac OS X 和 Linux 用户，则可以直接打开 **Terminal**。
 
    .. image:: img/batocera_powershell.png
       :width: 90%
       
 
-#. The default hostname for the batocera system is ``batocera``, with the default username as ``root`` and the password as ``linux``. Therefore, you can log in by typing ``ssh root@batocera.local`` and entering the password ``linux``.
+#. Batocera 系统的默认主机名是 ``batocera`` ，默认用户名为 ``root`` ，密码为 ``linux`` 。因此，你可以通过输入 ``ssh root@batocera.local`` 来登录，并输入密码 ``linux`` 。
 
    .. image:: img/batocera_login.png
       :width: 90%
 
-#. Execute the command: ``/etc/init.d/S92switch setup`` to enter the menu settings page.
+#. 执行命令: ``/etc/init.d/S92switch setup`` 进入菜单设置页面。
 
    .. image:: img/batocera_configure.png  
       :width: 90%
 
-#. Use the down arrow key to navigate to the end, select and activate the **Pironman5** services.
+#. 使用下箭头键导航到页面底部，选择并启用 **Pironman5** 服务。
 
    .. image:: img/batocera_configure_pironman5.png
       :width: 90%
 
-#. After activating the pironman5 service, select **OK**.
+#. 启用 pironman5 服务后，选择 **OK**。
 
    .. image:: img/batocera_configure_pironman5_ok.png
       :width: 90%
 
-#. Execute the command ``reboot`` to restart Pironman5.
+#. 执行命令 ``reboot`` 来重启 Pironman5。
 
    .. code-block:: shell
 
       reboot
 
-#. Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
-   
-   * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
-   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
-   
-   .. note::
-    
-     RGB fans won't spin unless the temperature hits 60°C. For different activation temperatures, see :ref:`cc_control_fan`.
+#. 重启后， ``pironman5.service`` 会自动启动。以下是 Pironman 5 的主要配置：
 
-Now, you can connect the Pironman 5 to a screen, game controllers, headphones, and more to immerse yourself in your gaming world.
+   * OLED 屏幕显示 CPU、RAM、磁盘使用情况、CPU 温度和 Raspberry Pi 的 IP 地址。
+   * 四个 WS2812 RGB LED 灯会以蓝色呼吸模式亮起。
+
+   .. note:: 
+   
+     RGB 风扇只有在温度达到 60°C 时才会开始转动。如需调整激活温度，请参见 :ref:`cc_control_fan`。
+
+现在，你可以将 Pironman 5 连接到显示器、游戏控制器、耳机等，沉浸在你的游戏世界中。
