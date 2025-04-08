@@ -48,7 +48,7 @@ class Pironman5:
                 _p.add('clear_history')
             else:
                 _p.remove('history')
-                _P.remove('clear_history')
+                _p.remove('clear_history')
             self.peripherals = list(_p)
 
         device_info = {

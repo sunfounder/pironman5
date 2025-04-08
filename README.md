@@ -98,7 +98,7 @@ cd ~/sf_rpi_status && sudo /opt/pironman5/venv/bin/pip3 uninstall sf_rpi_status 
 
 Start/stop the service for debug
 
-```
+```bash
 sudo systemctl stop pironman5.service
 sudo systemctl start pironman5.service
 sudo systemctl restart pironman5.service
