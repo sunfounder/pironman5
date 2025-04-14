@@ -101,7 +101,7 @@ dashboard_settings = {
     ],
     'python_source': {
         'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.3.0',
-        'sf_rpi_status': 'git+https://github.com/sunfounder/sf_rpi_status.git@1.1.0',
+        'sf_rpi_status': 'git+https://github.com/sunfounder/sf_rpi_status.git@1.1.1',
     },
 }
 
