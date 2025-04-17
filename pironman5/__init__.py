@@ -32,7 +32,8 @@ def main():
     debug_level = 'INFO'
     new_sys_config = {}
 
-    parser = argparse.ArgumentParser(description=f'{NAME} command line interface')
+    parser = argparse.ArgumentParser(prog='pironman5',
+                                    description=f'{NAME} command line interface')
     parser.add_argument("command",
                         choices=["start", "restart", "stop"],
                         nargs="?",
