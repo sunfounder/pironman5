@@ -220,13 +220,6 @@ Or check if the OLED's i2c address 0x3C is recognized:
 Checkout the Infrared Receiver
 ---------------------------------------
 
-To utilize the IR receiver, verify its connection and install the necessary module:
-
-* Test the connection:
-
-  .. code-block:: shell
-
-    sudo ls /dev |grep lirc
 
 * Install the ``lirc`` module:
 
