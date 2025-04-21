@@ -219,13 +219,6 @@ Ou vérifiez si l'adresse i2c de l'OLED, 0x3C, est reconnue :
 Vérifier le Récepteur Infrarouge
 ---------------------------------------
 
-Pour utiliser le récepteur IR, vérifiez sa connexion et installez le module nécessaire :
-
-* Testez la connexion :
-
-  .. code-block:: shell
-
-    sudo ls /dev |grep lirc
 
 * Installez le module ``lirc`` :
 
