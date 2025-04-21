@@ -221,13 +221,6 @@ O verifica si la dirección i2c de la OLED 0x3C es reconocida:
 Verificar el Receptor Infrarrojo
 ---------------------------------------
 
-Para utilizar el receptor IR, verifica su conexión e instala el módulo necesario:
-
-* Prueba la conexión:
-
-  .. code-block:: shell
-
-    sudo ls /dev |grep lirc
 
 * Instala el módulo ``lirc``:
 
