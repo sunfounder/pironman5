@@ -220,13 +220,6 @@ Oder überprüfen Sie, ob die i2c-Adresse des OLED 0x3C erkannt wird:
 Überprüfung des Infrarot-Empfängers
 ---------------------------------------
 
-Um den IR-Empfänger zu verwenden, überprüfen Sie die Verbindung und installieren Sie das notwendige Modul:
-
-* Testen Sie die Verbindung:
-
-  .. code-block:: shell
-
-    sudo ls /dev |grep lirc
 
 * Installieren Sie das Modul ``lirc``:
 
