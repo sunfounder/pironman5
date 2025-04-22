@@ -140,6 +140,7 @@ class SF_Installer():
 
         self.parser = argparse.ArgumentParser(description=description)
         self.parser.add_argument('--uninstall', action='store_true', help='Uninstall')
+        self.parser.add_argument('--gitee', action='store_true', help='Use gitee')
         self.parser.add_argument('--no-dep',
                                  action='store_true',
                                  help='Do not install dependencies')
@@ -351,6 +352,8 @@ class SF_Installer():
             return
         print("Install Python source packages...")
         for package, url in self.python_source.items():
+            if args.gitee:
+                url = url.replace('github.com', 'gitee.com')
             self.install_python_source(package, url)
 
     def setup_auto_start(self):
