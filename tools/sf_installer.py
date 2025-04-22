@@ -352,7 +352,7 @@ class SF_Installer():
             return
         print("Install Python source packages...")
         for package, url in self.python_source.items():
-            if args.gitee:
+            if self.args.gitee:
                 url = url.replace('github.com', 'gitee.com')
             self.install_python_source(package, url)
 
