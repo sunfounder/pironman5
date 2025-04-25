@@ -32,6 +32,10 @@ If you are using a Micro SD card, you can follow the tutorial below to install t
    .. image:: img/batocera_download.png
       :width: 90%
       
+      
+#. Unzip the downloaded file ``batocera-xxx-xx-xxxxxxxx.img.gz``.
+
+
 
 #. Insert your SD card into your computer or laptop using a Reader.
 
@@ -46,7 +50,8 @@ If you are using a Micro SD card, you can follow the tutorial below to install t
       :width: 90%
       
 
-#. Choose the system file you have just downloaded, ``batocera-xxx-xx-xxxxxxxx.img.gz``, and then click **Open**.
+
+#. Choose the system file you have just unzipped, ``batocera-xxx-xx-xxxxxxxx.img``, and then click **Open**.
 
    .. image:: img/batocera_os_choose.png
       :width: 90%
