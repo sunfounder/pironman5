@@ -40,7 +40,7 @@ class Pironman5:
         'gpio_fan_mode': 0,
         'gpio_fan_led': 'follow',
         'gpio_fan_led_pin': 5,
-        'oled_sleep_timeout': 2,
+        'oled_sleep_timeout': 10,
         'vibration_switch_pin': 26,
         'vibration_switch_pull_up': False,
     }
