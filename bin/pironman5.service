@@ -2,7 +2,7 @@
 [Unit]
 Description=pironman5 service
 # Need to start last to avoid gpio being occupied
-After=basic.target
+After=multi-user.target
 
 [Service]
 Type=forking
@@ -12,4 +12,4 @@ ExecStop=/usr/local/bin/pironman5 stop
 # PrivateTmp=False
 
 [Install]
-WantedBy=basic.target
+WantedBy=multi-user.target
