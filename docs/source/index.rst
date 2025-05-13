@@ -12,54 +12,103 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-|link_pironman5| - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5
+Pironman 5 Series - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5 
 ================================================================================
 
-Thanks for choosing our |link_pironman5|.
+Welcome to the official guide for the Pironman 5 Series products. This guide will help you identify your specific product within the series and provide step-by-step instructions for setup and installation.
 
-.. note::
+Use the images below to identify the product you purchased. Once identified, click the corresponding link to access the detailed product introduction and specifications. After reviewing the introduction, you can proceed with system installation and the setup of the ``pironman5`` software.
 
-    This document is available in the following languages.
+.. .. note::
 
-    * |link_german_tutorials|
-    * |link_jp_tutorials|
-    * |link_en_tutorials|
-    * |link_fr_tutorials|
-    * |link_es_tutorials|
-    * |link_it_tutorials|
-    * |link_zh_tutorials|
-    
-    Please click on the respective links to access the document in your preferred language.
+..     This document is available in the following languages.
 
-.. image:: img/pironman5_pic.jpg
-    :width: 400
-    :align: center
-    
-Elevate your Raspberry Pi 5 with the |link_pironman5|, our top-tier case designed for unmatched style and functionality. It's the perfect blend of aesthetics and performance:
+..     * |link_german_tutorials|
+..     * |link_jp_tutorials|
+..     * |link_en_tutorials|
+..     * |link_fr_tutorials|
+..     * |link_es_tutorials|
+..     * |link_it_tutorials|
+..     * |link_zh_tutorials|
 
-* Raspberry Pi 5 mini PC
-* 0.96" OLED Display showing Raspberry Pi's CPU usage, temperature, disk usage, IP address, RAM usage etc.
-* Tower cooler can cool a 100% CPU load Pi to 39°C at 25°C room temperature
-* 2 RGB Fans, with GPIO control
-* 1 PWM Fan on the Tower Cooler is controlled by the Raspberry Pi system.
-* Supports four (PCIe Gen 2.0 / PCIe Gen 3.0) NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280.
-* 4 WS2812 Addressable RGB LED light up the whole case with cool light effect
-* IR Receiver for multi-media center like Kodi or Volumio
-* Retro metal power button for safe shut down
-* External GPIO extender with pin name label, for easy access
-* Equipped with a spring-loaded socket for easy card removal
-* Aluminum main body with clear Acrylic side panel
-* Features two standard HDMI ports
 
-The |link_pironman5| is not just a case; it's an upgrade that transforms your Raspberry Pi 5 into a powerful, efficient, and stylish device. Get yours now and experience the future of Raspberry Pi cases!
+    .. Please click on the respective links to access the document in your preferred language.
 
-.. note::
+Based on the images below, select the product you own to learn more. Each link will take you to the respective product's introduction page.
 
-    You need to install an OS that supports Raspberry Pi 5. Please use the latest Raspberry Pi Imager tool for system installation. The currently tested systems are:
+.. list-table:: 
+   :widths: 25 25 25
+   :header-rows: 1
 
-    .. image:: img/compitable_os.png
-        :width: 600
-        :align: center
+   * - :ref:`intro_pironman5`
+     - :ref:`intro_pironman5_mini`
+     - :ref:`intro_pironman5_max`
+   * - |pic_pironman5| 
+     - |pic_pironman5_mini| 
+     - |pic_pironman5_max|
+
+Below is a comparison of specifications for the Pironman 5 and Pironman 5 Mini. Use this table to understand the differences between these products.
+
+.. list-table:: 
+   :widths: 25 25 25 25
+   :header-rows: 1
+
+   * - Specifications
+     - :ref:`intro_pironman5`
+     - :ref:`intro_pironman5_mini`
+     - :ref:`intro_pironman5_max`
+   * - Compatible Devices 
+     - Raspberry Pi 5
+     - Raspberry Pi 5
+     - Raspberry Pi 5
+   * - Input
+     - USB Type C, 5V/5A
+     - USB Type C, 5V/5A
+     - USB Type C, 5V/5A
+   * - Power Button 
+     - ✔
+     - ✔
+     - ✔
+   * - Exterior Material 1
+     - Silver Aluminum Alloy
+     - Silver Aluminum Alloy
+     - Black Aluminum Alloy
+   * - Exterior Material 2
+     - Transparent Acrylic
+     - Black Acrylic
+     - Black Acrylic
+   * - Cooler
+     - Tower Cooler
+     - Active Cooler
+     - Tower Cooler
+   * - IR Receiver
+     - ✔
+     - X
+     - ✔
+   * - RGB Fans 
+     - 2 (Auto-lit)
+     - 1 (Auto-lit)
+     - 2 (Programmable)
+   * - HDMI Ports
+     - 2 Standard HDMI Ports
+     - 2 Micro HDMI Ports
+     - 2 Standard HDMI Ports
+   * - OLED Screen
+     - ✔
+     - X
+     - ✔
+   * - OLED Activation
+     - Always on
+     - Always on
+     - Wake on Tap
+   * - Support NVMe SSD
+     - 1
+     - 1   
+     - 2
+   * - Dimension
+     - 111.9x78.5x117mm
+     - 67.8x98.6x101.5mm  
+     - 111.9x78.5x117mm
 
 If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
 
@@ -71,16 +120,10 @@ If you have any questions, please send an email to service@sunfounder.com and we
 .. toctree::
     :maxdepth: 1
 
-    About this Kit <self>
-    what_do_we_need    
-    assembly_instructions
-    install/install_the_os
-    set_up/set_up_pironman5
-    control/control_pironman5
-    advanced/advanced
-    compitable_nvme_ssd
-    assemble_camera
-    faq
+    About Pironman 5 Series <self>
+    pironman5/intro_pironman5
+    pironman5_mini/intro_pironman5_mini
+    pironman5_max/intro_pironman5_max
 
 **Copyright Notice**
 
