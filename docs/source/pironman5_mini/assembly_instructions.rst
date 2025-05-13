@@ -18,9 +18,6 @@
 =============================================
 
 
-.. image:: img/pironman5mini.png
-    :width: 400
-
 Before assembling the Pironman, please first verify that all parts and components have been included. If there are any missing or damaged components, please contact SunFounder immediately at service@sunfounder.com to resolve the issue as soon as possible.
 
 **Tips**
