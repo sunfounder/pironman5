@@ -35,7 +35,7 @@ Use the images below to identify the product you purchased. Once identified, cli
 Based on the images below, select the product you own to learn more. Each link will take you to the respective product's introduction page.
 
 .. list-table:: 
-   :widths: 25 25
+   :widths: 25 25 25
    :header-rows: 1
 
    * - :ref:`intro_pironman5`
@@ -48,7 +48,7 @@ Based on the images below, select the product you own to learn more. Each link w
 Below is a comparison of specifications for the Pironman 5 and Pironman 5 Mini. Use this table to understand the differences between these products.
 
 .. list-table:: 
-   :widths: 25 25 25
+   :widths: 25 25 25 25
    :header-rows: 1
 
    * - Specifications
