@@ -25,7 +25,9 @@ Before assembling the Pironman, please first verify that all parts and component
 * Before installation, sort and stack the components to find them more quickly.
 * Repeatedly check the connections of FFC and FPC cables to avoid poor contact.
 
-* :download:`[PDF]Component List and Assembly of Pironman 5 Max </_static/pdf/Z0316V10-A0001266-Pironman5-MAX.pdf>`
+* :download:`[PDF]Component List and Assembly of Pironman 5 Max <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/Z0316V10-A0001266-Pironman5-MAX.pdf>`
+
+
 
 
 .. **Complete Assembly and Boot Guide: Pironman 5 with NVMe SSD**
