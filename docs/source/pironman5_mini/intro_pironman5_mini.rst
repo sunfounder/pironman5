@@ -3,7 +3,7 @@
 Pironman 5 Mini
 =========================================
 
-Thanks for choosing our Pironman 5 Mini.
+Thanks for choosing our |link_pironman5_mini|.
 
 .. image:: img/pironman5_mini_pic.jpg
     :width: 400

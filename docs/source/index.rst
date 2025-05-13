@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-|link_pironman5| Series - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5 
+Pironman 5 Series - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5 
 ================================================================================
 
 Welcome to the official guide for the Pironman 5 Series products. This guide will help you identify your specific product within the series and provide step-by-step instructions for setup and installation.

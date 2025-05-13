@@ -4,9 +4,9 @@ Pironman 5 MAX
 ================================================================================
 
 
-Thanks for choosing our Pironman 5 MAX.
+Thanks for choosing our |link_pironman5_max|.
 
-.. image:: img/pironman5.JPG
+.. image:: img/pironman5_max.jpg
     :width: 400
     :align: center
     
