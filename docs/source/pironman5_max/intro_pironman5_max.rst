@@ -6,12 +6,10 @@ Pironman 5 MAX
 
 Thanks for choosing our Pironman 5 MAX.
 
-
-
 .. image:: img/pironman5.JPG
     :width: 400
+    :align: center
     
-
 The Pironman 5 Max is the new flagship product in our Pironman Raspberry Pi case series, 
 exclusively compatible with the latest Raspberry Pi 5. 
 
