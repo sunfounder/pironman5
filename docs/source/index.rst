@@ -99,6 +99,7 @@ If you have any questions, please send an email to service@sunfounder.com and we
     About Pironman 5 Series <self>
     pironman5/intro_pironman5
     pironman5_mini/intro_pironman5_mini
+    pironman5_max/intro_pironman5_max
 
 **Copyright Notice**
 
