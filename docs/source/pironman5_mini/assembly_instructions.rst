@@ -31,7 +31,7 @@ Before assembling the Pironman, please first verify that all parts and component
 
 
 
-* :download:`[PDF]Component List and Assembly of Pironman 5 Mini <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0999V10-a0009999-pironman5.pdf>`
+* :download:`[PDF]Component List and Assembly of Pironman 5 Mini </_static/pdf/Z0315V10-A0001256-Pironman5-Mini.pdf>`
 
 
 
