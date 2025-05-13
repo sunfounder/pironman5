@@ -67,10 +67,14 @@ Below is a comparison of specifications for the Pironman 5 and Pironman 5 Mini. 
      - ✔
      - ✔
      - ✔
-   * - Exterior Material 
-     - Silver Aluminum Alloy/Transparent Acrylic
-     - Silver Aluminum Alloy/Black Acrylic
-     - Black Aluminum Alloy/Black Acrylic
+   * - Exterior Material 1
+     - Silver Aluminum Alloy
+     - Silver Aluminum Alloy
+     - Black Aluminum Alloy
+   * - Exterior Material 2
+     - Transparent Acrylic
+     - Black Acrylic
+     - Black Acrylic
    * - Cooler
      - Tower Cooler
      - Active Cooler
