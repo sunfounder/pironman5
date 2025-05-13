@@ -22,6 +22,7 @@ Pironman 5 is a mini PC case designed specifically for the Raspberry Pi. Crafted
     control/control_pironman5
     hardware/hardware
     compitable_nvme_ssd
+    assemble_camera
     faq
 
 

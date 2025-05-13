@@ -172,18 +172,3 @@ Now you can install the operating system on your NVMe SSD.
    .. image:: img/nvme_install_finish.png
       :width: 90%
       
-
-#. After installing the operating system on the SD card or NVMe drive, you will need to reinsert it into your computer. At this point, you will see a newly added volume named ``bootfs``. 
-
-   .. image:: img/nvme_config_dt.png
-      :width: 90%
-      
-   Locate the ``config.txt`` file inside this volume and add the following line at the end:
-
-   .. code-block:: bash
-
-      dtparam=pciex1_no_10s=on
-
-   Save the file and exit.
-
-   This step disables the PCIe boot delay, allowing the Raspberry Pi to detect the NVMe drive connected behind the PCIe switch during startup.

@@ -29,7 +29,9 @@ Use the images below to identify the product you purchased. Once identified, cli
 ..     * |link_fr_tutorials|
 ..     * |link_es_tutorials|
 ..     * |link_it_tutorials|
-    
+..     * |link_zh_tutorials|
+
+
     .. Please click on the respective links to access the document in your preferred language.
 
 Based on the images below, select the product you own to learn more. Each link will take you to the respective product's introduction page.
