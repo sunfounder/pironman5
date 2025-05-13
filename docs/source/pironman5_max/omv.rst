@@ -18,7 +18,7 @@ OpenMediaVault (abbreviated as OMV) is an open-source Network Attached Storage (
 Please follow these steps to install OpenMediaVault on your Raspberry Pi:
 
 1. Connect to Your Raspberry Pi Using SSH
--------------------------------------
+-----------------------------------------------------------
 
    Enter the following command in the terminal:
 

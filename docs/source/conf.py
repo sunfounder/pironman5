@@ -185,5 +185,6 @@ rst_epilog += """
 
 .. |pic_pironman5| image:: /img/pic_pironman51.jpg 
 .. |pic_pironman5_mini| image:: /img/pic_pironman5_mini1.jpg 
+.. |pic_pironman5_max| image:: /img/pic_pironman51.jpg 
 
 """
