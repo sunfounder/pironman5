@@ -124,7 +124,8 @@ rst_epilog = """
 .. |link_zh_tutorials| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/pironman5/zh-cn/latest/" target="_blank">中文在线教程</a>
-    
+
+
 """
 
 
@@ -151,8 +152,8 @@ rst_epilog += """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">hier</a>
-    
+    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
+
 .. |link_kodi| raw:: html
 
     <a href="https://kodi.tv/" target="_blank">Kodi</a>
@@ -175,6 +176,18 @@ rst_epilog += """
     <a href="https://www.sunfounder.com/products/pironman-5-nvme-m-2-ssd-pcie-mini-pc-case-for-raspberry-pi-5" target="_blank">Pironman 5</a>
 
 
+.. |link_pironman5_mini| raw:: html
+
+    <a href="https://www.sunfounder.com/products/pironman-5-mini-case" target="_blank">Pironman 5 Mini</a>
+
+.. |link_pironman5_max| raw:: html
+
+    <a href="https://www.sunfounder.com/products/pironman-5-max" target="_blank">Pironman 5 Max</a>
+
+
+    
+
+
 .. |link_raspberry_pi_imager| raw:: html
 
     <a href="https://www.raspberrypi.org/software/" target="_blank">Raspberry Pi Imager</a>
@@ -183,5 +196,13 @@ rst_epilog += """
 
     <a href="https://www.putty.org/" target="_blank">PuTTY</a>
 
+
+"""
+# component pic
+rst_epilog += """
+
+.. |pic_pironman5| image:: /img/pic_pironman51.jpg 
+.. |pic_pironman5_mini| image:: /img/pic_pironman5_mini1.jpg 
+.. |pic_pironman5_max| image:: /img/pic_pironman5_max1.jpg 
 
 """
