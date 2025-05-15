@@ -238,7 +238,7 @@ Falls das Problem nach Durchführung der oben genannten Schritte weiterhin beste
 
 #. Die beiden Pins am IO-Expander über J9 verbinden die RGB-LEDs mit GPIO10. Stellen Sie sicher, dass die Jumperkappe auf diesen beiden Pins korrekt angebracht ist.
 
-   .. image:: advanced/img/io_board_rgb_pin.png
+   .. image:: img/io_board_rgb_pin.png
       :width: 300
       :align: center
 

@@ -1,40 +1,40 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder-Community für Raspberry Pi-, Arduino- und ESP32-Enthusiasten auf Facebook! Entdecke gemeinsam mit anderen Technikbegeisterten noch mehr rund um Raspberry Pi, Arduino und ESP32.
 
-    **Why Join?**
+    **Warum solltest du beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenhilfe**: Erhalte Unterstützung bei technischen Problemen und Fragen nach dem Kauf – direkt durch unsere Community und unser Team.
+    - **Lernen & Teilen**: Teile Tipps und Tutorials, um deine Fähigkeiten auszubauen.
+    - **Exklusive Vorschauen**: Erfahre frühzeitig von neuen Produkten und erhalte exklusive Einblicke.
+    - **Sonderrabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Aktionen & Verlosungen**: Nimm an saisonalen Aktionen und Gewinnspielen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und kreativ zu werden? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
-For Linux/Unix Users
+Für Linux-/Unix-Nutzer
 ==========================
 
-#. Locate and open the **Terminal** on your Linux/Unix system.
+#. Öffne das **Terminal** auf deinem Linux- oder Unix-System.
 
-#. Ensure your Raspberry Pi is connected to the same network. Verify this by typing `ping <hostname>.local`. For example:
+#. Stelle sicher, dass dein Raspberry Pi mit demselben Netzwerk verbunden ist. Überprüfe dies mit folgendem Befehl: `ping <hostname>.local`. Zum Beispiel:
 
     .. code-block::
 
         ping raspberrypi.local
 
-    You should see the Raspberry Pi's IP address if it's connected to the network.
+    Wenn der Raspberry Pi korrekt verbunden ist, wird seine IP-Adresse angezeigt.
 
-    * If the terminal shows a message like ``Ping request could not find host pi.local. Please check the name and try again.``, double-check the hostname you've entered.
-    * If you're unable to retrieve the IP address, inspect your network or WiFi settings on the Raspberry Pi.
+    * Falls die Meldung erscheint: ``Ping request could not find host pi.local. Please check the name and try again.``, überprüfe bitte den eingegebenen Hostnamen sorgfältig.
+    * Wenn keine IP-Adresse zurückgegeben wird, kontrolliere die Netzwerk- oder WLAN-Einstellungen deines Raspberry Pi.
 
-#. Initiate an SSH connection by typing ``ssh <username>@<hostname>.local`` or ``ssh <username>@<IP address>``. For instance:
+#. Stelle die SSH-Verbindung her, indem du ``ssh <username>@<hostname>.local`` oder ``ssh <benutzername>@<IP-Adresse>`` eingibst. Zum Beispiel:
 
     .. code-block::
 
         ssh pi@raspberrypi.local
 
-#. On your first login, you'll encounter a security message. Type ``yes`` to proceed.
+#. Beim ersten Verbindungsaufbau erscheint eine Sicherheitsabfrage. Bestätige mit ``yes``, um fortzufahren.
 
     .. code-block::
 
@@ -42,9 +42,9 @@ For Linux/Unix Users
         ED25519 key fingerprint is SHA256:oo7x3ZSgAo032wD1tE8eW0fFM/kmewIvRwkBys6XRwg.
         Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
-#. Enter the password you previously set. Note that for security reasons, the password won't be visible as you type.
+#. Gib nun das zuvor gesetzte Passwort ein. Aus Sicherheitsgründen wird bei der Eingabe nichts im Terminal angezeigt.
 
     .. note::
-        It's normal for the password characters not to display in the terminal. Just ensure to enter the correct password.
+        Es ist völlig normal, dass beim Eingeben des Passworts keine Zeichen im Terminal erscheinen. Gib es einfach korrekt ein und bestätige mit Enter.
 
-#. Once you've successfully logged in, your Raspberry Pi is now connected, and you're ready to proceed to the next step.
+#. Nach erfolgreicher Anmeldung bist du mit deinem Raspberry Pi verbunden und kannst mit dem nächsten Schritt fortfahren.

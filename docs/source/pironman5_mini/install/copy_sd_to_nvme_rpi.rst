@@ -1,222 +1,222 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder-Community für Raspberry Pi-, Arduino- und ESP32-Enthusiasten auf Facebook! Entdecke die Welt von Raspberry Pi, Arduino und ESP32 gemeinsam mit anderen Technikbegeisterten.
 
-    **Why Join?**
+    **Warum solltest du beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe bei technischen Problemen und Fragen nach dem Kauf – direkt von unserer Community und unserem Team.
+    - **Lernen & Teilen**: Teile Tipps und Tutorials, um deine Fähigkeiten weiterzuentwickeln.
+    - **Exklusive Vorschauen**: Erfahre frühzeitig von neuen Produktankündigungen und erhalte exklusive Einblicke.
+    - **Sonderrabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Aktionen & Verlosungen**: Nimm an saisonalen Aktionen und Gewinnspielen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns kreativ zu werden? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _copy_sd_to_nvme_rpi_mini:
 
-Copy OS from Micro SD to NVMe SSD
-==================================================================
+Kopieren des Betriebssystems von der Micro-SD-Karte auf die NVMe-SSD
+========================================================================
 
-If you have an NVMe SSD but lack an adapter to connect it to your computer, you can opt for a third approach: initially install the system on your Micro SD card. After the Pironman 5 Mini successfully boots up, you can then transfer the system from your Micro SD card to your NVMe SSD.
+Falls du eine NVMe-SSD hast, aber keinen Adapter, um sie mit deinem Computer zu verbinden, kannst du folgende Alternative wählen: Installiere das System zuerst auf einer Micro-SD-Karte. Sobald der Pironman 5 Mini erfolgreich hochgefahren ist, kannst du das System von der SD-Karte auf die NVMe-SSD übertragen.
 
-* First, you need to :ref:`install_os_sd_rpi_mini`.
-* Then, boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
+* Installiere zunächst das Betriebssystem gemäß :ref:`install_os_sd_rpi_mini`.
+* Starte und melde dich beim Raspberry Pi an. Wenn du nicht weißt, wie du dich anmeldest, besuche die offizielle Raspberry Pi-Webseite: |link_rpi_get_start|.
 
-Complete the above steps before proceeding with the instructions below.
+Schließe die obigen Schritte ab, bevor du mit den folgenden Anleitungen fortfährst.
 
 
-1. Enabling PCIe
+1. PCIe aktivieren
 --------------------
 
-By default the PCIe connector is not enabled. 
+Standardmäßig ist der PCIe-Anschluss deaktiviert.
 
-* To enable it you should open the ``/boot/firmware/config.txt`` file.
+* Um ihn zu aktivieren, öffne die Datei ``/boot/firmware/config.txt``.
 
   .. code-block:: shell
-  
+
     sudo nano /boot/firmware/config.txt
-  
-* Then add the following line to the file. 
+
+* Füge folgende Zeile hinzu:
 
   .. code-block:: shell
-  
-    # Enable the PCIe External connector.
+
+    # PCIe-Externanschluss aktivieren
     dtparam=pciex1
-  
-* A more memorable alias for ``pciex1`` exists, so you can alternatively add ``dtparam=nvme`` to the ``/boot/firmware/config.txt`` file.
+
+* Alternativ kannst du auch den Alias ``dtparam=nvme`` verwenden:
 
   .. code-block:: shell
-  
+
     dtparam=nvme
 
-* The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec) if you add the following lines to your ``/boot/firmware/config.txt``.
+* Die Verbindung ist für Gen 2.0 (5 GT/s) zertifiziert, kann aber mit folgendem Eintrag auf Gen 3.0 (10 GT/s) erzwungen werden:
 
   .. code-block:: shell
-  
-    # Force Gen 3.0 speeds
+
+    # Gen 3.0-Geschwindigkeit erzwingen
     dtparam=pciex1_gen=3
-  
+
   .. warning::
-  
-    The Raspberry Pi 5 is not certified for Gen 3.0 speeds, and connections to PCIe devices at these speeds may be unstable.
 
-* Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes.
+    Der Raspberry Pi 5 ist nicht für Gen 3.0 zertifiziert. Der Betrieb bei dieser Geschwindigkeit kann zu Instabilitäten führen.
+
+* Speichere die Änderungen mit ``Ctrl + X``, ``Y`` und ``Enter``.
 
 
-2. Install the OS on the SSD
+2. Betriebssystem auf SSD installieren
 ----------------------------------------
 
-There are two ways to install an operating system on the SSD:
+Es gibt zwei Möglichkeiten, das Betriebssystem auf der SSD zu installieren:
 
-**Copying the System from the Micro SD Card to the SSD**
+**System von SD-Karte auf SSD kopieren**
 
-#. Connect a display or access the Raspberry Pi desktop through VNC Viewer. Then click **Raspberry Pi logo** -> **Accessories** -> **SD Card Copier**.
+#. Verbinde einen Monitor oder verwende VNC Viewer, um auf den Raspberry Pi-Desktop zuzugreifen. Klicke dann auf **Raspberry Pi logo** → **Accessories** → **SD Card Copier**.
 
    .. image:: img/ssd_copy.png
-      
-    
-#. Make sure to select the correct **Copy From** and **Copy To** devices. Be careful not to mix them up.
+
+
+#. Wähle sorgfältig die richtigen Geräte für **Copy From** und **Copy To** aus.
 
    .. image:: img/ssd_copy_from.png
-      
-#. Remember to select "NEW Partition UUIDs" to ensure the system can correctly distinguish devices, avoiding mounting conflicts and boot issues.
+
+#. Aktiviere die Option "NEW Partition UUIDs", um Probleme mit der Gerätezurodnung zu vermeiden.
 
    .. image:: img/ssd_copy_uuid.png
-    
-#. After selection, click **Start**.
+
+#. Klicke auf **Start**.
 
    .. image:: img/ssd_copy_click_start.png
 
-#. You will be prompted that the content on the SSD will be erased. Make sure to back up your data before clicking Yes.
+#. Bestätige den Hinweis, dass alle Daten auf der SSD gelöscht werden. Sichere wichtige Daten vorab.
 
    .. image:: img/ssd_copy_erase.png
 
-#. Wait for some time, and the copying will be completed.
+#. Warte, bis der Kopiervorgang abgeschlossen ist.
 
-**Installing the System with Raspberry Pi Imager**
+**System mit Raspberry Pi Imager installieren**
 
-If your Micro SD card has a desktop version of the system installed, you can use an imaging tool (like Raspberry Pi Imager) to burn the system to the SSD. This example uses Raspberry Pi OS bookworm, but other systems might require installing the imaging tool first.
+Wenn auf deiner Micro-SD-Karte eine Desktop-Version des Betriebssystems installiert ist, kannst du ein Imaging-Tool (z. B. Raspberry Pi Imager) verwenden, um das System auf die SSD zu übertragen. In diesem Beispiel wird Raspberry Pi OS Bookworm verwendet, bei anderen Systemen muss das Imaging-Tool möglicherweise zuerst installiert werden.
 
-#. Connect a display or access the Raspberry Pi desktop through VNC Viewer. Then click **Raspberry Pi logo** -> **Accessories** -> **Imager**.
+#. Schließe ein Display an oder greife über VNC Viewer auf den Desktop des Raspberry Pi zu. Klicke dann auf **Raspberry Pi-Logo** → **Zubehör** → **Imager**.
 
    .. image:: img/ssd_imager.png
 
-      
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+
+#. Im |link_rpi_imager| wähle **Raspberry Pi Gerät** und wähle **Raspberry Pi 5**.
 
    .. image:: img/ssd_pi5.png
       :width: 90%
 
 
-#. Select **Operating System** and opt for the recommended operating system version.
+#. Wähle **Betriebssystem** und entscheide dich für die empfohlene Version.
 
    .. image:: img/ssd_os.png
       :width: 90%
-    
-#. In the **Storage** option, select your inserted NVMe SSD.
+
+#. Wähle unter **Speicher** deine angeschlossene NVMe-SSD.
 
    .. image:: img/nvme_storage.png
       :width: 90%
-    
-#. Click **NEXT** and then **EDIT SETTINGS** to tailor your OS settings. 
+
+#. Klicke auf **NEXT**, danach auf **EDIT SETTINGS**, um die OS-Konfiguration anzupassen.
 
    .. note::
 
-      If you have a monitor for your Raspberry Pi, you can skip the next steps and click 'Yes' to begin the installation. Adjust other settings later on the monitor.
+      Falls ein Monitor angeschlossen ist, kannst du die weiteren Schritte überspringen und direkt mit 'Ja' fortfahren.
 
    .. image:: img/os_enter_setting.png
       :width: 90%
 
-#. Define a **hostname** for your Raspberry Pi.
+#. Vergib einen **Hostname** für deinen Raspberry Pi.
 
    .. note::
 
-      The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
+      Du erreichst deinen Pi unter ``<hostname>.local`` oder ``<hostname>.lan``.
 
    .. image:: img/os_set_hostname.png
-      
 
-#. Create a **Username** and **Password** for the Raspberry Pi's administrator account.
+
+#. Lege einen **Benutzernamen** und ein **Passwort** fest.
 
    .. note::
 
-      Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
+      Ein individuelles Passwort erhöht die Sicherheit deines Systems.
 
    .. image:: img/os_set_username.png
-      
 
-#. Configure the wireless LAN by providing your network's **SSID** and **Password**.
+
+#. Konfiguriere das drahtlose Netzwerk, indem du die **SSID** und das **Passwort** deines WLANs eingibst.
 
    .. note::
 
-      Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
+      Stelle sicher, dass du das ``Wireless LAN country`` auf den zweistelligen `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ für dein Land einstellst.
 
    .. image:: img/os_set_wifi.png
 
-#. To remotely connect to your Raspberry Pi, **enable SSH** in the **Services** tab.
+#. Um dich aus der Ferne mit deinem Raspberry Pi zu verbinden, **aktiviere SSH** im Reiter **Dienste**.
 
-   * For **password authentication**, use the username and password from the **General** tab.
-   * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
+   * Für die **password authentication** verwende den Benutzernamen und das Passwort aus dem Reiter **General**.
+   * Für die Authentifizierung per öffentlichem Schlüssel wähle „Nur Authentifizierung mit öffentlichem Schlüssel zulassen“. Wenn du bereits einen RSA-Schlüssel hast, wird dieser verwendet. Andernfalls klicke auf „SSH-keygen ausführen“, um ein neues Schlüsselpaar zu generieren.
 
    .. image:: img/os_enable_ssh.png
 
-      
 
-#. The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
+
+#. Im Menü **Optionen** kannst du das Verhalten des Imagers während des Schreibvorgangs anpassen – z. B. Ton abspielen nach Abschluss, Medium auswerfen oder Telemetrie aktivieren.
 
    .. image:: img/os_options.png
-    
-#. When you've finished entering OS customisation settings, click **Save** to save your customisation. Then, click **Yes** to apply them when writing the image.
+
+#. Wenn du alle gewünschten Einstellungen vorgenommen hast, klicke auf **Speichern**, um die Anpassungen zu sichern. Danach auf **Ja**, um sie beim Schreiben des Abbilds anzuwenden.
 
    .. image:: img/os_click_yes.png
       :width: 90%
-      
-#. If the NVMe SSD contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+
+#. Falls sich bereits Daten auf der NVMe-SSD befinden, sichere diese vorher, um Datenverlust zu vermeiden. Wenn keine Sicherung erforderlich ist, fahre mit **Ja** fort.
 
    .. image:: img/nvme_erase.png
       :width: 90%
 
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the NVMe SSD!
+#. Sobald das Fenster „Write Successful“ erscheint, wurde dein Abbild erfolgreich geschrieben und verifiziert. Du kannst den Raspberry Pi jetzt direkt von der NVMe-SSD starten!
 
    .. image:: img/nvme_install_finish.png
       :width: 90%
-      
+
 
 .. _configure_boot_ssd_mini:
 
-3. Configure boot from the SSD
+3. Boot von der SSD konfigurieren
 ---------------------------------------
 
-In this section, we'll configure your Raspberry Pi to boot directly from an NVMe SSD, providing faster boot times and improved performance over an SD card. Follow these steps carefully:
+In diesem Abschnitt konfigurieren wir deinen Raspberry Pi so, dass er direkt von einer NVMe-SSD startet. Dies ermöglicht schnellere Bootzeiten und eine bessere Systemleistung im Vergleich zur SD-Karte. Folge diesen Schritten sorgfältig:
 
-#. First, open a terminal on your Raspberry Pi and run the following command to access the configuration interface:.
+#. Öffne zunächst ein Terminal auf deinem Raspberry Pi und führe folgenden Befehl aus, um das Konfigurationsmenü zu öffnen:
 
    .. code-block:: shell
 
       sudo raspi-config
 
-#. In the ``raspi-config`` menu, use the arrow keys to navigate and select **Advanced Options**. Press ``Enter`` to access the advanced settings.
+#. Navigiere im Menü ``raspi-config`` mit den Pfeiltasten zu **Erweiterte Optionen** (**Advanced Options**) und drücke ``Enter``, um die erweiterten Einstellungen aufzurufen.
 
    .. image:: img/nvme_open_config.png
 
-#. Inside **Advanced Options**, select **Boot Order**. This setting allows you to specify the order in which your Raspberry Pi looks for bootable devices.
+#. Wähle im Menü **Erweiterte Optionen** den Punkt **Boot-Reihenfolge** (**Boot Order**). Hier legst du fest, in welcher Reihenfolge der Raspberry Pi nach startfähigen Geräten sucht.
 
    .. image:: img/nvme_boot_order.png
 
-#. Then, choose **NVMe/USB boot**. This tells the Raspberry Pi to prioritize booting from USB-connected SSDs or NVMe drives over other options, such as the SD card.
+#. Wähle anschließend **NVMe/USB-Boot**, damit der Raspberry Pi bevorzugt von über USB angeschlossenen SSDs oder NVMe-Laufwerken startet, anstatt von der SD-Karte.
 
    .. image:: img/nvme_boot_nvme.png
 
-#. After selecting the boot order, press **Finish** to exit raspi-config. You may also use the **Escape** key to close the configuration tool.
+#. Drücke nach der Auswahl der Boot-Reihenfolge auf **Fertigstellen** (**Finish**), um das raspi-config-Menü zu verlassen. Alternativ kannst du auch die **Escape**-Taste verwenden.
 
    .. image:: img/nvme_boot_ok.png
 
-#. To apply the new boot settings, reboot your Raspberry Pi by running ``sudo reboot``.
+#. Um die neuen Boot-Einstellungen zu übernehmen, starte den Raspberry Pi neu mit folgendem Befehl: ``sudo reboot``.
 
    .. code-block:: shell
 
       sudo raspi-config
-   
+
    .. image:: img/nvme_boot_reboot.png
 
-After rebooting, the Raspberry Pi should now attempt to boot from your connected NVMe SSD, providing you with enhanced performance and durability for your system.
+Nach dem Neustart sollte dein Raspberry Pi versuchen, direkt von der angeschlossenen NVMe-SSD zu booten – das sorgt für höhere Leistung und bessere Systemstabilität.

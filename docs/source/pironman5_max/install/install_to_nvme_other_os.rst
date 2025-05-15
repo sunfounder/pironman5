@@ -1,37 +1,37 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Technikbegeisterten aus.
 
-    **Why Join?**
+    **Warum der Community beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertensupport**: Erhalte Unterstützung bei technischen Problemen und Herausforderungen nach dem Kauf – durch unsere Community und unser Team.
+    - **Lernen & Teilen**: Teile Tipps und Tutorials, um dein Wissen zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
+    - **Sonderrabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Aktionen und Gewinnspiele**: Nimm an Verlosungen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu entwickeln? Klicke auf [|link_sf_facebook|] und werde noch heute Mitglied!
 
 .. _max_install_to_nvme_home_bridge:
 
-Installing the OS on an NVMe SSD
-============================================
+Installation des Betriebssystems auf einer NVMe-SSD
+=======================================================
 
-If you are using an NVMe SSD and have an adapter to connect the NVMe SSD to your computer for system installation, you can use the following tutorial for a quick installation.
+Wenn du eine NVMe-SSD verwendest und einen Adapter hast, um sie zur Systeminstallation mit deinem Computer zu verbinden, kannst du die folgende Anleitung für eine schnelle Installation nutzen.
 
-**Required Components**
+**Benötigte Komponenten**
 
-* A Personal Computer
-* A NVMe SSD
-* A NVMe to USB Adapter
-* Micro SD Card and Reader
+* Ein Computer
+* Eine NVMe-SSD
+* Ein NVMe-zu-USB-Adapter
+* Micro SD-Karte und Kartenleser
 
 .. _max_update_bootloader:
 
-1. Update the Bootloader
+1. Bootloader aktualisieren
 ----------------------------------
 
-First, you need to update the Raspberry Pi 5 bootloader to boot from NVMe before trying USB and then SD Card.
+Zuerst musst du den Bootloader des Raspberry Pi 5 aktualisieren, damit dieser zuerst von NVMe, dann USB und schließlich SD-Karte bootet.
 
 .. .. raw:: html
 
@@ -40,153 +40,152 @@ First, you need to update the Raspberry Pi 5 bootloader to boot from NVMe before
 
 .. note::
 
-    At this step, it is recommended to use a spare Micro SD card. First, write the bootloader to this Micro SD card and then immediately insert it into the Raspberry Pi to enable booting from an NVMe device.
+    Es wird empfohlen, in diesem Schritt eine separate Micro SD-Karte zu verwenden. Schreibe zunächst den Bootloader auf diese Karte und stecke sie dann sofort in den Raspberry Pi, um das Booten von einem NVMe-Gerät zu aktivieren.
     
-    Alternatively, you can write the bootloader directly to your NVMe device first, then insert it into the Raspberry Pi to change its boot method. Afterwards, connect the NVMe SSD to a computer to install the operating system, and once the installation is complete, reinsert it back into the Raspberry Pi.
+    Alternativ kannst du den Bootloader auch direkt auf dein NVMe-Gerät schreiben, es dann in den Raspberry Pi einlegen, um die Bootmethode zu ändern. Danach verbindest du die NVMe-SSD wieder mit dem Computer, installierst das Betriebssystem und setzt sie anschließend erneut in den Raspberry Pi ein.
 
-#. Insert your spare Micro SD card or NVMe SSD into your computer or laptop using a Reader.
+#. Stecke deine Micro SD-Karte oder NVMe-SSD über einen Kartenleser in den Computer oder Laptop.
 
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+#. Öffne den |link_rpi_imager|, klicke auf **Raspberry Pi Device** und wähle **Raspberry Pi 5** aus.
 
    .. image:: img/os_choose_device_pi5.png
       :width: 90%
       
-#. On the **Operating System** tab, scroll down and select **Misc utility images**.
+#. Klicke im Reiter **Betriebssystem**, scrolle nach unten und wähle **Verschiedene Dienstprogramme**.
 
    .. image:: img/nvme_misc.png
       :width: 90%
 
-#. Select **Bootloader (Pi 5 family)**.
+#. Wähle **Bootloader (Pi 5 Familie)**.
 
    .. image:: img/nvme_bootloader.png
       :width: 90%
-      
 
-#. Select **NVMe/USB Boot** to enable Raspberry Pi 5 to boot from NVMe before trying USB and then SD Card.
+
+#. Wähle **NVMe/USB-Boot**, damit der Raspberry Pi zuerst von NVMe, dann USB und zuletzt SD-Karte bootet.
 
    .. image:: img/nvme_nvme_boot.png
       :width: 90%
-      
 
 
-#. In the **Storage** option, select the appropriate storage device for the installation.
+
+#. Wähle im Reiter **Speicher** das entsprechende Laufwerk aus.
 
    .. note::
 
-      Ensure you select the correct storage device. To avoid confusion, disconnect any additional storage devices if multiple ones are connected.
+      Stelle sicher, dass du das richtige Laufwerk auswählst. Um Verwechslungen zu vermeiden, entferne bei Bedarf andere angeschlossene Geräte.
 
    .. image:: img/os_choose_sd.png
       :width: 90%
-      
 
-#. Now you can click **NEXT**. If the storage device contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+
+#. Klicke auf **WEITER**. Falls das Laufwerk Daten enthält, sichere diese vor dem Fortfahren. Klicke auf **Ja**, wenn kein Backup benötigt wird.
 
    .. image:: img/os_continue.png
       :width: 90%
-      
 
-#. Soon, you will be prompted that **NVMe/USB Boot** has been written to your storage device.
+#. Kurz darauf erhältst du die Bestätigung, dass **NVMe/USB Boot** auf dein Speichermedium geschrieben wurde.
 
    .. image:: img/nvme_boot_finish.png
       :width: 90%
-      
 
-#. Now, you can insert your Micro SD card or NVMe SSD into the Raspberry Pi. After powering the Raspberry Pi with a Type C adapter, the bootloader from the Micro SD card or NVMe SSD will be written to the Raspberry Pi's EEPROM.
+
+#. Jetzt kannst du die Micro SD-Karte oder NVMe-SSD in den Raspberry Pi einlegen. Nach dem Einschalten mit einem USB-C-Netzteil wird der Bootloader vom Medium in den EEPROM des Raspberry Pi geschrieben.
 
 .. note::
 
-   Afterward, the Raspberry Pi will boot from NVMe before trying USB and then the SD Card. 
+   Danach bootet der Raspberry Pi zuerst von NVMe, dann USB und zuletzt von der SD-Karte. 
     
-   Power off the Raspberry Pi and remove the Micro SD card or NVMe SSD.
+   Schalte den Raspberry Pi aus und entferne die Micro SD-Karte oder NVMe-SSD.
 
 
-2. Install OS to NVMe SSD
----------------------------------
+2. Betriebssystem auf NVMe-SSD installieren
+-----------------------------------------------
 
-Now you can install the operating system on your NVMe SSD.
+Nun kannst du das Betriebssystem auf deiner NVMe-SSD installieren.
 
-**Steps**
+**Schritte**
 
-#. Insert your SD card into your computer or laptop using a Reader.
+#. Stecke die SD-Karte über einen Kartenleser in deinen Computer oder Laptop.
 
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+#. Öffne den |link_rpi_imager|, klicke auf **Raspberry Pi-Gerät** und wähle **Raspberry Pi 5** aus.
 
    .. image:: img/os_choose_device_pi5.png
       :width: 90%
-      
 
-#. Click on the **Operating System** tab.
+
+#. Klicke auf den Reiter **Betriebssystem**.
 
    .. image:: img/os_choose_os.png
       :width: 90%
 
-#. Scroll down to the bottom of the page and select the your operating system.
+#. Scrolle nach unten und wähle dein gewünschtes Betriebssystem aus.
 
    .. note::
 
-      * For **Ubuntu** system, you need to click **Other general-purpose OS** -> **Ubuntu**, and select either **Ubuntu Desktop 24.04 LTS (64 bit)** or **Ubuntu Server 24.04 LTS (64 bit)**.
-      * For **Kali Linux**, **Home Assistant** and **Homebridge** systems, you need to click **Other specific-purpose OS** and then select the corresponding system.
+      * Für **Ubuntu** wähle unter **Andere Mehrzweckbetriebssysteme** -> **Ubuntu** und dann entweder **Ubuntu Desktop 24.04 LTS (64 Bit)** oder **Ubuntu Server 24.04 LTS (64 Bit)**.
+      * Für **Kali Linux**, **Home Assistant** und **Homebridge** gehe zu **Andere Spezialbetriebssysteme** und wähle das entsprechende System aus.
 
    .. image:: img/os_other_os.png
       :width: 90%
 
-#. In the **Storage** option, select the appropriate storage device for the installation.
+#. Wähle im Reiter **Speicher** dein Ziel-Laufwerk aus.
 
    .. image:: img/nvme_ssd_storage.png
       :width: 90%
-      
 
-#. Click **NEXT**.
+
+#. Klicke auf **WEITER**.
 
    .. note::
 
-      * For systems that cannot be configured in advance, after clicking **NEXT**, you will be prompted whether to save the data within the device. If you have confirmed that a backup has been made, select **Yes**.
+      * Für Systeme, die nicht vorab konfiguriert werden können, wirst du nach dem Klick gefragt, ob die Daten überschrieben werden dürfen. Bestätige mit **Ja**, wenn du bereits ein Backup gemacht hast.
 
-      * For systems where the Hostname, WiFi, and Enable SSH can be configured in advance, a pop-up will appear prompting whether to apply the OS's custom settings. You can choose **Yes** or **No**, or go back to edit further.
+      * Bei Systemen mit konfigurierbaren Hostnamen, WLAN und SSH erscheint ein Fenster zur Eingabe benutzerdefinierter Einstellungen. Du kannst mit **Ja** bestätigen oder Änderungen vornehmen.
 
    .. image:: img/os_enter_setting.png
       :width: 90%
-      
 
-   * Define a **hostname** for your Raspberry Pi. The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
+
+   * Definiere einen **Hostname** für deinen Raspberry Pi. Damit kannst du ihn im Netzwerk unter ``<hostname>.local`` oder ``<hostname>.lan`` erreichen.
 
      .. image:: img/os_set_hostname.png
 
-   * Create a **Username** and **Password** for the Raspberry Pi's administrator account. Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
+   * Erstelle einen **Benutzernamen** und ein **Passwort** für das Administrator-Konto deines Raspberry Pi. Ein individuelles Passwort ist essenziell, da es kein Standardpasswort gibt.
 
      .. image:: img/os_set_username.png
 
-   * Configure the wireless LAN by providing your network's **SSID** and **Password**.
+   * Konfiguriere dein WLAN, indem du **SSID** und **Passwort** eingibst.
 
      .. note::
 
-       Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
+        Gib als ``Wireless LAN country`` den zweistelligen Ländercode gemäß `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ ein.
 
      .. image:: img/os_set_wifi.png
          
-   * To remotely connect to your Raspberry Pi, enable SSH in the Services tab.
+   * Aktiviere **SSH**, um dich später per Fernzugriff mit dem Raspberry Pi zu verbinden.
 
-     * For **password authentication**, use the username and password from the General tab.
-     * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
+     * Für **Passwort-Authentifizierung** verwende die Angaben aus dem Reiter Allgemein.
+     * Für Public-Key-Authentifizierung wähle „Nur Public-Key zulassen“. Falls kein RSA-Schlüssel vorhanden ist, kann über „SSH-Keygen ausführen“ ein neuer erstellt werden.
 
      .. image:: img/os_enable_ssh.png
 
-   * The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
+   * Im Menü **Optionen** kannst du z. B. festlegen, ob nach dem Schreiben ein Ton abgespielt oder das Medium ausgeworfen werden soll.
 
      .. image:: img/os_options.png
 
-         
-    
-#. When you've finished entering OS customisation settings, click **Save** to save your customisation. Then, click **Yes** to apply them when writing the image.
+
+
+#. Klicke auf **Speichern**, um die benutzerdefinierten Einstellungen zu sichern. Danach auf **Ja**, um sie beim Schreiben anzuwenden.
 
    .. image:: img/os_click_yes.png
       :width: 90%
-      
 
-#. If the NVMe SSD contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+
+#. Falls sich Daten auf der NVMe-SSD befinden, sichere diese. Klicke auf **Ja**, um fortzufahren, wenn kein Backup nötig ist.
 
    .. image:: img/nvme_erase.png
       :width: 90%
-      
 
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the NVMe SSD!
+
+#. Sobald die Meldung **"Schreiben erfolgreich"** erscheint, ist das Image erfolgreich geschrieben und überprüft. Der Raspberry Pi kann nun direkt von der NVMe-SSD booten!

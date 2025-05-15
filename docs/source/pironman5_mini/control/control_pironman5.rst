@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder-Community für Raspberry Pi-, Arduino- und ESP32-Enthusiasten auf Facebook! Tauche gemeinsam mit Gleichgesinnten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum der Beitritt lohnt?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Erhalte Hilfe bei technischen Problemen und Fragen nach dem Kauf – von unserer Community und unserem Team.
+    - **Lernen & Teilen**: Tausche Wissen, Tipps und Tutorials aus, um deine Fähigkeiten weiterzuentwickeln.
+    - **Exklusive Vorschauen**: Erhalte frühzeitige Informationen zu neuen Produkten und spannende Einblicke vor der Veröffentlichung.
+    - **Spezielle Rabatte**: Nutze exklusive Preisnachlässe auf unsere neuesten Produkte.
+    - **Aktionen & Verlosungen**: Nimm an saisonalen Events und Gewinnspielen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns zu entdecken und kreativ zu werden? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
-5. Controlling with Commands or the Dashboard
+5. Steuerung per Befehlen oder Dashboard
 =======================================================
 
-Once you have successfully installed the ``pironman5`` module, the ``pironman5.service`` will automatically start upon reboot.
+Nach erfolgreicher Installation des ``pironman5``-Moduls wird der Dienst ``pironman5.service`` bei jedem Systemneustart automatisch gestartet.
 
-You can monitor and control the Pironman 5 Mini via commands, or by accessing the dashboard through the webpage at ``http://<ip>:34001``.
+Du kannst den Pironman 5 Mini entweder über die Kommandozeile steuern oder über das Web-Dashboard unter ``http://<ip>:34001`` darauf zugreifen und ihn überwachen.
 
 .. note::
 
-    * For the **Home Assistant** system, you can only monitor and control the Pironman 5 Mini through the dashboard by opening the webpage at ``http://<ip>:34001``.
+    * Beim System **Home Assistant** erfolgt die Überwachung und Steuerung des Pironman 5 Mini ausschließlich über das Dashboard unter ``http://<ip>:34001``.
 
-    .. * For the **Batocera.linux** system, you can only monitor and control the Pironman 5 Mini via commands. It is important to note that any changes to the configuration require a restart of the service using ``pironman5 restart`` to take effect.
+    .. * Beim System **Batocera.linux** kann der Pironman 5 Mini ausschließlich über Befehle gesteuert werden. Beachte, dass Änderungen an der Konfiguration erst nach einem Neustart des Dienstes mit ``pironman5 restart`` wirksam werden.
 
 
 .. toctree::

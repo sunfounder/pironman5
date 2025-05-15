@@ -1,27 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder-Community für Raspberry Pi-, Arduino- und ESP32-Enthusiasten auf Facebook! Entdecke gemeinsam mit anderen Technikbegeisterten noch mehr rund um Raspberry Pi, Arduino und ESP32.
 
-    **Why Join?**
+    **Warum solltest du beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenhilfe**: Erhalte Unterstützung bei technischen Problemen und Fragen nach dem Kauf – direkt von unserer Community und unserem Support-Team.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erfahre als Erste:r von neuen Produktankündigungen und erhalte exklusive Einblicke.
+    - **Sonderrabatte**: Profitiere von exklusiven Preisnachlässen auf unsere neuesten Produkte.
+    - **Aktionen & Verlosungen**: Nimm an saisonalen Gewinnspielen und Sonderaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns gemeinsam zu entdecken und kreativ zu werden? Klicke auf [|link_sf_facebook|] und werde noch heute Mitglied!
 
 .. _about_hardware_mini:
 
-6. Hardware Overview
+6. Hardwareübersicht
 =========================
 
 .. image:: ../img/pironman5mini.png
     :width: 400
 
 
-This chapter is a detailed description of all the components in Pironman, as well as the associated software configuration.
+In diesem Kapitel findest du eine detaillierte Beschreibung aller Komponenten des Pironman sowie der zugehörigen Softwarekonfiguration.
 
 
 .. toctree::

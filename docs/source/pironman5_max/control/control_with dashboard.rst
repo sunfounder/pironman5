@@ -1,154 +1,154 @@
 
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Enthusiasten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertensupport**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Einblicke**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
+    - **Sonderrabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und saisonalen Sonderaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und werde noch heute Mitglied!
 
 .. _max_view_control_dashboard:
 
-View and Control from Dashboard
+Anzeige und Steuerung über das Dashboard
 =========================================
 
-Once you have successfully installed the ``pironman5`` module, the ``pironman5.service`` will start automatically upon reboot.
+Nachdem du das ``pironman5``-Modul erfolgreich installiert hast, wird der ``pironman5.service`` nach dem Neustart automatisch gestartet.
 
-Now you can open the monitoring page in your browser to see the information about your Raspberry Pi, configure the RGB, and control the fan, etc. The page link is: ``http://<ip>:34001``.
+Nun kannst du die Überwachungsseite in deinem Browser öffnen, um Informationen über deinen Raspberry Pi anzuzeigen, die RGB-Einstellungen zu konfigurieren und den Lüfter zu steuern. Der Link zur Seite lautet: ``http://<ip>:34001``.
 
-This page has **Dashboard**, **History**, **Log**, and a **Settings** page.
+Diese Seite enthält die Bereiche **Dashboard**, **Verlauf**, **Protokoll** und **Einstellungen**.
 
 .. image:: img/dashboard_tab.png
   :width: 90%
-  
-  
+
+
 Dashboard
 -----------------------
 
-There are multiple cards to view the relevant status of the Raspberry Pi, including:
+Es gibt mehrere Karten, um den relevanten Status des Raspberry Pi anzuzeigen, darunter:
 
-* **Fan**: View the Raspberry Pi's CPU temperature and the PWM fan speed. **GPIO Fan State** indicates the status of the two side RGB fans. At the current temperature, the two RGB fans are off.
+* **Lüfter**: Zeigt die CPU-Temperatur des Raspberry Pi und die PWM-Lüftergeschwindigkeit an. **GPIO Lüfterstatus** zeigt den Status der beiden seitlichen RGB-Lüfter an. Bei der aktuellen Temperatur sind die beiden RGB-Lüfter ausgeschaltet.
 
   .. image:: img/dashboard_pwm_fan.png
     :width: 90%
-    
 
-* **Storage**: Displays the storage capacity of a Raspberry Pi, showing various disk partitions with their used and available space.
+
+* **Speicher**: Zeigt die Speicherkapazität des Raspberry Pi an und zeigt verschiedene Festplattenpartitionen mit ihrem belegten und verfügbaren Speicherplatz.
 
   .. image:: img/dashboard_storage.png
     :width: 90%
-    
 
-* **Memory**: Shows the Raspberry Pi's RAM usage and percentage.
+
+* **Speicher**: Zeigt die RAM-Nutzung des Raspberry Pi und den Prozentsatz an.
 
   .. image:: img/dashboard_memory.png
     :width: 90%
-    
 
-* **Network**: Displays the current network connection type, upload, and download speeds.
+
+* **Netzwerk**: Zeigt den aktuellen Verbindungstyp des Netzwerks sowie die Upload- und Download-Geschwindigkeiten an.
 
   .. image:: img/dashboard_network.png
     :width: 90%
-    
 
-* **Processor**: Illustrates the Raspberry Pi's CPU performance, including the status of its four cores, operating frequencies, and CPU usage percentage.
+
+* **Prozessor**: Zeigt die CPU-Leistung des Raspberry Pi an, einschließlich des Status der vier Kerne, der Betriebshäufigkeiten und des CPU-Nutzungsprozentsatzes.
 
   .. image:: img/dashboard_processor.png
     :width: 90%
-    
 
-History
+
+Verlauf
 --------------
 
-The History page allows you to view historical data. Check the data you want to view in the left sidebar, then select the time range to see the data for that period, and you can also click to download it.
+Die Verlauf-Seite ermöglicht es dir, historische Daten anzuzeigen. Wähle im linken Seitenbereich die Daten aus, die du anzeigen möchtest, wähle dann den Zeitraum aus, um die Daten für diesen Zeitraum zu sehen, und du kannst sie auch herunterladen.
 
 .. image:: img/dashboard_history1.png
   :width: 90%
-  
+
 .. image:: img/dashboard_history2.png
   :width: 90%
 
-Log
+Protokoll
 ------------
 
-The Log page is used to view the logs of the currently running Pironman5 service. The Pironman5 service includes multiple sub-services, each with its own log. Select the log you want to view, and you can see the log data on the right. If it is blank, it may mean there is no log content.
+Die Protokoll-Seite wird verwendet, um die Protokolle des aktuell laufenden Pironman5-Dienstes anzuzeigen. Der Pironman5-Dienst umfasst mehrere Unterdienste, von denen jeder sein eigenes Protokoll hat. Wähle das Protokoll aus, das du anzeigen möchtest, und du kannst die Protokolldaten auf der rechten Seite sehen. Wenn es leer ist, bedeutet dies möglicherweise, dass keine Protokollinhalte vorhanden sind.
 
-* Each log has a fixed size of 10MB. When it exceeds this size, a second log will be created.
-* The number of logs for the same service is limited to 10. If the number exceeds this limit, the oldest log will be automatically deleted.
-* There are filter tools above the log area on the right. You can select the log level, filter by keywords, and use several convenient tools, including **Line Wrap**, **Auto Scroll** and **Auto Update**.
-* Logs can also be downloaded locally.
+* Jedes Protokoll hat eine feste Größe von 10 MB. Wenn diese Größe überschritten wird, wird ein zweites Protokoll erstellt.
+* Die Anzahl der Protokolle für denselben Dienst ist auf 10 begrenzt. Wenn die Anzahl dieses Limits überschreitet, wird das älteste Protokoll automatisch gelöscht.
+* Es gibt Filterwerkzeuge oberhalb des Protokollbereichs auf der rechten Seite. Du kannst das Protokollniveau auswählen, nach Schlüsselwörtern filtern und verschiedene praktische Werkzeuge wie **Zeilenumbruch**, **Automatisches Scrollen** und **Automatische Aktualisierung** verwenden.
+* Protokolle können auch lokal heruntergeladen werden.
 
 .. image:: img/dashboard_log1.png
   :width: 90%
-  
+
 .. image:: img/dashboard_log2.png
   :width: 90%
 
 
-Settings
+Einstellungen
 -----------------
 
-There is a settings menu in the upper right corner of the page where you can customize the settings according to your preferences. After making modifications, the changes will be saved automatically. If needed, you can click the CLEAR button at the bottom to clear the historical data.
+Im oberen rechten Bereich der Seite befindet sich ein Einstellungsmenü, in dem du die Einstellungen nach deinen Wünschen anpassen kannst. Nach Änderungen werden die Einstellungen automatisch gespeichert. Wenn nötig, kannst du die Schaltfläche CLEAR am unteren Rand verwenden, um die historischen Daten zu löschen.
 
 .. image:: img/Dark_mode_and_Temperature.jpg
   :width: 600
 
-* **Dark Mode**: Toggle between light and dark mode themes. The theme option is saved in the browser cache. Changing the browser or clearing the cache will revert to the default light theme.
-* **Temperature Unit**: Set the temperature unit displayed by the system.
+* **Dunkelmodus**: Wechsle zwischen den Themen für den Hell- und Dunkelmodus. Die Themenoption wird im Browser-Cache gespeichert. Wenn du den Browser wechselst oder den Cache löschst, wird das Standardthema im hellen Modus wiederhergestellt.
+* **Temperatur-Einheit**: Lege die Temperatureinheit fest, die im System angezeigt wird.
 
-**About OLED Screen**
+**Über OLED-Bildschirm**
 
 .. image:: img/OLED_Sreens.jpg
   :width: 600
 
-* **OLED Enable**: Whether to enable OLED.
-* **OLED Disk**: Set OLED disk.
-* **OLED Network Interface**: 
+* **OLED aktivieren**: Bestimmt, ob das OLED aktiviert werden soll.
+* **OLED Festplatte**: Lege die OLED-Festplatte fest.
+* **OLED Netzwerkinterface**:
 
-  * **all**: Toggle the display between the Ethernet IP and Wi-Fi IP in sequence.
-  * **eth0**: Display only the Ethernet IP
-  * **wlan0**: Display only the Wi-Fi IP
+  * **all**: Wechsle die Anzeige zwischen der Ethernet-IP und der Wi-Fi-IP in Reihenfolge.
+  * **eth0**: Zeige nur die Ethernet-IP an.
+  * **wlan0**: Zeige nur die Wi-Fi-IP an.
 
-* **OLED Rotation**: Set OLED rotation.
+* **OLED Rotation**: Lege die OLED-Rotation fest.
 
-**About RGB LEDs**
+**Über RGB-LEDs**
 
 .. image:: img/RGB_LEDS.jpg
   :width: 600
 
-* **RGB Enable**: Whether to enable RGB LEDS
-* **RGB Color**: Set the color of the RGB LEDs.
-* **RGB Brightness**: You can adjust the brightness of the RGB LEDs with a slider.
-* **RGB Style**: Choose the RGB LEDs display mode. Options include **Solid**, **Breathing**, **Flow**, **Flow_reverse**, **Rainbow**, **Rainbow Reverse**, and **Hue Cycle**.
+* **RGB aktivieren**: Bestimmt, ob die RGB-LEDs aktiviert werden sollen.
+* **RGB-Farbe**: Lege die Farbe der RGB-LEDs fest.
+* **RGB-Helligkeit**: Du kannst die Helligkeit der RGB-LEDs mit einem Schieberegler anpassen.
+* **RGB-Stil**: Wähle den Anzeige-Modus der RGB-LEDs. Optionen beinhalten **Solid**, **Breathing**, **Flow**, **Flow_reverse**, **Rainbow**, **Rainbow Reverse**, und **Hue Cycle**.
 
   .. note::
 
-     If you set the **RGB Style** to **Rainbow**, **Rainbow Reverse**, and **Hue Cycle**, you will not be able to set the color.
+     Wenn du den **RGB-Stil** auf **Rainbow**, **Rainbow Reverse** oder **Hue Cycle** einstellst, kannst du die Farbe nicht festlegen.
 
-* **RGB Speed**: Set the speed of the RGB LED changes.
+* **RGB-Geschwindigkeit**: Bestimme die Geschwindigkeit der RGB-LED-Änderungen.
 
-**About RGB Fans**
+**Über RGB-Lüfter**
 
 .. image:: img/RGB_FAN2.png
   :width: 600
 
-* **GPIO Fan Mode**: You can set the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate.
+* **GPIO Lüftermodus**: Du kannst den Betriebsmodus der beiden RGB-Lüfter festlegen. Diese Modi bestimmen die Bedingungen, unter denen die RGB-Lüfter aktiviert werden.
 
-    * **Quiet**: The RGB fans will activate at 70°C.
-    * **Balanced**: The RGB fans will activate at 67.5°C.
-    * **Cool**: The RGB fans will activate at 60°C.
-    * **Performance**: The RGB fans will activate at 50°C.
-    * **Always On**: The RGB fans will always be on.
+    * **Quiet**: Die RGB-Lüfter werden bei 70°C aktiviert.
+    * **Balanced**: Die RGB-Lüfter werden bei 67,5°C aktiviert.
+    * **Cool**: Die RGB-Lüfter werden bei 60°C aktiviert.
+    * **Performance**: Die RGB-Lüfter werden bei 50°C aktiviert.
+    * **Always On**: Die RGB-Lüfter sind immer eingeschaltet.
 
-For instance, if set to **Performance** mode, the RGB fans will activate at 50°C.
+Beispielsweise, wenn auf **Performance**-Modus eingestellt, werden die RGB-Lüfter bei 50°C aktiviert.
 
-After saving, if the CPU temperature exceeds 50°C, you will see the **GPIO Fan State** change to ON in the Dashboard, and the side RGB fans will start spinning.
+Nach dem Speichern, wenn die CPU-Temperatur 50°C überschreitet, wird der **GPIO Lüfterstatus** auf „ON“ im Dashboard geändert und die seitlichen RGB-Lüfter beginnen sich zu drehen.
 
 .. image:: img/dashboard_rgbfan_on.png
   :width: 300

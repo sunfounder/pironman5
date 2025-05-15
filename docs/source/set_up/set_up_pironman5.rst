@@ -1,29 +1,29 @@
 .. note::
 
-    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten ein.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Entdecken Sie gemeinsam mit Gleichgesinnten die faszinierende Welt von Raspberry Pi, Arduino und ESP32.
 
     **Warum beitreten?**
 
-    - **Fachkundige Unterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit der Hilfe unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.
-    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
-    - **Sonderrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
-    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und Feiertagsaktionen teil.
+    - **Fachkundige Unterstützung**: Lassen Sie sich bei Problemen und technischen Herausforderungen nach dem Kauf von unserer Community und unserem Team unterstützen.
+    - **Lernen & Teilen**: Profitieren Sie vom Austausch über Tipps, Tricks und Tutorials, um Ihre Kenntnisse zu vertiefen.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugriff auf neue Produktankündigungen und Einblicke.
+    - **Sonderrabatte**: Sichern Sie sich exklusive Rabatte auf unsere neuesten Produkte.
+    - **Aktionen & Verlosungen**: Nehmen Sie an spannenden Gewinnspielen und saisonalen Aktionen teil.
 
-    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
+    👉 Bereit, gemeinsam mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _set_up_pironman5:
 
 4. Software einrichten oder installieren
 ================================================
 
-Nachdem das System entweder auf die Micro SD oder die NVMe SSD geschrieben wurde, können Sie diese in den entsprechenden Slot des Pironman 5 einstecken. Drücken Sie dann die Einschalttaste, um das Gerät einzuschalten.
+Nachdem das System entweder auf die Micro-SD-Karte oder die NVMe-SSD geschrieben wurde, setzen Sie das Speichermedium in den entsprechenden Slot des Pironman 5 ein. Drücken Sie anschließend die Einschalttaste, um das Gerät zu starten.
 
-Nach dem Einschalten werden verschiedene Status-LEDs aufleuchten, aber das OLED-Display, die RGB-LEDs und die RGB-Lüfter (die beiden Lüfter an den Seiten) funktionieren noch nicht, da sie konfiguriert werden müssen. Wenn ein Anzeigeproblem auf dem Bildschirm auftritt, ignorieren Sie dies vorerst; es wird nach der Konfiguration behoben.
+Nach dem Einschalten leuchten verschiedene Status-LEDs auf. OLED-Display, RGB-LEDs und die seitlichen RGB-Lüfter funktionieren zu diesem Zeitpunkt jedoch noch nicht, da sie zunächst konfiguriert werden müssen. Sollte das Display vorübergehend eine fehlerhafte Anzeige zeigen, ignorieren Sie dies – das Problem wird nach der Konfiguration behoben.
 
-Bevor Sie mit der Konfiguration beginnen, müssen Sie Ihren Raspberry Pi starten und sich anmelden. Falls Sie nicht wissen, wie Sie sich anmelden können, besuchen Sie die offizielle Raspberry Pi-Website: |link_rpi_get_start|.
+Bevor Sie mit der Einrichtung fortfahren, müssen Sie Ihren Raspberry Pi starten und sich anmelden. Wenn Sie nicht wissen, wie Sie sich anmelden können, besuchen Sie die offizielle Raspberry Pi-Webseite: |link_rpi_get_start|.
 
-Sie können dann das entsprechende Konfigurations-Tutorial basierend auf Ihrem System auswählen.
+Wählen Sie anschließend das passende Konfigurations-Tutorial entsprechend Ihrem System aus.
 
 .. toctree::
     :maxdepth: 1
@@ -35,16 +35,16 @@ Sie können dann das entsprechende Konfigurations-Tutorial basierend auf Ihrem S
 
 **Über den Einschaltknopf**
 
-Der Einschaltknopf entspricht dem des Raspberry Pi 5 und erfüllt die gleiche Funktion.
+Der Einschaltknopf entspricht dem des Raspberry Pi 5 und erfüllt die gleiche Funktionalität.
 
 * **Herunterfahren**
 
-    * Wenn Sie das System Raspberry Pi **Bookworm Desktop** verwenden, können Sie zweimal schnell hintereinander die Einschalttaste drücken, um das Gerät herunterzufahren. 
-    * Wenn Sie das System Raspberry Pi **Bookworm Lite** verwenden, drücken Sie die Einschalttaste einmal, um das Herunterfahren zu starten.
-    * Halten Sie die Einschalttaste gedrückt, um einen erzwungenen Hard-Shutdown durchzuführen.
+    * Beim System Raspberry Pi **Bookworm Desktop** können Sie durch zweimaliges schnelles Drücken der Einschalttaste den Shutdown-Vorgang einleiten.
+    * Beim System Raspberry Pi **Bookworm Lite** genügt ein einmaliges Drücken der Taste, um das Gerät herunterzufahren.
+    * Durch langes Drücken führen Sie einen erzwungenen Hard-Shutdown durch.
 
 * **Einschalten**
 
-    * Wenn das Raspberry Pi-Board heruntergefahren, aber noch mit Strom versorgt ist, drücken Sie einmal kurz die Einschalttaste, um es wieder einzuschalten.
+    * Wenn das Raspberry Pi-Board heruntergefahren, aber noch mit Strom versorgt ist, drücken Sie kurz die Taste, um es wieder einzuschalten.
 
-* Wenn Sie ein System verwenden, das die Herunterfahren-Taste nicht unterstützt, können Sie diese 5 Sekunden lang gedrückt halten, um einen Hard-Shutdown zu erzwingen, und durch einmaliges Drücken aus dem ausgeschalteten Zustand wieder einschalten.
+* Falls Ihr System die Herunterfahren-Funktion nicht unterstützt, halten Sie die Taste für 5 Sekunden gedrückt, um einen Hard-Shutdown zu erzwingen. Zum Einschalten genügt dann ein kurzes Drücken der Taste.

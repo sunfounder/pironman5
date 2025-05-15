@@ -1,27 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Technikbegeisterten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum solltest du beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu Produktankündigungen und exklusiven Einblicken.
+    - **Sonderrabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an saisonalen Verlosungen und Aktionsangeboten teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit zum Entdecken und Entwickeln? Klicke auf [|link_sf_facebook|] und werde noch heute Mitglied!
 
 .. _install_batocera_mini:
 
-Installing Batocera Linux
+Installation von Batocera Linux
 ======================================================
 
-|link_batocera| is an open-source and completely free retro-gaming distribution that can be copied to a USB stick or an SD card with the aim of turning any computer/nano computer into a gaming console during a game or permanently.
+|link_batocera| ist eine quelloffene und vollkommen kostenlose Retro-Gaming-Distribution, die auf einen USB-Stick oder eine SD-Karte kopiert werden kann, um jeden Computer oder Einplatinenrechner temporär oder dauerhaft in eine Spielekonsole zu verwandeln.
 
-You can choose the installation method based on whether you have a Micro SD or an NVMe SSD at hand.
+Die Installationsmethode richtet sich danach, ob du eine Micro-SD-Karte oder eine NVMe-SSD zur Verfügung hast.
 
-Installing directly onto the NVMe SSD involves an additional step compared to installing on the Micro SD: you must update the Raspberry Pi's bootloader because it defaults to boot from the Micro SD card. Update the bootloader to prioritize booting from the NVMe SSD.
+Die direkte Installation auf eine NVMe-SSD erfordert einen zusätzlichen Schritt im Vergleich zur Installation auf einer Micro-SD-Karte: Du musst den Bootloader des Raspberry Pi aktualisieren, da dieser standardmäßig von der SD-Karte bootet. Aktualisiere den Bootloader, um das Booten von der NVMe-SSD zu priorisieren.
 
 .. toctree::
     :maxdepth: 1

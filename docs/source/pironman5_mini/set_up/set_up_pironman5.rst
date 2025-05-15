@@ -1,30 +1,30 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Technikbegeisterten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderrabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Gewinnspielen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und kreativ zu werden? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _set_up_pironman5_mini:
 
-4. Setting Up or Installing Software
+4. Einrichtung und Softwareinstallation
 ================================================
 
-Now that the system has been written to either the Micro SD or NVMe SSD, you can insert them into the Raspberry Pi slot. Then press the power button to turn on the device.
+Nachdem das System erfolgreich auf die Micro-SD-Karte oder die NVMe-SSD geschrieben wurde, kannst du das jeweilige Speichermedium in den Raspberry Pi einsetzen. Drücke anschließend den Netzschalter, um das Gerät einzuschalten.
 
-After powering on, you will see the various power LEDs lit up, but the RGB LEDs, and RGB fan will not be operational yet, 
-as they need to be configured. If there is a screen garbling issue, please ignore it for now; it will be resolved after configuration.
+Nach dem Einschalten leuchten die verschiedenen Status-LEDs, allerdings funktionieren die RGB-LEDs und der RGB-Lüfter noch nicht, 
+da diese zunächst konfiguriert werden müssen. Falls es zu einer verzerrten Darstellung auf dem Bildschirm kommt, kann dies zunächst ignoriert werden – das Problem wird nach der Konfiguration behoben sein.
 
-Before configuring, you need to boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
+Bevor du mit der Konfiguration beginnst, musst du dein Raspberry Pi starten und dich anmelden. Falls du nicht weißt, wie das geht, findest du Hilfe auf der offiziellen Raspberry Pi Website: |link_rpi_get_start|.
 
-You can then proceed to select the configuration tutorial based on your system.
+Wähle dann das passende Konfigurations-Tutorial entsprechend deinem verwendeten System:
 
 
 .. toctree::
@@ -34,22 +34,21 @@ You can then proceed to select the configuration tutorial based on your system.
     set_up_home_assistant
 
 
-**About Power Button**
+**Zum Netzschalter**
 
-The power button brings out the power button of the Raspberry Pi 5, and it functions just like the power button of the Raspberry Pi 5.
+Der Netzschalter entspricht dem physischen Power-Button des Raspberry Pi 5 und verhält sich funktional genauso.
 
-* **Shutdown**
+* **Herunterfahren**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system, press the power button a single time to initiate a shutdown.
-    * To force a hard shutdown, press and hold the power button.
+    * Wenn du das Raspberry Pi **Bookworm Desktop**-System verwendest, kannst du durch zweimaliges kurzes Drücken des Netzschalters den Shutdown-Vorgang auslösen.
+    * Beim **Bookworm Lite**-System reicht ein einfaches Drücken zum Einleiten des Herunterfahrens.
+    * Für ein erzwungenes Herunterfahren halte den Knopf gedrückt.
 
-* **Power on**
+* **Einschalten**
 
-    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+    * Wenn das Raspberry Pi ausgeschaltet, aber noch mit Strom versorgt ist, genügt ein kurzer Druck, um es wieder einzuschalten.
 
-* If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
+* Wenn du ein System verwendest, das den Shutdown-Knopf nicht unterstützt, kannst du ihn für 5 Sekunden gedrückt halten, um ein erzwungenes Herunterfahren durchzuführen, und anschließend mit einem kurzen Druck wieder einschalten.
 
 
-    
-    
+

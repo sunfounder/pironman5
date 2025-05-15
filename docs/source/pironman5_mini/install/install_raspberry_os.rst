@@ -1,34 +1,34 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Technikbegeisterten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum solltest du beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenhilfe**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Unterstützung unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten weiterzuentwickeln.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugriff auf Produktneuheiten und exklusive Einblicke.
+    - **Sonderrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Verlosungen und Aktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
-Installing Raspberry Pi OS
+Installation von Raspberry Pi OS
 ================================================================================
-You can choose an installation method based on whether you have a Micro SD card or an NVMe SSD available.
+Je nachdem, ob dir eine Micro-SD-Karte oder eine NVMe-SSD zur Verfügung steht, kannst du die passende Installationsmethode wählen.
 
-**Using a Micro SD Card Only**
+**Nur mit einer Micro-SD-Karte**
 
-  If you are only using a Micro SD card, you can simply follow the first method below.
+  Wenn du ausschließlich eine Micro-SD-Karte verwendest, folge einfach der ersten Methode unten.
 
-**Using an M.2 NVMe SSD**
+**Mit einer M.2 NVMe SSD**
 
-  * If you have an **M.2 NVMe SSD Enclosure Adapter**, you can connect your SSD to your computer using the adapter and follow the second method to install the OS.  
+  * Wenn du einen **M.2 NVMe SSD Enclosure Adapter** besitzt, kannst du die SSD über den Adapter mit deinem Computer verbinden und der zweiten Methode zur Installation des Betriebssystems folgen.  
 
     .. image:: img/m2_nvme_adapter.png  
         :width: 300
         :align: center
   
-  * If you do not have the adapter shown above, you can first install the OS on a Micro SD card using the first method, then use the third method to copy the system from the Micro SD card to your M.2 NVMe SSD.  
+  * Wenn du den oben gezeigten Adapter nicht besitzt, kannst du das Betriebssystem zunächst über die erste Methode auf einer Micro-SD-Karte installieren und anschließend die dritte Methode verwenden, um das System auf deine M.2 NVMe SSD zu übertragen.  
 
 
 .. toctree::
