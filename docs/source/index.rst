@@ -1,67 +1,116 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez plus profondément dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
 
-    **Pourquoi nous rejoindre ?**
+    **Why Join?**
 
-    - **Support d'experts**: Résolvez vos problèmes après-vente et relevez vos défis techniques avec l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour améliorer vos compétences.
-    - **Avant-premières exclusives**: Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
-    - **Réductions spéciales**: Profitez de réductions exclusives sur nos derniers produits.
-    - **Promotions festives et tirages au sort**: Participez à des tirages au sort et à des promotions festives.
+    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
+    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
+    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
+    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
+    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-|link_pironman5| - Boîtier Mini PC NVMe M.2 SSD PCIe pour Raspberry Pi 5
+Pironman 5 Series - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5 
 ================================================================================
 
-Merci d'avoir choisi notre |link_pironman5|.
+Welcome to the official guide for the Pironman 5 Series products. This guide will help you identify your specific product within the series and provide step-by-step instructions for setup and installation.
 
-.. note::
-    Ce document est disponible dans les langues suivantes.
+Use the images below to identify the product you purchased. Once identified, click the corresponding link to access the detailed product introduction and specifications. After reviewing the introduction, you can proceed with system installation and the setup of the ``pironman5`` software.
 
-        * |link_german_tutorials|
-        * |link_jp_tutorials|
-        * |link_en_tutorials|
-        * |link_fr_tutorials|
-        * |link_es_tutorials|
-        * |link_it_tutorials|
-        * |link_zh_tutorials|
-    
-    Veuillez cliquer sur les liens correspondants pour accéder au document dans la langue de votre choix.
+.. .. note::
 
-.. image:: img/pironman5_pic.jpg
-    :width: 400
-    :align: center
-    
+..     This document is available in the following languages.
 
-Améliorez votre Raspberry Pi 5 avec le |link_pironman5|, notre boîtier haut de gamme conçu pour allier style et fonctionnalité. C'est le parfait équilibre entre esthétique et performance :
+..     * |link_german_tutorials|
+..     * |link_jp_tutorials|
+..     * |link_en_tutorials|
+..     * |link_fr_tutorials|
+..     * |link_es_tutorials|
+..     * |link_it_tutorials|
+..     * |link_zh_tutorials|
 
-* Mini PC Raspberry Pi 5
-* Écran OLED de 0,96" affichant l'utilisation du CPU, la température, l'utilisation du disque, l'adresse IP, l'utilisation de la RAM, etc.
-* Refroidisseur tour capable de maintenir un Pi à 100% de charge CPU à 39°C dans une pièce à 25°C
-* 2 ventilateurs RGB avec contrôle GPIO
-* 1 ventilateur PWM sur le refroidisseur tour contrôlé par le système Raspberry Pi
-* Prend en charge quatre tailles de SSD NVMe M.2 (PCIe Gen 2.0 / PCIe Gen 3.0): 2230, 2242, 2260 et 2280.
-* 4 LED RGB WS2812 adressables illuminent tout le boîtier avec un effet lumineux impressionnant
-* Récepteur IR pour centre multimédia comme Kodi ou Volumio
-* Bouton d'alimentation rétro en métal pour un arrêt sécurisé
-* Extendeur GPIO externe avec étiquette de nom de pin, pour un accès facile
-* Équipé d'un support à ressort pour retirer facilement la carte
-* Corps principal en aluminium avec panneau latéral en acrylique transparent
-* Comprend deux ports HDMI standards
 
-Le |link_pironman5| n'est pas seulement un boîtier ; c'est une mise à niveau qui transforme votre Raspberry Pi 5 en un appareil puissant, efficace et élégant. Procurez-vous le vôtre dès maintenant et découvrez l'avenir des boîtiers Raspberry Pi !
+    .. Please click on the respective links to access the document in your preferred language.
 
-.. note::
+Based on the images below, select the product you own to learn more. Each link will take you to the respective product's introduction page.
 
-    Vous devez installer un système d'exploitation compatible avec le Raspberry Pi 5. Veuillez utiliser la dernière version de l'outil Raspberry Pi Imager pour l'installation du système. Les systèmes actuellement testés sont :
+.. list-table:: 
+   :widths: 25 25 25
+   :header-rows: 1
 
-    .. image:: img/compitable_os.png
-        :width: 600
-        :align: center
+   * - :ref:`intro_pironman5`
+     - :ref:`intro_pironman5_mini`
+     - :ref:`intro_pironman5_max`
+   * - |pic_pironman5| 
+     - |pic_pironman5_mini| 
+     - |pic_pironman5_max|
 
-Si vous avez des questions, envoyez un email à service@sunfounder.com et nous vous répondrons dès que possible.
+Below is a comparison of specifications for the Pironman 5 and Pironman 5 Mini. Use this table to understand the differences between these products.
+
+.. list-table:: 
+   :widths: 25 25 25 25
+   :header-rows: 1
+
+   * - Specifications
+     - :ref:`intro_pironman5`
+     - :ref:`intro_pironman5_mini`
+     - :ref:`intro_pironman5_max`
+   * - Compatible Devices 
+     - Raspberry Pi 5
+     - Raspberry Pi 5
+     - Raspberry Pi 5
+   * - Input
+     - USB Type C, 5V/5A
+     - USB Type C, 5V/5A
+     - USB Type C, 5V/5A
+   * - Power Button 
+     - ✔
+     - ✔
+     - ✔
+   * - Exterior Material 1
+     - Silver Aluminum Alloy
+     - Silver Aluminum Alloy
+     - Black Aluminum Alloy
+   * - Exterior Material 2
+     - Transparent Acrylic
+     - Black Acrylic
+     - Black Acrylic
+   * - Cooler
+     - Tower Cooler
+     - Active Cooler
+     - Tower Cooler
+   * - IR Receiver
+     - ✔
+     - X
+     - ✔
+   * - RGB Fans 
+     - 2 (Auto-lit)
+     - 1 (Auto-lit)
+     - 2 (Programmable)
+   * - HDMI Ports
+     - 2 Standard HDMI Ports
+     - 2 Micro HDMI Ports
+     - 2 Standard HDMI Ports
+   * - OLED Screen
+     - ✔
+     - X
+     - ✔
+   * - OLED Activation
+     - Always on
+     - Always on
+     - Wake on Tap
+   * - Support NVMe SSD
+     - 1
+     - 1   
+     - 2
+   * - Dimension
+     - 111.9x78.5x117mm
+     - 67.8x98.6x101.5mm  
+     - 111.9x78.5x117mm
+
+If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
 
 
 .. raw:: html
@@ -71,18 +120,12 @@ Si vous avez des questions, envoyez un email à service@sunfounder.com et nous v
 .. toctree::
     :maxdepth: 1
 
-    About this Kit <self>
-    what_do_we_need    
-    assembly_instructions
-    install/install_the_os
-    set_up/set_up_pironman5
-    control/control_pironman5
-    advanced/advanced
-    compitable_nvme_ssd
-    assemble_camera
-    faq
+    About Pironman 5 Series <self>
+    pironman5/intro_pironman5
+    pironman5_mini/intro_pironman5_mini
+    pironman5_max/intro_pironman5_max
 
-**Avis de Copyright**
+**Copyright Notice**
 
-Tout le contenu, y compris mais non limité aux textes, images et codes présents dans ce manuel, est la propriété de la société SunFounder. Vous ne devez l'utiliser que pour des études personnelles, des investigations, des loisirs ou à d'autres fins non commerciales ou sans but lucratif, conformément aux lois relatives aux droits d'auteur et aux règlements en vigueur, sans porter atteinte aux droits légaux de l'auteur et des titulaires de droits concernés. Pour toute personne ou organisation qui utilise ces contenus à des fins lucratives sans permission, la société se réserve le droit d'engager des poursuites judiciaires.
+All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
 
