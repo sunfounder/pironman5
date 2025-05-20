@@ -1,63 +1,63 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32愛好者向けFacebookコミュニティへようこそ！このコミュニティでは、Raspberry Pi、Arduino、ESP32についてより深く学び、同じ趣味を持つ仲間たちと交流できます。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: 購入後のサポートや技術的な課題を、私たちのチームとコミュニティが協力して解決します。
+    - **Learn & Share**: ヒントやチュートリアルを共有しながら知識とスキルを向上させましょう。
+    - **Exclusive Previews**: 新製品の発表や先行情報をいち早くチェックできます。
+    - **Special Discounts**: 最新製品を対象にした特別割引をご利用いただけます。
+    - **Festive Promotions and Giveaways**: プレゼント企画や季節イベントにご参加いただけます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に楽しみましょう！今すぐ [|link_sf_facebook|] をクリックして参加！
 
 .. _max_set_up_batocera:
 
-Set up on Batocera.linux
+Batocera.linuxのセットアップ
 =========================================================
 
-If you have installed the Batocera.linux OS, you can remotely log in to this system via SSH and then follow the steps below to complete the configuration.
+Batocera.linux OSをインストールした場合、SSH経由でこのシステムにリモートログインし、以下の手順で設定を完了させることができます。
 
-#. Once the system boots up, use ssh to remotely connect to Pironman5. For Windows, you can open **Powershell**, and for Mac OS X and Linux, you can directly open **Terminal**.
+#. システムが起動したら、sshでPironman5にリモート接続します。Windowsでは **Powershell** を開き、Mac OS XやLinuxでは **Terminal** を使用してください。
 
    .. image:: img/batocera_powershell.png
       :width: 90%
-      
 
-#. The default hostname for the batocera system is ``batocera``, with the default username as ``root`` and the password as ``linux``. Therefore, you can log in by typing ``ssh root@batocera.local`` and entering the password ``linux``.
+
+#. Batoceraシステムのデフォルトホスト名は ``batocera``、ユーザー名は ``root``、パスワードは ``linux`` です。そのため、以下のように入力してログインできます： ``ssh root@batocera.local`` パスワードには ``linux`` を入力してください。
 
    .. image:: img/batocera_login.png
       :width: 90%
 
-#. Execute the command: ``/etc/init.d/S92switch setup`` to enter the menu settings page.
+#. 次に、以下のコマンドを実行して設定メニューに入ります： ``/etc/init.d/S92switch setup``
 
    .. image:: img/batocera_configure.png  
       :width: 90%
 
-#. Use the down arrow key to navigate to the end, select and activate the **Pironman5** services.
+#. ↓キーを使って最後までスクロールし、 **Pironman5** サービスを選択・有効化してください。
 
    .. image:: img/batocera_configure_pironman5.png
       :width: 90%
 
-#. After activating the pironman5 service, select **OK**.
+#. Pironman5サービスを有効化したら、 **OK** を選択します。
 
    .. image:: img/batocera_configure_pironman5_ok.png
       :width: 90%
 
-#. Execute the command ``reboot`` to restart Pironman5.
+#. ``reboot`` コマンドを実行して、Pironman5 を再起動します。
 
    .. code-block:: shell
 
       reboot
 
-#. Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
-   
-   * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
-   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
-   
-   .. note::
-    
-     RGB fans won't spin unless the temperature hits 60°C. For different activation temperatures, see :ref:`max_cc_control_fan`.
+#. 再起動後、自動的に ``pironman5.service`` が起動します。Pironman 5の主な構成は以下の通りです：
 
-Now, you can connect the Pironman 5 to a screen, game controllers, headphones, and more to immerse yourself in your gaming world.
+   * OLEDスクリーンには、CPU・RAM・ディスク使用量・CPU温度・Raspberry PiのIPアドレスが表示されます。
+   * 4つのWS2812 RGB LEDは、青色のブリージングモードで点灯します。
+
+   .. note::
+
+     RGBファンは、温度が60°Cを超えるまで回転しません。起動温度を変更したい場合は、:ref:`max_cc_control_fan` を参照してください。
+
+Pironman 5にディスプレイ、ゲームコントローラー、ヘッドホンなどを接続し、ゲームの世界に没入しましょう。

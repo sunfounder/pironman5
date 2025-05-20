@@ -3,13 +3,17 @@
 Pironman 5
 =================================
 
-Thanks for choosing our |link_pironman5|.
+|link_pironman5| をお選びいただきありがとうございます。
 
 .. image:: img/pironman5_pic.jpg
     :width: 400
     :align: center
 
-Pironman 5 is a mini PC case designed specifically for the Raspberry Pi. Crafted from durable aluminum, it features an advanced cooling system with a tower cooler and dual RGB fans, along with dust filters to ensure optimal performance. The case supports NVMe M.2 SSDs (2230, 2242, 2260, 2280) and is fully compatible with the Hailo-8L AI accelerator, providing enhanced storage and powerful edge AI capabilities. A built-in 0.96” OLED display delivers real-time insights into CPU usage, memory, temperature, and IP address, while dual HDMI ports, customizable RGB LEDs, a secure power switch, an IR receiver, and an external GPIO extender boost connectivity and functionality. Ideal for NAS, Home Assistant, media centers, gaming setups, and AI projects, Pironman 5 comes with a clear, step-by-step guide for easy assembly and setup.
+Pironman 5 は、Raspberry Pi 専用に設計されたミニPCケースです。堅牢なアルミニウム素材を使用し、タワー型クーラーとデュアルRGBファンを備えた高度な冷却システムを搭載しています。さらに、ホコリの侵入を防ぐダストフィルターにより、常に最適なパフォーマンスを維持できます。2230、2242、2260、2280サイズに対応するNVMe M.2 SSDに対応し、Hailo-8L AIアクセラレータとの完全な互換性により、大容量ストレージと強力なエッジAI機能を実現します。
+
+0.96インチのOLEDディスプレイを内蔵し、CPU使用率、メモリ、温度、IPアドレスなどをリアルタイムで表示。デュアルHDMIポート、カスタマイズ可能なRGB LED、安全な電源スイッチ、赤外線受信モジュール、外部GPIOエクステンダなどを備え、拡張性と利便性を高めています。
+
+NAS、Home Assistant、メディアセンター、ゲーム環境、AIプロジェクトなどに最適なこのケースは、組み立てとセットアップをわかりやすくガイドする手順書付きです。
 
 .. toctree::
     :maxdepth: 1
@@ -36,31 +40,31 @@ Pironman 5 is a mini PC case designed specifically for the Raspberry Pi. Crafted
 
 **Parameters**
 
-* Dimension: 111.9x78.5x117mm
-* Material
-    * Main Body: Silver Aluminum Alloy
-    * Two Side Panel: Transparent Acrylic
-* Support Platform: Raspberry Pi 5
-* Power Input: USB Type C, 5V/5A
-* Interfaces
-    * Raspberry Pi standard 40-Pin GPIO
-    * spring-loaded Micro SD socket
-    * USB Type C power input
-    * 2 x USB 2.0
-    * 2 x USB 3.0
-    * Gigabit LAN port
-    * 2 x 4Kp60 Standard HDMI Output
-* 1 x Metal Power Button
-* 1 x 0.96'' 128x64 OLED Screen
-* 1 x PWM Fan (40x40x10mm)
-* 2 x RGB Fans (40x40x10mm)
-* 4 x WS2812-5050 RGB LEDs
-* 1 x 38KHz IR Receiver
-* 1 x Tower Cooler
-* 1 x PCIe 2.0 M.2 M key (2230, 2242, 2260, 2280) for NVMe SSD
-* 1 x 1220 Battery for RTC
+* 寸法：111.9×78.5×117mm
+* 材質
+    * 本体：シルバーアルミニウム合金
+    * サイドパネル：透明アクリル
+* 対応プラットフォーム：Raspberry Pi 5
+* 電源入力：USB Type-C、5V/5A
+* インターフェース
+    * Raspberry Pi 標準 40ピン GPIO
+    * スプリング式 Micro SD ソケット
+    * USB Type-C 電源入力
+    * USB 2.0 × 2
+    * USB 3.0 × 2
+    * ギガビットLANポート
+    * 4Kp60対応 標準 HDMI出力 × 2
+* メタル製電源ボタン × 1
+* 0.96インチ 128x64 OLEDスクリーン × 1
+* PWMファン（40×40×10mm）× 1
+* RGBファン（40×40×10mm）× 2
+* WS2812-5050 RGB LED × 4
+* 38KHz 赤外線受信機 × 1
+* タワークーラー × 1
+* PCIe 2.0 M.2 Mキー（2230、2242、2260、2280）対応スロット × 1
+* RTC用1220バッテリー × 1
 
-**Dimensional Drawing**
+**外形寸法図**
 
 .. image:: img/pironman5_dimension.png
     :width: 800

@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！Raspberry Pi、Arduino、ESP32の世界を、同じ情熱を持つ仲間たちと一緒にさらに深く探求しましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後の問題や技術的課題を、コミュニティと当社のサポートチームがサポートします。
+    - **Learn & Share**：ヒントやチュートリアルを共有し、スキルを高めましょう。
+    - **Exclusive Previews**：新製品の発表や先行情報を誰よりも早く入手できます。
+    - **Special Discounts**：最新製品を対象にした限定割引をご提供します。
+    - **Festive Promotions and Giveaways**：季節限定のキャンペーンやプレゼント企画にご参加いただけます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に創造の旅を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
 .. _install_os_sd_rpi_mini:
 
-Installing the OS on a Micro SD Card
+Micro SDカードへのOSインストール
 ============================================================
 .. If you are using a Micro SD card, you can follow the tutorial below to install the system onto your Micro SD card.
 
@@ -22,79 +22,78 @@ Installing the OS on a Micro SD Card
 
 ..     <iframe width="700" height="500" src="https://www.youtube.com/embed/-5rTwJ0oMVM?start=343&end=414&si=je5SaLccHzjjEhuD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Required Components**
+**必要な機材**
 
-* A Personal Computer
-* A Micro SD card and Reader
+* パーソナルコンピューター
+* Micro SDカードおよびカードリーダー
 
-**Steps**
+**手順**
 
-#. Insert your SD card into your computer or laptop using a Reader.
+#. カードリーダーを使用して、Micro SDカードをパソコンまたはノートパソコンに挿入します。
 
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+#. |link_rpi_imager| を起動し、 **Raspberry Pi Device** をクリックして、ドロップダウンから **Raspberry Pi 5** を選択します。
 
    .. image:: img/os_choose_device_pi5.png
       :width: 90%
 
-#. Select **Operating System** and opt for the recommended operating system version.
+#. **Operating System** を選択し、推奨されているOSバージョンを選びます。
 
    .. image:: img/os_choose_os.png
       :width: 90%
 
-#. Click **Choose Storage** and select the appropriate storage device for the installation.
+#. **Choose Storage** をクリックして、インストール対象のストレージデバイスを選択します。
 
    .. image:: img/os_choose_sd.png
       :width: 90%
 
-#. Click **NEXT** and then **EDIT SETTINGS** to tailor your OS settings. 
+#. **NEXT** をクリックし、次に **EDIT SETTINGS** をクリックして、OS設定をカスタマイズします。
 
    .. image:: img/os_enter_setting.png
       :width: 90%
-      
 
-   * Define a **hostname** for your Raspberry Pi. The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
+
+   * Raspberry Piの **ホスト名** を設定します。これはネットワーク上での識別名となり、 ``<hostname>.local`` や ``<hostname>.lan`` でアクセス可能です。
 
      .. image:: img/os_set_hostname.png
-   
 
-   * Create a **Username** and **Password** for the Raspberry Pi's administrator account. Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
 
-     .. image:: img/os_set_username.png      
+   * 管理者アカウント用の **ユーザー名** と **パスワード** を設定します。初期状態ではパスワードが存在しないため、セキュリティを確保するために必ず設定してください。
 
-   * Configure the wireless LAN by providing your network's **SSID** and **Password**.
+     .. image:: img/os_set_username.png
+
+   * ネットワークの **SSID** と **パスワード** を入力して、無線LANを設定します。
 
      .. note::
 
-       Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
+       ``Wireless LAN country`` には、お住まいの地域に対応する2文字の `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ を入力してください。
 
      .. image:: img/os_set_wifi.png
 
 
-   * To remotely connect to your Raspberry Pi, enable SSH in the Services tab.
+   * Raspberry Piへのリモート接続を有効にするには、 **Services** タブでSSHを有効にします。
 
-     * For **password authentication**, use the username and password from the General tab.
-     * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
+     * **パスワード認証** を使用する場合は、Generalタブで設定したユーザー名とパスワードを使用します。
+     * **公開鍵認証** のみを許可する場合は、「Allow public-key authentication only」を選択します。RSA鍵があればそれが使用され、ない場合は「Run SSH-keygen」で新しい鍵ペアを生成します。
 
      .. image:: img/os_enable_ssh.png
 
-   * The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
+   * **Options** メニューでは、書き込み後の音声通知、メディアの自動排出、テレメトリの有効化など、Imagerの動作をカスタマイズできます。
 
      .. image:: img/os_options.png
 
-#. When you've finished entering OS customisation settings, click **Save** to save your customisation. Then, click **Yes** to apply them when writing the image.
+#. OSのカスタマイズ設定が完了したら、 **Save** をクリックして保存し、 **Yes** をクリックして書き込み時に適用します。
 
    .. image:: img/os_click_yes.png
       :width: 90%
-      
 
-#. If the SD card contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+
+#. SDカードに既存のデータがある場合は、データ損失を防ぐために事前にバックアップを行ってください。バックアップが不要な場合は **Yes** をクリックして続行します。
 
    .. image:: img/os_continue.png
       :width: 90%
-      
 
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the Micro SD Card!
+
+#. 「Write Successful」のポップアップが表示されたら、イメージの書き込みと検証は正常に完了しています。これでMicro SDカードからRaspberry Piを起動する準備が整いました！
 
    .. image:: img/os_finish.png
       :width: 90%
-      

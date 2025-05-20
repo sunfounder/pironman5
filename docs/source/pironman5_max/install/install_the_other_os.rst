@@ -1,23 +1,23 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder の Facebook コミュニティ「Raspberry Pi & Arduino & ESP32 愛好者グループ」へようこそ！Raspberry Pi、Arduino、ESP32 に熱中する仲間たちと共に、より深く学び、創造していきましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**：購入後の技術的な問題を、コミュニティと当社チームがサポートします。
+    - **学びと共有**：チュートリアルやノウハウを交換し、スキルアップを図りましょう。
+    - **新製品の先行プレビュー**：開発中の新製品情報をいち早くキャッチ。
+    - **限定割引**：最新商品に対する特別割引をご提供。
+    - **イベント＆プレゼント企画**：季節限定のキャンペーンやプレゼントに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求と創造の旅に出ましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
-Install the Ubuntu/Kali Linux/Homebridge/Home Assistant
-=========================================================
+Ubuntu／Kali Linux／Homebridge／Home Assistant のインストール
+===============================================================
 
-You can choose the installation method based on whether you have a Micro SD or an NVMe SSD at hand.
+Micro SD カードまたは NVMe SSD のどちらを使用するかに応じて、インストール方法を選択してください。
 
-Installing directly onto the NVMe SSD involves an additional step compared to installing on the Micro SD: you must update the Raspberry Pi's bootloader because it defaults to boot from the Micro SD card. Update the bootloader to prioritize booting from the NVMe SSD.
+NVMe SSD に直接インストールする場合、Micro SD カードに比べて追加手順が必要です。Raspberry Pi は初期状態で Micro SD からの起動を優先しているため、NVMe SSD からの起動を優先させるにはブートローダーの更新が必要です。
 
 
 .. toctree::

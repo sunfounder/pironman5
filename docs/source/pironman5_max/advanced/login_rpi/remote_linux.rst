@@ -1,40 +1,40 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder の Facebook コミュニティ「Raspberry Pi & Arduino & ESP32 愛好者グループ」へようこそ！同じ興味を持つ仲間たちと一緒に、Raspberry Pi、Arduino、ESP32 の世界をさらに深く掘り下げましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的課題に、コミュニティやサポートチームが対応します。
+    - **学びと共有**：役立つヒントやチュートリアルを共有してスキルを向上させましょう。
+    - **先行情報の入手**：新製品の発表やプレビューをいち早くチェックできます。
+    - **特別割引**：最新製品に対する限定割引をご利用いただけます。
+    - **季節限定プロモーションとプレゼント企画**：各種キャンペーンや抽選プレゼントに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に、ものづくりの冒険を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
-For Linux/Unix Users
+Linux/Unix ユーザー向け
 ==========================
 
-#. Locate and open the **Terminal** on your Linux/Unix system.
+#. お使いの Linux/Unix システムで **ターミナル** を開きます。
 
-#. Ensure your Raspberry Pi is connected to the same network. Verify this by typing `ping <hostname>.local`. For example:
+#. Raspberry Pi が同じネットワークに接続されていることを確認します。以下のように入力して確認します： `ping <hostname>.local`。例：
 
     .. code-block::
 
         ping raspberrypi.local
 
-    You should see the Raspberry Pi's IP address if it's connected to the network.
+    ネットワークに接続されていれば、Raspberry Pi の IP アドレスが表示されます。
 
-    * If the terminal shows a message like ``Ping request could not find host pi.local. Please check the name and try again.``, double-check the hostname you've entered.
-    * If you're unable to retrieve the IP address, inspect your network or WiFi settings on the Raspberry Pi.
+    * ``Ping request could not find host pi.local. Please check the name and try again.`` のようなエラーメッセージが表示された場合は、ホスト名が正しく入力されているかを確認してください。
+    * IP アドレスが取得できない場合は、Raspberry Pi 側のネットワークや Wi-Fi 設定を確認してください。
 
-#. Initiate an SSH connection by typing ``ssh <username>@<hostname>.local`` or ``ssh <username>@<IP address>``. For instance:
+#. 以下のように入力して SSH 接続を開始します： ``ssh <username>@<hostname>.local`` または ``ssh <username>@<IP address>``。例えば：
 
     .. code-block::
 
         ssh pi@raspberrypi.local
 
-#. On your first login, you'll encounter a security message. Type ``yes`` to proceed.
+#. 初回ログイン時にはセキュリティに関するメッセージが表示されます。 ``yes`` と入力して接続を進めます。
 
     .. code-block::
 
@@ -42,9 +42,9 @@ For Linux/Unix Users
         ED25519 key fingerprint is SHA256:oo7x3ZSgAo032wD1tE8eW0fFM/kmewIvRwkBys6XRwg.
         Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
-#. Enter the password you previously set. Note that for security reasons, the password won't be visible as you type.
+#. 事前に設定したパスワードを入力します。セキュリティの都合上、入力中の文字は表示されません。
 
     .. note::
-        It's normal for the password characters not to display in the terminal. Just ensure to enter the correct password.
+        ターミナルにパスワードが表示されないのは正常です。正しく入力されていれば問題ありません。
 
-#. Once you've successfully logged in, your Raspberry Pi is now connected, and you're ready to proceed to the next step.
+#. ログインが成功すれば、Raspberry Pi に接続完了です。次のステップに進みましょう。

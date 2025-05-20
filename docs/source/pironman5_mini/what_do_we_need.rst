@@ -1,52 +1,52 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の世界を、情熱を共有する仲間たちと一緒により深く探究しましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後のトラブルや技術的課題は、コミュニティおよびSunFounderチームがサポートします。
+    - **Learn & Share**：ヒントやチュートリアルを共有し、スキルを高め合いましょう。
+    - **Exclusive Previews**：新製品の発表やプレビューにいち早くアクセス。
+    - **Special Discounts**：最新製品に対する限定割引をお楽しみいただけます。
+    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定イベントにも参加可能！
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒にものづくりと学びを楽しみませんか？今すぐ [|link_sf_facebook|] をクリックしてご参加ください！
 
-1. What Else Should You Prepare?
+1. 他に準備すべきものは？
 ===================================
 
-To get started with your Pironman 5 Mini, you'll need to gather a few essential components and some optional extras depending on your project requirements.
+Pironman 5 Miniを使い始めるにあたり、いくつかの必須コンポーネントと、プロジェクトに応じたオプションパーツを準備しておくと安心です。
 
-**Essential Components**
+**必須コンポーネント**
 
-* Raspberry Pi 5 
+* Raspberry Pi 5  
 
-    The Pironman 5 Mini is fully compatible with the Raspberry Pi 5.
+    Pironman 5 Miniは、Raspberry Pi 5に完全対応しています。
 
-* 5V/5A Power Adapter
+* 5V/5A電源アダプター  
 
-    A 5V/5A power adapter is required to power the Pironman 5 Mini and its components.
+    本体と各コンポーネントを安定して動作させるために、5V/5A出力のUSB Type-C電源アダプターが必要です。
 
-* Micro SD Card
- 
-    It is recommended to use an SD card with a minimum of 16GB of storage for Raspberry Pi OS. For Raspberry Pi OS Lite, a minimum of 4GB is advised.
+* Micro SDカード  
 
-**Optional Components**
+    Raspberry Pi OSを使用する場合は、16GB以上のSDカードを推奨します。Raspberry Pi OS Liteであれば、最低4GBで動作可能です。
 
-* M.2 NVMe SSD
+**オプションコンポーネント**
 
-    The Pironman 5 Mini features an NVMe PIP with an M.2 SSD connector, accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec).
+* M.2 NVMe SSD  
 
-* Screen
+    Pironman 5 Miniには、M.2 NVMe SSD（2230、2242、2260、2280サイズ対応）に対応したNVMe PIPスロットを搭載。標準でGen 2.0（5 GT/sec）に対応していますが、設定によりGen 3.0（10 GT/sec）での動作も可能です。
 
-    To access the Raspberry Pi's desktop environment, a screen such as a TV or a computer monitor is required.
-    
-* Micro HDMI Cable
+* ディスプレイ  
 
-  The Pironman 5 Mini utilizes all the native ports of the Raspberry Pi 5. Therefore, for the HDMI connection, you will need a Micro HDMI cable to connect the Pironman 5 Mini to a display.
+    Raspberry Piのデスクトップ環境にアクセスするには、テレビまたはモニターなどの画面が必要です。
 
-* Mouse & Keyboard
+* Micro HDMIケーブル  
 
-    Any USB port on the Pironman 5 Mini can be used to connect a wired keyboard and mouse, or a USB Bluetooth receiver for wireless peripherals.
+    Pironman 5 Miniは、Raspberry Pi 5のすべてのネイティブポートを利用します。HDMI接続には、Micro HDMIケーブルを使用してディスプレイと接続する必要があります。
 
-By ensuring you have these components ready, you'll be fully equipped to set up and enjoy your Pironman 5 Mini with your Raspberry Pi 5!
+* マウス＆キーボード  
+
+    有線のUSBマウスとキーボード、またはUSB接続のBluetoothレシーバーを使用して、ワイヤレス周辺機器も利用可能です。
+
+これらのコンポーネントを事前に用意しておくことで、Pironman 5 MiniとRaspberry Pi 5のセットアップをスムーズに始めることができます。

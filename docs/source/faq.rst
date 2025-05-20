@@ -239,7 +239,7 @@ OLEDスクリーンが表示されない、または正しく表示されない�
 
 #. J9上のIOエクスパンダーにある2つのピンは、RGB LEDをGPIO10に接続するために使用されます。これらのピンにジャンパーキャップが正しく取り付けられていることを確認してください。
 
-   .. image:: advanced/img/io_board_rgb_pin.png
+   .. image:: img/io_board_rgb_pin.png
       :width: 300
       :align: center
 
@@ -382,7 +382,7 @@ Raspberry Piに接続する際に、 ``ssh <username>@<hostname>.local`` また�
         State : NotPresent
 
 
-  .. warning ::
+  .. warning::
 
     上記のプロンプトが表示されない場合、Windowsシステムがさらに古いため |link_putty| のようなサードパーティSSHツールのインストールを検討してください。
 

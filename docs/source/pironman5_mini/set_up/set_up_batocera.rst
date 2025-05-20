@@ -1,62 +1,62 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！Raspberry Pi、Arduino、ESP32に情熱を注ぐ仲間たちと一緒に、さらに深く学び、楽しみましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後のトラブルや技術的な課題を、コミュニティおよび当社のサポートチームがサポートします。
+    - **Learn & Share**：ヒントやチュートリアルを共有してスキルアップを目指しましょう。
+    - **Exclusive Previews**：新製品の発表や先行情報をいち早くチェックできます。
+    - **Special Discounts**：最新製品を対象とした会員限定の割引をご利用いただけます。
+    - **Festive Promotions and Giveaways**：季節限定のキャンペーンやプレゼント企画に参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に創造の旅を始めませんか？[|link_sf_facebook|] をクリックして今すぐ参加！
 
 .. _set_up_batocera_mini:
 
-Seting up on Batocera.linux
+Batocera.linux のセットアップ
 =========================================================
 
-If you have installed the Batocera.linux OS, you can remotely log in to this system via SSH and then follow the steps below to complete the configuration.
+Batocera.linux OSをインストール済みの場合は、SSH経由でリモートログインし、以下の手順に従って設定を完了させましょう。
 
-#. Once the system boots up, use ssh to remotely connect to Pironman5. For Windows, you can open **Powershell**, and for Mac OS X and Linux, you can directly open **Terminal**.
+#. システムが起動したら、SSHを使ってPironman 5にリモート接続します。Windowsの場合は **Powershell** を開き、Mac OS XやLinuxでは **ターミナル** を起動してください。
 
    .. image:: img/batocera_powershell.png
       :width: 90%
-      
 
-#. The default hostname for the batocera system is ``batocera``, with the default username as ``root`` and the password as ``linux``. Therefore, you can log in by typing ``ssh root@batocera.local`` and entering the password ``linux``.
+
+#. batoceraシステムのデフォルトホスト名は ``batocera``、ユーザー名は ``root``、パスワードは ``linux`` です。したがって、 ``ssh root@batocera.local`` と入力し、パスワードに ``linux`` を入力することでログインできます。
 
    .. image:: img/batocera_login.png
       :width: 90%
 
-#. Execute the command: ``/etc/init.d/S92switch setup`` to enter the menu settings page.
+#. 次のコマンドを実行して、メニュー設定ページを開きます： ``/etc/init.d/S92switch setup``
 
    .. image:: img/batocera_configure.png  
       :width: 90%
 
-#. Use the down arrow key to navigate to the end, select and activate the **Pironman5** services.
+#. 下矢印キーでメニューの一番下まで移動し、 **Pironman5** のサービスを選択して有効化します。
 
    .. image:: img/batocera_configure_pironman5.png
       :width: 90%
 
-#. After activating the pironman5 service, select **OK**.
+#. pironman5サービスを有効化したら、 **OK** を選択します。
 
    .. image:: img/batocera_configure_pironman5_ok.png
       :width: 90%
 
-#. Execute the command ``reboot`` to restart Pironman5.
+#. ``reboot`` コマンドを実行して、Pironman5 を再起動します。
 
    .. code-block:: shell
 
       reboot
 
-#. Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
-   
-   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
-   
-   .. note::
-    
-     RGB fan won't spin unless the temperature hits 60°C. For different activation temperatures, see :ref:`cc_control_fan_mini`.
+#. 再起動後、自動的に ``pironman5.service`` が起動されます。Pironman 5の主な設定内容は以下の通りです：
 
-Now, you can connect the Pironman 5 to a screen, game controllers, headphones, and more to immerse yourself in your gaming world.
+   * WS2812 RGB LEDが4つ点灯し、青色のブリージングモードになります。
+
+   .. note::
+
+      RGBファンは温度が60°Cに達するまで回転しません。起動温度を変更したい場合は :ref:`cc_control_fan_mini` を参照してください。
+
+これで、Pironman 5にディスプレイ、ゲームコントローラー、ヘッドホンなどを接続し、ゲームの世界を思う存分楽しめます。

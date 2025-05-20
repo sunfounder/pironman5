@@ -1,58 +1,58 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder の Facebook コミュニティ「Raspberry Pi & Arduino & ESP32 愛好者グループ」へようこそ！Raspberry Pi、Arduino、ESP32 に情熱を注ぐ仲間たちとともに、これらのテクノロジーをさらに深く学びましょう。
 
-    **Why Join?**
+    **参加するメリット**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**：購入後のトラブルや技術的な課題を、コミュニティと弊社チームが連携して解決します。
+    - **学びと共有**：ヒントやチュートリアルを交換してスキルを向上。
+    - **新製品の先行プレビュー**：開発中の製品や最新情報をいち早く入手。
+    - **限定割引**：最新製品を対象とした特別割引を利用可能。
+    - **キャンペーン & プレゼント企画**：イベントやプレゼントに参加して楽しみましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に創造と探求の旅を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
-Power Switch Conventor
+電源スイッチ変換モジュール
 ==============================
 
-This is a module that expands the Raspberry Pi 5 power switch to the outside. 
+これは、Raspberry Pi 5 の電源スイッチ機能を外部に拡張するためのモジュールです。
 
 .. image:: img/power_switch_conventor.jpeg
 
-**Adding the Power Button**
+**電源ボタンの追加**
 
-* The Raspberry Pi 5 features a **J2** jumper, situated between the RTC battery connector and the board edge. This breakout enables the addition of a custom power button to the Raspberry Pi 5 by connecting a Normally Open (NO) momentary switch across the two pads. Briefly engaging this switch mimics the onboard power button's functionality.
+* Raspberry Pi 5 には、RTCバッテリーコネクタと基板端の間に **J2** ジャンパーがあり、ここにノーマルオープン（NO）タイプのモーメンタリースイッチを接続することで、外部電源ボタンとして利用できます。短く押すことで、オンボードの電源ボタンと同じ動作をします。
 
    .. image:: img/pi5_j2.jpg
 
-* On the Pironman 5, there's a **Power Switch Converter** that extends the **J2** jumper to an external power button using two Pogo pins.
+* Pironman 5 には、 **Power Switch Converter** が搭載されており、 **J2** の信号を2つのポゴピンを介して外部電源ボタンに拡張します。
 
    .. image:: img/power_switch_convertor.png
 
-* Now, the Raspberry Pi 5 can be powered on and off using the Power Button.
+* これにより、Raspberry Pi 5 を外部の電源ボタンで起動・停止できるようになります。
 
    .. image:: img/pironman_button.JPG
 
-**Power Cycling**
+**電源操作について**
 
-Upon initially powering your Raspberry Pi 5, it will automatically turn on and boot into the operating system without the need to press the button.
+Raspberry Pi 5 に初めて電源を接続した際、自動的に電源が入り、OSが起動します。
 
-If running the Raspberry Pi Desktop, a brief press of the power button initiates a clean shutdown process. A menu will appear, offering options to shutdown, reboot, or logout. Selecting an option or pressing the power button again will start a clean shutdown.
+Raspberry Pi Desktop 環境を使用している場合、電源ボタンを短く押すと、シャットダウンメニューが表示され、シャットダウン、再起動、ログアウトのいずれかを選択できます。再度ボタンを押すことでもシャットダウンが開始されます。
 
 .. image:: img/button_shutdown.png
 
-**Shutdown**
+**シャットダウン**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system without a desktop, press the power button a single time to initiate a shutdown.
-    * To force a hard shutdown, press and hold the power button.
+* Raspberry Pi **Bookworm Desktop** を使用している場合は、電源ボタンをすばやく2回押すとシャットダウンが実行されます。
+* Raspberry Pi **Bookworm Lite** （デスクトップなし）では、ボタンを1回押すことでシャットダウンが開始されます。
+* 強制シャットダウンが必要な場合は、ボタンを長押ししてください。
 
 
-**Power on**
+**起動方法**
 
-    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+* Raspberry Pi がシャットダウン状態で電源が供給されている場合は、ボタンを1回押すことで起動します。
 
 .. note::
 
-    If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
+    システムがシャットダウンボタンをサポートしていない場合でも、ボタンを5秒間長押しすれば強制シャットダウンが可能です。シャットダウン状態からの起動は、ボタンを1回押すことで行えます。
 

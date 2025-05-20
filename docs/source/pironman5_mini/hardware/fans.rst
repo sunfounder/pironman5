@@ -1,70 +1,68 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！ 同じ情熱を持つ仲間たちと一緒に、Raspberry Pi、Arduino、ESP32の世界をさらに深く探求しましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後のトラブルや技術的な問題に対して、コミュニティおよび当社チームがサポートします。
+    - **Learn & Share**：チュートリアルやヒントを共有してスキルを高めましょう。
+    - **Exclusive Previews**：新製品の情報やプレビューをいち早く入手できます。
+    - **Special Discounts**：最新製品の限定割引をご利用いただけます。
+    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定のキャンペーンに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に創造と発見の旅を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
 .. _fan_mini:
 
-Fans
+ファン
 ============
 
-Active Cooler
-----------------
+アクティブクーラー
+-------------------
 
-The Active Cooler on the Pironman 5 Mini is controlled by the Raspberry Pi system.
+Pironman 5 Mini に搭載されたアクティブクーラーは、Raspberry Pi システムによって制御されています。
 
 .. image:: img/active_cooler.png
 
-Regarding cooling solutions for the Raspberry Pi 5, 
-especially under heavy load, the design of the Pironman 5 Mini incorporates a smart cooling system. 
-It features a primary Active Cooler (active cooler) and a supplementary RGB fan. 
-The cooling strategy is closely integrated with the Raspberry Pi 5's thermal management system.
+Raspberry Pi 5 の冷却対策として、特に高負荷時において、Pironman 5 Mini はスマートな冷却システムを採用しています。  
+本体にはメインのアクティブクーラーと補助的なRGBファンが搭載されており、Raspberry Pi 5 の熱管理システムと密接に連携した冷却戦略が組み込まれています。
 
-The Active Cooler's operation is based on the Raspberry Pi 5's temperature:
+アクティブクーラーは、Raspberry Pi 5 の温度に応じて次のように動作します：
 
-* Below 50°C, the Active Cooler remains off (0% speed).
-* At 50°C, the fan starts at a low speed (30% speed).
-* Reaching 60°C, the fan increases to a medium speed (50% speed).
-* At 67.5°C, the fan ramps up to a high speed (70% speed).
-* At 75°C and above, the fan operates at full speed (100% speed).
+* 50°C未満：ファンは停止（速度0%）
+* 50°C：ファンが低速で起動（速度30%）
+* 60°C：中速で動作（速度50%）
+* 67.5°C：高速動作（速度70%）
+* 75°C以上：最大速度で動作（速度100%）
 
-This temperature-to-speed relationship also applies when the temperature decreases, with a 5°C hysteresis. The fan speed reduces when the temperature falls 5°C below each of these thresholds.
+この温度とファン速度の関係は、温度が下がる場合にも適用され、各閾値から5°C下がった時点で次の段階に速度が減少します（ヒステリシス5°C）。
 
-* Commands to monitor the Active Cooler. To check the Active Cooler's status:
+* アクティブクーラーの状態を確認するコマンド：
 
   .. code-block:: shell
   
     cat /sys/class/thermal/cooling_device0/cur_state
 
-* To view the Active Cooler's speed:
+* アクティブクーラーの回転数を確認するコマンド：
 
   .. code-block:: shell
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-In the Pironman 5 Mini, the Active Cooler is a critical component for maintaining optimal operating temperatures, particularly during intensive tasks, ensuring the Raspberry Pi 5 runs efficiently and reliably.
+Pironman 5 Mini において、アクティブクーラーは高負荷時でも安定した動作温度を維持するために不可欠な構成要素であり、Raspberry Pi 5 のパフォーマンスと信頼性を確保します。
 
-RGB Fan
+RGBファン
 -------------------
 
 .. image:: img/size_fan.png
 
-* **Extermal dimension**: 40*40*10MM
-* **Weight**: 13.5±5g/pcs
-* **Life**: 40,000 hours (room temperature 25°C)
-* **Maximum Air Flow**: 2.46CFM
-* **Max.Air Pressure**: 0.62mm-H2O
-* **Accoustic Sound**: 22.31dBA
-* **Rated Input power**: 5V/0.1A
-* **Rated Speed**: 3500±10%RPM
-* **Operating Temperature**: -10℃~+70℃
-* **Storage Temperature**: -30℃~+85℃
+* **外形寸法**：40×40×10mm  
+* **重量**：13.5±5g／個  
+* **寿命**：40,000時間（室温25°Cにて）  
+* **最大風量**：2.46CFM  
+* **最大静圧**：0.62mm-H2O  
+* **動作音**：22.31dBA  
+* **定格入力**：5V／0.1A  
+* **定格回転数**：3500±10%RPM  
+* **動作温度範囲**：-10℃〜+70℃  
+* **保存温度範囲**：-30℃〜+85℃

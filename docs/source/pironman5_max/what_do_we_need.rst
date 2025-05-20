@@ -1,50 +1,50 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！同じ興味を持つ仲間たちと一緒に、Raspberry Pi・Arduino・ESP32の世界をより深く探求しましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後のトラブルや技術的な課題を、コミュニティおよび当社サポートチームがサポートします。
+    - **Learn & Share**：チュートリアルやヒントを共有してスキルを磨きましょう。
+    - **Exclusive Previews**：新製品の発表や先行情報をいち早くキャッチ。
+    - **Special Discounts**：最新製品に関する限定割引をご利用いただけます。
+    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定プロモーションにもご参加いただけます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に創造と探求の旅を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
-1. What Else Should We Prepare?
-===================================
+1. 他に何を準備する必要がありますか？
+======================================
 
-**Essential Components**
+**必須コンポーネント**
 
-* Raspberry Pi 5 
+* Raspberry Pi 5
 
-    The Pironman 5 is fully compatible with the Raspberry Pi 5.
+    Pironman 5 は Raspberry Pi 5 に完全対応しています。
 
-* 5V/5A Power Adapter
+* 5V/5A 電源アダプター
 
-    A 5V/5A power adapter is required to power the Pironman 5 and its components.
+    Pironman 5 およびその各種コンポーネントを動作させるには、5V/5A の電源アダプターが必要です。
 
-* Micro SD Card
- 
-    It is recommended to use an SD card with a minimum of 16GB of storage for Raspberry Pi OS. For Raspberry Pi OS Lite, a minimum of 4GB is advised.
+* Micro SDカード
 
-**Optional Components**
+    Raspberry Pi OS を使用する場合は、16GB以上の容量を持つSDカードの使用を推奨します。Raspberry Pi OS Liteの場合は最低4GB以上が目安です。
+
+**オプションコンポーネント**
 
 * M.2 NVMe SSD
 
-    The Pironman 5 features an NVMe PIP with two M.2 SSD connectors, 
-    accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. 
-    The connection is certified for Gen 2.0 speeds (5 GT/sec).
+    Pironman 5 には NVMe PIP が搭載されており、2つの M.2 SSDスロットを備えています。  
+    対応サイズは 2230、2242、2260、2280 の4種類で、接続は Gen 2.0（5 GT/sec）に対応しています。
 
-* Screen
+* ディスプレイ
 
-    To access the Raspberry Pi's desktop environment, a screen such as a TV or a computer monitor is required.
-    
-* HDMI Cable
+    Raspberry Pi のデスクトップ環境にアクセスするには、テレビやPCモニターなどの画面が必要です。
 
-    The Raspberry Pi 5's HDMI ports have been adapted to standard HDMI Type A interfaces via a USB HDMI adapter. Therefore, a standard HDMI to HDMI cable is needed to connect the Pironman 5 to a display.
+* HDMIケーブル
 
-* Mouse & Keyboard
+    Raspberry Pi 5 のHDMIポートは、USB経由のHDMIアダプターによって標準HDMI Type Aに変換されています。  
+    そのため、Pironman 5 をディスプレイに接続するには、標準のHDMI - HDMIケーブルが必要です。
 
-    Any USB port on the Pironman 5 can be used to connect a wired keyboard and mouse, or a USB Bluetooth receiver for wireless peripherals.
+* マウス＆キーボード
+
+    Pironman 5 のUSBポートに有線マウスやキーボードを接続するか、ワイヤレス機器用のUSB Bluetoothレシーバーを利用できます。

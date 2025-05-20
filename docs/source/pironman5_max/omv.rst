@@ -1,37 +1,37 @@
 .. _max_omv_5_max:
 
 
-(Optional) Setting Up OpenMediaVault
+（オプション）OpenMediaVaultの設定
 =====================================
 
 .. warning::
 
-   OpenMediaVault **does not** support installation on the Raspberry Pi OS desktop.
+   OpenMediaVault は **Raspberry Pi OS デスクトップ版には対応していません**。
 
-   Please make sure you have installed the correct operating system and configured the network.
-   The procedure here is consistent with :ref:`max_install_os_sd_rpi`, but when selecting an image, please choose Raspberry Pi OS Lite from Raspberry Pi OS (other).
+   必ず対応するOSがインストールされており、ネットワーク設定が完了していることを確認してください。
+   本手順は :ref:`max_install_os_sd_rpi` と同様ですが、OSイメージ選択時は Raspberry Pi OS (other) の中から Raspberry Pi OS Lite を選択してください。
 
    .. image:: img/omv/omv-install-1.png
 
-OpenMediaVault (abbreviated as OMV) is an open-source Network Attached Storage (NAS) operating system based on Debian Linux, designed for home users and small office environments, aiming to simplify storage management and provide rich network service features.
+OpenMediaVault（略称：OMV）は、Debian Linuxをベースとしたオープンソースのネットワーク接続ストレージ（NAS）向けOSで、家庭や小規模オフィス向けにストレージ管理の簡素化と豊富なネットワーク機能を提供します。
 
-Please follow these steps to install OpenMediaVault on your Raspberry Pi:
+以下の手順に従って、Raspberry Pi に OpenMediaVault をインストールしてください。
 
-1. Connect to Your Raspberry Pi Using SSH
+1. Raspberry Pi にSSH接続
 -----------------------------------------------------------
 
-   Enter the following command in the terminal:
+   ターミナルに以下のコマンドを入力します：
 
    .. code-block:: bash
 
       ssh pi@raspberrypi.local
 
-   If you are using Windows, use PuTTY or another SSH client to connect to your Raspberry Pi.
+   Windowsをお使いの場合は、PuTTYなどのSSHクライアントを使用してください。
 
-2. Install OpenMediaVault
-----------------------------
+2. OpenMediaVaultのインストール
+----------------------------------
 
-   Enter the following command in the terminal:
+   ターミナルに以下のコマンドを入力します：
 
    .. code-block:: bash
 
@@ -39,232 +39,232 @@ Please follow these steps to install OpenMediaVault on your Raspberry Pi:
       chmod +x install  
       sudo ./install -n
 
-   This will download and run the installation script for OpenMediaVault. Do not restart your Raspberry Pi after installation.
+   このスクリプトがOpenMediaVaultのインストールを行います。インストール完了後は、Raspberry Piを再起動しないでください。
 
-3. Access OpenMediaVault
------------------------------
+3. OpenMediaVaultにアクセス
+------------------------------
 
-   Enter the following URL in your browser to access OpenMediaVault:
+   ブラウザで以下のURLにアクセスしてください：
 
    .. code-block:: bash
 
       http://raspberrypi.local
 
-   .. note:: If you cannot access the above URL, try using the IP address instead, for example, http://192.168.1.100.
+   .. note:: 上記URLでアクセスできない場合は、代わりにIPアドレスを使用してください（例： http://192.168.1.100）。
 
-   You will see a login page, log in using the default username and password. The default username is ``admin``, and the password is ``openmediavault``.
+   ログイン画面が表示されるので、デフォルトのユーザー名とパスワードでログインします。ユーザー名は ``admin`` 、パスワードは ``openmediavault`` です。
 
    .. image:: img/omv/omv-login.png
 
-   After logging in, you will see the main interface of OpenMediaVault.
+   ログイン後、OpenMediaVaultのメイン画面が表示されます。
 
    .. image:: img/omv/omv-main.png
 
-   Now that you have successfully installed and accessed OpenMediaVault, you can start configuring and managing your storage.
+   これでOpenMediaVaultのインストールとアクセスが完了しました。ストレージの設定・管理を開始できます。
 
 
 
-6. Set Up RAID (Optional)
+6. RAIDの設定（オプション）
 ---------------------------------------
 
-   NVMe RAID is a storage solution that combines multiple NVMe Solid State Drives (SSDs) using RAID technology, aimed at maximizing the high-speed performance of the NVMe protocol and the redundancy/performance enhancement features of RAID. Common modes include RAID 0, 1, 5, 10, etc. For dual NVMe SSDs, RAID 0 and RAID 1 are the most commonly used modes.
+   NVMe RAIDは、複数のNVMe SSDをRAID技術で統合し、NVMeの高速性とRAIDの冗長性・性能強化を活かすための構成です。代表的なモードにはRAID 0、1、5、10などがありますが、2基のNVMe SSDを使う場合はRAID 0またはRAID 1が主に使用されます。
 
-   * RAID 0 is a striping technology that divides data into multiple stripes and distributes these stripes across multiple hard drives, thus achieving higher read/write speeds. RAID 0 does not provide redundancy protection, so if any one of the hard drives fails, all data will be lost.
+   * RAID 0 はストライピング技術で、データを複数のストライプに分割して複数のディスクに分散配置し、読み書き速度を向上させます。ただし冗長性はなく、1台でも障害が発生すると全データが失われます。
 
-   * RAID 1 is a mirroring technology that copies data across multiple hard drives, thus providing redundancy protection. The read/write speeds of RAID 1 depend on the speed of a single hard drive, as data needs to be read from multiple hard drives. If any one of the hard drives fails, the others can continue to provide data.
+   * RAID 1 はミラーリング技術で、同じデータを複数のディスクに複製するため、冗長性が確保されます。読み書き速度は単体ディスクに依存しますが、1台故障してもデータを保持できます。
 
-   .. note:: At least mount 2 disks for RAID 0 or RAID 1. In RAID 0, the capacity of the RAID volume will be the sum of the capacities of all disks. In RAID 1,the capacity of the RAID volume will be the same as the capacity of the smallest disk. 
+   .. note:: RAID 0 または RAID 1 を構成するには、最低2台のディスクが必要です。RAID 0では全ディスクの合計容量がRAID容量になりますが、RAID 1では最小のディスク容量がRAID容量になります。
 
-   1. In the ``System`` menu click on the ``Plugins`` option, search for the ``openmediavault-md`` plugin, and install it.
+   1. ``System`` メニューから ``Plugins`` を選択し、 ``openmediavault-md`` プラグインを検索してインストールします。
 
    .. image:: img/omv/omv-raid-1.png
 
-   2. In the ``Storage`` menu click on the ``Disks`` option, erase two SSDs.
+   2. ``Storage`` メニューから ``Disks`` を開き、2台のSSDを消去します。
    
    .. image:: img/omv/omv-raid-2.png
 
-   3. Please note that this action will erase all data on the hard drives, make sure you have backed up all important data.
+   3. この操作によりすべてのデータが削除されますので、事前にバックアップを取ってください。
 
    .. image:: img/omv/omv-raid-3.png
 
-   4. Erase mode select ``QUICK`` is sufficient.
+   4. 消去モードは ``QUICK`` を選択すれば十分です。
 
    .. image:: img/omv/omv-raid-4.png
 
-   5. Enter the ``Multiple Device`` tab, click ``Create``.
+   5. ``Multiple Device`` タブに移動し、 ``Create`` をクリックします。
 
    .. image:: img/omv/omv-raid-5.png
 
-   6. In the Level option, you can choose Stripe (RAID 0) or Mirror (RAID 1). In the Devices option, select the hard drives you just erased. Click ``Save`` and wait for the RAID configuration to complete.
+   6. Levelでは ``Stripe（RAID 0）`` または ``Mirror（RAID 1）`` を選択し、Devicesで消去済みのディスクを指定します。 ``Save`` をクリックし、RAID設定が完了するまで待ちます。
 
    .. image:: img/omv/omv-raid-6.png
 
-   .. note:: If an error report (500 - Internal Server Error) pops up, try restarting the OMV system.
+   .. note:: ``500 - Internal Server Error`` が表示された場合は、OMVシステムを再起動してください。
 
-   7. Apply the configuration by clicking on the ``Apply`` button.
+   7. ``Apply`` ボタンをクリックして設定を適用します。
 
    .. image:: img/omv/omv-raid-7.png
 
-   8. After the RAID configuration is complete, you have to wait the state of the RAID to be ``100%``.
+   8. RAIDの状態が ``100%`` になるまで待機してください。
 
    .. image:: img/omv/omv-raid-8.png
 
-   9. After the RAID configuration is complete, your hard drives are now in a RAID 0 or RAID 1 configuration, and you can use them as a single storage device.
+   9. RAID構成が完了すると、ディスクはRAID 0またはRAID 1として一体化され、単一のストレージとして利用できます。
 
-5. Configure Storage
+5. ストレージの構成
 -----------------------
 
-   In the main interface of OpenMediaVault, click on the ``Storage`` option in the left-side menu. In the ``Storage`` page, click on the ``Disks`` tab. On the ``Disks`` page, you will see all the disks on your Raspberry Pi. Ensure your NVMe PIP has a connected hard drive.
+   OpenMediaVaultのメイン画面で左メニューの ``Storage`` → ``Disks`` を開きます。接続されているすべてのディスクが表示されるので、NVMeストレージが認識されているか確認してください。
 
    .. image:: img/omv/omv-disk.png
 
-   1. In the sidebar, click the ``File System`` option. Then create and mount a file system. Choose ``ext4`` as the file system type.
+   1. 左側のメニューから ``File System`` を選択し、ファイルシステムを作成してマウントします。ファイルシステムの種類は ``ext4`` を選択してください。
 
    .. image:: img/omv/omv-mount.png
 
-   2. Select Device, and save. 
+   2. デバイスを選択し、保存します。
    
-   .. note:: If you have set up the RAID, you will see the RAID device in the list. Just select it and save.
+   .. note:: RAID構成済みの場合は、RAIDデバイスが一覧に表示されるので、それを選択してください。
 
    .. image:: img/omv/omv-mount-2.png
 
-   3. A window will appear, informing you that the file system is being created, please wait a moment.
+   3. ファイルシステム作成中のメッセージが表示されますので、しばらく待ちます。
 
    .. image:: img/omv/omv-mount-3.png
 
-   4. Once done, you will enter the ``Mount`` interface, select the file system you just created, and mount it to your Raspberry Pi.
+   4. 完了後、 ``Mount`` 画面に移動します。作成したファイルシステムを選択し、Raspberry Pi にマウントします。
 
    .. image:: img/omv/omv-mount-4.png
 
-   .. note:: If you are using dual hard drives (and not RAID), you should repeat the above steps to also mount the second hard drive to your Raspberry Pi.
+   .. note:: RAIDを使用せず2台のドライブを接続している場合は、もう1台についても上記の手順を繰り返してください。
 
-   5. After mounting, please Apply, and then you can see the data on your hard drives in the file system.
+   5. マウント完了後、 ``Apply`` をクリックして設定を適用すると、ファイルシステム上にディスクが表示されます。
 
    .. image:: img/omv/omv-mount-5.png
 
-   At this point, you have successfully configured OpenMediaVault and mounted your hard drives. You can now use OpenMediaVault to manage your storage.
+   これでOpenMediaVaultの設定とディスクのマウントが完了しました。以後、ストレージ管理が可能です。
 
 
-6. Create a Shared Folder
+6. 共有フォルダの作成  
 ---------------------------------------
 
-   1. In the ``Storage`` page, go to the ``Shared Folders`` tab. And click the ``Create`` button.
+1. ``Storage`` ページで ``Shared Folders`` タブに移動し、 ``Create`` ボタンをクリックします。
 
    .. image:: img/omv/omv-share-1.png
 
-   2. In the ``Create Shared Folder`` page, enter the name of the shared folder, select the hard drive you want to share, the path of the shared folder, and set the permissions of the shared folder. Then click the ``Save`` button.
+2. ``Create Shared Folder`` ページで、共有フォルダの名前、共有するハードドライブ、フォルダのパス、アクセス権限を入力し、 ``Save`` をクリックします。
 
    .. image:: img/omv/omv-share-2.png
 
-   3. Now you can see the shared folder you just created. Confirm it is correct, then apply.
+3. 作成した共有フォルダが表示されます。内容に問題がなければ ``Apply`` をクリックして反映します。
 
    .. image:: img/omv/omv-share-3.png
 
-   You have now successfully created a shared folder. 
+これで共有フォルダの作成が完了しました。
 
 
-7. Create a New User
+7. 新しいユーザーの作成  
 ---------------------------------------
 
-   To access the folder, we need to create a new user, please follow these steps:
+共有フォルダにアクセスするには、新しいユーザーを作成する必要があります。以下の手順に従ってください。
 
-   1. In the ``User`` page, click the ``Create`` button.
+1. ``User`` ページで ``Create`` ボタンをクリックします。
 
    .. image:: img/omv/omv-user-1.png
 
-   2. In the ``Create User`` page, enter the new user's username and password, then click the ``Save`` button.
+2. ``Create User`` ページで、ユーザー名とパスワードを入力し、 ``Save`` をクリックします。
 
    .. image:: img/omv/omv-user-2.png
 
-   You have now successfully created a new user.
+これで新しいユーザーの作成が完了しました。
 
 
-8. Set Permissions for the New User
+8. 新規ユーザーのアクセス権設定  
 ---------------------------------------
 
-   1. In the ``Shared Folders`` page, click on the shared folder you just created. Then click the ``Permissions`` button.
+1. ``Shared Folders`` ページで先ほど作成した共有フォルダを選択し、 ``Permissions`` をクリックします。
 
    .. image:: img/omv/omv-user-3.png
 
-   2. In the ``Permissions`` page, set the permissions. Then click the ``Save`` button.
+2. ``Permissions`` ページで、権限を設定し、 ``Save`` をクリックします。
 
    .. image:: img/omv/omv-user-4.png
 
-   3. After completing, click the ``Apply`` button.
+3. 最後に ``Apply`` をクリックして設定を反映させます。
 
    .. image:: img/omv/omv-user-5.png
 
-   You can now use this new user to access your shared folder.
+これでこのユーザーで共有フォルダにアクセスできるようになりました。
 
 
-9. Configure the SMB Service
+9. SMBサービスの設定  
 ---------------------------------------
 
-   1. In the ``Services`` page, find the ``SMB/CIFS`` > ``Setting`` tab. And check the ``Enable`` option. Then click the ``Save`` button.
+1. ``Services`` ページで ``SMB/CIFS`` > ``Setting`` タブを開き、 ``Enable`` にチェックを入れて ``Save`` をクリックします。
 
    .. image:: img/omv/omv-smb-1.png
 
-   2. Apply the changes by clicking the ``Apply`` button.
+2. ``Apply`` をクリックして変更を適用します。
 
    .. image:: img/omv/omv-smb-2.png
 
-   3. Enter the ``Shares`` page, click the ``Create`` button.
+3. ``Shares`` ページに移動し、 ``Create`` をクリックします。
 
    .. image:: img/omv/omv-smb-3.png
 
-   4. In the ``Create Share`` page, select the path of the shared folder. Then click the ``Save`` button. Incidentally, there are many options on this page that you can configure as needed.
+4. ``Create Share`` ページで、共有フォルダのパスを選択し、必要に応じて他のオプションも設定したうえで、 ``Save`` をクリックします。
 
    .. image:: img/omv/omv-smb-4.png
 
-   5. Click ``Apply``.
+5. ``Apply`` をクリックして保存します。
 
    .. image:: img/omv/omv-smb-5.png
 
-   You have now successfully configured the SMB service. You can now use the SMB protocol to access your shared folder.
+これでSMBサービスの設定が完了し、SMBプロトコルを使って共有フォルダにアクセスできるようになります。
 
 
-10. Access the Shared Folder on Windows
+10. Windowsから共有フォルダにアクセス  
 ---------------------------------------
 
-   1. Open ``This PC``, then click ``Map network drive``.
+1. ``PC`` を開き、 ``Map network drive`` をクリックします。
 
    .. image:: img/omv/omv-network-location-1.png
 
-   2. In the pop-up dialog box, enter the IP of the Raspberry Pi in the ``Folder`` field, for example, ``\\192.168.1.100\``, or the Raspberry Pi's hostname, for example, ``\\pi.local\``.
+2. ダイアログで、 ``Folder`` 欄に Raspberry Pi のIPアドレス（例： ``\\192.168.1.100\`` ）またはホスト名（例： ``\\pi.local\``）を入力します。
 
    .. image:: img/omv/omv-network-location-2.png
 
-   3. Click the browse button, then select the shared folder you want to access. During this process, you will need to enter the username and password you created earlier.
+3. ``参照`` ボタンをクリックし、アクセスしたい共有フォルダを選択します。このとき、先ほど作成したユーザー名とパスワードの入力が求められます。
 
    .. image:: img/omv/omv-network-location-3.png
 
-   4. Check "Reconnect at sign-in", and click the ``Finish`` button.
+4. 「サインイン時に再接続する」にチェックを入れ、 ``Finish`` をクリックします。
 
    .. image:: img/omv/omv-network-location-4.png
-   
-   5. You can now access the NAS shared folder.
+
+5. これでNASの共有フォルダにアクセスできます。
 
    .. image:: img/omv/omv-network-location-5.png
 
-10. Access the Shared Folder on Mac
+10. Macから共有フォルダにアクセス  
 -------------------------------------
 
-   1. In the ``Go`` menu, click ``Connect to Server``.
+1. ``Go`` メニューから ``Connect to Server`` を選択します。
 
    .. image:: img/omv/omv-mac-1.png
 
-   2. In the pop-up dialog box, enter the IP of the Raspberry Pi, such as ``smb://192.168.1.100``, or the Raspberry Pi's hostname, such as ``smb://pi.local``.
+2. ダイアログに、Raspberry Pi のIP（例： ``smb://192.168.1.100``）またはホスト名（例： ``smb://pi.local``）を入力します。
 
    .. image:: img/omv/omv-mac-2.png
 
-   3. Click the ``Connect`` button.
+3. ``Connect`` をクリックします。
 
    .. image:: img/omv/omv-mac-3.png
 
-   4. In the pop-up dialog box, enter the username and password you created earlier. Click the ``Connect`` button.
+4. ユーザー名とパスワードを入力して ``Connect`` をクリックします。
 
    .. image:: img/omv/omv-mac-4.png
 
-   5. You can now access the NAS shared folder.
+5. これでMacからNAS共有フォルダにアクセスできます。
 
    .. image:: img/omv/omv-mac-5.png

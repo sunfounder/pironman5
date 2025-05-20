@@ -1,32 +1,32 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！ 同じ情熱を持つ仲間たちと一緒に、Raspberry Pi・Arduino・ESP32の世界をさらに深く探求しましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後のトラブルや技術的な課題について、コミュニティおよび当社チームがサポートします。
+    - **Learn & Share**：チュートリアルやヒントを共有し、スキルを向上させましょう。
+    - **Exclusive Previews**：新製品の先行情報やプレビューをいち早く入手できます。
+    - **Special Discounts**：最新製品に対する限定割引を受けられます。
+    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定キャンペーンに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に創造と発見の旅を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
 .. _about_hardware_mini:
 
-6. Hardware Overview
+6. ハードウェア概要
 =========================
 
 .. image:: ../img/pironman5mini.png
     :width: 400
 
 
-This chapter is a detailed description of all the components in Pironman, as well as the associated software configuration.
+この章では、Pironmanに搭載されているすべてのコンポーネントと、それに関連するソフトウェア設定について詳しく解説します。
 
 
 .. toctree::
     :maxdepth: 2
-    
+
     io_board
     fans
     login_rpi/login_rpi

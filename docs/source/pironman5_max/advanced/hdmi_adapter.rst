@@ -1,43 +1,43 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder の Facebook コミュニティ「Raspberry Pi & Arduino & ESP32 愛好者グループ」へようこそ！Raspberry Pi、Arduino、ESP32 の世界を、情熱を分かち合う仲間たちと共にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加するメリット**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**：購入後の課題や技術的な問題を、コミュニティと当社チームが協力してサポートします。
+    - **学びと共有**：ヒントやチュートリアルを交換し、知識とスキルを磨き合いましょう。
+    - **新製品の先行プレビュー**：発売前の新製品情報や内部プレビューをいち早くチェックできます。
+    - **限定割引**：最新製品に適用される会員限定の特別割引をご利用いただけます。
+    - **イベント & プレゼント企画**：季節ごとのキャンペーンやプレゼントに参加してお楽しみいただけます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に、探究と創造の旅を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
-USB HDMI Adapter
+USB HDMIアダプター
 ==========================================
 
 .. image:: img/hdmi_adapter.jpeg
 
-This USB HDMI adapter board is specifically designed for the Raspberry Pi 5. Its primary function is to reposition the USB and HDMI connections to align with the USB interface side of the Raspberry Pi, enhancing accessibility and cable management.
+このUSB HDMIアダプターボードは、Raspberry Pi 5専用に設計されています。主な機能は、USBおよびHDMIの接続端子をRaspberry PiのUSB側に配置し直すことで、ケーブルの取り回しやアクセス性を向上させることです。
 
-Additionally, the HDMI port is converted to a standard HDMI Type A interface, offering broader compatibility.
+さらに、HDMIポートは標準のHDMI Type Aインターフェースに変換されており、より幅広いデバイスとの互換性を実現しています。
 
-**NVMe Additional Power Supply**
+**NVMe用 追加電源供給**
 
-The board features a 5V power header specifically for NVMe PIP power supply. Coupled with an extension header, it can be connected to the NVMe's additional power interface to provide extra power.
+このボードには、NVMe PIP用の5V電源ヘッダーが搭載されています。拡張ヘッダーと組み合わせることで、NVMe側の追加電源端子に接続し、安定した電力供給が可能になります。
 
-**1220RTC Battery Holder**
+**1220RTCバッテリーホルダー**
 
-A 1220RTC battery holder is incorporated for convenient installation of an RTC battery. It connects to the Raspberry Pi's RTC interface via an SH1.0 2P reverse cable. 
+RTCバッテリーの取り付けを容易にするため、1220サイズ対応のバッテリーホルダーを備えています。SH1.0 2P リバースケーブルを使用して、Raspberry PiのRTCインターフェースに接続します。
 
-The battery holder is compatible with both CR1220 and ML1220 batteries. If using an ML1220 (Lithium Manganese Dioxide battery), charging can be configured directly on the Raspberry Pi. Note that the CR1220 is not rechargeable.
+このバッテリーホルダーは、CR1220およびML1220の両バッテリーに対応しています。ML1220（マンガン系リチウム充電池）を使用する場合は、Raspberry Pi側で充電設定を行うことが可能です。ただし、CR1220は充電非対応のため、注意が必要です。
 
-**Enabling Trickle Charging**
+**トリクル充電の有効化**
 
 .. warning::
 
-  If you're using a CR1220 battery, do not enable trickle charging as it can cause irreparable damage to the battery and risk damaging the board.
+  CR1220バッテリーを使用している場合は、トリクル充電を絶対に有効化しないでください。バッテリーの破損や基板への深刻なダメージの原因となります。
 
-By default, the trickle charging feature for the battery is disabled. The ``sysfs`` files indicate the current trickle charging voltage and limits:
+トリクル充電機能はデフォルトで無効になっています。現在の充電電圧や制限値は、以下の ``sysfs`` ファイルから確認できます：
 
 .. code-block:: shell
 
@@ -48,21 +48,21 @@ By default, the trickle charging feature for the battery is disabled. The ``sysf
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-To enable trickle charging, add ``rtc_bbat_vchg`` to ``/boot/firmware/config.txt``:
+トリクル充電を有効にするには、 ``/boot/firmware/config.txt`` に ``rtc_bbat_vchg`` を追記します：
 
-  * Open the ``/boot/firmware/config.txt``.
+  * ``/boot/firmware/config.txt`` を開きます。
   
     .. code-block:: shell
     
       sudo nano /boot/firmware/config.txt
       
-  * Add ``rtc_bbat_vchg`` to ``/boot/firmware/config.txt``.
+  * ``/boot/firmware/config.txt`` に ``rtc_bbat_vchg`` を追加します。
   
     .. code-block:: shell
     
       dtparam=rtc_bbat_vchg=3000000
-  
-After rebooting, the system will display:
+
+再起動後、システムに以下のように表示されます：
 
 .. code-block:: shell
 
@@ -73,5 +73,5 @@ After rebooting, the system will display:
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-This confirms the battery is now under trickle charging. To disable this feature, simply remove the ``dtparam`` line from ``config.txt``.
+この出力が表示されれば、バッテリーに対してトリクル充電が有効になっていることを示します。無効化するには、 ``config.txt`` から ``dtparam`` の行を削除してください。
 

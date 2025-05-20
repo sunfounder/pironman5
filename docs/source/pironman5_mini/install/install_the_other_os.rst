@@ -1,30 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！Raspberry Pi、Arduino、ESP32に関する知識を、同じ情熱を持つ仲間たちと一緒に深めましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後のサポートや技術的な課題を、コミュニティと専門スタッフが一緒に解決します。
+    - **Learn & Share**：チュートリアルやノウハウを共有して、スキルアップを目指しましょう。
+    - **Exclusive Previews**：新製品の先行情報や発表をいち早くチェックできます。
+    - **Special Discounts**：最新製品を対象としたメンバー限定の割引をご利用いただけます。
+    - **Festive Promotions and Giveaways**：季節限定のイベントやプレゼント企画に参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒にものづくりの冒険を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
-Installing Ubuntu, Kali Linux, Homebridge, or Home Assistant
+Ubuntu、Kali Linux、Homebridge、Home Assistantのインストール
 =======================================================================
 
-You can choose the installation method based on whether you have a Micro SD or an NVMe SSD at hand.
+Micro SDカードまたはNVMe SSDのどちらを使用するかによって、インストール方法を選択できます。
 
-**Using a Micro SD Card Only**
+**Micro SDカードのみを使用する場合**
 
-  If you are using a Micro SD card, you can simply follow the first method below.
+  Micro SDカードを使用する場合は、以下の最初の手順に従ってインストールを行ってください。
 
-**Using an M.2 NVMe SSD**
+**M.2 NVMe SSDを使用する場合**
 
-  * If you are using an M.2 NVMe SSD, you will also need an **M.2 NVMe SSD Enclosure Adapter** to connect your SSD to your computer and follow the second method to install the OS.
-  
+  * M.2 NVMe SSDを使用する場合は、 **M.2 NVMe SSDエンクロージャーアダプター** が必要です。このアダプターを使用してSSDをPCに接続し、2番目の手順に従ってOSをインストールしてください。
+
     .. image:: img/m2_nvme_adapter.png
         :width: 300
         :align: center

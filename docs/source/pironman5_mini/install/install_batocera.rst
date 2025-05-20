@@ -1,27 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！Raspberry Pi、Arduino、ESP32に情熱を持つ仲間たちとともに、より深く学び、楽しみましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後のトラブルや技術的な課題を、コミュニティおよび当社サポートチームがしっかりサポートします。
+    - **Learn & Share**：チュートリアルやヒントを交換して、スキルをさらに磨きましょう。
+    - **Exclusive Previews**：新製品の発表や先行情報をいち早くチェックできます。
+    - **Special Discounts**：最新製品を対象に、会員限定の特別割引をご利用いただけます。
+    - **Festive Promotions and Giveaways**：季節限定のキャンペーンや豪華プレゼント企画に参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒にモノづくりと探究の旅を始めませんか？[|link_sf_facebook|] をクリックして今すぐ参加！
 
 .. _install_batocera_mini:
 
-Installing Batocera Linux
+Batocera Linuxのインストール
 ======================================================
 
-|link_batocera| is an open-source and completely free retro-gaming distribution that can be copied to a USB stick or an SD card with the aim of turning any computer/nano computer into a gaming console during a game or permanently.
+|link_batocera| は、あらゆるPCやナノコンピュータを一時的または恒久的にレトロゲームコンソールに変えることを目的とした、完全無料かつオープンソースのレトロゲーム向けLinuxディストリビューションです。USBメモリやSDカードにコピーして使用できます。
 
-You can choose the installation method based on whether you have a Micro SD or an NVMe SSD at hand.
+インストール方法は、お手元にMicro SDカードがあるかNVMe SSDがあるかによって選択できます。
 
-Installing directly onto the NVMe SSD involves an additional step compared to installing on the Micro SD: you must update the Raspberry Pi's bootloader because it defaults to boot from the Micro SD card. Update the bootloader to prioritize booting from the NVMe SSD.
+NVMe SSDへ直接インストールする場合、Micro SDカードへのインストールよりも一手間必要です。それは、Raspberry Piのブートローダーを更新することです。初期状態ではMicro SDからの起動が優先されているため、NVMe SSDを優先起動に設定する必要があります。
 
 .. toctree::
     :maxdepth: 1

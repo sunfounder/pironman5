@@ -1,17 +1,17 @@
-.. _intro_pironman5_mini:
+.. _intro_pironman5_mini: 
 
 Pironman 5 Mini
 =========================================
 
-Thanks for choosing our |link_pironman5_mini|.
+このたびは、|link_pironman5_mini| をお選びいただきありがとうございます。
 
 .. image:: img/pironman5_mini_pic.jpg
     :width: 400
     :align: center
 
-The Pironman 5 Mini is the latest addition to the Pironman Raspberry Pi case series, designed as a compact yet highly functional solution for Raspberry Pi enthusiasts. With a sleek silver aluminum alloy body and transparent acrylic side panels, the Pironman 5 Mini combines style and performance in a small form factor.
+Pironman 5 Miniは、Raspberry Pi用ケース「Pironman」シリーズの最新モデルであり、コンパクトながら高機能を備えた愛好家向けのソリューションです。洗練されたシルバーのアルミ合金製ボディと、透明なアクリル製サイドパネルを組み合わせたデザインで、コンパクトさと高性能を両立しています。
 
-Key features include a dedicated power button, an active cooling system similar to the official Raspberry Pi cooler, an additional RGB fan mounted on the side panel for enhanced airflow, an RTC battery, and vibrant WS2812-5050 RGB LEDs. Its GPIO extender ensures you can easily expand the functionality of your Raspberry Pi. The case also supports NVMe SSDs via a PCIe 2.0 M.2 M key slot (sizes 2230, 2242, 2260, 2280), making it ideal for projects requiring fast and reliable storage.
+主な特長として、専用の電源ボタン、公式のRaspberry Piクーラーに近いアクティブ冷却システム、サイドパネルに取り付けられた追加のRGBファンによる優れた通気性、RTC用バッテリー、そして鮮やかなWS2812-5050 RGB LEDを搭載。また、GPIOエクステンダにより、Raspberry Piの拡張性を保ちながら柔軟に開発が行えます。さらに、PCIe 2.0 M.2 Mキー（2230、2242、2260、2280）スロットを通じてNVMe SSDにも対応し、高速かつ安定したストレージが求められるプロジェクトに最適です。
 
 .. toctree::
     :maxdepth: 1
@@ -27,30 +27,30 @@ Key features include a dedicated power button, an active cooling system similar 
     faq
 
 
-**Parameters**
+**パラメータ**
 
-* Dimension: 67.8x98.6x101.5mm
-* Material
-    * Main Body: Silver Aluminum Alloy
-    * Two Side Panel: Transparent Acrylic
-* Support Platform: Raspberry Pi 5
-* Power Input: USB Type C, 5V/5A
-* Interfaces
-    * Raspberry Pi standard 40-Pin GPIO
-    * Micro SD socket
-    * USB Type C power input
-    * 2 x USB 2.0
-    * 2 x USB 3.0
-    * Gigabit LAN port
-    * 2 x 4Kp60 Micro HDMI Ports
-* 1 x Metal Power Button
-* 1 x RGB Fan (40x40x10mm)
-* 4 x WS2812-5050 RGB LEDs
-* 1 x Activer Cooler
-* 1 x PCIe 2.0 M.2 M key (2230, 2242, 2260, 2280) for NVMe SSD
-* 1 x 1220 Battery for RTC
+* 外形寸法：67.8×98.6×101.5mm
+* 材質：
+    * 本体：シルバー アルミ合金
+    * サイドパネル：透明アクリル（2枚）
+* 対応プラットフォーム：Raspberry Pi 5
+* 電源入力：USB Type-C、5V/5A
+* インターフェース：
+    * Raspberry Pi 標準40ピンGPIO
+    * Micro SDスロット
+    * USB Type-C電源入力
+    * USB 2.0 ×2
+    * USB 3.0 ×2
+    * ギガビットLANポート
+    * 4Kp60対応Micro HDMIポート ×2
+* 金属製電源ボタン ×1
+* RGBファン（40×40×10mm）×1
+* WS2812-5050 RGB LED ×4
+* アクティブクーラー ×1
+* PCIe 2.0 M.2 Mキー（2230、2242、2260、2280対応、NVMe SSD用）×1
+* RTC用1220バッテリー ×1
 
-**Dimensional Drawing**
+**外形図**
 
 .. image:: img/pironman5_mini_dimension.png
     :width: 800

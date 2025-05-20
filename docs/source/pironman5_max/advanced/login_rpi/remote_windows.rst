@@ -1,29 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder の Facebook コミュニティ「Raspberry Pi & Arduino & ESP32 愛好者グループ」へようこそ！Raspberry Pi、Arduino、ESP32 の世界を、熱意ある仲間たちと一緒にさらに深く探求しましょう。
 
-    **Why Join?**
+    **参加するメリット**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**：購入後の問題や技術的な課題を、コミュニティと弊社サポートチームが一緒に解決します。
+    - **学びと共有**：ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **先行プレビュー**：新製品の発表や試作品の情報をいち早く入手できます。
+    - **限定割引**：最新製品を対象にしたメンバー限定の特別割引をご利用いただけます。
+    - **キャンペーン & プレゼント企画**：イベントやプレゼントに参加してお得な体験を！
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に創造と冒険を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
-For Windows Users
+Windows ユーザー向け
 =======================
 
-For Windows 10 or higher users, remote login to a Raspberry Pi can be achieved through the following steps:
+Windows 10 以降をご利用の方は、以下の手順で Raspberry Pi にリモートログインできます：
 
-#. Search for ``powershell`` in your Windows search box. Right-click on ``Windows PowerShell`` and select ``Run as administrator``.
+#. Windows の検索ボックスで ``powershell`` と入力し、 ``Windows PowerShell`` を右クリックして「管理者として実行」を選択します。
 
    .. image:: img/powershell_ssh.png
       :width: 90%
       
 
-#. Determine your Raspberry Pi's IP address by typing ``ping -4 <hostname>.local`` in PowerShell.
+#. PowerShell にて ``ping -4 <hostname>.local`` と入力し、Raspberry Pi の IP アドレスを確認します。
 
    .. code-block::
 
@@ -33,12 +33,12 @@ For Windows 10 or higher users, remote login to a Raspberry Pi can be achieved t
      :width: 90%
       
 
-   The Raspberry Pi's IP address will be displayed once it's connected to the network.
+   Raspberry Pi がネットワークに接続されていれば、IP アドレスが表示されます。
 
-   * If the terminal displays ``Ping request could not find host pi.local. Please check the name and try again.``, verify the hostname you've entered is correct.
-   * If the IP address still isn't retrievable, check your network or WiFi settings on the Raspberry Pi.
+   * ``Ping request could not find host pi.local. Please check the name and try again.`` と表示された場合は、ホスト名が正しく入力されているかを確認してください。
+   * IP アドレスが取得できない場合は、Raspberry Pi 側のネットワークや Wi-Fi 設定を見直してください。
 
-#. Once the IP address is confirmed, log in to your Raspberry Pi using ``ssh <username>@<hostname>.local`` or ``ssh <username>@<IP address>``.
+#. IPアドレスを確認したら、 ``ssh <username>@<hostname>.local`` または ``ssh <username>@<IP address>`` を使用してRaspberry Piにログインします。
 
     .. code-block::
 
@@ -46,9 +46,9 @@ For Windows 10 or higher users, remote login to a Raspberry Pi can be achieved t
 
     .. warning::
 
-        If an error appears stating ``The term 'ssh' is not recognized as the name of a cmdlet...``, your system may not have SSH tools pre-installed. In this case, you need to manually install OpenSSH following :ref:`max_openssh_powershell`, or use a third-party tool like |link_putty|.
+        ``The term 'ssh' is not recognized as the name of a cmdlet...`` というエラーが出た場合、SSH ツールがシステムにインストールされていない可能性があります。その場合は :ref:`max_openssh_powershell` に従って OpenSSH を手動でインストールするか、 |link_putty| のようなサードパーティツールをご利用ください。
 
-#. A security message will appear on your first login. Enter ``yes`` to proceed.
+#. 初回ログイン時にはセキュリティ確認のメッセージが表示されます。 ``yes`` と入力して接続を続行します。
 
     .. code-block::
 
@@ -56,13 +56,13 @@ For Windows 10 or higher users, remote login to a Raspberry Pi can be achieved t
         ED25519 key fingerprint is SHA256:oo7x3ZSgAo032wD1tE8eW0fFM/kmewIvRwkBys6XRwg.
         Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
-#. Enter the password you previously set. Note that the password characters won't be displayed on the screen, which is a standard security feature.
+#. 設定済みのパスワードを入力します。入力中に画面に文字が表示されないのは正常な動作です。
 
     .. note::
-        The absence of visible characters when typing the password is normal. Ensure you input the correct password.
+        パスワード入力時に文字が表示されないのはセキュリティ上の仕様です。正確に入力してください。
 
-#. Once connected, your Raspberry Pi is ready for remote operations.
+#. 接続が完了すれば、Raspberry Pi をリモート操作する準備が整いました。
 
    .. image:: img/sp221221_140628.png
       :width: 90%
-      
+

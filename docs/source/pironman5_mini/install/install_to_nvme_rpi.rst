@@ -1,173 +1,163 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！Raspberry Pi、Arduino、ESP32に情熱を持つ仲間たちとともに、より深く学び、楽しみましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後のトラブルや技術的な課題を、コミュニティおよび当社のサポートチームが支援します。
+    - **Learn & Share**：ヒントやチュートリアルを共有し、スキルを高めましょう。
+    - **Exclusive Previews**：新製品の発表や先行情報をいち早くキャッチ。
+    - **Special Discounts**：最新製品を対象とした限定割引をご提供。
+    - **Festive Promotions and Giveaways**：季節限定のキャンペーンやプレゼント企画に参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒にものづくりの世界を探求しませんか？[|link_sf_facebook|] をクリックして今すぐ参加！
 
 .. _install_to_nvme_rpi_mini:
 
-Installing the OS on an NVMe SSD
+NVMe SSDへのOSインストール
 ===================================
-If you are using an NVMe SSD and have an adapter to connect the NVMe SSD to your computer for system installation, you can use the following tutorial for a quick installation.
 
-**Required Components**
+NVMe SSDを使用していて、システムインストール用にPCへ接続できるアダプターをお持ちの場合は、以下の手順で簡単にインストールできます。
 
-* A Personal Computer
-* A NVMe SSD
-* A NVMe to USB Adapter
-* Micro SD Card and Reader
+**必要な機材**
+
+* パーソナルコンピューター
+* NVMe SSD
+* NVMe to USBアダプター
+* Micro SDカードおよびカードリーダー
 
 .. _update_bootloader_mini:
 
-1. Update the Bootloader
+1. ブートローダーの更新
 --------------------------------
 
-First, you need to update the Raspberry Pi 5 bootloader to boot from NVMe before trying USB and then SD Card.
-
-.. .. raw:: html
-
-..     <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?start=47&end=95&si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+まず、Raspberry Pi 5がUSBやSDカードよりも先にNVMeから起動できるよう、ブートローダーを更新する必要があります。
 
 .. note::
 
-    At this step, it is recommended to use a spare Micro SD card. First, write the bootloader to this Micro SD card and then immediately insert it into the Raspberry Pi to enable booting from an NVMe device.
-    
-    Alternatively, you can write the bootloader directly to your NVMe device first, then insert it into the Raspberry Pi to change its boot method. Afterwards, connect the NVMe SSD to a computer to install the operating system, and once the installation is complete, reinsert it back into the Raspberry Pi.
+    この手順では、予備のMicro SDカードの使用を推奨します。まずこのカードにブートローダーを書き込み、すぐにRaspberry Piへ挿入することで、NVMeデバイスからの起動が有効になります。
 
-#. Insert your spare Micro SD card or NVMe SSD into your computer or laptop using a Reader.
+    あるいは、ブートローダーを最初にNVMeデバイスに書き込み、その後Raspberry Piに接続して起動方法を変更することも可能です。その後、NVMe SSDをパソコンに接続してOSをインストールし、完了後に再びRaspberry Piに装着してください。
 
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+#. 予備のMicro SDカードまたはNVMe SSDをリーダー経由でPCに接続します。
+
+#. |link_rpi_imager| を開き、 **Raspberry Pi Device** をクリックし、ドロップダウンから **Raspberry Pi 5** を選択します。
 
    .. image:: img/os_choose_device_pi5.png
       :width: 90%
 
-#. On the **Operating System** tab, scroll down and select **Misc utility images**.
+#. **Operating System** タブで下にスクロールし、 **Misc utility images** を選択します。
 
    .. image:: img/nvme_misc.png
       :width: 90%
 
-#. Select **Bootloader (Pi 5 family)**.
+#. **Bootloader (Pi 5 family)** を選択します。
 
    .. image:: img/nvme_bootloader.png
       :width: 90%
-      
 
-#. Select **NVMe/USB Boot** to enable Raspberry Pi 5 to boot from NVMe before trying USB and then SD Card.
+#. **NVMe/USB Boot** を選択して、NVMe → USB → SDカードの順に起動されるようにします。
 
    .. image:: img/nvme_nvme_boot.png
       :width: 90%
-      
 
-
-#. In the **Storage** option, select the appropriate storage device for the installation.
+#. **Storage** オプションで、書き込み対象のストレージを選択します。
 
    .. note::
 
-      Ensure you select the correct storage device. To avoid confusion, disconnect any additional storage devices if multiple ones are connected.
+      接続されているストレージが複数ある場合は、誤認防止のため他のストレージを一時的に取り外しておくことをおすすめします。
 
    .. image:: img/os_choose_sd.png
       :width: 90%
-      
 
-#. Now you can click **NEXT**. If the storage device contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+#. **NEXT** をクリックします。ストレージに既存データがある場合は、事前にバックアップを取っておきましょう。不要な場合は **Yes** をクリックして続行します。
 
    .. image:: img/os_continue.png
       :width: 90%
-      
 
-#. Soon, you will be prompted that **NVMe/USB Boot** has been written to your storage device.
+#. 数秒後、**NVMe/USB Boot** が正常に書き込まれたことを知らせるメッセージが表示されます。
 
    .. image:: img/nvme_boot_finish.png
       :width: 90%
-      
 
-#. Now, you can insert your Micro SD card or NVMe SSD into the Raspberry Pi. After powering the Raspberry Pi with a Type C adapter, the bootloader from the Micro SD card or NVMe SSD will be written to the Raspberry Pi's EEPROM.
+
+#. Micro SDカードまたはNVMe SSDをRaspberry Piに挿入し、Type Cアダプターで電源を投入すると、ブートローダーがEEPROMに書き込まれます。
 
 .. note::
 
-    Afterward, the Raspberry Pi will boot from NVMe before trying USB and then the SD Card. 
-    
-    Power off the Raspberry Pi and remove the Micro SD card or NVMe SSD.
+    書き込み後は、Raspberry PiがNVMe → USB → SDカードの順で起動を試みます。
 
+    電源を切り、Micro SDカードまたはNVMe SSDを取り外してください。
 
-2. Install OS to NVMe SSD
+2. NVMe SSDへのOSインストール
 -----------------------------------
 
-Now you can install the operating system on your NVMe SSD.
+次に、NVMe SSDにオペレーティングシステムをインストールします。
 
 
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+#. |link_rpi_imager| を開き、 **Raspberry Pi Device** をクリックして **Raspberry Pi 5** を選択します。
 
    .. image:: img/os_choose_device_pi5.png
       :width: 90%
 
-#. Select **Operating System** and opt for the recommended operating system version.
+#. **Operating System** を選択し、推奨されるOSバージョンを選びます。
 
    .. image:: img/os_choose_os.png
       :width: 90%
-      
 
-#. In the **Storage** option, select the appropriate storage device for the installation.
+
+#. **Storage** オプションで、インストール先のストレージを選択します。
 
    .. image:: img/nvme_ssd_storage.png
       :width: 90%
-      
 
-#. Click **NEXT** and then **EDIT SETTINGS** to tailor your OS settings. 
+
+#. **NEXT** をクリックし、 **EDIT SETTINGS** を選んでOS設定をカスタマイズします。
 
    .. image:: img/os_enter_setting.png
       :width: 90%
-      
 
-   * Define a **hostname** for your Raspberry Pi. The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
-  
+
+   * Raspberry Piの **ホスト名** を設定します。ホスト名はネットワーク上の識別子であり、 ``<hostname>.local`` や ``<hostname>.lan`` でアクセス可能になります。
+
      .. image:: img/os_set_hostname.png
-         
-   * Create a **Username** and **Password** for the Raspberry Pi's administrator account. Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
+
+   * 管理者アカウント用の **ユーザー名** と **パスワード** を作成します。初期状態ではパスワードが設定されていないため、セキュリティ上の理由から必ず設定してください。
 
      .. image:: img/os_set_username.png
-         
-   * Configure the wireless LAN by providing your network's **SSID** and **Password**.
+
+   * 無線LANの設定として、ネットワークの **SSID** と **パスワード** を入力します。
 
      .. note::
 
-       Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
+       ``Wireless LAN country`` には、お住まいの国に対応する2文字の `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ を設定してください。
 
      .. image:: img/os_set_wifi.png
-         
-   * To remotely connect to your Raspberry Pi, enable SSH in the Services tab.
 
-     * For **password authentication**, use the username and password from the General tab.
-     * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
+   * Raspberry Piへのリモート接続を行うには、 **Services** タブでSSHを有効にします。
+
+     * **パスワード認証** の場合は、Generalタブで設定したユーザー名とパスワードを使用します。
+     * 公開鍵認証を使用する場合は、「Allow public-key authentication only」を選びます。RSAキーがあればそれが使用され、なければ「Run SSH-keygen」で新たにキーを生成できます。
 
      .. image:: img/os_enable_ssh.png
-         
-   * The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
+
+   * **Options** メニューでは、書き込み完了時の動作（音を鳴らす、メディアの取り出し、テレメトリの有効化など）を設定できます。
 
      .. image:: img/os_options.png
 
-#. When you've finished entering OS customisation settings, click **Save** to save your customisation. Then, click **Yes** to apply them when writing the image.
+#. OSのカスタマイズ設定が完了したら **Save** をクリックして保存し、 **Yes** をクリックして書き込み時に設定を反映させます。
 
    .. image:: img/os_click_yes.png
       :width: 90%
-      
 
-#. If the NVMe SSD contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+
+#. NVMe SSDに既存のデータがある場合は、事前にバックアップを取りましょう。不要であれば **Yes** をクリックして続行します。
 
    .. image:: img/nvme_erase.png
       :width: 90%
-      
 
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the NVMe SSD!
+
+#. 「Write Successful」のポップアップが表示されたら、イメージの書き込みと検証は正常に完了しています。これでRaspberry PiをNVMe SSDから起動する準備が整いました。
 
    .. image:: img/nvme_install_finish.png
       :width: 90%

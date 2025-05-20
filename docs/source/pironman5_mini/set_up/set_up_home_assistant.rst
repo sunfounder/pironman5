@@ -1,182 +1,182 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ興味を持つ仲間たちと一緒に深く探究しましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後の問題や技術的な課題を、コミュニティやSunFounderチームと一緒に解決できます。
+    - **Learn & Share**：ヒントやチュートリアルを共有し合い、スキルを高めましょう。
+    - **Exclusive Previews**：新製品情報をいち早く入手できます。
+    - **Special Discounts**：最新製品を対象とした特別割引が受けられます。
+    - **Festive Promotions and Giveaways**：季節イベントやプレゼントキャンペーンにも参加可能！
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に創造と探究の旅に出かけましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
 Seting Up on Home Assistant
 ============================================
 
-If you have installed the Home Assistant system, you will need to add the necessary add-ons to Home Assistant and start them to get the Pironman 5 Mini working.
+Home Assistantシステムをインストール済みの場合、必要なアドオンを追加して起動することで、Pironman 5 Miniを使用可能にします。
 
 .. note::
 
-    The following method is only applicable to systems with Home Assistant installed natively. It does not apply to Raspberry Pi systems with Home Assistant installed on top or to Docker versions of Home Assistant.
+    以下の方法は、Home Assistantをネイティブにインストールしたシステムにのみ適用されます。Raspberry Pi上で後からHome Assistantをインストールした場合や、Docker版のHome Assistantには対応していません。
 
-1. Log in to Home Assistant
------------------------------
+1. Home Assistant にログインする
+----------------------------------------
 
-* After starting Pironman 5 Mini, it is recommended to plug in an Ethernet cable directly. This way, you can open your computer browser and enter: ``homeassistant.local:8123`` to access Home Assistant.
+* Pironman 5 Miniを起動後、イーサネットケーブルを直接接続することを推奨します。この方法で、PCのブラウザから ``homeassistant.local:8123`` にアクセスできます。
 
   .. image:: img/home_login.png
    :width: 90%
 
 
-* Select **CREATE MY SMART HOME**, and then create your account.
+* **CREATE MY SMART HOME** を選択し、アカウントを作成します。
 
   .. image:: img/home_account.png
    :width: 90%
 
-* Follow the prompts to choose your location and other configurations. Once completed, you will enter the Home Assistant dashboard.
+* 指示に従って地域やその他の設定を行うと、Home Assistantのダッシュボードにアクセスできます。
 
   .. image:: img/home_dashboard.png
    :width: 90%
 
 
-2. Add the SunFounder Add-ons Repository
+2. SunFounderアドオンリポジトリを追加する
 ----------------------------------------------------
 
-The functionality of Pironman 5 Mini is installed on Home Assistant in the form of add-ons. First, you need to add the **SunFounder** add-ons repository.
+Pironman 5 Miniの機能は、Home Assistant上でアドオンとして提供されています。まずは **SunFounder** のアドオンリポジトリを追加しましょう。
 
-#. Open **Settings** -> **Add-ons**.
+#. **設定** -> **アドオン** を開きます。
 
    .. image:: img/home_setting_addon.png
       :width: 90%
 
-#. Click the plus sign in the bottom right corner to enter the add-on store.
+#. 右下の「＋」アイコンをクリックして、アドオンストアに入ります。
 
    .. image:: img/home_addon.png
       :width: 90%
 
-#. In the add-on store, click the menu in the top right corner and select **Repositories**.
+#. アドオンストアの右上メニューから **Repositories** を選択。
 
    .. image:: img/home_add_res.png
       :width: 90%
 
-#. Enter the **SunFounder** add-ons repository URL: ``https://github.com/sunfounder/home-assistant-addon``, and click **ADD**.
+#. 以下のSunFounderアドオンリポジトリURLを入力し、 **ADD** をクリックします： ``https://github.com/sunfounder/home-assistant-addon``
 
    .. image:: img/home_res_add.png
       :width: 90%
 
-#. After successfully adding, close the pop-up window and refresh the page. Find the SunFounder add-ons list.
+#. 正常に追加できたら、ポップアップを閉じてページを更新し、SunFounderアドオン一覧を確認します。
 
    .. image:: img/home_addon_list.png
          :width: 90%
 
-3. Install the **Pi Config Wizard** Add-on
+3. **Pi Config Wizard** アドオンをインストールする
 ------------------------------------------------------
 
-The **Pi Config Wizard** can help enable the configurations needed for Pironman 5 Mini, such as I2C and SPI. If not needed afterward, it can be removed.
+**Pi Config Wizard** は、I2CやSPIなど、Pironman 5 Miniに必要な設定を有効化するためのアドオンです。設定完了後は削除しても構いません。
 
-#. Find **Pi Config Wizard** in the SunFounder add-ons list and click to enter.
+#. SunFounderアドオン一覧から **Pi Config Wizard** を見つけてクリック。
 
    .. image:: img/home_pi_config.png
       :width: 90%
 
-#. On the **Pi Config Wizard** page, click **INSTALL**. Wait for the installation to complete.
+#. **Pi Config Wizard** ページで **INSTALL** をクリックし、インストール完了まで待ちます。
 
    .. image:: img/home_config_install.png
       :width: 90%
 
-#. After the installation is complete, switch to the **Log** page to confirm if there are any errors.
+#. インストール完了後、 **ログ** ページに切り替えてエラーがないか確認します。
 
    .. image:: img/home_log.png
       :width: 90%
 
-#. If there are no errors, return to the **Info** page and click **START** to start this add-on.
+#. エラーがなければ、 **情報** ページに戻り、 **START** をクリックしてアドオンを起動します。
 
    .. image:: img/home_start.png
       :width: 90%
 
-#. Now open the WEB UI.
+#. 次に、WEB UIを開きます。
 
    .. image:: img/home_open_web_ui.png
       :width: 90%
 
-#. In the Web UI, you will see an option to mount the Boot partition. Click **MOUNT** to mount the partition.
+#. Web UI上でBootパーティションのマウントオプションが表示されるので、 **MOUNT** をクリックしてマウントします。
 
    .. image:: img/home_mount_boot.png
       :width: 90%
 
-#. After successful mounting, you will see options to set I2C, SPI, and edit the config.txt file. Check I2C and SPI to enable them. Once they show as enabled, click the reboot button at the bottom to restart the Raspberry Pi.
+#. マウントに成功すると、I2CやSPIの設定、config.txtの編集などのオプションが表示されます。I2CとSPIをチェックして有効にし、下部の再起動ボタンをクリックしてRaspberry Piを再起動します。
 
    .. image:: img/home_i2c_spi.png
       :width: 90%
 
-#. After the restart, refresh the page. You will return to the mount boot partition page again. Click **MOUNT** again.
+#. 再起動後、ページを更新して再びマウント画面に戻り、再度 **MOUNT** をクリック。
 
    .. image:: img/home_mount_boot.png
       :width: 90%
 
-#. Usually, you will see that SPI is enabled, but I2C is not because I2C requires two reboots. Enable I2C again, then restart the Raspberry Pi.
+#. 通常、SPIは有効化されますが、I2Cは2回の再起動が必要です。もう一度I2Cを有効にして、再度再起動します。
 
    .. image:: img/home_enable_i2c.png
       :width: 90%
 
-#. After the reboot, return to the **MOUNT** page again. You will see that both I2C and SPI are enabled.
+#. 再起動後、再び **MOUNT** ページに戻ると、I2CとSPIの両方が有効化されていることが確認できます。
 
    .. image:: img/home_i2c_spi_enable.png
       :width: 90%
 
 .. note::
 
-    * If after refreshing the page, you do not enter the mount partition page, you can click **Settings** -> **Add-ons** -> **Pi Config Wizard** again.
-    * Check if this add-on is started. If not, click **START**.
-    * After starting, click **OPEN WEB UI**, then click **MOUNT** to confirm if I2C and SPI are enabled.
+    * ページ更新後にマウント画面が表示されない場合は、 **設定** -> **アドオン** -> **Pi Config Wizard** を開き直してください。
+    * アドオンが起動しているか確認し、起動していなければ **START** をクリックしてください。
+    * 起動後、 **OPEN WEB UI** をクリックし、 **MOUNT** を押してI2CおよびSPIの状態を確認してください。
 
 
 
 .. .. 这里要改PIRONMAN5 MINI的ADD ON 图
 
 
-4. Install the **Pironman 5 Mini** Add-on
----------------------------------------------
+4. **Pironman 5 Mini** アドオンをインストールする
+---------------------------------------------------
 
-Now officially start installing the **Pironman 5 Mini** add-on.
+いよいよ、 **Pironman 5 Mini** アドオンのインストールを開始します。
 
-#. Open **Settings** -> **Add-ons**.
+#. **設定** -> **アドオン** を開きます。
 
    .. image:: img/home_setting_addon.png
       :width: 90%
 
-#. Click the plus sign in the bottom right corner to enter the add-on store.
+#. 右下の「＋」をクリックしてアドオンストアに入ります。
 
    .. image:: img/home_addon.png
       :width: 90%
 
-#. Find **Pironman 5 Mini** in the **SunFounder** add-ons list and click to enter.
+#. **SunFounder** アドオン一覧から **Pironman 5 Mini** を見つけてクリック。
 
    .. image:: img/home_pironman5_addon.png
       :width: 90%
 
-#. Now install the Pironman 5 add-on.
+#. Pironman 5アドオンをインストールします。
 
    .. image:: img/home_install_pironman5.png
       :width: 90%
 
-#. After installation is complete, click **START** to start this add-on. You will see Four WS2812 RGB LEDs will light up in blue with a breathing mode.
+#. インストール完了後、 **START** をクリックして起動します。4つのWS2812 RGB LEDが青色でブリージングモードになります。
 
    .. image:: img/home_start_pironman5.png
       :width: 90%
 
-#. Now you can click **OPEN WEB UI** to open the Pironman 5 Mini web page. You can also check the option to display the Web UI in the sidebar. This will allow you to see the Pironman 5 Mini option in the left sidebar of Home Assistant, and click to open the Pironman 5 Mini page.
+#. 次に **OPEN WEB UI** をクリックして、Pironman 5 MiniのWebページを開きます。サイドバー表示のオプションにもチェックを入れると、Home Assistantの左サイドバーにPironman 5 Miniの項目が表示され、すぐにアクセス可能になります。
 
    .. image:: img/home_web_ui.png
       :width: 90%
 
-#. Now you can see the information about your Raspberry Pi, configure the RGB, and control the fan, etc.
+#. Web UIでは、Raspberry Piの情報を確認したり、RGBの設定やファンの制御などが可能です。
 
    .. image:: img/home_web.png
       :width: 90%
 
 .. note::
 
-    For more information and usage of this Pironman 5 Mini web page, please refer to: :ref:`view_control_dashboard_mini`.
+    Pironman 5 MiniのWebページに関する詳細な使用方法については、:ref:`view_control_dashboard_mini` を参照してください。

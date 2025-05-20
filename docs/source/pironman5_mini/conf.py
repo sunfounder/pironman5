@@ -134,14 +134,13 @@ rst_epilog += """
 
     <a href="https://batocera.org/" target="_blank">Batocera.linux</a>
 
-
 .. |link_batocera_download| raw:: html
 
     <a href="https://batocera.org/download" target="_blank">Batocera.linux download</a>
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">ここ</a>
 
 .. |link_kodi| raw:: html
 

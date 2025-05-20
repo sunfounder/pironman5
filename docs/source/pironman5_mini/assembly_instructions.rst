@@ -1,33 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の世界を、同じ情熱を持つ仲間たちと一緒にさらに深く探究しましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後のトラブルや技術的な課題も、コミュニティとSunFounderチームがしっかりサポート。
+    - **Learn & Share**：ヒントやチュートリアルを共有して、知識とスキルを高めましょう。
+    - **Exclusive Previews**：新製品のアナウンスや先行情報をいち早く入手できます。
+    - **Special Discounts**：最新製品の限定割引をご利用いただけます。
+    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定キャンペーンに参加可能！
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に創造と探究の旅を始めましょう！[|link_sf_facebook|] をクリックして、今すぐ参加！
 
 .. _assembly_instructions_mini:
 
-2. Assembly Instructions
+2. 組み立て手順
 =============================================
 
 
-Before assembling the Pironman, please first verify that all parts and components have been included. If there are any missing or damaged components, please contact SunFounder immediately at service@sunfounder.com to resolve the issue as soon as possible.
+Pironmanを組み立てる前に、すべての部品とコンポーネントが揃っていることを必ずご確認ください。万が一、部品が不足している、または破損している場合は、できるだけ早くSunFounder（service@sunfounder.com）までご連絡ください。
 
 **Tips**
 
-* It is recommended to follow the paper installation instructions step by step.
-* Before installation, sort and stack the components to find them more quickly.
-* Repeatedly check the connections of FFC and FPC cables to avoid poor contact.
+* 紙のマニュアルに沿って、手順を一つずつ丁寧に進めることをおすすめします。
+* インストール前に部品を種類ごとに分類・整理しておくと、作業がスムーズです。
+* FFCおよびFPCケーブルの接続部分は接触不良が起こりやすいため、念入りに確認しましょう。
 
 
-* :download:`[PDF]Component List and Assembly of Pironman 5 Mini <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/Z0315V10-A0001256-Pironman5-Mini.pdf>`
+* :download:`[PDF]Pironman 5 Miniの部品一覧と組み立て手順 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/Z0315V10-A0001256-Pironman5-Mini.pdf>`
 
 
 

@@ -1,110 +1,111 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32愛好者向けFacebookコミュニティへようこそ！
+    このコミュニティでは、Raspberry Pi、Arduino、ESP32についてさらに深く学び、同じ興味を持つ仲間と交流できます。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: ご購入後の問題や技術的なトラブルに対し、コミュニティメンバーやスタッフがサポートします。
+    - **Learn & Share**: ノウハウやチュートリアルを共有し、スキルを向上させましょう。
+    - **Exclusive Previews**: 新製品情報を先行して入手できます。
+    - **Special Discounts**: 会員限定の割引価格で最新商品を購入できます。
+    - **Festive Promotions and Giveaways**: プレゼント企画や季節限定のキャンペーンに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に学び、創造する準備はできましたか？[|link_sf_facebook|] をクリックして今すぐ参加！
 
 .. _max_install_to_sd_home_bridge:
 
-Installing the OS on a Micro SD Card
+Micro SDカードへのOSインストール
 =============================================
 
-If you are using a Micro SD card, you can follow the tutorial below to install the system onto your Micro SD card.
+Micro SDカードを使用する場合は、以下の手順に従ってシステムをインストールしてください。
 
 
-**Required Components**
+**必要なもの**
 
-* A Personal Computer
-* A Micro SD card and Reader
+* パーソナルコンピュータ
+* Micro SDカードとカードリーダー
 
-**Steps**
+**手順**
 
-#. Insert your SD card into your computer or laptop using a Reader.
+#. SDカードをカードリーダーに挿入し、パソコンまたはノートPCに接続します。
 
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+#. |link_rpi_imager| を起動し、 **Raspberry Pi Device** をクリックして **Raspberry Pi 5** を選択します。
 
    .. image:: img/os_choose_device_pi5.png
       :width: 90%
-      
 
-#. Click on the **Operating System** tab.
+
+#. **Operating System** タブをクリックします。
 
    .. image:: img/os_choose_os.png
       :width: 90%
 
-#. Scroll down to the bottom of the page and select the your operating system.
+#. ページ最下部までスクロールして、お使いのオペレーティングシステムを選択します。
 
    .. note::
 
-      * For **Ubuntu** system, you need to click **Other general-purpose OS** -> **Ubuntu**, and select either **Ubuntu Desktop 24.04 LTS (64 bit)** or **Ubuntu Server 24.04 LTS (64 bit)**.
-      * For **Kali Linux**, **Home Assistant** and **Homebridge** systems, you need to click **Other specific-purpose OS** and then select the corresponding system.
+      * **Ubuntu** を使用する場合は、 **Other general-purpose OS** → **Ubuntu** をクリックし、 **Ubuntu Desktop 24.04 LTS（64bit）** または **Ubuntu Server 24.04 LTS（64bit）** を選択します。
+      * **Kali Linux**、 **Home Assistant**、 **Homebridge** の場合は、 **Other specific-purpose OS** をクリックし、それぞれのシステムを選択します。
 
    .. image:: img/os_other_os.png
       :width: 90%
 
-#. In the **Storage** option, select the appropriate storage device for the installation.
+#. **Storage** オプションで、インストール先のストレージデバイスを選択します。
 
    .. image:: img/nvme_ssd_storage.png
       :width: 90%
-      
 
-#. Click **NEXT**.
+
+#. **NEXT** をクリックします。
 
    .. note::
 
-      * For systems that cannot be configured in advance, after clicking **NEXT**, you will be prompted whether to save the data within the device. If you have confirmed that a backup has been made, select **Yes**.
+      * 事前設定できないシステムでは、 **NEXT** の後にストレージ内データの保存確認が表示されます。バックアップを確認済みであれば **Yes** を選択してください。
 
-      * For systems where the Hostname, WiFi, and Enable SSH can be configured in advance, a pop-up will appear prompting whether to apply the OS's custom settings. You can choose **Yes** or **No**, or go back to edit further.
+      * ホスト名、WiFi、SSHの有効化など事前設定可能なシステムでは、カスタム設定の適用を尋ねるポップアップが表示されます。 **Yes** または **No** を選ぶか、戻って編集できます。
 
    .. image:: img/os_enter_setting.png
       :width: 90%
-      
 
-   * Define a **hostname** for your Raspberry Pi. The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
 
-     .. image:: img/os_set_hostname.png  
+   * **hostname** （ホスト名）を定義します。これはRaspberry Piのネットワーク識別名です。 ``<hostname>.local`` や ``<hostname>.lan`` でアクセスできます。
 
-   * Create a **Username** and **Password** for the Raspberry Pi's administrator account. Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
+     .. image:: img/os_set_hostname.png
+
+   * 管理者アカウント用の **Username**（ユーザー名）と **Password** （パスワード）を作成します。Raspberry Piには初期パスワードが存在しないため、セキュリティのために必須です。
 
      .. image:: img/os_set_username.png
-         
-   * Configure the wireless LAN by providing your network's **SSID** and **Password**.
+
+   * ワイヤレスLANの **SSID** と **Password** を入力して設定します。
 
      .. note::
 
-       Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
+       ``Wireless LAN country`` には、ご自身の国に対応する2文字の `ISO/IEC alpha2コード <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ を設定してください。
 
      .. image:: img/os_set_wifi.png
-         
-   * To remotely connect to your Raspberry Pi, enable SSH in the Services tab.
 
-     * For **password authentication**, use the username and password from the General tab.
-     * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
+   * Raspberry Piへリモート接続するために、 **Services** タブでSSHを有効化します。
+
+     * **パスワード認証** を使用する場合は、 **General** タブで設定したユーザー名とパスワードを使用してください。
+     * **公開鍵認証** を使用する場合は、「Allow public-key authentication only」を選択します。RSAキーが存在する場合はそれが使用され、ない場合は「Run SSH-keygen」でキーを生成できます。
 
      .. image:: img/os_enable_ssh.png
-         
-   * The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
+
+   * **Options** メニューでは、書き込み時の動作（終了時の音、メディアの取り出し、テレメトリの有効化など）を設定できます。
 
      .. image:: img/os_options.png
-           
-#. When you've finished entering OS customisation settings, click **Save** to save your customisation. Then, click **Yes** to apply them when writing the image.
+
+#. カスタマイズ設定の入力が完了したら、 **Save** をクリックして保存し、次に **Yes** をクリックして書き込みに設定を適用します。
 
    .. image:: img/os_click_yes.png
       :width: 90%
-      
 
-#. If the SD card contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+
+#. SDカードに既存のデータがある場合は、データ損失を避けるためにバックアップを取ってください。バックアップが不要な場合は **Yes** をクリックして続行します。
 
    .. image:: img/os_continue.png
       :width: 90%
-      
 
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the Micro SD Card!
+
+#. 「Write Successful」というポップアップが表示されたら、OSの書き込みと検証が完了です。これで、Raspberry PiをMicro SDカードから起動する準備が整いました！

@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！ 同じ情熱を持つ仲間たちと一緒に、Raspberry Pi・Arduino・ESP32の世界をさらに深く探求しましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後の問題や技術的な課題を、コミュニティと当社のチームがサポートします。
+    - **Learn & Share**：チュートリアルやヒントを共有してスキルを高めましょう。
+    - **Exclusive Previews**：新製品の発表や先行情報をいち早く入手できます。
+    - **Special Discounts**：最新製品に限定割引でアクセスできます。
+    - **Festive Promotions and Giveaways**：プレゼントキャンペーンやシーズンイベントに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 創造と発見の旅に出かけませんか？[|link_sf_facebook|] をクリックして今すぐ参加！
 
 Pironman 5 Mini HAT
 ===========================================
@@ -18,66 +18,66 @@ Pironman 5 Mini HAT
 
 .. image:: img/pironman5mini_hat.png
 
-RGB LEDs
+RGB LED
 ------------
 
 .. image:: img/io_board_rgb.png
 
-The board features 4 WS2812 RGB LEDs, 
-offering customizable control. 
-Users can turn them on or off, change the color, 
-adjust the brightness, switch display modes, and set the speed of changes.
+このボードには、制御可能なWS2812 RGB LEDが4個搭載されています。  
+オン／オフの切り替え、色変更、輝度調整、表示モードの切り替え、点灯速度の調整が可能です。
 
-* To modify the on and off state of the RGB LEDs, ``true`` to turn on the RGB LEDs, ``false`` to turn them off.
+* RGB LEDのオン／オフを切り替えるには、 ``true`` でオン、 ``false`` でオフに設定します。
+
 
 .. code-block:: shell
 
   pironman5 -re true
 
-* To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
+* 色を変更するには、例： ``fe1a1a`` のような16進カラーコードを入力します。
 
 .. code-block:: shell
 
   pironman5 -rc fe1a1a
 
-* To change the brightness of the RGB LED (range: 0 ~ 100%):
+* 輝度を変更（0〜100％）するには：
 
 .. code-block:: shell
 
   pironman5 -rb 100
 
-* To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
+* 表示モードを変更するには、以下から選択します： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``
 
 .. note::
 
-  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``pironman5 -rc``.
+  表示モードを ``rainbow``、 ``rainbow_reverse``、または ``hue_cycle`` に設定すると、 ``pironman5 -rc`` による色指定は無効になります。
 
 .. code-block:: shell
 
   pironman5 -rs breathing
 
-* To modify the speed of change (range: 0 ~ 100%):
+* 点灯速度の調整（0〜100％）：
 
 .. code-block:: shell
 
   pironman5 -rp 80
 
-RGB Control Pin
+RGB制御ピン
 -------------------------
 
-The RGB LED is driven by SPI and connected to **GPIO10**, which is also the SPI MOSI pin. 
-The two pins are used to connect the RGB to GPIO10. If not needed, the jumper can be removed.
+RGB LEDはSPI接続で動作し、 **GPIO10** （SPI MOSIピン）に接続されています。  
+ジャンパーを介してGPIO10に接続されており、必要なければジャンパーを取り外すことでピンを解放できます。
 
- .. image:: img/io_board_rgb_pin.png
+.. image:: img/io_board_rgb_pin.png
 
-RGB OUT Pins
+RGB OUTピン
 -------------------------
 
- .. image:: img/io_board_rgb_out.png
+.. image:: img/io_board_rgb_out.png
 
-The WS2812 RGB LEDs support serial connection, allowing for the attachment of an external RGB LED strip. Connect the **SIG** pin to the external strip's **DIN** pin for expansion.
+WS2812 RGB LEDは直列接続に対応しており、外部のRGB LEDテープを追加可能です。  
+**SIG** ピンを外部テープの **DIN** ピンに接続してください。
 
-The default setup includes 4 RGB LEDs. Connect additional LEDs and update the count using:
+デフォルトでは4個のRGB LEDが設定されています。LEDを追加する場合は以下のように数を更新します：
 
 .. code-block:: shell
 
@@ -85,151 +85,163 @@ The default setup includes 4 RGB LEDs. Connect additional LEDs and update the co
 
 
 
-RGB Fan Pins
+RGBファンピン
 ---------------
 
-The IO expansion board supports to a 5V non-PWM fan. 
+I/O拡張ボードは5Vの非PWMファンに対応しています。  
+ファンの電源線はFANポートに接続してください。
 
-You need to connect the fan's wire to FAN port.
 
- .. image:: img/io_board_fan.png
+.. image:: img/io_board_fan.png
 
-The two sets of pins below J9 are the enable pins for the fan and its RGB. By default, jumpers are inserted on these pins, allowing GPIO6 and GPIO5 to control the on and off states of the fan and its LED. If the fan and LED are not required to be operated, the corresponding jumpers can be removed to release GPIO6 or GPIO5.
+J9の下にある2組のピンは、ファンおよびそのRGBの制御用です。  
+デフォルトではジャンパーが挿入されており、GPIO6とGPIO5でファンとLEDのON/OFFが制御されます。  
+制御を不要とする場合、ジャンパーを外すことでGPIOピンを解放可能です。
 
- .. image:: img/io_board_fan_j9.png
+.. image:: img/io_board_fan_j9.png
 
-You can use command to configure the operating mode of the RGB fan. These modes determine the conditions under which the RGB fan will activate.
+RGBファンの動作モードを設定するには以下のコマンドを使用します。  
+モードに応じて、ファンが動作を開始する温度が変わります。
 
-  For instance, if set to **1: Performance** mode, the RGB fan will activate at 50°C.
+例： **1: Performance** モードでは、50°Cでファンが動作開始します。
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    pironman5 -gm 3
+  pironman5 -gm 3
 
-  * **4: Quiet**: The RGB fan will activate at 70°C.
-  * **3: Balanced**: The RGB fan will activate at 67.5°C.
-  * **2: Cool**: The RGB fan will activate at 60°C.
-  * **1: Performance**: The RGB fan will activate at 50°C.
-  * **0: Always On**: The RGB fan will always on.
+* **4: Quiet**：70°Cで動作開始  
+* **3: Balanced**：67.5°Cで動作開始  
+* **2: Cool**：60°Cで動作開始  
+* **1: Performance**：50°Cで動作開始  
+* **0: Always On**：常時ON
 
-If you connect the control pin of the RGB fan to different pins on the Raspberry Pi, you can use the following command to change the pin number.
+他のGPIOピンに接続する場合は以下でピン番号を変更可能です：
 
 .. code-block:: shell
 
   sudo pironman5 -gp 18
 
 
-Power Switch Conventor
+電源スイッチ変換器
 --------------------------------------
 
-**Adding the Power Button**
+**電源ボタンの追加について**
 
-* The Raspberry Pi 5 features a **J2** jumper, situated between the RTC battery connector and the board edge. This breakout enables the addition of a custom power button to the Raspberry Pi 5 by connecting a Normally Open (NO) momentary switch across the two pads. Briefly engaging this switch mimics the onboard power button's functionality.
+* Raspberry Pi 5には、 **J2** ジャンパーがRTCバッテリ端子と基板端の間にあります。  
+  ここに通常開(N.O.)のモーメンタリスイッチを接続することで、電源ボタンとして機能させることができます。
 
   .. image:: img/pi5_j2.jpg
 
-* The Pironman 5 Mini extends the **J2** jumper to an external power button using two Pogo pins.
+* Pironman 5 Miniは、 **J2** を2つのポゴピンで外部電源ボタンに延長しています。
 
-  .. image:: img/power_switch_j2.jpeg
+  .. image:: img/power_switch_j2.jpeg  
 
   .. image:: img/power_switch_j2_2.jpeg
 
-* Now, the Raspberry Pi 5 can be powered on and off using the Power Button.
+* これにより、Raspberry Pi 5は電源ボタンでオン／オフが可能になります。
 
   .. image:: img/pironman_button.JPG
 
-**Power Cycling**
+**電源操作について**
 
-Upon initially powering your Raspberry Pi 5, it will automatically turn on and boot into the operating system without the need to press the button.
+初回起動時は自動的にOSが起動します。
 
-If running the Raspberry Pi Desktop, a brief press of the power button initiates a clean shutdown process. A menu will appear, offering options to shutdown, reboot, or logout. Selecting an option or pressing the power button again will start a clean shutdown.
+Raspberry Pi Desktopを使用している場合は、ボタンを短く1回押すとシャットダウンメニューが表示されます。  
+再度押すことで安全なシャットダウンが開始されます。
 
 .. image:: img/button_shutdown.png
 
-**Shutdown**
+**シャットダウン**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system without a desktop, press the power button a single time to initiate a shutdown.
-    * To force a hard shutdown, press and hold the power button.
+* Raspberry Pi **Bookworm Desktop** ：電源ボタンをすばやく2回押す  
+* Raspberry Pi **Bookworm Lite** （CLI）：電源ボタンを1回押す  
+* 強制シャットダウン：電源ボタンを長押し
 
 
-**Power on**
+**起動**
 
-    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+* 電源が供給された状態で停止している場合、ボタンを1回押すと起動します。
 
 .. note::
 
-    If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
+    シャットダウンボタン非対応のシステムでは、5秒以上長押しで強制シャットダウンが可能です。その後1回押すと起動します。
 
 
 
 
-NVMe Module
+NVMeモジュール
 -------------------------------------------
 
 
-Pironman 5 mini integrates a PCIe adapter module for NVMe SSD. It supports four different sizes of NVMe SSDs: 2230, 2242, 2260, and 2280, all fitting into an M.2 M key slot.
+Pironman 5 MiniはNVMe SSD用のPCIeアダプタモジュールを内蔵しています。  
+2230、2242、2260、2280サイズのNVMe M.2 SSD（Mキー）に対応しています。
 
 .. image:: img/nvme_p.png
 
 
-* **STA**: A Status LED indicator.
-* **PWR**: A Power LED indicator.
+* **STA**：ステータスLED  
+* **PWR**：電源LED  
 
   .. image:: img/nvme_led.png
 
-* The module connects through a 16P 0.5mm reverse FFC (Flexible Flat Cable) or a custom impedance-matched FPC (Flexible Printed Circuit) cable.
+* 16ピン 0.5mm ピッチのリバースFFCまたはインピーダンス調整済みFPCケーブルで接続します。
 
   .. image:: img/nvme_pcie.png
 
-* **FORCE ENABLE**: The onboard power supply is activated by the switch signal from the PCIe interface. After the Raspberry Pi is powered on, it sends a signal to turn on the 3.3V power supply. If some systems do not support the switch signal or for other reasons, you can short-circuit J2 FORCE ENABLE by soldering a wire between the two floating pads to force the onboard 3.3V power supply to power the NVMe.
+* **FORCE ENABLE**：一部システムでスイッチ信号が使用できない場合、J2の2つのパッドをショートして3.3V電源を強制的にオンにできます。
 
   .. image:: img/nvme_j2.png
 
-**About the Model**
 
-M.2 SSDs, known for their compact size, come in various types mainly differentiated by their keying (notch design on the connector) and the interface they use. Here are the primary types:
+**モデルについて**
 
-* **M.2 SATA SSDs**: These use the SATA interface, similar to 2.5-inch SATA SSDs but in the smaller M.2 form factor. They are limited by the SATA III maximum speeds of around 600 MB/s. These SSDs are compatible with M.2 slots keyed for B and M keys.
-* **M.2 NVMe SSDs**: These SSDs use the NVMe protocol over PCIe lanes and are significantly faster than M.2 SATA SSDs. They are suitable for applications requiring high read/write speeds like gaming, video editing, and data-intensive tasks. These SSDs typically require M-keyed slots. These drives utilize the PCIe (Peripheral Component Interconnect Express) interface, with different versions like 3.0, 4.0, and 5.0. Each new version of PCIe effectively doubles the data transfer speed of its predecessor. However, the Raspberry Pi 5 uses a PCIe 3.0 interface, capable of delivering transfer speeds up to 3,500 MB/s. 
+M.2 SSDには接続方式とキーデザインによりいくつかのタイプがあります：
 
-M.2 SSDs come in three key types: B key, M key, and B+M key. However, later on, the B+M key was introduced, combining the functionalities of the B key and M key. As a result, it replaced the standalone B key. Please refer to the image below.
+
+* **M.2 SATA SSD**：SATAインターフェース。通常BキーまたはB+Mキー。
+* **M.2 NVMe SSD**：PCIe接続、Mキーが主流。高速転送が可能。
+
+Raspberry Pi 5はPCIe 3.0 x1レーンを搭載しており、最大3,500MB/sの転送速度に対応します。
+
+キーデザインは以下の通りです：
 
 .. image:: img/ssd_key.png
 
-
-In general, M.2 SATA SSDs are B+M-keyed (can fit in sockets for B-keyed and M-keyed modules), while M.2 NVMe SSDs for PCIe 3.0 x4 lane are M-keyed.
+NVMe SSDはMキー、またはB+Mキーに対応しており、以下のようなバリエーションがあります：
 
 .. image:: img/ssd_model2.png
 
-**About the Length**
+**長さについて**
 
-M.2 modules come in different sizes and can also be utilized for Wi-Fi, WWAN, Bluetooth, GPS, and NFC.
+Pironman 5は、2230／2242／2260／2280の4種類のM.2 SSDサイズに対応しています（PCIe Gen 2.0／Gen 3.0）
 
-Pironman 5 supports four (PCIe Gen 2.0 / PCIe Gen 3.0) NVMe M.2 SSD sizes based on their names: 2230, 2242, 2260, and 2280. The "22" is the width in millimeters (mm), and the two following numbers are the length. The longer the drive, the more NAND flash chips can be mounted; therefore, the more capacity.
-
+「22」は幅（mm）、「30」「42」などは長さ（mm）です。
 
 .. image:: img/m2_ssd_size.png
   :width: 600
 
 
-1220RTC Battery Holder
+1220RTCバッテリホルダー
 ---------------------------------
 
 .. image:: img/battery_holder.png
 
 
-A 1220RTC battery holder is incorporated for convenient installation of an RTC battery. It connects to the Raspberry Pi's RTC interface via an SH1.0 2P reverse cable. 
+RTCバッテリー用の1220ホルダーが搭載されています。  
+SH1.0 2PリバースケーブルでRaspberry PiのRTCインターフェースと接続します。
 
-The battery holder is compatible with both CR1220 and ML1220 batteries. If using an ML1220 (Lithium Manganese Dioxide battery), charging can be configured directly on the Raspberry Pi. Note that the CR1220 is not rechargeable.
+CR1220とML1220の両バッテリーに対応しています。  
+ML1220は充電可能なタイプであり、設定によりトリクル充電を有効化できます（CR1220では不可）。
 
-**Enabling Trickle Charging**
+**トリクル充電の有効化**
 
 .. warning::
 
-  If you're using a CR1220 battery, do not enable trickle charging as it can cause irreparable damage to the battery and risk damaging the board.
+  CR1220を使用している場合、トリクル充電を有効にしないでください。 バッテリーや基板の破損の原因となります。
 
-By default, the trickle charging feature for the battery is disabled. The ``sysfs`` files indicate the current trickle charging voltage and limits:
+
+デフォルトでは、バッテリーのトリクル充電機能は無効になっています。現在のトリクル充電の電圧および制限値は ``sysfs`` ファイルで確認できます：
+
 
 .. code-block:: shell
 
@@ -240,21 +252,21 @@ By default, the trickle charging feature for the battery is disabled. The ``sysf
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-To enable trickle charging, add ``rtc_bbat_vchg`` to ``/boot/firmware/config.txt``:
+トリクル充電を有効にするには、 ``/boot/firmware/config.txt`` に以下を追加：
 
-  * Open the ``/boot/firmware/config.txt``.
+  * ``/boot/firmware/config.txt`` を開きます。
   
     .. code-block:: shell
     
       sudo nano /boot/firmware/config.txt
       
-  * Add ``rtc_bbat_vchg`` to ``/boot/firmware/config.txt``.
+  * ``/boot/firmware/config.txt`` に ``rtc_bbat_vchg`` を追加します。
   
     .. code-block:: shell
     
       dtparam=rtc_bbat_vchg=3000000
-  
-After rebooting, the system will display:
+
+再起動後、以下のように表示されれば、トリクル充電が有効になっていることを確認できます：
 
 .. code-block:: shell
 
@@ -265,16 +277,18 @@ After rebooting, the system will display:
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-This confirms the battery is now under trickle charging. To disable this feature, simply remove the ``dtparam`` line from ``config.txt``.
+この数値が表示されれば、バッテリーへのトリクル充電が正常に動作していることを示します。  
+機能を無効化したい場合は、 ``config.txt`` から ``dtparam`` の行を削除してください。
 
 
 
-Pin Headers
---------------
+ピンヘッダー
+-------------------
 
 .. image:: img/io_board_pin_header.png
 
-Two right-angle header connectors extend the Raspberry Pi's GPIO, but note that the IR receiver, RGB LED, and fan occupy some pins. Remove the corresponding jumper caps to utilize these pins for other functions.
+Raspberry PiのGPIOを拡張するための2つのL字型ヘッダーが搭載されていますが、IR受信機、RGB LED、ファンが一部のピンを占有しています。  
+これらのピンを他の用途で使用したい場合は、対応するジャンパーキャップを取り外してください。
 
 .. list-table:: 
   :widths: 25 25

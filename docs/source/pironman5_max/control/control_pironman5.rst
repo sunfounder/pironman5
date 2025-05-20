@@ -1,28 +1,28 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder の Facebook コミュニティ「Raspberry Pi & Arduino & ESP32 愛好者グループ」へようこそ！Raspberry Pi、Arduino、ESP32 を愛する仲間たちと一緒に、これらの技術をより深く探究しましょう。
 
-    **Why Join?**
+    **参加するメリット**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**：購入後の技術的課題を、コミュニティと当社チームが連携して解決します。
+    - **学びと共有**：チュートリアルやノウハウを通じてスキルアップを図りましょう。
+    - **新製品の先行プレビュー**：最新の製品情報や開発中の情報をいち早く入手できます。
+    - **会員限定割引**：新製品に対する特別割引を受けられます。
+    - **イベント & プレゼント企画**：キャンペーンや抽選企画にもご参加いただけます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に創造と発見を楽しみましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
-5. Control with Commands or Dashboard
+5. コマンドまたはダッシュボードによる制御
 =======================================================
 
-Once you have successfully installed the ``pironman5`` module, the ``pironman5.service`` will automatically start upon reboot.
+``pironman5`` モジュールのインストールが完了すると、 ``pironman5.service`` は再起動時に自動で起動します。
 
-You can monitor and control the Pironman 5 via commands, or by accessing the dashboard through the webpage at ``http://<ip>:34001``.
+Pironman 5 の状態監視や制御は、コマンドラインまたはウェブブラウザで ``http://<ip>:34001`` にアクセスすることでダッシュボード経由でも行えます。
 
 .. note::
 
-    * For the **Home Assistant** system, you can only monitor and control the Pironman 5 through the dashboard by opening the webpage at ``http://<ip>:34001``.
-    * For the **Batocera.linux** system, you can only monitor and control the Pironman 5 via commands. It is important to note that any changes to the configuration require a restart of the service using ``pironman5 restart`` to take effect.
+    * **Home Assistant** システムでは、 ``http://<ip>:34001`` を開いてダッシュボードからのみ操作・監視が可能です。
+    * **Batocera.linux** システムでは、コマンドによる操作・監視のみ対応しています。設定を変更した場合は ``pironman5 restart`` を使用してサービスを再起動しないと、変更が反映されません。
 
 
 .. toctree::

@@ -1,40 +1,40 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の世界を、同じ興味を持つ仲間たちと一緒により深く探究しましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後の問題や技術的な課題も、コミュニティやSunFounderチームのサポートで安心。
+    - **Learn & Share**：役立つヒントやチュートリアルを共有して、スキルをさらにレベルアップ。
+    - **Exclusive Previews**：新製品の発表やプレビューにいち早くアクセス可能。
+    - **Special Discounts**：最新製品を対象とした特別割引が受けられます。
+    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定キャンペーンにも参加可能！
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に創造と発見の旅を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
 .. _set_up_pironman5_mini:
 
-Setting Up on Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge
+Raspberry Pi OS/Ubuntu/Kali Linux/Homebridgeでのセットアップ
 ======================================================================
 
-If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your Raspberry Pi, you will need to configure the Pironman 5 Mini using the command line. Detailed tutorials can be found below:
+Raspberry PiにRaspberry Pi OS、Ubuntu、Kali Linux、またはHomebridgeをインストールしている場合、Pironman 5 Miniの設定はコマンドラインを使って行います。詳細なチュートリアルは以下をご参照ください。
 
 .. note::
 
-  Before configuring, you need to boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
+  設定を始める前に、Raspberry Piを起動しログインしておく必要があります。ログイン方法が不明な場合は、公式Raspberry Piサイト（|link_rpi_get_start|）をご確認ください。
 
 
-Configuring Shutdown to Deactivate GPIO Power
+シャットダウン時にGPIOの電源を無効にする設定
 ------------------------------------------------------------
-To prevent the RGB fan, powered by the Raspberry Pi GPIO, from remaining active post-shutdown, it's essential to configure the Raspberry Pi for GPIO power deactivation.
+Raspberry PiのGPIOから電源供給されているRGBファンが、シャットダウン後も回り続けるのを防ぐため、GPIOの電源を無効化する設定を行います。
 
-#. Manually edit the ``EEPROM`` configuration file with this command:
+#. 以下のコマンドで ``EEPROM`` 設定ファイルを手動で編集します：
 
    .. code-block:: shell
    
      sudo rpi-eeprom-config -e
 
-#. Modify the ``POWER_OFF_ON_HALT`` setting in the file to ``1``. For instance:
+#. 設定ファイル内の ``POWER_OFF_ON_HALT`` を ``1`` に変更します。例：
 
    .. code-block:: shell
    
@@ -42,21 +42,21 @@ To prevent the RGB fan, powered by the Raspberry Pi GPIO, from remaining active 
      POWER_OFF_ON_HALT=1
      BOOT_ORDER=0xf41
 
-#. Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes.
+#. ``Ctrl + X``、 ``Y``、 ``Enter`` の順で保存・終了します。
 
 
-Downloading and Installing the ``pironman5`` Module
+``pironman5`` モジュールのダウンロードとインストール
 -----------------------------------------------------------
 
-#. For lite systems, initially install tools like ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
-  
+#. 最小構成のシステムでは、まず ``git``、 ``python3``、 ``pip3``、 ``setuptools`` などのツールをインストールします。
+
    .. code-block:: shell
   
      sudo apt-get update
      sudo apt-get install git -y
      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. Proceed to download code from GitHub and install the ``pironman5`` module .
+#. GitHubからコードをダウンロードし、 ``pironman5`` モジュールをインストールします。
 
    .. code-block:: shell
 
@@ -65,22 +65,22 @@ Downloading and Installing the ``pironman5`` Module
       cd ~/pironman5
       sudo python3 install.py
 
-   After successful installation, a system reboot is required to activate the installation. Follow the on-screen reboot prompt.
+   インストール完了後は、画面の指示に従ってシステムを再起動してください。
 
-   Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
-   
-   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
+   再起動後、 ``pironman5.service`` が自動的に起動します。主な設定内容は以下の通りです：
+
+   * 4つのWS2812 RGB LEDが青色でブリージングモードに点灯します。
      
    .. note::
-    
-     RGB fan won't spin unless the temperature hits 60°C. For different activation temperatures, see :ref:`cc_control_fan_mini`.
 
-#. You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5.service``.
+     RGBファンは温度が60°Cに達するまで回転しません。起動温度を変更したい場合は、:ref:`cc_control_fan_mini` を参照してください。
+
+#. ``systemctl`` コマンドを使って ``pironman5.service`` の ``start``、 ``stop``、 ``restart``、 ``status`` を管理できます。
 
    .. code-block:: shell
      
       sudo systemctl restart pironman5.service
-   
-   * ``restart``: Use this command to apply any changes made to the settings of pironman 5 Mini.
-   * ``start/stop``: Enable or disable the ``pironman5.service``.
-   * ``status``: Check the operational status of the ``pironman5`` program using the ``systemctl`` tool.
+
+   * ``restart``：設定変更を適用する際に使用します。
+   * ``start/stop``： ``pironman5.service`` の有効／無効を切り替えます。
+   * ``status``： ``pironman5`` プログラムの動作状況を確認できます。

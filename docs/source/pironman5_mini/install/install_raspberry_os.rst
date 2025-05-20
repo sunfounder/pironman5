@@ -1,34 +1,34 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！Raspberry Pi、Arduino、ESP32の世界を、同じ情熱を持つ仲間たちと一緒に深く掘り下げましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後のサポートや技術的な問題を、コミュニティとサポートチームがしっかりサポートします。
+    - **Learn & Share**：チュートリアルやヒントを共有し合い、スキルを高めましょう。
+    - **Exclusive Previews**：新製品情報や先行公開を誰よりも早く入手できます。
+    - **Special Discounts**：最新製品を対象に、会員限定の特別割引をご利用いただけます。
+    - **Festive Promotions and Giveaways**：季節限定のキャンペーンやプレゼント企画に参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒にものづくりの冒険を始めませんか？[|link_sf_facebook|] をクリックして、今すぐ参加！
 
-Installing Raspberry Pi OS
+Raspberry Pi OSのインストール
 ================================================================================
-You can choose an installation method based on whether you have a Micro SD card or an NVMe SSD available.
+お持ちのデバイスがMicro SDカードかNVMe SSDかによって、インストール方法を選択できます。
 
-**Using a Micro SD Card Only**
+**Micro SDカードのみを使用する場合**
 
-  If you are only using a Micro SD card, you can simply follow the first method below.
+  Micro SDカードのみを使用する場合は、以下の最初の方法に従って簡単にインストールできます。
 
-**Using an M.2 NVMe SSD**
+**M.2 NVMe SSDを使用する場合**
 
-  * If you have an **M.2 NVMe SSD Enclosure Adapter**, you can connect your SSD to your computer using the adapter and follow the second method to install the OS.  
+  * **M.2 NVMe SSDエンクロージャーアダプター** をお持ちであれば、そのアダプターを使ってSSDをパソコンに接続し、2番目の方法でOSをインストールできます。
 
     .. image:: img/m2_nvme_adapter.png  
         :width: 300
         :align: center
-  
-  * If you do not have the adapter shown above, you can first install the OS on a Micro SD card using the first method, then use the third method to copy the system from the Micro SD card to your M.2 NVMe SSD.  
+
+  * 上記のアダプターがない場合は、まず最初の方法でMicro SDカードにOSをインストールし、その後3番目の方法を使ってMicro SDカードからM.2 NVMe SSDにシステムをコピーすることができます。
 
 
 .. toctree::

@@ -1,24 +1,24 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder の Facebook コミュニティ「Raspberry Pi & Arduino & ESP32 愛好者グループ」へようこそ！Raspberry Pi、Arduino、ESP32 の世界を、情熱を共有する仲間たちと共に深く探求しましょう。
 
-    **Why Join?**
+    **参加するメリット**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**：購入後のトラブルや技術的課題を、コミュニティと当社のサポートチームが一緒に解決します。
+    - **学びと共有**：ヒントやチュートリアルを交換しながら、スキルを高めましょう。
+    - **先行プレビュー**：新製品の発表や試作品の情報をいち早く手に入れることができます。
+    - **限定割引**：最新製品に対する会員限定の特別割引をご利用いただけます。
+    - **キャンペーン＆プレゼント企画**：各種イベントやプレゼントに参加して楽しみましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に創造し、探求する準備はできましたか？[|link_sf_facebook|] をクリックして、今すぐご参加ください！
 
 .. _max_advanced:
 
-6. Advanced
+6. 高度な設定
 =========================
 
 
-This chapter is a detailed description of all the components in Pironman, as well as the associated software configuration.
+この章では、Pironman に搭載されたすべてのコンポーネントと、それに関連するソフトウェア設定について詳しく解説します。
 
 
 .. toctree::

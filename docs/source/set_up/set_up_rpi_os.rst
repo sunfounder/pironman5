@@ -1,39 +1,39 @@
-.. note::
+.. note:: 
 
-    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと一緒に、Raspberry Pi、Arduino、ESP32についてさらに深く掘り下げていきましょう。
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Facebookで他の愛好者たちとともに、Raspberry Pi、Arduino、ESP32の世界をさらに深く探究しましょう。
 
     **参加する理由**
 
-    - **専門サポート**: コミュニティやチームのサポートを受け、購入後の問題や技術的な課題を解決します。
-    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
-    - **限定プレビュー**: 新製品発表や先行情報に早期アクセスできます。
-    - **特別割引**: 最新製品の特別割引を楽しめます。
-    - **フェスティブプロモーションとプレゼント企画**: プレゼント企画や季節ごとのプロモーションに参加できます。
+    - **専門サポート**：購入後の課題や技術的なトラブルも、コミュニティやチームのサポートで安心して解決できます。
+    - **学びと共有**：スキル向上につながるヒントやチュートリアルを気軽に交換できます。
+    - **限定プレビュー**：新製品の先行発表やプレビューをいち早くチェックできます。
+    - **特別割引**：最新製品を対象とした限定ディスカウントが受けられます。
+    - **フェスティブプロモーションとプレゼント企画**：季節限定のキャンペーンや抽選企画に参加可能です。
 
-    👉 探索と創造の準備ができましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
+    👉 探索と創造を始める準備はできていますか？今すぐ [|link_sf_facebook|] をクリックして参加しましょう！
 
 
-Raspberry Pi/Ubuntu/Kali/Homebridge OSでのセットアップ
-===========================================================
+Raspberry Pi / Ubuntu / Kali / Homebridge OSでのセットアップ
+===============================================================
 
-Raspberry Pi OS、Ubuntu、Kali Linux、またはHomebridgeをインストールした場合、Pironman 5をコマンドラインで設定する必要があります。詳細なチュートリアルは以下をご覧ください。
+Raspberry Pi OS、Ubuntu、Kali Linux、またはHomebridgeをインストールしている場合、Pironman 5はコマンドラインから設定を行う必要があります。詳細な手順は以下をご覧ください。
 
 .. note::
 
-  設定を行う前に、Raspberry Piを起動してログインする必要があります。ログイン方法がわからない場合は、公式のRaspberry Piウェブサイトをご覧ください: |link_rpi_get_start|。
+  設定を行う前に、Raspberry Piを起動してログインしておく必要があります。ログイン方法が分からない場合は、公式Raspberry Piウェブサイト（ |link_rpi_get_start| ）を参照してください。
 
 
-GPIO電源を停止するためのシャットダウン設定
+GPIO電源をシャットダウン時に無効化する設定
 ------------------------------------------------------------
-Raspberry PiのGPIOから供給されるOLED画面やRGBファンがシャットダウン後も動作し続けないように、GPIO電源の停止を設定する必要があります。
+OLEDディスプレイやRGBファンが、シャットダウン後もGPIOから電力供給されて動作し続けないようにするため、GPIO電源を停止する設定が必要です。
 
-#. 次のコマンドを使用して、 ``EEPROM`` 設定ファイルを手動で編集します:
+#. 以下のコマンドで ``EEPROM`` 設定ファイルを手動で編集します：
 
    .. code-block:: shell
 
      sudo rpi-eeprom-config -e
 
-#. ファイル内の ``POWER_OFF_ON_HALT`` 設定を ``1`` に変更します。例:
+#. ファイル内の ``POWER_OFF_ON_HALT`` の値を ``1`` に設定します。例：
 
    .. code-block:: shell
  
@@ -41,13 +41,13 @@ Raspberry PiのGPIOから供給されるOLED画面やRGBファンがシャット
      POWER_OFF_ON_HALT=1
      BOOT_ORDER=0xf41
 
-#. ``Ctrl + X``、 ``Y`` 、そして ``Enter`` を押して変更を保存します。
+#. ``Ctrl + X`` → ``Y`` → ``Enter`` を順に押して変更を保存・終了します。
 
 
 ``pironman5`` モジュールのダウンロードとインストール
 -----------------------------------------------------------
 
-#. Liteシステムでは、最初に ``git`` 、 ``python3`` 、 ``pip3`` 、 ``setuptools`` などのツールをインストールしてください。
+#. Lite系OSでは、まず以下のツールをインストールしてください： ``git``、 ``python3``、 ``pip3``、 ``setuptools``
 
    .. code-block:: shell
   
@@ -55,34 +55,34 @@ Raspberry PiのGPIOから供給されるOLED画面やRGBファンがシャット
      sudo apt-get install git -y
      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. 次に、GitHubからコードをダウンロードし、 ``pironman5`` モジュールをインストールします。
+#. 次に、GitHubからコードをクローンして ``pironman5`` モジュールをインストールします。
 
    .. code-block:: shell
 
-    cd ~
-    git clone https://github.com/sunfounder/pironman5.git --depth 1
-    cd ~/pironman5
-    sudo python3 install.py
+     cd ~
+     git clone https://github.com/sunfounder/pironman5.git --depth 1
+     cd ~/pironman5
+     sudo python3 install.py
 
-   インストールが成功したら、再起動が必要です。画面の指示に従って再起動してください。
+   インストールが完了すると、再起動を促されます。画面の指示に従ってRaspberry Piを再起動してください。
 
-   再起動後、 ``pironman5.service`` が自動的に開始されます。Pironman 5の主な設定は次の通りです:
+   再起動後、 ``pironman5.service`` が自動で起動します。Pironman 5の主な動作内容は以下の通りです：
 
-   * OLED画面には、CPU、RAM、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示されます。
-   * 4つのWS2812 RGB LEDが青色で呼吸モードに点灯します。
-   
+   * OLED画面にCPU、RAM、ディスク使用量、CPU温度、IPアドレスが表示されます。
+   * 4つのWS2812 RGB LEDが青色でブリージングモード（呼吸点灯）になります。
+
    .. note::
 
-      RGBファンは温度が60°Cに達しないと回転しません。異なる起動温度については :ref:`cc_control_fan` を参照してください。
+      RGBファンは、CPU温度が60°C以上にならないと回転しません。起動温度のカスタマイズについては :ref:`cc_control_fan` を参照してください。
 
 
-#. ``systemctl`` ツールを使用して、 ``pironman5.service`` の ``start`` 、 ``stop`` 、 ``restart`` 、または ``status`` を確認することができます。
+#. ``systemctl`` コマンドを使用して、 ``pironman5.service`` の ``start``、 ``stop``、 ``restart``、 ``status`` の操作が可能です。
 
    .. code-block:: shell
 
      sudo systemctl restart pironman5.service
 
-   * ``restart`` : pironman 5の設定に変更を加えた場合、このコマンドを使用して変更を適用します。
-   * ``start/stop`` : ``pironman5.service`` を有効または無効にします。
-   * ``status`` : ``systemctl`` ツールを使用して、 ``pironman5`` プログラムの稼働状況を確認します。
+   * ``restart``：Pironman 5の設定を変更した際に、その内容を反映させるために使用します。
+   * ``start/stop``： ``pironman5.service`` を起動または停止します。
+   * ``status``： ``systemctl`` コマンドで ``pironman5`` の動作状態を確認します。
 

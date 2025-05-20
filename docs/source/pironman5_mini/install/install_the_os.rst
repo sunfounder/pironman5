@@ -1,32 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！Raspberry Pi、Arduino、ESP32の世界を、同じ情熱を持つ仲間たちと一緒にさらに深く探究しましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後の問題や技術的なトラブルを、コミュニティおよびサポートチームが解決をサポートします。
+    - **Learn & Share**：ヒントやチュートリアルを共有して、スキルアップを目指しましょう。
+    - **Exclusive Previews**：新製品の発表や先行情報をいち早くチェックできます。
+    - **Special Discounts**：最新製品をお得に購入できる限定割引をご提供します。
+    - **Festive Promotions and Giveaways**：季節限定のキャンペーンや豪華プレゼント企画に参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒にものづくりを楽しみませんか？[|link_sf_facebook|] をクリックして今すぐ参加！
 
 .. _install_the_os_mini:
 
-3. Installing the Operating System
-=======================================
+3. オペレーティングシステムのインストール
+===========================================
 
 .. note::
 
-    You need to install an OS that supports Raspberry Pi 5. Please use the latest Raspberry Pi Imager tool for system installation. The currently tested systems are:
+    Raspberry Pi 5に対応したOSをインストールする必要があります。必ず最新版のRaspberry Pi Imagerツールを使ってシステムをインストールしてください。現在動作確認済みのシステムは以下の通りです：
 
    .. image:: ../img/compitable_os.png
         :width: 600
         :align: center
 
-
-In this chapter, you will learn how to install the operating systems. All the installation steps depend on the |link_rpi_imager|, which you need to install first.
+この章では、各種オペレーティングシステムのインストール方法について解説します。すべての手順は、まず |link_rpi_imager| のインストールから始まります。
 
     .. toctree::
         :maxdepth: 1

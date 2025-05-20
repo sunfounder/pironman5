@@ -1,23 +1,21 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder の Facebook コミュニティ「Raspberry Pi & Arduino & ESP32 愛好者グループ」へようこそ！Raspberry Pi、Arduino、ESP32 を愛する仲間たちと共に、その世界をさらに深く探究しましょう。
 
-    **Why Join?**
+    **参加するメリット**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**：購入後のトラブルや技術的な課題に、コミュニティおよび当社チームが対応します。
+    - **学びと共有**：チュートリアルやヒントを通じてスキルを高め、知識を共有しましょう。
+    - **新製品の先行プレビュー**：発売前の製品情報や試作段階の情報をいち早く入手できます。
+    - **限定割引**：最新製品を対象としたメンバー限定の割引をご利用いただけます。
+    - **イベント＆プレゼント企画**：プレゼントキャンペーンや季節イベントに参加して楽しみましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に創造と発見の旅を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
-MicroSD Extender
-===================
+MicroSDエクステンダー
+=======================
 
-
-This is a Micro SD card expansion board, which extends the Raspberry Pi's MicroSD card slot to the outside and adds a spring-loaded card slot.
+このMicroSDカード拡張ボードは、Raspberry PiのMicroSDスロットを外部に延長し、スプリング式カードスロットを追加するためのボードです。
 
 
 .. image:: img/sd_board.jpeg
-    

@@ -1,30 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！Raspberry Pi、Arduino、ESP32に熱中する仲間たちと一緒に、知識を深め、楽しさを共有しましょう。
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**：購入後のトラブルや技術的な課題に対して、コミュニティとサポートチームが対応します。
+    - **Learn & Share**：ヒントやチュートリアルを交換しながら、スキルを向上させましょう。
+    - **Exclusive Previews**：新製品の発表や先行情報をいち早くチェックできます。
+    - **Special Discounts**：最新製品に対するメンバー限定割引をご利用いただけます。
+    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定のキャンペーンに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求と創造の旅を始めませんか？[|link_sf_facebook|] をクリックして、今すぐ参加！
 
 .. _set_up_pironman5_mini:
 
-4. Setting Up or Installing Software
+4. ソフトウェアのセットアップまたはインストール
 ================================================
 
-Now that the system has been written to either the Micro SD or NVMe SSD, you can insert them into the Raspberry Pi slot. Then press the power button to turn on the device.
+OSがMicro SDカードまたはNVMe SSDに書き込まれたら、それをRaspberry Piのスロットに挿入し、電源ボタンを押して起動します。
 
-After powering on, you will see the various power LEDs lit up, but the RGB LEDs, and RGB fan will not be operational yet, 
-as they need to be configured. If there is a screen garbling issue, please ignore it for now; it will be resolved after configuration.
+起動後、複数の電源LEDが点灯しますが、RGB LEDおよびRGBファンはまだ動作しません。これらは後で設定が必要です。また、画面が乱れることがありますが、設定後に解消されますので無視してください。
 
-Before configuring, you need to boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
+設定を始める前に、Raspberry Piを起動しログインする必要があります。ログイン方法が分からない場合は、公式Raspberry Piサイトをご参照ください：|link_rpi_get_start|
 
-You can then proceed to select the configuration tutorial based on your system.
+その後、ご使用のシステムに応じて適切な設定チュートリアルを選択してください。
 
 
 .. toctree::
@@ -34,22 +33,19 @@ You can then proceed to select the configuration tutorial based on your system.
     set_up_home_assistant
 
 
-**About Power Button**
+**電源ボタンについて**
 
-The power button brings out the power button of the Raspberry Pi 5, and it functions just like the power button of the Raspberry Pi 5.
+この電源ボタンは、Raspberry Pi 5 の物理電源ボタンを引き出す設計となっており、Raspberry Pi 5の電源ボタンと同様に機能します。
 
-* **Shutdown**
+* **シャットダウン**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system, press the power button a single time to initiate a shutdown.
-    * To force a hard shutdown, press and hold the power button.
+    * Raspberry Pi **Bookworm Desktop** システムを使用している場合、電源ボタンを素早く2回押すことでシャットダウンします。
+    * Raspberry Pi **Bookworm Lite** システムの場合、電源ボタンを1回押すだけでシャットダウンが始まります。
+    * 強制的に電源を切るには、電源ボタンを長押ししてください。
 
-* **Power on**
+* **起動**
 
-    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
-
-* If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
+    * Raspberry Piの基板がシャットダウン状態でも電源が供給されている場合、ボタンを1回押すことで電源をオンにできます。
 
 
-    
-    
+* シャットダウンボタンに対応していないシステムをご利用の場合でも、電源ボタンを5秒以上長押しすることで強制シャットダウンが可能です。その後、1回押しで電源を入れられます。

@@ -1,34 +1,28 @@
-.. _intro_pironman5_max:
+.. _intro_pironman5_max: 
 
 Pironman 5 MAX
 ================================================================================
 
 
-Thanks for choosing our |link_pironman5_max|.
+このたびは、|link_pironman5_max| をお選びいただきありがとうございます。
 
 .. image:: img/pironman5_max.jpg
     :width: 400
     :align: center
-    
-The Pironman 5 Max is the new flagship product in our Pironman Raspberry Pi case series, 
-exclusively compatible with the latest Raspberry Pi 5. 
 
-A standout feature of the Pironman 5 Max is its dual transparent sides, 
-reminiscent of a PC case, combined with RGB LEDs and two RGB fans, 
-adding an impressive flair to the product. 
-It includes an OLED screen that displays basic information about the Raspberry Pi, 
-and has expanded features such as power on/off buttons and status indicators. 
-The micro HDMI port has been converted to a standard HDMI port for more common use, 
-and the power and HDMI ports have been relocated to the same side as the Raspberry Pi’s USB ports, 
-enhancing the aesthetics of the wiring. Equipped with three fans and a tower-style heatsink, 
-it greatly assists in reducing the high temperatures of the Raspberry Pi 5. 
+Pironman 5 Max は、当社のPironman Raspberry Piケースシリーズにおける最新のフラッグシップモデルであり、最新のRaspberry Pi 5専用に設計されています。
 
-The case integrates a PCIe Gen 2 Switch with two M.2 M key PCIe slots supporting 2230, 2242, 2260, and 2280, allowing the installation of two NVMe Gen2 SSDs or AI accelerators. 
-Users can set up two NVMe SSDs in software RAID 0 or RAID 1 for NAS configurations; 
-combine one AI accelerator and one NVMe SSD to boost AI performance; 
-or use two AI accelerators for even stronger AI capabilities. 
-Additionally, GPIO expansion is provided for convenient extension of the Raspberry Pi’s functionality.
+この製品の大きな特長は、PCケースのようなデザインを彷彿とさせる両側面の透明パネルと、RGB LEDおよび2基のRGBファンを組み合わせたビジュアル効果です。これにより、ケース全体がスタイリッシュで印象的な外観に仕上がっています。
 
+また、Raspberry Piの基本情報（CPU使用率や温度など）を表示するOLEDディスプレイを搭載し、電源のオン／オフボタンやステータスインジケーターといった拡張機能も備えています。micro HDMIポートは、より一般的な標準サイズのHDMIポートに変更されており、電源ポートとHDMIポートはUSBポートと同じ側に再配置されているため、配線の見た目がすっきりします。
+
+冷却面では、3基のファンとタワー型ヒートシンクを搭載し、Raspberry Pi 5の高温対策に大きく貢献します。
+
+さらに、本体にはPCIe Gen2スイッチが統合されており、2230、2242、2260、2280サイズに対応する2つのM.2 MキーPCIeスロットを装備しています。これにより、2台のNVMe Gen2 SSDやAIアクセラレータの搭載が可能です。
+
+ユーザーは、2台のNVMe SSDをソフトウェアRAID 0またはRAID 1構成にしてNAS用途に活用したり、AIアクセラレータとNVMe SSDを併用してAI処理能力を強化したり、あるいは2台のAIアクセラレータを組み合わせてさらに高性能なAI環境を構築することも可能です。
+
+加えて、GPIO拡張ポートも用意されており、Raspberry Piの機能を柔軟に拡張できます。
 
 .. raw:: html
 
@@ -50,18 +44,18 @@ Additionally, GPIO expansion is provided for convenient extension of the Raspber
 
 **Parameters**
 
-* Raspberry Pi 5 mini PC
-* 0.96" OLED Display showing Raspberry Pi's CPU usage, temperature, disk usage, IP address, RAM usage etc.
-* With a built-in vibration switch, tapping the case gently wakes up the OLED display.
-* Tower cooler can cool a 100% CPU load Pi to 39°C at 25°C room temperature
-* 2 RGB Fans, with GPIO control
-* 1 PWM Fan on the Tower Cooler is controlled by the Raspberry Pi system.
-* Integrated PCIe Gen 2 Switch with two M.2 M key PCIe interfaces, which can install two NVMe Gen2 solid-state drives or AI accelerators.
-* Supports four (PCIe Gen 2.0) NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280.
-* 4 WS2812 Addressable RGB LED light up the whole case with cool light effect
-* IR Receiver for multi-media center like Kodi or Volumio
-* Retro metal power button for safe shut down
-* External GPIO extender with pin name label, for easy access
-* Equipped with a spring-loaded socket for easy card removal
-* Aluminum main body with dark Acrylic side panel
-* Features two standard HDMI ports
+* Raspberry Pi 5 ミニPC
+* 0.96インチ OLEDディスプレイ（CPU使用率、温度、ディスク使用量、IPアドレス、RAM使用率などを表示）
+* 振動スイッチ内蔵で、ケースを軽く叩くだけでOLED画面を起動可能
+* タワー型クーラーにより、室温25℃の環境下でCPU負荷100％時でも39℃まで冷却可能
+* GPIO制御対応のRGBファン2基
+* PWM制御対応タワークーラー搭載ファン（Raspberry Piから制御）
+* PCIe Gen2スイッチを統合し、2つのM.2 MキーPCIeスロットを装備。NVMe Gen2 SSDまたはAIアクセラレータを2基搭載可能
+* 4つのNVMe M.2 SSDサイズに対応（2230、2242、2260、2280／PCIe Gen2.0）
+* 4つのWS2812アドレッサブルRGB LEDにより、筐体全体を鮮やかにライトアップ
+* KodiやVolumioなどのマルチメディアセンターに対応するIR受信機搭載
+* 安全なシャットダウンが可能なレトロ風メタル電源ボタン
+* ピン名が明記された外部GPIO拡張基板により、接続が簡単
+* 押し込み式ソケット採用により、SDカードの取り外しがスムーズ
+* 本体はアルミ製、側面はダークアクリルパネルを採用
+* 標準HDMIポートを2基搭載

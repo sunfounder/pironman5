@@ -1,82 +1,82 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder の Facebook コミュニティ「Raspberry Pi & Arduino & ESP32 愛好者グループ」へようこそ！同じ情熱を持つ仲間たちと一緒に、Raspberry Pi、Arduino、ESP32 の世界をさらに深く探求しましょう。
 
-    **Why Join?**
+    **参加するメリット**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**：購入後の問題や技術的課題を、コミュニティと当社チームが連携して解決します。
+    - **学びと共有**：チュートリアルやヒントを通じてスキルを高め合いましょう。
+    - **新製品の先行プレビュー**：開発中製品や最新情報をいち早くチェックできます。
+    - **限定割引**：最新製品に適用される会員限定の特別割引をご利用いただけます。
+    - **イベント＆プレゼント企画**：プレゼント抽選や季節ごとのプロモーションをお楽しみください。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒にものづくりを探求しましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
-IO Expander
-================
+IOエクスパンダー
+===================
 
-RGB LEDs
-------------
+RGB LED
+--------------
 
 .. image:: img/io_board_rgb.png
 
-The board features 4 WS2812 RGB LEDs, offering customizable control. Users can turn them on or off, change the color, adjust the brightness, switch display modes, and set the speed of changes.
+このボードには、カスタマイズ可能な4つの WS2812 RGB LED が搭載されています。LED の点灯／消灯、色変更、明るさ調整、表示モードの切り替え、変化速度の設定が可能です。
 
-* To modify the on and off state of the RGB LEDs, ``true`` to turn on the RGB LEDs, ``false`` to turn them off.
+* RGB LED をオン／オフするには、 ``true`` （オン）または ``false`` （オフ）を設定します。
 
 .. code-block:: shell
 
   pironman5 -re true
 
-* To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
+* 任意のカラーコード（16進数）を指定して色を変更できます。例： ``fe1a1a``
 
 .. code-block:: shell
 
   pironman5 -rc fe1a1a
 
-* To change the brightness of the RGB LED (range: 0 ~ 100%):
+* 明るさを設定するには、0〜100の範囲で指定します（単位：%）：
 
 .. code-block:: shell
 
   pironman5 -rb 100
 
-* To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
+* 表示モードを以下のいずれかに変更できます： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``
 
 .. note::
 
-  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``pironman5 -rc``.
+  表示モードに ``rainbow``、 ``rainbow_reverse``、 ``hue_cycle`` を選んだ場合、 ``pironman5 -rc`` による色設定は無効になります。
 
 .. code-block:: shell
 
   pironman5 -rs breathing
 
-* To modify the speed of change (range: 0 ~ 100%):
+* 表示変化の速度を 0～100% の範囲で設定：
 
 .. code-block:: shell
 
   pironman5 -rp 80
 
-RGB Control Pin
+RGB制御ピン
 -------------------------
 
-The RGB LED is driven by SPI and connected to **GPIO10**, which is also the SPI MOSI pin. The two pins shown are used to connect the RGB to GPIO10. If not needed, the jumper can be removed.
+RGB LED は SPI 経由で制御されており、 **GPIO10** （SPI MOSI）に接続されています。ジャンパーピンはGPIO10に接続するためのもので、使用しない場合は取り外せます。
 
   .. image:: img/io_board_rgb_pin.png
 
-RGB OUT Pins
+RGB出力ピン
 -------------------------
 
 .. image:: img/io_board_rgb_out.png
 
-The WS2812 RGB LEDs support serial connection, allowing for the attachment of an external RGB LED strip. Connect the **SIG** pin to the external strip's **DIN** pin for expansion.
+WS2812 RGB LED は直列接続に対応しており、外部の RGB LED ストリップを接続可能です。 **SIG** ピンを外部LEDの **DIN** に接続してください。
 
-The default setup includes 4 RGB LEDs. Connect additional LEDs and update the count using:
+デフォルトでは4つのRGB LEDが搭載されていますが、追加接続後に以下のコマンドでLED数を指定します：
 
 .. code-block:: shell
 
   sudo pironman5 --rgb-led-count [quantity]
 
-Example:
+例：
 
 .. code-block:: shell
 
@@ -84,30 +84,30 @@ Example:
 
 
 
-OLED Screen Connector
+OLEDスクリーンコネクタ
 ----------------------------
 
-The OLED screen connector, with an address of 0x3C, is a key feature.
+OLED スクリーン（I2C アドレス：0x3C）の接続部です。
 
 .. image:: img/io_board_oled.png
 
-If the OLED Screen is not displaying or displaying incorrectly, you can follow these steps to troubleshoot the issue:
+表示されない、または異常がある場合は、以下の手順で確認してください：
 
-Check if the FPC cable of the OLED Screen is properly connected.
+FPC ケーブルがしっかり接続されているか確認してください。
 
-#. Use the following command to view the program's run logs and check for error messages.
+#. ログを確認し、エラーの有無をチェック：
 
     .. code-block:: shell
 
         cat /var/log/pironman5/pm_auto.oled.log
 
-#. Alternatively, use the following command to check if the OLED's i2c address 0x3C is recognized:
-    
+#. OLED の I2C アドレス（0x3C）が認識されているか確認：
+
     .. code-block:: shell
         
         sudo i2cdetect -y 1
 
-#. If the first two steps don't reveal any issues, try restarting the pironman5 service to see if that resolves the problem.
+#. 問題が解決しない場合は、サービスを再起動してください：
 
 
     .. code-block:: shell
@@ -115,92 +115,90 @@ Check if the FPC cable of the OLED Screen is properly connected.
         sudo systemctl restart pironman5.service
 
 
-Infrared Receiver
+赤外線受信モジュール
 ---------------------------
 
 .. image:: img/io_board_receiver.png
 
-* **Model**: IRM-56384, operating at 38KHz.
-* **Connection**: The IR receiver connects to **GPIO13**.
-* **D1**: An infrared reception indicator that blinks upon signal detection.
-* **J8**: A pin for enabling the infrared function. By default, a jumper cap is inserted for immediate functionality. Remove the cap to free GPIO13 if the IR receiver is not in use.
+* **型番**：IRM-56384（38KHz動作）
+* **接続ピン**： **GPIO13**
+* **D1**：受信時に点滅する赤外線インジケーター
+* **J8**：赤外線機能の有効化ピン。デフォルトでジャンパーキャップが装着されており、使用しない場合は取り外すことでGPIO13が開放されます。
 
-To utilize the IR receiver, verify its connection and install the necessary module:
+IR受信機能を利用するには、以下を実施してください：
 
-* Test the connection:
+* 接続確認：
 
   .. code-block:: shell
 
     sudo ls /dev |grep lirc
 
-* Install the ``lirc`` module:
+* ``lirc`` モジュールのインストール：
 
   .. code-block:: shell
 
     sudo apt-get install lirc -y
 
-* Now, test the IR Receiver by running the following command. 
+* リモコンボタンを押し、コードを確認：
 
   .. code-block:: shell
 
     mode2 -d /dev/lirc0
 
-* After running the command, press a button on the remote control, and the code of that button will be printed.
+* コマンドを実行した後、リモコンのボタンを押すと、そのボタンに対応するコードが表示されます。
 
 
-RGB Fan Pins
----------------
+RGBファン接続ピン
+--------------------
 
-The IO expansion board supports up to two 5V non-PWM fans. Both fans are controlled together. 
+IO拡張ボードは最大2基の5V非PWMファンに対応し、同時制御されます。
 
-**FAN1** and **FAN 2** are two sets of fan pins. You need to connect the fan's red wire to "+", and the black wire to "-".
+**FAN1** および **FAN2** に、ファンの赤線を「+」、黒線を「-」に接続します。
 
 .. image:: img/io_board_fan.png
 
-There are two sets of 2-pin connectors and two jumpers used to control the RGB fans and their LEDs. 
-By default, the jumpers are connected to these pins, allowing control of the fans and LEDs via GPIO6 and GPIO5. 
-If fan operation is not required, these jumpers can be removed to free up GPIO5 and GPIO6.
+2つの2ピンコネクタと2つのジャンパーで、ファンおよびLEDの制御が可能です。
+ジャンパーが装着されている場合、GPIO6（ファン）とGPIO5（LED）で制御できます。
+制御不要の場合はジャンパーを外し、GPIO5/6 を他用途に使用可能です。
 
 .. image:: img/io_board_fan_j9.png
 
-
-After removing the jumper caps, the fan or fan LED will default to being off. 
-If activation is required, the two pads below can be bridged with solder. 
-Once connected, the fan/LED will turn on when the system powers up and turn off when the system is powered down, 
-but cannot be controlled via the IO port.
+ジャンパーを外すと、ファンおよびLEDはオフの状態になります。
+常時オンにしたい場合は、下部の2つのパッドをハンダでショートさせてください。
+システム起動時にオン、シャットダウン時にオフとなりますが、IOポートでの制御はできなくなります。
 
 .. image:: img/io_board_fan_hanpan.png
 
-.. **D2** is a fan signal indicator that lights up when the fan is active.
+.. **D2**：ファン作動時に点灯するインジケーター
 
 .. .. image:: img/io_board_fan_d2.png
 
-.. You can use command to configure the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate.
+ファン動作モードはコマンドで設定可能です。動作温度に応じて自動起動します：
 
-For instance, if set to **1: Performance** mode, the RGB fans will activate at 50°C.
+例） **1: パフォーマンス** モード：50℃で起動
 
 .. code-block:: shell
 
   pironman5 -gm 3
 
-* **4: Quiet**: The RGB fans will activate at 70°C.
-* **3: Balanced**: The RGB fans will activate at 67.5°C.
-* **2: Cool**: The RGB fans will activate at 60°C.
-* **1: Performance**: The RGB fans will activate at 50°C.
-* **0: Always On**: The RGB fans will always on.
+* **4: 静音モード**：70℃で起動
+* **3: バランスモード**：67.5℃
+* **2: 冷却重視モード**：60℃
+* **1: パフォーマンスモード**：50℃
+* **0: 常時オン**：常に動作
 
-If you connect the control pin of the RGB fan to different pins on the Raspberry Pi, you can use the following command to change the pin number.
+ファンの制御ピンを変更した場合は、以下でピン番号を設定：
 
 .. code-block:: shell
 
   sudo pironman5 -gp 18
 
-Pin Headers
+GPIOヘッダー
 --------------
 
 .. image:: img/io_board_pin_header.png
 
-Two right-angle header connectors extend the Raspberry Pi's GPIO, but note that the IR receiver, RGB LED, and fan occupy some pins. Remove the corresponding jumper caps to utilize these pins for other functions.
+Raspberry Pi のGPIOを拡張するL字型ピンヘッダー2列を装備。ただしIR受信機、RGB LED、ファンなどが一部のピンを使用しているため、他の用途で使用する際は該当ジャンパーキャップを取り外してください。
 
 .. list-table:: 
   :widths: 25 25
@@ -208,15 +206,15 @@ Two right-angle header connectors extend the Raspberry Pi's GPIO, but note that 
 
   * - Pironman 5
     - Raspberry Pi 5
-  * - IR Receiver(Optional)
+  * - 赤外線受信機（オプション）
     - GPIO13
   * - OLED SDA
     - SDA
   * - OLED SCL
     - SCL
-  * - FAN(Optional)
+  * - ファン（オプション）
     - GPIO6
-  * - FLED(Optional)
+  * - ファンLED（オプション）
     - GPIO5  
-  * - RGB(Optional)
+  * - RGB（オプション）
     - GPIO10
