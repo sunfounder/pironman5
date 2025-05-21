@@ -1,29 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi・Arduino・ESP32 愛好者コミュニティ（Facebook）へようこそ！他の愛好者たちと一緒に、Raspberry Pi、Arduino、ESP32 の世界をより深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題を、コミュニティおよび当社チームがサポートします。
+    - **学びと共有**：スキルアップのためのヒントやチュートリアルを共有・交換できます。
+    - **製品の先行情報**：新製品の発表や限定プレビューにいち早くアクセスできます。
+    - **特別割引**：最新製品を対象とした限定割引が受けられます。
+    - **季節のプロモーションとプレゼント企画**：ホリデーイベントや抽選キャンペーンに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に創造と探求を始めませんか？[|link_sf_facebook|] をクリックして今すぐ参加！
 
 .. _advanced:
 
-6. Hardware Overview
+6. ハードウェア概要
 =========================
 
 
-This chapter is a detailed description of all the components in Pironman, as well as the associated software configuration.
+本章では、Pironman に含まれるすべてのコンポーネントと、それに関連するソフトウェア設定について詳しく説明します。
 
 
 .. toctree::
     :maxdepth: 2
-    
+
     io_board
     hdmi_adapter
     nvme_pip
