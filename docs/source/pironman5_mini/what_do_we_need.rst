@@ -1,52 +1,52 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Rejoignez d'autres amateurs pour approfondir vos connaissances sur Raspberry Pi, Arduino et ESP32.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d’experts** : Bénéficiez de l’aide de notre équipe et de notre communauté pour résoudre les problèmes techniques et post-achat.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Soyez parmi les premiers à découvrir nos nouveaux produits et aperçus.
+    - **Réductions exclusives** : Profitez de promotions spéciales sur nos nouveautés.
+    - **Promotions festives et cadeaux** : Participez à nos concours et offres spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
-1. What Else Should You Prepare?
-===================================
+1. Que devez-vous préparer d'autre ?
+======================================
 
-To get started with your Pironman 5 Mini, you'll need to gather a few essential components and some optional extras depending on your project requirements.
+Pour commencer avec votre Pironman 5 Mini, vous aurez besoin de quelques composants essentiels, ainsi que d'éléments optionnels selon les besoins de votre projet.
 
-**Essential Components**
+**Composants essentiels**
 
-* Raspberry Pi 5 
+* Raspberry Pi 5
 
-    The Pironman 5 Mini is fully compatible with the Raspberry Pi 5.
+    Le Pironman 5 Mini est entièrement compatible avec le Raspberry Pi 5.
 
-* 5V/5A Power Adapter
+* Adaptateur secteur 5V/5A
 
-    A 5V/5A power adapter is required to power the Pironman 5 Mini and its components.
+    Un adaptateur secteur 5V/5A est nécessaire pour alimenter le Pironman 5 Mini et ses composants.
 
-* Micro SD Card
- 
-    It is recommended to use an SD card with a minimum of 16GB of storage for Raspberry Pi OS. For Raspberry Pi OS Lite, a minimum of 4GB is advised.
+* Carte Micro SD
 
-**Optional Components**
+    Il est recommandé d'utiliser une carte SD d'au moins 16 Go pour Raspberry Pi OS. Pour Raspberry Pi OS Lite, un minimum de 4 Go est suffisant.
 
-* M.2 NVMe SSD
+**Composants optionnels**
 
-    The Pironman 5 Mini features an NVMe PIP with an M.2 SSD connector, accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec).
+* SSD NVMe M.2
 
-* Screen
+    Le Pironman 5 Mini est équipé d’un connecteur NVMe PIP pour SSD M.2, compatible avec quatre formats : 2230, 2242, 2260 et 2280. La connexion prend en charge la norme Gen 2.0 (5 GT/s), mais peut être forcée en Gen 3.0 (10 GT/s).
 
-    To access the Raspberry Pi's desktop environment, a screen such as a TV or a computer monitor is required.
-    
-* Micro HDMI Cable
+* Écran
 
-  The Pironman 5 Mini utilizes all the native ports of the Raspberry Pi 5. Therefore, for the HDMI connection, you will need a Micro HDMI cable to connect the Pironman 5 Mini to a display.
+    Pour accéder à l’environnement graphique du Raspberry Pi, un écran (TV ou moniteur) est requis.
 
-* Mouse & Keyboard
+* Câble Micro HDMI
 
-    Any USB port on the Pironman 5 Mini can be used to connect a wired keyboard and mouse, or a USB Bluetooth receiver for wireless peripherals.
+    Le Pironman 5 Mini exploite tous les ports natifs du Raspberry Pi 5. Vous aurez donc besoin d’un câble Micro HDMI pour le connecter à un écran.
 
-By ensuring you have these components ready, you'll be fully equipped to set up and enjoy your Pironman 5 Mini with your Raspberry Pi 5!
+* Souris & Clavier
+
+    Tout port USB du Pironman 5 Mini peut accueillir un clavier et une souris filaires, ou un dongle Bluetooth USB pour des périphériques sans fil.
+
+En réunissant ces éléments, vous serez parfaitement équipé pour configurer et profiter pleinement de votre Pironman 5 Mini avec votre Raspberry Pi 5 !

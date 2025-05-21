@@ -1,43 +1,43 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté Facebook des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 ! Rejoignez d'autres passionnés pour approfondir vos connaissances sur le Raspberry Pi, l’Arduino et l’ESP32.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d’experts** : Résolvez les problèmes après-vente et relevez les défis techniques grâce à l’aide de notre équipe et de notre communauté.
+    - **Apprendre et partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des présentations exclusives.
+    - **Réductions spéciales** : Bénéficiez de remises exclusives sur nos nouveautés.
+    - **Promotions festives et cadeaux** : Participez à des jeux-concours et à des offres spéciales lors d’événements saisonniers.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt(e) à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
-USB HDMI Adapter
+Adaptateur USB HDMI
 ==========================================
 
 .. image:: img/hdmi_adapter.jpeg
 
-This USB HDMI adapter board is specifically designed for the Raspberry Pi 5. Its primary function is to reposition the USB and HDMI connections to align with the USB interface side of the Raspberry Pi, enhancing accessibility and cable management.
+Cette carte adaptateur USB HDMI est spécialement conçue pour le Raspberry Pi 5. Sa fonction principale est de repositionner les connexions USB et HDMI du côté des interfaces USB du Raspberry Pi, ce qui améliore l’accessibilité et la gestion des câbles.
 
-Additionally, the HDMI port is converted to a standard HDMI Type A interface, offering broader compatibility.
+De plus, le port HDMI est converti en interface HDMI Type A standard, offrant une compatibilité plus large.
 
-**NVMe Additional Power Supply**
+**Alimentation supplémentaire pour NVMe**
 
-The board features a 5V power header specifically for NVMe PIP power supply. Coupled with an extension header, it can be connected to the NVMe's additional power interface to provide extra power.
+La carte est équipée d’un connecteur d’alimentation 5V dédié à l’alimentation du NVMe PIP. Associé à un connecteur d’extension, il permet de relier l’alimentation supplémentaire du module NVMe pour une alimentation renforcée.
 
-**1220RTC Battery Holder**
+**Support de batterie RTC 1220**
 
-A 1220RTC battery holder is incorporated for convenient installation of an RTC battery. It connects to the Raspberry Pi's RTC interface via an SH1.0 2P reverse cable. 
+Un support pour batterie RTC 1220 est intégré, facilitant l’installation d’une batterie pour l’horloge temps réel. Il se connecte à l’interface RTC du Raspberry Pi via un câble inversé SH1.0 2P.
 
-The battery holder is compatible with both CR1220 and ML1220 batteries. If using an ML1220 (Lithium Manganese Dioxide battery), charging can be configured directly on the Raspberry Pi. Note that the CR1220 is not rechargeable.
+Le support est compatible avec les batteries CR1220 et ML1220. Si vous utilisez une ML1220 (batterie lithium-dioxyde de manganèse), la recharge peut être configurée directement sur le Raspberry Pi. À noter que la CR1220 n’est pas rechargeable.
 
-**Enabling Trickle Charging**
+**Activation de la charge d’entretien (Trickle Charging)**
 
 .. warning::
 
-  If you're using a CR1220 battery, do not enable trickle charging as it can cause irreparable damage to the battery and risk damaging the board.
+  Si vous utilisez une batterie CR1220, n’activez pas la charge d’entretien car cela pourrait endommager irréversiblement la batterie et le circuit.
 
-By default, the trickle charging feature for the battery is disabled. The ``sysfs`` files indicate the current trickle charging voltage and limits:
+Par défaut, la fonction de charge d’entretien est désactivée. Les fichiers ``sysfs`` permettent de consulter la tension et les limites actuelles de charge :
 
 .. code-block:: shell
 
@@ -48,21 +48,21 @@ By default, the trickle charging feature for the battery is disabled. The ``sysf
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-To enable trickle charging, add ``rtc_bbat_vchg`` to ``/boot/firmware/config.txt``:
+Pour activer la charge d’entretien, ajoutez ``rtc_bbat_vchg`` dans ``/boot/firmware/config.txt`` :
 
-  * Open the ``/boot/firmware/config.txt``.
+  * Ouvrez le fichier ``/boot/firmware/config.txt``.
   
     .. code-block:: shell
     
       sudo nano /boot/firmware/config.txt
       
-  * Add ``rtc_bbat_vchg`` to ``/boot/firmware/config.txt``.
+ * Ajoutez ``rtc_bbat_vchg`` dans ``/boot/firmware/config.txt``.
   
     .. code-block:: shell
     
       dtparam=rtc_bbat_vchg=3000000
   
-After rebooting, the system will display:
+Après le redémarrage, le système affichera :
 
 .. code-block:: shell
 
@@ -73,5 +73,5 @@ After rebooting, the system will display:
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-This confirms the battery is now under trickle charging. To disable this feature, simply remove the ``dtparam`` line from ``config.txt``.
+Cela confirme que la batterie est désormais en charge d’entretien. Pour désactiver cette fonctionnalité, il suffit de supprimer la ligne ``dtparam`` du fichier ``config.txt``.
 

@@ -1,40 +1,40 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Rejoignez d'autres passionnés pour explorer plus en profondeur l’univers du Raspberry Pi, d’Arduino et de l’ESP32.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d’experts** : Résolvez vos problèmes après-vente et défis techniques avec l’aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des conseils et tutoriels pour faire progresser vos compétences.
+    - **Aperçus exclusifs** : Soyez les premiers à découvrir nos nouveaux produits et avant-premières.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos dernières nouveautés.
+    - **Promotions festives et cadeaux** : Participez à des concours et événements spéciaux pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
 .. _view_control_commands_mini:
 
-Control with Commands
+Contrôle par commandes
 ========================================
-In addition to viewing data from the Pironman 5 Mini and controlling various devices through the Dashboard, you can also use commands to control them.
+En plus de visualiser les données du Pironman 5 Mini et de contrôler divers périphériques via le tableau de bord, vous pouvez également utiliser des commandes pour les piloter.
 
 .. note::
 
-  * For the **Home Assistant** system, you can only monitor and control the Pironman 5 Mini through the dashboard by opening the webpage at ``http://<ip>:34001``.
-  * It is important to note that any changes to the configuration require a restart of the service using ``pironman5 restart`` to take effect.
+  * Pour le système **Home Assistant**, vous ne pouvez surveiller et contrôler le Pironman 5 Mini qu’en accédant au tableau de bord à l’adresse ``http://<ip>:34001``.
+  * Toute modification de la configuration nécessite un redémarrage du service à l’aide de la commande ``pironman5 restart`` pour être prise en compte.
 
-View the Basic Configurations
------------------------------------
+Afficher les configurations de base
+----------------------------------------
 
-The ``pironman5`` module offers basic configurations for Pironman, which you can review with the following command.
+Le module ``pironman5`` propose une configuration de base du Pironman, que vous pouvez consulter avec la commande suivante :
 
 .. code-block:: shell
 
   pironman5 -c
 
-The standard configurations appear as follows:
+La configuration par défaut est la suivante :
 
-.. code-block:: 
+.. code-block::
 
   {
       "system": {
@@ -52,9 +52,9 @@ The standard configurations appear as follows:
       }
   }
 
-Customize these configurations to fit your needs.
+Adaptez cette configuration selon vos besoins.
 
-Use ``pironman5`` or ``pironman5 -h`` for instructions.
+Utilisez ``pironman5`` ou ``pironman5 -h`` pour afficher l’aide.
 
 .. code-block::
 
@@ -100,73 +100,73 @@ Use ``pironman5`` or ``pironman5 -h`` for instructions.
                          Run in background
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+  À chaque modification de l’état du ``pironman5.service``, vous devez exécuter la commande suivante pour appliquer les changements :
 
   .. code-block:: shell
 
     sudo systemctl restart pironman5.service
 
 
-* Verify the ``pironman5`` program status using the ``systemctl`` tool.
+* Vérifiez l’état du programme ``pironman5`` avec l’outil ``systemctl`` :
 
   .. code-block:: shell
 
     sudo systemctl status pironman5.service
 
-* Alternatively, inspect the program-generated log files.
+* Ou consultez les journaux générés par le programme :
 
   .. code-block:: shell
 
     ls /var/log/pironman5/
     cat /var/log/pironman5/main.log
 
-Control RGB LEDs
-----------------------
-The board features 4 WS2812 RGB LEDs, offering customizable control. Users can turn them on or off, change the color, adjust the brightness, switch RGB LED display modes, and set the speed of changes.
+Contrôler les LED RGB
+--------------------------
+La carte dispose de 4 LED RGB WS2812 contrôlables. Vous pouvez les activer ou désactiver, changer la couleur, ajuster la luminosité, modifier le style d’affichage et la vitesse de transition.
 
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+  Chaque fois que vous modifiez l’état de ``pironman5.service``, vous devez exécuter la commande suivante pour que les changements de configuration prennent effet.
 
   .. code-block:: shell
 
     sudo systemctl restart pironman5.service
 
-* To modify the on and off state of the RGB LEDs, ``true`` to turn on the RGB LEDs, ``false`` to turn them off.
+* Pour allumer ou éteindre les LED RGB : ``true`` pour activer, ``false`` pour désactiver :
 
 .. code-block:: shell
 
   pironman5 -re true
 
-* To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
+* Pour changer la couleur, entrez une valeur hexadécimale, ex. : ``fe1a1a`` :
 
 .. code-block:: shell
 
   pironman5 -rc fe1a1a
 
-* To change the brightness of the RGB LED (range: 0 ~ 100%):
+* Pour ajuster la luminosité des LED RGB (0 à 100 %) :
 
 .. code-block:: shell
 
   pironman5 -rb 100
 
-* To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
+* Pour modifier le style d’affichage RGB, choisissez parmi : ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` :
 
 .. note::
 
-  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``pironman5 -rc``.
+  Si vous choisissez ``rainbow``, ``rainbow_reverse`` ou ``hue_cycle``, vous ne pourrez pas définir manuellement la couleur via ``pironman5 -rc``.
 
 .. code-block:: shell
 
   pironman5 -rs breathing
 
-* To modify the speed of change (range: 0 ~ 100%):
+* Pour régler la vitesse de transition (0 à 100 %) :
 
 .. code-block:: shell
 
   pironman5 -rp 80
 
-* The default setup includes 4 RGB LEDs. Connect additional LEDs and update the count using:
+* Par défaut, 4 LED RGB sont configurées. Pour connecter plus de LED, mettez à jour le nombre :
 
 .. code-block:: shell
 
@@ -174,34 +174,34 @@ The board features 4 WS2812 RGB LEDs, offering customizable control. Users can t
 
 .. _cc_control_fan_mini:
 
-Control RGB Fan
----------------------
-The IO expansion board supports to a 5V non-PWM fan. 
+Contrôler le ventilateur RGB
+---------------------------------
+La carte d’extension prend en charge un ventilateur 5V non-PWM.
 
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+  Après toute modification, redémarrez le service :
 
   .. code-block:: shell
 
     sudo systemctl restart pironman5.service
 
-* You can use command to configure the operating mode of the RGB fan. These modes determine the conditions under which the RGB fan will activate. 
+* Vous pouvez configurer le mode de fonctionnement du ventilateur RGB selon les conditions de déclenchement souhaitées.
 
-For instance, if set to **1: Performance** mode, the RGB fan will activate at 50°C.
+Par exemple, en mode **1: Performance**, le ventilateur s’active à 50°C :
 
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4: Quiet**: The RGB fan will activate at 70°C.
-* **3: Balanced**: The RGB fan will activate at 67.5°C.
-* **2: Cool**: The RGB fan will activate at 60°C.
-* **1: Performance**: The RGB fan will activate at 50°C.
-* **0: Always On**: The RGB fan will always on.
+* **4: Silencieux** : activation à 70°C  
+* **3: Équilibré** : activation à 67,5°C  
+* **2: Froid** : activation à 60°C  
+* **1: Performance** : activation à 50°C  
+* **0: Toujours actif** : le ventilateur reste en marche
 
-* If you connect the control pin of the RGB fan to different pins on the Raspberry Pi, you can use the following command to change the pin number.
+* Si la broche de commande du ventilateur RGB est connectée à une autre broche GPIO, utilisez cette commande pour la modifier :
 
 .. code-block:: shell
 

@@ -1,50 +1,49 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Plongez au cœur de l’univers Raspberry Pi, Arduino et ESP32 aux côtés d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d’experts** : Résolvez vos problèmes techniques ou après-vente grâce à l’aide de notre équipe et de la communauté.
+    - **Apprendre et partager** : Échangez astuces et tutoriels pour faire progresser vos compétences.
+    - **Aperçus exclusifs** : Profitez d’un accès anticipé aux annonces de nouveaux produits et aperçus en avant-première.
+    - **Réductions spéciales** : Bénéficiez d’offres exclusives sur nos dernières nouveautés.
+    - **Promotions festives et concours** : Participez à nos jeux-concours et offres spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
-1. What Else Should We Prepare?
+1. Que faut-il préparer d’autre ?
 ===================================
 
-**Essential Components**
+**Composants essentiels**
 
-* Raspberry Pi 5 
+* Raspberry Pi 5
 
-    The Pironman 5 is fully compatible with the Raspberry Pi 5.
+    Le Pironman 5 est entièrement compatible avec le Raspberry Pi 5.
 
-* 5V/5A Power Adapter
+* Adaptateur secteur 5V/5A
 
-    A 5V/5A power adapter is required to power the Pironman 5 and its components.
+    Un adaptateur secteur 5V/5A est nécessaire pour alimenter le Pironman 5 et ses composants.
 
-* Micro SD Card
- 
-    It is recommended to use an SD card with a minimum of 16GB of storage for Raspberry Pi OS. For Raspberry Pi OS Lite, a minimum of 4GB is advised.
+* Carte micro SD
 
-**Optional Components**
+    Une carte SD d’au moins 16 Go est recommandée pour Raspberry Pi OS. Pour Raspberry Pi OS Lite, une capacité minimale de 4 Go est suffisante.
 
-* M.2 NVMe SSD
+**Composants optionnels**
 
-    The Pironman 5 features an NVMe PIP with two M.2 SSD connectors, 
-    accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. 
-    The connection is certified for Gen 2.0 speeds (5 GT/sec).
+* SSD NVMe au format M.2
 
-* Screen
+    Le Pironman 5 est équipé d’un connecteur NVMe PIP avec deux ports M.2, compatibles avec quatre formats de SSD M.2 NVMe : 2230, 2242, 2260 et 2280.
+    La connexion prend en charge des vitesses certifiées Gen 2.0 (5 GT/sec).
 
-    To access the Raspberry Pi's desktop environment, a screen such as a TV or a computer monitor is required.
-    
-* HDMI Cable
+* Écran
 
-    The Raspberry Pi 5's HDMI ports have been adapted to standard HDMI Type A interfaces via a USB HDMI adapter. Therefore, a standard HDMI to HDMI cable is needed to connect the Pironman 5 to a display.
+    Pour accéder à l’environnement de bureau du Raspberry Pi, un écran tel qu’un téléviseur ou un moniteur est requis.
 
-* Mouse & Keyboard
+* Câble HDMI
 
-    Any USB port on the Pironman 5 can be used to connect a wired keyboard and mouse, or a USB Bluetooth receiver for wireless peripherals.
+    Les ports HDMI du Raspberry Pi 5 ont été convertis en interfaces HDMI Type A standard via un adaptateur USB HDMI. Un câble HDMI standard est donc nécessaire pour connecter le Pironman 5 à un écran.
+
+* Souris et clavier
+
+    Vous pouvez brancher un clavier et une souris filaires sur n’importe quel port USB du Pironman 5, ou utiliser un récepteur USB Bluetooth pour des périphériques sans fil.

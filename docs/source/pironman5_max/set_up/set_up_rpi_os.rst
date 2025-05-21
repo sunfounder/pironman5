@@ -1,62 +1,62 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Rejoignez d’autres passionnés pour approfondir vos connaissances et vos projets autour de Raspberry Pi, Arduino et ESP32.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes techniques et après-vente grâce à l’aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des conseils et tutoriels pour renforcer vos compétences.
+    - **Avant-premières exclusives** : Profitez d’un accès anticipé aux annonces et démonstrations de nouveaux produits.
+    - **Réductions spéciales** : Bénéficiez de remises exclusives sur nos dernières nouveautés.
+    - **Promotions festives et cadeaux** : Participez à des concours et offres promotionnelles pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt(e) à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
 .. _max_set_up_pi_os:
 
-Set Up on Raspberry Pi/Ubuntu/Kali/Homebridge OS
-==================================================
+Configuration sur Raspberry Pi/Ubuntu/Kali/Homebridge OS
+=================================================================
 
-If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your Raspberry Pi, you will need to configure the Pironman 5 using the command line. Detailed tutorials can be found below:
+Si vous avez installé Raspberry Pi OS, Ubuntu, Kali Linux ou Homebridge sur votre Raspberry Pi, vous devez configurer le Pironman 5 via la ligne de commande. Vous trouverez ci-dessous les tutoriels détaillés :
 
 .. note::
 
-  Before configuring, you need to boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
+  Avant de procéder à la configuration, démarrez et connectez-vous à votre Raspberry Pi. Si vous ne savez pas comment faire, consultez le site officiel de Raspberry Pi : |link_rpi_get_start|.
 
 
-Configuring Shutdown to Deactivate GPIO Power
-------------------------------------------------------------
-To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from remaining active post-shutdown, it's essential to configure the Raspberry Pi for GPIO power deactivation.
+Configuration de l'extinction pour désactiver l'alimentation des GPIO
+--------------------------------------------------------------------------
+Pour éviter que l’écran OLED et les ventilateurs RGB, alimentés par les broches GPIO du Raspberry Pi, restent actifs après l’arrêt du système, il est nécessaire de configurer l’extinction de l’alimentation GPIO.
 
-#. Manually edit the ``EEPROM`` configuration file with this command:
+#. Modifiez manuellement le fichier de configuration de la ``EEPROM`` avec la commande suivante :
 
    .. code-block:: shell
-   
+
      sudo rpi-eeprom-config -e
 
-#. Modify the ``POWER_OFF_ON_HALT`` setting in the file to ``1``. For instance:
+#. Modifiez le paramètre ``POWER_OFF_ON_HALT`` et définissez-le à ``1``. Exemple :
 
    .. code-block:: shell
-   
+
      BOOT_UART=1
      POWER_OFF_ON_HALT=1
      BOOT_ORDER=0xf41
 
-#. Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes.
+#. Appuyez sur ``Ctrl + X``, puis ``Y`` et ``Entrée`` pour enregistrer les modifications.
 
 
-Downloading and Installing the ``pironman5`` Module
+Téléchargement et installation du module ``pironman5``
 -----------------------------------------------------------
 
-#. For lite systems, initially install tools like ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
-  
+#. Pour les systèmes Lite, commencez par installer les outils nécessaires : ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
+
    .. code-block:: shell
-  
+
      sudo apt-get update
      sudo apt-get install git -y
      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. Proceed to download code from GitHub and install the ``pironman5`` module .
+#. Téléchargez ensuite le code depuis GitHub et installez le module ``pironman5`` :
 
    .. code-block:: shell
 
@@ -65,23 +65,23 @@ Downloading and Installing the ``pironman5`` Module
       cd ~/pironman5
       sudo python3 install.py
 
-   After successful installation, a system reboot is required to activate the installation. Follow the on-screen reboot prompt.
+   Une fois l’installation réussie, un redémarrage du système est nécessaire. Suivez l’invite affichée pour redémarrer.
 
-   Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
-   
-   * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
-   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
-     
+   Au redémarrage, le service ``pironman5.service`` démarrera automatiquement. Voici les principales fonctions activées :
+
+   * L’écran OLED affiche l’utilisation CPU, RAM, Disque, la température du CPU, et l’adresse IP du Raspberry Pi.
+   * Quatre LED RGB WS2812 s’allument en bleu avec un effet « respiration » (breathing).
+
    .. note::
-    
-     RGB fans won't spin unless the temperature hits 60°C. For different activation temperatures, see :ref:`max_cc_control_fan`.
 
-#. You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5.service``.
+     Les ventilateurs RGB ne tournent que si la température atteint 60 °C. Pour modifier cette température, consultez : :ref:`max_cc_control_fan`.
+
+#. Vous pouvez utiliser l’outil ``systemctl`` pour ``start``, ``stop``, ``restart`` ou vérifier le ``status`` de ``pironman5.service`` :
 
    .. code-block:: shell
-     
+
       sudo systemctl restart pironman5.service
-   
-   * ``restart``: Use this command to apply any changes made to the settings of pironman 5.
-   * ``start/stop``: Enable or disable the ``pironman5.service``.
-   * ``status``: Check the operational status of the ``pironman5`` program using the ``systemctl`` tool.
+
+   * ``restart`` : applique les modifications de configuration.
+   * ``start/stop`` : active ou désactive le service ``pironman5.service``.
+   * ``status`` : vérifie l’état de fonctionnement du programme ``pironman5`` via ``systemctl``.

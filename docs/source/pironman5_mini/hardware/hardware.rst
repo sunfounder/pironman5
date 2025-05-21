@@ -1,27 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Rejoignez d'autres passionnés pour approfondir vos connaissances sur Raspberry Pi, Arduino et ESP32.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d’experts** : Bénéficiez de l’aide de notre équipe et de la communauté pour résoudre les problèmes techniques et après-vente.
+    - **Apprendre et partager** : Échangez des conseils et des tutoriels pour renforcer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-goûts.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos nouveautés.
+    - **Promotions festives et cadeaux** : Participez à des jeux-concours et des offres spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
 .. _about_hardware_mini:
 
-6. Hardware Overview
-=========================
+6. Présentation du matériel
+===============================
 
 .. image:: ../img/pironman5mini.png
     :width: 400
 
 
-This chapter is a detailed description of all the components in Pironman, as well as the associated software configuration.
+Ce chapitre présente en détail tous les composants du Pironman ainsi que leur configuration logicielle associée.
 
 
 .. toctree::

@@ -1,62 +1,62 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Rejoignez d'autres passionnés pour approfondir vos connaissances sur Raspberry Pi, Arduino et ESP32.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d’experts** : Obtenez de l’aide pour les problèmes techniques ou après-vente grâce à notre communauté et notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et tutoriels pour développer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus inédits.
+    - **Réductions spéciales** : Bénéficiez d’offres exclusives sur nos produits les plus récents.
+    - **Promotions et cadeaux festifs** : Participez à des jeux-concours et des offres spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
 .. _set_up_pironman5_mini:
 
-Setting Up on Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge
+Configuration sur Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge
 ======================================================================
 
-If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your Raspberry Pi, you will need to configure the Pironman 5 Mini using the command line. Detailed tutorials can be found below:
+Si vous avez installé Raspberry Pi OS, Ubuntu, Kali Linux ou Homebridge sur votre Raspberry Pi, vous devrez configurer le Pironman 5 Mini en ligne de commande. Des tutoriels détaillés sont disponibles ci-dessous :
 
 .. note::
 
-  Before configuring, you need to boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
+  Avant toute configuration, démarrez et connectez-vous à votre Raspberry Pi. Si vous ne savez pas comment faire, consultez le site officiel de Raspberry Pi : |link_rpi_get_start|.
 
 
-Configuring Shutdown to Deactivate GPIO Power
+Configurer l’arrêt pour désactiver l’alimentation GPIO
 ------------------------------------------------------------
-To prevent the RGB fan, powered by the Raspberry Pi GPIO, from remaining active post-shutdown, it's essential to configure the Raspberry Pi for GPIO power deactivation.
+Pour éviter que le ventilateur RGB, alimenté via le port GPIO du Raspberry Pi, ne continue de tourner après l’arrêt du système, il est nécessaire de configurer la désactivation de l’alimentation GPIO.
 
-#. Manually edit the ``EEPROM`` configuration file with this command:
+#. Modifiez manuellement le fichier de configuration ``EEPROM`` avec la commande suivante :
 
    .. code-block:: shell
-   
+
      sudo rpi-eeprom-config -e
 
-#. Modify the ``POWER_OFF_ON_HALT`` setting in the file to ``1``. For instance:
+#. Modifiez la ligne ``POWER_OFF_ON_HALT`` en ``1``. Par exemple :
 
    .. code-block:: shell
-   
+
      BOOT_UART=1
      POWER_OFF_ON_HALT=1
      BOOT_ORDER=0xf41
 
-#. Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes.
+#. Appuyez sur ``Ctrl + X``, ``Y`` puis ``Entrée`` pour enregistrer les modifications.
 
 
-Downloading and Installing the ``pironman5`` Module
+Téléchargement et installation du module ``pironman5``
 -----------------------------------------------------------
 
-#. For lite systems, initially install tools like ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
-  
+#. Pour les systèmes Lite, commencez par installer les outils requis comme ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
+
    .. code-block:: shell
-  
+
      sudo apt-get update
      sudo apt-get install git -y
      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. Proceed to download code from GitHub and install the ``pironman5`` module .
+#. Téléchargez ensuite le code depuis GitHub et installez le module ``pironman5`` :
 
    .. code-block:: shell
 
@@ -65,22 +65,22 @@ Downloading and Installing the ``pironman5`` Module
       cd ~/pironman5
       sudo python3 install.py
 
-   After successful installation, a system reboot is required to activate the installation. Follow the on-screen reboot prompt.
+   Une fois l’installation terminée, redémarrez le système pour activer l’installation. Suivez les instructions affichées à l’écran.
 
-   Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
-   
-   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
+   Au redémarrage, le service ``pironman5.service`` se lancera automatiquement. Voici les principales fonctionnalités activées :
+
+   * Quatre LED RGB WS2812 s’allumeront en bleu avec un effet de respiration.
      
    .. note::
-    
-     RGB fan won't spin unless the temperature hits 60°C. For different activation temperatures, see :ref:`cc_control_fan_mini`.
 
-#. You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5.service``.
+     Le ventilateur RGB ne s’active que lorsque la température atteint 60°C. Pour modifier cette température, consultez : :ref:`cc_control_fan_mini`.
+
+#. Vous pouvez utiliser l’outil ``systemctl`` pour ``start``, ``stop``, ``restart`` ou vérifier le ``status`` de ``pironman5.service``.
 
    .. code-block:: shell
-     
+
       sudo systemctl restart pironman5.service
-   
-   * ``restart``: Use this command to apply any changes made to the settings of pironman 5 Mini.
-   * ``start/stop``: Enable or disable the ``pironman5.service``.
-   * ``status``: Check the operational status of the ``pironman5`` program using the ``systemctl`` tool.
+
+   * ``restart`` : Appliquez les modifications apportées à la configuration du Pironman 5 Mini.
+   * ``start/stop`` : Activez ou désactivez le service ``pironman5.service``.
+   * ``status`` : Vérifiez le statut du programme ``pironman5`` avec l’outil ``systemctl``.

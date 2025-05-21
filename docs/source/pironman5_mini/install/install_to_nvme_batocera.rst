@@ -1,37 +1,37 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Rejoignez d'autres passionnés pour approfondir vos connaissances sur Raspberry Pi, Arduino et ESP32.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d’experts** : Résolvez les problèmes techniques et après-vente avec l’aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des conseils et tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d’un accès anticipé aux annonces et démonstrations de nouveaux produits.
+    - **Réductions exclusives** : Profitez de remises spéciales sur nos dernières nouveautés.
+    - **Promotions festives et cadeaux** : Participez à des concours et événements pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
 .. _install_to_nvme_ubuntu_mini:
 
-Installing the OS on an NVMe SSD
-============================================
+Installation du système d’exploitation sur un SSD NVMe
+===========================================================
 
-If you are using an NVMe SSD and have an adapter to connect the NVMe SSD to your computer for system installation, you can use the following tutorial for a quick installation.
+Si vous utilisez un SSD NVMe et disposez d’un adaptateur pour le connecter à votre ordinateur, vous pouvez suivre ce tutoriel pour effectuer une installation rapide.
 
-**Required Components**
+**Composants nécessaires**
 
-* A Personal Computer
-* A NVMe SSD
-* A NVMe to USB Adapter
-* Micro SD Card and Reader
+* Un ordinateur personnel
+* Un SSD NVMe
+* Un adaptateur NVMe vers USB
+* Une carte Micro SD et un lecteur de cartes
 
 .. _update_bootloader_mini:
 
-1. Update the Bootloader
+1. Mettre à jour le bootloader
 ----------------------------------
 
-First, you need to update the Raspberry Pi 5 bootloader to boot from NVMe before trying USB and then SD Card.
+Commencez par mettre à jour le bootloader du Raspberry Pi 5 afin qu’il démarre depuis le NVMe, puis depuis l’USB et enfin depuis la carte SD.
 
 .. .. raw:: html
 
@@ -40,114 +40,114 @@ First, you need to update the Raspberry Pi 5 bootloader to boot from NVMe before
 
 .. note::
 
-    At this step, it is recommended to use a spare Micro SD card. First, write the bootloader to this Micro SD card and then immediately insert it into the Raspberry Pi to enable booting from an NVMe device.
-    
-    Alternatively, you can write the bootloader directly to your NVMe device first, then insert it into the Raspberry Pi to change its boot method. Afterwards, connect the NVMe SSD to a computer to install the operating system, and once the installation is complete, reinsert it back into the Raspberry Pi.
+    À cette étape, il est recommandé d’utiliser une carte Micro SD de rechange. Commencez par y écrire le bootloader, puis insérez-la immédiatement dans le Raspberry Pi pour activer le démarrage depuis un périphérique NVMe.
 
-#. Insert your spare Micro SD card or NVMe SSD into your computer or laptop using a Reader.
+    En alternative, vous pouvez écrire le bootloader directement sur le SSD NVMe, puis l’insérer dans le Raspberry Pi pour modifier la méthode de démarrage. Ensuite, connectez le SSD à l’ordinateur pour y installer le système d’exploitation, puis réinsérez-le dans le Raspberry Pi.
 
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+#. Insérez votre carte Micro SD de rechange ou SSD NVMe dans l’ordinateur via un lecteur de cartes.
+
+#. Dans le |link_rpi_imager|, cliquez sur **Appareil Raspberry Pi** et sélectionnez **Raspberry Pi 5** dans la liste.
 
    .. image:: img/os_choose_device_pi5.png
       :width: 90%
 
-#. On the **Operating System** tab, scroll down and select **Misc utility images**.
+#. Dans l’onglet **Système d’exploitation**, faites défiler vers le bas et sélectionnez **Images utilitaires diverses**.
 
    .. image:: img/nvme_misc.png
       :width: 90%
    
-#. Select **Bootloader (Pi 5 family)**.
+#. Choisissez **Bootloader (famille Pi 5)**.
 
    .. image:: img/nvme_bootloader.png
       :width: 90%
       
 
-#. Select **NVMe/USB Boot** to enable Raspberry Pi 5 to boot from NVMe before trying USB and then SD Card.
+#. Sélectionnez **Démarrage NVMe/USB** pour permettre au Raspberry Pi 5 de démarrer en priorité depuis le NVMe, puis depuis l’USB et enfin depuis la carte SD.
 
    .. image:: img/nvme_nvme_boot.png
       :width: 90%
-      
 
 
-#. In the **Storage** option, select the appropriate storage device for the installation.
+
+#. Dans l’option **Stockage**, sélectionnez le périphérique sur lequel écrire.
 
    .. note::
 
-      Ensure you select the correct storage device. To avoid confusion, disconnect any additional storage devices if multiple ones are connected.
+      Assurez-vous de choisir le bon support. Pour éviter toute confusion, déconnectez les autres périphériques de stockage si nécessaire.
 
    .. image:: img/os_choose_sd.png
       :width: 90%
-      
 
-#. Now you can click **NEXT**. If the storage device contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+
+#. Cliquez sur **SUIVANT**. Si le support contient déjà des données, sauvegardez-les. Cliquez sur **Oui** pour continuer sans sauvegarde.
 
    .. image:: img/os_continue.png
       :width: 90%
-      
 
-#. Soon, you will be prompted that **NVMe/USB Boot** has been written to your storage device.
+
+#. Une fois l’écriture terminée, un message vous confirmera que **NVMe/USB Boot** a bien été écrit sur votre support.
 
    .. image:: img/nvme_boot_finish.png
       :width: 90%
-      
 
-#. Now, you can insert your Micro SD card or NVMe SSD into the Raspberry Pi. After powering the Raspberry Pi with a Type C adapter, the bootloader from the Micro SD card or NVMe SSD will be written to the Raspberry Pi's EEPROM.
+
+#. Insérez maintenant votre carte Micro SD ou SSD NVMe dans le Raspberry Pi. Après avoir alimenté le Raspberry Pi avec un adaptateur USB-C, le bootloader sera écrit dans l’EEPROM du Raspberry Pi.
 
 .. note::
 
-    Afterward, the Raspberry Pi will boot from NVMe before trying USB and then the SD Card. 
-    
-    Power off the Raspberry Pi and remove the Micro SD card or NVMe SSD.
+    Ensuite, le Raspberry Pi démarrera d’abord depuis le NVMe, puis depuis l’USB, et enfin depuis la carte SD.
+
+    Éteignez le Raspberry Pi et retirez la carte Micro SD ou le SSD NVMe.
 
 
-2. Install OS to NVMe SSD
----------------------------------
+2. Installer le système d’exploitation sur le SSD NVMe
+-----------------------------------------------------------
 
-Now you can install the operating system on your NVMe SSD.
+Vous pouvez maintenant installer le système d’exploitation sur le SSD NVMe.
 
-**Steps**
+**Étapes**
 
-#. First, navigate to the |link_batocera_download| page, select **Raspberry Pi 5 B**, and click to download.
+#. Accédez à la page |link_batocera_download|, sélectionnez **Raspberry Pi 5 B**, puis téléchargez l’image.
 
    .. image:: img/batocera_download.png
       :width: 90%
-      
-      
-#. Unzip the downloaded file ``batocera-xxx-xx-xxxxxxxx.img.gz``.
 
 
-#. Insert your SD card into your computer or laptop using a Reader.
+#. Décompressez le fichier téléchargé ``batocera-xxx-xx-xxxxxxxx.img.gz``.
 
-#. Within the |link_rpi_imager|, click on the **Operating System** tab.
+
+#. Insérez votre carte SD dans l’ordinateur à l’aide d’un lecteur.
+
+#. Ouvrez |link_rpi_imager|, puis cliquez sur l’onglet **Système d’exploitation**.
 
    .. image:: img/os_choose_os.png
       :width: 90%
-      
-#. Scroll down to the bottom of the page and select **Use Custom**.
+
+#. Faites défiler jusqu’en bas et sélectionnez **Utiliser une image personnalisée**.
 
    .. image:: img/batocera_os_use_custom.png
       :width: 90%
-      
 
 
-#. Choose the system file you have just unzipped, ``batocera-xxx-xx-xxxxxxxx.img``, and then click **Open**.
+
+#. Sélectionnez le fichier image que vous venez de décompresser, ``batocera-xxx-xx-xxxxxxxx.img``, puis cliquez sur **Ouvrir**.
 
 
    .. image:: img/batocera_os_choose.png
       :width: 90%
-      
 
-#. In the **Storage** option, select the appropriate storage device for the installation.
+
+#. Dans l’onglet **Stockage**, choisissez le SSD NVMe comme périphérique de destination.
 
    .. image:: img/nvme_ssd_storage.png
       :width: 90%
-      
 
 
-#. Now you can click **NEXT**. If the storage device contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+
+#. Cliquez sur **SUIVANT**. Si le support contient des données, assurez-vous d’en faire une sauvegarde. Cliquez sur **Oui** si aucune sauvegarde n’est nécessaire.
 
    .. image:: img/nvme_erase.png
       :width: 90%
-      
 
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the NVMe SSD!
+
+#. Une fois le message "Écriture réussie" affiché, l’image a bien été gravée et vérifiée. Vous êtes maintenant prêt à démarrer votre Raspberry Pi depuis le SSD NVMe !

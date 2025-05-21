@@ -1,27 +1,28 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l’univers de Raspberry Pi, Arduino et ESP32 avec d’autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Bénéficiez de l’aide de notre équipe et de notre communauté pour résoudre vos problèmes après-vente et relever les défis techniques.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives** : Accédez en priorité aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et tirages au sort** : Participez à des concours et à des offres spéciales durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
-Pironman 5 Series - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5 
+Pironman 5 Series - Boîtier Mini PC PCIe NVMe M.2 SSD pour Raspberry Pi 5
 ================================================================================
 
-Welcome to the official guide for the Pironman 5 Series products. This guide will help you identify your specific product within the series and provide step-by-step instructions for setup and installation.
+Bienvenue dans le guide officiel des produits de la série Pironman 5. Ce guide vous aidera à identifier votre produit spécifique au sein de la série et vous fournira des instructions détaillées pour l’installation et la configuration.
 
-Use the images below to identify the product you purchased. Once identified, click the corresponding link to access the detailed product introduction and specifications. After reviewing the introduction, you can proceed with system installation and the setup of the ``pironman5`` software.
+Utilisez les images ci-dessous pour identifier le produit que vous avez acheté. Une fois identifié, cliquez sur le lien correspondant pour accéder à la présentation détaillée et aux spécifications. Après avoir consulté l’introduction, vous pourrez procéder à l’installation du système et à la configuration du logiciel ``pironman5``.
 
-.. .. note::
+.. 
+  .. note::
 
-..     This document is available in the following languages.
+..     Ce document est disponible dans les langues suivantes :
 
 ..     * |link_german_tutorials|
 ..     * |link_jp_tutorials|
@@ -32,9 +33,9 @@ Use the images below to identify the product you purchased. Once identified, cli
 ..     * |link_zh_tutorials|
 
 
-    .. Please click on the respective links to access the document in your preferred language.
+    .. Cliquez sur le lien correspondant pour consulter le document dans la langue de votre choix.
 
-Based on the images below, select the product you own to learn more. Each link will take you to the respective product's introduction page.
+À partir des images ci-dessous, sélectionnez le produit que vous possédez pour en savoir plus. Chaque lien vous redirigera vers la page de présentation dédiée du produit.
 
 .. list-table:: 
    :widths: 25 25 25
@@ -47,70 +48,70 @@ Based on the images below, select the product you own to learn more. Each link w
      - |pic_pironman5_mini| 
      - |pic_pironman5_max|
 
-Below is a comparison of specifications for the Pironman 5 and Pironman 5 Mini. Use this table to understand the differences between these products.
+Vous trouverez ci-dessous un tableau comparatif des spécifications du Pironman 5 et du Pironman 5 Mini. Utilisez ce tableau pour mieux comprendre les différences entre ces produits.
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 1
 
-   * - Specifications
+   * - Caractéristiques
      - :ref:`intro_pironman5`
      - :ref:`intro_pironman5_mini`
      - :ref:`intro_pironman5_max`
-   * - Compatible Devices 
+   * - Appareils compatibles 
      - Raspberry Pi 5
      - Raspberry Pi 5
      - Raspberry Pi 5
-   * - Input
+   * - Alimentation
      - USB Type C, 5V/5A
      - USB Type C, 5V/5A
      - USB Type C, 5V/5A
-   * - Power Button 
+   * - Bouton d'alimentation 
      - ✔
      - ✔
      - ✔
-   * - Exterior Material 1
-     - Silver Aluminum Alloy
-     - Silver Aluminum Alloy
-     - Black Aluminum Alloy
-   * - Exterior Material 2
-     - Transparent Acrylic
-     - Black Acrylic
-     - Black Acrylic
-   * - Cooler
-     - Tower Cooler
-     - Active Cooler
-     - Tower Cooler
-   * - IR Receiver
+   * - Matériau extérieur 1
+     - Alliage d’aluminium argenté
+     - Alliage d’aluminium argenté
+     - Alliage d’aluminium noir
+   * - Matériau extérieur 2
+     - Acrylique transparent
+     - Acrylique noir
+     - Acrylique noir
+   * - Refroidisseur
+     - Refroidisseur à tour
+     - Refroidisseur actif
+     - Refroidisseur à tour
+   * - Récepteur IR
      - ✔
      - X
      - ✔
-   * - RGB Fans 
-     - 2 (Auto-lit)
-     - 1 (Auto-lit)
-     - 2 (Programmable)
-   * - HDMI Ports
-     - 2 Standard HDMI Ports
-     - 2 Micro HDMI Ports
-     - 2 Standard HDMI Ports
-   * - OLED Screen
+   * - Ventilateurs RGB 
+     - 2 (éclairage automatique)
+     - 1 (éclairage automatique)
+     - 2 (programmables)
+   * - Ports HDMI
+     - 2 ports HDMI standard
+     - 2 ports Micro HDMI
+     - 2 ports HDMI standard
+   * - Écran OLED
      - ✔
      - X
      - ✔
-   * - OLED Activation
-     - Always on
-     - Always on
-     - Wake on Tap
-   * - Support NVMe SSD
+   * - Activation OLED
+     - Toujours allumé
+     - Toujours allumé
+     - Allumage par contact
+   * - Prise en charge NVMe SSD
      - 1
-     - 1   
+     - 1
      - 2
-   * - Dimension
-     - 111.9x78.5x117mm
-     - 67.8x98.6x101.5mm  
-     - 111.9x78.5x117mm
+   * - Dimensions
+     - 111.9 x 78.5 x 117 mm
+     - 67.8 x 98.6 x 101.5 mm  
+     - 111.9 x 78.5 x 117 mm
 
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
+Pour toute question, veuillez envoyer un e-mail à service@sunfounder.com. Nous vous répondrons dans les plus brefs délais.
 
 
 .. raw:: html
@@ -125,7 +126,7 @@ If you have any questions, please send an email to service@sunfounder.com and we
     pironman5_mini/intro_pironman5_mini
     pironman5_max/intro_pironman5_max
 
-**Copyright Notice**
+**Avis de droits d’auteur**
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+Tous les contenus de ce manuel — y compris, sans s’y limiter, les textes, images et codes — sont la propriété de la société SunFounder. Vous ne pouvez les utiliser que dans un cadre personnel : étude, exploration, loisir ou tout autre usage non commercial et à but non lucratif, conformément aux lois sur le droit d’auteur et sans porter atteinte aux droits légitimes de l’auteur et des ayants droit. Toute utilisation commerciale non autorisée par une personne physique ou morale pourra faire l’objet de poursuites judiciaires.
 

@@ -1,40 +1,40 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Rejoignez d'autres passionnés pour explorer plus en profondeur l’univers de Raspberry Pi, Arduino et ESP32.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Bénéficiez de l’aide de notre équipe et de la communauté pour résoudre les problèmes techniques et après-vente.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives** : Accédez en exclusivité aux annonces et aperçus des nouveaux produits.
+    - **Réductions spéciales** : Profitez d’offres exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des jeux-concours et événements spéciaux pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt(e) à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
-3. Installing the Operating System
-=======================================
+3. Installation du système d’exploitation
+===========================================
 
 .. note::
 
-    You need to install an OS that supports Raspberry Pi 5. Please use the latest Raspberry Pi Imager tool for system installation. The currently tested systems are:
+    Vous devez installer un système compatible avec le Raspberry Pi 5. Utilisez la dernière version de Raspberry Pi Imager pour procéder à l’installation. Les systèmes actuellement testés sont les suivants :
 
    .. image:: img/compitable_os.png
 
 .. note::
 
-    If you want to use the OpenMediaVault OS, please install the Raspberry Pi OS Lite.
+    Si vous souhaitez utiliser le système OpenMediaVault, veuillez d’abord installer Raspberry Pi OS Lite.
 
     .. image:: ../img/omv/omv-install-1.png
 
 
-In this chapter, you will learn how to install the operating systems. All the installation steps depend on the |link_rpi_imager|, which you need to install first.
+Dans ce chapitre, vous apprendrez à installer différents systèmes d’exploitation. Toutes les étapes d’installation s’appuient sur |link_rpi_imager|, que vous devez d’abord installer.
 
     .. toctree::
         :maxdepth: 1
 
         install_raspberry_os
         install_the_other_os
-        
+
 .. install_batocera
 

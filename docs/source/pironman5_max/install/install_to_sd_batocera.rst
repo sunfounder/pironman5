@@ -1,68 +1,68 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Rejoignez d’autres passionnés pour approfondir vos connaissances et vos projets autour du Raspberry Pi, d’Arduino et d’ESP32.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes techniques et après-vente grâce à l’aide de notre équipe et de notre communauté.
+    - **Apprendre & Partager** : Échangez des astuces et tutoriels pour développer vos compétences.
+    - **Avant-premières exclusives** : Soyez parmi les premiers à découvrir nos nouveaux produits et à accéder à des aperçus exclusifs.
+    - **Réductions spéciales** : Bénéficiez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et cadeaux** : Participez à des concours et événements spéciaux pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt(e) à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
 .. _max_install_to_sd_ubuntu:
 
-Installing the OS on a Micro SD Card
-=============================================
+Installation du système d’exploitation sur une carte Micro SD
+=====================================================================
 
-If you are using a Micro SD card, you can follow the tutorial below to install the system onto your Micro SD card.
+Si vous utilisez une carte Micro SD, vous pouvez suivre le tutoriel ci-dessous pour y installer le système.
 
 
-**Required Components**
+**Composants requis**
 
-* A Personal Computer
-* A Micro SD card and Reader
+* Un ordinateur personnel
+* Une carte Micro SD et un lecteur
 
-**Steps**
+**Étapes**
 
-#. First, navigate to the |link_batocera_download| page, select **Raspberry Pi 5 B**, and click to download.
+#. Rendez-vous sur la page |link_batocera_download|, sélectionnez **Raspberry Pi 5 B**, puis cliquez sur Télécharger.
 
    .. image:: img/batocera_download.png
       :width: 90%
-      
-#. Unzip the downloaded file ``batocera-xxx-xx-xxxxxxxx.img.gz``.
 
-#. Insert your SD card into your computer or laptop using a Reader.
+#. Décompressez le fichier téléchargé ``batocera-xxx-xx-xxxxxxxx.img.gz``.
 
-#. Within the |link_rpi_imager|, click on the **Operating System** tab.
+#. Insérez la carte SD dans votre ordinateur ou ordinateur portable à l’aide d’un lecteur.
+
+#. Dans le |link_rpi_imager|, cliquez sur l’onglet **Operating System**.
 
    .. image:: img/os_choose_os.png
       :width: 90%
 
-#. Scroll down to the bottom of the page and select **Use Custom**.
+#. Faites défiler jusqu’en bas de la page et sélectionnez **Use Custom**.
 
    .. image:: img/batocera_os_use_custom.png
       :width: 90%
-      
 
-#. Choose the system file you have just unzipped, ``batocera-xxx-xx-xxxxxxxx.img``, and then click **Open**.
+
+#. Sélectionnez le fichier système que vous venez de décompresser, ``batocera-xxx-xx-xxxxxxxx.img``, puis cliquez sur **Open**.
 
    .. image:: img/batocera_os_choose.png
       :width: 90%
-      
 
-#. Click **Choose Storage** and select the appropriate storage device for the installation.
+
+#. Cliquez sur **Choose Storage** et sélectionnez le périphérique de stockage approprié pour l’installation.
 
    .. image:: img/os_choose_sd.png
       :width: 90%
-      
 
-#. Now you can click **NEXT**. If the storage device contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+
+#. Cliquez maintenant sur **NEXT**. Si le support contient déjà des données, veillez à les sauvegarder. Cliquez sur **Yes** si aucune sauvegarde n’est nécessaire.
 
    .. image:: img/os_continue.png
       :width: 90%
-      
 
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the Micro SD Card!
+
+#. Lorsque la fenêtre "Write Successful" apparaît, cela signifie que l’image a bien été écrite et vérifiée. Vous êtes maintenant prêt à démarrer votre Raspberry Pi depuis la carte Micro SD !

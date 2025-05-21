@@ -240,7 +240,7 @@ Si le problème persiste après avoir suivi ces étapes, veuillez envoyer un e-m
 
 #. Les deux broches sur l'IO Expander au-dessus de J9 sont utilisées pour connecter les LEDs RGB à GPIO10. Assurez-vous que le cavalier sur ces deux broches est correctement en place.
 
-   .. image:: advanced/img/io_board_rgb_pin.png
+   .. image:: img/io_board_rgb_pin.png
       :width: 300
       :align: center
 

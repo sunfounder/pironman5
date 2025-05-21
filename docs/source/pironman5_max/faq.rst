@@ -1,104 +1,104 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Rejoignez d’autres passionnés pour aller plus loin dans l’univers de Raspberry Pi, Arduino et ESP32.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Bénéficiez d’une assistance pour résoudre les problèmes techniques et après-vente grâce à notre communauté et notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives** : Accédez en exclusivité aux annonces de nouveaux produits et à des aperçus.
+    - **Réductions spéciales** : Profitez d’offres spéciales sur nos dernières nouveautés.
+    - **Promotions festives et cadeaux** : Participez à des concours et animations pendant les périodes festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt(e) à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
 FAQ
 ============
 
-How to disable web dashboard?
+Comment désactiver le tableau de bord Web ?
 ------------------------------------------------------
 
-Once you have completed the installation of the ``pironman5`` module, you will be able to access the :ref:`max_view_control_dashboard`.
-      
-If you do not need this feature and want to reduce CPU and RAM usage, you can disable the dashboard during the installation of ``pironman5`` by adding the ``--disable-dashboard`` flag.
-      
+Une fois l’installation du module ``pironman5`` terminée, vous pouvez accéder au :ref:`max_view_control_dashboard`.
+
+Si vous ne souhaitez pas utiliser cette fonctionnalité et souhaitez réduire la consommation CPU et RAM, vous pouvez désactiver le tableau de bord pendant l’installation avec l’option ``--disable-dashboard``.
+
 .. code-block:: shell
-      
+
    cd ~/pironman5
    sudo python3 install.py --disable-dashboard
-      
-If you have already installed ``pironman 5``, you can remove the ``dashboard`` module and ``influxdb``, then restart pironman5 to apply the changes:
-      
+
+Si vous avez déjà installé ``pironman5``, vous pouvez désinstaller le module ``dashboard`` ainsi que ``influxdb``, puis redémarrer le service pour appliquer les changements :
+
 .. code-block:: shell
-      
+
    /opt/pironman5/venv/bin/pip3 uninstall pm-dashboard influxdb
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-Does the Pironman 5 support retro gaming systems?
-------------------------------------------------------
-Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
+Le Pironman 5 est-il compatible avec les systèmes de jeux rétro ?
+------------------------------------------------------------------------
+Oui, il est compatible. Toutefois, la plupart des systèmes de jeux rétro sont des distributions allégées qui ne permettent pas l’installation de logiciels supplémentaires. Cela peut empêcher certains composants du Pironman 5, comme l’écran OLED, les deux ventilateurs RGB et les 4 LED RGB, de fonctionner correctement car ils nécessitent les paquets logiciels de Pironman 5.
 
 
 .. note::
 
-    The Batocera.linux system is now fully compatible with Pironman 5. Batocera.linux is an open-source and completely free retro-gaming distribution.
+    Le système Batocera.linux est désormais entièrement compatible avec le Pironman 5. Il s’agit d’une distribution open source et gratuite dédiée au rétro-gaming.
 
     * :ref:`max_install_batocera`
     * :ref:`max_set_up_batocera`
 
-How to Control Components Using the ``pironman5`` Command
+Comment contrôler les composants avec la commande ``pironman5`` ?
 ----------------------------------------------------------------------
-You can refer to the following tutorial to control the components of the Pironman 5 using the ``pironman5`` command.
+Vous pouvez consulter le tutoriel suivant pour contrôler les composants du Pironman 5 avec la commande ``pironman5`` :
 
 * :ref:`max_view_control_commands`
 
-How to Change the Raspberry Pi Boot Order Using Commands
--------------------------------------------------------------
+Comment modifier l’ordre de démarrage du Raspberry Pi via commande ?
+-----------------------------------------------------------------------
 
-If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
+Si vous êtes déjà connecté à votre Raspberry Pi, vous pouvez modifier l’ordre de démarrage via ligne de commande. Voir les instructions détaillées :
 
 * :ref:`max_configure_boot_ssd`
 
 
-How to Modify the Boot Order with Raspberry Pi Imager?
----------------------------------------------------------------
+Comment modifier l’ordre de démarrage avec Raspberry Pi Imager ?
+--------------------------------------------------------------------
 
-In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can also use the **Raspberry Pi Imager** to change the boot order of your Raspberry Pi.
+En plus de modifier la variable ``BOOT_ORDER`` dans la configuration EEPROM, vous pouvez utiliser **Raspberry Pi Imager** pour définir l’ordre de démarrage.
 
-It is recommended to use a spare card for this step.
+Il est recommandé d’utiliser une carte Micro SD de rechange pour cette opération.
 
 * :ref:`max_update_bootloader`
 
-How to Copy the System from the SD Card to an NVMe SSD?
--------------------------------------------------------------
+Comment copier le système de la carte SD vers un SSD NVMe ?
+-----------------------------------------------------------------
 
-If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
+Si vous avez un SSD NVMe mais pas d’adaptateur pour le connecter à votre ordinateur, vous pouvez d’abord installer le système sur la carte Micro SD. Une fois que le Pironman 5 démarre correctement, copiez le système de la carte SD vers le SSD NVMe. Suivez les instructions ci-dessous :
 
 
 * :ref:`max_copy_sd_to_nvme_rpi`
 
 
-OLED Screen Not Working?
---------------------------
+L’écran OLED ne fonctionne pas ?
+--------------------------------------
 
-If the OLED Screen is not displaying or displaying incorrectly, you can follow these steps to troubleshoot the issue:
+Si l’écran OLED n’affiche rien ou s’affiche de façon incorrecte, suivez ces étapes pour diagnostiquer le problème :
 
-Check if the FPC cable of the OLED Screen is properly connected.
+Vérifiez si le câble FPC de l’écran OLED est correctement connecté.
 
-#. Use the following command to view the program's run logs and check for error messages.
+#. Utilisez la commande suivante pour consulter les journaux et détecter d’éventuelles erreurs :
 
    .. code-block:: shell
 
       cat /opt/pironman5/log
 
-#. Alternatively, use the following command to check if the OLED's i2c address 0x3C is recognized:
-    
+#. Vous pouvez aussi vérifier si l’adresse i2c 0x3C de l’écran est reconnue :
+
    .. code-block:: shell
-        
+
         sudo i2cdetect -y 1
 
-#. If the first two steps don't reveal any issues, try restarting the pironman5 service to see if that resolves the problem.
+#. Si aucune anomalie n’est détectée, tentez de redémarrer le service pironman5 :
 
 
    .. code-block:: shell
@@ -107,10 +107,10 @@ Check if the FPC cable of the OLED Screen is properly connected.
 
 .. _max_openssh_powershell:
 
-Install OpenSSH via Powershell
+Installer OpenSSH via PowerShell
 -----------------------------------
 
-When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``) to connect to your Raspberry Pi, but the following error message appears.
+Lorsque vous tentez de vous connecter à votre Raspberry Pi via ``ssh <username>@<hostname>.local`` (ou ``ssh <username>@<IP address>``) et que vous voyez le message d’erreur suivant :
 
     .. code-block::
 
@@ -118,21 +118,21 @@ When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP addres
         spelling of the name, or if a path was included, verify that the path is correct and try again.
 
 
-It means your computer system is too old and does not have `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ pre-installed, you need to follow the tutorial below to install it manually.
+Cela signifie que votre système Windows est trop ancien et ne dispose pas de `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ préinstallé. Suivez les étapes ci-dessous pour l’installer manuellement.
 
-#. Type ``powershell`` in the search box of your Windows desktop, right click on the ``Windows PowerShell``, and select ``Run as administrator`` from the menu that appears.
+#. Tapez ``powershell`` dans la barre de recherche de Windows, faites un clic droit sur ``Windows PowerShell`` et choisissez ``Run as administrator``.
 
    .. image:: img/powershell_ssh.png
       :width: 90%
-      
 
-#. Use the following command to install ``OpenSSH.Client``.
+
+#. Exécutez la commande suivante pour installer ``OpenSSH.Client`` :
 
    .. code-block::
 
         Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
-#. After installation, the following output will be returned.
+#. Une fois l’installation terminée, vous verrez un résultat semblable à celui-ci :
 
    .. code-block::
 
@@ -140,13 +140,13 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
         Online        : True
         RestartNeeded : False
 
-#. Verify the installation by using the following command.
+#. Vérifiez l’installation avec la commande suivante :
 
    .. code-block::
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. It now tells you that ``OpenSSH.Client`` has been successfully installed.
+#. Vous verrez alors que ``OpenSSH.Client`` est installé avec succès :
 
    .. code-block::
 
@@ -156,17 +156,17 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
         Name  : OpenSSH.Server~~~~0.0.1.0
         State : NotPresent
 
-   .. warning:: 
+   .. warning::
 
-        If the above prompt does not appear, it means that your Windows system is still too old, and you are advised to install a third-party SSH tool, like |link_putty|.
+        Si cette information n’apparaît pas, cela signifie que votre version de Windows est trop ancienne. Nous vous recommandons d’utiliser un outil SSH tiers, comme |link_putty|.
 
-#. Now restart PowerShell and continue to run it as administrator. At this point you will be able to log in to your Raspberry Pi using the ``ssh`` command, where you will be prompted to enter the password you set up earlier.
+#. Redémarrez PowerShell en tant qu’administrateur. Vous pourrez désormais vous connecter à votre Raspberry Pi avec la commande ``ssh``, qui vous demandera le mot de passe configuré précédemment.
 
    .. image:: img/powershell_login.png
 
 
 
-If I set up OMV, can I still use the Pironman5's function?
+Puis-je utiliser les fonctionnalités du Pironman 5 avec OMV ?
 --------------------------------------------------------------------------------------------------------
 
-Yes, OpenMediaVault is set up on the Raspberry Pi system. Please follow the steps of :ref:`max_set_up_pi_os` to continue the configuration.
+Oui, OpenMediaVault est installé sur le système Raspberry Pi. Veuillez suivre les étapes décrites dans :ref:`max_set_up_pi_os` pour compléter la configuration.

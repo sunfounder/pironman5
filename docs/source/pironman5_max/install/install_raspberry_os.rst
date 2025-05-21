@@ -1,24 +1,24 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Rejoignez d'autres passionnés pour approfondir vos connaissances et projets autour de Raspberry Pi, Arduino et ESP32.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Obtenez de l’aide pour résoudre les problèmes techniques ou liés au service après-vente grâce à notre équipe et notre communauté.
+    - **Apprendre & Partager** : Échangez des conseils et tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives** : Bénéficiez d’un accès anticipé aux annonces et aperçus de nouveaux produits.
+    - **Réductions spéciales** : Profitez d’offres exclusives sur nos dernières innovations.
+    - **Promotions festives et cadeaux** : Participez à des concours et événements promotionnels tout au long de l’année.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt(e) à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès maintenant !
 
-Install the Raspberry Pi OS
+Installer Raspberry Pi OS
 ================================================================================
 
-You can choose the installation method based on whether you have a Micro SD or an NVMe SSD at hand.
+La méthode d'installation dépend du support dont vous disposez : carte Micro SD ou SSD NVMe.
 
-* Installing directly onto the NVMe SSD involves an additional step compared to installing on the Micro SD: you must update the Raspberry Pi's bootloader because it defaults to boot from the Micro SD card. Update the bootloader to prioritize booting from the NVMe SSD.
-* If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, consider the third option to first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD.
+* L’installation directe sur un SSD NVMe nécessite une étape supplémentaire par rapport à une carte Micro SD : vous devez mettre à jour le bootloader du Raspberry Pi, qui démarre par défaut sur la carte Micro SD. Mettez à jour le bootloader pour qu’il privilégie le démarrage depuis le SSD NVMe.
+* Si vous possédez un SSD NVMe mais pas d’adaptateur pour le connecter à votre ordinateur, envisagez une troisième option : commencez par installer le système sur votre carte Micro SD. Une fois le Pironman 5 démarré avec succès, vous pourrez copier le système de la carte Micro SD vers le SSD NVMe.
 
 
 .. toctree::
