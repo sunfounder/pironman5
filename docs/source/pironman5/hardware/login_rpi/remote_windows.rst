@@ -1,29 +1,29 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Sumérgete más profundamente en Raspberry Pi, Arduino y ESP32 con otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de réductions exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions lors des fêtes.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Pour les utilisateurs de Windows
-==================================
+Para usuarios de Windows
+============================
 
-Pour les utilisateurs de Windows 10 ou supérieur, la connexion à distance à un Raspberry Pi peut être réalisée en suivant les étapes suivantes :
+Para los usuarios de Windows 10 o superior, el inicio de sesión remoto en una Raspberry Pi se puede lograr a través de los siguientes pasos:
 
-#. Recherchez ``powershell`` dans la barre de recherche Windows. Faites un clic droit sur ``Windows PowerShell`` et sélectionnez ``Exécuter en tant qu'administrateur``.
+#. Busca ``powershell`` en la barra de búsqueda de Windows. Haz clic derecho en ``Windows PowerShell`` y selecciona ``Ejecutar como administrador``.
 
    .. image:: img/powershell_ssh.png
       :width: 90%
       
 
-#. Déterminez l'adresse IP de votre Raspberry Pi en tapant ``ping -4 <hostname>.local`` dans PowerShell.
+#. Determina la dirección IP de tu Raspberry Pi escribiendo ``ping -4 <nombre_de_host>.local`` en PowerShell.
 
    .. code-block::
 
@@ -33,12 +33,12 @@ Pour les utilisateurs de Windows 10 ou supérieur, la connexion à distance à u
      :width: 90%
       
 
-   L'adresse IP du Raspberry Pi sera affichée une fois qu'il sera connecté au réseau.
+   La dirección IP de la Raspberry Pi se mostrará una vez que esté conectada a la red.
 
-   * Si le terminal affiche ``Ping request could not find host pi.local. Please check the name and try again.``, vérifiez que le nom d'hôte que vous avez saisi est correct.
-   * Si l'adresse IP ne peut toujours pas être récupérée, vérifiez les paramètres de votre réseau ou de votre WiFi sur le Raspberry Pi.
+   * Si la terminal muestra ``Ping request could not find host pi.local. Please check the name and try again.``, verifica que el nombre de host ingresado sea correcto.
+   * Si aún no se puede obtener la dirección IP, revisa la configuración de red o WiFi en la Raspberry Pi.
 
-#. Une fois l'adresse IP confirmée, connectez-vous à votre Raspberry Pi en utilisant ``ssh <username>@<hostname>.local`` ou ``ssh <username>@<IP address>``.
+#. Una vez confirmada la dirección IP, inicia sesión en tu Raspberry Pi usando ``ssh <nombre_de_usuario>@<nombre_de_host>.local`` o ``ssh <nombre_de_usuario>@<dirección_IP>``.
 
     .. code-block::
 
@@ -46,9 +46,9 @@ Pour les utilisateurs de Windows 10 ou supérieur, la connexion à distance à u
 
     .. warning::
 
-        Si une erreur apparaît indiquant ``The term 'ssh' is not recognized as the name of a cmdlet...``, il est possible que votre système n'ait pas les outils SSH pré-installés. Dans ce cas, vous devrez installer manuellement OpenSSH en suivant :ref:`openssh_powershell`, ou utiliser un outil tiers tel que |link_putty|.
+        Si aparece un error que dice ``The term 'ssh' is not recognized as the name of a cmdlet...``, es posible que tu sistema no tenga las herramientas SSH preinstaladas. En este caso, deberás instalar OpenSSH manualmente siguiendo :ref:`openssh_powershell` , o usar una herramienta de terceros como |link_putty|.
 
-#. Un message de sécurité apparaîtra lors de votre première connexion. Saisissez ``yes`` pour continuer.
+#. Aparecerá un mensaje de seguridad en tu primer inicio de sesión. Escribe ``yes`` para continuar.
 
     .. code-block::
 
@@ -56,12 +56,12 @@ Pour les utilisateurs de Windows 10 ou supérieur, la connexion à distance à u
         ED25519 key fingerprint is SHA256:oo7x3ZSgAo032wD1tE8eW0fFM/kmewIvRwkBys6XRwg.
         Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
-#. Entrez le mot de passe que vous avez précédemment défini. Notez que les caractères du mot de passe ne seront pas affichés à l'écran, ce qui est une fonctionnalité de sécurité standard.
+#. Ingresa la contraseña que configuraste previamente. Ten en cuenta que los caracteres de la contraseña no se mostrarán en la pantalla, lo cual es una característica de seguridad estándar.
 
     .. note::
-        L'absence de caractères visibles lors de la saisie du mot de passe est normale. Assurez-vous de bien entrer le mot de passe correct.
+        La ausencia de caracteres visibles al escribir la contraseña es normal. Asegúrate de ingresar la contraseña correcta.
 
-#. Une fois connecté, votre Raspberry Pi est prêt pour les opérations à distance.
+#. Una vez conectado, tu Raspberry Pi estará lista para operaciones remotas.
 
    .. image:: img/sp221221_140628.png
       :width: 90%

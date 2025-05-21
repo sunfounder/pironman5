@@ -1,40 +1,40 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Sumérgete más profundamente en Raspberry Pi, Arduino y ESP32 con otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes post-achat et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives**: Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de réductions exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort**: Participez à des concours et des promotions lors des fêtes.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Pour les utilisateurs de Linux/Unix
-=======================================
+Para usuarios de Linux/Unix
+===============================
 
-#. Localisez et ouvrez le **Terminal** sur votre système Linux/Unix.
+#. Ubica y abre la **Terminal** en tu sistema Linux/Unix.
 
-#. Assurez-vous que votre Raspberry Pi est connecté au même réseau. Vérifiez cela en tapant `ping <hostname>.local`. Par exemple :
+#. Asegúrate de que tu Raspberry Pi esté conectada a la misma red. Verifícalo escribiendo `ping <nombre_de_host>.local`. Por ejemplo:
 
     .. code-block::
 
         ping raspberrypi.local
 
-    Vous devriez voir l'adresse IP de votre Raspberry Pi s'il est connecté au réseau.
+    Deberías ver la dirección IP de la Raspberry Pi si está conectada a la red.
 
-    * Si le terminal affiche un message tel que ``Ping request could not find host pi.local. Please check the name and try again.``, vérifiez le nom d'hôte que vous avez entré.
-    * Si vous ne parvenez pas à obtenir l'adresse IP, examinez vos paramètres réseau ou WiFi sur le Raspberry Pi.
+    * Si la terminal muestra un mensaje como ``Ping request could not find host pi.local. Please check the name and try again.``, verifica nuevamente el nombre de host que has ingresado.
+    * Si no puedes obtener la dirección IP, revisa la configuración de red o WiFi en la Raspberry Pi.
 
-#. Initiez une connexion SSH en tapant ``ssh <username>@<hostname>.local`` ou ``ssh <username>@<IP address>``. Par exemple :
+#. Inicia una conexión SSH escribiendo ``ssh <nombre_de_usuario>@<nombre_de_host>.local`` o ``ssh <nombre_de_usuario>@<dirección_IP>``. Por ejemplo:
 
     .. code-block::
 
         ssh pi@raspberrypi.local
 
-#. Lors de votre première connexion, vous verrez un message de sécurité. Tapez ``yes`` pour continuer.
+#. En tu primer inicio de sesión, te encontrarás con un mensaje de seguridad. Escribe ``yes`` para continuar.
 
     .. code-block::
 
@@ -42,12 +42,10 @@ Pour les utilisateurs de Linux/Unix
         ED25519 key fingerprint is SHA256:oo7x3ZSgAo032wD1tE8eW0fFM/kmewIvRwkBys6XRwg.
         Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
-#. Entrez le mot de passe que vous avez précédemment défini. Notez que pour des raisons de sécurité, le mot de passe ne sera pas visible pendant que vous le tapez.
+#. Ingresa la contraseña que configuraste previamente. Ten en cuenta que, por motivos de seguridad, la contraseña no será visible mientras la escribes.
 
     .. note::
-        Il est normal que les caractères du mot de passe ne s'affichent pas dans le terminal. Assurez-vous simplement de saisir correctement le mot de passe.
+        Es normal que los caracteres de la contraseña no se muestren en la terminal. Solo asegúrate de ingresar la contraseña correcta.
 
-
-
-#. Une fois connecté avec succès, votre Raspberry Pi est désormais connecté, et vous êtes prêt à passer à l'étape suivante.
+#. Una vez que hayas iniciado sesión correctamente, tu Raspberry Pi estará conectada y estarás listo para continuar con el siguiente paso.
 

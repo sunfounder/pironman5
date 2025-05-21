@@ -1,23 +1,23 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Sumérgete más profundamente en Raspberry Pi, Arduino y ESP32 con otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives**: Profitez d'un accès anticipé aux annonces de nouveaux produits et aux aperçus exclusifs.
-    - **Réductions spéciales**: Bénéficiez de réductions exclusives sur nos derniers produits.
-    - **Promotions festives et tirages au sort**: Participez à des concours et des promotions pendant les fêtes.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Pour les utilisateurs de Mac OS X
-=====================================
+Para usuarios de Mac OS X
+==============================
 
-Pour les utilisateurs de Mac OS X, SSH (Secure Shell) offre une méthode sécurisée et pratique pour accéder à distance et contrôler un Raspberry Pi. Cela est particulièrement utile pour travailler à distance avec le Raspberry Pi ou lorsqu'il n'est pas connecté à un moniteur. En utilisant l'application Terminal sur un Mac, vous pouvez établir cette connexion sécurisée. Le processus implique une commande SSH intégrant le nom d'utilisateur et le nom d'hôte du Raspberry Pi. Lors de la première connexion, une invite de sécurité vous demandera de confirmer l'authenticité du Raspberry Pi.
+Para los usuarios de Mac OS X, SSH (Secure Shell) ofrece un método seguro y conveniente para acceder y controlar una Raspberry Pi de forma remota. Esto es especialmente útil cuando trabajas con la Raspberry Pi sin que esté conectada a un monitor. Usando la aplicación Terminal en un Mac, puedes establecer esta conexión segura. El proceso implica un comando SSH que incorpora el nombre de usuario y el nombre de host de la Raspberry Pi. Durante la conexión inicial, un aviso de seguridad te pedirá que confirmes la autenticidad de la Raspberry Pi.
 
-#. Pour vous connecter au Raspberry Pi, tapez la commande SSH suivante :
+#. Para conectarte a la Raspberry Pi, escribe el siguiente comando SSH:
 
     .. code-block::
 
@@ -25,7 +25,7 @@ Pour les utilisateurs de Mac OS X, SSH (Secure Shell) offre une méthode sécuri
 
    .. image:: img/mac_vnc14.png
 
-#. Un message de sécurité apparaîtra lors de votre première connexion. Répondez par **yes** pour continuer.
+#. Aparecerá un mensaje de seguridad durante tu primer inicio de sesión. Responde con **yes** para continuar.
 
     .. code-block::
 
@@ -33,7 +33,7 @@ Pour les utilisateurs de Mac OS X, SSH (Secure Shell) offre une méthode sécuri
         ED25519 key fingerprint is SHA256:oo7x3ZSgAo032wD1tE8eW0fFM/kmewIvRwkBys6XRwg.
         Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
-#. Entrez le mot de passe du Raspberry Pi. Notez que le mot de passe ne s'affichera pas à l'écran pendant que vous tapez, ce qui est une fonctionnalité de sécurité standard.
+#. Ingresa la contraseña de la Raspberry Pi. Ten en cuenta que la contraseña no se mostrará en pantalla mientras la escribes, lo cual es una medida de seguridad estándar.
 
     .. code-block::
 

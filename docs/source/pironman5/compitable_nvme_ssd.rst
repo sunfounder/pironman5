@@ -1,22 +1,22 @@
-.. note::
+.. note:: 
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
-    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-goûts.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
-    - **Promotions festives et cadeaux** : Participez à des tirages au sort et à des promotions spéciales pour les fêtes.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y contenido exclusivo.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-NVMe SSD compatibles
-=======================
+Discos SSD NVMe compatibles
+=============================
 
-NVMe SSD compatibles
------------------------
+Discos SSD NVMe compatibles
+-----------------------------
 
 * ADATA Legend 700
 * ADATA Legend 800
@@ -63,27 +63,26 @@ NVMe SSD compatibles
 * Western Digital SN740
 * Western Digital SN570
 * Western Digital SN530
-* Western Digital Black SN750 SE (Phison Controller)
-* Western Digital Blue SN550 series (Si vous savez comment installer les dernières mises à jour rpi-eeprom, le fichier pieeprom-2024-01-24.bin a corrigé le problème de démarrage avec les NVMe Western Digital Blue SN550. Consultez : https://forums.raspberrypi.com/viewtopic.php?t=364327.)
+* Western Digital Black SN750 SE (controlador Phison)
+* Serie Western Digital Blue SN550 (si sabes cómo instalar las actualizaciones más recientes de rpi-eeprom, el archivo pieeprom-2024-01-24.bin solucionó el problema de arranque con la serie Western Digital Blue SN550. Consulta https://forums.raspberrypi.com/viewtopic.php?t=364327).
 
 * XPG GAMMIX S70 BLADE
 * XPG SX8200 Pro
 
+Discos SSD NVMe incompatibles
+--------------------------------
 
-NVMe SSD incompatibles
---------------------------
+Recomendamos evitar los siguientes discos SSD NVMe que están equipados con un controlador Phison debido a su comprobada incompatibilidad:
 
-Nous vous recommandons d'éviter les disques NVMe SSD suivants équipés d'un contrôleur Phison, en raison de leur incompatibilité avérée :
-
-* Série WD Blue SN580
-* Série Western Digital Green SN350
-* Série Western Digital Black SN850
+* Serie WD Blue SN580
+* Serie Western Digital Green SN350
+* Serie Western Digital Black SN850
 * Western Digital Black SN770
 * WD BLACK 8TB SN850X
-* Inland tn446 nvme drive
+* Unidad Inland tn446 NVMe
 * Corsair MP600 SSD
 * Samsung PM991
 * Kingston OM8SEP4256Q-A0
 * Transcend 110Q (TS500GMTE110Q)
-* Les modèles SN350 et SN570 empêchent notamment le démarrage du RPi 5.
-* Autres disques NVMe SSD équipés du même contrôleur Phison.
+* Las series SN350 y SN570 impidieron que el Raspberry Pi 5 arrancara.
+* Otros discos SSD NVMe con el mismo controlador Phison.

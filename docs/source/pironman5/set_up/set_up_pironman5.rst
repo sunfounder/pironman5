@@ -1,29 +1,29 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi & Arduino & ESP32 sur Facebook ! Plongez-vous dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 con otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes après-vente et surmontez les défis techniques avec l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux nouvelles annonces de produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de remises exclusives sur nos produits les plus récents.
-    - **Promotions festives et concours**: Participez à des tirages au sort et à des promotions spéciales.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _set_up_pironman5:
 
-4. Configuration ou installation du logiciel
+4. Configurar o Instalar Software
 ================================================
 
-Maintenant que le système a été écrit sur la Micro SD ou le NVMe SSD, vous pouvez les insérer dans l'emplacement prévu du Pironman 5. Ensuite, appuyez sur le bouton d'alimentation pour allumer l'appareil.
+Una vez que el sistema se haya escrito en la Micro SD o el NVMe SSD, puedes insertarlos en la ranura del Pironman 5. Luego, presiona el botón de encendido para encender el dispositivo.
 
-Après avoir allumé l'appareil, vous verrez que les différentes LED d'alimentation sont allumées, mais l'écran OLED, les LED RGB et les ventilateurs RGB (les deux ventilateurs latéraux) ne fonctionneront pas encore, car ils doivent être configurés. Si vous constatez des problèmes d'affichage à l'écran, veuillez les ignorer pour l'instant ; ils seront résolus après la configuration.
+Después de encenderlo, verás que se iluminan varios LEDs de encendido, pero la pantalla OLED, los LEDs RGB y los ventiladores RGB (los dos ventiladores en el lateral) aún no estarán operativos, ya que necesitan ser configurados. Si experimentas un problema de distorsión en la pantalla, ignóralo por ahora; se resolverá después de la configuración.
 
-Avant de procéder à la configuration, vous devez démarrer et vous connecter à votre Raspberry Pi. Si vous ne savez pas comment vous connecter, vous pouvez consulter le site officiel de Raspberry Pi: |link_rpi_get_start|.
+Antes de configurar, necesitas iniciar sesión en tu Raspberry Pi. Si no estás seguro de cómo iniciar sesión, puedes visitar el sitio web oficial de Raspberry Pi: |link_rpi_get_start|.
 
-Vous pouvez ensuite sélectionner le tutoriel de configuration en fonction de votre système.
+Luego, puedes proceder a seleccionar el tutorial de configuración según tu sistema.
 
 
 .. toctree::
@@ -34,19 +34,19 @@ Vous pouvez ensuite sélectionner le tutoriel de configuration en fonction de vo
     set_up_batocera
 
 
-**À propos du bouton d'alimentation**
+**Acerca del botón de encendido**
 
-Le bouton d'alimentation fait ressortir le bouton d'alimentation du Raspberry Pi 5, et il fonctionne de la même manière que le bouton d'alimentation du Raspberry Pi 5.
+El botón de encendido replica la función del botón de encendido del Raspberry Pi 5, y su funcionalidad es similar al del Raspberry Pi 5.
 
-* **Éteindre**
+* **Apagado**
 
-    * Si vous utilisez le système Raspberry Pi **Bookworm Desktop**, vous pouvez appuyer deux fois rapidement sur le bouton d'alimentation pour éteindre.
-    * Si vous utilisez le système Raspberry Pi **Bookworm Lite**, appuyez une seule fois sur le bouton d'alimentation pour initier l'arrêt.
-    * Pour forcer un arrêt brutal, appuyez et maintenez le bouton d'alimentation enfoncé.
+    * Si ejecutas el sistema Raspberry Pi **Bookworm Desktop**, puedes presionar el botón de encendido dos veces en rápida sucesión para apagarlo.
+    * Si ejecutas el sistema Raspberry Pi **Bookworm Lite**, presiona el botón de encendido una sola vez para iniciar el apagado.
+    * Para forzar un apagado forzoso, mantén presionado el botón de encendido.
 
-* **Allumer**
+* **Encendido**
 
-    * Si la carte Raspberry Pi est éteinte mais toujours alimentée, appuyez une seule fois pour allumer à partir d'un état d'arrêt.
+    * Si la placa Raspberry Pi está apagada pero sigue recibiendo energía, presiona el botón una sola vez para encenderla desde un estado de apagado.
 
-* Si vous utilisez un système qui ne prend pas en charge un bouton d'arrêt, vous pouvez le maintenir enfoncé pendant 5 secondes pour forcer un arrêt brutal, puis appuyer une seule fois pour allumer à partir d'un état d'arrêt.
+* Si estás ejecutando un sistema que no admite un botón de apagado, puedes mantener presionado el botón durante 5 segundos para forzar un apagado forzoso y presionar una vez para encender desde un estado de apagado.
 

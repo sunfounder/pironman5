@@ -1,15 +1,15 @@
-.. _intro_pironman5:
+.. _intro_pironman5: 
 
 Pironman 5
 =================================
 
-Thanks for choosing our |link_pironman5|.
+Gracias por elegir nuestro |link_pironman5|.
 
 .. image:: img/pironman5_pic.jpg
     :width: 400
     :align: center
 
-Pironman 5 is a mini PC case designed specifically for the Raspberry Pi. Crafted from durable aluminum, it features an advanced cooling system with a tower cooler and dual RGB fans, along with dust filters to ensure optimal performance. The case supports NVMe M.2 SSDs (2230, 2242, 2260, 2280) and is fully compatible with the Hailo-8L AI accelerator, providing enhanced storage and powerful edge AI capabilities. A built-in 0.96” OLED display delivers real-time insights into CPU usage, memory, temperature, and IP address, while dual HDMI ports, customizable RGB LEDs, a secure power switch, an IR receiver, and an external GPIO extender boost connectivity and functionality. Ideal for NAS, Home Assistant, media centers, gaming setups, and AI projects, Pironman 5 comes with a clear, step-by-step guide for easy assembly and setup.
+El Pironman 5 es una carcasa tipo mini PC diseñada específicamente para la Raspberry Pi. Fabricada en aluminio resistente, incorpora un sistema de refrigeración avanzado con disipador tipo torre y dos ventiladores RGB, además de filtros de polvo para garantizar un rendimiento óptimo. Es compatible con discos NVMe M.2 SSD (2230, 2242, 2260, 2280) y con el acelerador de inteligencia artificial Hailo-8L, lo que proporciona almacenamiento de alto rendimiento y potentes capacidades de IA en el borde. Incluye una pantalla OLED de 0.96” que muestra en tiempo real el uso de la CPU, la memoria, la temperatura y la dirección IP. También dispone de puertos HDMI duales, LEDs RGB personalizables, botón de encendido seguro, receptor IR y un extensor GPIO externo para mejorar la conectividad y funcionalidad. Ideal para proyectos NAS, Home Assistant, centros multimedia, juegos y desarrollos de IA, el Pironman 5 viene con una guía clara y detallada para facilitar su montaje e instalación.
 
 .. toctree::
     :maxdepth: 1
@@ -34,33 +34,33 @@ Pironman 5 is a mini PC case designed specifically for the Raspberry Pi. Crafted
 .. image:: img/pironman5_interfaces2.png
     :width: 400
 
-**Parameters**
+**Parámetros**
 
-* Dimension: 111.9x78.5x117mm
+* Dimensiones: 111.9x78.5x117 mm
 * Material
-    * Main Body: Silver Aluminum Alloy
-    * Two Side Panel: Transparent Acrylic
-* Support Platform: Raspberry Pi 5
-* Power Input: USB Type C, 5V/5A
+    * Cuerpo principal: Aleación de aluminio plateado
+    * Paneles laterales: Acrílico transparente
+* Plataforma compatible: Raspberry Pi 5
+* Entrada de alimentación: USB Tipo C, 5V/5A
 * Interfaces
-    * Raspberry Pi standard 40-Pin GPIO
-    * spring-loaded Micro SD socket
-    * USB Type C power input
+    * GPIO de 40 pines estándar de Raspberry Pi
+    * Zócalo microSD con resorte
+    * Entrada de alimentación USB Tipo C
     * 2 x USB 2.0
     * 2 x USB 3.0
-    * Gigabit LAN port
-    * 2 x 4Kp60 Standard HDMI Output
-* 1 x Metal Power Button
-* 1 x 0.96'' 128x64 OLED Screen
-* 1 x PWM Fan (40x40x10mm)
-* 2 x RGB Fans (40x40x10mm)
-* 4 x WS2812-5050 RGB LEDs
-* 1 x 38KHz IR Receiver
-* 1 x Tower Cooler
-* 1 x PCIe 2.0 M.2 M key (2230, 2242, 2260, 2280) for NVMe SSD
-* 1 x 1220 Battery for RTC
+    * Puerto LAN Gigabit
+    * 2 x Salidas HDMI estándar 4Kp60
+* 1 x Botón de encendido metálico
+* 1 x Pantalla OLED de 0.96'' 128x64
+* 1 x Ventilador PWM (40x40x10 mm)
+* 2 x Ventiladores RGB (40x40x10 mm)
+* 4 x LEDs RGB WS2812-5050
+* 1 x Receptor IR de 38KHz
+* 1 x Disipador tipo torre
+* 1 x Conector PCIe 2.0 M.2 M key (2230, 2242, 2260, 2280) para NVMe SSD
+* 1 x Batería 1220 para RTC
 
-**Dimensional Drawing**
+**Dibujo de dimensiones**
 
 .. image:: img/pironman5_dimension.png
     :width: 800

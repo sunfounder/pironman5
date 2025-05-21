@@ -1,43 +1,43 @@
 .. note::
 
-    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi & Arduino & ESP32 sur Facebook ! Plongez-vous dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour améliorer vos compétences.
-    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de remises exclusives sur nos derniers produits.
-    - **Promotions festives et concours**: Participez à des tirages au sort et à des promotions spéciales.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _assembly_instructions:
 
-2. Instructions d'assemblage
+2. Instrucciones de Ensamblaje
 =============================================
 
-Avant d'assembler le Pironman, veuillez d'abord vérifier que toutes les pièces et composants sont inclus. S'il manque des éléments ou si certains sont endommagés, contactez immédiatement SunFounder à service@sunfounder.com pour résoudre le problème dans les plus brefs délais.
+Antes de ensamblar el Pironman, verifica que todas las piezas y componentes estén incluidos. Si falta algún componente o está dañado, contacta a SunFounder inmediatamente a través de service@sunfounder.com para resolver el problema lo antes posible.
 
-**Conseils**
+**Consejos**
 
-* Il est recommandé de suivre les instructions d'installation papier étape par étape.
-* Avant l'installation, triez et empilez les composants pour les retrouver plus facilement.
-* Vérifiez à plusieurs reprises les connexions des câbles FFC et FPC pour éviter tout mauvais contact.
+* Se recomienda seguir las instrucciones de instalación en papel paso a paso.
+* Antes de la instalación, clasifica y apila los componentes para encontrarlos más rápidamente.
+* Verifica repetidamente las conexiones de los cables FFC y FPC para evitar un mal contacto.
 
 .. * :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5.pdf>`
 
-**Guide complet d'assemblage et de démarrage: Pironman 5 avec NVMe SSD**
+**Guía Completa de Ensamblaje y Arranque: Pironman 5 con SSD NVMe**
 
-Si vous utilisez un SSD NVMe, suivez cette vidéo pour assembler et configurer le Pironman 5.
+Si estás utilizando un SSD NVMe, sigue este video para ensamblar y configurar el Pironman 5.
 
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Guide complet d'assemblage et de démarrage: Pironman 5 avec carte Micro SD**
+**Guía Completa de Ensamblaje y Arranque: Pironman 5 con Tarjeta Micro SD**
 
-Si vous utilisez une carte Micro SD, suivez cette vidéo pour assembler et configurer le Pironman 5.
+Si estás utilizando una tarjeta Micro SD, sigue este video para ensamblar y configurar el Pironman 5.
 
 .. raw:: html
 

@@ -1,38 +1,39 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    ¡Hola, bienvenido a la comunidad de entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook! Sumérgete aún más en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de remises exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
 .. _view_control_commands:
 
-Contrôler avec des Commandes
-============================================
-En plus de pouvoir consulter les données du Pironman 5 et de contrôler divers appareils via le tableau de bord, vous pouvez également utiliser des commandes pour les gérer.
+Control con Comandos
+========================================
+Además de visualizar datos del Pironman 5 y controlar varios dispositivos a través del Panel de Control, también puedes utilizar comandos para controlarlos.
 
 .. note::
 
-    * Pour le système **Home Assistant**, vous pouvez uniquement surveiller et contrôler le Pironman 5 via le tableau de bord en ouvrant la page web à l'adresse ``http://<ip>:34001``.
-    * Pour le système **Batocera.linux**, vous pouvez uniquement surveiller et contrôler le Pironman 5 via des commandes. Il est important de noter que toute modification de la configuration nécessite un redémarrage du service à l'aide de la commande ``pironman5 restart`` pour être prise en compte.
+  * Para el sistema **Home Assistant**, solo puedes monitorear y controlar el Pironman 5 a través del panel de control abriendo la página web en ``http://<ip>:34001``.
+  * Para el sistema **Batocera.linux**, solo puedes monitorear y controlar el Pironman 5 mediante comandos. Es importante tener en cuenta que cualquier cambio en la configuración requiere reiniciar el servicio utilizando ``pironman5 restart`` para que los cambios surtan efecto.
 
-Consulter les Configurations de Base
------------------------------------------
 
-Le module ``pironman5`` propose des configurations de base pour Pironman, que vous pouvez consulter avec la commande suivante.
+Ver las Configuraciones Básicas
+-----------------------------------
+
+El módulo ``pironman5`` ofrece configuraciones básicas para Pironman, las cuales puedes revisar con el siguiente comando.
 
 .. code-block:: shell
 
   pironman5 -c
 
-Les configurations standard apparaissent comme suit :
+Las configuraciones estándar aparecen de la siguiente manera:
 
 .. code-block:: 
 
@@ -50,9 +51,9 @@ Les configurations standard apparaissent comme suit :
       }
   }
 
-Personnalisez ces configurations en fonction de vos besoins.
+Personaliza estas configuraciones para adaptarlas a tus necesidades.
 
-Utilisez ``pironman5`` ou ``pironman5 -h`` pour obtenir des instructions.
+Utiliza ``pironman5`` o ``pironman5 -h`` para obtener instrucciones.
 
 .. code-block::
 
@@ -63,100 +64,100 @@ Utilisez ``pironman5`` ou ``pironman5 -h`` pour obtenir des instructions.
 
   Pironman5
 
-  positional arguments:
-    {start,stop}          Command
+  argumentos posicionales:
+    {start,stop}          Comando
 
-  options:
-    -h, --help            show this help message and exit
-    -c, --config          Show config
+  opciones:
+    -h, --help            muestra este mensaje de ayuda y sale
+    -c, --config          Mostrar configuración
     -rc [RGB_COLOR], --rgb-color [RGB_COLOR]
-                          RGB color in hex format with or without # (e.g. #FF0000 or 00aabb)
+                          Color RGB en formato hexadecimal con o sin # (p.ej. #FF0000 o 00aabb)
     -rb [RGB_BRIGHTNESS], --rgb-brightness [RGB_BRIGHTNESS]
-                          RGB brightness 0-100
+                          Brillo RGB 0-100
     -rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}], --rgb-style [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]
-                          RGB style
+                          Estilo RGB
     -rp [RGB_SPEED], --rgb-speed [RGB_SPEED]
-                          RGB speed 0-100
+                          Velocidad RGB 0-100
     -re [RGB_ENABLE], --rgb-enable [RGB_ENABLE]
-                          RGB enable True/False
+                          Habilitar RGB True/False
     -rl [RGB_LED_COUNT], --rgb-led-count [RGB_LED_COUNT]
-                          RGB LED count int
+                          Cantidad de LEDs RGB int
     -u [{C,F}], --temperature-unit [{C,F}]
-                          Temperature unit
+                          Unidad de temperatura
     -gm [GPIO_FAN_MODE], --gpio-fan-mode [GPIO_FAN_MODE]
-                          GPIO fan mode, 0: Always On, 1: Performance, 2: Cool, 3: Balanced, 4: Quiet
+                          Modo del ventilador GPIO, 0: Siempre Encendido, 1: Rendimiento, 2: Fresco, 3: Equilibrado, 4: Silencioso
     -gp [GPIO_FAN_PIN], --gpio-fan-pin [GPIO_FAN_PIN]
-                          GPIO fan pin
+                          Pin del ventilador GPIO
 
 .. note::
 
-  Chaque fois que vous modifiez l'état du ``pironman5.service``, vous devez utiliser la commande suivante pour que les changements de configuration prennent effet.
+  Cada vez que modifiques el estado de ``pironman5.service``, necesitas usar el siguiente comando para que los cambios en la configuración surtan efecto.
 
   .. code-block:: shell
 
     sudo systemctl restart pironman5.service
 
 
-* Vérifiez l'état du programme ``pironman5`` à l'aide de l'outil ``systemctl``.
+* Verifica el estado del programa ``pironman5`` usando la herramienta ``systemctl``.
 
   .. code-block:: shell
 
     sudo systemctl status pironman5.service
 
-* Vous pouvez également consulter les fichiers journaux générés par le programme.
+* Alternativamente, inspecciona los archivos de registro generados por el programa.
 
   .. code-block:: shell
 
     cat /opt/pironman5/log
 
 
-Contrôler les LEDs RGB
-------------------------------
-La carte dispose de 4 LEDs RGB WS2812, offrant un contrôle personnalisable. Vous pouvez les allumer ou les éteindre, changer leur couleur, ajuster leur luminosité, modifier le mode d'affichage des LEDs RGB et régler la vitesse des changements.
+Control de LEDs RGB
+-----------------------
+La placa cuenta con 4 LEDs RGB WS2812, ofreciendo un control personalizable. Los usuarios pueden encenderlos o apagarlos, cambiar el color, ajustar el brillo, cambiar los modos de visualización de los LEDs RGB y establecer la velocidad de los cambios.
 
 .. note::
 
-  Chaque fois que vous modifiez l'état du ``pironman5.service``, vous devez utiliser la commande suivante pour que les changements de configuration prennent effet.
+  Cada vez que modifiques el estado de ``pironman5.service``, necesitas usar el siguiente comando para que los cambios en la configuración surtan efecto.
 
   .. code-block:: shell
 
     sudo systemctl restart pironman5.service
 
-* Pour modifier l'état d'activation ou de désactivation des LEDs RGB, utilisez ``true`` pour les allumer et ``false`` pour les éteindre.
+* Para modificar el estado de encendido y apagado de los LEDs RGB, usa ``true`` para encenderlos y ``false`` para apagarlos.
 
 .. code-block:: shell
 
   pironman5 -re true
 
-* Pour changer leur couleur, entrez les valeurs hexadécimales souhaitées, par exemple ``fe1a1a``.
+* Para cambiar su color, introduce los valores hexadecimales del color deseado, como ``fe1a1a``.
 
 .. code-block:: shell
 
   pironman5 -rc fe1a1a
 
-* Pour changer la luminosité des LEDs RGB (plage: 0 ~ 100%) :
+* Para cambiar el brillo de los LEDs RGB (rango: 0 ~ 100%):
 
 .. code-block:: shell
 
   pironman5 -rb 100
 
-* Pour changer le mode d'affichage des LEDs RGB, choisissez parmi les options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` :
+* Para cambiar los modos de visualización de los LEDs RGB, elige entre las opciones: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
 .. note::
 
-  Si vous réglez le mode d'affichage des LEDs RGB sur ``rainbow``, ``rainbow_reverse`` ou ``hue_cycle``, vous ne pourrez pas définir la couleur avec ``pironman5 -rc``.
+  Si configuras el modo de visualización de los LEDs RGB en ``rainbow``, ``rainbow_reverse`` o ``hue_cycle``, no podrás configurar el color usando ``pironman5 -rc``.
 
 .. code-block:: shell
 
   pironman5 -rs breathing
 
-* Pour modifier la vitesse de changement (plage: 0 ~ 100%) :
+* Para modificar la velocidad de los cambios (rango: 0 ~ 100%):
 
 .. code-block:: shell
 
   pironman5 -rp 80
 
-* La configuration par défaut inclut 4 LEDs RGB. Connectez des LEDs supplémentaires et mettez à jour le nombre avec :
+* La configuración predeterminada incluye 4 LEDs RGB. Conecta LEDs adicionales y actualiza la cantidad usando:
 
 .. code-block:: shell
 
@@ -164,72 +165,74 @@ La carte dispose de 4 LEDs RGB WS2812, offrant un contrôle personnalisable. Vou
 
 .. _cc_control_fan:
 
-Contrôler les Ventilateurs RGB
----------------------------------------
-La carte d'extension IO prend en charge jusqu'à deux ventilateurs non-PWM 5V. Les deux ventilateurs sont contrôlés ensemble. 
+Control de Ventiladores RGB
+--------------------------------
+La placa de expansión IO admite hasta dos ventiladores de 5V sin PWM. Ambos ventiladores se controlan juntos. 
 
 .. note::
 
-  Chaque fois que vous modifiez l'état du ``pironman5.service``, vous devez utiliser la commande suivante pour que les changements de configuration prennent effet.
+  Cada vez que modifiques el estado de ``pironman5.service``, necesitas usar el siguiente comando para que los cambios en la configuración surtan efecto.
 
   .. code-block:: shell
 
     sudo systemctl restart pironman5.service
 
-* Vous pouvez utiliser des commandes pour configurer le mode de fonctionnement des deux ventilateurs RGB. Ces modes déterminent les conditions dans lesquelles les ventilateurs RGB s'activent. 
+* Puedes usar comandos para configurar el modo de funcionamiento de los dos ventiladores RGB. Estos modos determinan las condiciones bajo las cuales los ventiladores RGB se activarán. 
 
-Par exemple, si vous réglez le mode sur **1: Performance**, les ventilateurs RGB s'activeront à 50°C.
+Por ejemplo, si está configurado en modo **1: Rendimiento**, los ventiladores RGB se activarán a 50°C.
+
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4: Silencieux**: Les ventilateurs RGB s'activent à 70°C.
-* **3: Équilibré**: Les ventilateurs RGB s'activent à 67,5°C.
-* **2: Cool**: Les ventilateurs RGB s'activent à 60°C.
-* **1: Performance**: Les ventilateurs RGB s'activent à 50°C.
-* **0: Toujours activé**: Les ventilateurs RGB seront toujours activés.
+* **4: Silencioso**: Los ventiladores RGB se activarán a 70°C.
+* **3: Equilibrado**: Los ventiladores RGB se activarán a 67.5°C.
+* **2: Fresco**: Los ventiladores RGB se activarán a 60°C.
+* **1: Rendimiento**: Los ventiladores RGB se activarán a 50°C.
+* **0: Siempre Encendido**: Los ventiladores RGB estarán siempre encendidos.
 
-* Si vous connectez la broche de contrôle du ventilateur RGB à d'autres broches du Raspberry Pi, vous pouvez utiliser la commande suivante pour changer le numéro de broche.
+* Si conectas el pin de control del ventilador RGB a diferentes pines en la Raspberry Pi, puedes usar el siguiente comando para cambiar el número de pin.
 
 .. code-block:: shell
 
   sudo pironman5 -gp 18
 
 
-Vérifier l'Écran OLED
+Verificar la Pantalla OLED
 -----------------------------------
 
-Lorsque vous avez installé la bibliothèque ``pironman5``, l'écran OLED affiche l'utilisation du CPU, de la RAM, de l'espace disque, la température du CPU et l'adresse IP du Raspberry Pi, et cela s'affiche à chaque redémarrage.
+Cuando hayas instalado la biblioteca ``pironman5``, la pantalla OLED muestra la CPU, RAM, Uso de Disco, Temperatura de la CPU y la Dirección IP de la Raspberry Pi, y lo muestra cada vez que reinicias.
 
-Si votre écran OLED n'affiche aucun contenu, vous devez d'abord vérifier si le câble FPC de l'écran OLED est correctement connecté.
+Si tu pantalla OLED no muestra ningún contenido, primero debes verificar si el cable FPC de la OLED está conectado correctamente.
 
-Ensuite, vous pouvez consulter le journal du programme pour identifier le problème avec la commande suivante.
+Luego, puedes revisar el registro del programa para ver cuál podría ser el problema usando el siguiente comando.
 
 .. code-block:: shell
 
   cat /var/log/pironman5/
 
-Ou vérifiez si l'adresse i2c de l'OLED, 0x3C, est reconnue :
+O verifica si la dirección i2c de la OLED 0x3C es reconocida:
 
 .. code-block:: shell
 
   i2cdetect -y 1
 
-Vérifier le Récepteur Infrarouge
+Verificar el Receptor Infrarrojo
 ---------------------------------------
 
 
-* Installez le module ``lirc`` :
+* Instala el módulo ``lirc``:
 
   .. code-block:: shell
 
     sudo apt-get install lirc -y
 
-* Testez maintenant le récepteur IR en exécutant la commande suivante. 
+* Ahora, prueba el receptor IR ejecutando el siguiente comando.
 
   .. code-block:: shell
 
     mode2 -d /dev/lirc0
 
-* Après avoir exécuté la commande, appuyez sur un bouton de la télécommande, et le code de ce bouton s'affichera.
+* Después de ejecutar el comando, presiona un botón en el control remoto y se imprimirá el código de ese botón.
+

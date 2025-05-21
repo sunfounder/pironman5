@@ -1,35 +1,35 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    ¡Hola, bienvenido a la comunidad de entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook! Sumérgete aún más en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes après-vente et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour améliorer vos compétences.
-    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de réductions exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
-Installer Raspberry Pi OS
+Instalar el Raspberry Pi OS
 ================================================================================
 
-Vous pouvez choisir une méthode d'installation en fonction du matériel disponible : une carte Micro SD ou un SSD NVMe.
+Puede elegir un método de instalación según si tiene disponible una tarjeta Micro SD o un SSD NVMe.
 
-**Utilisation d'une carte Micro SD uniquement**
+**Usando solo una tarjeta Micro SD**
 
-  Si vous utilisez uniquement une carte Micro SD, vous pouvez simplement suivre la première méthode ci-dessous.
+  Si solo está utilizando una tarjeta Micro SD, simplemente puede seguir el primer método a continuación.
 
-**Utilisation d'un SSD M.2 NVMe**
+**Usando un SSD M.2 NVMe**
 
-  * Si vous disposez d'un **adaptateur de boîtier SSD M.2 NVMe**, vous pouvez connecter votre SSD à votre ordinateur en utilisant l'adaptateur et suivre la deuxième méthode pour installer le système d'exploitation.  
+  * Si tiene un **Adaptador de Carcasa para SSD M.2 NVMe**, puede conectar su SSD a su computadora usando el adaptador y seguir el segundo método para instalar el sistema operativo.
 
     .. image:: img/m2_nvme_adapter.png  
         :width: 300
         :align: center
   
-  * Si vous ne possédez pas l'adaptateur illustré ci-dessus, vous pouvez d'abord installer le système d'exploitation sur une carte Micro SD en utilisant la première méthode, puis utiliser la troisième méthode pour copier le système de la carte Micro SD vers votre SSD M.2 NVMe.  
+  * Si no tiene el adaptador que se muestra arriba, puede primero instalar el sistema operativo en una tarjeta Micro SD utilizando el primer método, y luego usar el tercer método para copiar el sistema de la tarjeta Micro SD a su SSD M.2 NVMe.
 
 
 .. toctree::

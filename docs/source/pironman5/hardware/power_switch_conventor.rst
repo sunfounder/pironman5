@@ -1,56 +1,58 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    ¡Hola, bienvenido a la comunidad de entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook! Sumérgete aún más en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de remises exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
-Convertisseur de Bouton d'Alimentation
-==========================================
+Power Switch Converter
+==============================
 
-Il s'agit d'un module qui permet d'étendre le bouton d'alimentation du Raspberry Pi 5 vers l'extérieur.
+Este es un módulo que expande el interruptor de encendido del Raspberry Pi 5 hacia el exterior.
 
 .. image:: img/power_switch_conventor.jpeg
 
-**Ajout du bouton d'alimentation**
+**Añadiendo el Botón de Encendido**
 
-* Le Raspberry Pi 5 est équipé d'un cavalier **J2**, situé entre le connecteur de la batterie RTC et le bord de la carte. Cette extension permet d'ajouter un bouton d'alimentation personnalisé au Raspberry Pi 5 en connectant un interrupteur momentané normalement ouvert (NO) sur les deux pastilles. Appuyer brièvement sur cet interrupteur reproduit la fonctionnalité du bouton d'alimentation intégré.
+* El Raspberry Pi 5 cuenta con un jumper **J2**, ubicado entre el conector de la batería RTC y el borde de la placa. Este punto de conexión permite añadir un botón de encendido personalizado al Raspberry Pi 5 conectando un interruptor momentáneo de Tipo Normalmente Abierto (NO) a las dos almohadillas. Al pulsar brevemente este interruptor, se emula la funcionalidad del botón de encendido integrado.
 
    .. image:: img/pi5_j2.jpg
 
-* Sur le Pironman 5, il y a un **convertisseur de bouton d'alimentation** qui étend le cavalier **J2** vers un bouton d'alimentation externe à l'aide de deux broches Pogo.
+* En el Pironman 5, hay un **Convertidor de Interruptor de Encendido** que extiende el jumper **J2** a un botón de encendido externo usando dos pines Pogo.
 
    .. image:: img/power_switch_convertor.png
 
-* Désormais, le Raspberry Pi 5 peut être alimenté ou éteint en utilisant le bouton d'alimentation.
+* Ahora, el Raspberry Pi 5 puede encenderse y apagarse usando el botón de encendido.
 
    .. image:: img/pironman_button.JPG
 
-**Cycle d'alimentation**
+**Ciclo de Encendido**
 
-Lors de la mise sous tension initiale de votre Raspberry Pi 5, il s'allumera automatiquement et démarrera dans le système d'exploitation sans avoir besoin d'appuyer sur le bouton.
+Al encender inicialmente tu Raspberry Pi 5, este se activará automáticamente y arrancará el sistema operativo sin necesidad de pulsar el botón.
 
-Si vous utilisez le bureau Raspberry Pi, une brève pression sur le bouton d'alimentation lance un processus d'arrêt propre. Un menu apparaîtra, offrant des options pour éteindre, redémarrer ou se déconnecter. Sélectionner une option ou appuyer de nouveau sur le bouton d'alimentation déclenchera un arrêt propre.
+Si estás ejecutando Raspberry Pi Desktop, una breve pulsación del botón de encendido iniciará un proceso de apagado seguro. Aparecerá un menú que ofrecerá opciones para apagar, reiniciar o cerrar sesión. Seleccionar una opción o pulsar nuevamente el botón de encendido iniciará un apagado seguro.
 
 .. image:: img/button_shutdown.png
 
-**Arrêt**
+**Apagado**
 
-    * Si vous utilisez le système **Bookworm Desktop** de Raspberry Pi, vous pouvez appuyer deux fois rapidement sur le bouton d'alimentation pour éteindre.
-    * Si vous utilisez le système **Bookworm Lite** de Raspberry Pi sans bureau, appuyez une seule fois sur le bouton d'alimentation pour lancer l'arrêt.
-    * Pour forcer un arrêt brutal, maintenez le bouton d'alimentation enfoncé.
+    * Si estás ejecutando el sistema **Bookworm Desktop** de Raspberry Pi, puedes pulsar dos veces rápidamente el botón de encendido para apagar.
+    * Si estás ejecutando el sistema **Bookworm Lite** de Raspberry Pi sin escritorio, presiona el botón de encendido una sola vez para iniciar un apagado.
+    * Para forzar un apagado brusco, mantén presionado el botón de encendido.
 
-**Mise sous tension**
 
-    * Si la carte Raspberry Pi est éteinte mais toujours sous tension, une simple pression permettra de rallumer la carte depuis l'état d'arrêt.
+**Encendido**
+
+    * Si la placa Raspberry Pi está apagada pero aún con alimentación, pulsa una sola vez para encenderla desde el estado de apagado.
 
 .. note::
 
-    Si vous utilisez un système qui ne prend pas en charge le bouton d'arrêt, vous pouvez le maintenir enfoncé pendant 5 secondes pour forcer un arrêt brutal, puis appuyer une seule fois pour rallumer la carte depuis l'état d'arrêt.
+    Si estás ejecutando un sistema que no admite el botón de apagado, puedes mantenerlo presionado durante 5 segundos para forzar un apagado brusco, y pulsarlo una vez para encenderlo desde el estado de apagado.
+

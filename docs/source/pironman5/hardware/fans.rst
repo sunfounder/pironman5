@@ -1,90 +1,91 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Sumérgete más profundamente en Raspberry Pi, Arduino y ESP32 con otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives**: Profitez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Bénéficiez de remises exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _fans:
 
-Ventilateurs
-================
+Ventiladores
+===============
 
-Ventilateur PWM
+Ventilador PWM
 -----------------
 
-Le ventilateur PWM dans le Pironman 5 est géré par le système Raspberry Pi et constitue la pierre angulaire de sa solution de refroidissement intelligent, notamment sous forte charge. Ce système combine un ventilateur PWM principal avec deux ventilateurs RGB supplémentaires pour améliorer les performances de refroidissement, étroitement intégrés au système de gestion thermique du Raspberry Pi 5.  
+El ventilador PWM en el Pironman 5 es gestionado por el sistema Raspberry Pi y constituye la base de su solución de enfriamiento inteligente, especialmente bajo cargas pesadas. Este sistema combina un ventilador PWM principal con dos ventiladores RGB suplementarios para un rendimiento de enfriamiento mejorado, integrados estrechamente con el sistema de gestión térmica del Raspberry Pi 5.
 
 .. image:: img/fan_tower_cooler.png  
   :width: 600  
   :align: center  
 
-**Caractéristiques électriques**
+**Características Eléctricas**
 
-* **Tension nominale** : 5 VDC  
-* **Tension de démarrage** : 4,0 V (à 25°C, Marche/Arrêt)  
-* **Plage de tension de fonctionnement** : 4,0 ~ 5,5 VDC  
-* **Courant nominal** : 0,05 A / MAX. 0,08 A  
-* **Puissance nominale** : 0,25 W / MAX. 0,40 W  
-* **Vitesse nominale** : 3500±10% RPM (à 25°C, testée après 3 minutes de fonctionnement)  
-* **Débit d'air maximal** : 2,46 (MIN. 2,21) CFM (à pression statique nulle)  
-* **Pression statique maximale** : 0,62 (MIN. 0,496) mmH2O (à débit d'air nul)  
-* **Bruit acoustique** : 22,31 dB(A) MAX. 25,31 dB(A)  
-* **Durée de vie** : 40 000 heures (à 25°C, 65% d'humidité, conditions normales de la pièce)  
+* **Voltaje Nominal**: 5 VDC  
+* **Voltaje de Inicio**: 4.0 V (a 25°C Encendido/Apagado)  
+* **Rango de Voltaje Operativo**: 4.0 ~ 5.5 VDC  
+* **Corriente Nominal**: 0.05 A / MÁX. 0.08 A  
+* **Potencia Nominal**: 0.25 W / MÁX. 0.40 W  
+* **Velocidad Nominal**: 3500±10% RPM (a 25°C, probado después de 3 minutos de operación)  
+* **Flujo de Aire Máximo**: 2.46 (MÍN. 2.21) CFM (a presión estática cero)  
+* **Presión Estática Máxima**: 0.62 (MÍN. 0.496) mmH2O (a flujo de aire cero)  
+* **Ruido Acústico**: 22.31 dB(A) MÁX. 25.31 dB(A)  
+* **Expectativa de Vida Útil**: 40,000 horas (a 25°C, 65% de humedad, condiciones normales de habitación)  
 
-**Caractéristiques mécaniques**
+**Características Mecánicas**
 
-* **Dimensions** : 40x10,4x40 mm (LxLxH)  
-* **Matériau du cadre** : Plastique PBT  
-* **Matériau de l'hélice** : Plastique PBT  
-* **Type de palier** : Palier hydraulique  
+* **Dimensiones**: 40x10.4x40 mm (LxAxH)  
+* **Material del Marco**: Plástico PBT  
+* **Material del Impulsor**: Plástico PBT  
+* **Tipo de Rodamiento**: Rodamiento Hidráulico  
 
-**Paramètres environnementaux**
+**Parámetros Ambientales**
 
-* **Température de fonctionnement** : -10°C ~ 70°C  
-* **Température de stockage** : -40°C ~ 75°C  
-* **Humidité de fonctionnement** : 5% ~ 90% HR  
-* **Humidité de stockage** : 5% ~ 95% HR  
+* **Temperatura Operativa**: -10°C ~ 70°C  
+* **Temperatura de Almacenamiento**: -40°C ~ 75°C  
+* **Humedad Operativa**: 5% ~ 90% RH  
+* **Humedad de Almacenamiento**: 5% ~ 95% RH  
 
-**Contrôle de la vitesse du ventilateur en fonction de la température**  
+**Control de Velocidad del Ventilador Según la Temperatura**  
 
-Le ventilateur PWM fonctionne de manière dynamique, ajustant sa vitesse en fonction de la température du Raspberry Pi 5 :  
+El ventilador PWM opera de manera dinámica, ajustando su velocidad de acuerdo con la temperatura del Raspberry Pi 5:
 
-* **En dessous de 50°C** : Le ventilateur reste éteint (vitesse 0%).  
-* **À 50°C** : Le ventilateur fonctionne à basse vitesse (vitesse 30%).  
-* **À 60°C** : Le ventilateur passe à une vitesse moyenne (vitesse 50%).  
-* **À 67,5°C** : Le ventilateur augmente à une vitesse élevée (vitesse 70%).  
-* **À 75°C et au-delà** : Le ventilateur fonctionne à pleine vitesse (vitesse 100%).  
+* **Por debajo de 50°C**: El ventilador permanece apagado (0% de velocidad).  
+* **A 50°C**: El ventilador opera a baja velocidad (30% de velocidad).  
+* **A 60°C**: El ventilador aumenta a velocidad media (50% de velocidad).  
+* **A 67.5°C**: El ventilador incrementa a alta velocidad (70% de velocidad).  
+* **A 75°C y más**: El ventilador opera a velocidad máxima (100% de velocidad).  
 
-Ce contrôle de la vitesse en fonction de la température inclut une hystérésis de 5°C pour éviter des changements fréquents de vitesse. Par exemple, le ventilateur réduit sa vitesse uniquement après une baisse de température de 5°C en dessous de chaque seuil.  
+Este control de temperatura a velocidad incluye una histéresis de 5°C para evitar cambios frecuentes en la velocidad. Por ejemplo, el ventilador reducirá su velocidad solo después de que la temperatura baje 5°C por debajo de cada umbral.  
 
-Les commandes suivantes permettent aux utilisateurs de surveiller le fonctionnement du ventilateur PWM :  
+Los siguientes comandos permiten a los usuarios monitorear la operación del ventilador PWM:  
 
-Pour vérifier l'état actuel du ventilateur :  
+Para verificar el estado actual del ventilador:  
 
 .. code-block:: shell
 
   cat /sys/class/thermal/cooling_device0/cur_state
 
-Ventilateurs RGB
----------------------
+Ventiladores RGB
+----------------------
 
 .. image:: img/size_fan.png
 
-* **Dimensions externes**: 40*40*10MM
-* **Poids**: 13,5±5g/pc
-* **Durée de vie**: 40 000 heures (température ambiante 25°C)
-* **Débit d'air maximal**: 2,46 CFM
-* **Pression d'air maximale**: 0,62 mm-H2O
-* **Niveau sonore**: 22,31 dBA
-* **Puissance nominale d'entrée**: 5V/0.1A
-* **Vitesse nominale**: 3500±10% RPM
-* **Température de fonctionnement**: -10℃~+70℃
-* **Température de stockage**: -30℃~+85℃
+* **Dimensiones externas**: 40*40*10MM
+* **Peso**: 13.5±5g/pcs
+* **Duración**: 40,000 horas (temperatura ambiente 25°C)
+* **Flujo de aire máximo**: 2.46CFM
+* **Presión de aire máxima**: 0.62mm-H2O
+* **Sonido acústico**: 22.31dBA
+* **Potencia de entrada nominal**: 5V/0.1A
+* **Velocidad nominal**: 3500±10%RPM
+* **Temperatura de funcionamiento**: -10℃~+70℃
+* **Temperatura de almacenamiento**: -30℃~+85℃
+

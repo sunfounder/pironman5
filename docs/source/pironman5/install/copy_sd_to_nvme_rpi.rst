@@ -1,183 +1,184 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    ¡Hola, bienvenido a la comunidad de entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook! Sumérgete aún más en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de remises exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
 .. _copy_sd_to_nvme_rpi:
 
-Copier l'OS de la carte Micro SD vers le SSD NVMe
+Copiar el Sistema Operativo de Micro SD a NVMe SSD
 ==================================================================
 
-Si vous disposez d'un SSD NVMe mais que vous n'avez pas d'adaptateur pour le connecter à votre ordinateur, vous pouvez choisir une troisième approche: installez d'abord le système sur votre carte Micro SD. Une fois que le Pironman 5 a démarré avec succès, vous pouvez transférer le système de votre carte Micro SD vers votre SSD NVMe.
+Si tienes un NVMe SSD pero no cuentas con un adaptador para conectarlo a tu computadora, puedes optar por un enfoque alternativo: instala el sistema inicialmente en tu tarjeta Micro SD. Después de que el Pironman 5 haya iniciado con éxito, puedes transferir el sistema desde tu tarjeta Micro SD a tu NVMe SSD.
 
-* Commencez par :ref:`install_os_sd_rpi`.
-* Ensuite, démarrez et connectez-vous à votre Raspberry Pi. Si vous ne savez pas comment vous connecter, vous pouvez consulter le site officiel de Raspberry Pi: |link_rpi_get_start|.
+* Primero, necesitas :ref:`install_os_sd_rpi`.
+* Luego, inicia sesión en tu Raspberry Pi. Si no sabes cómo iniciar sesión, puedes visitar el sitio web oficial de Raspberry Pi: |link_rpi_get_start|.
 
-Terminez ces étapes avant de poursuivre avec les instructions ci-dessous.
+Completa los pasos anteriores antes de continuar con las siguientes instrucciones.
 
 
-1. Activer le PCIe
---------------------
+1. Habilitar PCIe
+-----------------------
 
-Par défaut, le connecteur PCIe n'est pas activé.
+Por defecto, el conector PCIe no está habilitado.
 
-* Pour l'activer, vous devez ouvrir le fichier ``/boot/firmware/config.txt``.
+* Para habilitarlo, debes abrir el archivo ``/boot/firmware/config.txt``.
 
   .. code-block:: shell
   
     sudo nano /boot/firmware/config.txt
   
-* Ajoutez ensuite la ligne suivante au fichier. 
+* Luego, añade la siguiente línea al archivo. 
 
   .. code-block:: shell
   
-    # Activer le connecteur PCIe externe.
+    # Habilitar el conector PCIe externo.
     dtparam=pciex1
   
-* Un alias plus mémorable pour ``pciex1`` existe, vous pouvez donc également ajouter ``dtparam=nvme`` au fichier ``/boot/firmware/config.txt``.
+* Existe un alias más fácil de recordar para ``pciex1``, por lo que también puedes añadir ``dtparam=nvme`` al archivo ``/boot/firmware/config.txt``.
 
   .. code-block:: shell
   
     dtparam=nvme
 
-* La connexion est certifiée pour des vitesses Gen 2.0 (5 GT/sec), mais vous pouvez la forcer à Gen 3.0 (10 GT/sec) en ajoutant les lignes suivantes à votre fichier ``/boot/firmware/config.txt``.
+* La conexión está certificada para velocidades Gen 2.0 (5 GT/seg), pero puedes forzarla a Gen 3.0 (10 GT/seg) si añades las siguientes líneas a tu archivo ``/boot/firmware/config.txt``.
 
   .. code-block:: shell
   
-    # Forcer les vitesses Gen 3.0
+    # Forzar velocidades Gen 3.0
     dtparam=pciex1_gen=3
   
   .. warning::
   
-    Le Raspberry Pi 5 n'est pas certifié pour les vitesses Gen 3.0, et les connexions aux périphériques PCIe à ces vitesses peuvent être instables.
+    El Raspberry Pi 5 no está certificado para velocidades Gen 3.0, y las conexiones a dispositivos PCIe a estas velocidades pueden ser inestables.
 
-* Appuyez sur ``Ctrl + X``, ``Y`` et ``Entrée`` pour enregistrer les modifications.
+* Presiona ``Ctrl + X``, ``Y`` y ``Enter`` para guardar los cambios.
 
 
-2. Installer l'OS sur le SSD
-----------------------------------------
+2. Instalar el Sistema Operativo en el SSD
+------------------------------------------------
 
-Il existe deux façons d'installer un système d'exploitation sur le SSD :
+Existen dos maneras de instalar un sistema operativo en el SSD:
 
-**Copier le Système de la Carte Micro SD vers le SSD**
+**Copiando el Sistema desde la Tarjeta Micro SD al SSD**
 
-#. Connectez un écran ou accédez au bureau du Raspberry Pi via VNC Viewer. Puis cliquez sur **Logo Raspberry Pi** -> **Accessoires** -> **Copieur de carte SD**.
+#. Conecta una pantalla o accede al escritorio de Raspberry Pi a través de VNC Viewer. Luego, haz clic en **Logotipo de Raspberry Pi** -> **Accesorios** -> **Copiador de Tarjetas SD**.
 
    .. image:: img/ssd_copy.png
       
     
-#. Assurez-vous de sélectionner les bons périphériques **Copier de** et **Copier vers**. Faites attention à ne pas les confondre.
+#. Asegúrate de seleccionar los dispositivos correctos en **Copiar Desde** y **Copiar A**. Ten cuidado de no confundirlos.
 
    .. image:: img/ssd_copy_from.png
       
-#. N'oubliez pas de sélectionner "NOUVEAUX UUID de partition" pour garantir que le système peut distinguer correctement les périphériques, évitant ainsi les conflits de montage et les problèmes de démarrage.
+#. Recuerde seleccionar **"NEW Partition UUIDs"** para asegurarse de que el sistema pueda distinguir correctamente los dispositivos, evitando conflictos de montaje y problemas de inicio.
 
    .. image:: img/ssd_copy_uuid.png
     
-#. Après la sélection, cliquez sur **Démarrer**.
+#. Después de la selección, haga clic en **Start**.
 
    .. image:: img/ssd_copy_click_start.png
 
-#. Un message vous avertira que le contenu du SSD sera effacé. Sauvegardez vos données avant de cliquer sur Oui.
+
+#. Se te advertirá que el contenido del SSD será borrado. Asegúrate de hacer una copia de seguridad de tus datos antes de hacer clic en Sí.
 
    .. image:: img/ssd_copy_erase.png
 
-#. Patientez un moment, et la copie sera terminée.
+#. Espera un tiempo, y la copia se completará.
 
 
-**Installer le Système avec Raspberry Pi Imager**
+**Instalar el Sistema con Raspberry Pi Imager**
 
-Si votre carte Micro SD a une version de bureau du système installée, vous pouvez utiliser un outil d'imagerie (comme Raspberry Pi Imager) pour graver le système sur le SSD. Cet exemple utilise Raspberry Pi OS Bookworm, mais d'autres systèmes peuvent nécessiter l'installation préalable de l'outil d'imagerie.
+Si tu tarjeta Micro SD tiene una versión de escritorio del sistema instalado, puedes utilizar una herramienta de imágenes (como Raspberry Pi Imager) para grabar el sistema en el SSD. Este ejemplo utiliza Raspberry Pi OS bookworm, pero otros sistemas pueden requerir la instalación de la herramienta de imágenes primero.
 
-#. Connectez un écran ou accédez au bureau du Raspberry Pi via VNC Viewer. Puis cliquez sur **Logo Raspberry Pi** -> **Accessoires** -> **Imager**.
+#. Conecta una pantalla o accede al escritorio de Raspberry Pi a través de VNC Viewer. Luego, haz clic en **Logotipo de Raspberry Pi** -> **Accesorios** -> **Imager**.
 
    .. image:: img/ssd_imager.png
 
       
-#. Dans |link_rpi_imager|, cliquez sur **Périphérique Raspberry Pi** et sélectionnez le modèle **Raspberry Pi 5** dans la liste déroulante.
+#. Dentro del |link_rpi_imager|, haz clic en **Dispositivo Raspberry Pi** y selecciona el modelo **Raspberry Pi 5** de la lista desplegable.
 
    .. image:: img/ssd_pi5.png
       :width: 90%
 
 
-#. Sélectionnez **Système d'exploitation** et optez pour la version recommandée du système d'exploitation.
+#. Selecciona **Sistema Operativo** y opta por la versión recomendada del sistema operativo.
 
    .. image:: img/ssd_os.png
       :width: 90%
     
-#. Dans l'option **Stockage**, sélectionnez votre SSD NVMe inséré.
+#. En la opción **Almacenamiento**, selecciona tu NVMe SSD insertado.
 
    .. image:: img/nvme_storage.png
       :width: 90%
     
-#. Cliquez sur **SUIVANT** puis sur **MODIFIER LES PARAMÈTRES** pour personnaliser vos paramètres OS.
+#. Haz clic en **SIGUIENTE** y luego en **EDITAR CONFIGURACIÓN** para personalizar la configuración de tu sistema operativo. 
 
    .. note::
 
-      Si vous avez un moniteur pour votre Raspberry Pi, vous pouvez ignorer les étapes suivantes et cliquer sur 'Oui' pour commencer l'installation. Ajustez les autres paramètres plus tard sur le moniteur.
+      Si tienes un monitor para tu Raspberry Pi, puedes omitir los próximos pasos y hacer clic en 'Sí' para comenzar la instalación. Ajusta otras configuraciones más adelante en el monitor.
 
    .. image:: img/os_enter_setting.png
       :width: 90%
 
-#. Définissez un **nom d'hôte** pour votre Raspberry Pi.
+#. Define un **nombre de host** para tu Raspberry Pi.
 
    .. note::
 
-      Le nom d'hôte est l'identifiant réseau de votre Raspberry Pi. Vous pouvez accéder à votre Pi en utilisant ``<hostname>.local`` ou ``<hostname>.lan``.
+      El nombre de host es el identificador de red de tu Raspberry Pi. Puedes acceder a tu Pi usando ``<nombre_host>.local`` o ``<nombre_host>.lan``.
 
    .. image:: img/os_set_hostname.png
       
 
-#. Créez un **Nom d'utilisateur** et un **Mot de passe** pour le compte administrateur du Raspberry Pi.
+#. Crea un **Nombre de Usuario** y **Contraseña** para la cuenta de administrador de Raspberry Pi.
 
    .. note::
 
-      Créer un nom d'utilisateur et un mot de passe uniques est essentiel pour sécuriser votre Raspberry Pi, qui n'a pas de mot de passe par défaut.
+      Establecer un nombre de usuario y contraseña únicos es fundamental para proteger tu Raspberry Pi, que carece de una contraseña predeterminada.
 
    .. image:: img/os_set_username.png
       
 
-#. Configurez le réseau sans fil en fournissant le **SSID** et le **Mot de passe** de votre réseau.
+#. Configura la red LAN inalámbrica proporcionando el **SSID** y la **Contraseña** de tu red.
 
    .. note::
 
-      Réglez le ``pays du réseau sans fil`` sur le code alpha2 à deux lettres `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ correspondant à votre emplacement.
+      Establece el ``país de la LAN inalámbrica`` al código de dos letras  `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ correspondiente a tu ubicación.
 
    .. image:: img/os_set_wifi.png
 
-#. Pour vous connecter à distance à votre Raspberry Pi, **activez SSH** dans l'onglet **Services**.
+#. Para conectarte de forma remota a tu Raspberry Pi, **habilita SSH** en la pestaña **Servicios**.
 
-   * Pour **l'authentification par mot de passe**, utilisez le nom d'utilisateur et le mot de passe de l'onglet **Général**.
-   * Pour l'authentification par clé publique, choisissez "Autoriser uniquement l'authentification par clé publique". Si vous avez une clé RSA, elle sera utilisée. Sinon, cliquez sur "Exécuter SSH-keygen" pour générer une nouvelle paire de clés.
+   * Para **autenticación con contraseña**, usa el nombre de usuario y contraseña de la pestaña **General**.
+   * Para autenticación con clave pública, elige "Permitir solo autenticación con clave pública". Si tienes una clave RSA, se usará. Si no, haz clic en "Ejecutar SSH-keygen" para generar un nuevo par de claves.
 
    .. image:: img/os_enable_ssh.png
 
       
 
-#. Le menu **Options** vous permet de configurer le comportement d'Imager pendant une écriture, notamment pour jouer un son à la fin, éjecter le support une fois terminé et activer la télémétrie.
+#. El menú **Opciones** te permite configurar el comportamiento de Imager durante una escritura, incluyendo reproducir sonido cuando termine, expulsar el medio cuando termine y habilitar la telemetría.
 
    .. image:: img/os_options.png
     
-#. Lorsque vous avez terminé de saisir les paramètres de personnalisation de l'OS, cliquez sur **Enregistrer** pour sauvegarder votre personnalisation. Ensuite, cliquez sur **Oui** pour les appliquer lors de l'écriture de l'image.
+#. Cuando hayas terminado de ingresar la personalización del sistema operativo, haz clic en **Guardar** para guardar tu personalización. Luego, haz clic en **Sí** para aplicarlos al escribir la imagen.
 
    .. image:: img/os_click_yes.png
       :width: 90%
       
-#. Si le SSD NVMe contient des données existantes, assurez-vous de les sauvegarder pour éviter toute perte de données. Continuez en cliquant sur **Oui** si aucune sauvegarde n'est nécessaire.
+#. Si el NVMe SSD contiene datos existentes, asegúrate de hacer una copia de seguridad para evitar la pérdida de datos. Procede haciendo clic en **Sí** si no se necesita una copia de seguridad.
 
    .. image:: img/nvme_erase.png
       :width: 90%
 
-#. Lorsque vous voyez le message "Écriture réussie", votre image a été complètement écrite et vérifiée. Vous êtes maintenant prêt à démarrer un Raspberry Pi à partir du SSD NVMe !
+#. Cuando veas el mensaje emergente "Escritura Exitosa", tu imagen ha sido completamente escrita y verificada. ¡Ahora estás listo para iniciar una Raspberry Pi desde el NVMe SSD!
 
    .. image:: img/nvme_install_finish.png
       :width: 90%
@@ -185,34 +186,34 @@ Si votre carte Micro SD a une version de bureau du système installée, vous pou
 
 .. _configure_boot_ssd:
 
-3. Configuration du démarrage depuis le SSD
------------------------------------------------------
+3. Configuración de inicio desde la SSD
+---------------------------------------
 
-Dans cette section, nous allons configurer votre Raspberry Pi pour démarrer directement depuis un SSD NVMe, offrant des temps de démarrage plus rapides et des performances accrues par rapport à une carte SD. Suivez attentivement les étapes suivantes :
+En esta sección, configuraremos su Raspberry Pi para que inicie directamente desde un SSD NVMe, proporcionando tiempos de arranque más rápidos y un mejor rendimiento en comparación con una tarjeta SD. Siga estos pasos con atención:
 
-#. Tout d'abord, ouvrez un terminal sur votre Raspberry Pi et exécutez la commande suivante pour accéder à l'interface de configuration :
+#. Primero, abra una terminal en su Raspberry Pi y ejecute el siguiente comando para acceder a la interfaz de configuración:
 
    .. code-block:: shell
 
       sudo raspi-config
 
-#. Dans le menu ``raspi-config``, utilisez les touches fléchées pour sélectionner **Advanced Options**. Appuyez sur ``Entrée`` pour accéder aux paramètres avancés.
+#. En el menú ``raspi-config``, use las teclas de flecha para navegar y seleccionar **Advanced Options**. Presione ``Enter`` para acceder a la configuración avanzada.
 
    .. image:: img/nvme_open_config.png
 
-#. À l'intérieur de **Advanced Options**, sélectionnez **Boot Order**. Ce paramètre vous permet de spécifier l'ordre dans lequel votre Raspberry Pi recherche les périphériques amorçables.
+#. Dentro de **Advanced Options**, seleccione **Boot Order**. Esta configuración le permite especificar el orden en el que su Raspberry Pi busca dispositivos de arranque.
 
    .. image:: img/nvme_boot_order.png
 
-#. Ensuite, choisissez **NVMe/USB boot**. Cela indique au Raspberry Pi de prioriser le démarrage à partir de SSD connectés via USB ou de disques NVMe par rapport aux autres options, telles que la carte SD.
+#. Luego, elija **NVMe/USB boot**. Esto indica al Raspberry Pi que priorice el arranque desde SSDs conectados por USB o unidades NVMe sobre otras opciones, como la tarjeta SD.
 
    .. image:: img/nvme_boot_nvme.png
 
-#. Après avoir sélectionné l'ordre de démarrage, appuyez sur **Finish** pour quitter ``raspi-config``. Vous pouvez également utiliser la touche **Échap** pour fermer l'outil de configuration.
+#. Después de seleccionar el orden de arranque, presione **Finish** para salir de ``raspi-config``. También puede utilizar la tecla **Escape** para cerrar la herramienta de configuración.
 
    .. image:: img/nvme_boot_ok.png
 
-#. Pour appliquer les nouveaux paramètres de démarrage, redémarrez votre Raspberry Pi en exécutant :
+#. Para aplicar la nueva configuración de arranque, reinicie su Raspberry Pi ejecutando:
 
    .. code-block:: shell
 
@@ -220,9 +221,4 @@ Dans cette section, nous allons configurer votre Raspberry Pi pour démarrer dir
 
    .. image:: img/nvme_boot_reboot.png
 
-Après le redémarrage, votre Raspberry Pi devrait tenter de démarrer depuis le SSD NVMe connecté, vous offrant des performances et une durabilité accrues pour votre système.
-
-
-
-
-
+Después de reiniciar, su Raspberry Pi debería intentar arrancar desde el SSD NVMe conectado, brindándole un rendimiento y durabilidad mejorados para su sistema.

@@ -1,187 +1,189 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Sumérgete más profundamente en Raspberry Pi, Arduino y ESP32 con otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de remises exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-IO Expander
+Expansor IO
 ================
 
-LEDs RGB
+LED RGB
 ------------
 
 .. image:: img/io_board_rgb.png
 
-La carte dispose de 4 LEDs RGB WS2812, offrant un contrôle personnalisable. Les utilisateurs peuvent les allumer ou les éteindre, changer leur couleur, ajuster la luminosité, modifier les modes d'affichage et régler la vitesse des changements.
+La placa incluye 4 LEDs RGB WS2812, que ofrecen un control personalizable. Los usuarios pueden encenderlos o apagarlos, cambiar el color, ajustar el brillo, alternar los modos de visualización y establecer la velocidad de los cambios.
 
-* Pour modifier l'état des LEDs RGB, utilisez ``true`` pour allumer les LEDs, ``false`` pour les éteindre.
+* Para modificar el estado de encendido y apagado de los LED RGB, usa ``true`` para encenderlos y ``false`` para apagarlos.
 
 .. code-block:: shell
 
   pironman5 -re true
 
-* Pour changer leur couleur, entrez les valeurs hexadécimales de la couleur souhaitée, par exemple ``fe1a1a``.
+* Para cambiar su color, ingresa los valores hexadecimales del color deseado, como ``fe1a1a``.
 
 .. code-block:: shell
 
   pironman5 -rc fe1a1a
 
-* Pour ajuster la luminosité des LEDs RGB (plage: 0 ~ 100 %) :
+* Para ajustar el brillo de los LED RGB (rango: 0 ~ 100%):
 
 .. code-block:: shell
 
   pironman5 -rb 100
 
-* Pour modifier les modes d'affichage des LEDs RGB, choisissez parmi les options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` :
+* Para alternar los modos de visualización de los LED RGB, elige entre las opciones: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
 .. note::
 
-  Si vous définissez le mode d'affichage des LEDs RGB sur ``rainbow``, ``rainbow_reverse`` ou ``hue_cycle``, vous ne pourrez pas définir la couleur avec ``pironman5 -rc``.
+  Si configuras el modo de visualización de los LED RGB en ``rainbow``, ``rainbow_reverse`` o ``hue_cycle``, no podrás establecer el color usando ``pironman5 -rc``.
 
 .. code-block:: shell
 
   pironman5 -rs breathing
 
-* Pour ajuster la vitesse de changement (plage: 0 ~ 100 %) :
+* Para modificar la velocidad de los cambios (rango: 0 ~ 100%):
 
 .. code-block:: shell
 
   pironman5 -rp 80
 
-Broche de contrôle RGB
-----------------------------
+Pin de control RGB
+-------------------------
 
-Les LED RGB sont pilotées par SPI et connectées au **GPIO10**, qui est également la broche SPI MOSI. Les deux broches au-dessus de J9 sont utilisées pour connecter les LED RGB au GPIO10. Si elles ne sont pas nécessaires, le cavalier peut être retiré.
+Los LED RGB son controlados por SPI y están conectados a GPIO10, que también es el pin SPI MOSI. Los dos pines encima de J9 se utilizan para conectar los LED RGB a GPIO10. Si no se necesitan, se puede quitar el puente.
 
   .. image:: img/io_board_rgb_pin.png
 
-Broches RGB OUT
----------------------------
+Pines RGB OUT
+-------------------------
 
 .. image:: img/io_board_rgb_out.png
 
-Les LEDs RGB WS2812 prennent en charge la connexion en série, permettant la connexion d'une bande LED RGB externe. Connectez la broche **SIG** à la broche **DIN** de la bande externe pour l'expansion.
+Los LEDs RGB WS2812 admiten conexión en serie, lo que permite conectar una tira LED RGB externa. Conecta el pin **SIG** al pin **DIN** de la tira externa para la expansión.
 
-La configuration par défaut comprend 4 LEDs RGB. Connectez des LEDs supplémentaires et mettez à jour le nombre avec :
+El ajuste predeterminado incluye 4 LEDs RGB. Conecta LEDs adicionales y actualiza el conteo usando:
 
 .. code-block:: shell
 
   pironman5 -rl 12
 
-Connecteur d'écran OLED
+
+Conector de pantalla OLED
 ----------------------------
 
-Le connecteur d'écran OLED, avec une adresse de 0x3C, est une fonctionnalité clé.
+El conector de la pantalla OLED, con una dirección de 0x3C, es una característica clave.
 
 .. image:: img/io_board_oled.png
 
-Si l'écran OLED ne s'affiche pas ou s'affiche incorrectement, suivez ces étapes pour résoudre le problème :
+Si la pantalla OLED no se muestra o se muestra incorrectamente, sigue estos pasos para solucionar el problema:
 
-Vérifiez si le câble FPC de l'écran OLED est correctement connecté.
+Verifica si el cable FPC de la pantalla OLED está correctamente conectado.
 
-#. Utilisez la commande suivante pour afficher les journaux d'exécution du programme et vérifier les messages d'erreur.
+#. Utiliza el siguiente comando para ver los registros de ejecución del programa y verificar si hay mensajes de error.
 
     .. code-block:: shell
 
         cat /opt/pironman5/log
 
-#. Vous pouvez également utiliser la commande suivante pour vérifier si l'adresse i2c 0x3C de l'OLED est reconnue :
+#. Alternativamente, utiliza el siguiente comando para verificar si la dirección i2c de la OLED, 0x3C, es reconocida:
     
     .. code-block:: shell
         
         sudo i2cdetect -y 1
 
-#. Si les deux premières étapes ne révèlent aucun problème, essayez de redémarrer le service pironman5 pour voir si cela résout le problème.
+#. Si los dos primeros pasos no revelan ningún problema, intenta reiniciar el servicio pironman5 para ver si eso resuelve el problema.
+
 
     .. code-block:: shell
 
         sudo systemctl restart pironman5.service
 
 
-Récepteur Infrarouge
+Receptor infrarrojo
 ---------------------------
 
 .. image:: img/io_board_receiver.png
 
-* **Modèle**: IRM-56384, fonctionnant à 38KHz.
-* **Connexion**: Le récepteur IR se connecte au **GPIO13**.
-* **D1**: Un indicateur de réception infrarouge qui clignote lors de la détection d'un signal.
-* **J8**: Une broche pour activer la fonction infrarouge. Par défaut, un cavalier est inséré pour une fonctionnalité immédiate. Retirez le cavalier pour libérer GPIO13 si le récepteur IR n'est pas utilisé.
+* **Modelo**: IRM-56384, operando a 38KHz.
+* **Conexión**: El receptor IR se conecta a **GPIO13**.
+* **D1**: Un indicador de recepción infrarroja que parpadea al detectar una señal.
+* **J8**: Un pin para habilitar la función infrarroja. Por defecto, un jumper está insertado para su funcionamiento inmediato. Retira el jumper para liberar GPIO13 si el receptor IR no se está utilizando.
 
-Pour utiliser le récepteur IR, vérifiez sa connexion et installez le module nécessaire :
+Para utilizar el receptor IR, verifica su conexión e instala el módulo necesario:
 
-* Testez la connexion :
+* Prueba la conexión:
 
   .. code-block:: shell
 
     sudo ls /dev |grep lirc
 
-* Installez le module ``lirc`` :
+* Instala el módulo ``lirc``:
 
   .. code-block:: shell
 
     sudo apt-get install lirc -y
 
-* Testez ensuite le récepteur IR en exécutant la commande suivante.
+* Ahora, prueba el receptor IR ejecutando el siguiente comando.
 
   .. code-block:: shell
 
     mode2 -d /dev/lirc0
 
-* Après avoir exécuté la commande, appuyez sur un bouton de la télécommande et le code de ce bouton s'affichera.
+* Después de ejecutar el comando, presiona un botón en el control remoto y se imprimirá el código de ese botón.
 
 
-Broches des ventilateurs RGB
-------------------------------------
+Pines del ventilador RGB
+-----------------------------
 
-La carte d'extension IO prend en charge jusqu'à deux ventilateurs 5V non-PWM. Les deux ventilateurs sont contrôlés ensemble. 
+La placa de expansión IO admite hasta dos ventiladores de 5V sin PWM. Ambos ventiladores son controlados juntos.
 
-**FAN1** et **FAN2** sont deux ensembles de broches pour ventilateurs. Vous devez connecter le fil rouge du ventilateur à « + », et le fil noir à « - ».
+**FAN1** y **FAN2** son dos conjuntos de pines para ventiladores. Debes conectar el cable rojo del ventilador a "+", y el cable negro a "-".
 
 .. image:: img/io_board_fan.png
 
-Les deux broches situées sous J9 sont les broches d'activation des ventilateurs RGB. Par défaut, un cavalier est inséré sur ces broches, permettant de contrôler l'état des ventilateurs via le GPIO6. Si le fonctionnement des ventilateurs n'est pas souhaité, le cavalier peut être retiré pour libérer GPIO6.
+Los dos pines debajo de J9 son los pines de habilitación para los ventiladores RGB. Por defecto, un jumper está insertado en estos pines, lo que permite controlar el estado de encendido y apagado de los ventiladores mediante GPIO6. Si no se desea que funcionen los ventiladores, se puede retirar el jumper para liberar GPIO6.
 
 .. image:: img/io_board_fan_j9.png
 
-**D2** est un indicateur de signal du ventilateur qui s'allume lorsque le ventilateur est actif.
+**D2** es un indicador de señal del ventilador que se enciende cuando el ventilador está activo.
 
 .. image:: img/io_board_fan_d2.png
 
-Vous pouvez utiliser une commande pour configurer le mode de fonctionnement des deux ventilateurs RGB. Ces modes déterminent les conditions sous lesquelles les ventilateurs RGB s'activeront.
+Puedes utilizar un comando para configurar el modo de funcionamiento de los dos ventiladores RGB. Estos modos determinan las condiciones bajo las cuales se activarán los ventiladores RGB.
 
-Par exemple, si le mode est réglé sur **1: Performance**, les ventilateurs RGB s'activeront à 50°C.
+Por ejemplo, si se configura en **1: Rendimiento**, los ventiladores RGB se activarán a 50°C.
 
 .. code-block:: shell
 
   pironman5 -gm 3
 
-* **4: Silencieux**: Les ventilateurs RGB s'activeront à 70°C.
-* **3: Équilibré**: Les ventilateurs RGB s'activeront à 67,5°C.
-* **2: Cool**: Les ventilateurs RGB s'activeront à 60°C.
-* **1: Performance**: Les ventilateurs RGB s'activeront à 50°C.
-* **0: Toujours activés**: Les ventilateurs RGB resteront toujours activés.
+* **4: Silencioso**: Los ventiladores RGB se activarán a 70°C.
+* **3: Equilibrado**: Los ventiladores RGB se activarán a 67.5°C.
+* **2: Enfriamiento**: Los ventiladores RGB se activarán a 60°C.
+* **1: Rendimiento**: Los ventiladores RGB se activarán a 50°C.
+* **0: Siempre encendido**: Los ventiladores RGB estarán siempre encendidos.
 
-Si vous connectez la broche de contrôle des ventilateurs RGB à différentes broches du Raspberry Pi, vous pouvez utiliser la commande suivante pour modifier le numéro de la broche.
+Si conectas el pin de control del ventilador RGB a diferentes pines en la Raspberry Pi, puedes utilizar el siguiente comando para cambiar el número de pin.
 
 .. code-block:: shell
 
   sudo pironman5 -gp 18
 
-Broches d'en-tête
---------------------
+Pines de cabecera
+----------------------
 
 .. image:: img/io_board_pin_header.png
 
-Deux connecteurs d'en-tête coudés étendent le GPIO du Raspberry Pi, mais notez que le récepteur IR, les LEDs RGB et le ventilateur occupent certaines broches. Retirez les cavaliers correspondants pour utiliser ces broches pour d'autres fonctions.
+Dos conectores de cabecera en ángulo recto extienden el GPIO de la Raspberry Pi, pero ten en cuenta que el receptor IR, el LED RGB y el ventilador ocupan algunos pines. Retira los jumpers correspondientes para utilizar estos pines para otras funciones.
 
 .. list-table:: 
   :widths: 25 25
@@ -189,17 +191,18 @@ Deux connecteurs d'en-tête coudés étendent le GPIO du Raspberry Pi, mais note
 
   * - Pironman 5
     - Raspberry Pi 5
-  * - Récepteur IR (Optionnel)
+  * - Receptor IR (Opcional)
     - GPIO13
   * - OLED SDA
     - SDA
   * - OLED SCL
     - SCL
-  * - Ventilateur (Optionnel)
+  * - Ventilador (Opcional)
     - GPIO6
-  * - RGB (Optionnel)
+  * - RGB (Opcional)
     - GPIO10
-  * - RGB (Optionnel)
+  * - RGB (Opcional)
     - GPIO12
-  * - RGB (Optionnel)
+  * - RGB (Opcional)
     - GPIO21
+

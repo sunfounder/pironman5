@@ -1,18 +1,18 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Sumérgete más profundamente en Raspberry Pi, Arduino y ESP32 con otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de remises exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Caractéristiques
+Características
 ======================
 
 **Interfaces**
@@ -21,32 +21,32 @@ Caractéristiques
 .. image:: img/pironman5_interfaces2.png
 
 
-**Paramètres**
+**Parámetros**
 
-* Dimensions: 111,9x78,5x117mm
-* Matériau
-    * Corps principal: alliage d'aluminium
-    * Deux panneaux latéraux: acrylique
-* Plateforme supportée: Raspberry Pi 5
-* Entrée d'alimentation: USB Type C, 5V/5A
+* Dimensiones: 111.9x78.5x117mm
+* Material
+    * Cuerpo principal: aleación de aluminio
+    * Dos paneles laterales: acrílico
+* Plataforma compatible: Raspberry Pi 5
+* Entrada de energía: USB Tipo C, 5V/5A
 * Interfaces
-    * GPIO standard à 40 broches pour Raspberry Pi
-    * Connecteur Micro SD à ressort
-    * Entrée d'alimentation USB Type C
+    * GPIO estándar de 40 pines para Raspberry Pi
+    * Ranura Micro SD con resorte
+    * Entrada de energía USB Tipo C
     * 2 x USB 2.0
     * 2 x USB 3.0
-    * Port LAN Gigabit
-    * 2 x HDMI Type A 4Kp60
-* Bouton d'alimentation en métal
-* Écran OLED: 0,96'' résolution 128x64
-* 1 x ventilateur PWM, 2 x ventilateurs RGB: 40x40x10mm
+    * Puerto LAN Gigabit
+    * 2 x HDMI Tipo A 4Kp60
+* Botón de encendido metálico
+* Pantalla OLED: 0.96'' con resolución de 128x64
+* 1 x Ventilador PWM, 2 x Ventiladores RGB: 40x40x10mm
 * 4 x LED RGB WS2812-5050
-* Récepteur IR 38KHz
-* Refroidisseur en tour
-* PCIe 3.0 x1 M.2 M key 2230, 2242, 2260, 2280 pour SSD NVMe
-* Pile 1220 pour RTC
+* Receptor IR de 38KHz
+* Enfriador tipo torre
+* PCIe 3.0 x1 M.2 M key 2230, 2242, 2260, 2280 para SSD NVMe
+* Batería 1220 para RTC
 
-**Schéma dimensionnel**
+**Dibujo dimensional**
 
 .. image:: img/pironman5_dimension.png
     :width: 800

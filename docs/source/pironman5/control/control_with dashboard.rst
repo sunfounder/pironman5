@@ -1,66 +1,64 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 con otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirse?**
 
-    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
-    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-goûts.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
-    - **Promotions festives et cadeaux** : Participez à des tirages au sort et à des promotions spéciales pour les fêtes.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a los anuncios de nuevos productos y a contenidos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _view_control_dashboard:
 
-Afficher et contrôler depuis le tableau de bord
-=================================================
+Visualizar y controlar desde el panel de control
+====================================================
 
-Une fois que vous avez installé le module ``pironman5`` avec succès, le service ``pironman5.service`` démarrera automatiquement au redémarrage.
+Una vez que hayas instalado correctamente el módulo ``pironman5``, el servicio ``pironman5.service`` se iniciará automáticamente al reiniciar.
 
-Vous pouvez maintenant ouvrir la page de surveillance dans votre navigateur pour consulter les informations sur votre Raspberry Pi, configurer les LEDs RGB et contrôler le ventilateur. Le lien de la page est : ``http://<ip>:34001``.
+Ahora puedes abrir la página de monitoreo en tu navegador para ver la información de tu Raspberry Pi, configurar las luces RGB y controlar el ventilador, entre otras funciones. El enlace de la página es: ``http://<ip>:34001``.
 
-Cette page comprend **Tableau de bord**, **Historique**, **Journal** et une page de **Paramètres**.
+Esta página incluye **Panel de control**, **Historial**, **Registro** y una sección de **Configuración**.
 
 .. image:: img/dashboard_tab_new.jpg
 
+Panel de control
+-------------------
 
-Tableau de bord
--------------------------
+En esta sección encontrarás varias tarjetas para visualizar el estado relevante de tu Raspberry Pi, incluyendo:
 
-Plusieurs cartes sont disponibles pour consulter l'état pertinent de votre Raspberry Pi, notamment :
-
-* **Ventilateur** : Consultez la température du CPU du Raspberry Pi et la vitesse du ventilateur PWM. **GPIO Fan State** indique l'état des deux ventilateurs RGB latéraux. À la température actuelle, les deux ventilateurs RGB sont arrêtés.
+* **Ventilador**: Consulta la temperatura de la CPU del Raspberry Pi y la velocidad del ventilador PWM. **Estado del ventilador GPIO** indica el estado de los dos ventiladores RGB laterales. A la temperatura actual, ambos ventiladores RGB están apagados.
 
   .. image:: img/dashboard_pwm_fan.png
     :width: 90%
-    
-* **Stockage** : Affiche la capacité de stockage d'un Raspberry Pi, montrant les différentes partitions de disque avec l'espace utilisé et disponible.
+
+* **Almacenamiento**: Muestra la capacidad de almacenamiento del Raspberry Pi, con las particiones del disco y el espacio utilizado y disponible.
 
   .. image:: img/dashboard_storage.png
     :width: 90%
-    
-* **Mémoire** : Affiche l'utilisation de la RAM du Raspberry Pi ainsi que le pourcentage utilisé.
+
+* **Memoria**: Indica el uso de RAM del Raspberry Pi y el porcentaje utilizado.
 
   .. image:: img/dashboard_memory.png
     :width: 90%
-    
-* **Réseau** : Affiche le type de connexion réseau actuel, ainsi que les vitesses de téléchargement et de téléversement.
+
+* **Red**: Muestra el tipo de conexión de red actual, así como las velocidades de carga y descarga.
 
   .. image:: img/dashboard_network.png
     :width: 90%
-    
-* **Processeur** : Illustre les performances du CPU du Raspberry Pi, y compris l'état de ses quatre cœurs, les fréquences d'opération et le pourcentage d'utilisation du CPU.
+
+* **Procesador**: Ilustra el rendimiento de la CPU del Raspberry Pi, incluyendo el estado de sus cuatro núcleos, las frecuencias de operación y el porcentaje de uso de la CPU.
 
   .. image:: img/dashboard_processor.png
     :width: 90%
-    
 
-Historique
---------------
+Historial
+-----------
 
-La page Historique vous permet de visualiser des données historiques. Sélectionnez les données que vous souhaitez consulter dans la barre latérale gauche, puis choisissez la plage de temps pour voir les données correspondantes. Vous pouvez également cliquer pour les télécharger.
+La página Historial te permite consultar datos históricos. Selecciona los datos que deseas ver en la barra lateral izquierda, elige un rango de tiempo para visualizarlos y también puedes descargarlos si es necesario.
 
 .. image:: img/dashboard_history1.png
   :width: 90%
@@ -68,15 +66,15 @@ La page Historique vous permet de visualiser des données historiques. Sélectio
 .. image:: img/dashboard_history2.png
   :width: 90%
 
-Journal
+Registro
 ----------
 
-La page Journal est utilisée pour consulter les journaux du service Pironman5 en cours d'exécution. Le service Pironman5 comprend plusieurs sous-services, chacun ayant son propre journal. Sélectionnez le journal que vous souhaitez consulter, et vous pourrez voir les données correspondantes sur la droite. Si aucun contenu n'apparaît, cela peut signifier qu'il n'y a pas de journal disponible.
+La página de Registro permite visualizar los registros del servicio Pironman5 en ejecución. Este servicio incluye múltiples subservicios, cada uno con su propio registro. Selecciona el registro que deseas consultar para visualizar sus datos.
 
-* Chaque journal a une taille fixe de 10 Mo. Lorsqu'il dépasse cette taille, un deuxième journal est créé.
-* Le nombre de journaux pour un même service est limité à 10. Si ce nombre est dépassé, le journal le plus ancien est automatiquement supprimé. Vous pouvez également supprimer les journaux manuellement.
-* Des outils de filtrage sont disponibles au-dessus de la zone de journal sur la droite. Vous pouvez sélectionner le niveau de journalisation, filtrer par mots-clés et utiliser plusieurs outils pratiques, notamment **Retour à la ligne**, **Défilement automatique** et **Mise à jour automatique**.
-* Les journaux peuvent également être téléchargés localement.
+* Cada registro tiene un tamaño fijo de 10 MB. Cuando se supera este tamaño, se crea un segundo archivo de registro.
+* El número de registros para un mismo servicio está limitado a 10. Los registros más antiguos se eliminan automáticamente si se excede este límite.
+* Hay herramientas de filtrado disponibles sobre la zona de registros: selección del nivel de registro, filtros por palabras clave y opciones como **Ajuste de línea**, **Desplazamiento automático** y **Actualización automática**.
+* También puedes descargar los registros localmente.
 
 .. image:: img/dashboard_log1.png
   :width: 90%
@@ -84,66 +82,66 @@ La page Journal est utilisée pour consulter les journaux du service Pironman5 e
 .. image:: img/dashboard_log2.png
   :width: 90%
 
-Paramètres
-------------
+Configuración
+----------------
 
-Dans le coin supérieur droit de la page, vous trouverez un menu de paramètres où vous pourrez personnaliser les réglages selon vos préférences. Après avoir effectué des modifications, elles seront enregistrées automatiquement. Si nécessaire, vous pouvez cliquer sur le bouton EFFACER en bas pour supprimer les données historiques.
+En la esquina superior derecha de la página, encontrarás un menú de configuración donde puedes personalizar los ajustes según tus preferencias. Los cambios se guardan automáticamente. Si lo necesitas, puedes hacer clic en el botón CLEAR en la parte inferior para borrar los datos históricos.
 
 .. image:: img/Dark_mode_and_Temperature.jpg
   :width: 600
 
-* **Mode sombre** : Basculez entre les thèmes clair et sombre. L'option de thème est enregistrée dans le cache du navigateur. Changer de navigateur ou effacer le cache rétablira le thème clair par défaut.
-* **Unité de température** : Définissez l'unité de température affichée par le système.
+* **Modo oscuro**: Alterna entre los temas de modo claro y oscuro. Esta opción se guarda en la caché del navegador. Cambiar de navegador o borrar la caché restablecerá el tema predeterminado (claro).
+* **Unidad de temperatura**: Configura la unidad de temperatura que muestra el sistema.
 
-**À propos de l'écran OLED**
+**Sobre la pantalla OLED**
 
 .. image:: img/OLED_Sreens.jpg
   :width: 600
 
-* **Activer l'OLED** : Déterminez si l'écran OLED doit être activé.
-* **Disque OLED** : Configurez le disque OLED.
-* **Interface réseau OLED** :
+* **Activar OLED**: Activa o desactiva la pantalla OLED.
+* **Disco OLED**: Configura el disco de la pantalla OLED.
+* **Interfaz de red OLED**:
 
-  * **all** : Alterne entre l'affichage de l'adresse IP Ethernet et Wi-Fi.
-  * **eth0** : Affiche uniquement l'adresse IP Ethernet.
-  * **wlan0** : Affiche uniquement l'adresse IP Wi-Fi.
+  * **todo**: Alterna entre mostrar la IP de Ethernet y la IP de Wi-Fi.
+  * **eth0**: Muestra solo la IP de Ethernet.
+  * **wlan0**: Muestra solo la IP de Wi-Fi.
 
-* **Rotation de l'OLED** : Configurez la rotation de l'écran OLED.
+* **Rotación OLED**: Configura la rotación de la pantalla OLED.
 
-**À propos des LEDs RGB**
+**Sobre las luces RGB**
 
 .. image:: img/RGB_LEDS.jpg
   :width: 600
 
-* **Activer les RGB** : Déterminez si les LEDs RGB doivent être activées.
-* **Couleur RGB** : Configurez la couleur des LEDs RGB.
-* **Luminosité RGB** : Ajustez la luminosité des LEDs RGB à l'aide d'un curseur.
-* **Style RGB** : Choisissez le mode d'affichage des LEDs RGB. Les options incluent **Solid**, **Breathing**, **Flow**, **Flow_reverse**, **Rainbow**, **Rainbow Reverse**, et **Hue Cycle**.
+* **Activar RGB**: Activa o desactiva las luces RGB.
+* **Color RGB**: Configura el color de las luces RGB.
+* **Brillo RGB**: Ajusta el brillo de las luces RGB mediante un control deslizante.
+* **Estilo RGB**: Selecciona el modo de visualización de las luces RGB. Las opciones incluyen **Estático**, **Respiración**, **Flujo**, **Flujo inverso**, **Arco iris**, **Arco iris inverso** y **Ciclo de tonalidad**.
 
   .. note::
 
-     Si vous définissez le **Style RGB** sur **Rainbow**, **Rainbow Reverse**, ou **Hue Cycle**, vous ne pourrez pas configurer la couleur.
+     Si seleccionas el estilo **Arco iris**, **Arco iris inverso** o **Ciclo de tonalidad**, no podrás configurar el color.
 
-* **Vitesse RGB** : Définissez la vitesse des changements des LEDs RGB.
+* **Velocidad RGB**: Configura la velocidad de los cambios de las luces RGB.
 
-**À propos des ventilateurs RGB**
+**Sobre los ventiladores RGB**
 
 .. image:: img/RGB_FAN2.jpg
   :width: 600
 
-.. * **LED du ventilateur** : Configurez les LEDs du ventilateur en mode ON, OFF ou FOLLOW.
+.. * **LED del ventilador**: Configura los LEDs del ventilador en ON, OFF o SEGUIR.
 
-* **Mode ventilateur** : Configurez le mode de fonctionnement des deux ventilateurs RGB. Ces modes déterminent les conditions dans lesquelles les ventilateurs s'activent.
+* **Modo de ventilador**: Configura las condiciones de activación de los dos ventiladores RGB.
 
-    * **Silencieux** : Les ventilateurs RGB s'activent à 70°C.
-    * **Équilibré** : Les ventilateurs RGB s'activent à 67.5°C.
-    * **Froid** : Les ventilateurs RGB s'activent à 60°C.
-    * **Performance** : Les ventilateurs RGB s'activent à 50°C.
-    * **Toujours activé** : Les ventilateurs RGB restent toujours activés.
+    * **Silencioso**: Los ventiladores RGB se activan a 70 °C.
+    * **Equilibrado**: Los ventiladores RGB se activan a 67,5 °C.
+    * **Fresco**: Los ventiladores RGB se activan a 60 °C.
+    * **Rendimiento**: Los ventiladores RGB se activan a 50 °C.
+    * **Siempre activo**: Los ventiladores RGB permanecen siempre encendidos.
 
-Par exemple, si le mode **Performance** est activé, les ventilateurs RGB s'activent à 50°C.
+Por ejemplo, si seleccionas el modo **Rendimiento**, los ventiladores RGB se activarán a 50 °C.
 
-Après avoir enregistré les réglages, si la température du CPU dépasse 50°C, vous verrez l'état **GPIO Fan State** passer à ON dans le tableau de bord, et les ventilateurs RGB latéraux commenceront à tourner.
+Después de guardar, si la temperatura del CPU supera los 50 °C, el estado **GPIO Fan** cambiará a ON en el panel de control y los ventiladores RGB laterales comenzarán a girar.
 
 .. image:: img/dashboard_rgbfan_on.png
   :width: 300

@@ -1,178 +1,177 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi & Arduino & ESP32 sur Facebook ! Plongez-vous dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 con otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes après-vente et surmontez les défis techniques avec l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives**: Accédez en avant-première aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de remises exclusives sur nos produits les plus récents.
-    - **Promotions festives et concours**: Participez à des tirages au sort et à des promotions spéciales.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más nuevos.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Configuration sur Home Assistant
+Configuración en Home Assistant
 ============================================
 
-Si vous avez installé le système Home Assistant, vous devrez ajouter les add-ons nécessaires à Home Assistant et les démarrer pour que Pironman 5 fonctionne.
+Si has instalado el sistema Home Assistant, necesitarás agregar los complementos necesarios y activarlos para que el Pironman 5 funcione correctamente.
 
 .. note::
 
-    La méthode suivante ne s'applique qu'aux systèmes avec Home Assistant installé nativement. Elle ne s'applique pas aux systèmes Raspberry Pi avec Home Assistant installé par-dessus ou aux versions Docker de Home Assistant.
+    El siguiente método solo es aplicable a sistemas con Home Assistant instalado de manera nativa. No se aplica a sistemas Raspberry Pi con Home Assistant instalado encima o a versiones de Home Assistant en Docker.
 
-1. Connexion à Home Assistant
----------------------------------
+1. Iniciar sesión en Home Assistant
+----------------------------------------
 
-* Après avoir démarré Pironman 5, il est recommandé de brancher directement un câble Ethernet. Vous pouvez ensuite ouvrir le navigateur de votre ordinateur et entrer: ``homeassistant.local:8123`` pour accéder à Home Assistant.
+* Después de encender el Pironman 5, se recomienda conectar directamente un cable Ethernet. De esta manera, puedes abrir el navegador de tu computadora e ingresar: ``homeassistant.local:8123`` para acceder a Home Assistant.
 
   .. image:: img/home_login.png
-      :width: 90%
+   :width: 90%
 
 
-* Sélectionnez **CREATE MY SMART HOME**, puis créez votre compte.
+* Selecciona **CREAR MI HOGAR INTELIGENTE**, y luego crea tu cuenta.
 
   .. image:: img/home_account.png
-      :width: 90%
+   :width: 90%
 
-* Suivez les instructions pour choisir votre emplacement et d'autres configurations. Une fois terminé, vous accéderez au tableau de bord de Home Assistant.
+* Sigue las indicaciones para elegir tu ubicación y otras configuraciones. Una vez completado, ingresarás al panel de control de Home Assistant.
 
   .. image:: img/home_dashboard.png
-      :width: 90%
+   :width: 90%
 
 
-2. Ajouter le dépôt d'add-ons SunFounder
-----------------------------------------------------
+2. Agregar el repositorio de complementos de SunFounder
+-------------------------------------------------------------
 
-Les fonctionnalités de Pironman 5 sont installées sur Home Assistant sous forme d'add-ons. Vous devez d'abord ajouter le dépôt d'add-ons **SunFounder**.
+La funcionalidad del Pironman 5 se instala en Home Assistant en forma de complementos. Primero, necesitas agregar el repositorio de complementos de **SunFounder**.
 
-#. Ouvrez **Paramètres** -> **Add-ons**.
+#. Abre **Configuración** -> **Complementos**.
 
    .. image:: img/home_setting_addon.png
       :width: 90%
 
-#. Cliquez sur le signe plus en bas à droite pour entrer dans la boutique des add-ons.
+#. Haz clic en el signo de más en la esquina inferior derecha para ingresar a la tienda de complementos.
 
    .. image:: img/home_addon.png
       :width: 90%
 
-#. Dans la boutique des add-ons, cliquez sur le menu en haut à droite et sélectionnez **Dépôts**.
+#. En la tienda de complementos, haz clic en el menú en la esquina superior derecha y selecciona **Repositorios**.
 
    .. image:: img/home_add_res.png
       :width: 90%
 
-#. Entrez l'URL du dépôt d'add-ons **SunFounder**: ``https://github.com/sunfounder/home-assistant-addon``, puis cliquez sur **ADD**.
+#. Ingresa la URL del repositorio de complementos de **SunFounder**: ``https://github.com/sunfounder/home-assistant-addon``, y haz clic en **AGREGAR**.
 
    .. image:: img/home_res_add.png
       :width: 90%
 
-#. Après avoir ajouté avec succès, fermez la fenêtre contextuelle et rafraîchissez la page. Trouvez la liste des add-ons SunFounder.
+#. Después de agregarlo exitosamente, cierra la ventana emergente y actualiza la página. Busca la lista de complementos de SunFounder.
 
    .. image:: img/home_addon_list.png
-      :width: 90%
+         :width: 90%
 
-3. Installer l'add-on **Pi Config Wizard**
+3. Instalar el complemento **Pi Config Wizard**
 ------------------------------------------------------
 
-Le **Pi Config Wizard** permet d'activer les configurations nécessaires pour Pironman 5, telles que l'I2C et le SPI. Si vous n'en avez plus besoin par la suite, vous pouvez le supprimer.
+El **Pi Config Wizard** puede ayudar a habilitar las configuraciones necesarias para el Pironman 5, como I2C y SPI. Si no se necesitan después, se puede eliminar.
 
-#. Trouvez **Pi Config Wizard** dans la liste des add-ons SunFounder et cliquez pour entrer.
+#. Encuentra **Pi Config Wizard** en la lista de complementos de SunFounder y haz clic para ingresar.
 
    .. image:: img/home_pi_config.png
       :width: 90%
 
-#. Sur la page **Pi Config Wizard**, cliquez sur **INSTALLER**. Attendez la fin de l'installation.
+#. En la página de **Pi Config Wizard**, haz clic en **INSTALAR**. Espera a que se complete la instalación.
 
    .. image:: img/home_config_install.png
       :width: 90%
 
-#. Une fois l'installation terminée, passez à l'onglet **Journal** pour vérifier s'il y a des erreurs.
+#. Después de que la instalación se complete, cambia a la página de **Registro** para confirmar si hay algún error.
 
    .. image:: img/home_log.png
       :width: 90%
 
-#. S'il n'y a pas d'erreurs, revenez à la page **Info** et cliquez sur **START** pour démarrer cet add-on.
+#. Si no hay errores, regresa a la página de **Información** y haz clic en **INICIAR** para comenzar con este complemento.
 
    .. image:: img/home_start.png
       :width: 90%
 
-#. Maintenant, ouvrez l'interface Web.
+#. Ahora abre la INTERFAZ WEB.
 
    .. image:: img/home_open_web_ui.png
       :width: 90%
 
-#. Dans l'interface Web, vous verrez une option pour monter la partition Boot. Cliquez sur **MOUNT** pour monter la partition.
+#. En la interfaz web, verás una opción para montar la partición Boot. Haz clic en **MONTAR** para montarla.
 
    .. image:: img/home_mount_boot.png
       :width: 90%
 
-#. Après un montage réussi, vous verrez des options pour configurer I2C, SPI et éditer le fichier config.txt. Cochez I2C et SPI pour les activer. Une fois qu'ils apparaissent comme activés, cliquez sur le bouton de redémarrage en bas pour redémarrer le Raspberry Pi.
+#. Después de montar con éxito, verás opciones para configurar I2C, SPI y editar el archivo config.txt. Marca I2C y SPI para habilitarlos. Una vez que estén habilitados, haz clic en el botón de reinicio en la parte inferior para reiniciar la Raspberry Pi.
 
    .. image:: img/home_i2c_spi.png
       :width: 90%
 
-#. Après le redémarrage, actualisez la page. Vous reviendrez à la page de montage de la partition Boot. Cliquez à nouveau sur **MOUNT**.
+#. Después del reinicio, actualiza la página. Volverás a la página de montaje de la partición Boot nuevamente. Haz clic en **MONTAR** otra vez.
 
    .. image:: img/home_mount_boot.png
       :width: 90%
 
-#. Généralement, vous verrez que SPI est activé, mais pas I2C, car I2C nécessite deux redémarrages. Activez à nouveau I2C, puis redémarrez le Raspberry Pi.
+#. Normalmente, verás que SPI está habilitado, pero I2C no, ya que I2C requiere dos reinicios. Habilita I2C nuevamente, luego reinicia la Raspberry Pi.
 
    .. image:: img/home_enable_i2c.png
       :width: 90%
 
-#. Après le redémarrage, retournez sur la page **MOUNT**. Vous verrez que l'I2C et le SPI sont tous deux activés.
+#. Después del reinicio, vuelve a la página de **MONTAR** nuevamente. Verás que tanto I2C como SPI están habilitados.
 
    .. image:: img/home_i2c_spi_enable.png
       :width: 90%
 
 .. note::
 
-    * Si après avoir actualisé la page, vous ne revenez pas sur la page de montage de la partition, vous pouvez cliquer sur **Paramètres** -> **Add-ons** -> **Pi Config Wizard** à nouveau.
-    * Vérifiez si cet add-on est démarré. Si ce n'est pas le cas, cliquez sur **START**.
-    * Après avoir démarré, cliquez sur **OPEN WEB UI**, puis sur **MOUNT** pour vérifier si I2C et SPI sont activés.
+    * Si después de actualizar la página, no ingresas a la página de montaje de la partición, puedes hacer clic en **Configuración** -> **Complementos** -> **Pi Config Wizard** nuevamente.
+    * Verifica si este complemento está iniciado. Si no lo está, haz clic en **INICIAR**.
+    * Después de iniciarlo, haz clic en **ABRIR INTERFAZ WEB**, luego haz clic en **MONTAR** para confirmar si I2C y SPI están habilitados.
 
-4. Installer l'add-on **Pironman 5**
+4. Instalar el complemento **Pironman 5**
 ---------------------------------------------
 
-Passons maintenant à l'installation officielle de l'add-on **Pironman 5**.
+Ahora comienza la instalación oficial del complemento **Pironman 5**.
 
-#. Ouvrez **Paramètres** -> **Add-ons**.
+#. Abre **Configuración** -> **Complementos**.
 
    .. image:: img/home_setting_addon.png
       :width: 90%
 
-#. Cliquez sur le signe plus en bas à droite pour entrer dans la boutique des add-ons.
+#. Haz clic en el signo de más en la esquina inferior derecha para ingresar a la tienda de complementos.
 
    .. image:: img/home_addon.png
       :width: 90%
 
-#. Trouvez **Pironman 5** dans la liste des add-ons **SunFounder** et cliquez pour entrer.
+#. Encuentra **Pironman 5** en la lista de complementos de **SunFounder** y haz clic para ingresar.
 
    .. image:: img/home_pironman5_addon.png
       :width: 90%
 
-#. Installez maintenant l'add-on Pironman 5.
+#. Ahora instala el complemento Pironman 5.
 
    .. image:: img/home_install_pironman5.png
       :width: 90%
 
-#. Une fois l'installation terminée, cliquez sur **START** pour démarrer cet add-on. Vous verrez l'écran OLED afficher les informations sur le CPU du Raspberry Pi, la température et d'autres informations connexes. Quatre LED RGB WS2812 s'allumeront en bleu avec un mode respiration.
+#. Después de que la instalación esté completa, haz clic en **INICIAR** para comenzar con este complemento. Verás que la pantalla OLED muestra la CPU de la Raspberry Pi, la temperatura y otra información relacionada. Cuatro LEDs RGB WS2812 se encenderán en azul en modo de respiración.
 
    .. image:: img/home_start_pironman5.png
       :width: 90%
 
-#. Maintenant, vous pouvez cliquer sur **OPEN WEB UI** pour ouvrir la page Web de Pironman 5. Vous pouvez également cocher l'option pour afficher l'interface Web dans la barre latérale. Cela vous permettra de voir l'option Pironman 5 dans la barre latérale gauche de Home Assistant et de cliquer pour ouvrir la page de Pironman 5.
+#. Ahora puedes hacer clic en **ABRIR INTERFAZ WEB** para abrir la página web de Pironman 5. También puedes marcar la opción para mostrar la interfaz web en la barra lateral. Esto te permitirá ver la opción de Pironman 5 en la barra lateral izquierda de Home Assistant y hacer clic para abrir la página de Pironman 5.
 
    .. image:: img/home_web_ui.png
       :width: 90%
 
-#. Vous pouvez maintenant voir les informations concernant votre Raspberry Pi, configurer le RGB et contrôler le ventilateur, etc.
+#. Ahora puedes ver la información sobre tu Raspberry Pi, configurar los LEDs RGB y controlar el ventilador, etc.
 
    .. image:: img/home_web_new.png
       :width: 90%
 
 .. note::
 
-    Pour plus d'informations et d'utilisation de cette page Web de Pironman 5, veuillez consulter: :ref:`view_control_dashboard`.
-
+    Para más información y uso de esta página web de Pironman 5, consulta: :ref:`view_control_dashboard`.

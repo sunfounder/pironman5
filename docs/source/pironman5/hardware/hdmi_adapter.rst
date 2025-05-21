@@ -1,43 +1,43 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Sumérgete más profundamente en Raspberry Pi, Arduino y ESP32 con otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes post-achat et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de remises exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Adaptateur USB HDMI
-==========================================
+Adaptador USB HDMI
+===========================================
 
 .. image:: img/hdmi_adapter.jpeg
 
-Cet adaptateur USB HDMI est spécialement conçu pour le Raspberry Pi 5. Sa fonction principale est de repositionner les connexions USB et HDMI pour qu'elles soient alignées avec le côté interface USB du Raspberry Pi, améliorant ainsi l'accessibilité et la gestion des câbles.
+Este adaptador USB HDMI está diseñado específicamente para la Raspberry Pi 5. Su función principal es reposicionar las conexiones USB y HDMI para alinearlas con el lado de la interfaz USB de la Raspberry Pi, mejorando la accesibilidad y la gestión de cables.
 
-De plus, le port HDMI est converti en une interface HDMI Type A standard, offrant une plus grande compatibilité.
+Además, el puerto HDMI se convierte en una interfaz HDMI Tipo A estándar, lo que ofrece una mayor compatibilidad.
 
-**Alimentation supplémentaire pour NVMe**
+**Fuente de Alimentación Adicional para NVMe**
 
-La carte dispose d'un connecteur d'alimentation 5V spécialement destiné à l'alimentation PIP du NVMe. Couplé à un connecteur d'extension, il peut être connecté à l'interface d'alimentation supplémentaire du NVMe pour fournir une puissance supplémentaire.
+La placa incluye un conector de alimentación de 5V específicamente para la fuente de alimentación NVMe PIP. Junto con un cabezal de extensión, puede conectarse a la interfaz de alimentación adicional del NVMe para proporcionar energía adicional.
 
-**Support de batterie 1220RTC**
+**Soporte para Batería 1220RTC**
 
-Un support de batterie 1220RTC est intégré pour l'installation pratique d'une batterie RTC. Il se connecte à l'interface RTC du Raspberry Pi via un câble inversé SH1.0 2P.
+Se incorpora un soporte para batería 1220RTC para facilitar la instalación de una batería RTC. Se conecta a la interfaz RTC de la Raspberry Pi a través de un cable SH1.0 2P inverso.
 
-Le support de batterie est compatible avec les batteries CR1220 et ML1220. Si vous utilisez une ML1220 (batterie au dioxyde de manganèse lithium), la charge peut être configurée directement sur le Raspberry Pi. Notez que la CR1220 n'est pas rechargeable.
+El soporte para baterías es compatible con las baterías CR1220 y ML1220. Si se utiliza una ML1220 (batería de dióxido de manganeso de litio), la carga se puede configurar directamente en la Raspberry Pi. Cabe señalar que la CR1220 no es recargable.
 
-**Activation de la charge d'entretien**
+**Activar la Carga de Mantenimiento**
 
 .. warning::
 
-  Si vous utilisez une batterie CR1220, n'activez pas la charge d'entretien car cela pourrait causer des dommages irréparables à la batterie et risquer d'endommager la carte.
+  Si estás utilizando una batería CR1220, no habilites la carga de mantenimiento, ya que puede causar daños irreparables a la batería y poner en riesgo la placa.
 
-Par défaut, la fonction de charge d'entretien de la batterie est désactivée. Les fichiers ``sysfs`` indiquent la tension actuelle de charge d'entretien ainsi que les limites :
+Por defecto, la función de carga de mantenimiento de la batería está deshabilitada. Los archivos ``sysfs`` indican el voltaje actual de carga de mantenimiento y los límites:
 
 .. code-block:: shell
 
@@ -48,21 +48,21 @@ Par défaut, la fonction de charge d'entretien de la batterie est désactivée. 
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-Pour activer la charge d'entretien, ajoutez ``rtc_bbat_vchg`` à ``/boot/firmware/config.txt`` :
+Para habilitar la carga de mantenimiento, agrega ``rtc_bbat_vchg`` a ``/boot/firmware/config.txt``:
 
-  * Ouvrez ``/boot/firmware/config.txt``.
+  * Abre el archivo ``/boot/firmware/config.txt``.
   
     .. code-block:: shell
     
       sudo nano /boot/firmware/config.txt
       
-  * Ajoutez ``rtc_bbat_vchg`` à ``/boot/firmware/config.txt``.
+  * Agrega ``rtc_bbat_vchg`` a ``/boot/firmware/config.txt``.
   
     .. code-block:: shell
     
       dtparam=rtc_bbat_vchg=3000000
   
-Après redémarrage, le système affichera :
+Después de reiniciar, el sistema mostrará:
 
 .. code-block:: shell
 
@@ -73,4 +73,4 @@ Après redémarrage, le système affichera :
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-Cela confirme que la batterie est maintenant en charge d'entretien. Pour désactiver cette fonction, il suffit de supprimer la ligne ``dtparam`` du fichier ``config.txt``.
+Esto confirma que la batería ahora está bajo carga de mantenimiento. Para deshabilitar esta función, simplemente elimina la línea ``dtparam`` del archivo ``config.txt``.

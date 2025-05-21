@@ -123,7 +123,7 @@ rst_epilog = """
 .. |link_zh_tutorials| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/pironman5/zh-cn/latest/" target="_blank">中文在线教程</a>
-    
+
 """
 
 # open link in a new window
@@ -149,7 +149,7 @@ rst_epilog += """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">ici</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">aquí</a>
     
 .. |link_kodi| raw:: html
 

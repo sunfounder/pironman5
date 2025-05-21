@@ -1,37 +1,37 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    ¡Hola, bienvenido a la comunidad de entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook! Sumérgete aún más en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes après-vente et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour améliorer vos compétences.
-    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de réductions exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
-
+    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 .. _install_batocera:
 
-Installer Batocera Linux
+Instalar Batocera Linux
 ======================================================
 
-|link_batocera| est une distribution open-source et totalement gratuite dédiée au rétro-gaming. Elle peut être copiée sur une clé USB ou une carte SD dans le but de transformer n'importe quel ordinateur/nano-ordinateur en console de jeux, de manière temporaire ou permanente.
+|link_batocera| es una distribución de retro-gaming de código abierto y completamente gratuita que se puede copiar en una memoria USB o una tarjeta SD con el objetivo de convertir cualquier computadora/nano computadora en una consola de juegos, ya sea temporalmente durante un juego o de forma permanente.
 
-Vous pouvez choisir la méthode d'installation en fonction du matériel dont vous disposez : une carte Micro SD ou un SSD NVMe.
+Puedes elegir el método de instalación según si tienes a mano una tarjeta Micro SD o un NVMe SSD.
 
-**Utilisation d'une carte Micro SD uniquement**
+**Using a Micro SD Card Only**
 
-  Si vous utilisez une carte Micro SD, il vous suffit de suivre la première méthode ci-dessous.
+  If you are using a Micro SD card, you can simply follow the first method below.
 
-**Utilisation d'un SSD M.2 NVMe**
+**Using an M.2 NVMe SSD**
 
-  * Si vous utilisez un SSD M.2 NVMe, vous aurez également besoin d'un **adaptateur de boîtier SSD M.2 NVMe** pour connecter votre SSD à votre ordinateur et suivre la deuxième méthode pour installer le système d'exploitation.
+  * If you are using an M.2 NVMe SSD, you will also need an **M.2 NVMe SSD Enclosure Adapter** to connect your SSD to your computer and follow the second method to install the OS.
   
     .. image:: img/m2_nvme_adapter.png
         :width: 300
-        :align: center
+        :align: center  
+
 
 .. toctree::
     :maxdepth: 1

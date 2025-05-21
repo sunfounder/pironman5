@@ -1,32 +1,32 @@
 .. note::
 
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
+    ¡Hola, bienvenido a la comunidad de entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook! Sumérgete aún más en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Pourquoi nous rejoindre ?**
+    **¿Por qué unirte?**
 
-    - **Support d'experts**: Résolvez les problèmes après-vente et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour améliorer vos compétences.
-    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
-    - **Réductions spéciales**: Profitez de réductions exclusives sur nos nouveaux produits.
-    - **Promotions festives et tirages au sort**: Participez à des concours et à des promotions pendant les fêtes.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
 .. _install_the_os:
 
-3. Installer le Système d'Exploitation
-===========================================
+3. Instalación del Sistema Operativo
+=======================================
 
 .. note::
 
-    Vous devez installer un système d'exploitation compatible avec Raspberry Pi 5. Veuillez utiliser la dernière version de l'outil Raspberry Pi Imager pour installer le système. Les systèmes actuellement testés sont :
+    Necesitas instalar un sistema operativo que sea compatible con Raspberry Pi 5. Por favor, utiliza la herramienta más reciente de Raspberry Pi Imager para la instalación del sistema. Los sistemas actualmente probados son:
 
    .. image:: ../img/compitable_os.png
         :width: 600
         :align: center
 
 
-Dans ce chapitre, vous apprendrez à installer les systèmes d'exploitation. Toutes les étapes d'installation dépendent du |link_rpi_imager|, que vous devez d'abord installer.
+En este capítulo, aprenderás cómo instalar los sistemas operativos. Todos los pasos de instalación dependen de |link_rpi_imager|, que debes instalar primero.
 
     .. toctree::
         :maxdepth: 1
