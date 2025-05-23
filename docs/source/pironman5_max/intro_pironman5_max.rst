@@ -4,31 +4,32 @@ Pironman 5 MAX
 ================================================================================
 
 
-Thanks for choosing our |link_pironman5_max|.
+Gracias por elegir nuestro |link_pironman5_max|.
 
 .. image:: img/pironman5_max.jpg
     :width: 400
     :align: center
-    
-The Pironman 5 Max is the new flagship product in our Pironman Raspberry Pi case series, 
-exclusively compatible with the latest Raspberry Pi 5. 
 
-A standout feature of the Pironman 5 Max is its dual transparent sides, 
-reminiscent of a PC case, combined with RGB LEDs and two RGB fans, 
-adding an impressive flair to the product. 
-It includes an OLED screen that displays basic information about the Raspberry Pi, 
-and has expanded features such as power on/off buttons and status indicators. 
-The micro HDMI port has been converted to a standard HDMI port for more common use, 
-and the power and HDMI ports have been relocated to the same side as the Raspberry Pi’s USB ports, 
-enhancing the aesthetics of the wiring. Equipped with three fans and a tower-style heatsink, 
-it greatly assists in reducing the high temperatures of the Raspberry Pi 5. 
+El Pironman 5 Max es el nuevo producto insignia de nuestra línea de carcasas Pironman para Raspberry Pi, 
+compatible exclusivamente con la más reciente Raspberry Pi 5.
 
-The case integrates a PCIe Gen 2 Switch with two M.2 M key PCIe slots supporting 2230, 2242, 2260, and 2280, allowing the installation of two NVMe Gen2 SSDs or AI accelerators. 
-Users can set up two NVMe SSDs in software RAID 0 or RAID 1 for NAS configurations; 
-combine one AI accelerator and one NVMe SSD to boost AI performance; 
-or use two AI accelerators for even stronger AI capabilities. 
-Additionally, GPIO expansion is provided for convenient extension of the Raspberry Pi’s functionality.
+Una de sus características más destacadas son los paneles laterales transparentes dobles, 
+que evocan el estilo de un gabinete de PC, combinados con LEDs RGB y dos ventiladores RGB, 
+aportando un aspecto visual impresionante. 
+Incluye una pantalla OLED que muestra información básica del sistema, 
+y cuenta con funciones adicionales como botones de encendido/apagado y luces indicadoras de estado. 
+El puerto micro HDMI se ha sustituido por un puerto HDMI estándar para mayor compatibilidad, 
+y tanto el puerto de alimentación como el HDMI han sido reubicados junto a los puertos USB de la Raspberry Pi, 
+mejorando así la organización del cableado. 
+Equipado con tres ventiladores y un disipador estilo torre, 
+el sistema ofrece una excelente refrigeración para reducir eficazmente la temperatura de la Raspberry Pi 5.
 
+La carcasa integra un conmutador PCIe Gen 2 con dos ranuras PCIe M.2 tipo M que admiten los formatos 2230, 2242, 2260 y 2280, 
+lo que permite instalar dos SSD NVMe Gen2 o aceleradores de IA. 
+Los usuarios pueden configurar dos SSD NVMe en RAID 0 o RAID 1 para crear un NAS; 
+combinar un SSD NVMe con un acelerador de IA para mejorar el rendimiento en inteligencia artificial; 
+o incluso usar dos aceleradores de IA para tareas más exigentes. 
+Además, cuenta con un conector de expansión GPIO para ampliar fácilmente las funcionalidades de la Raspberry Pi.
 
 .. raw:: html
 
@@ -48,20 +49,20 @@ Additionally, GPIO expansion is provided for convenient extension of the Raspber
     compitable_nvme_ssd
     faq
 
-**Parameters**
+**Parámetros**
 
-* Raspberry Pi 5 mini PC
-* 0.96" OLED Display showing Raspberry Pi's CPU usage, temperature, disk usage, IP address, RAM usage etc.
-* With a built-in vibration switch, tapping the case gently wakes up the OLED display.
-* Tower cooler can cool a 100% CPU load Pi to 39°C at 25°C room temperature
-* 2 RGB Fans, with GPIO control
-* 1 PWM Fan on the Tower Cooler is controlled by the Raspberry Pi system.
-* Integrated PCIe Gen 2 Switch with two M.2 M key PCIe interfaces, which can install two NVMe Gen2 solid-state drives or AI accelerators.
-* Supports four (PCIe Gen 2.0) NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280.
-* 4 WS2812 Addressable RGB LED light up the whole case with cool light effect
-* IR Receiver for multi-media center like Kodi or Volumio
-* Retro metal power button for safe shut down
-* External GPIO extender with pin name label, for easy access
-* Equipped with a spring-loaded socket for easy card removal
-* Aluminum main body with dark Acrylic side panel
-* Features two standard HDMI ports
+* Mini PC Raspberry Pi 5
+* Pantalla OLED de 0.96" que muestra uso de CPU, temperatura, uso de disco, dirección IP, uso de RAM, etc.
+* Sensor de vibración integrado: al tocar suavemente la carcasa, se activa la pantalla OLED.
+* Disipador tipo torre que mantiene la CPU al 100% de carga a solo 39 °C en una habitación a 25 °C.
+* 2 ventiladores RGB con control mediante GPIO.
+* 1 ventilador PWM en el disipador torre, controlado por el sistema de la Raspberry Pi.
+* Conmutador PCIe Gen 2 integrado con dos interfaces PCIe M.2 tipo M, para instalar dos SSD NVMe Gen2 o aceleradores de IA.
+* Compatibilidad con cuatro tamaños de SSD NVMe M.2 (PCIe Gen 2.0): 2230, 2242, 2260 y 2280.
+* 4 LEDs RGB direccionables WS2812 que iluminan toda la carcasa con efectos visuales llamativos.
+* Receptor IR para centros multimedia como Kodi o Volumio.
+* Botón de encendido metálico tipo retro para apagado seguro.
+* Extensor GPIO externo con etiquetas de pines para fácil identificación.
+* Zócalo con resorte para extracción sencilla de la tarjeta.
+* Cuerpo principal de aluminio con paneles laterales de acrílico oscuro.
+* Incluye dos puertos HDMI estándar.

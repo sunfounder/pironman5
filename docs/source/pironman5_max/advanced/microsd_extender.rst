@@ -1,23 +1,22 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de Raspberry Pi, Arduino y ESP32 de SunFounder en Facebook. Profundiza tus conocimientos en Raspberry Pi, Arduino y ESP32 junto a otros apasionados como tú.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Learn & Share**: Intercambia consejos y tutoriales para perfeccionar tus habilidades.
+    - **Exclusive Previews**: Accede con antelación a los anuncios de nuevos productos y adelantos exclusivos.
+    - **Special Discounts**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Festive Promotions and Giveaways**: Participa en sorteos y promociones especiales durante celebraciones.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 MicroSD Extender
 ===================
 
 
-This is a Micro SD card expansion board, which extends the Raspberry Pi's MicroSD card slot to the outside and adds a spring-loaded card slot.
+Esta es una placa de expansión para tarjeta Micro SD, que extiende la ranura MicroSD del Raspberry Pi hacia el exterior e incorpora una ranura con mecanismo de resorte.
 
 
 .. image:: img/sd_board.jpeg
-    

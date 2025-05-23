@@ -3,15 +3,15 @@
 Pironman 5 Mini
 =========================================
 
-Thanks for choosing our |link_pironman5_mini|.
+Gracias por elegir nuestro |link_pironman5_mini|.
 
 .. image:: img/pironman5_mini_pic.jpg
     :width: 400
     :align: center
 
-The Pironman 5 Mini is the latest addition to the Pironman Raspberry Pi case series, designed as a compact yet highly functional solution for Raspberry Pi enthusiasts. With a sleek silver aluminum alloy body and transparent acrylic side panels, the Pironman 5 Mini combines style and performance in a small form factor.
+El Pironman 5 Mini es la incorporación más reciente a la serie de carcasas Pironman para Raspberry Pi, diseñado como una solución compacta pero altamente funcional para los entusiastas de esta plataforma. Con un elegante cuerpo de aleación de aluminio plateado y paneles laterales de acrílico transparente, el Pironman 5 Mini combina estilo y rendimiento en un formato reducido.
 
-Key features include a dedicated power button, an active cooling system similar to the official Raspberry Pi cooler, an additional RGB fan mounted on the side panel for enhanced airflow, an RTC battery, and vibrant WS2812-5050 RGB LEDs. Its GPIO extender ensures you can easily expand the functionality of your Raspberry Pi. The case also supports NVMe SSDs via a PCIe 2.0 M.2 M key slot (sizes 2230, 2242, 2260, 2280), making it ideal for projects requiring fast and reliable storage.
+Entre sus características principales se incluyen un botón de encendido dedicado, un sistema de refrigeración activa similar al del enfriador oficial de Raspberry Pi, un ventilador RGB adicional montado en el panel lateral para mejorar el flujo de aire, una batería RTC y LEDs RGB WS2812-5050 vibrantes. Su extensor de GPIO facilita la expansión de funcionalidades del Raspberry Pi. La carcasa también es compatible con unidades SSD NVMe a través de una ranura PCIe 2.0 M.2 con clave M (formatos 2230, 2242, 2260, 2280), lo que la convierte en una opción ideal para proyectos que requieren almacenamiento rápido y confiable.
 
 .. toctree::
     :maxdepth: 1
@@ -29,26 +29,26 @@ Key features include a dedicated power button, an active cooling system similar 
 
 **Parameters**
 
-* Dimension: 67.8x98.6x101.5mm
-* Material
-    * Main Body: Silver Aluminum Alloy
-    * Two Side Panel: Transparent Acrylic
-* Support Platform: Raspberry Pi 5
-* Power Input: USB Type C, 5V/5A
+* Dimensiones: 67.8 x 98.6 x 101.5 mm
+* Materiales
+    * Cuerpo principal: Aleación de aluminio plateado
+    * Paneles laterales: Acrílico transparente
+* Plataforma compatible: Raspberry Pi 5
+* Entrada de alimentación: USB tipo C, 5V/5A
 * Interfaces
-    * Raspberry Pi standard 40-Pin GPIO
-    * Micro SD socket
-    * USB Type C power input
+    * GPIO de 40 pines estándar de Raspberry Pi
+    * Ranura para tarjeta Micro SD
+    * Entrada de alimentación USB tipo C
     * 2 x USB 2.0
     * 2 x USB 3.0
-    * Gigabit LAN port
-    * 2 x 4Kp60 Micro HDMI Ports
-* 1 x Metal Power Button
-* 1 x RGB Fan (40x40x10mm)
-* 4 x WS2812-5050 RGB LEDs
-* 1 x Activer Cooler
-* 1 x PCIe 2.0 M.2 M key (2230, 2242, 2260, 2280) for NVMe SSD
-* 1 x 1220 Battery for RTC
+    * Puerto LAN Gigabit
+    * 2 x puertos Micro HDMI 4Kp60
+* 1 x Botón de encendido metálico
+* 1 x Ventilador RGB (40x40x10 mm)
+* 4 x LEDs RGB WS2812-5050
+* 1 x Sistema de refrigeración activa
+* 1 x Ranura PCIe 2.0 M.2 clave M (2230, 2242, 2260, 2280) para SSD NVMe
+* 1 x Batería 1220 para RTC
 
 **Dimensional Drawing**
 

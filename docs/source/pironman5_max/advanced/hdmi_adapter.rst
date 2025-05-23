@@ -1,43 +1,43 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de Raspberry Pi, Arduino y ESP32 de SunFounder en Facebook. Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados como tú.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Resuelve problemas postventa y retos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Learn & Share**: Comparte y aprende consejos y tutoriales para potenciar tus habilidades.
+    - **Exclusive Previews**: Accede con antelación a anuncios de nuevos productos y adelantos exclusivos.
+    - **Special Discounts**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Festive Promotions and Giveaways**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 USB HDMI Adapter
 ==========================================
 
 .. image:: img/hdmi_adapter.jpeg
 
-This USB HDMI adapter board is specifically designed for the Raspberry Pi 5. Its primary function is to reposition the USB and HDMI connections to align with the USB interface side of the Raspberry Pi, enhancing accessibility and cable management.
+Esta placa adaptadora USB HDMI está diseñada específicamente para el Raspberry Pi 5. Su función principal es reubicar las conexiones USB y HDMI para alinearlas con el lateral del Raspberry Pi donde se encuentran los puertos USB, mejorando así la accesibilidad y la gestión de cables.
 
-Additionally, the HDMI port is converted to a standard HDMI Type A interface, offering broader compatibility.
+Además, el puerto HDMI se convierte en una interfaz HDMI Tipo A estándar, lo que ofrece una mayor compatibilidad.
 
-**NVMe Additional Power Supply**
+**Alimentación adicional para NVMe**
 
-The board features a 5V power header specifically for NVMe PIP power supply. Coupled with an extension header, it can be connected to the NVMe's additional power interface to provide extra power.
+La placa incluye un conector de alimentación de 5 V destinado específicamente a suministrar energía al NVMe PIP. Combinado con un conector de extensión, permite conectar la interfaz de alimentación adicional del NVMe para proporcionar energía extra.
 
-**1220RTC Battery Holder**
+**Portabatería 1220RTC**
 
-A 1220RTC battery holder is incorporated for convenient installation of an RTC battery. It connects to the Raspberry Pi's RTC interface via an SH1.0 2P reverse cable. 
+Se incorpora un portabatería 1220RTC para facilitar la instalación de una batería RTC. Este se conecta a la interfaz RTC del Raspberry Pi mediante un cable inverso SH1.0 de 2 pines.
 
-The battery holder is compatible with both CR1220 and ML1220 batteries. If using an ML1220 (Lithium Manganese Dioxide battery), charging can be configured directly on the Raspberry Pi. Note that the CR1220 is not rechargeable.
+El portabatería es compatible con baterías CR1220 y ML1220. Si se utiliza una ML1220 (batería de dióxido de manganeso-litio), la carga puede configurarse directamente en el Raspberry Pi. Ten en cuenta que la batería CR1220 no es recargable.
 
-**Enabling Trickle Charging**
+**Activación de la carga por goteo**
 
 .. warning::
 
-  If you're using a CR1220 battery, do not enable trickle charging as it can cause irreparable damage to the battery and risk damaging the board.
+  Si utilizas una batería CR1220, **no** actives la carga por goteo, ya que podría causar daños irreversibles a la batería y poner en riesgo la placa.
 
-By default, the trickle charging feature for the battery is disabled. The ``sysfs`` files indicate the current trickle charging voltage and limits:
+Por defecto, la función de carga por goteo está desactivada. Los archivos de ``sysfs`` muestran el voltaje y los límites actuales para esta función:
 
 .. code-block:: shell
 
@@ -48,21 +48,21 @@ By default, the trickle charging feature for the battery is disabled. The ``sysf
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-To enable trickle charging, add ``rtc_bbat_vchg`` to ``/boot/firmware/config.txt``:
+Para habilitar la carga por goteo, añade ``rtc_bbat_vchg`` al archivo ``/boot/firmware/config.txt``:
 
-  * Open the ``/boot/firmware/config.txt``.
-  
+  * Abre ``/boot/firmware/config.txt``.
+
     .. code-block:: shell
-    
+
       sudo nano /boot/firmware/config.txt
-      
-  * Add ``rtc_bbat_vchg`` to ``/boot/firmware/config.txt``.
-  
+
+  * Añade ``rtc_bbat_vchg`` a ``/boot/firmware/config.txt``.
+
     .. code-block:: shell
-    
+
       dtparam=rtc_bbat_vchg=3000000
-  
-After rebooting, the system will display:
+
+Después de reiniciar, el sistema mostrará:
 
 .. code-block:: shell
 
@@ -73,5 +73,5 @@ After rebooting, the system will display:
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-This confirms the battery is now under trickle charging. To disable this feature, simply remove the ``dtparam`` line from ``config.txt``.
+Esto confirma que la batería ahora está bajo carga por goteo. Para desactivar esta función, simplemente elimina la línea ``dtparam`` del archivo ``config.txt``.
 

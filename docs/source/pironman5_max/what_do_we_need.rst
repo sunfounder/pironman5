@@ -1,50 +1,53 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete aún más en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados como tú.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas técnicos y postventa con la ayuda de nuestra comunidad y equipo especializado.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede antes que nadie a anuncios y adelantos de nuevos productos.
+    - **Descuentos especiales**: Disfruta de ofertas exclusivas en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-1. What Else Should We Prepare?
+1. ¿Qué más debemos preparar?
 ===================================
 
-**Essential Components**
+**Componentes esenciales**
 
 * Raspberry Pi 5 
 
-    The Pironman 5 is fully compatible with the Raspberry Pi 5.
+    El Pironman 5 es totalmente compatible con la Raspberry Pi 5.
 
-* 5V/5A Power Adapter
+* Adaptador de corriente 5V/5A
 
-    A 5V/5A power adapter is required to power the Pironman 5 and its components.
+    Se requiere un adaptador de 5V/5A para alimentar el Pironman 5 y todos sus componentes.
 
-* Micro SD Card
+* Tarjeta Micro SD
  
-    It is recommended to use an SD card with a minimum of 16GB of storage for Raspberry Pi OS. For Raspberry Pi OS Lite, a minimum of 4GB is advised.
+    Se recomienda una tarjeta SD de al menos 16 GB para Raspberry Pi OS.  
+    Para Raspberry Pi OS Lite, es suficiente con un mínimo de 4 GB.
 
-**Optional Components**
 
-* M.2 NVMe SSD
+**Componentes opcionales**
 
-    The Pironman 5 features an NVMe PIP with two M.2 SSD connectors, 
-    accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. 
-    The connection is certified for Gen 2.0 speeds (5 GT/sec).
+* SSD NVMe M.2
 
-* Screen
+    El Pironman 5 incorpora un módulo NVMe PIP con dos conectores M.2 para SSD, 
+    compatibles con cuatro tamaños de unidades NVMe M.2: 2230, 2242, 2260 y 2280. 
+    La conexión está certificada para velocidades Gen 2.0 (5 GT/s).
 
-    To access the Raspberry Pi's desktop environment, a screen such as a TV or a computer monitor is required.
-    
-* HDMI Cable
+* Pantalla
 
-    The Raspberry Pi 5's HDMI ports have been adapted to standard HDMI Type A interfaces via a USB HDMI adapter. Therefore, a standard HDMI to HDMI cable is needed to connect the Pironman 5 to a display.
+    Para acceder al entorno gráfico de Raspberry Pi, se necesita una pantalla como un televisor o monitor.
 
-* Mouse & Keyboard
+* Cable HDMI
 
-    Any USB port on the Pironman 5 can be used to connect a wired keyboard and mouse, or a USB Bluetooth receiver for wireless peripherals.
+    Los puertos HDMI de la Raspberry Pi 5 han sido adaptados a interfaces HDMI estándar tipo A mediante un adaptador USB a HDMI.  
+    Por ello, es necesario un cable HDMI a HDMI estándar para conectar el Pironman 5 a la pantalla.
+
+* Ratón y teclado
+
+    Cualquier puerto USB del Pironman 5 puede utilizarse para conectar un teclado y ratón con cable, o un receptor Bluetooth USB para periféricos inalámbricos.

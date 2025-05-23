@@ -1,62 +1,62 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete más en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _set_up_batocera_mini:
 
-Seting up on Batocera.linux
+Configuración en Batocera.linux
 =========================================================
 
-If you have installed the Batocera.linux OS, you can remotely log in to this system via SSH and then follow the steps below to complete the configuration.
+Si ya has instalado el sistema operativo Batocera.linux, puedes iniciar sesión de forma remota a través de SSH y seguir los pasos a continuación para completar la configuración.
 
-#. Once the system boots up, use ssh to remotely connect to Pironman5. For Windows, you can open **Powershell**, and for Mac OS X and Linux, you can directly open **Terminal**.
+#. Una vez que el sistema haya arrancado, utiliza SSH para conectarte remotamente a Pironman5. En Windows, puedes abrir **Powershell**, y en Mac OS X o Linux, abre directamente la **Terminal**.
 
    .. image:: img/batocera_powershell.png
       :width: 90%
-      
 
-#. The default hostname for the batocera system is ``batocera``, with the default username as ``root`` and the password as ``linux``. Therefore, you can log in by typing ``ssh root@batocera.local`` and entering the password ``linux``.
+
+#. El nombre de host predeterminado del sistema Batocera es ``batocera``, con el nombre de usuario ``root`` y la contraseña ``linux``. Por lo tanto, puedes iniciar sesión escribiendo ``ssh root@batocera.local`` e introduciendo la contraseña ``linux``.
 
    .. image:: img/batocera_login.png
       :width: 90%
 
-#. Execute the command: ``/etc/init.d/S92switch setup`` to enter the menu settings page.
+#. Ejecuta el comando: ``/etc/init.d/S92switch setup`` para acceder al menú de configuración.
 
    .. image:: img/batocera_configure.png  
       :width: 90%
 
-#. Use the down arrow key to navigate to the end, select and activate the **Pironman5** services.
+#. Usa la tecla de flecha hacia abajo para ir al final, selecciona y activa los servicios **Pironman5**.
 
    .. image:: img/batocera_configure_pironman5.png
       :width: 90%
 
-#. After activating the pironman5 service, select **OK**.
+#. Tras activar el servicio pironman5, selecciona **OK**.
 
    .. image:: img/batocera_configure_pironman5_ok.png
       :width: 90%
 
-#. Execute the command ``reboot`` to restart Pironman5.
+#. Ejecuta el comando ``reboot`` para reiniciar Pironman5.
 
    .. code-block:: shell
 
       reboot
 
-#. Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
+#. Al reiniciar, el servicio ``pironman5.service`` se iniciará automáticamente. Aquí están las configuraciones principales para Pironman 5:
    
-   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
+   * Los cuatro LED RGB WS2812 se encenderán en azul con efecto de respiración.
    
    .. note::
-    
-     RGB fan won't spin unless the temperature hits 60°C. For different activation temperatures, see :ref:`cc_control_fan_mini`.
 
-Now, you can connect the Pironman 5 to a screen, game controllers, headphones, and more to immerse yourself in your gaming world.
+     El ventilador RGB no girará a menos que la temperatura alcance los 60°C. Para conocer otras temperaturas de activación, consulta :ref:`cc_control_fan_mini`.
+
+Ahora puedes conectar el Pironman 5 a una pantalla, mandos de juego, auriculares y más para sumergirte en tu mundo de juegos.

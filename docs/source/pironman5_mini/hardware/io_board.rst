@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. ¡Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados como tú!
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a nuevos lanzamientos y adelantos de productos.
+    - **Descuentos especiales**: Aprovecha ofertas exclusivas en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y campañas especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 Pironman 5 Mini HAT
 ===========================================
@@ -18,66 +18,66 @@ Pironman 5 Mini HAT
 
 .. image:: img/pironman5mini_hat.png
 
-RGB LEDs
-------------
+LEDs RGB
+--------------
 
 .. image:: img/io_board_rgb.png
 
-The board features 4 WS2812 RGB LEDs, 
-offering customizable control. 
-Users can turn them on or off, change the color, 
-adjust the brightness, switch display modes, and set the speed of changes.
+La placa incluye 4 LEDs RGB WS2812 con control personalizable. 
+Puedes encenderlos o apagarlos, cambiar su color, ajustar el brillo, seleccionar modos de visualización y configurar la velocidad de cambio.
 
-* To modify the on and off state of the RGB LEDs, ``true`` to turn on the RGB LEDs, ``false`` to turn them off.
+
+
+* Para encender o apagar los LEDs RGB, usa ``true`` para encenderlos, ``false`` para apagarlos.
 
 .. code-block:: shell
 
   pironman5 -re true
 
-* To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
+* Para cambiar el color, introduce un valor hexadecimal, como ``fe1a1a``.
 
 .. code-block:: shell
 
   pironman5 -rc fe1a1a
 
-* To change the brightness of the RGB LED (range: 0 ~ 100%):
+* Para modificar el brillo (rango: 0 ~ 100%):
 
 .. code-block:: shell
 
   pironman5 -rb 100
 
-* To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
+* Para cambiar el modo de visualización, selecciona entre: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
 .. note::
 
-  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``pironman5 -rc``.
+  Si eliges los modos ``rainbow``, ``rainbow_reverse`` o ``hue_cycle``, no podrás cambiar el color con ``pironman5 -rc``.
 
 .. code-block:: shell
 
   pironman5 -rs breathing
 
-* To modify the speed of change (range: 0 ~ 100%):
+* Para ajustar la velocidad del efecto (rango: 0 ~ 100%):
 
 .. code-block:: shell
 
   pironman5 -rp 80
 
-RGB Control Pin
+Pin de control RGB
 -------------------------
 
-The RGB LED is driven by SPI and connected to **GPIO10**, which is also the SPI MOSI pin. 
-The two pins are used to connect the RGB to GPIO10. If not needed, the jumper can be removed.
+El LED RGB funciona mediante SPI y está conectado a **GPIO10**, que también es el pin SPI MOSI. 
+Los dos pines permiten conectar el RGB al GPIO10. Si no se utilizan, se puede quitar el puente.
 
- .. image:: img/io_board_rgb_pin.png
+.. image:: img/io_board_rgb_pin.png
 
-RGB OUT Pins
+Pines de salida RGB
 -------------------------
 
- .. image:: img/io_board_rgb_out.png
+.. image:: img/io_board_rgb_out.png
 
-The WS2812 RGB LEDs support serial connection, allowing for the attachment of an external RGB LED strip. Connect the **SIG** pin to the external strip's **DIN** pin for expansion.
+Los LEDs RGB WS2812 admiten conexión en serie, lo que permite añadir una tira LED RGB externa. Conecta el pin **SIG** al pin **DIN** de la tira para expandir.
 
-The default setup includes 4 RGB LEDs. Connect additional LEDs and update the count using:
+La configuración por defecto incluye 4 LEDs RGB. Para añadir más y actualizar el número:
 
 .. code-block:: shell
 
@@ -85,151 +85,153 @@ The default setup includes 4 RGB LEDs. Connect additional LEDs and update the co
 
 
 
-RGB Fan Pins
----------------
+Pines del ventilador RGB
+------------------------------
 
-The IO expansion board supports to a 5V non-PWM fan. 
+La placa de expansión IO es compatible con un ventilador de 5V sin PWM.
 
-You need to connect the fan's wire to FAN port.
+Debes conectar el cable del ventilador al puerto FAN.
 
- .. image:: img/io_board_fan.png
+.. image:: img/io_board_fan.png
 
-The two sets of pins below J9 are the enable pins for the fan and its RGB. By default, jumpers are inserted on these pins, allowing GPIO6 and GPIO5 to control the on and off states of the fan and its LED. If the fan and LED are not required to be operated, the corresponding jumpers can be removed to release GPIO6 or GPIO5.
+Los pines debajo del J9 permiten activar/desactivar el ventilador y su LED RGB. Por defecto, los jumpers permiten que GPIO6 y GPIO5 los controlen. Si no se necesita esta función, se pueden retirar los jumpers.
 
- .. image:: img/io_board_fan_j9.png
+.. image:: img/io_board_fan_j9.png
 
-You can use command to configure the operating mode of the RGB fan. These modes determine the conditions under which the RGB fan will activate.
+Puedes usar comandos para definir el modo de funcionamiento del ventilador RGB.
 
-  For instance, if set to **1: Performance** mode, the RGB fan will activate at 50°C.
+Por ejemplo, si eliges el modo **1: Performance**, el ventilador se activará a 50°C.
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    pironman5 -gm 3
+  pironman5 -gm 3
 
-  * **4: Quiet**: The RGB fan will activate at 70°C.
-  * **3: Balanced**: The RGB fan will activate at 67.5°C.
-  * **2: Cool**: The RGB fan will activate at 60°C.
-  * **1: Performance**: The RGB fan will activate at 50°C.
-  * **0: Always On**: The RGB fan will always on.
+* **4: Quiet**: se activa a 70°C.
+* **3: Balanced**: se activa a 67.5°C.
+* **2: Cool**: se activa a 60°C.
+* **1: Performance**: se activa a 50°C.
+* **0: Always On**: siempre encendido.
 
-If you connect the control pin of the RGB fan to different pins on the Raspberry Pi, you can use the following command to change the pin number.
+Si conectas el pin de control del ventilador a otro pin, puedes cambiar el número con:
 
 .. code-block:: shell
 
   sudo pironman5 -gp 18
 
 
-Power Switch Conventor
+Convertidor de botón de encendido
 --------------------------------------
 
-**Adding the Power Button**
+**Agregar botón de encendido**
 
-* The Raspberry Pi 5 features a **J2** jumper, situated between the RTC battery connector and the board edge. This breakout enables the addition of a custom power button to the Raspberry Pi 5 by connecting a Normally Open (NO) momentary switch across the two pads. Briefly engaging this switch mimics the onboard power button's functionality.
+* La Raspberry Pi 5 incluye el jumper **J2**, entre el conector de batería RTC y el borde de la placa. Permite añadir un botón de encendido externo conectando un interruptor momentáneo normalmente abierto (NO) a los dos pads.
 
-  .. image:: img/pi5_j2.jpg
+.. image:: img/pi5_j2.jpg
 
-* The Pironman 5 Mini extends the **J2** jumper to an external power button using two Pogo pins.
+* El Pironman 5 Mini extiende el jumper **J2** mediante dos pines pogo hacia un botón externo.
 
-  .. image:: img/power_switch_j2.jpeg
+.. image:: img/power_switch_j2.jpeg
 
-  .. image:: img/power_switch_j2_2.jpeg
+.. image:: img/power_switch_j2_2.jpeg
 
-* Now, the Raspberry Pi 5 can be powered on and off using the Power Button.
+* Ahora puedes encender o apagar la Raspberry Pi 5 con el botón de encendido.
 
-  .. image:: img/pironman_button.JPG
+.. image:: img/pironman_button.JPG
 
-**Power Cycling**
+**Ciclo de encendido**
 
-Upon initially powering your Raspberry Pi 5, it will automatically turn on and boot into the operating system without the need to press the button.
+Al encender la Raspberry Pi 5 por primera vez, arrancará automáticamente sin pulsar el botón.
 
-If running the Raspberry Pi Desktop, a brief press of the power button initiates a clean shutdown process. A menu will appear, offering options to shutdown, reboot, or logout. Selecting an option or pressing the power button again will start a clean shutdown.
+En el escritorio de Raspberry Pi, una pulsación breve abre un menú para apagar, reiniciar o cerrar sesión. Si presionas de nuevo, inicia el apagado limpio.
 
 .. image:: img/button_shutdown.png
 
-**Shutdown**
+**Apagado**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system without a desktop, press the power button a single time to initiate a shutdown.
-    * To force a hard shutdown, press and hold the power button.
+* En **Bookworm Desktop**, pulsa dos veces rápidamente para apagar.
+* En **Bookworm Lite**, basta una sola pulsación.
+* Para forzar un apagado, mantén el botón presionado.
 
 
-**Power on**
+**Encendido**
 
-    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+* Si la Raspberry Pi está apagada pero con energía, una pulsación la encenderá.
 
 .. note::
 
-    If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
+    En sistemas sin soporte para botón de apagado, mantén pulsado 5 segundos para apagar forzadamente, y una pulsación para encender.
 
 
 
 
-NVMe Module
+Módulo NVMe
 -------------------------------------------
 
 
-Pironman 5 mini integrates a PCIe adapter module for NVMe SSD. It supports four different sizes of NVMe SSDs: 2230, 2242, 2260, and 2280, all fitting into an M.2 M key slot.
+El Pironman 5 Mini integra un adaptador PCIe para SSD NVMe. Soporta tamaños 2230, 2242, 2260 y 2280 con ranura M.2 tipo M.
 
 .. image:: img/nvme_p.png
 
 
-* **STA**: A Status LED indicator.
-* **PWR**: A Power LED indicator.
+* **STA**: LED de estado.
+* **PWR**: LED de energía.
 
-  .. image:: img/nvme_led.png
+.. image:: img/nvme_led.png
 
-* The module connects through a 16P 0.5mm reverse FFC (Flexible Flat Cable) or a custom impedance-matched FPC (Flexible Printed Circuit) cable.
+Se conecta mediante un cable FFC de 16 pines o un FPC personalizado de impedancia controlada.
 
-  .. image:: img/nvme_pcie.png
+.. image:: img/nvme_pcie.png
 
-* **FORCE ENABLE**: The onboard power supply is activated by the switch signal from the PCIe interface. After the Raspberry Pi is powered on, it sends a signal to turn on the 3.3V power supply. If some systems do not support the switch signal or for other reasons, you can short-circuit J2 FORCE ENABLE by soldering a wire between the two floating pads to force the onboard 3.3V power supply to power the NVMe.
+* **FORCE ENABLE**: El suministro de 3.3V se activa por una señal del PCIe. Si el sistema no soporta esta señal, puedes puentear J2 FORCE ENABLE para forzar la alimentación del NVMe.
 
-  .. image:: img/nvme_j2.png
+.. image:: img/nvme_j2.png
 
-**About the Model**
+**Sobre el modelo**
 
-M.2 SSDs, known for their compact size, come in various types mainly differentiated by their keying (notch design on the connector) and the interface they use. Here are the primary types:
+Los SSD M.2, conocidos por su tamaño compacto, se presentan en distintos tipos que se diferencian principalmente por su tipo de llave (la muesca del conector) y la interfaz que utilizan. A continuación, se describen los principales tipos:
 
-* **M.2 SATA SSDs**: These use the SATA interface, similar to 2.5-inch SATA SSDs but in the smaller M.2 form factor. They are limited by the SATA III maximum speeds of around 600 MB/s. These SSDs are compatible with M.2 slots keyed for B and M keys.
-* **M.2 NVMe SSDs**: These SSDs use the NVMe protocol over PCIe lanes and are significantly faster than M.2 SATA SSDs. They are suitable for applications requiring high read/write speeds like gaming, video editing, and data-intensive tasks. These SSDs typically require M-keyed slots. These drives utilize the PCIe (Peripheral Component Interconnect Express) interface, with different versions like 3.0, 4.0, and 5.0. Each new version of PCIe effectively doubles the data transfer speed of its predecessor. However, the Raspberry Pi 5 uses a PCIe 3.0 interface, capable of delivering transfer speeds up to 3,500 MB/s. 
+* **M.2 SATA SSDs**: Utilizan la interfaz SATA, similar a los SSD SATA de 2.5 pulgadas, pero en un formato M.2 más pequeño. Su velocidad está limitada por el estándar SATA III, con un máximo de aproximadamente 600 MB/s. Estos SSD son compatibles con ranuras M.2 con llaves B y M.
+* **M.2 NVMe SSDs**: Utilizan el protocolo NVMe sobre carriles PCIe y son considerablemente más rápidos que los SSD SATA M.2. Son ideales para tareas que requieren altas velocidades de lectura y escritura, como juegos, edición de video o trabajos con grandes volúmenes de datos. Normalmente, requieren ranuras con llave M. Estos dispositivos utilizan la interfaz PCIe (Peripheral Component Interconnect Express), con versiones como 3.0, 4.0 y 5.0. Cada nueva versión duplica efectivamente la velocidad de transferencia respecto a la anterior. Sin embargo, la Raspberry Pi 5 emplea una interfaz PCIe 3.0, capaz de alcanzar velocidades de hasta 3,500 MB/s.
 
-M.2 SSDs come in three key types: B key, M key, and B+M key. However, later on, the B+M key was introduced, combining the functionalities of the B key and M key. As a result, it replaced the standalone B key. Please refer to the image below.
+Los SSD M.2 están disponibles en tres tipos de llave: llave B, llave M y llave B+M. Posteriormente se introdujo la llave B+M, que combina las funciones de las llaves B y M, reemplazando así a la llave B por separado. Consulta la imagen siguiente para más detalles.
 
 .. image:: img/ssd_key.png
 
 
-In general, M.2 SATA SSDs are B+M-keyed (can fit in sockets for B-keyed and M-keyed modules), while M.2 NVMe SSDs for PCIe 3.0 x4 lane are M-keyed.
+En general:
+* SATA: llave B+M
+* NVMe: llave M (PCIe x4)
 
 .. image:: img/ssd_model2.png
 
-**About the Length**
+**Sobre el tamaño**
 
-M.2 modules come in different sizes and can also be utilized for Wi-Fi, WWAN, Bluetooth, GPS, and NFC.
+El número (ej. 2280) indica 22 mm de ancho y 80 mm de largo.
 
-Pironman 5 supports four (PCIe Gen 2.0 / PCIe Gen 3.0) NVMe M.2 SSD sizes based on their names: 2230, 2242, 2260, and 2280. The "22" is the width in millimeters (mm), and the two following numbers are the length. The longer the drive, the more NAND flash chips can be mounted; therefore, the more capacity.
+Pironman 5 Mini es compatible con tamaños 2230, 2242, 2260 y 2280 (PCIe Gen 2.0/3.0).
 
 
 .. image:: img/m2_ssd_size.png
   :width: 600
 
 
-1220RTC Battery Holder
+Soporte de batería RTC 1220
 ---------------------------------
 
 .. image:: img/battery_holder.png
 
 
-A 1220RTC battery holder is incorporated for convenient installation of an RTC battery. It connects to the Raspberry Pi's RTC interface via an SH1.0 2P reverse cable. 
+Incluye soporte para batería RTC 1220, conectado mediante cable SH1.0 2P inverso. 
 
-The battery holder is compatible with both CR1220 and ML1220 batteries. If using an ML1220 (Lithium Manganese Dioxide battery), charging can be configured directly on the Raspberry Pi. Note that the CR1220 is not rechargeable.
+Compatible con CR1220 y ML1220 (recargable).
 
-**Enabling Trickle Charging**
+**Activar carga por goteo (trickle charging)**
 
 .. warning::
 
-  If you're using a CR1220 battery, do not enable trickle charging as it can cause irreparable damage to the battery and risk damaging the board.
+  Si estás utilizando una batería CR1220, no actives la carga por goteo, ya que podría causar daños irreparables a la batería y poner en riesgo la placa.
 
-By default, the trickle charging feature for the battery is disabled. The ``sysfs`` files indicate the current trickle charging voltage and limits:
+De forma predeterminada, la función de carga por goteo para la batería está desactivada. Los archivos ``sysfs`` indican el voltaje y los límites actuales de la carga por goteo:
 
 .. code-block:: shell
 
@@ -240,21 +242,21 @@ By default, the trickle charging feature for the battery is disabled. The ``sysf
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-To enable trickle charging, add ``rtc_bbat_vchg`` to ``/boot/firmware/config.txt``:
+Para habilitar la carga lenta, añade ``rtc_bbat_vchg`` al archivo ``/boot/firmware/config.txt``:
 
-  * Open the ``/boot/firmware/config.txt``.
+  * Abre el archivo ``/boot/firmware/config.txt``.
   
     .. code-block:: shell
     
       sudo nano /boot/firmware/config.txt
       
-  * Add ``rtc_bbat_vchg`` to ``/boot/firmware/config.txt``.
+  * Añade ``rtc_bbat_vchg`` a ``/boot/firmware/config.txt``.
   
     .. code-block:: shell
     
       dtparam=rtc_bbat_vchg=3000000
   
-After rebooting, the system will display:
+Después de reiniciar, el sistema mostrará:
 
 .. code-block:: shell
 
@@ -265,16 +267,16 @@ After rebooting, the system will display:
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-This confirms the battery is now under trickle charging. To disable this feature, simply remove the ``dtparam`` line from ``config.txt``.
+Esto confirma que la batería se encuentra en proceso de carga lenta. Para desactivar esta función, simplemente elimina la línea ``dtparam`` del archivo ``config.txt``.
 
 
 
-Pin Headers
---------------
+Encabezados de Pines
+-------------------------
 
 .. image:: img/io_board_pin_header.png
 
-Two right-angle header connectors extend the Raspberry Pi's GPIO, but note that the IR receiver, RGB LED, and fan occupy some pins. Remove the corresponding jumper caps to utilize these pins for other functions.
+Dos conectores de pines en ángulo recto extienden los GPIO de la Raspberry Pi, pero ten en cuenta que el receptor IR, el LED RGB y el ventilador utilizan algunos de estos pines. Quita los puentes correspondientes para reutilizarlos en otras funciones.
 
 .. list-table:: 
   :widths: 25 25
@@ -282,9 +284,9 @@ Two right-angle header connectors extend the Raspberry Pi's GPIO, but note that 
 
   * - Pironman 5 Mini
     - Raspberry Pi 5
-  * - FAN(Optional)
+  * - FAN (Opcional)
     - GPIO6
-  * - FAN RGB(Optional)
+  * - FAN RGB (Opcional)
     - GPIO5
-  * - RGB(Optional)
+  * - RGB (Opcional)
     - GPIO10

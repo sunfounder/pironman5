@@ -1,82 +1,82 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete más a fondo en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _max_login_rpi:
 
-Log in to the Raspberry Pi OS
-=====================================
+Iniciar sesión en Raspberry Pi OS
+=======================================
 
-In this chapter, you will learn how to log in to the Raspberry Pi. Whether you have a screen attached or need to access it remotely, this section will guide you through opening the terminal, which you will use in later chapters to enter commands.
+En este capítulo aprenderás cómo iniciar sesión en tu Raspberry Pi. Ya sea que tengas una pantalla conectada o necesites acceder de forma remota, esta sección te guiará para abrir la terminal, la cual usarás en capítulos posteriores para introducir comandos.
 
 .. note::
 
-    If you are already familiar with Raspberry Pi operations, you can skip this chapter.
+    Si ya estás familiarizado con el uso de Raspberry Pi, puedes saltarte este capítulo.
 
-Logging in with a Screen
----------------------------
+Iniciar sesión con una pantalla
+----------------------------------
 
-Having a screen attached to your Raspberry Pi makes it easier to interact with the system directly.
+Tener una pantalla conectada a tu Raspberry Pi facilita la interacción directa con el sistema.
 
-**Required Components**
+**Componentes necesarios**
 
-* Pironman 5
-* Power Adapter
-* Micro SD card or NVMe SSD with pre-installed Raspberry Pi OS
-* Monitor Power Adapter
-* HDMI cable
-* Monitor
-* Mouse
-* Keyboard
+* Pironman 5  
+* Adaptador de corriente  
+* Tarjeta Micro SD o SSD NVMe con Raspberry Pi OS preinstalado  
+* Adaptador de corriente del monitor  
+* Cable HDMI  
+* Monitor  
+* Ratón  
+* Teclado  
 
-**Steps**
+**Pasos**
 
-#. Insert the Micro SD card into the Pironman 5.
+#. Inserta la tarjeta Micro SD en el Pironman 5.
 
-#. Connect the Mouse and Keyboard to the USB ports of the Pironman 5.
+#. Conecta el ratón y el teclado a los puertos USB del Pironman 5.
 
-#. Use the HDMI cable to connect the monitor to the HDMI port of the Pironman 5. Make sure the monitor is connected to a power source and is turned on.
+#. Utiliza el cable HDMI para conectar el monitor al puerto HDMI del Pironman 5. Asegúrate de que el monitor esté encendido y conectado a una fuente de alimentación.
 
-#. Power up the Pironman 5 using the power adapter. You should see the Raspberry Pi OS desktop appear on the monitor shortly.
+#. Enciende el Pironman 5 usando el adaptador de corriente. Deberías ver el escritorio de Raspberry Pi OS aparecer en el monitor en breve.
 
    .. image:: img/bookwarm.png
       :width: 90%
-      
 
-#. Once the desktop is visible, open the Terminal by clicking on the terminal icon or searching for it in the menu to start entering commands.
 
-Logging in Remotely Without a Screen
-------------------------------------
+#. Una vez que veas el escritorio, abre la Terminal haciendo clic en el ícono de la terminal o buscándola en el menú, para comenzar a ingresar comandos.
 
-If you do not have access to a monitor, you can still use your Raspberry Pi by logging in remotely.
+Iniciar sesión remotamente sin pantalla
+---------------------------------------
 
-For command-line access, you can use SSH to connect to the Raspberry Pi's Bash shell, the default Linux shell which allows for managing the device via commands.
+Si no tienes acceso a un monitor, aún puedes usar tu Raspberry Pi iniciando sesión de forma remota.
 
-For those who prefer a graphical interface, using a remote desktop application like VNC Viewer offers a visual way to manage files and operations remotely.
+Para acceder desde la línea de comandos, puedes utilizar SSH para conectarte a la shell Bash de Raspberry Pi, la cual te permite gestionar el dispositivo mediante comandos.
 
-**Required Components**
+Si prefieres una interfaz gráfica, puedes usar una aplicación de escritorio remoto como VNC Viewer, que ofrece una forma visual de administrar archivos y operaciones a distancia.
 
-* Pironman 5 
-* Power Adapter
-* Micro SD card or NVMe SSD with pre-installed Raspberry Pi OS
+**Componentes necesarios**
 
-Steps:
+* Pironman 5  
+* Adaptador de corriente  
+* Tarjeta Micro SD o SSD NVMe con Raspberry Pi OS preinstalado  
 
-#. Insert the Micro SD card into the Pironman 5.
+**Pasos**
 
-#. Connect the Pironman 5 to a power source using the power adapter.
+#. Inserta la tarjeta Micro SD en el Pironman 5.
 
-#. For detailed tutorials on setting up remote access depending on your computer's operating system, see the following sections:
+#. Conecta el Pironman 5 a una fuente de alimentación usando el adaptador.
+
+#. Para tutoriales detallados sobre cómo configurar el acceso remoto según el sistema operativo de tu ordenador, consulta las siguientes secciones:
 
 .. toctree::
 

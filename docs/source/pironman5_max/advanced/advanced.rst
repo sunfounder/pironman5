@@ -1,24 +1,24 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de Raspberry Pi, Arduino y ESP32 de SunFounder en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados como tú.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Learn & Share**: Comparte y aprende consejos y tutoriales para mejorar tus habilidades.
+    - **Exclusive Previews**: Accede antes que nadie a anuncios de nuevos productos y adelantos exclusivos.
+    - **Special Discounts**: Disfruta de descuentos especiales en nuestros productos más recientes.
+    - **Festive Promotions and Giveaways**: Participa en promociones festivas y sorteos exclusivos.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _max_advanced:
 
-6. Advanced
+6. Avanzado
 =========================
 
 
-This chapter is a detailed description of all the components in Pironman, as well as the associated software configuration.
+Este capítulo ofrece una descripción detallada de todos los componentes de Pironman, así como la configuración de software asociada.
 
 
 .. toctree::

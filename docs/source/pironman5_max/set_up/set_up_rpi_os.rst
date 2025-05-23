@@ -1,40 +1,40 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete más a fondo en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados como tú.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Soluciona problemas técnicos y postventa con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a lanzamientos de productos y adelantos especiales.
+    - **Descuentos exclusivos**: Aprovecha promociones especiales en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y eventos promocionales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _max_set_up_pi_os:
 
-Set Up on Raspberry Pi/Ubuntu/Kali/Homebridge OS
-==================================================
+Configuración en Raspberry Pi/Ubuntu/Kali/Homebridge OS
+==========================================================
 
-If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your Raspberry Pi, you will need to configure the Pironman 5 using the command line. Detailed tutorials can be found below:
+Si has instalado Raspberry Pi OS, Ubuntu, Kali Linux o Homebridge en tu Raspberry Pi, deberás configurar el Pironman 5 desde la línea de comandos. A continuación, encontrarás los tutoriales detallados:
 
 .. note::
 
-  Before configuring, you need to boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
+  Antes de comenzar la configuración, asegúrate de haber iniciado y accedido a tu Raspberry Pi. Si no sabes cómo hacerlo, puedes visitar el sitio oficial de Raspberry Pi: |link_rpi_get_start|.
 
 
-Configuring Shutdown to Deactivate GPIO Power
-------------------------------------------------------------
-To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from remaining active post-shutdown, it's essential to configure the Raspberry Pi for GPIO power deactivation.
+Configurar el apagado para desactivar la energía del GPIO
+---------------------------------------------------------------
+Para evitar que la pantalla OLED y los ventiladores RGB —alimentados a través del GPIO de la Raspberry Pi— permanezcan encendidos después del apagado, es necesario configurar la desactivación de energía del GPIO.
 
-#. Manually edit the ``EEPROM`` configuration file with this command:
+#. Edita manualmente el archivo de configuración de ``EEPROM`` con el siguiente comando:
 
    .. code-block:: shell
    
      sudo rpi-eeprom-config -e
 
-#. Modify the ``POWER_OFF_ON_HALT`` setting in the file to ``1``. For instance:
+#. Modifica el parámetro ``POWER_OFF_ON_HALT`` en el archivo a ``1``. Por ejemplo:
 
    .. code-block:: shell
    
@@ -42,13 +42,13 @@ To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from 
      POWER_OFF_ON_HALT=1
      BOOT_ORDER=0xf41
 
-#. Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes.
+#. Presiona ``Ctrl + X``, luego ``Y`` y ``Enter`` para guardar los cambios.
 
 
-Downloading and Installing the ``pironman5`` Module
+Descarga e instalación del módulo ``pironman5``
 -----------------------------------------------------------
 
-#. For lite systems, initially install tools like ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
+#. En sistemas "lite", primero instala herramientas como ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
   
    .. code-block:: shell
   
@@ -56,7 +56,7 @@ Downloading and Installing the ``pironman5`` Module
      sudo apt-get install git -y
      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. Proceed to download code from GitHub and install the ``pironman5`` module .
+#. Luego, descarga el código desde GitHub e instala el módulo ``pironman5``.
 
    .. code-block:: shell
 
@@ -65,23 +65,23 @@ Downloading and Installing the ``pironman5`` Module
       cd ~/pironman5
       sudo python3 install.py
 
-   After successful installation, a system reboot is required to activate the installation. Follow the on-screen reboot prompt.
+   Una vez completada la instalación, será necesario reiniciar el sistema para activar los cambios. Sigue las instrucciones en pantalla para reiniciar.
 
-   Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
+   Al reiniciar, el servicio ``pironman5.service`` se iniciará automáticamente. Estas son las configuraciones principales de Pironman 5:
    
-   * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
-   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
+   * La pantalla OLED muestra el uso de CPU, RAM, disco, temperatura de la CPU y la dirección IP de la Raspberry Pi.
+   * Cuatro LEDs RGB WS2812 se encenderán en azul con efecto de respiración.
      
    .. note::
     
-     RGB fans won't spin unless the temperature hits 60°C. For different activation temperatures, see :ref:`max_cc_control_fan`.
+     Los ventiladores RGB no girarán hasta que la temperatura alcance los 60 °C. Para modificar esta temperatura de activación, consulta :ref:`max_cc_control_fan`.
 
-#. You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5.service``.
+#. Puedes usar la herramienta ``systemctl`` para ``start``, ``stop``, ``restart`` o consultar el ``status`` de ``pironman5.service``.
 
    .. code-block:: shell
      
       sudo systemctl restart pironman5.service
    
-   * ``restart``: Use this command to apply any changes made to the settings of pironman 5.
-   * ``start/stop``: Enable or disable the ``pironman5.service``.
-   * ``status``: Check the operational status of the ``pironman5`` program using the ``systemctl`` tool.
+   * ``restart``: Aplica los cambios realizados en la configuración de Pironman 5.
+   * ``start/stop``: Activa o desactiva el servicio ``pironman5.service``.
+   * ``status``: Verifica el estado de funcionamiento del programa ``pironman5`` mediante la herramienta ``systemctl``.

@@ -1,27 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza tus conocimientos sobre Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede antes que nadie a nuevos lanzamientos y vistas previas de productos.
+    - **Descuentos especiales**: Disfruta de ofertas exclusivas en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Pironman 5 Series - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5 
+Pironman 5 Series - Carcasa Mini PC PCIe NVMe M.2 para Raspberry Pi 5
 ================================================================================
 
-Welcome to the official guide for the Pironman 5 Series products. This guide will help you identify your specific product within the series and provide step-by-step instructions for setup and installation.
+Bienvenido a la guía oficial de productos de la serie Pironman 5. Esta guía te ayudará a identificar tu modelo específico dentro de la serie y te proporcionará instrucciones detalladas para su configuración e instalación.
 
-Use the images below to identify the product you purchased. Once identified, click the corresponding link to access the detailed product introduction and specifications. After reviewing the introduction, you can proceed with system installation and the setup of the ``pironman5`` software.
+Utiliza las imágenes a continuación para identificar el producto que adquiriste. Una vez identificado, haz clic en el enlace correspondiente para acceder a la introducción detallada y las especificaciones del producto. Después de revisar la información, podrás continuar con la instalación del sistema y la configuración del software ``pironman5``.
 
-.. .. note::
+.. 
+  .. note::
 
-..     This document is available in the following languages.
+..     Este documento está disponible en los siguientes idiomas.
 
 ..     * |link_german_tutorials|
 ..     * |link_jp_tutorials|
@@ -32,9 +33,9 @@ Use the images below to identify the product you purchased. Once identified, cli
 ..     * |link_zh_tutorials|
 
 
-    .. Please click on the respective links to access the document in your preferred language.
+    .. Haz clic en los enlaces correspondientes para acceder al documento en tu idioma preferido.
 
-Based on the images below, select the product you own to learn more. Each link will take you to the respective product's introduction page.
+Según las imágenes que se muestran a continuación, selecciona el producto que tienes para obtener más información. Cada enlace te llevará a la página de presentación del producto correspondiente.
 
 .. list-table:: 
    :widths: 25 25 25
@@ -47,70 +48,70 @@ Based on the images below, select the product you own to learn more. Each link w
      - |pic_pironman5_mini| 
      - |pic_pironman5_max|
 
-Below is a comparison of specifications for the Pironman 5 and Pironman 5 Mini. Use this table to understand the differences between these products.
+A continuación, se muestra una tabla comparativa de especificaciones entre el Pironman 5 y el Pironman 5 Mini. Utiliza esta tabla para entender las diferencias entre estos productos.
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 1
 
-   * - Specifications
+   * - Especificaciones
      - :ref:`intro_pironman5`
      - :ref:`intro_pironman5_mini`
      - :ref:`intro_pironman5_max`
-   * - Compatible Devices 
+   * - Dispositivos compatibles 
      - Raspberry Pi 5
      - Raspberry Pi 5
      - Raspberry Pi 5
-   * - Input
-     - USB Type C, 5V/5A
-     - USB Type C, 5V/5A
-     - USB Type C, 5V/5A
-   * - Power Button 
+   * - Entrada
+     - USB tipo C, 5V/5A
+     - USB tipo C, 5V/5A
+     - USB tipo C, 5V/5A
+   * - Botón de encendido 
      - ✔
      - ✔
      - ✔
-   * - Exterior Material 1
-     - Silver Aluminum Alloy
-     - Silver Aluminum Alloy
-     - Black Aluminum Alloy
-   * - Exterior Material 2
-     - Transparent Acrylic
-     - Black Acrylic
-     - Black Acrylic
-   * - Cooler
-     - Tower Cooler
-     - Active Cooler
-     - Tower Cooler
-   * - IR Receiver
+   * - Material exterior 1
+     - Aleación de aluminio plateado
+     - Aleación de aluminio plateado
+     - Aleación de aluminio negro
+   * - Material exterior 2
+     - Acrílico transparente
+     - Acrílico negro
+     - Acrílico negro
+   * - Sistema de refrigeración
+     - Enfriador tipo torre
+     - Enfriador activo
+     - Enfriador tipo torre
+   * - Receptor IR
      - ✔
      - X
      - ✔
-   * - RGB Fans 
-     - 2 (Auto-lit)
-     - 1 (Auto-lit)
-     - 2 (Programmable)
-   * - HDMI Ports
-     - 2 Standard HDMI Ports
-     - 2 Micro HDMI Ports
-     - 2 Standard HDMI Ports
-   * - OLED Screen
+   * - Ventiladores RGB 
+     - 2 (iluminación automática)
+     - 1 (iluminación automática)
+     - 2 (programables)
+   * - Puertos HDMI
+     - 2 puertos HDMI estándar
+     - 2 puertos Micro HDMI
+     - 2 puertos HDMI estándar
+   * - Pantalla OLED
      - ✔
      - X
      - ✔
-   * - OLED Activation
-     - Always on
-     - Always on
-     - Wake on Tap
-   * - Support NVMe SSD
+   * - Activación OLED
+     - Siempre encendida
+     - Siempre encendida
+     - Activación por toque
+   * - Soporte SSD NVMe
      - 1
      - 1   
      - 2
-   * - Dimension
-     - 111.9x78.5x117mm
-     - 67.8x98.6x101.5mm  
-     - 111.9x78.5x117mm
+   * - Dimensiones
+     - 111.9x78.5x117 mm
+     - 67.8x98.6x101.5 mm  
+     - 111.9x78.5x117 mm
 
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
+Si tienes alguna pregunta, envía un correo a service@sunfounder.com y te responderemos lo antes posible.
 
 
 .. raw:: html
@@ -125,7 +126,7 @@ If you have any questions, please send an email to service@sunfounder.com and we
     pironman5_mini/intro_pironman5_mini
     pironman5_max/intro_pironman5_max
 
-**Copyright Notice**
+**Aviso de derechos de autor**
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+Todos los contenidos, incluyendo pero no limitándose a textos, imágenes y código, contenidos en este manual son propiedad de la empresa SunFounder. Solo se permite su uso para estudio personal, investigación, disfrute u otros fines no comerciales o sin ánimo de lucro, conforme a las leyes y regulaciones de derechos de autor correspondientes, sin infringir los derechos legales del autor ni de los titulares de derechos relacionados. Cualquier persona u organización que utilice estos contenidos con fines comerciales sin autorización, será susceptible de acciones legales por parte de la empresa.
 
