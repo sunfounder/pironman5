@@ -1,23 +1,23 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao! Benvenuto nella community di appassionati di Raspberry Pi, Arduino ed ESP32 di SunFounder su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati come te.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Risolvi problemi post-vendita e sfide tecniche con il supporto della nostra community e del nostro team.
+    - **Learn & Share**: Scambia consigli e tutorial per potenziare le tue competenze.
+    - **Exclusive Previews**: Accedi in anteprima agli annunci dei nuovi prodotti e alle anticipazioni esclusive.
+    - **Special Discounts**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Festive Promotions and Giveaways**: Partecipa a promozioni stagionali e giveaway speciali.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-Install the Ubuntu/Kali Linux/Homebridge/Home Assistant
-=========================================================
+Installazione di Ubuntu/Kali Linux/Homebridge/Home Assistant
+==================================================================
 
-You can choose the installation method based on whether you have a Micro SD or an NVMe SSD at hand.
+Puoi scegliere il metodo di installazione in base al supporto disponibile: Micro SD o SSD NVMe.
 
-Installing directly onto the NVMe SSD involves an additional step compared to installing on the Micro SD: you must update the Raspberry Pi's bootloader because it defaults to boot from the Micro SD card. Update the bootloader to prioritize booting from the NVMe SSD.
+L’installazione diretta su SSD NVMe richiede un passaggio aggiuntivo rispetto all’installazione su Micro SD: è necessario aggiornare il bootloader del Raspberry Pi, poiché per impostazione predefinita avvia il sistema dalla Micro SD. Aggiorna il bootloader per dare priorità all’avvio da SSD NVMe.
 
 
 .. toctree::

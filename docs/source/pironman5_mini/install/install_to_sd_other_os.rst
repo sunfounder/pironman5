@@ -1,110 +1,109 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community Facebook di appassionati di Raspberry Pi, Arduino ed ESP32 targata SunFounder! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l’aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima a nuovi annunci di prodotto e anticipazioni.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a concorsi a premi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] ed entra oggi stesso!
 
 .. _install_to_sd_home_bridge_mini:
 
-Installing the OS on a Micro SD Card
-=============================================
+Installazione del sistema operativo su scheda Micro SD
+======================================================
 
-If you are using a Micro SD card, you can follow the tutorial below to install the system onto your Micro SD card.
+Se stai utilizzando una scheda Micro SD, puoi seguire il tutorial qui sotto per installare il sistema sulla tua scheda.
 
+**Componenti necessari**
 
-**Required Components**
+* Un computer personale
+* Una scheda Micro SD e un lettore
 
-* A Personal Computer
-* A Micro SD card and Reader
+**Procedura**
 
-**Steps**
+#. Inserisci la scheda SD nel tuo computer o laptop utilizzando un lettore.
 
-#. Insert your SD card into your computer or laptop using a Reader.
-
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+#. All’interno di |link_rpi_imager|, clicca su **Raspberry Pi Device** e seleziona il modello **Raspberry Pi 5** dal menu a tendina.
 
    .. image:: img/os_choose_device_pi5.png
       :width: 90%
-      
 
-#. Click on the **Operating System** tab.
+
+#. Clicca sulla scheda **Operating System**.
 
    .. image:: img/os_choose_os.png
       :width: 90%
 
-#. Scroll down to the bottom of the page and select the your operating system.
+#. Scorri fino in fondo alla pagina e seleziona il tuo sistema operativo.
 
    .. note::
 
-      * For **Ubuntu** system, you need to click **Other general-purpose OS** -> **Ubuntu**, and select either **Ubuntu Desktop 24.04 LTS (64 bit)** or **Ubuntu Server 24.04 LTS (64 bit)**.
-      * For **Kali Linux**, **Home Assistant** and **Homebridge** systems, you need to click **Other specific-purpose OS** and then select the corresponding system.
+      * Per il sistema **Ubuntu**, clicca su **Other general-purpose OS** -> **Ubuntu**, e seleziona **Ubuntu Desktop 24.04 LTS (64 bit)** o **Ubuntu Server 24.04 LTS (64 bit)**.
+      * Per **Kali Linux**, **Home Assistant** e **Homebridge**, clicca su **Other specific-purpose OS** e seleziona il sistema corrispondente.
 
    .. image:: img/os_other_os.png
       :width: 90%
 
-#. In the **Storage** option, select the appropriate storage device for the installation.
+#. Nella sezione **Storage**, seleziona il dispositivo di archiviazione appropriato per l’installazione.
 
    .. image:: img/nvme_ssd_storage.png
       :width: 90%
-      
 
-#. Click **NEXT**.
+
+#. Clicca su **NEXT**.
 
    .. note::
 
-      * For systems that cannot be configured in advance, after clicking **NEXT**, you will be prompted whether to save the data within the device. If you have confirmed that a backup has been made, select **Yes**.
+      * Per i sistemi che non possono essere configurati in anticipo, dopo aver cliccato su **NEXT**, ti verrà chiesto se desideri sovrascrivere i dati presenti sul dispositivo. Se hai già eseguito un backup, seleziona **Yes**.
 
-      * For systems where the Hostname, WiFi, and Enable SSH can be configured in advance, a pop-up will appear prompting whether to apply the OS's custom settings. You can choose **Yes** or **No**, or go back to edit further.
+      * Per i sistemi in cui è possibile configurare in anticipo Hostname, Wi-Fi e SSH, apparirà una finestra di dialogo per applicare le impostazioni personalizzate del sistema operativo. Puoi scegliere **Yes**, **No** oppure tornare indietro per ulteriori modifiche.
 
    .. image:: img/os_enter_setting.png
       :width: 90%
-      
 
-   * Define a **hostname** for your Raspberry Pi. The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
+
+   * Definisci un **hostname** per il tuo Raspberry Pi. Il nome host identifica il tuo Raspberry Pi in rete. Puoi accedervi tramite ``<hostname>.local`` o ``<hostname>.lan``.
 
      .. image:: img/os_set_hostname.png  
 
-   * Create a **Username** and **Password** for the Raspberry Pi's administrator account. Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
+   * Crea un **Username** e una **Password** per l’account amministratore del Raspberry Pi. Impostare credenziali univoche è fondamentale per garantire la sicurezza del dispositivo.
 
      .. image:: img/os_set_username.png
-         
-   * Configure the wireless LAN by providing your network's **SSID** and **Password**.
+
+   * Configura la rete wireless LAN inserendo il **SSID** e la **Password** della tua rete.
 
      .. note::
 
-       Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
+         Imposta il ``Wireless LAN country`` utilizzando il codice a due lettere `ISO/IEC alpha2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corrispondente alla tua posizione geografica.
 
      .. image:: img/os_set_wifi.png
-         
-   * To remotely connect to your Raspberry Pi, enable SSH in the Services tab.
 
-     * For **password authentication**, use the username and password from the General tab.
-     * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
+   * Per connetterti in remoto al tuo Raspberry Pi, abilita SSH nella scheda Servizi.
+
+     * Per **l’autenticazione tramite password**, utilizza nome utente e password impostati nella scheda Generale.
+     * Per l’autenticazione a chiave pubblica, seleziona "Allow public-key authentication only". Se disponi già di una chiave RSA, verrà utilizzata. In caso contrario, clicca su "Run SSH-keygen" per generare una nuova coppia di chiavi.
 
      .. image:: img/os_enable_ssh.png
-         
-   * The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
+
+   * Il menu **Options** consente di configurare il comportamento di Imager durante la scrittura, come l’emissione di un suono al termine, l’espulsione del supporto o l’attivazione della telemetria.
 
      .. image:: img/os_options.png
-           
-#. When you've finished entering OS customisation settings, click **Save** to save your customisation. Then, click **Yes** to apply them when writing the image.
+
+#. Una volta completata la personalizzazione del sistema operativo, clicca su **Save** per salvare le impostazioni. Successivamente, clicca su **Yes** per applicarle durante la scrittura dell’immagine.
 
    .. image:: img/os_click_yes.png
       :width: 90%
-      
 
-#. If the SD card contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+
+#. Se la scheda SD contiene dati, assicurati di eseguire un backup per evitare perdite. Procedi cliccando su **Yes** se non è necessario alcun backup.
 
    .. image:: img/os_continue.png
       :width: 90%
-      
 
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the Micro SD Card!
+
+#. Quando visualizzi il messaggio "Write Successful", l’immagine è stata scritta e verificata correttamente. Ora sei pronto ad avviare il Raspberry Pi dalla tua scheda Micro SD!

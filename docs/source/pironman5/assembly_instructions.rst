@@ -25,7 +25,7 @@ Prima di assemblare il Pironman, verifica che tutte le parti e i componenti sian
 * Prima dell'installazione, ordina e impila i componenti per trovarli più velocemente.
 * Controlla ripetutamente i collegamenti dei cavi FFC e FPC per evitare cattivi contatti.
 
-.. * :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5.pdf>`
+* :download:`[PDF]Component List and Assembly of Pironman 5 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0312V10-a0001127-pironman5.pdf>`
 
 **Guida Completa all'Assemblaggio e Avvio: Pironman 5 con NVMe SSD**
 

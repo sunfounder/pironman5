@@ -1,64 +1,64 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community Facebook degli appassionati di Raspberry Pi, Arduino ed ESP32 targata SunFounder! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati come te.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Risolvi problemi post-vendita e sfide tecniche con l’aiuto della nostra community e del nostro team.
+    - **Learn & Share**: Condividi suggerimenti e tutorial per potenziare le tue competenze.
+    - **Exclusive Previews**: Accedi in anteprima ai nuovi annunci di prodotto e alle anticipazioni esclusive.
+    - **Special Discounts**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Festive Promotions and Giveaways**: Partecipa a promozioni festive e giveaway.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] ed entra nella community oggi stesso!
 
-Fans
+Ventole
 ============
 
-PWM Fan
------------
+Ventola PWM
+---------------
 
-The PWM fan on the Pironman 5 is controlled by the Raspberry Pi system.
+La ventola PWM del Pironman 5 è controllata direttamente dal sistema del Raspberry Pi.
 
-Regarding cooling solutions for the Raspberry Pi 5, especially under heavy load, the design of the Pironman 5 incorporates a smart cooling system. It features a primary PWM fan and two supplementary RGB fans. The cooling strategy is closely integrated with the Raspberry Pi 5's thermal management system.
+In merito alle soluzioni di raffreddamento per il Raspberry Pi 5, soprattutto sotto carichi elevati, il design del Pironman 5 integra un sistema di raffreddamento intelligente. Include una ventola PWM principale e due ventole RGB supplementari. La strategia di raffreddamento è strettamente integrata con il sistema di gestione termica del Raspberry Pi 5.
 
-The PWM fan's operation is based on the Raspberry Pi 5's temperature:
+Il funzionamento della ventola PWM si basa sulla temperatura del Raspberry Pi 5:
 
-* Below 50°C, the PWM fan remains off (0% speed).
-* At 50°C, the fan starts at a low speed (30% speed).
-* Reaching 60°C, the fan increases to a medium speed (50% speed).
-* At 67.5°C, the fan ramps up to a high speed (70% speed).
-* At 75°C and above, the fan operates at full speed (100% speed).
+* Sotto i 50°C, la ventola PWM rimane spenta (velocità 0%).
+* A 50°C, la ventola parte a bassa velocità (30%).
+* A 60°C, la ventola passa a velocità media (50%).
+* A 67,5°C, la ventola aumenta a velocità alta (70%).
+* A 75°C e oltre, la ventola funziona alla massima velocità (100%).
 
-This temperature-to-speed relationship also applies when the temperature decreases, with a 5°C hysteresis. The fan speed reduces when the temperature falls 5°C below each of these thresholds.
+Questa relazione temperatura-velocità si applica anche quando la temperatura scende, con una isteresi di 5°C. La velocità della ventola si riduce quando la temperatura scende di 5°C al di sotto di ciascuna soglia.
 
-* Commands to monitor the PWM fan. To check the PWM fan's status:
+* Comandi per monitorare la ventola PWM. Per verificare lo stato della ventola PWM:
 
   .. code-block:: shell
   
     cat /sys/class/thermal/cooling_device0/cur_state
 
-* To view the PWM fan's speed:
+* Per visualizzare la velocità della ventola PWM:
 
   .. code-block:: shell
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-In the Pironman 5, the PWM fan is a critical component for maintaining optimal operating temperatures, particularly during intensive tasks, ensuring the Raspberry Pi 5 runs efficiently and reliably.
+Nel Pironman 5, la ventola PWM è un componente essenziale per mantenere temperature operative ottimali, soprattutto durante attività intensive, garantendo che il Raspberry Pi 5 operi in modo efficiente e affidabile.
 
-RGB Fans
+Ventole RGB
 -------------------
 
 .. image:: img/size_fan.png
 
-* **Extermal dimension**: 40*40*10MM
-* **Weight**: 13.5±5g/pcs
-* **Life**: 40,000 hours (room temperature 25°C)
-* **Maximum Air Flow**: 2.46CFM
-* **Max.Air Pressure**: 0.62mm-H2O
-* **Accoustic Sound**: 22.31dBA
-* **Rated Input power**: 5V/0.1A
-* **Rated Speed**: 3500±10%RPM
-* **Operating Temperature**: -10℃~+70℃
-* **Storage Temperature**: -30℃~+85℃
+* **Dimensioni esterne**: 40*40*10MM
+* **Peso**: 13,5±5g/cad
+* **Durata**: 40.000 ore (temperatura ambiente 25°C)
+* **Portata massima d'aria**: 2.46CFM
+* **Pressione massima dell'aria**: 0.62mm-H2O
+* **Rumorosità acustica**: 22.31dBA
+* **Potenza nominale in ingresso**: 5V/0.1A
+* **Velocità nominale**: 3500±10%RPM
+* **Temperatura operativa**: -10℃~+70℃
+* **Temperatura di stoccaggio**: -30℃~+85℃
 

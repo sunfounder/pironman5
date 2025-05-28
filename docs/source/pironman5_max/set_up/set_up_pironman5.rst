@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao! Benvenuto nella community di appassionati di Raspberry Pi, Arduino ed ESP32 di SunFounder su Facebook! Approfondisci le tue competenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati come te.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Risolvi problemi post-vendita e difficoltà tecniche grazie al supporto del nostro team e della community.
+    - **Learn & Share**: Scambia suggerimenti e tutorial per ampliare le tue conoscenze.
+    - **Exclusive Previews**: Accedi in anteprima agli annunci e alle novità sui prodotti.
+    - **Special Discounts**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Festive Promotions and Giveaways**: Partecipa a promozioni festive e giveaway dedicati alla community.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti subito!
 
 .. _max_set_up_pironman5:
 
-4. Set up or Install Software
+4. Configurazione o Installazione del Software
 ================================================
 
-Now that the system has been written to either the Micro SD or NVMe SSD, you can insert them into the Pironman 5 slot. Then press the power button to turn on the device.
+Una volta scritto il sistema su Micro SD o SSD NVMe, puoi inserirlo nell’apposito slot del Pironman 5 e premere il pulsante di accensione per avviare il dispositivo.
 
-After powering on, you will see the various power LEDs lit up, but the OLED screen, RGB LEDs, and RGB fans (the two fans on the side) will not be operational yet, as they need to be configured. If there is a screen garbling issue, please ignore it for now; it will be resolved after configuration.
+Dopo l’accensione, vedrai accendersi i vari LED di alimentazione, ma lo schermo OLED, i LED RGB e le ventole RGB (le due ventole laterali) non saranno ancora attivi, poiché necessitano di essere configurati. Se noti disturbi o glitch grafici sullo schermo, ignorali: verranno risolti dopo la configurazione.
 
-Before configuring, you need to boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
+Prima della configurazione, devi avviare e accedere al tuo Raspberry Pi. Se non sai come fare, puoi visitare il sito ufficiale Raspberry Pi: |link_rpi_get_start|.
 
-You can then proceed to select the configuration tutorial based on your system.
+Successivamente, scegli il tutorial di configurazione in base al sistema operativo in uso.
 
 
 .. toctree::
@@ -34,22 +34,21 @@ You can then proceed to select the configuration tutorial based on your system.
     set_up_batocera
 
 
-**About Power Button**
+**Informazioni sul Pulsante di Accensione**
 
-The power button brings out the power button of the Raspberry Pi 5, and it functions just like the power button of the Raspberry Pi 5.
+Il pulsante di accensione corrisponde al pulsante fisico del Raspberry Pi 5 e ne replica le funzionalità.
 
-* **Shutdown**
+* **Spegnimento**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system, press the power button a single time to initiate a shutdown.
-    * To force a hard shutdown, press and hold the power button.
+    * Se utilizzi il sistema **Raspberry Pi Bookworm Desktop**, premi due volte in rapida successione il pulsante per spegnere il dispositivo.
+    * Se utilizzi il sistema **Raspberry Pi Bookworm Lite**, premi una sola volta per avviare lo spegnimento.
+    * Per forzare lo spegnimento, tieni premuto il pulsante.
 
-* **Power on**
+* **Accensione**
 
-    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+    * Se la scheda Raspberry Pi è spenta ma alimentata, premi una volta per accenderla dallo stato di spegnimento.
 
-* If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
+* Se utilizzi un sistema che non supporta il pulsante di spegnimento, tienilo premuto per 5 secondi per forzare lo spegnimento, e premi una sola volta per riaccendere.
 
 
-    
-    
+

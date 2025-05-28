@@ -1,72 +1,71 @@
+.. note:: 
 
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community Facebook degli appassionati di Raspberry Pi, Arduino ed ESP32 targata SunFounder! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati come te.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Risolvi problemi post-vendita e sfide tecniche con il supporto della nostra community e del nostro team.
+    - **Learn & Share**: Scambia consigli e tutorial per sviluppare le tue competenze.
+    - **Exclusive Previews**: Ottieni accesso anticipato a nuovi annunci di prodotto e anteprime esclusive.
+    - **Special Discounts**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Festive Promotions and Giveaways**: Partecipa a promozioni festive e concorsi a premi.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] ed entra nella community oggi stesso!
 
 .. _max_view_control_dashboard:
 
-View and Control from Dashboard
-=========================================
+Visualizzazione e Controllo dalla Dashboard
+===============================================
 
-Once you have successfully installed the ``pironman5`` module, the ``pironman5.service`` will start automatically upon reboot.
+Una volta installato correttamente il modulo ``pironman5``, il servizio ``pironman5.service`` si avvierà automaticamente al riavvio del sistema.
 
-Now you can open the monitoring page in your browser to see the information about your Raspberry Pi, configure the RGB, and control the fan, etc. The page link is: ``http://<ip>:34001``.
+Ora puoi aprire la pagina di monitoraggio nel browser per visualizzare le informazioni sul tuo Raspberry Pi, configurare gli RGB, controllare la ventola e molto altro. Il link alla pagina è: ``http://<ip>:34001``.
 
-This page has **Dashboard**, **History**, **Log**, and a **Settings** page.
+Questa pagina include **Dashboard**, **Storico**, **Log** e una pagina delle **Impostazioni**.
 
 .. image:: img/dashboard_tab.png
   :width: 90%
-  
-  
+
+
 Dashboard
 -----------------------
 
-There are multiple cards to view the relevant status of the Raspberry Pi, including:
+Sono disponibili diverse schede per monitorare lo stato del Raspberry Pi, tra cui:
 
-* **Fan**: View the Raspberry Pi's CPU temperature and the PWM fan speed. **GPIO Fan State** indicates the status of the two side RGB fans. At the current temperature, the two RGB fans are off.
+* **Ventola**: Mostra la temperatura della CPU del Raspberry Pi e la velocità della ventola PWM. **GPIO Fan State** indica lo stato delle due ventole RGB laterali. Alla temperatura attuale, le due ventole RGB sono spente.
 
   .. image:: img/dashboard_pwm_fan.png
     :width: 90%
-    
 
-* **Storage**: Displays the storage capacity of a Raspberry Pi, showing various disk partitions with their used and available space.
+
+* **Archiviazione**: Visualizza la capacità di archiviazione del Raspberry Pi, mostrando le partizioni del disco con lo spazio utilizzato e disponibile.
 
   .. image:: img/dashboard_storage.png
     :width: 90%
-    
 
-* **Memory**: Shows the Raspberry Pi's RAM usage and percentage.
+
+* **Memoria**: Mostra l’utilizzo e la percentuale della RAM del Raspberry Pi.
 
   .. image:: img/dashboard_memory.png
     :width: 90%
-    
 
-* **Network**: Displays the current network connection type, upload, and download speeds.
+
+* **Rete**: Visualizza il tipo di connessione attiva, e la velocità di upload e download.
 
   .. image:: img/dashboard_network.png
     :width: 90%
-    
 
-* **Processor**: Illustrates the Raspberry Pi's CPU performance, including the status of its four cores, operating frequencies, and CPU usage percentage.
+
+* **Processore**: Mostra le prestazioni della CPU, inclusi lo stato dei quattro core, la frequenza operativa e la percentuale di utilizzo.
 
   .. image:: img/dashboard_processor.png
     :width: 90%
-    
 
-History
+
+Storico
 --------------
 
-The History page allows you to view historical data. Check the data you want to view in the left sidebar, then select the time range to see the data for that period, and you can also click to download it.
+La pagina Storico consente di visualizzare dati storici. Seleziona nel menu a sinistra i dati da monitorare, imposta l’intervallo di tempo e potrai anche scaricare le informazioni.
 
 .. image:: img/dashboard_history1.png
   :width: 90%
@@ -77,12 +76,12 @@ The History page allows you to view historical data. Check the data you want to 
 Log
 ------------
 
-The Log page is used to view the logs of the currently running Pironman5 service. The Pironman5 service includes multiple sub-services, each with its own log. Select the log you want to view, and you can see the log data on the right. If it is blank, it may mean there is no log content.
+La pagina Log permette di consultare i log del servizio Pironman5 in esecuzione. Il servizio comprende diversi sottoservizi, ognuno con il proprio log. Seleziona quello desiderato per visualizzarne i contenuti. Se la finestra è vuota, potrebbe significare che non ci sono log registrati.
 
-* Each log has a fixed size of 10MB. When it exceeds this size, a second log will be created.
-* The number of logs for the same service is limited to 10. If the number exceeds this limit, the oldest log will be automatically deleted.
-* There are filter tools above the log area on the right. You can select the log level, filter by keywords, and use several convenient tools, including **Line Wrap**, **Auto Scroll** and **Auto Update**.
-* Logs can also be downloaded locally.
+* Ogni log ha una dimensione massima di 10MB. Una volta superata, viene creato un nuovo file.
+* Il numero massimo di log per ogni servizio è 10. I log più vecchi vengono eliminati automaticamente.
+* Nella parte superiore dell’area log ci sono strumenti di filtro per selezionare il livello del log, filtrare per parole chiave e utilizzare opzioni come **Line Wrap**, **Auto Scroll** e **Auto Update**.
+* I log possono essere anche scaricati in locale.
 
 .. image:: img/dashboard_log1.png
   :width: 90%
@@ -91,64 +90,64 @@ The Log page is used to view the logs of the currently running Pironman5 service
   :width: 90%
 
 
-Settings
+Impostazioni
 -----------------
 
-There is a settings menu in the upper right corner of the page where you can customize the settings according to your preferences. After making modifications, the changes will be saved automatically. If needed, you can click the CLEAR button at the bottom to clear the historical data.
+Nel menu in alto a destra trovi le impostazioni personalizzabili. Le modifiche vengono salvate automaticamente. Se necessario, puoi cliccare sul pulsante CLEAR in basso per cancellare i dati storici.
 
 .. image:: img/Dark_mode_and_Temperature.jpg
   :width: 600
 
-* **Dark Mode**: Toggle between light and dark mode themes. The theme option is saved in the browser cache. Changing the browser or clearing the cache will revert to the default light theme.
-* **Temperature Unit**: Set the temperature unit displayed by the system.
+* **Modalità Scura**: Passa tra tema chiaro e scuro. La preferenza viene salvata nella cache del browser.
+* **Unità di Temperatura**: Imposta l’unità di temperatura visualizzata dal sistema.
 
-**About OLED Screen**
+**Informazioni sullo schermo OLED**
 
 .. image:: img/OLED_Sreens.jpg
   :width: 600
 
-* **OLED Enable**: Whether to enable OLED.
-* **OLED Disk**: Set OLED disk.
-* **OLED Network Interface**: 
+* **OLED Enable**: Attiva/disattiva l'OLED.
+* **OLED Disk**: Imposta il disco da visualizzare su OLED.
+* **Interfaccia di rete OLED**: 
 
-  * **all**: Toggle the display between the Ethernet IP and Wi-Fi IP in sequence.
-  * **eth0**: Display only the Ethernet IP
-  * **wlan0**: Display only the Wi-Fi IP
+  * **all**: Alterna tra IP Ethernet e Wi-Fi.
+  * **eth0**: Mostra solo l’IP Ethernet.
+  * **wlan0**: Mostra solo l’IP Wi-Fi.
 
-* **OLED Rotation**: Set OLED rotation.
+* **Rotazione OLED**: Imposta la rotazione dello schermo OLED.
 
-**About RGB LEDs**
+**Informazioni sui LED RGB**
 
 .. image:: img/RGB_LEDS.jpg
   :width: 600
 
-* **RGB Enable**: Whether to enable RGB LEDS
-* **RGB Color**: Set the color of the RGB LEDs.
-* **RGB Brightness**: You can adjust the brightness of the RGB LEDs with a slider.
-* **RGB Style**: Choose the RGB LEDs display mode. Options include **Solid**, **Breathing**, **Flow**, **Flow_reverse**, **Rainbow**, **Rainbow Reverse**, and **Hue Cycle**.
+* **RGB Enable**: Attiva/disattiva i LED RGB.
+* **Colore RGB**: Imposta il colore dei LED RGB.
+* **Luminosità RGB**: Regola la luminosità tramite un cursore.
+* **Stile RGB**: Scegli la modalità di visualizzazione: **Solid**, **Breathing**, **Flow**, **Flow_reverse**, **Rainbow**, **Rainbow Reverse**, **Hue Cycle**.
 
   .. note::
 
-     If you set the **RGB Style** to **Rainbow**, **Rainbow Reverse**, and **Hue Cycle**, you will not be able to set the color.
+     Se imposti lo **RGB Style** su **Rainbow**, **Rainbow Reverse** o **Hue Cycle**, non potrai modificare il colore.
 
-* **RGB Speed**: Set the speed of the RGB LED changes.
+* **Velocità RGB**: Imposta la velocità degli effetti RGB.
 
-**About RGB Fans**
+**Informazioni sulle Ventole RGB**
 
 .. image:: img/RGB_FAN2.png
   :width: 600
 
-* **GPIO Fan Mode**: You can set the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate.
+* **Modalità Ventola GPIO**: Imposta la modalità operativa delle due ventole RGB. Queste modalità determinano la soglia di attivazione in base alla temperatura.
 
-    * **Quiet**: The RGB fans will activate at 70°C.
-    * **Balanced**: The RGB fans will activate at 67.5°C.
-    * **Cool**: The RGB fans will activate at 60°C.
-    * **Performance**: The RGB fans will activate at 50°C.
-    * **Always On**: The RGB fans will always be on.
+    * **Quiet**: Le ventole si attivano a 70°C.
+    * **Balanced**: Le ventole si attivano a 67.5°C.
+    * **Cool**: Le ventole si attivano a 60°C.
+    * **Performance**: Le ventole si attivano a 50°C.
+    * **Always On**: Le ventole restano sempre accese.
 
-For instance, if set to **Performance** mode, the RGB fans will activate at 50°C.
+Ad esempio, impostando la modalità **Prestazioni**, le ventole RGB si attiveranno a 50°C.
 
-After saving, if the CPU temperature exceeds 50°C, you will see the **GPIO Fan State** change to ON in the Dashboard, and the side RGB fans will start spinning.
+Dopo aver salvato, se la temperatura della CPU supera i 50°C, vedrai lo **Stato Ventola GPIO** passare a ON nella Dashboard, e le ventole RGB laterali inizieranno a girare.
 
 .. image:: img/dashboard_rgbfan_on.png
   :width: 300

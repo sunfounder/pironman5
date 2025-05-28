@@ -1,167 +1,167 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di Raspberry Pi, Arduino ed ESP32 di SunFounder su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri membri della community.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e difficoltà tecniche grazie al supporto del nostro team e della community.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni l’accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti esclusivi**: Approfitta di offerte speciali sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a concorsi ed eventi promozionali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 FAQ
 ============
 
-1. About Compatible Systems
+1. Sistemi compatibili
 -------------------------------
 
-Systems that passed the test on the Raspberry Pi 5:
+Sistemi che hanno superato i test con Raspberry Pi 5:
 
 .. image:: img/compitable_os.png
    :width: 600
    :align: center
 
-2. About Power Button
---------------------------
+2. Pulsante di accensione
+-----------------------------
 
-The power button brings out the power button of the Raspberry Pi 5, and it functions just like the power button of the Raspberry Pi 5.
+Il pulsante esterno replica il pulsante di accensione del Raspberry Pi 5 e ne mantiene le stesse funzionalità.
 
 .. image:: img/power_button.jpg
     :width: 400
     :align: center
 
-* **Shutdown**
+* **Spegnimento**
 
-  * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-  * If you run Raspberry Pi **Bookworm Lite** system, press the power button a single time to initiate a shutdown.
-  * To force a hard shutdown, press and hold the power button.
+  * Su **Raspberry Pi Bookworm Desktop**, premi due volte rapidamente per spegnere.
+  * Su **Raspberry Pi Bookworm Lite**, premi una volta per iniziare lo spegnimento.
+  * Tieni premuto per un arresto forzato.
 
-* **Power on**
+* **Accensione**
 
-  * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+  * Se il Raspberry Pi è spento ma alimentato, premi una volta per accendere.
 
-* If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
+* Se il sistema non supporta lo spegnimento tramite pulsante, tieni premuto 5 secondi per forzare lo spegnimento, poi premi una volta per accendere.
 
-3. About the Raspberry Pi AI HAT+
+3. Raspberry Pi AI HAT+
 ----------------------------------------------------------
 
-The Raspberry Pi AI HAT+ is not compatible with the Pironman 5.
+Il Raspberry Pi AI HAT+ non è compatibile con il Pironman 5.
 
-   .. image::  img/output3.png
-        :width: 400
+.. image::  img/output3.png
+    :width: 400
 
-The Raspberry Pi AI Kit combines the Raspberry Pi M.2 HAT+ and the Hailo AI accelerator module.
+Il kit AI Raspberry Pi combina l’HAT+ M.2 e il modulo acceleratore AI Hailo.
 
-   .. image::  img/output2.jpg
-        :width: 400
+.. image::  img/output2.jpg
+    :width: 400
 
-You can detach the Hailo AI accelerator module from the Raspberry Pi AI Kit and directly insert it into the NVMe PIP module of the Pironman 5 Mini.
+Puoi rimuovere il modulo AI Hailo dal kit e inserirlo direttamente nel modulo NVMe PIP del Pironman 5 Mini.
 
    .. .. image::  img/output4.png
    ..      :width: 800
 
-4. Does the Pironman 5 Mini support retro gaming systems?
+4. Pironman 5 Mini supporta i sistemi retro gaming?
 --------------------------------------------------------------
 
-Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5 Mini, such as the RGB fan, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
+Sì, è compatibile. Tuttavia, la maggior parte di questi sistemi è semplificata e non consente l’installazione di software aggiuntivo. Questo limita il funzionamento di componenti come la ventola RGB o i 4 LED RGB, che richiedono i pacchetti software di Pironman 5.
 
 
-5. RGB LEDs Not Working?
---------------------------
+5. I LED RGB non funzionano?
+--------------------------------
 
-#. The two pins on the IO Expander above J9 are used to connect the RGB LEDs to GPIO10. Ensure that the jumper cap on these two pins are properly in place.
+#. Assicurati che il ponticello sopra J9 colleghi correttamente i LED RGB a GPIO10.
 
-   .. image:: hardware/img/io_board_rgb_pin.png
-      :width: 300
-      :align: center
+.. image:: hardware/img/io_board_rgb_pin.png
+    :width: 300
+    :align: center
 
-#. Verify that the Raspberry Pi is running a compatible operating system. The Pironman 5 only supports the following OS versions:
+#. Verifica che il Raspberry Pi utilizzi un sistema compatibile:
 
-   .. image:: img/compitable_os.png
-      :width: 600
-      :align: center
+.. image:: img/compitable_os.png
+    :width: 600
+    :align: center
 
-   If you have installed an unsupported OS, follow the guide to install a compatible operating system: :ref:`install_the_os_mini`.
+Se il sistema non è compatibile, segui la guida per l’installazione: :ref:`install_the_os_mini`.
 
-#. Run the command ``sudo raspi-config`` to open the configuration menu. Navigate to **3 Interfacing Options** -> **I3 SPI** -> **YES**, then click **OK** and **Finish** to enable SPI. After enabling SPI, restart the Pironman 5.
+#. Abilita SPI con ``sudo raspi-config``: vai su **3 Interfacing Options** -> **I3 SPI** -> **YES**. Poi conferma e riavvia il dispositivo.
 
-If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
+Se il problema persiste, scrivici a service@sunfounder.com.
 
-6. CPU fan not working?
+6. La ventola della CPU non funziona?
 ----------------------------------------------
 
-When the CPU temperature has not reached the set threshold, the CPU fan will not working.
+La ventola non parte finché la temperatura non supera una certa soglia.
 
-**Fan Speed Control Based on Temperature**  
+**Controllo dinamico della velocità della ventola**  
 
-The PWM fan operates dynamically, adjusting its speed according to the Raspberry Pi 5's temperature:  
+* **< 50°C**: spenta (0%)
+* **= 50°C**: bassa velocità (30%)
+* **= 60°C**: media velocità (50%)
+* **= 67.5°C**: alta velocità (70%)
+* **≥ 75°C**: velocità massima (100%)
 
-* **Below 50°C**: Fan remains off (0% speed).  
-* **At 50°C**: Fan operates at low speed (30% speed).  
-* **At 60°C**: Fan increases to medium speed (50% speed).  
-* **At 67.5°C**: Fan ramps up to high speed (70% speed).  
-* **At 75°C and above**: Fan operates at full speed (100% speed).  
+Per dettagli, consulta :ref:`fan_mini`.
 
-For more detail please refer to : :ref:`fan_mini`
 
-7. How to disable web dashboard?
+
+7. Come disabilitare il pannello web?
 ------------------------------------------------------
 
-Once you have completed the installation of the ``pironman5`` module, you will be able to access the :ref:`view_control_dashboard_mini`.
-      
-If you do not need this feature and want to reduce CPU and RAM usage, you can disable the dashboard during the installation of ``pironman5`` by adding the ``--disable-dashboard`` flag.
-      
+Dopo aver installato il modulo ``pironman5``, puoi accedere al :ref:`view_control_dashboard_mini`.
+
+Se non ti serve e vuoi risparmiare risorse, installa con il flag ``--disable-dashboard``:
+
 .. code-block:: shell
-      
+
    cd ~/pironman5
    sudo python3 install.py --disable-dashboard
-      
-If you have already installed ``pironman 5``, you can remove the ``dashboard`` module and ``influxdb``, then restart pironman5 to apply the changes:
-      
+
+Se hai già installato ``pironman 5``, puoi rimuovere i moduli ``dashboard`` e ``influxdb``, quindi riavviare pironman5 per applicare le modifiche:
+
 .. code-block:: shell
-      
+
    /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-8. How to Control Components Using the ``pironman5`` Command
+8. Come controllare i componenti con il comando ``pironman5``?
 ----------------------------------------------------------------------
-You can refer to the following tutorial to control the components of the Pironman 5 using the ``pironman5`` command.
+Puoi fare riferimento al seguente tutorial per controllare i componenti del Pironman 5 utilizzando il comando ``pironman5``.
 
-* :ref:`view_control_commands_mini`
+Segui la guida: :ref:`view_control_commands_mini`
 
-9. How to Change the Raspberry Pi Boot Order Using Commands
+9. Come cambiare l’ordine di avvio da terminale?
 -------------------------------------------------------------
 
-If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
+Se sei già connesso al Raspberry Pi, puoi usare i comandi indicati in: 
 
 * :ref:`configure_boot_ssd_mini`
 
 
-10. How to Modify the Boot Order with Raspberry Pi Imager?
+10. Come cambiare l’ordine di avvio con Raspberry Pi Imager?
 ---------------------------------------------------------------
 
-In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can also use the **Raspberry Pi Imager** to change the boot order of your Raspberry Pi.
+Oltre a modificare il parametro ``BOOT_ORDER`` nella configurazione dell'EEPROM, puoi anche utilizzare il **Raspberry Pi Imager** per cambiare l'ordine di avvio del tuo Raspberry Pi.
 
-It is recommended to use a spare card for this step.
+Si consiglia di utilizzare una scheda di riserva per eseguire questo passaggio.
 
 * :ref:`update_bootloader_mini`
 
-11. How to Copy the System from the SD Card to an NVMe SSD?
--------------------------------------------------------------
+11. Come copiare il sistema da SD a SSD NVMe?
+--------------------------------------------------------------
 
-If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
+Se non hai un adattatore NVMe, installa il sistema su microSD. Dopo l’avvio, copia tutto su SSD.
 
 
 * :ref:`copy_sd_to_nvme_rpi_mini`
 
-12. How to Remove the Protective Film from the Acrylic Plates
------------------------------------------------------------------
+12. Come rimuovere la pellicola protettiva dai pannelli acrilici?
+----------------------------------------------------------------------
 
-Two acrylic panels are included in the package, both covered with yellow/transparent protective film on both sides to prevent scratches. The protective film may be a bit difficult to remove. Use a screwdriver to gently scrape at the corners, then carefully peel off the entire film.
+I due pannelli acrilici hanno una pellicola protettiva su entrambi i lati. Rimuovila con cautela aiutandoti con un cacciavite.
 
 .. image:: img/peel_off_film.jpg
     :width: 500
@@ -171,10 +171,10 @@ Two acrylic panels are included in the package, both covered with yellow/transpa
 
 .. _openssh_powershell_mini:
 
-13. How to Install OpenSSH via Powershell?
-----------------------------------------------
+13. Come installare OpenSSH tramite Powershell?
+---------------------------------------------------
 
-When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``) to connect to your Raspberry Pi, but the following error message appears.
+Quando provi a collegarti al tuo Raspberry Pi usando il comando ``ssh <username>@<hostname>.local`` (oppure ``ssh <username>@<IP address>``), ma compare il seguente messaggio di errore:
 
     .. code-block::
 
@@ -182,21 +182,21 @@ When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP addres
         spelling of the name, or if a path was included, verify that the path is correct and try again.
 
 
-It means your computer system is too old and does not have `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ pre-installed, you need to follow the tutorial below to install it manually.
+Significa che il tuo sistema operativo è troppo vecchio e non ha `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ preinstallato. In tal caso, segui il tutorial qui sotto per installarlo manualmente.
 
-#. Type ``powershell`` in the search box of your Windows desktop, right click on the ``Windows PowerShell``, and select ``Run as administrator`` from the menu that appears.
+#. Digita ``powershell`` nella barra di ricerca del desktop di Windows, fai clic destro su ``Windows PowerShell`` e seleziona ``Esegui come amministratore`` dal menu che appare.
 
    .. image:: img/powershell_ssh.png
       :width: 90%
-      
 
-#. Use the following command to install ``OpenSSH.Client``.
+
+#. Utilizza il seguente comando per installare ``OpenSSH.Client``.
 
    .. code-block::
 
         Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
-#. After installation, the following output will be returned.
+#. Dopo l’installazione, verrà restituito il seguente output:
 
    .. code-block::
 
@@ -204,13 +204,13 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
         Online        : True
         RestartNeeded : False
 
-#. Verify the installation by using the following command.
+#. Verifica l’installazione con il comando:
 
    .. code-block::
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. It now tells you that ``OpenSSH.Client`` has been successfully installed.
+#. Ora ti verrà mostrato che ``OpenSSH.Client`` è stato installato correttamente:
 
    .. code-block::
 
@@ -220,10 +220,10 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
         Name  : OpenSSH.Server~~~~0.0.1.0
         State : NotPresent
 
-   .. warning:: 
+   .. warning::
 
-        If the above prompt does not appear, it means that your Windows system is still too old, and you are advised to install a third-party SSH tool, like |link_putty|.
+        Se questo messaggio non compare, significa che il tuo sistema Windows è ancora troppo obsoleto. In questo caso, ti consigliamo di installare uno strumento SSH di terze parti come |link_putty|.
 
-#. Now restart PowerShell and continue to run it as administrator. At this point you will be able to log in to your Raspberry Pi using the ``ssh`` command, where you will be prompted to enter the password you set up earlier.
+#. Riavvia PowerShell e continua ad eseguirlo come amministratore. A questo punto potrai accedere al tuo Raspberry Pi con il comando ``ssh``, dove ti verrà chiesta la password che hai configurato precedentemente.
 
    .. image:: img/powershell_login.png

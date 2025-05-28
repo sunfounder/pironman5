@@ -239,7 +239,7 @@ Se il problema persiste dopo aver eseguito questi passaggi, invia un'email a ser
 
 #. I due pin sull'IO Expander sopra J9 vengono utilizzati per collegare i LED RGB al GPIO10. Assicurati che il jumper su questi due pin sia correttamente posizionato.
 
-   .. image:: advanced/img/io_board_rgb_pin.png
+   .. image:: img/io_board_rgb_pin.png
       :width: 300
       :align: center
 
@@ -254,6 +254,7 @@ Se il problema persiste dopo aver eseguito questi passaggi, invia un'email a ser
 #. Esegui il comando ``sudo raspi-config`` per aprire il menu di configurazione. Vai su **3 Interfacing Options** -> **I3 SPI** -> **YES**, quindi clicca su **OK** e **Finish** per abilitare SPI. Dopo aver abilitato SPI, riavvia il Pironman 5.
 
 Se il problema persiste dopo aver eseguito questi passaggi, invia un'email a service@sunfounder.com. Ti risponderemo il prima possibile.
+
 10. La ventola della CPU non funziona?
 ----------------------------------------------
 

@@ -1,37 +1,37 @@
-.. _max_omv_5_max:
+.. _max_omv_5_max: 
 
 
-(Optional) Setting Up OpenMediaVault
-=====================================
+(Facoltativo) Configurazione di OpenMediaVault
+====================================================
 
 .. warning::
 
-   OpenMediaVault **does not** support installation on the Raspberry Pi OS desktop.
+   OpenMediaVault **non supporta** l'installazione sul sistema operativo desktop di Raspberry Pi.
 
-   Please make sure you have installed the correct operating system and configured the network.
-   The procedure here is consistent with :ref:`max_install_os_sd_rpi`, but when selecting an image, please choose Raspberry Pi OS Lite from Raspberry Pi OS (other).
+   Assicurati di aver installato il sistema operativo corretto e di aver configurato la rete.
+   La procedura è coerente con :ref:`max_install_os_sd_rpi`, ma quando selezioni l'immagine, scegli Raspberry Pi OS Lite da Raspberry Pi OS (altri).
 
    .. image:: img/omv/omv-install-1.png
 
-OpenMediaVault (abbreviated as OMV) is an open-source Network Attached Storage (NAS) operating system based on Debian Linux, designed for home users and small office environments, aiming to simplify storage management and provide rich network service features.
+OpenMediaVault (abbreviato OMV) è un sistema operativo NAS (Network Attached Storage) open-source basato su Debian Linux, progettato per ambienti domestici e piccoli uffici, con l’obiettivo di semplificare la gestione dello storage e offrire ricche funzionalità di rete.
 
-Please follow these steps to install OpenMediaVault on your Raspberry Pi:
+Segui questi passaggi per installare OpenMediaVault sul tuo Raspberry Pi:
 
-1. Connect to Your Raspberry Pi Using SSH
+1. Connessione al Raspberry Pi tramite SSH
 -----------------------------------------------------------
 
-   Enter the following command in the terminal:
+   Inserisci il seguente comando nel terminale:
 
    .. code-block:: bash
 
       ssh pi@raspberrypi.local
 
-   If you are using Windows, use PuTTY or another SSH client to connect to your Raspberry Pi.
+   Se utilizzi Windows, usa PuTTY o un altro client SSH per collegarti al Raspberry Pi.
 
-2. Install OpenMediaVault
-----------------------------
+2. Installazione di OpenMediaVault
+---------------------------------------
 
-   Enter the following command in the terminal:
+   Inserisci i seguenti comandi nel terminale:
 
    .. code-block:: bash
 
@@ -39,232 +39,232 @@ Please follow these steps to install OpenMediaVault on your Raspberry Pi:
       chmod +x install  
       sudo ./install -n
 
-   This will download and run the installation script for OpenMediaVault. Do not restart your Raspberry Pi after installation.
+   Questo comando scarica ed esegue lo script di installazione di OpenMediaVault. Non riavviare il Raspberry Pi al termine dell’installazione.
 
-3. Access OpenMediaVault
------------------------------
+3. Accesso a OpenMediaVault
+--------------------------------
 
-   Enter the following URL in your browser to access OpenMediaVault:
+   Inserisci il seguente URL nel browser per accedere a OpenMediaVault:
 
    .. code-block:: bash
 
       http://raspberrypi.local
 
-   .. note:: If you cannot access the above URL, try using the IP address instead, for example, http://192.168.1.100.
+   .. note:: Se non riesci ad accedere all’URL sopra indicato, prova con l’indirizzo IP, ad esempio http://192.168.1.100.
 
-   You will see a login page, log in using the default username and password. The default username is ``admin``, and the password is ``openmediavault``.
+   Verrà visualizzata la schermata di login. Accedi con le credenziali predefinite: utente ``admin``, password ``openmediavault``.
 
    .. image:: img/omv/omv-login.png
 
-   After logging in, you will see the main interface of OpenMediaVault.
+   Dopo il login, vedrai l’interfaccia principale di OpenMediaVault.
 
    .. image:: img/omv/omv-main.png
 
-   Now that you have successfully installed and accessed OpenMediaVault, you can start configuring and managing your storage.
+   A questo punto hai installato correttamente OpenMediaVault e puoi iniziare a configurare e gestire lo storage.
 
 
 
-6. Set Up RAID (Optional)
+6. Configurazione RAID (Facoltativo)
 ---------------------------------------
 
-   NVMe RAID is a storage solution that combines multiple NVMe Solid State Drives (SSDs) using RAID technology, aimed at maximizing the high-speed performance of the NVMe protocol and the redundancy/performance enhancement features of RAID. Common modes include RAID 0, 1, 5, 10, etc. For dual NVMe SSDs, RAID 0 and RAID 1 are the most commonly used modes.
+   Il RAID NVMe è una soluzione che combina più SSD NVMe utilizzando la tecnologia RAID per massimizzare le prestazioni e la ridondanza. I modelli più comuni sono RAID 0 e RAID 1 per configurazioni con due SSD.
 
-   * RAID 0 is a striping technology that divides data into multiple stripes and distributes these stripes across multiple hard drives, thus achieving higher read/write speeds. RAID 0 does not provide redundancy protection, so if any one of the hard drives fails, all data will be lost.
+   * RAID 0 suddivide i dati in blocchi distribuiti su più dischi, migliorando la velocità di lettura/scrittura. Tuttavia, non offre ridondanza.
+  
+   * RAID 1 crea una copia esatta dei dati su più dischi, offrendo protezione in caso di guasto di un’unità.
 
-   * RAID 1 is a mirroring technology that copies data across multiple hard drives, thus providing redundancy protection. The read/write speeds of RAID 1 depend on the speed of a single hard drive, as data needs to be read from multiple hard drives. If any one of the hard drives fails, the others can continue to provide data.
+   .. note:: Per RAID 0 o RAID 1 è necessario montare almeno due dischi. In RAID 0 la capacità è la somma di tutti i dischi; in RAID 1 equivale a quella del disco più piccolo.
 
-   .. note:: At least mount 2 disks for RAID 0 or RAID 1. In RAID 0, the capacity of the RAID volume will be the sum of the capacities of all disks. In RAID 1,the capacity of the RAID volume will be the same as the capacity of the smallest disk. 
-
-   1. In the ``System`` menu click on the ``Plugins`` option, search for the ``openmediavault-md`` plugin, and install it.
+   1. In ``Sistema``, clicca su ``Plugin``, cerca ``openmediavault-md`` e installalo.
 
    .. image:: img/omv/omv-raid-1.png
 
-   2. In the ``Storage`` menu click on the ``Disks`` option, erase two SSDs.
-   
+   2. In ``Storage`` > ``Dischi``, inizializza due SSD.
+
    .. image:: img/omv/omv-raid-2.png
 
-   3. Please note that this action will erase all data on the hard drives, make sure you have backed up all important data.
+   3. Attenzione: questa operazione cancella tutti i dati. Effettua prima un backup.
 
    .. image:: img/omv/omv-raid-3.png
 
-   4. Erase mode select ``QUICK`` is sufficient.
+   4. Seleziona la modalità ``QUICK``.
 
    .. image:: img/omv/omv-raid-4.png
 
-   5. Enter the ``Multiple Device`` tab, click ``Create``.
+   5. Vai su ``Multiple Device`` e clicca ``Create``.
 
    .. image:: img/omv/omv-raid-5.png
 
-   6. In the Level option, you can choose Stripe (RAID 0) or Mirror (RAID 1). In the Devices option, select the hard drives you just erased. Click ``Save`` and wait for the RAID configuration to complete.
+   6. Seleziona Stripe (RAID 0) o Mirror (RAID 1) e i dischi da utilizzare. Clicca ``Save``.
 
    .. image:: img/omv/omv-raid-6.png
 
-   .. note:: If an error report (500 - Internal Server Error) pops up, try restarting the OMV system.
+   .. note:: Se appare un errore 500, prova a riavviare OMV.
 
-   7. Apply the configuration by clicking on the ``Apply`` button.
+   7. Applica la configurazione cliccando ``Apply``.
 
    .. image:: img/omv/omv-raid-7.png
 
-   8. After the RAID configuration is complete, you have to wait the state of the RAID to be ``100%``.
+   8. Attendi che lo stato del RAID raggiunga il ``100%``.
 
    .. image:: img/omv/omv-raid-8.png
 
-   9. After the RAID configuration is complete, your hard drives are now in a RAID 0 or RAID 1 configuration, and you can use them as a single storage device.
+   9. A configurazione completata, potrai usare l’array RAID come singola unità.
 
-5. Configure Storage
------------------------
+5. Configurazione dello storage
+-------------------------------
 
-   In the main interface of OpenMediaVault, click on the ``Storage`` option in the left-side menu. In the ``Storage`` page, click on the ``Disks`` tab. On the ``Disks`` page, you will see all the disks on your Raspberry Pi. Ensure your NVMe PIP has a connected hard drive.
+   Nell’interfaccia principale, clicca su ``Storage`` > ``Disks``. Verifica che l’unità NVMe sia collegata.
 
    .. image:: img/omv/omv-disk.png
 
-   1. In the sidebar, click the ``File System`` option. Then create and mount a file system. Choose ``ext4`` as the file system type.
+   1. Nella barra laterale, vai su ``File System``. Crea e monta un file system ``ext4``.
 
    .. image:: img/omv/omv-mount.png
 
-   2. Select Device, and save. 
-   
-   .. note:: If you have set up the RAID, you will see the RAID device in the list. Just select it and save.
+2. Seleziona il dispositivo e clicca su "Salva".
 
-   .. image:: img/omv/omv-mount-2.png
+.. note:: Se hai configurato il RAID, vedrai il dispositivo RAID nell’elenco. Selezionalo e clicca su "Salva".
 
-   3. A window will appear, informing you that the file system is being created, please wait a moment.
+.. image:: img/omv/omv-mount-2.png
 
-   .. image:: img/omv/omv-mount-3.png
+3. Apparirà una finestra che ti informa della creazione del file system. Attendi qualche istante.
 
-   4. Once done, you will enter the ``Mount`` interface, select the file system you just created, and mount it to your Raspberry Pi.
+.. image:: img/omv/omv-mount-3.png
 
-   .. image:: img/omv/omv-mount-4.png
+4. Al termine, accederai all’interfaccia ``Mount``. Seleziona il file system appena creato e montalo sul tuo Raspberry Pi.
 
-   .. note:: If you are using dual hard drives (and not RAID), you should repeat the above steps to also mount the second hard drive to your Raspberry Pi.
+.. image:: img/omv/omv-mount-4.png
 
-   5. After mounting, please Apply, and then you can see the data on your hard drives in the file system.
+.. note:: Se stai usando due dischi rigidi (senza RAID), ripeti i passaggi per montare anche il secondo disco.
 
-   .. image:: img/omv/omv-mount-5.png
+5. Dopo il montaggio, clicca su "Applica", e potrai visualizzare i dati dei tuoi dischi nella sezione file system.
 
-   At this point, you have successfully configured OpenMediaVault and mounted your hard drives. You can now use OpenMediaVault to manage your storage.
+.. image:: img/omv/omv-mount-5.png
+
+A questo punto, hai configurato correttamente OpenMediaVault e montato i tuoi dischi. Ora puoi utilizzare OMV per gestire lo storage.
 
 
-6. Create a Shared Folder
+6. Creazione di una Cartella Condivisa
+----------------------------------------------
+
+1. Nella pagina ``Storage``, vai alla scheda ``Shared Folders`` e clicca su ``Create``.
+
+.. image:: img/omv/omv-share-1.png
+
+2. Nella schermata ``Create Shared Folder``, inserisci il nome, seleziona il disco da condividere, imposta il percorso e i permessi. Poi clicca su ``Save``.
+
+.. image:: img/omv/omv-share-2.png
+
+3. Ora visualizzerai la cartella condivisa appena creata. Verifica che sia corretta, quindi clicca su ``Apply``.
+
+.. image:: img/omv/omv-share-3.png
+
+Hai creato con successo una cartella condivisa.
+
+
+7. Creazione di un Nuovo Utente
 ---------------------------------------
 
-   1. In the ``Storage`` page, go to the ``Shared Folders`` tab. And click the ``Create`` button.
+Per accedere alla cartella condivisa, è necessario creare un nuovo utente. Segui questi passaggi:
 
-   .. image:: img/omv/omv-share-1.png
+1. Vai alla sezione ``User`` e clicca su ``Create``.
 
-   2. In the ``Create Shared Folder`` page, enter the name of the shared folder, select the hard drive you want to share, the path of the shared folder, and set the permissions of the shared folder. Then click the ``Save`` button.
+.. image:: img/omv/omv-user-1.png
 
-   .. image:: img/omv/omv-share-2.png
+2. Nella schermata ``Create User``, inserisci nome utente e password. Clicca su ``Save``.
 
-   3. Now you can see the shared folder you just created. Confirm it is correct, then apply.
+.. image:: img/omv/omv-user-2.png
 
-   .. image:: img/omv/omv-share-3.png
-
-   You have now successfully created a shared folder. 
+Hai creato con successo un nuovo utente.
 
 
-7. Create a New User
----------------------------------------
+8. Impostare i Permessi per il Nuovo Utente
+------------------------------------------------
 
-   To access the folder, we need to create a new user, please follow these steps:
+1. Nella sezione ``Shared Folders``, clicca sulla cartella appena creata. Poi clicca su ``Permissions``.
 
-   1. In the ``User`` page, click the ``Create`` button.
+.. image:: img/omv/omv-user-3.png
 
-   .. image:: img/omv/omv-user-1.png
+2. Nella schermata ``Permissions``, imposta i permessi e clicca su ``Save``.
 
-   2. In the ``Create User`` page, enter the new user's username and password, then click the ``Save`` button.
+.. image:: img/omv/omv-user-4.png
 
-   .. image:: img/omv/omv-user-2.png
+3. Al termine, clicca su ``Apply``.
 
-   You have now successfully created a new user.
+.. image:: img/omv/omv-user-5.png
 
-
-8. Set Permissions for the New User
----------------------------------------
-
-   1. In the ``Shared Folders`` page, click on the shared folder you just created. Then click the ``Permissions`` button.
-
-   .. image:: img/omv/omv-user-3.png
-
-   2. In the ``Permissions`` page, set the permissions. Then click the ``Save`` button.
-
-   .. image:: img/omv/omv-user-4.png
-
-   3. After completing, click the ``Apply`` button.
-
-   .. image:: img/omv/omv-user-5.png
-
-   You can now use this new user to access your shared folder.
+Ora puoi accedere alla cartella condivisa con il nuovo utente.
 
 
-9. Configure the SMB Service
----------------------------------------
+9. Configurazione del Servizio SMB
+----------------------------------------
 
-   1. In the ``Services`` page, find the ``SMB/CIFS`` > ``Setting`` tab. And check the ``Enable`` option. Then click the ``Save`` button.
+1. Nella sezione ``Services``, trova ``SMB/CIFS`` > ``Setting`` e abilita l’opzione ``Enable``. Poi clicca su ``Save``.
 
-   .. image:: img/omv/omv-smb-1.png
+.. image:: img/omv/omv-smb-1.png
 
-   2. Apply the changes by clicking the ``Apply`` button.
+2. Clicca su ``Apply`` per applicare le modifiche.
 
-   .. image:: img/omv/omv-smb-2.png
+.. image:: img/omv/omv-smb-2.png
 
-   3. Enter the ``Shares`` page, click the ``Create`` button.
+3. Vai alla sezione ``Shares`` e clicca su ``Create``.
 
-   .. image:: img/omv/omv-smb-3.png
+.. image:: img/omv/omv-smb-3.png
 
-   4. In the ``Create Share`` page, select the path of the shared folder. Then click the ``Save`` button. Incidentally, there are many options on this page that you can configure as needed.
+4. Nella schermata ``Create Share``, seleziona il percorso della cartella condivisa. Clicca su ``Save``. Puoi configurare anche altre opzioni, se necessario.
 
-   .. image:: img/omv/omv-smb-4.png
+.. image:: img/omv/omv-smb-4.png
 
-   5. Click ``Apply``.
+5. Clicca su ``Apply``.
 
-   .. image:: img/omv/omv-smb-5.png
+.. image:: img/omv/omv-smb-5.png
 
-   You have now successfully configured the SMB service. You can now use the SMB protocol to access your shared folder.
+Hai configurato con successo il servizio SMB. Ora puoi accedere alla cartella condivisa tramite protocollo SMB.
 
 
-10. Access the Shared Folder on Windows
----------------------------------------
+10. Accesso alla Cartella Condivisa su Windows
+-----------------------------------------------
 
-   1. Open ``This PC``, then click ``Map network drive``.
+1. Apri ``Questo PC`` e clicca su ``Connetti unità di rete``.
 
-   .. image:: img/omv/omv-network-location-1.png
+.. image:: img/omv/omv-network-location-1.png
 
-   2. In the pop-up dialog box, enter the IP of the Raspberry Pi in the ``Folder`` field, for example, ``\\192.168.1.100\``, or the Raspberry Pi's hostname, for example, ``\\pi.local\``.
+2. Nella finestra di dialogo, inserisci l’IP del Raspberry Pi nel campo ``Cartella``, ad esempio ``\\192.168.1.100\`` oppure ``\\pi.local\``.
 
-   .. image:: img/omv/omv-network-location-2.png
+.. image:: img/omv/omv-network-location-2.png
 
-   3. Click the browse button, then select the shared folder you want to access. During this process, you will need to enter the username and password you created earlier.
+3. Clicca su "Sfoglia", seleziona la cartella desiderata. Ti verrà richiesto di inserire le credenziali create in precedenza.
 
-   .. image:: img/omv/omv-network-location-3.png
+.. image:: img/omv/omv-network-location-3.png
 
-   4. Check "Reconnect at sign-in", and click the ``Finish`` button.
+4. Spunta l’opzione "Riconnetti all’accesso" e clicca su ``Fine``.
 
-   .. image:: img/omv/omv-network-location-4.png
-   
-   5. You can now access the NAS shared folder.
+.. image:: img/omv/omv-network-location-4.png
 
-   .. image:: img/omv/omv-network-location-5.png
+5. Ora puoi accedere alla cartella condivisa del NAS.
 
-10. Access the Shared Folder on Mac
--------------------------------------
+.. image:: img/omv/omv-network-location-5.png
 
-   1. In the ``Go`` menu, click ``Connect to Server``.
+10. Accesso alla Cartella Condivisa su Mac
+-------------------------------------------
 
-   .. image:: img/omv/omv-mac-1.png
+1. Nel menu ``Go``, clicca su ``Connect to Server``.
 
-   2. In the pop-up dialog box, enter the IP of the Raspberry Pi, such as ``smb://192.168.1.100``, or the Raspberry Pi's hostname, such as ``smb://pi.local``.
+.. image:: img/omv/omv-mac-1.png
 
-   .. image:: img/omv/omv-mac-2.png
+2. Inserisci l’indirizzo IP del Raspberry Pi, ad esempio ``smb://192.168.1.100`` o il nome host, ad esempio ``smb://pi.local``.
 
-   3. Click the ``Connect`` button.
+.. image:: img/omv/omv-mac-2.png
 
-   .. image:: img/omv/omv-mac-3.png
+3. Clicca su ``Connetti``.
 
-   4. In the pop-up dialog box, enter the username and password you created earlier. Click the ``Connect`` button.
+.. image:: img/omv/omv-mac-3.png
 
-   .. image:: img/omv/omv-mac-4.png
+4. Inserisci le credenziali dell’utente creato e clicca su ``Connetti``.
 
-   5. You can now access the NAS shared folder.
+.. image:: img/omv/omv-mac-4.png
 
-   .. image:: img/omv/omv-mac-5.png
+5. Ora puoi accedere alla cartella condivisa NAS.
+
+.. image:: img/omv/omv-mac-5.png

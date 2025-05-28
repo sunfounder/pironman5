@@ -1,31 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao! Benvenuto nella community di appassionati di Raspberry Pi, Arduino ed ESP32 di SunFounder su Facebook! Approfondisci le tue competenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati come te.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Risolvi problemi post-vendita e sfide tecniche con il supporto della nostra community e del nostro team.
+    - **Learn & Share**: Condividi suggerimenti e tutorial per migliorare le tue abilità.
+    - **Exclusive Previews**: Accedi in anteprima ai nuovi annunci e alle anticipazioni sui prodotti.
+    - **Special Discounts**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Festive Promotions and Giveaways**: Partecipa a promozioni festive e giveaway esclusivi.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti subito!
 
 .. _max_assembly_instructions:
 
-2. Assembly Instructions
+2. Istruzioni di Assemblaggio
 =============================================
 
-Before assembling the Pironman, please first verify that all parts and components have been included. If there are any missing or damaged components, please contact SunFounder immediately at service@sunfounder.com to resolve the issue as soon as possible.
+Prima di assemblare il Pironman, verifica che tutte le parti e i componenti siano inclusi. In caso di componenti mancanti o danneggiati, contatta immediatamente SunFounder all’indirizzo service@sunfounder.com per risolvere il problema il prima possibile.
 
-**Tips**
+**Consigli**
 
-* It is recommended to follow the paper installation instructions step by step.
-* Before installation, sort and stack the components to find them more quickly.
-* Repeatedly check the connections of FFC and FPC cables to avoid poor contact.
+* Si consiglia di seguire passo dopo passo le istruzioni cartacee fornite con il kit.
+* Prima dell’installazione, ordina e raggruppa i componenti per individuarli più rapidamente.
+* Controlla più volte i collegamenti dei cavi FFC e FPC per evitare contatti difettosi.
 
-* :download:`[PDF]Component List and Assembly of Pironman 5 Max <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/Z0316V10-A0001266-Pironman5-MAX.pdf>`
+* :download:`[PDF] Elenco componenti e guida all’assemblaggio di Pironman 5 Max <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/Z0316V10-A0001266-Pironman5-MAX.pdf>`
 
 
 

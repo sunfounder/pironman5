@@ -1,29 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community Facebook di appassionati di Raspberry Pi, Arduino ed ESP32 targata SunFounder! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche grazie al supporto del nostro team e della community.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri ultimi prodotti.
+    - **Promozioni festive e giveaway**: Partecipa a concorsi e iniziative promozionali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] ed entra oggi stesso!
 
-Installing Ubuntu, Kali Linux, Homebridge, or Home Assistant
+Installazione di Ubuntu, Kali Linux, Homebridge o Home Assistant
 =======================================================================
 
-You can choose the installation method based on whether you have a Micro SD or an NVMe SSD at hand.
+Puoi scegliere il metodo di installazione in base alla disponibilità di una scheda Micro SD o di un SSD NVMe.
 
-**Using a Micro SD Card Only**
+**Utilizzando solo una scheda Micro SD**
 
-  If you are using a Micro SD card, you can simply follow the first method below.
+  Se stai utilizzando una scheda Micro SD, puoi semplicemente seguire il primo metodo riportato di seguito.
 
-**Using an M.2 NVMe SSD**
+**Utilizzando un SSD NVMe M.2**
 
-  * If you are using an M.2 NVMe SSD, you will also need an **M.2 NVMe SSD Enclosure Adapter** to connect your SSD to your computer and follow the second method to install the OS.
+  * Se stai utilizzando un SSD NVMe M.2, avrai bisogno anche di un **adattatore con box esterno per SSD NVMe M.2** per collegare il disco al tuo computer e seguire il secondo metodo per installare il sistema operativo.
   
     .. image:: img/m2_nvme_adapter.png
         :width: 300

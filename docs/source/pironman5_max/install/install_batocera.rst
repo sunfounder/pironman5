@@ -1,27 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao! Benvenuto nella community di appassionati di Raspberry Pi, Arduino ed ESP32 di SunFounder su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri entusiasti.
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Risolvi problemi post-vendita e sfide tecniche grazie al supporto del nostro team e della community.
+    - **Learn & Share**: Condividi suggerimenti e tutorial per migliorare le tue competenze.
+    - **Exclusive Previews**: Accedi in anteprima a nuovi annunci di prodotto e anticipazioni esclusive.
+    - **Special Discounts**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Festive Promotions and Giveaways**: Partecipa a promozioni stagionali e giveaway speciali.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare insieme a noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _max_install_batocera:
 
-Install the Batocera Linux
+Installazione di Batocera Linux
 ======================================================
 
-|link_batocera| is an open-source and completely free retro-gaming distribution that can be copied to a USB stick or an SD card with the aim of turning any computer/nano computer into a gaming console during a game or permanently.
+|link_batocera| è una distribuzione open-source e completamente gratuita per il retrogaming, che può essere copiata su una chiavetta USB o una scheda SD per trasformare qualsiasi computer o nano computer in una console da gioco, sia temporaneamente che in modo permanente.
 
-You can choose the installation method based on whether you have a Micro SD or an NVMe SSD at hand.
+Puoi scegliere il metodo di installazione in base al tipo di supporto che hai a disposizione: Micro SD o SSD NVMe.
 
-Installing directly onto the NVMe SSD involves an additional step compared to installing on the Micro SD: you must update the Raspberry Pi's bootloader because it defaults to boot from the Micro SD card. Update the bootloader to prioritize booting from the NVMe SSD.
+L’installazione diretta su SSD NVMe richiede un passaggio aggiuntivo rispetto all’installazione su Micro SD: è necessario aggiornare il bootloader del Raspberry Pi, poiché per impostazione predefinita il sistema si avvia dalla Micro SD. Aggiorna quindi il bootloader per dare priorità all’avvio da SSD NVMe.
 
 .. toctree::
     :maxdepth: 1

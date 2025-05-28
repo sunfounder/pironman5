@@ -1,70 +1,70 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community Facebook di appassionati di Raspberry Pi, Arduino ed ESP32 targata SunFounder! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche grazie al supporto del nostro team e della community.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri ultimi prodotti.
+    - **Promozioni festive e giveaway**: Partecipa a concorsi e iniziative promozionali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] ed entra oggi stesso!
 
 .. _fan_mini:
 
-Fans
+Ventole
 ============
 
-Active Cooler
-----------------
+Sistema di Raffreddamento Attivo
+-------------------------------------------
 
-The Active Cooler on the Pironman 5 Mini is controlled by the Raspberry Pi system.
+Il sistema di raffreddamento attivo del Pironman 5 Mini è gestito direttamente dal sistema operativo del Raspberry Pi.
 
 .. image:: img/active_cooler.png
 
-Regarding cooling solutions for the Raspberry Pi 5, 
-especially under heavy load, the design of the Pironman 5 Mini incorporates a smart cooling system. 
-It features a primary Active Cooler (active cooler) and a supplementary RGB fan. 
-The cooling strategy is closely integrated with the Raspberry Pi 5's thermal management system.
+Per quanto riguarda le soluzioni di raffreddamento per Raspberry Pi 5, 
+specialmente durante carichi di lavoro intensi, il design del Pironman 5 Mini integra un sistema di raffreddamento intelligente. 
+Include una ventola principale Active Cooler e una ventola RGB supplementare. 
+La strategia di raffreddamento è strettamente collegata al sistema di gestione termica del Raspberry Pi 5.
 
-The Active Cooler's operation is based on the Raspberry Pi 5's temperature:
+Il funzionamento dell’Active Cooler è basato sulla temperatura rilevata dal Raspberry Pi 5:
 
-* Below 50°C, the Active Cooler remains off (0% speed).
-* At 50°C, the fan starts at a low speed (30% speed).
-* Reaching 60°C, the fan increases to a medium speed (50% speed).
-* At 67.5°C, the fan ramps up to a high speed (70% speed).
-* At 75°C and above, the fan operates at full speed (100% speed).
+* Sotto i 50°C, l’Active Cooler rimane spento (velocità 0%).
+* A 50°C, la ventola si avvia a bassa velocità (30%).
+* Al raggiungimento dei 60°C, aumenta a velocità media (50%).
+* A 67.5°C, accelera ulteriormente a velocità alta (70%).
+* A 75°C o più, la ventola lavora alla massima velocità (100%).
 
-This temperature-to-speed relationship also applies when the temperature decreases, with a 5°C hysteresis. The fan speed reduces when the temperature falls 5°C below each of these thresholds.
+Questo rapporto tra temperatura e velocità viene mantenuto anche durante il raffreddamento, grazie a un'isteresi di 5°C. La velocità della ventola si riduce quando la temperatura scende di 5°C rispetto a ciascuna soglia.
 
-* Commands to monitor the Active Cooler. To check the Active Cooler's status:
+* Comandi per monitorare l’Active Cooler. Per controllare lo stato dell’Active Cooler:
 
   .. code-block:: shell
   
     cat /sys/class/thermal/cooling_device0/cur_state
 
-* To view the Active Cooler's speed:
+* Per visualizzare la velocità della ventola Active Cooler:
 
   .. code-block:: shell
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-In the Pironman 5 Mini, the Active Cooler is a critical component for maintaining optimal operating temperatures, particularly during intensive tasks, ensuring the Raspberry Pi 5 runs efficiently and reliably.
+Nel Pironman 5 Mini, l’Active Cooler è un componente essenziale per mantenere temperature operative ottimali, soprattutto durante attività intensive, garantendo prestazioni stabili ed efficienti al Raspberry Pi 5.
 
-RGB Fan
+Ventola RGB
 -------------------
 
 .. image:: img/size_fan.png
 
-* **Extermal dimension**: 40*40*10MM
-* **Weight**: 13.5±5g/pcs
-* **Life**: 40,000 hours (room temperature 25°C)
-* **Maximum Air Flow**: 2.46CFM
-* **Max.Air Pressure**: 0.62mm-H2O
-* **Accoustic Sound**: 22.31dBA
-* **Rated Input power**: 5V/0.1A
-* **Rated Speed**: 3500±10%RPM
-* **Operating Temperature**: -10℃~+70℃
-* **Storage Temperature**: -30℃~+85℃
+* **Dimensioni esterne**: 40×40×10 mm  
+* **Peso**: 13,5±5 g/cad  
+* **Durata**: 40.000 ore (a temperatura ambiente 25°C)  
+* **Portata d'aria massima**: 2,46 CFM  
+* **Pressione dell’aria massima**: 0,62 mm-H2O  
+* **Rumorosità acustica**: 22,31 dBA  
+* **Potenza nominale in ingresso**: 5V/0,1A  
+* **Velocità nominale**: 3500±10% RPM  
+* **Temperatura operativa**: da -10°C a +70°C  
+* **Temperatura di stoccaggio**: da -30°C a +85°C  

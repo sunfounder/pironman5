@@ -1,29 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community Facebook di appassionati di Raspberry Pi, Arduino ed ESP32 targata SunFounder! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche grazie al supporto del nostro team e della community.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri ultimi prodotti.
+    - **Promozioni festive e giveaway**: Partecipa a concorsi e iniziative promozionali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] ed entra oggi stesso!
 
-For Windows Users
+Per Utenti Windows
 =======================
 
-For Windows 10 or higher users, remote login to a Raspberry Pi can be achieved through the following steps:
+Per gli utenti Windows 10 o versioni successive, l’accesso remoto a un Raspberry Pi può essere effettuato seguendo questi passaggi:
 
-#. Search for ``powershell`` in your Windows search box. Right-click on ``Windows PowerShell`` and select ``Run as administrator``.
+#. Cerca ``powershell`` nella barra di ricerca di Windows. Fai clic con il tasto destro su ``Windows PowerShell`` e seleziona ``Esegui come amministratore``.
 
    .. image:: img/powershell_ssh.png
       :width: 90%
       
 
-#. Determine your Raspberry Pi's IP address by typing ``ping -4 <hostname>.local`` in PowerShell.
+#. Identifica l’indirizzo IP del tuo Raspberry Pi digitando ``ping -4 <hostname>.local`` in PowerShell.
 
    .. code-block::
 
@@ -33,12 +33,12 @@ For Windows 10 or higher users, remote login to a Raspberry Pi can be achieved t
      :width: 90%
       
 
-   The Raspberry Pi's IP address will be displayed once it's connected to the network.
+   L’indirizzo IP del Raspberry Pi verrà mostrato una volta che il dispositivo è connesso alla rete.
 
-   * If the terminal displays ``Ping request could not find host pi.local. Please check the name and try again.``, verify the hostname you've entered is correct.
-   * If the IP address still isn't retrievable, check your network or WiFi settings on the Raspberry Pi.
+   * Se il terminale visualizza ``Ping request could not find host pi.local. Please check the name and try again.``, verifica che il nome host inserito sia corretto.
+   * Se l’indirizzo IP non viene trovato, controlla le impostazioni di rete o Wi-Fi del Raspberry Pi.
 
-#. Once the IP address is confirmed, log in to your Raspberry Pi using ``ssh <username>@<hostname>.local`` or ``ssh <username>@<IP address>``.
+#. Una volta confermato l’indirizzo IP, accedi al tuo Raspberry Pi utilizzando ``ssh <username>@<hostname>.local`` oppure ``ssh <username>@<IP address>``.
 
     .. code-block::
 
@@ -46,9 +46,9 @@ For Windows 10 or higher users, remote login to a Raspberry Pi can be achieved t
 
     .. warning::
 
-        If an error appears stating ``The term 'ssh' is not recognized as the name of a cmdlet...``, your system may not have SSH tools pre-installed. In this case, you need to manually install OpenSSH following :ref:`openssh_powershell_mini`, or use a third-party tool like |link_putty|.
+        Se compare un errore del tipo ``The term 'ssh' is not recognized as the name of a cmdlet...``, è possibile che il tuo sistema non abbia gli strumenti SSH preinstallati. In tal caso, installa manualmente OpenSSH seguendo :ref:`openssh_powershell_mini`, oppure utilizza un programma di terze parti come |link_putty|.
 
-#. A security message will appear on your first login. Enter ``yes`` to proceed.
+#. Al primo accesso verrà mostrato un messaggio di sicurezza. Digita ``yes`` per continuare.
 
     .. code-block::
 
@@ -56,13 +56,13 @@ For Windows 10 or higher users, remote login to a Raspberry Pi can be achieved t
         ED25519 key fingerprint is SHA256:oo7x3ZSgAo032wD1tE8eW0fFM/kmewIvRwkBys6XRwg.
         Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
-#. Enter the password you previously set. Note that the password characters won't be displayed on the screen, which is a standard security feature.
+#. Inserisci la password precedentemente impostata. Tieni presente che, per motivi di sicurezza, i caratteri della password non verranno visualizzati durante la digitazione.
 
     .. note::
-        The absence of visible characters when typing the password is normal. Ensure you input the correct password.
+        È normale che i caratteri della password non vengano mostrati nel terminale. Assicurati semplicemente di digitare la password corretta.
 
-#. Once connected, your Raspberry Pi is ready for remote operations.
+#. Una volta connesso, il tuo Raspberry Pi sarà pronto per l'uso remoto.
 
    .. image:: img/sp221221_140628.png
       :width: 90%
-      
+

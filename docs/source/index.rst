@@ -1,27 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato ai nuovi annunci e anteprime di prodotto.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto per esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-Pironman 5 Series - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5 
+Pironman 5 Series - Case Mini PC NVMe M.2 SSD PCIe per Raspberry Pi 5
 ================================================================================
 
-Welcome to the official guide for the Pironman 5 Series products. This guide will help you identify your specific product within the series and provide step-by-step instructions for setup and installation.
+Benvenuto nella guida ufficiale per i prodotti della serie Pironman 5. Questa guida ti aiuterà a identificare il tuo modello e ti fornirà istruzioni dettagliate per la configurazione e l’installazione.
 
-Use the images below to identify the product you purchased. Once identified, click the corresponding link to access the detailed product introduction and specifications. After reviewing the introduction, you can proceed with system installation and the setup of the ``pironman5`` software.
+Usa le immagini qui sotto per identificare il prodotto acquistato. Una volta individuato, clicca sul relativo collegamento per accedere alla presentazione dettagliata e alle specifiche tecniche. Dopo aver letto l’introduzione, potrai procedere con l’installazione del sistema operativo e la configurazione del software ``pironman5``.
 
 .. .. note::
 
-..     This document is available in the following languages.
+..     Questo documento è disponibile nelle seguenti lingue.
 
 ..     * |link_german_tutorials|
 ..     * |link_jp_tutorials|
@@ -32,9 +32,9 @@ Use the images below to identify the product you purchased. Once identified, cli
 ..     * |link_zh_tutorials|
 
 
-    .. Please click on the respective links to access the document in your preferred language.
+    .. Clicca sui rispettivi link per accedere alla guida nella tua lingua preferita.
 
-Based on the images below, select the product you own to learn more. Each link will take you to the respective product's introduction page.
+In base alle immagini seguenti, seleziona il prodotto che possiedi per saperne di più. Ogni collegamento ti porterà alla pagina introduttiva del relativo prodotto.
 
 .. list-table:: 
    :widths: 25 25 25
@@ -47,70 +47,70 @@ Based on the images below, select the product you own to learn more. Each link w
      - |pic_pironman5_mini| 
      - |pic_pironman5_max|
 
-Below is a comparison of specifications for the Pironman 5 and Pironman 5 Mini. Use this table to understand the differences between these products.
+Di seguito una tabella comparativa delle specifiche tra Pironman 5 e Pironman 5 Mini. Usala per comprendere le differenze tra i prodotti.
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 1
 
-   * - Specifications
+   * - Specifiche
      - :ref:`intro_pironman5`
      - :ref:`intro_pironman5_mini`
      - :ref:`intro_pironman5_max`
-   * - Compatible Devices 
+   * - Dispositivi compatibili 
      - Raspberry Pi 5
      - Raspberry Pi 5
      - Raspberry Pi 5
-   * - Input
+   * - Alimentazione
      - USB Type C, 5V/5A
      - USB Type C, 5V/5A
      - USB Type C, 5V/5A
-   * - Power Button 
+   * - Pulsante di accensione 
      - ✔
      - ✔
      - ✔
-   * - Exterior Material 1
-     - Silver Aluminum Alloy
-     - Silver Aluminum Alloy
-     - Black Aluminum Alloy
-   * - Exterior Material 2
-     - Transparent Acrylic
-     - Black Acrylic
-     - Black Acrylic
-   * - Cooler
-     - Tower Cooler
-     - Active Cooler
-     - Tower Cooler
-   * - IR Receiver
+   * - Materiale esterno 1
+     - Lega di alluminio argento
+     - Lega di alluminio argento
+     - Lega di alluminio nero
+   * - Materiale esterno 2
+     - Acrilico trasparente
+     - Acrilico nero
+     - Acrilico nero
+   * - Sistema di raffreddamento
+     - Dissipatore a torre
+     - Dissipatore attivo
+     - Dissipatore a torre
+   * - Ricevitore IR
      - ✔
      - X
      - ✔
-   * - RGB Fans 
-     - 2 (Auto-lit)
-     - 1 (Auto-lit)
-     - 2 (Programmable)
-   * - HDMI Ports
-     - 2 Standard HDMI Ports
-     - 2 Micro HDMI Ports
-     - 2 Standard HDMI Ports
-   * - OLED Screen
+   * - Ventole RGB 
+     - 2 (illuminazione automatica)
+     - 1 (illuminazione automatica)
+     - 2 (programmabili)
+   * - Porte HDMI
+     - 2 porte HDMI standard
+     - 2 porte Micro HDMI
+     - 2 porte HDMI standard
+   * - Schermo OLED
      - ✔
      - X
      - ✔
-   * - OLED Activation
-     - Always on
-     - Always on
-     - Wake on Tap
-   * - Support NVMe SSD
+   * - Attivazione OLED
+     - Sempre attivo
+     - Sempre attivo
+     - Attivo al tocco
+   * - Supporto NVMe SSD
      - 1
      - 1   
      - 2
-   * - Dimension
-     - 111.9x78.5x117mm
-     - 67.8x98.6x101.5mm  
-     - 111.9x78.5x117mm
+   * - Dimensioni
+     - 111.9x78.5x117 mm
+     - 67.8x98.6x101.5 mm  
+     - 111.9x78.5x117 mm
 
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
+Per qualsiasi domanda, inviaci un'e-mail all'indirizzo service@sunfounder.com: ti risponderemo il prima possibile.
 
 
 .. raw:: html
@@ -125,7 +125,7 @@ If you have any questions, please send an email to service@sunfounder.com and we
     pironman5_mini/intro_pironman5_mini
     pironman5_max/intro_pironman5_max
 
-**Copyright Notice**
+**Avviso sul copyright**
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+Tutti i contenuti, inclusi ma non limitati a testi, immagini e codice in questo manuale, sono di proprietà di SunFounder Company. Puoi utilizzarli esclusivamente per studio personale, ricerca, intrattenimento o altri scopi non commerciali o senza fini di lucro, in conformità con le normative e le leggi sul diritto d'autore, senza violare i diritti legali dell'autore o di terzi titolari. Per qualsiasi utilizzo a scopo di lucro non autorizzato, l'azienda si riserva il diritto di agire legalmente.
 
