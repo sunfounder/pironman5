@@ -85,21 +85,25 @@ Below is a comparison of specifications for the Pironman 5 and Pironman 5 Mini. 
      - ✔
      - X
      - ✔
-   * - RGB Fans 
-     - 2 (Auto-lit)
-     - 1 (Auto-lit)
-     - 2 (Programmable)
+   * - RGB Fans Number
+     - 2
+     - 1
+     - 2
+   * - Fan RGB Mode
+     - Sync with Fan
+     - Sync with Fan
+     - Independent Control
    * - HDMI Ports
      - 2 Standard HDMI Ports
      - 2 Micro HDMI Ports
      - 2 Standard HDMI Ports
-   * - OLED Screen
+   * - OLED Display
      - ✔
      - X
      - ✔
    * - OLED Activation
      - Always on
-     - Always on
+     - 
      - Wake on Tap
    * - Support NVMe SSD
      - 1
