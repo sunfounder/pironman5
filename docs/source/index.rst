@@ -91,7 +91,7 @@ Below is a comparison of specifications for the Pironman 5 and Pironman 5 Mini. 
      - 2
    * - Fan RGB Mode
      - Sync with Fan
-     - Sync with Fan
+     - Independent Control
      - Independent Control
    * - HDMI Ports
      - 2 Standard HDMI Ports
