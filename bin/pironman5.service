@@ -8,7 +8,7 @@ After=multi-user.target
 Type=forking
 # WorkingDirectory=/opt/pironman5
 ExecStart=/usr/local/bin/pironman5 start --background --debug-level=debug
-ExecStop=/usr/local/bin/pironman5 stop
+# ExecStop=/usr/local/bin/pironman5 stop
 # PrivateTmp=False
 
 [Install]
