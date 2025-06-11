@@ -60,6 +60,13 @@ settings = {
     'dtoverlays': DT_OVERLAYS,
 }
 
+ws2812_settings = {
+    # - Install from pip
+    'pip_dependencies': [
+        'adafruit-circuitpython-neopixel-spi',
+    ],
+}
+
 oled_settings = {
     # - Install from apt
     'apt_dependencies': [
@@ -68,6 +75,11 @@ oled_settings = {
         'libopenjp2-7', # for Pillow on 32 bit OS
         'kmod',
         'i2c-tools',
+    ],
+    # - Install from pip
+    'pip_dependencies': [
+        'Pillow',
+        'smbus2',
     ],
     # add modules
     # sudo nano /etc/modules
@@ -84,6 +96,8 @@ fan_settings = {
     # - Install from pip
     'pip_dependencies': [
         'gpiozero',
+        'gpiod',
+        'rpi.lgpio',
     ],
 }
 
@@ -127,4 +141,6 @@ if 'oled' in PERIPHERALS:
     installer.update_settings(oled_settings)
 if 'fan' in PERIPHERALS:
     installer.update_settings(fan_settings)
+if 'ws2812' in PERIPHERALS:
+    installer.update_settings(ws2812_settings)
 installer.main()
