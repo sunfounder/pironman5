@@ -17,7 +17,8 @@ settings = {
 
     # - Before install script, default to {}
     'run_commands_before_install': {
-        'Install LGPIO': 'bash install_lgpio.sh',
+        'Install LGPIO': 'bash scripts/install_lgpio.sh',
+        'Softlink to gpiochip4': 'bash scripts/softlink_to_gpiochip4.sh',
     },
 
     # - Install from apt
