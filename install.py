@@ -21,8 +21,9 @@ settings = {
     },
 
     # - Install from apt
-    # 'apt_dependencies': [
-    # ],
+    'apt_dependencies': [
+        'liblgpio-dev', # for pm_auto
+    ],
 
     # - Install from pip
     # 'pip_dependencies': [
@@ -32,7 +33,7 @@ settings = {
     # - Install python source code from git
     'python_source': {
         'pironman5': './',
-        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.2.7',
+        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.2.8',
     },
 
     # - Setup config txt
