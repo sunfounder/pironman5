@@ -22,9 +22,8 @@ settings = {
     },
 
     # - Install from apt
-    'apt_dependencies': [
-        'liblgpio-dev', # for pm_auto
-    ],
+    # 'apt_dependencies': [
+    # ],
 
     # - Install from pip
     # 'pip_dependencies': [
@@ -60,6 +59,8 @@ settings = {
     'dtoverlays': DT_OVERLAYS,
 }
 
+
+
 ws2812_settings = {
     # - Install from pip
     'pip_dependencies': [
@@ -88,7 +89,7 @@ oled_settings = {
     ],
 }
 
-fan_settings = {
+gpio_settings = {
     # - Install from apt
     'apt_dependencies': [
         'python3-gpiozero', # for pm_auto fan control
@@ -139,8 +140,9 @@ if not args.disable_dashboard:
     installer.update_settings(dashboard_settings)
 if 'oled' in PERIPHERALS:
     installer.update_settings(oled_settings)
-if 'fan' in PERIPHERALS:
-    installer.update_settings(fan_settings)
+if 'gpio_fan_state' in PERIPHERALS or \
+    'vibration_switch' in PERIPHERALS:
+    installer.update_settings(gpio_settings)
 if 'ws2812' in PERIPHERALS:
     installer.update_settings(ws2812_settings)
 installer.main()
