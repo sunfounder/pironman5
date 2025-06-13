@@ -16,10 +16,9 @@ settings = {
     # ],
 
     # - Before install script, default to {}
-    'run_commands_before_install': {
-        'Install LGPIO': 'bash scripts/install_lgpio.sh',
-        'Softlink to gpiochip4': 'bash scripts/softlink_to_gpiochip4.sh',
-    },
+    # 'run_commands_before_install': {
+    #     'Install LGPIO': 'bash scripts/install_lgpio.sh',
+    # },
 
     # - Install from apt
     # 'apt_dependencies': [
@@ -33,7 +32,7 @@ settings = {
     # - Install python source code from git
     'python_source': {
         'pironman5': './',
-        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.2.9',
+        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.2.10',
     },
 
     # - Setup config txt
@@ -90,6 +89,11 @@ oled_settings = {
 }
 
 gpio_settings = {
+    # - Before install script, default to {}
+    'run_commands_before_install': {
+        'Install LGPIO': 'bash scripts/install_lgpio.sh',
+    },
+
     # - Install from apt
     'apt_dependencies': [
         'python3-gpiozero', # for pm_auto fan control
