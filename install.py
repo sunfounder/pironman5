@@ -32,7 +32,7 @@ settings = {
     # - Install python source code from git
     'python_source': {
         'pironman5': './',
-        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.2.10',
+        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.2.11',
     },
 
     # - Setup config txt
