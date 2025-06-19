@@ -16,6 +16,9 @@ get_child_logger = create_get_child_logger(APP_NAME)
 log = get_child_logger('main')
 __package_name__ = __name__.split('.')[0]
 CONFIG_PATH = str(resource_files(__package_name__).joinpath('config.json'))
+log.info(f"")
+log.info(f"{'#'*60}")
+log.debug(f"Config path: {CONFIG_PATH}")
 
 PMDashboard = None
 try:
@@ -60,11 +63,29 @@ class Pironman5:
         }
         self.log.debug(f"Pironman5 version: {pironman5_version}")
         self.log.debug(f"Variant: {NAME} {PRODUCT_VERSION}")
-        self.log.debug(f"Config: {self.config}")
-        self.log.debug(f"Device info: {device_info}")
+        # self.log.debug(f"Config: {self.config}")
+        # self.log.debug(f"Device info: {device_info}")
+
+        # from pprint import pformat
+        # self.log.debug(f"Config:\n{pformat(self.config, indent=2)}")
+        # self.log.debug(f"Device info:\n{pformat(device_info, indent=2)}")
+
+        # self.log.debug(f"Config: {json.dumps(self.config, indent=2)}")
+        # self.log.debug(f"Device info: {json.dumps(device_info, indent=2)}")
+
+        _config_json = json.dumps(self.config, indent=2)
+        self.log.debug(f"Config:")
+        for line in _config_json.splitlines():
+            self.log.debug(line)
+        _device_info_json = json.dumps(device_info, indent=2)
+        self.log.debug(f"Device info:")
+        for line in _device_info_json.splitlines():
+            self.log.debug(line)
+
         self.log.debug(f"PM_Auto version: {pm_auto_version}")
         if PMDashboard is not None:
             self.log.debug(f"PM_Dashboard version: {pm_dashboard_version}")
+
         self.pm_auto = PMAuto(self.config['system'],
                               peripherals=self.peripherals,
                               get_logger=get_child_logger)
