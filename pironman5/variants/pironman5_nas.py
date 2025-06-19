@@ -2,7 +2,6 @@ class Pironman5NAS:
     NAME = "Pironman 5 NAS"
     ID = "pironman5-nas"
     PRODUCT_VERSION = ""
-    MCU_I2C_ADDRESS = 0x6A
     PERIPHERALS = [
         'storage',
         "cpu",
