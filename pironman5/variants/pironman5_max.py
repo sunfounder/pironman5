@@ -1,8 +1,7 @@
-class Pironman5NAS:
-    NAME = "Pironman 5 NAS"
-    ID = "pironman5-nas"
-    PRODUCT_VERSION = ""
-    MCU_I2C_ADDRESS = 0x6A
+class Pironman5Max:
+    NAME = "Pironman 5 Max"
+    ID = "pironman5-max"
+    PRODUCT_VERSION = "V2"
     PERIPHERALS = [
         'storage',
         "cpu",
@@ -10,6 +9,7 @@ class Pironman5NAS:
         "memory",
         "history",
         "log",
+        "ws2812",
         "cpu_temperature",
         "gpu_temperature",
         "temperature_unit",
@@ -17,22 +17,34 @@ class Pironman5NAS:
         "clear_history",
         "delete_log_file",
         "pwm_fan_speed",
+        "gpio_fan_state",
+        "gpio_fan_mode",
+        "gpio_fan_led",
+        "vibration_switch",
         "oled_sleep",
-        "pironman_mcu",
     ]
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
+        "rgb_color": "#0a1aff",
+        "rgb_brightness": 50,
+        "rgb_style": "breathing",
+        "rgb_speed": 50,
+        "rgb_enable": True,
+        "rgb_led_count": 4,
         "temperature_unit": "C",
         "oled_enable": True,
         "oled_rotation": 0,
         "oled_disk": "total",
         "oled_network_interface": "all",
-        'oled_sleep_timeout': 5,
+        'gpio_fan_pin': 6,
+        'gpio_fan_mode': 0,
+        'gpio_fan_led': 'follow',
+        'gpio_fan_led_pin': 5,
+        'oled_sleep_timeout': 2,
         'vibration_switch_pin': 26,
         'vibration_switch_pull_up': False,
-        'enable_history': False,
     }
     DT_OVERLAYS = [
-        'sunfounder-pironman5nas.dtbo',
+        'sunfounder-pironman5.dtbo',
     ]
 
