@@ -1,7 +1,7 @@
-class Pironman5:
+class Pironman5V10:
     NAME = "Pironman 5"
     ID = "pironman5"
-    PRODUCT_VERSION = "V2"
+    PRODUCT_VERSION = ""
     PERIPHERALS = [
         'storage',
         "cpu",
@@ -19,9 +19,8 @@ class Pironman5:
         "pwm_fan_speed",
         "gpio_fan_state",
         "gpio_fan_mode",
-        "gpio_fan_led",
-        "vibration_switch",
         "oled_sleep",
+        "pi5_pwr_btn",
     ]
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
@@ -36,15 +35,10 @@ class Pironman5:
         "oled_rotation": 0,
         "oled_disk": "total",
         "oled_network_interface": "all",
+        'oled_sleep_timeout': 5,
         'gpio_fan_pin': 6,
         'gpio_fan_mode': 0,
-        'gpio_fan_led': 'follow',
-        'gpio_fan_led_pin': 5,
-        'oled_sleep_timeout': 2,
-        'vibration_switch_pin': 26,
-        'vibration_switch_pull_up': False,
     }
     DT_OVERLAYS = [
         'sunfounder-pironman5.dtbo',
     ]
-
