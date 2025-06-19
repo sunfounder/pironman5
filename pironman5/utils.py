@@ -9,7 +9,7 @@ def merge_dict(dict1, dict2):
         elif isinstance(dict2[key], list):
             if key not in dict1:
                 new_dict[key] = []
-            new_dict[key].extend(dict2[key])
+            new_dict[key] = (dict2[key])
         else:
             new_dict[key] = dict2[key]
     return new_dict
