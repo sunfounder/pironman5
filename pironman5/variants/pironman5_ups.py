@@ -2,7 +2,6 @@ class Pironman5UPS:
     NAME = "Pironman 5 UPS"
     ID = "pironman5-ups"
     PRODUCT_VERSION = "V2"
-    MCU_I2C_ADDRESS = 0x5C
     PERIPHERALS = [
         'storage',
         "cpu",
@@ -22,6 +21,7 @@ class Pironman5UPS:
         "rgb_matrix",
         # ----
         "input_voltage",
+        "input_current",
         "is_input_plugged_in",
         "output_voltage",
         "output_current",
