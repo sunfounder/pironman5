@@ -46,7 +46,7 @@ def main():
     parser.add_argument("-cp", "--config-path", nargs='?', default='', help="Config path")
     parser.add_argument("-eh", "--enable-history", nargs='?', default='', help="Enable history, True/true/on/On/1 or False/false/off/Off/0")
     if is_included(PERIPHERALS, "ws2812"):
-        from pm_auto.ws2812 import RGB_STYLES
+        from pm_auto.services.ws2812_service import RGB_STYLES
         parser.add_argument("-rc", "--rgb-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
         parser.add_argument("-rb", "--rgb-brightness", nargs='?', default='', help="RGB brightness 0-100")
         parser.add_argument("-rs", "--rgb-style", choices=RGB_STYLES, nargs='?', default='', help="RGB style")
@@ -56,7 +56,7 @@ def main():
     if is_included(PERIPHERALS, "temperature_unit"):
         parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], nargs='?', default='', help="Temperature unit")
     if is_included(PERIPHERALS, "gpio_fan_mode"):
-        from pm_auto.fan_control import GPIO_FAN_MODES
+        from pm_auto.services.fan_service import GPIO_FAN_MODES
         parser.add_argument("-gm", "--gpio-fan-mode", nargs='?', default='', help=f"GPIO fan mode, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
         parser.add_argument("-gp", "--gpio-fan-pin", nargs='?', default='', help="GPIO fan pin")
     if is_included(PERIPHERALS, "gpio_fan_led"):
@@ -71,6 +71,19 @@ def main():
         parser.add_argument("-vp", "--vibration-switch-pin", nargs='?', default='', help="Vibration switch pin")
         parser.add_argument("-vu", "--vibration-switch-pull-up", nargs='?', default='', help="Vibration switch pull up True/False")
         parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds")
+    if is_included(PERIPHERALS, "pironman_mcu"):
+        parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds")
+    if is_included(PERIPHERALS, "pi5_pwr_btn"):
+        parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds")
+    if is_included(PERIPHERALS, "oled_sleep"):
+        parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds")
+    if is_included(PERIPHERALS, "rgb_matrix"):
+        from pm_auto.services.rgb_matrix_service import RGB_MATRIX_STYLES
+        parser.add_argument("-rmc", "--rgb-matrix-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
+        parser.add_argument("-rmb", "--rgb-matrix-brightness", nargs='?', default='', help="RGB brightness 0-100")
+        parser.add_argument("-rms", "--rgb-matrix-style", choices=RGB_MATRIX_STYLES, nargs='?', default='', help="RGB style")
+        parser.add_argument("-rmp", "--rgb-matrix-speed", nargs='?', default='', help="RGB speed 0-100")
+        parser.add_argument("-rme", "--rgb-matrix-enable", nargs='?', default='', help="RGB enable True/False")
     args = parser.parse_args()
 
     if not (len(sys.argv) > 1):
@@ -380,20 +393,21 @@ def main():
                 else:
                     print(f"Invalid value for Vibration switch pull up, it should be {', '.join(TRUE_LIST)} or {', '.join(FALSE_LIST)}")
                     quit()
-        if args.oled_sleep_timeout != '':
-            if args.oled_sleep_timeout == None:
-                print(f"OLED sleep timeout: {current_config['system']['oled_sleep_timeout']}")
-            else:
-                try:
-                    args.oled_sleep_timeout = int(args.oled_sleep_timeout)
-                except ValueError:
-                    print(f"Invalid value for OLED sleep timeout, it should be an integer")
-                    quit()
-                if args.oled_sleep_timeout < 0:
-                    print(f"Invalid value for OLED sleep timeout, it should be greater than or equal to 0")
-                    quit()
-                new_sys_config['oled_sleep_timeout'] = args.oled_sleep_timeout
-                print(f"Set OLED sleep timeout: {args.oled_sleep_timeout}")
+    if args.oled_sleep_timeout != '':
+        if args.oled_sleep_timeout == None:
+            print(f"OLED sleep timeout: {current_config['system']['oled_sleep_timeout']}")
+        else:
+            try:
+                args.oled_sleep_timeout = int(args.oled_sleep_timeout)
+            except ValueError:
+                print(f"Invalid value for OLED sleep timeout, it should be an integer")
+                quit()
+            if args.oled_sleep_timeout < 0:
+                print(f"Invalid value for OLED sleep timeout, it should be greater than or equal to 0")
+                quit()
+            new_sys_config['oled_sleep_timeout'] = args.oled_sleep_timeout
+            print(f"Set OLED sleep timeout: {args.oled_sleep_timeout}")
+
     new_config = {
         'system': new_sys_config,
     }
