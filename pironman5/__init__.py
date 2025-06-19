@@ -71,10 +71,6 @@ def main():
         parser.add_argument("-vp", "--vibration-switch-pin", nargs='?', default='', help="Vibration switch pin")
         parser.add_argument("-vu", "--vibration-switch-pull-up", nargs='?', default='', help="Vibration switch pull up True/False")
         parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds")
-    if is_included(PERIPHERALS, "pironman_mcu"):
-        parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds")
-    if is_included(PERIPHERALS, "pi5_pwr_btn"):
-        parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds")
     if is_included(PERIPHERALS, "oled_sleep"):
         parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds")
     if is_included(PERIPHERALS, "rgb_matrix"):
