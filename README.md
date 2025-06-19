@@ -21,7 +21,7 @@ Quick Links:
 ## Links
 
 - SunFounder Online Store &emsp; <https://www.sunfounder.com/>
-- Documentation &emsp; <https://docs.sunfounder.com/en/latest/>
+- Documentation &emsp; <https://docs.sunfounder.com/projects/pironman5/en/latest/>
 
 ## Installation
 
