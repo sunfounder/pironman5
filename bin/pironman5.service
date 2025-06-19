@@ -5,9 +5,9 @@ Description=pironman5 service
 After=basic.target
 
 [Service]
-Type=forking
+Type=simple
 # WorkingDirectory=/opt/pironman5
-ExecStart=/usr/local/bin/pironman5 start --background --debug-level=debug
+ExecStart=/usr/local/bin/pironman5 start --debug-level=debug
 ExecStop=/usr/local/bin/pironman5 stop
 # PrivateTmp=False
 
