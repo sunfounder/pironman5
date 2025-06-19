@@ -131,6 +131,7 @@ class SF_Installer():
         self.custom_apt_dependencies = set()
         self.custom_pip_dependencies = set()
         self.python_source = {}
+        self.symlinks = set()
         self.config_txt = {}
         self.modules = set()
         self.service_files = set()
@@ -184,6 +185,8 @@ class SF_Installer():
             self.custom_pip_dependencies.update(settings['pip_dependencies'])
         if 'python_source' in settings:
             self.python_source.update(settings['python_source'])
+        if 'symlinks' in settings:
+            self.symlinks.update(settings['symlinks'])
         if 'config_txt' in settings:
             self.config_txt.update(settings['config_txt'])
         if 'modules' in settings:
@@ -289,7 +292,7 @@ class SF_Installer():
                 f'{self.venv_pip} uninstall -y {name}')
         self.do(f'Install {name} from source',
                 f'{self.venv_pip} install {url}')
-
+        
     # Install Steps:
     def install_build_dep(self):
         print("Install build dependencies...")
@@ -352,6 +355,14 @@ class SF_Installer():
         print("Install Python source packages...")
         for package, url in self.python_source.items():
             self.install_python_source(package, url)
+
+    def create_symlinks(self):
+        if len(self.symlinks) == 0:
+            return
+        print("Create symlinks...")
+        for script in self.symlinks:
+            self.do(f'Create symbolic link: {self.venv_path}/bin/{script} -> /usr/local/bin/{script}',
+                    f'ln -s -f {self.venv_path}/bin/{script} /usr/local/bin/{script}')
 
     def setup_auto_start(self):
         if ('skip_auto_start' in self.args and self.args.skip_auto_start) or \
@@ -452,7 +463,7 @@ class SF_Installer():
             self.need_reboot = True
 
     def reboot_prompt(self):
-        print("\033[1;32mWhether to restart for the changes to take effect(Y/N): \033[0m", end='')
+        print("\033[1;32mWhether to reboot for the changes to take effect(Y/N): \033[0m", end='')
         while True:
             key = input()
             if key == 'Y' or key == 'y':
@@ -476,6 +487,7 @@ class SF_Installer():
         self.create_working_dir()
         self.install_pip_dep()
         self.install_py_src_pkgs()
+        self.create_symlinks()
         self.setup_auto_start()
         self.setup_config_txt()
         self.modules_probe()

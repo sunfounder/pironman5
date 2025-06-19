@@ -25,7 +25,7 @@ dependencies = [
 ]
 
 [project.scripts]
-pironman5-service = "pironman5:main"
+pironman5 = "pironman5:main"
 
 [tool.setuptools]
 packages = ["pironman5", "pironman5.variants"]

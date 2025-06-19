@@ -35,6 +35,12 @@ settings = {
         'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.2.4',
     },
 
+    # create symbolic links from venv/bin/ to /usr/local/bin/
+    'symlinks':
+    [
+        'pironman5',
+    ],
+
     # - Setup config txt
     # 'config_txt':  {
     #     'dtparam=spi': 'on',
