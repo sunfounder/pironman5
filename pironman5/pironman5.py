@@ -16,9 +16,6 @@ get_child_logger = create_get_child_logger(APP_NAME)
 log = get_child_logger('main')
 __package_name__ = __name__.split('.')[0]
 CONFIG_PATH = str(resource_files(__package_name__).joinpath('config.json'))
-log.info(f"")
-log.info(f"{'#'*60}")
-log.debug(f"Config path: {CONFIG_PATH}")
 
 PMDashboard = None
 try:
@@ -30,6 +27,12 @@ except ImportError:
 class Pironman5:
     # @log_error
     def __init__(self, config_path=CONFIG_PATH):
+        # LOG HEADER
+        log.info(f"")
+        log.info(f"{'#'*60}")
+        log.debug(f"Config path: {CONFIG_PATH}")
+
+
         self.peripherals = PERIPHERALS
         self.log = get_child_logger('main')
         self.config = {
@@ -73,11 +76,11 @@ class Pironman5:
         # self.log.debug(f"Config: {json.dumps(self.config, indent=2)}")
         # self.log.debug(f"Device info: {json.dumps(device_info, indent=2)}")
 
-        _config_json = json.dumps(self.config, indent=2)
+        _config_json = json.dumps(self.config, indent=4)
         self.log.debug(f"Config:")
         for line in _config_json.splitlines():
             self.log.debug(line)
-        _device_info_json = json.dumps(device_info, indent=2)
+        _device_info_json = json.dumps(device_info, indent=4)
         self.log.debug(f"Device info:")
         for line in _device_info_json.splitlines():
             self.log.debug(line)
