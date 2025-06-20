@@ -410,10 +410,10 @@ def main():
     # stop
     if args.command == "stop":
         import os
-        os.system('kill -9 $(pgrep -f "pironman5 start")')
-        os.system('kill -9 $(pgrep -f "pironman5-service start")')
-        pironman5 = Pironman5()
-        pironman5.stop()
+        os.system('kill -15 $(pgrep -f "pironman5 start")')
+        os.system('kill -15 $(pgrep -f "pironman5-service start")')
+        # pironman5 = Pironman5()
+        # pironman5.stop()
         quit()
 
     # start
