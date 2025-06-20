@@ -64,6 +64,7 @@ ws2812_settings = {
     # - Install from pip
     'pip_dependencies': [
         'adafruit-circuitpython-neopixel-spi',
+        'Adafruit-Blinka==8.59.0',
     ],
 }
 
