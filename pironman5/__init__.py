@@ -41,7 +41,6 @@ def main():
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
     parser.add_argument("-dl", "--debug-level", choices=['debug', 'info', 'warning', 'error', 'critical'], help="Debug level")
-    parser.add_argument("--background", nargs='?', default='', help="Run in background")
     parser.add_argument("-rd", "--remove-dashboard", action="store_true", help="Remove dashboard")
     parser.add_argument("-cp", "--config-path", nargs='?', default='', help="Config path")
     parser.add_argument("-eh", "--enable-history", nargs='?', default='', help="Enable history, True/true/on/On/1 or False/false/off/Off/0")
@@ -129,10 +128,6 @@ def main():
         print(__version__)
         quit()
 
-    if args.background != '':
-        print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
-        quit()
-    
     if args.remove_dashboard:
         import os
         print("Remove Dashboard")
