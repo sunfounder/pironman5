@@ -1,70 +1,56 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _fan_mini:
 
-Fans
+风扇
 ============
 
-Active Cooler
-----------------
+主动散热风扇（Active Cooler）
+-----------------------------------
 
-The Active Cooler on the Pironman 5 Mini is controlled by the Raspberry Pi system.
+Pironman 5 Mini 所搭载的主动散热风扇由 Raspberry Pi 系统进行控制。
 
 .. image:: img/active_cooler.png
 
-Regarding cooling solutions for the Raspberry Pi 5, 
-especially under heavy load, the design of the Pironman 5 Mini incorporates a smart cooling system. 
-It features a primary Active Cooler (active cooler) and a supplementary RGB fan. 
-The cooling strategy is closely integrated with the Raspberry Pi 5's thermal management system.
+在为 Raspberry Pi 5 提供散热方案方面，特别是在高负载运行时，Pironman 5 Mini 的结构设计集成了智能散热系统。该系统包括一个主散热装置（主动散热风扇）以及一个辅助 RGB 风扇，整体散热策略与 Raspberry Pi 5 的热管理机制高度协同。
 
-The Active Cooler's operation is based on the Raspberry Pi 5's temperature:
+主动散热风扇的运行策略基于 Raspberry Pi 5 的温度变化：
 
-* Below 50°C, the Active Cooler remains off (0% speed).
-* At 50°C, the fan starts at a low speed (30% speed).
-* Reaching 60°C, the fan increases to a medium speed (50% speed).
-* At 67.5°C, the fan ramps up to a high speed (70% speed).
-* At 75°C and above, the fan operates at full speed (100% speed).
+* 温度低于 50°C 时，风扇关闭（转速为 0%）。
+* 温度达到 50°C 时，风扇启动，低速运行（转速为 30%）。
+* 温度升至 60°C 时，风扇转速升至中速（转速为 50%）。
+* 温度达到 67.5°C 时，风扇提升至高速（转速为 70%）。
+* 温度达到或超过 75°C 时，风扇全速运行（转速为 100%）。
 
-This temperature-to-speed relationship also applies when the temperature decreases, with a 5°C hysteresis. The fan speed reduces when the temperature falls 5°C below each of these thresholds.
 
-* Commands to monitor the Active Cooler. To check the Active Cooler's status:
+
+
+上述温度与风扇转速的对应关系在温度下降时同样适用，并具备 5°C 的迟滞阈值。当温度比对应档位的阈值低 5°C 时，风扇转速相应降低。
+
+* 用于监测主动散热风扇的指令如下。查看当前风扇状态：
 
   .. code-block:: shell
   
     cat /sys/class/thermal/cooling_device0/cur_state
 
-* To view the Active Cooler's speed:
+* 查看当前风扇转速：
 
   .. code-block:: shell
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-In the Pironman 5 Mini, the Active Cooler is a critical component for maintaining optimal operating temperatures, particularly during intensive tasks, ensuring the Raspberry Pi 5 runs efficiently and reliably.
+在 Pironman 5 Mini 中，主动散热风扇是确保 Raspberry Pi 5 在高性能任务下维持稳定运行温度的关键组件，能够显著提升设备运行效率与可靠性。
 
-RGB Fan
+RGB 风扇
 -------------------
 
 .. image:: img/size_fan.png
 
-* **Extermal dimension**: 40*40*10MM
-* **Weight**: 13.5±5g/pcs
-* **Life**: 40,000 hours (room temperature 25°C)
-* **Maximum Air Flow**: 2.46CFM
-* **Max.Air Pressure**: 0.62mm-H2O
-* **Accoustic Sound**: 22.31dBA
-* **Rated Input power**: 5V/0.1A
-* **Rated Speed**: 3500±10%RPM
-* **Operating Temperature**: -10℃~+70℃
-* **Storage Temperature**: -30℃~+85℃
+* **外形尺寸**：40×40×10mm  
+* **重量**：13.5±5g/个  
+* **使用寿命**：40,000 小时（室温 25°C）  
+* **最大风量**：2.46 CFM  
+* **最大风压**：0.62 mm-H2O  
+* **噪音值**：22.31 dBA  
+* **额定输入功率**：5V / 0.1A  
+* **额定转速**：3500±10% RPM  
+* **工作温度范围**：-10°C ~ +70°C  
+* **存储温度范围**：-30°C ~ +85°C

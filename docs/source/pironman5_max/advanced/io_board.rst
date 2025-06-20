@@ -1,82 +1,68 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-IO Expander
+IO 扩展板  
 ================
 
-RGB LEDs
+RGB 灯  
 ------------
 
 .. image:: img/io_board_rgb.png
 
-The board features 4 WS2812 RGB LEDs, offering customizable control. Users can turn them on or off, change the color, adjust the brightness, switch display modes, and set the speed of changes.
+该扩展板集成了 4 颗 WS2812 RGB LED，支持多种自定义控制。用户可以开启或关闭灯效、调节颜色和亮度、切换显示模式，并设定变化速度。
 
-* To modify the on and off state of the RGB LEDs, ``true`` to turn on the RGB LEDs, ``false`` to turn them off.
+* 控制 RGB LED 的开关状态，使用 ``true`` 开启， ``false`` 关闭：
 
 .. code-block:: shell
 
   pironman5 -re true
 
-* To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
+* 更改颜色，输入目标的十六进制色值，例如 ``fe1a1a``：
 
 .. code-block:: shell
 
   pironman5 -rc fe1a1a
 
-* To change the brightness of the RGB LED (range: 0 ~ 100%):
+* 调整亮度（范围：0 ~ 100%）：
 
 .. code-block:: shell
 
   pironman5 -rb 100
 
-* To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
+* 切换显示模式，可选项包括： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``：
 
 .. note::
 
-  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``pironman5 -rc``.
+  如果 RGB 模式设置为 ``rainbow`` 、 ``rainbow_reverse`` 或 ``hue_cycle`` ，将无法使用 ``pironman5 -rc`` 设置颜色。
 
 .. code-block:: shell
 
   pironman5 -rs breathing
 
-* To modify the speed of change (range: 0 ~ 100%):
+* 设置变化速度（范围：0 ~ 100%）：
 
 .. code-block:: shell
 
   pironman5 -rp 80
 
-RGB Control Pin
+RGB 控制引脚  
 -------------------------
 
-The RGB LED is driven by SPI and connected to **GPIO10**, which is also the SPI MOSI pin. The two pins shown are used to connect the RGB to GPIO10. If not needed, the jumper can be removed.
+RGB LED 由 SPI 驱动，连接至 **GPIO10** （SPI 的 MOSI 引脚）。图中两根引脚连接 RGB 到 GPIO10。如不需要此功能，可移除跳线帽。
 
-  .. image:: img/io_board_rgb_pin.png
+.. image:: img/io_board_rgb_pin.png
 
-RGB OUT Pins
+RGB OUT 扩展引脚  
 -------------------------
 
 .. image:: img/io_board_rgb_out.png
 
-The WS2812 RGB LEDs support serial connection, allowing for the attachment of an external RGB LED strip. Connect the **SIG** pin to the external strip's **DIN** pin for expansion.
+WS2812 LED 支持串联，可外接 RGB 灯带。将 **SIG** 引脚连接至灯带的 **DIN** 引脚即可。
 
-The default setup includes 4 RGB LEDs. Connect additional LEDs and update the count using:
+默认配置为 4 个 RGB 灯，如需扩展数量，使用以下命令修改：
 
 .. code-block:: shell
 
   sudo pironman5 --rgb-led-count [quantity]
 
-Example:
+示例：
 
 .. code-block:: shell
 
@@ -84,139 +70,135 @@ Example:
 
 
 
-OLED Screen Connector
+OLED 显示屏接口  
 ----------------------------
 
-The OLED screen connector, with an address of 0x3C, is a key feature.
+OLED 显示屏地址为 0x3C。
 
 .. image:: img/io_board_oled.png
 
-If the OLED Screen is not displaying or displaying incorrectly, you can follow these steps to troubleshoot the issue:
+如果屏幕未正常显示，可尝试以下步骤排查问题：
 
-Check if the FPC cable of the OLED Screen is properly connected.
+1. 确认 OLED 显示屏的 FPC 线缆连接正确。
 
-#. Use the following command to view the program's run logs and check for error messages.
+2. 查看程序日志检查错误信息：
 
-    .. code-block:: shell
+.. code-block:: shell
 
-        cat /var/log/pironman5/pm_auto.oled.log
+  cat /var/log/pironman5/pm_auto.oled.log
 
-#. Alternatively, use the following command to check if the OLED's i2c address 0x3C is recognized:
-    
-    .. code-block:: shell
-        
-        sudo i2cdetect -y 1
+3. 检查 OLED 是否被识别：
 
-#. If the first two steps don't reveal any issues, try restarting the pironman5 service to see if that resolves the problem.
+.. code-block:: shell
 
+  sudo i2cdetect -y 1
 
-    .. code-block:: shell
-
-        sudo systemctl restart pironman5.service
+4. 如果上述方法无效，可尝试重启 pironman5 服务：
 
 
-Infrared Receiver
+.. code-block:: shell
+
+  sudo systemctl restart pironman5.service
+
+
+红外接收器  
 ---------------------------
 
 .. image:: img/io_board_receiver.png
 
-* **Model**: IRM-56384, operating at 38KHz.
-* **Connection**: The IR receiver connects to **GPIO13**.
-* **D1**: An infrared reception indicator that blinks upon signal detection.
-* **J8**: A pin for enabling the infrared function. By default, a jumper cap is inserted for immediate functionality. Remove the cap to free GPIO13 if the IR receiver is not in use.
+* **型号**：IRM-56384，工作频率 38KHz  
+* **连接**：接入 **GPIO13**  
+* **D1**：接收到红外信号时闪烁  
+* **J8**：用于启用红外功能，默认已插跳线帽。如无需使用 IR，可移除跳线帽释放 GPIO13
 
-To utilize the IR receiver, verify its connection and install the necessary module:
+要启用红外接收器，请确认连接无误并安装所需模块：
 
-* Test the connection:
+* 检查设备节点是否存在：
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    sudo ls /dev |grep lirc
+  sudo ls /dev |grep lirc
 
-* Install the ``lirc`` module:
+* 安装 ``lirc`` 模块：
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    sudo apt-get install lirc -y
+  sudo apt-get install lirc -y
 
-* Now, test the IR Receiver by running the following command. 
+* 使用以下命令测试：
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    mode2 -d /dev/lirc0
+  mode2 -d /dev/lirc0
 
-* After running the command, press a button on the remote control, and the code of that button will be printed.
+* 按下遥控器任意按键，终端将输出按键的编码信息。
 
 
-RGB Fan Pins
+RGB 风扇引脚  
 ---------------
 
-The IO expansion board supports up to two 5V non-PWM fans. Both fans are controlled together. 
+IO 扩展板支持最多连接两颗 5V 非 PWM 风扇，两者统一控制。
 
-**FAN1** and **FAN 2** are two sets of fan pins. You need to connect the fan's red wire to "+", and the black wire to "-".
+**FAN1** 和 **FAN2** 为两个风扇接口，红线接 “+”，黑线接 “-”。
 
 .. image:: img/io_board_fan.png
 
-There are two sets of 2-pin connectors and two jumpers used to control the RGB fans and their LEDs. 
-By default, the jumpers are connected to these pins, allowing control of the fans and LEDs via GPIO6 and GPIO5. 
-If fan operation is not required, these jumpers can be removed to free up GPIO5 and GPIO6.
+
+两组 2 针风扇连接器及跳线帽默认连接至 GPIO6（风扇）和 GPIO5（风扇灯），支持 GPIO 控制。如果不需要风扇控制功能，可移除跳线帽释放引脚。
+
 
 .. image:: img/io_board_fan_j9.png
 
-
-After removing the jumper caps, the fan or fan LED will default to being off. 
-If activation is required, the two pads below can be bridged with solder. 
-Once connected, the fan/LED will turn on when the system powers up and turn off when the system is powered down, 
-but cannot be controlled via the IO port.
+跳线帽移除后风扇默认关闭。如需风扇开机即转动，可在下方焊盘处加锡桥接，此时风扇将在系统通电时开启、关机时关闭，但不再支持 GPIO 控制。
 
 .. image:: img/io_board_fan_hanpan.png
 
-.. **D2** is a fan signal indicator that lights up when the fan is active.
+.. **D2** 为风扇运行指示灯，风扇工作时点亮。
 
 .. .. image:: img/io_board_fan_d2.png
 
-.. You can use command to configure the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate.
+.. 使用以下命令配置 RGB 风扇运行模式，不同模式下的启动温度如下：
 
-For instance, if set to **1: Performance** mode, the RGB fans will activate at 50°C.
+例如，若设置为 **1: 性能模式**，RGB 风扇将在温度达到 50°C 时启动。
 
 .. code-block:: shell
 
   pironman5 -gm 3
 
-* **4: Quiet**: The RGB fans will activate at 70°C.
-* **3: Balanced**: The RGB fans will activate at 67.5°C.
-* **2: Cool**: The RGB fans will activate at 60°C.
-* **1: Performance**: The RGB fans will activate at 50°C.
-* **0: Always On**: The RGB fans will always on.
+* **4: 安静模式**：风扇在 70°C 启动  
+* **3: 平衡模式**：风扇在 67.5°C 启动  
+* **2: 冷却模式**：风扇在 60°C 启动  
+* **1: 性能模式**：风扇在 50°C 启动  
+* **0: 始终开启**：风扇始终转动
 
-If you connect the control pin of the RGB fan to different pins on the Raspberry Pi, you can use the following command to change the pin number.
+如风扇的控制引脚连接至其他 GPIO 引脚，可使用以下命令重新指定：
 
 .. code-block:: shell
 
   sudo pironman5 -gp 18
 
-Pin Headers
+引脚排针  
 --------------
 
 .. image:: img/io_board_pin_header.png
 
-Two right-angle header connectors extend the Raspberry Pi's GPIO, but note that the IR receiver, RGB LED, and fan occupy some pins. Remove the corresponding jumper caps to utilize these pins for other functions.
+两组直角排针用于拓展树莓派 GPIO，但需注意红外接收器、RGB LED、风扇等占用了部分引脚。可移除相应跳线帽释放引脚。
 
 .. list-table:: 
   :widths: 25 25
   :header-rows: 1
 
   * - Pironman 5
-    - Raspberry Pi 5
-  * - IR Receiver(Optional)
+    - 树莓派 5 引脚
+  * - 红外接收器（可选）
     - GPIO13
   * - OLED SDA
     - SDA
   * - OLED SCL
     - SCL
-  * - FAN(Optional)
+  * - 风扇（可选）
     - GPIO6
-  * - FLED(Optional)
+  * - 风扇灯（可选）
     - GPIO5  
-  * - RGB(Optional)
+  * - RGB（可选）
     - GPIO10

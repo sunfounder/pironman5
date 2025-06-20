@@ -124,7 +124,7 @@ rst_epilog += """
 
 .. |link_rpi_get_start| raw:: html
 
-    <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" target="_blank">Getting Started with Raspberry Pi</a>
+    <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" target="_blank">Raspberry Pi 入门指南</a>
 
 .. |link_rpi_imager| raw:: html
 

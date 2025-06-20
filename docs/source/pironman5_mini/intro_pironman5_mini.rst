@@ -3,15 +3,15 @@
 Pironman 5 Mini
 =========================================
 
-Thanks for choosing our |link_pironman5_mini|.
+感谢您选择我们的 |link_pironman5_mini|。
 
 .. image:: img/pironman5_mini_pic.jpg
     :width: 400
     :align: center
 
-The Pironman 5 Mini is the latest addition to the Pironman Raspberry Pi case series, designed as a compact yet highly functional solution for Raspberry Pi enthusiasts. With a sleek silver aluminum alloy body and transparent acrylic side panels, the Pironman 5 Mini combines style and performance in a small form factor.
+Pironman 5 Mini 是 Pironman 树莓派机箱系列的最新成员，专为追求小巧与高性能的树莓派爱好者设计。它采用银色铝合金外壳搭配透明亚克力侧板，兼具现代美感与出色性能。
 
-Key features include a dedicated power button, an active cooling system similar to the official Raspberry Pi cooler, an additional RGB fan mounted on the side panel for enhanced airflow, an RTC battery, and vibrant WS2812-5050 RGB LEDs. Its GPIO extender ensures you can easily expand the functionality of your Raspberry Pi. The case also supports NVMe SSDs via a PCIe 2.0 M.2 M key slot (sizes 2230, 2242, 2260, 2280), making it ideal for projects requiring fast and reliable storage.
+主要特性包括专用电源按钮、与官方散热方案类似的主动散热系统、侧面附带 RGB 风扇以增强气流、RTC 实时时钟电池，以及炫彩的 WS2812-5050 RGB 灯效。其配备的 GPIO 扩展器，方便您拓展树莓派的更多功能。此外，机箱支持通过 PCIe 2.0 M.2 M 键（支持 2230、2242、2260、2280 规格）连接 NVMe SSD，非常适合需要高速稳定存储的项目应用。
 
 .. toctree::
     :maxdepth: 1
@@ -27,30 +27,30 @@ Key features include a dedicated power button, an active cooling system similar 
     faq
 
 
-**Parameters**
+**产品参数**
 
-* Dimension: 67.8x98.6x101.5mm
-* Material
-    * Main Body: Silver Aluminum Alloy
-    * Two Side Panel: Transparent Acrylic
-* Support Platform: Raspberry Pi 5
-* Power Input: USB Type C, 5V/5A
-* Interfaces
-    * Raspberry Pi standard 40-Pin GPIO
-    * Micro SD socket
-    * USB Type C power input
+* 尺寸：67.8 x 98.6 x 101.5 毫米
+* 材质：
+    * 主体：银色铝合金
+    * 侧板：透明亚克力
+* 支持平台：Raspberry Pi 5
+* 电源输入：USB Type-C，5V/5A
+* 接口配置：
+    * Raspberry Pi 标准 40Pin GPIO
+    * Micro SD 卡槽
+    * USB Type-C 电源接口
     * 2 x USB 2.0
     * 2 x USB 3.0
-    * Gigabit LAN port
-    * 2 x 4Kp60 Micro HDMI Ports
-* 1 x Metal Power Button
-* 1 x RGB Fan (40x40x10mm)
-* 4 x WS2812-5050 RGB LEDs
-* 1 x Activer Cooler
-* 1 x PCIe 2.0 M.2 M key (2230, 2242, 2260, 2280) for NVMe SSD
-* 1 x 1220 Battery for RTC
+    * 千兆以太网接口
+    * 2 个 4Kp60 Micro HDMI 接口
+* 1 个金属电源按钮
+* 1 个 RGB 风扇（40x40x10 毫米）
+* 4 个 WS2812-5050 RGB LED
+* 1 个主动散热器
+* 1 个 PCIe 2.0 M.2 M 键插槽（支持 2230、2242、2260、2280）用于 NVMe SSD
+* 1 个 1220 RTC 实时时钟电池
 
-**Dimensional Drawing**
+**尺寸图**
 
 .. image:: img/pironman5_mini_dimension.png
     :width: 800

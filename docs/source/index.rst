@@ -1,27 +1,14 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Pironman 5 Series - NVMe M.2 SSD PCIe Mini PC Case for Raspberry Pi 5 
+Pironman 5 系列 - 适用于 Raspberry Pi 5 的 NVMe M.2 SSD PCIe 迷你电脑机箱
 ================================================================================
 
-Welcome to the official guide for the Pironman 5 Series products. This guide will help you identify your specific product within the series and provide step-by-step instructions for setup and installation.
+欢迎阅读 Pironman 5 系列产品官方指南。本指南将帮助您识别所购产品的具体型号，并提供详细的安装和设置步骤说明。
 
-Use the images below to identify the product you purchased. Once identified, click the corresponding link to access the detailed product introduction and specifications. After reviewing the introduction, you can proceed with system installation and the setup of the ``pironman5`` software.
+请参考下方图片以确认您所购买的产品型号。确认后，点击对应链接以查看该产品的详细介绍与规格。阅读完产品介绍后，您可继续进行系统安装以及 ``pironman5`` 软件的配置。
 
-.. .. note::
+..
+  .. note::
 
-..     This document is available in the following languages.
+..     本文档提供以下语言版本：
 
 ..     * |link_german_tutorials|
 ..     * |link_jp_tutorials|
@@ -32,9 +19,9 @@ Use the images below to identify the product you purchased. Once identified, cli
 ..     * |link_zh_tutorials|
 
 
-    .. Please click on the respective links to access the document in your preferred language.
+    .. 请点击相应链接以阅读您所需语言版本的文档。
 
-Based on the images below, select the product you own to learn more. Each link will take you to the respective product's introduction page.
+根据下方图片选择您所拥有的产品，了解更多信息。每个链接将跳转至对应产品的介绍页面。
 
 .. list-table:: 
    :widths: 25 25 25
@@ -47,74 +34,74 @@ Based on the images below, select the product you own to learn more. Each link w
      - |pic_pironman5_mini| 
      - |pic_pironman5_max|
 
-Below is a comparison of specifications for the Pironman 5 and Pironman 5 Mini. Use this table to understand the differences between these products.
+以下是 Pironman 5 与 Pironman 5 Mini 的规格对比表，可帮助您了解各型号之间的差异。
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 1
 
-   * - Specifications
+   * - 规格参数
      - :ref:`intro_pironman5`
      - :ref:`intro_pironman5_mini`
      - :ref:`intro_pironman5_max`
-   * - Compatible Devices 
+   * - 兼容设备 
      - Raspberry Pi 5
      - Raspberry Pi 5
      - Raspberry Pi 5
-   * - Input
-     - USB Type C, 5V/5A
-     - USB Type C, 5V/5A
-     - USB Type C, 5V/5A
-   * - Power Button 
+   * - 电源输入
+     - USB Type C，5V/5A
+     - USB Type C，5V/5A
+     - USB Type C，5V/5A
+   * - 电源按钮
      - ✔
      - ✔
      - ✔
-   * - Exterior Material 1
-     - Silver Aluminum Alloy
-     - Silver Aluminum Alloy
-     - Black Aluminum Alloy
-   * - Exterior Material 2
-     - Transparent Acrylic
-     - Black Acrylic
-     - Black Acrylic
-   * - Cooler
-     - Tower Cooler
-     - Active Cooler
-     - Tower Cooler
-   * - IR Receiver
+   * - 外壳材质 1
+     - 银色铝合金
+     - 银色铝合金
+     - 黑色铝合金
+   * - 外壳材质 2
+     - 透明亚克力
+     - 黑色亚克力
+     - 黑色亚克力
+   * - 散热器类型
+     - 塔式散热器
+     - 主动式散热器
+     - 塔式散热器
+   * - 红外接收器
      - ✔
      - X
      - ✔
-   * - RGB Fans Number
+   * - RGB 风扇数量
      - 2
      - 1
      - 2
-   * - Fan RGB Mode
-     - Sync with Fan
-     - Independent Control
-     - Independent Control
-   * - HDMI Ports
-     - 2 Standard HDMI Ports
-     - 2 Micro HDMI Ports
-     - 2 Standard HDMI Ports
-   * - OLED Display
+   * - RGB 风扇模式
+     - 与风扇同步
+     - 独立控制
+     - 独立控制
+   * - HDMI 接口
+     - 2 个标准 HDMI 接口
+     - 2 个 Micro HDMI 接口
+     - 2 个标准 HDMI 接口
+   * - OLED 显示屏
      - ✔
      - X
      - ✔
-   * - OLED Activation
-     - Always on
+   * - OLED 启动方式
+     - 始终开启
      - 
-     - Wake on Tap
-   * - Support NVMe SSD
+     - 触控唤醒
+   * - 支持 NVMe SSD 数量
      - 1
      - 1   
      - 2
-   * - Dimension
-     - 111.9x78.5x117mm
-     - 67.8x98.6x101.5mm  
-     - 111.9x78.5x117mm
+   * - 尺寸
+     - 111.9×78.5×117mm
+     - 67.8×98.6×101.5mm  
+     - 111.9×78.5×117mm
 
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
+如有任何疑问，请发送邮件至 service@sunfounder.com，我们将尽快回复您。
 
 
 .. raw:: html
@@ -131,5 +118,5 @@ If you have any questions, please send an email to service@sunfounder.com and we
 
 **Copyright Notice**
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+本手册中包括但不限于文字、图片及代码等内容的所有权均归 SunFounder 公司所有。仅限于个人学习、研究、欣赏或其他非商业、非盈利目的使用，且应遵守相关法规及版权法，不得侵犯作者及相关权利人的合法权益。任何个人或组织未经许可以营利为目的使用上述内容，公司保留追究法律责任的权利。
 

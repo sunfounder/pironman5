@@ -1,29 +1,15 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _set_up_pironman5:
 
-4. Setting Up or Installing Software
+4. 设置或安装软件
 ================================================
 
-Now that the system has been written to either the Micro SD or NVMe SSD, you can insert them into the Pironman 5 slot. Then press the power button to turn on the device.
+现在，系统已经写入 Micro SD 卡或 NVMe SSD，您可以将其插入 Pironman 5 的插槽中。然后按下电源按钮启动设备。
 
-After powering on, you will see the various power LEDs lit up, but the OLED screen, RGB LEDs, and RGB fans (the two fans on the side) will not be operational yet, as they need to be configured. If there is a screen garbling issue, please ignore it for now; it will be resolved after configuration.
+启动后，您会看到各个电源指示灯亮起，但 OLED 屏幕、RGB 灯和 RGB 风扇（侧边两个风扇）暂时还不会工作，因为这些功能尚未进行配置。如果屏幕出现乱码，请暂时忽略，后续配置完成后将恢复正常。
 
-Before configuring, you need to boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
+在进行配置之前，您需要先启动并登录到您的树莓派系统。如果您不确定如何登录，可以访问树莓派官方网站：|link_rpi_get_start|。
 
-You can then proceed to select the configuration tutorial based on your system.
+接下来，请根据您所使用的系统选择对应的配置教程：
 
 
 .. toctree::
@@ -33,23 +19,21 @@ You can then proceed to select the configuration tutorial based on your system.
     set_up_home_assistant
     set_up_batocera
 
+**关于电源按钮**
 
-**About Power Button**
+该电源按钮引出的是树莓派 5 的原生电源按钮，其功能与树莓派 5 的电源键完全一致。
 
-The power button brings out the power button of the Raspberry Pi 5, and it functions just like the power button of the Raspberry Pi 5.
-
-* **Shutdown**
-
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system, press the power button a single time to initiate a shutdown.
-    * To force a hard shutdown, press and hold the power button.
-
-* **Power on**
-
-    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
-
-* If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
+* **关机操作**
 
 
-    
-    
+    * 若您运行的是树莓派 **Bookworm Desktop** 系统，可快速连续按两下电源键实现关机；
+    * 若您运行的是树莓派 **Bookworm Lite** 系统，按下一次电源键即可执行关机；
+    * 若需强制关机，长按电源按钮即可。
+
+* **开机操作**
+
+
+    * 当树莓派已关机但仍通电时，短按一次电源按钮可开机。
+
+* 若您运行的是不支持电源键关机的系统，可通过长按 5 秒强制关机，之后短按一次实现开机。
+

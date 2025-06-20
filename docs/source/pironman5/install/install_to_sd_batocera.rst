@@ -1,69 +1,55 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _install_to_sd_ubuntu:
 
-Installing the OS on a Micro SD Card
+在 Micro SD 卡上安装操作系统
 =============================================
 
-If you are using a Micro SD card, you can follow the tutorial below to install the system onto your Micro SD card.
+如果您打算使用 Micro SD 卡安装系统，可以按照以下教程将系统写入 Micro SD 卡中。
 
 
 **Required Components**
 
-* A Personal Computer
-* A Micro SD card and Reader
+* 一台个人电脑
+* 一张 Micro SD 卡及其读卡器
 
 **Steps**
 
-#. First, navigate to the |link_batocera_download| page, select **Raspberry Pi 5 B**, and click to download.
+#. 首先，访问 |link_batocera_download| 页面，选择 **Raspberry Pi 5 B**，然后点击下载。
 
-   .. image:: img/batocera_download.png
-      :width: 90%
-      
-
-#. Unzip the downloaded file ``batocera-xxx-xx-xxxxxxxx.img.gz``.
-
-#. Insert your SD card into your computer or laptop using a Reader.
-
-#. Within the |link_rpi_imager|, click on the **Operating System** tab.
-
-   .. image:: img/os_choose_os.png
+    .. image:: img/batocera_download.png
       :width: 90%
 
-#. Scroll down to the bottom of the page and select **Use Custom**.
 
-   .. image:: img/batocera_os_use_custom.png
+#. 解压下载的文件 ``batocera-xxx-xx-xxxxxxxx.img.gz``。
+
+#. 使用读卡器将 SD 卡插入您的电脑或笔记本电脑。
+
+#. 打开 |link_rpi_imager|，点击 **Operating System** 选项卡。
+
+    .. image:: img/os_choose_os.png
       :width: 90%
-      
 
-#. Choose the system file you have just unzipped, ``batocera-xxx-xx-xxxxxxxx.img``, and then click **Open**.
+#. 向下滚动页面底部，选择 **Use Custom**。
 
-   .. image:: img/batocera_os_choose.png
+    .. image:: img/batocera_os_use_custom.png
       :width: 90%
-      
 
-#. Click **Choose Storage** and select the appropriate storage device for the installation.
 
-   .. image:: img/os_choose_sd.png
+#. 选择刚刚解压的系统镜像文件 ``batocera-xxx-xx-xxxxxxxx.img``，然后点击 **Open**。
+
+    .. image:: img/batocera_os_choose.png
       :width: 90%
-      
 
-#. Now you can click **NEXT**. If the storage device contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
 
-   .. image:: img/os_continue.png
+#. 点击 **Choose Storage**，并选择正确的存储设备以进行安装。
+
+    .. image:: img/os_choose_sd.png
       :width: 90%
-      
 
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the Micro SD Card!
+
+#. 现在可以点击 **NEXT**。如果存储设备中已有数据，请务必提前备份以防数据丢失。如果不需要备份，点击 **Yes** 继续操作。
+
+    .. image:: img/os_continue.png
+      :width: 90%
+
+
+#. 当您看到 “Write Successful” 的弹窗提示时，说明系统镜像已经成功写入并校验完成。现在，您可以使用这张 Micro SD 卡启动 Raspberry Pi！

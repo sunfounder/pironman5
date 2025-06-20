@@ -1,34 +1,20 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-3. Installing the Operating System
+3. 安装操作系统
 =======================================
 
 .. note::
 
-    You need to install an OS that supports Raspberry Pi 5. Please use the latest Raspberry Pi Imager tool for system installation. The currently tested systems are:
+    您需要安装支持 Raspberry Pi 5 的操作系统。请使用最新版 Raspberry Pi Imager 工具进行系统安装。目前已测试可用的系统如下：
 
    .. image:: img/compitable_os.png
 
 .. note::
 
-    If you want to use the OpenMediaVault OS, please install the Raspberry Pi OS Lite.
+    如果您打算使用 OpenMediaVault 操作系统，请先安装 Raspberry Pi OS Lite。
 
     .. image:: ../img/omv/omv-install-1.png
 
 
-In this chapter, you will learn how to install the operating systems. All the installation steps depend on the |link_rpi_imager|, which you need to install first.
+本章节将介绍如何安装操作系统。所有安装步骤均依赖于 |link_rpi_imager|，请先安装该工具。
 
     .. toctree::
         :maxdepth: 1

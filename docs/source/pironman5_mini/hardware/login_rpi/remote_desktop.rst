@@ -1,31 +1,17 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _remote_desktop_mini:
 
-Remote Desktop Access for Raspberry Pi
+通过远程桌面访问 Raspberry Pi
 ==================================================
 
-For those preferring a graphical user interface (GUI) over command-line access, the Raspberry Pi supports remote desktop functionality. This guide will walk you through setting up and using VNC (Virtual Network Computing) for remote access.
+如果您更喜欢图形用户界面（GUI）而非命令行操作，Raspberry Pi 支持远程桌面功能。本指南将引导您通过 VNC（虚拟网络计算）配置并使用远程桌面访问功能。
 
-We recommend using `VNC® Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_ for this purpose.
+我们推荐使用 `VNC® Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_ 来进行远程连接。
 
-**Enabling VNC Service on Raspberry Pi**
+**启用 Raspberry Pi 的 VNC 服务**
 
-VNC service comes pre-installed in the Raspberry Pi OS but is disabled by default. Follow these steps to enable it:
+Raspberry Pi OS 默认已预装 VNC 服务，但默认未启用。请按照以下步骤启用：
 
-#. Enter the following command in the Raspberry Pi terminal:
+#. 在 Raspberry Pi 的终端中输入以下命令：
 
     .. raw:: html
 
@@ -35,42 +21,42 @@ VNC service comes pre-installed in the Raspberry Pi OS but is disabled by defaul
 
         sudo raspi-config
 
-#. Navigate to **Interfacing Options** using the down arrow key, then press **Enter**.
+#. 使用方向键导航至 **Interfacing Options**，然后按 **Enter**。
 
    .. image:: img/bookwarm_config_interface.png
       :width: 90%
       
 
-#. Select **VNC** from the options.
+#. 从选项中选择 **VNC**。
 
    .. image:: img/bookwarm_vnc.png
       :width: 90%
       
 
-#. Use the arrow keys to choose **<Yes>** -> **<OK>** -> **<Finish>** and finalize the VNC service activation.
+#. 使用方向键依次选择 **<Yes>** -> **<OK>** -> **<Finish>**，完成 VNC 服务启用。
 
    .. image:: img/bookwarn_vnc_yes.png
       :width: 90%
       
 
-**Logging in via VNC Viewer**
+**使用 VNC Viewer 登录**
 
-#. Download and install `VNC Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_ on your personal computer.
+#. 在您的电脑上下载并安装 `VNC Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_。
 
-#. Once installed, launch VNC Viewer. Enter the hostname or IP address of your Raspberry Pi and press Enter.
+#. 安装完成后，启动 VNC Viewer，输入 Raspberry Pi 的主机名或 IP 地址，并按回车键。
 
    .. image:: img/vnc_viewer1.png
       :width: 90%
       
 
-#. When prompted, enter your Raspberry Pi's username and password, then click **OK**.
+#. 出现提示时，输入您的 Raspberry Pi 用户名和密码，然后点击 **OK**。
 
    .. image:: img/vnc_viewer2.png
       :width: 90%
       
 
-#. You'll now have access to your Raspberry Pi's desktop interface.
+#. 您现在可以访问 Raspberry Pi 的图形化桌面界面了。
 
    .. image:: img/bookwarm.png
       :width: 90%
-      
+

@@ -1,83 +1,66 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 Pironman 5 Mini HAT
 ===========================================
 
 
 .. image:: img/pironman5mini_hat.png
 
-RGB LEDs
+RGB 灯效
 ------------
 
 .. image:: img/io_board_rgb.png
 
-The board features 4 WS2812 RGB LEDs, 
-offering customizable control. 
-Users can turn them on or off, change the color, 
-adjust the brightness, switch display modes, and set the speed of changes.
+该主板配备了 4 颗 WS2812 RGB LED，支持多种自定义控制。用户可开启或关闭灯效、更改颜色、调节亮度、切换显示模式，以及设置变换速度。
 
-* To modify the on and off state of the RGB LEDs, ``true`` to turn on the RGB LEDs, ``false`` to turn them off.
+* 控制 RGB 灯的开关状态，设置为 ``true`` 开启， ``false`` 关闭：
 
 .. code-block:: shell
 
   pironman5 -re true
 
-* To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
+* 更改颜色，输入十六进制颜色值，例如 ``fe1a1a``：
 
 .. code-block:: shell
 
   pironman5 -rc fe1a1a
 
-* To change the brightness of the RGB LED (range: 0 ~ 100%):
+* 设置亮度（范围：0 ~ 100%）：
 
 .. code-block:: shell
 
   pironman5 -rb 100
 
-* To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
+* 切换显示模式，可选项包括： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``：
 
 .. note::
 
-  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``pironman5 -rc``.
+  如果设置为 ``rainbow``、 ``rainbow_reverse`` 或 ``hue_cycle`` 模式，则无法再使用 ``pironman5 -rc`` 命令设置颜色。
 
 .. code-block:: shell
 
   pironman5 -rs breathing
 
-* To modify the speed of change (range: 0 ~ 100%):
+* 设置灯效变化速度（范围：0 ~ 100%）：
 
 .. code-block:: shell
 
   pironman5 -rp 80
 
-RGB Control Pin
+RGB 控制引脚
 -------------------------
 
-The RGB LED is driven by SPI and connected to **GPIO10**, which is also the SPI MOSI pin. 
-The two pins are used to connect the RGB to GPIO10. If not needed, the jumper can be removed.
+RGB 灯通过 SPI 驱动，连接至 **GPIO10**，该引脚也是 SPI 的 MOSI 引脚。RGB 与 GPIO10 的连接通过两根引脚实现，如无需此功能，可移除跳线帽。
+
 
  .. image:: img/io_board_rgb_pin.png
 
-RGB OUT Pins
+RGB OUT 扩展引脚
 -------------------------
 
  .. image:: img/io_board_rgb_out.png
 
-The WS2812 RGB LEDs support serial connection, allowing for the attachment of an external RGB LED strip. Connect the **SIG** pin to the external strip's **DIN** pin for expansion.
+WS2812 RGB 支持串联扩展，可外接 RGB 灯带。请将 **SIG** 引脚连接至外部灯带的 **DIN** 引脚。
 
-The default setup includes 4 RGB LEDs. Connect additional LEDs and update the count using:
+默认配置包含 4 颗 RGB 灯，如需扩展，可使用以下命令更新数量：
 
 .. code-block:: shell
 
@@ -85,151 +68,150 @@ The default setup includes 4 RGB LEDs. Connect additional LEDs and update the co
 
 
 
-RGB Fan Pins
+RGB 风扇引脚
 ---------------
 
-The IO expansion board supports to a 5V non-PWM fan. 
+IO 扩展板支持 5V 非 PWM 风扇。
 
-You need to connect the fan's wire to FAN port.
+请将风扇电源线连接至 FAN 接口。
 
  .. image:: img/io_board_fan.png
 
-The two sets of pins below J9 are the enable pins for the fan and its RGB. By default, jumpers are inserted on these pins, allowing GPIO6 and GPIO5 to control the on and off states of the fan and its LED. If the fan and LED are not required to be operated, the corresponding jumpers can be removed to release GPIO6 or GPIO5.
+J9 下方的两组针脚分别控制风扇与风扇灯光的启用。默认跳线帽已插入，允许使用 GPIO6 和 GPIO5 控制风扇和其 RGB 灯的开关。若无需此功能，可移除跳线以释放对应 GPIO 引脚。
 
  .. image:: img/io_board_fan_j9.png
 
-You can use command to configure the operating mode of the RGB fan. These modes determine the conditions under which the RGB fan will activate.
+可通过命令配置 RGB 风扇的运行模式，不同模式决定风扇启动所需的温度条件：
 
-  For instance, if set to **1: Performance** mode, the RGB fan will activate at 50°C.
+  例如，设置为 **1: Performance** 模式时，风扇将在温度达到 50°C 时启动：
 
   .. code-block:: shell
 
     pironman5 -gm 3
 
-  * **4: Quiet**: The RGB fan will activate at 70°C.
-  * **3: Balanced**: The RGB fan will activate at 67.5°C.
-  * **2: Cool**: The RGB fan will activate at 60°C.
-  * **1: Performance**: The RGB fan will activate at 50°C.
-  * **0: Always On**: The RGB fan will always on.
+  * **4: Quiet**：70°C 启动风扇
+  * **3: Balanced**：67.5°C 启动风扇
+  * **2: Cool**：60°C 启动风扇
+  * **1: Performance**：50°C 启动风扇
+  * **0: Always On**：风扇始终运行
 
-If you connect the control pin of the RGB fan to different pins on the Raspberry Pi, you can use the following command to change the pin number.
+若将风扇控制引脚连接至 Raspberry Pi 的其他 GPIO 引脚，可使用以下命令修改引脚编号：
 
 .. code-block:: shell
 
   sudo pironman5 -gp 18
 
 
-Power Switch Conventor
+电源按钮连接器
 --------------------------------------
 
-**Adding the Power Button**
+**添加电源按钮**
 
-* The Raspberry Pi 5 features a **J2** jumper, situated between the RTC battery connector and the board edge. This breakout enables the addition of a custom power button to the Raspberry Pi 5 by connecting a Normally Open (NO) momentary switch across the two pads. Briefly engaging this switch mimics the onboard power button's functionality.
+* Raspberry Pi 5 上的 **J2** 跳线位于 RTC 电池接口与板边之间。通过该跳线，可外接一个常开（NO）瞬时按钮，实现与主板电源键相同的功能。
 
   .. image:: img/pi5_j2.jpg
 
-* The Pironman 5 Mini extends the **J2** jumper to an external power button using two Pogo pins.
+* Pironman 5 Mini 通过两个弹片针将 **J2** 跳线延伸至外部电源按钮接口。
 
   .. image:: img/power_switch_j2.jpeg
 
   .. image:: img/power_switch_j2_2.jpeg
 
-* Now, the Raspberry Pi 5 can be powered on and off using the Power Button.
+* 现在，您可以通过电源按钮控制 Raspberry Pi 5 的开关机。
 
   .. image:: img/pironman_button.JPG
 
-**Power Cycling**
+**电源控制行为**
 
-Upon initially powering your Raspberry Pi 5, it will automatically turn on and boot into the operating system without the need to press the button.
+首次通电时，Raspberry Pi 5 将自动启动系统，无需按下电源键。
 
-If running the Raspberry Pi Desktop, a brief press of the power button initiates a clean shutdown process. A menu will appear, offering options to shutdown, reboot, or logout. Selecting an option or pressing the power button again will start a clean shutdown.
+如果运行的是 Raspberry Pi 桌面系统，短按电源按钮将触发关机菜单，提供关机、重启、注销等选项。再次按下按钮或点击选项，即可执行干净关机。
 
 .. image:: img/button_shutdown.png
 
-**Shutdown**
+**关机说明**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system without a desktop, press the power button a single time to initiate a shutdown.
-    * To force a hard shutdown, press and hold the power button.
+* 若运行的是 **Bookworm Desktop** 桌面系统，可快速双击电源键进行关机。
+* 若运行的是不带桌面的 **Bookworm Lite** 系统，单击一次即可关机。
+* 若需强制关机，请长按电源键。
 
+**开机说明**
 
-**Power on**
-
-    * If the Raspberry Pi board is shut down, but still powered, single-press to power on from a shutdown state.
+* 当 Raspberry Pi 已关机但仍通电时，单击电源键可重新开机。
 
 .. note::
 
-    If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
+    如果当前系统不支持关机按钮，可长按 5 秒强制关机，之后单击按钮实现开机。
 
 
 
 
-NVMe Module
+NVMe 模块
 -------------------------------------------
 
 
-Pironman 5 mini integrates a PCIe adapter module for NVMe SSD. It supports four different sizes of NVMe SSDs: 2230, 2242, 2260, and 2280, all fitting into an M.2 M key slot.
+Pironman 5 Mini 集成了用于 NVMe SSD 的 PCIe 适配模块，支持 2230、2242、2260 和 2280 四种规格的 NVMe M.2 SSD，接口为 M key。
 
 .. image:: img/nvme_p.png
 
 
-* **STA**: A Status LED indicator.
-* **PWR**: A Power LED indicator.
+* **STA**：状态指示灯  
+* **PWR**：电源指示灯
 
   .. image:: img/nvme_led.png
 
-* The module connects through a 16P 0.5mm reverse FFC (Flexible Flat Cable) or a custom impedance-matched FPC (Flexible Printed Circuit) cable.
+* 模块通过 16Pin 0.5mm 反向 FFC（柔性扁平线）或定制阻抗匹配的 FPC（柔性电路板）进行连接。
 
   .. image:: img/nvme_pcie.png
 
-* **FORCE ENABLE**: The onboard power supply is activated by the switch signal from the PCIe interface. After the Raspberry Pi is powered on, it sends a signal to turn on the 3.3V power supply. If some systems do not support the switch signal or for other reasons, you can short-circuit J2 FORCE ENABLE by soldering a wire between the two floating pads to force the onboard 3.3V power supply to power the NVMe.
+* **FORCE ENABLE**：模块上电依赖于来自 PCIe 接口的开关信号。若某些系统不支持该信号，可通过将 J2 的两个焊盘短接，使 NVMe 强制上电。
 
   .. image:: img/nvme_j2.png
 
-**About the Model**
+**关于型号**
 
-M.2 SSDs, known for their compact size, come in various types mainly differentiated by their keying (notch design on the connector) and the interface they use. Here are the primary types:
+M.2 SSD 根据接口与金手指凹槽的不同，主要分为以下几种：
 
-* **M.2 SATA SSDs**: These use the SATA interface, similar to 2.5-inch SATA SSDs but in the smaller M.2 form factor. They are limited by the SATA III maximum speeds of around 600 MB/s. These SSDs are compatible with M.2 slots keyed for B and M keys.
-* **M.2 NVMe SSDs**: These SSDs use the NVMe protocol over PCIe lanes and are significantly faster than M.2 SATA SSDs. They are suitable for applications requiring high read/write speeds like gaming, video editing, and data-intensive tasks. These SSDs typically require M-keyed slots. These drives utilize the PCIe (Peripheral Component Interconnect Express) interface, with different versions like 3.0, 4.0, and 5.0. Each new version of PCIe effectively doubles the data transfer speed of its predecessor. However, the Raspberry Pi 5 uses a PCIe 3.0 interface, capable of delivering transfer speeds up to 3,500 MB/s. 
+* **M.2 SATA SSD**：使用 SATA 接口，传输速率约 600 MB/s，兼容 B key 与 M key 插槽。
+* **M.2 NVMe SSD**：使用 NVMe 协议，基于 PCIe 通道，读写速度显著优于 SATA SSD，适合游戏、视频编辑、大数据处理等场景。一般需插入 M-key 插槽，常见版本有 PCIe 3.0、4.0、5.0，传输速率逐代翻倍。Raspberry Pi 5 支持 PCIe 3.0，最高传输速度可达 3500 MB/s。
 
-M.2 SSDs come in three key types: B key, M key, and B+M key. However, later on, the B+M key was introduced, combining the functionalities of the B key and M key. As a result, it replaced the standalone B key. Please refer to the image below.
+M.2 SSD 的接口类型包括 B key、M key 和 B+M key。目前大多数 SATA 型 SSD 为 B+M key，NVMe 型 SSD 多为 M key。请参考下图：
 
 .. image:: img/ssd_key.png
 
 
-In general, M.2 SATA SSDs are B+M-keyed (can fit in sockets for B-keyed and M-keyed modules), while M.2 NVMe SSDs for PCIe 3.0 x4 lane are M-keyed.
+一般而言，M.2 SATA 为 B+M-key，M.2 NVMe（PCIe 3.0 x4）为 M-key。
 
 .. image:: img/ssd_model2.png
 
-**About the Length**
+**关于长度**
 
-M.2 modules come in different sizes and can also be utilized for Wi-Fi, WWAN, Bluetooth, GPS, and NFC.
+M.2 模块支持不同长度的规格，也常用于 Wi-Fi、WWAN、蓝牙、GPS 和 NFC 等用途。
 
-Pironman 5 supports four (PCIe Gen 2.0 / PCIe Gen 3.0) NVMe M.2 SSD sizes based on their names: 2230, 2242, 2260, and 2280. The "22" is the width in millimeters (mm), and the two following numbers are the length. The longer the drive, the more NAND flash chips can be mounted; therefore, the more capacity.
+Pironman 5 支持 4 种 NVMe M.2 SSD 尺寸（PCIe Gen 2.0 / Gen 3.0）：2230、2242、2260、2280。其中“22”表示宽度（单位 mm），后两位为长度。长度越大，可安装更多 NAND 闪存芯片，容量也越大。
 
 
 .. image:: img/m2_ssd_size.png
   :width: 600
 
 
-1220RTC Battery Holder
+1220RTC 电池座
 ---------------------------------
 
 .. image:: img/battery_holder.png
 
 
-A 1220RTC battery holder is incorporated for convenient installation of an RTC battery. It connects to the Raspberry Pi's RTC interface via an SH1.0 2P reverse cable. 
+设备内置 1220 型 RTC 电池座，便于安装实时时钟电池。通过 SH1.0 2P 反向连接线与 Raspberry Pi 的 RTC 接口连接。
 
-The battery holder is compatible with both CR1220 and ML1220 batteries. If using an ML1220 (Lithium Manganese Dioxide battery), charging can be configured directly on the Raspberry Pi. Note that the CR1220 is not rechargeable.
+该电池座兼容 CR1220 和 ML1220 电池。如果使用可充电的 ML1220（锂二氧化锰电池），可在 Raspberry Pi 上配置涓流充电。请注意，CR1220 不可充电。
 
-**Enabling Trickle Charging**
+**启用涓流充电功能**
 
 .. warning::
 
-  If you're using a CR1220 battery, do not enable trickle charging as it can cause irreparable damage to the battery and risk damaging the board.
+  若使用的是 CR1220 电池，请勿启用涓流充电，否则可能造成电池或主板永久损坏。
 
-By default, the trickle charging feature for the battery is disabled. The ``sysfs`` files indicate the current trickle charging voltage and limits:
+系统默认关闭涓流充电功能。通过 ``sysfs`` 可查看当前涓流充电电压与限制：
 
 .. code-block:: shell
 
@@ -240,21 +222,21 @@ By default, the trickle charging feature for the battery is disabled. The ``sysf
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-To enable trickle charging, add ``rtc_bbat_vchg`` to ``/boot/firmware/config.txt``:
+启用涓流充电步骤如下，在 ``/boot/firmware/config.txt`` 文件中添加配置：
 
-  * Open the ``/boot/firmware/config.txt``.
-  
+  * 打开配置文件：
+
     .. code-block:: shell
-    
+
       sudo nano /boot/firmware/config.txt
-      
-  * Add ``rtc_bbat_vchg`` to ``/boot/firmware/config.txt``.
-  
+
+  * 添加以下内容：
+
     .. code-block:: shell
-    
+
       dtparam=rtc_bbat_vchg=3000000
-  
-After rebooting, the system will display:
+
+重启后，可看到系统显示如下：
 
 .. code-block:: shell
 
@@ -265,16 +247,16 @@ After rebooting, the system will display:
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-This confirms the battery is now under trickle charging. To disable this feature, simply remove the ``dtparam`` line from ``config.txt``.
+说明当前电池已开启涓流充电。如需关闭，只需删除 ``config.txt`` 中对应的 ``dtparam`` 行。
 
 
 
-Pin Headers
+引脚排针
 --------------
 
 .. image:: img/io_board_pin_header.png
 
-Two right-angle header connectors extend the Raspberry Pi's GPIO, but note that the IR receiver, RGB LED, and fan occupy some pins. Remove the corresponding jumper caps to utilize these pins for other functions.
+主板设有两个直角引脚排针，用于扩展 Raspberry Pi 的 GPIO 功能。但请注意，红外接收器、RGB 灯和风扇已占用部分 GPIO 引脚。如需使用对应引脚，请先移除跳线帽释放资源。
 
 .. list-table:: 
   :widths: 25 25
@@ -282,9 +264,9 @@ Two right-angle header connectors extend the Raspberry Pi's GPIO, but note that 
 
   * - Pironman 5 Mini
     - Raspberry Pi 5
-  * - FAN(Optional)
+  * - FAN（可选）
     - GPIO6
-  * - FAN RGB(Optional)
+  * - FAN RGB（可选）
     - GPIO5
-  * - RGB(Optional)
+  * - RGB（可选）
     - GPIO10

@@ -1,52 +1,39 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-1. What Else Should You Prepare?
+1. 你还需要准备什么？
 ===================================
 
-To get started with your Pironman 5, you'll need to gather a few essential components and some optional extras depending on your project requirements.
+在开始使用 Pironman 5 之前，您需要准备一些必要的组件，以及根据项目需求可选的配件。
 
-**Essential Components**
+**必备组件**
 
 * Raspberry Pi 5 
 
-    The Pironman 5 is fully compatible with the Raspberry Pi 5.
+    Pironman 5 完全兼容树莓派 5。
 
-* 5V/5A Power Adapter
+* 5V/5A 电源适配器
 
-    A 5V/5A power adapter is required to power the Pironman 5 and its components.
+    Pironman 5 及其组件需要使用 5V/5A 的电源适配器供电。
 
-* Micro SD Card
+* Micro SD 卡
  
-    It is recommended to use an SD card with a minimum of 16GB of storage for Raspberry Pi OS. For Raspberry Pi OS Lite, a minimum of 4GB is advised.
+    推荐使用容量不少于 16GB 的 SD 卡来安装 Raspberry Pi OS。如果是安装 Raspberry Pi OS Lite，最低建议使用 4GB 容量的 SD 卡。
 
-**Optional Components**
+
+**可选组件**
 
 * M.2 NVMe SSD
 
-    The Pironman 5 features an NVMe PIP with an M.2 SSD connector, accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec).
+    Pironman 5 配备 NVMe PIP 模块，支持 M.2 接口 SSD，兼容四种规格：2230、2242、2260 和 2280。默认支持 PCIe Gen 2.0（5 GT/sec）传输速度，也可强制切换至 Gen 3.0（10 GT/sec）。
 
-* Screen
+* 显示屏
 
-    To access the Raspberry Pi's desktop environment, a screen such as a TV or a computer monitor is required.
+    若需进入树莓派的桌面环境，需要连接显示设备，如电视或电脑显示器。
     
-* HDMI Cable
+* HDMI 线缆
 
-    The Raspberry Pi 5's HDMI ports have been adapted to standard HDMI Type A interfaces via a USB HDMI adapter. Therefore, a standard HDMI to HDMI cable is needed to connect the Pironman 5 to a display.
+    树莓派 5 的 HDMI 接口通过 USB 转 HDMI 适配器转换为标准 HDMI Type A 接口，因此需要一条标准 HDMI 对 HDMI 的线缆来连接 Pironman 5 与显示器。
 
-* Mouse & Keyboard
+* 鼠标与键盘
 
-    Any USB port on the Pironman 5 can be used to connect a wired keyboard and mouse, or a USB Bluetooth receiver for wireless peripherals.
+    可通过 Pironman 5 的任意 USB 接口连接有线鼠标与键盘，或使用 USB 蓝牙接收器连接无线外设。
 
-By ensuring you have these components ready, you'll be fully equipped to set up and enjoy your Pironman 5 with your Raspberry Pi 5!
+确保这些组件准备就绪后，您就可以顺利开始使用树莓派 5 和 Pironman 5 了！

@@ -1,27 +1,13 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _max_install_batocera:
 
-Install the Batocera Linux
+安装 Batocera Linux
 ======================================================
 
-|link_batocera| is an open-source and completely free retro-gaming distribution that can be copied to a USB stick or an SD card with the aim of turning any computer/nano computer into a gaming console during a game or permanently.
+|link_batocera| 是一个开源且完全免费的复古游戏操作系统发行版，可以被写入到 U 盘或 SD 卡中，旨在将任意电脑或微型计算机临时或永久变成游戏主机。
 
-You can choose the installation method based on whether you have a Micro SD or an NVMe SSD at hand.
+你可以根据手头是否有 Micro SD 卡或 NVMe SSD 来选择合适的安装方式。
 
-Installing directly onto the NVMe SSD involves an additional step compared to installing on the Micro SD: you must update the Raspberry Pi's bootloader because it defaults to boot from the Micro SD card. Update the bootloader to prioritize booting from the NVMe SSD.
+相比安装到 Micro SD 卡，直接安装到 NVMe SSD 多了一步：你需要更新树莓派的启动加载器，因为其默认从 Micro SD 卡启动。更新启动加载器后，树莓派将优先从 NVMe SSD 启动。
 
 .. toctree::
     :maxdepth: 1

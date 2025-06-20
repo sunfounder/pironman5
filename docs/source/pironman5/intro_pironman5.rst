@@ -1,32 +1,32 @@
-.. _intro_pironman5:
+.. _intro_pironman5: 
 
 Pironman 5
 =================================
 
-Thanks for choosing our |link_pironman5|.
+感谢您选择我们的 |link_pironman5|。
 
 .. image:: img/pironman5_pic.jpg
     :width: 400
     :align: center
 
-Pironman 5 is a mini PC case designed specifically for the Raspberry Pi. Crafted from durable aluminum, it features an advanced cooling system with a tower cooler and dual RGB fans, along with dust filters to ensure optimal performance. The case supports NVMe M.2 SSDs (2230, 2242, 2260, 2280) and is fully compatible with the Hailo-8L AI accelerator, providing enhanced storage and powerful edge AI capabilities. A built-in 0.96” OLED display delivers real-time insights into CPU usage, memory, temperature, and IP address, while dual HDMI ports, customizable RGB LEDs, a secure power switch, an IR receiver, and an external GPIO extender boost connectivity and functionality. Ideal for NAS, Home Assistant, media centers, gaming setups, and AI projects, Pironman 5 comes with a clear, step-by-step guide for easy assembly and setup.
+Pironman 5 是一款专为树莓派打造的迷你 PC 机箱，采用坚固的铝合金材质，并配备了高效散热系统，包括塔式散热器和双 RGB 风扇，搭配防尘滤网，确保系统运行稳定。机箱支持 NVMe M.2 SSD（2230、2242、2260、2280）并完全兼容 Hailo-8L AI 加速模块，提升存储性能与边缘 AI 能力。内置 0.96 英寸 OLED 屏可实时显示 CPU 使用率、内存、温度和 IP 地址，另外配备双 HDMI 接口、可自定义 RGB 灯效、安全电源开关、红外接收器和外部 GPIO 扩展模块，大幅增强连接性与功能性。Pironman 5 非常适合搭建 NAS、Home Assistant、媒体中心、游戏主机和 AI 项目，配套提供清晰的分步安装说明，轻松完成组装与配置。
 
 .. toctree::
     :maxdepth: 1
 
-    About this Kit <self>
-    what_do_we_need    
-    assembly_instructions
-    install/install_the_os
-    set_up/set_up_pironman5
-    control/control_pironman5
-    hardware/hardware
-    compitable_nvme_ssd
-    assemble_camera
-    faq
+    关于本套件 <self>
+    所需配件    
+    组装指南
+    安装系统
+    配置 Pironman 5
+    控制 Pironman 5
+    硬件说明
+    支持的 NVMe SSD
+    安装摄像头模块
+    常见问题
 
 
-**Interfaces**
+**接口示意图**
 
 .. image:: img/pironman5_interfaces1.png
     :width: 500
@@ -34,33 +34,33 @@ Pironman 5 is a mini PC case designed specifically for the Raspberry Pi. Crafted
 .. image:: img/pironman5_interfaces2.png
     :width: 400
 
-**Parameters**
+**产品参数**
 
-* Dimension: 111.9x78.5x117mm
-* Material
-    * Main Body: Silver Aluminum Alloy
-    * Two Side Panel: Transparent Acrylic
-* Support Platform: Raspberry Pi 5
-* Power Input: USB Type C, 5V/5A
-* Interfaces
-    * Raspberry Pi standard 40-Pin GPIO
-    * spring-loaded Micro SD socket
-    * USB Type C power input
+* 尺寸：111.9 x 78.5 x 117mm
+* 材质：
+    * 主体：银色铝合金
+    * 两侧面板：透明亚克力
+* 支持平台：树莓派 5
+* 电源输入：USB Type-C，5V/5A
+* 接口配置：
+    * 树莓派标准 40Pin GPIO
+    * 弹簧式 Micro SD 卡槽
+    * USB Type-C 电源输入
     * 2 x USB 2.0
     * 2 x USB 3.0
-    * Gigabit LAN port
-    * 2 x 4Kp60 Standard HDMI Output
-* 1 x Metal Power Button
-* 1 x 0.96'' 128x64 OLED Screen
-* 1 x PWM Fan (40x40x10mm)
-* 2 x RGB Fans (40x40x10mm)
-* 4 x WS2812-5050 RGB LEDs
-* 1 x 38KHz IR Receiver
-* 1 x Tower Cooler
-* 1 x PCIe 2.0 M.2 M key (2230, 2242, 2260, 2280) for NVMe SSD
-* 1 x 1220 Battery for RTC
+    * 千兆以太网接口
+    * 2 x 4Kp60 标准 HDMI 输出
+* 1 个金属电源按钮
+* 1 个 0.96 英寸 128x64 OLED 显示屏
+* 1 个 PWM 风扇（40x40x10mm）
+* 2 个 RGB 风扇（40x40x10mm）
+* 4 个 WS2812-5050 RGB 灯珠
+* 1 个 38KHz 红外接收器
+* 1 个塔式散热器
+* 1 个 PCIe 2.0 M.2 M 键接口（支持 2230、2242、2260、2280 NVMe SSD）
+* 1 个 1220 电池用于 RTC 实时时钟
 
-**Dimensional Drawing**
+**尺寸图**
 
 .. image:: img/pironman5_dimension.png
     :width: 800

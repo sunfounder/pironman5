@@ -1,64 +1,50 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Fans
+风扇
 ============
 
-PWM Fan
+PWM 风扇
 -----------
 
-The PWM fan on the Pironman 5 is controlled by the Raspberry Pi system.
+Pironman 5 上的 PWM 风扇由树莓派系统控制。
 
-Regarding cooling solutions for the Raspberry Pi 5, especially under heavy load, the design of the Pironman 5 incorporates a smart cooling system. It features a primary PWM fan and two supplementary RGB fans. The cooling strategy is closely integrated with the Raspberry Pi 5's thermal management system.
+为了应对树莓派 5 在高负载下的散热需求，Pironman 5 采用了智能散热系统的设计，配置了一枚主控 PWM 风扇和两枚辅助 RGB 风扇。该散热策略与树莓派 5 的温控机制高度集成。
 
-The PWM fan's operation is based on the Raspberry Pi 5's temperature:
+PWM 风扇的运行状态依据树莓派 5 的温度自动调节：
 
-* Below 50°C, the PWM fan remains off (0% speed).
-* At 50°C, the fan starts at a low speed (30% speed).
-* Reaching 60°C, the fan increases to a medium speed (50% speed).
-* At 67.5°C, the fan ramps up to a high speed (70% speed).
-* At 75°C and above, the fan operates at full speed (100% speed).
+* 温度低于 50°C：风扇关闭（转速为 0%）。
+* 达到 50°C：风扇低速运行（转速为 30%）。
+* 达到 60°C：风扇中速运行（转速为 50%）。
+* 达到 67.5°C：风扇高速运行（转速为 70%）。
+* 达到 75°C 或更高：风扇全速运行（转速为 100%）。
 
-This temperature-to-speed relationship also applies when the temperature decreases, with a 5°C hysteresis. The fan speed reduces when the temperature falls 5°C below each of these thresholds.
+该温度与风速的对应关系在温度降低时同样适用，并带有 5°C 的滞后回差。当温度下降到每个阈值下 5°C 时，风扇将切换至对应的较低速度。
 
-* Commands to monitor the PWM fan. To check the PWM fan's status:
+* 查看 PWM 风扇状态的命令如下：
 
   .. code-block:: shell
   
     cat /sys/class/thermal/cooling_device0/cur_state
 
-* To view the PWM fan's speed:
+* 查看 PWM 风扇当前转速的命令：
 
   .. code-block:: shell
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-In the Pironman 5, the PWM fan is a critical component for maintaining optimal operating temperatures, particularly during intensive tasks, ensuring the Raspberry Pi 5 runs efficiently and reliably.
+在 Pironman 5 中，PWM 风扇是保障树莓派 5 在高负载任务中保持稳定运行、维持最佳工作温度的关键部件。
 
-RGB Fans
+RGB 风扇
 -------------------
 
 .. image:: img/size_fan.png
 
-* **Extermal dimension**: 40*40*10MM
-* **Weight**: 13.5±5g/pcs
-* **Life**: 40,000 hours (room temperature 25°C)
-* **Maximum Air Flow**: 2.46CFM
-* **Max.Air Pressure**: 0.62mm-H2O
-* **Accoustic Sound**: 22.31dBA
-* **Rated Input power**: 5V/0.1A
-* **Rated Speed**: 3500±10%RPM
-* **Operating Temperature**: -10℃~+70℃
-* **Storage Temperature**: -30℃~+85℃
+* **外形尺寸**：40×40×10 毫米  
+* **重量**：13.5±5 克 / 个  
+* **使用寿命**：40,000 小时（室温 25°C）  
+* **最大风量**：2.46 CFM  
+* **最大风压**：0.62 mm-H2O  
+* **噪音水平**：22.31 dBA  
+* **额定输入电压 / 电流**：5V / 0.1A  
+* **额定转速**：3500±10% RPM  
+* **工作温度范围**：-10℃ ~ +70℃  
+* **存储温度范围**：-30℃ ~ +85℃
 

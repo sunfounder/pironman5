@@ -3,32 +3,17 @@
 Pironman 5 MAX
 ================================================================================
 
-
-Thanks for choosing our |link_pironman5_max|.
+感谢您选择我们的 |link_pironman5_max|。
 
 .. image:: img/pironman5_max.jpg
     :width: 400
     :align: center
-    
-The Pironman 5 Max is the new flagship product in our Pironman Raspberry Pi case series, 
-exclusively compatible with the latest Raspberry Pi 5. 
 
-A standout feature of the Pironman 5 Max is its dual transparent sides, 
-reminiscent of a PC case, combined with RGB LEDs and two RGB fans, 
-adding an impressive flair to the product. 
-It includes an OLED screen that displays basic information about the Raspberry Pi, 
-and has expanded features such as power on/off buttons and status indicators. 
-The micro HDMI port has been converted to a standard HDMI port for more common use, 
-and the power and HDMI ports have been relocated to the same side as the Raspberry Pi’s USB ports, 
-enhancing the aesthetics of the wiring. Equipped with three fans and a tower-style heatsink, 
-it greatly assists in reducing the high temperatures of the Raspberry Pi 5. 
+Pironman 5 Max 是我们 Pironman 树莓派机箱系列中的旗舰产品，专为最新的 Raspberry Pi 5 设计。
 
-The case integrates a PCIe Gen 2 Switch with two M.2 M key PCIe slots supporting 2230, 2242, 2260, and 2280, allowing the installation of two NVMe Gen2 SSDs or AI accelerators. 
-Users can set up two NVMe SSDs in software RAID 0 or RAID 1 for NAS configurations; 
-combine one AI accelerator and one NVMe SSD to boost AI performance; 
-or use two AI accelerators for even stronger AI capabilities. 
-Additionally, GPIO expansion is provided for convenient extension of the Raspberry Pi’s functionality.
+该机箱的一大亮点是其双侧透明设计，灵感来自 PC 机箱，配合 RGB 灯效与双 RGB 风扇，营造出强烈的科技氛围。机身配备 OLED 显示屏，用于显示树莓派的基本运行信息，此外还集成了电源开关按钮与工作状态指示灯。Micro HDMI 接口升级为标准 HDMI 接口，且电源和 HDMI 接口与 USB 接口集中在同一侧，大幅提升了布线的美观性。内部配备三风扇散热系统及塔式散热器，可有效抑制 Raspberry Pi 5 的高温运行。
 
+该机箱还内置 PCIe Gen 2 Switch，并提供两个支持 2230、2242、2260 和 2280 尺寸的 M.2 M Key PCIe 插槽，可安装两块 NVMe Gen2 SSD 或 AI 加速卡。用户可以根据需要配置为软件 RAID 0 或 RAID 1 构建 NAS，或组合使用一块 AI 加速器与一块 NVMe SSD 以提升 AI 性能，亦可安装两块 AI 加速器以实现更强的人工智能处理能力。此外，机箱还提供 GPIO 扩展接口，方便拓展树莓派的应用功能。
 
 .. raw:: html
 
@@ -48,20 +33,20 @@ Additionally, GPIO expansion is provided for convenient extension of the Raspber
     compitable_nvme_ssd
     faq
 
-**Parameters**
+**参数规格**
 
-* Raspberry Pi 5 mini PC
-* 0.96" OLED Display showing Raspberry Pi's CPU usage, temperature, disk usage, IP address, RAM usage etc.
-* With a built-in vibration switch, tapping the case gently wakes up the OLED display.
-* Tower cooler can cool a 100% CPU load Pi to 39°C at 25°C room temperature
-* 2 RGB Fans, with GPIO control
-* 1 PWM Fan on the Tower Cooler is controlled by the Raspberry Pi system.
-* Integrated PCIe Gen 2 Switch with two M.2 M key PCIe interfaces, which can install two NVMe Gen2 solid-state drives or AI accelerators.
-* Supports four (PCIe Gen 2.0) NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280.
-* 4 WS2812 Addressable RGB LED light up the whole case with cool light effect
-* IR Receiver for multi-media center like Kodi or Volumio
-* Retro metal power button for safe shut down
-* External GPIO extender with pin name label, for easy access
-* Equipped with a spring-loaded socket for easy card removal
-* Aluminum main body with dark Acrylic side panel
-* Features two standard HDMI ports
+* 兼容 Raspberry Pi 5 单板计算机
+* 0.96 英寸 OLED 显示屏，显示树莓派 CPU 使用率、温度、磁盘占用、IP 地址、内存占用等信息
+* 内置震动开关，轻敲机箱可唤醒 OLED 显示屏
+* 塔式散热器可在 25°C 室温下将满载 CPU 温度降至约 39°C
+* 2 个 RGB 风扇，通过 GPIO 控制
+* 塔式散热器上的 PWM 风扇由树莓派系统自动控制
+* 内建 PCIe Gen 2 Switch，配备两个 M.2 M Key PCIe 接口，可安装两块 NVMe Gen2 SSD 或 AI 加速器
+* 支持 4 种 NVMe M.2 SSD 规格（PCIe Gen 2.0）：2230、2242、2260、2280
+* 4 个 WS2812 可寻址 RGB 灯珠，打造炫酷光效
+* 红外接收器，适用于 Kodi、Volumio 等多媒体中心
+* 复古金属电源按钮，支持安全关机
+* 外置 GPIO 扩展接口，带引脚标签，方便接线
+* 配备弹簧卡槽，轻松取出 Micro SD 卡
+* 机身采用铝合金材质，配备深色亚克力侧板
+* 配置两个标准 HDMI 接口

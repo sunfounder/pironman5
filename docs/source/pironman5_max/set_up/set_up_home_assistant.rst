@@ -1,177 +1,163 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Set Up on Home Assistant
+在 Home Assistant 上设置
 ============================================
 
-If you have installed the Home Assistant system, you will need to add the necessary add-ons to Home Assistant and start them to get the Pironman 5 working.
+如果你已经安装了 Home Assistant 系统，需要在 Home Assistant 中添加必要的附加组件并启动，以使 Pironman 5 正常运行。
 
 .. note::
 
-    The following method is only applicable to systems with Home Assistant installed natively. It does not apply to Raspberry Pi systems with Home Assistant installed on top or to Docker versions of Home Assistant.
+    以下方法仅适用于原生安装 Home Assistant 的系统。不适用于在 Raspberry Pi 系统上叠加安装 Home Assistant 或使用 Docker 版本的 Home Assistant。
 
-1. Log in to Home Assistant
+1. 登录 Home Assistant
 -----------------------------
 
-* After starting Pironman 5, it is recommended to plug in an Ethernet cable directly. This way, you can open your computer browser and enter: ``homeassistant.local:8123`` to access Home Assistant.
+* 启动 Pironman 5 后，建议直接插入网线。此时可在电脑浏览器中输入：``homeassistant.local:8123`` 访问 Home Assistant。
 
   .. image:: img/home_login.png
    :width: 90%
 
 
-* Select **CREATE MY SMART HOME**, and then create your account.
+* 选择 **CREATE MY SMART HOME**，然后创建你的账户。
 
   .. image:: img/home_account.png
    :width: 90%
 
-* Follow the prompts to choose your location and other configurations. Once completed, you will enter the Home Assistant dashboard.
+* 按照提示选择你的位置信息及其他配置。配置完成后将进入 Home Assistant 的控制面板。
 
   .. image:: img/home_dashboard.png
    :width: 90%
 
 
-2. Add the SunFounder Add-ons Repository
-----------------------------------------------------
+2. 添加 SunFounder 插件仓库
+-------------------------------------------
 
-The functionality of Pironman 5 is installed on Home Assistant in the form of add-ons. First, you need to add the **SunFounder** add-ons repository.
+Pironman 5 的功能通过插件的形式集成在 Home Assistant 中。首先需要添加 **SunFounder** 插件仓库。
 
-#. Open **Settings** -> **Add-ons**.
+#. 打开 **Settings** -> **Add-ons**。
 
    .. image:: img/home_setting_addon.png
       :width: 90%
 
-#. Click the plus sign in the bottom right corner to enter the add-on store.
+#. 点击右下角的加号进入插件商店。
 
    .. image:: img/home_addon.png
       :width: 90%
 
-#. In the add-on store, click the menu in the top right corner and select **Repositories**.
+#. 在插件商店中，点击右上角菜单，选择 **Repositories**。
 
    .. image:: img/home_add_res.png
       :width: 90%
 
-#. Enter the **SunFounder** add-ons repository URL: ``https://github.com/sunfounder/home-assistant-addon``, and click **ADD**.
+#. 输入 **SunFounder** 插件仓库地址： ``https://github.com/sunfounder/home-assistant-addon``，点击 **ADD**。
 
    .. image:: img/home_res_add.png
       :width: 90%
 
-#. After successfully adding, close the pop-up window and refresh the page. Find the SunFounder add-ons list.
+#. 添加成功后关闭弹窗并刷新页面，即可在插件列表中看到 SunFounder 插件。
 
    .. image:: img/home_addon_list.png
-         :width: 90%
+      :width: 90%
 
-3. Install the **Pi Config Wizard** Add-on
-------------------------------------------------------
+3. 安装 **Pi Config Wizard** 插件
+-------------------------------------------
 
-The **Pi Config Wizard** can help enable the configurations needed for Pironman 5, such as I2C and SPI. If not needed afterward, it can be removed.
+**Pi Config Wizard** 可以帮助启用 Pironman 5 所需的配置项，如 I2C 和 SPI。配置完成后可以将其卸载。
 
-#. Find **Pi Config Wizard** in the SunFounder add-ons list and click to enter.
+#. 在 SunFounder 插件列表中找到 **Pi Config Wizard** 并点击进入。
 
    .. image:: img/home_pi_config.png
       :width: 90%
 
-#. On the **Pi Config Wizard** page, click **INSTALL**. Wait for the installation to complete.
+#. 在插件页面点击 **INSTALL**，等待安装完成。
 
    .. image:: img/home_config_install.png
       :width: 90%
 
-#. After the installation is complete, switch to the **Log** page to confirm if there are any errors.
+#. 安装完成后，切换至 **Log** 页面检查是否有报错信息。
 
    .. image:: img/home_log.png
       :width: 90%
 
-#. If there are no errors, return to the **Info** page and click **START** to start this add-on.
+#. 若无报错，返回 **Info** 页面，点击 **START** 启动插件。
 
    .. image:: img/home_start.png
       :width: 90%
 
-#. Now open the WEB UI.
+#. 启动后点击 **OPEN WEB UI** 打开网页界面。
 
    .. image:: img/home_open_web_ui.png
       :width: 90%
 
-#. In the Web UI, you will see an option to mount the Boot partition. Click **MOUNT** to mount the partition.
+#. 在网页界面中会出现挂载 Boot 分区的选项，点击 **MOUNT**。
 
    .. image:: img/home_mount_boot.png
       :width: 90%
 
-#. After successful mounting, you will see options to set I2C, SPI, and edit the config.txt file. Check I2C and SPI to enable them. Once they show as enabled, click the reboot button at the bottom to restart the Raspberry Pi.
+#. 挂载成功后，可设置 I2C、SPI 以及编辑 config.txt 文件。勾选 I2C 和 SPI 启用，显示为启用状态后点击底部的重启按钮重启树莓派。
 
    .. image:: img/home_i2c_spi.png
       :width: 90%
 
-#. After the restart, refresh the page. You will return to the mount boot partition page again. Click **MOUNT** again.
+#. 重启后刷新页面，回到挂载 Boot 分区界面，再次点击 **MOUNT**。
 
    .. image:: img/home_mount_boot.png
       :width: 90%
 
-#. Usually, you will see that SPI is enabled, but I2C is not because I2C requires two reboots. Enable I2C again, then restart the Raspberry Pi.
+#. 通常此时 SPI 已启用，而 I2C 仍未启用，因为 I2C 需要两次重启。请再次启用 I2C 并重启。
 
    .. image:: img/home_enable_i2c.png
       :width: 90%
 
-#. After the reboot, return to the **MOUNT** page again. You will see that both I2C and SPI are enabled.
+#. 重启后再次返回 **MOUNT** 页面，你将看到 I2C 和 SPI 均已启用。
 
    .. image:: img/home_i2c_spi_enable.png
       :width: 90%
 
 .. note::
 
-    * If after refreshing the page, you do not enter the mount partition page, you can click **Settings** -> **Add-ons** -> **Pi Config Wizard** again.
-    * Check if this add-on is started. If not, click **START**.
-    * After starting, click **OPEN WEB UI**, then click **MOUNT** to confirm if I2C and SPI are enabled.
+    * 如果刷新页面后没有进入挂载分区页面，可前往 **Settings** -> **Add-ons** -> **Pi Config Wizard**。
+    * 确认该插件是否已启动，若未启动请点击 **START**。
+    * 启动后点击 **OPEN WEB UI**，再点击 **MOUNT** 检查 I2C 和 SPI 是否已启用。
 
-4. Install the **Pironman 5** Add-on
----------------------------------------------
+4. 安装 **Pironman 5** 插件
+-------------------------------------------
 
-Now officially start installing the **Pironman 5** add-on.
+现在正式安装 **Pironman 5** 插件。
 
-#. Open **Settings** -> **Add-ons**.
+#. 打开 **Settings** -> **Add-ons**。
 
    .. image:: img/home_setting_addon.png
       :width: 90%
 
-#. Click the plus sign in the bottom right corner to enter the add-on store.
+#. 点击右下角加号进入插件商店。
 
    .. image:: img/home_addon.png
       :width: 90%
 
-#. Find **Pironman 5** in the **SunFounder** add-ons list and click to enter.
+#. 在 **SunFounder** 插件列表中找到 **Pironman 5** 并点击进入。
 
    .. image:: img/home_pironman5_addon.png
       :width: 90%
 
-#. Now install the Pironman 5 add-on.
+#. 安装 Pironman 5 插件。
 
    .. image:: img/home_install_pironman5.png
       :width: 90%
 
-#. After installation is complete, click **START** to start this add-on. You will see the OLED screen display the Raspberry Pi CPU, temperature, and other related information. Four WS2812 RGB LEDs will light up in blue with a breathing mode.
+#. 安装完成后点击 **START** 启动插件。此时 OLED 屏幕将显示树莓派的 CPU、温度等信息，四颗 WS2812 RGB 灯将以呼吸灯模式亮起蓝光。
 
    .. image:: img/home_start_pironman5.png
       :width: 90%
 
-#. Now you can click **OPEN WEB UI** to open the Pironman 5 web page. You can also check the option to display the Web UI in the sidebar. This will allow you to see the Pironman 5 option in the left sidebar of Home Assistant, and click to open the Pironman 5 page.
+#. 现在可点击 **OPEN WEB UI** 打开 Pironman 5 的网页控制界面。你也可以勾选在侧边栏显示 Web UI，这样你就能在 Home Assistant 的左侧边栏中看到 Pironman 5 入口，点击即可进入控制页面。
 
    .. image:: img/home_web_ui.png
       :width: 90%
 
-#. Now you can see the information about your Raspberry Pi, configure the RGB, and control the fan, etc.
+#. 在该页面中，你可以查看树莓派信息，配置 RGB 灯效，以及控制风扇等功能。
 
    .. image:: img/home_web.png
       :width: 90%
 
 .. note::
 
-    For more information and usage of this Pironman 5 web page, please refer to: :ref:`max_view_control_dashboard`.
+    有关 Pironman 5 网页界面的更多功能说明，请参考：:ref:`max_view_control_dashboard`。

@@ -129,7 +129,7 @@ rst_epilog += """
 
 .. |link_rpi_get_start| raw:: html
 
-    <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" target="_blank">Getting Started with Raspberry Pi</a>
+    <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" target="_blank">树莓派入门指南</a>
 
 .. |link_rpi_imager| raw:: html
 
@@ -142,7 +142,7 @@ rst_epilog += """
 
 .. |link_batocera_download| raw:: html
 
-    <a href="https://batocera.org/download" target="_blank">Batocera.linux download</a>
+    <a href="https://batocera.org/download" target="_blank">Batocera.linux 下载</a>
 
 .. |link_sf_facebook| raw:: html
 

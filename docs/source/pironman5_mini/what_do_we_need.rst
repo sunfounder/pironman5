@@ -1,52 +1,38 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-1. What Else Should You Prepare?
+1. 你还需要准备哪些物品？
 ===================================
 
-To get started with your Pironman 5 Mini, you'll need to gather a few essential components and some optional extras depending on your project requirements.
+在开始使用 Pironman 5 Mini 之前，您需要准备一些基本组件，以及根据项目需求可能用到的扩展配件。
 
-**Essential Components**
+**必备组件**
 
 * Raspberry Pi 5 
 
-    The Pironman 5 Mini is fully compatible with the Raspberry Pi 5.
+    Pironman 5 Mini 完全兼容 Raspberry Pi 5。
 
-* 5V/5A Power Adapter
+* 5V/5A 电源适配器
 
-    A 5V/5A power adapter is required to power the Pironman 5 Mini and its components.
+    需要使用 5V/5A 电源适配器为 Pironman 5 Mini 及其内部组件供电。
 
-* Micro SD Card
+* Micro SD 卡
  
-    It is recommended to use an SD card with a minimum of 16GB of storage for Raspberry Pi OS. For Raspberry Pi OS Lite, a minimum of 4GB is advised.
+    建议为 Raspberry Pi OS 准备至少 16GB 容量的 SD 卡；若使用 Raspberry Pi OS Lite，最低容量建议为 4GB。
 
-**Optional Components**
+**可选组件**
 
 * M.2 NVMe SSD
 
-    The Pironman 5 Mini features an NVMe PIP with an M.2 SSD connector, accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec).
+    Pironman 5 Mini 配备了 NVMe PIP 模块和 M.2 SSD 接口，支持四种规格的 NVMe M.2 SSD：2230、2242、2260 和 2280。默认支持 PCIe Gen 2.0（5 GT/sec），也可强制切换为 Gen 3.0（10 GT/sec）。
 
-* Screen
+* 显示器
 
-    To access the Raspberry Pi's desktop environment, a screen such as a TV or a computer monitor is required.
+    如果您想使用 Raspberry Pi 的桌面环境，需要连接电视或电脑显示器等屏幕设备。
     
-* Micro HDMI Cable
+* Micro HDMI 线缆
 
-  The Pironman 5 Mini utilizes all the native ports of the Raspberry Pi 5. Therefore, for the HDMI connection, you will need a Micro HDMI cable to connect the Pironman 5 Mini to a display.
+    Pironman 5 Mini 使用 Raspberry Pi 5 的原生接口，因此如需连接显示器，请准备 Micro HDMI 线缆。
 
-* Mouse & Keyboard
+* 鼠标和键盘
 
-    Any USB port on the Pironman 5 Mini can be used to connect a wired keyboard and mouse, or a USB Bluetooth receiver for wireless peripherals.
+    Pironman 5 Mini 上的任意 USB 接口均可连接有线键盘与鼠标，或通过 USB 蓝牙接收器连接无线外设。
 
-By ensuring you have these components ready, you'll be fully equipped to set up and enjoy your Pironman 5 Mini with your Raspberry Pi 5!
+准备好上述组件后，您就可以顺利开始体验 Raspberry Pi 5 与 Pironman 5 Mini 带来的强大性能与乐趣！

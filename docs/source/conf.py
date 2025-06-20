@@ -134,11 +134,11 @@ rst_epilog += """
 
 .. |link_rpi_get_start| raw:: html
 
-    <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" target="_blank">Getting Started with Raspberry Pi</a>
+    <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" target="_blank">Raspberry Pi 入门指南</a>
 
 .. |link_rpi_imager| raw:: html
 
-    <a href="https://www.raspberrypi.org/software/" target="_blank">Raspberry Pi Imager</a>
+    <a href="https://www.raspberrypi.org/software/" target="_blank">Raspberry Pi 镜像写入工具</a>
 
 .. |link_batocera| raw:: html
 
@@ -147,7 +147,7 @@ rst_epilog += """
 
 .. |link_batocera_download| raw:: html
 
-    <a href="https://batocera.org/download" target="_blank">Batocera.linux download</a>
+    <a href="https://batocera.org/download" target="_blank">Batocera.linux 下载</a>
 
 .. |link_sf_facebook| raw:: html
 
@@ -167,7 +167,7 @@ rst_epilog += """
     
 .. |link_imager| raw:: html
 
-    <a href="https://www.raspberrypi.com/software/" target="_blank">Raspberry Pi Imager</a>
+    <a href="https://www.raspberrypi.com/software/" target="_blank">Raspberry Pi 镜像写入工具</a>
 
 
 .. |link_pironman5| raw:: html
@@ -189,7 +189,7 @@ rst_epilog += """
 
 .. |link_raspberry_pi_imager| raw:: html
 
-    <a href="https://www.raspberrypi.org/software/" target="_blank">Raspberry Pi Imager</a>
+    <a href="https://www.raspberrypi.org/software/" target="_blank">Raspberry Pi 镜像写入工具</a>
 
 .. |link_putty| raw:: html
 

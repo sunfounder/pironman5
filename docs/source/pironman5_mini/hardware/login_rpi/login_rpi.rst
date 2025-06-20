@@ -1,82 +1,68 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _login_rpi_mini:
 
-Log in to the Raspberry Pi OS
+登录 Raspberry Pi OS
 =====================================
 
-In this chapter, you will learn how to log in to the Raspberry Pi. Whether you have a screen attached or need to access it remotely, this section will guide you through opening the terminal, which you will use in later chapters to enter commands.
+在本章节中，您将学习如何登录到 Raspberry Pi。无论是连接显示器直接操作，还是通过远程方式访问，本节将指导您打开终端，后续章节中您将通过终端输入相关命令。
 
 .. note::
 
-    If you are already familiar with Raspberry Pi operations, you can skip this chapter.
+    如果您已经熟悉 Raspberry Pi 的操作，可以跳过本章节。
 
-Logging in with a Screen
+通过连接显示器登录
 ---------------------------
 
-Having a screen attached to your Raspberry Pi makes it easier to interact with the system directly.
+为 Raspberry Pi 连接显示器可以直接在系统中进行交互操作。
 
-**Required Components**
+**所需组件**
 
 * Pironman 5 Mini
-* Power Adapter
-* Micro SD card or NVMe SSD with pre-installed Raspberry Pi OS
-* Monitor Power Adapter
-* HDMI cable
-* Monitor
-* Mouse
-* Keyboard
+* 电源适配器
+* 预装 Raspberry Pi OS 的 Micro SD 卡或 NVMe SSD
+* 显示器电源适配器
+* HDMI 线缆
+* 显示器
+* 鼠标
+* 键盘
 
-**Steps**
+**操作步骤**
 
-#. Insert the Micro SD card into the Pironman 5 Mini.
+#. 将 Micro SD 卡插入 Pironman 5 Mini。
 
-#. Connect the Mouse and Keyboard to the USB ports of the Pironman 5 Mini.
+#. 将鼠标和键盘连接到 Pironman 5 Mini 的 USB 接口。
 
-#. Use the HDMI cable to connect the monitor to the HDMI port of the Pironman 5 Mini. Make sure the monitor is connected to a power source and is turned on.
+#. 使用 HDMI 线将显示器连接至 Pironman 5 Mini 的 HDMI 接口。确保显示器已接通电源并打开。
 
-#. Power up the Pironman 5 Mini using the power adapter. You should see the Raspberry Pi OS desktop appear on the monitor shortly.
+#. 通过电源适配器为 Pironman 5 Mini 通电，稍后您将看到 Raspberry Pi OS 的桌面出现在显示器上。
 
    .. image:: img/bookwarm.png
       :width: 90%
       
+#. 当桌面出现后，点击终端图标或在菜单中搜索“终端”以打开命令行界面，开始输入命令。
 
-#. Once the desktop is visible, open the Terminal by clicking on the terminal icon or searching for it in the menu to start entering commands.
 
-Logging in Remotely Without a Screen
+无显示器远程登录
 ----------------------------------------------
 
-If you do not have access to a monitor, you can still use your Raspberry Pi by logging in remotely.
+如果没有可用的显示器，您仍可通过远程方式登录并使用 Raspberry Pi。
 
-For command-line access, you can use SSH to connect to the Raspberry Pi's Bash shell, the default Linux shell which allows for managing the device via commands.
+若您习惯命令行操作，可以使用 SSH 远程连接至 Raspberry Pi 的 Bash Shell，这是默认的 Linux 命令行环境，可通过命令管理设备。
 
-For those who prefer a graphical interface, using a remote desktop application like VNC Viewer offers a visual way to manage files and operations remotely.
+如果您更倾向图形化界面，可使用如 VNC Viewer 等远程桌面应用程序，以图形方式远程操作文件和管理系统。
 
-**Required Components**
+**所需组件**
 
 * Pironman 5 Mini 
-* Power Adapter
-* Micro SD card or NVMe SSD with pre-installed Raspberry Pi OS
+* 电源适配器
+* 预装 Raspberry Pi OS 的 Micro SD 卡或 NVMe SSD
 
-Steps:
+操作步骤：
 
-#. Insert the Micro SD card into the Pironman 5 Mini.
+#. 将 Micro SD 卡插入 Pironman 5 Mini。
 
-#. Connect the Pironman 5 Mini to a power source using the power adapter.
+#. 使用电源适配器为 Pironman 5 Mini 通电。
 
-#. For detailed tutorials on setting up remote access depending on your computer's operating system, see the following sections:
+#. 针对不同操作系统的远程访问配置，请参阅以下小节教程：
 
 .. toctree::
 

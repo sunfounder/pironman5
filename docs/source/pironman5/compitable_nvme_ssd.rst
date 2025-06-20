@@ -1,89 +1,75 @@
-.. note::
+兼容的 NVMe 固态硬盘（SSD）
+============================
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Compatible NVMe SSDs
-========================
-
-Compatible NVMe SSDs
+兼容型号
 ---------------------------
 
-* ADATA Legend 700
-* ADATA Legend 800
-* AData XPG SX8200 Pro
+* ADATA Legend 700  
+* ADATA Legend 800  
+* AData XPG SX8200 Pro  
 
-* Axe Memory Generic Drive
+* Axe Memory Generic Drive  
 
-* Crucial P2 M.2
-* Crucial P3 M.2
-* Crucial P3 Plus M.2
+* Crucial P2 M.2  
+* Crucial P3 M.2  
+* Crucial P3 Plus M.2  
 
-* Inland PCIe NVMe SSD
+* Inland PCIe NVMe SSD  
 
-* KIOXIA EXCERIA NVMe SSD
-* KIOXIA EXCERIA G2 NVMe SSD
+* KIOXIA EXCERIA NVMe SSD  
+* KIOXIA EXCERIA G2 NVMe SSD  
 
-* Kingston KC3000
-* Kingston NV2
+* Kingston KC3000  
+* Kingston NV2  
 
-* Lexar NM710
-* Lexar NM620
+* Lexar NM710  
+* Lexar NM620  
 
-* Netac NV3000 NVMe SSD
-* Netac NV2000 NVMe SSD
+* Netac NV3000 NVMe SSD  
+* Netac NV2000 NVMe SSD  
 
-* Origin Inception TLC830 Pro NVMe SSD
-* Ortial ON-750-128 NVME SSD
+* Origin Inception TLC830 Pro NVMe SSD  
+* Ortial ON-750-128 NVME SSD  
 
-* Pineberry Pi Pinedrive (2280)
+* Pineberry Pi Pinedrive（2280）  
 
-* PNY CS1030
+* PNY CS1030  
 
-* Sabrent Rocket 4.0
-* Sabrent Rocket Nano
+* Sabrent Rocket 4.0  
+* Sabrent Rocket Nano  
 
-* Samsung 970 EVO Plus
-* Samsung 980
-* Samsung 980 Pro
-* Samsung 990 Pro
+* Samsung 970 EVO Plus  
+* Samsung 980  
+* Samsung 980 Pro  
+* Samsung 990 Pro  
 
-* Team MP33
+* Team MP33  
 
-* Western Digital SN850
-* Western Digital SN740
-* Western Digital SN570
-* Western Digital SN530
-* Western Digital Black SN750 SE (Phison Controller)
-* Western Digital Blue SN550 series (If you know how to install latest rpi-eeprom-updates, pieeprom-2024-01-24.bin fixed the Western Digital Blue SN550 nvme boot issue Refer to https://forums.raspberrypi.com/viewtopic.php?t=364327.)
+* Western Digital SN850  
+* Western Digital SN740  
+* Western Digital SN570  
+* Western Digital SN530  
+* Western Digital Black SN750 SE（Phison 控制器）  
+* Western Digital Blue SN550 系列（如果您了解如何安装最新版 rpi-eeprom 更新，pieeprom-2024-01-24.bin 已修复 WD Blue SN550 的 NVMe 启动问题，参考：https://forums.raspberrypi.com/viewtopic.php?t=364327）
 
-* XPG GAMMIX S70 BLADE
-* XPG SX8200 Pro
+* XPG GAMMIX S70 BLADE  
+* XPG SX8200 Pro  
 
 
-Uncompitable NVMe SSD
+不兼容型号
 --------------------------
 
-We recommend avoiding the following NVMe SSD drives which is equipped with a Phison controller due to their proven incompatibility:
+以下 NVMe SSD 搭载了已知不兼容的 Phison 控制器，我们建议避免使用：
 
-* WD Blue SN580 series
-* Western Digital Green SN350 series
-* Western Digital Black SN850 series
-* Western Digital Black SN770
-* WD BLACK 8TB SN850X
-* Inland tn446 nvme drive
-* Corsair MP600 SSD
-* Samsung PM991
-* Kingston OM8SEP4256Q-A0
-* Transcend 110Q (TS500GMTE110Q)
-* SN350 and SN570 prevented the RPi 5 from booting at all especially.
-* Other NVMe SSD drivers equipped with the same Phison controller
+* WD Blue SN580 系列  
+* Western Digital Green SN350 系列  
+* Western Digital Black SN850 系列  
+* Western Digital Black SN770  
+* WD BLACK 8TB SN850X  
+* Inland TN446 NVMe Drive  
+* Corsair MP600 SSD  
+* Samsung PM991  
+* Kingston OM8SEP4256Q-A0  
+* Transcend 110Q（TS500GMTE110Q）  
+* SN350 和 SN570 尤其会导致 Raspberry Pi 5 无法启动  
+* 其他使用同款 Phison 控制器的 NVMe SSD 驱动器  

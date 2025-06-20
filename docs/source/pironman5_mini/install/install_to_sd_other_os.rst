@@ -1,110 +1,96 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _install_to_sd_home_bridge_mini:
 
-Installing the OS on a Micro SD Card
+将操作系统安装到 Micro SD 卡
 =============================================
 
-If you are using a Micro SD card, you can follow the tutorial below to install the system onto your Micro SD card.
+如果您打算使用 Micro SD 卡安装系统，可参考以下教程将操作系统写入 Micro SD 卡。
 
 
-**Required Components**
+**所需组件**
 
-* A Personal Computer
-* A Micro SD card and Reader
+* 一台个人电脑
+* 一张 Micro SD 卡及读卡器
 
-**Steps**
+**操作步骤**
 
-#. Insert your SD card into your computer or laptop using a Reader.
+#. 使用读卡器将 SD 卡插入您的电脑或笔记本。
 
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+#. 打开 |link_rpi_imager|，点击 **Raspberry Pi Device**，并从下拉列表中选择 **Raspberry Pi 5** 机型。
 
    .. image:: img/os_choose_device_pi5.png
       :width: 90%
-      
 
-#. Click on the **Operating System** tab.
+
+#. 点击 **Operating System** 选项卡。
 
    .. image:: img/os_choose_os.png
       :width: 90%
 
-#. Scroll down to the bottom of the page and select the your operating system.
+#. 滚动至页面底部，选择您所需的操作系统。
 
    .. note::
 
-      * For **Ubuntu** system, you need to click **Other general-purpose OS** -> **Ubuntu**, and select either **Ubuntu Desktop 24.04 LTS (64 bit)** or **Ubuntu Server 24.04 LTS (64 bit)**.
-      * For **Kali Linux**, **Home Assistant** and **Homebridge** systems, you need to click **Other specific-purpose OS** and then select the corresponding system.
+      * 若选择 **Ubuntu** 系统，请点击 **Other general-purpose OS** -> **Ubuntu**，然后选择 **Ubuntu Desktop 24.04 LTS (64 bit)** 或 **Ubuntu Server 24.04 LTS (64 bit)**。
+      * 若选择 **Kali Linux**、 **Home Assistant** 或 **Homebridge** 系统，请点击 **Other specific-purpose OS**，然后选择相应系统。
 
    .. image:: img/os_other_os.png
       :width: 90%
 
-#. In the **Storage** option, select the appropriate storage device for the installation.
+#. 在 **Storage** 选项中，选择正确的安装设备。
 
    .. image:: img/nvme_ssd_storage.png
       :width: 90%
-      
 
-#. Click **NEXT**.
+
+#. 点击 **NEXT**。
 
    .. note::
 
-      * For systems that cannot be configured in advance, after clicking **NEXT**, you will be prompted whether to save the data within the device. If you have confirmed that a backup has been made, select **Yes**.
+      * 若所选系统不支持提前配置，点击 **NEXT** 后会提示是否擦除设备数据。确认已完成备份后点击 **Yes**。
 
-      * For systems where the Hostname, WiFi, and Enable SSH can be configured in advance, a pop-up will appear prompting whether to apply the OS's custom settings. You can choose **Yes** or **No**, or go back to edit further.
+      * 若系统支持预设主机名、WiFi 和 SSH 配置，将弹出窗口询问是否应用自定义设置。您可选择 **Yes**、 **No** 或返回继续编辑。
 
    .. image:: img/os_enter_setting.png
       :width: 90%
-      
 
-   * Define a **hostname** for your Raspberry Pi. The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
 
-     .. image:: img/os_set_hostname.png  
+   * 设置您的树莓派 **hostname**，作为设备在网络中的标识。您可通过 ``<hostname>.local`` 或 ``<hostname>.lan`` 访问设备。
 
-   * Create a **Username** and **Password** for the Raspberry Pi's administrator account. Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
+     .. image:: img/os_set_hostname.png
+
+   * 创建树莓派的 **用户名** 和 **密码**。建议设定专属账户信息，以提高系统安全性（树莓派默认无密码）。
 
      .. image:: img/os_set_username.png
-         
-   * Configure the wireless LAN by providing your network's **SSID** and **Password**.
+
+   * 配置无线网络，填写 WiFi 的 **SSID** 和 **密码**。
 
      .. note::
 
-       Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
+        请将 ``Wireless LAN country`` 设置为您所在国家的 `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_。
 
      .. image:: img/os_set_wifi.png
-         
-   * To remotely connect to your Raspberry Pi, enable SSH in the Services tab.
 
-     * For **password authentication**, use the username and password from the General tab.
-     * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
+   * 若需远程连接树莓派，请在 Services 标签页中启用 SSH 服务。
+
+     * 使用 **密码验证** 时，请输入您在 General 标签中设定的用户名和密码。
+     * 使用 **公钥验证** 时，选择 “Allow public-key authentication only”。若已有 RSA 密钥，将直接使用；否则点击 “Run SSH-keygen” 生成新密钥对。
 
      .. image:: img/os_enable_ssh.png
-         
-   * The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
+
+   * 在 **Options** 菜单中，您可设置写入完成后的行为，如播放提示音、自动弹出设备、启用遥测等。
 
      .. image:: img/os_options.png
-           
-#. When you've finished entering OS customisation settings, click **Save** to save your customisation. Then, click **Yes** to apply them when writing the image.
+
+#. 设置完成后，点击 **Save** 保存设置，再点击 **Yes** 以在写入镜像时应用这些设置。
 
    .. image:: img/os_click_yes.png
       :width: 90%
-      
 
-#. If the SD card contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+
+#. 如果 SD 卡中已有数据，请确认是否备份。若无备份需求，可点击 **Yes** 继续写入。
 
    .. image:: img/os_continue.png
       :width: 90%
-      
 
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the Micro SD Card!
+
+#. 当看到 “Write Successful” 的提示窗口时，说明系统镜像已成功写入并验证完毕。现在您可以使用这张 Micro SD 卡启动树莓派了！

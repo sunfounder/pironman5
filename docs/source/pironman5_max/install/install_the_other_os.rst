@@ -1,23 +1,9 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Install the Ubuntu/Kali Linux/Homebridge/Home Assistant
+安装 Ubuntu/Kali Linux/Homebridge/Home Assistant
 =========================================================
 
-You can choose the installation method based on whether you have a Micro SD or an NVMe SSD at hand.
+您可以根据手头是否有 Micro SD 卡或 NVMe 固态硬盘选择相应的安装方式。
 
-Installing directly onto the NVMe SSD involves an additional step compared to installing on the Micro SD: you must update the Raspberry Pi's bootloader because it defaults to boot from the Micro SD card. Update the bootloader to prioritize booting from the NVMe SSD.
+如果直接将系统安装到 NVMe 固态硬盘中，相比于安装到 Micro SD 卡，还需额外执行一步：更新树莓派的启动引导程序（bootloader），因为树莓派默认从 Micro SD 启动。通过更新引导程序，使其优先从 NVMe SSD 启动。
 
 
 .. toctree::

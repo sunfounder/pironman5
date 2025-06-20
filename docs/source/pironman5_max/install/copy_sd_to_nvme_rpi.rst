@@ -1,235 +1,221 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _max_copy_sd_to_nvme_rpi:
 
-Copy OS from Micro SD to NVMe SSD
+从 Micro SD 复制系统到 NVMe SSD
 ==================================================================
 
-If you have an NVMe SSD but lack an adapter to connect it to your computer, you can opt for a third approach: initially install the system on your Micro SD card. After the Pironman 5 successfully boots up, you can then transfer the system from your Micro SD card to your NVMe SSD.
+如果你拥有一块 NVMe 固态硬盘但没有转接器可将其连接至电脑，可以选择第三种方式：首先将系统安装在 Micro SD 卡中，待 Pironman 5 成功启动后，再将系统从 SD 卡复制到 NVMe SSD 上。
 
-* First, you need to :ref:`max_install_os_sd_rpi`.
-* Then, boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
+* 首先，请完成 :ref:`max_install_os_sd_rpi`。
+* 然后启动并登录树莓派。如不确定如何登录，可参考树莓派官网：|link_rpi_get_start|。
 
-Complete the above steps before proceeding with the instructions below.
+完成以上步骤后，继续以下操作：
 
 
-1. Enabling PCIe
+1. 启用 PCIe
 --------------------
 
-By default the PCIe connector is not enabled. 
+默认情况下，PCIe 接口未启用。
 
-* To enable it you should open the ``/boot/firmware/config.txt`` file.
+* 你需要先编辑 ``/boot/firmware/config.txt`` 文件：
 
   .. code-block:: shell
   
     sudo nano /boot/firmware/config.txt
   
-* Then add the following line to the file. 
+* 然后在文件末尾添加以下内容：
 
   .. code-block:: shell
   
-    # Enable the PCIe External connector.
+    # 启用 PCIe 外部连接器
     dtparam=pciex1
   
-* A more memorable alias for ``pciex1`` exists, so you can alternatively add ``dtparam=nvme`` to the ``/boot/firmware/config.txt`` file.
+* 你也可以使用更易记的别名 ``dtparam=nvme`` 来代替上面一行：
 
   .. code-block:: shell
   
     dtparam=nvme
 
-* The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec) if you add the following lines to your ``/boot/firmware/config.txt``.
+* 默认连接认证支持 Gen 2.0（5 GT/sec）速率，如需强制使用 Gen 3.0（10 GT/sec）速率，可添加以下配置：
 
   .. code-block:: shell
   
-    # Force Gen 3.0 speeds
+    # 强制使用 PCIe Gen 3.0 速率
     dtparam=pciex1_gen=3
   
   .. warning::
-  
-    The Raspberry Pi 5 is not certified for Gen 3.0 speeds, and connections to PCIe devices at these speeds may be unstable.
 
-*  You will need to disable the PCIe boot delay so that the Raspberry Pi can detect the NVMe drive behind the PCIe Switch at startup. Add the following line to ``/boot/firmware/config.txt`` ：
+    树莓派 5 并未对 Gen 3.0 速率进行官方认证，部分 PCIe 设备在此速率下可能会出现不稳定情况。
+
+* 为了让树莓派能够在启动时识别通过 PCIe Switch 连接的 NVMe 驱动器，你还需要关闭 PCIe 启动延迟。添加以下内容至 ``/boot/firmware/config.txt``：
 
    .. code-block:: shell
 
       dtparam=pciex1_no_10s=on
 
 
-* Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes.
+* 按 ``Ctrl + X``、 ``Y``，然后 ``Enter`` 保存文件。
 
 
 **BOOT_ORDER**
 
-If you have installed two NVMe system drives and need to choose one to boot from, 
-you can modify the ``ROOT=PARTUUID=xxxxxxxxx`` in the ``/boot/firmware/cmdline.txt`` file to the UUID of the disk you want to boot from. You can find the disk UUID with the following command:
+若安装了两个 NVMe 系统盘并需要选择其中一个启动，请编辑 ``/boot/firmware/cmdline.txt`` 文件，将 ``ROOT=PARTUUID=xxxxxxxxx`` 修改为目标磁盘的 UUID。可通过以下命令查找磁盘 UUID：
+
 
 .. code-block:: shell
 
    ls /dev/disk/by-id/
 
 
-2. Install the OS on the SSD
+2. 在 SSD 上安装操作系统
 ----------------------------------------
 
-There are two ways to install an operating system on the SSD:
+以下两种方法可将系统安装到 SSD 上：
 
-**Copying the System from the Micro SD Card to the SSD**
+**从 Micro SD 卡复制系统至 SSD**
 
-#. Connect a display or access the Raspberry Pi desktop through VNC Viewer. Then click **Raspberry Pi logo** -> **Accessories** -> **SD Card Copier**.
+#. 连接显示器或使用 VNC Viewer 访问树莓派桌面，点击 **树莓派图标** -> **Accessories** -> **SD Card Copier**。
 
    .. image:: img/ssd_copy.png
       
-    
-#. Make sure to select the correct **Copy From** and **Copy To** devices. Be careful not to mix them up.
+
+#. 确保正确选择 **复制来源（Copy From）** 和 **复制目标（Copy To）**，切勿选错。
 
    .. image:: img/ssd_copy_from.png
       
-#. Remember to select "NEW Partition UUIDs" to ensure the system can correctly distinguish devices, avoiding mounting conflicts and boot issues.
+#. 勾选 “NEW Partition UUIDs” 以避免设备识别冲突，确保系统正常挂载与启动。
 
    .. image:: img/ssd_copy_uuid.png
     
-#. After selection, click **Start**.
+#. 确认无误后点击 **Start**。
 
    .. image:: img/ssd_copy_click_start.png
 
-#. You will be prompted that the content on the SSD will be erased. Make sure to back up your data before clicking Yes.
+#. 系统会提示 SSD 数据将被清除，务必提前备份数据，再点击 Yes。
 
    .. image:: img/ssd_copy_erase.png
 
-#. Wait for some time, and the copying will be completed.
+#. 稍作等待，复制过程完成。
 
 
-**Installing the System with Raspberry Pi Imager**
+**使用 Raspberry Pi Imager 安装系统**
 
-If your Micro SD card has a desktop version of the system installed, you can use an imaging tool (like Raspberry Pi Imager) to burn the system to the SSD. This example uses Raspberry Pi OS bookworm, but other systems might require installing the imaging tool first.
+若 Micro SD 卡已安装桌面版本系统，可使用 Raspberry Pi Imager 工具将系统烧录至 SSD。本例使用 Raspberry Pi OS bookworm，其它系统可能需先安装 Imager 工具。
 
-#. Connect a display or access the Raspberry Pi desktop through VNC Viewer. Then click **Raspberry Pi logo** -> **Accessories** -> **Imager**.
+#. 连接显示器或使用 VNC Viewer 访问树莓派桌面，点击 **树莓派图标** -> **Accessories** -> **Imager**。
 
    .. image:: img/ssd_imager.png
 
-      
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+
+#. 在 |link_rpi_imager| 中点击 **Raspberry Pi Device**，选择 **Raspberry Pi 5** 型号。
 
    .. image:: img/ssd_pi5.png
       :width: 90%
 
 
-#. Select **Operating System** and opt for the recommended operating system version.
+#. 选择 **Operating System**，推荐使用官方推荐版本。
 
    .. image:: img/ssd_os.png
       :width: 90%
     
-#. In the **Storage** option, select your inserted NVMe SSD.
+#. 在 **Storage** 选项中选择所插入的 NVMe SSD。
 
    .. image:: img/nvme_storage.png
       :width: 90%
-    
-#. Click **NEXT** and then **EDIT SETTINGS** to tailor your OS settings. 
+
+#. 点击 **NEXT**，再点击 **EDIT SETTINGS** 进入系统配置。
 
    .. note::
 
-      If you have a monitor for your Raspberry Pi, you can skip the next steps and click 'Yes' to begin the installation. Adjust other settings later on the monitor.
+      如果你连接了显示器，可直接点击 Yes 开始安装，其他设置可后续手动修改。
 
    .. image:: img/os_enter_setting.png
       :width: 90%
 
-#. Define a **hostname** for your Raspberry Pi.
+#. 设置树莓派的 **主机名（hostname）**。
 
    .. note::
 
-      The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
+      主机名是树莓派在网络中的标识，可通过 ``<hostname>.local`` 或 ``<hostname>.lan`` 访问。
 
    .. image:: img/os_set_hostname.png
-      
 
-#. Create a **Username** and **Password** for the Raspberry Pi's administrator account.
+
+#. 创建用于管理员登录的 **用户名** 与 **密码**。
 
    .. note::
 
-      Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
+      建议使用唯一用户名与密码，以确保设备安全，树莓派默认不设密码。
 
    .. image:: img/os_set_username.png
-      
 
-#. Configure the wireless LAN by providing your network's **SSID** and **Password**.
+
+#. 设置 Wi-Fi 网络的 **SSID** 与 **密码**。
 
    .. note::
 
-      Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
+      设置 ``Wireless LAN country`` 为你所在地区的 ISO 国家代码，例如“CN”。
 
    .. image:: img/os_set_wifi.png
 
-#. To remotely connect to your Raspberry Pi, **enable SSH** in the **Services** tab.
+#. 若需远程连接，请在 **Services** 中启用 **SSH**。
 
-   * For **password authentication**, use the username and password from the **General** tab.
-   * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
+   * 若使用密码认证，请确保 General 中的用户名与密码设置完整；
+   * 若使用公钥认证，可选择“只允许公钥认证”。如未生成公钥，可点击“Run SSH-keygen”生成一对密钥。
 
    .. image:: img/os_enable_ssh.png
 
-      
 
-#. The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
+
+#. 在 **Options** 菜单中可配置烧录完成后的行为，如提示音、自动弹出磁盘、启用遥测等。
 
    .. image:: img/os_options.png
     
-#. When you've finished entering OS customisation settings, click **Save** to save your customisation. Then, click **Yes** to apply them when writing the image.
+#. 配置完成后点击 **Save** 保存，再点击 **Yes** 应用设置。
 
    .. image:: img/os_click_yes.png
       :width: 90%
       
-#. If the NVMe SSD contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
+#. 若 NVMe SSD 中已有数据，请先备份，再点击 **Yes** 继续。
 
    .. image:: img/nvme_erase.png
       :width: 90%
 
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the NVMe SSD!
+#. 当出现 “Write Successful” 弹窗时，说明镜像已成功写入并校验完成。此时你可以用 NVMe SSD 启动树莓派。
 
    .. image:: img/nvme_install_finish.png
       :width: 90%
-      
+
 
 .. _max_configure_boot_ssd:
 
-3. Configure boot from the SSD
+3. 配置从 SSD 启动
 ---------------------------------------
 
-In this section, we'll configure your Raspberry Pi to boot directly from an NVMe SSD, providing faster boot times and improved performance over an SD card. Follow these steps carefully:
+本节将指导你将树莓派配置为从 NVMe SSD 启动，从而提升系统启动速度与整体性能。请依照以下步骤操作：
 
-#. First, open a terminal on your Raspberry Pi and run the following command to access the configuration interface:.
+#. 首先，在树莓派终端中运行以下命令进入配置界面：
 
    .. code-block:: shell
 
       sudo raspi-config
 
-#. In the ``raspi-config`` menu, use the arrow keys to navigate and select **Advanced Options**. Press ``Enter`` to access the advanced settings.
+#. 在 ``raspi-config`` 菜单中，使用方向键选择 **Advanced Options**，按 ``Enter`` 进入高级设置。
 
    .. image:: img/nvme_open_config.png
 
-#. Inside **Advanced Options**, select **Boot Order**. This setting allows you to specify the order in which your Raspberry Pi looks for bootable devices.
+#. 进入 **Advanced Options** 后，选择 **Boot Order** 设置系统的启动优先顺序。
 
    .. image:: img/nvme_boot_order.png
 
-#. Then, choose **NVMe/USB boot**. This tells the Raspberry Pi to prioritize booting from USB-connected SSDs or NVMe drives over other options, such as the SD card.
+#. 选择 **NVMe/USB boot**，表示优先从 USB 或 NVMe 启动而非 SD 卡。
 
    .. image:: img/nvme_boot_nvme.png
 
-#. After selecting the boot order, press **Finish** to exit raspi-config. You may also use the **Escape** key to close the configuration tool.
+#. 设置完成后，按 **Finish** 退出配置工具，或按 **Esc** 键离开。
 
    .. image:: img/nvme_boot_ok.png
 
-#. To apply the new boot settings, reboot your Raspberry Pi by running ``sudo reboot``.
+#. 为应用新的启动设置，请重启树莓派： ``sudo reboot`` 。
 
    .. code-block:: shell
 
@@ -237,6 +223,6 @@ In this section, we'll configure your Raspberry Pi to boot directly from an NVMe
    
    .. image:: img/nvme_boot_reboot.png
 
-After rebooting, the Raspberry Pi should now attempt to boot from your connected NVMe SSD, providing you with enhanced performance and durability for your system.
+重启后，树莓派将尝试从所连接的 NVMe SSD 启动，为你的系统带来更高的性能与更强的耐用性。
 
 

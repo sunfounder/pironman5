@@ -1,29 +1,15 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-5. Controlling with Commands or the Dashboard
+5. 通过命令或仪表盘进行控制
 =======================================================
 
-Once you have successfully installed the ``pironman5`` module, the ``pironman5.service`` will automatically start upon reboot.
+成功安装 ``pironman5`` 模块后，系统将在重启时自动启动 ``pironman5.service`` 服务。
 
-You can monitor and control the Pironman 5 Mini via commands, or by accessing the dashboard through the webpage at ``http://<ip>:34001``.
+您可以通过命令行控制 Pironman 5 Mini，也可以在浏览器中访问 ``http://<ip>:34001`` 打开仪表盘进行监控和管理。
 
 .. note::
 
-    * For the **Home Assistant** system, you can only monitor and control the Pironman 5 Mini through the dashboard by opening the webpage at ``http://<ip>:34001``.
+    * 对于 **Home Assistant** 系统，仅支持通过浏览器访问 ``http://<ip>:34001`` 打开的仪表盘对 Pironman 5 Mini 进行监控与控制。
 
-    .. * For the **Batocera.linux** system, you can only monitor and control the Pironman 5 Mini via commands. It is important to note that any changes to the configuration require a restart of the service using ``pironman5 restart`` to take effect.
+    .. * 对于 **Batocera.linux** 系统，仅支持使用命令行方式进行监控与控制。请注意，任何配置更改后都必须使用 ``pironman5 restart`` 命令重启服务以使更改生效。
 
 
 .. toctree::

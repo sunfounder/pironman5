@@ -1,116 +1,101 @@
-.. note::
+常见问题解答（FAQ）
+============================
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+如何禁用 Web 控制面板？
+------------------------------------------
 
-    **Why Join?**
+在完成 ``pironman5`` 模块的安装后，您将可以访问 :ref:`max_view_control_dashboard` 页面。
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+如果您不需要该功能，并希望减少 CPU 与内存占用，可以在安装 ``pironman5`` 时添加 ``--disable-dashboard`` 参数以禁用控制面板。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-FAQ
-============
-
-How to disable web dashboard?
-------------------------------------------------------
-
-Once you have completed the installation of the ``pironman5`` module, you will be able to access the :ref:`max_view_control_dashboard`.
-      
-If you do not need this feature and want to reduce CPU and RAM usage, you can disable the dashboard during the installation of ``pironman5`` by adding the ``--disable-dashboard`` flag.
-      
 .. code-block:: shell
-      
+
    cd ~/pironman5
    sudo python3 install.py --disable-dashboard
-      
-If you have already installed ``pironman 5``, you can remove the ``dashboard`` module and ``influxdb``, then restart pironman5 to apply the changes:
-      
+
+如果您已经安装了 ``pironman5``，可以卸载 ``dashboard`` 模块和 ``influxdb``，并重启 pironman5 服务以应用更改：
+
 .. code-block:: shell
-      
+
    /opt/pironman5/venv/bin/pip3 uninstall pm-dashboard influxdb
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-Does the Pironman 5 support retro gaming systems?
-------------------------------------------------------
-Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
-
+Pironman 5 是否支持复古游戏系统？
+------------------------------------------
+支持。但需要注意的是，大多数复古游戏系统是精简版系统，无法安装或运行额外软件。这将导致 Pironman 5 的部分组件（如 OLED 屏幕、RGB 风扇和 4 个 RGB 灯）无法正常工作，因为这些组件依赖于 Pironman 5 的软件包进行驱动。
 
 .. note::
 
-    The Batocera.linux system is now fully compatible with Pironman 5. Batocera.linux is an open-source and completely free retro-gaming distribution.
+    目前 Batocera.linux 系统已完全兼容 Pironman 5。Batocera.linux 是一个开源且完全免费的复古游戏发行版。
 
     * :ref:`max_install_batocera`
     * :ref:`max_set_up_batocera`
 
-How to Control Components Using the ``pironman5`` Command
-----------------------------------------------------------------------
-You can refer to the following tutorial to control the components of the Pironman 5 using the ``pironman5`` command.
+如何使用 ``pironman5`` 命令控制组件？
+------------------------------------------------
+您可以参考以下教程，使用 ``pironman5`` 命令控制 Pironman 5 的各个组件：
 
 * :ref:`max_view_control_commands`
 
-How to Change the Raspberry Pi Boot Order Using Commands
--------------------------------------------------------------
+如何通过命令更改树莓派的启动顺序？
+-----------------------------------------------------
+如果您已经登录到树莓派系统，可以使用命令修改启动顺序。详细步骤请参考：
 
-If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
 
 * :ref:`max_configure_boot_ssd`
 
 
-How to Modify the Boot Order with Raspberry Pi Imager?
----------------------------------------------------------------
+如何使用 Raspberry Pi Imager 修改启动顺序？
+-------------------------------------------------------------
+除了在 EEPROM 配置中更改 ``BOOT_ORDER`` 外，还可以使用 **Raspberry Pi Imager** 修改树莓派的启动顺序。
 
-In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can also use the **Raspberry Pi Imager** to change the boot order of your Raspberry Pi.
+建议您使用备用卡执行此操作。
 
-It is recommended to use a spare card for this step.
 
 * :ref:`max_update_bootloader`
 
-How to Copy the System from the SD Card to an NVMe SSD?
--------------------------------------------------------------
+如何将系统从 SD 卡复制到 NVMe SSD？
+------------------------------------------------------
 
-If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
+如果您拥有 NVMe SSD，但没有合适的适配器将其连接到电脑，可以先将系统安装到 Micro SD 卡上。Pironman 5 成功启动后，可将系统从 SD 卡复制到 NVMe SSD。请参阅以下教程：
 
 
 * :ref:`max_copy_sd_to_nvme_rpi`
 
 
-OLED Screen Not Working?
---------------------------
+OLED 屏幕无法显示？
+-----------------------------
 
-If the OLED Screen is not displaying or displaying incorrectly, you can follow these steps to troubleshoot the issue:
+如果 OLED 屏幕不显示或显示异常，请尝试以下方法进行排查：
 
-Check if the FPC cable of the OLED Screen is properly connected.
+确认 OLED 屏幕的 FPC 排线是否连接牢固。
 
-#. Use the following command to view the program's run logs and check for error messages.
+#. 使用以下命令查看程序日志并排查错误信息：
 
    .. code-block:: shell
 
       cat /opt/pironman5/log
 
-#. Alternatively, use the following command to check if the OLED's i2c address 0x3C is recognized:
-    
-   .. code-block:: shell
-        
-        sudo i2cdetect -y 1
-
-#. If the first two steps don't reveal any issues, try restarting the pironman5 service to see if that resolves the problem.
-
+#. 或者使用以下命令查看 OLED 的 i2c 地址（0x3C）是否被识别：
 
    .. code-block:: shell
 
-        sudo systemctl restart pironman5.service
+      sudo i2cdetect -y 1
+
+#. 如果上述操作未发现异常，尝试重启 pironman5 服务：
+
+
+   .. code-block:: shell
+
+      sudo systemctl restart pironman5.service
 
 .. _max_openssh_powershell:
 
-Install OpenSSH via Powershell
------------------------------------
+通过 PowerShell 安装 OpenSSH
+---------------------------------------
 
-When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``) to connect to your Raspberry Pi, but the following error message appears.
+当您尝试使用 ``ssh <用户名>@<主机名>.local``（或 ``ssh <用户名>@<IP 地址>``）登录树莓派时，若出现以下报错：
 
     .. code-block::
 
@@ -118,21 +103,21 @@ When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP addres
         spelling of the name, or if a path was included, verify that the path is correct and try again.
 
 
-It means your computer system is too old and does not have `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ pre-installed, you need to follow the tutorial below to install it manually.
+说明您的 Windows 系统版本较老，未预装 `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_，请按照以下步骤手动安装：
 
-#. Type ``powershell`` in the search box of your Windows desktop, right click on the ``Windows PowerShell``, and select ``Run as administrator`` from the menu that appears.
+#. 在 Windows 搜索框中输入 ``powershell``，右键点击 ``Windows PowerShell``，选择“以管理员身份运行”。
 
    .. image:: img/powershell_ssh.png
       :width: 90%
-      
 
-#. Use the following command to install ``OpenSSH.Client``.
+
+#. 使用以下命令安装 ``OpenSSH.Client``：
 
    .. code-block::
 
         Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
-#. After installation, the following output will be returned.
+#. 安装完成后，您将看到如下输出：
 
    .. code-block::
 
@@ -140,13 +125,13 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
         Online        : True
         RestartNeeded : False
 
-#. Verify the installation by using the following command.
+#. 使用以下命令验证安装状态：
 
    .. code-block::
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. It now tells you that ``OpenSSH.Client`` has been successfully installed.
+#. 如果输出结果为： ``OpenSSH.Client``  则表示已成功安装。
 
    .. code-block::
 
@@ -156,17 +141,17 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
         Name  : OpenSSH.Server~~~~0.0.1.0
         State : NotPresent
 
-   .. warning:: 
+   .. warning::
 
-        If the above prompt does not appear, it means that your Windows system is still too old, and you are advised to install a third-party SSH tool, like |link_putty|.
+        如果没有上述提示，说明您的 Windows 系统版本过老，建议使用第三方 SSH 工具，如 |link_putty|。
 
-#. Now restart PowerShell and continue to run it as administrator. At this point you will be able to log in to your Raspberry Pi using the ``ssh`` command, where you will be prompted to enter the password you set up earlier.
+#. 此时请重新启动 PowerShell，并继续以管理员身份运行。您即可使用 ``ssh`` 命令登录树莓派，并输入之前设置的密码。
 
    .. image:: img/powershell_login.png
 
 
 
-If I set up OMV, can I still use the Pironman5's function?
---------------------------------------------------------------------------------------------------------
+如果我安装了 OMV，还能使用 Pironman5 的功能吗？
+----------------------------------------------------------------
 
-Yes, OpenMediaVault is set up on the Raspberry Pi system. Please follow the steps of :ref:`max_set_up_pi_os` to continue the configuration.
+可以，OpenMediaVault 是基于树莓派系统构建的，您仍然可以按照 :ref:`max_set_up_pi_os` 中的步骤继续进行 Pironman5 的配置。

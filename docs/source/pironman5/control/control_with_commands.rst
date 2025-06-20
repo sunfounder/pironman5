@@ -1,40 +1,27 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _view_control_commands:
 
-Control with Commands
+通过命令行进行控制
 ========================================
-In addition to viewing data from the Pironman 5 and controlling various devices through the Dashboard, you can also use commands to control them.
+
+除了通过控制面板查看 Pironman 5 的运行数据和控制各类设备，您还可以使用命令行实现同样的控制功能。
 
 .. note::
 
-  * For the **Home Assistant** system, you can only monitor and control the Pironman 5 through the dashboard by opening the webpage at ``http://<ip>:34001``.
-  * For the **Batocera.linux** system, you can only monitor and control the Pironman 5 via commands. It is important to note that any changes to the configuration require a restart of the service using ``pironman5 restart`` to take effect.
+  * 在 **Home Assistant** 系统中，仅可通过网页 ``http://<ip>:34001`` 使用控制面板进行监控与管理。
+  * 在 **Batocera.linux** 系统中，仅支持使用命令行对 Pironman 5 进行监控与控制。请注意，修改配置后需执行 ``pironman5 restart`` 以使更改生效。
 
-View the Basic Configurations
+查看基本配置
 -----------------------------------
 
-The ``pironman5`` module offers basic configurations for Pironman, which you can review with the following command.
+``pironman5`` 模块提供了 Pironman 的基础配置，您可以通过以下命令查看当前配置项。
 
 .. code-block:: shell
 
   pironman5 -c
 
-The standard configurations appear as follows:
+标准配置如下所示：
 
-.. code-block:: 
+.. code-block::
 
   {
       "auto": {
@@ -50,9 +37,9 @@ The standard configurations appear as follows:
       }
   }
 
-Customize these configurations to fit your needs.
+您可以根据需求自定义这些配置。
 
-Use ``pironman5`` or ``pironman5 -h`` for instructions.
+使用 ``pironman5`` 或 ``pironman5 -h`` 查看命令使用说明。
 
 .. code-block::
 
@@ -63,100 +50,100 @@ Use ``pironman5`` or ``pironman5 -h`` for instructions.
 
   Pironman5
 
-  positional arguments:
-    {start,stop}          Command
+  位置参数:
+    {start,stop}          控制命令
 
-  options:
-    -h, --help            show this help message and exit
-    -c, --config          Show config
+  可选参数:
+    -h, --help            显示帮助信息并退出
+    -c, --config          显示当前配置
     -rc [RGB_COLOR], --rgb-color [RGB_COLOR]
-                          RGB color in hex format with or without # (e.g. #FF0000 or 00aabb)
+                          以十六进制设置 RGB 颜色，可带或不带 '#'（如 #FF0000 或 00aabb）
     -rb [RGB_BRIGHTNESS], --rgb-brightness [RGB_BRIGHTNESS]
-                          RGB brightness 0-100
-    -rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}], --rgb-style [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]
-                          RGB style
+                          设置 RGB 亮度，范围为 0–100
+    -rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}], --rgb-style [{...}]
+                          设置 RGB 显示样式
     -rp [RGB_SPEED], --rgb-speed [RGB_SPEED]
-                          RGB speed 0-100
+                          设置 RGB 动效速度，范围 0–100
     -re [RGB_ENABLE], --rgb-enable [RGB_ENABLE]
-                          RGB enable True/False
+                          启用或关闭 RGB，True/False
     -rl [RGB_LED_COUNT], --rgb-led-count [RGB_LED_COUNT]
-                          RGB LED count int
+                          设置 RGB LED 的数量（整数）
     -u [{C,F}], --temperature-unit [{C,F}]
-                          Temperature unit
+                          设置温度单位
     -gm [GPIO_FAN_MODE], --gpio-fan-mode [GPIO_FAN_MODE]
-                          GPIO fan mode, 0: Always On, 1: Performance, 2: Cool, 3: Balanced, 4: Quiet
+                          设置风扇模式，0: 始终开启，1: 高性能，2: 清凉，3: 平衡，4: 静音
     -gp [GPIO_FAN_PIN], --gpio-fan-pin [GPIO_FAN_PIN]
-                          GPIO fan pin
+                          设置风扇 GPIO 引脚号
 
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+  每当修改 ``pironman5.service`` 状态后，需使用以下命令重启服务，使配置生效。
 
   .. code-block:: shell
 
     sudo systemctl restart pironman5.service
 
 
-* Verify the ``pironman5`` program status using the ``systemctl`` tool.
+* 可使用 ``systemctl`` 工具查看 ``pironman5`` 程序状态：
 
   .. code-block:: shell
 
     sudo systemctl status pironman5.service
 
-* Alternatively, inspect the program-generated log files.
+* 或通过日志文件检查程序运行状态：
 
   .. code-block:: shell
 
     cat /opt/pironman5/log
 
 
-Control RGB LEDs
+控制 RGB 灯效
 ----------------------
-The board features 4 WS2812 RGB LEDs, offering customizable control. Users can turn them on or off, change the color, adjust the brightness, switch RGB LED display modes, and set the speed of changes.
+主板配备了 4 颗 WS2812 RGB LED，支持个性化控制。用户可开启/关闭灯效，变更颜色，调整亮度，设置显示模式以及动效速度。
 
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+  每当您修改 ``pironman5.service`` 的状态后，都需要执行以下命令，使配置更改生效。
 
   .. code-block:: shell
 
     sudo systemctl restart pironman5.service
 
-* To modify the on and off state of the RGB LEDs, ``true`` to turn on the RGB LEDs, ``false`` to turn them off.
+* 开关 RGB 灯：使用 ``true`` 开启， ``false`` 关闭：
 
 .. code-block:: shell
 
   pironman5 -re true
 
-* To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
+* 更改颜色：输入十六进制颜色值，例如 ``fe1a1a``：
 
 .. code-block:: shell
 
   pironman5 -rc fe1a1a
 
-* To change the brightness of the RGB LED (range: 0 ~ 100%):
+* 设置亮度（范围：0–100%）：
 
 .. code-block:: shell
 
   pironman5 -rb 100
 
-* To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
+* 更换 RGB 显示模式，可选项包括： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``
 
 .. note::
 
-  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``pironman5 -rc``.
+  若设置为 ``rainbow``、 ``rainbow_reverse`` 或 ``hue_cycle`` 模式，将无法再使用 ``pironman5 -rc`` 指定颜色。
 
 .. code-block:: shell
 
   pironman5 -rs breathing
 
-* To modify the speed of change (range: 0 ~ 100%):
+* 设置动画速度（范围：0–100%）：
 
 .. code-block:: shell
 
   pironman5 -rp 80
 
-* The default setup includes 4 RGB LEDs. Connect additional LEDs and update the count using:
+* 默认配置为 4 颗 RGB LED。如您连接了更多 LED，可使用以下命令修改数量：
 
 .. code-block:: shell
 
@@ -164,74 +151,74 @@ The board features 4 WS2812 RGB LEDs, offering customizable control. Users can t
 
 .. _cc_control_fan:
 
-Control RGB Fans
+控制 RGB 风扇
 ---------------------
-The IO expansion board supports up to two 5V non-PWM fans. Both fans are controlled together. 
+IO 扩展板支持连接两颗 5V 非 PWM 风扇，两个风扇同步控制。
 
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+  每次修改 ``pironman5.service`` 服务的状态后，都需要执行以下命令，使配置更改生效。
 
   .. code-block:: shell
 
     sudo systemctl restart pironman5.service
 
-* You can use command to configure the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate. 
+* 使用命令设置 RGB 风扇的运行模式，不同模式对应不同的启动温度阈值：
 
-For instance, if set to **1: Performance** mode, the RGB fans will activate at 50°C.
+例如：选择 **1: Performance** 模式，风扇将在温度达到 50°C 时自动启动。
 
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4: Quiet**: The RGB fans will activate at 70°C.
-* **3: Balanced**: The RGB fans will activate at 67.5°C.
-* **2: Cool**: The RGB fans will activate at 60°C.
-* **1: Performance**: The RGB fans will activate at 50°C.
-* **0: Always On**: The RGB fans will always on.
+* **4: Quiet**：温度达 70°C 启动风扇  
+* **3: Balanced**：温度达 67.5°C 启动  
+* **2: Cool**：温度达 60°C 启动  
+* **1: Performance**：温度达 50°C 启动  
+* **0: Always On**：风扇始终运行
 
-* If you connect the control pin of the RGB fan to different pins on the Raspberry Pi, you can use the following command to change the pin number.
+* 若您将风扇控制引脚连接至其他 GPIO 引脚，可使用以下命令修改：
 
 .. code-block:: shell
 
   sudo pironman5 -gp 18
 
 
-Check the OLED Screen
+检查 OLED 显示屏
 -----------------------------------
 
-When you have installed the ``pironman5`` library, the OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address, and it shows this every time you reboot.
+安装 ``pironman5`` 模块后，OLED 显示屏将在每次开机时显示 CPU、内存、磁盘使用情况、CPU 温度及设备 IP 地址。
 
-If your OLED screen does not display any content, you need to first check if the OLED's FPC cable is connected properly.
+若屏幕未显示内容，请首先检查 OLED 的 FPC 软排线是否正确连接。
 
-Then you can check the program log to see what might be the problem through the following command.
+随后可通过查看日志判断问题所在：
 
 .. code-block:: shell
 
   cat /var/log/pironman5/
 
-Or check if the OLED's i2c address 0x3C is recognized:
+或检查 OLED 是否被识别，地址应为 0x3C：
 
 .. code-block:: shell
 
   i2cdetect -y 1
 
-Checkout the Infrared Receiver
+检查红外接收器
 ---------------------------------------
 
 
-* Install the ``lirc`` module:
+* 安装 ``lirc`` 模块：
 
   .. code-block:: shell
 
     sudo apt-get install lirc -y
 
-* Now, test the IR Receiver by running the following command. 
+* 使用以下命令测试红外接收器：
 
   .. code-block:: shell
 
     mode2 -d /dev/lirc0
 
-* After running the command, press a button on the remote control, and the code of that button will be printed.
+* 执行命令后，按下遥控器按钮，终端将输出该按钮的码值。
 
