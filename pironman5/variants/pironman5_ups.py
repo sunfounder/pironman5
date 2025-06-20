@@ -1,7 +1,7 @@
 class Pironman5UPS:
     NAME = "Pironman 5 UPS"
     ID = "pironman5-ups"
-    PRODUCT_VERSION = "V2"
+    PRODUCT_VERSION = "V1"
     PERIPHERALS = [
         'storage',
         "cpu",
@@ -50,7 +50,8 @@ class Pironman5UPS:
         "oled_disk": "total",
         "oled_network_interface": "all",
         'oled_sleep_timeout': 10,
-        'oled_pages': [# set
+        'oled_pages': [
+            'mix',
             'performance',
             'ips',
             'disk',
