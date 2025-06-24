@@ -38,12 +38,6 @@ class Pironman5UPS:
     ]
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
-        "rgb_color": "#0a1aff",
-        "rgb_brightness": 50,
-        "rgb_style": "breathing",
-        "rgb_speed": 50,
-        "rgb_enable": True,
-        "rgb_led_count": 4,
         "temperature_unit": "C",
         "oled_enable": True,
         "oled_rotation": 0,
@@ -59,8 +53,13 @@ class Pironman5UPS:
             'input',
             'output',
         ],
+        'rgb_matrix_enable': True,
+        'rgb_matrix_style': "rainbow",
+        'rgb_matrix_color': "#0a1aff",
+        'rgb_matrix_speed': 50,
+        'rgb_matrix_brightness': 100,
     }
     DT_OVERLAYS = [
-        'sunfounder-pironman5.dtbo',
+        'sunfounder-pironman5ups.dtbo',
     ]
 
