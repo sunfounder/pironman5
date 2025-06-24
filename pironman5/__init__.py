@@ -27,6 +27,7 @@ def main():
     __package_name__ = __name__.split('.')[0]
     CONFIG_PATH = str(resource_files(__package_name__).joinpath('config.json'))
     PIP_PATH = "/opt/pironman5/venv/bin/pip"
+    DEBUG_LEVELS = ['debug', 'info', 'warning', 'error', 'critical']
 
     current_config = None
     debug_level = 'INFO'
@@ -40,18 +41,18 @@ def main():
                         help="Command")
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
-    parser.add_argument("-dl", "--debug-level", choices=['debug', 'info', 'warning', 'error', 'critical'], help="Debug level")
+    parser.add_argument("-dl", "--debug-level", nargs='?', help=f"Debug level: {DEBUG_LEVELS}")
     parser.add_argument("-rd", "--remove-dashboard", action="store_true", help="Remove dashboard")
     parser.add_argument("-cp", "--config-path", nargs='?', default='', help="Config path")
     parser.add_argument("-eh", "--enable-history", nargs='?', default='', help="Enable history, True/true/on/On/1 or False/false/off/Off/0")
     # ws2812
     if is_included(PERIPHERALS, "ws2812"):
         from pm_auto.services.ws2812_service import RGB_STYLES
+        parser.add_argument("-re", "--rgb-enable", nargs='?', default='', help="RGB enable True/False")
+        parser.add_argument("-rs", "--rgb-style", nargs='?', default='breathing', help=f"RGB style: {RGB_STYLES}")
         parser.add_argument("-rc", "--rgb-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
         parser.add_argument("-rb", "--rgb-brightness", nargs='?', default='', help="RGB brightness 0-100")
-        parser.add_argument("-rs", "--rgb-style", choices=RGB_STYLES, nargs='?', default='', help="RGB style")
         parser.add_argument("-rp", "--rgb-speed", nargs='?', default='', help="RGB speed 0-100")
-        parser.add_argument("-re", "--rgb-enable", nargs='?', default='', help="RGB enable True/False")
         parser.add_argument("-rl", "--rgb-led-count", nargs='?', default='', help="RGB LED count int")
     # temperature_unit
     if is_included(PERIPHERALS, "temperature_unit"):
@@ -77,11 +78,12 @@ def main():
     # rgb_matrix
     if is_included(PERIPHERALS, "rgb_matrix"):
         from pm_auto.services.rgb_matrix_service import RGB_MATRIX_STYLES
-        parser.add_argument("-rmc", "--rgb-matrix-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
-        parser.add_argument("-rmb", "--rgb-matrix-brightness", nargs='?', default='', help="RGB brightness 0-100")
-        parser.add_argument("-rms", "--rgb-matrix-style", choices=RGB_MATRIX_STYLES, nargs='?', default='', help="RGB style")
-        parser.add_argument("-rmp", "--rgb-matrix-speed", nargs='?', default='', help="RGB speed 0-100")
         parser.add_argument("-rme", "--rgb-matrix-enable", nargs='?', default='', help="RGB enable True/False")
+        # parser.add_argument("-rms", "--rgb-matrix-style", choices=RGB_MATRIX_STYLES, nargs='?', default='', help="RGB style")
+        parser.add_argument("-rms", "--rgb-matrix-style",  nargs='?', default='rainbow', help=f"RGB style: {RGB_MATRIX_STYLES}")
+        parser.add_argument("-rmc", "--rgb-matrix-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
+        parser.add_argument("-rmp", "--rgb-matrix-speed", nargs='?', default='', help="RGB speed 0-100")
+        parser.add_argument("-rmb", "--rgb-matrix-brightness", nargs='?', default='', help="RGB brightness 0-100")
     
     # -----------------------------------------------------------
     args = parser.parse_args()
@@ -254,6 +256,36 @@ def main():
                     quit()
                 new_sys_config['rgb_led_count'] = args.rgb_led_count
                 print(f"Set RGB LED count: {args.rgb_led_count}")
+    # rgb_matrix
+    if is_included(PERIPHERALS, "rgb_matrix"):
+        # rgb_matrix color
+        if args.rgb_matrix_color != '':
+            if args.rgb_matrix_color == None:
+                hex = current_config['system']['rgb_matrix_color']
+                if hex[0] == '#':
+                    hex = hex[1:]
+                r = int(hex[0:2], 16)
+                g = int(hex[2:4], 16)
+                b = int(hex[4:6], 16)
+                print(f"RGB Matrix color: #{hex} ({r}, {g}, {b})")
+            else:
+                if len(args.rgb_matrix_color) != 6:
+                    print(f'Invalid value for RGB Matrix color, it should be in hex format without # (e.g. 00aabb)')
+                    quit()
+                if len(args.rgb_matrix_color) == 6:
+                    try:
+                        r = int(args.rgb_matrix_color[0:2], 16)
+                        g = int(args.rgb_matrix_color[2:4], 16)
+                        b = int(args.rgb_matrix_color[4:6], 16)
+                    except ValueError:
+                        print(f'Invalid value for RGB Matrix color, it should be in hex format without # (e.g. 00aabb)')
+                        quit()
+                new_sys_config['rgb_matrix_color'] = args.rgb_matrix_color
+                print(f"Set RGB Matrix color: #{args.rgb_matrix_color} ({r}, {g}, {b})")
+        # rgb_matrix brightness
+        if args.rgb_matrix_brightness != '':
+            if args.rgb_matrix_brightness == None:
+                print(f"RGB Matrix brightness: {current_config['system']['rgb_matrix_brightness']}")
     # temperature_unit
     if is_included(PERIPHERALS, "temperature_unit"):
         if args.temperature_unit != '':
