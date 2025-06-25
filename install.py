@@ -32,7 +32,7 @@ settings = {
     # - Install python source code from git
     'python_source': {
         'pironman5': './',
-        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.2.4',
+        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.3.x',
     },
 
     # create symbolic links from venv/bin/ to /usr/local/bin/
@@ -58,7 +58,7 @@ settings = {
     # - Set service filenames
     'service_files': ['pironman5.service'],
     # - Set bin files
-    'bin_files': ['pironman5'],
+    'bin_files': [],
 
     # - Copy device tree overlay to /boot/overlays
     'dtoverlays': DT_OVERLAYS,
@@ -106,8 +106,8 @@ dashboard_settings = {
         'lsof', # for pm_dashboard
     ],
     'python_source': {
-        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.2.6',
-        'sf_rpi_status': 'git+https://github.com/sunfounder/sf_rpi_status.git@1.1.0',
+        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.3.x',
+        'sf_rpi_status': 'git+https://github.com/sunfounder/sf_rpi_status.git@1.1.3',
     },
 }
 
