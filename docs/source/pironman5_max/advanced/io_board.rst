@@ -26,19 +26,19 @@ The board features 4 WS2812 RGB LEDs, offering customizable control. Users can t
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * To change the brightness of the RGB LED (range: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
@@ -48,13 +48,17 @@ The board features 4 WS2812 RGB LEDs, offering customizable control. Users can t
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * To modify the speed of change (range: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
+
+
+
+
 
 RGB Control Pin
 -------------------------
@@ -113,6 +117,23 @@ Check if the FPC cable of the OLED Screen is properly connected.
     .. code-block:: shell
 
         sudo systemctl restart pironman5.service
+
+
+Wake-Up Trigger
+-------------------------
+
+.. image:: img/io_board_vib.png
+
+The onboard vibration switch is used to wake up the OLED display from sleep mode. When a vibration is detected, it sends a signal to reactivate the OLED, allowing the display to remain off when idle and wake automatically when motion is sensed.
+
+If you remove the jumper cap labeled for the vibration switch, the wake-up function will be disabled. Once the OLED enters sleep mode, it will no longer be able to wake up. This option is intended for advanced users who wish to repurpose the corresponding GPIO pin for other applications.
+
+.. note::
+
+  Jumper installed: Vibration wake-up is enabled.
+
+  Jumper removed: OLED cannot be woken once it turns off. The pin is freed for other uses.
+
 
 
 Infrared Receiver

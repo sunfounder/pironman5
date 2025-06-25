@@ -147,24 +147,24 @@ Now officially start installing the **Pironman 5** add-on.
    .. image:: img/home_addon.png
       :width: 90%
 
-#. Find **Pironman 5** in the **SunFounder** add-ons list and click to enter.
+#. Find **Pironman 5 MAX** in the **SunFounder** add-ons list and click to enter.
 
-   .. image:: img/home_pironman5_addon.png
+   .. image:: img/home_pironman5_max_addon.png
       :width: 90%
 
-#. Now install the Pironman 5 add-on.
+#. Now install the Pironman 5 MAX add-on.
 
-   .. image:: img/home_install_pironman5.png
-      :width: 90%
+   .. image:: img/home_pironman5_max_addon_install.png
+
 
 #. After installation is complete, click **START** to start this add-on. You will see the OLED screen display the Raspberry Pi CPU, temperature, and other related information. Four WS2812 RGB LEDs will light up in blue with a breathing mode.
 
-   .. image:: img/home_start_pironman5.png
+   .. image:: img/home_pironman5_max_addon_start.png
       :width: 90%
 
 #. Now you can click **OPEN WEB UI** to open the Pironman 5 web page. You can also check the option to display the Web UI in the sidebar. This will allow you to see the Pironman 5 option in the left sidebar of Home Assistant, and click to open the Pironman 5 page.
 
-   .. image:: img/home_web_ui.png
+   .. image:: img/home_pironman5_max_webui.png
       :width: 90%
 
 #. Now you can see the information about your Raspberry Pi, configure the RGB, and control the fan, etc.

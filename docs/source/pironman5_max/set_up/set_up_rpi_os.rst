@@ -26,6 +26,7 @@ If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your 
 
 Configuring Shutdown to Deactivate GPIO Power
 ------------------------------------------------------------
+
 To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from remaining active post-shutdown, it's essential to configure the Raspberry Pi for GPIO power deactivation.
 
 #. Manually edit the ``EEPROM`` configuration file with this command:
@@ -61,7 +62,7 @@ Downloading and Installing the ``pironman5`` Module
    .. code-block:: shell
 
       cd ~
-      git clone https://github.com/sunfounder/pironman5.git -b 1.2.7
+      git clone -b 1.2.5 https://github.com/sunfounder/pironman5.git --depth 1
       cd ~/pironman5
       sudo python3 install.py
 

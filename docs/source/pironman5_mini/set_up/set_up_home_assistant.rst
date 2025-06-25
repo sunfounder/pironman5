@@ -154,22 +154,22 @@ Now officially start installing the **Pironman 5 Mini** add-on.
 
 #. Find **Pironman 5 Mini** in the **SunFounder** add-ons list and click to enter.
 
-   .. image:: img/home_pironman5_addon.png
+   .. image:: img/home_pironman5_mini_addon.png
       :width: 90%
 
-#. Now install the Pironman 5 add-on.
+#. Now install the Pironman 5 Mini add-on.
 
-   .. image:: img/home_install_pironman5.png
+   .. image:: img/home_pironman5_mini_addon_install.png
       :width: 90%
 
 #. After installation is complete, click **START** to start this add-on. You will see Four WS2812 RGB LEDs will light up in blue with a breathing mode.
 
-   .. image:: img/home_start_pironman5.png
+   .. image:: img/home_pironman5_mini_addon_start.png
       :width: 90%
 
 #. Now you can click **OPEN WEB UI** to open the Pironman 5 Mini web page. You can also check the option to display the Web UI in the sidebar. This will allow you to see the Pironman 5 Mini option in the left sidebar of Home Assistant, and click to open the Pironman 5 Mini page.
 
-   .. image:: img/home_web_ui.png
+   .. image:: img/home_pironman5_mini_webui.png
       :width: 90%
 
 #. Now you can see the information about your Raspberry Pi, configure the RGB, and control the fan, etc.

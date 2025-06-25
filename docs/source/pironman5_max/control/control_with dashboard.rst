@@ -33,9 +33,9 @@ Dashboard
 
 There are multiple cards to view the relevant status of the Raspberry Pi, including:
 
-* **Fan**: View the Raspberry Pi's CPU temperature and the PWM fan speed. **GPIO Fan State** indicates the status of the two side RGB fans. At the current temperature, the two RGB fans are off.
+* **Temperature**: View the Raspberry Pi's CPU & GPU temperature and the PWM fan speed. **GPIO Fan State** indicates the status of the two side RGB fans. At the current temperature, the two RGB fans are off.
 
-  .. image:: img/dashboard_pwm_fan.png
+  .. image:: img/dashboard_temp.png
     :width: 90%
     
 
@@ -96,15 +96,17 @@ Settings
 
 There is a settings menu in the upper right corner of the page where you can customize the settings according to your preferences. After making modifications, the changes will be saved automatically. If needed, you can click the CLEAR button at the bottom to clear the historical data.
 
-.. image:: img/Dark_mode_and_Temperature.jpg
+.. image:: img/dashboard_setting_darkmode.png
   :width: 600
 
 * **Dark Mode**: Toggle between light and dark mode themes. The theme option is saved in the browser cache. Changing the browser or clearing the cache will revert to the default light theme.
+* **Show Unmounted Disk**: Whether to show unmounted disks in the dashboard.
+* **Show All Cores**: Whether to show all cores in the dashboard.
 * **Temperature Unit**: Set the temperature unit displayed by the system.
 
 **About OLED Screen**
 
-.. image:: img/OLED_Sreens.jpg
+.. image:: img/dashboard_setting_oled.png
   :width: 600
 
 * **OLED Enable**: Whether to enable OLED.
@@ -116,6 +118,7 @@ There is a settings menu in the upper right corner of the page where you can cus
   * **wlan0**: Display only the Wi-Fi IP
 
 * **OLED Rotation**: Set OLED rotation.
+* **OLED Sleep Timeout**: Set OLED sleep timeout.
 
 **About RGB LEDs**
 
@@ -135,8 +138,15 @@ There is a settings menu in the upper right corner of the page where you can cus
 
 **About RGB Fans**
 
-.. image:: img/RGB_FAN2.png
+.. image:: img/dashboard_setting_fan.png
   :width: 600
+
+
+* **Fan LED**: Set the mode of the RGB fans.
+
+    * **Off**: Turn off the RGB.
+    * **On**: Turn on the RGB.
+    * **Follow**: Turn on the RGB automatically based on the fan's work state. 
 
 * **GPIO Fan Mode**: You can set the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate.
 
@@ -148,8 +158,5 @@ There is a settings menu in the upper right corner of the page where you can cus
 
 For instance, if set to **Performance** mode, the RGB fans will activate at 50°C.
 
-After saving, if the CPU temperature exceeds 50°C, you will see the **GPIO Fan State** change to ON in the Dashboard, and the side RGB fans will start spinning.
-
-.. image:: img/dashboard_rgbfan_on.png
-  :width: 300
+After saving, if the CPU temperature exceeds 50°C, you will see the side RGB fans will start spinning.
 
