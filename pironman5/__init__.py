@@ -104,6 +104,10 @@ def main():
     if not path.exists(config_path):
         with open(config_path, 'w') as f:
             json.dump({'system': {}}, f, indent=4)
+        try:
+            os.chmod(config_path, 0o775)
+        except Exception as e:
+            print(f"Failed to set permissions for config file: {e}")
     else:
         with open(config_path, 'r') as f:
             try:
