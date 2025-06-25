@@ -29,7 +29,7 @@ class Pironman5V10:
         "oled_rotation": 0,
         "oled_disk": "total",
         "oled_network_interface": "all",
-        'oled_sleep_timeout': 5,
+        'oled_sleep_timeout': 10,
         'oled_pages': [
             'mix',
             'performance',
