@@ -49,7 +49,7 @@ def main():
     if is_included(PERIPHERALS, "ws2812"):
         from pm_auto.services.ws2812_service import RGB_STYLES
         parser.add_argument("-re", "--rgb-enable", nargs='?', default='', help="RGB enable True/False")
-        parser.add_argument("-rs", "--rgb-style", nargs='?', default='breathing', help=f"RGB style: {RGB_STYLES}")
+        parser.add_argument("-rs", "--rgb-style", nargs='?', default='', help=f"RGB style: {RGB_STYLES}")
         parser.add_argument("-rc", "--rgb-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
         parser.add_argument("-rb", "--rgb-brightness", nargs='?', default='', help="RGB brightness 0-100")
         parser.add_argument("-rp", "--rgb-speed", nargs='?', default='', help="RGB speed 0-100")
@@ -80,7 +80,7 @@ def main():
         from pm_auto.services.rgb_matrix_service import RGB_MATRIX_STYLES
         parser.add_argument("-rme", "--rgb-matrix-enable", nargs='?', default='', help="RGB enable True/False")
         # parser.add_argument("-rms", "--rgb-matrix-style", choices=RGB_MATRIX_STYLES, nargs='?', default='', help="RGB style")
-        parser.add_argument("-rms", "--rgb-matrix-style",  nargs='?', default='rainbow', help=f"RGB style: {RGB_MATRIX_STYLES}")
+        parser.add_argument("-rms", "--rgb-matrix-style",  nargs='?', default='', help=f"RGB style: {RGB_MATRIX_STYLES}")
         parser.add_argument("-rmc", "--rgb-matrix-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
         parser.add_argument("-rmp", "--rgb-matrix-speed", nargs='?', default='', help="RGB speed 0-100")
         parser.add_argument("-rmb", "--rgb-matrix-brightness", nargs='?', default='', help="RGB brightness 0-100")
@@ -426,6 +426,62 @@ def main():
                 else:
                     print(f"Invalid value for Vibration switch pull up, it should be {', '.join(TRUE_LIST)} or {', '.join(FALSE_LIST)}")
                     quit()
+    # rgb_matrix
+    if is_included(PERIPHERALS, "rgb_matrix"):
+        # rgb_matrix_enable
+        if args.rgb_matrix_enable != '':
+            if args.rgb_matrix_enable == None:
+                print(f"RGB Matrix enable: {current_config['system']['rgb_matrix_enable']}")
+            else:
+                if args.rgb_matrix_enable in TRUE_LIST:
+                    new_sys_config['rgb_matrix_enable'] = True
+                    print(f"Set RGB Matrix enable: True")
+                elif args.rgb_matrix_enable in FALSE_LIST:
+                    new_sys_config['rgb_matrix_enable'] = False
+                    print(f"Set RGB Matrix enable: False")
+                else:
+                    print(f"Invalid value for RGB Matrix enable, it should be True or False")
+                    quit()
+        # rgb_matrix_style
+        if args.rgb_matrix_style != '':
+            if args.rgb_matrix_style == None:
+                print(f"RGB Matrix style: {current_config['system']['rgb_matrix_style']}")
+            else:
+                if args.rgb_matrix_style not in RGB_MATRIX_STYLES:
+                    print(f"Invalid value for RGB Matrix style, it should be one of {RGB_MATRIX_STYLES}")
+                    quit()
+                new_sys_config['rgb_matrix_style'] = args.rgb_matrix_style
+                print(f"Set RGB Matrix style: {args.rgb_matrix_style}")
+        # rgb_matrix_speed
+        if args.rgb_matrix_speed != '':
+            if args.rgb_matrix_speed == None:
+                print(f"RGB Matrix speed: {current_config['system']['rgb_matrix_speed']}")
+            else:
+                try:
+                    args.rgb_matrix_speed = int(args.rgb_matrix_speed)
+                except ValueError:
+                    print(f"Invalid value for RGB Matrix speed, it should be an integer between 0 and 100")
+                    quit()
+                if args.rgb_matrix_speed < 0 or args.rgb_matrix_speed > 100:
+                    print(f"Invalid value for RGB Matrix speed, it should be between 0 and 100")
+                    quit()
+                new_sys_config['rgb_matrix_speed'] = args.rgb_matrix_speed
+                print(f"Set RGB Matrix speed: {args.rgb_matrix_speed}")
+        # rgb_matrix_brightness
+        if args.rgb_matrix_brightness != '':
+            if args.rgb_matrix_brightness == None:
+                print(f"RGB Matrix brightness: {current_config['system']['rgb_matrix_brightness']}")
+            else:
+                try:
+                    args.rgb_matrix_brightness = int(args.rgb_matrix_brightness)
+                except ValueError:
+                    print(f"Invalid value for RGB Matrix brightness, it should be an integer between 0 and 100")
+                    quit()
+                if args.rgb_matrix_brightness < 0 or args.rgb_matrix_brightness > 100:
+                    print(f"Invalid value for RGB Matrix brightness, it should be between 0 and 100")
+                    quit()
+                new_sys_config['rgb_matrix_brightness'] = args.rgb_matrix_brightness
+                print(f"Set RGB Matrix brightness: {args.rgb_matrix_brightness}")
 
     # -----------------------------------------------------------
     new_config = {

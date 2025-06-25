@@ -24,12 +24,13 @@ class Pironman5NAS:
         "temperature_unit": "C",
         "oled_enable": True,
         "oled_rotation": 0,
-        "oled_disk": "total",
-        "oled_network_interface": "all",
-        'oled_sleep_timeout': 5,
-        'vibration_switch_pin': 26,
-        'vibration_switch_pull_up': False,
-        'enable_history': False,
+        'oled_sleep_timeout': 10,
+        'oled_pages': [
+                'mix',
+                'performance',
+                'ips',
+                'disk',
+            ],
     }
     DT_OVERLAYS = [
         'sunfounder-pironman5nas.dtbo',
