@@ -101,9 +101,9 @@ NVMe PIP Module Not Working?
    .. image:: img/dual_nvme_pip_j4.png  
 
      
-4. Confirm that your NVMe SSD has a properly installed operating system. Refer to: :ref:`install_the_os`.
+4. Confirm that your NVMe SSD has a properly installed operating system. Refer to: :ref:`max_install_the_os`.
 
-5. If the wiring is correct and the OS is installed, but the NVMe SSD still fails to boot, try booting from a Micro SD card to verify the functionality of other components. Once confirmed, proceed to: :ref:`configure_boot_ssd`.
+5. If the wiring is correct and the OS is installed, but the NVMe SSD still fails to boot, try booting from a Micro SD card to verify the functionality of other components. Once confirmed, proceed to: :ref:`max_configure_boot_ssd`.
 
 If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
 
