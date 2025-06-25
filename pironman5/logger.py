@@ -10,6 +10,7 @@ class Logger(logging.Logger):
 
         if not os.path.exists(os.path.dirname(self.log_path)):
             os.makedirs(os.path.dirname(self.log_path), exist_ok=True)
+            os.chmod(self.log_path, 0o775)
 
         # Create a handler, used for output to a file
         file_handler = RotatingFileHandler(self.log_path, maxBytes=maxBytes, backupCount=backupCount)
