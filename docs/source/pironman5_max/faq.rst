@@ -48,12 +48,11 @@ Yes, it is compatible. However, most retro gaming systems are streamlined versio
     * :ref:`max_set_up_batocera`
 
 
-Disable ``pironman5`` Logging in SYSLOG
-----------------------------------------------------------
+Reduce ``pironman5`` Logging in SYSLOG
+-----------------------------------------------
+To reduce the amount of logging output to SYSLOG, you can take the following steps:
 
-When using ``journalctl`` to view logs, you may notice a large amount of output from influxd. This is the default behavior of influxd.
-
-You can disable it by modifying the influxd configuration file:
+First, disable HTTP request logging in ``influxd``:
 
 .. code-block:: bash
    
@@ -102,7 +101,7 @@ After saving the file, restart the ``influxd`` service:
 
    sudo systemctl restart influxd.service
 
-Next, change the log level of the ``pironman5`` program to warning:
+Then, reduce the logging level of the ``pironman5`` program to warning:
 
 .. code-block:: bash
    
