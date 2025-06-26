@@ -47,6 +47,100 @@ Yes, it is compatible. However, most retro gaming systems are streamlined versio
     * :ref:`max_install_batocera`
     * :ref:`max_set_up_batocera`
 
+
+Disable ``pironman5`` Logging in SYSLOG
+----------------------------------------------------------
+
+When using ``journalctl`` to view logs, you may notice a large amount of output from influxd. This is the default behavior of influxd.
+
+You can disable it by modifying the influxd configuration file:
+
+.. code-block:: bash
+   
+   sudo nano /etc/influxdb/influxdb.conf 
+
+
+Locate the ``http`` section and set ``log-enabled`` to ``false``.
+
+.. code-block:: bash
+   :emphasize-lines: 22
+
+   ###
+   ### [http]
+   ###
+   ### Controls how the HTTP endpoints are configured. These are the primary
+   ### mechanism for getting data into and out of InfluxDB.
+   ###
+
+   [http]
+   # Determines whether HTTP endpoint is enabled.
+   # enabled = true
+
+   # The bind address used by the HTTP service.
+   # bind-address = ":8086"
+
+   # Determines whether user authentication is enabled over HTTP/HTTPS.
+   # auth-enabled = false
+
+   # The default realm sent back when issuing a basic auth challenge.
+   # realm = "InfluxDB"
+
+   # Determines whether HTTP request logging is enabled.
+   log-enabled = false
+
+   # Determines whether the HTTP write request logs should be suppressed when the log is enabled.
+   # suppress-write-log = false
+
+   # When HTTP request logging is enabled, this option specifies the path where
+   # log entries should be written. If unspecified, the default is to write to stderr, which
+   # intermingles HTTP logs with internal InfluxDB logging.
+
+
+After saving the file, restart the ``influxd`` service:
+
+.. code-block:: bash
+
+   sudo systemctl restart influxd.service
+
+Next, change the log level of the ``pironman5`` program to warning:
+
+.. code-block:: bash
+   
+   sudo nano /etc/systemd/system/pironman5.service
+
+In the ``Service`` section, set the ``debug-level`` to ``warning``:
+
+.. code-block:: bash
+   :emphasize-lines: 10
+
+   # https://www.freedesktop.org/software/systemd/man/systemd.service.html
+   [Unit]
+   Description=pironman5 service
+   # Need to start last to avoid gpio being occupied
+   After=multi-user.target
+
+   [Service]
+   Type=forking
+   # WorkingDirectory=/opt/pironman5
+   ExecStart=/usr/local/bin/pironman5 start --background --debug-level=warning
+   # ExecStop=/usr/local/bin/pironman5 stop
+   # PrivateTmp=False
+
+   [Install]
+   WantedBy=multi-user.target
+
+After saving, reload the systemd configuration and restart the ``pironman5`` service:
+
+.. code-block:: bash
+
+   sudo systemctl daemon-reload
+   sudo systemctl restart pironman5.service
+
+
+
+
+
+
 How to Control Components Using the ``pironman5`` Command
 ----------------------------------------------------------------------
 You can refer to the following tutorial to control the components of the Pironman 5 MAX using the ``pironman5`` command.
