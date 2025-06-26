@@ -26,19 +26,19 @@ Das Board verfügt über 4 WS2812 RGB-LEDs, die eine anpassbare Steuerung bieten
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * Um ihre Farbe zu ändern, gib die gewünschten hexadezimalen Farbwerte ein, wie zum Beispiel ``fe1a1a``.
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * Um die Helligkeit der RGB-LED zu ändern (Bereich: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * Um die Anzeige-Modi der RGB-LED zu wechseln, wähle aus den folgenden Optionen: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
@@ -48,13 +48,13 @@ Das Board verfügt über 4 WS2812 RGB-LEDs, die eine anpassbare Steuerung bieten
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * Um die Geschwindigkeit der Änderung zu ändern (Bereich: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 RGB-Steuerpin
 -------------------------
@@ -114,6 +114,20 @@ Wenn der OLED-Bildschirm nicht angezeigt wird oder fehlerhaft ist, kannst du fol
 
         sudo systemctl restart pironman5.service
 
+Wake-Up-Auslöser
+-------------------------
+
+.. image:: img/io_board_vib.png
+
+Der integrierte Vibrationsschalter wird verwendet, um das OLED-Display aus dem Energiesparmodus aufzuwecken. Wenn eine Vibration erkannt wird, sendet er ein Signal zur Reaktivierung des OLED-Bildschirms, sodass das Display im Ruhezustand ausgeschaltet bleiben und bei Bewegung automatisch eingeschaltet werden kann.
+
+Wenn Sie die für den Vibrationsschalter vorgesehene Jumperkappe entfernen, wird die Aufweckfunktion deaktiviert. Sobald das OLED in den Ruhezustand übergeht, kann es nicht mehr aufgeweckt werden. Diese Option richtet sich an fortgeschrittene Benutzer, die den entsprechenden GPIO-Pin für andere Anwendungen verwenden möchten.
+
+.. note::
+
+  Jumper installiert: Vibrationserkennung zum Aufwecken ist aktiviert.
+
+  Jumper entfernt: OLED kann nach dem Ausschalten nicht mehr aufgeweckt werden. Der Pin steht für andere Zwecke zur Verfügung.
 
 Infrarot-Empfänger
 ---------------------------
@@ -181,7 +195,7 @@ Zum Beispiel, wenn auf **1: Performance**-Modus eingestellt, werden die RGB-Lüf
 
 .. code-block:: shell
 
-  pironman5 -gm 3
+  sudo pironman5 -gm 3
 
 * **4: Quiet**: Die RGB-Lüfter werden bei 70°C aktiviert.
 * **3: Balanced**: Die RGB-Lüfter werden bei 67,5°C aktiviert.
