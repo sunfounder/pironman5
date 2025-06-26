@@ -12,6 +12,8 @@
 
     👉 Bereit, mit uns zu entdecken und zu entwickeln? Klicke auf [|link_sf_facebook|] und werde noch heute Mitglied!
 
+.. _max_install_the_os:
+
 3. Installation des Betriebssystems
 =======================================
 

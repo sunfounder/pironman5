@@ -31,7 +31,9 @@ Wähle anschließend das passende Konfigurations-Tutorial entsprechend deinem Be
 
     set_up_rpi_os 
     set_up_home_assistant
-    set_up_batocera
+    
+    
+.. set_up_batocera
 
 
 **Zum Power-Button**

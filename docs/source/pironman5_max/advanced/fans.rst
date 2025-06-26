@@ -53,12 +53,12 @@ RGB-Lüfter
 
 * **Außenabmessung**: 40*40*10MM
 * **Gewicht**: 13,5±5g/Stück
-* **Lebensdauer**: 40.000 Stunden (Raumtemperatur 25°C)
+* **Lebensdauer**: 30.000 Stunden (Raumtemperatur 25°C)
 * **Maximaler Luftstrom**: 2,46CFM
 * **Max. Luftdruck**: 0,62mm-H2O
 * **Akustischer Schall**: 22,31dBA
-* **Nenn-Eingangsleistung**: 5V/0,1A
+* **Nenn-Eingangsleistung**: 5V/0,15A
 * **Nenn-Drehzahl**: 3500±10%RPM
-* **Betriebstemperatur**: -10℃~+70℃
-* **Lagerungstemperatur**: -30℃~+85℃
+* **Betriebstemperatur**: -10℃~+60℃
+* **Lagerungstemperatur**: -20℃~+70℃
 

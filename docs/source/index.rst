@@ -86,10 +86,14 @@ Nachfolgend finden Sie einen Vergleich der technischen Spezifikationen zwischen 
      - ✔
      - X
      - ✔
-   * - RGB-Lüfter
-     - 2 (automatisch beleuchtet)
-     - 1 (automatisch beleuchtet)
-     - 2 (programmierbar)
+   * - Anzahl der RGB-Lüfter
+     - 2
+     - 1
+     - 2
+   * - RGB-Modus der Lüfter
+     - Synchronisiert mit Lüfter
+     - Unabhängige Steuerung
+     - Unabhängige Steuerung
    * - HDMI-Anschlüsse
      - 2 Standard-HDMI-Anschlüsse
      - 2 Micro-HDMI-Anschlüsse
@@ -100,7 +104,7 @@ Nachfolgend finden Sie einen Vergleich der technischen Spezifikationen zwischen 
      - ✔
    * - OLED-Aktivierung
      - Immer an
-     - Immer an
+     - 
      - Aktivierung durch Antippen
    * - Unterstützung für NVMe SSD
      - 1

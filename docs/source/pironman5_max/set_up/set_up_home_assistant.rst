@@ -147,24 +147,23 @@ Nun kannst du das Add-on **Pironman 5** installieren.
    .. image:: img/home_addon.png
       :width: 90%
 
-#. Suche in der Liste der **SunFounder**-Add-ons nach **Pironman 5** und öffne es.
+#. Suche in der Liste der **SunFounder**-Add-ons nach **Pironman 5 MAX** und öffne es.
 
-   .. image:: img/home_pironman5_addon.png
+   .. image:: img/home_pironman5_max_addon.png
       :width: 90%
 
 #. Installiere das Add-on nun durch Klick auf INSTALL.
 
-   .. image:: img/home_install_pironman5.png
-      :width: 90%
+   .. image:: img/home_pironman5_max_addon_install.png
 
 #. Nach erfolgreicher Installation klicke auf **START**, um den Dienst zu starten. Auf dem OLED-Display erscheinen nun CPU-Temperatur und weitere Informationen. Vier WS2812-RGB-LEDs leuchten im blauen Atemmodus.
 
-   .. image:: img/home_start_pironman5.png
+   .. image:: img/home_pironman5_max_addon_start.png
       :width: 90%
 
 #. Klicke anschließend auf **OPEN WEB UI**, um die Pironman 5-Weboberfläche zu öffnen. Aktiviere optional die Sidebar-Anzeige, um den Zugriff zu erleichtern.
 
-   .. image:: img/home_web_ui.png
+   .. image:: img/home_pironman5_max_webui.png
       :width: 90%
 
 #. Jetzt kannst du Systeminformationen einsehen, RGB konfigurieren, den Lüfter steuern und vieles mehr.

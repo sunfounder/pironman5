@@ -26,6 +26,7 @@ Wenn du Raspberry Pi OS, Ubuntu, Kali Linux oder Homebridge auf deinem Raspberry
 
 Abschalten konfigurieren, um GPIO-Stromversorgung zu deaktivieren
 ---------------------------------------------------------------------
+
 Damit das OLED-Display und die RGB-Lüfter nach dem Herunterfahren nicht weiter über die GPIO-Pins mit Strom versorgt werden, muss der Raspberry Pi entsprechend konfiguriert werden.
 
 #. Öffne die ``EEPROM``-Konfigurationsdatei mit folgendem Befehl:
@@ -61,7 +62,7 @@ Herunterladen und Installieren des ``pironman5``-Moduls
    .. code-block:: shell
 
       cd ~
-      git clone https://github.com/sunfounder/pironman5.git -b 1.2.7
+      git clone -b 1.2.15 https://github.com/sunfounder/pironman5.git --depth 1
       cd ~/pironman5
       sudo python3 install.py
 

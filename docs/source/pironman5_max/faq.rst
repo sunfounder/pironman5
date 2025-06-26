@@ -35,7 +35,7 @@ Wenn ``pironman 5`` bereits installiert ist, kannst du das ``dashboard``-Modul u
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-Unterstützt der Pironman 5 Retro-Gaming-Systeme?
+Unterstützt der Pironman 5 MAX Retro-Gaming-Systeme?
 ------------------------------------------------------
 Ja, der Pironman 5 ist kompatibel. Die meisten Retro-Gaming-Systeme sind jedoch stark optimiert und erlauben keine nachträgliche Installation zusätzlicher Software. Daher funktionieren einige Komponenten des Pironman 5 – wie das OLED-Display, die beiden RGB-Lüfter und die vier RGB-LEDs – möglicherweise nicht korrekt, da sie auf die Installation spezifischer Softwarepakete angewiesen sind.
 
@@ -49,7 +49,7 @@ Ja, der Pironman 5 ist kompatibel. Die meisten Retro-Gaming-Systeme sind jedoch 
 
 Wie kann ich Komponenten mit dem ``pironman5``-Befehl steuern?
 ----------------------------------------------------------------------
-In der folgenden Anleitung erfährst du, wie du mit dem ``pironman5``-Befehl die Komponenten des Pironman 5 steuerst:
+In der folgenden Anleitung erfährst du, wie du mit dem ``pironman5``-Befehl die Komponenten des Pironman 5 MAX steuerst:
 
 * :ref:`max_view_control_commands`
 
@@ -73,37 +73,87 @@ Für diesen Schritt wird empfohlen, eine separate SD-Karte zu verwenden.
 Wie kopiere ich das System von der SD-Karte auf eine NVMe-SSD?
 --------------------------------------------------------------------
 
-Wenn du eine NVMe-SSD besitzt, aber keinen Adapter zur Verbindung mit deinem Computer hast, kannst du das System zunächst auf einer Micro-SD-Karte installieren. Sobald der Pironman 5 erfolgreich gestartet ist, kannst du das System von der SD-Karte auf die NVMe-SSD übertragen. Eine detaillierte Anleitung findest du hier:
+Wenn du eine NVMe-SSD besitzt, aber keinen Adapter zur Verbindung mit deinem Computer hast, kannst du das System zunächst auf einer Micro-SD-Karte installieren. Sobald der Pironman 5 MAX erfolgreich gestartet ist, kannst du das System von der SD-Karte auf die NVMe-SSD übertragen. Eine detaillierte Anleitung findest du hier:
 
 
 * :ref:`max_copy_sd_to_nvme_rpi`
 
 
+NVMe PIP-Modul funktioniert nicht?
+---------------------------------------
+
+1. Stellen Sie sicher, dass das FPC-Kabel, das das NVMe PIP-Modul mit dem Raspberry Pi 5 verbindet, fest angeschlossen ist.
+
+2. Vergewissern Sie sich, dass Ihre SSD ordnungsgemäß am NVMe PIP-Modul befestigt ist.
+
+3. Überprüfen Sie den Status der LEDs des NVMe PIP-Moduls:
+
+   Nachdem alle Verbindungen überprüft wurden, schalten Sie den Pironman 5 MAX ein und beobachten Sie die beiden Anzeigen auf dem NVMe PIP-Modul:
+
+   * **PWR-LED**: Sollte leuchten.  
+   * **STA-LED**: Sollte blinken, um den normalen Betrieb anzuzeigen.  
+
+   .. image:: img/dual_nvme_pip_leds.png  
+
+   * Wenn die **PWR-LED** leuchtet, aber die **STA-LED** nicht blinkt, bedeutet dies, dass die NVMe-SSD vom Raspberry Pi nicht erkannt wird.  
+   * Wenn die **PWR-LED** aus ist, überbrücken Sie die "Force Enable"-Pins auf dem Modul. Wenn die **PWR-LED** daraufhin leuchtet, könnte dies auf ein loses FPC-Kabel oder eine nicht unterstützte Systemkonfiguration für NVMe hinweisen.
+
+   .. image:: img/dual_nvme_pip_j4.png  
+
+
+4. Stellen Sie sicher, dass auf Ihrer NVMe-SSD ein korrekt installiertes Betriebssystem vorhanden ist. Siehe: :ref:`max_install_the_os`.
+
+5. Wenn die Verkabelung korrekt ist und das Betriebssystem installiert wurde, die NVMe-SSD aber trotzdem nicht startet, versuchen Sie, von einer Micro-SD-Karte zu booten, um die Funktionalität anderer Komponenten zu überprüfen. Wenn dies bestätigt ist, fahren Sie fort mit: :ref:`max_configure_boot_ssd`.
+
+Wenn das Problem nach Durchführung der oben genannten Schritte weiterhin besteht, senden Sie bitte eine E-Mail an service@sunfounder.com. Wir werden so schnell wie möglich antworten.
+
+
+
 OLED-Display funktioniert nicht?
 ------------------------------------
 
-Wenn das OLED-Display nichts anzeigt oder falsche Inhalte darstellt, folge diesen Schritten zur Fehlerbehebung:
+.. note:: Der OLED-Bildschirm kann sich nach einer gewissen Inaktivität automatisch ausschalten, um Energie zu sparen. Sie können leicht auf das Gehäuse tippen, um den Vibrationssensor auszulösen und den Bildschirm zu aktivieren.
 
-Stelle sicher, dass das FPC-Kabel des OLED-Displays korrekt angeschlossen ist.
+Wenn der OLED-Bildschirm nichts anzeigt oder falsch angezeigt wird, befolgen Sie diese Schritte zur Fehlerbehebung:
 
-#. Verwende den folgenden Befehl, um die Programmlogs zu überprüfen und nach Fehlermeldungen zu suchen:
+1. **Verbindung des OLED-Bildschirms überprüfen**
 
-   .. code-block:: shell
+   Stellen Sie sicher, dass das FPC-Kabel des OLED-Bildschirms richtig angeschlossen ist.
 
-      cat /opt/pironman5/log
+2. **Betriebssystem-Kompatibilität überprüfen**
 
-#. Alternativ kannst du prüfen, ob die I2C-Adresse 0x3C des OLED erkannt wird:
+   Vergewissern Sie sich, dass auf Ihrem Raspberry Pi ein kompatibles Betriebssystem läuft.
 
-   .. code-block:: shell
+3. **I2C-Adresse überprüfen**
 
-        sudo i2cdetect -y 1
-
-#. Falls keine Fehler erkennbar sind, versuche den Dienst pironman5 neu zu starten:
-
+   Führen Sie den folgenden Befehl aus, um zu überprüfen, ob die I2C-Adresse des OLEDs (0x3C) erkannt wird:
 
    .. code-block:: shell
 
-        sudo systemctl restart pironman5.service
+      sudo i2cdetect -y 1
+
+   Wenn die Adresse nicht erkannt wird, aktivieren Sie I2C mit dem folgenden Befehl:
+
+   .. code-block:: shell
+
+      sudo raspi-config
+
+4. **Dienst `pironman5` neu starten**
+
+   Starten Sie den Dienst `pironman5` neu, um zu prüfen, ob das Problem dadurch behoben wird:
+
+   .. code-block:: shell
+
+      sudo systemctl restart pironman5.service
+
+5. **Protokolldatei überprüfen**
+
+   Wenn das Problem weiterhin besteht, überprüfen Sie die Protokolldatei auf Fehlermeldungen und senden Sie diese Informationen an den Kundendienst zur weiteren Analyse:
+
+   .. code-block:: shell
+
+      cat /var/log/pironman5/pm_auto.oled.log
+
 
 .. _max_openssh_powershell:
 

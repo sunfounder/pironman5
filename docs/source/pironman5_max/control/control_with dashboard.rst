@@ -33,9 +33,9 @@ Dashboard
 
 Es gibt mehrere Karten, um den relevanten Status des Raspberry Pi anzuzeigen, darunter:
 
-* **Lüfter**: Zeigt die CPU-Temperatur des Raspberry Pi und die PWM-Lüftergeschwindigkeit an. **GPIO Lüfterstatus** zeigt den Status der beiden seitlichen RGB-Lüfter an. Bei der aktuellen Temperatur sind die beiden RGB-Lüfter ausgeschaltet.
+* **Temperatur**: Zeigt die CPU-Temperatur des Raspberry Pi und die PWM-Lüftergeschwindigkeit an. **GPIO Lüfterstatus** zeigt den Status der beiden seitlichen RGB-Lüfter an. Bei der aktuellen Temperatur sind die beiden RGB-Lüfter ausgeschaltet.
 
-  .. image:: img/dashboard_pwm_fan.png
+  .. image:: img/dashboard_temp.png
     :width: 90%
 
 
@@ -96,15 +96,17 @@ Einstellungen
 
 Im oberen rechten Bereich der Seite befindet sich ein Einstellungsmenü, in dem du die Einstellungen nach deinen Wünschen anpassen kannst. Nach Änderungen werden die Einstellungen automatisch gespeichert. Wenn nötig, kannst du die Schaltfläche CLEAR am unteren Rand verwenden, um die historischen Daten zu löschen.
 
-.. image:: img/Dark_mode_and_Temperature.jpg
+.. image:: img/dashboard_setting_darkmode.png
   :width: 600
 
 * **Dunkelmodus**: Wechsle zwischen den Themen für den Hell- und Dunkelmodus. Die Themenoption wird im Browser-Cache gespeichert. Wenn du den Browser wechselst oder den Cache löschst, wird das Standardthema im hellen Modus wiederhergestellt.
+* **Nicht gemountete Datenträger anzeigen**: Ob nicht gemountete Datenträger im Dashboard angezeigt werden sollen.
+* **Alle Kerne anzeigen**: Ob alle Kerne im Dashboard angezeigt werden sollen.
 * **Temperatur-Einheit**: Lege die Temperatureinheit fest, die im System angezeigt wird.
 
 **Über OLED-Bildschirm**
 
-.. image:: img/OLED_Sreens.jpg
+.. image:: img/dashboard_setting_oled.png
   :width: 600
 
 * **OLED aktivieren**: Bestimmt, ob das OLED aktiviert werden soll.
@@ -116,6 +118,7 @@ Im oberen rechten Bereich der Seite befindet sich ein Einstellungsmenü, in dem 
   * **wlan0**: Zeige nur die Wi-Fi-IP an.
 
 * **OLED Rotation**: Lege die OLED-Rotation fest.
+* **OLED-Ruhezustand-Timeout**: Legen Sie das OLED-Ruhezustand-Timeout fest.
 
 **Über RGB-LEDs**
 
@@ -135,8 +138,15 @@ Im oberen rechten Bereich der Seite befindet sich ein Einstellungsmenü, in dem 
 
 **Über RGB-Lüfter**
 
-.. image:: img/RGB_FAN2.png
+.. image:: img/dashboard_setting_fan.png
   :width: 600
+
+* **Lüfter-LED**: Stellt den Modus der RGB-Lüfter ein.
+
+    * **Aus**: RGB ausschalten.
+    * **Ein**: RGB einschalten.
+    * **Folgen**: RGB automatisch je nach Betriebszustand des Lüfters einschalten.
+
 
 * **GPIO Lüftermodus**: Du kannst den Betriebsmodus der beiden RGB-Lüfter festlegen. Diese Modi bestimmen die Bedingungen, unter denen die RGB-Lüfter aktiviert werden.
 
@@ -148,8 +158,4 @@ Im oberen rechten Bereich der Seite befindet sich ein Einstellungsmenü, in dem 
 
 Beispielsweise, wenn auf **Performance**-Modus eingestellt, werden die RGB-Lüfter bei 50°C aktiviert.
 
-Nach dem Speichern, wenn die CPU-Temperatur 50°C überschreitet, wird der **GPIO Lüfterstatus** auf „ON“ im Dashboard geändert und die seitlichen RGB-Lüfter beginnen sich zu drehen.
-
-.. image:: img/dashboard_rgbfan_on.png
-  :width: 300
-
+Wenn die CPU-Temperatur nach dem Speichern 50 °C überschreitet, werden Sie sehen, dass die seitlichen RGB-Lüfter zu rotieren beginnen.
