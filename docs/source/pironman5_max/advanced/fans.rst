@@ -53,12 +53,12 @@ Ventiladores RGB
 
 * **Dimensión externa**: 40*40*10MM  
 * **Peso**: 13.5±5g/unidad  
-* **Vida útil**: 40,000 horas (a temperatura ambiente de 25 °C)  
+* **Vida útil**: 30,000 horas (a temperatura ambiente de 25 °C)  
 * **Flujo de aire máximo**: 2.46CFM  
 * **Presión de aire máxima**: 0.62mm-H2O  
 * **Nivel de sonido acústico**: 22.31dBA  
-* **Potencia de entrada nominal**: 5V/0.1A  
+* **Potencia de entrada nominal**: 5V/0.15A  
 * **Velocidad nominal**: 3500±10%RPM  
-* **Temperatura de funcionamiento**: -10℃~+70℃  
-* **Temperatura de almacenamiento**: -30℃~+85℃  
+* **Temperatura de funcionamiento**: -10℃~+60℃  
+* **Temperatura de almacenamiento**: -20℃~+70℃  
 

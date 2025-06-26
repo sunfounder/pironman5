@@ -31,7 +31,7 @@ El módulo ``pironman5`` ofrece configuraciones básicas para Pironman, las cual
 
 .. code-block:: shell
 
-  pironman5 -c
+  sudo pironman5 -c
 
 Las configuraciones estándar aparecen de la siguiente manera:
 
@@ -57,37 +57,66 @@ Utiliza ``pironman5`` o ``pironman5 -h`` para obtener instrucciones.
 
 .. code-block::
 
-  usage: pironman5-service [-h] [-c] [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]]
-                          [-rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]] [-rp [RGB_SPEED]]
-                          [-re [RGB_ENABLE]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]]
-                          [{start,stop}]
+  usage: pironman5-service [-h] [-v] [-c] [-dl {debug,info,warning,error,critical}] [--background [BACKGROUND]] [-rd]
+                          [-cp [CONFIG_PATH]] [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]]
+                          [-rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]] [-rp [RGB_SPEED]]     
+                          [-re [RGB_ENABLE]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]]    
+                          [-fl [GPIO_FAN_LED]] [-fp [GPIO_FAN_LED_PIN]] [-oe [OLED_ENABLE]] [-od [OLED_DISK]]
+                          [-oi [OLED_NETWORK_INTERFACE]] [-or [{0,180}]] [-os [OLED_SLEEP_TIMEOUT]]
+                          [{start,restart,stop}]
 
-  Pironman5
+  Pironman 5 command line interface
 
-  argumentos posicionales:
-    {start,stop}          Comando
+  positional arguments:
+    {start,restart,stop}  Command
 
-  opciones:
-    -h, --help            muestra este mensaje de ayuda y sale
-    -c, --config          Mostrar configuración
+  options:
+    -h, --help            show this help message and exit
+    -v, --version         Show version
+    -c, --config          Show config
+    -dl {debug,info,warning,error,critical}, --debug-level {debug,info,warning,error,critical}
+                          Debug level
+    --background [BACKGROUND]
+                          Run in background
+    -rd, --remove-dashboard
+                          Remove dashboard
+    -cp [CONFIG_PATH], --config-path [CONFIG_PATH]
+                          Config path
     -rc [RGB_COLOR], --rgb-color [RGB_COLOR]
-                          Color RGB en formato hexadecimal con o sin # (p.ej. #FF0000 o 00aabb)
+                          RGB color in hex format without # (e.g. 00aabb)
     -rb [RGB_BRIGHTNESS], --rgb-brightness [RGB_BRIGHTNESS]
-                          Brillo RGB 0-100
+                          RGB brightness 0-100
     -rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}], --rgb-style [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]
-                          Estilo RGB
+                          RGB style
     -rp [RGB_SPEED], --rgb-speed [RGB_SPEED]
-                          Velocidad RGB 0-100
+                          RGB speed 0-100
     -re [RGB_ENABLE], --rgb-enable [RGB_ENABLE]
-                          Habilitar RGB True/False
+                          RGB enable True/False
     -rl [RGB_LED_COUNT], --rgb-led-count [RGB_LED_COUNT]
-                          Cantidad de LEDs RGB int
+                          RGB LED count int
     -u [{C,F}], --temperature-unit [{C,F}]
-                          Unidad de temperatura
+                          Temperature unit
     -gm [GPIO_FAN_MODE], --gpio-fan-mode [GPIO_FAN_MODE]
-                          Modo del ventilador GPIO, 0: Siempre Encendido, 1: Rendimiento, 2: Fresco, 3: Equilibrado, 4: Silencioso
+                          GPIO fan mode, 0: Always On, 1: Performance, 2: Cool, 3: Balanced, 4: Quiet
     -gp [GPIO_FAN_PIN], --gpio-fan-pin [GPIO_FAN_PIN]
-                          Pin del ventilador GPIO
+                          GPIO fan pin
+    -fl [GPIO_FAN_LED], --gpio-fan-led [GPIO_FAN_LED]
+                          GPIO fan LED state on/off/follow
+    -fp [GPIO_FAN_LED_PIN], --gpio-fan-led-pin [GPIO_FAN_LED_PIN]
+                          GPIO fan LED pin
+    -oe [OLED_ENABLE], --oled-enable [OLED_ENABLE]
+                          OLED enable True/true/on/On/1 or False/false/off/Off/0
+    -od [OLED_DISK], --oled-disk [OLED_DISK]
+                          Set to display which disk on OLED. 'total' or the name of the disk, like mmbclk or nvme
+    -oi [OLED_NETWORK_INTERFACE], --oled-network-interface [OLED_NETWORK_INTERFACE]
+                          Set to display which ip of network interface on OLED, 'all' or the interface name, like eth0 or      
+                          wlan0
+    -or [{0,180}], --oled-rotation [{0,180}]
+                          Set to rotate OLED display, 0, 180
+    -os [OLED_SLEEP_TIMEOUT], --oled-sleep-timeout [OLED_SLEEP_TIMEOUT]
+                          OLED sleep timeout in seconds
+
+
 
 .. note::
 
@@ -127,19 +156,19 @@ La placa cuenta con 4 LEDs RGB WS2812, ofreciendo un control personalizable. Los
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * Para cambiar su color, introduce los valores hexadecimales del color deseado, como ``fe1a1a``.
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * Para cambiar el brillo de los LEDs RGB (rango: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * Para cambiar los modos de visualización de los LEDs RGB, elige entre las opciones: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
@@ -149,19 +178,19 @@ La placa cuenta con 4 LEDs RGB WS2812, ofreciendo un control personalizable. Los
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * Para modificar la velocidad de los cambios (rango: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 * La configuración predeterminada incluye 4 LEDs RGB. Conecta LEDs adicionales y actualiza la cantidad usando:
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  sudo pironman5 -rl 12
 
 .. _cc_control_fan:
 

@@ -59,7 +59,7 @@ Descargar e instalar el módulo ``pironman5``
    .. code-block:: shell
 
      cd ~
-     git clone https://github.com/sunfounder/pironman5.git
+     git clone -b 1.2.15 https://github.com/sunfounder/pironman5.git --depth 1
      cd ~/pironman5
      sudo python3 install.py
 

@@ -66,7 +66,7 @@ Sigue estos pasos para instalar OpenMediaVault en tu Raspberry Pi:
 
 
 
-6. Configura RAID (Opcional)
+4. Configura RAID (Opcional)
 ---------------------------------------
 
    RAID NVMe es una solución que combina múltiples SSD NVMe usando tecnología RAID, diseñada para maximizar el rendimiento del protocolo NVMe y ofrecer redundancia y mayor rendimiento. Los modos más comunes incluyen RAID 0, 1, 5, 10. Para dos unidades NVMe, los más utilizados son RAID 0 y RAID 1.

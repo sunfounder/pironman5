@@ -86,10 +86,14 @@ A continuación, se muestra una tabla comparativa de especificaciones entre el P
      - ✔
      - X
      - ✔
-   * - Ventiladores RGB 
-     - 2 (iluminación automática)
-     - 1 (iluminación automática)
-     - 2 (programables)
+   * - Número de ventiladores RGB
+     - 2
+     - 1
+     - 2
+   * - Modo RGB del ventilador - Añadir comentario - Más acciones
+     - Sincronizar con el ventilador
+     - Control independiente
+     - Control independiente
    * - Puertos HDMI
      - 2 puertos HDMI estándar
      - 2 puertos Micro HDMI
@@ -100,7 +104,7 @@ A continuación, se muestra una tabla comparativa de especificaciones entre el P
      - ✔
    * - Activación OLED
      - Siempre encendida
-     - Siempre encendida
+     - 
      - Activación por toque
    * - Soporte SSD NVMe
      - 1
