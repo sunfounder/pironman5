@@ -26,6 +26,7 @@ Si vous avez installé Raspberry Pi OS, Ubuntu, Kali Linux ou Homebridge sur vot
 
 Configuration de l'extinction pour désactiver l'alimentation des GPIO
 --------------------------------------------------------------------------
+
 Pour éviter que l’écran OLED et les ventilateurs RGB, alimentés par les broches GPIO du Raspberry Pi, restent actifs après l’arrêt du système, il est nécessaire de configurer l’extinction de l’alimentation GPIO.
 
 #. Modifiez manuellement le fichier de configuration de la ``EEPROM`` avec la commande suivante :
@@ -61,7 +62,7 @@ Téléchargement et installation du module ``pironman5``
    .. code-block:: shell
 
       cd ~
-      git clone https://github.com/sunfounder/pironman5.git -b 1.2.7
+      git clone -b 1.2.15 https://github.com/sunfounder/pironman5.git --depth 1
       cd ~/pironman5
       sudo python3 install.py
 

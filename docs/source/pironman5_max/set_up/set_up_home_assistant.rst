@@ -147,24 +147,24 @@ Il est temps d’installer officiellement le module **Pironman 5** .
    .. image:: img/home_addon.png
       :width: 90%
 
-#. Trouvez **Pironman 5** dans la liste **SunFounder** et cliquez dessus.
+#. Trouvez **Pironman 5 MAX** dans la liste **SunFounder** et cliquez dessus.
 
-   .. image:: img/home_pironman5_addon.png
+   .. image:: img/home_pironman5_max_addon.png
       :width: 90%
 
-#. Installez le module Pironman 5.
+#. Installez le module Pironman 5 MAX.
 
-   .. image:: img/home_install_pironman5.png
+   .. image:: img/home_pironman5_max_addon_install.png
       :width: 90%
 
 #. Une fois l’installation terminée, cliquez sur **START** pour lancer le module. L’écran OLED affichera les informations CPU, température, etc. Quatre LED WS2812 s’allumeront en bleu avec effet respirant.
 
-   .. image:: img/home_start_pironman5.png
+   .. image:: img/home_pironman5_max_addon_start.png
       :width: 90%
 
 #. Cliquez sur **OPEN WEB UI** pour accéder à la page web de Pironman 5. Vous pouvez également activer l’affichage de l’interface dans la barre latérale de Home Assistant.
 
-   .. image:: img/home_web_ui.png
+   .. image:: img/home_pironman5_max_webui.png
       :width: 90%
 
 #. Vous pourrez y visualiser les informations système, configurer les LED RGB, contrôler les ventilateurs, etc.

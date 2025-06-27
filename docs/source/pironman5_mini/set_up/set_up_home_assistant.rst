@@ -154,22 +154,22 @@ L’installation du module **Pironman 5 Mini** peut maintenant commencer.
 
 #. Trouvez **Pironman 5 Mini** dans la liste **SunFounder** et cliquez dessus.
 
-   .. image:: img/home_pironman5_addon.png
+   .. image:: img/home_pironman5_mini_addon.png
       :width: 90%
 
 #. Procédez à l’installation du module **Pironman 5 Mini**.
 
-   .. image:: img/home_install_pironman5.png
+   .. image:: img/home_pironman5_mini_addon_install.png
       :width: 90%
 
 #. Une fois installé, cliquez sur **START**. Quatre LED RGB WS2812 s’allumeront en bleu avec un effet de respiration.
 
-   .. image:: img/home_start_pironman5.png
+   .. image:: img/home_pironman5_mini_addon_start.png
       :width: 90%
 
 #. Cliquez ensuite sur **OPEN WEB UI** pour ouvrir l’interface web de Pironman 5 Mini. Vous pouvez aussi activer l’affichage dans la barre latérale pour y accéder plus rapidement.
 
-   .. image:: img/home_web_ui.png
+   .. image:: img/home_pironman5_mini_webui.png
       :width: 90%
 
 #. Vous pourrez alors consulter les informations de votre Raspberry Pi, configurer les LED RGB, contrôler le ventilateur, etc.

@@ -60,7 +60,7 @@ Téléchargement et installation du module ``pironman5``
    .. code-block:: shell
 
       cd ~
-      git clone https://github.com/sunfounder/pironman5.git
+      git clone -b 1.2.5 https://github.com/sunfounder/pironman5.git --depth 1
       cd ~/pironman5
       sudo python3 install.py
 

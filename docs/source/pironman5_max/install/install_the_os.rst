@@ -12,6 +12,9 @@
 
     👉 Prêt(e) à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
+
+.. _max_install_the_os:
+
 3. Installation du système d’exploitation
 ===========================================
 

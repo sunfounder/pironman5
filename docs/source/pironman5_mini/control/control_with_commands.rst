@@ -30,7 +30,7 @@ Le module ``pironman5`` propose une configuration de base du Pironman, que vous 
 
 .. code-block:: shell
 
-  pironman5 -c
+  sudo pironman5 -c
 
 La configuration par défaut est la suivante :
 
@@ -58,46 +58,42 @@ Utilisez ``pironman5`` ou ``pironman5 -h`` pour afficher l’aide.
 
 .. code-block::
 
-  usage: pironman5-service [-h] [-v] [-c] [-dl {debug,info,warning,error,critical}] [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]] [-rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]]
-                                [-rp [RGB_SPEED]] [-re [RGB_ENABLE]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]] [-fl [GPIO_FAN_LED]] [-fp [GPIO_FAN_LED_PIN]]
-                                [--background [BACKGROUND]]
-                                [{start,restart,stop}]
+ usage: pironman5-service [-h] [-v] [-c] [-dl {debug,info,warning,error,critical}] [--background [BACKGROUND]] [-rd]
+                          [-cp [CONFIG_PATH]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]]    
+                          [-fl [GPIO_FAN_LED]] [-fp [GPIO_FAN_LED_PIN]] 
+                          [{start,restart,stop}]Add commentMore actions
 
-  Pironman5 Mini
+  Pironman 5 command line interface
 
-  ositional arguments:
-   {start,restart,stop}  Command
+  positional arguments:
+    {start,restart,stop}  Command
 
-  ptions:
-   -h, --help            show this help message and exit
-   -v, --version         Show version
-   -c, --config          Show config
-   -dl {debug,info,warning,error,critical}, --debug-level {debug,info,warning,error,critical}
-                         Debug level
-   -rc [RGB_COLOR], --rgb-color [RGB_COLOR]
-                         RGB color in hex format without # (e.g. 00aabb)
-   -rb [RGB_BRIGHTNESS], --rgb-brightness [RGB_BRIGHTNESS]
-                         RGB brightness 0-100
-   -rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}], --rgb-style [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]
-                         RGB style
-   -rp [RGB_SPEED], --rgb-speed [RGB_SPEED]
-                         RGB speed 0-100
-   -re [RGB_ENABLE], --rgb-enable [RGB_ENABLE]
-                         RGB enable True/False
-   -rl [RGB_LED_COUNT], --rgb-led-count [RGB_LED_COUNT]
-                         RGB LED count int
-   -u [{C,F}], --temperature-unit [{C,F}]
-                         Temperature unit
-   -gm [GPIO_FAN_MODE], --gpio-fan-mode [GPIO_FAN_MODE]
-                         GPIO fan mode, 0: Always On, 1: Performance, 2: Cool, 3: Balanced, 4: Quiet
-   -gp [GPIO_FAN_PIN], --gpio-fan-pin [GPIO_FAN_PIN]
-                         GPIO fan pin
-   -fl [GPIO_FAN_LED], --gpio-fan-led [GPIO_FAN_LED]
-                         GPIO fan LED state on/off/follow
-   -fp [GPIO_FAN_LED_PIN], --gpio-fan-led-pin [GPIO_FAN_LED_PIN]
-                         GPIO fan LED pin
-   --background [BACKGROUND]
-                         Run in background
+  options:
+    -h, --help            show this help message and exit
+    -v, --version         Show version
+    -c, --config          Show config
+    -dl {debug,info,warning,error,critical}, --debug-level {debug,info,warning,error,critical}
+                          Debug level
+    --background [BACKGROUND]
+                          Run in background
+    -rd, --remove-dashboard
+                          Remove dashboard
+    -cp [CONFIG_PATH], --config-path [CONFIG_PATH]
+                          Config path
+    -u [{C,F}], --temperature-unit [{C,F}]
+                          Temperature unit
+    -gm [GPIO_FAN_MODE], --gpio-fan-mode [GPIO_FAN_MODE]
+                          GPIO fan mode, 0: Always On, 1: Performance, 2: Cool, 3: Balanced, 4: Quiet
+    -gp [GPIO_FAN_PIN], --gpio-fan-pin [GPIO_FAN_PIN]
+                          GPIO fan pin
+    -fl [GPIO_FAN_LED], --gpio-fan-led [GPIO_FAN_LED]
+                          GPIO fan LED state on/off/follow
+    -fp [GPIO_FAN_LED_PIN], --gpio-fan-led-pin [GPIO_FAN_LED_PIN]
+                          GPIO fan LED pin
+
+
+
+
 .. note::
 
   À chaque modification de l’état du ``pironman5.service``, vous devez exécuter la commande suivante pour appliquer les changements :
@@ -136,19 +132,19 @@ La carte dispose de 4 LED RGB WS2812 contrôlables. Vous pouvez les activer ou d
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * Pour changer la couleur, entrez une valeur hexadécimale, ex. : ``fe1a1a`` :
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * Pour ajuster la luminosité des LED RGB (0 à 100 %) :
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * Pour modifier le style d’affichage RGB, choisissez parmi : ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` :
 
@@ -158,19 +154,19 @@ La carte dispose de 4 LED RGB WS2812 contrôlables. Vous pouvez les activer ou d
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * Pour régler la vitesse de transition (0 à 100 %) :
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 * Par défaut, 4 LED RGB sont configurées. Pour connecter plus de LED, mettez à jour le nombre :
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  sudo pironman5 -rl 12
 
 .. _cc_control_fan_mini:
 

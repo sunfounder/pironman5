@@ -26,19 +26,19 @@ La carte intègre 4 LED RGB WS2812 entièrement personnalisables. Vous pouvez le
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * Pour changer la couleur, entrez une valeur hexadécimale, comme ``fe1a1a``.
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * Pour ajuster la luminosité (valeurs de 0 à 100 %) :
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * Pour changer le mode d'affichage des LED RGB, choisissez parmi : ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` :
 
@@ -48,13 +48,13 @@ La carte intègre 4 LED RGB WS2812 entièrement personnalisables. Vous pouvez le
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * Pour ajuster la vitesse de transition (0 à 100 %) :
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 Broche de contrôle des LED RGB
 -----------------------------------
@@ -113,6 +113,24 @@ Assurez-vous que la nappe FPC de l’écran est bien connectée.
     .. code-block:: shell
 
         sudo systemctl restart pironman5.service
+
+
+
+Déclencheur de Réveil
+-------------------------
+
+.. image:: img/io_board_vib.png
+
+Le commutateur de vibration intégré est utilisé pour réveiller l'écran OLED du mode veille. Lorsqu'une vibration est détectée, un signal est envoyé pour réactiver l'OLED, permettant à l'affichage de rester éteint lorsqu'il est inactif et de se rallumer automatiquement lorsqu'un mouvement est détecté.
+
+Si vous retirez le cavalier identifié pour le commutateur de vibration, la fonction de réveil sera désactivée. Une fois que l'OLED est entré en mode veille, il ne pourra plus se rallumer. Cette option est destinée aux utilisateurs avancés souhaitant réutiliser la broche GPIO correspondante pour d'autres applications.
+
+.. note::
+
+  Cavalier installé : le réveil par vibration est activé.
+
+  Cavalier retiré : l'OLED ne peut pas être rallumé une fois éteint. La broche est libérée pour d'autres utilisations.
+
 
 
 Récepteur infrarouge
@@ -181,7 +199,7 @@ Par exemple, en mode **1: Performance**, les ventilateurs s’activent à 50°C.
 
 .. code-block:: shell
 
-  pironman5 -gm 3
+  sudo pironman5 -gm 3
 
 * **4: Quiet** : activation à 70°C  
 * **3: Balanced** : activation à 67,5°C  

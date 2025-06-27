@@ -32,9 +32,9 @@ Tableau de bord
 
 Plusieurs cartes permettent de visualiser l’état du Raspberry Pi, dont :
 
-* **Ventilateur** : Affiche la température du CPU et la vitesse du ventilateur PWM. **GPIO Fan State** indique l’état des deux ventilateurs RGB latéraux. À la température actuelle, ils sont éteints.
+* **Température** : Affiche la température du CPU et la vitesse du ventilateur PWM. **GPIO Fan State** indique l’état des deux ventilateurs RGB latéraux. À la température actuelle, ils sont éteints.
 
-  .. image:: img/dashboard_pwm_fan.png
+  .. image:: img/dashboard_temp.png
     :width: 90%
 
 
@@ -95,15 +95,17 @@ Paramètres
 
 Un menu Paramètres est disponible en haut à droite de la page pour personnaliser votre interface. Les modifications sont enregistrées automatiquement. Vous pouvez aussi cliquer sur le bouton CLEAR pour réinitialiser les données historiques.
 
-.. image:: img/Dark_mode_and_Temperature.jpg
+.. image:: img/dashboard_setting_darkmode.png
   :width: 600
 
 * **Dark Mode** : Basculez entre les thèmes clair et sombre. Le choix est enregistré dans le cache du navigateur. Changer de navigateur ou vider le cache revient au thème par défaut.
+* **Afficher le disque non monté** : indique si les disques non montés doivent être affichés dans le tableau de bord.
+* **Afficher tous les cœurs** : indique si tous les cœurs doivent être affichés dans le tableau de bord.
 * **Temperature Unit** : Définissez l’unité de température affichée.
 
 **À propos de l’écran OLED**
 
-.. image:: img/OLED_Sreens.jpg
+.. image:: img/dashboard_setting_oled.png
   :width: 600
 
 * **OLED Enable** : Activer ou désactiver l’écran OLED.
@@ -115,6 +117,8 @@ Un menu Paramètres est disponible en haut à droite de la page pour personnalis
   * **wlan0** : Affiche uniquement l’IP Wi-Fi.
 
 * **OLED Rotation** : Définir l’orientation de l’écran OLED.
+* **Délai de veille OLED** : définissez le délai de veille OLED.
+
 
 **À propos des LED RGB**
 
@@ -134,8 +138,16 @@ Un menu Paramètres est disponible en haut à droite de la page pour personnalis
 
 **À propos des ventilateurs RGB**
 
-.. image:: img/RGB_FAN2.png
+.. image:: img/dashboard_setting_fan.png
   :width: 600
+
+**LED du ventilateur** : permet de définir le mode des ventilateurs RVB.
+Ajouter un commentaire Plus d'actions
+
+  * **Désactivé** : désactive le RVB.
+  * **Activé** : active le RVB.
+  * **Suivi** : active automatiquement le RVB en fonction de l'état de fonctionnement du ventilateur.
+
 
 * **GPIO Fan Mode** : Choisir le mode de fonctionnement des ventilateurs RGB latéraux, qui détermine à quelle température ils se déclenchent.
 
@@ -147,8 +159,4 @@ Un menu Paramètres est disponible en haut à droite de la page pour personnalis
 
 Par exemple, en mode **Performance**, les ventilateurs se déclenchent à 50°C.
 
-Après enregistrement, si la température du CPU dépasse 50°C, vous verrez **GPIO Fan State** passer à ON dans le tableau de bord, et les ventilateurs latéraux s’activeront.
-
-.. image:: img/dashboard_rgbfan_on.png
-  :width: 300
-
+Après avoir enregistré, si la température du processeur dépasse 50°C, vous verrez que les ventilateurs RVB latéraux commenceront à tourner.
