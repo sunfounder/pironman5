@@ -54,7 +54,7 @@ Las configuraciones estándar aparecen de la siguiente manera:
 Personaliza estas configuraciones para adaptarlas a tus necesidades.
 
 Utiliza ``pironman5`` o ``pironman5 -h`` para obtener instrucciones.
-
+ 
 .. code-block::
 
   usage: pironman5-service [-h] [-v] [-c] [-dl {debug,info,warning,error,critical}] [--background [BACKGROUND]] [-rd]
