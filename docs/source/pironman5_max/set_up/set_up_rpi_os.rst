@@ -26,6 +26,7 @@ Si has instalado Raspberry Pi OS, Ubuntu, Kali Linux o Homebridge en tu Raspberr
 
 Configurar el apagado para desactivar la energía del GPIO
 ---------------------------------------------------------------
+
 Para evitar que la pantalla OLED y los ventiladores RGB —alimentados a través del GPIO de la Raspberry Pi— permanezcan encendidos después del apagado, es necesario configurar la desactivación de energía del GPIO.
 
 #. Edita manualmente el archivo de configuración de ``EEPROM`` con el siguiente comando:
@@ -61,7 +62,7 @@ Descarga e instalación del módulo ``pironman5``
    .. code-block:: shell
 
       cd ~
-      git clone https://github.com/sunfounder/pironman5.git -b 1.2.7
+      git clone -b 1.2.15 https://github.com/sunfounder/pironman5.git --depth 1
       cd ~/pironman5
       sudo python3 install.py
 

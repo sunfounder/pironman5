@@ -26,19 +26,19 @@ La placa cuenta con 4 LED RGB WS2812 totalmente personalizables. Los usuarios pu
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * Para cambiar el color, introduce los valores hexadecimales del color deseado, por ejemplo ``fe1a1a``:
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * Para ajustar el brillo de los LED RGB (rango: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * Para cambiar el modo de visualización, selecciona entre: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
@@ -48,13 +48,13 @@ La placa cuenta con 4 LED RGB WS2812 totalmente personalizables. Los usuarios pu
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * Para ajustar la velocidad de cambio (rango: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 RGB Control Pin
 -------------------------
@@ -113,6 +113,22 @@ Verifica que el cable FPC de la pantalla esté correctamente conectado.
     .. code-block:: shell
 
         sudo systemctl restart pironman5.service
+
+
+Disparador de Activación
+-------------------------
+
+.. image:: img/io_board_vib.png
+
+El interruptor de vibración incorporado se utiliza para activar la pantalla OLED desde el modo de suspensión. Cuando se detecta una vibración, se envía una señal para reactivar la OLED, lo que permite que la pantalla permanezca apagada cuando está inactiva y se active automáticamente al detectar movimiento.
+
+Si se retira el puente (jumper) etiquetado para el interruptor de vibración, la función de activación se desactivará. Una vez que la OLED entre en modo de suspensión, ya no podrá activarse. Esta opción está pensada para usuarios avanzados que deseen reutilizar el pin GPIO correspondiente para otras aplicaciones.
+
+.. note::
+
+  Puente instalado: Activación por vibración habilitada.
+
+  Puente retirado: La OLED no puede activarse una vez que se apaga. El pin queda libre para otros usos.
 
 
 Infrared Receiver
@@ -179,7 +195,7 @@ Por ejemplo, en modo **1: Performance**, los ventiladores se activan a 50 °C:
 
 .. code-block:: shell
 
-  pironman5 -gm 3
+  sudo pironman5 -gm 3
 
 * **4: Quieto**: Activación a 70 °C.
 * **3: Equilibrado**: Activación a 67.5 °C.

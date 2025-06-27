@@ -33,9 +33,9 @@ Dashboard
 
 Hay varias tarjetas que muestran el estado actual del Raspberry Pi, entre ellas:
 
-* **Fan**: Muestra la temperatura del CPU y la velocidad del ventilador PWM. **GPIO Fan State** indica el estado de los dos ventiladores RGB laterales. A la temperatura actual, los ventiladores RGB están apagados.
+* **temperatura**: Muestra la temperatura del CPU y la velocidad del ventilador PWM. **GPIO Fan State** indica el estado de los dos ventiladores RGB laterales. A la temperatura actual, los ventiladores RGB están apagados.
 
-  .. image:: img/dashboard_pwm_fan.png
+  .. image:: img/dashboard_temp.png
     :width: 90%
 
 
@@ -96,15 +96,17 @@ Settings
 
 En la esquina superior derecha encontrarás el menú de ajustes, donde puedes personalizar la configuración según tus preferencias. Los cambios se guardan automáticamente. Si es necesario, puedes hacer clic en el botón CLEAR al final para borrar los datos históricos.
 
-.. image:: img/Dark_mode_and_Temperature.jpg
+.. image:: img/dashboard_setting_darkmode.png
   :width: 600
 
 * **Dark Mode**: Alterna entre el modo claro y el modo oscuro. La preferencia de tema se guarda en la caché del navegador. Si cambias de navegador o borras la caché, volverá al tema claro por defecto.
+* **Mostrar disco desmontado**: Si se muestran los discos desmontados en el panel.
+* **Mostrar todos los núcleos**: Si se muestran todos los núcleos en el panel.
 * **Temperature Unit**: Define la unidad de temperatura que mostrará el sistema.
 
 **Sobre la pantalla OLED**
 
-.. image:: img/OLED_Sreens.jpg
+.. image:: img/dashboard_setting_oled.png
   :width: 600
 
 * **OLED Enable**: Activa o desactiva la pantalla OLED.
@@ -116,6 +118,7 @@ En la esquina superior derecha encontrarás el menú de ajustes, donde puedes pe
   * **wlan0**: Muestra solo la IP de Wi-Fi.
 
 * **OLED Rotation**: Ajusta la rotación de la pantalla OLED.
+* **Tiempo de espera de suspensión de OLED**: establece el tiempo de espera de suspensión de OLED.
 
 **Sobre los LEDs RGB**
 
@@ -135,8 +138,14 @@ En la esquina superior derecha encontrarás el menú de ajustes, donde puedes pe
 
 **Sobre los ventiladores RGB**
 
-.. image:: img/RGB_FAN2.png
+.. image:: img/dashboard_setting_fan.png
   :width: 600
+
+* **LED del ventilador**: Configura el modo de los ventiladores RGB.
+
+  * **Apagado**: Apaga el RGB.
+  * **Encendido**: Enciende el RGB.
+  * **Seguir**: Enciende el RGB automáticamente según el estado de funcionamiento del ventilador.
 
 * **GPIO Fan Mode**: Define el modo de funcionamiento de los dos ventiladores RGB. Cada modo establece la temperatura a la que se activan los ventiladores.
 
@@ -148,8 +157,4 @@ En la esquina superior derecha encontrarás el menú de ajustes, donde puedes pe
 
 Por ejemplo, si seleccionas el modo **Performance**, los ventiladores RGB se activarán a los 50 °C.
 
-Una vez guardados los cambios, si la temperatura del CPU supera los 50 °C, verás que el **GPIO Fan State** en el panel cambia a ON y los ventiladores RGB laterales comenzarán a girar.
-
-.. image:: img/dashboard_rgbfan_on.png
-  :width: 300
-
+Después de guardar, si la temperatura de la CPU supera los 50 °C, verá que los ventiladores RGB laterales comenzarán a girar.

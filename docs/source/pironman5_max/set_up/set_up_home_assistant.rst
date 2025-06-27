@@ -147,24 +147,24 @@ Ahora comienza oficialmente la instalación del complemento **Pironman 5**.
    .. image:: img/home_addon.png
       :width: 90%
 
-#. Encuentra **Pironman 5** en la lista de complementos de **SunFounder** y haz clic para ingresar.
+#. Encuentra **Pironman 5 MAX** en la lista de complementos de **SunFounder** y haz clic para ingresar.
 
-   .. image:: img/home_pironman5_addon.png
+   .. image:: img/home_pironman5_max_addon.png
       :width: 90%
 
-#. Instala el complemento Pironman 5.
+#. Instala el complemento Pironman 5 MAX.
 
-   .. image:: img/home_install_pironman5.png
+   .. image:: img/home_pironman5_max_addon_install.png
       :width: 90%
 
 #. Una vez instalado, haz clic en **START** para iniciar el complemento. Verás en la pantalla OLED información como la CPU de la Raspberry Pi, la temperatura, entre otros datos. Además, cuatro LEDs RGB WS2812 se encenderán en azul con un efecto de respiración.
 
-   .. image:: img/home_start_pironman5.png
+   .. image:: img/home_pironman5_max_addon_start.png
       :width: 90%
 
 #. Ahora puedes hacer clic en **OPEN WEB UI** para acceder a la página web de Pironman 5. También puedes activar la opción para mostrar la interfaz en la barra lateral. Así podrás acceder directamente desde el menú lateral de Home Assistant.
 
-   .. image:: img/home_web_ui.png
+   .. image:: img/home_pironman5_max_webui.png
       :width: 90%
 
 #. En la interfaz web podrás consultar información de tu Raspberry Pi, configurar los LEDs RGB, controlar el ventilador y mucho más.
