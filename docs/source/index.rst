@@ -86,10 +86,14 @@ Vous trouverez ci-dessous un tableau comparatif des spécifications du Pironman 
      - ✔
      - X
      - ✔
-   * - Ventilateurs RGB 
-     - 2 (éclairage automatique)
-     - 1 (éclairage automatique)
-     - 2 (programmables)
+   * - Nombre de ventilateurs RVB
+     - 2 Ajouter un commentaire Plus d'actions
+     - 1
+     - 2
+   * - Mode RVB du ventilateur
+     - Synchronisation avec le ventilateur
+     - Contrôle indépendant
+     - Contrôle indépendant
    * - Ports HDMI
      - 2 ports HDMI standard
      - 2 ports Micro HDMI
@@ -100,7 +104,7 @@ Vous trouverez ci-dessous un tableau comparatif des spécifications du Pironman 
      - ✔
    * - Activation OLED
      - Toujours allumé
-     - Toujours allumé
+     - 
      - Allumage par contact
    * - Prise en charge NVMe SSD
      - 1

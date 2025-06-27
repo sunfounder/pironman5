@@ -64,7 +64,7 @@ Veuillez suivre les étapes suivantes pour installer OpenMediaVault sur votre Ra
 
 
 
-6. Configuration d’un RAID (optionnel)
+4. Configuration d’un RAID (optionnel)
 -------------------------------------------
 
    Le RAID NVMe est une solution de stockage combinant plusieurs SSD NVMe à l’aide de la technologie RAID. Elle permet de maximiser les performances élevées du protocole NVMe tout en tirant parti de la redondance ou des améliorations de performance offertes par le RAID. Les modes les plus courants sont RAID 0, 1, 5 et 10. Avec deux SSD NVMe, les modes RAID 0 et RAID 1 sont les plus utilisés.
