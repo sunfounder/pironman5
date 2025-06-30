@@ -85,10 +85,14 @@ Di seguito una tabella comparativa delle specifiche tra Pironman 5 e Pironman 5 
      - ✔
      - X
      - ✔
-   * - Ventole RGB 
-     - 2 (illuminazione automatica)
-     - 1 (illuminazione automatica)
-     - 2 (programmabili)
+   * - Numero ventole RGB
+     - 2
+     - 1
+     - 2
+   * - Modalità ventola RGB
+     - Sincronizzazione con ventola
+     - Controllo indipendente
+     - Controllo indipendente
    * - Porte HDMI
      - 2 porte HDMI standard
      - 2 porte Micro HDMI
@@ -99,7 +103,7 @@ Di seguito una tabella comparativa delle specifiche tra Pironman 5 e Pironman 5 
      - ✔
    * - Attivazione OLED
      - Sempre attivo
-     - Sempre attivo
+     - 
      - Attivo al tocco
    * - Supporto NVMe SSD
      - 1

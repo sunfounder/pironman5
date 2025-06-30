@@ -53,12 +53,12 @@ Ventole RGB
 
 * **Dimensioni esterne**: 40*40*10MM
 * **Peso**: 13,5±5g/cad
-* **Durata**: 40.000 ore (temperatura ambiente 25°C)
+* **Durata**: 30.000 ore (temperatura ambiente 25°C)
 * **Portata massima d'aria**: 2.46CFM
 * **Pressione massima dell'aria**: 0.62mm-H2O
 * **Rumorosità acustica**: 22.31dBA
-* **Potenza nominale in ingresso**: 5V/0.1A
+* **Potenza nominale in ingresso**: 5V/0.15A
 * **Velocità nominale**: 3500±10%RPM
-* **Temperatura operativa**: -10℃~+70℃
-* **Temperatura di stoccaggio**: -30℃~+85℃
+* **Temperatura operativa**: -10℃~+60℃
+* **Temperatura di stoccaggio**: -20℃~+70℃
 

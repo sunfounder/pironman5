@@ -32,9 +32,9 @@ Dashboard
 
 Sono disponibili diverse schede per monitorare lo stato del Raspberry Pi, tra cui:
 
-* **Ventola**: Mostra la temperatura della CPU del Raspberry Pi e la velocità della ventola PWM. **GPIO Fan State** indica lo stato delle due ventole RGB laterali. Alla temperatura attuale, le due ventole RGB sono spente.
+* **temperatura**: Mostra la temperatura della CPU del Raspberry Pi e la velocità della ventola PWM. **GPIO Fan State** indica lo stato delle due ventole RGB laterali. Alla temperatura attuale, le due ventole RGB sono spente.
 
-  .. image:: img/dashboard_pwm_fan.png
+  .. image:: img/dashboard_temp.png
     :width: 90%
 
 
@@ -95,15 +95,17 @@ Impostazioni
 
 Nel menu in alto a destra trovi le impostazioni personalizzabili. Le modifiche vengono salvate automaticamente. Se necessario, puoi cliccare sul pulsante CLEAR in basso per cancellare i dati storici.
 
-.. image:: img/Dark_mode_and_Temperature.jpg
+.. image:: img/dashboard_setting_darkmode.png
   :width: 600
 
 * **Modalità Scura**: Passa tra tema chiaro e scuro. La preferenza viene salvata nella cache del browser.
+* **Mostra disco non montato**: Indica se mostrare i dischi non montati nella dashboard.
+* **Mostra tutti i core**: Indica se mostrare tutti i core nella dashboard.
 * **Unità di Temperatura**: Imposta l’unità di temperatura visualizzata dal sistema.
 
 **Informazioni sullo schermo OLED**
 
-.. image:: img/OLED_Sreens.jpg
+.. image:: img/dashboard_setting_oled.png
   :width: 600
 
 * **OLED Enable**: Attiva/disattiva l'OLED.
@@ -115,6 +117,8 @@ Nel menu in alto a destra trovi le impostazioni personalizzabili. Le modifiche v
   * **wlan0**: Mostra solo l’IP Wi-Fi.
 
 * **Rotazione OLED**: Imposta la rotazione dello schermo OLED.
+* **Timeout sospensione OLED**: Imposta il timeout di sospensione dell'OLED.
+
 
 **Informazioni sui LED RGB**
 
@@ -134,8 +138,15 @@ Nel menu in alto a destra trovi le impostazioni personalizzabili. Le modifiche v
 
 **Informazioni sulle Ventole RGB**
 
-.. image:: img/RGB_FAN2.png
+.. image:: img/dashboard_setting_fan.png
   :width: 600
+
+* **LED ventola**: Imposta la modalità delle ventole RGB.
+
+    * **Off**: Disattiva l'RGB.
+    * **On**: Attiva l'RGB.
+    * **Follow**: Attiva automaticamente l'RGB in base allo stato di funzionamento della ventola.
+
 
 * **Modalità Ventola GPIO**: Imposta la modalità operativa delle due ventole RGB. Queste modalità determinano la soglia di attivazione in base alla temperatura.
 
@@ -147,8 +158,4 @@ Nel menu in alto a destra trovi le impostazioni personalizzabili. Le modifiche v
 
 Ad esempio, impostando la modalità **Prestazioni**, le ventole RGB si attiveranno a 50°C.
 
-Dopo aver salvato, se la temperatura della CPU supera i 50°C, vedrai lo **Stato Ventola GPIO** passare a ON nella Dashboard, e le ventole RGB laterali inizieranno a girare.
-
-.. image:: img/dashboard_rgbfan_on.png
-  :width: 300
-
+Dopo aver salvato, se la temperatura della CPU supera i 50°C, vedrai le ventole RGB laterali iniziare a girare.

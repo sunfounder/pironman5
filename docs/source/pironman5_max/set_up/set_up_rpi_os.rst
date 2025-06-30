@@ -26,6 +26,7 @@ Se hai installato Raspberry Pi OS, Ubuntu, Kali Linux o Homebridge sul tuo Raspb
 
 Configurazione dello spegnimento per disattivare l’alimentazione GPIO
 ----------------------------------------------------------------------------
+
 Per evitare che lo schermo OLED e le ventole RGB alimentate dal GPIO del Raspberry Pi rimangano attivi dopo lo spegnimento, è importante configurare la disattivazione dell’alimentazione GPIO.
 
 #. Modifica manualmente il file di configurazione ``EEPROM`` con il comando:
@@ -61,7 +62,7 @@ Download e installazione del modulo ``pironman5``
    .. code-block:: shell
 
       cd ~
-      git clone https://github.com/sunfounder/pironman5.git -b 1.2.7
+      git clone -b 1.2.15 https://github.com/sunfounder/pironman5.git --depth 1
       cd ~/pironman5
       sudo python3 install.py
 

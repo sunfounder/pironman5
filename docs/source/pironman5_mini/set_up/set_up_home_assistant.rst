@@ -134,9 +134,6 @@ Il **Pi Config Wizard** ti aiuta ad abilitare le configurazioni necessarie per P
 
 
 
-.. .. 这里要改PIRONMAN5 MINI的ADD ON 图
-
-
 4. Installa il componente **Pironman 5 Mini**
 ---------------------------------------------------
 
@@ -154,22 +151,22 @@ Ora puoi procedere con l’installazione del componente **Pironman 5 Mini**.
 
 #. Trova **Pironman 5 Mini** nell’elenco SunFounder e clicca per entrare.
 
-   .. image:: img/home_pironman5_addon.png
+   .. image:: img/home_pironman5_mini_addon.png
       :width: 90%
 
 #. Procedi all’installazione del componente.
 
-   .. image:: img/home_install_pironman5.png
+   .. image:: img/home_pironman5_mini_addon_install.png
       :width: 90%
 
 #. Al termine, clicca su **START**. Vedrai quattro LED WS2812 RGB accendersi di blu in modalità respiro.
 
-   .. image:: img/home_start_pironman5.png
+   .. image:: img/home_pironman5_mini_addon_start.png
       :width: 90%
 
 #. Clicca su **OPEN WEB UI** per accedere alla pagina web di Pironman 5 Mini. Puoi anche spuntare l’opzione per mostrare il Web UI nella sidebar.
 
-   .. image:: img/home_web_ui.png
+   .. image:: img/home_pironman5_mini_webui.png
       :width: 90%
 
 #. Ora puoi visualizzare le informazioni del tuo Raspberry Pi, configurare gli RGB, controllare la ventola e molto altro.

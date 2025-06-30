@@ -26,19 +26,19 @@ La scheda è dotata di 4 LED RGB WS2812 completamente configurabili. È possibil
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * Per cambiare colore, inserire il valore esadecimale desiderato, ad esempio ``fe1a1a``.
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * Per regolare la luminosità dei LED RGB (intervallo: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * Per cambiare modalità di visualizzazione dei LED RGB, scegli tra: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
@@ -48,13 +48,13 @@ La scheda è dotata di 4 LED RGB WS2812 completamente configurabili. È possibil
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * Per modificare la velocità della transizione (intervallo: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 Pin di controllo RGB
 -------------------------
@@ -113,6 +113,23 @@ Verifica che il cavo FPC dello schermo OLED sia collegato correttamente.
     .. code-block:: shell
 
         sudo systemctl restart pironman5.service
+
+
+Trigger di Riattivazione
+-------------------------
+
+.. image:: img/io_board_vib.png
+
+L'interruttore a vibrazione integrato viene utilizzato per riattivare il display OLED dalla modalità di sospensione. Quando viene rilevata una vibrazione, viene inviato un segnale per riattivare l'OLED, consentendo al display di rimanere spento quando inattivo e di riaccendersi automaticamente al rilevamento di un movimento.
+
+Se si rimuove il ponticello etichettato per l'interruttore a vibrazione, la funzione di riattivazione verrà disabilitata. Una volta che l'OLED entra in modalità di sospensione, non sarà più possibile riattivarlo. Questa opzione è pensata per utenti esperti che desiderano riutilizzare il pin GPIO corrispondente per altre applicazioni.
+
+.. note::
+
+  Ponticello installato: la riattivazione tramite vibrazione è abilitata.
+
+  Ponticello rimosso: l’OLED non può essere riattivato una volta spento. Il pin è liberato per altri utilizzi.
+
 
 
 Ricevitore a Infrarossi
@@ -181,7 +198,7 @@ Ad esempio, la modalità **1: Performance** attiva le ventole a 50°C.
 
 .. code-block:: shell
 
-  pironman5 -gm 3
+  sudo pironman5 -gm 3
 
 * **4: Quiet**: le ventole si attivano a 70°C.
 * **3: Balanced**: le ventole si attivano a 67.5°C.
