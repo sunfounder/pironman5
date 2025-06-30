@@ -64,7 +64,7 @@ OpenMediaVault（略称：OMV）は、Debian Linuxをベースとしたオープ
 
 
 
-6. RAIDの設定（オプション）
+4. RAIDの設定（オプション）
 ---------------------------------------
 
    NVMe RAIDは、複数のNVMe SSDをRAID技術で統合し、NVMeの高速性とRAIDの冗長性・性能強化を活かすための構成です。代表的なモードにはRAID 0、1、5、10などがありますが、2基のNVMe SSDを使う場合はRAID 0またはRAID 1が主に使用されます。

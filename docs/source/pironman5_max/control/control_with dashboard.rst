@@ -32,9 +32,9 @@
 
 ダッシュボードには、Raspberry Pi の状態を確認できる複数のカードが表示されます：
 
-* **ファン**：CPU 温度と PWM ファンの回転速度を表示。 **GPIO Fan State** は左右の RGB ファンの状態を示します。現在の温度では、RGB ファンはオフです。
+* **温度**：CPU 温度と PWM ファンの回転速度を表示。 **GPIO Fan State** は左右の RGB ファンの状態を示します。現在の温度では、RGB ファンはオフです。
 
-  .. image:: img/dashboard_pwm_fan.png
+  .. image:: img/dashboard_temp.png
     :width: 90%
 
 
@@ -95,15 +95,17 @@
 
 画面右上にある設定メニューから、表示や動作に関する各種設定をカスタマイズできます。変更内容は自動で保存され、必要に応じて [CLEAR] ボタンで履歴データをクリア可能です。
 
-.. image:: img/Dark_mode_and_Temperature.jpg
+.. image:: img/dashboard_setting_darkmode.png
   :width: 600
 
 * **ダークモード**：ライト／ダークテーマの切り替え。テーマ設定はブラウザのキャッシュに保存されます。ブラウザを変えたりキャッシュを削除すると、デフォルトのライトテーマに戻ります。
+* **Show Unmounted Disk**: 記録装置が接続されていない場合でも、画面に表示するかどうかを設定します。
+* **Show All Cores**: すべての処理用核心（コア）を画面に表示するかどうかを設定します。
 * **温度単位**：温度の表示単位を設定。
 
 **OLED スクリーンの設定**
 
-.. image:: img/OLED_Sreens.jpg
+.. image:: img/dashboard_setting_oled.png
   :width: 600
 
 * **OLED 有効化**：OLED 表示の有効／無効を設定
@@ -115,6 +117,9 @@
   * **wlan0**：Wi-Fi IP のみを表示
 
 * **OLED 回転**：OLED 表示の回転角度を設定
+* **OLED Sleep Timeout**: 表示装置（OLED）が休止状態になるまでの時間を設定します。
+
+
 
 **RGB LED の設定**
 
@@ -134,8 +139,16 @@
 
 **RGB ファンの設定**
 
-.. image:: img/RGB_FAN2.png
+.. image:: img/dashboard_setting_fan.png
   :width: 600
+
+
+* **Fan LED**：RGB冷却扇の発光動作を設定します。
+
+    * **Off**：発光を無効にします。
+    * **On**：常に発光させます。
+    * **Follow**：冷却扇の動作状態に応じて自動的に発光します。
+
 
 * **GPIO ファンモード**：2基の RGB ファンの動作モードを設定できます。
 
@@ -147,8 +160,4 @@
 
 たとえば、 **Performance** モードを選択すると、CPU温度が50℃を超えたときにRGBファンが起動します。
 
-保存後、CPU 温度が 50℃ を超えると、ダッシュボード上の **GPIO Fan State** が ON に変わり、側面の RGB ファンが回転を始めます。
-
-.. image:: img/dashboard_rgbfan_on.png
-  :width: 300
-
+設定を保存した後、CPUの温度が50度を超えると、側面のRGB冷却扇が回転し始めます。

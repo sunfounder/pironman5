@@ -26,19 +26,19 @@ RGB LED
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * 任意のカラーコード（16進数）を指定して色を変更できます。例： ``fe1a1a``
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * 明るさを設定するには、0〜100の範囲で指定します（単位：%）：
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * 表示モードを以下のいずれかに変更できます： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``
 
@@ -48,13 +48,13 @@ RGB LED
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * 表示変化の速度を 0～100% の範囲で設定：
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 RGB制御ピン
 -------------------------
@@ -113,6 +113,24 @@ FPC ケーブルがしっかり接続されているか確認してください�
     .. code-block:: shell
 
         sudo systemctl restart pironman5.service
+
+
+
+OLED画面の省電力モードと振動起動
+---------------------------------------------
+
+.. image:: img/io_board_vib.png
+
+オンボードの振動スイッチは、OLEDディスプレイをスリープモードから復帰させるために使用されます。振動を検出すると信号を送信し、OLEDを再起動します。これにより、アイドル時にはディスプレイをオフにし、動きを感知したときに自動で表示が再開されます。
+
+振動スイッチ用にラベル付けされたジャンパーキャップを取り外すと、ウェイクアップ機能は無効になります。一度OLEDがスリープモードに入ると、再びオンにすることはできなくなります。このオプションは、対応するGPIOピンを他の用途に再利用したい上級ユーザー向けです。
+
+.. note::
+
+  ジャンパー装着時：振動によるウェイクアップが有効です。
+
+  ジャンパー未装着時：OLEDが一度オフになると再起動できません。このピンは他の用途に使用可能になります。
+
 
 
 赤外線受信モジュール
@@ -179,7 +197,7 @@ IO拡張ボードは最大2基の5V非PWMファンに対応し、同時制御さ
 
 .. code-block:: shell
 
-  pironman5 -gm 3
+  sudo pironman5 -gm 3
 
 * **4: 静音モード**：70℃で起動
 * **3: バランスモード**：67.5℃

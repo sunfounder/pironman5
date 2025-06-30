@@ -147,24 +147,24 @@ Pironman 5 の機能は、Home Assistant のアドオンとして提供されま
    .. image:: img/home_addon.png
       :width: 90%
 
-#. **SunFounder** アドオンリストから **Pironman 5** を探してクリックします。
+#. **SunFounder** アドオンリストから **Pironman 5 MAX** を探してクリックします。
 
-   .. image:: img/home_pironman5_addon.png
+   .. image:: img/home_pironman5_max_addon.png
       :width: 90%
 
-#. **Pironman 5** アドオンをインストールします。
+#. **Pironman 5 MAX** アドオンをインストールします。
 
-   .. image:: img/home_install_pironman5.png
+   .. image:: img/home_pironman5_max_addon_install.png
       :width: 90%
 
 #. インストール完了後、 **START** をクリックしてアドオンを起動します。OLEDディスプレイにRaspberry PiのCPU温度やその他情報が表示され、4つのWS2812 RGB LEDが青色で呼吸モードになります。
 
-   .. image:: img/home_start_pironman5.png
+   .. image:: img/home_pironman5_max_addon_start.png
       :width: 90%
 
 #. 次に **OPEN WEB UI** をクリックして Pironman 5 の Web ページを開きます。Web UI をサイドバーに表示するオプションを有効にすると、Home Assistant の左サイドバーからも Pironman 5 ページにアクセスできます。
 
-   .. image:: img/home_web_ui.png
+   .. image:: img/home_pironman5_max_webui.png
       :width: 90%
 
 #. ここでは Raspberry Pi の各種情報を確認したり、RGB の設定やファンの制御などが行えます。

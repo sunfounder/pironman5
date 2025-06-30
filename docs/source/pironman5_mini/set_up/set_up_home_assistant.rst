@@ -134,7 +134,6 @@ Pironman 5 Miniの機能は、Home Assistant上でアドオンとして提供さ
 
 
 
-.. .. 这里要改PIRONMAN5 MINI的ADD ON 图
 
 
 4. **Pironman 5 Mini** アドオンをインストールする
@@ -154,22 +153,22 @@ Pironman 5 Miniの機能は、Home Assistant上でアドオンとして提供さ
 
 #. **SunFounder** アドオン一覧から **Pironman 5 Mini** を見つけてクリック。
 
-   .. image:: img/home_pironman5_addon.png
+   .. image:: img/home_pironman5_mini_addon.png
       :width: 90%
 
 #. Pironman 5アドオンをインストールします。
 
-   .. image:: img/home_install_pironman5.png
+   .. image:: img/home_pironman5_mini_addon_install.png
       :width: 90%
 
 #. インストール完了後、 **START** をクリックして起動します。4つのWS2812 RGB LEDが青色でブリージングモードになります。
 
-   .. image:: img/home_start_pironman5.png
+   .. image:: img/home_pironman5_mini_addon_start.png
       :width: 90%
 
 #. 次に **OPEN WEB UI** をクリックして、Pironman 5 MiniのWebページを開きます。サイドバー表示のオプションにもチェックを入れると、Home Assistantの左サイドバーにPironman 5 Miniの項目が表示され、すぐにアクセス可能になります。
 
-   .. image:: img/home_web_ui.png
+   .. image:: img/home_pironman5_mini_webui.png
       :width: 90%
 
 #. Web UIでは、Raspberry Piの情報を確認したり、RGBの設定やファンの制御などが可能です。

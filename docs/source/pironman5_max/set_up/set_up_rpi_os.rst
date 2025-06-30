@@ -26,6 +26,7 @@ Raspberry Pi に Raspberry Pi OS、Ubuntu、Kali Linux、または Homebridge �
 
 シャットダウン時にGPIO電源を無効化する設定
 ------------------------------------------------------------
+
 Raspberry Pi のシャットダウン後もOLEDスクリーンやRGBファン（GPIO駆動）が動作し続けるのを防ぐため、GPIOの電源をオフにする設定が必要です。
 
 #. 次のコマンドで ``EEPROM`` 設定ファイルを編集します：
@@ -61,7 +62,7 @@ Raspberry Pi のシャットダウン後もOLEDスクリーンやRGBファン（
    .. code-block:: shell
 
       cd ~
-      git clone https://github.com/sunfounder/pironman5.git -b 1.2.7
+      git clone -b 1.2.15 https://github.com/sunfounder/pironman5.git --depth 1
       cd ~/pironman5
       sudo python3 install.py
 

@@ -86,10 +86,14 @@ Pironman 5シリーズ - Raspberry Pi 5用 NVMe M.2 SSD対応PCIeミニPCケー�
      - ✔
      - X
      - ✔
-   * - RGBファン 
-     - 2基（自動点灯）
-     - 1基（自動点灯）
-     - 2基（プログラム制御）
+   * - RGBファン数
+     - 2
+     - 1
+     - 2
+   * - ファンRGBモード
+     - ファン同期
+     - 独立制御
+     - 独立制御
    * - HDMIポート
      - 標準HDMIポート×2
      - Micro HDMIポート×2
@@ -100,7 +104,7 @@ Pironman 5シリーズ - Raspberry Pi 5用 NVMe M.2 SSD対応PCIeミニPCケー�
      - ✔
    * - OLED起動方式
      - 常時点灯
-     - 常時点灯
+     - 
      - タップで点灯
    * - NVMe SSD対応数
      - 1
