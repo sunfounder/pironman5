@@ -69,18 +69,34 @@ def main():
         parser.add_argument("-vp", "--vibration-switch-pin", nargs='?', default='', help="Vibration switch pin")
         parser.add_argument("-vu", "--vibration-switch-pull-up", nargs='?', default='', help="Vibration switch pull up True/False")
         parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds")
+
+    # parse args
+    # ========================================
     args = parser.parse_args()
 
+    # no args, show help
+    # ----------------------------------------
     if not (len(sys.argv) > 1):
         parser.print_help()
         quit()
-    
+
+    # show version
+    # ----------------------------------------
+    if args.version:
+        print(__version__)
+        quit()
+
+    # get or set config path
+    # ----------------------------------------
     config_path = CONFIG_PATH
     if args.config_path != '':
         if args.config_path == None:
             print(f"Config path: {config_path}")
         else:
             config_path = args.config_path
+
+    # load config file
+    # ----------------------------------------
     if not path.exists(config_path):
         with open(config_path, 'w') as f:
             json.dump({'system': {}}, f, indent=4)
@@ -95,33 +111,19 @@ def main():
                 print(f"Invalid config file: {config_path}")
                 quit()
 
+    # show config
+    # ----------------------------------------
     if args.config:
         print(json.dumps(current_config, indent=4))
         quit()
 
+    # set debug level
+    # ----------------------------------------
     if args.debug_level != None:
         debug_level = args.debug_level.upper()
 
-    if args.command == "restart":
-        print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
-        quit()
-
-    if args.command == "stop":
-        import os
-        os.system('kill -15 $(pgrep -f "pironman5 start")')
-        os.system('kill -15 $(pgrep -f "pironman5-service start")')
-        pironman5 = Pironman5()
-        pironman5.stop()
-        quit()
-
-    if args.version:
-        print(__version__)
-        quit()
-
-    if args.background != '':
-        print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
-        quit()
-    
+    # remove dashboard
+    # ----------------------------------------    
     if args.remove_dashboard:
         import os
         print("Remove Dashboard")
@@ -138,7 +140,10 @@ def main():
         print("Dashboard removed, restart pironman5 to apply changes: sudo systemctl restart pironman5.service")
         quit()
 
+    # ws2812 settings
+    # ----------------------------------------
     if is_included(PERIPHERALS, "ws2812"):
+        # ws2812 rgb_color
         if args.rgb_color != '':
             if args.rgb_color == None:
                 hex = current_config['system']['rgb_color']
@@ -162,6 +167,7 @@ def main():
                         quit()
                 new_sys_config['rgb_color'] = args.rgb_color
                 print(f"Set RGB color: #{args.rgb_color} ({r}, {g}, {b})")
+        # ws2812 rgb_brightness
         if args.rgb_brightness != '':
             if args.rgb_brightness == None:
                 print(f"RGB brightness: {current_config['system']['rgb_brightness']}")
@@ -176,6 +182,7 @@ def main():
                     quit()
                 new_sys_config['rgb_brightness'] = args.rgb_brightness
                 print(f"Set RGB brightness: {args.rgb_brightness}")
+        # ws2812 rgb_style
         if args.rgb_style != '':
             if args.rgb_style == None:
                 print(f"RGB style: {current_config['system']['rgb_style']}")
@@ -185,6 +192,7 @@ def main():
                     quit()
                 new_sys_config['rgb_style'] = args.rgb_style
                 print(f"Set RGB style: {args.rgb_style}")
+        # ws2812 rgb_speed
         if args.rgb_speed != '':
             if args.rgb_speed == None:
                 print(f"RGB speed: {current_config['system']['rgb_speed']}")
@@ -199,6 +207,7 @@ def main():
                     quit()
                 new_sys_config['rgb_speed'] = args.rgb_speed
                 print(f"Set RGB speed: {args.rgb_speed}")
+        # ws2812 rgb_enable
         if args.rgb_enable != '':
             if args.rgb_enable == None:
                 print(f"RGB enable: {current_config['system']['rgb_enable']}")
@@ -212,6 +221,7 @@ def main():
                 else:
                     print(f"Invalid value for RGB enable, it should be True or False")
                     quit()
+        # ws2812 rgb_led_count
         if args.rgb_led_count != '':
             if args.rgb_led_count == None:
                 print(f"RGB LED count: {current_config['system']['rgb_led_count']}")
@@ -226,6 +236,8 @@ def main():
                     quit()
                 new_sys_config['rgb_led_count'] = args.rgb_led_count
                 print(f"Set RGB LED count: {args.rgb_led_count}")
+    # temperature unit settings
+    # ----------------------------------------
     if is_included(PERIPHERALS, "temperature_unit"):
         if args.temperature_unit != '':
             if args.temperature_unit == None:
@@ -236,6 +248,8 @@ def main():
                     quit()
                 new_sys_config['temperature_unit'] = args.temperature_unit
                 print(f"Set Temperature unit: {args.temperature_unit}")
+    # GPIO fan settings
+    # ----------------------------------------
     if is_included(PERIPHERALS, "gpio_fan_mode"):
         if args.gpio_fan_mode != '':
             if args.gpio_fan_mode == None:
@@ -262,6 +276,8 @@ def main():
                     quit()
                 new_sys_config['gpio_fan_pin'] = args.gpio_fan_pin
                 print(f"Set GPIO fan pin: {args.gpio_fan_pin}")
+    # GPIO fan LED settings
+    # ----------------------------------------
     if is_included(PERIPHERALS, "gpio_fan_led"):
         if args.gpio_fan_led != '':
             if args.gpio_fan_led == None:
@@ -284,7 +300,10 @@ def main():
                     quit()
                 new_sys_config['gpio_fan_led_pin'] = args.gpio_fan_led_pin
                 print(f"Set GPIO fan LED pin: {args.gpio_fan_led_pin}")
+    # OLED settings
+    # ----------------------------------------
     if is_included(PERIPHERALS, "oled"):
+        # oled enable
         if args.oled_enable != '':
             if args.oled_enable == None:
                 print(f"OLED enable: {'enabled' if current_config['system']['oled_enable'] else 'disabled'}")
@@ -298,6 +317,7 @@ def main():
                 else:
                     print(f"Invalid value for OLED enable, it should be {', '.join(TRUE_LIST)} or {', '.join(FALSE_LIST)}")
                     quit()
+        # oled disk
         if args.oled_disk != '':
             from sf_rpi_status import get_disks
             disks = ['total']
@@ -310,6 +330,7 @@ def main():
                     quit()
                 new_sys_config['oled_disk'] = args.oled_disk
                 print(f"Set OLED disk: {args.oled_disk}")
+        # oled network interface
         if args.oled_network_interface != '':
             from sf_rpi_status import get_ips
             interfaces = ['all']
@@ -322,6 +343,7 @@ def main():
                     quit()
                 new_sys_config['oled_network_interface'] = args.oled_network_interface
                 print(f"Set OLED Network Interface: {args.oled_network_interface}")
+        # oled rotation
         if args.oled_rotation != -1:
             if args.oled_rotation == None:
                 print(f"OLED rotation: {current_config['system']['oled_rotation']}")
@@ -336,6 +358,8 @@ def main():
                     quit()
                 new_sys_config['oled_rotation'] = args.oled_rotation
                 print(f"SetOLED rotation: {args.oled_rotation}")
+    # Vibration switch settings
+    # ----------------------------------------
     if is_included(PERIPHERALS, "vibration_switch"):
         if args.vibration_switch_pin != '':
             if args.vibration_switch_pin == None:
@@ -378,13 +402,34 @@ def main():
                     quit()
                 new_sys_config['oled_sleep_timeout'] = args.oled_sleep_timeout
                 print(f"Set OLED sleep timeout: {args.oled_sleep_timeout}")
+
+    # update config
+    # =========================================
     new_config = {
         'system': new_sys_config,
     }
 
     update_config_file(new_config, config_path)
 
+    # start, restart, stop
+    # =========================================
     if args.command == "start":
         pironman5 = Pironman5(config_path=config_path)
         pironman5.set_debug_level(debug_level)
         pironman5.start()
+
+    if args.command == "restart":
+        print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
+        quit()
+
+    if args.command == "stop":
+        import os
+        os.system('kill -15 $(pgrep -f "pironman5 start")')
+        os.system('kill -15 $(pgrep -f "pironman5-service start")')
+        pironman5 = Pironman5()
+        pironman5.stop()
+        quit()
+
+    if args.background != '':
+        print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
+        quit()
