@@ -21,6 +21,7 @@ class Pironman5Max:
         "gpio_fan_mode",
         "gpio_fan_led",
         "vibration_switch",
+        "pi5_pwr_btn",
         "oled_sleep",
     ]
     SYSTEM_DEFAULT_CONFIG = {
