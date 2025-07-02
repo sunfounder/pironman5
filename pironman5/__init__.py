@@ -39,7 +39,7 @@ def main():
                         help="Command")
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
-    parser.add_argument("-dl", "--debug-level", choices=['debug', 'info', 'warning', 'error', 'critical'], help="Debug level")
+    parser.add_argument("-dl", "--debug-level", nargs='?', default='', choices=['debug', 'info', 'warning', 'error', 'critical'], help="Debug level")
     parser.add_argument("--background", nargs='?', default='', help="Run in background")
     parser.add_argument("-rd", "--remove-dashboard", action="store_true", help="Remove dashboard")
     parser.add_argument("-cp", "--config-path", nargs='?', default='', help="Config path")
@@ -117,10 +117,19 @@ def main():
         print(json.dumps(current_config, indent=4))
         quit()
 
-    # set debug level
+    # get or set debug level
     # ----------------------------------------
-    if args.debug_level != None:
-        debug_level = args.debug_level.upper()
+    if args.debug_level != '':
+        if args.debug_level == None:
+            print(f"Debug level: {current_config['system']['debug_level']}")
+        else:
+            if args.debug_level.lower() not in ['debug', 'info', 'warning', 'error', 'critical']:
+                print(f"Invalid debug level, it should be one of: debug, info, warning, error, critical")
+                quit()
+            else:
+                debug_level = args.debug_level.upper()
+                new_sys_config['debug_level'] = debug_level
+                print(f"Set debug level: {debug_level}")
 
     # remove dashboard
     # ----------------------------------------    
@@ -415,7 +424,6 @@ def main():
     # =========================================
     if args.command == "start":
         pironman5 = Pironman5(config_path=config_path)
-        pironman5.set_debug_level(debug_level)
         pironman5.start()
 
     if args.command == "restart":
