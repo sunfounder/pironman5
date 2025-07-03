@@ -28,6 +28,11 @@ class Logger(logging.Logger):
         self.addHandler(file_handler)
         self.addHandler(console_handler)
 
+    def setLevel(self, level):
+        super().setLevel(level)
+        for handler in self.handlers:
+            handler.setLevel(level)
+
 def create_get_child_logger(app_name):
     def get_child_logger(name):
         return Logger(app_name, name)
