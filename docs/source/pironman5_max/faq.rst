@@ -84,6 +84,24 @@ Le module NVMe PIP ne fonctionne pas ?
 
 1. Assurez-vous que le câble FPC reliant le module NVMe PIP au Raspberry Pi 5 est correctement connecté.  
 
+   .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Nvme(1)-11.mp4" type="video/mp4">
+               Votre navigateur ne prend pas en charge la balise vidéo.
+           </video>
+       </div>
+
+   .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Nvme(2)-11.mp4" type="video/mp4">
+               Votre navigateur ne prend pas en charge la balise vidéo.
+           </video>
+       </div>
+
 2. Vérifiez que votre SSD est correctement fixé au module NVMe PIP.  
 
 3. Vérifiez l’état des voyants LED du module NVMe PIP :
@@ -118,6 +136,15 @@ Si l’écran OLED ne s’affiche pas ou s’affiche incorrectement, suivez ces 
 1. **Vérifiez la connexion de l’écran OLED**
 
    Assurez-vous que le câble FPC de l’écran OLED est correctement connecté.
+
+   .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Oled-11.mp4" type="video/mp4">
+               Votre navigateur ne prend pas en charge la balise vidéo.
+           </video>
+       </div>
 
 2. **Vérifiez la compatibilité du système d’exploitation**
 
