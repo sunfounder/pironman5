@@ -84,21 +84,21 @@ NVMe PIP-Modul funktioniert nicht?
 
 1. Stellen Sie sicher, dass das FPC-Kabel, das das NVMe PIP-Modul mit dem Raspberry Pi 5 verbindet, fest angeschlossen ist.
 
-   .. raw:: html
+.. raw:: html
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/Nvme(1)-11.mp4" type="video/mp4">
-               Ihr Browser unterstützt das Video-Tag nicht.
+               <source src="../_static/video/Nvme(1)-11.mp4" type="video/mp4">
+               Your browser does not support the video tag.
            </video>
        </div>
 
-   .. raw:: html
+.. raw:: html
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/Nvme(2)-11.mp4" type="video/mp4">
-               Ihr Browser unterstützt das Video-Tag nicht.
+               <source src="../_static/video/Nvme(2)-11.mp4" type="video/mp4">
+               Your browser does not support the video tag.
            </video>
        </div>
 
@@ -138,12 +138,12 @@ Wenn der OLED-Bildschirm nichts anzeigt oder falsch angezeigt wird, befolgen Sie
 
    Stellen Sie sicher, dass das FPC-Kabel des OLED-Bildschirms richtig angeschlossen ist.
 
-   .. raw:: html
+.. raw:: html
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/Oled-11.mp4" type="video/mp4">
-               Ihr Browser unterstützt das Video-Tag nicht.
+               <source src="../_static/video/Oled-11.mp4" type="video/mp4">
+               Your browser does not support the video tag.
            </video>
        </div>
 
