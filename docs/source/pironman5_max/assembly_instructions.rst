@@ -12,3 +12,43 @@
 * 反复检查 FFC 与 FPC 排线的连接，避免接触不良。
 
 * :download:`[PDF]Pironman 5 Max 零件清单与组装说明 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/Z0316V10-A0001266-Pironman5-MAX.pdf>`
+
+
+.. raw:: html
+
+    <br><br>
+
+* NvMe PIP 连接器卡扣
+
+.. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Nvme(1)-11.mp4" type="video/mp4">
+               Votre navigateur ne prend pas en charge la balise vidéo.
+           </video>
+       </div>
+
+.. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Nvme(2)-11.mp4" type="video/mp4">
+               Votre navigateur ne prend pas en charge la balise vidéo.
+           </video>
+       </div>
+
+.. raw:: html
+
+    <br><br>
+
+* OLED 屏幕连接器卡扣
+
+.. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Oled-11.mp4" type="video/mp4">
+               Votre navigateur ne prend pas en charge la balise vidéo.
+           </video>
+       </div>

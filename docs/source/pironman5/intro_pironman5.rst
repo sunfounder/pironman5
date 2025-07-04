@@ -14,16 +14,16 @@ Pironman 5 是一款专为树莓派打造的迷你 PC 机箱，采用坚固的�
 .. toctree::
     :maxdepth: 1
 
-    关于本套件 <self>
-    所需配件    
-    组装指南
-    安装系统
-    配置 Pironman 5
-    控制 Pironman 5
-    硬件说明
-    支持的 NVMe SSD
-    安装摄像头模块
-    常见问题
+    About this Kit <self>
+    what_do_we_need
+    assembly_instructions
+    install/install_the_os
+    set_up/set_up_pironman5
+    control/control_pironman5
+    hardware/hardware
+    compitable_nvme_ssd
+    assemble_camera
+    faq
 
 
 **接口示意图**
