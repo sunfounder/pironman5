@@ -34,3 +34,43 @@ Bevor du mit dem Zusammenbau des Pironman beginnst, überprüfe bitte, ob alle T
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/Iucf51zInWQ?si=Rveb_L7FIGCq1N5C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+.. raw:: html
+
+    <br><br>
+
+* Wie man den NvMe-PIP-Steckverbinder-Verschluss verwendet
+
+.. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Nvme(1)-11.mp4" type="video/mp4">
+               Votre navigateur ne prend pas en charge la balise vidéo.
+           </video>
+       </div>
+
+.. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Nvme(2)-11.mp4" type="video/mp4">
+               Votre navigateur ne prend pas en charge la balise vidéo.
+           </video>
+       </div>
+
+.. raw:: html
+
+    <br><br>
+
+* Wie man den OLED-Bildschirm-Steckverbinder-Verschluss verwendet
+
+.. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Oled-11.mp4" type="video/mp4">
+               Votre navigateur ne prend pas en charge la balise vidéo.
+           </video>
+       </div>
