@@ -35,7 +35,7 @@ def main():
 
     parser = argparse.ArgumentParser(prog='pironman5',
                                     description=f'{NAME} command line interface')
-    parser.add_argument("start", action="store_true", help="Start")
+    parser.add_argument("command", choices=['start'], help="Command")
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
     parser.add_argument("-dl", "--debug-level", nargs='?', default='', choices=['debug', 'info', 'warning', 'error', 'critical'], help="Debug level")
@@ -525,6 +525,6 @@ def main():
     update_config_file(new_config, config_path)
 
     # start
-    if args.start:
+    if args.command == 'start':
         pironman5 = Pironman5(config_path=config_path)
         pironman5.start()

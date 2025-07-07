@@ -6,7 +6,7 @@ import signal
 
 from pm_auto.pm_auto import PMAuto
 from pm_auto import __version__ as pm_auto_version
-from .logger import create_get_child_logger
+from .logger import Logger
 from .utils import merge_dict, log_error
 from .version import __version__ as pironman5_version
 from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, SYSTEM_DEFAULT_CONFIG
@@ -14,8 +14,7 @@ from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, SYSTEM_DEFAULT_CON
 APP_NAME = 'pironman5'
 DEFAULT_DEBUG_LEVEL = 'INFO' # 'DEBUG' | 'INFO' | 'WARNING' | 'ERROR' | 'CRITICAL'
 
-get_child_logger = create_get_child_logger(APP_NAME)
-log = get_child_logger('main')
+log = Logger(APP_NAME)
 __package_name__ = __name__.split('.')[0]
 CONFIG_PATH = str(resource_files(__package_name__).joinpath('config.json'))
 
@@ -35,9 +34,8 @@ class Pironman5:
         log.info(f"{'#'*60}")
         log.debug(f"Config path: {CONFIG_PATH}")
 
-
         self.peripherals = PERIPHERALS
-        self.log = get_child_logger('main')
+        self.log = log
 
         # Load config
         # -----------------------------------------
@@ -92,7 +90,7 @@ class Pironman5:
 
         self.pm_auto = PMAuto(self.config['system'],
                               peripherals=self.peripherals,
-                              get_logger=get_child_logger)
+                              log=log)
         if PMDashboard is None:
             self.pm_dashboard = None
             self.log.warning('PM Dashboard not found skipping')
@@ -101,7 +99,7 @@ class Pironman5:
                                             database=ID,
                                             spc_enabled=True if 'spc' in self.peripherals else False,
                                             config=self.config,
-                                            get_logger=get_child_logger)
+                                            log=log)
             self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
             self.pm_dashboard.set_on_config_changed(self.update_config)
 
@@ -116,9 +114,6 @@ class Pironman5:
     @log_error
     def set_debug_level(self, level):
         self.log.setLevel(level)
-        self.pm_auto.set_debug_level(level)
-        if self.pm_dashboard:
-            self.pm_dashboard.set_debug_level(level)
 
     @log_error
     def upgrade_config(self, config):

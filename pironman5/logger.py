@@ -3,10 +3,10 @@ from logging.handlers import RotatingFileHandler
 import os
 
 class Logger(logging.Logger):
-    def __init__(self, appname, name='logger', level=0, maxBytes=10*1024*1024, backupCount=10):
-        super().__init__(name, level=level)
+    def __init__(self, appname, level=0, maxBytes=100*1024*1024, backupCount=5):
+        super().__init__(appname, level=level)
         self.log_folder = f"/var/log/{appname}"
-        self.log_path = os.path.join(self.log_folder, f"{self.name.lower()}.log")
+        self.log_path = os.path.join(self.log_folder, f"{appname.lower()}.log")
 
         if not os.path.exists(os.path.dirname(self.log_path)):
             os.makedirs(os.path.dirname(self.log_path), exist_ok=True)
@@ -33,8 +33,3 @@ class Logger(logging.Logger):
         super().setLevel(level)
         for handler in self.handlers:
             handler.setLevel(level)
-
-def create_get_child_logger(app_name):
-    def get_child_logger(name):
-        return Logger(app_name, name)
-    return get_child_logger
