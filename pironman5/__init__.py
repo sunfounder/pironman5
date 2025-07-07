@@ -35,7 +35,7 @@ def main():
 
     parser = argparse.ArgumentParser(prog='pironman5',
                                     description=f'{NAME} command line interface')
-    parser.add_argument("command", choices=['start'], help="Command")
+    parser.add_argument("command", choices=['start'], nargs='?', help="Command")
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
     parser.add_argument("-dl", "--debug-level", nargs='?', default='', choices=['debug', 'info', 'warning', 'error', 'critical'], help="Debug level")
@@ -75,10 +75,9 @@ def main():
         parser.add_argument("-vu", "--vibration-switch-pull-up", nargs='?', default='', help="Vibration switch pull up True/False")
     # rgb_matrix
     if is_included(PERIPHERALS, "rgb_matrix"):
-        from pm_auto.services.rgb_matrix_service import RGB_MATRIX_STYLES
+        from pm_auto.services.rgb_matrix_service import EFFECT_LIST
         parser.add_argument("-rme", "--rgb-matrix-enable", nargs='?', default='', help="RGB enable True/False")
-        # parser.add_argument("-rms", "--rgb-matrix-style", choices=RGB_MATRIX_STYLES, nargs='?', default='', help="RGB style")
-        parser.add_argument("-rms", "--rgb-matrix-style",  nargs='?', default='', help=f"RGB style: {RGB_MATRIX_STYLES}")
+        parser.add_argument("-rms", "--rgb-matrix-style",  nargs='?', default='', help=f"RGB style: {EFFECT_LIST}")
         parser.add_argument("-rmc", "--rgb-matrix-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
         parser.add_argument("-rmp", "--rgb-matrix-speed", nargs='?', default='', help="RGB speed 0-100")
         parser.add_argument("-rmb", "--rgb-matrix-brightness", nargs='?', default='', help="RGB brightness 0-100")
@@ -480,8 +479,8 @@ def main():
             if args.rgb_matrix_style == None:
                 print(f"RGB Matrix style: {current_config['system']['rgb_matrix_style']}")
             else:
-                if args.rgb_matrix_style not in RGB_MATRIX_STYLES:
-                    print(f"Invalid value for RGB Matrix style, it should be one of {RGB_MATRIX_STYLES}")
+                if args.rgb_matrix_style not in EFFECT_LIST:
+                    print(f"Invalid value for RGB Matrix style: {args.rgb_matrix_style}, it should be one of {EFFECT_LIST}")
                     quit()
                 new_sys_config['rgb_matrix_style'] = args.rgb_matrix_style
                 print(f"Set RGB Matrix style: {args.rgb_matrix_style}")
