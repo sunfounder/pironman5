@@ -69,7 +69,7 @@ Compatible NVMe SSDs
 * XPG SX8200 Pro
 
 
-Uncompitable NVMe SSD
+Uncompatible NVMe SSD
 --------------------------
 
 We recommend avoiding the following NVMe SSD drives which is equipped with a Phison controller due to their proven incompatibility:
