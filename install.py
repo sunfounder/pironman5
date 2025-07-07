@@ -16,9 +16,9 @@ settings = {
     # ],
 
     # - Before install script, default to {}
-    'run_commands_before_install': {
-        'Install LGPIO': 'bash install_lgpio.sh',
-    },
+    # 'run_commands_before_install': {
+    #     'Install LGPIO': 'bash scripts/install_lgpio.sh',
+    # },
 
     # - Install from apt
     # 'apt_dependencies': [
@@ -64,6 +64,16 @@ settings = {
     'dtoverlays': DT_OVERLAYS,
 }
 
+
+
+ws2812_settings = {
+    # - Install from pip
+    'pip_dependencies': [
+        'adafruit-circuitpython-neopixel-spi',
+        'Adafruit-Blinka==8.59.0',
+    ],
+}
+
 oled_settings = {
     # - Install from apt
     'apt_dependencies': [
@@ -73,6 +83,11 @@ oled_settings = {
         'kmod',
         'i2c-tools',
     ],
+    # - Install from pip
+    'pip_dependencies': [
+        'Pillow',
+        'smbus2',
+    ],
     # add modules
     # sudo nano /etc/modules
     'modules': [
@@ -80,7 +95,12 @@ oled_settings = {
     ],
 }
 
-fan_settings = {
+gpio_settings = {
+    # - Before install script, default to {}
+    'run_commands_before_install': {
+        'Install LGPIO': 'bash scripts/install_lgpio.sh',
+    },
+
     # - Install from apt
     'apt_dependencies': [
         'python3-gpiozero', # for pm_auto fan control
@@ -88,6 +108,8 @@ fan_settings = {
     # - Install from pip
     'pip_dependencies': [
         'gpiozero',
+        'gpiod',
+        'rpi.lgpio',
     ],
 }
 
@@ -129,6 +151,9 @@ if not args.disable_dashboard:
     installer.update_settings(dashboard_settings)
 if 'oled' in PERIPHERALS:
     installer.update_settings(oled_settings)
-if 'fan' in PERIPHERALS:
-    installer.update_settings(fan_settings)
+if 'gpio_fan_state' in PERIPHERALS or \
+    'vibration_switch' in PERIPHERALS:
+    installer.update_settings(gpio_settings)
+if 'ws2812' in PERIPHERALS:
+    installer.update_settings(ws2812_settings)
 installer.main()

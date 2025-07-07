@@ -41,7 +41,8 @@ def main():
                         help="Command")
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
-    parser.add_argument("-dl", "--debug-level", nargs='?', help=f"Debug level: {DEBUG_LEVELS}")
+    parser.add_argument("-dl", "--debug-level", nargs='?', default='', choices=['debug', 'info', 'warning', 'error', 'critical'], help="Debug level")
+    parser.add_argument("--background", nargs='?', default='', help="Run in background")
     parser.add_argument("-rd", "--remove-dashboard", action="store_true", help="Remove dashboard")
     parser.add_argument("-cp", "--config-path", nargs='?', default='', help="Config path")
     parser.add_argument("-eh", "--enable-history", nargs='?', default='', help="Enable history, True/true/on/On/1 or False/false/off/Off/0")
@@ -85,6 +86,7 @@ def main():
         parser.add_argument("-rmp", "--rgb-matrix-speed", nargs='?', default='', help="RGB speed 0-100")
         parser.add_argument("-rmb", "--rgb-matrix-brightness", nargs='?', default='', help="RGB brightness 0-100")
     
+    # parse args
     # -----------------------------------------------------------
     args = parser.parse_args()
 
@@ -93,7 +95,14 @@ def main():
         parser.print_help()
         quit()
     
+    # show version
+    # ----------------------------------------
+    if args.version:
+        print(__version__)
+        quit()
+
     # get or set config path
+    # ----------------------------------------
     config_path = CONFIG_PATH
     if args.config_path != '':
         if args.config_path == None:
@@ -101,6 +110,9 @@ def main():
         else:
             config_path = args.config_path
             print(f"Set config path: {config_path}")
+
+    # load config file
+    # ----------------------------------------
     if not path.exists(config_path):
         with open(config_path, 'w') as f:
             json.dump({'system': {}}, f, indent=4)
@@ -119,21 +131,28 @@ def main():
                 print(f"Invalid config file: {config_path}")
                 quit()
 
-    # show current config
+    # show config
+    # ----------------------------------------
     if args.config:
         print(json.dumps(current_config, indent=4))
         quit()
 
-    # set debug level
-    if args.debug_level != None:
-        debug_level = args.debug_level.upper()
+    # get or set debug level
+    # ----------------------------------------
+    if args.debug_level != '':
+        if args.debug_level == None:
+            print(f"Debug level: {current_config['system']['debug_level']}")
+        else:
+            if args.debug_level.lower() not in ['debug', 'info', 'warning', 'error', 'critical']:
+                print(f"Invalid debug level, it should be one of: debug, info, warning, error, critical")
+                quit()
+            else:
+                debug_level = args.debug_level.upper()
+                new_sys_config['debug_level'] = debug_level
+                print(f"Set debug level: {debug_level}")
 
-    # version
-    if args.version:
-        print(__version__)
-        quit()
-
-    # remove_dashboard
+    # remove dashboard
+    # ----------------------------------------    
     if args.remove_dashboard:
         import os
         print("Remove Dashboard")
@@ -165,7 +184,8 @@ def main():
                 print(f"Invalid value for enable history, it should be True/true/on/On/1 or False/false/off/Off/0")
                 quit()
 
-    # ws2812
+    # ws2812 settings
+    # ----------------------------------------
     if is_included(PERIPHERALS, "ws2812"):
         # ws2812 rgb_color
         if args.rgb_color != '':
@@ -260,6 +280,7 @@ def main():
                     quit()
                 new_sys_config['rgb_led_count'] = args.rgb_led_count
                 print(f"Set RGB LED count: {args.rgb_led_count}")
+
     # rgb_matrix
     if is_included(PERIPHERALS, "rgb_matrix"):
         # rgb_matrix color
@@ -290,7 +311,9 @@ def main():
         if args.rgb_matrix_brightness != '':
             if args.rgb_matrix_brightness == None:
                 print(f"RGB Matrix brightness: {current_config['system']['rgb_matrix_brightness']}")
-    # temperature_unit
+
+    # temperature unit settings
+    # ----------------------------------------
     if is_included(PERIPHERALS, "temperature_unit"):
         if args.temperature_unit != '':
             if args.temperature_unit == None:
@@ -301,7 +324,9 @@ def main():
                     quit()
                 new_sys_config['temperature_unit'] = args.temperature_unit
                 print(f"Set Temperature unit: {args.temperature_unit}")
-    # gpio_fan
+
+    # GPIO fan settings
+    # ----------------------------------------
     if is_included(PERIPHERALS, "gpio_fan_mode"):
         # gpio_fan_mode
         if args.gpio_fan_mode != '':
@@ -330,7 +355,9 @@ def main():
                     quit()
                 new_sys_config['gpio_fan_pin'] = args.gpio_fan_pin
                 print(f"Set GPIO fan pin: {args.gpio_fan_pin}")
-    # gpio_fan_led
+
+    # GPIO fan LED settings
+    # ----------------------------------------
     if is_included(PERIPHERALS, "gpio_fan_led"):
         if args.gpio_fan_led != '':
             if args.gpio_fan_led == None:
@@ -353,9 +380,11 @@ def main():
                     quit()
                 new_sys_config['gpio_fan_led_pin'] = args.gpio_fan_led_pin
                 print(f"Set GPIO fan LED pin: {args.gpio_fan_led_pin}")
-    # oled
+
+    # OLED settings
+    # ----------------------------------------
     if is_included(PERIPHERALS, "oled"):
-        # oled_enable
+        # oled enable
         if args.oled_enable != '':
             if args.oled_enable == None:
                 print(f"OLED enable: {'enabled' if current_config['system']['oled_enable'] else 'disabled'}")
@@ -369,7 +398,33 @@ def main():
                 else:
                     print(f"Invalid value for OLED enable, it should be {', '.join(TRUE_LIST)} or {', '.join(FALSE_LIST)}")
                     quit()
-        # oled_rotation
+        # oled disk
+        if args.oled_disk != '':
+            from sf_rpi_status import get_disks
+            disks = ['total']
+            disks.extend(get_disks())
+            if args.oled_disk == None:
+                print(f"OLED disk: {current_config['system']['oled_disk']}, options: {disks}")
+            else:
+                if args.oled_disk not in disks:
+                    print(f"Invalid value for OLED disk, it should be in {disks}")
+                    quit()
+                new_sys_config['oled_disk'] = args.oled_disk
+                print(f"Set OLED disk: {args.oled_disk}")
+        # oled network interface
+        if args.oled_network_interface != '':
+            from sf_rpi_status import get_ips
+            interfaces = ['all']
+            interfaces.extend(get_ips().keys())
+            if args.oled_network_interface == None:
+                print(f"OLED Network Interface: {current_config['system']['oled_network_interface']}, options: {interfaces}")
+            else:
+                if args.oled_network_interface not in interfaces:
+                    print(f"Invalid value for OLED Network Interface, it should be in {interfaces}")
+                    quit()
+                new_sys_config['oled_network_interface'] = args.oled_network_interface
+                print(f"Set OLED Network Interface: {args.oled_network_interface}")
+        # oled rotation
         if args.oled_rotation != -1:
             if args.oled_rotation == None:
                 print(f"OLED rotation: {current_config['system']['oled_rotation']}")
@@ -399,7 +454,9 @@ def main():
                     quit()
                 new_sys_config['oled_sleep_timeout'] = args.oled_sleep_timeout
                 print(f"Set OLED sleep timeout: {args.oled_sleep_timeout}")
-    # vibration_switch
+
+    # Vibration switch settings
+    # ----------------------------------------
     if is_included(PERIPHERALS, "vibration_switch"):
         # vibration_switch_pin
         if args.vibration_switch_pin != '':
@@ -487,7 +544,8 @@ def main():
                 new_sys_config['rgb_matrix_brightness'] = args.rgb_matrix_brightness
                 print(f"Set RGB Matrix brightness: {args.rgb_matrix_brightness}")
 
-    # -----------------------------------------------------------
+    # update config
+    # ----------------------------------------
     new_config = {
         'system': new_sys_config,
     }
@@ -511,5 +569,20 @@ def main():
     # start
     if args.command == "start":
         pironman5 = Pironman5(config_path=config_path)
-        pironman5.set_debug_level(debug_level)
         pironman5.start()
+
+    # if args.command == "restart":
+    #     print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
+    #     quit()
+
+    # if args.command == "stop":
+    #     import os
+    #     os.system('kill -15 $(pgrep -f "pironman5 start")')
+    #     os.system('kill -15 $(pgrep -f "pironman5-service start")')
+    #     pironman5 = Pironman5()
+    #     pironman5.stop()
+    #     quit()
+
+    if args.background != '':
+        print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
+        quit()

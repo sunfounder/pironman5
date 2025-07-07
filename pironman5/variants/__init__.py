@@ -1,4 +1,4 @@
-from .pironman5 import Pironman5V10
+from .pironman5 import Pironman5
 from .pironman5_max import Pironman5Max
 from .pironman5_mini import Pironman5Mini
 from .pironman5_nas import Pironman5NAS
@@ -82,9 +82,9 @@ def get_varient_id_and_version():
 def get_variant(variant_id, version=None):
     if variant_id == "0306":
         if version == "10":
-            return Pironman5V10
-        else:
             return Pironman5
+        else:
+            return Pironman5Max
     elif variant_id == "0308":
         return Pironman5Mini
     elif variant_id == "0312":

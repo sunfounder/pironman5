@@ -1,4 +1,4 @@
-class Pironman5V10:
+class Pironman5:
     NAME = "Pironman 5"
     ID = "pironman5"
     PRODUCT_VERSION = ""

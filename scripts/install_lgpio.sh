@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -euo pipefail
+trap 'echo "Error occurred. Exiting..." >&2; exit 1' ERR
+
 echo "Installing LGPIO"
 
 # Check if LGPIO is already installed
@@ -17,7 +20,7 @@ fi
 echo "- Updating package list"
 apt-get update
 echo "- Installing dependencies"
-apt-get install -y swig python3-dev python3-setuptools
+apt-get install -y swig python3-dev python3-setuptools unzip
 
 echo "- Downloading and installing LGPIO"
 wget http://abyz.me.uk/lg/lg.zip

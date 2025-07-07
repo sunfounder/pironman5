@@ -5,7 +5,6 @@ import time
 import threading
 import os
 
-
 class ConfigTxt(object):
     DEFAULT_BOOT_FILE = "/boot/firmware/config.txt"
     BACKUP_BOOT_FILE = "/boot/config.txt"
@@ -141,6 +140,7 @@ class SF_Installer():
 
         self.parser = argparse.ArgumentParser(description=description)
         self.parser.add_argument('--uninstall', action='store_true', help='Uninstall')
+        self.parser.add_argument('--gitee', action='store_true', help='Use gitee')
         self.parser.add_argument('--no-dep',
                                  action='store_true',
                                  help='Do not install dependencies')
@@ -173,6 +173,16 @@ class SF_Installer():
         self.venv_python = f'{self.venv_path}/bin/python3'
         self.venv_pip = f'{self.venv_path}/bin/pip3'
         self.custom_install = lambda: None
+
+        self.version = self.get_version()
+
+    def get_version(self):
+        version_file = f'{self.name}/version.py'
+        if os.path.exists(version_file):
+            with open(version_file, 'r') as f:
+                for line in f:
+                    if line.startswith('__version__'):
+                        return line.split('=')[1].strip().strip("'")
 
     def update_settings(self, settings):
         if 'build_dependencies' in settings:
@@ -354,6 +364,8 @@ class SF_Installer():
             return
         print("Install Python source packages...")
         for package, url in self.python_source.items():
+            if self.args.gitee:
+                url = url.replace('github.com', 'gitee.com')
             self.install_python_source(package, url)
 
     def create_symlinks(self):
@@ -462,6 +474,10 @@ class SF_Installer():
             self.do(f'Remove dtoverlay {overlay}', f'rm {overlays_path}/{overlay}')
             self.need_reboot = True
 
+    def remove_logs(self):
+        print("Remove logs...")
+        self.do('Remove logs', f'rm -r {self.log_dir}')
+
     def reboot_prompt(self):
         print("\033[1;32mWhether to reboot for the changes to take effect(Y/N): \033[0m", end='')
         while True:
@@ -480,7 +496,9 @@ class SF_Installer():
         self.do(f'Remove build', f'rm -r ./build', ignore_error=True)
 
     def install(self):
-        print(f"Installing for {self.friendly_name}\n")
+        print(f"Installing for {self.friendly_name}")
+        print(f"Version: {self.version}")
+        print(" ")
         self.install_build_dep()
         self.run_commands_before_install()
         self.install_apt_dep()
@@ -501,6 +519,7 @@ class SF_Installer():
         self.remove_auto_start()
         self.remove_work_dir()
         self.remove_dtoverlay()
+        self.remove_logs()
 
     def main(self):
         self.check_admin()

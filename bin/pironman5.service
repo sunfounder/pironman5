@@ -2,14 +2,14 @@
 [Unit]
 Description=pironman5 service
 # Need to start last to avoid gpio being occupied
-After=basic.target
+After=multi-user.target
 
 [Service]
 Type=simple
 # WorkingDirectory=/opt/pironman5
-ExecStart=/usr/local/bin/pironman5 start --debug-level=debug
-ExecStop=/usr/local/bin/pironman5 stop
+ExecStart=/usr/local/bin/pironman5 start --background
+# ExecStop=/usr/local/bin/pironman5 stop
 # PrivateTmp=False
 
 [Install]
-WantedBy=basic.target
+WantedBy=multi-user.target

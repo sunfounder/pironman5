@@ -21,6 +21,7 @@ dependencies = [
   'smbus2',
   'psutil',
   'adafruit-circuitpython-neopixel-spi',
+  'Adafruit-Blinka==8.59.0',
   'RPi.GPIO',
 ]
 

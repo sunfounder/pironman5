@@ -12,6 +12,8 @@ from .version import __version__ as pironman5_version
 from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, SYSTEM_DEFAULT_CONFIG
 
 APP_NAME = 'pironman5'
+DEFAULT_DEBUG_LEVEL = 'INFO' # 'DEBUG' | 'INFO' | 'WARNING' | 'ERROR' | 'CRITICAL'
+
 get_child_logger = create_get_child_logger(APP_NAME)
 log = get_child_logger('main')
 __package_name__ = __name__.split('.')[0]
@@ -25,6 +27,7 @@ except ImportError:
     pass
 
 class Pironman5:
+  
     # @log_error
     def __init__(self, config_path=CONFIG_PATH):
         # LOG HEADER
@@ -35,9 +38,14 @@ class Pironman5:
 
         self.peripherals = PERIPHERALS
         self.log = get_child_logger('main')
+
+        # Load config
+        # -----------------------------------------
         self.config = {
             'system': SYSTEM_DEFAULT_CONFIG,
         }
+        self.config['system']['debug_level'] = DEFAULT_DEBUG_LEVEL
+
         self.config_path = config_path
         if os.path.exists(self.config_path):
             with open(self.config_path, 'r') as f:
@@ -57,6 +65,14 @@ class Pironman5:
                 _p.remove('clear_history')
             self.peripherals = list(_p)
 
+        # log header
+        # -----------------------------------------
+        log.info(f"")
+        log.info(f"{'#'*60}")
+        log.debug(f"Config path: {CONFIG_PATH}")
+
+        # init PMAuto and PMDashboard
+        # -----------------------------------------
         device_info = {
             'name': NAME,
             'id': ID,
@@ -103,6 +119,14 @@ class Pironman5:
                                             get_logger=get_child_logger)
             self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
             self.pm_dashboard.set_on_config_changed(self.update_config)
+
+        # Set debug level
+        # -----------------------------------------
+        _debug_level = self.config['system']['debug_level'].upper()
+        if _debug_level not in ['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL']:
+            self.log.warning(f"Invalid debug level '{_debug_level}', using default '{DEFAULT_DEBUG_LEVEL}'")
+            _debug_level = DEFAULT_DEBUG_LEVEL
+        self.set_debug_level(_debug_level)
 
     @log_error
     def set_debug_level(self, level):
