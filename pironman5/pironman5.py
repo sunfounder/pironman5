@@ -65,12 +65,6 @@ class Pironman5:
                 _p.remove('clear_history')
             self.peripherals = list(_p)
 
-        # log header
-        # -----------------------------------------
-        log.info(f"")
-        log.info(f"{'#'*60}")
-        log.debug(f"Config path: {CONFIG_PATH}")
-
         # init PMAuto and PMDashboard
         # -----------------------------------------
         device_info = {
@@ -82,15 +76,6 @@ class Pironman5:
         }
         self.log.debug(f"Pironman5 version: {pironman5_version}")
         self.log.debug(f"Variant: {NAME} {PRODUCT_VERSION}")
-        # self.log.debug(f"Config: {self.config}")
-        # self.log.debug(f"Device info: {device_info}")
-
-        # from pprint import pformat
-        # self.log.debug(f"Config:\n{pformat(self.config, indent=2)}")
-        # self.log.debug(f"Device info:\n{pformat(device_info, indent=2)}")
-
-        # self.log.debug(f"Config: {json.dumps(self.config, indent=2)}")
-        # self.log.debug(f"Device info: {json.dumps(device_info, indent=2)}")
 
         _config_json = json.dumps(self.config, indent=4)
         self.log.debug(f"Config:")

@@ -35,10 +35,7 @@ def main():
 
     parser = argparse.ArgumentParser(prog='pironman5',
                                     description=f'{NAME} command line interface')
-    parser.add_argument("command",
-                        choices=["start", "restart", "stop"],
-                        nargs="?",
-                        help="Command")
+    parser.add_argument("start", action="store_true", help="Start")
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
     parser.add_argument("-dl", "--debug-level", nargs='?', default='', choices=['debug', 'info', 'warning', 'error', 'critical'], help="Debug level")
@@ -398,32 +395,7 @@ def main():
                 else:
                     print(f"Invalid value for OLED enable, it should be {', '.join(TRUE_LIST)} or {', '.join(FALSE_LIST)}")
                     quit()
-        # oled disk
-        if args.oled_disk != '':
-            from sf_rpi_status import get_disks
-            disks = ['total']
-            disks.extend(get_disks())
-            if args.oled_disk == None:
-                print(f"OLED disk: {current_config['system']['oled_disk']}, options: {disks}")
-            else:
-                if args.oled_disk not in disks:
-                    print(f"Invalid value for OLED disk, it should be in {disks}")
-                    quit()
-                new_sys_config['oled_disk'] = args.oled_disk
-                print(f"Set OLED disk: {args.oled_disk}")
-        # oled network interface
-        if args.oled_network_interface != '':
-            from sf_rpi_status import get_ips
-            interfaces = ['all']
-            interfaces.extend(get_ips().keys())
-            if args.oled_network_interface == None:
-                print(f"OLED Network Interface: {current_config['system']['oled_network_interface']}, options: {interfaces}")
-            else:
-                if args.oled_network_interface not in interfaces:
-                    print(f"Invalid value for OLED Network Interface, it should be in {interfaces}")
-                    quit()
-                new_sys_config['oled_network_interface'] = args.oled_network_interface
-                print(f"Set OLED Network Interface: {args.oled_network_interface}")
+
         # oled rotation
         if args.oled_rotation != -1:
             if args.oled_rotation == None:
@@ -552,37 +524,7 @@ def main():
 
     update_config_file(new_config, config_path)
 
-    # restart
-    if args.command == "restart":
-        print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
-        quit()
-
-    # stop
-    if args.command == "stop":
-        import os
-        os.system('kill -15 $(pgrep -f "pironman5 start")')
-        os.system('kill -15 $(pgrep -f "pironman5-service start")')
-        # pironman5 = Pironman5()
-        # pironman5.stop()
-        quit()
-
     # start
-    if args.command == "start":
+    if args.start:
         pironman5 = Pironman5(config_path=config_path)
         pironman5.start()
-
-    # if args.command == "restart":
-    #     print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
-    #     quit()
-
-    # if args.command == "stop":
-    #     import os
-    #     os.system('kill -15 $(pgrep -f "pironman5 start")')
-    #     os.system('kill -15 $(pgrep -f "pironman5-service start")')
-    #     pironman5 = Pironman5()
-    #     pironman5.stop()
-    #     quit()
-
-    if args.background != '':
-        print("This is a placeholder for pironman5 binary help, you should run pironman5 instead")
-        quit()
