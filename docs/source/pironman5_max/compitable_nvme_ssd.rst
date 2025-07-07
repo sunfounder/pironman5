@@ -12,10 +12,10 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-Compitable NVMe SSD
+Compatible NVMe SSD
 ========================
 
-Compitable NVMe SSD
+Compatible NVMe SSD
 ---------------------------
 
 * ADATA Legend 700
@@ -68,7 +68,7 @@ Compitable NVMe SSD
 * XPG SX8200 Pro
 
 
-Uncompitable NVMe SSD
+Uncompatible NVMe SSD
 --------------------------
 
 We recommend avoiding the following NVMe SSD drives which is equipped with a Phison controller due to their proven incompatibility:
