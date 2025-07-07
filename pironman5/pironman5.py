@@ -29,11 +29,6 @@ class Pironman5:
   
     # @log_error
     def __init__(self, config_path=CONFIG_PATH):
-        # LOG HEADER
-        log.info(f"")
-        log.info(f"{'#'*60}")
-        log.debug(f"Config path: {CONFIG_PATH}")
-
         self.peripherals = PERIPHERALS
         self.log = log
 
@@ -52,6 +47,19 @@ class Pironman5:
             self.config = merge_dict(self.config, config)
         with open(self.config_path, 'w') as f:
             json.dump(self.config, f, indent=4)
+
+        # Set debug level
+        # -----------------------------------------
+        _debug_level = self.config['system']['debug_level'].upper()
+        if _debug_level not in ['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL']:
+            self.log.warning(f"Invalid debug level '{_debug_level}', using default '{DEFAULT_DEBUG_LEVEL}'")
+            _debug_level = DEFAULT_DEBUG_LEVEL
+        self.set_debug_level(_debug_level)
+
+        # LOG HEADER
+        log.info(f"")
+        log.info(f"{'#'*60}")
+        log.debug(f"Config path: {CONFIG_PATH}")
 
         if 'enable_history' in self.config['system']:
             _p = set(self.peripherals)
@@ -103,14 +111,6 @@ class Pironman5:
             self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
             self.pm_dashboard.set_on_config_changed(self.update_config)
 
-        # Set debug level
-        # -----------------------------------------
-        _debug_level = self.config['system']['debug_level'].upper()
-        if _debug_level not in ['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL']:
-            self.log.warning(f"Invalid debug level '{_debug_level}', using default '{DEFAULT_DEBUG_LEVEL}'")
-            _debug_level = DEFAULT_DEBUG_LEVEL
-        self.set_debug_level(_debug_level)
-
     @log_error
     def set_debug_level(self, level):
         self.log.setLevel(level)
@@ -135,10 +135,8 @@ class Pironman5:
         signal.signal(signal.SIGTERM, self.signal_handler)
         signal.signal(signal.SIGABRT, self.signal_handler)
         self.pm_auto.start()
-        self.log.info('PMAuto started')
         if self.pm_dashboard:
             self.pm_dashboard.start()
-            self.log.info('PmDashboard started')
         while True:
             time.sleep(1)
 
