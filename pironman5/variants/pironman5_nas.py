@@ -12,9 +12,11 @@ class Pironman5NAS:
         "cpu_temperature",
         "gpu_temperature",
         "temperature_unit",
-        "oled",
+        "restart_service",
         "clear_history",
         "delete_log_file",
+
+        "oled",
         "pwm_fan_speed",
         "oled_sleep",
         "pironman_mcu",

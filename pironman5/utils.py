@@ -34,3 +34,17 @@ def is_included(li, target):
     if isinstance(target, list):
         return has_common_items(li, target)
     return False
+
+def hex_to_rgb(hex):
+    '''
+    Convert hex color to rgb color.
+
+    Args:
+        hex (str): hex color string.
+
+    Returns:
+        tuple: rgb color tuple.
+    '''
+    if hex.startswith('#'):
+        hex = hex[1:]
+    return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))

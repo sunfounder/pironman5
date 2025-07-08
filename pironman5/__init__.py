@@ -79,6 +79,7 @@ def main():
         parser.add_argument("-rme", "--rgb-matrix-enable", nargs='?', default='', help="RGB enable True/False")
         parser.add_argument("-rms", "--rgb-matrix-style",  nargs='?', default='', help=f"RGB style: {EFFECT_LIST}")
         parser.add_argument("-rmc", "--rgb-matrix-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
+        parser.add_argument("-rmc2", "--rgb-matrix-color2", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
         parser.add_argument("-rmp", "--rgb-matrix-speed", nargs='?', default='', help="RGB speed 0-100")
         parser.add_argument("-rmb", "--rgb-matrix-brightness", nargs='?', default='', help="RGB brightness 0-100")
     
@@ -276,37 +277,6 @@ def main():
                     quit()
                 new_sys_config['rgb_led_count'] = args.rgb_led_count
                 print(f"Set RGB LED count: {args.rgb_led_count}")
-
-    # rgb_matrix
-    if is_included(PERIPHERALS, "rgb_matrix"):
-        # rgb_matrix color
-        if args.rgb_matrix_color != '':
-            if args.rgb_matrix_color == None:
-                hex = current_config['system']['rgb_matrix_color']
-                if hex[0] == '#':
-                    hex = hex[1:]
-                r = int(hex[0:2], 16)
-                g = int(hex[2:4], 16)
-                b = int(hex[4:6], 16)
-                print(f"RGB Matrix color: #{hex} ({r}, {g}, {b})")
-            else:
-                if len(args.rgb_matrix_color) != 6:
-                    print(f'Invalid value for RGB Matrix color, it should be in hex format without # (e.g. 00aabb)')
-                    quit()
-                if len(args.rgb_matrix_color) == 6:
-                    try:
-                        r = int(args.rgb_matrix_color[0:2], 16)
-                        g = int(args.rgb_matrix_color[2:4], 16)
-                        b = int(args.rgb_matrix_color[4:6], 16)
-                    except ValueError:
-                        print(f'Invalid value for RGB Matrix color, it should be in hex format without # (e.g. 00aabb)')
-                        quit()
-                new_sys_config['rgb_matrix_color'] = args.rgb_matrix_color
-                print(f"Set RGB Matrix color: #{args.rgb_matrix_color} ({r}, {g}, {b})")
-        # rgb_matrix brightness
-        if args.rgb_matrix_brightness != '':
-            if args.rgb_matrix_brightness == None:
-                print(f"RGB Matrix brightness: {current_config['system']['rgb_matrix_brightness']}")
 
     # temperature unit settings
     # ----------------------------------------
@@ -514,6 +484,35 @@ def main():
                     quit()
                 new_sys_config['rgb_matrix_brightness'] = args.rgb_matrix_brightness
                 print(f"Set RGB Matrix brightness: {args.rgb_matrix_brightness}")
+
+        # rgb_matrix color
+        if args.rgb_matrix_color != '':
+            from pironman5.utils import hex_to_rgb
+            if args.rgb_matrix_color == None:
+                hex = current_config['system']['rgb_matrix_color']
+                r, g, b = hex_to_rgb(hex)
+                print(f"RGB Matrix color: #{hex} ({r}, {g}, {b})")
+            else:
+                try:
+                    r, g, b = hex_to_rgb(args.rgb_matrix_color)
+                except ValueError:
+                    print(f'Invalid value for RGB Matrix color, it should be in hex format without # (e.g. 00aabb)')
+                    quit()
+                new_sys_config['rgb_matrix_color'] = args.rgb_matrix_color
+                print(f"Set RGB Matrix color: #{args.rgb_matrix_color} ({r}, {g}, {b})")
+        # rgb_matrix color2
+        if args.rgb_matrix_color2 != '':
+            from pironman5.utils import hex_to_rgb
+            if args.rgb_matrix_color2 == None:
+                print(f"RGB Matrix color2: {current_config['system']['rgb_matrix_color2']}")
+            else:
+                try:
+                    r, g, b = hex_to_rgb(args.rgb_matrix_color2)
+                except ValueError:
+                    print(f'Invalid value for RGB Matrix color2, it should be in hex format without # (e.g. 00aabb)')
+                    quit()
+                new_sys_config['rgb_matrix_color2'] = args.rgb_matrix_color2
+                print(f"Set RGB Matrix color2: #{args.rgb_matrix_color2} ({r}, {g}, {b})")
 
     # update config
     # ----------------------------------------

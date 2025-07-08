@@ -110,10 +110,17 @@ class Pironman5:
                                             log=log)
             self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
             self.pm_dashboard.set_on_config_changed(self.update_config)
+            self.pm_dashboard.set_on_restart_service(self.restart_service)
 
     @log_error
     def set_debug_level(self, level):
         self.log.setLevel(level)
+
+    @log_error
+    def restart_service(self, restart):
+        if restart:
+            self.log.info('Restarting Pironman5 service')
+            os.system('sudo systemctl restart pironman5.service')
 
     @log_error
     def upgrade_config(self, config):
@@ -124,6 +131,8 @@ class Pironman5:
 
     @log_error
     def update_config(self, config):
+        if 'debug_level' in config['system']:
+            self.set_debug_level(config['system']['debug_level'])
         self.pm_auto.update_config(config['system'])
         self.config = merge_dict(self.config, config)
         with open(self.config_path, 'w') as f:

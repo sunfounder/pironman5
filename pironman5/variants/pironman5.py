@@ -9,17 +9,19 @@ class Pironman5:
         "memory",
         "history",
         "log",
-        "ws2812",
         "cpu_temperature",
         "gpu_temperature",
         "temperature_unit",
-        "oled",
+        "restart_service",
         "clear_history",
         "delete_log_file",
+        
+        "oled",
+        "oled_sleep",
+        "ws2812",
         "pwm_fan_speed",
         "gpio_fan_state",
         "gpio_fan_mode",
-        "oled_sleep",
         "pi5_pwr_btn",
     ]
     SYSTEM_DEFAULT_CONFIG = {

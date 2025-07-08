@@ -13,11 +13,14 @@ class Pironman5UPS:
         "cpu_temperature",
         "gpu_temperature",
         "temperature_unit",
-        "oled",
+        "restart_service",
         "clear_history",
         "delete_log_file",
-        "pwm_fan_speed",
+        "data_interval",
+
+        "oled",
         "oled_sleep",
+        "pwm_fan_speed",
         "rgb_matrix",
         # ----
         "input_voltage",
@@ -33,7 +36,6 @@ class Pironman5UPS:
         "is_charging",
         "shutdown_percentage",
         "default_on",
-        "data_interval",
         "power-failure-simulation",
     ]
     SYSTEM_DEFAULT_CONFIG = {
@@ -54,6 +56,7 @@ class Pironman5UPS:
         'rgb_matrix_enable': True,
         'rgb_matrix_style': "rainbow",
         'rgb_matrix_color': "#0a1aff",
+        'rgb_matrix_color2': "#00ff00",
         'rgb_matrix_speed': 50,
         'rgb_matrix_brightness': 100,
     }
