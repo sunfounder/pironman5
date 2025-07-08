@@ -20,6 +20,13 @@ class Pironman5UPS:
 
         "oled",
         "oled_sleep",
+        'oled_page_mix',
+        'oled_page_performance',
+        'oled_page_ips',
+        'oled_page_disk',
+        'oled_page_battery',
+        'oled_page_input',
+        'oled_page_output',
         "pwm_fan_speed",
         "rgb_matrix",
         # ----

@@ -65,8 +65,13 @@ def main():
         parser.add_argument("-fp", "--gpio-fan-led-pin", nargs='?', default='', help="GPIO fan LED pin")
     # oled
     if is_included(PERIPHERALS, "oled"):
+        AVAILABLE_PAGES = []
+        for item in PERIPHERALS:
+            if item.startswith("oled_page_"):
+                AVAILABLE_PAGES.append(item.split("oled_page_")[1])
         parser.add_argument("-oe", "--oled-enable", nargs='?', default='', help="OLED enable True/true/on/On/1 or False/false/off/Off/0")
         parser.add_argument("-or", "--oled-rotation", nargs='?', default=-1, type=int, choices=[0, 180], help="Set to rotate OLED display, 0, 180")
+        parser.add_argument("-op", "--oled-pages", nargs='*', default=[], help=f"OLED pages: {', '.join(AVAILABLE_PAGES)}")
         if is_included(PERIPHERALS, "oled_sleep"):
             parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds")
     # vibration_switch
@@ -381,7 +386,7 @@ def main():
                 new_sys_config['oled_rotation'] = args.oled_rotation
                 print(f"SetOLED rotation: {args.oled_rotation}")
         # oled_sleep_timeout
-        if is_included(PERIPHERALS, "oled") and args.oled_sleep_timeout != '':
+        if args.oled_sleep_timeout != '':
             if args.oled_sleep_timeout == None:
                 print(f"OLED sleep timeout: {current_config['system']['oled_sleep_timeout']}")
             else:
@@ -395,7 +400,17 @@ def main():
                     quit()
                 new_sys_config['oled_sleep_timeout'] = args.oled_sleep_timeout
                 print(f"Set OLED sleep timeout: {args.oled_sleep_timeout}")
-
+        # oled_pages
+        if args.oled_pages != []:
+            if args.oled_pages == None:
+                print(f"OLED pages: {', '.join(current_config['system']['oled_pages'])}")
+            else:
+                for page in args.oled_pages:
+                    if page not in AVAILABLE_PAGES:
+                        print(f"Invalid value for OLED pages: '{page}', it should be {', '.join(AVAILABLE_PAGES)}")
+                        quit()
+                new_sys_config['oled_pages'] = args.oled_pages
+                print(f"Set OLED pages: {args.oled_pages}")
     # Vibration switch settings
     # ----------------------------------------
     if is_included(PERIPHERALS, "vibration_switch"):
@@ -484,7 +499,6 @@ def main():
                     quit()
                 new_sys_config['rgb_matrix_brightness'] = args.rgb_matrix_brightness
                 print(f"Set RGB Matrix brightness: {args.rgb_matrix_brightness}")
-
         # rgb_matrix color
         if args.rgb_matrix_color != '':
             from pironman5.utils import hex_to_rgb

@@ -17,6 +17,10 @@ class Pironman5Max:
         "delete_log_file",
 
         "oled",
+        'oled_page_mix',
+        'oled_page_performance',
+        'oled_page_ips',
+        'oled_page_disk',
         "ws2812",
         "pwm_fan_speed",
         "gpio_fan_state",
