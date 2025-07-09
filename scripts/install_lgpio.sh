@@ -20,7 +20,7 @@ fi
 echo "- Updating package list"
 apt-get update
 echo "- Installing dependencies"
-apt-get install -y swig python3-dev python3-setuptools unzip
+apt-get install -y swig python3-dev python3-setuptools unzip wget
 
 echo "- Downloading and installing LGPIO"
 wget http://abyz.me.uk/lg/lg.zip
