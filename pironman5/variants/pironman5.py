@@ -28,6 +28,11 @@ class Pironman5:
         "gpio_fan_mode",
         "pi5_pwr_btn",
     ]
+    EVENT_MAP = {
+        'pi5_power_button_click': 'oled_wake_page_next',
+        'pi5_power_button_double_click': 'oled_page_prev',
+        'pi5_power_button_long_press': 'shutdown',
+    }
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
         "temperature_unit": "C",

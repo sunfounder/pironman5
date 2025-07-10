@@ -22,6 +22,7 @@ class Pironman5Mini:
         "gpio_fan_mode",
         "gpio_fan_led",
     ]
+    EVENT_MAP = {}
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
         'temperature_unit': 'C',

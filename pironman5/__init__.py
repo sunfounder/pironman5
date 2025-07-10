@@ -10,7 +10,7 @@ def update_config_file(config, config_path):
         json.dump(current, f, indent=4)
 
 def main():
-    from .variants import NAME, ID, PERIPHERALS
+    from .variants import NAME, PERIPHERALS
     
     import argparse
     from .pironman5 import Pironman5

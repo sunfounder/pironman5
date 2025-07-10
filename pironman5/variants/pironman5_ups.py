@@ -45,6 +45,11 @@ class Pironman5UPS:
         "default_on",
         "power-failure-simulation",
     ]
+    EVENT_MAP = {
+        'pipower5_button_click': 'oled_wake_page_next',
+        'pipower5_button_double_click': 'oled_page_prev',
+        'pipower5_button_long_press': 'shutdown',
+    }
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
         "temperature_unit": "C",

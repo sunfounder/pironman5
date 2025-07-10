@@ -122,6 +122,7 @@ pi5_pwr_btn_settings = {
 rgb_matrix_settings = {
     'pip_dependencies': [
         'smbus2',
+        'numpy',
     ],
 }
 

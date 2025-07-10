@@ -9,7 +9,7 @@ from pm_auto import __version__ as pm_auto_version
 from .logger import Logger
 from .utils import merge_dict, log_error
 from .version import __version__ as pironman5_version
-from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, SYSTEM_DEFAULT_CONFIG
+from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, SYSTEM_DEFAULT_CONFIG, EVENT_MAP
 
 APP_NAME = 'pironman5'
 DEFAULT_DEBUG_LEVEL = 'INFO' # 'DEBUG' | 'INFO' | 'WARNING' | 'ERROR' | 'CRITICAL'
@@ -26,8 +26,7 @@ except ImportError:
     pass
 
 class Pironman5:
-  
-    # @log_error
+
     def __init__(self, config_path=CONFIG_PATH):
         self.peripherals = PERIPHERALS
         self.log = log
@@ -98,6 +97,7 @@ class Pironman5:
 
         self.pm_auto = PMAuto(self.config['system'],
                               peripherals=self.peripherals,
+                              event_map=EVENT_MAP,
                               log=log)
         if PMDashboard is None:
             self.pm_dashboard = None
@@ -108,7 +108,7 @@ class Pironman5:
                                             spc_enabled=True if 'spc' in self.peripherals else False,
                                             config=self.config,
                                             log=log)
-            self.pm_auto.set_on_state_changed(self.pm_dashboard.update_status)
+            self.pm_dashboard.set_read_data(self.pm_auto.read)
             self.pm_dashboard.set_on_config_changed(self.update_config)
             self.pm_dashboard.set_on_restart_service(self.restart_service)
 
