@@ -142,7 +142,7 @@ dashboard_settings = {
         'lsof', # for pm_dashboard
     ],
     'python_source': {
-        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.3.x',
+        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.3.6',
     },
 }
 
