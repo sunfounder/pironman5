@@ -12,13 +12,13 @@ You can learn more about the LCD screen and how to use it from the following lin
 
 **Assemble**
 
+
 .. image:: ../img/lcd_to_mini1.jpg
-    :width: 350
-    :align: center
+    :width: 340
 
 .. image:: ../img/lcd_to_mini2.jpg
-    :width: 350
-    :align: center
+    :width: 340
+
 
 .. warning:: When installing the 3.5-inch LCD screen onto the Pironman 5, please make sure the pins are perfectly aligned. The LCD module's header must match the Raspberry Pi's GPIO interface exactly, with no offset or misalignment. Incorrect connections may damage the LCD screen or even the Raspberry Pi itself. Double-check all connections carefully before powering on!
 
