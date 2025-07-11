@@ -7,17 +7,17 @@ This section is for Pironman 5 users who also purchased the `3.5-inch LCD screen
 The LCD screen can be directly mounted onto the Raspberry Pi's GPIO header, providing visual display and touch control functionality for the Pironman 5. Please follow the proper installation steps to ensure correct operation and to avoid any hardware damage.
 
 You can learn more about the LCD screen and how to use it from the following link:
-`3.5-inch LCD Documentation<http://wiki.sunfounder.cc/index.php?title=3.5_Inch_LCD_Touch_Screen_Monitor_for_Raspberry_Pi>`_.
+`3.5-inch LCD Documentation <http://wiki.sunfounder.cc/index.php?title=3.5_Inch_LCD_Touch_Screen_Monitor_for_Raspberry_Pi>`_.
 
 
 **Assemble**
 
-.. image:: ../img/lcd_to_max1.jpg
-    :width: 400
+.. image:: ../img/lcd_to_mini1.jpg
+    :width: 350
     :align: center
 
-.. image:: ../img/lcd_to_max2.jpg
-    :width: 400
+.. image:: ../img/lcd_to_mini2.jpg
+    :width: 350
     :align: center
 
 .. warning:: When installing the 3.5-inch LCD screen onto the Pironman 5, please make sure the pins are perfectly aligned. The LCD module's header must match the Raspberry Pi's GPIO interface exactly, with no offset or misalignment. Incorrect connections may damage the LCD screen or even the Raspberry Pi itself. Double-check all connections carefully before powering on!
