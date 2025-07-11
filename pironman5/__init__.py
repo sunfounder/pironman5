@@ -27,7 +27,8 @@ def main():
     __package_name__ = __name__.split('.')[0]
     CONFIG_PATH = str(resource_files(__package_name__).joinpath('config.json'))
     PIP_PATH = "/opt/pironman5/venv/bin/pip"
-    DEBUG_LEVELS = ['debug', 'info', 'warning', 'error', 'critical']
+    DEBUG_LEVELS = ['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL',\
+        'debug', 'info', 'warning', 'error', 'critical']
 
     current_config = None
     debug_level = 'INFO'
@@ -35,10 +36,10 @@ def main():
 
     parser = argparse.ArgumentParser(prog='pironman5',
                                     description=f'{NAME} command line interface')
-    parser.add_argument("command", choices=['start'], nargs='?', help="Command")
+    parser.add_argument("command", choices=['start', 'stop'], nargs='?', help="Command")
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
-    parser.add_argument("-dl", "--debug-level", nargs='?', default='', choices=['debug', 'info', 'warning', 'error', 'critical'], help="Debug level")
+    parser.add_argument("-dl", "--debug-level", nargs='?', default='', choices=DEBUG_LEVELS, help="Debug level")
     parser.add_argument("--background", nargs='?', default='', help="Run in background")
     parser.add_argument("-rd", "--remove-dashboard", action="store_true", help="Remove dashboard")
     parser.add_argument("-cp", "--config-path", nargs='?', default='', help="Config path")
@@ -406,12 +407,14 @@ def main():
             if args.oled_pages == None:
                 print(f"OLED pages: {', '.join(current_config['system']['oled_pages'])}")
             else:
-                for page in args.oled_pages:
+                pages = [p.lower().strip().replace(',', '') for p in args.oled_pages]
+                for page in pages:
+                    page = page.lower().strip().replace(',', '')
                     if page not in AVAILABLE_PAGES:
                         print(f"Invalid value for OLED pages: '{page}', it should be {', '.join(AVAILABLE_PAGES)}")
                         quit()
-                new_sys_config['oled_pages'] = args.oled_pages
-                print(f"Set OLED pages: {args.oled_pages}")
+                new_sys_config['oled_pages'] = pages
+                print(f"Set OLED pages: {pages}")
     # Vibration switch settings
     # ----------------------------------------
     if is_included(PERIPHERALS, "vibration_switch"):
@@ -541,3 +544,5 @@ def main():
     if args.command == 'start':
         pironman5 = Pironman5(config_path=config_path)
         pironman5.start()
+    elif args.command == 'stop':
+        os.system('pkill -f pironman5')

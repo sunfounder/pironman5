@@ -32,7 +32,8 @@ settings = {
     # - Install python source code from git
     'python_source': {
         'pironman5': './',
-        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.3.x',
+        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.4.0',
+        'sf_rpi_status': 'git+https://github.com/sunfounder/sf_rpi_status.git@1.1.4',
     },
 
     # create symbolic links from venv/bin/ to /usr/local/bin/
@@ -142,7 +143,6 @@ dashboard_settings = {
     ],
     'python_source': {
         'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.3.x',
-        'sf_rpi_status': 'git+https://github.com/sunfounder/sf_rpi_status.git@1.1.3',
     },
 }
 
