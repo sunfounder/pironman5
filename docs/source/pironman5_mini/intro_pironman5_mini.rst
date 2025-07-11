@@ -24,6 +24,7 @@ Key features include a dedicated power button, an active cooling system similar 
     control/control_pironman5
     hardware/hardware
     compitable_nvme_ssd
+    combine_with_lcd
     faq
 
 

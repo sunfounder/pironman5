@@ -46,6 +46,7 @@ Additionally, GPIO expansion is provided for convenient extension of the Raspber
     control/control_pironman5
     advanced/advanced
     compitable_nvme_ssd
+    combine_with_lcd
     faq
 
 **Parameters**
