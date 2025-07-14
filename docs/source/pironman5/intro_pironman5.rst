@@ -26,6 +26,7 @@ NAS、Home Assistant、メディアセンター、ゲーム環境、AIプロジ�
     control/control_pironman5
     hardware/hardware
     compitable_nvme_ssd
+    combine_with_lcd
     assemble_camera
     faq
 
