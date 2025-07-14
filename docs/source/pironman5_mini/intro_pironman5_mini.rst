@@ -24,6 +24,7 @@ Le caratteristiche principali includono un pulsante di accensione dedicato, un s
     control/control_pironman5
     hardware/hardware
     compitable_nvme_ssd
+    combine_with_lcd
     faq
 
 
