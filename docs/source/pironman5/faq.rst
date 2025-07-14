@@ -56,7 +56,7 @@ Per una dimostrazione dettagliata, consulta il video:
 
     <div style="text-align: center;">
         <video center loop autoplay muted style="max-width:90%">
-            <source src="_static/video/airflow_direction.mp4"  type="video/mp4">
+            <source src="../_static/video/airflow_direction.mp4"  type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -88,7 +88,7 @@ Per una dimostrazione dettagliata, consulta il video:
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/remove_tower_cooler.mp4" type="video/mp4">
+               <source src="../_static/video/remove_tower_cooler.mp4" type="video/mp4">
                Il tuo browser non supporta il tag video.
            </video>
        </div>
@@ -133,7 +133,7 @@ Se il display OLED non mostra nulla o visualizza informazioni errate, segui ques
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_oled_screen.mp4" type="video/mp4">
+               <source src="../_static/video/connect_oled_screen.mp4" type="video/mp4">
                Your browser does not support the video tag.
            </video>
        </div>
@@ -188,7 +188,7 @@ Se il problema persiste dopo aver eseguito questi passaggi, invia un'email a ser
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_nvme_pip1.mp4" type="video/mp4">
+               <source src="../_static/video/connect_nvme_pip1.mp4" type="video/mp4">
                Your browser does not support the video tag.
            </video>
        </div>
@@ -197,7 +197,7 @@ Se il problema persiste dopo aver eseguito questi passaggi, invia un'email a ser
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_nvme_pip2.mp4" type="video/mp4">
+               <source src="../_static/video/connect_nvme_pip2.mp4" type="video/mp4">
                Your browser does not support the video tag.
            </video>
        </div>
@@ -208,7 +208,7 @@ Se il problema persiste dopo aver eseguito questi passaggi, invia un'email a ser
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_ssd.mp4" type="video/mp4">
+               <source src="../_static/video/connect_ssd.mp4" type="video/mp4">
                Your browser does not support the video tag.
            </video>
        </div>
