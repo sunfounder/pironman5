@@ -56,7 +56,7 @@ Pour une démonstration détaillée, veuillez consulter la vidéo :
 
     <div style="text-align: center;">
         <video center loop autoplay muted style="max-width:90%">
-            <source src="_static/video/airflow_direction.mp4"  type="video/mp4">
+            <source src="../_static/video/airflow_direction.mp4"  type="video/mp4">
             Votre navigateur ne prend pas en charge la balise vidéo.
         </video>
     </div>
@@ -89,7 +89,7 @@ Pour une démonstration détaillée, veuillez consulter la vidéo :
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/remove_tower_cooler.mp4" type="video/mp4">
+               <source src="../_static/video/remove_tower_cooler.mp4" type="video/mp4">
                Your browser does not support the video tag.
            </video>
        </div>
@@ -136,7 +136,7 @@ Si l'écran OLED ne s'affiche pas ou affiche incorrectement, suivez ces étapes 
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_oled_screen.mp4" type="video/mp4">
+               <source src="../_static/video/connect_oled_screen.mp4" type="video/mp4">
                Votre navigateur ne prend pas en charge la balise vidéo.
            </video>
        </div>
@@ -190,7 +190,7 @@ Si le problème persiste après avoir effectué ces étapes, veuillez envoyer un
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_nvme_pip1.mp4" type="video/mp4">
+               <source src="../_static/video/connect_nvme_pip1.mp4" type="video/mp4">
                Votre navigateur ne prend pas en charge la balise vidéo.
            </video>
        </div>
@@ -199,7 +199,7 @@ Si le problème persiste après avoir effectué ces étapes, veuillez envoyer un
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_nvme_pip2.mp4" type="video/mp4">
+               <source src="../_static/video/connect_nvme_pip2.mp4" type="video/mp4">
                Votre navigateur ne prend pas en charge la balise vidéo.
            </video>
        </div>
@@ -210,7 +210,7 @@ Si le problème persiste après avoir effectué ces étapes, veuillez envoyer un
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_ssd.mp4" type="video/mp4">
+               <source src="../_static/video/connect_ssd.mp4" type="video/mp4">
                Votre navigateur ne prend pas en charge la balise vidéo.
            </video>
        </div>
