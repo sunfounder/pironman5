@@ -146,6 +146,21 @@ dashboard_settings = {
     },
 }
 
+pipower5_settings = {
+    'python_source': {
+        'pipower5': 'git+https://github.com/sunfounder/pipower5.git@1.1.0',
+    },
+    'symlinks': [
+        'pipower5',
+    ],
+    'run_commands_before_install': {
+        'Install LGPIO': 'bash scripts/install_lgpio.sh',
+    },
+    'dtoverlays': [
+        'https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo'
+    ],
+}
+
 installer = SF_Installer(
     name='pironman5',
     friendly_name=NAME,
