@@ -133,8 +133,9 @@ class Pironman5:
     def update_config(self, config):
         if 'debug_level' in config['system']:
             self.set_debug_level(config['system']['debug_level'])
-        self.pm_auto.update_config(config['system'])
-        self.config = merge_dict(self.config, config)
+        patch = self.pm_auto.update_config(config['system'])
+        self.log.debug(f"Update config: {patch}")
+        self.config['system'].update(patch)
         with open(self.config_path, 'w') as f:
             json.dump(self.config, f, indent=4)
 

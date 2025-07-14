@@ -1,11 +1,12 @@
 
+AVAILABLE_PAGES = []
+
 def update_config_file(config, config_path):
     import json
-    from .utils import merge_dict
     current = None
     with open(config_path, 'r') as f:
         current = json.load(f)
-    current = merge_dict(current, config)
+    current.update(config)
     with open(config_path, 'w') as f:
         json.dump(current, f, indent=4)
 
@@ -46,7 +47,7 @@ def main():
     parser.add_argument("-eh", "--enable-history", nargs='?', default='', help="Enable history, True/true/on/On/1 or False/false/off/Off/0")
     # ws2812
     if is_included(PERIPHERALS, "ws2812"):
-        from pm_auto.services.ws2812_service import RGB_STYLES
+        from pm_auto.addons.ws2812 import RGB_STYLES
         parser.add_argument("-re", "--rgb-enable", nargs='?', default='', help="RGB enable True/False")
         parser.add_argument("-rs", "--rgb-style", nargs='?', default='', help=f"RGB style: {RGB_STYLES}")
         parser.add_argument("-rc", "--rgb-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
@@ -58,7 +59,7 @@ def main():
         parser.add_argument("-u", "--temperature-unit", choices=["C", "F"], nargs='?', default='', help="Temperature unit")
     # gpio_fan_mode
     if is_included(PERIPHERALS, "gpio_fan_mode"):
-        from pm_auto.services.fan_service import GPIO_FAN_MODES
+        from pm_auto.addons.fan import GPIO_FAN_MODES
         parser.add_argument("-gm", "--gpio-fan-mode", nargs='?', default='', help=f"GPIO fan mode, {', '.join([f'{i}: {mode}' for i, mode in enumerate(GPIO_FAN_MODES)])}")
         parser.add_argument("-gp", "--gpio-fan-pin", nargs='?', default='', help="GPIO fan pin")
     if is_included(PERIPHERALS, "gpio_fan_led"):
@@ -66,10 +67,9 @@ def main():
         parser.add_argument("-fp", "--gpio-fan-led-pin", nargs='?', default='', help="GPIO fan LED pin")
     # oled
     if is_included(PERIPHERALS, "oled"):
-        AVAILABLE_PAGES = []
-        for item in PERIPHERALS:
-            if item.startswith("oled_page_"):
-                AVAILABLE_PAGES.append(item.split("oled_page_")[1])
+        from pm_auto.addons.oled import get_available_pages
+        global AVAILABLE_PAGES
+        AVAILABLE_PAGES = get_available_pages(PERIPHERALS)
         parser.add_argument("-oe", "--oled-enable", nargs='?', default='', help="OLED enable True/true/on/On/1 or False/false/off/Off/0")
         parser.add_argument("-or", "--oled-rotation", nargs='?', default=-1, type=int, choices=[0, 180], help="Set to rotate OLED display, 0, 180")
         parser.add_argument("-op", "--oled-pages", nargs='*', default=[], help=f"OLED pages: {', '.join(AVAILABLE_PAGES)}")
@@ -81,7 +81,7 @@ def main():
         parser.add_argument("-vu", "--vibration-switch-pull-up", nargs='?', default='', help="Vibration switch pull up True/False")
     # rgb_matrix
     if is_included(PERIPHERALS, "rgb_matrix"):
-        from pm_auto.services.rgb_matrix_service import EFFECT_LIST
+        from pm_auto.addons.rgb_matrix import EFFECT_LIST
         parser.add_argument("-rme", "--rgb-matrix-enable", nargs='?', default='', help="RGB enable True/False")
         parser.add_argument("-rms", "--rgb-matrix-style",  nargs='?', default='', help=f"RGB style: {EFFECT_LIST}")
         parser.add_argument("-rmc", "--rgb-matrix-color", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
