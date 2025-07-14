@@ -24,6 +24,7 @@ Zu den Hauptmerkmalen gehören ein dedizierter Ein-/Ausschalter, ein aktives Kü
     control/control_pironman5
     hardware/hardware
     compitable_nvme_ssd
+    combine_with_lcd
     faq
 
 
