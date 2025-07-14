@@ -24,6 +24,7 @@ Parmi ses caractéristiques principales : un bouton d’alimentation dédié, un
     control/control_pironman5
     hardware/hardware
     compitable_nvme_ssd
+    combine_with_lcd
     faq
 
 
