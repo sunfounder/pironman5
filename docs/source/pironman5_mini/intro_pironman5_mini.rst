@@ -24,6 +24,7 @@ Pironman 5 Miniは、Raspberry Pi用ケース「Pironman」シリーズの最新
     control/control_pironman5
     hardware/hardware
     compitable_nvme_ssd
+    combine_with_lcd
     faq
 
 
