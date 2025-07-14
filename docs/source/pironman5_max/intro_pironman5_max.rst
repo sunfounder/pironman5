@@ -47,6 +47,7 @@ Además, cuenta con un conector de expansión GPIO para ampliar fácilmente las 
     control/control_pironman5
     advanced/advanced
     compitable_nvme_ssd
+    combine_with_lcd
     faq
 
 **Parámetros**
