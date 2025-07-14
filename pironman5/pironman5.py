@@ -117,10 +117,9 @@ class Pironman5:
         self.log.setLevel(level)
 
     @log_error
-    def restart_service(self, restart):
-        if restart:
-            self.log.info('Restarting Pironman5 service')
-            os.system('sudo systemctl restart pironman5.service')
+    def restart_service(self):
+        self.log.info('Restarting Pironman5 service')
+        os.system('sudo systemctl restart pironman5.service')
 
     @log_error
     def upgrade_config(self, config):
