@@ -36,7 +36,8 @@ Webダッシュボードを無効にする方法は？
    sudo systemctl restart pironman5
 
 Pironman 5 MAXはレトロゲームシステムに対応していますか？
-------------------------------------------------------
+--------------------------------------------------------------
+
 はい、対応しています。ただし、多くのレトロゲームシステムは軽量化されたシステムであり、追加のソフトウェアをインストールできないことがあります。そのため、OLEDディスプレイ、RGBファン、4つのRGB LEDなど、一部のPironman 5機能が動作しない可能性があります。
 
 
@@ -84,6 +85,24 @@ NVMe PIP モジュールが動作しない場合
 
 1. NVMe PIP モジュールとらずべりーぱい5を接続するFPCけーぶるが、しっかりと差し込まれていることを確認してください。
 
+   .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Nvme(1)-11.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+       </div>
+
+   .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Nvme(2)-11.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+       </div>
+
 2. SSDがNVMe PIP モジュールに正しく固定されていることを確認してください。
 
 3. NVMe PIP モジュールの発光表示（LED）の状態を確認してください：
@@ -95,8 +114,8 @@ NVMe PIP モジュールが動作しない場合
 
    .. image:: img/dual_nvme_pip_leds.png  
 
-   * **PWR LED**が点灯していて、**STA LED**が点滅していない場合、NVMe SSDがらずべりーぱいに認識されていないことを示しています。  
-   * **PWR LED**が消灯している場合、モジュール上の「強制有効（Force Enable）」端子を短絡してください。**PWR LED**が点灯すれば、FPCけーぶるの接触不良、またはNVMeに対応していない環境の可能性があります。
+   * **PWR LED** が点灯していて、 **STA LED** が点滅していない場合、NVMe SSDがらずべりーぱいに認識されていないことを示しています。  
+   * **PWR LED** が消灯している場合、モジュール上の「強制有効（Force Enable）」端子を短絡してください。 **PWR LED** が点灯すれば、FPCけーぶるの接触不良、またはNVMeに対応していない環境の可能性があります。
 
    .. image:: img/dual_nvme_pip_j4.png  
 
@@ -108,7 +127,7 @@ NVMe PIP モジュールが動作しない場合
 
 
 OLED 画面が表示されない場合
---------------------------
+----------------------------------
 
 .. note:: OLED 画面は一定時間操作がない場合、電力節約のため自動的に消灯することがあります。かるく筐体をたたくと振動感知により再表示されます。
 
@@ -117,6 +136,16 @@ OLED 画面が表示されない、または正しく表示されない場合は
 1. **画面けーぶるの接続を確認する**
 
    OLED 画面のFPCけーぶるが正しく接続されているか確認してください。
+
+   .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Oled-11.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+       </div>
+
 
 2. **おぺれーてぃんぐしすてむの対応状況を確認する**
 

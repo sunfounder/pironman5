@@ -56,7 +56,7 @@ Pironman 5のシャーシ内のエアフローは、冷却効率を最大化す�
 
     <div style="text-align: center;">
         <video center loop autoplay muted style="max-width:90%">
-            <source src="_static/video/airflow_direction.mp4" type="video/mp4">
+            <source src="../_static/video/airflow_direction.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -88,7 +88,7 @@ Pironman 5のシャーシ内のエアフローは、冷却効率を最大化す�
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/remove_tower_cooler.mp4" type="video/mp4">
+               <source src="../_static/video/remove_tower_cooler.mp4" type="video/mp4">
                Your browser does not support the video tag.
            </video>
        </div>
@@ -135,7 +135,7 @@ OLEDスクリーンが表示されない、または正しく表示されない�
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_oled_screen.mp4" type="video/mp4">
+               <source src="../_static/video/connect_oled_screen.mp4" type="video/mp4">
                Your browser does not support the video tag.
            </video>
        </div>
@@ -189,7 +189,7 @@ OLEDスクリーンが表示されない、または正しく表示されない�
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_nvme_pip1.mp4" type="video/mp4">
+               <source src="../_static/video/connect_nvme_pip1.mp4" type="video/mp4">
                Your browser does not support the video tag.
            </video>
        </div>
@@ -198,7 +198,7 @@ OLEDスクリーンが表示されない、または正しく表示されない�
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_nvme_pip2.mp4" type="video/mp4">
+               <source src="../_static/video/connect_nvme_pip2.mp4" type="video/mp4">
                Your browser does not support the video tag.
            </video>
        </div>
@@ -209,7 +209,7 @@ OLEDスクリーンが表示されない、または正しく表示されない�
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_ssd.mp4" type="video/mp4">
+               <source src="../_static/video/connect_ssd.mp4" type="video/mp4">
                Your browser does not support the video tag.
            </video>
        </div>
