@@ -84,6 +84,24 @@ Si tienes un SSD NVMe pero no cuentas con un adaptador para conectarlo a tu orde
 
 1. Asegúrese de que el cable FPC que conecta el módulo NVMe PIP con la Raspberry Pi 5 esté bien conectado.
 
+   .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Nvme(1)-11.mp4" type="video/mp4">
+               Tu navegador no admite la etiqueta de video.
+           </video>
+       </div>
+
+   .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Nvme(2)-11.mp4" type="video/mp4">
+               Tu navegador no admite la etiqueta de video.
+           </video>
+       </div>
+
 2. Confirme que su SSD esté correctamente instalado en el módulo NVMe PIP.
 
 3. Verifique el estado de los LEDs del módulo NVMe PIP:
@@ -118,6 +136,15 @@ Si la pantalla OLED no muestra nada o muestra información incorrecta, siga esto
 1. **Verifique la conexión de la pantalla OLED**
 
    Asegúrese de que el cable FPC de la pantalla OLED esté correctamente conectado.
+
+   .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Oled-11.mp4" type="video/mp4">
+               Tu navegador no admite la etiqueta de video.
+           </video>
+       </div>
 
 2. **Verifique la compatibilidad del sistema operativo**
 

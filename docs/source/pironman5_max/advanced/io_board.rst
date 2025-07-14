@@ -118,7 +118,7 @@ Verifica que el cable FPC de la pantalla esté correctamente conectado.
 Disparador de Activación
 -------------------------
 
-.. image:: img/io_board_vib.png
+.. image:: img/io_board_tilt.png
 
 El interruptor de vibración incorporado se utiliza para activar la pantalla OLED desde el modo de suspensión. Cuando se detecta una vibración, se envía una señal para reactivar la OLED, lo que permite que la pantalla permanezca apagada cuando está inactiva y se active automáticamente al detectar movimiento.
 

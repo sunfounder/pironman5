@@ -56,7 +56,7 @@ Para una demostración detallada, consulta el video:
 
     <div style="text-align: center;">
         <video center loop autoplay muted style="max-width:90%">
-            <source src="_static/video/airflow_direction.mp4"  type="video/mp4">
+            <source src="../_static/video/airflow_direction.mp4"  type="video/mp4">
             Tu navegador no admite la etiqueta de video.
         </video>
     </div>
@@ -88,7 +88,7 @@ Para una demostración detallada, consulta el video:
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/remove_tower_cooler.mp4" type="video/mp4">
+               <source src="../_static/video/remove_tower_cooler.mp4" type="video/mp4">
                Su navegador no soporta la etiqueta de video.
            </video>
        </div>
@@ -134,7 +134,7 @@ Si la pantalla OLED no muestra nada o lo hace de manera incorrecta, sigue estos 
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_oled_screen.mp4" type="video/mp4">
+               <source src="../_static/video/connect_oled_screen.mp4" type="video/mp4">
                Tu navegador no admite la etiqueta de video.
            </video>
        </div>
@@ -188,7 +188,7 @@ Si el problema persiste después de realizar los pasos anteriores, envía un cor
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_nvme_pip1.mp4" type="video/mp4">
+               <source src="../_static/video/connect_nvme_pip1.mp4" type="video/mp4">
                Tu navegador no admite la etiqueta de video.
            </video>
        </div>
@@ -197,7 +197,7 @@ Si el problema persiste después de realizar los pasos anteriores, envía un cor
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_nvme_pip2.mp4" type="video/mp4">
+               <source src="../_static/video/connect_nvme_pip2.mp4" type="video/mp4">
                Tu navegador no admite la etiqueta de video.
            </video>
        </div>
@@ -208,7 +208,7 @@ Si el problema persiste después de realizar los pasos anteriores, envía un cor
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
-               <source src="_static/video/connect_ssd.mp4" type="video/mp4">
+               <source src="../_static/video/connect_ssd.mp4" type="video/mp4">
                Tu navegador no admite la etiqueta de video.
            </video>
        </div>
@@ -238,7 +238,7 @@ Si el problema persiste después de realizar los pasos anteriores, envía un cor
 
 #. Los dos pines del expansor de E/S sobre el conector J9 se utilizan para conectar las luces RGB al GPIO10. Asegúrate de que el puente en estos dos pines esté colocado correctamente.
 
-   .. image:: advanced/img/io_board_rgb_pin.png
+   .. image:: hardware/img/io_board_rgb_pin.png
       :width: 300
       :align: center
 
