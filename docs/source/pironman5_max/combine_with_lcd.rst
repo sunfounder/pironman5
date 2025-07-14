@@ -22,6 +22,31 @@ You can learn more about the LCD screen and how to use it from the following lin
 
 .. warning:: When installing the 3.5-inch LCD screen onto the Pironman 5, please make sure the pins are perfectly aligned. The LCD module's header must match the Raspberry Pi's GPIO interface exactly, with no offset or misalignment. Incorrect connections may damage the LCD screen or even the Raspberry Pi itself. Double-check all connections carefully before powering on!
 
+**Remove RGB Jumper**
+
+When using the Pironman 5 with the 3.5-inch LCD screen, the RGB LED and the LCD share the same SPI pins. To avoid conflicts and ensure the LCD screen functions properly, the RGB LED connection must be disabled.
+
+Follow the steps below:
+
+1. On the **IO Expansion Board**, **remove the jumper cap connected to the RGB pins** to disconnect the RGB LED from the SPI interface.
+
+   .. image:: ../img/lcd_to_max0.jpg
+      :width: 600
+      :align: center
+
+
+2. Run the following commands to **disable the RGB LED control service**:
+
+   .. code-block:: bash
+
+      pironman5 -re false
+      sudo systemctl restart pironman5.service 
+
+This will free up the SPI interface for the LCD screen, preventing any conflicts or display issues.
+
+
+
+
 **Driver Installation**
 
 This LCD module requires driver installation before use. The installation steps vary depending on the operating system.
