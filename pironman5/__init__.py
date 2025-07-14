@@ -6,7 +6,11 @@ def update_config_file(config, config_path):
     current = None
     with open(config_path, 'r') as f:
         current = json.load(f)
-    current.update(config)
+    for key in config:
+        if key in current:
+            current[key].update(config[key])
+        else:
+            current[key] = config[key]
     with open(config_path, 'w') as f:
         json.dump(current, f, indent=4)
 
