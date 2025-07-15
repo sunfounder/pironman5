@@ -49,7 +49,9 @@ class Pironman5UPS:
     EVENT_MAP = {
         'pipower5_button_click': 'oled_wake_page_next',
         'pipower5_button_double_click': 'oled_page_prev',
-        'pipower5_button_long_press': 'shutdown',
+        'pipower5_low_battery_shutdown': 'shutdown',
+        'pipower5_button_shutdown': 'shutdown',
+        'pipower5_low_voltage_shutdown': 'shutdown',
     }
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
@@ -71,6 +73,21 @@ class Pironman5UPS:
         'rgb_matrix_color2': '#00ff00',
         'rgb_matrix_speed': 50,
         'rgb_matrix_brightness': 100,
+        'send_email_on': [
+            "battery_activated",
+            "low_battery",
+            "power_disconnected",
+            "power_restored",
+            "power_insufficient",
+            "battery_critical_shutdown",
+            "battery_voltage_critical_shutdown",
+        ],
+        'smtp_receiver': '',
+        'smtp_sender': '',
+        'smtp_password': '',
+        'smtp_server': '',
+        'smtp_port': 465,
+        'smtp_use_tls': False
     }
     DT_OVERLAYS = [
         'sunfounder-pironman5ups.dtbo',

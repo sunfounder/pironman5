@@ -142,7 +142,7 @@ dashboard_settings = {
         'lsof', # for pm_dashboard
     ],
     'python_source': {
-        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.3.6',
+        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.3.7',
     },
 }
 
@@ -154,7 +154,7 @@ pipower5_settings = {
         'pipower5',
     ],
     'run_commands_before_install': {
-        'Install LGPIO': 'bash scripts/install_lgpio.sh',
+        'Install PiPower 5 driver': 'bash scripts/install_pipower5_device.sh',
     },
     'dtoverlays': [
         'https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo'
@@ -188,4 +188,6 @@ if 'pi5_pwr_btn' in PERIPHERALS:
     installer.update_settings(pi5_pwr_btn_settings)
 if 'rgb_matrix' in PERIPHERALS:
     installer.update_settings(rgb_matrix_settings)
+if 'pipower5' in PERIPHERALS:
+    installer.update_settings(pipower5_settings)
 installer.main()

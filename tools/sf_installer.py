@@ -424,6 +424,10 @@ class SF_Installer():
                 return
         
         for overlay in self.dtoverlays:
+            # If is online dtoverlay, download it first
+            if overlay.startswith('http'):
+                self.do(f'Download dtoverlay {overlay}', f'wget {overlay}')
+                overlay = overlay.split('/')[-1]
             if not os.path.exists(overlay):
                 self.errors.append(f"Device tree overlay file {overlay} not found")
                 continue
@@ -468,6 +472,9 @@ class SF_Installer():
                 return
         
         for overlay in self.dtoverlays:
+            # if it's a online dtoverlay, skip it
+            if overlay.startswith('http'):
+                overlay = overlay.split('/')[-1]
             if not os.path.exists(f'{overlays_path}/{overlay}'):
                 print(f" - Device tree overlay {overlay} not found Skip")
                 continue
