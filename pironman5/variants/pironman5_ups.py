@@ -9,7 +9,6 @@ class Pironman5UPS:
         'memory',
         'history',
         'log',
-        'spc',
         'cpu_temperature',
         'gpu_temperature',
         'temperature_unit',
@@ -89,7 +88,5 @@ class Pironman5UPS:
         'smtp_port': 465,
         'smtp_use_tls': False
     }
-    DT_OVERLAYS = [
-        'sunfounder-pironman5ups.dtbo',
-    ]
+    DT_OVERLAYS = []
 

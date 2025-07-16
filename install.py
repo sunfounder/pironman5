@@ -149,6 +149,7 @@ dashboard_settings = {
 pipower5_settings = {
     'python_source': {
         'pipower5': 'git+https://github.com/sunfounder/pipower5.git@1.1.x',
+        'spc': 'git+https://github.com/sunfounder/spc.git',
     },
     'symlinks': [
         'pipower5',
