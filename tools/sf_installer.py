@@ -428,10 +428,12 @@ class SF_Installer():
             if overlay.startswith('http'):
                 self.do(f'Download dtoverlay {overlay}', f'wget {overlay}')
                 overlay = overlay.split('/')[-1]
-            if not os.path.exists(overlay):
-                self.errors.append(f"Device tree overlay file {overlay} not found")
-                continue
-            self.do(f'Copy dtoverlay {overlay}', f'cp {overlay} {overlays_path}/')
+                self.do(f'Move dtoverlay {overlay}', f'mv {overlay} {overlays_path}/')
+            else:
+                if not os.path.exists(overlay):
+                    self.errors.append(f"Device tree overlay file {overlay} not found")
+                    continue
+                self.do(f'Copy dtoverlay {overlay}', f'cp {overlay} {overlays_path}/')
 
         self.need_reboot = True
 

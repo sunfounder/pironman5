@@ -155,7 +155,7 @@ pipower5_settings = {
         'pipower5',
     ],
     'run_commands_before_install': {
-        'Install PiPower 5 driver': 'bash scripts/install_pipower5_device.sh',
+        'Install PiPower 5 driver': 'bash scripts/setup_pipower5.sh',
     },
     'dtoverlays': [
         'https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo'

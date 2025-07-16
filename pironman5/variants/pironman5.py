@@ -12,9 +12,10 @@ class Pironman5:
         "cpu_temperature",
         "gpu_temperature",
         "temperature_unit",
-        "restart_service",
         "clear_history",
         "delete_log_file",
+        'debug_level',
+        "restart_service",
         
         "oled",
         "oled_sleep",

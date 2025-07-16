@@ -1,5 +1,6 @@
 
 AVAILABLE_PAGES = []
+AVAILABLE_EMAIL_MODES = []
 
 def update_config_file(config, config_path):
     import json
@@ -15,8 +16,9 @@ def update_config_file(config, config_path):
         json.dump(current, f, indent=4)
 
 def main():
+    global AVAILABLE_PAGES, AVAILABLE_EMAIL_MODES
+
     from .variants import NAME, PERIPHERALS
-    
     import argparse
     from .pironman5 import Pironman5
     from .version import __version__
@@ -76,7 +78,7 @@ def main():
         AVAILABLE_PAGES = get_available_pages(PERIPHERALS)
         parser.add_argument("-oe", "--oled-enable", nargs='?', default='', help="OLED enable True/true/on/On/1 or False/false/off/Off/0")
         parser.add_argument("-or", "--oled-rotation", nargs='?', default=-1, type=int, choices=[0, 180], help="Set to rotate OLED display, 0, 180")
-        parser.add_argument("-op", "--oled-pages", nargs='*', default=[], help=f"OLED pages: {', '.join(AVAILABLE_PAGES)}")
+        parser.add_argument("-op", "--oled-pages", nargs='?', default=[], help=f"OLED pages: {', '.join(AVAILABLE_PAGES)}")
         if is_included(PERIPHERALS, "oled_sleep"):
             parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds")
     # vibration_switch
@@ -92,7 +94,18 @@ def main():
         parser.add_argument("-rmc2", "--rgb-matrix-color2", nargs='?', default='', help='RGB color in hex format without # (e.g. 00aabb)')
         parser.add_argument("-rmp", "--rgb-matrix-speed", nargs='?', default='', help="RGB speed 0-100")
         parser.add_argument("-rmb", "--rgb-matrix-brightness", nargs='?', default='', help="RGB brightness 0-100")
-    
+    # pipower5
+    if is_included(PERIPHERALS, "pipower5"):
+        from pipower5.email_sender import EmailModes
+        AVAILABLE_EMAIL_MODES = [i.value for i in EmailModes]
+        parser.add_argument("-seo", '--send-email-on', nargs='?', default=[], help=f"Send email on: {AVAILABLE_EMAIL_MODES}")
+        parser.add_argument("-set", '--send-email-to', nargs='?', default='', help="Email address to send email to")
+        parser.add_argument("-ss", '--smtp-server', nargs='?', default='', help="SMTP server")
+        parser.add_argument("-sp", '--smtp-port', nargs='?', default='', help="SMTP port")
+        parser.add_argument("-se", '--smtp-email', nargs='?', default='', help="SMTP email")
+        parser.add_argument("-spw", '--smtp-password', nargs='?', default='', help="SMTP password")
+        parser.add_argument("-ssu", '--smtp-use-tls', nargs='?', default='', help="SMTP use tls")
+
     # parse args
     # -----------------------------------------------------------
     args = parser.parse_args()
@@ -409,16 +422,19 @@ def main():
         # oled_pages
         if args.oled_pages != []:
             if args.oled_pages == None:
-                print(f"OLED pages: {', '.join(current_config['system']['oled_pages'])}")
+                pages = [f' - {page}' for page in current_config['system']['oled_pages']]
+                pages = '\n'.join(pages)
+                print("OLED pages:")
+                print(pages)
             else:
                 pages = [p.lower().strip().replace(',', '') for p in args.oled_pages]
                 for page in pages:
-                    page = page.lower().strip().replace(',', '')
                     if page not in AVAILABLE_PAGES:
                         print(f"Invalid value for OLED pages: '{page}', it should be {', '.join(AVAILABLE_PAGES)}")
                         quit()
                 new_sys_config['oled_pages'] = pages
                 print(f"Set OLED pages: {pages}")
+
     # Vibration switch settings
     # ----------------------------------------
     if is_included(PERIPHERALS, "vibration_switch"):
@@ -451,7 +467,9 @@ def main():
                 else:
                     print(f"Invalid value for Vibration switch pull up, it should be {', '.join(TRUE_LIST)} or {', '.join(FALSE_LIST)}")
                     quit()
-    # rgb_matrix
+
+    # RGB matrix settings
+    # ----------------------------------------
     if is_included(PERIPHERALS, "rgb_matrix"):
         # rgb_matrix_enable
         if args.rgb_matrix_enable != '':
@@ -536,7 +554,73 @@ def main():
                 new_sys_config['rgb_matrix_color2'] = args.rgb_matrix_color2
                 print(f"Set RGB Matrix color2: #{args.rgb_matrix_color2} ({r}, {g}, {b})")
 
-    # update config
+    # PiPower 5 settings
+    if is_included(PERIPHERALS, "pipower5"):
+        # send email on
+        if args.send_email_on != []:
+            if args.send_email_on == None:
+                send_email_on = [f' - {mode}' for mode in current_config['system']['send_email_on']]
+                send_email_on = '\n'.join(send_email_on)
+                print("Send email on:")
+                print(send_email_on)
+            else:
+                send_email_on = [p.replace(',', '') for p in args.send_email_on]
+                for mode in send_email_on:
+                    if mode not in AVAILABLE_EMAIL_MODES:
+                        print(f"Invalid value for Send email on: '{mode}', it should be {', '.join(AVAILABLE_EMAIL_MODES)}")
+                        quit()
+                new_sys_config['send_email_on'] = send_email_on
+                print(f"Set Send email on: {send_email_on}")
+        # send email to
+        if args.send_email_to != '':
+            if args.send_email_to == None:
+                print(f"Send email to: {current_config['system']['send_email_to']}")
+            else:
+                new_sys_config['send_email_to'] = args.send_email_to
+                print(f"Set Send email to: {args.send_email_to}")
+        # SMTP server
+        if args.smtp_server != '':
+            if args.smtp_server == None:
+                print(f"SMTP server: {current_config['system']['smtp_server']}")
+            else:
+                new_sys_config['smtp_server'] = args.smtp_server
+                print(f"Set SMTP server: {args.smtp_server}")
+        # SMTP port
+        if args.smtp_port != '':
+            if args.smtp_port == None:
+                print(f"SMTP port: {current_config['system']['smtp_port']}")
+            else:
+                new_sys_config['smtp_port'] = int(args.smtp_port)
+                print(f"Set SMTP port: {args.smtp_port}")
+        # SMTP user
+        if args.smtp_email != '':
+            if args.smtp_email == None:
+                print(f"SMTP user: {current_config['system']['smtp_email']}")
+            else:
+                new_sys_config['smtp_email'] = args.smtp_email
+                print(f"Set SMTP user: {args.smtp_email}")
+        # SMTP password
+        if args.smtp_password != '':
+            if args.smtp_password == None:
+                print(f"SMTP password: {current_config['system']['smtp_password']}")
+            else:
+                new_sys_config['smtp_password'] = args.smtp_password
+                print(f"Set SMTP password: {args.smtp_password}")
+        # SMTP use TLS
+        if args.smtp_use_tls != '':
+            if args.smtp_use_tls == None:
+                print(f"SMTP use TLS: {current_config['system']['smtp_use_tls']}")
+            else:
+                if args.smtp_use_tls in TRUE_LIST:
+                    args.smtp_use_tls = True
+                elif args.smtp_use_tls in FALSE_LIST:
+                    args.smtp_use_tls = False
+                else:
+                    print(f"Invalid value for SMTP use TLS, it should be in {', '.join(TRUE_LIST + FALSE_LIST)}")
+                    quit()
+                print(f"Set SMTP use TLS: {args.smtp_use_tls}")
+
+    # Update settings
     # ----------------------------------------
     new_config = {
         'system': new_sys_config,

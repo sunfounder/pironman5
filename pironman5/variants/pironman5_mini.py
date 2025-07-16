@@ -12,9 +12,10 @@ class Pironman5Mini:
         "cpu_temperature",
         "gpu_temperature",
         "temperature_unit",
-        "restart_service",
         "clear_history",
         "delete_log_file",
+        'debug_level',
+        "restart_service",
         
         "ws2812",
         "pwm_fan_speed",
