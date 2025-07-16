@@ -55,6 +55,7 @@ class Pironman5UPS:
     }
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
+        'database_retention_days': 30,
         'temperature_unit': 'C',
         'oled_enable': True,
         'oled_rotation': 0,
@@ -87,7 +88,7 @@ class Pironman5UPS:
         'smtp_password': '',
         'smtp_server': '',
         'smtp_port': 465,
-        'smtp_use_tls': False
+        'smtp_use_tls': False,
     }
     DT_OVERLAYS = []
 

@@ -26,6 +26,7 @@ class Pironman5Mini:
     EVENT_MAP = {}
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
+        'database_retention_days': 30,
         'temperature_unit': 'C',
         'rgb_enable': True,
         'rgb_led_count': 4,

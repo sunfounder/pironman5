@@ -36,6 +36,7 @@ class Pironman5:
     }
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
+        'database_retention_days': 30,
         "temperature_unit": "C",
         "oled_enable": True,
         "oled_rotation": 0,
