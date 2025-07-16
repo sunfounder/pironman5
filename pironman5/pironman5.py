@@ -130,9 +130,13 @@ class Pironman5:
 
     @log_error
     def update_config(self, config):
+        patch = {}
         if 'debug_level' in config['system']:
-            self.set_debug_level(config['system']['debug_level'])
-        patch = self.pm_auto.update_config(config['system'])
+            level = config['system']['debug_level'].upper()
+            self.set_debug_level(level)
+            patch['debug_level'] = level
+        pm_auto_patch = self.pm_auto.update_config(config['system'])
+        patch.update(pm_auto_patch)
         self.log.debug(f"Update config: {patch}")
         self.config['system'].update(patch)
         with open(self.config_path, 'w') as f:

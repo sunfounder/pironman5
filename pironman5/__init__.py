@@ -101,7 +101,7 @@ def main():
         parser.add_argument("-seo", '--send-email-on', nargs='?', default=[], help=f"Send email on: {AVAILABLE_EMAIL_MODES}")
         parser.add_argument("-set", '--send-email-to', nargs='?', default='', help="Email address to send email to")
         parser.add_argument("-ss", '--smtp-server', nargs='?', default='', help="SMTP server")
-        parser.add_argument("-sp", '--smtp-port', nargs='?', default='', help="SMTP port")
+        parser.add_argument("-smp", '--smtp-port', nargs='?', default='', help="SMTP port")
         parser.add_argument("-se", '--smtp-email', nargs='?', default='', help="SMTP email")
         parser.add_argument("-spw", '--smtp-password', nargs='?', default='', help="SMTP password")
         parser.add_argument("-ssu", '--smtp-use-tls', nargs='?', default='', help="SMTP use tls")
