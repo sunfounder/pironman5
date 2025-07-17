@@ -3,7 +3,7 @@ set -euo pipefail
 trap 'echo "Error occurred. Exiting..." >&2; exit 1' ERR
 
 # Check if argument exists before accessing \$1
-if [ \$# -ge 1 ] && [ "\$1" == "--uninstall" ]; then
+if [ $# -ge 1 ] && [ "$1" == "--uninstall" ]; then
     echo "Uninstalling PiPower 5 driver"
     rm -rf /lib/modules/$(uname -r)/kernel/drivers/misc/pipower5_driver.ko
     rm -rf /etc/modules-load.d/pipower5_driver.conf
