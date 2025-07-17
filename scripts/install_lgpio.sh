@@ -3,6 +3,11 @@
 set -euo pipefail
 trap 'echo "Error occurred. Exiting..." >&2; exit 1' ERR
 
+# Check if argument exists before accessing \$1
+if [ \$# -ge 1 ] && [ "\$1" == "--uninstall" ]; then
+  exit 0
+fi
+
 echo "Installing LGPIO"
 
 # Check if LGPIO is already installed

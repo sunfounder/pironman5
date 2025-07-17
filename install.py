@@ -15,10 +15,10 @@ settings = {
     #     'curl', # for influxdb key download
     # ],
 
-    # - Before install script, default to {}
-    # 'run_commands_before_install': {
-    #     'Install LGPIO': 'bash scripts/install_lgpio.sh',
-    # },
+    # - Before install scripts, default to []
+    # 'run_scripts_before_install': [
+    #     "install_lgpio.sh",
+    # ],
 
     # - Install from apt
     # 'apt_dependencies': [
@@ -97,10 +97,10 @@ oled_settings = {
 }
 
 gpio_settings = {
-    # - Before install script, default to {}
-    'run_commands_before_install': {
-        'Install LGPIO': 'bash scripts/install_lgpio.sh',
-    },
+    # - Before install scripts, default to []
+    'run_scripts_before_install': [
+        "install_lgpio.sh",
+    ],
 
     # - Install from apt
     'apt_dependencies': [
@@ -115,12 +115,14 @@ gpio_settings = {
 }
 
 pi5_pwr_btn_settings = {
+    # - Install from pip
     'pip_dependencies': [
         'evdev',
     ],
 }
 
 rgb_matrix_settings = {
+    # - Install from pip
     'pip_dependencies': [
         'smbus2',
         'numpy',
@@ -128,35 +130,39 @@ rgb_matrix_settings = {
 }
 
 dashboard_settings = {
+    # - Build required apt dependencies, default to []
     'build_dependencies': [
         'curl', # for influxdb key download
     ],
-    'run_commands_before_install': {
-        # download influxdb key and add to trusted key list https://docs.influxdata.com/influxdb/v2/install/?t=Linux
-        'Download influxdb key': 'curl --silent --location -O https://repos.influxdata.com/influxdata-archive.key',
-        'Setup influxdb install source': 'echo "943666881a1b8d9b849b74caebf02d3465d6beb716510d86a39f6c8e8dac7515  influxdata-archive.key" | sha256sum --check - && cat influxdata-archive.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/influxdata-archive.gpg > /dev/null && echo "deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive.gpg] https://repos.influxdata.com/debian stable main" | tee /etc/apt/sources.list.d/influxdata.list',
-        'Cleanup influxdata-achive.key': 'rm influxdata-archive.key',
-    },
+    # - Before install scripts, default to []
+    'run_scripts_before_install': [
+        "setup_influxdb.sh",
+    ],
+    # - Install from apt
     'apt_dependencies': [
         'influxdb', # for pm_dashboard
         'lsof', # for pm_dashboard
     ],
     'python_source': {
-        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.3.10',
+        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.3.11',
     },
 }
 
 pipower5_settings = {
+    # Install python packages from source
     'python_source': {
         'pipower5': 'git+https://github.com/sunfounder/pipower5.git@1.2.0',
         'spc': 'git+https://github.com/sunfounder/spc.git',
     },
+    # Add symbolic links
     'symlinks': [
         'pipower5',
     ],
-    'run_commands_before_install': {
-        'Install PiPower 5 driver': 'bash scripts/setup_pipower5.sh',
-    },
+    # Before install scripts, default to []
+    'run_scripts_before_install': [
+        "setup_pipower5.sh",
+    ],
+    # - Copy device tree overlay to /boot/overlays
     'dtoverlays': [
         'https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo'
     ],

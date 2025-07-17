@@ -59,6 +59,7 @@ class Pironman5:
         log.info(f"")
         log.info(f"{'#'*60}")
         log.debug(f"Config path: {CONFIG_PATH}")
+        log.info(f"Pironman5 Start")
 
         if 'enable_history' in self.config['system']:
             _p = set(self.peripherals)
@@ -79,21 +80,21 @@ class Pironman5:
             'version': pironman5_version,
             'app_name': APP_NAME,
         }
-        self.log.debug(f"Pironman5 version: {pironman5_version}")
-        self.log.debug(f"Variant: {NAME} {PRODUCT_VERSION}")
+        self.log.info(f"Pironman5 version: {pironman5_version}")
+        self.log.info(f"Variant: {NAME} {PRODUCT_VERSION}")
 
         _config_json = json.dumps(self.config, indent=4)
-        self.log.debug(f"Config:")
+        self.log.info(f"Config:")
         for line in _config_json.splitlines():
-            self.log.debug(line)
+            self.log.info(line)
         _device_info_json = json.dumps(device_info, indent=4)
-        self.log.debug(f"Device info:")
+        self.log.info(f"Device info:")
         for line in _device_info_json.splitlines():
-            self.log.debug(line)
+            self.log.info(line)
 
-        self.log.debug(f"PM_Auto version: {pm_auto_version}")
+        self.log.info(f"PM_Auto version: {pm_auto_version}")
         if PMDashboard is not None:
-            self.log.debug(f"PM_Dashboard version: {pm_dashboard_version}")
+            self.log.info(f"PM_Dashboard version: {pm_dashboard_version}")
 
         self.pm_auto = PMAuto(self.config['system'],
                               peripherals=self.peripherals,

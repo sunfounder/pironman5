@@ -126,7 +126,7 @@ class SF_Installer():
             self.log_dir = log_dir
 
         self.build_dependencies = set()
-        self.before_install_commands = {}
+        self.before_install_scripts = set()
         self.custom_apt_dependencies = set()
         self.custom_pip_dependencies = set()
         self.python_source = {}
@@ -187,8 +187,8 @@ class SF_Installer():
     def update_settings(self, settings):
         if 'build_dependencies' in settings:
             self.build_dependencies.update(settings['build_dependencies'])
-        if 'run_commands_before_install' in settings:
-            self.before_install_commands.update(settings['run_commands_before_install'])
+        if 'run_scripts_before_install' in settings:
+            self.before_install_scripts.update(settings['run_scripts_before_install'])
         if 'apt_dependencies' in settings:
             self.custom_apt_dependencies.update(settings['apt_dependencies'])
         if 'pip_dependencies' in settings:
@@ -316,13 +316,12 @@ class SF_Installer():
         self.do(f'Install build dependencies: {deps}',
                 f'apt-get install -y {deps}')
 
-    def run_commands_before_install(self):
-        if len(self.before_install_commands) == 0:
+    def run_scripts_before_install(self):
+        if len(self.before_install_scripts) == 0:
             return
-        print("Run commands before install...")
-        for name in self.before_install_commands:
-            command = self.before_install_commands[name]
-            self.do(f'Run command before install: {name}', f'{command}')
+        print("Run scripts before install...")
+        for script in self.before_install_scripts:
+            self.do(f'Run scripts before install: {script}', f'bash scripts/{script}')
 
     def install_apt_dep(self):
         if ('no_dep' in self.args and self.args.no_dep) or \
@@ -442,6 +441,21 @@ class SF_Installer():
         self.do('Change work directory owner', f'chown -R {self.user}:{self.user} {self.work_dir}')
 
     # Uninstall Steps:
+    def remove_symlinks(self):
+        if len(self.symlinks) == 0:
+            return
+        print("Remove symlinks...")
+        for link in self.symlinks:
+            self.do(f'Remove symbolic link: {link}',
+                    f'rm -f /usr/local/bin/{link}')
+
+    def uninstall_scripts(self):
+        if len(self.before_install_scripts) == 0:
+            return
+        print("Uninstall scripts...")
+        for script in self.before_install_scripts:
+            self.do(f'Uninstall script: {script}', f'bash scripts/{script} --uninstall')
+
     def remove_auto_start(self):
         if len(self.service_files) == 0 and len(self.bin_files) == 0:
             return
@@ -485,7 +499,7 @@ class SF_Installer():
 
     def remove_logs(self):
         print("Remove logs...")
-        self.do('Remove logs', f'rm -r {self.log_dir}')
+        self.do('Remove logs', f'rm -r {self.log_dir}', ignore_error=True)
 
     def reboot_prompt(self):
         print("\033[1;32mWhether to reboot for the changes to take effect(Y/N): \033[0m", end='')
@@ -509,7 +523,7 @@ class SF_Installer():
         print(f"Version: {self.version}")
         print(" ")
         self.install_build_dep()
-        self.run_commands_before_install()
+        self.run_scripts_before_install()
         self.install_apt_dep()
         self.create_working_dir()
         self.install_pip_dep()
@@ -525,6 +539,8 @@ class SF_Installer():
 
     def uninstall(self):
         print(f"Uninstall for {self.friendly_name}")
+        self.remove_symlinks()
+        self.uninstall_scripts()
         self.remove_auto_start()
         self.remove_work_dir()
         self.remove_dtoverlay()
