@@ -45,6 +45,7 @@ class Pironman5UPS:
         'shutdown_percentage',
         'default_on',
         'power-failure-simulation',
+        'send_email',
     ]
     EVENT_MAP = {
         'pipower5_button_click': 'oled_wake_page_next',
