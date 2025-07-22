@@ -19,11 +19,11 @@
 
 * Raspberry Pi 5 
 
-    The Pironman 5 is fully compatible with the Raspberry Pi 5.
+    The Pironman 5 MAX is fully compatible with the Raspberry Pi 5.
 
 * 5V/5A Power Adapter
 
-    A 5V/5A power adapter is required to power the Pironman 5 and its components.
+    A 5V/5A power adapter is required to power the Pironman 5 MAX and its components.
 
 * Micro SD Card
  
@@ -33,7 +33,7 @@
 
 * M.2 NVMe SSD
 
-    The Pironman 5 features an NVMe PIP with two M.2 SSD connectors, 
+    The Pironman 5 MAX features an NVMe PIP with two M.2 SSD connectors, 
     accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. 
     The connection is certified for Gen 2.0 speeds (5 GT/sec).
 
@@ -43,8 +43,8 @@
     
 * HDMI Cable
 
-    The Raspberry Pi 5's HDMI ports have been adapted to standard HDMI Type A interfaces via a USB HDMI adapter. Therefore, a standard HDMI to HDMI cable is needed to connect the Pironman 5 to a display.
+    The Raspberry Pi 5's HDMI ports have been adapted to standard HDMI Type A interfaces via a USB HDMI adapter. Therefore, a standard HDMI to HDMI cable is needed to connect the Pironman 5 MAX to a display.
 
 * Mouse & Keyboard
 
-    Any USB port on the Pironman 5 can be used to connect a wired keyboard and mouse, or a USB Bluetooth receiver for wireless peripherals.
+    Any USB port on the Pironman 5 MAX can be used to connect a wired keyboard and mouse, or a USB Bluetooth receiver for wireless peripherals.

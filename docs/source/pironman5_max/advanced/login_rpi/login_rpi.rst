@@ -30,7 +30,7 @@ Having a screen attached to your Raspberry Pi makes it easier to interact with t
 
 **Required Components**
 
-* Pironman 5
+* Pironman 5 MAX
 * Power Adapter
 * Micro SD card or NVMe SSD with pre-installed Raspberry Pi OS
 * Monitor Power Adapter
@@ -41,13 +41,13 @@ Having a screen attached to your Raspberry Pi makes it easier to interact with t
 
 **Steps**
 
-#. Insert the Micro SD card into the Pironman 5.
+#. Insert the Micro SD card into the Pironman 5 MAX.
 
-#. Connect the Mouse and Keyboard to the USB ports of the Pironman 5.
+#. Connect the Mouse and Keyboard to the USB ports of the Pironman 5 MAX.
 
-#. Use the HDMI cable to connect the monitor to the HDMI port of the Pironman 5. Make sure the monitor is connected to a power source and is turned on.
+#. Use the HDMI cable to connect the monitor to the HDMI port of the Pironman 5 MAX. Make sure the monitor is connected to a power source and is turned on.
 
-#. Power up the Pironman 5 using the power adapter. You should see the Raspberry Pi OS desktop appear on the monitor shortly.
+#. Power up the Pironman 5 MAX using the power adapter. You should see the Raspberry Pi OS desktop appear on the monitor shortly.
 
    .. image:: img/bookwarm.png
       :width: 90%
@@ -66,15 +66,15 @@ For those who prefer a graphical interface, using a remote desktop application l
 
 **Required Components**
 
-* Pironman 5 
+* Pironman 5 MAX 
 * Power Adapter
 * Micro SD card or NVMe SSD with pre-installed Raspberry Pi OS
 
 Steps:
 
-#. Insert the Micro SD card into the Pironman 5.
+#. Insert the Micro SD card into the Pironman 5 MAX.
 
-#. Connect the Pironman 5 to a power source using the power adapter.
+#. Connect the Pironman 5 MAX to a power source using the power adapter.
 
 #. For detailed tutorials on setting up remote access depending on your computer's operating system, see the following sections:
 

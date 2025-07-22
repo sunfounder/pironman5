@@ -17,7 +17,7 @@
 4. Set up or Install Software
 ================================================
 
-Now that the system has been written to either the Micro SD or NVMe SSD, you can insert them into the Pironman 5 slot. Then press the power button to turn on the device.
+Now that the system has been written to either the Micro SD or NVMe SSD, you can insert them into the Pironman 5 MAX slot. Then press the power button to turn on the device.
 
 After powering on, you will see the various power LEDs lit up, but the OLED screen, RGB LEDs, and RGB fans (the two fans on the side) will not be operational yet, as they need to be configured. If there is a screen garbling issue, please ignore it for now; it will be resolved after configuration.
 

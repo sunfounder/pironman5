@@ -17,7 +17,7 @@
 Copy OS from Micro SD to NVMe SSD
 ==================================================================
 
-If you have an NVMe SSD but lack an adapter to connect it to your computer, you can opt for a third approach: initially install the system on your Micro SD card. After the Pironman 5 successfully boots up, you can then transfer the system from your Micro SD card to your NVMe SSD.
+If you have an NVMe SSD but lack an adapter to connect it to your computer, you can opt for a third approach: initially install the system on your Micro SD card. After the Pironman 5 MAX successfully boots up, you can then transfer the system from your Micro SD card to your NVMe SSD.
 
 * First, you need to :ref:`max_install_os_sd_rpi`.
 * Then, boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
@@ -49,16 +49,16 @@ By default the PCIe connector is not enabled.
   
     dtparam=nvme
 
-* The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec) if you add the following lines to your ``/boot/firmware/config.txt``.
+.. * The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec) if you add the following lines to your ``/boot/firmware/config.txt``.
 
-  .. code-block:: shell
+..   .. code-block:: shell
   
-    # Force Gen 3.0 speeds
-    dtparam=pciex1_gen=3
+..     # Force Gen 3.0 speeds
+..     dtparam=pciex1_gen=3
   
-  .. warning::
+..   .. warning::
   
-    The Raspberry Pi 5 is not certified for Gen 3.0 speeds, and connections to PCIe devices at these speeds may be unstable.
+..     The Raspberry Pi 5 is not certified for Gen 3.0 speeds, and connections to PCIe devices at these speeds may be unstable.
 
 *  You will need to disable the PCIe boot delay so that the Raspberry Pi can detect the NVMe drive behind the PCIe Switch at startup. Add the following line to ``/boot/firmware/config.txt`` ：
 

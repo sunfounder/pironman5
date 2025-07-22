@@ -23,7 +23,7 @@ and the power and HDMI ports have been relocated to the same side as the Raspber
 enhancing the aesthetics of the wiring. Equipped with three fans and a tower-style heatsink, 
 it greatly assists in reducing the high temperatures of the Raspberry Pi 5. 
 
-The case integrates a PCIe Gen 2 Switch with two M.2 M key PCIe slots supporting 2230, 2242, 2260, and 2280, allowing the installation of two NVMe Gen2 SSDs or AI accelerators. 
+The case integrates a PCIe Gen 2 Switch with two M.2 M key PCIe slots supporting 2230, 2242, 2260, and 2280, allowing the installation of two NVMe Gen2 SSDs or AI accelerators. (But Gen3 is not supported.)
 Users can set up two NVMe SSDs in software RAID 0 or RAID 1 for NAS configurations; 
 combine one AI accelerator and one NVMe SSD to boost AI performance; 
 or use two AI accelerators for even stronger AI capabilities. 

@@ -227,7 +227,7 @@ Two right-angle header connectors extend the Raspberry Pi's GPIO, but note that 
   :widths: 25 25
   :header-rows: 1
 
-  * - Pironman 5
+  * - Pironman 5 MAX
     - Raspberry Pi 5
   * - IR Receiver(Optional)
     - GPIO13
