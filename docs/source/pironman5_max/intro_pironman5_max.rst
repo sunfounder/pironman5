@@ -40,6 +40,7 @@ Pironman 5 Max は、当社のPironman Raspberry Piケースシリーズにお�
     control/control_pironman5
     advanced/advanced
     compitable_nvme_ssd
+    combine_with_lcd
     faq
 
 **Parameters**
