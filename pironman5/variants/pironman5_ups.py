@@ -58,6 +58,7 @@ class Pironman5UPS:
     }
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
+        'debug_level': 'INFO',
         'database_retention_days': 30,
         'temperature_unit': 'C',
         'oled_enable': True,

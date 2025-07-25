@@ -107,7 +107,6 @@ class Pironman5:
         else:
             self.pm_dashboard = PMDashboard(device_info=device_info,
                                             database=ID,
-                                            spc_enabled=True if 'spc' in self.peripherals else False,
                                             config=self.config,
                                             log=log)
             self.pm_dashboard.set_read_data(self.pm_auto.read)
