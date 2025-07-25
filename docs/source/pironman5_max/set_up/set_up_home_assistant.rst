@@ -15,7 +15,7 @@
 Home Assistant のセットアップ
 ============================================
 
-Home Assistant をインストール済みの場合、Pironman 5 を動作させるには、必要なアドオンを追加して起動する必要があります。
+Home Assistant をインストール済みの場合、Pironman 5 MAX を動作させるには、必要なアドオンを追加して起動する必要があります。
 
 .. note::
 
@@ -24,7 +24,7 @@ Home Assistant をインストール済みの場合、Pironman 5 を動作させ
 1. Home Assistant にログイン
 ------------------------------
 
-* Pironman 5 を起動後、Ethernet ケーブルを直接接続することを推奨します。PC のブラウザで ``homeassistant.local:8123`` にアクセスすると、Home Assistant の画面が開きます。
+* Pironman 5 MAX を起動後、Ethernet ケーブルを直接接続することを推奨します。PC のブラウザで ``homeassistant.local:8123`` にアクセスすると、Home Assistant の画面が開きます。
 
   .. image:: img/home_login.png
    :width: 90%
@@ -44,7 +44,7 @@ Home Assistant をインストール済みの場合、Pironman 5 を動作させ
 2. SunFounder アドオンリポジトリの追加
 ----------------------------------------------------
 
-Pironman 5 の機能は、Home Assistant のアドオンとして提供されます。まずは **SunFounder** のアドオンリポジトリを追加します。
+Pironman 5 MAX の機能は、Home Assistant のアドオンとして提供されます。まずは **SunFounder** のアドオンリポジトリを追加します。
 
 #. **設定** → **アドオン** を開きます。
 
@@ -74,7 +74,7 @@ Pironman 5 の機能は、Home Assistant のアドオンとして提供されま
 3. **Pi Config Wizard** アドオンのインストール
 ------------------------------------------------------
 
-**Pi Config Wizard** は、Pironman 5 に必要な I2C や SPI の設定を有効化するためのアドオンです。設定後は削除しても構いません。
+**Pi Config Wizard** は、Pironman 5 MAX に必要な I2C や SPI の設定を有効化するためのアドオンです。設定後は削除しても構いません。
 
 #. SunFounder のアドオンリストから **Pi Config Wizard** を見つけ、クリックして開きます。
 
@@ -132,10 +132,10 @@ Pironman 5 の機能は、Home Assistant のアドオンとして提供されま
     * アドオンが起動していない場合は **START** をクリック。
     * 起動後に **OPEN WEB UI** をクリックし、 **MOUNT** を実行して I2C および SPI の状態を確認してください。
 
-4. **Pironman 5** アドオンのインストール
+4. **Pironman 5 MAX** アドオンのインストール
 ---------------------------------------------
 
-いよいよ **Pironman 5** アドオンをインストールします。
+いよいよ **Pironman 5 MAX** アドオンをインストールします。
 
 #. **Settings** -> **Add-ons** を開きます。
 
@@ -162,7 +162,7 @@ Pironman 5 の機能は、Home Assistant のアドオンとして提供されま
    .. image:: img/home_pironman5_max_addon_start.png
       :width: 90%
 
-#. 次に **OPEN WEB UI** をクリックして Pironman 5 の Web ページを開きます。Web UI をサイドバーに表示するオプションを有効にすると、Home Assistant の左サイドバーからも Pironman 5 ページにアクセスできます。
+#. 次に **OPEN WEB UI** をクリックして Pironman 5 MAX の Web ページを開きます。Web UI をサイドバーに表示するオプションを有効にすると、Home Assistant の左サイドバーからも Pironman 5 MAX ページにアクセスできます。
 
    .. image:: img/home_pironman5_max_webui.png
       :width: 90%
@@ -174,4 +174,4 @@ Pironman 5 の機能は、Home Assistant のアドオンとして提供されま
 
 .. note::
 
-    Pironman 5 Web ページのより詳しい使い方については、:ref:`max_view_control_dashboard` を参照してください。
+    Pironman 5 MAX Web ページのより詳しい使い方については、:ref:`max_view_control_dashboard` を参照してください。

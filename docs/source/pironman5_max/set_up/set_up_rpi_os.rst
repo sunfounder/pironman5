@@ -17,7 +17,7 @@
 Raspberry Pi/Ubuntu/Kali/Homebridge OS でのセットアップ
 ============================================================
 
-Raspberry Pi に Raspberry Pi OS、Ubuntu、Kali Linux、または Homebridge をインストールしている場合、Pironman 5 の設定はコマンドラインで行う必要があります。詳細な手順は以下をご覧ください：
+Raspberry Pi に Raspberry Pi OS、Ubuntu、Kali Linux、または Homebridge をインストールしている場合、Pironman 5 MAX の設定はコマンドラインで行う必要があります。詳細な手順は以下をご覧ください：
 
 .. note::
 

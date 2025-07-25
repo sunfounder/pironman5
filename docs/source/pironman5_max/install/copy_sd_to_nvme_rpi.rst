@@ -17,7 +17,7 @@
 Micro SD から NVMe SSD へ OS をコピーする
 ==================================================================
 
-NVMe SSD を持っているけれどパソコンに接続するアダプタがない場合は、次の方法が使えます。まず Micro SD カードにシステムをインストールし、Pironman 5 の起動後にシステムを NVMe SSD へコピーする手順です。
+NVMe SSD を持っているけれどパソコンに接続するアダプタがない場合は、次の方法が使えます。まず Micro SD カードにシステムをインストールし、Pironman 5 MAX の起動後にシステムを NVMe SSD へコピーする手順です。
 
 * まず、:ref:`max_install_os_sd_rpi` を完了してください。
 * その後、Raspberry Pi を起動してログインします。ログイン方法が分からない場合は、Raspberry Pi 公式サイト（|link_rpi_get_start|）をご参照ください。
@@ -49,16 +49,16 @@ NVMe SSD を持っているけれどパソコンに接続するアダプタが�
 
     dtparam=nvme
 
-* この接続は Gen 2.0（5 GT/sec）に対応していますが、以下の設定で Gen 3.0（10 GT/sec）に強制できます。
+.. * この接続は Gen 2.0（5 GT/sec）に対応していますが、以下の設定で Gen 3.0（10 GT/sec）に強制できます。
 
-  .. code-block:: shell
+..   .. code-block:: shell
 
-    # Gen 3.0 に強制設定
-    dtparam=pciex1_gen=3
+..     # Gen 3.0 に強制設定
+..     dtparam=pciex1_gen=3
 
-  .. warning::
+..   .. warning::
 
-    Raspberry Pi 5 は Gen 3.0 に公式対応しておらず、不安定になる可能性があります。
+..     Raspberry Pi 5 は Gen 3.0 に公式対応しておらず、不安定になる可能性があります。
 
 * 起動時に PCIe スイッチ経由で NVMe ドライブを認識させるため、PCIe 起動遅延を無効にします。
 

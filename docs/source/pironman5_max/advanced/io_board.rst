@@ -222,7 +222,7 @@ Raspberry Pi のGPIOを拡張するL字型ピンヘッダー2列を装備。た�
   :widths: 25 25
   :header-rows: 1
 
-  * - Pironman 5
+  * - Pironman 5 MAX
     - Raspberry Pi 5
   * - 赤外線受信機（オプション）
     - GPIO13

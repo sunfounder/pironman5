@@ -51,7 +51,7 @@ Batocera.linux OSをインストールした場合、SSH経由でこのシステ
 
       reboot
 
-#. 再起動後、自動的に ``pironman5.service`` が起動します。Pironman 5の主な構成は以下の通りです：
+#. 再起動後、自動的に ``pironman5.service`` が起動します。Pironman 5 MAXの主な構成は以下の通りです：
 
    * OLEDスクリーンには、CPU・RAM・ディスク使用量・CPU温度・Raspberry PiのIPアドレスが表示されます。
    * 4つのWS2812 RGB LEDは、青色のブリージングモードで点灯します。
@@ -60,4 +60,4 @@ Batocera.linux OSをインストールした場合、SSH経由でこのシステ
 
      RGBファンは、温度が60°Cを超えるまで回転しません。起動温度を変更したい場合は、:ref:`max_cc_control_fan` を参照してください。
 
-Pironman 5にディスプレイ、ゲームコントローラー、ヘッドホンなどを接続し、ゲームの世界に没入しましょう。
+Pironman 5 MAXにディスプレイ、ゲームコントローラー、ヘッドホンなどを接続し、ゲームの世界に没入しましょう。

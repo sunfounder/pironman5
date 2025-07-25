@@ -18,9 +18,9 @@
 PWMファン
 -----------
 
-Pironman 5 に搭載された PWM ファンは、Raspberry Pi システムによって制御されています。
+Pironman 5 MAX に搭載された PWM ファンは、Raspberry Pi システムによって制御されています。
 
-Raspberry Pi 5 を高負荷で運用する際の冷却対策として、Pironman 5 にはスマートな冷却システムが採用されています。メインの PWM ファンに加え、補助として2基の RGB ファンを搭載。冷却設計は Raspberry Pi 5 の熱管理機構と密接に連携しています。
+Raspberry Pi 5 を高負荷で運用する際の冷却対策として、Pironman 5 MAX にはスマートな冷却システムが採用されています。メインの PWM ファンに加え、補助として2基の RGB ファンを搭載。冷却設計は Raspberry Pi 5 の熱管理機構と密接に連携しています。
 
 PWM ファンは Raspberry Pi 5 の温度に応じて動作します：
 
@@ -44,7 +44,7 @@ PWM ファンは Raspberry Pi 5 の温度に応じて動作します：
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-Pironman 5 において PWM ファンは、特に高負荷時の安定した動作を確保する上で重要な冷却コンポーネントです。Raspberry Pi 5 のパフォーマンスを最大限に引き出すための信頼性ある設計です。
+Pironman 5 MAX において PWM ファンは、特に高負荷時の安定した動作を確保する上で重要な冷却コンポーネントです。Raspberry Pi 5 のパフォーマンスを最大限に引き出すための信頼性ある設計です。
 
 RGBファン
 -------------------

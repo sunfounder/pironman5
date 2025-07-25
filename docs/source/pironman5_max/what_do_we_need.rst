@@ -19,11 +19,11 @@
 
 * Raspberry Pi 5
 
-    Pironman 5 は Raspberry Pi 5 に完全対応しています。
+    Pironman 5 MAX は Raspberry Pi 5 に完全対応しています。
 
 * 5V/5A 電源アダプター
 
-    Pironman 5 およびその各種コンポーネントを動作させるには、5V/5A の電源アダプターが必要です。
+    Pironman 5 MAX およびその各種コンポーネントを動作させるには、5V/5A の電源アダプターが必要です。
 
 * Micro SDカード
 
@@ -33,7 +33,7 @@
 
 * M.2 NVMe SSD
 
-    Pironman 5 には NVMe PIP が搭載されており、2つの M.2 SSDスロットを備えています。  
+    Pironman 5 MAX には NVMe PIP が搭載されており、2つの M.2 SSDスロットを備えています。  
     対応サイズは 2230、2242、2260、2280 の4種類で、接続は Gen 2.0（5 GT/sec）に対応しています。
 
 * ディスプレイ
@@ -43,8 +43,8 @@
 * HDMIケーブル
 
     Raspberry Pi 5 のHDMIポートは、USB経由のHDMIアダプターによって標準HDMI Type Aに変換されています。  
-    そのため、Pironman 5 をディスプレイに接続するには、標準のHDMI - HDMIケーブルが必要です。
+    そのため、Pironman 5 MAX をディスプレイに接続するには、標準のHDMI - HDMIケーブルが必要です。
 
 * マウス＆キーボード
 
-    Pironman 5 のUSBポートに有線マウスやキーボードを接続するか、ワイヤレス機器用のUSB Bluetoothレシーバーを利用できます。
+    Pironman 5 MAX のUSBポートに有線マウスやキーボードを接続するか、ワイヤレス機器用のUSB Bluetoothレシーバーを利用できます。

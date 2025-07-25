@@ -30,7 +30,7 @@ Raspberry Pi にディスプレイを接続することで、システムとの�
 
 **必要な構成部品**
 
-* Pironman 5
+* Pironman 5 MAX
 * 電源アダプター
 * Raspberry Pi OS をインストール済みの Micro SD カードまたは NVMe SSD
 * モニター用電源アダプター
@@ -41,13 +41,13 @@ Raspberry Pi にディスプレイを接続することで、システムとの�
 
 **手順**
 
-#. Micro SD カードを Pironman 5 に挿入します。
+#. Micro SD カードを Pironman 5 MAX に挿入します。
 
-#. マウスとキーボードを Pironman 5 の USB ポートに接続します。
+#. マウスとキーボードを Pironman 5 MAX の USB ポートに接続します。
 
-#. HDMI ケーブルを使用してモニターと Pironman 5 の HDMI ポートを接続します。モニターの電源が入っていることを確認してください。
+#. HDMI ケーブルを使用してモニターと Pironman 5 MAX の HDMI ポートを接続します。モニターの電源が入っていることを確認してください。
 
-#. 電源アダプターを接続して Pironman 5 の電源を入れます。まもなくモニターに Raspberry Pi OS のデスクトップ画面が表示されるはずです。
+#. 電源アダプターを接続して Pironman 5 MAX の電源を入れます。まもなくモニターに Raspberry Pi OS のデスクトップ画面が表示されるはずです。
 
    .. image:: img/bookwarm.png
       :width: 90%
@@ -66,15 +66,15 @@ Raspberry Pi にディスプレイを接続することで、システムとの�
 
 **必要な構成部品**
 
-* Pironman 5 
+* Pironman 5 MAX 
 * 電源アダプター
 * Raspberry Pi OS をインストール済みの Micro SD カードまたは NVMe SSD
 
 **手順：**
 
-#. Micro SD カードを Pironman 5 に挿入します。
+#. Micro SD カードを Pironman 5 MAX に挿入します。
 
-#. 電源アダプターを接続し、Pironman 5 の電源を入れます。
+#. 電源アダプターを接続し、Pironman 5 MAX の電源を入れます。
 
 #. お使いのコンピューターの OS に応じたリモートアクセス設定については、以下の各章をご参照ください：
 

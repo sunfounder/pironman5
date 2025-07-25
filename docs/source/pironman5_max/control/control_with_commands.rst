@@ -17,7 +17,7 @@
 コマンドによる制御
 ========================================
 
-ダッシュボードを使って Pironman 5 の各種デバイスを操作するだけでなく、コマンドでも制御できます。
+ダッシュボードを使って Pironman 5 MAX の各種デバイスを操作するだけでなく、コマンドでも制御できます。
 
 .. note::
 
@@ -66,7 +66,7 @@
                           [-vu [VIBRATION_SWITCH_PULL_UP]] [-os [OLED_SLEEP_TIMEOUT]]
                           [{start,restart,stop}]
 
-  Pironman 5 command line interface
+  Pironman 5 MAX command line interface
 
   positional arguments:
     {start,restart,stop}  Command
