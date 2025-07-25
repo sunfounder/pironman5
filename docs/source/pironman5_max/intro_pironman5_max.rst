@@ -49,6 +49,7 @@ Zudem steht ein GPIO-Expander zur Verfügung, der den Funktionsumfang des Raspbe
     control/control_pironman5
     advanced/advanced
     compitable_nvme_ssd
+    toctree
     faq
 
 **Technische Daten**
