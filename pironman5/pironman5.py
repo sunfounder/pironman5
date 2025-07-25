@@ -98,6 +98,7 @@ class Pironman5:
 
         self.pm_auto = PMAuto(self.config['system'],
                               peripherals=self.peripherals,
+                              device_info=device_info,
                               event_map=EVENT_MAP,
                               log=log)
         if PMDashboard is None:
@@ -110,6 +111,8 @@ class Pironman5:
                                             config=self.config,
                                             log=log)
             self.pm_dashboard.set_read_data(self.pm_auto.read)
+            if 'send_email' in self.peripherals:
+                self.pm_dashboard.set_test_smtp(self.pm_auto.test_smtp)
             self.pm_dashboard.set_on_config_changed(self.update_config)
             self.pm_dashboard.set_on_restart_service(self.restart_service)
 
@@ -138,10 +141,11 @@ class Pironman5:
             patch['debug_level'] = level
         pm_auto_patch = self.pm_auto.update_config(config['system'])
         patch.update(pm_auto_patch)
-        self.log.debug(f"Update config: {patch}")
-        self.config['system'].update(patch)
-        with open(self.config_path, 'w') as f:
-            json.dump(self.config, f, indent=4)
+        if len(patch) > 0:
+            self.log.debug(f"Update config: {patch}")
+            self.config['system'].update(patch)
+            with open(self.config_path, 'w') as f:
+                json.dump(self.config, f, indent=4)
 
     @log_error
     def start(self):
