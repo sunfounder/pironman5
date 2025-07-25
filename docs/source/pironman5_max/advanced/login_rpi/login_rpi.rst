@@ -30,7 +30,7 @@ Tener una pantalla conectada a tu Raspberry Pi facilita la interacción directa 
 
 **Componentes necesarios**
 
-* Pironman 5  
+* Pironman 5 MAX  
 * Adaptador de corriente  
 * Tarjeta Micro SD o SSD NVMe con Raspberry Pi OS preinstalado  
 * Adaptador de corriente del monitor  
@@ -41,13 +41,13 @@ Tener una pantalla conectada a tu Raspberry Pi facilita la interacción directa 
 
 **Pasos**
 
-#. Inserta la tarjeta Micro SD en el Pironman 5.
+#. Inserta la tarjeta Micro SD en el Pironman 5 MAX.
 
-#. Conecta el ratón y el teclado a los puertos USB del Pironman 5.
+#. Conecta el ratón y el teclado a los puertos USB del Pironman 5 MAX.
 
-#. Utiliza el cable HDMI para conectar el monitor al puerto HDMI del Pironman 5. Asegúrate de que el monitor esté encendido y conectado a una fuente de alimentación.
+#. Utiliza el cable HDMI para conectar el monitor al puerto HDMI del Pironman 5 MAX. Asegúrate de que el monitor esté encendido y conectado a una fuente de alimentación.
 
-#. Enciende el Pironman 5 usando el adaptador de corriente. Deberías ver el escritorio de Raspberry Pi OS aparecer en el monitor en breve.
+#. Enciende el Pironman 5 MAX usando el adaptador de corriente. Deberías ver el escritorio de Raspberry Pi OS aparecer en el monitor en breve.
 
    .. image:: img/bookwarm.png
       :width: 90%
@@ -66,15 +66,15 @@ Si prefieres una interfaz gráfica, puedes usar una aplicación de escritorio re
 
 **Componentes necesarios**
 
-* Pironman 5  
+* Pironman 5 MAX  
 * Adaptador de corriente  
 * Tarjeta Micro SD o SSD NVMe con Raspberry Pi OS preinstalado  
 
 **Pasos**
 
-#. Inserta la tarjeta Micro SD en el Pironman 5.
+#. Inserta la tarjeta Micro SD en el Pironman 5 MAX.
 
-#. Conecta el Pironman 5 a una fuente de alimentación usando el adaptador.
+#. Conecta el Pironman 5 MAX a una fuente de alimentación usando el adaptador.
 
 #. Para tutoriales detallados sobre cómo configurar el acceso remoto según el sistema operativo de tu ordenador, consulta las siguientes secciones:
 

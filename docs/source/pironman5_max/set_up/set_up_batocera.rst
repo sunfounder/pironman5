@@ -51,7 +51,7 @@ Si ya has instalado el sistema operativo Batocera.linux, puedes iniciar sesión 
 
       reboot
 
-#. Al reiniciar, el servicio ``pironman5.service`` se iniciará automáticamente. Estas son las configuraciones principales de Pironman 5:
+#. Al reiniciar, el servicio ``pironman5.service`` se iniciará automáticamente. Estas son las configuraciones principales de Pironman 5 MAX:
 
    * La pantalla OLED mostrará el uso de CPU, RAM, disco, temperatura de la CPU y la dirección IP de la Raspberry Pi.
    * Cuatro LEDs RGB WS2812 se encenderán en color azul con efecto de respiración.
@@ -60,4 +60,4 @@ Si ya has instalado el sistema operativo Batocera.linux, puedes iniciar sesión 
 
      Los ventiladores RGB no girarán hasta que la temperatura alcance los 60°C. Para cambiar la temperatura de activación, consulta :ref:`max_cc_control_fan`.
 
-Ahora puedes conectar el Pironman 5 a una pantalla, controles de juego, auriculares y más, y sumergirte en tu mundo de juegos.
+Ahora puedes conectar el Pironman 5 MAX a una pantalla, controles de juego, auriculares y más, y sumergirte en tu mundo de juegos.

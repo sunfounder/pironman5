@@ -18,9 +18,9 @@ Fans
 Ventilador PWM
 -----------------
 
-El ventilador PWM del Pironman 5 es controlado por el sistema del Raspberry Pi.
+El ventilador PWM del Pironman 5 MAX es controlado por el sistema del Raspberry Pi.
 
-En cuanto a las soluciones de refrigeración para el Raspberry Pi 5, especialmente bajo cargas elevadas, el diseño del Pironman 5 incorpora un sistema de enfriamiento inteligente. Cuenta con un ventilador PWM principal y dos ventiladores RGB complementarios. Esta estrategia de enfriamiento está estrechamente integrada con el sistema de gestión térmica del Raspberry Pi 5.
+En cuanto a las soluciones de refrigeración para el Raspberry Pi 5, especialmente bajo cargas elevadas, el diseño del Pironman 5 MAX incorpora un sistema de enfriamiento inteligente. Cuenta con un ventilador PWM principal y dos ventiladores RGB complementarios. Esta estrategia de enfriamiento está estrechamente integrada con el sistema de gestión térmica del Raspberry Pi 5.
 
 El funcionamiento del ventilador PWM se basa en la temperatura del Raspberry Pi 5:
 
@@ -44,7 +44,7 @@ Esta relación temperatura/velocidad también se aplica al disminuir la temperat
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-En el Pironman 5, el ventilador PWM es un componente clave para mantener temperaturas óptimas de funcionamiento, especialmente durante tareas intensivas, garantizando que el Raspberry Pi 5 opere de forma eficiente y confiable.
+En el Pironman 5 MAX, el ventilador PWM es un componente clave para mantener temperaturas óptimas de funcionamiento, especialmente durante tareas intensivas, garantizando que el Raspberry Pi 5 opere de forma eficiente y confiable.
 
 Ventiladores RGB
 ---------------------

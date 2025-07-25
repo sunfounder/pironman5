@@ -25,7 +25,7 @@ Equipado con tres ventiladores y un disipador estilo torre,
 el sistema ofrece una excelente refrigeración para reducir eficazmente la temperatura de la Raspberry Pi 5.
 
 La carcasa integra un conmutador PCIe Gen 2 con dos ranuras PCIe M.2 tipo M que admiten los formatos 2230, 2242, 2260 y 2280, 
-lo que permite instalar dos SSD NVMe Gen2 o aceleradores de IA. 
+lo que permite instalar dos SSD NVMe Gen2 o aceleradores de IA. (Pero Gen3 no es compatible).
 Los usuarios pueden configurar dos SSD NVMe en RAID 0 o RAID 1 para crear un NAS; 
 combinar un SSD NVMe con un acelerador de IA para mejorar el rendimiento en inteligencia artificial; 
 o incluso usar dos aceleradores de IA para tareas más exigentes. 

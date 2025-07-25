@@ -12,10 +12,14 @@
 
     👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Dual Pi5 NVMe PIP
+Dual NVMe PIP
 =====================
 
-El Pi5 NVMe PIP (Placa Periférica PCIe), definida por la Fundación Raspberry Pi, es una placa adaptadora PCIe diseñada específicamente para unidades de estado sólido NVMe. Es compatible con cuatro tamaños distintos de SSD NVMe: 2230, 2242, 2260 y 2280, todos adecuados para ranuras M.2 con llave M.
+La Dual NVMe PIP (placa periférica PCIe), según la definición de la Fundación Raspberry Pi, es una placa adaptadora PCIe diseñada específicamente para unidades de estado sólido NVMe.
+
+La interfaz PCIe de la Raspberry Pi 5 proporciona un único canal Gen2 x1 (ancho de banda de 500 MB/s) por defecto. Al integrar el chip ASM1182e, se puede ampliar a dos canales Gen2 x1 independientes para conectar dos dispositivos M.2 con ranura M-key (como dos SSD NVMe M.2 o un SSD NVMe M.2 + un acelerador M.2 Hailo-8/8LAI). Sin embargo, cabe destacar que la Dual NVMe PIP no es compatible con Gen 3.
+
+Admite cuatro tamaños diferentes de SSD NVMe: 2230, 2242, 2260 y 2280, todos compatibles con una ranura M-key M.2.
 
 .. image:: img/nvme_pip.png
 
@@ -47,7 +51,7 @@ Sobre la longitud
 
 Los módulos M.2 están disponibles en diferentes tamaños y también pueden utilizarse para Wi-Fi, WWAN, Bluetooth, GPS y NFC.
 
-El Pironman 5 admite cuatro tamaños de SSD NVMe M.2 (PCIe Gen 2.0 / Gen 3.0): 2230, 2242, 2260 y 2280. El número "22" indica el ancho en milímetros, y los siguientes dos dígitos indican la longitud. Cuanto más largo sea el módulo, mayor será el número de chips de memoria NAND que puede alojar, lo que se traduce en mayor capacidad.
+El Pironman 5 MAX admite cuatro tamaños de SSD NVMe M.2 (PCIe Gen 2.0 / Gen 3.0): 2230, 2242, 2260 y 2280. El número "22" indica el ancho en milímetros, y los siguientes dos dígitos indican la longitud. Cuanto más largo sea el módulo, mayor será el número de chips de memoria NAND que puede alojar, lo que se traduce en mayor capacidad.
 
 
 .. image:: img/m2_ssd_size.png

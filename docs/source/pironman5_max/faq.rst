@@ -37,12 +37,12 @@ Si ya instalaste ``pironman 5``, puedes eliminar el módulo ``dashboard`` y ``in
 
 ¿Pironman 5 MAX es compatible con sistemas retro?
 ------------------------------------------------------
-Sí, es compatible. Sin embargo, la mayoría de los sistemas retro son versiones ligeras que no permiten instalar software adicional. Esta limitación puede hacer que ciertos componentes de Pironman 5, como la pantalla OLED, los dos ventiladores RGB y los 4 LEDs RGB, no funcionen correctamente, ya que requieren los paquetes de software de Pironman 5.
+Sí, es compatible. Sin embargo, la mayoría de los sistemas retro son versiones ligeras que no permiten instalar software adicional. Esta limitación puede hacer que ciertos componentes de Pironman 5 MAX, como la pantalla OLED, los dos ventiladores RGB y los 4 LEDs RGB, no funcionen correctamente, ya que requieren los paquetes de software de Pironman 5 MAX.
 
 
 .. note::
 
-    El sistema Batocera.linux ahora es totalmente compatible con Pironman 5. Batocera.linux es una distribución de retro gaming de código abierto y completamente gratuita.
+    El sistema Batocera.linux ahora es totalmente compatible con Pironman 5 MAX. Batocera.linux es una distribución de retro gaming de código abierto y completamente gratuita.
 
     * :ref:`max_install_batocera`
     * :ref:`max_set_up_batocera`

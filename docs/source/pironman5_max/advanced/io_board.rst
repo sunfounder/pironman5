@@ -220,7 +220,7 @@ Dos conectores de pines en ángulo recto extienden el GPIO de la Raspberry Pi, p
   :widths: 25 25
   :header-rows: 1
 
-  * - Pironman 5
+  * - Pironman 5 MAX
     - Raspberry Pi 5
   * - IR Receiver(Optional)
     - GPIO13

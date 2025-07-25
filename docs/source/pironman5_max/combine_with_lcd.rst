@@ -1,9 +1,9 @@
 Combine With 3.5 inch LCD
 =============================
 
-Esta sección es para los usuarios de Pironman 5 que también hayan adquirido la `pantalla LCD de 3,5 pulgadas <https://www.sunfounder.com/products/touchscreen-02?_pos=2&_sid=839d5db5b&_ss=r>`_.
+Esta sección es para los usuarios de Pironman 5 MAX que también hayan adquirido la `pantalla LCD de 3,5 pulgadas <https://www.sunfounder.com/products/touchscreen-02?_pos=2&_sid=839d5db5b&_ss=r>`_.
 
-La pantalla LCD se puede montar directamente en los pines GPIO de la Raspberry Pi, proporcionando funcionalidad de visualización y control táctil para el Pironman 5. Por favor, siga los pasos de instalación correctamente para garantizar el funcionamiento adecuado y evitar daños al hardware.
+La pantalla LCD se puede montar directamente en los pines GPIO de la Raspberry Pi, proporcionando funcionalidad de visualización y control táctil para el Pironman 5 MAX. Por favor, siga los pasos de instalación correctamente para garantizar el funcionamiento adecuado y evitar daños al hardware.
 
 Puede obtener más información sobre la pantalla LCD y cómo utilizarla en el siguiente enlace:  
 `Documentación de la pantalla LCD de 3,5 pulgadas <http://wiki.sunfounder.cc/index.php?title=3.5_Inch_LCD_Touch_Screen_Monitor_for_Raspberry_Pi>`_.
@@ -18,12 +18,12 @@ Puede obtener más información sobre la pantalla LCD y cómo utilizarla en el s
     :width: 340
 
 
-.. warning:: Al instalar la pantalla LCD de 3,5 pulgadas en el Pironman 5, asegúrese de que los pines estén perfectamente alineados. El conector del módulo LCD debe coincidir exactamente con la interfaz GPIO de la Raspberry Pi, sin desplazamientos ni desalineaciones. Las conexiones incorrectas pueden dañar la pantalla LCD o incluso la propia Raspberry Pi. ¡Verifique todas las conexiones cuidadosamente antes de encender!
+.. warning:: Al instalar la pantalla LCD de 3,5 pulgadas en el Pironman 5 MAX, asegúrese de que los pines estén perfectamente alineados. El conector del módulo LCD debe coincidir exactamente con la interfaz GPIO de la Raspberry Pi, sin desplazamientos ni desalineaciones. Las conexiones incorrectas pueden dañar la pantalla LCD o incluso la propia Raspberry Pi. ¡Verifique todas las conexiones cuidadosamente antes de encender!
 
 
 **Remove RGB Jumper**
 
-Cuando se utiliza el Pironman 5 con la pantalla LCD de 3,5 pulgadas, el LED RGB y la pantalla LCD comparten los mismos pines SPI. Para evitar conflictos y garantizar el funcionamiento correcto de la pantalla, se debe desactivar la conexión del LED RGB.
+Cuando se utiliza el Pironman 5 MAX con la pantalla LCD de 3,5 pulgadas, el LED RGB y la pantalla LCD comparten los mismos pines SPI. Para evitar conflictos y garantizar el funcionamiento correcto de la pantalla, se debe desactivar la conexión del LED RGB.
 
 Siga los siguientes pasos:
 

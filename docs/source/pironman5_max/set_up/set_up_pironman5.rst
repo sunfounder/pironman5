@@ -17,7 +17,7 @@
 4. Configuración o instalación del software
 ================================================
 
-Una vez que el sistema se haya escrito en la tarjeta Micro SD o en el SSD NVMe, insértalo en la ranura correspondiente del Pironman 5. Luego presiona el botón de encendido para iniciar el dispositivo.
+Una vez que el sistema se haya escrito en la tarjeta Micro SD o en el SSD NVMe, insértalo en la ranura correspondiente del Pironman 5 MAX. Luego presiona el botón de encendido para iniciar el dispositivo.
 
 Al encenderlo, verás que se iluminan los diferentes indicadores LED de alimentación. Sin embargo, la pantalla OLED, los LEDs RGB y los ventiladores RGB (los dos ventiladores laterales) aún no estarán operativos, ya que requieren configuración. Si notas algún error visual en la pantalla, puedes ignorarlo por ahora; se resolverá tras la configuración.
 
