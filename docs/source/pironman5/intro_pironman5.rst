@@ -22,6 +22,7 @@ Le Pironman 5 est un boîtier mini PC conçu spécialement pour le Raspberry Pi.
     control/control_pironman5
     hardware/hardware
     compitable_nvme_ssd
+    combine_with_lcd
     assemble_camera
     faq
 

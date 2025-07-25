@@ -36,6 +36,7 @@ Une extension GPIO est également incluse, facilitant l’extension des fonction
     control/control_pironman5
     advanced/advanced
     compitable_nvme_ssd
+    combine_with_lcd
     faq
 
 **Caractéristiques techniques**
