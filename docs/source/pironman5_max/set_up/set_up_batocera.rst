@@ -51,7 +51,7 @@ Wenn du das Betriebssystem Batocera.linux installiert hast, kannst du dich über
 
       reboot
 
-#. Nach dem Neustart wird der Dienst ``pironman5.service`` automatisch gestartet. Die wichtigsten Funktionen des Pironman 5 sind:
+#. Nach dem Neustart wird der Dienst ``pironman5.service`` automatisch gestartet. Die wichtigsten Funktionen des Pironman 5 MAX sind:
 
    * Das OLED-Display zeigt CPU-, RAM- und Festplattenauslastung, CPU-Temperatur sowie die IP-Adresse des Raspberry Pi an.
    * Vier WS2812-RGB-LEDs leuchten blau im Atemmodus.
@@ -60,4 +60,4 @@ Wenn du das Betriebssystem Batocera.linux installiert hast, kannst du dich über
 
      Die RGB-Lüfter drehen sich erst, wenn die Temperatur 60 °C erreicht. Für andere Temperaturgrenzwerte siehe :ref:`max_cc_control_fan`.
 
-Jetzt kannst du den Pironman 5 mit einem Bildschirm, Gamecontrollern, Kopfhörern und mehr verbinden und voll in deine Gamingwelt eintauchen.
+Jetzt kannst du den Pironman 5 MAX mit einem Bildschirm, Gamecontrollern, Kopfhörern und mehr verbinden und voll in deine Gamingwelt eintauchen.

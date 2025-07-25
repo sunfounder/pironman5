@@ -27,7 +27,7 @@ die hohe Temperatur des Raspberry Pi 5 zu senken.
 
 Das Gehäuse integriert einen PCIe Gen 2 Switch mit zwei M.2-M-Key-PCIe-Steckplätzen, 
 die die Größen 2230, 2242, 2260 und 2280 unterstützen und den Einbau von zwei NVMe Gen2 SSDs 
-oder KI-Beschleunigern ermöglichen. 
+oder KI-Beschleunigern ermöglichen. (Gen3 wird jedoch nicht unterstützt.)
 Nutzer können zwei NVMe-SSDs im Software-RAID 0 oder RAID 1 für NAS-Zwecke konfigurieren, 
 eine Kombination aus einem KI-Beschleuniger und einer SSD zur Steigerung der KI-Leistung einsetzen 
 oder zwei KI-Beschleuniger für maximale KI-Performance nutzen. 

@@ -27,7 +27,7 @@ Wenn du diese Funktion nicht benötigst und CPU- sowie RAM-Auslastung reduzieren
    cd ~/pironman5
    sudo python3 install.py --disable-dashboard
 
-Wenn ``pironman 5`` bereits installiert ist, kannst du das ``dashboard``-Modul und ``influxdb`` deinstallieren und anschließend pironman5 neu starten, um die Änderungen zu übernehmen:
+Wenn ``pironman5`` bereits installiert ist, kannst du das ``dashboard``-Modul und ``influxdb`` deinstallieren und anschließend pironman5 neu starten, um die Änderungen zu übernehmen:
 
 .. code-block:: shell
 
@@ -37,7 +37,7 @@ Wenn ``pironman 5`` bereits installiert ist, kannst du das ``dashboard``-Modul u
 
 Unterstützt der Pironman 5 MAX Retro-Gaming-Systeme?
 ------------------------------------------------------
-Ja, der Pironman 5 ist kompatibel. Die meisten Retro-Gaming-Systeme sind jedoch stark optimiert und erlauben keine nachträgliche Installation zusätzlicher Software. Daher funktionieren einige Komponenten des Pironman 5 – wie das OLED-Display, die beiden RGB-Lüfter und die vier RGB-LEDs – möglicherweise nicht korrekt, da sie auf die Installation spezifischer Softwarepakete angewiesen sind.
+Ja, der Pironman 5 MAX ist kompatibel. Die meisten Retro-Gaming-Systeme sind jedoch stark optimiert und erlauben keine nachträgliche Installation zusätzlicher Software. Daher funktionieren einige Komponenten des Pironman 5 MAX – wie das OLED-Display, die beiden RGB-Lüfter und die vier RGB-LEDs – möglicherweise nicht korrekt, da sie auf die Installation spezifischer Softwarepakete angewiesen sind.
 
 
 .. note::

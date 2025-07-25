@@ -30,7 +30,7 @@ Ein angeschlossener Bildschirm erleichtert die direkte Interaktion mit dem Syste
 
 **Benötigte Komponenten**
 
-* Pironman 5
+* Pironman 5 MAX
 * Netzteil
 * Micro SD-Karte oder NVMe SSD mit vorinstalliertem Raspberry Pi OS
 * Monitor-Netzteil
@@ -41,13 +41,13 @@ Ein angeschlossener Bildschirm erleichtert die direkte Interaktion mit dem Syste
 
 **Schritte**
 
-#. Stecke die Micro SD-Karte in das Pironman 5.
+#. Stecke die Micro SD-Karte in das Pironman 5 MAX.
 
-#. Verbinde die Maus und die Tastatur mit den USB-Ports des Pironman 5.
+#. Verbinde die Maus und die Tastatur mit den USB-Ports des Pironman 5 MAX.
 
-#. Verwende das HDMI-Kabel, um den Monitor mit dem HDMI-Port des Pironman 5 zu verbinden. Stelle sicher, dass der Monitor mit einer Stromquelle verbunden und eingeschaltet ist.
+#. Verwende das HDMI-Kabel, um den Monitor mit dem HDMI-Port des Pironman 5 MAX zu verbinden. Stelle sicher, dass der Monitor mit einer Stromquelle verbunden und eingeschaltet ist.
 
-#. Schalte das Pironman 5 mit dem Netzteil ein. Kurz darauf sollte der Raspberry Pi OS-Desktop auf dem Monitor erscheinen.
+#. Schalte das Pironman 5 MAX mit dem Netzteil ein. Kurz darauf sollte der Raspberry Pi OS-Desktop auf dem Monitor erscheinen.
 
    .. image:: img/bookwarm.png
       :width: 90%
@@ -66,15 +66,15 @@ Wer eine grafische Oberfläche bevorzugt, kann eine Remote-Desktop-Anwendung wie
 
 **Benötigte Komponenten**
 
-* Pironman 5 
+* Pironman 5 MAX 
 * Netzteil
 * Micro SD-Karte oder NVMe SSD mit vorinstalliertem Raspberry Pi OS
 
 Schritte:
 
-#. Stecke die Micro SD-Karte in das Pironman 5.
+#. Stecke die Micro SD-Karte in das Pironman 5 MAX.
 
-#. Verbinde das Pironman 5 mit einer Stromquelle, indem du das Netzteil verwendest.
+#. Verbinde das Pironman 5 MAX mit einer Stromquelle, indem du das Netzteil verwendest.
 
 #. Weitere detaillierte Tutorials zur Einrichtung des Remote-Zugriffs je nach Betriebssystem deines Computers findest du in den folgenden Abschnitten:
 

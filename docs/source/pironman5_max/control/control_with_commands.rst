@@ -16,12 +16,12 @@
 
 Steuerung mit Befehlen
 ========================================
-Neben der Anzeige von Daten des Pironman 5 und der Steuerung verschiedener Geräte über das Dashboard, kannst du diese auch über Befehle steuern.
+Neben der Anzeige von Daten des Pironman 5 MAX und der Steuerung verschiedener Geräte über das Dashboard, kannst du diese auch über Befehle steuern.
 
 .. note::
 
-  * Beim **Home Assistant**-System kannst du den Pironman 5 nur über das Dashboard überwachen und steuern, indem du die Webseite unter ``http://<ip>:34001`` öffnest.
-  * Beim **Batocera.linux**-System kannst du den Pironman 5 nur über Befehle überwachen und steuern. Es ist wichtig zu beachten, dass Änderungen an der Konfiguration einen Neustart des Dienstes mit ``pironman5 restart`` erfordern, damit sie wirksam werden.
+  * Beim **Home Assistant**-System kannst du den Pironman 5 MAX nur über das Dashboard überwachen und steuern, indem du die Webseite unter ``http://<ip>:34001`` öffnest.
+  * Beim **Batocera.linux**-System kannst du den Pironman 5 MAX nur über Befehle überwachen und steuern. Es ist wichtig zu beachten, dass Änderungen an der Konfiguration einen Neustart des Dienstes mit ``pironman5 restart`` erfordern, damit sie wirksam werden.
 
 Anzeige der Basiskonfigurationen
 -----------------------------------
@@ -64,7 +64,7 @@ Verwende ``pironman5`` oder ``pironman5 -h`` für Anweisungen.
                           [-oi [OLED_NETWORK_INTERFACE]] [-or [{0,180}]] [-os [OLED_SLEEP_TIMEOUT]]
                           [{start,restart,stop}]
 
-  Pironman 5 command line interface
+  Pironman 5 MAX command line interface
 
   positional arguments:
     {start,restart,stop}  Command

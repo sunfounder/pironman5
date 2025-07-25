@@ -17,7 +17,7 @@
 4. Software einrichten oder installieren
 ================================================
 
-Sobald das System auf die Micro-SD-Karte oder die NVMe-SSD geschrieben wurde, kannst du das Speichermedium in den entsprechenden Slot am Pironman 5 einsetzen. Drücke anschließend den Power-Button, um das Gerät einzuschalten.
+Sobald das System auf die Micro-SD-Karte oder die NVMe-SSD geschrieben wurde, kannst du das Speichermedium in den entsprechenden Slot am Pironman 5 MAX einsetzen. Drücke anschließend den Power-Button, um das Gerät einzuschalten.
 
 Nach dem Einschalten leuchten die verschiedenen Status-LEDs. Das OLED-Display, die RGB-LEDs und die RGB-Lüfter (die beiden seitlichen Lüfter) funktionieren jedoch zunächst nicht, da sie erst konfiguriert werden müssen. Falls es zu einer verzerrten Darstellung auf dem Bildschirm kommt, kann dies zunächst ignoriert werden – das Problem wird nach der Konfiguration behoben.
 

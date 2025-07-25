@@ -12,10 +12,14 @@
 
     👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und werde noch heute Mitglied!
 
-Dual Pi5 NVMe PIP
+Dual NVMe PIP
 =====================
 
-Das Pi5 NVMe PIP (PCIe Peripheral Board), wie es von der Raspberry Pi Foundation definiert wurde, ist eine PCIe-Adapterplatine, die speziell für NVMe-SSD-Laufwerke entwickelt wurde. Sie unterstützt vier verschiedene Größen von NVMe-SSDs: 2230, 2242, 2260 und 2280, die alle in einen M.2 M-Key-Slot passen.
+Das Dual NVMe PIP (PCIe Peripheral Board) der Raspberry Pi Foundation ist ein PCIe-Adapterboard, das speziell für NVMe-Solid-State-Laufwerke entwickelt wurde.
+
+Die PCIe-Schnittstelle des Raspberry Pi 5 bietet standardmäßig einen Gen2 x1-Kanal (Bandbreite 500 MB/s). Durch die Integration des ASM1182e-Chips kann die Schnittstelle auf zwei unabhängige Gen2 x1-Kanäle erweitert werden, um zwei M.2 M-Key-Geräte anzuschließen (z. B. zwei M.2 NVMe SSDs oder eine M.2 NVMe SSD + einen M.2 Hailo-8/8LAI-Beschleuniger). Beachten Sie jedoch, dass Dual NVMe PIP Gen 3 nicht unterstützt.
+
+Es unterstützt vier verschiedene Größen von NVMe-SSDs: 2230, 2242, 2260 und 2280, die alle in einen M.2 M-Key-Steckplatz passen.
 
 .. image:: img/nvme_pip.png
 
@@ -47,7 +51,7 @@ Im Allgemeinen sind M.2 SATA-SSDs B+M-keyed (können in Steckplätze für B-Key-
 
 M.2-Module gibt es in verschiedenen Größen und sie können auch für Wi-Fi, WWAN, Bluetooth, GPS und NFC verwendet werden.
 
-Der Pironman 5 unterstützt vier NVMe M.2 SSD-Größen (PCIe Gen 2.0 / PCIe Gen 3.0), basierend auf ihren Namen: 2230, 2242, 2260 und 2280. Die "22" ist die Breite in Millimetern (mm), und die beiden folgenden Zahlen sind die Länge. Je länger das Laufwerk, desto mehr NAND-Flash-Chips können montiert werden; daher steigt die Kapazität.
+Der Pironman 5 MAX unterstützt vier NVMe M.2 SSD-Größen (PCIe Gen 2.0 / PCIe Gen 3.0), basierend auf ihren Namen: 2230, 2242, 2260 und 2280. Die "22" ist die Breite in Millimetern (mm), und die beiden folgenden Zahlen sind die Länge. Je länger das Laufwerk, desto mehr NAND-Flash-Chips können montiert werden; daher steigt die Kapazität.
 
 .. image:: img/m2_ssd_size.png
   :width: 600

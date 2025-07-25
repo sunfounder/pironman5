@@ -17,7 +17,7 @@
 Betriebssystem von der Micro SD auf die NVMe SSD kopieren
 ==================================================================
 
-Wenn du eine NVMe SSD hast, aber keinen Adapter, um sie an deinen Computer anzuschließen, kannst du eine dritte Methode verwenden: Installiere zunächst das System auf deiner Micro SD-Karte. Nachdem der Pironman 5 erfolgreich hochgefahren ist, kannst du das System von der Micro SD auf die NVMe SSD übertragen.
+Wenn du eine NVMe SSD hast, aber keinen Adapter, um sie an deinen Computer anzuschließen, kannst du eine dritte Methode verwenden: Installiere zunächst das System auf deiner Micro SD-Karte. Nachdem der Pironman 5 MAX erfolgreich hochgefahren ist, kannst du das System von der Micro SD auf die NVMe SSD übertragen.
 
 * Zuerst musst du :ref:`max_install_os_sd_rpi` durchführen.
 * Starte dann deinen Raspberry Pi und melde dich an. Falls du unsicher bist, wie du dich einloggst, besuche die offizielle Raspberry Pi-Website: |link_rpi_get_start|.
@@ -49,16 +49,16 @@ Standardmäßig ist der PCIe-Anschluss deaktiviert.
   
     dtparam=nvme
 
-* Die Verbindung ist für Gen 2.0 Geschwindigkeiten (5 GT/sec) zertifiziert, aber du kannst sie auf Gen 3.0 (10 GT/sec) erzwingen, indem du folgende Zeilen in deine ``/boot/firmware/config.txt`` hinzufügst.
+.. * Die Verbindung ist für Gen 2.0 Geschwindigkeiten (5 GT/sec) zertifiziert, aber du kannst sie auf Gen 3.0 (10 GT/sec) erzwingen, indem du folgende Zeilen in deine ``/boot/firmware/config.txt`` hinzufügst.
 
-  .. code-block:: shell
+..   .. code-block:: shell
   
-    # Erzwinge Gen 3.0 Geschwindigkeiten
-    dtparam=pciex1_gen=3
+..     # Erzwinge Gen 3.0 Geschwindigkeiten
+..     dtparam=pciex1_gen=3
   
-  .. warning::
+..   .. warning::
   
-    Der Raspberry Pi 5 ist nicht für Gen 3.0 Geschwindigkeiten zertifiziert, und Verbindungen zu PCIe-Geräten bei diesen Geschwindigkeiten könnten instabil sein.
+..     Der Raspberry Pi 5 ist nicht für Gen 3.0 Geschwindigkeiten zertifiziert, und Verbindungen zu PCIe-Geräten bei diesen Geschwindigkeiten könnten instabil sein.
 
 * Du musst die PCIe-Startverzögerung deaktivieren, damit der Raspberry Pi das NVMe-Laufwerk hinter dem PCIe-Switch beim Start erkennen kann. Füge folgende Zeile zu ``/boot/firmware/config.txt`` hinzu:
 

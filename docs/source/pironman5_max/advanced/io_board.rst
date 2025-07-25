@@ -220,7 +220,7 @@ Zwei rechteckige Header-Steckverbinder erweitern den GPIO des Raspberry Pi, beac
   :widths: 25 25
   :header-rows: 1
 
-  * - Pironman 5
+  * - Pironman 5 MAX
     - Raspberry Pi 5
   * - IR-Empfänger (Optional)
     - GPIO13
