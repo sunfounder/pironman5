@@ -40,6 +40,7 @@ class Pironman5:
         'data_interval': 1,
         'database_retention_days': 30,
         "temperature_unit": "C",
+        'enable_history': True,
         "oled_enable": True,
         "oled_rotation": 0,
         "oled_disk": "total",

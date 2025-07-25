@@ -41,6 +41,7 @@ class Pironman5Max:
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
         'database_retention_days': 30,
+        'enable_history': True,
         "rgb_color": "#0a1aff",
         "rgb_brightness": 100,
         "rgb_style": "breathing",
