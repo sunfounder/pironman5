@@ -24,6 +24,7 @@ Entre sus características principales se incluyen un botón de encendido dedica
     control/control_pironman5
     hardware/hardware
     compitable_nvme_ssd
+    combine_with_lcd
     faq
 
 

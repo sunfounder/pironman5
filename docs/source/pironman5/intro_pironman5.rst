@@ -22,6 +22,7 @@ El Pironman 5 es una carcasa tipo mini PC diseñada específicamente para la Ras
     control/control_pironman5
     hardware/hardware
     compitable_nvme_ssd
+    combine_with_lcd
     assemble_camera
     faq
 
