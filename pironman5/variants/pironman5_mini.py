@@ -15,6 +15,8 @@ class Pironman5Mini:
         "clear_history",
         "delete_log_file",
         'debug_level',
+        'ip_address',
+        'mac_address',
         "restart_service",
         
         "ws2812",

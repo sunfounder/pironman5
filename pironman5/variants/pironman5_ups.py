@@ -16,6 +16,8 @@ class Pironman5UPS:
         'delete_log_file',
         'data_interval',
         'debug_level',
+        'ip_address',
+        'mac_address',
         'restart_service',
 
         'oled',
@@ -76,7 +78,6 @@ class Pironman5UPS:
         'rgb_matrix_speed': 50,
         'rgb_matrix_brightness': 100,
         'send_email_on': [
-            "battery_activated",
             "low_battery",
             "power_disconnected",
             "power_restored",
@@ -89,7 +90,7 @@ class Pironman5UPS:
         'smtp_password': '',
         'smtp_server': '',
         'smtp_port': 465,
-        'smtp_use_tls': False,
+        'smtp_security': 'ssl',
     }
     DT_OVERLAYS = []
 

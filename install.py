@@ -32,7 +32,7 @@ settings = {
     # - Install python source code from git
     'python_source': {
         'pironman5': './',
-        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.4.1',
+        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.4.x',
         'sf_rpi_status': 'git+https://github.com/sunfounder/sf_rpi_status.git@1.1.4',
     },
 
@@ -144,14 +144,14 @@ dashboard_settings = {
         'lsof', # for pm_dashboard
     ],
     'python_source': {
-        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.3.11',
+        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.3.12',
     },
 }
 
 pipower5_settings = {
     # Install python packages from source
     'python_source': {
-        'pipower5': 'git+https://github.com/sunfounder/pipower5.git@1.2.1',
+        'pipower5': 'git+https://github.com/sunfounder/pipower5.git@1.2.x',
         'spc': 'git+https://github.com/sunfounder/spc.git',
     },
     # Add symbolic links
