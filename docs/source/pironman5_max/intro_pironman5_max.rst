@@ -45,6 +45,7 @@ Inoltre, è prevista un’espansione GPIO per estendere comodamente le funzional
     control/control_pironman5
     advanced/advanced
     compitable_nvme_ssd
+    combine_with_lcd
     faq
 
 **Parametri**
