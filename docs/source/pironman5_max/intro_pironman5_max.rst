@@ -23,7 +23,7 @@ e le porte HDMI e di alimentazione sono state riposizionate sullo stesso lato de
 migliorando l’ordine dei cavi. Dotato di tre ventole e un dissipatore a torre, 
 offre un'efficace soluzione per la dissipazione del calore generato dal Raspberry Pi 5.
 
-Il case integra uno switch PCIe Gen 2 con due slot PCIe M key M.2 compatibili con i formati 2230, 2242, 2260 e 2280, permettendo l’installazione di due SSD NVMe Gen2 o acceleratori AI.  
+Il case integra uno switch PCIe Gen 2 con due slot PCIe M key M.2 compatibili con i formati 2230, 2242, 2260 e 2280, permettendo l’installazione di due SSD NVMe Gen2 o acceleratori AI. (Ma Gen3 non è supportato.)
 Gli utenti possono configurare due SSD NVMe in RAID 0 o RAID 1 tramite software per realizzare un NAS; 
 oppure combinare un acceleratore AI con un SSD NVMe per migliorare le prestazioni AI; 
 oppure ancora utilizzare due acceleratori AI per potenziare ulteriormente le capacità di elaborazione.  

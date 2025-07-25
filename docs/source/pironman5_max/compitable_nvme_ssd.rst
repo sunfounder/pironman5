@@ -43,6 +43,7 @@ SSD NVMe Compatibili
 * Netac NV2000 NVMe SSD  
 
 * Origin Inception TLC830 Pro NVMe SSD  
+* Ortial ON-750-128 NVME SSD
 
 * Pineberry Pi Pinedrive (2280)  
 
@@ -54,14 +55,14 @@ SSD NVMe Compatibili
 * Samsung 970 EVO Plus  
 * Samsung 980  
 * Samsung 980 Pro  
+* Samsung 990 Pro
 
 * Team MP33  
 
-* Western Digital SN850  
-* Western Digital SN740  
+ 
 * Western Digital SN570  
 * Western Digital SN530  
-* Western Digital Black SN750 SE (con controller Phison)  
+* Western Digital Black SN750 SE
 * Serie Western Digital Blue SN550 (Se sai come installare l’ultimo aggiornamento rpi-eeprom, il file pieeprom-2024-01-24.bin risolve il problema di avvio con NVMe SN550. Vedi: https://forums.raspberrypi.com/viewtopic.php?t=364327.)  
 
 * XPG GAMMIX S70 BLADE  
@@ -73,14 +74,15 @@ SSD NVMe Non Compatibili
 
 Si consiglia di evitare i seguenti modelli di SSD NVMe dotati di controller Phison, poiché hanno dimostrato di essere incompatibili:
 
+* Western Digital SN740
+* Western Digital Black SN770
 * Serie WD Blue SN580  
 * Serie Western Digital Green SN350  
 * Serie Western Digital Black SN850  
-* Western Digital Black SN770  
+* WD BLACK 8TB SN850X
 * Inland TN446 NVMe Drive  
 * Corsair MP600 SSD  
 * Samsung PM991  
 * Kingston OM8SEP4256Q-A0  
 * Transcend 110Q (TS500GMTE110Q)  
-* I modelli SN350 e SN570 impediscono completamente l’avvio del Raspberry Pi 5.  
 * Altri SSD NVMe con lo stesso controller Phison

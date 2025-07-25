@@ -223,7 +223,7 @@ Due header angolati estendono i GPIO del Raspberry Pi. Nota che ricevitore IR, L
   :widths: 25 25
   :header-rows: 1
 
-  * - Pironman 5
+  * - Pironman 5 MAX
     - Raspberry Pi 5
   * - Ricevitore IR (Opzionale)
     - GPIO13

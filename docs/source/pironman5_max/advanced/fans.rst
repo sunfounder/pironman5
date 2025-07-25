@@ -18,9 +18,9 @@ Ventole
 Ventola PWM
 ---------------
 
-La ventola PWM del Pironman 5 è controllata direttamente dal sistema del Raspberry Pi.
+La ventola PWM del Pironman 5 MAX è controllata direttamente dal sistema del Raspberry Pi.
 
-In merito alle soluzioni di raffreddamento per il Raspberry Pi 5, soprattutto sotto carichi elevati, il design del Pironman 5 integra un sistema di raffreddamento intelligente. Include una ventola PWM principale e due ventole RGB supplementari. La strategia di raffreddamento è strettamente integrata con il sistema di gestione termica del Raspberry Pi 5.
+In merito alle soluzioni di raffreddamento per il Raspberry Pi 5, soprattutto sotto carichi elevati, il design del Pironman 5 MAX integra un sistema di raffreddamento intelligente. Include una ventola PWM principale e due ventole RGB supplementari. La strategia di raffreddamento è strettamente integrata con il sistema di gestione termica del Raspberry Pi 5.
 
 Il funzionamento della ventola PWM si basa sulla temperatura del Raspberry Pi 5:
 
@@ -44,7 +44,7 @@ Questa relazione temperatura-velocità si applica anche quando la temperatura sc
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-Nel Pironman 5, la ventola PWM è un componente essenziale per mantenere temperature operative ottimali, soprattutto durante attività intensive, garantendo che il Raspberry Pi 5 operi in modo efficiente e affidabile.
+Nel Pironman 5 MAX, la ventola PWM è un componente essenziale per mantenere temperature operative ottimali, soprattutto durante attività intensive, garantendo che il Raspberry Pi 5 operi in modo efficiente e affidabile.
 
 Ventole RGB
 -------------------

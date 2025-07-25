@@ -19,7 +19,7 @@ Configurazione su Batocera.linux
 
 Se hai installato il sistema operativo Batocera.linux, puoi accedere da remoto tramite SSH e seguire i passaggi qui sotto per completare la configurazione.
 
-#. Una volta avviato il sistema, utilizza SSH per collegarti da remoto a Pironman5. Su Windows puoi aprire **Powershell**, mentre su Mac OS X e Linux puoi usare direttamente il **Terminale**.
+#. Una volta avviato il sistema, utilizza SSH per collegarti da remoto a Pironman 5 MAX. Su Windows puoi aprire **Powershell**, mentre su Mac OS X e Linux puoi usare direttamente il **Terminale**.
 
    .. image:: img/batocera_powershell.png
       :width: 90%
@@ -51,7 +51,7 @@ Se hai installato il sistema operativo Batocera.linux, puoi accedere da remoto t
 
       reboot
 
-#. Al riavvio, il servizio ``pironman5.service`` si avvierà automaticamente. Ecco le funzionalità principali di Pironman 5:
+#. Al riavvio, il servizio ``pironman5.service`` si avvierà automaticamente. Ecco le funzionalità principali di Pironman 5 MAX:
 
    * Il display OLED mostrerà CPU, RAM, utilizzo del disco, temperatura della CPU e indirizzo IP del Raspberry Pi.
    * Quattro LED RGB WS2812 si accenderanno di blu con effetto respiro.
@@ -60,4 +60,4 @@ Se hai installato il sistema operativo Batocera.linux, puoi accedere da remoto t
 
      Le ventole RGB non si attiveranno finché la temperatura non raggiungerà i 60 °C. Per modificare la temperatura di attivazione, consulta :ref:`max_cc_control_fan`.
 
-Ora puoi collegare Pironman 5 a uno schermo, controller di gioco, cuffie e altri dispositivi per immergerti nel tuo mondo videoludico.
+Ora puoi collegare Pironman 5 MAX a uno schermo, controller di gioco, cuffie e altri dispositivi per immergerti nel tuo mondo videoludico.

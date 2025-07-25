@@ -15,7 +15,11 @@
 Dual Pi5 NVMe PIP
 =====================
 
-Il Pi5 NVMe PIP (PCIe Peripheral Board), come definito dalla Raspberry Pi Foundation, è una scheda adattatore PCIe progettata specificamente per unità a stato solido NVMe. Supporta quattro formati di SSD NVMe: 2230, 2242, 2260 e 2280, tutti compatibili con slot M.2 con chiave M.
+La Dual NVMe PIP (PCIe Peripheral Board), come definita dalla Raspberry Pi Foundation, è una scheda adattatore PCIe progettata specificamente per unità a stato solido NVMe.
+
+L'interfaccia PCIe del Raspberry Pi 5 fornisce di default un singolo canale Gen2 x1 (larghezza di banda 500 MB/s). Integrando il chip ASM1182e, può essere espansa in due canali Gen2 x1 indipendenti per collegare due dispositivi M.2 M-key (come due SSD M.2 NVMe o un SSD M.2 NVMe + un acceleratore M.2 Hailo-8/8LAI). Tuttavia, è importante notare che la Dual NVMe PIP non supporta la Gen 3.
+
+Supporta quattro diverse dimensioni di SSD NVMe: 2230, 2242, 2260 e 2280, tutte compatibili con uno slot M.2 M-key.
 
 .. image:: img/nvme_pip.png
 
@@ -47,7 +51,7 @@ Informazioni sulla lunghezza
 
 I moduli M.2 esistono in diverse dimensioni e possono essere utilizzati anche per Wi-Fi, WWAN, Bluetooth, GPS e NFC.
 
-Pironman 5 supporta quattro formati di SSD M.2 NVMe (PCIe Gen 2.0 / Gen 3.0): 2230, 2242, 2260 e 2280. Il numero “22” indica la larghezza in millimetri (mm), mentre i numeri successivi rappresentano la lunghezza. Maggiore è la lunghezza, maggiore è lo spazio disponibile per i chip di memoria NAND e, di conseguenza, maggiore è la capacità.
+Pironman 5 MAX supporta quattro formati di SSD M.2 NVMe (PCIe Gen 2.0 / Gen 3.0): 2230, 2242, 2260 e 2280. Il numero “22” indica la larghezza in millimetri (mm), mentre i numeri successivi rappresentano la lunghezza. Maggiore è la lunghezza, maggiore è lo spazio disponibile per i chip di memoria NAND e, di conseguenza, maggiore è la capacità.
 
 
 .. image:: img/m2_ssd_size.png

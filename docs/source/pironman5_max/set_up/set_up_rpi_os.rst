@@ -17,7 +17,7 @@
 Configurazione su Raspberry Pi/Ubuntu/Kali/Homebridge OS
 =============================================================
 
-Se hai installato Raspberry Pi OS, Ubuntu, Kali Linux o Homebridge sul tuo Raspberry Pi, dovrai configurare il Pironman 5 utilizzando la riga di comando. Di seguito trovi i tutorial dettagliati:
+Se hai installato Raspberry Pi OS, Ubuntu, Kali Linux o Homebridge sul tuo Raspberry Pi, dovrai configurare il Pironman 5 MAX utilizzando la riga di comando. Di seguito trovi i tutorial dettagliati:
 
 .. note::
 
@@ -68,7 +68,7 @@ Download e installazione del modulo ``pironman5``
 
    Dopo un’installazione completata con successo, sarà necessario riavviare il sistema per attivare il modulo. Segui il messaggio a schermo per eseguire il riavvio.
 
-   Al riavvio, il servizio ``pironman5.service`` si avvierà automaticamente. Ecco le principali funzionalità di Pironman 5:
+   Al riavvio, il servizio ``pironman5.service`` si avvierà automaticamente. Ecco le principali funzionalità di Pironman 5 MAX:
 
    * Il display OLED mostra utilizzo di CPU, RAM, disco, temperatura della CPU e indirizzo IP del Raspberry Pi.
    * Quattro LED RGB WS2812 si illumineranno di blu con effetto respiro.
@@ -83,6 +83,6 @@ Download e installazione del modulo ``pironman5``
 
       sudo systemctl restart pironman5.service
 
-   * ``restart``: Usa questo comando per applicare eventuali modifiche alla configurazione di Pironman 5.
+   * ``restart``: Usa questo comando per applicare eventuali modifiche alla configurazione di Pironman 5 MAX.
    * ``start/stop``: Avvia o interrompi il servizio ``pironman5.service``.
    * ``status``: Controlla lo stato operativo del programma ``pironman5`` con il comando ``systemctl``.

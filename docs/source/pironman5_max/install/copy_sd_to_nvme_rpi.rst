@@ -17,7 +17,7 @@
 Copiare il Sistema Operativo da Micro SD a SSD NVMe
 ==================================================================
 
-Se disponi di un SSD NVMe ma non di un adattatore per collegarlo al computer, puoi adottare una terza soluzione: installare inizialmente il sistema sulla scheda Micro SD. Dopo l’avvio corretto del Pironman 5, puoi trasferire il sistema dalla Micro SD all’SSD NVMe.
+Se disponi di un SSD NVMe ma non di un adattatore per collegarlo al computer, puoi adottare una terza soluzione: installare inizialmente il sistema sulla scheda Micro SD. Dopo l’avvio corretto del Pironman 5 MAX, puoi trasferire il sistema dalla Micro SD all’SSD NVMe.
 
 * Per prima cosa, devi seguire i passaggi in :ref:`max_install_os_sd_rpi`.
 * Poi avvia e accedi al tuo Raspberry Pi. Se non sai come fare, visita il sito ufficiale Raspberry Pi: |link_rpi_get_start|.
@@ -49,16 +49,16 @@ Per impostazione predefinita, il connettore PCIe non è abilitato.
   
     dtparam=nvme
 
-* La connessione è certificata per la velocità Gen 2.0 (5 GT/sec), ma puoi forzarla a Gen 3.0 (10 GT/sec) aggiungendo:
+.. * La connessione è certificata per la velocità Gen 2.0 (5 GT/sec), ma puoi forzarla a Gen 3.0 (10 GT/sec) aggiungendo:
 
-  .. code-block:: shell
+..   .. code-block:: shell
   
-    # Forza la velocità Gen 3.0
-    dtparam=pciex1_gen=3
+..     # Forza la velocità Gen 3.0
+..     dtparam=pciex1_gen=3
 
-  .. warning::
+..   .. warning::
 
-    Il Raspberry Pi 5 non è certificato per la velocità Gen 3.0, quindi potrebbero verificarsi instabilità con alcuni dispositivi PCIe.
+..     Il Raspberry Pi 5 non è certificato per la velocità Gen 3.0, quindi potrebbero verificarsi instabilità con alcuni dispositivi PCIe.
 
 * Disabilita il ritardo di avvio PCIe per permettere il rilevamento dell’SSD NVMe:
 

@@ -16,12 +16,12 @@
 
 Controllo tramite Comandi
 ========================================
-Oltre a visualizzare i dati del Pironman 5 e controllare i vari dispositivi tramite la Dashboard, puoi anche utilizzare comandi per gestirli.
+Oltre a visualizzare i dati del Pironman 5 MAX e controllare i vari dispositivi tramite la Dashboard, puoi anche utilizzare comandi per gestirli.
 
 .. note::
 
-  * Per il sistema **Home Assistant**, è possibile monitorare e controllare il Pironman 5 solo tramite la dashboard accedendo alla pagina ``http://<ip>:34001``.
-  * Per il sistema **Batocera.linux**, è possibile monitorare e controllare il Pironman 5 solo tramite comandi. Ricorda che ogni modifica alla configurazione richiede il riavvio del servizio con ``pironman5 restart`` affinché abbia effetto.
+  * Per il sistema **Home Assistant**, è possibile monitorare e controllare il Pironman 5 MAX solo tramite la dashboard accedendo alla pagina ``http://<ip>:34001``.
+  * Per il sistema **Batocera.linux**, è possibile monitorare e controllare il Pironman 5 MAX solo tramite comandi. Ricorda che ogni modifica alla configurazione richiede il riavvio del servizio con ``pironman5 restart`` affinché abbia effetto.
 
 Visualizzare le Configurazioni di Base
 -----------------------------------------
@@ -65,7 +65,7 @@ Utilizza ``pironman5`` o ``pironman5 -h`` per istruzioni.
                           [-vu [VIBRATION_SWITCH_PULL_UP]] [-os [OLED_SLEEP_TIMEOUT]]
                           [{start,restart,stop}]
 
-  Pironman 5 command line interface
+  Pironman 5 MAX command line interface
 
   positional arguments:
     {start,restart,stop}  Command

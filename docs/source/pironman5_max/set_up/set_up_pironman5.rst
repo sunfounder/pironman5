@@ -17,7 +17,7 @@
 4. Configurazione o Installazione del Software
 ================================================
 
-Una volta scritto il sistema su Micro SD o SSD NVMe, puoi inserirlo nell’apposito slot del Pironman 5 e premere il pulsante di accensione per avviare il dispositivo.
+Una volta scritto il sistema su Micro SD o SSD NVMe, puoi inserirlo nell’apposito slot del Pironman 5 MAX e premere il pulsante di accensione per avviare il dispositivo.
 
 Dopo l’accensione, vedrai accendersi i vari LED di alimentazione, ma lo schermo OLED, i LED RGB e le ventole RGB (le due ventole laterali) non saranno ancora attivi, poiché necessitano di essere configurati. Se noti disturbi o glitch grafici sullo schermo, ignorali: verranno risolti dopo la configurazione.
 

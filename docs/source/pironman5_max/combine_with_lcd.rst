@@ -1,9 +1,9 @@
 Combine With 3.5 inch LCD
 =============================
 
-Questa sezione è destinata agli utenti di Pironman 5 che hanno acquistato anche il `display LCD da 3,5 pollici <https://www.sunfounder.com/products/touchscreen-02?_pos=2&_sid=839d5db5b&_ss=r>`_.
+Questa sezione è destinata agli utenti di Pironman 5 MAX che hanno acquistato anche il `display LCD da 3,5 pollici <https://www.sunfounder.com/products/touchscreen-02?_pos=2&_sid=839d5db5b&_ss=r>`_.
 
-Il display LCD può essere montato direttamente sull’intestazione GPIO del Raspberry Pi, fornendo funzionalità di visualizzazione e controllo touch per il Pironman 5. Si prega di seguire correttamente i passaggi di installazione per garantire il corretto funzionamento ed evitare danni all’hardware.
+Il display LCD può essere montato direttamente sull’intestazione GPIO del Raspberry Pi, fornendo funzionalità di visualizzazione e controllo touch per il Pironman 5 MAX. Si prega di seguire correttamente i passaggi di installazione per garantire il corretto funzionamento ed evitare danni all’hardware.
 
 Puoi trovare maggiori informazioni sul display LCD e il suo utilizzo al seguente link:  
 `Documentazione LCD da 3,5 pollici <http://wiki.sunfounder.cc/index.php?title=3.5_Inch_LCD_Touch_Screen_Monitor_for_Raspberry_Pi>`_.
@@ -18,12 +18,12 @@ Puoi trovare maggiori informazioni sul display LCD e il suo utilizzo al seguente
     :width: 340
 
 
-.. warning:: Durante l’installazione del display LCD da 3,5 pollici sul Pironman 5, assicurati che i pin siano perfettamente allineati. L’intestazione del modulo LCD deve corrispondere esattamente all’interfaccia GPIO del Raspberry Pi, senza alcuno spostamento o disallineamento. Collegamenti errati possono danneggiare il display LCD o anche il Raspberry Pi. Controlla attentamente tutte le connessioni prima di accendere l’alimentazione!
+.. warning:: Durante l’installazione del display LCD da 3,5 pollici sul Pironman 5 MAX, assicurati che i pin siano perfettamente allineati. L’intestazione del modulo LCD deve corrispondere esattamente all’interfaccia GPIO del Raspberry Pi, senza alcuno spostamento o disallineamento. Collegamenti errati possono danneggiare il display LCD o anche il Raspberry Pi. Controlla attentamente tutte le connessioni prima di accendere l’alimentazione!
 
 
 **Remove RGB Jumper**
 
-Quando si utilizza il Pironman 5 con il display LCD da 3,5 pollici, il LED RGB e il display condividono gli stessi pin SPI. Per evitare conflitti e garantire il corretto funzionamento del display, è necessario disattivare la connessione del LED RGB.
+Quando si utilizza il Pironman 5 MAX con il display LCD da 3,5 pollici, il LED RGB e il display condividono gli stessi pin SPI. Per evitare conflitti e garantire il corretto funzionamento del display, è necessario disattivare la connessione del LED RGB.
 
 Segui i passaggi seguenti:
 
