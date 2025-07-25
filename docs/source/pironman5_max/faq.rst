@@ -37,12 +37,12 @@ Si vous avez déjà installé ``pironman5``, vous pouvez désinstaller le module
 
 Le Pironman 5 MAX est-il compatible avec les systèmes de jeux rétro ?
 ------------------------------------------------------------------------
-Oui, il est compatible. Toutefois, la plupart des systèmes de jeux rétro sont des distributions allégées qui ne permettent pas l’installation de logiciels supplémentaires. Cela peut empêcher certains composants du Pironman 5, comme l’écran OLED, les deux ventilateurs RGB et les 4 LED RGB, de fonctionner correctement car ils nécessitent les paquets logiciels de Pironman 5.
+Oui, il est compatible. Toutefois, la plupart des systèmes de jeux rétro sont des distributions allégées qui ne permettent pas l’installation de logiciels supplémentaires. Cela peut empêcher certains composants du Pironman 5 MAX, comme l’écran OLED, les deux ventilateurs RGB et les 4 LED RGB, de fonctionner correctement car ils nécessitent les paquets logiciels de Pironman 5 MAX.
 
 
 .. note::
 
-    Le système Batocera.linux est désormais entièrement compatible avec le Pironman 5. Il s’agit d’une distribution open source et gratuite dédiée au rétro-gaming.
+    Le système Batocera.linux est désormais entièrement compatible avec le Pironman 5 MAX. Il s’agit d’une distribution open source et gratuite dédiée au rétro-gaming.
 
     * :ref:`max_install_batocera`
     * :ref:`max_set_up_batocera`

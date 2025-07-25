@@ -30,7 +30,7 @@ Un écran connecté à votre Raspberry Pi facilite l’interaction directe avec 
 
 **Composants nécessaires**
 
-* Pironman 5
+* Pironman 5 MAX
 * Adaptateur secteur
 * Carte Micro SD ou SSD NVMe avec Raspberry Pi OS préinstallé
 * Adaptateur d’alimentation de l’écran
@@ -41,13 +41,13 @@ Un écran connecté à votre Raspberry Pi facilite l’interaction directe avec 
 
 **Étapes**
 
-#. Insérez la carte Micro SD dans le Pironman 5.
+#. Insérez la carte Micro SD dans le Pironman 5 MAX.
 
-#. Connectez la souris et le clavier aux ports USB du Pironman 5.
+#. Connectez la souris et le clavier aux ports USB du Pironman 5 MAX.
 
-#. Utilisez le câble HDMI pour connecter l’écran au port HDMI du Pironman 5. Assurez-vous que l’écran est alimenté et allumé.
+#. Utilisez le câble HDMI pour connecter l’écran au port HDMI du Pironman 5 MAX. Assurez-vous que l’écran est alimenté et allumé.
 
-#. Allumez le Pironman 5 à l’aide de l’adaptateur secteur. Le bureau de Raspberry Pi OS devrait apparaître sur l’écran dans quelques instants.
+#. Allumez le Pironman 5 MAX à l’aide de l’adaptateur secteur. Le bureau de Raspberry Pi OS devrait apparaître sur l’écran dans quelques instants.
 
    .. image:: img/bookwarm.png
       :width: 90%
@@ -66,15 +66,15 @@ Pour ceux qui préfèrent une interface graphique, une application de bureau à 
 
 **Composants nécessaires**
 
-* Pironman 5
+* Pironman 5 MAX
 * Adaptateur secteur
 * Carte Micro SD ou SSD NVMe avec Raspberry Pi OS préinstallé
 
 **Étapes :**
 
-#. Insérez la carte Micro SD dans le Pironman 5.
+#. Insérez la carte Micro SD dans le Pironman 5 MAX.
 
-#. Connectez le Pironman 5 à une source d’alimentation à l’aide de l’adaptateur secteur.
+#. Connectez le Pironman 5 MAX à une source d’alimentation à l’aide de l’adaptateur secteur.
 
 #. Pour des tutoriels détaillés sur la configuration de l’accès à distance selon le système d’exploitation de votre ordinateur, consultez les sections suivantes :
 

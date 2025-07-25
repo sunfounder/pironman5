@@ -17,7 +17,7 @@
 4. Configuration ou installation du logiciel
 ================================================
 
-Une fois que le système est écrit sur la carte Micro SD ou le SSD NVMe, insérez-le dans l’emplacement prévu du Pironman 5. Appuyez ensuite sur le bouton d’alimentation pour allumer l’appareil.
+Une fois que le système est écrit sur la carte Micro SD ou le SSD NVMe, insérez-le dans l’emplacement prévu du Pironman 5 MAX. Appuyez ensuite sur le bouton d’alimentation pour allumer l’appareil.
 
 Après la mise sous tension, vous verrez les différentes LED d’alimentation s’allumer. En revanche, l’écran OLED, les LED RGB et les ventilateurs RGB (les deux sur les côtés) ne fonctionneront pas encore, car une configuration est nécessaire. Si l’écran présente un affichage brouillé, ignorez-le pour l’instant ; cela sera corrigé une fois la configuration effectuée.
 

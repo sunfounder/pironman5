@@ -15,7 +15,11 @@
 Carte Pi5 NVMe PIP double
 ==========================
 
-La carte Pi5 NVMe PIP (carte périphérique PCIe), définie par la Fondation Raspberry Pi, est une carte adaptatrice PCIe spécialement conçue pour les disques SSD NVMe. Elle prend en charge quatre formats de SSD NVMe : 2230, 2242, 2260 et 2280, tous compatibles avec un slot M.2 M key.
+La carte périphérique PCIe Dual NVMe (PIP), telle que définie par la Fondation Raspberry Pi, est une carte adaptateur PCIe spécialement conçue pour les disques SSD NVMe.
+
+L'interface PCIe du Raspberry Pi 5 offre par défaut un seul canal Gen2 x1 (bande passante de 500 Mo/s). L'intégration de la puce ASM1182e permet de l'étendre à deux canaux Gen2 x1 indépendants pour connecter deux périphériques M.2 M-key (tels que deux SSD M.2 NVMe ou un SSD M.2 NVMe + un accélérateur M.2 Hailo-8/8LAI). Il est toutefois à noter que la carte périphérique PCIe Dual NVMe ne prend pas en charge la Gen 3.
+
+Elle prend en charge quatre tailles différentes de SSD NVMe : 2230, 2242, 2260 et 2280, tous compatibles avec un emplacement M.2 M-key.
 
 .. image:: img/nvme_pip.png
 
@@ -47,7 +51,7 @@ En général, les SSD SATA sont au format B+M key (compatibles avec les ports B 
 
 Les modules M.2 existent en plusieurs tailles et peuvent aussi servir pour le Wi-Fi, WWAN, Bluetooth, GPS et NFC.
 
-Le Pironman 5 prend en charge quatre longueurs de SSD M.2 NVMe (PCIe Gen 2.0 / Gen 3.0) : 2230, 2242, 2260 et 2280. Le « 22 » désigne la largeur en mm et les deux chiffres suivants indiquent la longueur. Plus le module est long, plus il peut contenir de puces NAND, et donc offrir plus de capacité.
+Le Pironman 5 MAX prend en charge quatre longueurs de SSD M.2 NVMe (PCIe Gen 2.0 / Gen 3.0) : 2230, 2242, 2260 et 2280. Le « 22 » désigne la largeur en mm et les deux chiffres suivants indiquent la longueur. Plus le module est long, plus il peut contenir de puces NAND, et donc offrir plus de capacité.
 
 
 .. image:: img/m2_ssd_size.png

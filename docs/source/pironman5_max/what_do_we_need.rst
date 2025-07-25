@@ -19,11 +19,11 @@
 
 * Raspberry Pi 5
 
-    Le Pironman 5 est entièrement compatible avec le Raspberry Pi 5.
+    Le Pironman 5 MAX est entièrement compatible avec le Raspberry Pi 5.
 
 * Adaptateur secteur 5V/5A
 
-    Un adaptateur secteur 5V/5A est nécessaire pour alimenter le Pironman 5 et ses composants.
+    Un adaptateur secteur 5V/5A est nécessaire pour alimenter le Pironman 5 MAX et ses composants.
 
 * Carte micro SD
 
@@ -33,7 +33,7 @@
 
 * SSD NVMe au format M.2
 
-    Le Pironman 5 est équipé d’un connecteur NVMe PIP avec deux ports M.2, compatibles avec quatre formats de SSD M.2 NVMe : 2230, 2242, 2260 et 2280.
+    Le Pironman 5 MAX est équipé d’un connecteur NVMe PIP avec deux ports M.2, compatibles avec quatre formats de SSD M.2 NVMe : 2230, 2242, 2260 et 2280.
     La connexion prend en charge des vitesses certifiées Gen 2.0 (5 GT/sec).
 
 * Écran
@@ -42,8 +42,8 @@
 
 * Câble HDMI
 
-    Les ports HDMI du Raspberry Pi 5 ont été convertis en interfaces HDMI Type A standard via un adaptateur USB HDMI. Un câble HDMI standard est donc nécessaire pour connecter le Pironman 5 à un écran.
+    Les ports HDMI du Raspberry Pi 5 ont été convertis en interfaces HDMI Type A standard via un adaptateur USB HDMI. Un câble HDMI standard est donc nécessaire pour connecter le Pironman 5 MAX à un écran.
 
 * Souris et clavier
 
-    Vous pouvez brancher un clavier et une souris filaires sur n’importe quel port USB du Pironman 5, ou utiliser un récepteur USB Bluetooth pour des périphériques sans fil.
+    Vous pouvez brancher un clavier et une souris filaires sur n’importe quel port USB du Pironman 5 MAX, ou utiliser un récepteur USB Bluetooth pour des périphériques sans fil.

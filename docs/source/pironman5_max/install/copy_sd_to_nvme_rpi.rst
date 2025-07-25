@@ -17,7 +17,7 @@
 Copier le système d’exploitation de la carte Micro SD vers un SSD NVMe
 ========================================================================
 
-Si vous possédez un SSD NVMe sans adaptateur pour le connecter à votre ordinateur, vous pouvez utiliser une autre méthode : commencez par installer le système sur une carte Micro SD. Une fois le Pironman 5 démarré avec succès, vous pourrez transférer le système de la carte Micro SD vers le SSD NVMe.
+Si vous possédez un SSD NVMe sans adaptateur pour le connecter à votre ordinateur, vous pouvez utiliser une autre méthode : commencez par installer le système sur une carte Micro SD. Une fois le Pironman 5 MAX démarré avec succès, vous pourrez transférer le système de la carte Micro SD vers le SSD NVMe.
 
 * Commencez par suivre les étapes décrites ici : :ref:`max_install_os_sd_rpi`.
 * Ensuite, démarrez votre Raspberry Pi et connectez-vous. Si vous ne savez pas comment faire, consultez le site officiel de Raspberry Pi : |link_rpi_get_start|.
@@ -49,16 +49,16 @@ Par défaut, le connecteur PCIe est désactivé.
 
     dtparam=nvme
 
-* La connexion est certifiée pour la vitesse Gen 2.0 (5 GT/s), mais vous pouvez forcer l’utilisation de Gen 3.0 (10 GT/s) avec ces lignes :
+.. * La connexion est certifiée pour la vitesse Gen 2.0 (5 GT/s), mais vous pouvez forcer l’utilisation de Gen 3.0 (10 GT/s) avec ces lignes :
 
-  .. code-block:: shell
+..   .. code-block:: shell
 
-    # Forcer la vitesse Gen 3.0
-    dtparam=pciex1_gen=3
+..     # Forcer la vitesse Gen 3.0
+..     dtparam=pciex1_gen=3
 
-  .. warning::
+..   .. warning::
 
-    Le Raspberry Pi 5 n’est pas certifié pour la Gen 3.0, ce qui peut entraîner une instabilité lors de la connexion à certains périphériques PCIe.
+..     Le Raspberry Pi 5 n’est pas certifié pour la Gen 3.0, ce qui peut entraîner une instabilité lors de la connexion à certains périphériques PCIe.
 
 * Vous devez désactiver le délai de démarrage PCIe afin que le Raspberry Pi puisse détecter le disque NVMe situé derrière le commutateur PCIe au démarrage. Ajoutez la ligne suivante dans ``/boot/firmware/config.txt`` :
 

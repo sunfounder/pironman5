@@ -224,7 +224,7 @@ Deux connecteurs coudés étendent les GPIO du Raspberry Pi. Attention : le réc
   :widths: 25 25
   :header-rows: 1
 
-  * - Pironman 5
+  * - Pironman 5 MAX
     - Raspberry Pi 5
   * - Récepteur IR (optionnel)
     - GPIO13

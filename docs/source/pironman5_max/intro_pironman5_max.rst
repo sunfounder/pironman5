@@ -14,7 +14,7 @@ Le Pironman 5 Max est le nouveau produit phare de notre gamme de boîtiers Piron
 
 L’un de ses éléments distinctifs réside dans ses deux parois latérales transparentes, évoquant un boîtier PC, associées à des LED RGB et deux ventilateurs RGB, qui apportent une esthétique saisissante à l’ensemble. Il intègre un écran OLED affichant les informations essentielles du Raspberry Pi, ainsi que des fonctionnalités étendues comme des boutons d’alimentation et des indicateurs de statut. Le port micro HDMI est remplacé par un port HDMI standard plus pratique, et les ports d’alimentation et HDMI sont repositionnés du même côté que les ports USB du Raspberry Pi, améliorant ainsi l’organisation des câbles. Doté de trois ventilateurs et d’un radiateur vertical, le boîtier aide significativement à dissiper la chaleur générée par le Raspberry Pi 5.
 
-Le boîtier embarque un commutateur PCIe Gen 2 avec deux emplacements PCIe M.2 clé M, compatibles avec les formats 2230, 2242, 2260 et 2280, permettant l’installation de deux SSD NVMe Gen2 ou d’accélérateurs IA. 
+Le boîtier embarque un commutateur PCIe Gen 2 avec deux emplacements PCIe M.2 clé M, compatibles avec les formats 2230, 2242, 2260 et 2280, permettant l’installation de deux SSD NVMe Gen2 ou d’accélérateurs IA. (Mais la Gen3 n'est pas prise en charge.)
 Les utilisateurs peuvent configurer deux SSD NVMe en RAID 0 ou RAID 1 pour des applications NAS, 
 combiner un accélérateur IA et un SSD NVMe pour améliorer les performances IA, 
 ou installer deux accélérateurs IA pour des capacités d’intelligence artificielle renforcées. 

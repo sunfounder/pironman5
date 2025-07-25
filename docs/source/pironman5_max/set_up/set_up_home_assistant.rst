@@ -15,7 +15,7 @@
 Configuration sous Home Assistant
 ============================================
 
-Si vous avez installé le système Home Assistant, vous devrez ajouter les modules complémentaires nécessaires et les activer pour faire fonctionner le Pironman 5.
+Si vous avez installé le système Home Assistant, vous devrez ajouter les modules complémentaires nécessaires et les activer pour faire fonctionner le Pironman 5 MAX.
 
 .. note::
 
@@ -24,7 +24,7 @@ Si vous avez installé le système Home Assistant, vous devrez ajouter les modul
 1. Connexion à Home Assistant
 -----------------------------
 
-* Après le démarrage du Pironman 5, il est recommandé de brancher un câble Ethernet. Vous pouvez ensuite ouvrir un navigateur sur votre ordinateur et accéder à : ``homeassistant.local:8123``.
+* Après le démarrage du Pironman 5 MAX, il est recommandé de brancher un câble Ethernet. Vous pouvez ensuite ouvrir un navigateur sur votre ordinateur et accéder à : ``homeassistant.local:8123``.
 
   .. image:: img/home_login.png
    :width: 90%
@@ -44,7 +44,7 @@ Si vous avez installé le système Home Assistant, vous devrez ajouter les modul
 2. Ajouter le dépôt de modules SunFounder
 ----------------------------------------------------
 
-Les fonctionnalités de Pironman 5 sont fournies sous forme de modules complémentaires dans Home Assistant. Commencez par ajouter le dépôt **SunFounder**.
+Les fonctionnalités de Pironman 5 MAX sont fournies sous forme de modules complémentaires dans Home Assistant. Commencez par ajouter le dépôt **SunFounder**.
 
 #. Allez dans **Settings** -> **Add-ons**.
 
@@ -74,7 +74,7 @@ Les fonctionnalités de Pironman 5 sont fournies sous forme de modules compléme
 3. Installer le module **Pi Config Wizard**
 ------------------------------------------------------
 
-Le module **Pi Config Wizard** permet d’activer les fonctionnalités nécessaires comme I2C et SPI pour le fonctionnement du Pironman 5. Il peut être supprimé par la suite si non nécessaire.
+Le module **Pi Config Wizard** permet d’activer les fonctionnalités nécessaires comme I2C et SPI pour le fonctionnement du Pironman 5 MAX. Il peut être supprimé par la suite si non nécessaire.
 
 #. Dans la liste SunFounder, cliquez sur **Pi Config Wizard**.
 
@@ -132,10 +132,10 @@ Le module **Pi Config Wizard** permet d’activer les fonctionnalités nécessai
     * Vérifiez que le module est lancé. Sinon, cliquez sur **START**.
     * Une fois démarré, cliquez sur **OPEN WEB UI**, puis sur **MOUNT** pour vérifier que I2C et SPI sont bien activés.
 
-4. Installer le module **Pironman 5**
+4. Installer le module **Pironman 5 MAX**
 ---------------------------------------------
 
-Il est temps d’installer officiellement le module **Pironman 5** .
+Il est temps d’installer officiellement le module **Pironman 5 MAX** .
 
 #. Allez dans **Settings** -> **Add-ons**.
 
@@ -162,7 +162,7 @@ Il est temps d’installer officiellement le module **Pironman 5** .
    .. image:: img/home_pironman5_max_addon_start.png
       :width: 90%
 
-#. Cliquez sur **OPEN WEB UI** pour accéder à la page web de Pironman 5. Vous pouvez également activer l’affichage de l’interface dans la barre latérale de Home Assistant.
+#. Cliquez sur **OPEN WEB UI** pour accéder à la page web de Pironman 5 MAX. Vous pouvez également activer l’affichage de l’interface dans la barre latérale de Home Assistant.
 
    .. image:: img/home_pironman5_max_webui.png
       :width: 90%
@@ -174,4 +174,4 @@ Il est temps d’installer officiellement le module **Pironman 5** .
 
 .. note::
 
-    Pour plus d’informations sur l’utilisation de l’interface web de Pironman 5, veuillez consulter : :ref:`max_view_control_dashboard`.
+    Pour plus d’informations sur l’utilisation de l’interface web de Pironman 5 MAX, veuillez consulter : :ref:`max_view_control_dashboard`.
