@@ -16,7 +16,7 @@
 
 **所需组件**
 
-* Pironman 5
+* Pironman 5 MAX
 * 电源适配器
 * 预装了 Raspberry Pi OS 的 Micro SD 卡或 NVMe SSD
 * 显示器电源适配器
@@ -27,13 +27,13 @@
 
 **操作步骤**
 
-#. 将 Micro SD 卡插入 Pironman 5。
+#. 将 Micro SD 卡插入 Pironman 5 MAX。
 
-#. 将鼠标和键盘连接至 Pironman 5 的 USB 接口。
+#. 将鼠标和键盘连接至 Pironman 5 MAX 的 USB 接口。
 
-#. 使用 HDMI 线将显示器连接至 Pironman 5 的 HDMI 接口。确保显示器已接通电源并开启。
+#. 使用 HDMI 线将显示器连接至 Pironman 5 MAX 的 HDMI 接口。确保显示器已接通电源并开启。
 
-#. 使用电源适配器为 Pironman 5 供电。稍后您将在显示器上看到 Raspberry Pi OS 的桌面界面。
+#. 使用电源适配器为 Pironman 5 MAX 供电。稍后您将在显示器上看到 Raspberry Pi OS 的桌面界面。
 
    .. image:: img/bookwarm.png
       :width: 90%
@@ -52,15 +52,15 @@
 
 **所需组件**
 
-* Pironman 5 
+* Pironman 5 MAX 
 * 电源适配器
 * 预装了 Raspberry Pi OS 的 Micro SD 卡或 NVMe SSD
 
 操作步骤：
 
-#. 将 Micro SD 卡插入 Pironman 5。
+#. 将 Micro SD 卡插入 Pironman 5 MAX。
 
-#. 使用电源适配器为 Pironman 5 供电。
+#. 使用电源适配器为 Pironman 5 MAX 供电。
 
 #. 根据您所使用电脑的操作系统，参阅以下章节获取远程访问设置的详细教程：
 

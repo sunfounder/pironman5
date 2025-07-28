@@ -13,7 +13,7 @@ Pironman 5 Max 是我们 Pironman 树莓派机箱系列中的旗舰产品，专�
 
 该机箱的一大亮点是其双侧透明设计，灵感来自 PC 机箱，配合 RGB 灯效与双 RGB 风扇，营造出强烈的科技氛围。机身配备 OLED 显示屏，用于显示树莓派的基本运行信息，此外还集成了电源开关按钮与工作状态指示灯。Micro HDMI 接口升级为标准 HDMI 接口，且电源和 HDMI 接口与 USB 接口集中在同一侧，大幅提升了布线的美观性。内部配备三风扇散热系统及塔式散热器，可有效抑制 Raspberry Pi 5 的高温运行。
 
-该机箱还内置 PCIe Gen 2 Switch，并提供两个支持 2230、2242、2260 和 2280 尺寸的 M.2 M Key PCIe 插槽，可安装两块 NVMe Gen2 SSD 或 AI 加速卡。用户可以根据需要配置为软件 RAID 0 或 RAID 1 构建 NAS，或组合使用一块 AI 加速器与一块 NVMe SSD 以提升 AI 性能，亦可安装两块 AI 加速器以实现更强的人工智能处理能力。此外，机箱还提供 GPIO 扩展接口，方便拓展树莓派的应用功能。
+该机箱还内置 PCIe Gen 2 Switch （不支持Gen3），并提供两个支持 2230、2242、2260 和 2280 尺寸的 M.2 M Key PCIe 插槽，可安装两块 NVMe Gen2 SSD 或 AI 加速卡。用户可以根据需要配置为软件 RAID 0 或 RAID 1 构建 NAS，或组合使用一块 AI 加速器与一块 NVMe SSD 以提升 AI 性能，亦可安装两块 AI 加速器以实现更强的人工智能处理能力。此外，机箱还提供 GPIO 扩展接口，方便拓展树莓派的应用功能。
 
 .. raw:: html
 
@@ -31,6 +31,7 @@ Pironman 5 Max 是我们 Pironman 树莓派机箱系列中的旗舰产品，专�
     control/control_pironman5
     advanced/advanced
     compitable_nvme_ssd
+    combine_with_lcd
     faq
 
 **参数规格**

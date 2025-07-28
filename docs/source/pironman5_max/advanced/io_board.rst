@@ -188,7 +188,7 @@ IO 扩展板支持最多连接两颗 5V 非 PWM 风扇，两者统一控制。
   :widths: 25 25
   :header-rows: 1
 
-  * - Pironman 5
+  * - Pironman 5 MAX
     - 树莓派 5 引脚
   * - 红外接收器（可选）
     - GPIO13

@@ -37,7 +37,7 @@
 
       reboot
 
-#. 重启后， ``pironman5.service`` 将自动启动。Pironman 5 的主要功能配置如下：
+#. 重启后， ``pironman5.service`` 将自动启动。Pironman 5 MAX 的主要功能配置如下：
 
    * OLED 屏幕将显示 CPU、内存、磁盘使用率、CPU 温度和树莓派的 IP 地址；
    * 四颗 WS2812 RGB 灯将以蓝色呼吸模式点亮。
@@ -46,4 +46,4 @@
 
      默认情况下，RGB 风扇在温度达到 60°C 前不会启动。如需设置不同的启动温度，请参见 :ref:`max_cc_control_fan`。
 
-现在，您可以将 Pironman 5 连接显示器、游戏手柄、耳机等设备，畅享沉浸式游戏体验。
+现在，您可以将 Pironman 5 MAX 连接显示器、游戏手柄、耳机等设备，畅享沉浸式游戏体验。

@@ -3,7 +3,7 @@
 从 Micro SD 复制系统到 NVMe SSD
 ==================================================================
 
-如果你拥有一块 NVMe 固态硬盘但没有转接器可将其连接至电脑，可以选择第三种方式：首先将系统安装在 Micro SD 卡中，待 Pironman 5 成功启动后，再将系统从 SD 卡复制到 NVMe SSD 上。
+如果你拥有一块 NVMe 固态硬盘但没有转接器可将其连接至电脑，可以选择第三种方式：首先将系统安装在 Micro SD 卡中，待 Pironman 5 MAX 成功启动后，再将系统从 SD 卡复制到 NVMe SSD 上。
 
 * 首先，请完成 :ref:`max_install_os_sd_rpi`。
 * 然后启动并登录树莓派。如不确定如何登录，可参考树莓派官网：|link_rpi_get_start|。
@@ -35,16 +35,16 @@
   
     dtparam=nvme
 
-* 默认连接认证支持 Gen 2.0（5 GT/sec）速率，如需强制使用 Gen 3.0（10 GT/sec）速率，可添加以下配置：
+.. * 默认连接认证支持 Gen 2.0（5 GT/sec）速率，如需强制使用 Gen 3.0（10 GT/sec）速率，可添加以下配置：
 
-  .. code-block:: shell
+..   .. code-block:: shell
   
-    # 强制使用 PCIe Gen 3.0 速率
-    dtparam=pciex1_gen=3
+..     # 强制使用 PCIe Gen 3.0 速率
+..     dtparam=pciex1_gen=3
   
-  .. warning::
+..   .. warning::
 
-    树莓派 5 并未对 Gen 3.0 速率进行官方认证，部分 PCIe 设备在此速率下可能会出现不稳定情况。
+..     树莓派 5 并未对 Gen 3.0 速率进行官方认证，部分 PCIe 设备在此速率下可能会出现不稳定情况。
 
 * 为了让树莓派能够在启动时识别通过 PCIe Switch 连接的 NVMe 驱动器，你还需要关闭 PCIe 启动延迟。添加以下内容至 ``/boot/firmware/config.txt``：
 

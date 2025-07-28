@@ -1,7 +1,11 @@
-双 Pi5 NVMe PIP
+双 NVMe PIP
 =====================
 
-Pi5 NVMe PIP（PCIe 外设板）由树莓派基金会定义，是一款专为 NVMe 固态硬盘设计的 PCIe 适配器板。它支持四种尺寸的 NVMe M.2 SSD：2230、2242、2260 和 2280，均采用 M.2 M key 接口。
+双 NVMe PIP（PCIe 外设板）由树莓派基金会定义，是一款专为 NVMe 固态硬盘设计的 PCIe 适配器板。
+
+Raspberry Pi 5 的 PCIe 接口默认提供一条 Gen2 x1 通道（带宽 500MB/s）。借助 ASM1182e 芯片，它可以扩展至两条独立的 Gen2 x1 通道，从而支持连接两个 M.2 M-key 设备（例如，连接两个 M.2 NVMe SSD，或连接一个 M.2 NVMe SSD 和一个 M.2 Hailo-8/8LAI 加速器）。不过，请注意，双 NVMe PIP 不支持 Gen 3。
+
+它支持四种尺寸的 NVMe M.2 SSD：2230、2242、2260 和 2280，均采用 M.2 M key 接口。
 
 .. image:: img/nvme_pip.png
 
@@ -33,7 +37,7 @@ M.2 SSD 分为三种键位类型：B key、M key 和 B+M key。其中，B+M key 
 
 M.2 模块不仅用于存储设备，也可用于 Wi-Fi、WWAN、蓝牙、GPS 和 NFC 等设备，因此具有多种尺寸。
 
-Pironman 5 支持四种 NVMe M.2 SSD（PCIe Gen 2.0 / Gen 3.0）长度规格：2230、2242、2260 和 2280。其中“22”表示宽度（单位为毫米），后两位数字表示长度。长度越大，可安装的 NAND 闪存芯片越多，容量也越大。
+Pironman 5 MAX 支持四种 NVMe M.2 SSD（PCIe Gen 2.0 / Gen 3.0）长度规格：2230、2242、2260 和 2280。其中“22”表示宽度（单位为毫米），后两位数字表示长度。长度越大，可安装的 NAND 闪存芯片越多，容量也越大。
 
 
 .. image:: img/m2_ssd_size.png

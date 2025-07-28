@@ -23,6 +23,7 @@ Pironman 5 Mini 是 Pironman 树莓派机箱系列的最新成员，专为追求
     set_up/set_up_pironman5
     control/control_pironman5
     hardware/hardware
+    combine_with_lcd
     compitable_nvme_ssd
     faq
 

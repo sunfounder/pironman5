@@ -3,7 +3,7 @@
 在 Raspberry Pi/Ubuntu/Kali/Homebridge 系统中配置
 =====================================================
 
-如果你在树莓派上安装了 Raspberry Pi OS、Ubuntu、Kali Linux 或 Homebridge 系统，则需要通过命令行来配置 Pironman 5。请参考以下详细教程：
+如果你在树莓派上安装了 Raspberry Pi OS、Ubuntu、Kali Linux 或 Homebridge 系统，则需要通过命令行来配置 Pironman 5 MAX。请参考以下详细教程：
 
 .. note::
 
@@ -53,7 +53,7 @@
 
    安装完成后，系统会提示重启，请根据提示完成重启。
 
-   重启后， ``pironman5.service`` 服务将自动启动。以下是 Pironman 5 的主要功能：
+   重启后， ``pironman5.service`` 服务将自动启动。以下是 Pironman 5 MAX 的主要功能：
 
    * OLED 屏幕将显示 CPU、内存、磁盘使用率、CPU 温度及树莓派的 IP 地址。
    * 四颗 WS2812 RGB 灯珠将以蓝色呼吸灯形式亮起。

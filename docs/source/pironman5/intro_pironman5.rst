@@ -23,6 +23,7 @@ Pironman 5 是一款专为树莓派打造的迷你 PC 机箱，采用坚固的�
     hardware/hardware
     compitable_nvme_ssd
     assemble_camera
+    combine_with_lcd
     faq
 
 
