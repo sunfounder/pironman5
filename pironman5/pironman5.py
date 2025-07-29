@@ -67,8 +67,10 @@ class Pironman5:
                 _p.add('history')
                 _p.add('clear_history')
             else:
-                _p.remove('history')
-                _p.remove('clear_history')
+                if 'history' in _p:
+                    _p.remove('history')
+                if 'clear_history' in _p:
+                    _p.remove('clear_history')
             self.peripherals = list(_p)
 
         # init PMAuto and PMDashboard

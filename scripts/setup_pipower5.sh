@@ -13,6 +13,8 @@ fi
 
 apt-get update
 apt-get install wget unzip
+apt-get install linux-headers-$(uname -r) -y
+
 
 echo "Installing PiPower 5 driver"
 
@@ -30,5 +32,8 @@ unzip email_templates.zip
 if [ ! -d /opt/pipower5 ]; then
     mkdir /opt/pipower5
 fi
-mv email_templates/ /opt/pipower5/
+if [ -d /opt/pipower5/email_templates ]; then
+    rm -rf /opt/pipower5/email_templates
+fi
+mv email_templates/ /opt/pipower5/email_templates/
 rm -rf email_templates.zip email_templates/
