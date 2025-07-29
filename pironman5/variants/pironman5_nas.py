@@ -29,7 +29,7 @@ class Pironman5NAS:
     EVENT_MAP = {
         'pironman_mcu_button_click': 'oled_wake_page_next',
         'pironman_mcu_button_double_click': 'oled_page_prev',
-        'pironman_mcu_button_long_press': 'shutdown',
+        'pironman_mcu_shutdown_request_button': 'shutdown',
     }
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
