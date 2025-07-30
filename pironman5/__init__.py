@@ -22,7 +22,7 @@ def main():
     import argparse
     from .pironman5 import Pironman5
     from .version import __version__
-    from .utils import is_included
+    from .utils import is_included, constrain
     from importlib.resources import files as resource_files
     import json
     import sys
@@ -423,6 +423,9 @@ def main():
             if args.oled_sleep_timeout == None:
                 print(f"OLED sleep timeout: {current_config['system']['oled_sleep_timeout']}")
             else:
+                from pm_auto.addons.oled import OLEDAddon
+                min = OLEDAddon.MIN_SLEEP_TIMEOUT
+                max = OLEDAddon.MAX_SLEEP_TIMEOUT
                 try:
                     args.oled_sleep_timeout = int(args.oled_sleep_timeout)
                 except ValueError:
@@ -431,8 +434,12 @@ def main():
                 if args.oled_sleep_timeout < 0:
                     print(f"Invalid value for OLED sleep timeout, it should be greater than or equal to 0")
                     quit()
-                new_sys_config['oled_sleep_timeout'] = args.oled_sleep_timeout
-                print(f"Set OLED sleep timeout: {args.oled_sleep_timeout}")
+                oled_sleep_timeout = args.oled_sleep_timeout
+                if args.oled_sleep_timeout < min or args.oled_sleep_timeout > max:
+                    print(f"[WARNING] OLED sleep timeout value should be between {min} and {max}")
+                    oled_sleep_timeout = constrain(oled_sleep_timeout, min, max)
+                new_sys_config['oled_sleep_timeout'] = oled_sleep_timeout
+                print(f"Set OLED sleep timeout: {oled_sleep_timeout}")
         # oled_pages
         if args.oled_pages != '':
             if args.oled_pages == None:

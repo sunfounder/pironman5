@@ -48,3 +48,9 @@ def hex_to_rgb(hex):
     if hex.startswith('#'):
         hex = hex[1:]
     return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
+
+def constrain(value, min_value, max_value):
+    '''
+    Constrain value to be within min and max.
+    '''
+    return max(min_value, min(value, max_value))
