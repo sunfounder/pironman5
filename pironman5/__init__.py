@@ -78,7 +78,7 @@ def main():
         AVAILABLE_PAGES = get_available_pages(PERIPHERALS)
         parser.add_argument("-oe", "--oled-enable", nargs='?', default='', help="OLED enable True/true/on/On/1 or False/false/off/Off/0")
         parser.add_argument("-or", "--oled-rotation", nargs='?', default=-1, type=int, choices=[0, 180], help="Set to rotate OLED display, 0, 180")
-        parser.add_argument("-op", "--oled-pages", nargs='?', default=[], help=f"OLED pages: {', '.join(AVAILABLE_PAGES)}")
+        parser.add_argument("-op", "--oled-pages", nargs='?', default='', help=f"OLED pages, split by ',': {','.join(AVAILABLE_PAGES)}")
         if is_included(PERIPHERALS, "oled_sleep"):
             parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds")
     # vibration_switch
@@ -98,7 +98,7 @@ def main():
     if is_included(PERIPHERALS, "pipower5"):
         from pipower5.email_sender import EmailModes
         AVAILABLE_EMAIL_MODES = [i.value for i in EmailModes]
-        parser.add_argument("-seo", '--send-email-on', nargs='?', default=[], help=f"Send email on: {AVAILABLE_EMAIL_MODES}")
+        parser.add_argument("-seo", '--send-email-on', nargs='?', default='', help=f"Send email on, split by ',': {','.join(AVAILABLE_EMAIL_MODES)}")
         parser.add_argument("-set", '--send-email-to', nargs='?', default='', help="Email address to send email to")
         parser.add_argument("-ss", '--smtp-server', nargs='?', default='', help="SMTP server")
         parser.add_argument("-smp", '--smtp-port', nargs='?', default='', help="SMTP port")
@@ -434,17 +434,21 @@ def main():
                 new_sys_config['oled_sleep_timeout'] = args.oled_sleep_timeout
                 print(f"Set OLED sleep timeout: {args.oled_sleep_timeout}")
         # oled_pages
-        if args.oled_pages != []:
+        if args.oled_pages != '':
             if args.oled_pages == None:
                 pages = [f' - {page}' for page in current_config['system']['oled_pages']]
                 pages = '\n'.join(pages)
                 print("OLED pages:")
                 print(pages)
             else:
-                pages = [p.lower().strip().replace(',', '') for p in args.oled_pages]
+                if ',' in args.oled_pages:
+                    pages = args.oled_pages.split(',')
+                else:
+                    pages = [args.oled_pages]
+                pages = [p.lower() for p in pages]
                 for page in pages:
                     if page not in AVAILABLE_PAGES:
-                        print(f"Invalid value for OLED pages: '{page}', it should be {', '.join(AVAILABLE_PAGES)}")
+                        print(f"Invalid value for OLED pages: '{page}', it should be split by ',' and be one of {','.join(AVAILABLE_PAGES)}")
                         quit()
                 new_sys_config['oled_pages'] = pages
                 print(f"Set OLED pages: {pages}")
@@ -571,17 +575,21 @@ def main():
     # PiPower 5 settings
     if is_included(PERIPHERALS, "pipower5"):
         # send email on
-        if args.send_email_on != []:
+        if args.send_email_on != '':
             if args.send_email_on == None:
                 send_email_on = [f' - {mode}' for mode in current_config['system']['send_email_on']]
                 send_email_on = '\n'.join(send_email_on)
                 print("Send email on:")
                 print(send_email_on)
             else:
-                send_email_on = [p.replace(',', '') for p in args.send_email_on]
+                if ',' in args.send_email_on:
+                    send_email_on = args.send_email_on.split(',')
+                else:
+                    send_email_on = [args.send_email_on]
+                send_email_on = [p.lower() for p in send_email_on]
                 for mode in send_email_on:
                     if mode not in AVAILABLE_EMAIL_MODES:
-                        print(f"Invalid value for Send email on: '{mode}', it should be {', '.join(AVAILABLE_EMAIL_MODES)}")
+                        print(f"Invalid value for Send email on: '{mode}', it should be split by ',' and be one of {','.join(AVAILABLE_EMAIL_MODES)}")
                         quit()
                 new_sys_config['send_email_on'] = send_email_on
                 print(f"Set Send email on: {send_email_on}")
