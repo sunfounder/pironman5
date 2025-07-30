@@ -30,7 +30,7 @@ class Pironman5Max:
         "gpio_fan_mode",
         "gpio_fan_led",
         "vibration_switch",
-        "pi5_pwr_btn",
+        "pi5_power_button",
         "oled_sleep",
     ]
     EVENT_MAP = {

@@ -29,7 +29,7 @@ class Pironman5:
         "pwm_fan_speed",
         "gpio_fan_state",
         "gpio_fan_mode",
-        "pi5_pwr_btn",
+        "pi5_power_button",
     ]
     EVENT_MAP = {
         'pi5_power_button_click': 'oled_wake_page_next',
