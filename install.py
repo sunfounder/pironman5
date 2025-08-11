@@ -114,7 +114,7 @@ gpio_settings = {
     ],
 }
 
-pi5_pwr_btn_settings = {
+pi5_power_button_settings = {
     # - Install from pip
     'pip_dependencies': [
         'evdev',
@@ -191,8 +191,8 @@ if 'gpio_fan_state' in PERIPHERALS or \
     installer.update_settings(gpio_settings)
 if 'ws2812' in PERIPHERALS:
     installer.update_settings(ws2812_settings)
-if 'pi5_pwr_btn' in PERIPHERALS:
-    installer.update_settings(pi5_pwr_btn_settings)
+if 'pi5_power_button' in PERIPHERALS:
+    installer.update_settings(pi5_power_button_settings)
 if 'rgb_matrix' in PERIPHERALS:
     installer.update_settings(rgb_matrix_settings)
 if 'pipower5' in PERIPHERALS:
