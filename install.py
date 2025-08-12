@@ -21,8 +21,9 @@ settings = {
     # ],
 
     # - Install from apt
-    # 'apt_dependencies': [
-    # ],
+    'apt_dependencies': [
+        'python3-dev',
+    ],
 
     # - Install from pip
     # 'pip_dependencies': [
