@@ -36,7 +36,8 @@ class Pironman5Max:
     EVENT_MAP = {
         'pi5_power_button_click': 'oled_wake_page_next',
         'pi5_power_button_double_click': 'oled_page_prev',
-        'pi5_power_button_long_press': 'shutdown',
+        'pi5_power_button_long_press_2s': 'oled_show_shutdown_screen',
+        'pi5_power_button_long_press_2s_released': 'shutdown',
     }
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,

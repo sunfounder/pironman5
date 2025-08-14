@@ -1,3 +1,4 @@
 .vscode
 pironman5.egg-info*
 *__pycache__*
+dev

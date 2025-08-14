@@ -53,7 +53,8 @@ class Pironman5UPS:
         'pipower5_button_click': 'oled_wake_page_next',
         'pipower5_button_double_click': 'oled_page_prev',
         'pipower5_low_battery_shutdown': 'shutdown',
-        'pipower5_button_shutdown': 'shutdown',
+        'pipower5_button_long_press': 'oled_show_shutdown_screen',
+        'pipower5_button_long_press_released': 'shutdown',
         'pipower5_low_voltage_shutdown': 'shutdown',
     }
     SYSTEM_DEFAULT_CONFIG = {
