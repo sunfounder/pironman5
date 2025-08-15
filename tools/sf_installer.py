@@ -276,36 +276,57 @@ class SF_Installer():
                 time.sleep(0.01)
         # status
         if status == 0:
-            if self.args.plain_text:
-                print(f'\r[✓]')
-            else:
-                print(f'\r\033[32m[✓]\033[0m')
+            print(f'\r{self.SUCCESS}')
         else:
             if ignore_error:
-                if self.args.plain_text:
-                    print(f'\r[✓]')
-                else:
-                    print(f'\r\033[1;33m[✓]\033[0m')
+                print(f'\r{self.SKIPPED}')
             else:
-                if self.args.plain_text:
-                    print(f'\r[✗]')
-                    self.errors.append(
-                        f"[✗] {msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}\n"
-                    )
-                else:
-                    print(f'\r\033[1;35m[✗]\033[0m')
-                    self.errors.append(
-                        f"\033[1;35m[✗]\033[0m {msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}\n"
-                    )
+                print(f'\r{self.FAILED}')
+                self.errors.append(
+                    f"{self.FAILED} {msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}\n"
+                )
+
+    def print_title(self, title):
+        if not self.args.plain_text:
+            print(f"\n\033[1;34m{title}\033[0m")
+        else:
+            print(f"\n{title}")
+
+    def print_error(self, msg):
+        if self.args.plain_text:
+            print(f'\r[✗] {msg}')
+        else:
+            print(f'\r\033[1;35m[✗]\033[0m {msg}')
+
+    @property
+    def SUCCESS(self):
+        if self.args.plain_text:
+            return "[✓]"
+        else:
+            return "\033[32m[✓]\033[0m"
+
+    @property
+    def SKIPPED(self):
+        if self.args.plain_text:
+            return "[✓]"
+        else:
+            return "\033[1;33m[✓]\033[0m"
+
+    @property
+    def FAILED(self):
+        if self.args.plain_text:
+            return "[✗]"
+        else:
+            return "\033[1;35m[✗]\033[0m"
 
     def check_admin(self):
         if os.geteuid() != 0:
-            print('This script must be run as root')
+            self.print_error('This script must be run as root')
             sys.exit(1)
 
     def remove_work_dir(self):
         if not os.path.exists(self.work_dir):
-            print(f" - Work directory {self.work_dir} already removed Skip")
+            print(f"{self.SKIPPED} Work directory {self.work_dir} already removed Skip")
             return
         self.do('Remove work directory', f'rm -r {self.work_dir}')
 
@@ -317,7 +338,7 @@ class SF_Installer():
         
     # Install Steps:
     def install_build_dep(self):
-        print("Install build dependencies...")
+        self.print_title("Install build dependencies...")
         self.do('Update package list', 'apt-get update')
         deps = [ *self.APT_DEPENDENCIES ]
 
@@ -334,7 +355,7 @@ class SF_Installer():
     def run_scripts_before_install(self):
         if len(self.before_install_scripts) == 0:
             return
-        print("Run scripts before install...")
+        self.print_title("Run scripts before install...")
         for script in self.before_install_scripts:
             self.do(f'Run scripts before install: {script}', f'bash scripts/{script}')
 
@@ -342,7 +363,7 @@ class SF_Installer():
         if ('no_dep' in self.args and self.args.no_dep) or \
             len(self.custom_apt_dependencies) == 0:
             return
-        print("Install APT dependencies...")
+        self.print_title("Install APT dependencies...")
 
         deps = " ".join(self.custom_apt_dependencies)
         msg = f'Install APT dependencies: {deps}'
@@ -352,12 +373,12 @@ class SF_Installer():
         self.do(msg, f'apt-get install -y {deps}')
 
     def create_working_dir(self):
-        print("Create working directory...")
+        self.print_title("Create working directory...")
         self.do('Create work directory', f'mkdir -p {self.work_dir}')
-        self.do('Change work directory mode', f'chmod 777 {self.work_dir}')
+        self.do('Change work directory mode', f'chmod 644 {self.work_dir}')
         self.do('Change work directory owner', f'chown -R {self.user}:{self.user} {self.work_dir}')
         self.do('Create log directory', f'mkdir -p {self.log_dir}')
-        self.do('Change log directory mode', f'chmod 777 {self.log_dir}')
+        self.do('Change log directory mode', f'chmod 644 {self.log_dir}')
         self.do('Change log directory owner', f'chown -R {self.user}:{self.user} {self.log_dir}')
         if os.path.exists(self.venv_path):
             self.do('Remove old virtual environment', f'rm -r {self.venv_path}')
@@ -367,7 +388,7 @@ class SF_Installer():
         if ('no_dep' in self.args and self.args.no_dep) or \
             len(self.custom_pip_dependencies) == 0:
             return
-        print("Install PIP dependencies...")
+        self.print_title("Install PIP dependencies...")
         deps = [ *self.PIP_DEPENDENCIES ]
         if self.custom_pip_dependencies is not None:
             deps += self.custom_pip_dependencies
@@ -378,7 +399,7 @@ class SF_Installer():
     def install_py_src_pkgs(self):
         if len(self.python_source) == 0:
             return
-        print("Install Python source packages...")
+        self.print_title("Install Python source packages...")
         for package, url in self.python_source.items():
             if self.args.gitee:
                 url = url.replace('github.com', 'gitee.com')
@@ -387,7 +408,7 @@ class SF_Installer():
     def create_symlinks(self):
         if len(self.symlinks) == 0:
             return
-        print("Create symlinks...")
+        self.print_title("Create symlinks...")
         for script in self.symlinks:
             self.do(f'Create symbolic link: {self.venv_path}/bin/{script} -> /usr/local/bin/{script}',
                     f'ln -s -f {self.venv_path}/bin/{script} /usr/local/bin/{script}')
@@ -396,7 +417,7 @@ class SF_Installer():
         if ('skip_auto_start' in self.args and self.args.skip_auto_start) or \
             (len(self.service_files) == 0 and len(self.bin_files) == 0):
             return
-        print("Setup auto start...")
+        self.print_title("Setup auto start...")
         for bin in self.bin_files:
             self.do('Copy binary file', f'cp bin/{bin} /usr/local/bin/')
             self.do('Change binary file mode', f'chmod +x /usr/local/bin/{bin}')
@@ -409,7 +430,7 @@ class SF_Installer():
         if ('skip_config_txt' in self.args and self.args.skip_config_txt) or \
             len(self.config_txt) == 0:
             return
-        print("Setup config.txt...")
+        self.print_title("Setup config.txt...")
         for name, value in self.config_txt.items():
             self.set_config_txt(name, value)
         self.need_reboot = True
@@ -418,7 +439,7 @@ class SF_Installer():
         if ('skip_modules' in self.args and self.args.skip_modules) or \
             len(self.modules) == 0:
             return
-        print("Probe modules...")
+        self.print_title("Probe modules...")
         for module in self.modules:
             self.do(f'add module: {module}',
                 f'sh -c "echo {module} >> /etc/modules-load.d/modules.conf"'
@@ -429,7 +450,7 @@ class SF_Installer():
         if ('skip_dtoverlay' in self.args and self.args.skip_dtoverlay) or \
             len(self.dtoverlays) == 0:
             return
-        print("Copy device tree overlay...")
+        self.print_title("Copy device tree overlay...")
         OVERLAY_PATH_DEFAULT = '/boot/overlays'
         OVERLAY_PATH_BACKUP = '/boot/firmware/overlays'
         overlays_path = OVERLAY_PATH_DEFAULT
@@ -454,14 +475,14 @@ class SF_Installer():
         self.need_reboot = True
 
     def change_work_dir_owner(self):
-        print("Change work directory owner...")
+        self.print_title("Change work directory owner...")
         self.do('Change work directory owner', f'chown -R {self.user}:{self.user} {self.work_dir}')
 
     # Uninstall Steps:
     def remove_symlinks(self):
         if len(self.symlinks) == 0:
             return
-        print("Remove symlinks...")
+        self.print_title("Remove symlinks...")
         for link in self.symlinks:
             self.do(f'Remove symbolic link: {link}',
                     f'rm -f /usr/local/bin/{link}')
@@ -469,39 +490,36 @@ class SF_Installer():
     def uninstall_scripts(self):
         if len(self.before_install_scripts) == 0:
             return
-        print("Uninstall scripts...")
+        self.print_title("Uninstall scripts...")
         for script in self.before_install_scripts:
             self.do(f'Uninstall script: {script}', f'bash scripts/{script} --uninstall')
 
     def remove_auto_start(self):
         if len(self.service_files) == 0 and len(self.bin_files) == 0:
             return
-        print("Remove auto start...")
+        self.print_title("Remove auto start...")
         for bin in self.bin_files:
-            if not os.path.exists(f'/usr/local/bin/{bin}'):
-                print(f" - Binary file {bin} not found Skip")
-                continue
-            self.do('Remove binary file', f'rm /usr/local/bin/{bin}')
+            self.do('Remove binary file', f'rm -f /usr/local/bin/{bin}')
         for service in self.service_files:
             if not os.path.exists(f'/etc/systemd/system/{service}'):
-                print(f" - Service file {service} not found Skip")
+                self.errors.append(f"{self.SKIPPED} Service file {service} not found Skip")
                 continue
             self.do('Stop service', f'systemctl stop {service}')
             self.do('Disable service', f'systemctl disable {service}')
-            self.do('Remove service file', f'rm /etc/systemd/system/{service}')
+            self.do('Remove service file', f'rm -f /etc/systemd/system/{service}')
         self.do('Reload systemd', 'systemctl daemon-reload')
 
     def remove_dtoverlay(self):
         if len(self.dtoverlays) == 0:
             return
-        print("Remove device tree overlay...")
+        self.print_title("Remove device tree overlay...")
         OVERLAY_PATH_DEFAULT = '/boot/overlays'
         OVERLAY_PATH_BACKUP = '/boot/firmware/overlays'
         overlays_path = OVERLAY_PATH_DEFAULT
         if not os.path.exists(overlays_path):
             overlays_path = OVERLAY_PATH_BACKUP
             if not os.path.exists(overlays_path):
-                self.errors.append(f"Device tree overlay directory {OVERLAY_PATH_DEFAULT} or {OVERLAY_PATH_BACKUP} not found")
+                self.errors.append(f"{self.SKIPPED} Device tree overlay directory {OVERLAY_PATH_DEFAULT} or {OVERLAY_PATH_BACKUP} not found")
                 return
         
         for overlay in self.dtoverlays:
@@ -509,36 +527,34 @@ class SF_Installer():
             if overlay.startswith('http'):
                 overlay = overlay.split('/')[-1]
             if not os.path.exists(f'{overlays_path}/{overlay}'):
-                print(f" - Device tree overlay {overlay} not found Skip")
+                self.errors.append(f"{self.SKIPPED} Device tree overlay {overlay} not found Skip")
                 continue
             self.do(f'Remove dtoverlay {overlay}', f'rm {overlays_path}/{overlay}')
             self.need_reboot = True
 
     def remove_logs(self):
-        print("Remove logs...")
-        self.do('Remove logs', f'rm -r {self.log_dir}', ignore_error=True)
+        self.print_title("Remove logs...")
+        self.do('Remove logs', f'rm -rf {self.log_dir}', ignore_error=True)
 
     def reboot_prompt(self):
-        print("\033[1;32mWhether to reboot for the changes to take effect(Y/N): \033[0m", end='')
+        self.print_title("Reboot to apply the changes? (Y/N): ", end='')
         while True:
             key = input()
             if key == 'Y' or key == 'y':
-                print(f'reboot')
+                self.print_title(f'Reboot')
                 self.run_command('reboot')
             elif key == 'N' or key == 'n':
-                print(f'canceled')
+                self.print_title(f'Canceled')
                 return False
             else:
-                print("\033[1;35mPlease enter Y or N: \033[0m", end='')
+                self.print_error("Please enter Y or N: ", end='')
                 continue
 
     def cleanup(self):
         self.do(f'Remove build', f'rm -r ./build', ignore_error=True)
 
     def install(self):
-        print(f"Installing for {self.friendly_name}")
-        print(f"Version: {self.version}")
-        print(" ")
+        self.print_title(f"Installing {self.friendly_name} {self.version}")
         self.install_build_dep()
         self.run_scripts_before_install()
         self.install_apt_dep()
@@ -552,10 +568,10 @@ class SF_Installer():
         self.copy_dtoverlay()
         self.custom_install()
         self.change_work_dir_owner()
-        print("Finished")
+        self.print_title("Finished")
 
     def uninstall(self):
-        print(f"Uninstall for {self.friendly_name}")
+        self.print_title(f"Uninstall for {self.friendly_name}")
         self.remove_symlinks()
         self.uninstall_scripts()
         self.remove_auto_start()
@@ -572,18 +588,18 @@ class SF_Installer():
             else:
                 self.install()
         except KeyboardInterrupt:
-            print("\n\nCanceled.")
+            self.print_title("\n\nCanceled.")
         finally:
             sys.stdout.write(' \033[1D')
             sys.stdout.write('\033[?25h')  # cursor visible
             sys.stdout.flush()
-            print('Cleanup')
+            self.print_title('Cleanup')
             self.cleanup()
             if len(self.errors) == 0:
                 if self.need_reboot and not self.args.skip_reboot:
                     self.reboot_prompt()
             else:
-                print("\n\nError happened in install process:")
+                print(f"\n\n{self.FAILED} Error happened in install process:")
                 for error in self.errors:
                     print(error)
                 print(
