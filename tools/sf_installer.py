@@ -247,21 +247,21 @@ class SF_Installer():
         return status, result, error
 
     def spinner(self):
-        char = ['/', '-', '\\', '|']
+        char = "⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"
         i = 0
         while self.is_running:
-            i = (i + 1) % 4
+            i = (i + 1) % len(char)
             sys.stdout.write('\033[?25l')  # cursor invisible
-            sys.stdout.write(f'{char[i]}\033[1D')
+            sys.stdout.write(f'\r\033[36m[{char[i]}]\033[0m')
             sys.stdout.flush()
-            time.sleep(0.5)
+            time.sleep(0.1)
 
         sys.stdout.write(' \033[1D')
         sys.stdout.write('\033[?25h')  # cursor visible
         sys.stdout.flush()
 
     def do(self, msg="", cmd="", ignore_error=False):
-        print(f" - {msg}... ", end='', flush=True)
+        print(f"[ ] {msg}", end='', flush=True)
         if not self.args.plain_text:
             self.is_running = True
             _thread = threading.Thread(target=self.spinner)
@@ -276,15 +276,27 @@ class SF_Installer():
                 time.sleep(0.01)
         # status
         if status == 0:
-            print('Done')
+            if self.args.plain_text:
+                print(f'\r[✓]')
+            else:
+                print(f'\r\033[32m[✓]\033[0m')
         else:
             if ignore_error:
-                print('\033[1;35mError Ignored\033[0m')
+                if self.args.plain_text:
+                    print(f'\r[✓]')
+                else:
+                    print(f'\r\033[1;33m[✓]\033[0m')
             else:
-                print('\033[1;35mError\033[0m')
-                self.errors.append(
-                    f"{msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}"
-                )
+                if self.args.plain_text:
+                    print(f'\r[✗]')
+                    self.errors.append(
+                        f"[✗] {msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}\n"
+                    )
+                else:
+                    print(f'\r\033[1;35m[✗]\033[0m')
+                    self.errors.append(
+                        f"\033[1;35m[✗]\033[0m {msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}\n"
+                    )
 
     def check_admin(self):
         if os.geteuid() != 0:
@@ -313,8 +325,11 @@ class SF_Installer():
             deps += self.build_dependencies
 
         deps = " ".join(deps)
-        self.do(f'Install build dependencies: {deps}',
-                f'apt-get install -y {deps}')
+        msg = f'Install build dependencies: {deps}'
+        width = int(os.environ.get('COLUMNS', 80))
+        if len(msg) > width - 3:
+            msg = msg[:width-3] + '...'
+        self.do(msg, f'apt-get install -y {deps}')
 
     def run_scripts_before_install(self):
         if len(self.before_install_scripts) == 0:
@@ -328,11 +343,13 @@ class SF_Installer():
             len(self.custom_apt_dependencies) == 0:
             return
         print("Install APT dependencies...")
-        # for dep in self.custom_apt_dependencies:
-        #     self.do(f'Install {dep}', f'apt-get install -y {dep}')
+
         deps = " ".join(self.custom_apt_dependencies)
-        self.do(f'Install APT dependencies: {deps}',
-                f'apt-get install -y {deps}')
+        msg = f'Install APT dependencies: {deps}'
+        width = int(os.environ.get('COLUMNS', 80))
+        if len(msg) > width-3:
+            msg = msg[:width-3] + '...'
+        self.do(msg, f'apt-get install -y {deps}')
 
     def create_working_dir(self):
         print("Create working directory...")
