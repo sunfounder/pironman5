@@ -286,17 +286,17 @@ class SF_Installer():
                     f"{self.FAILED} {msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}\n"
                 )
 
-    def print_title(self, title):
+    def print_title(self, title, end='\n', flush=False):
         if not self.args.plain_text:
-            print(f"\n\033[1;34m{title}\033[0m")
+            print(f"\n\033[1;34m{title}\033[0m", end=end, flush=flush)
         else:
-            print(f"\n{title}")
+            print(f"\n{title}", end=end, flush=flush)
 
-    def print_error(self, msg):
+    def print_error(self, msg, end='\n', flush=False):
         if self.args.plain_text:
-            print(f'\r[✗] {msg}')
+            print(f'\r[✗] {msg}', end=end, flush=flush)
         else:
-            print(f'\r\033[1;35m[✗]\033[0m {msg}')
+            print(f'\r\033[1;35m[✗]\033[0m {msg}', end=end, flush=flush)   
 
     @property
     def SUCCESS(self):
