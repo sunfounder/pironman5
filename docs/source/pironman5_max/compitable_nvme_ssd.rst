@@ -71,7 +71,7 @@ Compatible NVMe SSDs
 Uncompatible NVMe SSD
 --------------------------
 
-We recommend avoiding the following NVMe SSD drives which is equipped with a Phison controller due to their proven incompatibility:
+We recommend avoiding the following NVMe SSD drives which is equipped with a Phison controller due to their proven incompatibility:
 
 * Western Digital SN740
 * Western Digital Black SN770
@@ -84,4 +84,4 @@ We recommend avoiding the following NVMe SSD drives which is equipped with a Ph
 * Samsung PM991
 * Kingston OM8SEP4256Q-A0
 * Transcend 110Q (TS500GMTE110Q)
-* Other NVMe SSD drivers equipped with the same Phison controller
+* Other NVMe SSD drivers equipped with the same Phison controller

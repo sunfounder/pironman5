@@ -10,25 +10,19 @@ Thanks for choosing our |link_pironman5_max|.
     :width: 400
     :align: center
     
-The Pironman 5 Max is the new flagship product in our Pironman Raspberry Pi case series, 
-exclusively compatible with the latest Raspberry Pi 5. 
+|link_pironman5_max| is a high-end Raspberry Pi case designed exclusively for the Raspberry Pi 5, featuring dual NVMe support for powerful storage and expansion capabilities.
 
-A standout feature of the Pironman 5 Max is its dual transparent sides, 
-reminiscent of a PC case, combined with RGB LEDs and two RGB fans, 
-adding an impressive flair to the product. 
-It includes an OLED screen that displays basic information about the Raspberry Pi, 
-and has expanded features such as power on/off buttons and status indicators. 
-The micro HDMI port has been converted to a standard HDMI port for more common use, 
-and the power and HDMI ports have been relocated to the same side as the Raspberry Pi’s USB ports, 
-enhancing the aesthetics of the wiring. Equipped with three fans and a tower-style heatsink, 
-it greatly assists in reducing the high temperatures of the Raspberry Pi 5. 
+**Key Features**:
 
-The case integrates a PCIe Gen 2 Switch with two M.2 M key PCIe slots supporting 2230, 2242, 2260, and 2280, allowing the installation of two NVMe Gen2 SSDs or AI accelerators. (But Gen3 is not supported.)
-Users can set up two NVMe SSDs in software RAID 0 or RAID 1 for NAS configurations; 
-combine one AI accelerator and one NVMe SSD to boost AI performance; 
-or use two AI accelerators for even stronger AI capabilities. 
-Additionally, GPIO expansion is provided for convenient extension of the Raspberry Pi’s functionality.
+* **High-Speed Storage & AI Support**: PCIe Gen 2 switch with two M.2 M-key slots (**2230**, **2242**, **2260**, **2280**) for dual NVMe Gen2 SSDs or AI accelerators (**Gen3 not supported**), including full **Hailo-8/8L** compatibility.
+* **Advanced Cooling**: Three fans and a tower cooler for efficient heat dissipation on the Raspberry Pi 5.
+* **Smart Display**: Built-in OLED screen showing CPU usage, memory, temperature, and IP address in real time.
+* **Enhanced Connectivity**: Upgraded HDMI (micro to standard) with ports aligned for cleaner cable management, customizable RGB LEDs, secure power switch, IR receiver, and external GPIO extender.
+* **Flexible Configurations**: RAID 0/1 NAS setups, SSD + AI accelerator combos, or dual AI accelerators for enhanced AI workloads.
 
+.. note::
+
+  It is recommended to use the official 27W power supply or |link_sf_27w_supply| for the Pironman 5 series products to avoid insufficient power supply, which may cause the Raspberry Pi 5 to reboot.
 
 .. raw:: html
 
@@ -45,8 +39,8 @@ Additionally, GPIO expansion is provided for convenient extension of the Raspber
     set_up/set_up_pironman5
     control/control_pironman5
     advanced/advanced
+    optional_modules/optional_modules
     compitable_nvme_ssd
-    combine_with_lcd
     faq
 
 **Parameters**

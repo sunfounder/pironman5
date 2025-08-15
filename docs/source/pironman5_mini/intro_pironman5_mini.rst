@@ -9,9 +9,21 @@ Thanks for choosing our |link_pironman5_mini|.
     :width: 400
     :align: center
 
-The Pironman 5 Mini is the latest addition to the Pironman Raspberry Pi case series, designed as a compact yet highly functional solution for Raspberry Pi enthusiasts. With a sleek silver aluminum alloy body and transparent acrylic side panels, the Pironman 5 Mini combines style and performance in a small form factor.
+|link_pironman5_mini| is the compact and streamlined model in the Pironman 5 series, offering a smaller form factor without compromising on core functionality. Featuring a sleek silver aluminum alloy body and transparent acrylic side panels, it delivers both style and performance in a space-saving design.
 
-Key features include a dedicated power button, an active cooling system similar to the official Raspberry Pi cooler, an additional RGB fan mounted on the side panel for enhanced airflow, an RTC battery, and vibrant WS2812-5050 RGB LEDs. Its GPIO extender ensures you can easily expand the functionality of your Raspberry Pi. The case also supports NVMe SSDs via a PCIe 2.0 M.2 M key slot (sizes 2230, 2242, 2260, 2280), making it ideal for projects requiring fast and reliable storage.
+**Key Features**
+
+* **Dedicated Controls**: Integrated power button for convenient operation.
+* **Efficient Cooling**: Active cooling system similar to the official Raspberry Pi cooler, plus an additional RGB side fan for enhanced airflow.
+* **Extra Functionality**: Built-in RTC battery and vibrant WS2812-5050 RGB LEDs.
+* **Easy Expansion**: GPIO extender for flexible hardware connections.
+* **High-Speed Storage**: PCIe 2.0 M.2 M-key slot supporting NVMe SSDs in sizes **2230**, **2242**, **2260**, **2280**.
+
+Ideal for projects that demand **fast storage, stable performance, and a compact design**, the Pironman 5 Mini brings premium features to a smaller form factor.
+
+.. note::
+
+  It is recommended to use the official 27W power supply or |link_sf_27w_supply| for the Pironman 5 series products to avoid insufficient power supply, which may cause the Raspberry Pi 5 to reboot.
 
 .. toctree::
     :maxdepth: 1
@@ -23,8 +35,8 @@ Key features include a dedicated power button, an active cooling system similar 
     set_up/set_up_pironman5
     control/control_pironman5
     hardware/hardware
+    optional_modules/optional_modules
     compitable_nvme_ssd
-    combine_with_lcd
     faq
 
 

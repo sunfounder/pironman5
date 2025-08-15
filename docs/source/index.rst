@@ -116,6 +116,10 @@ Below is a comparison of specifications for the Pironman 5 and Pironman 5 Mini. 
 
 If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
 
+.. note::
+
+  It is recommended to use the official 27W power supply or |link_sf_27w_supply| for the Pironman 5 series products to avoid insufficient power supply, which may cause the Raspberry Pi 5 to reboot.
+
 
 .. raw:: html
 
@@ -128,7 +132,7 @@ If you have any questions, please send an email to service@sunfounder.com and we
     pironman5/intro_pironman5
     pironman5_mini/intro_pironman5_mini
     pironman5_max/intro_pironman5_max
-
+    
 **Copyright Notice**
 
 All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.

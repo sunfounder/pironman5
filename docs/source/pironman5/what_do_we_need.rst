@@ -23,9 +23,9 @@ To get started with your Pironman 5, you'll need to gather a few essential compo
 
     The Pironman 5 is fully compatible with the Raspberry Pi 5.
 
-* 5V/5A Power Adapter
+* 27W Power Supply
 
-    A 5V/5A power adapter is required to power the Pironman 5 and its components.
+    It is recommended to use the official 27W power supply or |link_sf_27w_supply| for the Pironman 5 series products to avoid insufficient power supply, which may cause the Raspberry Pi 5 to reboot.
 
 * Micro SD Card
  

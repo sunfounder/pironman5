@@ -87,17 +87,17 @@ You can detach the Hailo AI accelerator module from the Raspberry Pi AI Kit and 
    .. image::  img/output4.png
         :width: 800
 
-6. Does the Pironman 5 support retro gaming systems?
-------------------------------------------------------
-Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
+.. 6. Does the Pironman 5 support retro gaming systems?
+.. ------------------------------------------------------
+.. Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
 
 
-.. note::
+.. .. note::
 
-   The Batocera.linux system is now fully compatible with Pironman 5. Batocera.linux is an open-source and completely free retro-gaming distribution.
+..    The Batocera.linux system is now fully compatible with Pironman 5. Batocera.linux is an open-source and completely free retro-gaming distribution.
 
-   * :ref:`install_batocera`
-   * :ref:`set_up_batocera`
+..    * :ref:`install_batocera`
+..    * :ref:`set_up_batocera`
 
 7. OLED Screen Not Working?
 -----------------------------------

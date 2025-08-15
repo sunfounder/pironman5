@@ -15,11 +15,18 @@
 Dual NVMe PIP
 =====================
 
-The Dual NVMe PIP (PCIe Peripheral Board), as defined by the Raspberry Pi Foundation, is a PCIe adapter board designed specifically for NVMe solid-state drives. 
 
-The PCIe interface of Raspberry Pi 5 provides a single Gen2 x1 channel (bandwidth 500MB/s) by default. By integrating the ASM1182e chip, it can be expanded into two independent Gen2 x1 channels to connect two M.2 M-key devices (such as two M.2 NVMe SSDs, or one M.2 NVMe SSD + one M.2 Hailo-8/8LAI accelerator). However, it should be noted that Dual NVMe PIP does not support Gen 3.
+The **Dual NVMe PIP** (PCIe Peripheral Board), as defined by the Raspberry Pi Foundation, is a PCIe adapter designed specifically for NVMe solid-state drives.
 
-It supports four different sizes of NVMe SSDs: 2230, 2242, 2260, and 2280, all fitting into an M.2 M key slot.
+The Raspberry Pi 5’s PCIe interface natively offers a single **Gen2 x1** lane (500 MB/s). By integrating the **ASM1182e** PCIe switch chip, the Dual NVMe PIP expands this into **two independent Gen2 x1 lanes**, allowing you to connect:
+
+* **Two M.2 NVMe SSDs**, or
+* **One M.2 NVMe SSD + one M.2 Hailo-8/8L AI accelerator**
+
+**Key Notes**:
+
+* Gen3 is not supported
+* Supports NVMe SSD sizes: **2230**, **2242**, **2260**, **2280** (all in M.2 M-key slots)
 
 .. image:: img/nvme_pip.png
 

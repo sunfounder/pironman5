@@ -21,9 +21,10 @@
 
     The Pironman 5 MAX is fully compatible with the Raspberry Pi 5.
 
-* 5V/5A Power Adapter
+* 27W Power Supply
 
-    A 5V/5A power adapter is required to power the Pironman 5 MAX and its components.
+    It is recommended to use the official 27W power supply or |link_sf_27w_supply| for the Pironman 5 series products to avoid insufficient power supply, which may cause the Raspberry Pi 5 to reboot.
+
 
 * Micro SD Card
  
@@ -35,7 +36,7 @@
 
     The Pironman 5 MAX features an NVMe PIP with two M.2 SSD connectors, 
     accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. 
-    The connection is certified for Gen 2.0 speeds (5 GT/sec).
+    The connection is certified for Gen 2.0 speeds (Gen3 is not supported).
 
 * Screen
 
