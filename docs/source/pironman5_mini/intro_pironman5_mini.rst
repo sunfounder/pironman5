@@ -30,7 +30,7 @@ Thanks for choosing our |link_pironman5_mini|.
 
 * **Dedicated Controls**: Integrated power button for convenient operation.
 * **Efficient Cooling**: Active cooling system similar to the official Raspberry Pi cooler, plus an additional RGB side fan for enhanced airflow.
-* **Extra Functionality**: Built-in RTC battery and vibrant WS2812-5050 RGB LEDs.
+* **Extra Functionality**: Built-in RTC battery.
 * **Easy Expansion**: GPIO extender for flexible hardware connections.
 * **High-Speed Storage**: PCIe 2.0 M.2 M-key slot supporting NVMe SSDs in sizes **2230**, **2242**, **2260**, **2280**.
 
