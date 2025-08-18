@@ -25,7 +25,7 @@ Thanks for choosing our |link_pironman5_max|.
     :width: 400
     :align: center
     
-Take your Raspberry Pi 5 to the next level with **|link_pironman5_max|**, a high-end aluminum case engineered for performance, cooling, and expansion. Perfect for NAS, AI, media centers, and advanced projects.
+Take your Raspberry Pi 5 to the next level with |link_pironman5_max|, a high-end aluminum case engineered for performance, cooling, and expansion. Perfect for NAS, AI, media centers, and advanced projects.
 
 **Key Features**:
 
