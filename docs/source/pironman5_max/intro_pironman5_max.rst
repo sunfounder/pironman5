@@ -25,15 +25,17 @@ Thanks for choosing our |link_pironman5_max|.
     :width: 400
     :align: center
     
-|link_pironman5_max| is a high-end Raspberry Pi case designed exclusively for the Raspberry Pi 5, featuring dual NVMe support for powerful storage and expansion capabilities.
+Take your Raspberry Pi 5 to the next level with **|link_pironman5_max|**, a high-end aluminum case engineered for performance, cooling, and expansion. Perfect for NAS, AI, media centers, and advanced projects.
 
 **Key Features**:
 
-* **High-Speed Storage & AI Support**: PCIe Gen 2 switch with two M.2 M-key slots (**2230**, **2242**, **2260**, **2280**) for dual NVMe Gen2 SSDs or AI accelerators (**Gen3 not supported**), including full **Hailo-8/8L** compatibility.
-* **Advanced Cooling**: Three fans and a tower cooler for efficient heat dissipation on the Raspberry Pi 5.
-* **Smart Display**: Built-in OLED screen showing CPU usage, memory, temperature, and IP address in real time.
-* **Enhanced Connectivity**: Upgraded HDMI (micro to standard) with ports aligned for cleaner cable management, customizable RGB LEDs, secure power switch, IR receiver, and external GPIO extender.
-* **Flexible Configurations**: RAID 0/1 NAS setups, SSD + AI accelerator combos, or dual AI accelerators for enhanced AI workloads.
+* **Dual NVMe & AI Expansion**: PCIe Gen 2 switch with two M.2 M-key slots (2230/2242/2260/2280) for SSDs or AI accelerators. Fully compatible with Hailo-8/8L.
+* **Extreme Cooling**: Tower cooler with PWM fan plus two RGB fans, keeping a 100% load Pi at just 39°C in a 25°C room.
+* **Smart OLED Display**: Real-time CPU, memory, temperature, disk usage, IP address, and more. Tap to wake with built-in vibration sensor.
+* **Customizable RGB Lighting**: Four WS2812 addressable LEDs light up your setup with vibrant effects.
+* **Enhanced Connectivity**: Dual standard HDMI ports, IR receiver for media apps, safe retro-style power button, and labeled external GPIO extender.
+* **Premium Build**: Durable aluminum chassis with dark acrylic side panel and spring-loaded card slot for easy access.
+* **Flexible Configurations**: RAID 0/1 NAS, SSD + AI combo, or dual AI accelerators for heavy AI workloads.
 
 .. note::
 
@@ -60,18 +62,35 @@ Thanks for choosing our |link_pironman5_max|.
 
 **Parameters**
 
-* Raspberry Pi 5 mini PC
-* 0.96" OLED Display showing Raspberry Pi's CPU usage, temperature, disk usage, IP address, RAM usage etc.
-* With a built-in vibration switch, tapping the case gently wakes up the OLED display.
-* Tower cooler can cool a 100% CPU load Pi to 39°C at 25°C room temperature
-* 2 RGB Fans, with GPIO control
-* 1 PWM Fan on the Tower Cooler is controlled by the Raspberry Pi system.
-* Integrated PCIe Gen 2 Switch with two M.2 M key PCIe interfaces, which can install two NVMe Gen2 solid-state drives or AI accelerators.
-* Supports four (PCIe Gen 2.0) NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280.
-* 4 WS2812 Addressable RGB LED light up the whole case with cool light effect
-* IR Receiver for multi-media center like Kodi or Volumio
-* Retro metal power button for safe shut down
-* External GPIO extender with pin name label, for easy access
-* Equipped with a spring-loaded socket for easy card removal
-* Aluminum main body with dark Acrylic side panel
-* Features two standard HDMI ports
+* Dimension: 111.9 x 78.5 x 117mm (with tower cooler)
+* Material
+    * Main Body: Dark Aluminum Alloy
+    * Two Side Panels: Dark Acrylic
+* Support Platform: Raspberry Pi 5
+* Power Input: USB Type C, 5V/5A or official 27W supply
+* Interfaces
+    * Raspberry Pi standard 40-Pin GPIO (with external GPIO extender and pin labels)
+    * Micro SD socket with spring-loaded card slot
+    * USB Type C power input
+    * 2 x USB 2.0
+    * 2 x USB 3.0
+    * Gigabit LAN port
+    * 2 x Standard HDMI Ports
+* Cooling System
+    * 1 x Tower Cooler with PWM Fan (system controlled)
+    * 2 x RGB Fans (GPIO controlled)
+* Display
+    * 0.96" OLED Display (CPU, RAM, temperature, disk usage, IP address)
+    * Built-in vibration switch to wake display by tapping the case
+* Storage & Expansion
+    * Integrated PCIe Gen 2 Switch
+    * 2 x PCIe 2.0 M.2 M key slots for NVMe SSDs or AI accelerators
+    * Supports M.2 sizes: 2230, 2242, 2260, 2280
+* Lighting & Control
+    * 4 x WS2812 Addressable RGB LEDs
+    * IR Receiver for multimedia center applications (e.g., Kodi, Volumio)
+    * Retro-style Metal Power Button for safe shutdown
+* Build
+    * Aluminum Alloy main body with Dark Acrylic side panels
+    * Premium design with enhanced durability and aesthetics
+
