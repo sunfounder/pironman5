@@ -32,5 +32,6 @@ In diesem Kapitel lernen Sie, wie Sie das Betriebssystem installieren. Alle Inst
 
         install_raspberry_os
         install_the_other_os
-        install_batocera
+
+.. install_batocera
 

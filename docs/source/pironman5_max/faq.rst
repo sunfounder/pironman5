@@ -35,17 +35,17 @@ Wenn ``pironman5`` bereits installiert ist, kannst du das ``dashboard``-Modul un
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-Unterstützt der Pironman 5 MAX Retro-Gaming-Systeme?
-------------------------------------------------------
-Ja, der Pironman 5 MAX ist kompatibel. Die meisten Retro-Gaming-Systeme sind jedoch stark optimiert und erlauben keine nachträgliche Installation zusätzlicher Software. Daher funktionieren einige Komponenten des Pironman 5 MAX – wie das OLED-Display, die beiden RGB-Lüfter und die vier RGB-LEDs – möglicherweise nicht korrekt, da sie auf die Installation spezifischer Softwarepakete angewiesen sind.
+.. Unterstützt der Pironman 5 MAX Retro-Gaming-Systeme?
+.. ------------------------------------------------------
+.. Ja, der Pironman 5 MAX ist kompatibel. Die meisten Retro-Gaming-Systeme sind jedoch stark optimiert und erlauben keine nachträgliche Installation zusätzlicher Software. Daher funktionieren einige Komponenten des Pironman 5 MAX – wie das OLED-Display, die beiden RGB-Lüfter und die vier RGB-LEDs – möglicherweise nicht korrekt, da sie auf die Installation spezifischer Softwarepakete angewiesen sind.
 
 
-.. note::
+.. .. note::
 
-    Das System Batocera.linux ist jetzt vollständig mit dem Pironman 5 kompatibel. Batocera.linux ist eine quelloffene und vollkommen kostenlose Retro-Gaming-Distribution.
+..     Das System Batocera.linux ist jetzt vollständig mit dem Pironman 5 kompatibel. Batocera.linux ist eine quelloffene und vollkommen kostenlose Retro-Gaming-Distribution.
 
-    * :ref:`max_install_batocera`
-    * :ref:`max_set_up_batocera`
+..     * :ref:`max_install_batocera`
+..     * :ref:`max_set_up_batocera`
 
 Wie kann ich Komponenten mit dem ``pironman5``-Befehl steuern?
 ----------------------------------------------------------------------

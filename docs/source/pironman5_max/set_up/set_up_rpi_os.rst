@@ -71,6 +71,11 @@ Herunterladen und Installieren des ``pironman5``-Moduls
    Nach dem Neustart wird der Dienst ``pironman5.service`` automatisch gestartet. Die Hauptfunktionen von Pironman 5 MAX sind:
 
    * Das OLED-Display zeigt CPU-, RAM- und Speichernutzung, CPU-Temperatur sowie die IP-Adresse des Raspberry Pi an.
+   
+   .. note::  
+
+     Das OLED-Display kann sich nach einer gewissen Inaktivität automatisch ausschalten, um Strom zu sparen. Du kannst leicht auf das Gehäuse tippen, um den Vibrationssensor auszulösen und den Bildschirm wieder zu aktivieren.
+
    * Vier WS2812-RGB-LEDs leuchten in Blau mit dem Effekt „Breathing“.
 
    .. note::

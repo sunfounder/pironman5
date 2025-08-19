@@ -30,7 +30,8 @@ Sie können dann das entsprechende Konfigurations-Tutorial basierend auf Ihrem S
 
     set_up_rpi_os 
     set_up_home_assistant
-    set_up_batocera
+
+.. set_up_batocera
 
 
 **Über den Einschaltknopf**

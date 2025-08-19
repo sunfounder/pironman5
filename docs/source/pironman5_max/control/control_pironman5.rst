@@ -22,7 +22,8 @@ Du kannst den Pironman 5 entweder über Befehle überwachen und steuern oder auf
 .. note::
 
     * Beim **Home Assistant**-System kannst du den Pironman 5 nur über das Dashboard überwachen und steuern, indem du die Webseite unter ``http://<ip>:34001`` öffnest.
-    * Beim **Batocera.linux**-System kannst du den Pironman 5 nur über Befehle überwachen und steuern. Beachte, dass Änderungen an der Konfiguration einen Neustart des Dienstes mit dem Befehl ``pironman5 restart`` erfordern, damit sie wirksam werden.
+
+.. * Beim **Batocera.linux**-System kannst du den Pironman 5 nur über Befehle überwachen und steuern. Beachte, dass Änderungen an der Konfiguration einen Neustart des Dienstes mit dem Befehl ``pironman5 restart`` erfordern, damit sie wirksam werden.
 
 
 .. toctree::

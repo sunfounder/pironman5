@@ -1,33 +1,61 @@
+.. note::
+
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Enthusiasten tiefer in Raspberry Pi, Arduino und ESP32 ein.
+
+    **Warum beitreten?**
+
+    - **Expertenunterstützung**: Löse Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Previews.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
+
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
+
+
 .. _intro_pironman5:
 
 Pironman 5
 =================================
 
-Thanks for choosing our |link_pironman5|.
+Vielen Dank, dass du dich für unser |link_pironman5| entschieden hast.
 
 .. image:: img/pironman5_pic.jpg
     :width: 400
     :align: center
 
-Pironman 5 is a mini PC case designed specifically for the Raspberry Pi. Crafted from durable aluminum, it features an advanced cooling system with a tower cooler and dual RGB fans, along with dust filters to ensure optimal performance. The case supports NVMe M.2 SSDs (2230, 2242, 2260, 2280) and is fully compatible with the Hailo-8L AI accelerator, providing enhanced storage and powerful edge AI capabilities. A built-in 0.96” OLED display delivers real-time insights into CPU usage, memory, temperature, and IP address, while dual HDMI ports, customizable RGB LEDs, a secure power switch, an IR receiver, and an external GPIO extender boost connectivity and functionality. Ideal for NAS, Home Assistant, media centers, gaming setups, and AI projects, Pironman 5 comes with a clear, step-by-step guide for easy assembly and setup.
+
+|link_pironman5| ist ein hochwertiges Mini-PC-Gehäuse, das speziell für den Raspberry Pi 5 entwickelt wurde. Es besteht aus **robustem Aluminium** und kombiniert eine stabile Konstruktion mit erweiterten Funktionen, um hohe Leistung für eine Vielzahl von Anwendungen bereitzustellen.
+
+**Hauptmerkmale**
+
+* **Fortschrittliche Kühlung**: Tower-Kühler mit zwei RGB-Lüftern für effiziente Temperaturkontrolle.
+* **Hochgeschwindigkeitsspeicher & KI-Unterstützung**: Unterstützt NVMe-M.2-SSDs (**2230**, **2242**, **2260**, **2280**) und ist vollständig kompatibel mit dem **Hailo-8L KI-Beschleuniger** für leistungsstarke Edge-KI-Funktionen.
+* **Intelligentes Display**: Eingebautes 0,96”-OLED-Display zeigt CPU-Auslastung, Speicher, Temperatur und IP-Adresse in Echtzeit an.
+* **Erweiterte Konnektivität**: Dual-HDMI-Ports, anpassbare RGB-LEDs, sicherer Netzschalter, IR-Empfänger und externer GPIO-Expander.
+* **Vielseitige Einsatzmöglichkeiten**: Ideal für NAS, Home Assistant, Media-Center, Gaming-Setups und KI-Projekte.
+
+
+.. note::
+
+  Es wird empfohlen, das offizielle 27W-Netzteil oder |link_sf_27w_supply| für die Produkte der Pironman-5-Serie zu verwenden, um eine unzureichende Stromversorgung zu vermeiden, die dazu führen kann, dass der Raspberry Pi 5 neu startet.
 
 .. toctree::
     :maxdepth: 1
 
-    About this Kit <self>
+    Über dieses Kit <self>
     what_do_we_need    
     assembly_instructions
     install/install_the_os
     set_up/set_up_pironman5
     control/control_pironman5
     hardware/hardware
+    optional_modules/optional_modules
     compitable_nvme_ssd
-    combine_with_lcd
-    assemble_camera
     faq
 
 
-**Interfaces**
+**Schnittstellen**
 
 .. image:: img/pironman5_interfaces1.png
     :width: 500
@@ -35,33 +63,33 @@ Pironman 5 is a mini PC case designed specifically for the Raspberry Pi. Crafted
 .. image:: img/pironman5_interfaces2.png
     :width: 400
 
-**Parameters**
+**Parameter**
 
-* Dimension: 111.9x78.5x117mm
+* Abmessungen: 111.9x78.5x117mm
 * Material
-    * Main Body: Silver Aluminum Alloy
-    * Two Side Panel: Transparent Acrylic
-* Support Platform: Raspberry Pi 5
-* Power Input: USB Type C, 5V/5A
-* Interfaces
-    * Raspberry Pi standard 40-Pin GPIO
-    * spring-loaded Micro SD socket
-    * USB Type C power input
+    * Hauptgehäuse: Silber-Aluminiumlegierung
+    * Zwei Seitenplatten: Transparenter Acryl
+* Unterstützte Plattform: Raspberry Pi 5
+* Stromeingang: USB Typ C, 5V/5A
+* Schnittstellen
+    * Raspberry Pi Standard 40-Pin GPIO
+    * Federbelasteter Micro-SD-Sockel
+    * USB Typ C Stromeingang
     * 2 x USB 2.0
     * 2 x USB 3.0
-    * Gigabit LAN port
-    * 2 x 4Kp60 Standard HDMI Output
-* 1 x Metal Power Button
-* 1 x 0.96'' 128x64 OLED Screen
-* 1 x PWM Fan (40x40x10mm)
-* 2 x RGB Fans (40x40x10mm)
-* 4 x WS2812-5050 RGB LEDs
-* 1 x 38KHz IR Receiver
-* 1 x Tower Cooler
-* 1 x PCIe 2.0 M.2 M key (2230, 2242, 2260, 2280) for NVMe SSD
-* 1 x 1220 Battery for RTC
+    * Gigabit-LAN-Anschluss
+    * 2 x 4Kp60 Standard-HDMI-Ausgänge
+* 1 x Metall-Netzschalter
+* 1 x 0,96'' 128x64 OLED-Bildschirm
+* 1 x PWM-Lüfter (40x40x10mm)
+* 2 x RGB-Lüfter (40x40x10mm)
+* 4 x WS2812-5050 RGB-LEDs
+* 1 x 38KHz IR-Empfänger
+* 1 x Tower-Kühler
+* 1 x PCIe 2.0 M.2 M-Key (2230, 2242, 2260, 2280) für NVMe-SSD
+* 1 x 1220-Batterie für RTC
 
-**Dimensional Drawing**
+**Maßzeichnung**
 
 .. image:: img/pironman5_dimension.png
     :width: 800

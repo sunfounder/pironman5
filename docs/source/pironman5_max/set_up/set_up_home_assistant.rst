@@ -133,7 +133,7 @@ Der **Pi Config Wizard** hilft dir, für den Pironman 5 MAX benötigte Funktione
     * Öffne dann die **WEB-Oberfläche** erneut und klicke auf **MOUNT**, um den Status von I2C und SPI zu prüfen.
 
 4. Installation des **Pironman 5 MAX** Add-ons
----------------------------------------------
+-------------------------------------------------
 
 Nun kannst du das Add-on **Pironman 5 MAX** installieren.
 

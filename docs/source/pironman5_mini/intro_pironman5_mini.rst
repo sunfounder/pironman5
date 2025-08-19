@@ -1,17 +1,47 @@
-.. _intro_pironman5_mini: 
+.. note::
+
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook!  
+    Tauche tiefer in Raspberry Pi, Arduino und ESP32 ein – gemeinsam mit anderen Enthusiasten.
+
+    **Warum beitreten?**
+
+    - **Experten-Support**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.  
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.  
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Previews.  
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.  
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und saisonalen Aktionen teil.  
+
+    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicke [|link_sf_facebook|] und tritt noch heute bei!
+
+
+.. _intro_pironman5_mini:
 
 Pironman 5 Mini
 =========================================
 
-Vielen Dank, dass Sie sich für unseren |link_pironman5_mini| entschieden haben.
+Danke, dass du dich für unseren |link_pironman5_mini| entschieden hast.
 
 .. image:: img/pironman5_mini_pic.jpg
     :width: 400
     :align: center
 
-Der Pironman 5 Mini ist die neueste Ergänzung der Pironman-Gehäusereihe für den Raspberry Pi – konzipiert als kompakte und zugleich leistungsfähige Lösung für Raspberry-Pi-Enthusiasten. Mit einem eleganten Gehäuse aus silbernem Aluminiumlegierung und transparenten Seitenwänden aus Acrylglas vereint der Pironman 5 Mini Stil und Funktionalität in einem kleinen Formfaktor.
+|link_pironman5_mini| ist das kompakte und schlanke Modell der Pironman-5-Serie und bietet ein kleineres Format, ohne auf die Kernfunktionen zu verzichten.  
+Mit einem eleganten silbernen Gehäuse aus Aluminiumlegierung und transparenten Acryl-Seitenplatten vereint er Stil und Leistung in einem platzsparenden Design.
 
-Zu den Hauptmerkmalen gehören ein dedizierter Ein-/Ausschalter, ein aktives Kühlsystem ähnlich dem offiziellen Raspberry-Pi-Kühler, ein zusätzlicher RGB-Lüfter an der Seitenwand für verbesserte Luftzirkulation, eine RTC-Batterie sowie vier leuchtstarke WS2812-5050-RGB-LEDs. Der GPIO-Extender sorgt dafür, dass die Erweiterung des Raspberry Pi einfach gelingt. Über den PCIe-2.0-M.2-M-Key-Slot (Größen: 2230, 2242, 2260, 2280) wird zudem die Nutzung einer NVMe-SSD ermöglicht – ideal für Projekte mit hohen Speicheranforderungen.
+**Hauptmerkmale**
+
+* **Dedizierte Steuerung**: Integrierter Power-Button für komfortable Bedienung.  
+* **Effiziente Kühlung**: Aktives Kühlsystem ähnlich dem offiziellen Raspberry Pi-Kühler, plus zusätzlicher RGB-Seitenlüfter für verbesserten Luftstrom.  
+* **Zusätzliche Funktionen**: Eingebaute RTC-Batterie und 4 WS2812-5050-RGB-LEDs.  
+* **Einfache Erweiterung**: GPIO-Extender für flexible Hardwareanschlüsse.  
+* **Hochgeschwindigkeits-Speicher**: PCIe 2.0 M.2 M-Key-Slot für NVMe-SSDs in den Größen **2230**, **2242**, **2260**, **2280**.  
+
+Ideal für Projekte, die **schnellen Speicher, stabile Leistung und ein kompaktes Design** erfordern, bringt der Pironman 5 Mini Premium-Funktionen in ein kleineres Format.
+
+.. note::
+
+  Es wird empfohlen, das offizielle 27W-Netzteil oder |link_sf_27w_supply| für die Produkte der Pironman-5-Serie zu verwenden,  
+  um eine unzureichende Stromversorgung zu vermeiden, die dazu führen könnte, dass der Raspberry Pi 5 neu startet.
 
 .. toctree::
     :maxdepth: 1
@@ -23,33 +53,33 @@ Zu den Hauptmerkmalen gehören ein dedizierter Ein-/Ausschalter, ein aktives Kü
     set_up/set_up_pironman5
     control/control_pironman5
     hardware/hardware
+    optional_modules/optional_modules
     compitable_nvme_ssd
-    combine_with_lcd
     faq
 
 
-**Technische Daten**
+**Parameter**
 
-* Abmessungen: 67.8x98.6x101.5mm
-* Material:
-    * Hauptgehäuse: Silberne Aluminiumlegierung
-    * Seitenwände: Transparentes Acryl
-* Unterstützte Plattform: Raspberry Pi 5
-* Stromeingang: USB Typ C, 5V/5A
-* Schnittstellen:
-    * Raspberry Pi Standard 40-Pin-GPIO
-    * MicroSD-Kartenslot
-    * USB-Typ-C-Stromeingang
-    * 2 x USB 2.0
-    * 2 x USB 3.0
-    * Gigabit-LAN-Anschluss
-    * 2 x 4Kp60 Micro-HDMI-Anschlüsse
-* 1 x Metall-Ein-/Ausschalter
-* 1 x RGB-Lüfter (40x40x10mm)
-* 4 x WS2812-5050 RGB-LEDs
-* 1 x Aktiver Kühler
-* 1 x PCIe 2.0 M.2 M Key (2230, 2242, 2260, 2280) für NVMe-SSD
-* 1 x 1220-Batterie für RTC
+* Abmessungen: 67.8 x 98.6 x 101.5 mm  
+* Material  
+    * Hauptkörper: Silberne Aluminiumlegierung  
+    * Zwei Seitenplatten: Schwarzes transparentes Acryl  
+* Unterstützte Plattform: Raspberry Pi 5  
+* Stromeingang: USB Type C, 5V/5A  
+* Schnittstellen  
+    * Raspberry Pi Standard-40-Pin-GPIO  
+    * Micro-SD-Steckplatz  
+    * USB Type C Stromeingang  
+    * 2 x USB 2.0  
+    * 2 x USB 3.0  
+    * Gigabit-LAN-Port  
+    * 2 x 4Kp60 Micro-HDMI-Ports  
+* 1 x Metall-Power-Button  
+* 1 x RGB-Lüfter (40x40x10 mm)  
+* 4 x WS2812-5050-RGB-LEDs  
+* 1 x Aktiver Kühler  
+* 1 x PCIe 2.0 M.2 M-Key (2230, 2242, 2260, 2280) für NVMe-SSD  
+* 1 x 1220-Batterie für RTC  
 
 **Maßzeichnung**
 

@@ -59,11 +59,9 @@ Kompatible NVMe SSDs
 
 * Team MP33
 
-* Western Digital SN850
-* Western Digital SN740
 * Western Digital SN570
 * Western Digital SN530
-* Western Digital Black SN750 SE (Phison-Controller)
+* Western Digital Black SN750 SE
 * Western Digital Blue SN550-Serie (Wenn Sie die neuesten rpi-eeprom-updates und die pieeprom-2024-01-24.bin installieren können, wird das Boot-Problem der Western Digital Blue SN550 NVMe behoben. Weitere Informationen finden Sie unter https://forums.raspberrypi.com/viewtopic.php?t=364327.)
 
 * XPG GAMMIX S70 BLADE
@@ -74,15 +72,15 @@ Inkompatible NVMe SSDs
 
 Wir empfehlen, die folgenden NVMe SSDs zu vermeiden, die mit einem Phison-Controller ausgestattet sind, da ihre Inkompatibilität nachgewiesen wurde:
 
-* WD Blue SN580 series
-* Western Digital Green SN350-Serie
-* Western Digital Black SN850-Serie
-* Western Digital Black SN770
-* WD BLACK 8TB SN850X
-* Inland tn446 NVMe-Laufwerk
-* Corsair MP600 SSD
-* Samsung PM991
-* Kingston OM8SEP4256Q-A0
-* Transcend 110Q (TS500GMTE110Q)
-* SN350 und SN570 verhinderten insbesondere, dass der Raspberry Pi 5 überhaupt bootete.
-* Andere NVMe SSDs mit demselben Phison-Controller
+* Western Digital SN740  
+* Western Digital Black SN770  
+* WD Blue SN580 Serie  
+* Western Digital Green SN350 Serie  
+* Western Digital Black SN850 Serie  
+* WD BLACK 8TB SN850X  
+* Inland TN446 NVMe-Laufwerk  
+* Corsair MP600 SSD  
+* Samsung PM991  
+* Kingston OM8SEP4256Q-A0  
+* Transcend 110Q (TS500GMTE110Q)  
+* Andere NVMe-SSDs mit demselben Phison-Controller  

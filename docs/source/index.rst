@@ -48,7 +48,7 @@ Wählen Sie anhand der folgenden Abbildungen das Produkt aus, das Sie besitzen, 
      - |pic_pironman5_mini| 
      - |pic_pironman5_max|
 
-Nachfolgend finden Sie einen Vergleich der technischen Spezifikationen zwischen dem Pironman 5 und dem Pironman 5 Mini. Nutzen Sie diese Tabelle, um die Unterschiede zwischen den Modellen besser zu verstehen.
+Nachfolgend finden Sie einen Vergleich der technischen Daten für den Pironman 5, den Pironman 5 Mini und den Pironman 5 MAX. Verwenden Sie diese Tabelle, um die Unterschiede zwischen diesen Produkten zu verstehen.
 
 .. list-table:: 
    :widths: 25 25 25 25
@@ -116,6 +116,12 @@ Nachfolgend finden Sie einen Vergleich der technischen Spezifikationen zwischen 
      - 111,9 × 78,5 × 117 mm
 
 Wenn Sie Fragen haben, schreiben Sie uns bitte eine E-Mail an service@sunfounder.com – wir antworten Ihnen so schnell wie möglich.
+
+.. note::
+
+  Es wird empfohlen, das offizielle 27W-Netzteil oder |link_sf_27w_supply| für die Pironman-5-Serie zu verwenden,  
+  um eine unzureichende Stromversorgung zu vermeiden, die dazu führen könnte, dass der Raspberry Pi 5 neu startet.  
+
 
 .. raw:: html
 

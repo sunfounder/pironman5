@@ -15,19 +15,26 @@
 Dual NVMe PIP
 =====================
 
-Das Dual NVMe PIP (PCIe Peripheral Board) der Raspberry Pi Foundation ist ein PCIe-Adapterboard, das speziell für NVMe-Solid-State-Laufwerke entwickelt wurde.
+Das **Dual NVMe PIP** (PCIe-Peripherie-Board), wie von der Raspberry Pi Foundation definiert, ist ein PCIe-Adapter, der speziell für NVMe-SSDs entwickelt wurde.  
 
-Die PCIe-Schnittstelle des Raspberry Pi 5 bietet standardmäßig einen Gen2 x1-Kanal (Bandbreite 500 MB/s). Durch die Integration des ASM1182e-Chips kann die Schnittstelle auf zwei unabhängige Gen2 x1-Kanäle erweitert werden, um zwei M.2 M-Key-Geräte anzuschließen (z. B. zwei M.2 NVMe SSDs oder eine M.2 NVMe SSD + einen M.2 Hailo-8/8LAI-Beschleuniger). Beachten Sie jedoch, dass Dual NVMe PIP Gen 3 nicht unterstützt.
+Die PCIe-Schnittstelle des Raspberry Pi 5 bietet nativ eine einzelne **Gen2 x1**-Lane (500 MB/s). Durch die Integration des **ASM1182e** PCIe-Switch-Chips erweitert das Dual NVMe PIP diese auf **zwei unabhängige Gen2 x1-Lanes**, sodass du Folgendes anschließen kannst:
 
-Es unterstützt vier verschiedene Größen von NVMe-SSDs: 2230, 2242, 2260 und 2280, die alle in einen M.2 M-Key-Steckplatz passen.
+* **Zwei M.2 NVMe-SSDs**, oder
+* **Eine M.2 NVMe-SSD + einen M.2 Hailo-8/8L KI-Beschleuniger**
+
+**Wichtige Hinweise**:
+
+* Gen3 wird nicht unterstützt  
+* Unterstützt NVMe-SSD-Größen: **2230**, **2242**, **2260**, **2280** (alle in M.2-M-Key-Slots)
 
 .. image:: img/nvme_pip.png
 
-* Die Platine wird über ein 16-poliges 0,5-mm Reverse-FFC (Flexible Flat Cable) oder ein speziell abgestimmtes FPC (Flexible Printed Circuit)-Kabel angeschlossen.
-* **STA**: Ein Status-LED-Anzeiger.
-* **PWR**: Ein Power-LED-Anzeiger.
-* Die Onboard-3,3V-Stromversorgung kann eine Ausgangsleistung von bis zu 3A unterstützen. Da jedoch der Raspberry Pi PCIe-Anschluss auf 5V/1A-Ausgang (entspricht 5W) begrenzt ist, kann zusätzliche Leistung für die 3,3V/3A-Nutzung über den J3-Anschluss von einer 5V-Quelle bereitgestellt werden.
-* **FORCE ENABLE**: Die Onboard-Stromversorgung wird durch das Schaltsignal des PCIe-Anschlusses aktiviert. Nachdem der Raspberry Pi eingeschaltet wurde, sendet er ein Signal, um die 3,3V-Stromversorgung zu aktivieren. Wenn einige Systeme das Schaltsignal nicht unterstützen oder aus anderen Gründen, kann die 3,3V-Stromversorgung für das NVMe durch das Überbrücken des J4 FORCE ENABLE durch Löten eines Drahtes zwischen den beiden freien Pads gezwungen werden.
+* Das Board wird über ein 16P-0,5mm-Reverse-FFC- (Flexible Flat Cable) oder ein kundenspezifisches impedanzangepasstes FPC- (Flexible Printed Circuit) Kabel angeschlossen.  
+* **STA**: Status-LED-Anzeige.  
+* **PWR**: Power-LED-Anzeige.  
+* Die integrierte 3,3V-Stromversorgung kann bis zu 3A Ausgang unterstützen. Da die PCIe-Schnittstelle des Raspberry Pi jedoch auf 5V/1A Ausgang (entspricht 5W) begrenzt ist, kann zusätzliche Leistung für 3,3V/3A über den J3-Anschluss von einer 5V-Quelle bereitgestellt werden.  
+* **FORCE ENABLE**: Die integrierte Stromversorgung wird durch das Schaltsignal der PCIe-Schnittstelle aktiviert. Nachdem der Raspberry Pi eingeschaltet ist, sendet er ein Signal, um die 3,3V-Stromversorgung einzuschalten. Falls einige Systeme das Schaltsignal nicht unterstützen oder aus anderen Gründen, kannst du J4 FORCE ENABLE durch das Löten eines Drahtes zwischen den beiden offenen Pads überbrücken, um die integrierte 3,3V-Stromversorgung dauerhaft für die NVMe zu aktivieren.
+
 
 Über das Modell
 ---------------------------

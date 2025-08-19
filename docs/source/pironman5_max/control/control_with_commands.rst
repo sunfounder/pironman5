@@ -21,7 +21,8 @@ Neben der Anzeige von Daten des Pironman 5 MAX und der Steuerung verschiedener G
 .. note::
 
   * Beim **Home Assistant**-System kannst du den Pironman 5 MAX nur über das Dashboard überwachen und steuern, indem du die Webseite unter ``http://<ip>:34001`` öffnest.
-  * Beim **Batocera.linux**-System kannst du den Pironman 5 MAX nur über Befehle überwachen und steuern. Es ist wichtig zu beachten, dass Änderungen an der Konfiguration einen Neustart des Dienstes mit ``pironman5 restart`` erfordern, damit sie wirksam werden.
+
+.. * Beim **Batocera.linux**-System kannst du den Pironman 5 MAX nur über Befehle überwachen und steuern. Es ist wichtig zu beachten, dass Änderungen an der Konfiguration einen Neustart des Dienstes mit ``pironman5 restart`` erfordern, damit sie wirksam werden.
 
 Anzeige der Basiskonfigurationen
 -----------------------------------

@@ -23,9 +23,10 @@ Um mit deinem Pironman 5 Mini loszulegen, brauchst du einige grundlegende Kompon
 
     Der Pironman 5 Mini ist vollständig kompatibel mit dem Raspberry Pi 5.
 
-* 5V/5A-Netzteil  
+* 27W Netzteil  
 
-    Ein Netzteil mit 5V/5A ist erforderlich, um den Pironman 5 Mini und seine Komponenten zuverlässig mit Strom zu versorgen.
+  Es wird empfohlen, das offizielle 27W-Netzteil oder |link_sf_27w_supply| für die Pironman-5-Serie zu verwenden,  
+  um eine unzureichende Stromversorgung zu vermeiden, die dazu führen könnte, dass der Raspberry Pi 5 neu startet.  
 
 * MicroSD-Karte  
 

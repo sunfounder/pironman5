@@ -1,37 +1,49 @@
-.. _intro_pironman5_max: 
+.. note::
+
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook!  
+    Tauche tiefer in Raspberry Pi, Arduino und ESP32 ein – gemeinsam mit anderen Enthusiasten.
+
+    **Warum beitreten?**
+
+    - **Experten-Support**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.  
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.  
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Previews.  
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.  
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und saisonalen Aktionen teil.  
+
+    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicke [|link_sf_facebook|] und tritt noch heute bei!
+
+
+.. _intro_pironman5_max:
 
 Pironman 5 MAX
 ================================================================================
 
 
-Vielen Dank, dass Sie sich für unser |link_pironman5_max| entschieden haben.
+Danke, dass du dich für unseren |link_pironman5_max| entschieden hast.
 
 .. image:: img/pironman5_max.jpg
     :width: 400
     :align: center
+    
+Bring deinen Raspberry Pi 5 mit dem |link_pironman5_max| auf die nächste Stufe –  
+ein hochwertiges Aluminiumgehäuse, entwickelt für Leistung, Kühlung und Erweiterbarkeit.  
+Perfekt für NAS, KI, Media-Center und fortgeschrittene Projekte.
 
-Der Pironman 5 Max ist das neue Flaggschiff unserer Pironman-Gehäusereihe für den Raspberry Pi, 
-exklusiv kompatibel mit dem neuesten Raspberry Pi 5.
+**Wichtige Merkmale**:
 
-Ein besonderes Highlight des Pironman 5 Max sind seine zwei transparenten Seitenwände, 
-die an ein PC-Gehäuse erinnern, kombiniert mit RGB-LEDs und zwei RGB-Lüftern, 
-die dem Produkt einen beeindruckenden Look verleihen. 
-Ein integriertes OLED-Display zeigt grundlegende Informationen über den Raspberry Pi an, 
-und zusätzliche Funktionen wie ein Power-Button und Statusanzeigen erweitern die Möglichkeiten. 
-Der Micro-HDMI-Anschluss wurde durch einen Standard-HDMI-Anschluss ersetzt, 
-um den alltäglichen Gebrauch zu erleichtern. Außerdem wurden die Strom- und HDMI-Anschlüsse 
-auf die gleiche Seite wie die USB-Anschlüsse des Raspberry Pi verlegt, 
-was das Kabelmanagement optisch deutlich verbessert. 
-Ausgestattet mit drei Lüftern und einem Tower-Kühlkörper hilft das Gehäuse erheblich dabei, 
-die hohe Temperatur des Raspberry Pi 5 zu senken.
+* **Dual NVMe & KI-Erweiterung**: PCIe Gen 2 Switch mit zwei M.2 M-Key-Slots (2230/2242/2260/2280) für SSDs oder KI-Beschleuniger. Vollständig kompatibel mit Hailo-8/8L.  
+* **Extreme Kühlung**: Tower-Kühler mit PWM-Lüfter plus zwei RGB-Lüfter, hält einen Pi bei 100 % Last in einem 25 °C Raum bei nur 39 °C.  
+* **Intelligentes OLED-Display**: Echtzeit-Anzeige von CPU, Speicher, Temperatur, Speichernutzung, IP-Adresse und mehr. Aufwecken durch Antippen mit eingebautem Vibrationssensor.  
+* **Anpassbare RGB-Beleuchtung**: Vier WS2812-Adressierbare LEDs erhellen dein Setup mit lebendigen Effekten.  
+* **Erweiterte Konnektivität**: Zwei Standard-HDMI-Ports, IR-Empfänger für Media-Apps, sicherer Retro-Power-Button und beschrifteter externer GPIO-Extender.  
+* **Premium-Bauweise**: Robustes Aluminiumgehäuse mit dunkler Acryl-Seitenwand und federbelastetem Kartenslot für einfachen Zugriff.  
+* **Flexible Konfigurationen**: RAID 0/1 NAS, SSD + KI-Kombination oder zwei KI-Beschleuniger für anspruchsvolle KI-Workloads.  
 
-Das Gehäuse integriert einen PCIe Gen 2 Switch mit zwei M.2-M-Key-PCIe-Steckplätzen, 
-die die Größen 2230, 2242, 2260 und 2280 unterstützen und den Einbau von zwei NVMe Gen2 SSDs 
-oder KI-Beschleunigern ermöglichen. (Gen3 wird jedoch nicht unterstützt.)
-Nutzer können zwei NVMe-SSDs im Software-RAID 0 oder RAID 1 für NAS-Zwecke konfigurieren, 
-eine Kombination aus einem KI-Beschleuniger und einer SSD zur Steigerung der KI-Leistung einsetzen 
-oder zwei KI-Beschleuniger für maximale KI-Performance nutzen. 
-Zudem steht ein GPIO-Expander zur Verfügung, der den Funktionsumfang des Raspberry Pi bequem erweitert.
+.. note::
+
+  Es wird empfohlen, das offizielle 27W-Netzteil oder |link_sf_27w_supply| für die Pironman-5-Serie zu verwenden,  
+  um eine unzureichende Stromversorgung zu vermeiden, die dazu führen könnte, dass der Raspberry Pi 5 neu startet.
 
 .. raw:: html
 
@@ -40,7 +52,7 @@ Zudem steht ein GPIO-Expander zur Verfügung, der den Funktionsumfang des Raspbe
 .. toctree::
     :maxdepth: 1
 
-    About this Kit <self>
+    Über dieses Kit <self>
     what_do_we_need    
     assembly_instructions
     install/install_the_os
@@ -48,24 +60,41 @@ Zudem steht ein GPIO-Expander zur Verfügung, der den Funktionsumfang des Raspbe
     set_up/set_up_pironman5
     control/control_pironman5
     advanced/advanced
+    optional_modules/optional_modules
     compitable_nvme_ssd
-    toctree
     faq
 
-**Technische Daten**
 
-* Raspberry Pi 5 Mini-PC
-* 0,96" OLED-Display zeigt CPU-Auslastung, Temperatur, Speichernutzung, IP-Adresse, RAM-Nutzung usw. des Raspberry Pi an
-* Integrierter Vibrationssensor: Ein leichtes Antippen weckt das OLED-Display auf
-* Tower-Kühler kann einen Raspberry Pi bei 100% CPU-Last auf 39 °C bei 25 °C Raumtemperatur kühlen
-* 2 RGB-Lüfter, steuerbar über GPIO
-* 1 PWM-Lüfter am Tower-Kühler wird vom Raspberry Pi System gesteuert
-* Integrierter PCIe Gen 2 Switch mit zwei M.2-M-Key-Schnittstellen – für NVMe Gen2 SSDs oder KI-Beschleuniger
-* Unterstützt vier M.2-NVMe-Formfaktoren (PCIe Gen 2.0): 2230, 2242, 2260, 2280
-* 4 WS2812 adressierbare RGB-LEDs beleuchten das Gehäuse mit coolem Lichteffekt
-* IR-Empfänger für Multimedia-Anwendungen wie Kodi oder Volumio
-* Retro-Metall-Power-Button für sicheres Herunterfahren
-* Externer GPIO-Expander mit Pin-Beschriftung für einfachen Zugriff
-* Federmechanismus für einfache SD-Kartenentnahme
-* Aluminiumgehäuse mit dunkler Acryl-Seitenverkleidung
-* Zwei Standard-HDMI-Anschlüsse
+**Parameter**
+
+* Abmessungen: 111,9 x 78,5 x 117 mm (mit Tower-Kühler)  
+* Material  
+    * Hauptgehäuse: Dunkle Aluminiumlegierung  
+    * Zwei Seitenplatten: Schwarzes transparentes Acryl  
+* Unterstützte Plattform: Raspberry Pi 5  
+* Stromeingang: USB Typ C, 5V/5A oder offizielles 27W-Netzteil  
+* Schnittstellen  
+    * Raspberry Pi Standard-40-Pin-GPIO (mit externem GPIO-Extender und Pin-Beschriftungen)  
+    * Micro-SD-Slot mit federbelastetem Kartenslot  
+    * USB Typ C Stromeingang  
+    * 2 x USB 2.0  
+    * 2 x USB 3.0  
+    * Gigabit-LAN-Port  
+    * 2 x Standard-HDMI-Ports  
+* Kühlsystem  
+    * 1 x Tower-Kühler mit PWM-Lüfter (systemgesteuert)  
+    * 2 x RGB-Lüfter (GPIO-gesteuert)  
+* Anzeige  
+    * 0,96" OLED-Display (CPU, RAM, Temperatur, Speichernutzung, IP-Adresse)  
+    * Eingebauter Vibrationsschalter zum Aufwecken des Displays durch Antippen des Gehäuses  
+* Speicher & Erweiterung  
+    * Integrierter PCIe Gen 2 Switch  
+    * 2 x PCIe 2.0 M.2 M-Key-Slots für NVMe-SSDs oder KI-Beschleuniger  
+    * Unterstützte M.2-Größen: 2230, 2242, 2260, 2280  
+* Beleuchtung & Steuerung  
+    * 4 x WS2812-Adressierbare RGB-LEDs  
+    * IR-Empfänger für Multimedia-Center-Anwendungen (z. B. Kodi, Volumio)  
+    * Retro-Metall-Power-Button für sicheres Herunterfahren  
+* Gehäuse  
+    * Aluminiumlegierung als Hauptkörper mit dunklen Acryl-Seitenplatten  
+    * Premium-Design mit erhöhter Haltbarkeit und Ästhetik  
