@@ -4,17 +4,24 @@
 
     **Why Join?**
 
-    * **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    * **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    * **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    * **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    * **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
+    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
+    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
+    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
+    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
 
 RTL-SDR Blog V4
 ==============================================
+
+.. note::
+
+    The Pironman 5 series products do not include the following modules.  
+    You need to prepare one yourself or purchase it from our official website:
+
+    * `RTL-SDR Blog V4 <https://www.sunfounder.com/products/rtl-sdr-blog-v4>`_
 
 This guide covers a reliable installation procedure for the RTL-SDR Blog V4, a popular and affordable USB software-defined radio (SDR) receiver.
 The V4 version features an improved R828D tuner, direct sampling mode, better sensitivity, and integrated bias-tee for powering active antennas.

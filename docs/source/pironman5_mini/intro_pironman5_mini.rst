@@ -60,7 +60,7 @@ Ideal for projects that demand **fast storage, stable performance, and a compact
 * Dimension: 67.8x98.6x101.5mm
 * Material
     * Main Body: Silver Aluminum Alloy
-    * Two Side Panel: Transparent Acrylic
+    * Two Side Panel: Black Transparent Acrylic
 * Support Platform: Raspberry Pi 5
 * Power Input: USB Type C, 5V/5A
 * Interfaces

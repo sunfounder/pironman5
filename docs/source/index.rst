@@ -4,11 +4,11 @@
 
     **Why Join?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    * **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
+    * **Learn & Share**: Exchange tips and tutorials to enhance your skills.
+    * **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
+    * **Special Discounts**: Enjoy exclusive discounts on our newest products.
+    * **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
@@ -47,7 +47,7 @@ Based on the images below, select the product you own to learn more. Each link w
      - |pic_pironman5_mini| 
      - |pic_pironman5_max|
 
-Below is a comparison of specifications for the Pironman 5 and Pironman 5 Mini. Use this table to understand the differences between these products.
+Below is a comparison of specifications for the Pironman 5, Pironman 5 Mini and Pironman 5 MAX. Use this table to understand the differences between these products.
 
 .. list-table:: 
    :widths: 25 25 25 25
