@@ -1,7 +1,7 @@
 适用于 Linux/Unix 用户
 ==========================
 
-#. 在您的 Linux/Unix 系统中，找到并打开 **终端**（Terminal）。
+#. 在您的 Linux/Unix 系统中，找到并打开 **终端** （Terminal）。
 
 #. 确保您的 Raspberry Pi 已连接至同一网络。您可以通过输入 `ping <hostname>.local` 进行验证，例如：
 

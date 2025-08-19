@@ -17,7 +17,8 @@
 
     set_up_rpi_os 
     set_up_home_assistant
-    set_up_batocera
+
+.. set_up_batocera
 
 **关于电源按钮**
 

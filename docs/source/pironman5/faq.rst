@@ -73,17 +73,17 @@ Raspberry Pi AI 套件由 Raspberry Pi M.2 HAT+ 与 Hailo AI 加速模块组成�
    .. image::  img/output4.png
         :width: 800
 
-6. Pironman 5 支持复古游戏系统吗？
-------------------------------------------------------
+.. 6. Pironman 5 支持复古游戏系统吗？
+.. ------------------------------------------------------
 
-支持，但需注意多数复古游戏系统为简化版，无法安装额外软件。这会导致 Pironman 5 的部分硬件功能（如 OLED 显示屏、两个 RGB 风扇和四颗 RGB 灯）无法正常工作，因为它们需要依赖 Pironman 5 的软件包。
+.. 支持，但需注意多数复古游戏系统为简化版，无法安装额外软件。这会导致 Pironman 5 的部分硬件功能（如 OLED 显示屏、两个 RGB 风扇和四颗 RGB 灯）无法正常工作，因为它们需要依赖 Pironman 5 的软件包。
 
-.. note::
+.. .. note::
 
-   Batocera.linux 系统现已全面兼容 Pironman 5。它是一款开源、完全免费的复古游戏系统发行版。
+..    Batocera.linux 系统现已全面兼容 Pironman 5。它是一款开源、完全免费的复古游戏系统发行版。
 
-   * :ref:`install_batocera`
-   * :ref:`set_up_batocera`
+..    * :ref:`install_batocera`
+..    * :ref:`set_up_batocera`
 
 7. OLED 屏幕无法正常显示？
 -----------------------------------

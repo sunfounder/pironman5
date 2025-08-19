@@ -9,9 +9,9 @@
 
     Pironman 5 Mini 完全兼容 Raspberry Pi 5。
 
-* 5V/5A 电源适配器
+* 27W 电源适配器
 
-    需要使用 5V/5A 电源适配器为 Pironman 5 Mini 及其内部组件供电。
+  建议为 Pironman 5 系列产品使用官方 27W 电源适配器或 |link_sf_27w_supply|，以避免电源不足造成树莓派 5 重启。
 
 * Micro SD 卡
  

@@ -1,4 +1,5 @@
-.. _intro_pironman5: 
+
+.. _intro_pironman5:
 
 Pironman 5
 =================================
@@ -9,22 +10,35 @@ Pironman 5
     :width: 400
     :align: center
 
-Pironman 5 是一款专为树莓派打造的迷你 PC 机箱，采用坚固的铝合金材质，并配备了高效散热系统，包括塔式散热器和双 RGB 风扇，搭配防尘滤网，确保系统运行稳定。机箱支持 NVMe M.2 SSD（2230、2242、2260、2280）并完全兼容 Hailo-8L AI 加速模块，提升存储性能与边缘 AI 能力。内置 0.96 英寸 OLED 屏可实时显示 CPU 使用率、内存、温度和 IP 地址，另外配备双 HDMI 接口、可自定义 RGB 灯效、安全电源开关、红外接收器和外部 GPIO 扩展模块，大幅增强连接性与功能性。Pironman 5 非常适合搭建 NAS、Home Assistant、媒体中心、游戏主机和 AI 项目，配套提供清晰的分步安装说明，轻松完成组装与配置。
+
+|link_pironman5| 是一款专为 Raspberry Pi 5 设计的高端迷你 PC 机箱。采用 **耐用铝材** 制造，兼具坚固的结构与先进的功能，能够在各种应用场景下提供高性能表现。
+
+**主要特性**
+
+* **先进散热**：配备塔式散热器和双 RGB 风扇，高效控制温度。
+* **高速存储与 AI 支持**：支持 NVMe M.2 SSD（**2230**, **2242**, **2260**, **2280**），并完全兼容 **Hailo-8L AI 加速器**，实现强大的边缘 AI 能力。
+* **智能显示**：内置 0.96 英寸 OLED 屏幕，实时显示 CPU 使用率、内存、温度和 IP 地址。
+* **增强连接性**：双 HDMI 接口、可定制 RGB 灯效、安全电源开关、红外接收器及外置 GPIO 扩展器。
+* **多样化应用场景**：非常适合 NAS、Home Assistant、媒体中心、游戏环境及 AI 项目。
+
+.. note::
+
+  推荐使用官方 27W 电源适配器或 |link_sf_27w_supply| 为 Pironman 5 系列产品供电，以避免电力不足导致 Raspberry Pi 5 重启。
 
 .. toctree::
     :maxdepth: 1
 
     About this Kit <self>
-    what_do_we_need
+    what_do_we_need    
     assembly_instructions
     install/install_the_os
     set_up/set_up_pironman5
     control/control_pironman5
     hardware/hardware
+    optional_modules/optional_modules
     compitable_nvme_ssd
-    assemble_camera
-    combine_with_lcd
     faq
+
 
 
 **接口示意图**

@@ -9,9 +9,23 @@ Pironman 5 Mini
     :width: 400
     :align: center
 
-Pironman 5 Mini 是 Pironman 树莓派机箱系列的最新成员，专为追求小巧与高性能的树莓派爱好者设计。它采用银色铝合金外壳搭配透明亚克力侧板，兼具现代美感与出色性能。
 
-主要特性包括专用电源按钮、与官方散热方案类似的主动散热系统、侧面附带 RGB 风扇以增强气流、RTC 实时时钟电池，以及炫彩的 WS2812-5050 RGB 灯效。其配备的 GPIO 扩展器，方便您拓展树莓派的更多功能。此外，机箱支持通过 PCIe 2.0 M.2 M 键（支持 2230、2242、2260、2280 规格）连接 NVMe SSD，非常适合需要高速稳定存储的项目应用。
+|link_pironman5_mini| 是 Pironman 5 系列中紧凑精简的型号，在保持核心功能的同时提供更小巧的外形。  
+它采用简洁的银色铝合金机身和透明亚克力侧板，兼具时尚与性能，适合对空间有要求的设计。  
+
+**主要特性**
+
+* **专用控制**：集成电源按钮，操作更方便。  
+* **高效散热**：主动散热系统，类似于官方树莓派散热器，并配备额外的 RGB 侧风扇以增强气流。  
+* **额外功能**：内置 RTC 电池和 4 颗 WS2812-5050 RGB LED。  
+* **轻松扩展**：GPIO 扩展器，方便进行硬件连接。  
+* **高速存储**：PCIe 2.0 M.2 M-key 插槽，支持 NVMe SSD，规格包括 **2230**、**2242**、**2260**、**2280**。  
+
+对于需要 **高速存储、稳定性能以及紧凑设计** 的项目，Pironman 5 Mini 在小巧机身中也能带来高端体验。  
+
+.. note::
+
+  推荐在 Pironman 5 系列产品中使用官方 27W 电源适配器或 |link_sf_27w_supply|，以避免因供电不足导致树莓派 5 重启。
 
 .. toctree::
     :maxdepth: 1
@@ -23,10 +37,9 @@ Pironman 5 Mini 是 Pironman 树莓派机箱系列的最新成员，专为追求
     set_up/set_up_pironman5
     control/control_pironman5
     hardware/hardware
-    combine_with_lcd
+    optional_modules/optional_modules
     compitable_nvme_ssd
     faq
-
 
 **产品参数**
 

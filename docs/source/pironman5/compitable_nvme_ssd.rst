@@ -45,11 +45,9 @@
 
 * Team MP33  
 
-* Western Digital SN850  
-* Western Digital SN740  
-* Western Digital SN570  
-* Western Digital SN530  
-* Western Digital Black SN750 SE（Phison 控制器）  
+* Western Digital SN570
+* Western Digital SN530
+* Western Digital Black SN750 SE
 * Western Digital Blue SN550 系列（如果您了解如何安装最新版 rpi-eeprom 更新，pieeprom-2024-01-24.bin 已修复 WD Blue SN550 的 NVMe 启动问题，参考：https://forums.raspberrypi.com/viewtopic.php?t=364327）
 
 * XPG GAMMIX S70 BLADE  
@@ -61,15 +59,15 @@
 
 以下 NVMe SSD 搭载了已知不兼容的 Phison 控制器，我们建议避免使用：
 
-* WD Blue SN580 系列  
-* Western Digital Green SN350 系列  
-* Western Digital Black SN850 系列  
-* Western Digital Black SN770  
-* WD BLACK 8TB SN850X  
-* Inland TN446 NVMe Drive  
-* Corsair MP600 SSD  
-* Samsung PM991  
-* Kingston OM8SEP4256Q-A0  
-* Transcend 110Q（TS500GMTE110Q）  
-* SN350 和 SN570 尤其会导致 Raspberry Pi 5 无法启动  
+* Western Digital SN740
+* Western Digital Black SN770
+* WD Blue SN580 系列
+* Western Digital Green SN350 系列
+* Western Digital Black SN850 系列
+* WD BLACK 8TB SN850X
+* Inland tn446 nvme drive
+* Corsair MP600 SSD
+* Samsung PM991
+* Kingston OM8SEP4256Q-A0
+* Transcend 110Q (TS500GMTE110Q)  
 * 其他使用同款 Phison 控制器的 NVMe SSD 驱动器  

@@ -8,12 +8,22 @@ Pironman 5 MAX
 .. image:: img/pironman5_max.jpg
     :width: 400
     :align: center
+    
+让您的 Raspberry Pi 5 更进一步，|link_pironman5_max| 是一款为性能、散热与扩展而设计的高端铝合金机箱。非常适合用于 NAS、AI、多媒体中心以及各类进阶项目。
 
-Pironman 5 Max 是我们 Pironman 树莓派机箱系列中的旗舰产品，专为最新的 Raspberry Pi 5 设计。
+**主要特性**:
 
-该机箱的一大亮点是其双侧透明设计，灵感来自 PC 机箱，配合 RGB 灯效与双 RGB 风扇，营造出强烈的科技氛围。机身配备 OLED 显示屏，用于显示树莓派的基本运行信息，此外还集成了电源开关按钮与工作状态指示灯。Micro HDMI 接口升级为标准 HDMI 接口，且电源和 HDMI 接口与 USB 接口集中在同一侧，大幅提升了布线的美观性。内部配备三风扇散热系统及塔式散热器，可有效抑制 Raspberry Pi 5 的高温运行。
+* **双 NVMe 与 AI 扩展**：内置 PCIe Gen 2 交换芯片，配备两个 M.2 M-key 插槽（2230/2242/2260/2280），可用于 SSD 或 AI 加速器，完全兼容 Hailo-8/8L。
+* **极致散热**：配备塔式散热器（带 PWM 风扇）和双 RGB 风扇，在 25°C 室温下可将满载运行的树莓派 5 温度保持在仅 39°C。
+* **智能 OLED 显示屏**：实时显示 CPU、内存、温度、磁盘使用率、IP 地址等信息；内置震动开关，轻敲机箱即可点亮显示。
+* **可定制 RGB 灯效**：4 颗 WS2812 可编程 RGB LED，为您的设备带来酷炫灯光效果。
+* **增强的连接性**：双标准 HDMI 接口，支持多媒体应用的红外接收器，安全的复古金属电源按钮，以及带引脚标签的外置 GPIO 扩展器。
+* **优质结构**：耐用铝合金机身搭配深色亚克力侧板，并配备弹簧卡槽，便于安全取卡。
+* **灵活配置**：支持 RAID 0/1 NAS、SSD + AI 加速器组合，或双 AI 加速器配置，满足重度 AI 工作负载需求。
 
-该机箱还内置 PCIe Gen 2 Switch （不支持Gen3），并提供两个支持 2230、2242、2260 和 2280 尺寸的 M.2 M Key PCIe 插槽，可安装两块 NVMe Gen2 SSD 或 AI 加速卡。用户可以根据需要配置为软件 RAID 0 或 RAID 1 构建 NAS，或组合使用一块 AI 加速器与一块 NVMe SSD 以提升 AI 性能，亦可安装两块 AI 加速器以实现更强的人工智能处理能力。此外，机箱还提供 GPIO 扩展接口，方便拓展树莓派的应用功能。
+.. note::
+
+  建议为 Pironman 5 系列产品使用官方 27W 电源适配器或 |link_sf_27w_supply|，以避免电源不足造成树莓派 5 重启。
 
 .. raw:: html
 
@@ -30,24 +40,42 @@ Pironman 5 Max 是我们 Pironman 树莓派机箱系列中的旗舰产品，专�
     set_up/set_up_pironman5
     control/control_pironman5
     advanced/advanced
+    optional_modules/optional_modules
     compitable_nvme_ssd
-    combine_with_lcd
     faq
 
-**参数规格**
 
-* 兼容 Raspberry Pi 5 单板计算机
-* 0.96 英寸 OLED 显示屏，显示树莓派 CPU 使用率、温度、磁盘占用、IP 地址、内存占用等信息
-* 内置震动开关，轻敲机箱可唤醒 OLED 显示屏
-* 塔式散热器可在 25°C 室温下将满载 CPU 温度降至约 39°C
-* 2 个 RGB 风扇，通过 GPIO 控制
-* 塔式散热器上的 PWM 风扇由树莓派系统自动控制
-* 内建 PCIe Gen 2 Switch，配备两个 M.2 M Key PCIe 接口，可安装两块 NVMe Gen2 SSD 或 AI 加速器
-* 支持 4 种 NVMe M.2 SSD 规格（PCIe Gen 2.0）：2230、2242、2260、2280
-* 4 个 WS2812 可寻址 RGB 灯珠，打造炫酷光效
-* 红外接收器，适用于 Kodi、Volumio 等多媒体中心
-* 复古金属电源按钮，支持安全关机
-* 外置 GPIO 扩展接口，带引脚标签，方便接线
-* 配备弹簧卡槽，轻松取出 Micro SD 卡
-* 机身采用铝合金材质，配备深色亚克力侧板
-* 配置两个标准 HDMI 接口
+
+**参数**
+
+* 尺寸：111.9 x 78.5 x 117mm（含塔式散热器）
+* 材质
+    * 主体：深色铝合金
+    * 两块侧板：深色亚克力
+* 支持平台：Raspberry Pi 5
+* 电源输入：USB Type C，5V/5A 或官方 27W 电源
+* 接口
+    * 树莓派标准 40-Pin GPIO（带外置 GPIO 扩展器和引脚标签）
+    * 带弹簧卡槽的 Micro SD 插槽
+    * USB Type C 电源输入
+    * 2 x USB 2.0
+    * 2 x USB 3.0
+    * 千兆 LAN 接口
+    * 2 x 标准 HDMI 接口
+* 散热系统
+    * 1 x 塔式散热器（带系统控制 PWM 风扇）
+    * 2 x RGB 风扇（GPIO 控制）
+* 显示
+    * 0.96 英寸 OLED 显示屏（CPU、内存、温度、磁盘使用率、IP 地址）
+    * 内置震动开关，轻敲机箱即可唤醒显示
+* 存储与扩展
+    * 集成 PCIe Gen 2 交换芯片
+    * 2 x PCIe 2.0 M.2 M-key 插槽，用于 NVMe SSD 或 AI 加速器
+    * 支持 M.2 尺寸：2230、2242、2260、2280
+* 灯效与控制
+    * 4 x WS2812 可编程 RGB LED
+    * 红外接收器（适用于 Kodi、Volumio 等多媒体中心）
+    * 复古金属电源按钮，支持安全关机
+* 结构
+    * 铝合金机身配深色亚克力侧板
+    * 高端设计，兼具耐用性与美观

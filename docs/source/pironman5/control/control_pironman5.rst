@@ -8,7 +8,8 @@
 .. note::
 
     * 在 **Home Assistant** 系统中，仅可通过打开网页 ``http://<ip>:34001`` 使用控制面板进行监控与管理。
-    * 在 **Batocera.linux** 系统中，仅支持使用命令行对 Pironman 5 进行监控与控制。请注意，修改配置后需执行 ``pironman5 restart`` 重启服务以使更改生效。
+
+.. * 在 **Batocera.linux** 系统中，仅支持使用命令行对 Pironman 5 进行监控与控制。请注意，修改配置后需执行 ``pironman5 restart`` 重启服务以使更改生效。
 
 
 .. toctree::

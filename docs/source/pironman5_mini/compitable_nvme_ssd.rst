@@ -1,14 +1,14 @@
-兼容的 NVMe SSD
-========================
+兼容的 NVMe 固态硬盘（SSD）
+============================
 
-兼容型号列表
+兼容型号
 ---------------------------
 
 * ADATA Legend 700  
 * ADATA Legend 800  
 * AData XPG SX8200 Pro  
 
-* Axe Memory 通用款  
+* Axe Memory Generic Drive  
 
 * Crucial P2 M.2  
 * Crucial P3 M.2  
@@ -29,6 +29,7 @@
 * Netac NV2000 NVMe SSD  
 
 * Origin Inception TLC830 Pro NVMe SSD  
+* Ortial ON-750-128 NVME SSD  
 
 * Pineberry Pi Pinedrive（2280）  
 
@@ -40,34 +41,33 @@
 * Samsung 970 EVO Plus  
 * Samsung 980  
 * Samsung 980 Pro  
+* Samsung 990 Pro  
 
 * Team MP33  
 
-* Western Digital SN850  
-* Western Digital SN740  
-* Western Digital SN570  
-* Western Digital SN530  
-* Western Digital Black SN750 SE（Phison 控制器）  
-* Western Digital Blue SN550 系列（如果你知道如何安装最新版 rpi-eeprom-update，`pieeprom-2024-01-24.bin` 已修复该系列无法引导问题，参考链接：  
-  https://forums.raspberrypi.com/viewtopic.php?t=364327）
+* Western Digital SN570
+* Western Digital SN530
+* Western Digital Black SN750 SE
+* Western Digital Blue SN550 系列（如果您了解如何安装最新版 rpi-eeprom 更新，pieeprom-2024-01-24.bin 已修复 WD Blue SN550 的 NVMe 启动问题，参考：https://forums.raspberrypi.com/viewtopic.php?t=364327）
 
 * XPG GAMMIX S70 BLADE  
 * XPG SX8200 Pro  
 
 
-不兼容的 NVMe SSD
+不兼容型号
 --------------------------
 
-以下搭载 Phison 控制器的 NVMe SSD 已被证明与系统不兼容，建议避免使用：
+以下 NVMe SSD 搭载了已知不兼容的 Phison 控制器，我们建议避免使用：
 
-* WD Blue SN580 系列  
-* Western Digital Green SN350 系列  
-* Western Digital Black SN850 系列  
-* Western Digital Black SN770  
-* Inland tn446 NVMe 硬盘  
-* Corsair MP600 SSD  
-* Samsung PM991  
-* Kingston OM8SEP4256Q-A0  
-* Transcend 110Q（TS500GMTE110Q）  
-* SN350 和 SN570 系列特别会导致 Raspberry Pi 5 完全无法启动  
-* 其他采用相同 Phison 控制器的 NVMe SSD
+* Western Digital SN740
+* Western Digital Black SN770
+* WD Blue SN580 系列
+* Western Digital Green SN350 系列
+* Western Digital Black SN850 系列
+* WD BLACK 8TB SN850X
+* Inland tn446 nvme drive
+* Corsair MP600 SSD
+* Samsung PM991
+* Kingston OM8SEP4256Q-A0
+* Transcend 110Q (TS500GMTE110Q)  
+* 其他使用同款 Phison 控制器的 NVMe SSD 驱动器  

@@ -35,16 +35,16 @@ FAQ
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-Pironman 5 MAX 支持复古游戏系统吗？
-------------------------------------------------------
-支持。但是，大多数复古游戏系统是精简版，无法安装和运行额外的软件。因此，Pironman 5 MAX 上的某些组件（如 OLED 显示屏、两个 RGB 风扇和四个 RGB LED）可能无法正常工作，因为这些组件依赖于 Pironman 5 MAX 的软件包。
+.. Pironman 5 MAX 支持复古游戏系统吗？
+.. ------------------------------------------------------
+.. 支持。但是，大多数复古游戏系统是精简版，无法安装和运行额外的软件。因此，Pironman 5 MAX 上的某些组件（如 OLED 显示屏、两个 RGB 风扇和四个 RGB LED）可能无法正常工作，因为这些组件依赖于 Pironman 5 MAX 的软件包。
 
-.. note::
+.. .. note::
 
-    Batocera.linux 系统现已完全兼容 Pironman 5 MAX。Batocera.linux 是一个开源、完全免费的复古游戏发行版。
+..     Batocera.linux 系统现已完全兼容 Pironman 5 MAX。Batocera.linux 是一个开源、完全免费的复古游戏发行版。
 
-    * :ref:`max_install_batocera`
-    * :ref:`max_set_up_batocera`
+..     * :ref:`max_install_batocera`
+..     * :ref:`max_set_up_batocera`
 
 减少 ``pironman5`` 在 SYSLOG 中的日志输出
 -----------------------------------------------

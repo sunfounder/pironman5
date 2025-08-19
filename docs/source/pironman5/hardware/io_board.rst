@@ -45,7 +45,7 @@ RGB LED 灯
 RGB 控制引脚
 -------------------------
 
-RGB LED 通过 SPI 接口驱动，连接至 **GPIO10**（即 SPI 的 MOSI 引脚）。J9 上方的两个引脚用于将 RGB LED 接入 GPIO10。如不使用，可移除跳帽。
+RGB LED 通过 SPI 接口驱动，连接至 **GPIO10** （即 SPI 的 MOSI 引脚）。J9 上方的两个引脚用于将 RGB LED 接入 GPIO10。如不使用，可移除跳帽。
 
 .. image:: img/io_board_rgb_pin.png
 
