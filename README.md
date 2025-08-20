@@ -97,6 +97,7 @@ cd ~/sf_rpi_status && sudo /opt/pironman5/venv/bin/pip3 uninstall sf_rpi_status 
 cd ~/pipower5 && sudo /opt/pironman5/venv/bin/pip3 uninstall pipower5 -y && sudo /opt/pironman5/venv/bin/pip3 install . --no-build-isolation
 ```
 
+
 Start/stop the service for debug
 
 ```bash
