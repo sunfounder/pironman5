@@ -1,50 +1,53 @@
 .. note::
 
-    こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！同じ興味を持つ仲間たちと一緒に、Raspberry Pi・Arduino・ESP32の世界をより深く探求しましょう。
+    こんにちは、Facebook の SunFounder Raspberry Pi & Arduino & ESP32 愛好者コミュニティへようこそ！  
+    仲間と一緒に Raspberry Pi、Arduino、ESP32 の世界をさらに深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**：購入後のトラブルや技術的な課題を、コミュニティおよび当社サポートチームがサポートします。
-    - **Learn & Share**：チュートリアルやヒントを共有してスキルを磨きましょう。
-    - **Exclusive Previews**：新製品の発表や先行情報をいち早くキャッチ。
-    - **Special Discounts**：最新製品に関する限定割引をご利用いただけます。
-    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定プロモーションにもご参加いただけます。
+    - **専門的なサポート**: 購入後の問題や技術的な課題を、コミュニティやチームの助けを借りて解決できます。  
+    - **学びと共有**: ヒントやチュートリアルを交換してスキルを向上。  
+    - **限定プレビュー**: 新製品発表や先行情報をいち早く入手。  
+    - **特別割引**: 最新製品を会員限定価格で入手可能。  
+    - **季節イベントとプレゼント企画**: ホリデーキャンペーンやプレゼントに参加できます。  
 
-    👉 一緒に創造と探求の旅を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
+    👉 一緒に探求し、創造する準備はできましたか？ [|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
-1. 他に何を準備する必要がありますか？
-======================================
+1. 他に準備すべきものは？
+===================================
 
 **必須コンポーネント**
 
-* Raspberry Pi 5
+* Raspberry Pi 5  
 
-    Pironman 5 MAX は Raspberry Pi 5 に完全対応しています。
+  Pironman 5 MAX は Raspberry Pi 5 と完全互換です。  
 
-* 5V/5A 電源アダプター
+* 27W 電源アダプター  
 
-    Pironman 5 MAX およびその各種コンポーネントを動作させるには、5V/5A の電源アダプターが必要です。
+  Pironman 5 シリーズ製品では、電力不足による Raspberry Pi 5 の再起動を防ぐため、公式の 27W 電源アダプターまたは |link_sf_27w_supply| の使用を推奨します。  
 
-* Micro SDカード
+* Micro SD カード  
 
-    Raspberry Pi OS を使用する場合は、16GB以上の容量を持つSDカードの使用を推奨します。Raspberry Pi OS Liteの場合は最低4GB以上が目安です。
+  Raspberry Pi OS を使用する場合、最低 16GB の SD カードを推奨します。  
+  Raspberry Pi OS Lite の場合は最低 4GB が必要です。  
 
 **オプションコンポーネント**
 
-* M.2 NVMe SSD
+* M.2 NVMe SSD  
 
-    Pironman 5 MAX には NVMe PIP が搭載されており、2つの M.2 SSDスロットを備えています。  
-    対応サイズは 2230、2242、2260、2280 の4種類で、接続は Gen 2.0（5 GT/sec）に対応しています。
+  Pironman 5 MAX には NVMe PIP が搭載されており、2つの M.2 SSD コネクタを備えています。  
+  2230、2242、2260、2280 の4種類の NVMe M.2 SSD フォームファクタをサポートし、インターフェースは PCIe Gen2.0 で動作します（Gen3 は非対応）。  
 
-* ディスプレイ
+* スクリーン  
 
-    Raspberry Pi のデスクトップ環境にアクセスするには、テレビやPCモニターなどの画面が必要です。
+  Raspberry Pi のデスクトップ環境にアクセスするには、テレビやコンピューターモニターなどのスクリーンが必要です。  
 
-* HDMIケーブル
+* HDMI ケーブル  
 
-    Raspberry Pi 5 のHDMIポートは、USB経由のHDMIアダプターによって標準HDMI Type Aに変換されています。  
-    そのため、Pironman 5 MAX をディスプレイに接続するには、標準のHDMI - HDMIケーブルが必要です。
+  Raspberry Pi 5 の HDMI ポートは USB HDMI アダプターを介して標準 HDMI Type A インターフェースに変換されています。  
+  そのため、Pironman 5 MAX をディスプレイに接続するには標準の HDMI ⇔ HDMI ケーブルが必要です。  
 
-* マウス＆キーボード
+* マウス & キーボード  
 
-    Pironman 5 MAX のUSBポートに有線マウスやキーボードを接続するか、ワイヤレス機器用のUSB Bluetoothレシーバーを利用できます。
+  Pironman 5 MAX の任意の USB ポートに有線のキーボードとマウスを接続できます。  
+  または USB Bluetooth レシーバーを利用してワイヤレス周辺機器を使用することも可能です。  

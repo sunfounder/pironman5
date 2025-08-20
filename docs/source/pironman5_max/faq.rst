@@ -35,18 +35,18 @@ Webダッシュボードを無効にする方法は？
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-Pironman 5 MAXはレトロゲームシステムに対応していますか？
---------------------------------------------------------------
+.. Pironman 5 MAXはレトロゲームシステムに対応していますか？
+.. --------------------------------------------------------------
 
-はい、対応しています。ただし、多くのレトロゲームシステムは軽量化されたシステムであり、追加のソフトウェアをインストールできないことがあります。そのため、OLEDディスプレイ、RGBファン、4つのRGB LEDなど、一部のPironman 5 MAX機能が動作しない可能性があります。
+.. はい、対応しています。ただし、多くのレトロゲームシステムは軽量化されたシステムであり、追加のソフトウェアをインストールできないことがあります。そのため、OLEDディスプレイ、RGBファン、4つのRGB LEDなど、一部のPironman 5 MAX機能が動作しない可能性があります。
 
 
-.. note::
+.. .. note::
 
-    Batocera.linux は現在、Pironman 5 MAX と完全に互換性があります。Batocera.linux はオープンソースかつ完全無料のレトロゲーム向けOSです。
+..     Batocera.linux は現在、Pironman 5 MAX と完全に互換性があります。Batocera.linux はオープンソースかつ完全無料のレトロゲーム向けOSです。
 
-    * :ref:`max_install_batocera`
-    * :ref:`max_set_up_batocera`
+..     * :ref:`max_install_batocera`
+..     * :ref:`max_set_up_batocera`
 
 ``pironman5`` コマンドで各種コンポーネントを制御する方法
 ----------------------------------------------------------------------

@@ -9,11 +9,21 @@ Pironman 5
     :width: 400
     :align: center
 
-Pironman 5 は、Raspberry Pi 専用に設計されたミニPCケースです。堅牢なアルミニウム素材を使用し、タワー型クーラーとデュアルRGBファンを備えた高度な冷却システムを搭載しています。さらに、ホコリの侵入を防ぐダストフィルターにより、常に最適なパフォーマンスを維持できます。2230、2242、2260、2280サイズに対応するNVMe M.2 SSDに対応し、Hailo-8L AIアクセラレータとの完全な互換性により、大容量ストレージと強力なエッジAI機能を実現します。
+|link_pironman5| は Raspberry Pi 5 専用に設計されたプレミアムミニPCケースです。 
 
-0.96インチのOLEDディスプレイを内蔵し、CPU使用率、メモリ、温度、IPアドレスなどをリアルタイムで表示。デュアルHDMIポート、カスタマイズ可能なRGB LED、安全な電源スイッチ、赤外線受信モジュール、外部GPIOエクステンダなどを備え、拡張性と利便性を高めています。
+**耐久性のあるアルミニウム** で作られており、堅牢な構造と高度な機能を兼ね備え、幅広い用途で高性能を発揮します。
 
-NAS、Home Assistant、メディアセンター、ゲーム環境、AIプロジェクトなどに最適なこのケースは、組み立てとセットアップをわかりやすくガイドする手順書付きです。
+**主な特長**
+
+* **高度な冷却機構**: デュアルRGBファンを備えたタワークーラーで効率的に温度を制御。  
+* **高速ストレージ & AI対応**: NVMe M.2 SSD（ **2230**, **2242**, **2260**, **2280** ）に対応し、強力なエッジAI機能を実現する **Hailo-8L AI アクセラレータ** に完全対応。  
+* **スマートディスプレイ**: CPU使用率、メモリ、温度、IPアドレスをリアルタイム表示する 0.96インチ OLED スクリーンを内蔵。  
+* **拡張された接続性**: デュアルHDMIポート、カスタマイズ可能なRGB LED、安全な電源スイッチ、IR受信機、外部GPIOエクステンダーを搭載。  
+* **多用途なユースケース**: NAS、Home Assistant、メディアセンター、ゲーミング環境、AIプロジェクトに最適。  
+
+.. note::
+
+  Pironman 5 シリーズ製品では、電力不足による Raspberry Pi 5 の再起動を防ぐため、公式の27W電源アダプターまたは |link_sf_27w_supply| の使用を推奨します。
 
 .. toctree::
     :maxdepth: 1
@@ -25,10 +35,10 @@ NAS、Home Assistant、メディアセンター、ゲーム環境、AIプロジ�
     set_up/set_up_pironman5
     control/control_pironman5
     hardware/hardware
+    optional_modules/optional_modules
     compitable_nvme_ssd
-    combine_with_lcd
-    assemble_camera
     faq
+
 
 
 **Interfaces**

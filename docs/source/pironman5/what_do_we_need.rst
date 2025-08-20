@@ -22,9 +22,9 @@
     Pironman 5はRaspberry Pi 5 に完全対応しています。
 
 
-* 5V/5Aパワーアダプター
+* 27W 電源アダプター
 
-    Pironman 5およびそのコンポーネントに電力を供給するためには、5V/5Aのパワーアダプターが必要です。
+    Pironman 5 シリーズ製品では、電力不足による Raspberry Pi 5 の再起動を防ぐため、公式の 27W 電源アダプター または |link_sf_27w_supply| の使用を推奨します。
 
 * Micro SDカード
  

@@ -132,6 +132,12 @@ rst_epilog = """
 
 rst_epilog += """
 
+
+.. |link_sf_27w_supply| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-27w-pd-power-supply-for-raspberry-pi" target="_blank">SunFounder 27W PD Power Supply</a>
+
+    
 .. |link_rpi_get_start| raw:: html
 
     <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" target="_blank">Getting Started with Raspberry Pi</a>

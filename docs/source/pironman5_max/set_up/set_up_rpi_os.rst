@@ -62,7 +62,7 @@ Raspberry Pi のシャットダウン後もOLEDスクリーンやRGBファン（
    .. code-block:: shell
 
       cd ~
-      git clone -b 1.2.15 https://github.com/sunfounder/pironman5.git --depth 1
+      git clone -b max https://github.com/sunfounder/pironman5.git --depth 1
       cd ~/pironman5
       sudo python3 install.py
 
@@ -71,6 +71,10 @@ Raspberry Pi のシャットダウン後もOLEDスクリーンやRGBファン（
    再起動後、 ``pironman5.service`` が自動的に起動します。主な機能は以下の通りです：
 
    * OLEDスクリーンにCPU、RAM、ディスク使用率、CPU温度、IPアドレスを表示。
+
+   .. note:: OLEDスクリーンは、省電力のため一定時間操作がないと自動的にオフになる場合があります。ケースを軽くタップすると振動センサーが反応し、スクリーンを再表示できます。
+
+
    * 4つのWS2812 RGB LEDが青色で呼吸モードに点灯。
 
    .. note::

@@ -1,5 +1,19 @@
-.. _max_omv_5_max:
+.. note::
 
+    こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！同じ情熱を持つ仲間たちと一緒に、Raspberry Pi・Arduino・ESP32の世界をさらに深く探求しましょう。
+
+    **Why Join?**
+
+    - **Expert Support**：購入後のサポートや技術的課題を、コミュニティやサポートチームがサポートします。
+    - **Learn & Share**：チュートリアルやヒントを共有し、スキルアップにつなげましょう。
+    - **Exclusive Previews**：新製品の情報や先行公開をいち早く入手できます。
+    - **Special Discounts**：最新製品を対象とした限定割引をお楽しみください。
+    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定キャンペーンにも参加可能です。
+
+    👉 一緒に探求と創造を楽しみましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
+
+
+.. _max_omv_5_max:
 
 （オプション）OpenMediaVaultの設定
 =====================================

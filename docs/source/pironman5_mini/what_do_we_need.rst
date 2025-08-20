@@ -23,9 +23,9 @@ Pironman 5 Miniを使い始めるにあたり、いくつかの必須コンポ�
 
     Pironman 5 Miniは、Raspberry Pi 5に完全対応しています。
 
-* 5V/5A電源アダプター  
+* 27W 電源アダプター  
 
-    本体と各コンポーネントを安定して動作させるために、5V/5A出力のUSB Type-C電源アダプターが必要です。
+  Pironman 5 シリーズ製品では、電力不足による Raspberry Pi 5 の再起動を防ぐため、公式の 27W 電源アダプターまたは |link_sf_27w_supply| の使用を推奨します。  
 
 * Micro SDカード  
 
