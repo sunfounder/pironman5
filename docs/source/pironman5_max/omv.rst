@@ -1,5 +1,19 @@
-.. _max_omv_5_max:
+.. note:: 
 
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete más a fondo en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados como tú.
+
+    **¿Por qué unirte?**
+
+    - **Soporte experto**: Resuelve problemas técnicos y postventa con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios y adelantos de nuevos productos.
+    - **Descuentos especiales**: Disfruta de ofertas exclusivas en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales durante las festividades.
+
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
+
+
+.. _max_omv_5_max:
 
 (Opcional) Configuración de OpenMediaVault
 ==============================================

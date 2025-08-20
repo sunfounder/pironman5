@@ -112,16 +112,16 @@ Puedes desconectar el módulo acelerador de IA Hailo del kit de IA de Raspberry 
    .. image::  img/output4.png
         :width: 800
 
-6. ¿El Pironman 5 es compatible con sistemas de juegos retro?
--------------------------------------------------------------------
-Sí, es compatible. Sin embargo, la mayoría de los sistemas de juegos retro son versiones simplificadas que no pueden instalar ni ejecutar software adicional. Esta limitación puede hacer que algunos componentes del Pironman 5, como la pantalla OLED, los dos ventiladores RGB y los 4 LEDs RGB, no funcionen correctamente, ya que requieren la instalación de paquetes de software del Pironman 5.
+.. 6. ¿El Pironman 5 es compatible con sistemas de juegos retro?
+.. -------------------------------------------------------------------
+.. Sí, es compatible. Sin embargo, la mayoría de los sistemas de juegos retro son versiones simplificadas que no pueden instalar ni ejecutar software adicional. Esta limitación puede hacer que algunos componentes del Pironman 5, como la pantalla OLED, los dos ventiladores RGB y los 4 LEDs RGB, no funcionen correctamente, ya que requieren la instalación de paquetes de software del Pironman 5.
 
-.. note::
+.. .. note::
 
-   El sistema Batocera.linux ahora es totalmente compatible con el Pironman 5. Batocera.linux es una distribución de juegos retro de código abierto completamente gratuita.
+..    El sistema Batocera.linux ahora es totalmente compatible con el Pironman 5. Batocera.linux es una distribución de juegos retro de código abierto completamente gratuita.
 
-   * :ref:`install_batocera`
-   * :ref:`set_up_batocera`
+..    * :ref:`install_batocera`
+..    * :ref:`set_up_batocera`
 
 7. ¿Pantalla OLED no funciona?
 -----------------------------------

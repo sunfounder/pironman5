@@ -71,6 +71,10 @@ Descarga e instalación del módulo ``pironman5``
    Al reiniciar, el servicio ``pironman5.service`` se iniciará automáticamente. Estas son las configuraciones principales de Pironman 5 MAX:
    
    * La pantalla OLED muestra el uso de CPU, RAM, disco, temperatura de la CPU y la dirección IP de la Raspberry Pi.
+
+   .. note:: La pantalla OLED puede apagarse automáticamente después de un período de inactividad para ahorrar energía. Puedes dar un toque suave a la carcasa para activar el sensor de vibración y encender la pantalla.
+
+
    * Cuatro LEDs RGB WS2812 se encenderán en azul con efecto de respiración.
      
    .. note::

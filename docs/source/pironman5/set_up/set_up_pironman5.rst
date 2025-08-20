@@ -31,7 +31,8 @@ Luego, puedes proceder a seleccionar el tutorial de configuración según tu sis
 
     set_up_rpi_os 
     set_up_home_assistant
-    set_up_batocera
+
+.. set_up_batocera
 
 
 **Acerca del botón de encendido**

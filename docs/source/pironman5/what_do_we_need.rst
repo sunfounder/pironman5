@@ -21,9 +21,9 @@
 
     El Pironman 5 es totalmente compatible con la Raspberry Pi 5.
 
-* Adaptador de corriente 5V/5A
+* Fuente de Alimentación de 27W
 
-    Se requiere un adaptador de corriente de 5V/5A para alimentar el Pironman 5 y sus componentes.
+    Se recomienda usar la fuente de alimentación oficial de 27W o |link_sf_27w_supply| para los productos de la serie Pironman 5, a fin de evitar un suministro de energía insuficiente que pueda provocar el reinicio de la Raspberry Pi 5.
 
 * Tarjeta Micro SD
  

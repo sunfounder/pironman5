@@ -22,7 +22,8 @@ Puedes monitorear y controlar el Pironman 5 mediante comandos o accediendo al pa
 .. note::
 
     * Para el sistema **Home Assistant**, solo puedes monitorear y controlar el Pironman 5 a través del panel de control abriendo la página web en ``http://<ip>:34001``.
-    * Para el sistema **Batocera.linux**, solo puedes monitorear y controlar el Pironman 5 mediante comandos. Es importante tener en cuenta que cualquier cambio en la configuración requiere reiniciar el servicio utilizando ``pironman5 restart`` para que los cambios surtan efecto.
+
+.. * Para el sistema **Batocera.linux**, solo puedes monitorear y controlar el Pironman 5 mediante comandos. Es importante tener en cuenta que cualquier cambio en la configuración requiere reiniciar el servicio utilizando ``pironman5 restart`` para que los cambios surtan efecto.
 
 .. toctree::
     :maxdepth: 1

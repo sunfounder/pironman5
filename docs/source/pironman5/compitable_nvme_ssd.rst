@@ -1,22 +1,22 @@
-.. note:: 
+.. note::
 
-    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
+  ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 con otros entusiastas.
 
     **¿Por qué unirte?**
 
     - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
-    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
-    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y contenido exclusivo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
     - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
-    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
     👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Discos SSD NVMe compatibles
-=============================
+SSD NVMe Compatibles
+========================
 
-Discos SSD NVMe compatibles
------------------------------
+SSD NVMe Compatibles
+---------------------------
 
 * ADATA Legend 700
 * ADATA Legend 800
@@ -59,30 +59,29 @@ Discos SSD NVMe compatibles
 
 * Team MP33
 
-* Western Digital SN850
-* Western Digital SN740
 * Western Digital SN570
 * Western Digital SN530
-* Western Digital Black SN750 SE (controlador Phison)
-* Serie Western Digital Blue SN550 (si sabes cómo instalar las actualizaciones más recientes de rpi-eeprom, el archivo pieeprom-2024-01-24.bin solucionó el problema de arranque con la serie Western Digital Blue SN550. Consulta https://forums.raspberrypi.com/viewtopic.php?t=364327).
+* Western Digital Black SN750 SE
+* Western Digital Blue SN550 series (Si sabes cómo instalar las últimas rpi-eeprom-updates, el archivo pieeprom-2024-01-24.bin solucionó el problema de arranque NVMe en Western Digital Blue SN550. Consulta https://forums.raspberrypi.com/viewtopic.php?t=364327.)
 
 * XPG GAMMIX S70 BLADE
 * XPG SX8200 Pro
 
-Discos SSD NVMe incompatibles
---------------------------------
 
-Recomendamos evitar los siguientes discos SSD NVMe que están equipados con un controlador Phison debido a su comprobada incompatibilidad:
+SSD NVMe No Compatibles
+--------------------------
 
-* Serie WD Blue SN580
-* Serie Western Digital Green SN350
-* Serie Western Digital Black SN850
+Recomendamos evitar las siguientes unidades NVMe SSD que están equipadas con un controlador Phison debido a su probada incompatibilidad:
+
+* Western Digital SN740
 * Western Digital Black SN770
+* WD Blue SN580 series
+* Western Digital Green SN350 series
+* Western Digital Black SN850 series
 * WD BLACK 8TB SN850X
-* Unidad Inland tn446 NVMe
+* Inland tn446 nvme drive
 * Corsair MP600 SSD
 * Samsung PM991
 * Kingston OM8SEP4256Q-A0
 * Transcend 110Q (TS500GMTE110Q)
-* Las series SN350 y SN570 impidieron que el Raspberry Pi 5 arrancara.
-* Otros discos SSD NVMe con el mismo controlador Phison.
+* Otros controladores NVMe SSD equipados con el mismo controlador Phison

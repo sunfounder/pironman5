@@ -15,19 +15,25 @@
 Dual NVMe PIP
 =====================
 
-La Dual NVMe PIP (placa periférica PCIe), según la definición de la Fundación Raspberry Pi, es una placa adaptadora PCIe diseñada específicamente para unidades de estado sólido NVMe.
+El **Dual NVMe PIP** (Placa Periférica PCIe), según lo definido por la Fundación Raspberry Pi, es un adaptador PCIe diseñado específicamente para unidades de estado sólido NVMe.
 
-La interfaz PCIe de la Raspberry Pi 5 proporciona un único canal Gen2 x1 (ancho de banda de 500 MB/s) por defecto. Al integrar el chip ASM1182e, se puede ampliar a dos canales Gen2 x1 independientes para conectar dos dispositivos M.2 con ranura M-key (como dos SSD NVMe M.2 o un SSD NVMe M.2 + un acelerador M.2 Hailo-8/8LAI). Sin embargo, cabe destacar que la Dual NVMe PIP no es compatible con Gen 3.
+La interfaz PCIe de la Raspberry Pi 5 ofrece de forma nativa un único carril **Gen2 x1** (500 MB/s). Al integrar el chip conmutador PCIe **ASM1182e**, el Dual NVMe PIP lo expande a **dos carriles independientes Gen2 x1**, permitiéndote conectar:
 
-Admite cuatro tamaños diferentes de SSD NVMe: 2230, 2242, 2260 y 2280, todos compatibles con una ranura M-key M.2.
+* **Dos SSD NVMe M.2**, o  
+* **Un SSD NVMe M.2 + un acelerador de IA M.2 Hailo-8/8L**  
+
+**Notas Clave**:
+
+* No se soporta Gen3  
+* Soporta tamaños de SSD NVMe: **2230**, **2242**, **2260**, **2280** (todos en ranuras M.2 con llave M)  
 
 .. image:: img/nvme_pip.png
 
-* La placa se conecta mediante un cable FFC inverso de 16 pines y 0.5 mm o un cable FPC personalizado con coincidencia de impedancia.
-* **STA**: LED indicador de estado.
-* **PWR**: LED indicador de alimentación.
-* La fuente de alimentación integrada de 3.3 V admite hasta 3 A de salida. Sin embargo, como la interfaz PCIe del Raspberry Pi solo proporciona hasta 5 V/1 A (equivalente a 5 W), se puede suministrar energía adicional de 5 V a través del conector J3 para alcanzar los 3.3 V/3 A.
-* **FORCE ENABLE**: La fuente de alimentación de la placa se activa mediante una señal de encendido proveniente de la interfaz PCIe. Al arrancar el Raspberry Pi, se envía una señal para habilitar la fuente de 3.3 V. Si el sistema no admite esta señal o en otros casos, puedes forzar la activación soldando un puente entre las almohadillas de J4 FORCE ENABLE.
+* La placa se conecta a través de un cable FFC (Flexible Flat Cable) inverso de 16 pines y 0.5mm o un cable FPC (Flexible Printed Circuit) personalizado con impedancia adaptada.  
+* **STA**: Indicador LED de estado.  
+* **PWR**: Indicador LED de encendido.  
+* La fuente de alimentación integrada de 3.3V puede soportar hasta 3A de salida. Sin embargo, dado que la interfaz PCIe de la Raspberry Pi está limitada a proporcionar 5V/1A de salida (equivalente a 5W), se puede suministrar energía adicional para el uso de 3.3V/3A a través del conector J3 desde una fuente de 5V.  
+* **FORCE ENABLE**: La fuente de alimentación integrada se activa mediante la señal de interruptor de la interfaz PCIe. Después de encender la Raspberry Pi, esta envía una señal para activar la fuente de 3.3V. Si algunos sistemas no soportan la señal de interruptor o por otras razones, puedes hacer un cortocircuito en J4 FORCE ENABLE soldando un cable entre las dos almohadillas libres para forzar que la fuente de 3.3V integrada alimente al NVMe.
 
 Sobre el modelo
 ---------------------------

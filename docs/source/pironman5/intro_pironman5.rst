@@ -1,3 +1,18 @@
+.. note:: 
+
+    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
+
+    **¿Por qué unirte?**
+
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y contenido exclusivo.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
+
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
+
+
 .. _intro_pironman5: 
 
 Pironman 5
@@ -9,7 +24,19 @@ Gracias por elegir nuestro |link_pironman5|.
     :width: 400
     :align: center
 
-El Pironman 5 es una carcasa tipo mini PC diseñada específicamente para la Raspberry Pi. Fabricada en aluminio resistente, incorpora un sistema de refrigeración avanzado con disipador tipo torre y dos ventiladores RGB, además de filtros de polvo para garantizar un rendimiento óptimo. Es compatible con discos NVMe M.2 SSD (2230, 2242, 2260, 2280) y con el acelerador de inteligencia artificial Hailo-8L, lo que proporciona almacenamiento de alto rendimiento y potentes capacidades de IA en el borde. Incluye una pantalla OLED de 0.96” que muestra en tiempo real el uso de la CPU, la memoria, la temperatura y la dirección IP. También dispone de puertos HDMI duales, LEDs RGB personalizables, botón de encendido seguro, receptor IR y un extensor GPIO externo para mejorar la conectividad y funcionalidad. Ideal para proyectos NAS, Home Assistant, centros multimedia, juegos y desarrollos de IA, el Pironman 5 viene con una guía clara y detallada para facilitar su montaje e instalación.
+|link_pironman5| es una carcasa premium para mini PC diseñada específicamente para la Raspberry Pi 5. Construida con **aluminio duradero**, combina una estructura robusta con funciones avanzadas para ofrecer un alto rendimiento en una amplia gama de aplicaciones.
+
+**Características Clave**
+
+* **Refrigeración Avanzada**: Disipador tipo torre con ventiladores RGB duales para un control eficiente de la temperatura.  
+* **Almacenamiento de Alta Velocidad y Soporte de IA**: Compatible con SSD NVMe M.2 (**2230**, **2242**, **2260**, **2280**) y totalmente compatible con el **acelerador de IA Hailo-8L** para potentes capacidades de IA en el borde.  
+* **Pantalla Inteligente**: Pantalla OLED integrada de 0.96” que muestra en tiempo real el uso de CPU, memoria, temperatura y dirección IP.  
+* **Conectividad Mejorada**: Puertos HDMI duales, LEDs RGB personalizables, interruptor de encendido seguro, receptor IR y expansor GPIO externo.  
+* **Usos Versátiles**: Ideal para NAS, Home Assistant, centros multimedia, configuraciones de juegos y proyectos de IA.  
+
+.. note::
+
+  Se recomienda usar la fuente de alimentación oficial de 27W o |link_sf_27w_supply| para los productos de la serie Pironman 5, a fin de evitar un suministro de energía insuficiente que pueda provocar el reinicio de la Raspberry Pi 5.
 
 .. toctree::
     :maxdepth: 1
@@ -21,10 +48,10 @@ El Pironman 5 es una carcasa tipo mini PC diseñada específicamente para la Ras
     set_up/set_up_pironman5
     control/control_pironman5
     hardware/hardware
+    optional_modules/optional_modules
     compitable_nvme_ssd
-    combine_with_lcd
-    assemble_camera
     faq
+
 
 
 **Interfaces**

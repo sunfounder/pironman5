@@ -1,35 +1,44 @@
+.. note:: 
+
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete más a fondo en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados como tú.
+
+    **¿Por qué unirte?**
+
+    - **Soporte experto**: Resuelve problemas técnicos y postventa con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios y adelantos de nuevos productos.
+    - **Descuentos especiales**: Disfruta de ofertas exclusivas en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales durante las festividades.
+
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
+
+
 .. _intro_pironman5_max:
 
 Pironman 5 MAX
 ================================================================================
-
 
 Gracias por elegir nuestro |link_pironman5_max|.
 
 .. image:: img/pironman5_max.jpg
     :width: 400
     :align: center
+    
+Lleva tu Raspberry Pi 5 al siguiente nivel con |link_pironman5_max|, una carcasa de aluminio de alta gama diseñada para rendimiento, refrigeración y expansión. Perfecta para NAS, IA, centros multimedia y proyectos avanzados.
 
-El Pironman 5 Max es el nuevo producto insignia de nuestra línea de carcasas Pironman para Raspberry Pi, 
-compatible exclusivamente con la más reciente Raspberry Pi 5.
+**Características Clave**:
 
-Una de sus características más destacadas son los paneles laterales transparentes dobles, 
-que evocan el estilo de un gabinete de PC, combinados con LEDs RGB y dos ventiladores RGB, 
-aportando un aspecto visual impresionante. 
-Incluye una pantalla OLED que muestra información básica del sistema, 
-y cuenta con funciones adicionales como botones de encendido/apagado y luces indicadoras de estado. 
-El puerto micro HDMI se ha sustituido por un puerto HDMI estándar para mayor compatibilidad, 
-y tanto el puerto de alimentación como el HDMI han sido reubicados junto a los puertos USB de la Raspberry Pi, 
-mejorando así la organización del cableado. 
-Equipado con tres ventiladores y un disipador estilo torre, 
-el sistema ofrece una excelente refrigeración para reducir eficazmente la temperatura de la Raspberry Pi 5.
+* **Expansión Dual NVMe & AI**: Conmutador PCIe Gen 2 con dos ranuras M.2 M-key (2230/2242/2260/2280) para SSDs o aceleradores de IA. Totalmente compatible con Hailo-8/8L.  
+* **Refrigeración Extrema**: Disipador tipo torre con ventilador PWM más dos ventiladores RGB, manteniendo una Pi al 100% de carga a solo 39°C en una habitación a 25°C.  
+* **Pantalla OLED Inteligente**: CPU, memoria, temperatura, uso de disco, dirección IP y más en tiempo real. Se activa con un toque gracias al sensor de vibración integrado.  
+* **Iluminación RGB Personalizable**: Cuatro LEDs direccionables WS2812 iluminan tu configuración con efectos vibrantes.  
+* **Conectividad Mejorada**: Dos puertos HDMI estándar, receptor IR para aplicaciones multimedia, botón de encendido seguro estilo retro y expansor GPIO externo con etiquetas.  
+* **Construcción Premium**: Chasis de aluminio duradero con panel lateral acrílico oscuro y ranura para tarjeta con resorte para fácil acceso.  
+* **Configuraciones Flexibles**: NAS en RAID 0/1, combinación SSD + IA, o doble acelerador de IA para cargas intensivas de IA.  
 
-La carcasa integra un conmutador PCIe Gen 2 con dos ranuras PCIe M.2 tipo M que admiten los formatos 2230, 2242, 2260 y 2280, 
-lo que permite instalar dos SSD NVMe Gen2 o aceleradores de IA. (Pero Gen3 no es compatible).
-Los usuarios pueden configurar dos SSD NVMe en RAID 0 o RAID 1 para crear un NAS; 
-combinar un SSD NVMe con un acelerador de IA para mejorar el rendimiento en inteligencia artificial; 
-o incluso usar dos aceleradores de IA para tareas más exigentes. 
-Además, cuenta con un conector de expansión GPIO para ampliar fácilmente las funcionalidades de la Raspberry Pi.
+.. note::
+
+  Se recomienda usar la fuente de alimentación oficial de 27W o |link_sf_27w_supply| para los productos de la serie Pironman 5, a fin de evitar un suministro de energía insuficiente que pueda provocar el reinicio de la Raspberry Pi 5.
 
 .. raw:: html
 
@@ -38,7 +47,7 @@ Además, cuenta con un conector de expansión GPIO para ampliar fácilmente las 
 .. toctree::
     :maxdepth: 1
 
-    About this Kit <self>
+    Sobre este Kit <self>
     what_do_we_need    
     assembly_instructions
     install/install_the_os
@@ -46,24 +55,41 @@ Además, cuenta con un conector de expansión GPIO para ampliar fácilmente las 
     set_up/set_up_pironman5
     control/control_pironman5
     advanced/advanced
+    optional_modules/optional_modules
     compitable_nvme_ssd
-    combine_with_lcd
     faq
+
 
 **Parámetros**
 
-* Mini PC Raspberry Pi 5
-* Pantalla OLED de 0.96" que muestra uso de CPU, temperatura, uso de disco, dirección IP, uso de RAM, etc.
-* Sensor de vibración integrado: al tocar suavemente la carcasa, se activa la pantalla OLED.
-* Disipador tipo torre que mantiene la CPU al 100% de carga a solo 39 °C en una habitación a 25 °C.
-* 2 ventiladores RGB con control mediante GPIO.
-* 1 ventilador PWM en el disipador torre, controlado por el sistema de la Raspberry Pi.
-* Conmutador PCIe Gen 2 integrado con dos interfaces PCIe M.2 tipo M, para instalar dos SSD NVMe Gen2 o aceleradores de IA.
-* Compatibilidad con cuatro tamaños de SSD NVMe M.2 (PCIe Gen 2.0): 2230, 2242, 2260 y 2280.
-* 4 LEDs RGB direccionables WS2812 que iluminan toda la carcasa con efectos visuales llamativos.
-* Receptor IR para centros multimedia como Kodi o Volumio.
-* Botón de encendido metálico tipo retro para apagado seguro.
-* Extensor GPIO externo con etiquetas de pines para fácil identificación.
-* Zócalo con resorte para extracción sencilla de la tarjeta.
-* Cuerpo principal de aluminio con paneles laterales de acrílico oscuro.
-* Incluye dos puertos HDMI estándar.
+* Dimensiones: 111.9 x 78.5 x 117mm (con disipador tipo torre)  
+* Material  
+    * Cuerpo Principal: Aleación de Aluminio Oscuro  
+    * Dos Paneles Laterales: Acrílico Negro Transparente  
+* Plataforma Soportada: Raspberry Pi 5  
+* Entrada de Energía: USB Tipo C, 5V/5A o fuente oficial de 27W  
+* Interfaces  
+    * GPIO estándar de 40 pines de Raspberry Pi (con expansor GPIO externo y etiquetas de pines)  
+    * Ranura Micro SD con mecanismo de resorte  
+    * Entrada de energía USB Tipo C  
+    * 2 x USB 2.0  
+    * 2 x USB 3.0  
+    * Puerto LAN Gigabit  
+    * 2 x Puertos HDMI Estándar  
+* Sistema de Refrigeración  
+    * 1 x Disipador tipo torre con ventilador PWM (controlado por el sistema)  
+    * 2 x Ventiladores RGB (controlados por GPIO)  
+* Pantalla  
+    * Pantalla OLED de 0.96" (CPU, RAM, temperatura, uso de disco, dirección IP)  
+    * Interruptor de vibración integrado para activar la pantalla tocando la carcasa  
+* Almacenamiento y Expansión  
+    * Conmutador PCIe Gen 2 integrado  
+    * 2 x Ranuras PCIe 2.0 M.2 M key para SSDs NVMe o aceleradores de IA  
+    * Compatible con tamaños M.2: 2230, 2242, 2260, 2280  
+* Iluminación y Control  
+    * 4 x LEDs RGB direccionables WS2812  
+    * Receptor IR para aplicaciones de centro multimedia (ej. Kodi, Volumio)  
+    * Botón de encendido metálico estilo retro para apagado seguro  
+* Construcción  
+    * Cuerpo principal de Aleación de Aluminio con paneles laterales de Acrílico Oscuro  
+    * Diseño premium con mayor durabilidad y estética
