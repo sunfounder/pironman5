@@ -1,50 +1,48 @@
 .. note::
 
-    Ciao, benvenuto nella community Facebook degli appassionati di SunFounder Raspberry Pi, Arduino ed ESP32! Esplora più a fondo Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
     **Perché unirsi?**
 
-    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l’aiuto del nostro team e della community.
-    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
-    - **Anteprime Esclusive**: Accedi in anticipo ad annunci di nuovi prodotti e contenuti in anteprima.
-    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
-    - **Promozioni e Giveaway Festivi**: Partecipa a concorsi e promozioni durante le festività.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l’aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-1. Cos’altro dobbiamo preparare?
+1. Cos’altro Dovremmo Preparare?
 ===================================
 
 **Componenti Essenziali**
 
-* Raspberry Pi 5
+* Raspberry Pi 5 
 
-    Il Pironman 5 MAX è pienamente compatibile con il Raspberry Pi 5.
+  Il Pironman 5 MAX è pienamente compatibile con il Raspberry Pi 5.
 
-* Alimentatore 5V/5A
+* Alimentatore da 27W
 
-    È necessario un alimentatore da 5V/5A per alimentare il Pironman 5 MAX e i suoi componenti.
+  Si consiglia di utilizzare l’alimentatore ufficiale da 27W o |link_sf_27w_supply| per i prodotti della serie Pironman 5, al fine di evitare insufficienza di alimentazione che potrebbe causare il riavvio del Raspberry Pi 5.
 
 * Scheda Micro SD
-
-    Si consiglia una scheda SD con almeno 16GB per Raspberry Pi OS. Per Raspberry Pi OS Lite, sono sufficienti almeno 4GB.
+ 
+  Si consiglia di utilizzare una scheda SD con almeno 16GB di memoria per Raspberry Pi OS. Per Raspberry Pi OS Lite è sufficiente un minimo di 4GB.
 
 **Componenti Opzionali**
 
-* SSD NVMe M.2
+* SSD M.2 NVMe
 
-    Il Pironman 5 MAX integra un modulo NVMe PIP con due connettori SSD M.2, 
-    compatibili con quattro formati NVMe M.2: 2230, 2242, 2260 e 2280. 
-    Il collegamento supporta velocità certificate Gen 2.0 (5 GT/sec).
+  Il Pironman 5 MAX è dotato di un NVMe PIP che fornisce due connettori SSD M.2, supportando quattro formati di SSD NVMe M.2: 2230, 2242, 2260 e 2280. L’interfaccia funziona a velocità PCIe Gen2.0 (Gen3 non è supportato).
 
 * Schermo
 
-    Per accedere all’ambiente desktop di Raspberry Pi, è necessario uno schermo, come una TV o un monitor.
-
+  Per accedere all’ambiente desktop del Raspberry Pi è necessario uno schermo, come una TV o un monitor per computer.
+  
 * Cavo HDMI
 
-    Le porte HDMI del Raspberry Pi 5 sono state adattate a interfacce HDMI standard di tipo A tramite un adattatore USB-HDMI. Pertanto, è necessario un cavo HDMI standard per collegare il Pironman 5 MAX a un display.
+  Le porte HDMI del Raspberry Pi 5 sono state adattate a interfacce HDMI standard Type A tramite un adattatore USB HDMI. Pertanto, è necessario un cavo HDMI standard per collegare il Pironman 5 MAX a un display.
 
-* Mouse e Tastiera
+* Mouse & Tastiera
 
-    Qualsiasi porta USB del Pironman 5 MAX può essere utilizzata per collegare tastiera e mouse con cavo, oppure un ricevitore Bluetooth USB per dispositivi wireless.
+  Qualsiasi porta USB del Pironman 5 MAX può essere utilizzata per collegare una tastiera e un mouse cablati, oppure un ricevitore USB Bluetooth per periferiche wireless.

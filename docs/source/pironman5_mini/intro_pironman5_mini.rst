@@ -9,9 +9,21 @@ Grazie per aver scelto il nostro |link_pironman5_mini|.
     :width: 400
     :align: center
 
-Il Pironman 5 Mini è l’ultima novità della serie di case Pironman per Raspberry Pi, progettato come una soluzione compatta ma altamente funzionale per gli appassionati di Raspberry Pi. Con un elegante corpo in lega di alluminio argentato e pannelli laterali in acrilico trasparente, il Pironman 5 Mini unisce stile e prestazioni in un formato ridotto.
+|link_pironman5_mini| è il modello compatto e snello della serie Pironman 5, che offre un formato ridotto senza compromettere le funzionalità principali. Con un elegante corpo in lega di alluminio argentato e pannelli laterali in acrilico trasparente, unisce stile e prestazioni in un design salvaspazio.
 
-Le caratteristiche principali includono un pulsante di accensione dedicato, un sistema di raffreddamento attivo simile a quello ufficiale del Raspberry Pi, una ventola RGB supplementare montata sul pannello laterale per migliorare il flusso d’aria, una batteria RTC e LED RGB WS2812-5050 vivaci. L’estensore GPIO consente di espandere facilmente la funzionalità del Raspberry Pi. Il case supporta inoltre SSD NVMe tramite uno slot PCIe 2.0 M.2 con chiave M (dimensioni 2230, 2242, 2260, 2280), rendendolo ideale per progetti che richiedono uno storage veloce e affidabile.
+**Caratteristiche Principali**
+
+* **Controlli Dedicati**: Pulsante di accensione integrato per un utilizzo comodo.
+* **Raffreddamento Efficiente**: Sistema di raffreddamento attivo simile al dissipatore ufficiale del Raspberry Pi, più una ventola RGB laterale aggiuntiva per migliorare il flusso d’aria.
+* **Funzionalità Extra**: Batteria RTC integrata e 4 LED RGB WS2812-5050.
+* **Espansione Facile**: Estensore GPIO per connessioni hardware flessibili.
+* **Archiviazione ad Alta Velocità**: Slot PCIe 2.0 M.2 M-key che supporta SSD NVMe nei formati **2230**, **2242**, **2260**, **2280**.
+
+Ideale per progetti che richiedono **archiviazione veloce, prestazioni stabili e un design compatto**, il Pironman 5 Mini porta funzionalità premium in un formato ridotto.
+
+.. note::
+
+  Si consiglia di utilizzare l’alimentatore ufficiale da 27W o |link_sf_27w_supply| per i prodotti della serie Pironman 5, al fine di evitare insufficienza di alimentazione che potrebbe causare il riavvio del Raspberry Pi 5.
 
 .. toctree::
     :maxdepth: 1
@@ -23,8 +35,8 @@ Le caratteristiche principali includono un pulsante di accensione dedicato, un s
     set_up/set_up_pironman5
     control/control_pironman5
     hardware/hardware
+    optional_modules/optional_modules
     compitable_nvme_ssd
-    combine_with_lcd
     faq
 
 
@@ -33,7 +45,7 @@ Le caratteristiche principali includono un pulsante di accensione dedicato, un s
 * Dimensioni: 67.8 x 98.6 x 101.5 mm
 * Materiali
     * Corpo Principale: Lega di Alluminio Argentata
-    * Due Pannelli Laterali: Acrilico Trasparente
+    * Due Pannelli Laterali: Acrilico Trasparente Nero
 * Piattaforma Supportata: Raspberry Pi 5
 * Alimentazione: USB Type C, 5V/5A
 * Interfacce

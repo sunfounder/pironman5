@@ -9,7 +9,21 @@ Thanks for choosing our |link_pironman5|.
     :width: 400
     :align: center
 
-Pironman 5 is a mini PC case designed specifically for the Raspberry Pi. Crafted from durable aluminum, it features an advanced cooling system with a tower cooler and dual RGB fans, along with dust filters to ensure optimal performance. The case supports NVMe M.2 SSDs (2230, 2242, 2260, 2280) and is fully compatible with the Hailo-8L AI accelerator, providing enhanced storage and powerful edge AI capabilities. A built-in 0.96” OLED display delivers real-time insights into CPU usage, memory, temperature, and IP address, while dual HDMI ports, customizable RGB LEDs, a secure power switch, an IR receiver, and an external GPIO extender boost connectivity and functionality. Ideal for NAS, Home Assistant, media centers, gaming setups, and AI projects, Pironman 5 comes with a clear, step-by-step guide for easy assembly and setup.
+|link_pironman5| è un case mini PC premium progettato specificamente per il Raspberry Pi 5. Realizzato in **alluminio resistente**, unisce una struttura robusta a funzionalità avanzate per offrire alte prestazioni in un’ampia gamma di applicazioni.
+
+**Caratteristiche Principali**
+
+* **Raffreddamento Avanzato**: Dissipatore a torre con doppie ventole RGB per un controllo efficiente della temperatura.
+* **Archiviazione ad Alta Velocità e Supporto AI**: Supporta SSD NVMe M.2 (**2230**, **2242**, **2260**, **2280**) ed è pienamente compatibile con l’**acceleratore AI Hailo-8L** per potenti capacità edge AI.
+* **Display Intelligente**: Schermo OLED integrato da 0,96” che mostra in tempo reale utilizzo della CPU, memoria, temperatura e indirizzo IP.
+* **Connettività Avanzata**: Doppie porte HDMI, LED RGB personalizzabili, interruttore di alimentazione sicuro, ricevitore IR ed estensore GPIO esterno.
+* **Casi d’Uso Versatili**: Ideale per NAS, Home Assistant, media center, setup gaming e progetti AI.
+
+
+.. note::
+
+  Si consiglia di utilizzare l’alimentatore ufficiale da 27W o |link_sf_27w_supply| per i prodotti della serie Pironman 5, al fine di evitare insufficienza di alimentazione che potrebbe causare il riavvio del Raspberry Pi 5.
+
 
 .. toctree::
     :maxdepth: 1
@@ -21,10 +35,10 @@ Pironman 5 is a mini PC case designed specifically for the Raspberry Pi. Crafted
     set_up/set_up_pironman5
     control/control_pironman5
     hardware/hardware
+    optional_modules/optional_modules
     compitable_nvme_ssd
-    combine_with_lcd
-    assemble_camera
     faq
+
 
 
 **Interfaces**

@@ -30,7 +30,8 @@ Puoi quindi procedere selezionando il tutorial di configurazione in base al tuo 
 
     set_up_rpi_os 
     set_up_home_assistant
-    set_up_batocera
+
+.. set_up_batocera
 
 
 **Informazioni sul pulsante di accensione**

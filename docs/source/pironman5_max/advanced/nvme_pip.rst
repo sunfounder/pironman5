@@ -15,19 +15,25 @@
 Dual Pi5 NVMe PIP
 =====================
 
-La Dual NVMe PIP (PCIe Peripheral Board), come definita dalla Raspberry Pi Foundation, è una scheda adattatore PCIe progettata specificamente per unità a stato solido NVMe.
+Il **Dual NVMe PIP** (Scheda Periferica PCIe), come definito dalla Raspberry Pi Foundation, è un adattatore PCIe progettato specificamente per unità a stato solido NVMe.
 
-L'interfaccia PCIe del Raspberry Pi 5 fornisce di default un singolo canale Gen2 x1 (larghezza di banda 500 MB/s). Integrando il chip ASM1182e, può essere espansa in due canali Gen2 x1 indipendenti per collegare due dispositivi M.2 M-key (come due SSD M.2 NVMe o un SSD M.2 NVMe + un acceleratore M.2 Hailo-8/8LAI). Tuttavia, è importante notare che la Dual NVMe PIP non supporta la Gen 3.
+L’interfaccia PCIe del Raspberry Pi 5 offre nativamente una singola corsia **Gen2 x1** (500 MB/s). Integrando il chip switch PCIe **ASM1182e**, il Dual NVMe PIP la espande in **due corsie Gen2 x1 indipendenti**, permettendoti di collegare:
 
-Supporta quattro diverse dimensioni di SSD NVMe: 2230, 2242, 2260 e 2280, tutte compatibili con uno slot M.2 M-key.
+* **Due SSD NVMe M.2**, oppure
+* **Un SSD NVMe M.2 + un acceleratore AI M.2 Hailo-8/8L**
+
+**Note Importanti**:
+
+* Gen3 non è supportato  
+* Supporta formati di SSD NVMe: **2230**, **2242**, **2260**, **2280** (tutti negli slot M.2 M-key)
 
 .. image:: img/nvme_pip.png
 
-* La scheda si collega tramite un cavo FFC (Flexible Flat Cable) inverso a 16 pin da 0,5 mm oppure un cavo FPC (Flexible Printed Circuit) su misura con impedenza controllata.
-* **STA**: LED di stato.
-* **PWR**: LED di alimentazione.
-* L'alimentazione integrata da 3,3V supporta un’uscita massima di 3A. Tuttavia, l'interfaccia PCIe del Raspberry Pi può fornire solo 5V/1A (equivalente a 5W), quindi per un uso completo dei 3,3V/3A è possibile fornire alimentazione aggiuntiva al connettore J3 tramite una fonte a 5V.
-* **FORCE ENABLE**: L'alimentatore integrato viene attivato da un segnale di switch proveniente dall’interfaccia PCIe. Dopo l'accensione del Raspberry Pi, viene inviato un segnale per attivare l’alimentazione a 3,3V. Se il sistema non supporta tale segnale o per altri motivi, è possibile cortocircuitare J4 FORCE ENABLE saldando un filo tra i due pad per forzare l’attivazione dell’alimentazione a 3,3V.
+* La scheda si collega tramite un cavo FFC (Flexible Flat Cable) inverso a 16 pin 0,5mm o un cavo FPC (Flexible Printed Circuit) personalizzato con impedenza abbinata.  
+* **STA**: Indicatore LED di stato.  
+* **PWR**: Indicatore LED di alimentazione.  
+* L’alimentazione integrata da 3,3V può supportare fino a 3A in uscita. Tuttavia, poiché l’interfaccia PCIe del Raspberry Pi è limitata a fornire 5V/1A in uscita (equivalente a 5W), un’alimentazione supplementare per l’uso a 3,3V/3A può essere fornita tramite il connettore J3 da una fonte a 5V.  
+* **FORCE ENABLE**: L’alimentazione integrata è attivata dal segnale di switch dell’interfaccia PCIe. Dopo l’accensione del Raspberry Pi, questo invia un segnale per attivare l’alimentazione a 3,3V. Se alcuni sistemi non supportano il segnale di switch o per altri motivi, puoi cortocircuitare J4 FORCE ENABLE saldando un filo tra i due pad flottanti per forzare l’alimentazione a 3,3V integrata a fornire energia all’NVMe.
 
 Informazioni sul modello
 ---------------------------

@@ -1,18 +1,18 @@
-.. note:: 
+.. note::
 
-    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Perché unirsi a noi?**
+    **Perché unirsi?**
 
-    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
-    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
-    - **Anteprime Esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotto e anteprime.
-    - **Sconti Speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
-    - **Promozioni Festive e Giveaway**: Partecipa a concorsi e promozioni per le festività.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l’aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-Compitable NVMe SSD
+SSD NVMe Compatibili
 ========================
 
 SSD NVMe Compatibili
@@ -59,30 +59,29 @@ SSD NVMe Compatibili
 
 * Team MP33
 
-* Western Digital SN850
-* Western Digital SN740
 * Western Digital SN570
 * Western Digital SN530
-* Western Digital Black SN750 SE (Phison Controller)
-* Western Digital Blue SN550 series (Se sai come installare gli ultimi aggiornamenti rpi-eeprom, pieeprom-2024-01-24.bin ha risolto il problema di avvio NVMe Western Digital Blue SN550. Fai riferimento a https://forums.raspberrypi.com/viewtopic.php?t=364327.)
+* Western Digital Black SN750 SE
+* Western Digital Blue SN550 series (Se sai come installare i più recenti rpi-eeprom-updates, il file pieeprom-2024-01-24.bin ha risolto il problema di avvio NVMe con Western Digital Blue SN550. Vedi https://forums.raspberrypi.com/viewtopic.php?t=364327.)
 
 * XPG GAMMIX S70 BLADE
 * XPG SX8200 Pro
 
+
 SSD NVMe Non Compatibili
 --------------------------
 
-Si consiglia di evitare i seguenti SSD NVMe dotati di controller Phison a causa della loro comprovata incompatibilità:
+Si consiglia di evitare i seguenti SSD NVMe dotati di controller Phison a causa della loro incompatibilità comprovata:
 
-* Serie WD Blue SN580
-* Serie Western Digital Green SN350
-* Serie Western Digital Black SN850
+* Western Digital SN740
 * Western Digital Black SN770
+* WD Blue SN580 series
+* Western Digital Green SN350 series
+* Western Digital Black SN850 series
 * WD BLACK 8TB SN850X
-* Inland tn446 NVMe drive
+* Inland tn446 nvme drive
 * Corsair MP600 SSD
 * Samsung PM991
 * Kingston OM8SEP4256Q-A0
 * Transcend 110Q (TS500GMTE110Q)
-* SN350 e SN570 impedivano soprattutto l'avvio del RPi 5.
-* Altri driver SSD NVMe dotati dello stesso controller Phison.
+* Altri SSD NVMe dotati dello stesso controller Phison

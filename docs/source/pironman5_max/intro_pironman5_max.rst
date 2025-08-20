@@ -1,3 +1,19 @@
+.. note::
+
+    Ciao! Benvenuto nella community di appassionati di Raspberry Pi, Arduino ed ESP32 di SunFounder su Facebook! Approfondisci le tue competenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati come te.
+
+    **Why Join?**
+
+    - **Expert Support**: Risolvi problemi post-vendita e sfide tecniche con l’aiuto della nostra community e del nostro team.
+    - **Learn & Share**: Condividi suggerimenti e tutorial per migliorare le tue competenze.
+    - **Exclusive Previews**: Ottieni accesso anticipato a nuovi annunci e anteprime sui prodotti.
+    - **Special Discounts**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Festive Promotions and Giveaways**: Partecipa a promozioni festive e giveaway esclusivi.
+
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti subito!
+
+
+
 .. _intro_pironman5_max: 
 
 Pironman 5 MAX
@@ -10,24 +26,21 @@ Grazie per aver scelto il nostro |link_pironman5_max|.
     :width: 400
     :align: center
 
-Il Pironman 5 Max è il nuovo prodotto di punta della nostra linea di case Pironman per Raspberry Pi, 
-compatibile esclusivamente con il più recente Raspberry Pi 5.
+Porta il tuo Raspberry Pi 5 al livello successivo con |link_pironman5_max|, un case in alluminio di fascia alta progettato per prestazioni, raffreddamento ed espansione. Perfetto per NAS, AI, media center e progetti avanzati.
 
-Uno degli elementi distintivi del Pironman 5 Max è la presenza di due pannelli laterali trasparenti, 
-che ricordano un case da PC, arricchiti da LED RGB e due ventole RGB, 
-che conferiscono un tocco estetico notevole al dispositivo. 
-Include uno schermo OLED che mostra le principali informazioni del Raspberry Pi, 
-oltre a funzionalità avanzate come pulsanti di accensione/spegnimento e indicatori di stato. 
-La porta micro HDMI è stata sostituita da una porta HDMI standard per una maggiore compatibilità, 
-e le porte HDMI e di alimentazione sono state riposizionate sullo stesso lato delle porte USB del Raspberry Pi, 
-migliorando l’ordine dei cavi. Dotato di tre ventole e un dissipatore a torre, 
-offre un'efficace soluzione per la dissipazione del calore generato dal Raspberry Pi 5.
+**Caratteristiche Principali**:
 
-Il case integra uno switch PCIe Gen 2 con due slot PCIe M key M.2 compatibili con i formati 2230, 2242, 2260 e 2280, permettendo l’installazione di due SSD NVMe Gen2 o acceleratori AI. (Ma Gen3 non è supportato.)
-Gli utenti possono configurare due SSD NVMe in RAID 0 o RAID 1 tramite software per realizzare un NAS; 
-oppure combinare un acceleratore AI con un SSD NVMe per migliorare le prestazioni AI; 
-oppure ancora utilizzare due acceleratori AI per potenziare ulteriormente le capacità di elaborazione.  
-Inoltre, è prevista un’espansione GPIO per estendere comodamente le funzionalità del Raspberry Pi.
+* **Espansione Dual NVMe & AI**: Switch PCIe Gen 2 con due slot M.2 M-key (2230/2242/2260/2280) per SSD o acceleratori AI. Pienamente compatibile con Hailo-8/8L.
+* **Raffreddamento Estremo**: Dissipatore a torre con ventola PWM più due ventole RGB, mantiene un Pi al 100% di carico a soli 39°C in una stanza a 25°C.
+* **Display OLED Intelligente**: Mostra in tempo reale CPU, memoria, temperatura, utilizzo disco, indirizzo IP e altro ancora. Si riattiva con un tocco grazie al sensore di vibrazione integrato.
+* **Illuminazione RGB Personalizzabile**: Quattro LED indirizzabili WS2812 illuminano il tuo setup con effetti vibranti.
+* **Connettività Avanzata**: Doppie porte HDMI standard, ricevitore IR per applicazioni multimediali, pulsante di accensione sicuro in stile retrò ed estensore GPIO esterno etichettato.
+* **Costruzione Premium**: Telaio in alluminio resistente con pannello laterale in acrilico scuro e slot per schede a molla per un facile accesso.
+* **Configurazioni Flessibili**: RAID 0/1 NAS, combinazione SSD + AI o doppi acceleratori AI per carichi di lavoro AI pesanti.
+
+.. note::
+
+  Si consiglia di utilizzare l’alimentatore ufficiale da 27W o |link_sf_27w_supply| per i prodotti della serie Pironman 5, al fine di evitare insufficienza di alimentazione che potrebbe causare il riavvio del Raspberry Pi 5.
 
 .. raw:: html
 
@@ -44,24 +57,41 @@ Inoltre, è prevista un’espansione GPIO per estendere comodamente le funzional
     set_up/set_up_pironman5
     control/control_pironman5
     advanced/advanced
+    optional_modules/optional_modules
     compitable_nvme_ssd
-    combine_with_lcd
     faq
 
 **Parametri**
 
-* Raspberry Pi 5 mini PC
-* Display OLED da 0,96" che mostra utilizzo CPU, temperatura, utilizzo disco, indirizzo IP, utilizzo RAM, ecc.
-* Interruttore a vibrazione integrato: toccando delicatamente il case si riattiva lo schermo OLED
-* Il dissipatore a torre mantiene la temperatura della CPU a 39°C con carico del 100% in ambiente a 25°C
-* 2 ventole RGB controllate via GPIO
-* 1 ventola PWM sul dissipatore a torre controllata dal sistema del Raspberry Pi
-* Switch PCIe Gen 2 integrato con due interfacce PCIe M key M.2 per installare due SSD NVMe Gen2 o acceleratori AI
-* Supporta quattro formati NVMe M.2 (PCIe Gen 2.0): 2230, 2242, 2260 e 2280
-* 4 LED RGB WS2812 indirizzabili per un effetto luminoso coinvolgente in tutto il case
-* Ricevitore IR per media center come Kodi o Volumio
-* Pulsante di accensione in metallo dal design retrò per uno spegnimento sicuro
-* Estensore GPIO esterno con etichette dei pin per un accesso semplificato
-* Slot a molla per una facile rimozione della scheda
-* Corpo principale in alluminio con pannelli laterali in acrilico scuro
-* Due porte HDMI standard integrate
+* Dimensioni: 111.9 x 78.5 x 117mm (con dissipatore a torre)
+* Materiale
+    * Corpo principale: Lega di alluminio scuro
+    * Due pannelli laterali: Acrilico trasparente nero
+* Piattaforma supportata: Raspberry Pi 5
+* Alimentazione in ingresso: USB Type C, 5V/5A o alimentatore ufficiale da 27W
+* Interfacce
+    * GPIO standard Raspberry Pi a 40 pin (con estensore GPIO esterno ed etichette pin)
+    * Slot Micro SD con meccanismo a molla
+    * Ingresso di alimentazione USB Type C
+    * 2 x USB 2.0
+    * 2 x USB 3.0
+    * Porta LAN Gigabit
+    * 2 x Porte HDMI standard
+* Sistema di Raffreddamento
+    * 1 x Dissipatore a torre con ventola PWM (controllata dal sistema)
+    * 2 x Ventole RGB (controllate da GPIO)
+* Display
+    * Display OLED da 0,96" (CPU, RAM, temperatura, utilizzo disco, indirizzo IP)
+    * Interruttore a vibrazione integrato per riattivare lo schermo toccando il case
+* Archiviazione & Espansione
+    * Switch PCIe Gen 2 integrato
+    * 2 x slot PCIe 2.0 M.2 M-key per SSD NVMe o acceleratori AI
+    * Supporta formati M.2: 2230, 2242, 2260, 2280
+* Illuminazione & Controllo
+    * 4 x LED RGB WS2812 indirizzabili
+    * Ricevitore IR per applicazioni multimediali (es. Kodi, Volumio)
+    * Pulsante di accensione in metallo stile retrò per spegnimento sicuro
+* Struttura
+    * Corpo principale in lega di alluminio con pannelli laterali in acrilico scuro
+    * Design premium con maggiore resistenza ed estetica
+

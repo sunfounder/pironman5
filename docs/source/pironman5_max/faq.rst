@@ -35,17 +35,17 @@ Se hai già installato ``pironman5``, puoi rimuovere il modulo ``dashboard`` e `
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-Il Pironman 5 MAX supporta i sistemi di retro gaming?
---------------------------------------------------------
+.. Il Pironman 5 MAX supporta i sistemi di retro gaming?
+.. --------------------------------------------------------
 
-Sì, è compatibile. Tuttavia, la maggior parte dei sistemi retro gaming sono versioni semplificate che non consentono l’installazione di software aggiuntivo. Questo può impedire il corretto funzionamento di alcuni componenti del Pironman 5 MAX, come il display OLED, le due ventole RGB e i quattro LED RGB, che richiedono i pacchetti software del Pironman 5 MAX per funzionare.
+.. Sì, è compatibile. Tuttavia, la maggior parte dei sistemi retro gaming sono versioni semplificate che non consentono l’installazione di software aggiuntivo. Questo può impedire il corretto funzionamento di alcuni componenti del Pironman 5 MAX, come il display OLED, le due ventole RGB e i quattro LED RGB, che richiedono i pacchetti software del Pironman 5 MAX per funzionare.
 
-.. note::
+.. .. note::
 
-    Il sistema Batocera.linux è ora pienamente compatibile con il Pironman 5 MAX. Batocera.linux è una distribuzione open-source e completamente gratuita dedicata al retro gaming.
+..     Il sistema Batocera.linux è ora pienamente compatibile con il Pironman 5 MAX. Batocera.linux è una distribuzione open-source e completamente gratuita dedicata al retro gaming.
 
-    * :ref:`max_install_batocera`
-    * :ref:`max_set_up_batocera`
+..     * :ref:`max_install_batocera`
+..     * :ref:`max_set_up_batocera`
 
 Come controllare i componenti con il comando ``pironman5``?
 ----------------------------------------------------------------------

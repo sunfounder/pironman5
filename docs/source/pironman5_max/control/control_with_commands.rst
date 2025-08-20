@@ -21,7 +21,8 @@ Oltre a visualizzare i dati del Pironman 5 MAX e controllare i vari dispositivi 
 .. note::
 
   * Per il sistema **Home Assistant**, è possibile monitorare e controllare il Pironman 5 MAX solo tramite la dashboard accedendo alla pagina ``http://<ip>:34001``.
-  * Per il sistema **Batocera.linux**, è possibile monitorare e controllare il Pironman 5 MAX solo tramite comandi. Ricorda che ogni modifica alla configurazione richiede il riavvio del servizio con ``pironman5 restart`` affinché abbia effetto.
+
+.. * Per il sistema **Batocera.linux**, è possibile monitorare e controllare il Pironman 5 MAX solo tramite comandi. Ricorda che ogni modifica alla configurazione richiede il riavvio del servizio con ``pironman5 restart`` affinché abbia effetto.
 
 Visualizzare le Configurazioni di Base
 -----------------------------------------
