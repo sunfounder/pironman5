@@ -1,49 +1,48 @@
-.. note:: 
+.. note::
 
-    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Plongez au cœur de l’univers Raspberry Pi, Arduino et ESP32 aux côtés d'autres passionnés.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 sur Facebook ! Plongez plus profondément dans Raspberry Pi, Arduino et ESP32 avec d’autres passionnés.
 
-    **Pourquoi nous rejoindre ?**
+    **Pourquoi rejoindre ?**
 
-    - **Support d’experts** : Résolvez vos problèmes techniques ou après-vente grâce à l’aide de notre équipe et de la communauté.
-    - **Apprendre et partager** : Échangez astuces et tutoriels pour faire progresser vos compétences.
-    - **Aperçus exclusifs** : Profitez d’un accès anticipé aux annonces de nouveaux produits et aperçus en avant-première.
-    - **Réductions spéciales** : Bénéficiez d’offres exclusives sur nos dernières nouveautés.
-    - **Promotions festives et concours** : Participez à nos jeux-concours et offres spéciales pendant les fêtes.
+    - **Support d’experts** : Résolvez vos problèmes après-vente et défis techniques avec l’aide de notre communauté et de notre équipe.  
+    - **Apprendre & Partager** : Échangez des astuces et tutoriels pour améliorer vos compétences.  
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.  
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.  
+    - **Promotions festives et cadeaux** : Participez à des concours et promotions pendant les fêtes.  
 
     👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
-1. Que faut-il préparer d’autre ?
-===================================
+1. Que devons-nous préparer d’autre ?  
+==================================================
 
 **Composants essentiels**
 
-* Raspberry Pi 5
+* Raspberry Pi 5  
 
-    Le Pironman 5 MAX est entièrement compatible avec le Raspberry Pi 5.
+  Le Pironman 5 MAX est entièrement compatible avec le Raspberry Pi 5.
 
-* Adaptateur secteur 5V/5A
+* Alimentation 27W  
 
-    Un adaptateur secteur 5V/5A est nécessaire pour alimenter le Pironman 5 MAX et ses composants.
+  Il est recommandé d’utiliser l’alimentation officielle 27W ou |link_sf_27w_supply| pour les produits de la série Pironman 5 afin d’éviter une alimentation insuffisante, ce qui pourrait entraîner un redémarrage du Raspberry Pi 5.
 
-* Carte micro SD
+* Carte Micro SD  
 
-    Une carte SD d’au moins 16 Go est recommandée pour Raspberry Pi OS. Pour Raspberry Pi OS Lite, une capacité minimale de 4 Go est suffisante.
+  Il est recommandé d’utiliser une carte SD d’au moins 16 Go pour Raspberry Pi OS. Pour Raspberry Pi OS Lite, un minimum de 4 Go est conseillé.
 
 **Composants optionnels**
 
-* SSD NVMe au format M.2
+* SSD NVMe M.2  
 
-    Le Pironman 5 MAX est équipé d’un connecteur NVMe PIP avec deux ports M.2, compatibles avec quatre formats de SSD M.2 NVMe : 2230, 2242, 2260 et 2280.
-    La connexion prend en charge des vitesses certifiées Gen 2.0 (5 GT/sec).
+  Le Pironman 5 MAX est équipé d’un module NVMe PIP qui fournit deux connecteurs SSD M.2, prenant en charge quatre formats de SSD NVMe M.2 : 2230, 2242, 2260 et 2280. L’interface fonctionne à des vitesses PCIe Gen2.0 (Gen3 n’est pas pris en charge).
 
-* Écran
+* Écran  
 
-    Pour accéder à l’environnement de bureau du Raspberry Pi, un écran tel qu’un téléviseur ou un moniteur est requis.
+  Pour accéder à l’environnement de bureau du Raspberry Pi, un écran tel qu’une TV ou un moniteur d’ordinateur est nécessaire.
+  
+* Câble HDMI  
 
-* Câble HDMI
+  Les ports HDMI du Raspberry Pi 5 ont été adaptés aux interfaces HDMI Type A standard via un adaptateur USB HDMI. Par conséquent, un câble HDMI vers HDMI standard est nécessaire pour connecter le Pironman 5 MAX à un écran.
 
-    Les ports HDMI du Raspberry Pi 5 ont été convertis en interfaces HDMI Type A standard via un adaptateur USB HDMI. Un câble HDMI standard est donc nécessaire pour connecter le Pironman 5 MAX à un écran.
+* Souris & Clavier  
 
-* Souris et clavier
-
-    Vous pouvez brancher un clavier et une souris filaires sur n’importe quel port USB du Pironman 5 MAX, ou utiliser un récepteur USB Bluetooth pour des périphériques sans fil.
+  N’importe quel port USB du Pironman 5 MAX peut être utilisé pour connecter un clavier et une souris filaires, ou un récepteur USB Bluetooth pour des périphériques sans fil.

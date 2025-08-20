@@ -183,8 +183,7 @@ Le Pironman 5 Mini intègre un module adaptateur PCIe pour SSD NVMe. Il prend en
 
   .. image:: img/nvme_pcie.png
 
-* **FORCE ENABLE** : l’alimentation 3,3 V est activée par un signal PCIe.  
-Si votre système ne le supporte pas, vous pouvez souder un pont sur J2 pour forcer l’activation.
+* **FORCE ENABLE** : l’alimentation 3,3 V est activée par un signal PCIe. Si votre système ne le supporte pas, vous pouvez souder un pont sur J2 pour forcer l’activation.
 
   .. image:: img/nvme_j2.png
 

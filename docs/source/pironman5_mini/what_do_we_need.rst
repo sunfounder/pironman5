@@ -23,9 +23,9 @@ Pour commencer avec votre Pironman 5 Mini, vous aurez besoin de quelques composa
 
     Le Pironman 5 Mini est entièrement compatible avec le Raspberry Pi 5.
 
-* Adaptateur secteur 5V/5A
+* Alimentation 27W  
 
-    Un adaptateur secteur 5V/5A est nécessaire pour alimenter le Pironman 5 Mini et ses composants.
+  Il est recommandé d’utiliser l’alimentation officielle 27W ou |link_sf_27w_supply| pour les produits de la série Pironman 5 afin d’éviter une alimentation insuffisante, ce qui pourrait entraîner un redémarrage du Raspberry Pi 5.
 
 * Carte Micro SD
 

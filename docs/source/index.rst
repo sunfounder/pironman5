@@ -48,7 +48,8 @@ Utilisez les images ci-dessous pour identifier le produit que vous avez acheté.
      - |pic_pironman5_mini| 
      - |pic_pironman5_max|
 
-Vous trouverez ci-dessous un tableau comparatif des spécifications du Pironman 5 et du Pironman 5 Mini. Utilisez ce tableau pour mieux comprendre les différences entre ces produits.
+Vous trouverez ci-dessous une comparaison des spécifications des modèles **Pironman 5**, **Pironman 5 Mini** et **Pironman 5 MAX**.  
+Utilisez ce tableau pour comprendre les différences entre ces produits.  
 
 .. list-table:: 
    :widths: 25 25 25 25
@@ -114,6 +115,10 @@ Vous trouverez ci-dessous un tableau comparatif des spécifications du Pironman 
      - 111.9 x 78.5 x 117 mm
      - 67.8 x 98.6 x 101.5 mm  
      - 111.9 x 78.5 x 117 mm
+
+.. note::
+
+  Il est recommandé d’utiliser l’alimentation officielle 27W ou |link_sf_27w_supply| pour les produits de la série Pironman 5 afin d’éviter une alimentation insuffisante, ce qui pourrait entraîner un redémarrage du Raspberry Pi 5.
 
 Pour toute question, veuillez envoyer un e-mail à service@sunfounder.com. Nous vous répondrons dans les plus brefs délais.
 

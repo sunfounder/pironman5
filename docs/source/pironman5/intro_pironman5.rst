@@ -9,7 +9,19 @@ Merci d’avoir choisi notre |link_pironman5|.
     :width: 400
     :align: center
 
-Le Pironman 5 est un boîtier mini PC conçu spécialement pour le Raspberry Pi. Fabriqué en aluminium robuste, il est équipé d’un système de refroidissement avancé incluant un dissipateur thermique vertical (tower cooler) et deux ventilateurs RGB, ainsi que de filtres à poussière pour garantir des performances optimales. Il prend en charge les SSD NVMe M.2 (2230, 2242, 2260, 2280) et est entièrement compatible avec l'accélérateur d'IA Hailo-8L, offrant ainsi un stockage performant et des capacités puissantes d’intelligence artificielle en périphérie. Un écran OLED intégré de 0,96’’ fournit des informations en temps réel sur l’utilisation du processeur, la mémoire, la température et l’adresse IP. Il dispose également de deux ports HDMI, de LED RGB personnalisables, d’un bouton d’alimentation sécurisé, d’un récepteur infrarouge et d’un prolongateur GPIO externe pour une connectivité et une fonctionnalité accrues. Idéal pour les projets NAS, Home Assistant, centres multimédias, installations de jeux et applications IA, le Pironman 5 est livré avec un guide clair et étape par étape pour un assemblage et une configuration faciles.
+|link_pironman5| est un boîtier mini PC haut de gamme conçu spécialement pour le Raspberry Pi 5. Fabriqué en **aluminium durable**, il combine une construction robuste avec des fonctionnalités avancées pour offrir des performances élevées dans un large éventail d’applications.
+
+**Caractéristiques principales**
+
+* **Refroidissement avancé** : Ventirad tour avec deux ventilateurs RGB pour un contrôle efficace de la température.  
+* **Stockage haute vitesse et support IA** : Prend en charge les SSD NVMe M.2 (**2230**, **2242**, **2260**, **2280**) et est entièrement compatible avec l’**accélérateur IA Hailo-8L** pour de puissantes capacités d’IA en périphérie.  
+* **Écran intelligent** : Écran OLED intégré de 0,96” affichant en temps réel l’utilisation CPU, la mémoire, la température et l’adresse IP.  
+* **Connectivité améliorée** : Double port HDMI, LED RGB personnalisables, interrupteur d’alimentation sécurisé, récepteur IR et extension GPIO externe.  
+* **Cas d’utilisation polyvalents** : Idéal pour NAS, Home Assistant, centres multimédias, configurations de jeu et projets IA.  
+
+.. note::
+
+  Il est recommandé d’utiliser l’alimentation officielle 27W ou |link_sf_27w_supply| pour les produits de la série Pironman 5 afin d’éviter une alimentation insuffisante, ce qui pourrait entraîner un redémarrage du Raspberry Pi 5.
 
 .. toctree::
     :maxdepth: 1
@@ -21,9 +33,8 @@ Le Pironman 5 est un boîtier mini PC conçu spécialement pour le Raspberry Pi.
     set_up/set_up_pironman5
     control/control_pironman5
     hardware/hardware
+    optional_modules/optional_modules
     compitable_nvme_ssd
-    combine_with_lcd
-    assemble_camera
     faq
 
 
