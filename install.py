@@ -34,7 +34,7 @@ settings = {
     'python_source': {
         'pironman5': './',
         'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.4.3',
-        'sf_rpi_status': 'git+https://github.com/sunfounder/sf_rpi_status.git@1.1.4',
+        'sf_rpi_status': 'git+https://github.com/sunfounder/sf_rpi_status.git@1.1.5',
     },
 
     # create symbolic links from venv/bin/ to /usr/local/bin/
