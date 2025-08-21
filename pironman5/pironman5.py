@@ -11,6 +11,8 @@ from .utils import merge_dict, log_error
 from .version import __version__ as pironman5_version
 from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, SYSTEM_DEFAULT_CONFIG, EVENT_MAP
 
+from sf_rpi_status import restart_service
+
 APP_NAME = 'pironman5'
 DEFAULT_DEBUG_LEVEL = 'INFO' # 'DEBUG' | 'INFO' | 'WARNING' | 'ERROR' | 'CRITICAL'
 
@@ -115,16 +117,11 @@ class Pironman5:
             if 'send_email' in self.peripherals:
                 self.pm_dashboard.set_test_smtp(self.pm_auto.test_smtp)
             self.pm_dashboard.set_on_config_changed(self.update_config)
-            self.pm_dashboard.set_on_restart_service(self.restart_service)
+            self.pm_dashboard.set_on_restart_service(restart_service)
 
     @log_error
     def set_debug_level(self, level):
         self.log.setLevel(level)
-
-    @log_error
-    def restart_service(self):
-        self.log.info('Restarting Pironman5 service')
-        os.system('sudo systemctl restart pironman5.service')
 
     @log_error
     def upgrade_config(self, config):
