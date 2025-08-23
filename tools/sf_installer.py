@@ -4,6 +4,7 @@ import sys
 import time
 import threading
 import os
+import subprocess
 
 class ConfigTxt(object):
     DEFAULT_BOOT_FILE = "/boot/firmware/config.txt"
@@ -29,48 +30,38 @@ class ConfigTxt(object):
                 return
         # read config file
         with open(self.file, 'r') as f:
-            self.configs = f.read()
-        self.configs = self.configs.split('\n')
+            self.configs = f.read().split('\n')
 
     def isready(self):
         return self.__isready
 
     def remove(self, expected):
-        for key in self.configs:
-            if expected in key:
-                self.configs.remove(key)
+        self.configs = [line for line in self.configs if expected not in line]
         return self.write_file()
 
     def comment(self, expected):
         for i in range(len(self.configs)):
             line = self.configs[i]
-            if expected in line:
-                self.configs[i] = '#' + line
+            if expected in line and not line.lstrip().startswith("#"):
+                self.configs[i] = "#" + line
         return self.write_file()
 
     def set(self, name, value=None, device="[all]"):
         '''
-        device : "[all]", "[pi3]", "[pi4]" or other
+        device : "[all]", "[pi3]", "[pi4]", "[pi5]" or other
         '''
-        have_excepted = False
+        have_expected = False
         for i in range(len(self.configs)):
-            line = self.configs[i]
-            if name in line:
-                have_excepted = True
-                tmp = name
-                if value != None:
-                    tmp += '=' + value
-                if line == tmp:
-                    return 1, line
-                self.configs[i] = tmp
+            if name in self.configs[i]:
+                have_expected = True
+                new_line = f"{name}={value}" if value else name
+                if self.configs[i] == new_line:
+                    return 1, new_line
+                self.configs[i] = new_line
                 break
-
-        if not have_excepted:
+        if not have_expected:
             self.configs.append(device)
-            tmp = name
-            if value != None:
-                tmp += '=' + value
-            self.configs.append(tmp)
+            self.configs.append(f"{name}={value}" if value else name)
         return self.write_file()
 
     def write_file(self):
@@ -83,9 +74,15 @@ class ConfigTxt(object):
             return -1, e
 
 
-class SF_Installer():
+class SF_Installer:
     WORK_DIR = '/opt/{name}'
     APT_DEPENDENCIES = [
+        'python3-pip',
+        'python3-venv',
+        'git',
+    ]
+
+    PACMAN_DEPENDENCIES = [
         'python3-pip',
         'python3-venv',
         'git',
@@ -97,37 +94,28 @@ class SF_Installer():
         'build',
     ]
 
-    def __init__(self,
-                name=None,
-                friendly_name=None,
-                description=None,
-                work_dir=None,
-                log_dir=None,):
+    def __init__(
+        self,
+        name=None,
+        friendly_name=None,
+        description=None,
+        work_dir=None,
+        log_dir=None,
+    ):
         if name is None:
             print("Please specify a name for the software")
             sys.exit(1)
-        else:
-            self.name = name
-        if friendly_name is None:
-            self.friendly_name = name
-        else:
-            self.friendly_name = friendly_name
-        if description is None:
-            self.description = f'Installer for {self.friendly_name}'
-        else:
-            self.description = description
-        if work_dir is None:
-            self.work_dir = self.WORK_DIR.format(name=self.name)
-        else:
-            self.work_dir = work_dir
-        if log_dir is None:
-            self.log_dir = f'/var/log/{self.name}'
-        else:
-            self.log_dir = log_dir
+        self.name = name
+        self.friendly_name = friendly_name or name
+        self.description = description or f"Installer for {self.friendly_name}"
+        self.work_dir = work_dir or self.WORK_DIR.format(name=self.name)
+        self.log_dir = log_dir or f"/var/log/{self.name}"
 
-        self.build_dependencies = set()
+        self.apt_build_dependencies = set()
+        self.pacman_build_dependencies = set()
         self.before_install_commands = {}
         self.custom_apt_dependencies = set()
+        self.custom_pacman_dependencies = set()
         self.custom_pip_dependencies = set()
         self.python_source = {}
         self.config_txt = {}
@@ -137,7 +125,7 @@ class SF_Installer():
         self.dtoverlays = set()
         self.venv_options = set()
 
-        self.parser = argparse.ArgumentParser(description=description)
+        self.parser = argparse.ArgumentParser(description=self.description)
         self.parser.add_argument('--uninstall', action='store_true', help='Uninstall')
         self.parser.add_argument('--gitee', action='store_true', help='Use gitee')
         self.parser.add_argument('--no-dep',
@@ -150,17 +138,18 @@ class SF_Installer():
                                  action='store_true',
                                  help='Plain text mode')
         self.parser.add_argument('--skip-auto-start',
-                                    action='store_true',
-                                    help='Skip auto start')
+                                 action='store_true',
+                                 help='Skip auto start')
         self.parser.add_argument('--skip-config-txt',
-                                    action='store_true',
-                                    help='Skip config.txt')
+                                 action='store_true',
+                                 help='Skip config.txt')
         self.parser.add_argument('--skip-dtoverlay',
-                                    action='store_true',
-                                    help='Skip dtoverlay')
+                                 action='store_true',
+                                 help='Skip dtoverlay')
         self.parser.add_argument('--skip-modules',
-                                    action='store_true',
-                                    help='Skip probe modules')
+                                 action='store_true',
+                                 help='Skip probe modules')
+
         self.config_txt_handler = ConfigTxt()
         self.user = self.get_username()
         self.errors = []
@@ -168,12 +157,21 @@ class SF_Installer():
         self.need_reboot = False
         self.args = None
 
-        self.venv_path = f'{self.work_dir}/venv'
-        self.venv_python = f'{self.venv_path}/bin/python3'
-        self.venv_pip = f'{self.venv_path}/bin/pip3'
+        self.venv_path = f"{self.work_dir}/venv"
+        self.venv_python = f"{self.venv_path}/bin/python3"
+        self.venv_pip = f"{self.venv_path}/bin/pip3"
         self.custom_install = lambda: None
 
         self.version = self.get_version()
+        self.os_type = self.detect_os()
+
+    def detect_os(self):
+        if os.path.exists("/etc/arch-release"):
+            return "arch"
+        elif os.path.exists("/etc/debian_version"):
+            return "debian"
+        else:
+            return "unknown"
 
     def get_version(self):
         version_file = f'{self.name}/version.py'
@@ -184,12 +182,16 @@ class SF_Installer():
                         return line.split('=')[1].strip().strip("'")
 
     def update_settings(self, settings):
-        if 'build_dependencies' in settings:
-            self.build_dependencies.update(settings['build_dependencies'])
+        if 'apt_build_dependencies' in settings:
+            self.apt_build_dependencies.update(settings['apt_build_dependencies'])
+        if 'pacman_build_dependencies' in settings:
+            self.pacman_build_dependencies.update(settings['pacman_build_dependencies'])
         if 'run_commands_before_install' in settings:
             self.before_install_commands.update(settings['run_commands_before_install'])
         if 'apt_dependencies' in settings:
             self.custom_apt_dependencies.update(settings['apt_dependencies'])
+        if 'pacman_dependencies' in settings:
+            self.custom_pacman_dependencies.update(settings['pacman_dependencies'])
         if 'pip_dependencies' in settings:
             self.custom_pip_dependencies.update(settings['pip_dependencies'])
         if 'python_source' in settings:
@@ -209,7 +211,7 @@ class SF_Installer():
 
     def set_config_txt(self, name="", value=""):
         msg = f"Setting config.txt: {name}={value}"
-        print(" - %s... " % (msg), end='', flush=True)
+        print(f" - {msg}... ", end='', flush=True)
         try:
             code, _ = self.config_txt_handler.set(name, value)
             if code == 0:
@@ -219,28 +221,30 @@ class SF_Installer():
                 print('Already')
         except Exception as e:
             print('\033[1;35mError\033[0m')
-            self.errors.append("%s error:\n Error:%s" % (msg, e))
+            self.errors.append(f"{msg} error:\n Error:{e}")
 
     def get_username(self):
         try:
-            user = os.getlogin()  # can run at boot
+            return os.getlogin() # can run at boot
         except:
-            user = os.popen("echo ${SUDO_USER:-$(who -m | awk '{ print $1 }')}"
-                            ).readline().strip()
-        return user
+            return (
+                os.popen("echo ${SUDO_USER:-$(who -m | awk '{ print $1 }')}")
+                .readline()
+                .strip()
+            )
 
     def run_command(self, cmd=""):
-        import subprocess
         p = subprocess.Popen(cmd,
-                             shell=True,
-                             executable="/bin/bash",
-                             stdout=subprocess.PIPE,
-                             stderr=subprocess.PIPE,
-                             universal_newlines=True)
+                            shell=True,
+                            executable="/bin/bash",
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE,
+                            universal_newlines=True,)
         p.wait()
+
+        status = p.poll()
         result = p.stdout.read()
         error = p.stderr.read()
-        status = p.poll()
         return status, result, error
 
     def spinner(self):
@@ -303,15 +307,20 @@ class SF_Installer():
     # Install Steps:
     def install_build_dep(self):
         print("Install build dependencies...")
-        self.do('Update package list', 'apt-get update')
-        deps = [ *self.APT_DEPENDENCIES ]
-
-        if self.build_dependencies is not None:
-            deps += self.build_dependencies
-
-        deps = " ".join(deps)
-        self.do(f'Install build dependencies: {deps}',
-                f'apt-get install -y {deps}')
+        if self.os_type == "arch":
+            self.do("Update package list", "pacman -Sy")
+            deps = list(self.PACMAN_DEPENDENCIES) + list(self.pacman_build_dependencies)
+            self.do(
+                f'Install build dependencies: {" ".join(deps)}',
+                f'pacman -S --noconfirm {" ".join(deps)}',
+            )
+        else:
+            self.do("Update package list", "apt-get update")
+            deps = list(self.APT_DEPENDENCIES) + list(self.apt_build_dependencies)
+            self.do(
+                f'Install build dependencies: {" ".join(deps)}',
+                f'apt-get install -y {" ".join(deps)}',
+            )
 
     def run_commands_before_install(self):
         if len(self.before_install_commands) == 0:
@@ -342,17 +351,17 @@ class SF_Installer():
         self.do('Change log directory owner', f'chown -R {self.user}:{self.user} {self.log_dir}')
         if os.path.exists(self.venv_path):
             self.do('Remove old virtual environment', f'rm -r {self.venv_path}')
-        self.do('Create virtual environment', f'python3 -m venv {self.venv_path} {" ".join(self.venv_options)}')
+        try:
+            self.do('Create virtual environment', f'python3 -m venv {self.venv_path} {" ".join(self.venv_options)}')
+        except Exception as e:
+            print(f'\033[1;35mVirtualenv creation failed: {e}\033[0m')
+            self.errors.append(f'Virtualenv creation failed: {e}')
 
     def install_pip_dep(self):
-        if ('no_dep' in self.args and self.args.no_dep) or \
-            len(self.custom_pip_dependencies) == 0:
+        if self.args.no_dep or len(self.custom_pip_dependencies) == 0:
             return
         print("Install PIP dependencies...")
-        deps = [ *self.PIP_DEPENDENCIES ]
-        if self.custom_pip_dependencies is not None:
-            deps += self.custom_pip_dependencies
-
+        deps = list(self.PIP_DEPENDENCIES) + list(self.custom_pip_dependencies)
         for dep in deps:
             self.do(f'Install {dep}', f'{self.venv_pip} install --upgrade {dep}')
 
@@ -366,8 +375,9 @@ class SF_Installer():
             self.install_python_source(package, url)
 
     def setup_auto_start(self):
-        if ('skip_auto_start' in self.args and self.args.skip_auto_start) or \
-            (len(self.service_files) == 0 and len(self.bin_files) == 0):
+        if self.args.skip_auto_start or (
+            len(self.service_files) == 0 and len(self.bin_files) == 0
+        ):
             return
         print("Setup auto start...")
         for bin in self.bin_files:
@@ -379,8 +389,7 @@ class SF_Installer():
             self.do('Reload systemd', 'systemctl daemon-reload')
 
     def setup_config_txt(self):
-        if ('skip_config_txt' in self.args and self.args.skip_config_txt) or \
-            len(self.config_txt) == 0:
+        if self.args.skip_config_txt or len(self.config_txt) == 0:
             return
         print("Setup config.txt...")
         for name, value in self.config_txt.items():
@@ -388,29 +397,23 @@ class SF_Installer():
         self.need_reboot = True
 
     def modules_probe(self):
-        if ('skip_modules' in self.args and self.args.skip_modules) or \
-            len(self.modules) == 0:
+        if self.args.skip_modules or len(self.modules) == 0:
             return
         print("Probe modules...")
         for module in self.modules:
-            self.do(f'add module: {module}',
+            self.do(f'Add module: {module}',
                 f'sh -c "echo {module} >> /etc/modules-load.d/modules.conf"'
             )
 
     def copy_dtoverlay(self):
-        # Copy device tree overlay
-        if ('skip_dtoverlay' in self.args and self.args.skip_dtoverlay) or \
-            len(self.dtoverlays) == 0:
+        if self.args.skip_dtoverlay or len(self.dtoverlays) == 0:
             return
         print("Copy device tree overlay...")
-        OVERLAY_PATH_DEFAULT = '/boot/overlays'
-        OVERLAY_PATH_BACKUP = '/boot/firmware/overlays'
-        overlays_path = OVERLAY_PATH_DEFAULT
-        if not os.path.exists(overlays_path):
-            overlays_path = OVERLAY_PATH_BACKUP
-            if not os.path.exists(overlays_path):
-                self.errors.append(f"Device tree overlay directory {OVERLAY_PATH_DEFAULT} or {OVERLAY_PATH_BACKUP} not found")
-                return
+        paths = ['/boot/overlays', '/boot/firmware/overlays']
+        overlays_path = next((p for p in paths if os.path.exists(p)), None)
+        if not overlays_path:
+            self.errors.append(f"Device tree overlay directory not found in {' or '.join(paths)}")
+            return
         
         for overlay in self.dtoverlays:
             if not os.path.exists(overlay):
@@ -431,12 +434,12 @@ class SF_Installer():
         print("Remove auto start...")
         for bin in self.bin_files:
             if not os.path.exists(f'/usr/local/bin/{bin}'):
-                print(f" - Binary file {bin} not found Skip")
+                print(f' - Binary file {bin} not found. Skip.')
                 continue
             self.do('Remove binary file', f'rm /usr/local/bin/{bin}')
         for service in self.service_files:
             if not os.path.exists(f'/etc/systemd/system/{service}'):
-                print(f" - Service file {service} not found Skip")
+                print(f' - Service file {service} not found. Skip.')
                 continue
             self.do('Stop service', f'systemctl stop {service}')
             self.do('Disable service', f'systemctl disable {service}')
@@ -447,20 +450,17 @@ class SF_Installer():
         if len(self.dtoverlays) == 0:
             return
         print("Remove device tree overlay...")
-        OVERLAY_PATH_DEFAULT = '/boot/overlays'
-        OVERLAY_PATH_BACKUP = '/boot/firmware/overlays'
-        overlays_path = OVERLAY_PATH_DEFAULT
-        if not os.path.exists(overlays_path):
-            overlays_path = OVERLAY_PATH_BACKUP
-            if not os.path.exists(overlays_path):
-                self.errors.append(f"Device tree overlay directory {OVERLAY_PATH_DEFAULT} or {OVERLAY_PATH_BACKUP} not found")
-                return
-        
+        paths = ["/boot/overlays", "/boot/firmware/overlays"]
+        overlays_path = next((p for p in paths if os.path.exists(p)), None)
+        if not overlays_path:
+            self.errors.append("Device tree overlay directory not found")
+            return
         for overlay in self.dtoverlays:
-            if not os.path.exists(f'{overlays_path}/{overlay}'):
-                print(f" - Device tree overlay {overlay} not found Skip")
+            full_path = f'{overlays_path}/{overlay}'
+            if not os.path.exists(full_path):
+                print(f' - Device tree overlay {overlay} not found. Skip.')
                 continue
-            self.do(f'Remove dtoverlay {overlay}', f'rm {overlays_path}/{overlay}')
+            self.do(f'Remove dtoverlay {overlay}', f'rm {full_path}')
             self.need_reboot = True
 
     def remove_logs(self):
@@ -468,26 +468,25 @@ class SF_Installer():
         self.do('Remove logs', f'rm -r {self.log_dir}')
 
     def reboot_prompt(self):
-        print("\033[1;32mWhether to restart for the changes to take effect(Y/N): \033[0m", end='')
+        print("\033[1;32mWhether to restart for the changes to take effect (Y/N): \033[0m", end='')
         while True:
-            key = input()
-            if key == 'Y' or key == 'y':
-                print(f'reboot')
-                self.run_command('reboot')
-            elif key == 'N' or key == 'n':
-                print(f'canceled')
-                return False
+            key = input().strip().lower()
+            if key == "y":
+                print("Rebooting...")
+                self.run_command("reboot")
+                break
+            elif key == "n":
+                print("Canceled.")
+                break
             else:
                 print("\033[1;35mPlease enter Y or N: \033[0m", end='')
-                continue
 
     def cleanup(self):
-        self.do(f'Remove build', f'rm -r ./build', ignore_error=True)
+        self.do('Remove build directory', 'rm -r ./build', ignore_error=True)
 
     def install(self):
         print(f"Installing for {self.friendly_name}")
-        print(f"Version: {self.version}")
-        print(" ")
+        print(f"Version: {self.version}\n")
         self.install_build_dep()
         self.run_commands_before_install()
         self.install_apt_dep()
@@ -503,7 +502,7 @@ class SF_Installer():
         print("Finished")
 
     def uninstall(self):
-        print(f"Uninstall for {self.friendly_name}")
+        print(f"Uninstalling {self.friendly_name}")
         self.remove_auto_start()
         self.remove_work_dir()
         self.remove_dtoverlay()
@@ -520,8 +519,7 @@ class SF_Installer():
         except KeyboardInterrupt:
             print("\n\nCanceled.")
         finally:
-            sys.stdout.write(' \033[1D')
-            sys.stdout.write('\033[?25h')  # cursor visible
+            sys.stdout.write(" \033[1D\033[?25h")
             sys.stdout.flush()
             print('Cleanup')
             self.cleanup()
@@ -529,11 +527,10 @@ class SF_Installer():
                 if self.need_reboot and not self.args.skip_reboot:
                     self.reboot_prompt()
             else:
-                print("\n\nError happened in install process:")
+                print("\n\nErrors occurred during installation:")
                 for error in self.errors:
                     print(error)
                 print(
                     "Try to fix it yourself, or contact service@sunfounder.com with this message"
                 )
                 sys.exit(1)
-
