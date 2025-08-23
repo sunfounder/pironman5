@@ -6,7 +6,7 @@ trap 'echo "Error occurred. Exiting..." >&2; exit 1' ERR
 echo "Installing LGPIO"
 
 # Check if LGPIO is already installed
-if `pip show lgpio &> /dev/null`; then
+if pip show lgpio &> /dev/null; then
   echo "LGPIO is already installed"
   exit 0
 fi
@@ -17,11 +17,23 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-echo "- Updating package list"
-apt-get update
-echo "- Installing dependencies"
-apt-get install -y swig python3-dev python3-setuptools unzip
-
+# Detect package manager
+if command -v pacman &> /dev/null; then
+  echo "- Detected pacman package manager"
+  echo "- Updating package list"
+  pacman -Sy --noconfirm
+  echo "- Installing dependencies"
+  pacman -S --noconfirm swig python python-setuptools unzip base-devel
+elif command -v apt-get &> /dev/null; then
+  echo "- Detected apt package manager"
+  echo "- Updating package list"
+  apt-get update
+  echo "- Installing dependencies"
+  apt-get install -y swig python3-dev python3-setuptools unzip
+else
+  echo "Unsupported package manager. Please install dependencies manually."
+  exit 1
+fi
 echo "- Downloading and installing LGPIO"
 wget http://abyz.me.uk/lg/lg.zip
 unzip lg.zip
