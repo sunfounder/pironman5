@@ -330,16 +330,22 @@ class SF_Installer:
             command = self.before_install_commands[name]
             self.do(f'Run command before install: {name}', f'{command}')
 
-    def install_apt_dep(self):
+    def install_deps(self):
         if ('no_dep' in self.args and self.args.no_dep) or \
             len(self.custom_apt_dependencies) == 0:
             return
-        print("Install APT dependencies...")
-        # for dep in self.custom_apt_dependencies:
-        #     self.do(f'Install {dep}', f'apt-get install -y {dep}')
-        deps = " ".join(self.custom_apt_dependencies)
-        self.do(f'Install APT dependencies: {deps}',
-                f'apt-get install -y {deps}')
+        print("Install additional dependencies...")
+        deps = list(self.custom_apt_dependencies)
+        if self.os_type == "arch":
+            self.do(
+                f'Install dependencies: {" ".join(deps)}',
+                f'pacman -S --noconfirm {" ".join(deps)}',
+            )
+        else:
+            self.do(
+                f'Install dependencies: {" ".join(deps)}',
+                f'apt-get install -y {" ".join(deps)}',
+            )
 
     def create_working_dir(self):
         print("Create working directory...")
@@ -489,7 +495,7 @@ class SF_Installer:
         print(f"Version: {self.version}\n")
         self.install_build_dep()
         self.run_commands_before_install()
-        self.install_apt_dep()
+        self.install_deps()
         self.create_working_dir()
         self.install_pip_dep()
         self.install_py_src_pkgs()
