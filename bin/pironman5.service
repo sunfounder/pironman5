@@ -6,6 +6,7 @@ After=multi-user.target
 
 [Service]
 Type=forking
+Environment="LD_LIBRARY_PATH=/usr/local/lib"
 # WorkingDirectory=/opt/pironman5
 ExecStart=/usr/local/bin/pironman5 start --background
 # ExecStop=/usr/local/bin/pironman5 stop
