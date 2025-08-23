@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 
+import shutil
+import argparse
 from tools.sf_installer import SF_Installer
 from pironman5.version import __version__
 from pironman5.variants import NAME, DT_OVERLAYS, PERIPHERALS
 
+
+# Example settings blocks (replace with actual ones)
 settings = {
     # - Setup venv options if needed, default to []
     'venv_options': [
@@ -11,7 +15,7 @@ settings = {
     ],
 
     # - Build required apt dependencies, default to []
-    # 'build_dependencies': [
+    # 'apt_build_dependencies': [
     #     'curl', # for influxdb key download
     # ],
 
@@ -54,15 +58,12 @@ settings = {
     'service_files': ['pironman5.service'],
     # - Set bin files
     'bin_files': ['pironman5'],
-
     # - Copy device tree overlay to /boot/overlays
     'dtoverlays': DT_OVERLAYS,
 }
 
 
-
 ws2812_settings = {
-    # - Install from pip
     'pip_dependencies': [
         'adafruit-circuitpython-neopixel-spi',
         'Adafruit-Blinka==8.59.0',
@@ -77,6 +78,14 @@ oled_settings = {
         'libopenjp2-7', # for Pillow on 32 bit OS
         'kmod',
         'i2c-tools',
+    ],
+    'pacman_dependencies': [
+        'libjpeg-turbo',
+        'freetype2',
+        'openjpeg2',
+        'kmod',
+        'i2c-tools',
+        'pillow',
     ],
     # - Install from pip
     'pip_dependencies': [
@@ -95,11 +104,11 @@ gpio_settings = {
     'run_commands_before_install': {
         'Install LGPIO': 'bash scripts/install_lgpio.sh',
     },
-
     # - Install from apt
     'apt_dependencies': [
         'python3-gpiozero', # for pm_auto fan control
     ],
+    'pacman_dependencies': ['python-gpiozero'],  # for pm_auto fan control
     # - Install from pip
     'pip_dependencies': [
         'gpiozero',
@@ -109,7 +118,7 @@ gpio_settings = {
 }
 
 dashboard_settings = {
-    'build_dependencies': [
+    'apt_build_dependencies': [
         'curl', # for influxdb key download
     ],
     'run_commands_before_install': {
@@ -121,6 +130,10 @@ dashboard_settings = {
     'apt_dependencies': [
         'influxdb', # for pm_dashboard
         'lsof', # for pm_dashboard
+    ],
+    'pacman_dependencies': [
+        'influxdb',  # for pm_dashboard
+        'lsof',  # for pm_dashboard
     ],
     'python_source': {
         'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.2.10',
@@ -139,16 +152,37 @@ installer = SF_Installer(
     # log_dir='/var/log/pironman5',
 )
 
-installer.parser.add_argument("--disable-dashboard", action='store_true', help="Disable dashboard")
-installer.update_settings(settings)
-args = installer.parser.parse_args()
-if not args.disable_dashboard:
-    installer.update_settings(dashboard_settings)
-if 'oled' in PERIPHERALS:
-    installer.update_settings(oled_settings)
-if 'gpio_fan_state' in PERIPHERALS or \
-    'vibration_switch' in PERIPHERALS:
-    installer.update_settings(gpio_settings)
-if 'ws2812' in PERIPHERALS:
-    installer.update_settings(ws2812_settings)
-installer.main()
+def detect_package_manager():
+    if shutil.which("pacman"):
+        return "pacman"
+    elif shutil.which("apt"):
+        return "apt"
+    else:
+        return None
+
+def run_installer():
+    installer.parser.add_argument(
+        "--disable-dashboard", action="store_true", help="Disable dashboard"
+    )
+
+    pkg_mgr = detect_package_manager()
+    if not pkg_mgr:
+        raise RuntimeError("Unsupported system: no apt or pacman found")
+
+    installer.update_settings(settings)
+    args = installer.parser.parse_args()
+
+    if not args.disable_dashboard:
+        installer.update_settings(dashboard_settings)
+    if 'oled' in PERIPHERALS:
+        installer.update_settings(oled_settings)
+    if 'gpio_fan_state' in PERIPHERALS or 'vibration_switch' in PERIPHERALS:
+        installer.update_settings(gpio_settings)
+    if 'ws2812' in PERIPHERALS:
+        installer.update_settings(ws2812_settings)
+
+    installer.main()
+
+
+if __name__ == "__main__":
+    run_installer()
