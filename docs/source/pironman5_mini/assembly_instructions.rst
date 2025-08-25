@@ -50,22 +50,23 @@ Before assembling the Pironman, please first verify that all parts and component
 
 
 
-.. **Assemble Tutorial Video**
+**Assemble Tutorial Video**
 
-.. .. raw:: html
+.. raw:: html
 
-..     <iframe width="560" height="315" src="https://www.youtube.com/embed/62V85UG-Ocg?si=gNi1rHaPS579Kq7C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/KAYt3JGOUDE?si=M0boC_dyvaxGFVOf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-.. **Connect the OLED Screen**
 
-.. .. raw:: html
+**Connect the Mini HAT Bridge**
 
-..     <div style="text-align: center;">
-..         <video center loop autoplay muted style = "max-width:90%">
-..             <source src="_static/video/connect_oled.mp4"  type="video/mp4">
-..             Your browser does not support the video tag.
-..         </video>
-..     </div>
+.. raw:: html
+
+     <div style="text-align: left;">
+         <video center loop autoplay muted style = "max-width:100%">
+             <source src="../_static/video/mini_fpc_connect.mp4"  type="video/mp4">
+             Your browser does not support the video tag.
+         </video>
+     </div>
 
 .. .. raw:: html
     
