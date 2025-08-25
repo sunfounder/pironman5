@@ -30,7 +30,23 @@ Pironmanを組み立てる前に、すべての部品とコンポーネントが
 * :download:`[PDF]Pironman 5 Miniの部品一覧と組み立て手順 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/Z0315V10-A0001256-Pironman5-Mini.pdf>`
 
 
+**組立チュートリアルビデオ**
 
+.. raw:: html
+
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/KAYt3JGOUDE?si=M0boC_dyvaxGFVOf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+**Mini HATブリッジを接続する**
+
+.. raw:: html
+
+     <div style="text-align: left;">
+         <video center loop autoplay muted style = "max-width:100%">
+             <source src="../_static/video/mini_fpc_connect.mp4"  type="video/mp4">
+             Your browser does not support the video tag.
+         </video>
+     </div>
 
 .. **Complete Assembly and Boot Guide: Pironman 5 with NVMe SSD**
 
