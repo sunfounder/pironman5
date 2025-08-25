@@ -14,6 +14,12 @@
 * :download:`[PDF]Pironman 5 Max 零件清单与组装说明 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/Z0316V10-A0001266-Pironman5-MAX.pdf>`
 
 
+**组装教程视频**
+
+.. raw:: html
+
+    <iframe width="700" height="500" src="https://player.bilibili.com/player.html?isOutside=true&aid=115009560584142&bvid=BV1F3bLzAEwx&cid=31625383546&p=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 .. raw:: html
 
     <br><br>

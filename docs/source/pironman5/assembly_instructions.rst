@@ -15,14 +15,13 @@
 
 
 
-.. **完整组装与启动指南：使用 NVMe SSD 的 Pironman 5**
+**完整组装与启动指南：使用 NVMe SSD 的 Pironman 5**
 
-.. 如果您使用的是 NVMe SSD，请参考以下视频完成 Pironman 5 的组装与配置。
+如果您使用的是 NVMe SSD，请参考以下视频完成 Pironman 5 的组装与配置。
 
-.. 
-    .. raw:: html
+.. raw:: html
 
-    <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="700" height="500" src="https://player.bilibili.com/player.html?isOutside=true&aid=114358352876233&bvid=BV1He5jzNExb&cid=29482090579&p=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 .. **完整组装与启动指南：使用 Micro SD 卡的 Pironman 5**
 
