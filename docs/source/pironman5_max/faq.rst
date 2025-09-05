@@ -187,7 +187,7 @@ Pourquoi l’écran OLED s’éteint-il automatiquement ?
 Pour économiser de l’énergie et prolonger la durée de vie de l’écran, l’écran OLED s’éteint automatiquement après une période d’inactivité.  
 Cela fait partie de la conception normale et n’affecte pas la fonctionnalité du produit.
 
-Il suffit d’appuyer une fois sur le bouton de l’appareil pour rallumer l’écran OLED et reprendre l’affichage.
+Appuyez simplement légèrement sur la coque pour réactiver l'écran OLED et restaurer l'affichage.
 
 .. note::
 
