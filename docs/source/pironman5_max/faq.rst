@@ -188,7 +188,7 @@ Perché lo schermo OLED si spegne automaticamente?
 Per risparmiare energia e prolungare la durata dello schermo, lo schermo OLED si spegne automaticamente dopo un periodo di inattività.  
 Questo fa parte del normale design e non influisce sulla funzionalità del prodotto.
 
-Premi semplicemente una volta il pulsante sul dispositivo per riattivare lo schermo OLED e riprendere la visualizzazione.
+Basta toccare delicatamente la custodia per riattivare lo schermo OLED e ripristinare la visualizzazione.
 
 .. note::
 
