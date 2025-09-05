@@ -387,40 +387,13 @@ Das bedeutet, dass Ihr Betriebssystem zu alt ist und `OpenSSH <https://learn.mic
 
    .. image:: img/powershell_login.png
 
-18. Wie schaltet man den OLED-Bildschirm EIN/AUS?
-----------------------------------------------------------
+18. Warum schaltet sich der OLED-Bildschirm automatisch aus?
+---------------------------------------------------------------------------------
 
-Sie können den OLED-Bildschirm über das Dashboard oder die Befehlszeile ein- oder ausschalten.
+Um Energie zu sparen und die Lebensdauer des Bildschirms zu verlängern, schaltet sich der OLED-Bildschirm nach einer gewissen Inaktivität automatisch aus. Dies ist Teil des normalen Designs und beeinträchtigt die Funktionalität des Produkts nicht.
 
-1. OLED-Bildschirm über das Dashboard EIN/AUS schalten.
-
-   .. note::
-
-    Bevor Sie das Dashboard verwenden, müssen Sie es in Home Assistant einrichten. Weitere Informationen finden Sie unter: :ref:`view_control_dashboard`.
-
-- Nach der Einrichtung können Sie die folgenden Schritte ausführen, um den OLED-Bildschirm ein- oder auszuschalten oder zu konfigurieren.
-
-   .. image:: img/set_up_on_dashboard.jpg
-      :width: 90%
-
-2. OLED-Bildschirm über die Befehlszeile EIN/AUS schalten.
-
-- Verwenden Sie einen der folgenden fünf Befehle, um den OLED-Bildschirm einzuschalten.
-
-.. code-block::
-
-    sudo pironman5 -oe True/true/on/On/1
-
-- Verwenden Sie einen der folgenden fünf Befehle, um den OLED-Bildschirm auszuschalten.
-
-.. code-block::
-
-    sudo pironman5 -oe False/false/off/Off/0
+Drücke einfach einmal die Taste am Gerät, um den OLED-Bildschirm aufzuwecken und die Anzeige fortzusetzen.
 
 .. note::
 
-    Sie müssen möglicherweise den Pironman5-Dienst neu starten, damit die Änderungen wirksam werden. Verwenden Sie den folgenden Befehl, um den Dienst neu zu starten:
-
-      .. code-block::
-
-        sudo systemctl restart pironman5.service
+   Für die Konfiguration des OLED-Bildschirms (z. B. Ein-/Ausschalten, Ruhezeit, Drehung usw.) siehe: :ref:`view_control_dashboard` oder :ref:`view_control_commands`.

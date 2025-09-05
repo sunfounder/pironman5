@@ -84,3 +84,10 @@ Herunterladen und Installieren des ``pironman5`` Moduls
   * ``restart``: Verwenden Sie diesen Befehl, um Änderungen an den Einstellungen von Pironman 5 anzuwenden.
   * ``start/stop``: Aktivieren oder deaktivieren Sie den ``pironman5.service``.
   * ``status``: Überprüfen Sie den Betriebsstatus des ``pironman5``-Programms mit dem ``systemctl``-Tool.
+
+
+.. note::
+
+   Sie haben nun alle Komponenten des Pironman 5 erfolgreich eingerichtet. Die Konfiguration des Pironman 5 ist abgeschlossen.
+   Sie können den Pironman 5 nun zur Steuerung Ihres Raspberry Pi und anderer Geräte verwenden.
+   Weitere Informationen und Hinweise zur Nutzung dieser Pironman 5-Webseite finden Sie unter: :ref:`view_control_dashboard`.

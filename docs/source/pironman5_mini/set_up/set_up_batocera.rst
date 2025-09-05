@@ -60,3 +60,11 @@ Wenn du das Betriebssystem Batocera.linux installiert hast, kannst du dich per S
      Der RGB-Lüfter beginnt sich erst ab einer Temperatur von 60 °C zu drehen. Weitere Informationen zu unterschiedlichen Temperaturgrenzen findest du unter :ref:`cc_control_fan_mini`.
 
 Jetzt kannst du den Pironman 5 mit einem Bildschirm, Controllern, Kopfhörern und weiteren Geräten verbinden und in dein Gaming-Erlebnis eintauchen.
+
+
+
+.. note::
+
+   Sie haben nun alle Komponenten des Pironman 5 mini erfolgreich eingerichtet. Die Konfiguration des Pironman 5 mini ist abgeschlossen.
+   Sie können den Pironman 5 mini nun zur Steuerung Ihres Raspberry Pi und anderer Geräte verwenden.
+   Weitere Informationen und Hinweise zur Nutzung dieser Pironman 5 mini-Webseite finden Sie unter: :ref:`view_control_dashboard_mini`.

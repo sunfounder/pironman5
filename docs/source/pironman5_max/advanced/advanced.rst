@@ -14,8 +14,8 @@
 
 .. _max_advanced:
 
-6. Fortgeschrittene
-=========================
+6. Fortgeschrittene Funktionen
+===========================================
 
 
 In diesem Kapitel findest du eine detaillierte Beschreibung aller Komponenten des Pironman sowie die zugehörige Softwarekonfiguration.

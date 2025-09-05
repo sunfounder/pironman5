@@ -177,6 +177,10 @@ Jetzt beginnt die eigentliche Installation des **Pironman 5 Mini** Add-ons.
    .. image:: img/home_web.png
       :width: 90%
 
+
+
 .. note::
 
-    Weitere Informationen zur Nutzung der Weboberfläche findest du unter: :ref:`view_control_dashboard_mini`.
+   Sie haben nun alle Komponenten des Pironman 5 mini erfolgreich eingerichtet. Die Konfiguration des Pironman 5 mini ist abgeschlossen.
+   Sie können den Pironman 5 mini nun zur Steuerung Ihres Raspberry Pi und anderer Geräte verwenden.
+   Weitere Informationen und Hinweise zur Nutzung dieser Pironman 5 mini-Webseite finden Sie unter: :ref:`view_control_dashboard_mini`.

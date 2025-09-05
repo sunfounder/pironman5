@@ -182,6 +182,20 @@ Wenn der OLED-Bildschirm nichts anzeigt oder falsch angezeigt wird, befolgen Sie
       cat /var/log/pironman5/pm_auto.oled.log
 
 
+
+Warum schaltet sich der OLED-Bildschirm automatisch aus?
+---------------------------------------------------------------------------------
+
+Um Energie zu sparen und die Lebensdauer des Bildschirms zu verlängern, schaltet sich der OLED-Bildschirm nach einer gewissen Inaktivität automatisch aus. Dies ist Teil des normalen Designs und beeinträchtigt die Funktionalität des Produkts nicht.
+
+Drücke einfach einmal die Taste am Gerät, um den OLED-Bildschirm aufzuwecken und die Anzeige fortzusetzen.
+
+.. note::
+
+   Für die Konfiguration des OLED-Bildschirms (z. B. Ein-/Ausschalten, Ruhezeit, Drehung usw.) siehe: :ref:`max_view_control_dashboard` oder :ref:`max_view_control_commands`.
+
+
+
 .. _max_openssh_powershell:
 
 OpenSSH über PowerShell installieren

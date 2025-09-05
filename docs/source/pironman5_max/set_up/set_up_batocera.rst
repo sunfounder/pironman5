@@ -61,3 +61,11 @@ Wenn du das Betriebssystem Batocera.linux installiert hast, kannst du dich über
      Die RGB-Lüfter drehen sich erst, wenn die Temperatur 60 °C erreicht. Für andere Temperaturgrenzwerte siehe :ref:`max_cc_control_fan`.
 
 Jetzt kannst du den Pironman 5 MAX mit einem Bildschirm, Gamecontrollern, Kopfhörern und mehr verbinden und voll in deine Gamingwelt eintauchen.
+
+
+
+.. note::
+
+   Sie haben nun alle Komponenten des Pironman 5 MAX erfolgreich eingerichtet. Die Konfiguration des Pironman 5 MAX ist abgeschlossen.
+   Sie können den Pironman 5 MAX nun zur Steuerung Ihres Raspberry Pi und anderer Geräte verwenden.
+   Weitere Informationen und Hinweise zur Nutzung dieser Pironman 5 MAX-Webseite finden Sie unter: :ref:`max_view_control_dashboard`.

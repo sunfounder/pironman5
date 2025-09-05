@@ -1,22 +1,7 @@
-.. note:: 
-
-    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit Gleichgesinnten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
-
-    **Warum solltest du beitreten?**
-
-    - **Experten-Support**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Unterstützung unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten weiterzuentwickeln.
-    - **Exklusive Einblicke**: Erhalte vorab Informationen zu neuen Produktankündigungen und erste Einblicke.
-    - **Sonderrabatte**: Nutze exklusive Rabatte auf unsere neuesten Produkte.
-    - **Festliche Aktionen und Verlosungen**: Nimm an Gewinnspielen und Sonderaktionen teil.
-
-    👉 Bereit, mit uns gemeinsam Neues zu entdecken und zu gestalten? Klicke auf [|link_sf_facebook|] und werde noch heute Mitglied!
-
 
 .. _max_omv_5_max:
 
-
-(Optional) Einrichtung von OpenMediaVault
+Einrichtung von OpenMediaVault
 =============================================
 
 .. warning::

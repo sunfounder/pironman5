@@ -174,3 +174,11 @@ Nun kannst du das Add-on **Pironman 5 MAX** installieren.
 .. note::
 
     Weitere Informationen zur Nutzung der Pironman 5 MAX-Weboberfläche findest du unter: :ref:`max_view_control_dashboard`.
+
+
+
+.. note::
+
+   Sie haben nun alle Komponenten des Pironman 5 MAX erfolgreich eingerichtet. Die Konfiguration des Pironman 5 MAX ist abgeschlossen.
+   Sie können den Pironman 5 MAX nun zur Steuerung Ihres Raspberry Pi und anderer Geräte verwenden.
+   Weitere Informationen und Hinweise zur Nutzung dieser Pironman 5 MAX-Webseite finden Sie unter: :ref:`max_view_control_dashboard`.
