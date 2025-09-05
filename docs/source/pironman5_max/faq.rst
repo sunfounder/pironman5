@@ -188,7 +188,7 @@ Warum schaltet sich der OLED-Bildschirm automatisch aus?
 
 Um Energie zu sparen und die Lebensdauer des Bildschirms zu verlängern, schaltet sich der OLED-Bildschirm nach einer gewissen Inaktivität automatisch aus. Dies ist Teil des normalen Designs und beeinträchtigt die Funktionalität des Produkts nicht.
 
-Drücke einfach einmal die Taste am Gerät, um den OLED-Bildschirm aufzuwecken und die Anzeige fortzusetzen.
+Klopfen Sie einfach leicht auf das Gehäuse, um den OLED-Bildschirm zu aktivieren und die Anzeige wiederherzustellen.
 
 .. note::
 
