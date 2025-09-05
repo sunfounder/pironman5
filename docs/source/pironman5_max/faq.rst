@@ -187,7 +187,7 @@ Si la pantalla OLED no muestra nada o muestra información incorrecta, siga esto
 Para ahorrar energía y prolongar la vida útil de la pantalla, la pantalla OLED se apagará automáticamente después de un período de inactividad.  
 Esto forma parte del diseño normal y no afecta la funcionalidad del producto.
 
-Simplemente presiona una vez el botón del dispositivo para reactivar la pantalla OLED y reanudar la visualización.
+Simplemente toque suavemente la funda para reactivar la pantalla OLED y restaurarla.
 
 .. note::
 
