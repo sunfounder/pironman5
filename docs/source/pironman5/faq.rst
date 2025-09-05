@@ -371,43 +371,13 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
    .. image:: img/powershell_login.png
 
 
+18. Why does the OLED screen turn off automatically?
+---------------------------------------------------------------------------------
 
+To save power and extend the screen’s lifespan, the OLED screen will automatically turn off after a period of inactivity. This is part of the normal design and does not affect the product’s functionality.
 
-18. How to turn OFF/ON the OLED Screen?
-----------------------------------------------------------
-
-You can choose to turn off the OLED Screen via the dashboard or the command line.
-
-1. Turn OFF/ON the OLED Screen by the dash board.
-
-   .. note::
-
-    Before using the dashboard, you need to set it up on Home Assistant. Please refer to: :ref:`view_control_dashboard`.
-
-- After you have completed the setup, you can follow these steps to turn on, turn off, or configure your OLED Screen.
-
-   .. image::  img/set_up_on_dashboard.jpg
-      :width: 90%
-
-2.Turn OFF/ON the OLED Screen by the command line.
-
-- Use any one of the following five commands to turn on the OLED screen.
-
-.. code-block::
-
-    sudo pironman5 -oe True/true/on/On/1
-
-- Use any one of the following five commands to turn off the OLED screen.
-
-.. code-block::
-
-    sudo pironman5 -oe False/false/off/Off/0
+Simply press the button on the device once to wake up the OLED screen and resume display.
 
 .. note::
 
-    You may need to restart the pironman5 service for the changes to take effect. You can use the following command to restart the service:
-
-      .. code-block::
-
-        sudo systemctl restart pironman5.service
-
+   For OLED Screen configuration (such as turn ON/OFF, sleeptime, rotation, etc), please refer to: :ref:`view_control_dashboard` or :ref:`view_control_commands`.

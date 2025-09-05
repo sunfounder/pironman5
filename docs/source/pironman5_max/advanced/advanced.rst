@@ -14,7 +14,7 @@
 
 .. _max_advanced:
 
-6. Advanced
+6. Hardware Overview
 =========================
 
 

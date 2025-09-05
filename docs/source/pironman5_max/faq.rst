@@ -277,6 +277,19 @@ If the OLED screen is not displaying or is displaying incorrectly, follow these 
 
 
 
+Why does the OLED screen turn off automatically?
+---------------------------------------------------------------------------------
+
+To save power and extend the screen’s lifespan, the OLED screen will automatically turn off after a period of inactivity. This is part of the normal design and does not affect the product’s functionality.
+
+You can gently tap the case to trigger the vibration sensor and wake the screen.
+
+.. note::
+
+   For OLED Screen configuration (such as turn ON/OFF, sleeptime, rotation, etc), please refer to: :ref:`max_view_control_dashboard` or :ref:`max_view_control_commands`.
+
+
+
 .. _max_openssh_powershell:
 
 Install OpenSSH via Powershell

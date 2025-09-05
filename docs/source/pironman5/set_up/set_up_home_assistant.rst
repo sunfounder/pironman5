@@ -174,4 +174,9 @@ Now officially start installing the **Pironman 5** add-on.
 
 .. note::
 
-    For more information and usage of this Pironman 5 web page, please refer to: :ref:`view_control_dashboard`.
+   In this time, you have successfully set up all the components of the Pironman 5. The configuration of the Pironman 5 is complete.
+   You can now use the Pironman 5 to control your Raspberry Pi and other devices.
+   For more information and usage of this Pironman 5 web page, please refer to: :ref:`view_control_dashboard`.
+
+
+

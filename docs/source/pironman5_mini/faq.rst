@@ -227,3 +227,6 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
 #. Now restart PowerShell and continue to run it as administrator. At this point you will be able to log in to your Raspberry Pi using the ``ssh`` command, where you will be prompted to enter the password you set up earlier.
 
    .. image:: img/powershell_login.png
+
+
+

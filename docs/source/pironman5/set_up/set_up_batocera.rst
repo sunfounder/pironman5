@@ -61,3 +61,12 @@ If you have installed the Batocera.linux OS, you can remotely log in to this sys
      RGB fans won't spin unless the temperature hits 60°C. For different activation temperatures, see :ref:`cc_control_fan`.
 
 Now, you can connect the Pironman 5 to a screen, game controllers, headphones, and more to immerse yourself in your gaming world.
+
+.. note::
+
+   In this time, you have successfully set up all the components of the Pironman 5. The configuration of the Pironman 5 is complete.
+   You can now use the Pironman 5 to control your Raspberry Pi and other devices.
+   For more information and usage of this Pironman 5 web page, please refer to: :ref:`view_control_dashboard`.
+
+
+
