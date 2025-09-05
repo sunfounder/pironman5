@@ -358,43 +358,14 @@ PWM 风扇根据树莓派 5 的温度自动调节转速：
    .. image:: img/powershell_login.png
 
 
+18. 为什么 OLED 屏幕会自动关闭？
+---------------------------------------------------------------------------------
 
+为了节省电力并延长屏幕的使用寿命，OLED 屏幕会在一段时间无操作后自动关闭。  
+这是正常的设计，不会影响产品的功能。
 
-18. 如何开启/关闭 OLED 屏幕？
--------------------------------------------------------------
-
-您可以通过控制面板或命令行来开启或关闭 OLED 屏幕。
-
-1. 通过控制面板控制 OLED 屏幕
-
-   .. note::
-
-    使用控制面板前，需先在 Home Assistant 中完成设置。请参考：:ref:`view_control_dashboard`。
-
-- 设置完成后，您可以通过以下界面开启、关闭或配置 OLED 屏幕：
-
-   .. image::  img/set_up_on_dashboard.jpg
-      :width: 90%
-
-2. 通过命令行控制 OLED 屏幕
-
-- 以下五种命令任意一种均可用于开启 OLED 屏幕：
-
-.. code-block::
-
-    sudo pironman5 -oe True/true/on/On/1
-
-- 以下五种命令任意一种均可用于关闭 OLED 屏幕：
-
-.. code-block::
-
-    sudo pironman5 -oe False/false/off/Off/0
+只需按下一次设备上的按钮即可唤醒 OLED 屏幕并恢复显示。
 
 .. note::
 
-    若执行命令后无效，可能需重启 pironman5 服务，可使用以下命令：
-
-    .. code-block::
-
-        sudo systemctl restart pironman5.service
-
+   关于 OLED 屏幕的配置（如开/关、休眠时间、旋转等），请参考: :ref:`view_control_dashboard` 或 :ref:`view_control_commands`。

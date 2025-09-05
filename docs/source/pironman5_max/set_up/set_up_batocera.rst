@@ -47,3 +47,11 @@
      默认情况下，RGB 风扇在温度达到 60°C 前不会启动。如需设置不同的启动温度，请参见 :ref:`max_cc_control_fan`。
 
 现在，您可以将 Pironman 5 MAX 连接显示器、游戏手柄、耳机等设备，畅享沉浸式游戏体验。
+
+
+.. note::
+
+   此时，你已经成功完成了 Pironman 5 MAX 的所有组件设置。  
+   Pironman 5 MAX 的配置已完成。  
+   现在你可以使用 Pironman 5 MAX 来控制你的 Raspberry Pi 和其他设备。  
+   有关 Pironman 5 MAX 网页的更多信息和使用方法，请参考: :ref:`max_view_control_dashboard`。

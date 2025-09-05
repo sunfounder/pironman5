@@ -38,6 +38,7 @@ Pironman 5 Mini
     control/control_pironman5
     hardware/hardware
     optional_modules/optional_modules
+    home_server/home_server
     compitable_nvme_ssd
     faq
 

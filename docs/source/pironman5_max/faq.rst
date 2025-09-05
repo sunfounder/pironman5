@@ -258,6 +258,20 @@ OLED 屏幕不工作？
 
       cat /var/log/pironman5/pm_auto.oled.log
 
+为什么 OLED 屏幕会自动关闭？
+---------------------------------------------------------------------------------
+
+为了节省电力并延长屏幕的使用寿命，OLED 屏幕会在一段时间无操作后自动关闭。  
+这是正常的设计，不会影响产品的功能。
+
+只需轻轻敲击机箱外壳即可唤醒 OLED 屏幕并恢复显示。
+
+.. note::
+
+   关于 OLED 屏幕的配置（如开/关、休眠时间、旋转等），请参考: :ref:`view_control_dashboard` 或 :ref:`view_control_commands`。
+
+
+
 .. _max_openssh_powershell:
 
 使用 PowerShell 安装 OpenSSH

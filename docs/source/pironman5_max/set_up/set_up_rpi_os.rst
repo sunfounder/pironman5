@@ -56,6 +56,7 @@
    重启后， ``pironman5.service`` 服务将自动启动。以下是 Pironman 5 MAX 的主要功能：
 
    * OLED 屏幕将显示 CPU、内存、磁盘使用率、CPU 温度及树莓派的 IP 地址。
+   
    .. note:: OLED 屏幕可能会在一段时间不操作后自动关闭以节省电源。您可以轻轻敲击机箱，触发振动传感器来唤醒屏幕。
 
    
@@ -74,3 +75,11 @@
    * ``restart``：用于使 pironman5 的配置更改生效。
    * ``start/stop``：启动或停止 ``pironman5.service`` 服务。
    * ``status``：使用 ``systemctl`` 工具查看 pironman5 服务的运行状态。
+
+
+.. note::
+
+   此时，你已经成功完成了 Pironman 5 MAX 的所有组件设置。  
+   Pironman 5 MAX 的配置已完成。  
+   现在你可以使用 Pironman 5 MAX 来控制你的 Raspberry Pi 和其他设备。  
+   有关 Pironman 5 MAX 网页的更多信息和使用方法，请参考: :ref:`max_view_control_dashboard`。

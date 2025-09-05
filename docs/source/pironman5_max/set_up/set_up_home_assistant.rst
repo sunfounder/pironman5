@@ -161,3 +161,11 @@ Pironman 5 MAX 的功能通过插件的形式集成在 Home Assistant 中。首�
 .. note::
 
     有关 Pironman 5 MAX 网页界面的更多功能说明，请参考：:ref:`max_view_control_dashboard`。
+
+
+.. note::
+
+   此时，你已经成功完成了 Pironman 5 MAX 的所有组件设置。  
+   Pironman 5 MAX 的配置已完成。  
+   现在你可以使用 Pironman 5 MAX 来控制你的 Raspberry Pi 和其他设备。  
+   有关 Pironman 5 MAX 网页的更多信息和使用方法，请参考: :ref:`max_view_control_dashboard`。

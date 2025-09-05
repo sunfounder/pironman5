@@ -46,3 +46,11 @@
      RGB 风扇在温度达到 60°C 前不会启动。若需设置其他温度触发值，请参考 :ref:`cc_control_fan_mini`。
 
 现在，你可以将 Pironman 5 连接到显示器、游戏手柄、耳机等设备，尽情畅玩属于你的游戏世界。
+
+
+.. note::
+
+   此时，你已经成功完成了 Pironman 5 Mini 的所有组件设置。  
+   Pironman 5 Mini 的配置已完成。  
+   现在你可以使用 Pironman 5 Mini 来控制你的 Raspberry Pi 和其他设备。  
+   有关 Pironman 5 Mini 网页的更多信息和使用方法，请参考: :ref:`view_control_dashboard_mini`。

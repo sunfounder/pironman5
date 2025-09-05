@@ -69,3 +69,11 @@
    * ``restart``：用于应用对 pironman 5 设置所做的修改；
    * ``start/stop``：启用或关闭 ``pironman5.service``；
    * ``status``：通过 ``systemctl`` 查看 pironman5 程序当前运行状态。
+
+
+.. note::
+
+   此时，你已经成功完成了 Pironman 5 的所有组件设置。  
+   Pironman 5 的配置已完成。  
+   现在你可以使用 Pironman 5 来控制你的 Raspberry Pi 和其他设备。  
+   有关 Pironman 5 网页的更多信息和使用方法，请参考: :ref:`view_control_dashboard`。
