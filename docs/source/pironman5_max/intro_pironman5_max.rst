@@ -53,11 +53,11 @@ Porta il tuo Raspberry Pi 5 al livello successivo con |link_pironman5_max|, un c
     what_do_we_need    
     assembly_instructions
     install/install_the_os
-    omv
     set_up/set_up_pironman5
     control/control_pironman5
     advanced/advanced
     optional_modules/optional_modules
+    home_server/home_server
     compitable_nvme_ssd
     faq
 

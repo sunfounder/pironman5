@@ -391,43 +391,14 @@ Significa che il tuo sistema operativo è troppo vecchio e non ha `OpenSSH <http
    .. image:: img/powershell_login.png
 
 
+18. Perché lo schermo OLED si spegne automaticamente?
+---------------------------------------------------------------------------------
 
+Per risparmiare energia e prolungare la durata dello schermo, lo schermo OLED si spegne automaticamente dopo un periodo di inattività.  
+Questo fa parte del normale design e non influisce sulla funzionalità del prodotto.
 
-18. Come Accendere/Spegnere lo Schermo OLED?
-----------------------------------------------------------
-
-Puoi scegliere di accendere o spegnere lo schermo OLED tramite la dashboard o la riga di comando.
-
-1. Accendere/Spegnere lo schermo OLED dalla dashboard.
-
-   .. note::
-
-    Prima di utilizzare la dashboard, è necessario configurarla su Home Assistant. Fai riferimento a:  :ref:`view_control_dashboard`.
-
-- Dopo aver completato la configurazione, segui questi passaggi per accendere, spegnere o configurare il display OLED.
-
-   .. image::  img/set_up_on_dashboard.jpg
-      :width: 90%
-
-2. Accendere/Spegnere lo schermo OLED dalla riga di comando.
-
-- Usa uno dei seguenti cinque comandi per accendere lo schermo OLED:
-
-.. code-block::
-
-    sudo pironman5 -oe True/true/on/On/1
-
-- Usa uno dei seguenti cinque comandi per spegnere lo schermo OLED:
-
-.. code-block::
-
-    sudo pironman5 -oe False/false/off/Off/0
+Premi semplicemente una volta il pulsante sul dispositivo per riattivare lo schermo OLED e riprendere la visualizzazione.
 
 .. note::
 
-    Potrebbe essere necessario riavviare il servizio pironman5 affinché le modifiche abbiano effetto. Puoi utilizzare il seguente comando per riavviare il servizio:
-
-      .. code-block::
-
-        sudo systemctl restart pironman5.service
-
+   Per la configurazione dello schermo OLED (come accensione/spegnimento, tempo di sospensione, rotazione, ecc.), fai riferimento a: :ref:`view_control_dashboard` o :ref:`view_control_commands`.

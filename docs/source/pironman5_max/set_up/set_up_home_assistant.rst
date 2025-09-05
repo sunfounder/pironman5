@@ -172,6 +172,10 @@ Ora puoi procedere all’installazione ufficiale del componente aggiuntivo **Pir
    .. image:: img/home_web.png
       :width: 90%
 
+
 .. note::
 
-    Per ulteriori informazioni e istruzioni sull’uso della pagina web di Pironman 5 MAX, consulta: :ref:`max_view_control_dashboard`.
+   A questo punto, hai configurato con successo tutti i componenti del Pironman 5 MAX.  
+   La configurazione del Pironman 5 MAX è completa.  
+   Ora puoi utilizzare il Pironman 5 MAX per controllare il tuo Raspberry Pi e altri dispositivi.  
+   Per maggiori informazioni e per l’utilizzo di questa pagina web del Pironman 5 MAX, fai riferimento a: :ref:`max_view_control_dashboard`.

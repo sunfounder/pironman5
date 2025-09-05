@@ -84,3 +84,11 @@ Download e installazione del modulo ``pironman5``
    * ``restart``: Applica le modifiche effettuate alla configurazione del Pironman 5 Mini.
    * ``start/stop``: Avvia o interrompe il servizio ``pironman5.service``.
    * ``status``: Controlla lo stato di esecuzione del programma ``pironman5`` con lo strumento ``systemctl``.
+
+
+.. note::
+
+   A questo punto, hai configurato con successo tutti i componenti del Pironman 5 Mini.  
+   La configurazione del Pironman 5 Mini è completa.  
+   Ora puoi utilizzare il Pironman 5 Mini per controllare il tuo Raspberry Pi e altri dispositivi.  
+   Per maggiori informazioni e per l’utilizzo di questa pagina web del Pironman 5 Mini, fai riferimento a: :ref:`view_control_dashboard_mini`.

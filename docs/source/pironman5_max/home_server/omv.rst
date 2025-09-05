@@ -4,19 +4,20 @@
 
     **Why Join?**
 
-    - **Expert Support**: Risolvi problemi post-vendita e sfide tecniche con l’aiuto della nostra community e del nostro team.
-    - **Learn & Share**: Condividi suggerimenti e tutorial per migliorare le tue competenze.
-    - **Exclusive Previews**: Ottieni accesso anticipato a nuovi annunci e anteprime sui prodotti.
+    - **Expert Support**: Risolvi problemi post-vendita e sfide tecniche con il supporto della nostra community e del nostro team.
+    - **Learn & Share**: Condividi suggerimenti e tutorial per migliorare le tue abilità.
+    - **Exclusive Previews**: Accedi in anteprima ai nuovi annunci e alle anticipazioni sui prodotti.
     - **Special Discounts**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
     - **Festive Promotions and Giveaways**: Partecipa a promozioni festive e giveaway esclusivi.
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti subito!
 
 
+
 .. _max_omv_5_max: 
 
 
-(Facoltativo) Configurazione di OpenMediaVault
+Configurazione di OpenMediaVault
 ====================================================
 
 .. warning::

@@ -85,3 +85,9 @@ Scaricare e installare il modulo ``pironman5``
    * ``start/stop``: Abilita o disabilita il servizio ``pironman5.service``.
    * ``status``: Verifica lo stato operativo del programma ``pironman5`` utilizzando lo strumento ``systemctl``.
 
+.. note::
+
+   A questo punto, hai configurato con successo tutti i componenti del Pironman 5.  
+   La configurazione del Pironman 5 è completa.  
+   Ora puoi utilizzare il Pironman 5 per controllare il tuo Raspberry Pi e altri dispositivi.  
+   Per maggiori informazioni e per l’utilizzo di questa pagina web del Pironman 5, fai riferimento a: :ref:`view_control_dashboard`.

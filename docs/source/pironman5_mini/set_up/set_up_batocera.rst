@@ -60,3 +60,11 @@ Se hai installato il sistema operativo Batocera.linux, puoi accedere da remoto a
      La ventola RGB non inizierà a girare finché la temperatura non raggiungerà i 60°C. Per temperature di attivazione differenti, vedi :ref:`cc_control_fan_mini`.
 
 Ora puoi collegare il tuo Pironman 5 a uno schermo, a dei controller di gioco, a cuffie e molto altro, per immergerti completamente nel tuo mondo videoludico.
+
+
+.. note::
+
+   A questo punto, hai configurato con successo tutti i componenti del Pironman 5 Mini.  
+   La configurazione del Pironman 5 Mini è completa.  
+   Ora puoi utilizzare il Pironman 5 Mini per controllare il tuo Raspberry Pi e altri dispositivi.  
+   Per maggiori informazioni e per l’utilizzo di questa pagina web del Pironman 5 Mini, fai riferimento a: :ref:`view_control_dashboard_mini`.

@@ -63,3 +63,9 @@ Se hai installato il sistema operativo Batocera.linux, puoi accedere a questo si
 
 Ora puoi collegare il Pironman 5 a uno schermo, controller di gioco, cuffie e molto altro per immergerti nel tuo mondo di gioco.
 
+.. note::
+
+   A questo punto, hai configurato con successo tutti i componenti del Pironman 5.  
+   La configurazione del Pironman 5 è completa.  
+   Ora puoi utilizzare il Pironman 5 per controllare il tuo Raspberry Pi e altri dispositivi.  
+   Per maggiori informazioni e per l’utilizzo di questa pagina web del Pironman 5, fai riferimento a: :ref:`view_control_dashboard`.

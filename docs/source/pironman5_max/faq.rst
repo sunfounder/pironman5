@@ -182,6 +182,17 @@ Se lo schermo OLED non visualizza nulla o presenta anomalie, segui questi passag
       cat /var/log/pironman5/pm_auto.oled.log
 
 
+Perché lo schermo OLED si spegne automaticamente?
+---------------------------------------------------------------------------------
+
+Per risparmiare energia e prolungare la durata dello schermo, lo schermo OLED si spegne automaticamente dopo un periodo di inattività.  
+Questo fa parte del normale design e non influisce sulla funzionalità del prodotto.
+
+Premi semplicemente una volta il pulsante sul dispositivo per riattivare lo schermo OLED e riprendere la visualizzazione.
+
+.. note::
+
+   Per la configurazione dello schermo OLED (come accensione/spegnimento, tempo di sospensione, rotazione, ecc.), fai riferimento a: :ref:`max_view_control_dashboard` o :ref:`max_view_control_commands`.
 
 
 .. _max_openssh_powershell:
