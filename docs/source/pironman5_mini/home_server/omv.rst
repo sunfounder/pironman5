@@ -1,3 +1,18 @@
+.. note::
+
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 mit Gleichgesinnten ein.
+
+    **Warum beitreten?**
+
+    - **Fachkundige Unterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
+    - **Sonderrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und festlichen Aktionen teil.
+
+    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
+
+
 
 .. _mini_omv_5_mini:
 
@@ -9,7 +24,7 @@ Einrichtung von OpenMediaVault
    OpenMediaVault **unterstützt keine** Installation auf dem Raspberry Pi OS mit Desktop-Oberfläche.
 
    Bitte stellen Sie sicher, dass Sie das richtige Betriebssystem installiert und die Netzwerkkonfiguration vorgenommen haben.
-   Die Vorgehensweise entspricht der Anleitung unter :ref:`max_install_os_sd_rpi`, jedoch wählen Sie beim Auswählen des Images bitte „Raspberry Pi OS Lite“ aus der Kategorie „Raspberry Pi OS (other)“.
+   Die Vorgehensweise entspricht der Anleitung unter :ref:`install_os_sd_rpi_mini`, jedoch wählen Sie beim Auswählen des Images bitte „Raspberry Pi OS Lite“ aus der Kategorie „Raspberry Pi OS (other)“.
 
    .. image:: img/omv/omv-install-1.png
 
