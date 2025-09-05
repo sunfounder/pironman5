@@ -172,6 +172,9 @@ Il est temps d’installer officiellement le module **Pironman 5 MAX** .
    .. image:: img/home_web.png
       :width: 90%
 
+
 .. note::
 
-    Pour plus d’informations sur l’utilisation de l’interface web de Pironman 5 MAX, veuillez consulter : :ref:`max_view_control_dashboard`.
+   Vous avez maintenant configuré tous les composants du Pironman 5. La configuration du Pironman 5 est terminée.
+   Vous pouvez désormais utiliser le Pironman 5 pour contrôler votre Raspberry Pi et d'autres appareils.
+   Pour plus d'informations et pour utiliser cette page web du Pironman 5, veuillez consulter : :ref:`max_view_control_dashboard`.

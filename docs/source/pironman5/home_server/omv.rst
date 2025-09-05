@@ -1,23 +1,21 @@
 .. note::
 
-    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Rejoignez d’autres passionnés pour aller plus loin dans l’univers de Raspberry Pi, Arduino et ESP32.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi & Arduino & ESP32 sur Facebook ! Plongez-vous dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Bénéficiez d’une assistance pour résoudre les problèmes techniques et après-vente grâce à notre communauté et notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives** : Accédez en exclusivité aux annonces de nouveaux produits et à des aperçus.
-    - **Réductions spéciales** : Profitez d’offres spéciales sur nos dernières nouveautés.
-    - **Promotions festives et cadeaux** : Participez à des concours et animations pendant les périodes festives.
+    - **Support d'experts**: Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager**: Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives**: Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales**: Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et concours**: Participez à des tirages au sort et à des promotions spéciales.
 
-    👉 Prêt(e) à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-
-
-.. _max_omv_5_max:
+.. _omv_5:
 
 
-(Configuration optionnelle) Installation d’OpenMediaVault
+Installation d’OpenMediaVault
 ============================================================
 
 .. warning::
@@ -25,7 +23,7 @@
    OpenMediaVault **ne prend pas en charge** l'installation sur le bureau Raspberry Pi OS.
 
    Veillez à installer le bon système d'exploitation et à configurer le réseau correctement.
-   La procédure décrite ici est cohérente avec :ref:`max_install_os_sd_rpi`, mais lors du choix de l’image, veuillez sélectionner Raspberry Pi OS Lite dans la section Raspberry Pi OS (autre).
+   La procédure décrite ici est cohérente avec :ref:`install_os_sd_rpi`, mais lors du choix de l’image, veuillez sélectionner Raspberry Pi OS Lite dans la section Raspberry Pi OS (autre).
 
    .. image:: img/omv/omv-install-1.png
 

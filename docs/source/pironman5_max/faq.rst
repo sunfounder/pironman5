@@ -181,6 +181,19 @@ Si l’écran OLED ne s’affiche pas ou s’affiche incorrectement, suivez ces 
       cat /var/log/pironman5/pm_auto.oled.log
 
 
+Pourquoi l’écran OLED s’éteint-il automatiquement ?
+---------------------------------------------------------------------------------
+
+Pour économiser de l’énergie et prolonger la durée de vie de l’écran, l’écran OLED s’éteint automatiquement après une période d’inactivité.  
+Cela fait partie de la conception normale et n’affecte pas la fonctionnalité du produit.
+
+Il suffit d’appuyer une fois sur le bouton de l’appareil pour rallumer l’écran OLED et reprendre l’affichage.
+
+.. note::
+
+   Pour la configuration de l’écran OLED (comme activer/désactiver, temps de veille, rotation, etc.), veuillez vous référer à : :ref:`max_view_control_dashboard` ou :ref:`max_view_control_commands`.
+
+
 .. _max_openssh_powershell:
 
 Installer OpenSSH via PowerShell

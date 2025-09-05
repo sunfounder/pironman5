@@ -60,3 +60,10 @@ Si vous avez installé le système Batocera.linux, vous pouvez vous y connecter 
      Le ventilateur RGB ne se mettra en marche que lorsque la température atteindra 60°C. Pour configurer une température différente de déclenchement, consultez :ref:`cc_control_fan_mini`.
 
 Vous pouvez maintenant connecter le Pironman 5 à un écran, des manettes de jeu, un casque audio et bien plus encore pour vous plonger pleinement dans votre univers gaming.
+
+
+.. note::
+
+   Vous avez maintenant configuré tous les composants du Pironman 5. La configuration du Pironman 5 est terminée.
+   Vous pouvez désormais utiliser le Pironman 5 pour contrôler votre Raspberry Pi et d'autres appareils.
+   Pour plus d'informations et pour utiliser cette page web du Pironman 5, veuillez consulter : :ref:`view_control_dashboard_mini`.

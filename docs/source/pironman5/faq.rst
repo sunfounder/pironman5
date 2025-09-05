@@ -388,41 +388,14 @@ Cela signifie que votre système d’exploitation est trop ancien et n’a pas `
 
    .. image:: img/powershell_login.png
 
+18. Pourquoi l’écran OLED s’éteint-il automatiquement ?
+---------------------------------------------------------------------------------
 
-18. Comment éteindre/allumer l'écran OLED ?
-----------------------------------------------
+Pour économiser de l’énergie et prolonger la durée de vie de l’écran, l’écran OLED s’éteint automatiquement après une période d’inactivité.  
+Cela fait partie de la conception normale et n’affecte pas la fonctionnalité du produit.
 
-Vous pouvez éteindre ou allumer l'écran OLED via le tableau de bord ou la ligne de commande.
-
-1. Éteindre/allumer l'écran OLED via le tableau de bord.
-
-   .. note::
-
-    Avant d'utiliser le tableau de bord, vous devez le configurer dans Home Assistant. Veuillez consulter : :ref:`view_control_dashboard`.
-
-- Une fois la configuration terminée, vous pouvez suivre ces étapes pour allumer, éteindre ou configurer l'écran OLED.
-
-   .. image:: img/set_up_on_dashboard.jpg
-      :width: 90%
-
-2. Éteindre/allumer l'écran OLED via la ligne de commande.
-
-- Utilisez l'une des cinq commandes suivantes pour allumer l'écran OLED :
-
-.. code-block::
-
-    sudo pironman5 -oe True/true/on/On/1
-
-- Utilisez l'une des cinq commandes suivantes pour éteindre l'écran OLED :
-
-.. code-block::
-
-    sudo pironman5 -oe False/false/off/Off/0
+Il suffit d’appuyer une fois sur le bouton de l’appareil pour rallumer l’écran OLED et reprendre l’affichage.
 
 .. note::
 
-    Vous devrez peut-être redémarrer le service pironman5 pour que les modifications prennent effet. Utilisez la commande suivante pour redémarrer le service :
-
-      .. code-block::
-
-        sudo systemctl restart pironman5.service
+   Pour la configuration de l’écran OLED (comme activer/désactiver, temps de veille, rotation, etc.), veuillez vous référer à : :ref:`view_control_dashboard` ou :ref:`view_control_commands`.

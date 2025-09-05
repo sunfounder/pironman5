@@ -14,8 +14,8 @@
 
 .. _max_advanced:
 
-6. Fonctions avancées
-=========================
+6. Présentation du matériel
+================================
 
 
 Ce chapitre propose une description détaillée de tous les composants du Pironman, ainsi que de la configuration logicielle associée.
