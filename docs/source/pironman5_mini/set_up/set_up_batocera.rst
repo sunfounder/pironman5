@@ -60,3 +60,11 @@ Batocera.linux OSをインストール済みの場合は、SSH経由でリモー
       RGBファンは温度が60°Cに達するまで回転しません。起動温度を変更したい場合は :ref:`cc_control_fan_mini` を参照してください。
 
 これで、Pironman 5にディスプレイ、ゲームコントローラー、ヘッドホンなどを接続し、ゲームの世界を思う存分楽しめます。
+
+
+.. note::
+
+   この時点で、Pironman 5 Mini のすべての構成要素を正しく設定できました。  
+   Pironman 5 Mini の設定は完了です。  
+   これで Pironman 5 Mini を使って Raspberry Pi やその他の機器を操作できます。  
+   この Pironman 5 Mini のウェブページに関する詳細や使用方法については、:ref:`view_control_dashboard_mini` を参照してください。

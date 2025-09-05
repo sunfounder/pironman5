@@ -57,7 +57,7 @@
 * Samsung 980 Pro
 * Samsung 990 Pro
 
-* Team MP33
+* TeamGroup MP33
 
 * Western Digital SN570
 * Western Digital SN530

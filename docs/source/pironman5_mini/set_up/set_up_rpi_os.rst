@@ -84,3 +84,12 @@ Raspberry PiのGPIOから電源供給されているRGBファンが、シャッ�
    * ``restart``：設定変更を適用する際に使用します。
    * ``start/stop``： ``pironman5.service`` の有効／無効を切り替えます。
    * ``status``： ``pironman5`` プログラムの動作状況を確認できます。
+
+
+
+.. note::
+
+   この時点で、Pironman 5 Mini のすべての構成要素を正しく設定できました。  
+   Pironman 5 Mini の設定は完了です。  
+   これで Pironman 5 Mini を使って Raspberry Pi やその他の機器を操作できます。  
+   この Pironman 5 Mini のウェブページに関する詳細や使用方法については、:ref:`view_control_dashboard_mini` を参照してください。

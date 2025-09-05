@@ -61,3 +61,11 @@ Batocera.linux OSをインストールした場合、SSH経由でこのシステ
      RGBファンは、温度が60°Cを超えるまで回転しません。起動温度を変更したい場合は、:ref:`max_cc_control_fan` を参照してください。
 
 Pironman 5 MAXにディスプレイ、ゲームコントローラー、ヘッドホンなどを接続し、ゲームの世界に没入しましょう。
+
+
+.. note::
+
+   この時点で、Pironman 5 MAX のすべての構成要素を正しく設定できました。  
+   Pironman 5 MAX の設定は完了です。  
+   これで Pironman 5 MAX を使って Raspberry Pi やその他の機器を操作できます。  
+   この Pironman 5 MAX のウェブページに関する詳細や使用方法については、:ref:`max_view_control_dashboard` を参照してください。

@@ -90,3 +90,13 @@ Raspberry Pi のシャットダウン後もOLEDスクリーンやRGBファン（
    * ``restart``：設定を変更した際に再読み込みします。
    * ``start/stop``：サービスの有効化・無効化を行います。
    * ``status``： ``pironman5`` プログラムの動作状態を確認します。
+
+
+
+
+.. note::
+
+   この時点で、Pironman 5 MAX のすべての構成要素を正しく設定できました。  
+   Pironman 5 MAX の設定は完了です。  
+   これで Pironman 5 MAX を使って Raspberry Pi やその他の機器を操作できます。  
+   この Pironman 5 MAX のウェブページに関する詳細や使用方法については、:ref:`max_view_control_dashboard` を参照してください。

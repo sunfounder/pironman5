@@ -86,3 +86,9 @@ Raspberry PiのGPIOから供給されるOLED画面やRGBファンがシャット
    * ``start/stop`` : ``pironman5.service`` を有効または無効にします。
    * ``status`` : ``systemctl`` ツールを使用して、 ``pironman5`` プログラムの稼働状況を確認します。
 
+.. note::
+
+   この時点で、Pironman 5 のすべての構成要素を正しく設定できました。  
+   Pironman 5 の設定は完了です。  
+   これで Pironman 5 を使って Raspberry Pi やその他の機器を操作できます。  
+   この Pironman 5 のウェブページに関する詳細や使用方法については、:ref:`view_control_dashboard` を参照してください。

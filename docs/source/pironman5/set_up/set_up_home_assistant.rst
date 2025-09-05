@@ -176,4 +176,7 @@ Pironman 5の機能は、Home Assistantにアドオンの形でインストー�
 
 .. note::
 
-    このPironman 5のウェブページの詳細や使用方法については、:ref:`view_control_dashboard` をご参照ください。
+   この時点で、Pironman 5 のすべての構成要素を正しく設定できました。  
+   Pironman 5 の設定は完了です。  
+   これで Pironman 5 を使って Raspberry Pi やその他の機器を操作できます。  
+   この Pironman 5 のウェブページに関する詳細や使用方法については、:ref:`view_control_dashboard` を参照してください。

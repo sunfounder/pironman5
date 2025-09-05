@@ -1,21 +1,23 @@
 .. note::
 
-    こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！同じ情熱を持つ仲間たちと一緒に、Raspberry Pi・Arduino・ESP32の世界をさらに深く探求しましょう。
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと一緒に、Raspberry Pi、Arduino、ESP32についてさらに深く掘り下げていきましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**：購入後のサポートや技術的課題を、コミュニティやサポートチームがサポートします。
-    - **Learn & Share**：チュートリアルやヒントを共有し、スキルアップにつなげましょう。
-    - **Exclusive Previews**：新製品の情報や先行公開をいち早く入手できます。
-    - **Special Discounts**：最新製品を対象とした限定割引をお楽しみください。
-    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定キャンペーンにも参加可能です。
+    - **専門サポート**: コミュニティやチームのサポートを受け、購入後の問題や技術的な課題を解決します。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品発表や先行情報に早期アクセスできます。
+    - **特別割引**: 最新製品の特別割引を楽しめます。
+    - **フェスティブプロモーションとプレゼント企画**: プレゼント企画や季節ごとのプロモーションに参加できます。
 
-    👉 一緒に探求と創造を楽しみましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
+    👉 探索と創造の準備ができましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 
-.. _max_omv_5_max:
+.. _omv_5:
 
-（オプション）OpenMediaVaultの設定
+
+
+OpenMediaVaultの設定
 =====================================
 
 .. warning::
@@ -23,7 +25,7 @@
    OpenMediaVault は **Raspberry Pi OS デスクトップ版には対応していません**。
 
    必ず対応するOSがインストールされており、ネットワーク設定が完了していることを確認してください。
-   本手順は :ref:`max_install_os_sd_rpi` と同様ですが、OSイメージ選択時は Raspberry Pi OS (other) の中から Raspberry Pi OS Lite を選択してください。
+   本手順は :ref:`install_os_sd_rpi` と同様ですが、OSイメージ選択時は Raspberry Pi OS (other) の中から Raspberry Pi OS Lite を選択してください。
 
    .. image:: img/omv/omv-install-1.png
 

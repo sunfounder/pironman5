@@ -27,7 +27,7 @@
 
     OpenMediaVault OS を使用したい場合は、Raspberry Pi OS Lite をインストールしてください。
 
-    .. image:: ../img/omv/omv-install-1.png
+    .. image:: ../home_server/img/omv/omv-install-1.png
 
 
 この章では、各種オペレーティングシステムのインストール手順を解説します。すべてのインストール作業は、事前にインストールしておく必要のある |link_rpi_imager| に基づいています。
