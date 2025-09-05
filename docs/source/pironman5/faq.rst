@@ -386,41 +386,14 @@ Esto significa que tu sistema operativo es demasiado antiguo y no tiene `OpenSSH
 
    .. image:: img/powershell_login.png
 
+18. ¿Por qué se apaga automáticamente la pantalla OLED?
+---------------------------------------------------------------------------------
 
-18. ¿Cómo encender/apagar la pantalla OLED?
----------------------------------------------------
+Para ahorrar energía y prolongar la vida útil de la pantalla, la pantalla OLED se apagará automáticamente después de un período de inactividad.  
+Esto forma parte del diseño normal y no afecta la funcionalidad del producto.
 
-Puedes elegir encender o apagar la pantalla OLED mediante el panel de control o la línea de comandos.
-
-1. Encender/apagar la pantalla OLED desde el panel de control.
-
-   .. note::
-
-    Antes de usar el panel de control, necesitas configurarlo en Home Assistant. Consulta: :ref:`view_control_dashboard`.
-
-- Una vez completada la configuración, puedes seguir estos pasos para encender, apagar o configurar tu pantalla OLED.
-
-   .. image:: img/set_up_on_dashboard.jpg
-      :width: 90%
-
-2. Encender/apagar la pantalla OLED desde la línea de comandos.
-
-- Usa cualquiera de los siguientes cinco comandos para encender la pantalla OLED.
-
-.. code-block::
-
-    sudo pironman5 -oe True/true/on/On/1
-
-- Usa cualquiera de los siguientes cinco comandos para apagar la pantalla OLED.
-
-.. code-block::
-
-    sudo pironman5 -oe False/false/off/Off/0
+Simplemente presiona una vez el botón del dispositivo para reactivar la pantalla OLED y reanudar la visualización.
 
 .. note::
 
-    Es posible que necesites reiniciar el servicio pironman5 para que los cambios surtan efecto. Usa el siguiente comando para reiniciar el servicio:
-
-      .. code-block::
-
-        sudo systemctl restart pironman5.service
+   Para la configuración de la pantalla OLED (como encendido/apagado, tiempo de suspensión, rotación, etc.), consulta: :ref:`view_control_dashboard` o :ref:`view_control_commands`.

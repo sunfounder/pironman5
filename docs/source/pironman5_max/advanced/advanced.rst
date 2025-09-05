@@ -14,8 +14,8 @@
 
 .. _max_advanced:
 
-6. Avanzado
-=========================
+6. Descripción general del hardware
+==================================================
 
 
 Este capítulo ofrece una descripción detallada de todos los componentes de Pironman, así como la configuración de software asociada.

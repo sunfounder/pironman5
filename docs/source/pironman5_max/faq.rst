@@ -181,6 +181,19 @@ Si la pantalla OLED no muestra nada o muestra información incorrecta, siga esto
       cat /var/log/pironman5/pm_auto.oled.log
 
 
+¿Por qué se apaga automáticamente la pantalla OLED?
+---------------------------------------------------------------------------------
+
+Para ahorrar energía y prolongar la vida útil de la pantalla, la pantalla OLED se apagará automáticamente después de un período de inactividad.  
+Esto forma parte del diseño normal y no afecta la funcionalidad del producto.
+
+Simplemente presiona una vez el botón del dispositivo para reactivar la pantalla OLED y reanudar la visualización.
+
+.. note::
+
+   Para la configuración de la pantalla OLED (como encendido/apagado, tiempo de suspensión, rotación, etc.), consulta: :ref:`view_control_dashboard` o :ref:`view_control_commands`.
+
+
 .. _max_openssh_powershell:
 
 Instalar OpenSSH desde PowerShell

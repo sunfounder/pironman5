@@ -60,3 +60,11 @@ Si ya has instalado el sistema operativo Batocera.linux, puedes iniciar sesión 
      El ventilador RGB no girará a menos que la temperatura alcance los 60°C. Para conocer otras temperaturas de activación, consulta :ref:`cc_control_fan_mini`.
 
 Ahora puedes conectar el Pironman 5 a una pantalla, mandos de juego, auriculares y más para sumergirte en tu mundo de juegos.
+
+
+.. note::
+
+   En este momento, has configurado correctamente todos los componentes del Pironman 5 MAX.  
+   La configuración del Pironman 5 MAX está completa.  
+   Ahora puedes usar el Pironman 5 MAX para controlar tu Raspberry Pi y otros dispositivos.  
+   Para más información y uso de esta página web de Pironman 5 MAX, consulta: :ref:`view_control_dashboard_mini`.

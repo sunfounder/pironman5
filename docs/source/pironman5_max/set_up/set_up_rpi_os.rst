@@ -90,3 +90,12 @@ Descarga e instalación del módulo ``pironman5``
    * ``restart``: Aplica los cambios realizados en la configuración de Pironman 5 MAX.
    * ``start/stop``: Activa o desactiva el servicio ``pironman5.service``.
    * ``status``: Verifica el estado de funcionamiento del programa ``pironman5`` mediante la herramienta ``systemctl``.
+
+
+
+.. note::
+
+   En este momento, has configurado correctamente todos los componentes del Pironman 5 MAX.  
+   La configuración del Pironman 5 MAX está completa.  
+   Ahora puedes usar el Pironman 5 MAX para controlar tu Raspberry Pi y otros dispositivos.  
+   Para más información y uso de esta página web de Pironman 5 MAX, consulta: :ref:`max_view_control_dashboard`.

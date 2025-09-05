@@ -27,7 +27,7 @@
 
     Si deseas utilizar el sistema OpenMediaVault, primero instala Raspberry Pi OS Lite.
 
-    .. image:: ../img/omv/omv-install-1.png
+    .. image:: ../home_server/img/omv/omv-install-1.png
 
 
 En este capítulo aprenderás a instalar los sistemas operativos disponibles. Todos los pasos de instalación se realizan a través de |link_rpi_imager|, el cual debes instalar primero.
