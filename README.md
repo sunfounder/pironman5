@@ -90,11 +90,17 @@ git clone https://github.com/sunfounder/sf_rpi_status.git
 Make adjustments, and manually install the package
 
 ```bash
+# install from folder
 cd ~/pironman5 && sudo /opt/pironman5/venv/bin/pip3 uninstall pironman5 -y && sudo /opt/pironman5/venv/bin/pip3 install . --no-build-isolation
 cd ~/pm_dashboard && sudo /opt/pironman5/venv/bin/pip3 uninstall pm_dashboard -y && sudo /opt/pironman5/venv/bin/pip3 install . --no-build-isolation
 cd ~/pm_auto && sudo /opt/pironman5/venv/bin/pip3 uninstall pm_auto -y && sudo /opt/pironman5/venv/bin/pip3 install . --no-build-isolation
 cd ~/sf_rpi_status && sudo /opt/pironman5/venv/bin/pip3 uninstall sf_rpi_status -y && sudo /opt/pironman5/venv/bin/pip3 install . --no-build-isolation
 cd ~/pipower5 && sudo /opt/pironman5/venv/bin/pip3 uninstall pipower5 -y && sudo /opt/pironman5/venv/bin/pip3 install . --no-build-isolation
+
+# install from github repo
+sudo /opt/pironman5/venv/bin/pip3 uninstall sf_rpi_status -y && sudo /opt/pironman5/venv/bin/pip3 install git+https://github.com/sunfounder/sf_rpi_status.git --no-build-isolation
+sudo /opt/pironman5/venv/bin/pip3 uninstall pipower5 -y && sudo /opt/pironman5/venv/bin/pip3 install git+https://github.com/sunfounder/pipower5.git --no-build-isolation
+
 ```
 
 

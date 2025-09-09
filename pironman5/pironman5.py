@@ -83,6 +83,7 @@ class Pironman5:
             'peripherals': self.peripherals,
             'version': pironman5_version,
             'app_name': APP_NAME,
+            'config_path': self.config_path,
         }
         self.log.info(f"Pironman5 version: {pironman5_version}")
         self.log.info(f"Variant: {NAME} {PRODUCT_VERSION}")

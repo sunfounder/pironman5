@@ -96,15 +96,18 @@ def main():
         parser.add_argument("-rmb", "--rgb-matrix-brightness", nargs='?', default='', help="RGB brightness 0-100")
     # pipower5
     if is_included(PERIPHERALS, "pipower5"):
-        from pipower5.email_sender import EmailModes
-        AVAILABLE_EMAIL_MODES = [i.value for i in EmailModes]
-        parser.add_argument("-seo", '--send-email-on', nargs='?', default='', help=f"Send email on, split by ',': {','.join(AVAILABLE_EMAIL_MODES)}")
+        from pipower5.pipower5 import Event
+        AVAILABLE_EVENTS = [i.value for i in Event]
+        parser.add_argument("-seo", '--send-email-on', nargs='?', default='', help=f"Send email on, split by ',': {','.join(AVAILABLE_EVENTS)}")
         parser.add_argument("-set", '--send-email-to', nargs='?', default='', help="Email address to send email to")
         parser.add_argument("-ss", '--smtp-server', nargs='?', default='', help="SMTP server")
         parser.add_argument("-smp", '--smtp-port', nargs='?', default='', help="SMTP port")
         parser.add_argument("-se", '--smtp-email', nargs='?', default='', help="SMTP email")
         parser.add_argument("-spw", '--smtp-password', nargs='?', default='', help="SMTP password")
-        parser.add_argument("-ssu", '--smtp-use-tls', nargs='?', default='', help="SMTP use tls")
+        parser.add_argument("-ssc", '--smtp-security', nargs='?', default='', help="SMTP security, 'none', 'ssl' or 'tls'")
+        parser.add_argument("-bzo", '--buzz-on', nargs='?', default=[], help=f"Buzz on: {AVAILABLE_EVENTS}")
+        parser.add_argument("-bzv", '--buzzer-volume', nargs='?', default='', help="Buzz volume")
+        parser.add_argument("-bzt", '--buzzer-test', nargs='?', default='', help="Test buzzer on selected event.")
 
     # parse args
     # -----------------------------------------------------------
@@ -584,70 +587,63 @@ def main():
         # send email on
         if args.send_email_on != '':
             if args.send_email_on == None:
-                send_email_on = [f' - {mode}' for mode in current_config['system']['send_email_on']]
-                send_email_on = '\n'.join(send_email_on)
-                print("Send email on:")
-                print(send_email_on)
+                os.system('pipower5 --send-email-on')
             else:
-                if ',' in args.send_email_on:
-                    send_email_on = args.send_email_on.split(',')
-                else:
-                    send_email_on = [args.send_email_on]
-                send_email_on = [p.lower() for p in send_email_on]
-                for mode in send_email_on:
-                    if mode not in AVAILABLE_EMAIL_MODES:
-                        print(f"Invalid value for Send email on: '{mode}', it should be split by ',' and be one of {','.join(AVAILABLE_EMAIL_MODES)}")
-                        quit()
-                new_sys_config['send_email_on'] = send_email_on
-                print(f"Set Send email on: {send_email_on}")
+                os.system(f'pipower5 --send-email-on {args.send_email_on}')
         # send email to
         if args.send_email_to != '':
             if args.send_email_to == None:
-                print(f"Send email to: {current_config['system']['send_email_to']}")
+                os.system('pipower5 --send-email-to')
             else:
-                new_sys_config['send_email_to'] = args.send_email_to
-                print(f"Set Send email to: {args.send_email_to}")
+                os.system(f'pipower5 --send-email-to {args.send_email_to}')
         # SMTP server
         if args.smtp_server != '':
             if args.smtp_server == None:
-                print(f"SMTP server: {current_config['system']['smtp_server']}")
+                os.system('pipower5 --smtp-server')
             else:
-                new_sys_config['smtp_server'] = args.smtp_server
-                print(f"Set SMTP server: {args.smtp_server}")
+                os.system(f'pipower5 --smtp-server {args.smtp_server}')
         # SMTP port
         if args.smtp_port != '':
             if args.smtp_port == None:
-                print(f"SMTP port: {current_config['system']['smtp_port']}")
+                os.system('pipower5 --smtp-port')
             else:
-                new_sys_config['smtp_port'] = int(args.smtp_port)
-                print(f"Set SMTP port: {args.smtp_port}")
+                os.system(f'pipower5 --smtp-port {args.smtp_port}')
         # SMTP user
         if args.smtp_email != '':
             if args.smtp_email == None:
-                print(f"SMTP user: {current_config['system']['smtp_email']}")
+                os.system('pipower5 --smtp-email')
             else:
-                new_sys_config['smtp_email'] = args.smtp_email
-                print(f"Set SMTP user: {args.smtp_email}")
+                os.system(f'pipower5 --smtp-email {args.smtp_email}')
         # SMTP password
         if args.smtp_password != '':
             if args.smtp_password == None:
-                print(f"SMTP password: {current_config['system']['smtp_password']}")
+                os.system('pipower5 --smtp-password')
             else:
-                new_sys_config['smtp_password'] = args.smtp_password
-                print(f"Set SMTP password: {args.smtp_password}")
-        # SMTP use TLS
-        if args.smtp_use_tls != '':
-            if args.smtp_use_tls == None:
-                print(f"SMTP use TLS: {current_config['system']['smtp_use_tls']}")
+                os.system(f'pipower5 --smtp-password {args.smtp_password}')
+        # SMTP security
+        if args.smtp_security != '':
+            if args.smtp_security == None:
+                os.system('pipower5 --smtp-security')
             else:
-                if args.smtp_use_tls in TRUE_LIST:
-                    args.smtp_use_tls = True
-                elif args.smtp_use_tls in FALSE_LIST:
-                    args.smtp_use_tls = False
-                else:
-                    print(f"Invalid value for SMTP use TLS, it should be in {', '.join(TRUE_LIST + FALSE_LIST)}")
-                    quit()
-                print(f"Set SMTP use TLS: {args.smtp_use_tls}")
+                os.system(f'pipower5 --smtp-security {security}')
+        # buzzer
+        if args.buzz_on != []:
+            if args.buzz_on == None:
+                os.system('pipower5 --buzz-on')
+            else:
+                os.system(f'pipower5 --buzz-on {buzz_on}')
+        if args.buzzer_volume != '':
+            if args.buzzer_volume == None:
+                os.system('pipower5 --buzzer-volume')
+            else:
+                os.system(f'pipower5 --buzzer-volume {args.buzzer_volume}')
+                
+        # test buzz on
+        if args.buzzer_test != '':
+            if args.buzzer_test == None:
+                os.system('pipower5 --buzzer-test')
+            else:
+                os.system(f'pipower5 --buzzer-test {args.buzzer_test}')
 
     # Update settings
     # ----------------------------------------

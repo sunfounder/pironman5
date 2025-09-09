@@ -2,6 +2,12 @@
 set -euo pipefail
 trap 'echo "Error occurred. Exiting..." >&2; exit 1' ERR
 
+# Check root privileges
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run as root"
+  exit 1
+fi
+
 # Check if argument exists before accessing \$1
 if [ $# -ge 1 ] && [ "$1" == "--uninstall" ]; then
     echo "Uninstalling PiPower 5 driver"
