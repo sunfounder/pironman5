@@ -152,7 +152,7 @@ dashboard_settings = {
 pipower5_settings = {
     # Install python packages from source
     'python_source': {
-        'pipower5': 'git+https://github.com/sunfounder/pipower5.git@1.2.x',
+        'pipower5': 'git+https://github.com/sunfounder/pipower5.git@main',
         'spc': 'git+https://github.com/sunfounder/spc.git',
     },
     # Add symbolic links
