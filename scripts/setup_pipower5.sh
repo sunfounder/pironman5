@@ -24,7 +24,7 @@ apt-get install linux-headers-$(uname -r) -y
 
 echo "Installing PiPower 5 driver"
 
-wget https://github.com/sunfounder/pipower5/releases/download/1.2.0/driver.zip
+wget https://github.com/sunfounder/pipower5/releases/download/1.2.1/driver.zip
 unzip driver.zip
 cd driver
 bash install.sh
@@ -33,7 +33,7 @@ rm -rf driver.zip driver/
 
 echo "Setting up email templates"
 
-wget https://github.com/sunfounder/pipower5/releases/download/1.2.0/email_templates.zip
+wget https://github.com/sunfounder/pipower5/releases/download/1.2.1/email_templates.zip
 unzip email_templates.zip
 if [ ! -d /opt/pipower5 ]; then
     mkdir /opt/pipower5
