@@ -26,7 +26,7 @@ def main():
     from importlib.resources import files as resource_files
     import json
     import sys
-    from os import path
+    import os
 
     TRUE_LIST = ['true', 'True', 'TRUE', '1', 'on', 'On', 'ON']
     FALSE_LIST = ['false', 'False', 'FALSE', '0', 'off', 'Off', 'OFF']
@@ -43,7 +43,11 @@ def main():
 
     parser = argparse.ArgumentParser(prog='pironman5',
                                     description=f'{NAME} command line interface')
-    parser.add_argument("command", choices=['start', 'stop'], nargs='?', help="Command")
+    
+    subparsers = parser.add_subparsers(dest="subcommand", title="Subcommands")
+        
+    commands = ['start', 'stop']
+    parser.add_argument("command", choices=commands, nargs='?', help="Command")
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
     parser.add_argument("-drd", "--database-retention-days", nargs='?', default='', help="Database retention days")
@@ -96,22 +100,29 @@ def main():
         parser.add_argument("-rmb", "--rgb-matrix-brightness", nargs='?', default='', help="RGB brightness 0-100")
     # pipower5
     if is_included(PERIPHERALS, "pipower5"):
-        from pipower5.pipower5 import Event
-        AVAILABLE_EVENTS = [i.value for i in Event]
-        parser.add_argument("-seo", '--send-email-on', nargs='?', default='', help=f"Send email on, split by ',': {','.join(AVAILABLE_EVENTS)}")
-        parser.add_argument("-set", '--send-email-to', nargs='?', default='', help="Email address to send email to")
-        parser.add_argument("-ss", '--smtp-server', nargs='?', default='', help="SMTP server")
-        parser.add_argument("-smp", '--smtp-port', nargs='?', default='', help="SMTP port")
-        parser.add_argument("-se", '--smtp-email', nargs='?', default='', help="SMTP email")
-        parser.add_argument("-spw", '--smtp-password', nargs='?', default='', help="SMTP password")
-        parser.add_argument("-ssc", '--smtp-security', nargs='?', default='', help="SMTP security, 'none', 'ssl' or 'tls'")
-        parser.add_argument("-bzo", '--buzz-on', nargs='?', default=[], help=f"Buzz on: {AVAILABLE_EVENTS}")
-        parser.add_argument("-bzv", '--buzzer-volume', nargs='?', default='', help="Buzz volume")
-        parser.add_argument("-bzt", '--buzzer-test', nargs='?', default='', help="Test buzzer on selected event.")
+        # 定义pipower5子命令（用于调用独立的pipower5）
+        pipower_parser = subparsers.add_parser(
+            "pipower5",
+            add_help=False  # 禁用子命令的-h处理，确保透传
+        )
+                # 添加固定参数（无论用户输入什么，都会附加）
+    #     from pipower5.pipower5 import Event
+    #     AVAILABLE_EVENTS = [i.value for i in Event]
+    #     parser.add_argument("-seo", '--send-email-on', nargs='?', default='', help=f"Send email on, split by ',': {','.join(AVAILABLE_EVENTS)}")
+    #     parser.add_argument("-set", '--send-email-to', nargs='?', default='', help="Email address to send email to")
+    #     parser.add_argument("-ss", '--smtp-server', nargs='?', default='', help="SMTP server")
+    #     parser.add_argument("-smp", '--smtp-port', nargs='?', default='', help="SMTP port")
+    #     parser.add_argument("-se", '--smtp-email', nargs='?', default='', help="SMTP email")
+    #     parser.add_argument("-spw", '--smtp-password', nargs='?', default='', help="SMTP password")
+    #     parser.add_argument("-ssc", '--smtp-security', nargs='?', default='', help="SMTP security, 'none', 'ssl' or 'tls'")
+    #     parser.add_argument("-bzo", '--buzz-on', nargs='?', default=[], help=f"Buzz on: {AVAILABLE_EVENTS}")
+    #     parser.add_argument("-bzv", '--buzzer-volume', nargs='?', default='', help="Buzz volume")
+    #     parser.add_argument("-bzt", '--buzzer-test', nargs='?', default='', help="Test buzzer on selected event.")
 
     # parse args
     # -----------------------------------------------------------
-    args = parser.parse_args()
+    # args = parser.parse_args()
+    args, remaining_args = parser.parse_known_args()
 
     # no args, show help
     if not (len(sys.argv) > 1):
@@ -136,11 +147,10 @@ def main():
 
     # load config file
     # ----------------------------------------
-    if not path.exists(config_path):
+    if not os.path.exists(config_path):
         with open(config_path, 'w') as f:
             json.dump({'system': {}}, f, indent=4)
         try:
-            import os
             os.chmod(config_path, 0o775)
         except Exception as e:
             print(f"Failed to set permissions for config file: {e}")
@@ -192,7 +202,6 @@ def main():
     # remove dashboard
     # ----------------------------------------    
     if args.remove_dashboard:
-        import os
         print("Remove Dashboard")
         os.system(f'{PIP_PATH} uninstall pm_dashboard -y')
         while True:
@@ -582,68 +591,91 @@ def main():
                 new_sys_config['rgb_matrix_color2'] = args.rgb_matrix_color2
                 print(f"Set RGB Matrix color2: #{args.rgb_matrix_color2} ({r}, {g}, {b})")
 
-    # PiPower 5 settings
+    # # PiPower 5 settings
     if is_included(PERIPHERALS, "pipower5"):
-        # send email on
-        if args.send_email_on != '':
-            if args.send_email_on == None:
-                os.system('pipower5 --send-email-on')
-            else:
-                os.system(f'pipower5 --send-email-on {args.send_email_on}')
-        # send email to
-        if args.send_email_to != '':
-            if args.send_email_to == None:
-                os.system('pipower5 --send-email-to')
-            else:
-                os.system(f'pipower5 --send-email-to {args.send_email_to}')
-        # SMTP server
-        if args.smtp_server != '':
-            if args.smtp_server == None:
-                os.system('pipower5 --smtp-server')
-            else:
-                os.system(f'pipower5 --smtp-server {args.smtp_server}')
-        # SMTP port
-        if args.smtp_port != '':
-            if args.smtp_port == None:
-                os.system('pipower5 --smtp-port')
-            else:
-                os.system(f'pipower5 --smtp-port {args.smtp_port}')
-        # SMTP user
-        if args.smtp_email != '':
-            if args.smtp_email == None:
-                os.system('pipower5 --smtp-email')
-            else:
-                os.system(f'pipower5 --smtp-email {args.smtp_email}')
-        # SMTP password
-        if args.smtp_password != '':
-            if args.smtp_password == None:
-                os.system('pipower5 --smtp-password')
-            else:
-                os.system(f'pipower5 --smtp-password {args.smtp_password}')
-        # SMTP security
-        if args.smtp_security != '':
-            if args.smtp_security == None:
-                os.system('pipower5 --smtp-security')
-            else:
-                os.system(f'pipower5 --smtp-security {security}')
-        # buzzer
-        if args.buzz_on != []:
-            if args.buzz_on == None:
-                os.system('pipower5 --buzz-on')
-            else:
-                os.system(f'pipower5 --buzz-on {buzz_on}')
-        if args.buzzer_volume != '':
-            if args.buzzer_volume == None:
-                os.system('pipower5 --buzzer-volume')
-            else:
-                os.system(f'pipower5 --buzzer-volume {args.buzzer_volume}')
+        if args.subcommand == "pipower5":
+            cmd = [
+                "pipower5",
+                "-cp", CONFIG_PATH,
+                *remaining_args
+            ]
+            try:
+                import subprocess
+                result = subprocess.run(
+                    cmd,
+                    check=True,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    text=True
+                )
+                print(result.stdout)
+            except subprocess.CalledProcessError as e:
+                print(f"Error: {e.stderr}", file=sys.stderr)
+                sys.exit(1)
+            except FileNotFoundError:
+                print("Error: pipower5 command not found, please make sure it is installed and in the environment variables", file=sys.stderr)
+                sys.exit(1)
+
+    #     # send email on
+    #     if args.send_email_on != '':
+    #         if args.send_email_on == None:
+    #             os.system('pipower5 --send-email-on')
+    #         else:
+    #             os.system(f'pipower5 --send-email-on {args.send_email_on}')
+    #     # send email to
+    #     if args.send_email_to != '':
+    #         if args.send_email_to == None:
+    #             os.system('pipower5 --send-email-to')
+    #         else:
+    #             os.system(f'pipower5 --send-email-to {args.send_email_to}')
+    #     # SMTP server
+    #     if args.smtp_server != '':
+    #         if args.smtp_server == None:
+    #             os.system('pipower5 --smtp-server')
+    #         else:
+    #             os.system(f'pipower5 --smtp-server {args.smtp_server}')
+    #     # SMTP port
+    #     if args.smtp_port != '':
+    #         if args.smtp_port == None:
+    #             os.system('pipower5 --smtp-port')
+    #         else:
+    #             os.system(f'pipower5 --smtp-port {args.smtp_port}')
+    #     # SMTP user
+    #     if args.smtp_email != '':
+    #         if args.smtp_email == None:
+    #             os.system('pipower5 --smtp-email')
+    #         else:
+    #             os.system(f'pipower5 --smtp-email {args.smtp_email}')
+    #     # SMTP password
+    #     if args.smtp_password != '':
+    #         if args.smtp_password == None:
+    #             os.system('pipower5 --smtp-password')
+    #         else:
+    #             os.system(f'pipower5 --smtp-password {args.smtp_password}')
+    #     # SMTP security
+    #     if args.smtp_security != '':
+    #         if args.smtp_security == None:
+    #             os.system('pipower5 --smtp-security')
+    #         else:
+    #             os.system(f'pipower5 --smtp-security {security}')
+    #     # buzzer
+    #     if args.buzz_on != []:
+    #         if args.buzz_on == None:
+    #             os.system('pipower5 --buzz-on')
+    #         else:
+    #             os.system(f'pipower5 --buzz-on {buzz_on}')
+    #     if args.buzzer_volume != '':
+    #         if args.buzzer_volume == None:
+    #             os.system('pipower5 --buzzer-volume')
+    #         else:
+    #             os.system(f'pipower5 --buzzer-volume {args.buzzer_volume}')
                 
-        # test buzz on
-        if args.buzzer_test != '':
-            if args.buzzer_test == None:
-                os.system('pipower5 --buzzer-test')
-            else:
-                os.system(f'pipower5 --buzzer-test {args.buzzer_test}')
+    #     # test buzz on
+    #     if args.buzzer_test != '':
+    #         if args.buzzer_test == None:
+    #             os.system('pipower5 --buzzer-test')
+    #         else:
+    #             os.system(f'pipower5 --buzzer-test {args.buzzer_test}')
 
     # Update settings
     # ----------------------------------------
@@ -659,3 +691,4 @@ def main():
         pironman5.start()
     elif args.command == 'stop':
         os.system('pkill -f pironman5')
+
