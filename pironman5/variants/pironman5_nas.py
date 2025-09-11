@@ -25,6 +25,7 @@ class Pironman5NAS:
         "pwm_fan_speed",
         "oled_sleep",
         "pironman_mcu",
+        "rtl8125",
     ]
     EVENT_MAP = {
         'pironman_mcu_button_click': 'oled_wake_page_next',

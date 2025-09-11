@@ -169,6 +169,13 @@ pipower5_settings = {
     ],
 }
 
+rtl8125_settings = {
+    # - Install from apt
+    'run_scripts_before_install': [
+        "setup_rtl8125.sh",
+    ],
+}
+
 installer = SF_Installer(
     name='pironman5',
     friendly_name=NAME,
@@ -198,4 +205,6 @@ if 'rgb_matrix' in PERIPHERALS:
     installer.update_settings(rgb_matrix_settings)
 if 'pipower5' in PERIPHERALS:
     installer.update_settings(pipower5_settings)
+if 'rtl8125' in PERIPHERALS:
+    installer.update_settings(rtl8125_settings)
 installer.main()
