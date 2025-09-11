@@ -113,6 +113,8 @@ sudo systemctl restart pironman5.service
 sudo pironman5 start
 
 sudo /opt/pironman5/venv/bin/python3
+journalctl -xefu pironman5.service
+sudo systemctl restart pironman5.service && journalctl -xefu pironman5.service
 ```
 
 ## About SunFounder
