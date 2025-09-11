@@ -45,9 +45,7 @@ def main():
                                     description=f'{NAME} command line interface')
     
     subparsers = parser.add_subparsers(dest="subcommand", title="Subcommands")
-        
-    commands = ['start', 'stop']
-    parser.add_argument("command", choices=commands, nargs='?', help="Command")
+
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-c", "--config", action="store_true", help="Show config")
     parser.add_argument("-drd", "--database-retention-days", nargs='?', default='', help="Database retention days")
@@ -105,7 +103,8 @@ def main():
             "pipower5",
             add_help=False  # 禁用子命令的-h处理，确保透传
         )
-                # 添加固定参数（无论用户输入什么，都会附加）
+    start_parser = subparsers.add_parser("start", help="Start Pironman5")
+    stop_parser = subparsers.add_parser("stop", help="Stop Pironman5")
     #     from pipower5.pipower5 import Event
     #     AVAILABLE_EVENTS = [i.value for i in Event]
     #     parser.add_argument("-seo", '--send-email-on', nargs='?', default='', help=f"Send email on, split by ',': {','.join(AVAILABLE_EVENTS)}")
@@ -686,9 +685,8 @@ def main():
     update_config_file(new_config, config_path)
 
     # start
-    if args.command == 'start':
+    if args.subcommand == 'start':
         pironman5 = Pironman5(config_path=config_path)
         pironman5.start()
-    elif args.command == 'stop':
+    elif args.subcommand == 'stop':
         os.system('pkill -f pironman5')
-
