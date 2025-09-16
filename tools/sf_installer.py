@@ -112,10 +112,7 @@ class SF_Installer():
             self.friendly_name = name
         else:
             self.friendly_name = friendly_name
-        if description is None:
-            self.description = f'Installer for {self.friendly_name}'
-        else:
-            self.description = description
+        self.description = description
         if work_dir is None:
             self.work_dir = self.WORK_DIR.format(name=self.name)
         else:
@@ -137,6 +134,7 @@ class SF_Installer():
         self.dtoverlays = set()
         self.venv_options = set()
 
+        description = description or f'Installer for {self.friendly_name}'
         self.parser = argparse.ArgumentParser(description=description)
         self.parser.add_argument('--uninstall', action='store_true', help='Uninstall')
         self.parser.add_argument('--gitee', action='store_true', help='Use gitee')
@@ -206,6 +204,11 @@ class SF_Installer():
             self.dtoverlays.update(settings['dtoverlays'])
         if 'venv_options' in settings:
             self.venv_options.update(settings['venv_options'])
+
+    def set_friendly_name(self, name):
+        self.friendly_name = name
+        if self.description is None:
+            self.parser.description = f'Installer for {self.friendly_name}'
 
     def set_config_txt(self, name="", value=""):
         msg = f"Setting config.txt: {name}={value}"

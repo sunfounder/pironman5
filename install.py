@@ -2,7 +2,36 @@
 
 from tools.sf_installer import SF_Installer
 from pironman5.version import __version__
-from pironman5.variants import NAME, DT_OVERLAYS, PERIPHERALS
+import os
+from pironman5.variants import NAME, DT_OVERLAYS, PERIPHERALS, VARIANTS
+
+installer = SF_Installer(
+    name='pironman5',
+    friendly_name=NAME,
+    # - Setup install command description if needed, default to "Installer for {friendly_name}""
+    # description='Installer for Pironman 5',
+    # - Setup Work Dir if needed, default to /opt/{name}
+    # work_dir='/opt/pironman5',
+    # - Setup log dir if needed, default to /var/log/{name}
+    # log_dir='/var/log/pironman5',
+)
+
+installer.parser.add_argument("--disable-dashboard", action='store_true', help="Disable dashboard")
+installer.parser.add_argument("-V", "--variant", help="force varient to specific")
+args = installer.parser.parse_args()
+if args.variant:
+    short_name = args.variant
+    if short_name in VARIANTS:
+        variant = VARIANTS[short_name]
+        DT_OVERLAYS = variant.DT_OVERLAYS
+        PERIPHERALS = variant.PERIPHERALS
+        NAME = variant.NAME
+        print(f'Force variant: {NAME}')
+        installer.set_friendly_name(NAME)
+        os.makedirs('/opt/pironman5', exist_ok=True)
+        os.system(f'echo {short_name} > /opt/pironman5/variant')
+    else:
+        print(f'Unknown variant: {short_name}')
 
 settings = {
     # - Setup venv options if needed, default to []
@@ -58,8 +87,6 @@ settings = {
     # - Copy device tree overlay to /boot/overlays
     'dtoverlays': DT_OVERLAYS,
 }
-
-
 
 ws2812_settings = {
     # - Install from pip
@@ -128,20 +155,7 @@ dashboard_settings = {
     },
 }
 
-installer = SF_Installer(
-    name='pironman5',
-    friendly_name=NAME,
-    # - Setup install command description if needed, default to "Installer for {friendly_name}""
-    # description='Installer for Pironman 5',
-    # - Setup Work Dir if needed, default to /opt/{name}
-    # work_dir='/opt/pironman5',
-    # - Setup log dir if needed, default to /var/log/{name}
-    # log_dir='/var/log/pironman5',
-)
-
-installer.parser.add_argument("--disable-dashboard", action='store_true', help="Disable dashboard")
 installer.update_settings(settings)
-args = installer.parser.parse_args()
 if not args.disable_dashboard:
     installer.update_settings(dashboard_settings)
 if 'oled' in PERIPHERALS:

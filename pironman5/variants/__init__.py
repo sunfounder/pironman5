@@ -1,6 +1,13 @@
 from .pironman5 import Pironman5
 from .pironman5_max import Pironman5Max
 from .pironman5_mini import Pironman5Mini
+import os
+
+VARIANTS = {
+    'base': Pironman5,
+    'mini': Pironman5Mini,
+    'max': Pironman5Max,
+}
 
 def get_device_tree_path():
     """
@@ -87,9 +94,28 @@ def get_variant(variant_id, version=None):
         return Pironman5Mini
     else:
         return None
-    
-varient_id, version = get_varient_id_and_version()
-VARIENT = get_variant(varient_id, version)
+
+def get_force_variant():
+    """
+    获取强制指定的变体。
+
+    Returns:
+        str: 强制指定的变体名称，如果未指定则返回None。
+    """
+    if os.path.isfile('/opt/pironman5/variant'):
+        with open('/opt/pironman5/variant', 'r') as f:
+            short_name = f.read().strip()
+            if short_name in VARIANTS:
+                return VARIANTS[short_name]
+    return None
+
+force_variant = get_force_variant()
+if force_variant:
+    print(f'Force variant: {force_variant.NAME}')
+    VARIENT = force_variant
+else:
+    varient_id, version = get_varient_id_and_version()
+    VARIENT = get_variant(varient_id, version)
 NAME = VARIENT.NAME
 ID = VARIENT.ID
 PRODUCT_VERSION = VARIENT.PRODUCT_VERSION
