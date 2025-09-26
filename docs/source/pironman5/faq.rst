@@ -87,6 +87,30 @@ You can detach the Hailo AI accelerator module from the Raspberry Pi AI Kit and 
    .. image::  img/output4.png
         :width: 800
 
+6. PI5 Fails to Boot (Red LED)?
+-------------------------------------------
+
+This issue may be caused by a system update, changes to the boot order, or a corrupted bootloader. You can try the following steps to resolve the problem:
+
+#. Check USB-HDMI Adapter Connection
+
+   * Please carefully check whether the USB-HDMI adapter is securely connected to the PI5.
+   * Try unplugging and reconnecting the USB-HDMI adapter.
+   * Then reconnect the power supply and check if the PI5 boots successfully.
+
+#. Test PI5 Outside the Case
+
+   * If reconnecting the adapter does not solve the problem:
+   * Remove the PI5 from the Pironman 5 case.
+   * Power the PI5 directly with the power adapter (without the case).
+   * Check if it can boot normally.
+
+#. Restore the Bootloader
+
+   * If the PI5 still cannot boot, the bootloader may be corrupted. You can follow this guide: :ref:`update_bootloader_5` and choose whether to boot from SD card or NVMe/USB.
+   * Insert the prepared SD card into the PI5, power it on, and wait at least 10 seconds. Once the recovery is complete, remove and reformat the SD card. 
+   * Then, use Raspberry Pi Imager to flash the latest Raspberry Pi OS, insert the card back, and try booting again.
+
 .. 6. Does the Pironman 5 support retro gaming systems?
 .. ------------------------------------------------------
 .. Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5, such as the OLED display, the two RGB fans, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
@@ -290,7 +314,7 @@ In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can
 
 It is recommended to use a spare card for this step.
 
-* :ref:`update_bootloader`
+* :ref:`update_bootloader_5`
 
 15. How to Copy the System from the SD Card to an NVMe SSD?
 -------------------------------------------------------------
@@ -371,13 +395,13 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
    .. image:: img/powershell_login.png
 
 
-18. Why does the OLED screen turn off automatically?
----------------------------------------------------------------------------------
+.. 18. Why does the OLED screen turn off automatically?
+.. ---------------------------------------------------------------------------------
 
-To save power and extend the screen’s lifespan, the OLED screen will automatically turn off after a period of inactivity. This is part of the normal design and does not affect the product’s functionality.
+.. To save power and extend the screen’s lifespan, the OLED screen will automatically turn off after a period of inactivity. This is part of the normal design and does not affect the product’s functionality.
 
-Simply press the button on the device once to wake up the OLED screen and resume display.
+.. Simply press the button on the device once to wake up the OLED screen and resume display.
 
-.. note::
+.. .. note::
 
-   For OLED Screen configuration (such as turn ON/OFF, sleeptime, rotation, etc), please refer to: :ref:`view_control_dashboard` or :ref:`view_control_commands`.
+..    For OLED Screen configuration (such as turn ON/OFF, sleeptime, rotation, etc), please refer to: :ref:`view_control_dashboard` or :ref:`view_control_commands`.

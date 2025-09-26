@@ -65,9 +65,9 @@ Now, you can connect the Pironman 5 MAX to a screen, game controllers, headphone
 
 .. note::
 
-   In this time, you have successfully set up all the components of the Pironman 5 MAX. The configuration of the Pironman 5 MAX is complete.
-   You can now use the Pironman 5 MAX to control your Raspberry Pi and other devices.
-   For more information and usage of this Pironman 5 MAX web page, please refer to: :ref:`max_view_control_dashboard`.
+   At this point, you have successfully set up the Pironman 5 MAX, and it is ready to use.
+   
+   For advanced control of its components, please refer to :ref:`control_commands_dashboard_max`.
 
 
 

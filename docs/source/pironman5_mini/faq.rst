@@ -58,21 +58,36 @@ The Raspberry Pi AI Kit combines the Raspberry Pi M.2 HAT+ and the Hailo AI acce
    .. image::  img/output2.jpg
         :width: 400
 
-You can detach the Hailo AI accelerator module from the Raspberry Pi AI Kit and directly insert it into the NVMe PIP module of the Pironman 5 Mini.
+You can detach the Hailo AI accelerator module from the Raspberry Pi AI Kit and directly insert it into the HAT of the Pironman 5 Mini.
 
    .. .. image::  img/output4.png
    ..      :width: 800
 
-4. Does the Pironman 5 Mini support retro gaming systems?
---------------------------------------------------------------
 
-Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5 Mini, such as the RGB fan, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
+4. PI5 Fails to Boot (Red LED)?
+-------------------------------------------
+
+This issue may be caused by a system update, changes to the boot order, or a corrupted bootloader. You can try the following steps to resolve the problem:
+
+#. Reconnect the power supply and check if the PI5 boots successfully.
+
+#. Restore the Bootloader
+
+   * If the PI5 still cannot boot, the bootloader may be corrupted. You can follow this guide: :ref:`update_bootloader_mini` and choose whether to boot from SD card or NVMe/USB.
+   * Insert the prepared SD card into the PI5, power it on, and wait at least 10 seconds. Once the recovery is complete, remove and reformat the SD card. 
+   * Then, use Raspberry Pi Imager to flash the latest Raspberry Pi OS, insert the card back, and try booting again.
+
+
+.. Does the Pironman 5 Mini support retro gaming systems?
+.. --------------------------------------------------------------
+
+.. Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5 Mini, such as the RGB fan, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
 
 
 5. RGB LEDs Not Working?
 --------------------------
 
-#. The two pins on the IO Expander above J9 are used to connect the RGB LEDs to GPIO10. Ensure that the jumper cap on these two pins are properly in place.
+#. The two pins on the Mini HAT are used to connect the RGB LEDs to GPIO10. Ensure that the jumper cap on these two pins are properly in place.
 
    .. image:: hardware/img/io_board_rgb_pin.png
       :width: 300

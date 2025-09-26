@@ -88,9 +88,9 @@ Downloading and Installing the ``pironman5`` Module
 
 .. note::
 
-   In this time, you have successfully set up all the components of the Pironman 5. The configuration of the Pironman 5 is complete.
-   You can now use the Pironman 5 to control your Raspberry Pi and other devices.
-   For more information and usage of this Pironman 5 web page, please refer to: :ref:`view_control_dashboard`.
+   At this point, you have successfully set up the Pironman 5, and it is ready to use.
+   
+   For advanced control of its components, please refer to :ref:`control_commands_dashboard_5`.
 
 
 

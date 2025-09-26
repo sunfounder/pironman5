@@ -12,6 +12,8 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
+.. _control_commands_dashboard_5:
+
 5. Control with Commands or Dashboard
 =======================================================
 

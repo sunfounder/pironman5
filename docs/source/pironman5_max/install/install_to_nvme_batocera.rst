@@ -26,7 +26,7 @@ If you are using an NVMe SSD and have an adapter to connect the NVMe SSD to your
 * A NVMe to USB Adapter
 * Micro SD Card and Reader
 
-.. _max_update_bootloader:
+.. _update_bootloader_max:
 
 1. Update the Bootloader
 ----------------------------------
