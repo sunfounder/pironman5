@@ -12,6 +12,8 @@
 
     👉 Bereit, gemeinsam mit uns zu entdecken und kreativ zu werden? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
+.. _control_commands_dashboard_mini:
+
 5. Steuerung per Befehlen oder Dashboard
 =======================================================
 

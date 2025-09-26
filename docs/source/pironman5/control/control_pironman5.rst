@@ -12,6 +12,8 @@
 
     👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
+.. _control_commands_dashboard_5:
+
 5. Steuerung mit Befehlen oder Dashboard
 =======================================================
 

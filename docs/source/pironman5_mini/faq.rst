@@ -63,16 +63,29 @@ Du kannst das Hailo AI-Modul aus dem Kit entfernen und direkt im NVMe-PIP-Modul 
    .. .. image::  img/output4.png
    ..      :width: 800
 
-4. Unterstützt der Pironman 5 Mini Retro-Gaming-Systeme?
---------------------------------------------------------------
+.. 4. Unterstützt der Pironman 5 Mini Retro-Gaming-Systeme?
+.. --------------------------------------------------------------
 
-Ja, ist kompatibel. Allerdings können viele Retro-Gaming-Systeme keine zusätzliche Software installieren, was dazu führen kann, dass Funktionen wie der RGB-Lüfter oder die 4 RGB-LEDs nicht funktionieren, da sie auf zusätzliche Software angewiesen sind.
+.. Ja, ist kompatibel. Allerdings können viele Retro-Gaming-Systeme keine zusätzliche Software installieren, was dazu führen kann, dass Funktionen wie der RGB-Lüfter oder die 4 RGB-LEDs nicht funktionieren, da sie auf zusätzliche Software angewiesen sind.
+
+4. PI5 startet nicht (Rote LED)?
+-------------------------------------------
+
+Dieses Problem kann durch ein Systemupdate, Änderungen der Bootreihenfolge oder einen beschädigten Bootloader verursacht werden. Sie können die folgenden Schritte ausprobieren, um das Problem zu beheben:
+
+#. Schließen Sie das Netzteil erneut an und überprüfen Sie, ob der PI5 erfolgreich startet.
+
+#. Bootloader wiederherstellen
+
+   * Wenn der PI5 immer noch nicht startet, ist möglicherweise der Bootloader beschädigt. Sie können dieser Anleitung folgen: :ref:`update_bootloader_mini` und auswählen, ob Sie von SD-Karte oder NVMe/USB booten möchten.
+   * Setzen Sie die vorbereitete SD-Karte in den PI5 ein, schalten Sie ihn ein und warten Sie mindestens 10 Sekunden. Sobald die Wiederherstellung abgeschlossen ist, entfernen und formatieren Sie die SD-Karte neu. 
+   * Verwenden Sie anschließend den Raspberry Pi Imager, um das neueste Raspberry Pi OS zu flashen, setzen Sie die Karte wieder ein und versuchen Sie erneut zu booten.
 
 
 5. RGB-LEDs funktionieren nicht?
 --------------------------------------
 
-#. Überprüfe die Jumper-Kappe über J9 – sie muss korrekt auf den Pins sitzen, die GPIO10 mit den RGB-LEDs verbinden.
+#. Die zwei Pins auf dem Mini-HAT werden verwendet, um die RGB-LEDs mit GPIO10 zu verbinden. Stellen Sie sicher, dass die Jumperkappe korrekt auf diesen beiden Pins sitzt.
 
    .. image:: hardware/img/io_board_rgb_pin.png
       :width: 300

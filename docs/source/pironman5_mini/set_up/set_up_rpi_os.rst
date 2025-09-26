@@ -86,11 +86,8 @@ Herunterladen und Installieren des ``pironman5``-Moduls
    * ``status``: Zeigt mit ``systemctl`` den aktuellen Status des ``pironman5``-Programms an.
 
 
-
-
-
 .. note::
 
-   Sie haben nun alle Komponenten des Pironman 5 mini erfolgreich eingerichtet. Die Konfiguration des Pironman 5 mini ist abgeschlossen.
-   Sie können den Pironman 5 mini nun zur Steuerung Ihres Raspberry Pi und anderer Geräte verwenden.
-   Weitere Informationen und Hinweise zur Nutzung dieser Pironman 5 mini-Webseite finden Sie unter: :ref:`view_control_dashboard_mini`.
+   An diesem Punkt haben Sie den Pironman 5 Mini erfolgreich eingerichtet, und er ist einsatzbereit.
+   
+   Für die erweiterte Steuerung seiner Komponenten verweisen wir auf :ref:`control_commands_dashboard_mini`.
