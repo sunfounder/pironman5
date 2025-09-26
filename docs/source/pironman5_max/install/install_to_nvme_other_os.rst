@@ -12,7 +12,7 @@
 * 一个 NVMe 转 USB 适配器
 * 一张 Micro SD 卡和读卡器
 
-.. _max_update_bootloader:
+.. _update_bootloader_max:
 
 1. 更新启动引导程序
 ----------------------------------
