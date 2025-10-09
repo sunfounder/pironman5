@@ -26,7 +26,7 @@ Si cuentas con un SSD NVMe y un adaptador para conectarlo a tu ordenador, puedes
 * Un adaptador de NVMe a USB
 * Una tarjeta Micro SD y su lector
 
-.. _max_update_bootloader:
+.. _update_bootloader_max:
 
 1. Actualizar el bootloader
 ----------------------------------

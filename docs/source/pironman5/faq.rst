@@ -112,6 +112,31 @@ Puedes desconectar el módulo acelerador de IA Hailo del kit de IA de Raspberry 
    .. image::  img/output4.png
         :width: 800
 
+
+6. El PI5 No Arranca (LED Rojo)
+-------------------------------------------
+
+Este problema puede deberse a una actualización del sistema, cambios en el orden de arranque o un cargador de arranque (bootloader) dañado. Puede intentar los siguientes pasos para resolver el problema:
+
+#. Verificar la Conexión del Adaptador USB-HDMI
+
+   * Verifique cuidadosamente que el adaptador USB-HDMI esté conectado de forma segura al PI5.
+   * Intente desconectar y volver a conectar el adaptador USB-HDMI.
+   * Luego, vuelva a conectar la fuente de alimentación y compruebe si el PI5 inicia correctamente.
+
+#. Probar el PI5 Fuera de la Caja
+
+   * Si volver a conectar el adaptador no resuelve el problema:
+   * Retire el PI5 de la carcasa del Pironman 5.
+   * Alimente el PI5 directamente con el adaptador de corriente (sin la carcasa).
+   * Verifique si puede arrancar con normalidad.
+
+#. Restaurar el Cargador de Arranque
+
+   * Si el PI5 aún no puede arrancar, es posible que el cargador de arranque esté dañado. Puede seguir esta guía: :ref:`update_bootloader_5` y elegir si desea arrancar desde una tarjeta SD o NVMe/USB.
+   * Inserte la tarjeta SD preparada en el PI5, enciéndalo y espere al menos 10 segundos. Una vez completada la recuperación, retire y reformatee la tarjeta SD. 
+   * Luego, use Raspberry Pi Imager para grabar la última versión del sistema operativo Raspberry Pi OS, inserte nuevamente la tarjeta y pruebe iniciar otra vez.
+
 .. 6. ¿El Pironman 5 es compatible con sistemas de juegos retro?
 .. -------------------------------------------------------------------
 .. Sí, es compatible. Sin embargo, la mayoría de los sistemas de juegos retro son versiones simplificadas que no pueden instalar ni ejecutar software adicional. Esta limitación puede hacer que algunos componentes del Pironman 5, como la pantalla OLED, los dos ventiladores RGB y los 4 LEDs RGB, no funcionen correctamente, ya que requieren la instalación de paquetes de software del Pironman 5.
@@ -312,7 +337,7 @@ Además de modificar el ``BOOT_ORDER`` en la configuración de EEPROM, también 
 
 Se recomienda usar una tarjeta de repuesto para este paso.
 
-* :ref:`update_bootloader`
+* :ref:`update_bootloader_5`
 
 15. ¿Cómo copiar el sistema de la tarjeta SD a un NVMe SSD?
 ---------------------------------------------------------------
@@ -386,14 +411,14 @@ Esto significa que tu sistema operativo es demasiado antiguo y no tiene `OpenSSH
 
    .. image:: img/powershell_login.png
 
-18. ¿Por qué se apaga automáticamente la pantalla OLED?
----------------------------------------------------------------------------------
+.. 18. ¿Por qué se apaga automáticamente la pantalla OLED?
+.. ---------------------------------------------------------------------------------
 
-Para ahorrar energía y prolongar la vida útil de la pantalla, la pantalla OLED se apagará automáticamente después de un período de inactividad.  
-Esto forma parte del diseño normal y no afecta la funcionalidad del producto.
+.. Para ahorrar energía y prolongar la vida útil de la pantalla, la pantalla OLED se apagará automáticamente después de un período de inactividad.  
+.. Esto forma parte del diseño normal y no afecta la funcionalidad del producto.
 
-Simplemente presiona una vez el botón del dispositivo para reactivar la pantalla OLED y reanudar la visualización.
+.. Simplemente presiona una vez el botón del dispositivo para reactivar la pantalla OLED y reanudar la visualización.
 
-.. note::
+.. .. note::
 
-   Para la configuración de la pantalla OLED (como encendido/apagado, tiempo de suspensión, rotación, etc.), consulta: :ref:`view_control_dashboard` o :ref:`view_control_commands`.
+..    Para la configuración de la pantalla OLED (como encendido/apagado, tiempo de suspensión, rotación, etc.), consulta: :ref:`view_control_dashboard` o :ref:`view_control_commands`.
