@@ -175,7 +175,6 @@ Pironman 5 MAX の機能は、Home Assistant のアドオンとして提供さ�
 
 .. note::
 
-   この時点で、Pironman 5 MAX のすべての構成要素を正しく設定できました。  
-   Pironman 5 MAX の設定は完了です。  
-   これで Pironman 5 MAX を使って Raspberry Pi やその他の機器を操作できます。  
-   この Pironman 5 MAX のウェブページに関する詳細や使用方法については、:ref:`max_view_control_dashboard` を参照してください。
+   この時点で、Pironman 5 MAX のセットアップが正常に完了し、使用可能な状態になっています。
+   
+   各コンポーネントを高度に制御する方法については、:ref:`control_commands_dashboard_max` を参照してください。

@@ -179,7 +179,6 @@ Pironman 5 Miniの機能は、Home Assistant上でアドオンとして提供さ
 
 .. note::
 
-   この時点で、Pironman 5 Mini のすべての構成要素を正しく設定できました。  
-   Pironman 5 Mini の設定は完了です。  
-   これで Pironman 5 Mini を使って Raspberry Pi やその他の機器を操作できます。  
-   この Pironman 5 Mini のウェブページに関する詳細や使用方法については、:ref:`view_control_dashboard_mini` を参照してください。
+   この時点で、Pironman 5 Mini のセットアップが正常に完了し、使用可能な状態になっています。
+   
+   各コンポーネントを高度に制御する方法については、:ref:`control_commands_dashboard_mini` を参照してください。

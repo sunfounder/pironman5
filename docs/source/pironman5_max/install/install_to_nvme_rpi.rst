@@ -26,7 +26,7 @@ NVMe SSDを使用しており、PCに接続できるアダプターをお持ち�
 * NVMe → USB アダプター
 * Micro SDカードとリーダー
 
-.. _max_update_bootloader:
+.. _update_bootloader_max:
 
 1. ブートローダーを更新する
 --------------------------------

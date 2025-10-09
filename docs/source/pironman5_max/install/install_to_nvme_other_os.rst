@@ -26,7 +26,7 @@ NVMe SSD を使用し、パソコンに接続するためのアダプターを�
 * NVMe → USB アダプター
 * Micro SD カードおよびカードリーダー
 
-.. _max_update_bootloader:
+.. _update_bootloader_max:
 
 1. ブートローダーの更新
 ----------------------------------
