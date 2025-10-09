@@ -64,7 +64,6 @@ Ora puoi collegare il tuo Pironman 5 a uno schermo, a dei controller di gioco, a
 
 .. note::
 
-   A questo punto, hai configurato con successo tutti i componenti del Pironman 5 Mini.  
-   La configurazione del Pironman 5 Mini è completa.  
-   Ora puoi utilizzare il Pironman 5 Mini per controllare il tuo Raspberry Pi e altri dispositivi.  
-   Per maggiori informazioni e per l’utilizzo di questa pagina web del Pironman 5 Mini, fai riferimento a: :ref:`view_control_dashboard_mini`.
+   A questo punto, hai completato con successo la configurazione del Pironman 5 Mini ed è pronto per l’uso.
+   
+   Per un controllo avanzato dei suoi componenti, fai riferimento a :ref:`control_commands_dashboard_mini`.

@@ -111,6 +111,31 @@ Puoi staccare il modulo acceleratore AI Hailo dal Raspberry Pi AI Kit e inserirl
    .. image::  img/output4.png
         :width: 800
 
+6. PI5 non si avvia (LED rosso)?
+-------------------------------------------
+
+Questo problema può essere causato da un aggiornamento del sistema, da modifiche all’ordine di avvio o da un bootloader danneggiato. Puoi provare i seguenti passaggi per risolvere il problema:
+
+#. Controlla la connessione dell’adattatore USB-HDMI
+
+   * Controlla attentamente che l’adattatore USB-HDMI sia collegato saldamente al PI5.
+   * Prova a scollegare e ricollegare l’adattatore USB-HDMI.
+   * Quindi ricollega l’alimentazione e verifica se il PI5 si avvia correttamente.
+
+#. Testa il PI5 fuori dal case
+
+   * Se ricollegare l’adattatore non risolve il problema:
+   * Rimuovi il PI5 dal case Pironman 5.
+   * Alimenta direttamente il PI5 con l’alimentatore (senza il case).
+   * Controlla se riesce ad avviarsi normalmente.
+
+#. Ripristina il bootloader
+
+   * Se il PI5 continua a non avviarsi, il bootloader potrebbe essere corrotto. Puoi seguire questa guida: :ref:`update_bootloader_5` e scegliere se avviare da scheda SD o da NVMe/USB.
+   * Inserisci la scheda SD preparata nel PI5, accendilo e attendi almeno 10 secondi. Una volta completato il ripristino, rimuovi e riformatta la scheda SD.
+   * Poi utilizza Raspberry Pi Imager per installare l’ultima versione del Raspberry Pi OS, reinserisci la scheda e prova ad avviare nuovamente.
+
+
 .. 6. Il Pironman 5 supporta i sistemi di retro gaming?
 .. ---------------------------------------------------------
 .. Sì, è compatibile. Tuttavia, la maggior parte dei sistemi di retro gaming sono versioni semplificate che non consentono l'installazione e l'esecuzione di software aggiuntivo. Questa limitazione può causare il malfunzionamento di alcuni componenti del Pironman 5, come il display OLED, le due ventole RGB e i 4 LED RGB, poiché richiedono l'installazione dei pacchetti software specifici del Pironman 5.
@@ -313,7 +338,7 @@ Oltre a modificare il parametro ``BOOT_ORDER`` nella configurazione dell'EEPROM,
 
 Si consiglia di utilizzare una scheda di memoria di riserva per questo passaggio.
 
-* :ref:`update_bootloader`
+* :ref:`update_bootloader_5`
 
 15. Come copiare il sistema dalla scheda SD a un SSD NVMe?
 -------------------------------------------------------------
@@ -391,14 +416,14 @@ Significa che il tuo sistema operativo è troppo vecchio e non ha `OpenSSH <http
    .. image:: img/powershell_login.png
 
 
-18. Perché lo schermo OLED si spegne automaticamente?
----------------------------------------------------------------------------------
+.. 18. Perché lo schermo OLED si spegne automaticamente?
+.. ---------------------------------------------------------------------------------
 
-Per risparmiare energia e prolungare la durata dello schermo, lo schermo OLED si spegne automaticamente dopo un periodo di inattività.  
-Questo fa parte del normale design e non influisce sulla funzionalità del prodotto.
+.. Per risparmiare energia e prolungare la durata dello schermo, lo schermo OLED si spegne automaticamente dopo un periodo di inattività.  
+.. Questo fa parte del normale design e non influisce sulla funzionalità del prodotto.
 
-Premi semplicemente una volta il pulsante sul dispositivo per riattivare lo schermo OLED e riprendere la visualizzazione.
+.. Premi semplicemente una volta il pulsante sul dispositivo per riattivare lo schermo OLED e riprendere la visualizzazione.
 
-.. note::
+.. .. note::
 
-   Per la configurazione dello schermo OLED (come accensione/spegnimento, tempo di sospensione, rotazione, ecc.), fai riferimento a: :ref:`view_control_dashboard` o :ref:`view_control_commands`.
+..    Per la configurazione dello schermo OLED (come accensione/spegnimento, tempo di sospensione, rotazione, ecc.), fai riferimento a: :ref:`view_control_dashboard` o :ref:`view_control_commands`.

@@ -12,6 +12,8 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
+.. _control_commands_dashboard_5:
+
 5. Controllo tramite Comandi o Dashboard
 =======================================================
 

@@ -25,7 +25,7 @@ Se stai utilizzando un SSD NVMe e disponi di un adattatore per collegarlo al com
 * Un adattatore da NVMe a USB
 * Una scheda Micro SD e un lettore
 
-.. _max_update_bootloader:
+.. _update_bootloader_max:
 
 1. Aggiornare il Bootloader
 --------------------------------
