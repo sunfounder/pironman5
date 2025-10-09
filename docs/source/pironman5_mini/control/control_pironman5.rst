@@ -12,6 +12,8 @@
 
     👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
+.. _control_commands_dashboard_mini:
+
 5. Contrôle via commandes ou tableau de bord
 =======================================================
 

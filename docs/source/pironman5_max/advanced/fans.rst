@@ -12,6 +12,8 @@
 
     👉 Prêt(e) à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
+.. _fan_max:
+
 Ventilateurs
 ==============
 

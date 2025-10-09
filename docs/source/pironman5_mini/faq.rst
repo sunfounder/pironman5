@@ -58,21 +58,30 @@ Le kit AI Raspberry Pi combine le HAT+ M.2 et le module d’accélération Hailo
 .. image::  img/output2.jpg
     :width: 400
 
-Vous pouvez retirer le module Hailo AI du kit AI et l’insérer directement dans le module NVMe PIP du Pironman 5 Mini.
+Vous pouvez détacher le module accélérateur Hailo AI du kit Raspberry Pi AI et l’insérer directement dans le HAT du Pironman 5 Mini.
 
    .. .. image::  img/output4.png
    ..      :width: 800
 
-4. Le Pironman 5 Mini est-il compatible avec les systèmes de jeux rétro ?
------------------------------------------------------------------------------
 
-Oui, il est compatible. Cependant, la plupart des systèmes rétro sont des versions allégées qui ne permettent pas l’installation de logiciels additionnels. Cela peut empêcher certaines fonctions du Pironman 5 Mini, comme le ventilateur RGB et les 4 LED RGB, de fonctionner correctement, car elles nécessitent l’installation de paquets logiciels spécifiques.
+4. PI5 ne démarre pas (LED rouge) ?
+-------------------------------------------
+
+Ce problème peut être causé par une mise à jour du système, une modification de l’ordre de démarrage ou un chargeur de démarrage corrompu. Vous pouvez essayer les étapes suivantes pour le résoudre :
+
+#. Reconnectez l’alimentation et vérifiez si le PI5 démarre correctement.
+
+#. Restaurer le chargeur de démarrage
+
+   * Si le PI5 ne démarre toujours pas, il est possible que le chargeur de démarrage soit corrompu. Vous pouvez suivre ce guide : :ref:`update_bootloader_mini` et choisir de démarrer depuis la carte SD ou NVMe/USB.  
+   * Insérez la carte SD préparée dans le PI5, allumez-le et attendez au moins 10 secondes. Une fois la récupération terminée, retirez et reformatez la carte SD.  
+   * Ensuite, utilisez Raspberry Pi Imager pour flasher la dernière version de Raspberry Pi OS, insérez à nouveau la carte et essayez de démarrer.
 
 
-5. Les LED RGB ne fonctionnent pas ?
-----------------------------------------
+5. Les LED RVB ne fonctionnent pas ?
+------------------------------------------
 
-#. Les deux broches de l’IO Expander situées au-dessus de J9 relient les LED RGB au GPIO10. Assurez-vous que le cavalier est bien en place.
+#. Les deux broches du Mini HAT sont utilisées pour connecter les LED RVB au GPIO10. Assurez-vous que le cavalier est correctement placé sur ces deux broches.
 
    .. image:: hardware/img/io_board_rgb_pin.png
       :width: 300

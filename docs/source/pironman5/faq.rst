@@ -113,6 +113,30 @@ Vous pouvez détacher le module accélérateur AI Hailo du kit Raspberry Pi AI e
    .. image:: img/output4.png
         :width: 800
 
+6. Le PI5 ne démarre pas (LED rouge) ?  
+-------------------------------------------
+
+Ce problème peut être causé par une mise à jour du système, des modifications de l’ordre de démarrage ou un chargeur de démarrage corrompu. Vous pouvez essayer les étapes suivantes pour résoudre le problème :
+
+#. Vérifier la connexion de l’adaptateur USB-HDMI
+
+   * Veuillez vérifier soigneusement si l’adaptateur USB-HDMI est correctement connecté au PI5.  
+   * Essayez de débrancher puis de rebrancher l’adaptateur USB-HDMI.  
+   * Reconnectez ensuite l’alimentation et vérifiez si le PI5 démarre correctement.
+
+#. Tester le PI5 en dehors du boîtier
+
+   * Si le fait de reconnecter l’adaptateur ne résout pas le problème :  
+   * Retirez le PI5 du boîtier Pironman 5.  
+   * Alimentez directement le PI5 avec l’adaptateur secteur (sans le boîtier).  
+   * Vérifiez s’il peut démarrer normalement.
+
+#. Restaurer le chargeur de démarrage
+
+   * Si le PI5 ne démarre toujours pas, il se peut que le chargeur de démarrage soit corrompu. Vous pouvez suivre ce guide : :ref:`update_bootloader_5` et choisir de démarrer depuis la carte SD ou NVMe/USB.  
+   * Insérez la carte SD préparée dans le PI5, mettez-le sous tension et attendez au moins 10 secondes. Une fois la récupération terminée, retirez et reformatez la carte SD.  
+   * Ensuite, utilisez Raspberry Pi Imager pour flasher la dernière version de Raspberry Pi OS, réinsérez la carte et essayez de démarrer à nouveau.
+
 .. 6. Le Pironman 5 est-il compatible avec les systèmes de rétro-gaming ?
 .. -------------------------------------------------------------------------
 
@@ -314,7 +338,7 @@ En plus de modifier le ``BOOT_ORDER`` dans la configuration EEPROM, vous pouvez 
 
 Il est recommandé d'utiliser une carte de secours pour cette étape.
 
-* :ref:`update_bootloader`
+* :ref:`update_bootloader_5`
 
 15. Comment copier le système de la carte SD vers un NVMe SSD ?
 -----------------------------------------------------------------
@@ -388,14 +412,14 @@ Cela signifie que votre système d’exploitation est trop ancien et n’a pas `
 
    .. image:: img/powershell_login.png
 
-18. Pourquoi l’écran OLED s’éteint-il automatiquement ?
----------------------------------------------------------------------------------
+.. 18. Pourquoi l’écran OLED s’éteint-il automatiquement ?
+.. ---------------------------------------------------------------------------------
 
-Pour économiser de l’énergie et prolonger la durée de vie de l’écran, l’écran OLED s’éteint automatiquement après une période d’inactivité.  
-Cela fait partie de la conception normale et n’affecte pas la fonctionnalité du produit.
+.. Pour économiser de l’énergie et prolonger la durée de vie de l’écran, l’écran OLED s’éteint automatiquement après une période d’inactivité.  
+.. Cela fait partie de la conception normale et n’affecte pas la fonctionnalité du produit.
 
-Il suffit d’appuyer une fois sur le bouton de l’appareil pour rallumer l’écran OLED et reprendre l’affichage.
+.. Il suffit d’appuyer une fois sur le bouton de l’appareil pour rallumer l’écran OLED et reprendre l’affichage.
 
-.. note::
+.. .. note::
 
-   Pour la configuration de l’écran OLED (comme activer/désactiver, temps de veille, rotation, etc.), veuillez vous référer à : :ref:`view_control_dashboard` ou :ref:`view_control_commands`.
+..    Pour la configuration de l’écran OLED (comme activer/désactiver, temps de veille, rotation, etc.), veuillez vous référer à : :ref:`view_control_dashboard` ou :ref:`view_control_commands`.
