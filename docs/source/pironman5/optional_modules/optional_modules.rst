@@ -37,3 +37,5 @@ By combining these add-ons, you can enhance interactivity, enable real-time visu
     camera_module
     35_screen
     rtl_sdr
+    dual_nvme
+
