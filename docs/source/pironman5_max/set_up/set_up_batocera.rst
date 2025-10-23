@@ -65,7 +65,6 @@ Ahora puedes conectar el Pironman 5 MAX a una pantalla, controles de juego, auri
 
 .. note::
 
-   En este momento, has configurado correctamente todos los componentes del Pironman 5 MAX.  
-   La configuración del Pironman 5 MAX está completa.  
-   Ahora puedes usar el Pironman 5 MAX para controlar tu Raspberry Pi y otros dispositivos.  
-   Para más información y uso de esta página web de Pironman 5 MAX, consulta: :ref:`max_view_control_dashboard`.
+   En este punto, ha configurado correctamente el Pironman 5 MAX y está listo para usar.
+   
+   Para un control avanzado de sus componentes, consulte :ref:`control_commands_dashboard_max`.

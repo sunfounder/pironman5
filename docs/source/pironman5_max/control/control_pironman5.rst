@@ -12,6 +12,8 @@
 
     👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
+.. _control_commands_dashboard_max:
+
 5. Control con comandos o panel de control
 =======================================================
 
