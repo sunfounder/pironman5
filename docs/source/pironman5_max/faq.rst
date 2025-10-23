@@ -1,96 +1,161 @@
 .. note::
 
-    こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！同じ情熱を持つ仲間たちと一緒に、Raspberry Pi・Arduino・ESP32の世界をさらに深く探求しましょう。
+    こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！同じ趣味を持つ仲間たちと一緒に、Raspberry Pi・Arduino・ESP32 の世界をより深く楽しみましょう。
 
     **Why Join?**
 
-    - **Expert Support**：購入後のサポートや技術的課題を、コミュニティやサポートチームがサポートします。
-    - **Learn & Share**：チュートリアルやヒントを共有し、スキルアップにつなげましょう。
-    - **Exclusive Previews**：新製品の情報や先行公開をいち早く入手できます。
-    - **Special Discounts**：最新製品を対象とした限定割引をお楽しみください。
-    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定キャンペーンにも参加可能です。
+    - **Expert Support**：購入後のトラブルや技術的課題を、コミュニティとサポートチームがサポートします。
+    - **Learn & Share**：ヒントやチュートリアルを共有しながらスキルアップ。
+    - **Exclusive Previews**：新製品の先行発表やプレビューにいち早くアクセス。
+    - **Special Discounts**：最新製品に対する限定割引をご利用いただけます。
+    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定キャンペーンにもご参加いただけます。
 
-    👉 一緒に探求と創造を楽しみましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
+    👉 私たちと一緒に創造と探求を始めましょう！[|link_sf_facebook|] をクリックして、今すぐ参加！
 
-FAQ（よくある質問）
-======================
+FAQ
+============
 
-Webダッシュボードを無効にする方法は？
-------------------------------------------------------
+1. 対応システムについて
+-------------------------------
 
-``pironman5`` モジュールのインストールが完了すると、:ref:`max_view_control_dashboard` にアクセスできるようになります。
+Raspberry Pi 5 でのテストに合格したシステム：
 
-この機能が不要で、CPUやメモリの使用量を抑えたい場合は、インストール時に ``--disable-dashboard`` オプションを付けてダッシュボードを無効化できます。
+.. image:: img/compitable_os.png
+   :width: 600
+   :align: center
 
-.. code-block:: shell
+2. 電源ボタンについて
+--------------------------
 
-   cd ~/pironman5
-   sudo python3 install.py --disable-dashboard
+電源ボタンは Raspberry Pi 5 の電源ボタンを外に引き出すもので、Raspberry Pi 5 の電源ボタンと同じように動作します。
 
-すでに ``pironman 5`` をインストール済みの場合は、以下のコマンドで ``dashboard`` モジュールと ``influxdb`` を削除し、pironman5 を再起動してください。
+.. image:: img/power_button.jpg
+    :width: 400
+    :align: center
 
-.. code-block:: shell
+* **シャットダウン**
 
-   /opt/pironman5/venv/bin/pip3 uninstall pm-dashboard influxdb
-   sudo apt purge influxdb
-   sudo systemctl restart pironman5
+  * Raspberry Pi **Bookworm Desktop** システムを使用している場合、電源ボタンを素早く 2 回押すとシャットダウンできます。
+  * Raspberry Pi **Bookworm Lite** システムを使用している場合、電源ボタンを 1 回押すとシャットダウンが開始されます。
+  * 強制シャットダウンを行うには、電源ボタンを長押しします。
 
-.. Pironman 5 MAXはレトロゲームシステムに対応していますか？
-.. --------------------------------------------------------------
+* **起動**
 
-.. はい、対応しています。ただし、多くのレトロゲームシステムは軽量化されたシステムであり、追加のソフトウェアをインストールできないことがあります。そのため、OLEDディスプレイ、RGBファン、4つのRGB LEDなど、一部のPironman 5 MAX機能が動作しない可能性があります。
+  * Raspberry Pi ボードがシャットダウンしていても電源が供給されている場合、電源ボタンを 1 回押すことで再び起動できます。
 
+* シャットダウンボタンをサポートしていないシステムを使用している場合は、ボタンを 5 秒間長押しすることで強制的に電源を切り、1 回押すと再び電源が入ります。
 
-.. .. note::
+3. Raspberry Pi AI HAT+ について
+----------------------------------------------------------
 
-..     Batocera.linux は現在、Pironman 5 MAX と完全に互換性があります。Batocera.linux はオープンソースかつ完全無料のレトロゲーム向けOSです。
+Raspberry Pi AI HAT+ は Pironman 5 と互換性がありません。
 
-..     * :ref:`max_install_batocera`
-..     * :ref:`max_set_up_batocera`
+   .. image::  img/output3.png
+        :width: 400
 
-``pironman5`` コマンドで各種コンポーネントを制御する方法
-----------------------------------------------------------------------
-``pironman5`` コマンドを使って各種コンポーネントを制御する方法については、以下のチュートリアルを参照してください。
+Raspberry Pi AI Kit は、Raspberry Pi M.2 HAT+ と Hailo AI アクセラレータモジュールの組み合わせです。
 
-* :ref:`max_view_control_commands`
+   .. image::  img/output2.jpg
+        :width: 400
 
-コマンドでRaspberry Piの起動順を変更するには？
--------------------------------------------------------------
+Hailo AI アクセラレータモジュールは Raspberry Pi AI Kit から取り外し、Pironman 5 MAX の NVMe PIP モジュールに直接装着できます。
 
-すでにRaspberry Piにログインしている場合、以下の手順に従って起動順をコマンドで変更できます。
+4. タワークーラーの銅パイプの端について
+----------------------------------------------------------
 
-* :ref:`max_configure_boot_ssd`
+タワークーラー上部の U 字型のヒートパイプは、銅パイプをアルミフィンに通すために押しつぶされた状態になっています。これは銅パイプの製造工程上、正常な仕様です。
 
+   .. image::  img/tower_cooler1.png
 
-Raspberry Pi Imagerで起動順を変更するには？
----------------------------------------------------------------
+5. PI5 が起動しない（赤色 LED）？
+-------------------------------------------
 
-``EEPROM`` の ``BOOT_ORDER`` を変更する方法に加えて、 **Raspberry Pi Imager** を使ってブート順を変更することもできます。
+この問題は、システムアップデート、ブート順の変更、またはブートローダーの破損が原因で発生することがあります。以下の手順をお試しください。
 
-この操作は、予備のSDカードを使用することを推奨します。
+#. USB-HDMI アダプターの接続を確認
 
-* :ref:`max_update_bootloader`
+   * USB-HDMI アダプターが PI5 に正しく接続されているか慎重に確認してください。
+   * USB-HDMI アダプターを一度外してから再接続してください。
+   * その後、電源を再接続し、PI5 が正常に起動するか確認します。
 
-SDカードからNVMe SSDにシステムをコピーする方法は？
--------------------------------------------------------------
+#. ケースの外で PI5 をテスト
 
-NVMe SSDを持っているが、PCに接続するためのアダプターがない場合、まずMicro SDカードにシステムをインストールしてください。Pironman 5 MAXが正常に起動した後、SDカードからNVMe SSDへシステムをコピーできます。詳細手順は以下をご覧ください：
+   * アダプターの再接続で問題が解決しない場合：
+   * PI5 を Pironman 5 ケースから取り外します。
+   * ケースを使わずに電源アダプターで直接 PI5 に給電します。
+   * 正常に起動するか確認します。
 
+#. ブートローダーを復元
 
-* :ref:`max_copy_sd_to_nvme_rpi`
+   * それでも起動しない場合、ブートローダーが破損している可能性があります。:ref:`update_bootloader_max` のガイドに従い、SD カードまたは NVMe/USB からの起動を選択してください。
+   * 準備した SD カードを PI5 に挿入し、電源を入れて少なくとも 10 秒待ちます。リカバリー完了後、SD カードを取り外して再フォーマットします。
+   * Raspberry Pi Imager を使用して最新の Raspberry Pi OS を書き込み、再度挿入して起動を試みます。
 
+6. OLED 画面が表示されない？
+------------------------------
 
-NVMe PIP モジュールが動作しない場合
+.. note:: OLED 画面は、一定時間操作がないと自動的にオフになり、省電力モードに入ります。ケースを軽く叩いて振動センサーを作動させることで画面を再点灯できます。
+
+OLED 画面が何も表示しない、または誤表示する場合は、以下の手順でトラブルシューティングしてください。
+
+1. **OLED 画面の接続を確認**
+
+   FPC ケーブルが正しく接続されているか確認してください。
+
+   .. raw:: html
+
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Oled-11.mp4" type="video/mp4">
+               お使いのブラウザは video タグをサポートしていません。
+           </video>
+       </div>
+
+2. **OS の互換性を確認**
+
+   使用中の OS が対応システムであることを確認してください。
+
+3. **I2C アドレスを確認**
+
+   以下のコマンドで OLED の I2C アドレス（0x3C）が認識されているか確認します：
+
+   .. code-block:: shell
+
+      sudo i2cdetect -y 1
+
+   認識されない場合は、次のコマンドで I2C を有効化します：
+
+   .. code-block:: shell
+
+      sudo raspi-config
+
+4. **pironman5 サービスの再起動**
+
+   `pironman5` サービスを再起動して、問題が解決するか確認します：
+
+   .. code-block:: shell
+
+      sudo systemctl restart pironman5.service
+
+5. **ログファイルの確認**
+
+   問題が続く場合はログファイルを確認し、サポートに連絡してください：
+
+   .. code-block:: shell
+
+      cat /var/log/pironman5/pm_auto.oled.log
+
+7. NVMe PIP モジュールが動作しない？
 ---------------------------------------
 
-1. NVMe PIP モジュールとらずべりーぱい5を接続するFPCけーぶるが、しっかりと差し込まれていることを確認してください。
+1. NVMe PIP モジュールと Raspberry Pi 5 を接続する FPC ケーブルが正しく接続されているか確認してください。  
 
    .. raw:: html
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
                <source src="../_static/video/Nvme(1)-11.mp4" type="video/mp4">
-               Your browser does not support the video tag.
+               お使いのブラウザは video タグをサポートしていません。
            </video>
        </div>
 
@@ -99,123 +164,167 @@ NVMe PIP モジュールが動作しない場合
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
                <source src="../_static/video/Nvme(2)-11.mp4" type="video/mp4">
-               Your browser does not support the video tag.
+               お使いのブラウザは video タグをサポートしていません。
            </video>
        </div>
 
-2. SSDがNVMe PIP モジュールに正しく固定されていることを確認してください。
+2. SSD が NVMe PIP モジュールに正しく装着されていることを確認してください。  
 
-3. NVMe PIP モジュールの発光表示（LED）の状態を確認してください：
+3. NVMe PIP モジュールの LED 状態を確認します：
 
-   すべての接続を確認した後、「Pironman 5 MAX」の電源を入れ、NVMe PIP モジュール上のふたつの表示灯を観察してください：
+   すべての接続が完了したら、Pironman 5 MAX の電源を入れ、モジュール上の 2 つのインジケーターを確認します：  
 
-   * **電源表示（PWR LED）**：点灯している必要があります。  
-   * **状態表示（STA LED）**：点滅していれば正常に動作しています。
+   * **PWR-LED**：点灯している必要があります。  
+   * **STA-LED**：点滅していると正常動作を示します。  
 
    .. image:: img/dual_nvme_pip_leds.png  
 
-   * **PWR LED** が点灯していて、 **STA LED** が点滅していない場合、NVMe SSDがらずべりーぱいに認識されていないことを示しています。  
-   * **PWR LED** が消灯している場合、モジュール上の「強制有効（Force Enable）」端子を短絡してください。 **PWR LED** が点灯すれば、FPCけーぶるの接触不良、またはNVMeに対応していない環境の可能性があります。
+   * **PWR-LED** が点灯し STA-LED が点滅しない場合は、NVMe SSD が Raspberry Pi に認識されていないことを意味します。  
+   * **PWR-LED** が消灯している場合は「Force Enable」ピンをショートし、再度確認します。それでも点灯しない場合は、ケーブルの緩みまたは非対応 OS の可能性があります。
 
    .. image:: img/dual_nvme_pip_j4.png  
 
-4. NVMe SSDに正しく作動するおぺれーてぃんぐしすてむが書き込まれていることを確認してください。以下を参照：:ref:`max_install_the_os`
+4. NVMe SSD に OS が正しくインストールされていることを確認してください。:ref:`max_install_the_os` を参照。
 
-5. 配線とおぺれーてぃんぐしすてむに問題がない場合でもNVMe SSDから起動できないときは、まずMicro SD から起動して他の部品が正常に動作しているか確認してください。その後、以下を参照して起動設定を行ってください：:ref:`max_configure_boot_ssd`
+5. 配線や OS に問題がないのに起動しない場合は、一度 Micro SD カードから起動して他のコンポーネントが正常に動作するか確認し、その後 :ref:`max_configure_boot_ssd` に進んでください。
 
-上記をお試しいただいても解決しない場合は、お手数ですが service@sunfounder.com までご連絡ください。できるだけ早く対応いたします。
+それでも解決しない場合は、service@sunfounder.com までご連絡ください。
 
+8. RGB LED が点灯しない？
+--------------------------
 
-OLED 画面が表示されない場合
-----------------------------------
+#. J9 上部の IO エクスパンダーの 2 ピンは、GPIO10 に RGB LED を接続するためのものです。ジャンパキャップが正しく取り付けられているか確認してください。
 
-.. note:: OLED 画面は一定時間操作がない場合、電力節約のため自動的に消灯することがあります。かるく筐体をたたくと振動感知により再表示されます。
+   .. image:: advanced/img/io_board_rgb_pin.png
+      :width: 300
+      :align: center
 
-OLED 画面が表示されない、または正しく表示されない場合は、以下の手順にしたがって確認してください：
+#. Raspberry Pi が対応する OS を実行していることを確認してください。Pironman 5 は以下の OS のみをサポートします。
 
-1. **画面けーぶるの接続を確認する**
+   .. image:: img/compitable_os.png
+      :width: 600
+      :align: center
 
-   OLED 画面のFPCけーぶるが正しく接続されているか確認してください。
+   非対応の OS を使用している場合は、:ref:`install_the_os` に従い、対応 OS をインストールしてください。
 
-   .. raw:: html
+#. ``sudo raspi-config`` コマンドを実行し、**3 Interfacing Options** -> **I3 SPI** -> **YES** を選択して SPI を有効にし、OK および Finish をクリックします。SPI 有効化後、Pironman 5 を再起動してください。
 
-       <div style="text-align: center;">
-           <video center loop autoplay muted style="max-width:90%">
-               <source src="../_static/video/Oled-11.mp4" type="video/mp4">
-               Your browser does not support the video tag.
-           </video>
-       </div>
+それでも解決しない場合は、service@sunfounder.com までご連絡ください。
 
+9. CPU ファンが回らない？
+----------------------------------------------
 
-2. **おぺれーてぃんぐしすてむの対応状況を確認する**
+CPU 温度が設定された閾値に達していない場合、CPU ファンは動作しません。
 
-   らずべりーぱい上で、対応するおぺれーてぃんぐしすてむが動作していることを確認してください。
+**温度に応じたファン回転制御**  
 
-3. **I2C 接続を確認する**
+PWM ファンは Raspberry Pi 5 の温度に応じて自動で速度を調整します：  
 
-   以下のこまんどで、OLEDの I2C あどれす（0x3C）が認識されているか確認します：
+* **50°C 未満**：停止（0％ 回転）  
+* **50°C**：低速（30％）  
+* **60°C**：中速（50％）  
+* **67.5°C**：高速（70％）  
+* **75°C 以上**：最大速度（100％）  
 
-   .. code-block:: shell
+詳細は :ref:`fan_max` を参照してください。
 
-      sudo i2cdetect -y 1
-
-   あどれすが表示されない場合は、以下のこまんどで I2C を有効にしてください：
-
-   .. code-block:: shell
-
-      sudo raspi-config
-
-4. **pironman5 さーびすを再起動する**
-
-   ``pironman5`` さーびすを再起動し、問題が解消するか確認します：
-
-   .. code-block:: shell
-
-      sudo systemctl restart pironman5.service
-
-5. **記録ろぐを確認する**
-
-   それでも解決しない場合は、以下のこまんどでろぐふぁいるの内容を確認し、内容をサポートにお知らせください：
-
-   .. code-block:: shell
-
-      cat /var/log/pironman5/pm_auto.oled.log
-
-
-なぜ有機表示画面は自動的に消えるのですか？
+10. OLED 画面を再点灯する方法
 ---------------------------------------------------------------------------------
 
-電力を節約し、画面の寿命を延ばすため、有機表示画面は一定時間操作がないと自動的に消えます。  
-これは通常の設計の一部であり、製品の機能には影響しません。
+省電力と寿命延長のため、一定時間操作がないと OLED 画面は自動的にオフになります。これは正常な仕様であり、製品の機能には影響しません。
 
-ケースを軽くタップするだけでOLED画面が起動し、表示が元に戻ります。
+ケースを軽く叩くことで振動センサーが反応し、画面が再び点灯します。
 
 .. note::
 
-   有機表示画面の設定（点灯／消灯、休止時間、回転など）については、:ref:`max_view_control_dashboard` または :ref:`max_view_control_commands` を参照してください。
+   OLED 画面の設定（オン/オフ、スリープ時間、回転など）については :ref:`max_view_control_dashboard` または :ref:`max_view_control_commands` を参照してください。
 
+
+11. Web ダッシュボードを無効にする方法
+------------------------------------------------------
+
+``pironman5`` モジュールのインストールが完了すると、:ref:`max_view_control_dashboard` にアクセスできるようになります。
+
+もしこの機能が不要で、CPU および RAM の使用量を削減したい場合は、``pironman5`` のインストール時に ``--disable-dashboard`` フラグを追加することで、ダッシュボードを無効にすることができます。
+
+.. code-block:: shell
+
+   cd ~/pironman5
+   sudo python3 install.py --disable-dashboard
+
+すでに ``pironman5`` をインストール済みの場合は、``dashboard`` モジュールと ``influxdb`` を削除し、pironman5 を再起動して変更を適用してください。
+
+.. code-block:: shell
+
+   /opt/pironman5/venv/bin/pip3 uninstall pm-dashboard influxdb
+   sudo apt purge influxdb
+   sudo systemctl restart pironman5
+
+
+12. ``pironman5`` コマンドでコンポーネントを制御する方法
+----------------------------------------------------------------------
+
+``pironman5`` コマンドを使用して Pironman 5 MAX のコンポーネントを制御するチュートリアルについては、以下を参照してください。
+
+* :ref:`max_view_control_commands`
+
+
+13. コマンドで Raspberry Pi の起動順序を変更する方法
+-------------------------------------------------------------
+
+Raspberry Pi にログイン済みであれば、コマンドを使って起動順序を変更することができます。詳細な手順は以下を参照してください。
+
+* :ref:`max_configure_boot_ssd`
+
+
+14. Raspberry Pi Imager で起動順序を変更する方法
+---------------------------------------------------------------
+
+EEPROM 設定で ``BOOT_ORDER`` を変更するだけでなく、**Raspberry Pi Imager** を使用して Raspberry Pi の起動順序を変更することも可能です。
+
+この作業では、予備のカードを使用することを推奨します。
+
+* :ref:`update_bootloader_max`
+
+
+15. SD カードから NVMe SSD にシステムをコピーする方法
+-------------------------------------------------------------
+
+NVMe SSD を持っているが、PC に接続するためのアダプターがない場合、まず Micro SD カードにシステムをインストールしてください。  
+Pironman 5 MAX が正常に起動したら、Micro SD カードから NVMe SSD へシステムをコピーできます。詳細な手順は以下を参照してください。
+
+* :ref:`max_copy_sd_to_nvme_rpi`
+
+
+16. アクリルプレートの保護フィルムを剥がす方法
+-----------------------------------------------------------------
+
+パッケージには 2 枚のアクリルパネルが含まれており、両面に黄色または透明の保護フィルムが貼られています。  
+このフィルムは傷防止用で、少し剥がしにくい場合があります。ドライバーなどで角を軽くこすり、端からゆっくりと剥がしてください。
+
+.. image:: img/peel_off_film.jpg
+    :width: 500
+    :align: center
 
 
 .. _max_openssh_powershell:
 
-PowerShellを使ってOpenSSHをインストールする方法
----------------------------------------------------
+17. Powershell で OpenSSH をインストールする方法
+--------------------------------------------------
 
-``ssh <username>@<hostname>.local`` または ``ssh <username>@<IP address>`` でRaspberry Piに接続しようとした際に、以下のエラーメッセージが表示された場合：
+``ssh <username>@<hostname>.local`` （または ``ssh <username>@<IP address>``）を使用して Raspberry Pi に接続しようとしたとき、以下のようなエラーメッセージが表示される場合があります。
 
 .. code-block::
 
     ssh: The term 'ssh' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
     spelling of the name, or if a path was included, verify that the path is correct and try again.
 
+これは、お使いの Windows システムが古く、`OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ が事前インストールされていないことを意味します。以下の手順で手動インストールしてください。
 
-これは、使用しているWindowsが古く、 `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ がプレインストールされていないことを意味しています。以下の手順に従って手動でインストールしてください。
-
-#. Windowsの検索バーに ``powershell`` と入力し、表示された ``Windows PowerShell`` を右クリックして「管理者として実行」を選択します。
+#. Windows デスクトップの検索ボックスに ``powershell`` と入力し、``Windows PowerShell`` を右クリックして、「管理者として実行」を選択します。
 
    .. image:: img/powershell_ssh.png
       :width: 90%
-
 
 #. 次のコマンドで ``OpenSSH.Client`` をインストールします。
 
@@ -223,7 +332,7 @@ PowerShellを使ってOpenSSHをインストールする方法
 
         Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
-#. インストールが完了すると、以下のような出力が表示されます。
+#. インストール後、次のような出力が表示されます。
 
    .. code-block::
 
@@ -231,13 +340,13 @@ PowerShellを使ってOpenSSHをインストールする方法
         Online        : True
         RestartNeeded : False
 
-#. 次のコマンドでインストールが完了したか確認します。
+#. 次のコマンドでインストールを確認します。
 
    .. code-block::
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. これで ``OpenSSH.Client`` が正常にインストールされたことが確認できます。
+#. 以下のように表示されれば、``OpenSSH.Client`` が正常にインストールされています。
 
    .. code-block::
 
@@ -249,15 +358,14 @@ PowerShellを使ってOpenSSHをインストールする方法
 
    .. warning::
 
-        上記の表示が出ない場合、Windowsのバージョンが古すぎる可能性があります。その場合は、|link_putty| などのサードパーティ製SSHツールをご使用ください。
+        上記の表示が出ない場合は、Windows システムがさらに古いため、|link_putty| のようなサードパーティの SSH ツールを使用することを推奨します。
 
-#. PowerShellを再起動し、再び「管理者として実行」してください。これで ``ssh`` コマンドが使えるようになり、Raspberry Piへ接続する際にパスワード入力が求められます。
+#. PowerShell を再起動し、再び管理者として実行してください。この時点で、``ssh`` コマンドで Raspberry Pi にログインでき、事前に設定したパスワードの入力を求められます。
 
    .. image:: img/powershell_login.png
 
 
-
-OMVを設定した場合でもPironman5の機能は使えますか？
+18. OMV を設定した場合でも Pironman5 の機能は使用できますか？
 --------------------------------------------------------------------------------------------------------
 
-はい、OpenMediaVault は Raspberry Pi OS 上に構築されているため、:ref:`max_set_up_pi_os` の手順に従って設定を続けることで、Pironman5 の機能をご利用いただけます。
+はい。OpenMediaVault は Raspberry Pi システム上で動作します。:ref:`max_set_up_pi_os` の手順に従って設定を続行してください。

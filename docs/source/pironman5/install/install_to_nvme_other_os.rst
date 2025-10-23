@@ -30,7 +30,7 @@ NVMe SSDを使用しており、システムインストールのためにNVMe S
 * NVMeからUSBへのアダプター
 * Micro SDカードおよびリーダー
 
-.. _update_bootloader:
+.. _update_bootloader_5:
 
 1. ブートローダーの更新
 ----------------------------------
