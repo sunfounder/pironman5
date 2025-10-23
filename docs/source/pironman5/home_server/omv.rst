@@ -22,6 +22,8 @@ Installation d’OpenMediaVault
 
    OpenMediaVault **ne prend pas en charge** l'installation sur le bureau Raspberry Pi OS.
 
+   ⚠️ **Seules les versions 11 (Bullseye) et 12 (Bookworm) de Raspberry Pi OS Lite sont prises en charge.**
+
    Veillez à installer le bon système d'exploitation et à configurer le réseau correctement.
    La procédure décrite ici est cohérente avec :ref:`install_os_sd_rpi`, mais lors du choix de l’image, veuillez sélectionner Raspberry Pi OS Lite dans la section Raspberry Pi OS (autre).
 
