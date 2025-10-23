@@ -12,6 +12,8 @@
 
     👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und werde noch heute Mitglied!
 
+.. _fan_max:
+
 Lüfter
 ============
 

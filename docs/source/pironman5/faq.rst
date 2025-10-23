@@ -111,6 +111,30 @@ Sie können das Hailo AI-Beschleunigermodul vom Raspberry Pi AI Kit abnehmen und
    .. image::  img/output4.png
         :width: 800
 
+6. PI5 startet nicht (rote LED)?
+-------------------------------------------
+
+Dieses Problem kann durch ein Systemupdate, Änderungen der Bootreihenfolge oder einen beschädigten Bootloader verursacht werden. Sie können die folgenden Schritte ausprobieren, um das Problem zu lösen:
+
+#. Überprüfen Sie die USB-HDMI-Adapter-Verbindung
+
+   * Bitte überprüfen Sie sorgfältig, ob der USB-HDMI-Adapter korrekt mit dem PI5 verbunden ist.
+   * Versuchen Sie, den USB-HDMI-Adapter zu entfernen und erneut anzuschließen.
+   * Schließen Sie dann die Stromversorgung wieder an und prüfen Sie, ob der PI5 erfolgreich startet.
+
+#. Testen Sie den PI5 außerhalb des Gehäuses
+
+   * Wenn das erneute Anschließen des Adapters das Problem nicht löst:
+   * Entfernen Sie den PI5 aus dem Pironman 5 Gehäuse.
+   * Versorgen Sie den PI5 direkt mit dem Netzteil (ohne das Gehäuse).
+   * Überprüfen Sie, ob er normal starten kann.
+
+#. Bootloader wiederherstellen
+
+   * Wenn der PI5 immer noch nicht startet, ist möglicherweise der Bootloader beschädigt. Sie können dieser Anleitung folgen: :ref:`update_bootloader_5` und wählen, ob vom SD-Karte oder NVMe/USB gebootet werden soll.
+   * Legen Sie die vorbereitete SD-Karte in den PI5 ein, schalten Sie ihn ein und warten Sie mindestens 10 Sekunden. Sobald die Wiederherstellung abgeschlossen ist, entfernen und formatieren Sie die SD-Karte erneut. 
+   * Verwenden Sie dann Raspberry Pi Imager, um das neueste Raspberry Pi OS auf die SD-Karte zu flashen, setzen Sie die Karte wieder ein und versuchen Sie erneut zu starten.
+
 .. 6. Unterstützt der Pironman 5 Retro-Gaming-Systeme?
 .. ------------------------------------------------------
 
@@ -312,7 +336,7 @@ Zusätzlich zur Änderung der ``BOOT_ORDER`` in der EEPROM-Konfiguration können
 
 Es wird empfohlen, für diesen Schritt eine Ersatzkarte zu verwenden.
 
-* :ref:`update_bootloader`
+* :ref:`update_bootloader_5`
 
 15. Wie kopiert man das System von der SD-Karte auf eine NVMe-SSD? 
 -----------------------------------------------------------------------
@@ -387,13 +411,13 @@ Das bedeutet, dass Ihr Betriebssystem zu alt ist und `OpenSSH <https://learn.mic
 
    .. image:: img/powershell_login.png
 
-18. Warum schaltet sich der OLED-Bildschirm automatisch aus?
----------------------------------------------------------------------------------
+.. 18. Warum schaltet sich der OLED-Bildschirm automatisch aus?
+.. ---------------------------------------------------------------------------------
 
-Um Energie zu sparen und die Lebensdauer des Bildschirms zu verlängern, schaltet sich der OLED-Bildschirm nach einer gewissen Inaktivität automatisch aus. Dies ist Teil des normalen Designs und beeinträchtigt die Funktionalität des Produkts nicht.
+.. Um Energie zu sparen und die Lebensdauer des Bildschirms zu verlängern, schaltet sich der OLED-Bildschirm nach einer gewissen Inaktivität automatisch aus. Dies ist Teil des normalen Designs und beeinträchtigt die Funktionalität des Produkts nicht.
 
-Drücke einfach einmal die Taste am Gerät, um den OLED-Bildschirm aufzuwecken und die Anzeige fortzusetzen.
+.. Drücke einfach einmal die Taste am Gerät, um den OLED-Bildschirm aufzuwecken und die Anzeige fortzusetzen.
 
-.. note::
+.. .. note::
 
-   Für die Konfiguration des OLED-Bildschirms (z. B. Ein-/Ausschalten, Ruhezeit, Drehung usw.) siehe: :ref:`view_control_dashboard` oder :ref:`view_control_commands`.
+..    Für die Konfiguration des OLED-Bildschirms (z. B. Ein-/Ausschalten, Ruhezeit, Drehung usw.) siehe: :ref:`view_control_dashboard` oder :ref:`view_control_commands`.

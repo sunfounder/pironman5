@@ -65,6 +65,6 @@ Nun können Sie den Pironman 5 mit einem Bildschirm, Gamecontrollern, Kopfhörer
 
 .. note::
 
-   Sie haben nun alle Komponenten des Pironman 5 erfolgreich eingerichtet. Die Konfiguration des Pironman 5 ist abgeschlossen.
-   Sie können den Pironman 5 nun zur Steuerung Ihres Raspberry Pi und anderer Geräte verwenden.
-   Weitere Informationen und Hinweise zur Nutzung dieser Pironman 5-Webseite finden Sie unter: :ref:`view_control_dashboard`.
+   Zu diesem Zeitpunkt haben Sie den Pironman 5 erfolgreich eingerichtet, und er ist einsatzbereit.
+   
+   Für die erweiterte Steuerung seiner Komponenten siehe bitte :ref:`control_commands_dashboard_5`.
