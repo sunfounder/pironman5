@@ -26,7 +26,7 @@ Se stai utilizzando un SSD NVMe e hai un adattatore per collegarlo al tuo comput
 * Un adattatore NVMe a USB
 * Scheda Micro SD e lettore
 
-.. _update_bootloader:
+.. _update_bootloader_5:
 
 1. Aggiornare il Bootloader
 ----------------------------------

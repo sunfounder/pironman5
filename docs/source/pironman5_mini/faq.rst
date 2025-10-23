@@ -58,21 +58,36 @@ Il kit AI Raspberry Pi combina l’HAT+ M.2 e il modulo acceleratore AI Hailo.
 .. image::  img/output2.jpg
     :width: 400
 
-Puoi rimuovere il modulo AI Hailo dal kit e inserirlo direttamente nel modulo NVMe PIP del Pironman 5 Mini.
+Puoi staccare il modulo acceleratore AI Hailo dal Raspberry Pi AI Kit e inserirlo direttamente nell’HAT del Pironman 5 Mini.
 
    .. .. image::  img/output4.png
    ..      :width: 800
 
-4. Pironman 5 Mini supporta i sistemi retro gaming?
---------------------------------------------------------------
 
-Sì, è compatibile. Tuttavia, la maggior parte di questi sistemi è semplificata e non consente l’installazione di software aggiuntivo. Questo limita il funzionamento di componenti come la ventola RGB o i 4 LED RGB, che richiedono i pacchetti software di Pironman 5.
+4. PI5 non si avvia (LED rosso)?
+-------------------------------------------
+
+Questo problema può essere causato da un aggiornamento del sistema, da modifiche all’ordine di avvio o da un bootloader danneggiato. Puoi provare i seguenti passaggi per risolvere il problema:
+
+#. Ricollega l’alimentazione e verifica se il PI5 si avvia correttamente.
+
+#. Ripristina il bootloader
+
+   * Se il PI5 continua a non avviarsi, il bootloader potrebbe essere corrotto. Puoi seguire questa guida: :ref:`update_bootloader_mini` e scegliere se avviare da SD card o da NVMe/USB.
+   * Inserisci la scheda SD preparata nel PI5, accendilo e attendi almeno 10 secondi. Una volta completato il ripristino, rimuovi e riformatta la scheda SD.
+   * Poi utilizza Raspberry Pi Imager per installare l’ultima versione del Raspberry Pi OS, reinserisci la scheda e prova ad avviare nuovamente.
+
+
+.. Il Pironman 5 Mini supporta i sistemi di retrogaming?
+.. --------------------------------------------------------------
+
+.. Sì, è compatibile. Tuttavia, la maggior parte dei sistemi di retrogaming sono versioni ottimizzate che non consentono l’installazione e l’esecuzione di software aggiuntivo. Questa limitazione può causare il malfunzionamento di alcuni componenti del Pironman 5 Mini, come la ventola RGB e i 4 LED RGB, poiché questi richiedono l’installazione dei pacchetti software del Pironman 5.
 
 
 5. I LED RGB non funzionano?
---------------------------------
+-------------------------------
 
-#. Assicurati che il ponticello sopra J9 colleghi correttamente i LED RGB a GPIO10.
+#. I due pin sull’HAT Mini vengono utilizzati per collegare i LED RGB a GPIO10. Assicurati che il ponticello sia correttamente inserito su questi due pin.
 
 .. image:: hardware/img/io_board_rgb_pin.png
     :width: 300

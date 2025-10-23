@@ -20,6 +20,9 @@ Elevate your Raspberry Pi 5 with the Pironman 5, our top-tier case designed for 
 <a id="update"></a>
 ## Update:
 
+2025-10-9:
+- Update FAQ
+
 2025-8-20:
 - Add optional modules.
 - Comment out the Batocera-related content.
