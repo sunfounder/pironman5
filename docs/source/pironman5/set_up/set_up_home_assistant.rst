@@ -160,7 +160,6 @@ Pironman 5 的功能以插件形式集成在 Home Assistant 中。首先，需�
 
 .. note::
 
-   此时，你已经成功完成了 Pironman 5 的所有组件设置。  
-   Pironman 5 的配置已完成。  
-   现在你可以使用 Pironman 5 来控制你的 Raspberry Pi 和其他设备。  
-   有关 Pironman 5 网页的更多信息和使用方法，请参考: :ref:`view_control_dashboard`。
+   此时，您已成功完成 Pironman 5 的安装，可以开始使用了。
+   
+   如需对其组件进行高级控制，请参考 :ref:`control_commands_dashboard_5`。

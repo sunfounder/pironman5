@@ -44,21 +44,33 @@ Raspberry Pi AI 套件由 Raspberry Pi M.2 HAT+ 与 Hailo AI 加速模块组合�
 .. image::  img/output2.jpg
     :width: 400
 
-你可以将 Hailo AI 加速模块从 AI 套件中拆下，直接插入 Pironman 5 Mini 的 NVMe PIP 模块中。
+你可以将 Hailo AI 加速模块从 AI 套件中拆下，直接插入 Pironman 5 Mini 的 拓展板中。
 
    .. .. image::  img/output4.png
    ..      :width: 800
 
-4. Pironman 5 Mini 是否支持复古游戏系统？
+.. 4. Pironman 5 Mini 是否支持复古游戏系统？
+.. -------------------------------------------
+
+.. 支持。但请注意，大多数复古游戏系统为精简版系统，无法安装和运行额外的软件。这将导致 Pironman 5 Mini 的部分组件（如 RGB 风扇与 4 个 RGB 灯）无法正常运行，因为这些组件依赖 Pironman 5 的软件支持。
+
+4. PI5 无法启动（红灯常亮）？
 -------------------------------------------
 
-支持。但请注意，大多数复古游戏系统为精简版系统，无法安装和运行额外的软件。这将导致 Pironman 5 Mini 的部分组件（如 RGB 风扇与 4 个 RGB 灯）无法正常运行，因为这些组件依赖 Pironman 5 的软件支持。
+此问题可能是由于系统更新、启动顺序更改或引导程序损坏导致的。您可以尝试以下步骤来解决该问题：
 
+#. 重新连接电源，并检查 PI5 是否能够正常启动。
+
+#. 恢复引导程序
+
+   * 如果 PI5 仍无法启动，可能是引导程序已损坏。您可以参考此教程：:ref:`update_bootloader_mini`，并选择从 SD 卡或 NVMe/USB 启动。
+   * 将准备好的 SD 卡插入 PI5，上电后至少等待 10 秒。恢复完成后，取出并重新格式化 SD 卡。 
+   * 然后使用 Raspberry Pi Imager 烧录最新的 Raspberry Pi OS，将卡插回，再尝试启动。
 
 5. RGB 灯不亮？
 ------------------
 
-#. J9 上方 IO 扩展板上的两个引脚用于通过 GPIO10 驱动 RGB 灯，确保这两个引脚正确插上跳线帽。
+#. IO 扩展板上的两个引脚用于通过 GPIO10 驱动 RGB 灯，确保这两个引脚正确插上跳线帽。
 
    .. image:: hardware/img/io_board_rgb_pin.png
       :width: 300

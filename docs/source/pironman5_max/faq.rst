@@ -1,175 +1,151 @@
-.. note::
-
-    您好，欢迎加入 SunFounder 的 Raspberry Pi、Arduino 和 ESP32 爱好者 Facebook 社区！与其他爱好者一起深入探索 Raspberry Pi、Arduino 和 ESP32 的乐趣。
-
-    **为什么要加入？**
-
-    - **专家支持**：在社区和我们的团队帮助下解决售后问题和技术难题。
-    - **学习与分享**：交流技巧与教程，提升您的技能。
-    - **新品预览**：抢先了解新产品发布和内部预览。
-    - **专属折扣**：享受我们最新产品的专属优惠。
-    - **节日活动与赠品**：参与赠品抽奖和节日促销。
-
-    👉 准备好加入我们一起探索与创作了吗？点击 [|link_sf_facebook|] 马上加入！
 
 FAQ
 ============
 
-如何禁用 Web 控制面板？
-------------------------------------------------------
+1. 关于兼容系统
+-------------------------------
 
-安装 ``pironman5`` 模块后，您将能够访问 :ref:`max_view_control_dashboard`。
+以下系统已在 Raspberry Pi 5 上通过测试：
 
-如果您不需要此功能并希望减少 CPU 和内存占用，可以在安装 ``pironman5`` 时添加 ``--disable-dashboard`` 参数来禁用控制面板。
+.. image:: img/compitable_os.png
+   :width: 600
+   :align: center
 
-.. code-block:: shell
+2. 关于电源按钮
+--------------------------
 
-   cd ~/pironman5
-   sudo python3 install.py --disable-dashboard
+该电源按钮直接引出 Raspberry Pi 5 的电源按钮，功能与 Raspberry Pi 5 的电源按钮完全一致。
 
-如果您已经安装了 ``pironman 5``，可以卸载 ``dashboard`` 模块和 ``influxdb``，然后重启 pironman5 以应用更改：
+.. image:: img/power_button.jpg
+    :width: 400
+    :align: center
 
-.. code-block:: shell
+* **关机**
 
-   /opt/pironman5/venv/bin/pip3 uninstall pm-dashboard influxdb
-   sudo apt purge influxdb
-   sudo systemctl restart pironman5
+  * 如果运行 Raspberry Pi **Bookworm Desktop** 系统，可以快速按两次电源按钮来关机。 
+  * 如果运行 Raspberry Pi **Bookworm Lite** 系统，单击一次电源按钮即可关机。
+  * 长按电源键可强制关机。
 
-.. Pironman 5 MAX 支持复古游戏系统吗？
-.. ------------------------------------------------------
-.. 支持。但是，大多数复古游戏系统是精简版，无法安装和运行额外的软件。因此，Pironman 5 MAX 上的某些组件（如 OLED 显示屏、两个 RGB 风扇和四个 RGB LED）可能无法正常工作，因为这些组件依赖于 Pironman 5 MAX 的软件包。
+* **开机**
 
-.. .. note::
+  * 如果树莓派已关机但仍有电源，单击一次电源按钮即可开机。
 
-..     Batocera.linux 系统现已完全兼容 Pironman 5 MAX。Batocera.linux 是一个开源、完全免费的复古游戏发行版。
+* 如果运行的系统不支持关机按钮，可以长按 5 秒来强制关机，再单击一次开机。
 
-..     * :ref:`max_install_batocera`
-..     * :ref:`max_set_up_batocera`
+3. 关于 Raspberry Pi AI HAT+
+----------------------------------------------------------
 
-减少 ``pironman5`` 在 SYSLOG 中的日志输出
------------------------------------------------
-若要减少输出到 SYSLOG 的日志量，可以执行以下步骤：
+Raspberry Pi AI HAT+ 不兼容 Pironman 5。
 
-首先，在 ``influxd`` 中禁用 HTTP 请求日志：
+   .. image::  img/output3.png
+        :width: 400
 
-.. code-block:: bash
+Raspberry Pi AI Kit 由 Raspberry Pi M.2 HAT+ 和 Hailo AI 加速模块组成。
 
-   sudo nano /etc/influxdb/influxdb.conf
+   .. image::  img/output2.jpg
+        :width: 400
 
-找到 ``http`` 部分，并将 ``log-enabled`` 设置为 ``false``。
+你可以将 Hailo AI 加速模块从 Raspberry Pi AI Kit 中拆下，直接插入 Pironman 5 MAX 的 NVMe PIP 模块。
 
-.. code-block:: bash
-   :emphasize-lines: 22
+   .. .. image::  img/output4.png
+   ..      :width: 800
 
-   ###
-   ### [http]
-   ###
-   ### 控制 HTTP 接口的配置方式。这些是 InfluxDB 数据交互的主要机制。
-   ###
+4. 关于塔式散热器的铜管端部
+----------------------------------------------------------
 
-   [http]
-   # 是否启用 HTTP 接口
-   # enabled = true
+塔式散热器顶部的 U 型热管经过压缩处理，以便铜管能够穿过铝散热片，这是铜管生产工艺中的正常步骤。
 
-   # HTTP 服务的绑定地址
-   # bind-address = ":8086"
+   .. image::  img/tower_cooler1.png
 
-   # 是否启用 HTTP/HTTPS 用户认证
-   # auth-enabled = false
+5. PI5 无法启动（红灯常亮）？
+-------------------------------------------
 
-   # 基本认证挑战返回的默认领域
-   # realm = "InfluxDB"
+此问题可能由系统更新、启动顺序更改或引导程序损坏导致。你可以尝试以下方法来解决：
 
-   # 是否启用 HTTP 请求日志
-   log-enabled = false
+#. 检查 USB-HDMI 适配器连接
 
-   # 启用日志时是否抑制写请求日志
-   # suppress-write-log = false
+   * 请仔细检查 USB-HDMI 适配器是否牢固连接到 PI5。
+   * 尝试拔下并重新插入 USB-HDMI 适配器。
+   * 然后重新连接电源，检查是否能正常启动。
 
-   # 启用日志后指定日志路径，默认写入 stderr
-   # log entries should be written. If unspecified, the default is to write to stderr, which
-   # intermingles HTTP logs with internal InfluxDB logging.
+#. 在机箱外测试 PI5
 
-保存文件后，重启 ``influxd`` 服务：
+   * 如果重新插拔适配器仍未解决问题：
+   * 将 PI5 从 Pironman 5 机箱中取出。
+   * 使用电源适配器直接为 PI5 供电（不通过机箱）。
+   * 检查是否能正常启动。
 
-.. code-block:: bash
+#. 恢复引导程序
 
-   sudo systemctl restart influxd.service
+   * 如果 PI5 仍然无法启动，可能是引导程序已损坏。你可以参考此教程：:ref:`update_bootloader_max` 并选择从 SD 卡或 NVMe/USB 启动。
+   * 将准备好的 SD 卡插入 PI5，上电后至少等待 10 秒。恢复完成后，取出并格式化 SD 卡。 
+   * 然后使用 Raspberry Pi Imager 烧录最新的 Raspberry Pi OS，将卡插回并再次尝试启动。
 
-然后，将 ``pironman5`` 的日志等级降为 warning：
+6. OLED 屏幕无显示？
+------------------------------
 
-.. code-block:: bash
+.. note:: OLED 屏幕可能在一段时间无操作后自动关闭以节省电源。你可以轻敲机箱触发振动传感器唤醒屏幕。
 
-   sudo nano /etc/systemd/system/pironman5.service
+如果 OLED 屏幕未显示或显示异常，请按以下步骤排查：
 
-在 ``Service`` 区段中，将 ``debug-level`` 设置为 ``warning``：
+1. **检查 OLED 屏幕连接**
 
-.. code-block:: bash
-   :emphasize-lines: 10
+   确认 OLED 屏幕的 FPC 排线正确连接。
 
-   # https://www.freedesktop.org/software/systemd/man/systemd.service.html
-   [Unit]
-   Description=pironman5 服务
-   # 最后启动，避免 GPIO 被占用
-   After=multi-user.target
+   .. raw:: html
 
-   [Service]
-   Type=forking
-   # WorkingDirectory=/opt/pironman5
-   ExecStart=/usr/local/bin/pironman5 start --background --debug-level=warning
-   # ExecStop=/usr/local/bin/pironman5 stop
-   # PrivateTmp=False
+       <div style="text-align: center;">
+           <video center loop autoplay muted style="max-width:90%">
+               <source src="../_static/video/Oled-11.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+       </div>
 
-   [Install]
-   WantedBy=multi-user.target
+2. **检查操作系统兼容性**
 
-保存后，重新加载 systemd 配置并重启 pironman5 服务：
+   确保运行在树莓派上的系统是兼容的。
 
-.. code-block:: bash
+3. **检查 I2C 地址**
 
-   sudo systemctl daemon-reload
-   sudo systemctl restart pironman5.service
+   运行以下命令检查 OLED 的 I2C 地址 (0x3C) 是否被识别：
 
-如何使用 ``pironman5`` 命令控制组件
-----------------------------------------------------------------------
-您可以参考以下教程，使用 ``pironman5`` 命令控制 Pironman 5 MAX 的各个组件：
+   .. code-block:: shell
 
-* :ref:`max_view_control_commands`
+      sudo i2cdetect -y 1
 
-如何使用命令修改树莓派的启动顺序？
--------------------------------------------------------------
+   如果未检测到，请使用以下命令启用 I2C：
 
-如果您已登录到树莓派系统，可使用命令修改启动顺序，详见：
+   .. code-block:: shell
 
-* :ref:`max_configure_boot_ssd`
+      sudo raspi-config
 
-如何使用 Raspberry Pi Imager 修改启动顺序？
----------------------------------------------------------------
+4. **重启 pironman5 服务**
 
-除了通过 EEPROM 配置文件中的 ``BOOT_ORDER`` 修改启动顺序，还可以使用 **Raspberry Pi Imager** 来更改树莓派的启动顺序。
+   重启 `pironman5` 服务，查看问题是否解决：
 
-建议使用备用 TF 卡进行此操作。
+   .. code-block:: shell
 
-* :ref:`max_update_bootloader`
+      sudo systemctl restart pironman5.service
 
-如何将系统从 SD 卡复制到 NVMe SSD？
--------------------------------------------------------------
+5. **检查日志文件**
 
-如果您有 NVMe SSD 但没有 NVMe 到电脑的转接器，可以先在 Micro SD 卡上安装系统。当 Pironman 5 MAX 成功启动后，可以将系统从 SD 卡复制到 NVMe SSD。详细步骤参见：
+   如果问题依旧，查看日志文件并将错误信息提供给技术支持：
 
-* :ref:`max_copy_sd_to_nvme_rpi`
+   .. code-block:: shell
 
-NVMe PIP 模块无法正常工作？
+      cat /var/log/pironman5/pm_auto.oled.log
+
+7. NVMe PIP 模块无响应？
 ---------------------------------------
 
-1. 请确认 NVMe PIP 模块到树莓派 5 的 FPC 排线连接牢固。  
+1. 确认 NVMe PIP 模块与 Raspberry Pi 5 的 FPC 线牢固连接。  
 
    .. raw:: html
 
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
                <source src="../_static/video/Nvme(1)-11.mp4" type="video/mp4">
-               您的浏览器不支持 video 标签。
+               Your browser does not support the video tag.
            </video>
        </div>
 
@@ -178,126 +154,175 @@ NVMe PIP 模块无法正常工作？
        <div style="text-align: center;">
            <video center loop autoplay muted style="max-width:90%">
                <source src="../_static/video/Nvme(2)-11.mp4" type="video/mp4">
-               您的浏览器不支持 video 标签。
+               Your browser does not support the video tag.
            </video>
        </div>
 
-2. 请确保 SSD 正确安装在 NVMe PIP 模块上。  
+2. 确认 SSD 已牢固安装在 NVMe PIP 模块上。  
 
-3. 检查 NVMe PIP 模块的指示灯状态：
+3. 检查 NVMe PIP 模块 LED 状态：  
 
-   在确认连接无误后，给 Pironman 5 MAX 供电，观察模块上的两个指示灯：  
+   通电后观察模块上的两个指示灯：  
 
-   * **PWR LED**：应常亮。  
-   * **STA LED**：应闪烁，表示工作正常。  
+   * **PWR LED**: 应常亮。  
+   * **STA LED**: 应闪烁，表示正常工作。  
 
    .. image:: img/dual_nvme_pip_leds.png  
 
-   * 如果 **PWR LED** 亮但 **STA LED** 不闪，说明树莓派未识别到 NVMe SSD。  
-   * 如果 **PWR LED** 不亮，请短接模块上的 “Force Enable” 引脚；若此时亮起，可能是排线松动或系统配置不支持 NVMe。
+   * 如果 **PWR LED** 亮但 **STA LED** 不闪烁，表示 NVMe SSD 未被识别。  
+   * 如果 **PWR LED** 不亮，可以短接模块上的 “Force Enable” 引脚。若此时亮起，可能是 FPC 线松动或系统不支持 NVMe。  
 
    .. image:: img/dual_nvme_pip_j4.png  
 
-4. 请确认您的 NVMe SSD 上已正确安装操作系统，参考：:ref:`max_install_the_os`。
+4. 确认 NVMe SSD 已安装可启动的操作系统，参考：:ref:`max_install_the_os`。  
 
-5. 如果接线与系统均无问题但仍无法启动，请尝试从 Micro SD 卡启动系统确认其他部件功能，再参考：:ref:`max_configure_boot_ssd` 进行配置。
+5. 如果接线和系统都正确，但 NVMe SSD 仍无法启动，可先用 Micro SD 卡启动验证其他组件，再参考 :ref:`max_configure_boot_ssd` 配置 NVMe 启动。  
 
-若尝试上述操作仍无法解决，请发送邮件至 service@sunfounder.com，我们会尽快为您回复。
+如果完成以上操作后问题依旧，请发送邮件至 service@sunfounder.com，我们会尽快回复。  
 
-OLED 屏幕不工作？
+8. RGB LED 无法工作？
 --------------------------
 
-.. note:: OLED 屏幕可能因节能而在一段时间后自动关闭。您可以轻轻敲击机壳以触发震动传感器唤醒屏幕。
+#. IO 扩展板上 J9 之上的两个引脚用于将 RGB LED 连接到 GPIO10，请确保跳帽正确插好。  
 
-如果 OLED 屏幕无显示或显示异常，请按以下步骤排查：
+   .. image:: advanced/img/io_board_rgb_pin.png
+      :width: 300
+      :align: center
 
-1. **检查 OLED 屏幕连接**
+#. 确认树莓派运行的是兼容系统，Pironman 5 仅支持以下系统：  
 
-   确保 OLED 屏幕的 FPC 排线连接正确。
+   .. image:: img/compitable_os.png
+      :width: 600
+      :align: center
 
-   .. raw:: html
+   如果已安装不兼容系统，请参考教程安装兼容系统：:ref:`install_the_os`。  
 
-       <div style="text-align: center;">
-           <video center loop autoplay muted style="max-width:90%">
-               <source src="../_static/video/Oled-11.mp4" type="video/mp4">
-               您的浏览器不支持 video 标签。
-           </video>
-       </div>
+#. 运行命令 ``sudo raspi-config`` 打开配置菜单。进入 **3 Interfacing Options** -> **I3 SPI** -> **YES**，然后选择 **OK** 和 **Finish** 启用 SPI。启用后重启 Pironman 5。  
 
-2. **检查操作系统兼容性**
+如果以上操作后问题仍未解决，请发送邮件至 service@sunfounder.com，我们会尽快回复。  
 
-   请确认您的树莓派运行的是兼容的操作系统。
+9. CPU 风扇不工作？
+----------------------------------------------
 
-3. **检查 I2C 地址**
+当 CPU 温度未达到设定阈值时，风扇不会转动。  
 
-   运行以下命令查看 OLED 的 I2C 地址（0x3C）是否被识别：
+**PWM 风扇温控逻辑**  
 
-   .. code-block:: shell
+* **低于 50°C**: 风扇关闭（0% 转速）。  
+* **50°C**: 风扇低速运行（30%）。  
+* **60°C**: 风扇中速运行（50%）。  
+* **67.5°C**: 风扇高速运行（70%）。  
+* **75°C 及以上**: 风扇全速运行（100%）。  
 
-      sudo i2cdetect -y 1
+更多详情请参考 :ref:`fan`  
 
-   若未识别，请启用 I2C：
-
-   .. code-block:: shell
-
-      sudo raspi-config
-
-4. **重启 pironman5 服务**
-
-   重启 pironman5 服务以尝试解决问题：
-
-   .. code-block:: shell
-
-      sudo systemctl restart pironman5.service
-
-5. **查看日志文件**
-
-   如果问题仍然存在，可查看日志文件，并将错误信息提供给客服协助分析：
-
-   .. code-block:: shell
-
-      cat /var/log/pironman5/pm_auto.oled.log
-
-为什么 OLED 屏幕会自动关闭？
+10. 如何唤醒 OLED 屏幕？
 ---------------------------------------------------------------------------------
 
-为了节省电力并延长屏幕的使用寿命，OLED 屏幕会在一段时间无操作后自动关闭。  
-这是正常的设计，不会影响产品的功能。
+OLED 屏幕会在一段时间无操作后自动关闭以节能并延长寿命，这是正常设计，不影响功能。  
 
-只需轻轻敲击机箱外壳即可唤醒 OLED 屏幕并恢复显示。
+你可以轻敲机箱，触发振动传感器唤醒屏幕。  
 
 .. note::
 
-   关于 OLED 屏幕的配置（如开/关、休眠时间、旋转等），请参考: :ref:`view_control_dashboard` 或 :ref:`view_control_commands`。
+   有关 OLED 屏幕的配置（开/关、休眠时间、旋转等），请参考 :ref:`max_view_control_dashboard` 或 :ref:`max_view_control_commands`。  
 
+11. 如何禁用 Web Dashboard？
+------------------------------------------------------
 
+在完成 ``pironman5`` 模块的安装后，你可以访问 :ref:`max_view_control_dashboard`。
+      
+如果你不需要此功能并希望降低 CPU 与内存占用，可以在安装 ``pironman5`` 时添加 ``--disable-dashboard`` 参数来禁用仪表盘。
+      
+.. code-block:: shell
+      
+   cd ~/pironman5
+   sudo python3 install.py --disable-dashboard
+      
+如果你已经安装了 ``pironman5``，可以卸载 ``dashboard`` 模块和 ``influxdb``，然后重启 pironman5 使更改生效：
+      
+.. code-block:: shell
+      
+   /opt/pironman5/venv/bin/pip3 uninstall pm-dashboard influxdb
+   sudo apt purge influxdb
+   sudo systemctl restart pironman5
+
+.. Pironman 5 MAX 是否支持复古游戏系统？
+.. ------------------------------------------------------
+.. 支持。但大多数复古游戏系统为精简版，无法安装并运行额外软件。这会导致 Pironman 5 MAX 的部分组件（如 OLED 屏、两枚 RGB 风扇和 4 颗 RGB LED）无法正常工作，因为这些组件需要安装 Pironman 5 MAX 的软件包。
+
+.. .. note::
+
+..     Batocera.linux 现已与 Pironman 5 MAX 完全兼容。Batocera.linux 是一款开源且完全免费的复古游戏发行版。
+
+..     * :ref:`max_install_batocera`
+..     * :ref:`max_set_up_batocera`
+
+12. 如何使用 ``pironman5`` 命令控制组件
+----------------------------------------------------------------------
+
+你可以参考以下教程，使用 ``pironman5`` 命令控制 Pironman 5 MAX 的各个组件。
+
+* :ref:`max_view_control_commands`
+
+13. 如何通过命令修改树莓派的启动顺序
+-------------------------------------------------------------
+
+如果你已经登录到树莓派，可以通过命令修改启动顺序。详细步骤如下：
+
+* :ref:`max_configure_boot_ssd`
+
+14. 如何用 Raspberry Pi Imager 修改启动顺序？
+---------------------------------------------------------------
+
+除了在 EEPROM 配置中修改 ``BOOT_ORDER`` 外，你也可以使用 **Raspberry Pi Imager** 更改树莓派的启动顺序。
+
+建议使用一张备用的 Micro SD 卡来进行此步骤。
+
+* :ref:`update_bootloader_max`
+
+15. 如何将系统从 SD 卡复制到 NVMe SSD？
+-------------------------------------------------------------
+
+如果你有 NVMe SSD，但没有转接器把 NVMe 连接到电脑，你可以先把系统安装在 Micro SD 卡上。待 Pironman 5 MAX 成功启动后，再将系统从 Micro SD 卡复制到 NVMe SSD。详细步骤如下：
+
+* :ref:`max_copy_sd_to_nvme_rpi`
+
+16. 如何撕下亚克力板的保护膜
+-----------------------------------------------------------------
+
+包装内包含两块亚克力板，正反两面都贴有黄色/透明保护膜以防刮花。保护膜可能较难撕下，可用螺丝刀轻轻从边角挑起，然后缓慢将整张膜撕下。
+
+.. image:: img/peel_off_film.jpg
+    :width: 500
+    :align: center
 
 .. _max_openssh_powershell:
 
-使用 PowerShell 安装 OpenSSH
------------------------------------
+17. 如何通过 PowerShell 安装 OpenSSH？
+--------------------------------------------------
 
-当你使用 ``ssh <username>@<hostname>.local``（或 ``ssh <username>@<IP address>``）连接树莓派时，若出现如下错误信息：
+当你使用 ``ssh <username>@<hostname>.local``（或 ``ssh <username>@<IP address>``）连接树莓派时，若出现如下错误：
 
     .. code-block::
 
         ssh: The term 'ssh' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
         spelling of the name, or if a path was included, verify that the path is correct and try again.
 
-这意味着你的 Windows 系统版本过旧，未预装 `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_，请按照以下步骤手动安装：
+这表示你的电脑系统较旧，未预装 `OpenSSH <https://learn.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_。请按以下步骤手动安装：
 
-#. 在 Windows 桌面搜索框中输入 ``powershell``，右键点击 ``Windows PowerShell``，选择“以管理员身份运行”。
+#. 在 Windows 桌面搜索框输入 ``powershell``，右键点击 ``Windows PowerShell``，选择 **以管理员身份运行**。
 
    .. image:: img/powershell_ssh.png
       :width: 90%
 
-#. 输入以下命令安装 ``OpenSSH.Client``：
+#. 使用以下命令安装 ``OpenSSH.Client``：
 
    .. code-block::
 
         Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
-#. 安装完成后会返回如下信息：
+#. 安装完成后将看到如下输出：
 
    .. code-block::
 
@@ -305,13 +330,13 @@ OLED 屏幕不工作？
         Online        : True
         RestartNeeded : False
 
-#. 使用下列命令确认是否安装成功：
+#. 使用以下命令验证安装结果：
 
    .. code-block::
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. 若成功，将看到类似以下信息：
+#. 若看到如下信息，表示 ``OpenSSH.Client`` 已成功安装：
 
    .. code-block::
 
@@ -323,13 +348,13 @@ OLED 屏幕不工作？
 
    .. warning:: 
 
-        如果未出现上述提示，说明系统版本仍不兼容，建议使用第三方 SSH 工具，如 |link_putty|。
+        如果没有出现上述提示，说明你的 Windows 系统版本仍然过旧，建议安装第三方 SSH 工具，例如 |link_putty|。
 
-#. 重启 PowerShell 并继续以管理员身份运行，此时即可使用 ``ssh`` 命令登录树莓派，系统将提示你输入之前设置的密码。
+#. 现在重启 PowerShell，并继续以管理员身份运行。此时即可使用 ``ssh`` 命令登录树莓派，系统会提示输入先前设置的密码。
 
    .. image:: img/powershell_login.png
 
-如果我安装了 OMV，还能使用 Pironman5 的功能吗？
+18. 我安装了 OMV，还能使用 Pironman5 的功能吗？
 --------------------------------------------------------------------------------------------------------
 
-可以，OpenMediaVault 是在树莓派操作系统基础上进行安装的。请继续按照 :ref:`max_set_up_pi_os` 步骤进行配置。
+可以。OpenMediaVault 是在树莓派系统上进行的设置。请继续按照 :ref:`max_set_up_pi_os` 的步骤完成配置。
