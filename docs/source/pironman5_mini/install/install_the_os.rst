@@ -2,11 +2,11 @@
 
     こんにちは！SunFounder Raspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！Raspberry Pi、Arduino、ESP32の世界を、同じ情熱を持つ仲間たちと一緒にさらに深く探究しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**：購入後の問題や技術的なトラブルを、コミュニティおよびサポートチームが解決をサポートします。
-    - **Learn & Share**：ヒントやチュートリアルを共有して、スキルアップを目指しましょう。
-    - **Exclusive Previews**：新製品の発表や先行情報をいち早くチェックできます。
+    - **エキスパートサポート**：購入後の問題や技術的なトラブルを、コミュニティおよびサポートチームが解決をサポートします。
+    - **学びと共有**：ヒントやチュートリアルを共有して、スキルアップを目指しましょう。
+    - **新製品の先行公開**：新製品の発表や先行情報をいち早くチェックできます。
     - **Special Discounts**：最新製品をお得に購入できる限定割引をご提供します。
     - **Festive Promotions and Giveaways**：季節限定のキャンペーンや豪華プレゼント企画に参加しましょう。
 
@@ -32,4 +32,4 @@
 
         install_raspberry_os
         install_the_other_os
-
+        install_umbrel

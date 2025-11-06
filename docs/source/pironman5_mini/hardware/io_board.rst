@@ -2,11 +2,11 @@
 
     こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！ 同じ情熱を持つ仲間たちと一緒に、Raspberry Pi・Arduino・ESP32の世界をさらに深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**：購入後の問題や技術的な課題を、コミュニティと当社のチームがサポートします。
-    - **Learn & Share**：チュートリアルやヒントを共有してスキルを高めましょう。
-    - **Exclusive Previews**：新製品の発表や先行情報をいち早く入手できます。
+    - **エキスパートサポート**：購入後の問題や技術的な課題を、コミュニティと当社のチームがサポートします。
+    - **学びと共有**：チュートリアルやヒントを共有してスキルを高めましょう。
+    - **新製品の先行公開**：新製品の発表や先行情報をいち早く入手できます。
     - **Special Discounts**：最新製品に限定割引でアクセスできます。
     - **Festive Promotions and Giveaways**：プレゼントキャンペーンやシーズンイベントに参加しましょう。
 
@@ -31,19 +31,19 @@ RGB LED
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * 色を変更するには、例： ``fe1a1a`` のような16進カラーコードを入力します。
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * 輝度を変更（0〜100％）するには：
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * 表示モードを変更するには、以下から選択します： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``
 
@@ -53,13 +53,13 @@ RGB LED
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * 点灯速度の調整（0〜100％）：
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 RGB制御ピン
 -------------------------
@@ -81,7 +81,7 @@ WS2812 RGB LEDは直列接続に対応しており、外部のRGB LEDテープ�
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  sudo pironman5 -rl 12
 
 
 
@@ -107,7 +107,7 @@ RGBファンの動作モードを設定するには以下のコマンドを使�
 
 .. code-block:: shell
 
-  pironman5 -gm 3
+  sudo pironman5 -gm 3
 
 * **4: Quiet**：70°Cで動作開始  
 * **3: Balanced**：67.5°Cで動作開始  
@@ -153,8 +153,8 @@ Raspberry Pi Desktopを使用している場合は、ボタンを短く1回押�
 
 **シャットダウン**
 
-* Raspberry Pi **Bookworm Desktop** ：電源ボタンをすばやく2回押す  
-* Raspberry Pi **Bookworm Lite** （CLI）：電源ボタンを1回押す  
+* Raspberry Pi **Raspberry Pi OS Desktop** ：電源ボタンをすばやく2回押す  
+* Raspberry Pi **Raspberry Pi OS Lite** （CLI）：電源ボタンを1回押す  
 * 強制シャットダウン：電源ボタンを長押し
 
 

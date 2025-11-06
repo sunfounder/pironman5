@@ -57,64 +57,64 @@ Pironman 5シリーズ - Raspberry Pi 5用 NVMe M.2 SSD対応PCIeミニPCケー�
 
    * - 仕様
      - :ref:`intro_pironman5`
-     - :ref:`intro_pironman5_mini`
      - :ref:`intro_pironman5_max`
+     - :ref:`intro_pironman5_mini`    
    * - 対応デバイス 
      - Raspberry Pi 5
      - Raspberry Pi 5
-     - Raspberry Pi 5
+     - Raspberry Pi 5    
    * - 電源入力
      - USB Type C, 5V/5A
      - USB Type C, 5V/5A
-     - USB Type C, 5V/5A
+     - USB Type C, 5V/5A    
    * - 電源ボタン 
      - ✔
      - ✔
-     - ✔
+     - ✔    
    * - 外装素材1
      - シルバーアルミ合金
-     - シルバーアルミ合金
      - ブラックアルミ合金
+     - シルバーアルミ合金    
    * - 外装素材2
      - 透明アクリル
      - ブラックアクリル
-     - ブラックアクリル
+     - ブラックアクリル    
    * - クーラー
      - タワークーラー
-     - アクティブクーラー
      - タワークーラー
+     - アクティブクーラー    
    * - IR受信機
      - ✔
-     - X
      - ✔
+     - X    
    * - RGBファン数
      - 2
-     - 1
      - 2
+     - 1    
    * - ファンRGBモード
      - ファン同期
      - 独立制御
-     - 独立制御
+     - 独立制御    
    * - HDMIポート
      - 標準HDMIポート×2
-     - Micro HDMIポート×2
      - 標準HDMIポート×2
+     - Micro HDMIポート×2    
    * - OLEDスクリーン
      - ✔
-     - X
      - ✔
+     - X    
    * - OLED起動方式
      - 常時点灯
-     - 
      - タップで点灯
+     -     
    * - NVMe SSD対応数
      - 1
-     - 1   
      - 2
+     - 1       
    * - サイズ
      - 111.9x78.5x117mm
-     - 67.8x98.6x101.5mm  
      - 111.9x78.5x117mm
+     - 67.8x98.6x101.5mm 
 
 ご不明な点がございましたら、service@sunfounder.com までお気軽にお問い合わせください。できる限り早くご返信いたします。
 
@@ -127,8 +127,9 @@ Pironman 5シリーズ - Raspberry Pi 5用 NVMe M.2 SSD対応PCIeミニPCケー�
 
     Pironman 5シリーズについて <self>
     pironman5/intro_pironman5
-    pironman5_mini/intro_pironman5_mini
     pironman5_max/intro_pironman5_max
+    pironman5_mini/intro_pironman5_mini
+
 
 **Copyright Notice**
 

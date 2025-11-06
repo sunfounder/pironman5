@@ -26,35 +26,35 @@ RGB LED
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * 色を変更するには、目的の16進数の色値を入力します。例： ``fe1a1a`` 
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * RGB LEDの明るさを変更するには（範囲: 0 ~ 100%）：
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * RGB LEDの表示モードを切り替えるには、次のオプションから選択します： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` 
 
 .. note::
 
-  RGB LEDの表示モードを ``rainbow`` , ``rainbow_reverse`` , ``hue_cycle`` に設定した場合、 ``pironman5 -rc`` で色を設定することはできません。
+  RGB LEDの表示モードを ``rainbow`` , ``rainbow_reverse`` , ``hue_cycle`` に設定した場合、 ``sudo pironman5 -rc`` で色を設定することはできません。
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * 変化速度を変更するには（範囲: 0 ~ 100%）：
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 RGB制御ピン
 -------------------------
@@ -74,7 +74,7 @@ WS2812 RGB LEDはシリアル接続をサポートしており、外部のRGB LE
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  sudo pironman5 -rl 12
 
 
 OLEDスクリーンコネクター
@@ -164,7 +164,7 @@ J9の下にある2つのピンはRGBファン用の有効化ピンです。デ�
 
 .. code-block:: shell
 
-  pironman5 -gm 3
+  sudo pironman5 -gm 3
 
 * **4: 静音**: RGBファンは70°Cで作動します。
 * **3: バランス**: RGBファンは67.5°Cで作動します。

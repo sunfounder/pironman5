@@ -62,7 +62,7 @@ IO Expander 上の RGB LED はスクリーンと同じ SPI MOSI ピン (GPIO10) 
 
    .. code-block:: bash
 
-      pironman5 -re false
+      sudo pironman5 -re false
       sudo systemctl restart pironman5.service
 
 これにより SPI インターフェースがタッチスクリーン用に解放され、表示の不具合を防ぎます。

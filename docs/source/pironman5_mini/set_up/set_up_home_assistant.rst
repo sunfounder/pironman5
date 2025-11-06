@@ -2,11 +2,11 @@
 
     こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ興味を持つ仲間たちと一緒に深く探究しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**：購入後の問題や技術的な課題を、コミュニティやSunFounderチームと一緒に解決できます。
-    - **Learn & Share**：ヒントやチュートリアルを共有し合い、スキルを高めましょう。
-    - **Exclusive Previews**：新製品情報をいち早く入手できます。
+    - **エキスパートサポート**：購入後の問題や技術的な課題を、コミュニティやSunFounderチームと一緒に解決できます。
+    - **学びと共有**：ヒントやチュートリアルを共有し合い、スキルを高めましょう。
+    - **新製品の先行公開**：新製品情報をいち早く入手できます。
     - **Special Discounts**：最新製品を対象とした特別割引が受けられます。
     - **Festive Promotions and Giveaways**：季節イベントやプレゼントキャンペーンにも参加可能！
 

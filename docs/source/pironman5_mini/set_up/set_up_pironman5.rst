@@ -2,11 +2,11 @@
 
     こんにちは！SunFounder Raspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！Raspberry Pi、Arduino、ESP32に熱中する仲間たちと一緒に、知識を深め、楽しさを共有しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**：購入後のトラブルや技術的な課題に対して、コミュニティとサポートチームが対応します。
-    - **Learn & Share**：ヒントやチュートリアルを交換しながら、スキルを向上させましょう。
-    - **Exclusive Previews**：新製品の発表や先行情報をいち早くチェックできます。
+    - **エキスパートサポート**：購入後のトラブルや技術的な課題に対して、コミュニティとサポートチームが対応します。
+    - **学びと共有**：ヒントやチュートリアルを交換しながら、スキルを向上させましょう。
+    - **新製品の先行公開**：新製品の発表や先行情報をいち早くチェックできます。
     - **Special Discounts**：最新製品に対するメンバー限定割引をご利用いただけます。
     - **Festive Promotions and Giveaways**：プレゼント企画や季節限定のキャンペーンに参加しましょう。
 
@@ -31,7 +31,7 @@ OSがMicro SDカードまたはNVMe SSDに書き込まれたら、それをRaspb
 
     set_up_rpi_os 
     set_up_home_assistant
-
+    set_up_umbrel
 
 **電源ボタンについて**
 
@@ -39,8 +39,8 @@ OSがMicro SDカードまたはNVMe SSDに書き込まれたら、それをRaspb
 
 * **シャットダウン**
 
-    * Raspberry Pi **Bookworm Desktop** システムを使用している場合、電源ボタンを素早く2回押すことでシャットダウンします。
-    * Raspberry Pi **Bookworm Lite** システムの場合、電源ボタンを1回押すだけでシャットダウンが始まります。
+    * Raspberry Pi **Raspberry Pi OS Desktop** システムを使用している場合、電源ボタンを素早く2回押すことでシャットダウンします。
+    * Raspberry Pi **Raspberry Pi OS Lite** システムの場合、電源ボタンを1回押すだけでシャットダウンが始まります。
     * 強制的に電源を切るには、電源ボタンを長押ししてください。
 
 * **起動**

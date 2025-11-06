@@ -198,7 +198,7 @@ RGB LED の制御
 
   sudo pironman5 -rl 12
 
-.. _max_cc_control_fan:
+.. _cc_control_fan_max:
 
 RGBファンの制御
 ---------------------

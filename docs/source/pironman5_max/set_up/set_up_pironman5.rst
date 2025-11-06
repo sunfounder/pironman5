@@ -2,11 +2,11 @@
 
     こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！同じ趣味を持つ仲間たちと一緒に、Raspberry Pi・Arduino・ESP32 の世界をより深く楽しみましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**：購入後のサポートや技術的なトラブルは、コミュニティとチームがサポートします。
-    - **Learn & Share**：チュートリアルやノウハウを共有してスキルアップ。
-    - **Exclusive Previews**：新製品の情報や先行リリースをいち早くゲット。
+    - **エキスパートサポート**：購入後のサポートや技術的なトラブルは、コミュニティとチームがサポートします。
+    - **学びと共有**：チュートリアルやノウハウを共有してスキルアップ。
+    - **新製品の先行公開**：新製品の情報や先行リリースをいち早くゲット。
     - **Special Discounts**：新製品を対象とした限定割引をお届け。
     - **Festive Promotions and Giveaways**：プレゼント企画や季節ごとのキャンペーンにも参加可能。
 
@@ -31,7 +31,7 @@
 
     set_up_rpi_os 
     set_up_home_assistant
-    
+    set_up_umbrel
     
 .. set_up_batocera
 
@@ -42,8 +42,8 @@
 
 * **シャットダウン**
 
-    * Raspberry Pi **Bookworm Desktop** システムをご利用の場合、電源ボタンを素早く2回押すことでシャットダウンできます。
-    * Raspberry Pi **Bookworm Lite** システムをご利用の場合、電源ボタンを1回押すとシャットダウンを開始します。
+    * Raspberry Pi **Raspberry Pi OS Desktop** システムをご利用の場合、電源ボタンを素早く2回押すことでシャットダウンできます。
+    * Raspberry Pi **Raspberry Pi OS Lite** システムをご利用の場合、電源ボタンを1回押すとシャットダウンを開始します。
     * 強制的に電源を切りたい場合は、ボタンを長押ししてください。
 
 * **電源オン**

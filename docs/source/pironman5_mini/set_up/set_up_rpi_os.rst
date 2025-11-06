@@ -2,11 +2,11 @@
 
     こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の世界を、同じ興味を持つ仲間たちと一緒により深く探究しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**：購入後の問題や技術的な課題も、コミュニティやSunFounderチームのサポートで安心。
-    - **Learn & Share**：役立つヒントやチュートリアルを共有して、スキルをさらにレベルアップ。
-    - **Exclusive Previews**：新製品の発表やプレビューにいち早くアクセス可能。
+    - **エキスパートサポート**：購入後の問題や技術的な課題も、コミュニティやSunFounderチームのサポートで安心。
+    - **学びと共有**：役立つヒントやチュートリアルを共有して、スキルをさらにレベルアップ。
+    - **新製品の先行公開**：新製品の発表やプレビューにいち早くアクセス可能。
     - **Special Discounts**：最新製品を対象とした特別割引が受けられます。
     - **Festive Promotions and Giveaways**：プレゼント企画や季節限定キャンペーンにも参加可能！
 
@@ -14,79 +14,79 @@
 
 .. _set_up_pironman5_mini:
 
-Raspberry Pi OS/Ubuntu/Kali Linux/Homebridgeでのセットアップ
+Raspberry Pi OS／Ubuntu／Kali Linux／Homebridgeでのセットアップ
 ======================================================================
 
-Raspberry PiにRaspberry Pi OS、Ubuntu、Kali Linux、またはHomebridgeをインストールしている場合、Pironman 5 Miniの設定はコマンドラインを使って行います。詳細なチュートリアルは以下をご参照ください。
+Raspberry PiにRaspberry Pi OS、Ubuntu、Kali Linux、またはHomebridgeをインストールしている場合は、コマンドラインを使用してPironman 5 Miniを設定する必要があります。詳細なチュートリアルは以下を参照してください。
 
 .. note::
 
-  設定を始める前に、Raspberry Piを起動しログインしておく必要があります。ログイン方法が不明な場合は、公式Raspberry Piサイト（|link_rpi_get_start|）をご確認ください。
+  設定を行う前に、Raspberry Piを起動してログインする必要があります。ログイン方法がわからない場合は、Raspberry Pi公式サイト（|link_rpi_get_start|）を参照してください。
 
 
-シャットダウン時にGPIOの電源を無効にする設定
+GPIO電源を停止時に無効化する設定
 ------------------------------------------------------------
-Raspberry PiのGPIOから電源供給されているRGBファンが、シャットダウン後も回り続けるのを防ぐため、GPIOの電源を無効化する設定を行います。
+Raspberry PiのGPIOによって電力供給されているRGBファンがシャットダウン後も動作し続けるのを防ぐために、GPIO電源を停止時に無効化する設定を行う必要があります。
 
-#. 以下のコマンドで ``EEPROM`` 設定ファイルを手動で編集します：
+#. EEPROM設定ツールを開きます：
 
-   .. code-block:: shell
-   
-     sudo rpi-eeprom-config -e
+   .. code-block::
 
-#. 設定ファイル内の ``POWER_OFF_ON_HALT`` を ``1`` に変更します。例：
+      sudo raspi-config
 
-   .. code-block:: shell
-   
-     BOOT_UART=1
-     POWER_OFF_ON_HALT=1
-     BOOT_ORDER=0xf41
+#. **Advanced Options → A12 Shutdown Behaviour** に進みます。
 
-#. ``Ctrl + X``、 ``Y``、 ``Enter`` の順で保存・終了します。
+   .. image:: img/shutdown_behaviour.png
 
+#. **B1 Full Power Off** を選択します。
+
+   .. image:: img/run_power_off.png
+
+#. 変更を保存します。設定を有効にするために再起動を求められます。
 
 ``pironman5`` モジュールのダウンロードとインストール
 -----------------------------------------------------------
 
-#. 最小構成のシステムでは、まず ``git``、 ``python3``、 ``pip3``、 ``setuptools`` などのツールをインストールします。
+.. note::
 
+   Lite版システムの場合、まず ``git``、``python3``、``pip3``、``setuptools`` などのツールをインストールしてください。
+   
    .. code-block:: shell
-  
-     sudo apt-get update
-     sudo apt-get install git -y
-     sudo apt-get install python3 python3-pip python3-setuptools -y
+   
+      sudo apt-get install git -y
+      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. GitHubからコードをダウンロードし、 ``pironman5`` モジュールをインストールします。
+#. GitHubからコードをダウンロードし、``pironman5`` モジュールをインストールします。
 
    .. code-block:: shell
 
       cd ~
-      git clone -b 1.2.15 https://github.com/sunfounder/pironman5.git --depth 1
+      git clone -b mini https://github.com/sunfounder/pironman5.git --depth 1
       cd ~/pironman5
       sudo python3 install.py
 
-   インストール完了後は、画面の指示に従ってシステムを再起動してください。
+   インストールが完了すると、システムの再起動が必要です。画面の指示に従って再起動を行ってください。
 
-   再起動後、 ``pironman5.service`` が自動的に起動します。主な設定内容は以下の通りです：
-
-   * 4つのWS2812 RGB LEDが青色でブリージングモードに点灯します。
+   再起動後、``pironman5.service`` が自動的に起動します。Pironman 5 Miniの主な初期設定は以下の通りです：
+   
+   * 4つのWS2812 RGB LEDが青色の呼吸モードで点灯します。
      
    .. note::
+    
+     * RGBファンはデフォルトで **常時オン** モードに設定されています。異なる作動温度の設定については、:ref:`cc_control_fan_mini` を参照してください。
 
-     RGBファンは温度が60°Cに達するまで回転しません。起動温度を変更したい場合は、:ref:`cc_control_fan_mini` を参照してください。
-
-#. ``systemctl`` コマンドを使って ``pironman5.service`` の ``start``、 ``stop``、 ``restart``、 ``status`` を管理できます。
+#. ``systemctl`` ツールを使用して、``pironman5.service`` を ``start``、``stop``、``restart``、または ``status`` で操作できます。
 
    .. code-block:: shell
      
       sudo systemctl restart pironman5.service
-
-   * ``restart``：設定変更を適用する際に使用します。
-   * ``start/stop``： ``pironman5.service`` の有効／無効を切り替えます。
-   * ``status``： ``pironman5`` プログラムの動作状況を確認できます。
+   
+   * ``restart``：Pironman 5 Miniの設定変更を適用する際に使用します。
+   * ``start/stop``：``pironman5.service`` を有効または無効にします。
+   * ``status``：``systemctl`` ツールを使用して ``pironman5`` プログラムの動作状態を確認します。
 
 .. note::
 
-   この時点で、Pironman 5 Mini のセットアップが正常に完了し、使用可能な状態になっています。
+   これでPironman 5 Miniのセットアップは完了です。すぐに使用を開始できます。
    
-   各コンポーネントを高度に制御する方法については、:ref:`control_commands_dashboard_mini` を参照してください。
+   各コンポーネントの詳細な制御方法については、:ref:`control_commands_dashboard_mini` を参照してください。

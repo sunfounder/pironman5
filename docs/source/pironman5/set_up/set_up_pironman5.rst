@@ -30,7 +30,7 @@
 
     set_up_rpi_os 
     set_up_home_assistant
-
+    set_up_umbrel
 .. set_up_batocera
 
 
@@ -40,8 +40,8 @@
 
 * **シャットダウン**
 
-    * Raspberry Pi **Bookworm Desktop** システムを実行している場合、電源ボタンを素早く2回押すとシャットダウンします。
-    * Raspberry Pi **Bookworm Lite** システムを実行している場合、電源ボタンを1回押すとシャットダウンが開始されます。
+    * Raspberry Pi **Raspberry Pi OS Desktop** システムを実行している場合、電源ボタンを素早く2回押すとシャットダウンします。
+    * Raspberry Pi **Raspberry Pi OS Lite** システムを実行している場合、電源ボタンを1回押すとシャットダウンが開始されます。
     * 強制的にハードシャットダウンするには、電源ボタンを押し続けます。
 
 * **電源オン**

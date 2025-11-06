@@ -35,8 +35,8 @@ Raspberry Pi 5 でのテストに合格したシステム：
 
 * **シャットダウン**
 
-  * Raspberry Pi **Bookworm Desktop** システムを使用している場合、電源ボタンを素早く 2 回押すとシャットダウンできます。
-  * Raspberry Pi **Bookworm Lite** システムを使用している場合、電源ボタンを 1 回押すとシャットダウンが開始されます。
+  * Raspberry Pi **Raspberry Pi OS Desktop** システムを使用している場合、電源ボタンを素早く 2 回押すとシャットダウンできます。
+  * Raspberry Pi **Raspberry Pi OS Lite** システムを使用している場合、電源ボタンを 1 回押すとシャットダウンが開始されます。
   * 強制シャットダウンを行うには、電源ボタンを長押しします。
 
 * **起動**
@@ -195,7 +195,7 @@ OLED 画面が何も表示しない、または誤表示する場合は、以下
 
 #. J9 上部の IO エクスパンダーの 2 ピンは、GPIO10 に RGB LED を接続するためのものです。ジャンパキャップが正しく取り付けられているか確認してください。
 
-   .. image:: advanced/img/io_board_rgb_pin.png
+   .. image:: hardware/img/io_board_rgb_pin.png
       :width: 300
       :align: center
 

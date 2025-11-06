@@ -13,81 +13,80 @@
     👉 探索と創造の準備ができましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 
-Raspberry Pi/Ubuntu/Kali/Homebridge OSでのセットアップ
-===========================================================
+Raspberry Pi OS/Ubuntu/Kali Linux/Homebridgeでのセットアップ
+==================================================================
 
-Raspberry Pi OS、Ubuntu、Kali Linux、またはHomebridgeをインストールした場合、Pironman 5をコマンドラインで設定する必要があります。詳細なチュートリアルは以下をご覧ください。
+Raspberry PiにRaspberry Pi OS、Ubuntu、Kali Linux、またはHomebridgeをインストールしている場合は、コマンドラインを使用してPironman 5を設定する必要があります。詳細なチュートリアルは以下を参照してください。
 
 .. note::
 
-  設定を行う前に、Raspberry Piを起動してログインする必要があります。ログイン方法がわからない場合は、公式のRaspberry Piウェブサイトをご覧ください: |link_rpi_get_start|。
+  設定を行う前に、Raspberry Piを起動してログインする必要があります。ログイン方法がわからない場合は、Raspberry Pi公式サイト（|link_rpi_get_start|）を参照してください。
 
 
-GPIO電源を停止するためのシャットダウン設定
+GPIO電源を停止時に無効化する設定
 ------------------------------------------------------------
-Raspberry PiのGPIOから供給されるOLED画面やRGBファンがシャットダウン後も動作し続けないように、GPIO電源の停止を設定する必要があります。
 
-#. 次のコマンドを使用して、 ``EEPROM`` 設定ファイルを手動で編集します:
+Raspberry PiのGPIOによって電力供給されているOLEDディスプレイやRGBファンがシャットダウン後も動作し続けるのを防ぐために、GPIO電源を停止時に無効化する設定を行う必要があります。
 
-   .. code-block:: shell
+#. EEPROM設定ツールを開きます：
 
-     sudo rpi-eeprom-config -e
+   .. code-block::
 
-#. ファイル内の ``POWER_OFF_ON_HALT`` 設定を ``1`` に変更します。例:
+      sudo raspi-config
 
-   .. code-block:: shell
- 
-     BOOT_UART=1
-     POWER_OFF_ON_HALT=1
-     BOOT_ORDER=0xf41
+#. **Advanced Options → A12 Shutdown Behaviour** に進みます。
 
-#. ``Ctrl + X``、 ``Y`` 、そして ``Enter`` を押して変更を保存します。
+   .. image:: img/shutdown_behaviour.png
+
+#. **B1 Full Power Off** を選択します。
+
+   .. image:: img/run_power_off.png
+
+#. 変更を保存します。設定を有効にするために再起動を求められます。
 
 
 ``pironman5`` モジュールのダウンロードとインストール
 -----------------------------------------------------------
 
-#. Liteシステムでは、最初に ``git`` 、 ``python3`` 、 ``pip3`` 、 ``setuptools`` などのツールをインストールしてください。
+.. note::
 
-   .. code-block:: shell
-  
-     sudo apt-get update
-     sudo apt-get install git -y
-     sudo apt-get install python3 python3-pip python3-setuptools -y
-
-#. 次に、GitHubからコードをダウンロードし、 ``pironman5`` モジュールをインストールします。
-
-   .. code-block:: shell
-
-    cd ~
-    git clone -b 1.2.15 https://github.com/sunfounder/pironman5.git --depth 1
-    cd ~/pironman5
-    sudo python3 install.py
-
-   インストールが成功したら、再起動が必要です。画面の指示に従って再起動してください。
-
-   再起動後、 ``pironman5.service`` が自動的に開始されます。Pironman 5の主な設定は次の通りです:
-
-   * OLED画面には、CPU、RAM、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示されます。
-   * 4つのWS2812 RGB LEDが青色で呼吸モードに点灯します。
+   Lite版システムの場合、まず ``git``、 ``python3``、``pip3``、``setuptools`` などのツールをインストールしてください。
    
-   .. note::
+   .. code-block:: shell
+   
+      sudo apt-get install git -y
+      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-      RGBファンは温度が60°Cに達しないと回転しません。異なる起動温度については :ref:`cc_control_fan` を参照してください。
-
-
-#. ``systemctl`` ツールを使用して、 ``pironman5.service`` の ``start`` 、 ``stop`` 、 ``restart`` 、または ``status`` を確認することができます。
+#. GitHubからコードをダウンロードし、 ``pironman5`` モジュールをインストールします。
 
    .. code-block:: shell
 
-     sudo systemctl restart pironman5.service
+      cd ~
+      git clone -b base https://github.com/sunfounder/pironman5.git --depth 1
+      cd ~/pironman5
+      sudo python3 install.py
 
-   * ``restart`` : pironman 5の設定に変更を加えた場合、このコマンドを使用して変更を適用します。
-   * ``start/stop`` : ``pironman5.service`` を有効または無効にします。
-   * ``status`` : ``systemctl`` ツールを使用して、 ``pironman5`` プログラムの稼働状況を確認します。
+   インストールが完了すると、システムの再起動が必要です。画面の指示に従って再起動を行ってください。
+
+   再起動後、 ``pironman5.service`` が自動的に起動します。Pironman 5の主な初期設定は以下の通りです：
+   
+   * OLEDディスプレイには、CPU、RAM、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示されます。
+   * 4つのWS2812 RGB LEDが青色の呼吸モードで点灯します。
+   * RGBファンはデフォルトで **常時オン** モードに設定されています。作動温度の調整に関する情報は、:ref:`cc_control_fan` を参照してください。
+
+#. ``systemctl`` ツールを使用して、``pironman5.service`` を ``start``、``stop``、``restart``、または ``status`` で操作できます。
+
+   .. code-block:: shell
+     
+      sudo systemctl restart pironman5.service
+   
+   * ``restart``： Pironman 5の設定変更を適用する際に使用します。
+   * ``start/stop``： ``pironman5.service`` を有効または無効にします。
+   * ``status``： ``systemctl`` ツールを使用して ``pironman5`` プログラムの動作状態を確認します。
+
 
 .. note::
 
-   この時点で、Pironman 5 のセットアップが正常に完了し、使用可能な状態になっています。
+   これでPironman 5のセットアップは完了です。すぐに使用を開始できます。
    
-   各コンポーネントを高度に制御する方法については、:ref:`control_commands_dashboard_5` を参照してください。
+   各コンポーネントの詳細な制御方法については、:ref:`control_commands_dashboard_5` を参照してください。

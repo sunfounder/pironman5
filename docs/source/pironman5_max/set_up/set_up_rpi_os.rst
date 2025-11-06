@@ -2,11 +2,11 @@
 
     こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！同じ趣味を持つ仲間たちと一緒に、Raspberry Pi・Arduino・ESP32 の世界をより深く楽しみましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**：購入後のトラブルや技術的課題を、コミュニティとサポートチームがサポートします。
-    - **Learn & Share**：ヒントやチュートリアルを共有しながらスキルアップ。
-    - **Exclusive Previews**：新製品の先行発表やプレビューにいち早くアクセス。
+    - **エキスパートサポート**：購入後のトラブルや技術的課題を、コミュニティとサポートチームがサポートします。
+    - **学びと共有**：ヒントやチュートリアルを共有しながらスキルアップ。
+    - **新製品の先行公開**：新製品の先行発表やプレビューにいち早くアクセス。
     - **Special Discounts**：最新製品に対する限定割引をご利用いただけます。
     - **Festive Promotions and Giveaways**：プレゼント企画や季節限定キャンペーンにもご参加いただけます。
 
@@ -14,50 +14,51 @@
 
 .. _max_set_up_pi_os:
 
-Raspberry Pi/Ubuntu/Kali/Homebridge OS でのセットアップ
-============================================================
+Raspberry Pi／Ubuntu／Kali／Homebridge OSでのセットアップ
+==========================================================
 
-Raspberry Pi に Raspberry Pi OS、Ubuntu、Kali Linux、または Homebridge をインストールしている場合、Pironman 5 MAX の設定はコマンドラインで行う必要があります。詳細な手順は以下をご覧ください：
+Raspberry PiにRaspberry Pi OS、Ubuntu、Kali Linux、またはHomebridgeをインストールしている場合は、コマンドラインを使用してPironman 5 MAXを設定する必要があります。詳細なチュートリアルは以下を参照してください。
 
 .. note::
 
-  設定を行う前に、Raspberry Pi を起動してログインしてください。ログイン方法が分からない場合は、公式サイトをご参照ください：|link_rpi_get_start|
+  設定を行う前に、Raspberry Piを起動してログインする必要があります。ログイン方法がわからない場合は、Raspberry Pi公式サイト（|link_rpi_get_start|）を参照してください。
 
 
-シャットダウン時にGPIO電源を無効化する設定
+GPIO電源を停止時に無効化する設定
 ------------------------------------------------------------
 
-Raspberry Pi のシャットダウン後もOLEDスクリーンやRGBファン（GPIO駆動）が動作し続けるのを防ぐため、GPIOの電源をオフにする設定が必要です。
+Raspberry PiのGPIOによって電力供給されているOLEDディスプレイやRGBファンがシャットダウン後も動作し続けるのを防ぐために、GPIO電源を停止時に無効化する設定を行う必要があります。
 
-#. 次のコマンドで ``EEPROM`` 設定ファイルを編集します：
+#. EEPROM設定ツールを開きます：
 
-   .. code-block:: shell
+   .. code-block::
 
-     sudo rpi-eeprom-config -e
+      sudo raspi-config
 
-#. ファイル内の ``POWER_OFF_ON_HALT`` を ``1`` に設定します。例：
+#. **Advanced Options → A12 Shutdown Behaviour** に進みます。
 
-   .. code-block:: shell
+   .. image:: img/shutdown_behaviour.png
 
-     BOOT_UART=1
-     POWER_OFF_ON_HALT=1
-     BOOT_ORDER=0xf41
+#. **B1 Full Power Off** を選択します。
 
-#. ``Ctrl + X``、 ``Y``、 ``Enter`` を押して保存し、終了します。
+   .. image:: img/run_power_off.png
+
+#. 変更を保存します。設定を有効にするために再起動を求められます。
 
 
 ``pironman5`` モジュールのダウンロードとインストール
 -----------------------------------------------------------
 
-#. Lite システムの場合、まず ``git``、 ``python3``、 ``pip3``、 ``setuptools`` などのツールをインストールします。
+.. note::
 
+   Lite版システムの場合、まず ``git``、``python3``、``pip3``、``setuptools`` などのツールをインストールしてください。
+   
    .. code-block:: shell
+   
+      sudo apt-get install git -y
+      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-     sudo apt-get update
-     sudo apt-get install git -y
-     sudo apt-get install python3 python3-pip python3-setuptools -y
-
-#. GitHub からコードをダウンロードし、 ``pironman5`` モジュールをインストールします。
+#. GitHubからコードをダウンロードし、``pironman5`` モジュールをインストールします。
 
    .. code-block:: shell
 
@@ -66,33 +67,29 @@ Raspberry Pi のシャットダウン後もOLEDスクリーンやRGBファン（
       cd ~/pironman5
       sudo python3 install.py
 
-   インストールが完了すると、再起動のプロンプトが表示されますので、指示に従って再起動してください。
+   インストールが完了すると、システムの再起動が必要です。画面の指示に従って再起動を行ってください。
 
-   再起動後、 ``pironman5.service`` が自動的に起動します。主な機能は以下の通りです：
+   再起動後、``pironman5.service`` が自動的に起動します。Pironman 5 MAXの主な初期設定は以下の通りです：
+   
+   * OLEDディスプレイには、CPU、RAM、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示されます。
 
-   * OLEDスクリーンにCPU、RAM、ディスク使用率、CPU温度、IPアドレスを表示。
+   .. note:: OLEDディスプレイは、省電力のため一定時間操作がないと自動的にオフになる場合があります。ケースを軽く叩くと、振動センサーが反応して画面が再点灯します。
 
-   .. note:: OLEDスクリーンは、省電力のため一定時間操作がないと自動的にオフになる場合があります。ケースを軽くタップすると振動センサーが反応し、スクリーンを再表示できます。
+   * 4つのWS2812 RGB LEDが青色の呼吸モードで点灯します。
+   * RGBファンはデフォルトで **常時オン** モードに設定されています。作動温度の調整に関する情報は、:ref:`cc_control_fan_max` を参照してください。
 
-
-   * 4つのWS2812 RGB LEDが青色で呼吸モードに点灯。
-
-   .. note::
-
-     RGBファンは温度が60°Cを超えない限り回転しません。動作温度の変更については :ref:`max_cc_control_fan` をご参照ください。
-
-#. ``systemctl`` を使用して ``pironman5.service`` の ``start``、 ``stop``、 ``restart``、 ``status`` を操作できます。
+#. ``systemctl`` ツールを使用して、``pironman5.service`` を ``start``、``stop``、``restart``、または ``status`` で操作できます。
 
    .. code-block:: shell
-
+     
       sudo systemctl restart pironman5.service
-
-   * ``restart``：設定を変更した際に再読み込みします。
-   * ``start/stop``：サービスの有効化・無効化を行います。
-   * ``status``： ``pironman5`` プログラムの動作状態を確認します。
+   
+   * ``restart``： Pironman 5 MAXの設定変更を適用する際に使用します。
+   * ``start/stop``： ``pironman5.service`` を有効または無効にします。
+   * ``status``： ``systemctl`` ツールを使用して ``pironman5`` プログラムの動作状態を確認します。
 
 .. note::
 
-   この時点で、Pironman 5 MAX のセットアップが正常に完了し、使用可能な状態になっています。
+   これでPironman 5 MAXのセットアップは完了です。すぐに使用を開始できます。
    
-   各コンポーネントを高度に制御する方法については、:ref:`control_commands_dashboard_max` を参照してください。
+   各コンポーネントの詳細な制御方法については、:ref:`control_commands_dashboard_max` を参照してください。
