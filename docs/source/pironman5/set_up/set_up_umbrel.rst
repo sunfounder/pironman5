@@ -21,7 +21,7 @@ Raspberry Pi 5にUmbrel OSをインストールしている場合は、コマン
 
 #. Raspberry Pi 5をEthernetケーブルでネットワークに接続します。この手順は、Raspberry Piにインターネット接続を確保するために重要です。
 
-#. ブラウザで次のURLにアクセスします： ``http://umbrel.local``。ページが開かない場合は、ルーターでUmbrelデバイスのIPアドレスを確認し、例：``http://192.168.1.50`` にアクセスしてください。
+#. ブラウザで次のURLにアクセスします： ``http://umbrel.local``。ページが開かない場合は、ルーターでUmbrelデバイスのIPアドレスを確認し、例： ``http://192.168.1.50`` にアクセスしてください。
 
    .. image:: img/umbrel_local.png
 
@@ -33,7 +33,7 @@ Raspberry Pi 5にUmbrel OSをインストールしている場合は、コマン
 
    .. image:: img/umbrel_desktop.png
 
-#. ターミナルを開きます。デスクトップから **Settings** アイコンをクリックし、**Advanced Settings** を選択して **Open** をクリックします。
+#. ターミナルを開きます。デスクトップから **Settings** アイコンをクリックし、 **Advanced Settings** を選択して **Open** をクリックします。
 
    .. image:: img/umbrel_setting.png
 
@@ -45,7 +45,7 @@ Raspberry Pi 5にUmbrel OSをインストールしている場合は、コマン
 
    .. image:: img/umbrel_terminal.png
 
-#. GitHubからコードをダウンロードし、``pironman5`` モジュールをインストールします。
+#. GitHubからコードをダウンロードし、 ``pironman5`` モジュールをインストールします。
 
    .. code-block:: shell
 
@@ -60,7 +60,7 @@ Raspberry Pi 5にUmbrel OSをインストールしている場合は、コマン
 
       sudo reboot
 
-#. 再起動後、``pironman5.service`` が自動的に起動します。Pironman 5の主な初期設定は以下の通りです：
+#. 再起動後、 ``pironman5.service`` が自動的に起動します。Pironman 5の主な初期設定は以下の通りです：
    
    * OLEDディスプレイには、CPU、RAM、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示されます。
    * 4つのWS2812 RGB LEDが青色の呼吸モードで点灯します。
@@ -69,15 +69,15 @@ Raspberry Pi 5にUmbrel OSをインストールしている場合は、コマン
     
      RGBファンはデフォルトで **常時オン** モードに設定されています。作動温度の調整に関する情報は、:ref:`cc_control_fan` を参照してください。
 
-#. ``systemctl`` ツールを使用して、``pironman5.service`` を ``start``、``stop``、``restart``、または ``status`` で操作できます。
+#. ``systemctl`` ツールを使用して、 ``pironman5.service`` を ``start``、 ``stop``、 ``restart``、または ``status`` で操作できます。
 
    .. code-block:: shell
      
       sudo systemctl restart pironman5.service
    
    * ``restart``：Pironman 5の設定変更を適用する際に使用します。
-   * ``start/stop``：``pironman5.service`` を有効または無効にします。
-   * ``status``：``systemctl`` ツールを使用して ``pironman5`` プログラムの動作状態を確認します。
+   * ``start/stop``： ``pironman5.service`` を有効または無効にします。
+   * ``status``： ``systemctl`` ツールを使用して ``pironman5`` プログラムの動作状態を確認します。
 
 .. note::
 

@@ -62,7 +62,7 @@
 * Western Digital SN570
 * Western Digital SN530
 * Western Digital Black SN750 SE
-* Western Digital Blue SN550 シリーズ (最新の rpi-eeprom-updates をインストールできる場合、`pieeprom-2024-01-24.bin` で Western Digital Blue SN550 の NVMe ブート問題が修正されました。参考: https://forums.raspberrypi.com/viewtopic.php?t=364327)
+* Western Digital Blue SN550 シリーズ (最新の rpi-eeprom-updates をインストールできる場合、 `pieeprom-2024-01-24.bin` で Western Digital Blue SN550 の NVMe ブート問題が修正されました。参考: https://forums.raspberrypi.com/viewtopic.php?t=364327)
 
 * XPG GAMMIX S70 BLADE
 * XPG SX8200 Pro

@@ -31,7 +31,6 @@
     set_up_rpi_os 
     set_up_home_assistant
     set_up_umbrel
-.. set_up_batocera
 
 
 **電源ボタンについて**

@@ -115,7 +115,7 @@ OpenMediaVault（略称：OMV）は、Debian Linuxをベースとしたオープ
 
    .. image:: img/omv/omv-raid-5.png
 
-   6. Levelでは ``Stripe（RAID 0）`` または ``Mirror（RAID 1）`` を選択し、Devicesで消去済みのディスクを指定します。 ``Save`` をクリックし、RAID設定が完了するまで待ちます。
+   6. Levelでは ``Stripe（RAID 0） `` または ``Mirror（RAID 1） `` を選択し、Devicesで消去済みのディスクを指定します。 ``Save`` をクリックし、RAID設定が完了するまで待ちます。
 
    .. image:: img/omv/omv-raid-6.png
 

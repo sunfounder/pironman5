@@ -7,8 +7,8 @@
     - **エキスパートサポート**：購入後の問題や技術的な課題を、コミュニティや弊社スタッフがサポートします。
     - **学びと共有**：ヒントやチュートリアルを共有し、スキルを高めましょう。
     - **新製品の先行公開**：新製品の発表や先行情報をいち早くチェック。
-    - **Special Discounts**：最新製品をお得に購入できる特別割引をご提供。
-    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定キャンペーンにも参加できます。
+    - **特別割引**：最新製品をお得に購入できる特別割引をご提供。
+    - **季節イベントとプレゼント企画**：プレゼント企画や季節限定キャンペーンにも参加できます。
 
     👉 私たちと一緒にモノづくりの世界を探求しませんか？[|link_sf_facebook|] をクリックして今すぐ参加！
 
@@ -23,8 +23,6 @@ Umbrelは、オープンソースのセルフホスト型ホームサーバー�
 * NVMe SSD
 * NVMe–USBアダプター
 * microSDカードおよびカードリーダー
-
-.. _update_bootloader_5:
 
 1. ブートローダーの更新
 --------------------------------
@@ -43,7 +41,7 @@ Umbrelは、オープンソースのセルフホスト型ホームサーバー�
    .. image:: img/os_choose_device_pi5.png
       :width: 90%
 
-#. **Operating System** タブで下にスクロールし、**Misc utility images** を選択します。
+#. **Operating System** タブで下にスクロールし、 **Misc utility images** を選択します。
 
    .. image:: img/nvme_misc.png
       :width: 90%
@@ -75,7 +73,7 @@ Umbrelは、オープンソースのセルフホスト型ホームサーバー�
       :width: 90%
       
 
-#. まもなく、**NVMe/USB Boot** がストレージデバイスに書き込まれたことが通知されます。
+#. まもなく、 **NVMe/USB Boot** がストレージデバイスに書き込まれたことが通知されます。
 
    .. image:: img/nvme_boot_finish.png
       :width: 90%
@@ -93,7 +91,7 @@ Umbrelは、オープンソースのセルフホスト型ホームサーバー�
 
 **手順**
 
-1. 最新のUmbrel OSイメージをダウンロードして解凍します。特定のバージョンを選択する場合は、`Umbrelリリースページ <https://github.com/getumbrel/umbrel/releases>`_ にアクセスしてください。
+1. 最新のUmbrel OSイメージをダウンロードして解凍します。特定のバージョンを選択する場合は、 `Umbrelリリースページ <https://github.com/getumbrel/umbrel/releases>`_ にアクセスしてください。
 
    * :download:`最新のUmbrel OSイメージ <https://download.umbrel.com/release/latest/umbrelos-pi5.img.zip>`
 
@@ -102,7 +100,7 @@ Umbrelは、オープンソースのセルフホスト型ホームサーバー�
    .. image:: img/os_choose_device_pi5.png
       :width: 90%
 
-3. **Raspberry Pi Imager** を起動し、**CHOOSE OS** をクリックします。
+3. **Raspberry Pi Imager** を起動し、 **CHOOSE OS** をクリックします。
 
    .. image:: img/umbrel_choose_os.png
        :width: 600
@@ -114,7 +112,7 @@ Umbrelは、オープンソースのセルフホスト型ホームサーバー�
        :width: 600
        :align: center
 
-5. 先ほどダウンロードしたUmbrel OSイメージファイルを選択し、**Open** をクリックします。
+5. 先ほどダウンロードしたUmbrel OSイメージファイルを選択し、 **Open** をクリックします。
 
    .. image:: img/umbrel_choose_umbrel.png
        :width: 600

@@ -50,7 +50,7 @@ Raspberry PiのGPIOによって電力供給されているOLEDディスプレイ
 
 .. note::
 
-   Lite版システムの場合、まず ``git``、 ``python3``、``pip3``、``setuptools`` などのツールをインストールしてください。
+   Lite版システムの場合、まず ``git``、 ``python3``、 ``pip3``、 ``setuptools`` などのツールをインストールしてください。
    
    .. code-block:: shell
    
@@ -74,7 +74,7 @@ Raspberry PiのGPIOによって電力供給されているOLEDディスプレイ
    * 4つのWS2812 RGB LEDが青色の呼吸モードで点灯します。
    * RGBファンはデフォルトで **常時オン** モードに設定されています。作動温度の調整に関する情報は、:ref:`cc_control_fan` を参照してください。
 
-#. ``systemctl`` ツールを使用して、``pironman5.service`` を ``start``、``stop``、``restart``、または ``status`` で操作できます。
+#. ``systemctl`` ツールを使用して、 ``pironman5.service`` を ``start``、 ``stop``、 ``restart``、または ``status`` で操作できます。
 
    .. code-block:: shell
      

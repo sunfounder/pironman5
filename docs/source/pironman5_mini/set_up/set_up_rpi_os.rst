@@ -7,12 +7,11 @@
     - **エキスパートサポート**：購入後の問題や技術的な課題も、コミュニティやSunFounderチームのサポートで安心。
     - **学びと共有**：役立つヒントやチュートリアルを共有して、スキルをさらにレベルアップ。
     - **新製品の先行公開**：新製品の発表やプレビューにいち早くアクセス可能。
-    - **Special Discounts**：最新製品を対象とした特別割引が受けられます。
-    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定キャンペーンにも参加可能！
+    - **特別割引**：最新製品を対象とした特別割引が受けられます。
+    - **季節イベントとプレゼント企画**：プレゼント企画や季節限定キャンペーンにも参加可能！
 
     👉 一緒に創造と発見の旅を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
-.. _set_up_pironman5_mini:
 
 Raspberry Pi OS／Ubuntu／Kali Linux／Homebridgeでのセットアップ
 ======================================================================
@@ -49,14 +48,14 @@ Raspberry PiのGPIOによって電力供給されているRGBファンがシャ�
 
 .. note::
 
-   Lite版システムの場合、まず ``git``、``python3``、``pip3``、``setuptools`` などのツールをインストールしてください。
+   Lite版システムの場合、まず ``git``、 ``python3``、 ``pip3``、 ``setuptools`` などのツールをインストールしてください。
    
    .. code-block:: shell
    
       sudo apt-get install git -y
       sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. GitHubからコードをダウンロードし、``pironman5`` モジュールをインストールします。
+#. GitHubからコードをダウンロードし、 ``pironman5`` モジュールをインストールします。
 
    .. code-block:: shell
 
@@ -67,7 +66,7 @@ Raspberry PiのGPIOによって電力供給されているRGBファンがシャ�
 
    インストールが完了すると、システムの再起動が必要です。画面の指示に従って再起動を行ってください。
 
-   再起動後、``pironman5.service`` が自動的に起動します。Pironman 5 Miniの主な初期設定は以下の通りです：
+   再起動後、 ``pironman5.service`` が自動的に起動します。Pironman 5 Miniの主な初期設定は以下の通りです：
    
    * 4つのWS2812 RGB LEDが青色の呼吸モードで点灯します。
      
@@ -75,15 +74,15 @@ Raspberry PiのGPIOによって電力供給されているRGBファンがシャ�
     
      * RGBファンはデフォルトで **常時オン** モードに設定されています。異なる作動温度の設定については、:ref:`cc_control_fan_mini` を参照してください。
 
-#. ``systemctl`` ツールを使用して、``pironman5.service`` を ``start``、``stop``、``restart``、または ``status`` で操作できます。
+#. ``systemctl`` ツールを使用して、 ``pironman5.service`` を ``start``、 ``stop``、 ``restart``、または ``status`` で操作できます。
 
    .. code-block:: shell
      
       sudo systemctl restart pironman5.service
    
    * ``restart``：Pironman 5 Miniの設定変更を適用する際に使用します。
-   * ``start/stop``：``pironman5.service`` を有効または無効にします。
-   * ``status``：``systemctl`` ツールを使用して ``pironman5`` プログラムの動作状態を確認します。
+   * ``start/stop``： ``pironman5.service`` を有効または無効にします。
+   * ``status``： ``systemctl`` ツールを使用して ``pironman5`` プログラムの動作状態を確認します。
 
 .. note::
 

@@ -2,13 +2,13 @@
 
     こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！同じ趣味を持つ仲間たちと一緒に、Raspberry Pi・Arduino・ESP32 の世界をより深く楽しみましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**：購入後のトラブルや技術的課題を、コミュニティとサポートチームがサポートします。
-    - **Learn & Share**：ヒントやチュートリアルを共有しながらスキルアップ。
-    - **Exclusive Previews**：新製品の先行発表やプレビューにいち早くアクセス。
-    - **Special Discounts**：最新製品に対する限定割引をご利用いただけます。
-    - **Festive Promotions and Giveaways**：プレゼント企画や季節限定キャンペーンにもご参加いただけます。
+    - **エキスパートサポート**：購入後のトラブルや技術的課題を、コミュニティとサポートチームがサポートします。
+    - **学びと共有**：ヒントやチュートリアルを共有しながらスキルアップ。
+    - **新製品の先行公開**：新製品の先行発表やプレビューにいち早くアクセス。
+    - **特別割引**：最新製品に対する限定割引をご利用いただけます。
+    - **季節イベントとプレゼント企画**：プレゼント企画や季節限定キャンペーンにもご参加いただけます。
 
     👉 私たちと一緒に創造と探求を始めましょう！[|link_sf_facebook|] をクリックして、今すぐ参加！
 
@@ -207,7 +207,7 @@ OLED 画面が何も表示しない、または誤表示する場合は、以下
 
    非対応の OS を使用している場合は、:ref:`install_the_os` に従い、対応 OS をインストールしてください。
 
-#. ``sudo raspi-config`` コマンドを実行し、**3 Interfacing Options** -> **I3 SPI** -> **YES** を選択して SPI を有効にし、OK および Finish をクリックします。SPI 有効化後、Pironman 5 を再起動してください。
+#. ``sudo raspi-config`` コマンドを実行し、 **3 Interfacing Options** -> **I3 SPI** -> **YES** を選択して SPI を有効にし、OK および Finish をクリックします。SPI 有効化後、Pironman 5 を再起動してください。
 
 それでも解決しない場合は、service@sunfounder.com までご連絡ください。
 
@@ -245,14 +245,14 @@ PWM ファンは Raspberry Pi 5 の温度に応じて自動で速度を調整し
 
 ``pironman5`` モジュールのインストールが完了すると、:ref:`max_view_control_dashboard` にアクセスできるようになります。
 
-もしこの機能が不要で、CPU および RAM の使用量を削減したい場合は、``pironman5`` のインストール時に ``--disable-dashboard`` フラグを追加することで、ダッシュボードを無効にすることができます。
+もしこの機能が不要で、CPU および RAM の使用量を削減したい場合は、 ``pironman5`` のインストール時に ``--disable-dashboard`` フラグを追加することで、ダッシュボードを無効にすることができます。
 
 .. code-block:: shell
 
    cd ~/pironman5
    sudo python3 install.py --disable-dashboard
 
-すでに ``pironman5`` をインストール済みの場合は、``dashboard`` モジュールと ``influxdb`` を削除し、pironman5 を再起動して変更を適用してください。
+すでに ``pironman5`` をインストール済みの場合は、 ``dashboard`` モジュールと ``influxdb`` を削除し、pironman5 を再起動して変更を適用してください。
 
 .. code-block:: shell
 
@@ -280,7 +280,7 @@ Raspberry Pi にログイン済みであれば、コマンドを使って起動�
 14. Raspberry Pi Imager で起動順序を変更する方法
 ---------------------------------------------------------------
 
-EEPROM 設定で ``BOOT_ORDER`` を変更するだけでなく、**Raspberry Pi Imager** を使用して Raspberry Pi の起動順序を変更することも可能です。
+EEPROM 設定で ``BOOT_ORDER`` を変更するだけでなく、 **Raspberry Pi Imager** を使用して Raspberry Pi の起動順序を変更することも可能です。
 
 この作業では、予備のカードを使用することを推奨します。
 
@@ -321,7 +321,7 @@ Pironman 5 MAX が正常に起動したら、Micro SD カードから NVMe SSD �
 
 これは、お使いの Windows システムが古く、`OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ が事前インストールされていないことを意味します。以下の手順で手動インストールしてください。
 
-#. Windows デスクトップの検索ボックスに ``powershell`` と入力し、``Windows PowerShell`` を右クリックして、「管理者として実行」を選択します。
+#. Windows デスクトップの検索ボックスに ``powershell`` と入力し、 ``Windows PowerShell`` を右クリックして、「管理者として実行」を選択します。
 
    .. image:: img/powershell_ssh.png
       :width: 90%
@@ -346,7 +346,7 @@ Pironman 5 MAX が正常に起動したら、Micro SD カードから NVMe SSD �
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. 以下のように表示されれば、``OpenSSH.Client`` が正常にインストールされています。
+#. 以下のように表示されれば、 ``OpenSSH.Client`` が正常にインストールされています。
 
    .. code-block::
 
@@ -360,7 +360,7 @@ Pironman 5 MAX が正常に起動したら、Micro SD カードから NVMe SSD �
 
         上記の表示が出ない場合は、Windows システムがさらに古いため、|link_putty| のようなサードパーティの SSH ツールを使用することを推奨します。
 
-#. PowerShell を再起動し、再び管理者として実行してください。この時点で、``ssh`` コマンドで Raspberry Pi にログインでき、事前に設定したパスワードの入力を求められます。
+#. PowerShell を再起動し、再び管理者として実行してください。この時点で、 ``ssh`` コマンドで Raspberry Pi にログインでき、事前に設定したパスワードの入力を求められます。
 
    .. image:: img/powershell_login.png
 

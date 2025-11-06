@@ -124,7 +124,7 @@ Raspberry Pi OS (Bookworm 以降) では **libcamera** スタックが使用さ�
 
     libcamera-jpeg -o test.jpg
 
-これにより静止画が撮影され、``test.jpg`` として保存されます。
+これにより静止画が撮影され、 ``test.jpg`` として保存されます。
 
 **動画を撮る**
 
@@ -169,7 +169,7 @@ Python ファイルを作成:
     time.sleep(2)
     picam2.capture_file("image.jpg")
 
-nano を保存して終了するには ``CTRL+O`` を押し、``ENTER`` を押してから ``CTRL+X`` を押します。
+nano を保存して終了するには ``CTRL+O`` を押し、 ``ENTER`` を押してから ``CTRL+X`` を押します。
 
 スクリプトを実行:
 

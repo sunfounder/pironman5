@@ -25,7 +25,6 @@ Umbrelは、オープンソースのセルフホスト型ホームサーバー�
 * NVMe–USBアダプター
 * microSDカードおよびカードリーダー
 
-.. _update_bootloader_5:
 
 1. ブートローダーの更新
 --------------------------------
@@ -44,7 +43,7 @@ Umbrelは、オープンソースのセルフホスト型ホームサーバー�
    .. image:: img/os_choose_device_pi5.png
       :width: 90%
 
-#. **Operating System** タブで下にスクロールし、**Misc utility images** を選択します。
+#. **Operating System** タブで下にスクロールし、 **Misc utility images** を選択します。
 
    .. image:: img/nvme_misc.png
       :width: 90%
@@ -76,7 +75,7 @@ Umbrelは、オープンソースのセルフホスト型ホームサーバー�
       :width: 90%
       
 
-#. まもなく、**NVMe/USB Boot** がストレージデバイスに書き込まれたことが通知されます。
+#. まもなく、 **NVMe/USB Boot** がストレージデバイスに書き込まれたことが通知されます。
 
    .. image:: img/nvme_boot_finish.png
       :width: 90%
@@ -103,7 +102,7 @@ Umbrelは、オープンソースのセルフホスト型ホームサーバー�
    .. image:: img/os_choose_device_pi5.png
       :width: 90%
 
-3. **Raspberry Pi Imager** を起動し、**CHOOSE OS** をクリックします。
+3. **Raspberry Pi Imager** を起動し、 **CHOOSE OS** をクリックします。
 
    .. image:: img/umbrel_choose_os.png
        :width: 600
@@ -115,7 +114,7 @@ Umbrelは、オープンソースのセルフホスト型ホームサーバー�
        :width: 600
        :align: center
 
-5. 先ほどダウンロードしたUmbrel OSイメージファイルを選択し、**Open** をクリックします。
+5. 先ほどダウンロードしたUmbrel OSイメージファイルを選択し、 **Open** をクリックします。
 
    .. image:: img/umbrel_choose_umbrel.png
        :width: 600

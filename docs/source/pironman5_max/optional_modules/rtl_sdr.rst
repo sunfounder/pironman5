@@ -41,7 +41,7 @@ RTL-SDR Blog V4 ドライバーのインストール
    sudo apt install -y git cmake build-essential pkg-config libusb-1.0-0-dev sox
 
 注:  
-    ``sox``（``play`` コマンドを提供）は直接オーディオテスト用に含まれています。
+    ``sox`` （ ``play`` コマンドを提供）は直接オーディオテスト用に含まれています。
 
 **1. 古いライブラリとバイナリの完全削除（重要）**
 
@@ -88,7 +88,7 @@ RTL-SDR Blog V4 ドライバーのインストール
    sudo reboot
 
 注:  
-    即時リロードコマンド（``udevadm control --reload-rules`` および ``udevadm trigger``）は、すぐに再起動する予定がある場合は省略可能です。
+    即時リロードコマンド（ ``udevadm control --reload-rules`` および ``udevadm trigger``）は、すぐに再起動する予定がある場合は省略可能です。
 
 **4. 再起動後のドライバー確認**
 
@@ -97,7 +97,7 @@ RTL-SDR Blog V4 ドライバーのインストール
    rtl_test -t
 
 期待される結果:  
-    出力に ``RTL-SDR Blog V4 Detected`` が含まれ、``[R82XX] PLL not locked!`` メッセージが表示されないこと。  
+    出力に ``RTL-SDR Blog V4 Detected`` が含まれ、 ``[R82XX] PLL not locked!`` メッセージが表示されないこと。  
     ``Using device 0: Generic RTL2832U OEM`` という行は正常で、単に USB 名を示しているだけです。
 
 **6. コマンドラインから FM 受信をテスト**
@@ -121,14 +121,14 @@ RTL-SDR Blog V4 ドライバーのインストール
 このセクションでは、広く使われている4つのSDRアプリケーションを紹介します。  
 それぞれの概要、インストール手順、Debian系システムでの基本セットアップ方法を説明します。
 
-* :ref:`install_gqrx`
-* :ref:`install_sdrpp`
-* :ref:`install_rtl433`
-* :ref:`install_dump1090`
+* :ref:`install_gqrx_max`
+* :ref:`install_sdrpp_max`
+* :ref:`install_rtl433_max`
+* :ref:`install_dump1090_max`
 
 ----
 
-.. _install_gqrx:
+.. _install_gqrx_max:
 
 GQRX
 ^^^^^^^^^^^^
@@ -209,7 +209,7 @@ GQRX、SDR++、gnuradio-dev、gr-osmosdr のインストール時に、古い ``
 
 ----
 
-.. _install_sdrpp:
+.. _install_sdrpp_max:
 
 SDR++ (SDRpp)
 ^^^^^^^^^^^^^
@@ -281,7 +281,7 @@ GQRX、SDR++、gnuradio-dev、gr-osmosdr のインストール時に、古い ``
 
 ----
 
-.. _install_rtl433:
+.. _install_rtl433_max:
 
 rtl_433
 ^^^^^^^^^^^^
@@ -329,7 +329,7 @@ GQRX、SDR++、gnuradio-dev、gr-osmosdr のインストール時に、古い ``
 
 ----
 
-.. _install_dump1090:
+.. _install_dump1090_max:
 
 dump1090-mutability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
