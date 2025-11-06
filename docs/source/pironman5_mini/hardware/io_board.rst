@@ -32,19 +32,19 @@ adjust the brightness, switch display modes, and set the speed of changes.
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * To change the brightness of the RGB LED (range: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
@@ -54,13 +54,13 @@ adjust the brightness, switch display modes, and set the speed of changes.
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * To modify the speed of change (range: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 RGB Control Pin
 -------------------------
@@ -81,7 +81,7 @@ The default setup includes 4 RGB LEDs. Connect additional LEDs and update the co
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  sudo pironman5 -rl 12
 
 
 
@@ -104,7 +104,7 @@ You can use command to configure the operating mode of the RGB fan. These modes 
 
   .. code-block:: shell
 
-    pironman5 -gm 3
+    sudo pironman5 -gm 3
 
   * **4: Quiet**: The RGB fan will activate at 70°C.
   * **3: Balanced**: The RGB fan will activate at 67.5°C.
@@ -148,8 +148,8 @@ If running the Raspberry Pi Desktop, a brief press of the power button initiates
 
 **Shutdown**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system without a desktop, press the power button a single time to initiate a shutdown.
+    * If you run Raspberry Pi **Raspberry Pi OS Desktop** system, you can press the power button twice in quick succession to shutdown. 
+    * If you run Raspberry Pi **Raspberry Pi OS Lite** system without a desktop, press the power button a single time to initiate a shutdown.
     * To force a hard shutdown, press and hold the power button.
 
 

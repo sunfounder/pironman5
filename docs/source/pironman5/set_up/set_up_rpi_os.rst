@@ -25,42 +25,44 @@ If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your 
 
 Configuring Shutdown to Deactivate GPIO Power
 ------------------------------------------------------------
+
 To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from remaining active post-shutdown, it's essential to configure the Raspberry Pi for GPIO power deactivation.
 
-#. Manually edit the ``EEPROM`` configuration file with this command:
+#. Open the EEPROM configuration tool:
 
-   .. code-block:: shell
-   
-     sudo rpi-eeprom-config -e
+   .. code-block::
 
-#. Modify the ``POWER_OFF_ON_HALT`` setting in the file to ``1``. For instance:
+      sudo raspi-config
 
-   .. code-block:: shell
-   
-     BOOT_UART=1
-     POWER_OFF_ON_HALT=1
-     BOOT_ORDER=0xf41
+#. Navigate to **Advanced Options → A12 Shutdown Behaviour**.
 
-#. Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes.
+   .. image:: img/shutdown_behaviour.png
+
+#. Select **B1 Full Power Off**.
+
+   .. image:: img/run_power_off.png
+
+#. Save the changes. You will be prompted to reboot for the new settings to take effect.
 
 
 Downloading and Installing the ``pironman5`` Module
 -----------------------------------------------------------
 
-#. For lite systems, initially install tools like ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
-  
+.. note::
+
+   For lite systems, initially install tools like ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
+   
    .. code-block:: shell
-  
-     sudo apt-get update
-     sudo apt-get install git -y
-     sudo apt-get install python3 python3-pip python3-setuptools -y
+   
+      sudo apt-get install git -y
+      sudo apt-get install python3 python3-pip python3-setuptools -y
 
 #. Proceed to download code from GitHub and install the ``pironman5`` module .
 
    .. code-block:: shell
 
       cd ~
-      git clone -b 1.2.15 https://github.com/sunfounder/pironman5.git --depth 1
+      git clone -b base https://github.com/sunfounder/pironman5.git --depth 1
       cd ~/pironman5
       sudo python3 install.py
 
@@ -70,10 +72,7 @@ Downloading and Installing the ``pironman5`` Module
    
    * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
    * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
-     
-   .. note::
-    
-     RGB fans won't spin unless the temperature hits 60°C. For different activation temperatures, see :ref:`cc_control_fan`.
+   * The RGB fans are set to **Always On** mode by default. For information on adjusting activation temperatures, see :ref:`cc_control_fan`.
 
 #. You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5.service``.
 

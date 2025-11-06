@@ -202,7 +202,7 @@ For instance, if set to **1: Performance** mode, the RGB fans will activate at 5
 
 .. code-block:: shell
 
-  pironman5 -gm 3
+  sudo pironman5 -gm 3
 
 * **4: Quiet**: The RGB fans will activate at 70°C.
 * **3: Balanced**: The RGB fans will activate at 67.5°C.

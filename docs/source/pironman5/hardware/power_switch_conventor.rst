@@ -43,8 +43,8 @@ If running the Raspberry Pi Desktop, a brief press of the power button initiates
 
 **Shutdown**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system without a desktop, press the power button a single time to initiate a shutdown.
+    * If you run Raspberry Pi **Raspberry Pi OS Desktop** system, you can press the power button twice in quick succession to shutdown. 
+    * If you run Raspberry Pi **Raspberry Pi OS Lite** system without a desktop, press the power button a single time to initiate a shutdown.
     * To force a hard shutdown, press and hold the power button.
 
 

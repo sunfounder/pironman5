@@ -35,8 +35,8 @@ The power button brings out the power button of the Raspberry Pi 5, and it funct
 
 * **Shutdown**
 
-  * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-  * If you run Raspberry Pi **Bookworm Lite** system, press the power button a single time to initiate a shutdown.
+  * If you run Raspberry Pi **Raspberry Pi OS Desktop** system, you can press the power button twice in quick succession to shutdown. 
+  * If you run Raspberry Pi **Raspberry Pi OS Lite** system, press the power button a single time to initiate a shutdown.
   * To force a hard shutdown, press and hold the power button.
 
 * **Power on**
@@ -200,7 +200,7 @@ If the problem persists after performing the above steps, please send an email t
 
 #. The two pins on the IO Expander above J9 are used to connect the RGB LEDs to GPIO10. Ensure that the jumper cap on these two pins are properly in place.
 
-   .. image:: advanced/img/io_board_rgb_pin.png
+   .. image:: hardware/img/io_board_rgb_pin.png
       :width: 300
       :align: center
 

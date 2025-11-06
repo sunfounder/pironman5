@@ -55,8 +55,8 @@ Below is a comparison of specifications for the Pironman 5, Pironman 5 Mini and 
 
    * - Specifications
      - :ref:`intro_pironman5`
-     - :ref:`intro_pironman5_mini`
      - :ref:`intro_pironman5_max`
+     - :ref:`intro_pironman5_mini`
    * - Compatible Devices 
      - Raspberry Pi 5
      - Raspberry Pi 5
@@ -71,48 +71,49 @@ Below is a comparison of specifications for the Pironman 5, Pironman 5 Mini and 
      - ✔
    * - Exterior Material 1
      - Silver Aluminum Alloy
-     - Silver Aluminum Alloy
      - Black Aluminum Alloy
+     - Silver Aluminum Alloy
    * - Exterior Material 2
      - Transparent Acrylic
      - Black Acrylic
      - Black Acrylic
    * - Cooler
      - Tower Cooler
-     - Active Cooler
      - Tower Cooler
+     - Active Cooler
    * - IR Receiver
      - ✔
-     - X
      - ✔
+     - X
    * - RGB Fans Number
      - 2
-     - 1
      - 2
+     - 1
    * - Fan RGB Mode
      - Sync with Fan
      - Independent Control
      - Independent Control
    * - HDMI Ports
      - 2 Standard HDMI Ports
-     - 2 Micro HDMI Ports
      - 2 Standard HDMI Ports
+     - 2 Micro HDMI Ports
    * - OLED Display
      - ✔
-     - X
      - ✔
+     - X
    * - OLED Activation
      - Always on
-     - 
      - Wake on Tap
+     - 
    * - Support NVMe SSD
      - 1
-     - 1   
      - 2
+     - 1   
    * - Dimension
      - 111.9x78.5x117mm
-     - 67.8x98.6x101.5mm  
      - 111.9x78.5x117mm
+     - 67.8x98.6x101.5mm  
+     
 
 If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
 
@@ -130,8 +131,8 @@ If you have any questions, please send an email to service@sunfounder.com and we
 
     About Pironman 5 Series <self>
     pironman5/intro_pironman5
-    pironman5_mini/intro_pironman5_mini
     pironman5_max/intro_pironman5_max
+    pironman5_mini/intro_pironman5_mini
     
 **Copyright Notice**
 

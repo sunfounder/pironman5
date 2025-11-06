@@ -31,7 +31,7 @@ You can then proceed to select the configuration tutorial based on your system.
 
     set_up_rpi_os 
     set_up_home_assistant
-    
+    set_up_umbrel
     
 .. set_up_batocera
 
@@ -42,8 +42,8 @@ The power button brings out the power button of the Raspberry Pi 5, and it funct
 
 * **Shutdown**
 
-    * If you run Raspberry Pi **Bookworm Desktop** system, you can press the power button twice in quick succession to shutdown. 
-    * If you run Raspberry Pi **Bookworm Lite** system, press the power button a single time to initiate a shutdown.
+    * If you run Raspberry Pi **Raspberry Pi OS Desktop** system, you can press the power button twice in quick succession to shutdown. 
+    * If you run Raspberry Pi **Raspberry Pi OS Lite** system, press the power button a single time to initiate a shutdown.
     * To force a hard shutdown, press and hold the power button.
 
 * **Power on**

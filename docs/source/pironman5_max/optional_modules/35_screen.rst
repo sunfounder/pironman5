@@ -63,7 +63,7 @@ To prevent conflicts and ensure proper operation:
 
    .. code-block:: bash
 
-      pironman5 -re false
+      sudo pironman5 -re false
       sudo systemctl restart pironman5.service
 
 This frees the SPI interface for the 3.5-inch touch screen and avoids display issues.

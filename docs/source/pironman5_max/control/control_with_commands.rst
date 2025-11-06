@@ -197,7 +197,7 @@ The board features 4 WS2812 RGB LEDs, offering customizable control. Users can t
 
   sudo pironman5 -rl 12
 
-.. _max_cc_control_fan:
+.. _cc_control_fan_max:
 
 Control RGB Fans
 ---------------------

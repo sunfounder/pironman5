@@ -26,35 +26,35 @@ The board features 4 WS2812 RGB LEDs, offering customizable control. Users can t
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * To change the brightness of the RGB LED (range: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
 .. note::
 
-  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``pironman5 -rc``.
+  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``sudo pironman5 -rc``.
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * To modify the speed of change (range: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 RGB Control Pin
 -------------------------
@@ -74,7 +74,7 @@ The default setup includes 4 RGB LEDs. Connect additional LEDs and update the co
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  sudopironman5 -rl 12
 
 
 OLED Screen Connector
@@ -164,7 +164,7 @@ For instance, if set to **1: Performance** mode, the RGB fans will activate at 5
 
 .. code-block:: shell
 
-  pironman5 -gm 3
+  sudo pironman5 -gm 3
 
 * **4: Quiet**: The RGB fans will activate at 70°C.
 * **3: Balanced**: The RGB fans will activate at 67.5°C.

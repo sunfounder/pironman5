@@ -54,7 +54,7 @@ Take your Raspberry Pi 5 to the next level with |link_pironman5_max|, a high-end
     install/install_the_os
     set_up/set_up_pironman5
     control/control_pironman5
-    advanced/advanced
+    hardware/hardware
     optional_modules/optional_modules
     home_server/home_server
     compitable_nvme_ssd
