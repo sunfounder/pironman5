@@ -55,26 +55,22 @@ Operate Systems that passed the test on the Raspberry Pi 5:
 
 Operate System | Release Date | Compatible
 :---   | :---: | :---: 
-Raspberry Pi OS Desktop - bookworm (64 bit) | 2024-11-19 | &#x2705;
-Raspberry Pi OS Desktop - bookworm (32 bit) | 2024-11-19 |  &#x2705;
-Raspberry Pi OS Full - bookworm (64 bit) | 2024-11-19 |  &#x2705;
-Raspberry Pi OS Full - bookworm (32 bit) | 2024-11-19 |  &#x2705;
-Raspberry Pi OS lite - bookworm (64 bit) | 2024-11-19 |  &#x2705;
-Raspberry Pi OS lite - bookworm (64 bit) | 2024-11-19 |  &#x2705;
-Ubuntu Desktop 24.04.1 LTS (64 bit) | 2024-08-29 |  &#x2705;
-Ubuntu Server 24.04.1 LTS (64 bit) | 2024-10-10 |  &#x2705;
-Ubuntu Desktop 24.10 (64 bit) | 2024-10-10 |   &#x2705;
-Ubuntu Server 24.10 (64 bit) | 2024-08-29 |   &#x2705;
-Kali Linux | 2024-08-27 | &#x2705;
-Home Assistant OS 14.0 | 2024-12-03 | &#x2705;
-Homebridge bookworm (64 bit) | 2024-05-03 | &#x2705;
-Homebridge bookworm (64 bit) | 2024-05-03 | &#x2705;
+Raspberry Pi OS Desktop - Trixie (64 bit) | 2025-10-01 | &#x2705;
+Raspberry Pi OS Desktop - Trixie (32 bit) | 2025-10-01 |  &#x2705;
+Raspberry Pi OS Full - Trixie (64 bit) | 2025-10-01 |  &#x2705;
+Raspberry Pi OS Full - Trixie (32 bit) | 2025-10-01 |  &#x2705;
+Raspberry Pi OS lite - Trixie (64 bit) | 2025-10-01 |  &#x2705;
+Raspberry Pi OS lite - Trixie (64 bit) | 2025-10-01 |  &#x2705;
+Ubuntu Desktop 25.04 LTS (64 bit) | 2025-04-17 |  &#x2705;
+Ubuntu Server 25.04 LTS (64 bit) | 2025-04-17 |  &#x2705;
+Ubuntu Desktop 25.10 (64 bit) | 2025-10-09 |   &#x2705;
+Ubuntu Server 25.10 (64 bit) | 2025-10-09 |   &#x2705;
+Kali Linux | 2025-09-18 | &#x2705;
+Home Assistant OS 16.3 | 2025-11-04 | &#x2705;
+Homebridge bookworm (64 bit) | 2025-07-16 | &#x2705;
+Homebridge bookworm (64 bit) | 2025-07-16 | &#x2705;
 Batocera Linux | 2024-07-31 | &#x2705;
-
-### Ubuntu 24.04 server eth0 and wifi not work
-
-https://www.reddit.com/r/Ubuntu/comments/1d0s8v5/ubuntu_2404_server_on_my_raspberry_pi_5_and_eth0/
-
+Umbrel OS 1.5 | 2025-11-5 | &#x2705;
 
 ### Debug
 
