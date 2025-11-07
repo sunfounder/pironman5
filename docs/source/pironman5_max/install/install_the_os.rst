@@ -2,13 +2,13 @@
 
     Ciao! Benvenuto nella community di appassionati di Raspberry Pi, Arduino ed ESP32 di SunFounder su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati come te.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto del nostro team e della community.
-    - **Learn & Share**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
-    - **Exclusive Previews**: Accedi in anteprima agli annunci dei nuovi prodotti e a contenuti esclusivi.
-    - **Special Discounts**: Approfitta di sconti riservati sui nostri prodotti più recenti.
-    - **Festive Promotions and Giveaways**: Partecipa a promozioni festive e giveaway speciali.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto del nostro team e della community.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci dei nuovi prodotti e a contenuti esclusivi.
+    - **Sconti speciali**: Approfitta di sconti riservati sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a promozioni festive e giveaway speciali.
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti subito!
 
