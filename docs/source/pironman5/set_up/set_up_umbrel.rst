@@ -64,10 +64,7 @@ Raspberry Pi 5にUmbrel OSをインストールしている場合は、コマン
    
    * OLEDディスプレイには、CPU、RAM、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示されます。
    * 4つのWS2812 RGB LEDが青色の呼吸モードで点灯します。
-     
-   .. note::
-    
-     RGBファンはデフォルトで **常時オン** モードに設定されています。作動温度の調整に関する情報は、:ref:`cc_control_fan` を参照してください。
+   * RGBファンはデフォルトで **常時オン** モードに設定されています。作動温度の調整に関する情報は、:ref:`cc_control_fan` を参照してください。
 
 #. ``systemctl`` ツールを使用して、 ``pironman5.service`` を ``start``、 ``stop``、 ``restart``、または ``status`` で操作できます。
 

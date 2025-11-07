@@ -39,8 +39,8 @@ OSがMicro SDカードまたはNVMe SSDに書き込まれたら、それをRaspb
 
 * **シャットダウン**
 
-    * Raspberry Pi **Raspberry Pi OS Desktop** システムを使用している場合、電源ボタンを素早く2回押すことでシャットダウンします。
-    * Raspberry Pi **Raspberry Pi OS Lite** システムの場合、電源ボタンを1回押すだけでシャットダウンが始まります。
+    * **Raspberry Pi OS Desktop** システムを使用している場合、電源ボタンを素早く2回押すことでシャットダウンします。
+    * **Raspberry Pi OS Lite** システムの場合、電源ボタンを1回押すだけでシャットダウンが始まります。
     * 強制的に電源を切るには、電源ボタンを長押ししてください。
 
 * **起動**
