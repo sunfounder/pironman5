@@ -150,7 +150,7 @@ La carte dispose de 4 LED RGB WS2812 contrôlables. Vous pouvez les activer ou d
 
 .. note::
 
-  Si vous choisissez ``rainbow``, ``rainbow_reverse`` ou ``hue_cycle``, vous ne pourrez pas définir manuellement la couleur via ``pironman5 -rc``.
+  Si vous choisissez ``rainbow``, ``rainbow_reverse`` ou ``hue_cycle``, vous ne pourrez pas définir manuellement la couleur via ``sudo pironman5 -rc``.
 
 .. code-block:: shell
 

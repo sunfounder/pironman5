@@ -31,7 +31,7 @@ Vous pouvez ensuite choisir le tutoriel de configuration en fonction de votre sy
 
     set_up_rpi_os 
     set_up_home_assistant
-
+    set_up_umbrel
 
 **À propos du bouton d’alimentation**
 
@@ -39,9 +39,9 @@ Le bouton d’alimentation reprend la fonctionnalité du bouton physique du Rasp
 
 * **Arrêt**
 
-    * Si vous utilisez le système **Bookworm Desktop** de Raspberry Pi, appuyez deux fois rapidement sur le bouton pour éteindre l’appareil.
-    * Si vous utilisez le système **Bookworm Lite**, une simple pression suffit pour initier l’arrêt.
-    * Pour forcer un arrêt complet, maintenez le bouton enfoncé.
+    * Si vous utilisez le système **Raspberry Pi OS Desktop**, vous pouvez appuyer deux fois rapidement sur le bouton d’alimentation pour éteindre.
+    * Si vous utilisez le système **Raspberry Pi OS Lite** sans interface graphique, appuyez une seule fois sur le bouton d’alimentation pour lancer l’arrêt.
+    * Pour forcer un arrêt brutal, maintenez le bouton d’alimentation enfoncé.
 
 * **Allumage**
 

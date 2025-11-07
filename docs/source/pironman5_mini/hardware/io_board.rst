@@ -30,35 +30,35 @@ Vous pouvez les allumer ou les éteindre, changer leur couleur, ajuster leur lum
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * Pour changer leur couleur, entrez la valeur hexadécimale souhaitée, par exemple ``fe1a1a`` :
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * Pour régler la luminosité des LED RGB (plage : 0 à 100 %) :
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * Pour modifier le mode d’affichage RGB, choisissez parmi : ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` :
 
 .. note::
 
-  Si vous choisissez ``rainbow``, ``rainbow_reverse`` ou ``hue_cycle``, vous ne pourrez pas définir la couleur avec ``pironman5 -rc``.
+  Si vous choisissez ``rainbow``, ``rainbow_reverse`` ou ``hue_cycle``, vous ne pourrez pas définir la couleur avec ``sudo pironman5 -rc``.
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * Pour ajuster la vitesse d’animation (plage : 0 à 100 %) :
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 Broche de contrôle RGB
 -------------------------
@@ -79,7 +79,7 @@ Par défaut, 4 LED RGB sont installées. Pour en ajouter, mettez à jour le nomb
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  sudo pironman5 -rl 12
 
 
 
@@ -149,9 +149,9 @@ Une nouvelle pression valide le choix ou lance l’arrêt.
 
 **Extinction**
 
-* Sous **Bookworm Desktop** : appuyez deux fois rapidement pour éteindre.  
-* Sous **Bookworm Lite** (sans interface graphique) : une seule pression suffit.  
-* Maintenez le bouton pour forcer l’arrêt en cas de blocage.
+* Si vous utilisez le système **Raspberry Pi OS Desktop**, vous pouvez appuyer deux fois rapidement sur le bouton d’alimentation pour éteindre.
+* Si vous utilisez le système **Raspberry Pi OS Lite** sans interface graphique, appuyez une seule fois sur le bouton d’alimentation pour lancer l’arrêt.
+* Pour forcer un arrêt brutal, maintenez le bouton d’alimentation enfoncé.
 
 
 **Allumage**

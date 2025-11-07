@@ -31,8 +31,8 @@ Vous pouvez ensuite sélectionner le tutoriel de configuration en fonction de vo
 
     set_up_rpi_os 
     set_up_home_assistant
+    set_up_umbrel
 
-.. set_up_batocera
 
 
 **À propos du bouton d'alimentation**
@@ -41,9 +41,9 @@ Le bouton d'alimentation fait ressortir le bouton d'alimentation du Raspberry Pi
 
 * **Éteindre**
 
-    * Si vous utilisez le système Raspberry Pi **Bookworm Desktop**, vous pouvez appuyer deux fois rapidement sur le bouton d'alimentation pour éteindre.
-    * Si vous utilisez le système Raspberry Pi **Bookworm Lite**, appuyez une seule fois sur le bouton d'alimentation pour initier l'arrêt.
-    * Pour forcer un arrêt brutal, appuyez et maintenez le bouton d'alimentation enfoncé.
+    * Si vous utilisez le système **Raspberry Pi OS Desktop**, vous pouvez appuyer deux fois rapidement sur le bouton d’alimentation pour éteindre.
+    * Si vous utilisez le système **Raspberry Pi OS Lite** sans interface graphique, appuyez une seule fois sur le bouton d’alimentation pour lancer l’arrêt.
+    * Pour forcer un arrêt brutal, maintenez le bouton d’alimentation enfoncé.
 
 * **Allumer**
 

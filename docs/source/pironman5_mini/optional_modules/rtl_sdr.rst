@@ -122,15 +122,15 @@ Installer les logiciels radio courants
 
 Cette section présente quatre applications SDR largement utilisées, avec de courtes descriptions, des instructions d’installation et des conseils de configuration de base pour les systèmes basés sur Debian.
 
-* :ref:`install_gqrx`
-* :ref:`install_sdrpp`
-* :ref:`install_rtl433`
-* :ref:`install_dump1090`
+* :ref:`install_gqrx_mini`
+* :ref:`install_sdrpp_mini`
+* :ref:`install_rtl433_mini`
+* :ref:`install_dump1090_mini`
 
 
 ----
 
-.. _install_gqrx:
+.. _install_gqrx_mini:
 
 GQRX  
 ^^^^^^^^^^^^
@@ -214,7 +214,7 @@ Sortie attendue :
 
 ----
 
-.. _install_sdrpp:
+.. _install_sdrpp_mini:
 
 SDR++ (SDRpp)  
 ^^^^^^^^^^^^^
@@ -284,7 +284,7 @@ Après l’installation, SDR++ apparaîtra dans le menu de votre bureau (génér
 
 ----
 
-.. _install_rtl433:
+.. _install_rtl433_mini:
 
 rtl_433  
 ^^^^^^^^^^^^
@@ -333,7 +333,7 @@ Sortie attendue :
 
 ----
 
-.. _install_dump1090:
+.. _install_dump1090_mini:
 
 dump1090-mutability  
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

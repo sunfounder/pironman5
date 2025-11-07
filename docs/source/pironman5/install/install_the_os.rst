@@ -33,6 +33,7 @@ Dans ce chapitre, vous apprendrez à installer les systèmes d'exploitation. Tou
 
         install_raspberry_os
         install_the_other_os
+        install_umbrel
+    
 
-.. install_batocera
 

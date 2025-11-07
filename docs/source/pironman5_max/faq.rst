@@ -203,7 +203,7 @@ Si le problème persiste après ces étapes, veuillez envoyer un e-mail à servi
 
 #. Les deux broches de l’IO-Expander situées au-dessus de J9 sont utilisées pour connecter les LED RVB au GPIO10. Assurez-vous que le cavalier est correctement placé sur ces deux broches.
 
-   .. image:: advanced/img/io_board_rgb_pin.png
+   .. image:: hardware/img/io_board_rgb_pin.png
       :width: 300
       :align: center
 

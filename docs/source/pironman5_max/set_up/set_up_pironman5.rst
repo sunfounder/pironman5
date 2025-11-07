@@ -31,7 +31,7 @@ Vous pouvez ensuite sélectionner le tutoriel de configuration adapté à votre 
 
     set_up_rpi_os 
     set_up_home_assistant
-
+    set_up_umbrel
 
 .. set_up_batocera
 
@@ -42,9 +42,9 @@ Le bouton d’alimentation est relié au bouton de mise sous tension du Raspberr
 
 * **Extinction**
 
-    * Si vous utilisez le système **Bookworm Desktop** de Raspberry Pi, appuyez deux fois rapidement sur le bouton pour éteindre.
-    * Si vous utilisez le système **Bookworm Lite**, une seule pression suffit pour initier l’extinction.
-    * Pour forcer une extinction brutale, maintenez le bouton enfoncé.
+    * Si vous utilisez le système **Raspberry Pi OS Desktop**, vous pouvez appuyer deux fois rapidement sur le bouton d’alimentation pour éteindre.
+    * Si vous utilisez le système **Raspberry Pi OS Lite** sans interface graphique, appuyez une seule fois sur le bouton d’alimentation pour lancer l’arrêt.
+    * Pour forcer un arrêt brutal, maintenez le bouton d’alimentation enfoncé.
 
 * **Allumage**
 

@@ -198,7 +198,7 @@ La carte dispose de 4 LEDs RGB WS2812 entièrement personnalisables. Vous pouvez
 
   sudo pironman5 -rl 12
 
-.. _max_cc_control_fan:
+.. _cc_control_fan_max:
 
 Contrôle des ventilateurs RGB
 ---------------------------------

@@ -38,6 +38,6 @@ Dans ce chapitre, vous apprendrez à installer différents systèmes d’exploit
 
         install_raspberry_os
         install_the_other_os
+        install_umbrel
 
-.. install_batocera
 

@@ -15,49 +15,50 @@
 .. _max_set_up_pi_os:
 
 Configuration sur Raspberry Pi/Ubuntu/Kali/Homebridge OS
-=================================================================
+===================================================================
 
-Si vous avez installé Raspberry Pi OS, Ubuntu, Kali Linux ou Homebridge sur votre Raspberry Pi, vous devez configurer le Pironman 5 MAX via la ligne de commande. Vous trouverez ci-dessous les tutoriels détaillés :
+Si vous avez installé Raspberry Pi OS, Ubuntu, Kali Linux ou Homebridge sur votre Raspberry Pi, vous devrez configurer le Pironman 5 MAX en utilisant la ligne de commande. Vous trouverez ci-dessous des tutoriels détaillés.
 
 .. note::
 
-  Avant de procéder à la configuration, démarrez et connectez-vous à votre Raspberry Pi. Si vous ne savez pas comment faire, consultez le site officiel de Raspberry Pi : |link_rpi_get_start|.
+  Avant de procéder à la configuration, vous devez démarrer et vous connecter à votre Raspberry Pi.  
+  Si vous n’êtes pas sûr de la procédure de connexion, vous pouvez visiter le site officiel de Raspberry Pi : |link_rpi_get_start|.
 
 
-Configuration de l'extinction pour désactiver l'alimentation des GPIO
---------------------------------------------------------------------------
+Configuration de l’arrêt pour couper l’alimentation GPIO
+-------------------------------------------------------------------------------
 
-Pour éviter que l’écran OLED et les ventilateurs RGB, alimentés par les broches GPIO du Raspberry Pi, restent actifs après l’arrêt du système, il est nécessaire de configurer l’extinction de l’alimentation GPIO.
+Pour éviter que l’écran OLED et les ventilateurs RGB, alimentés par le GPIO du Raspberry Pi, restent actifs après l’arrêt, il est essentiel de configurer le Raspberry Pi afin de désactiver l’alimentation GPIO.
 
-#. Modifiez manuellement le fichier de configuration de la ``EEPROM`` avec la commande suivante :
+#. Ouvrez l’outil de configuration EEPROM :
 
-   .. code-block:: shell
+   .. code-block::
 
-     sudo rpi-eeprom-config -e
+      sudo raspi-config
 
-#. Modifiez le paramètre ``POWER_OFF_ON_HALT`` et définissez-le à ``1``. Exemple :
+#. Accédez à **Advanced Options → A12 Shutdown Behaviour**.
 
-   .. code-block:: shell
+   .. image:: img/shutdown_behaviour.png
 
-     BOOT_UART=1
-     POWER_OFF_ON_HALT=1
-     BOOT_ORDER=0xf41
+#. Sélectionnez **B1 Full Power Off**.
 
-#. Appuyez sur ``Ctrl + X``, puis ``Y`` et ``Entrée`` pour enregistrer les modifications.
+   .. image:: img/run_power_off.png
 
+#. Enregistrez les modifications. Il vous sera demandé de redémarrer afin que les nouveaux paramètres prennent effet.
 
-Téléchargement et installation du module ``pironman5``
+Download e installazione del modulo ``pironman5``
 -----------------------------------------------------------
 
-#. Pour les systèmes Lite, commencez par installer les outils nécessaires : ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
+.. note::
 
+   Per i sistemi “lite”, installa inizialmente strumenti come ``git``, ``python3``, ``pip3``, ``setuptools``, ecc.
+   
    .. code-block:: shell
+   
+      sudo apt-get install git -y
+      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-     sudo apt-get update
-     sudo apt-get install git -y
-     sudo apt-get install python3 python3-pip python3-setuptools -y
-
-#. Téléchargez ensuite le code depuis GitHub et installez le module ``pironman5`` :
+#. Procedi a scaricare il codice da GitHub e installare il modulo ``pironman5``.
 
    .. code-block:: shell
 
@@ -66,29 +67,30 @@ Téléchargement et installation du module ``pironman5``
       cd ~/pironman5
       sudo python3 install.py
 
-   Une fois l’installation réussie, un redémarrage du système est nécessaire. Suivez l’invite affichée pour redémarrer.
+   Dopo un’installazione riuscita, è necessario riavviare il sistema per attivare l’installazione. Segui il prompt a schermo per riavviare.
 
-   Au redémarrage, le service ``pironman5.service`` démarrera automatiquement. Voici les principales fonctions activées :
+   Al riavvio, il servizio ``pironman5.service`` verrà avviato automaticamente.  
+   Ecco le configurazioni principali di Pironman 5 MAX:
+   
+   * Lo schermo OLED mostra CPU, RAM, utilizzo del disco, temperatura della CPU e indirizzo IP del Raspberry Pi.
 
-   * L’écran OLED affiche l’utilisation CPU, RAM, Disque, la température du CPU, et l’adresse IP du Raspberry Pi.
-   * Quatre LED RGB WS2812 s’allument en bleu avec un effet « respiration » (breathing).
+   .. note:: Lo schermo OLED può spegnersi automaticamente dopo un periodo di inattività per risparmiare energia.  
+      Puoi toccare delicatamente il case per attivare il sensore di vibrazione e riaccendere lo schermo.
 
-   .. note::
+   * Quattro LED WS2812 RGB si illumineranno di blu con un effetto di respirazione.  
+   * Le ventole RGB sono impostate di default su **Always On**. Per informazioni sull’impostazione delle temperature di attivazione, consulta :ref:`cc_control_fan_max`.
 
-     Les ventilateurs RGB ne tournent que si la température atteint 60 °C. Pour modifier cette température, consultez : :ref:`max_cc_control_fan`.
-
-#. Vous pouvez utiliser l’outil ``systemctl`` pour ``start``, ``stop``, ``restart`` ou vérifier le ``status`` de ``pironman5.service`` :
+#. Puoi utilizzare lo strumento ``systemctl`` per ``start``, ``stop``, ``restart`` o controllare lo ``status`` del servizio ``pironman5.service``.
 
    .. code-block:: shell
-
+     
       sudo systemctl restart pironman5.service
-
-   * ``restart`` : applique les modifications de configuration.
-   * ``start/stop`` : active ou désactive le service ``pironman5.service``.
-   * ``status`` : vérifie l’état de fonctionnement du programme ``pironman5`` via ``systemctl``.
+   
+   * ``restart``: Usa questo comando per applicare eventuali modifiche alle impostazioni di Pironman 5 MAX.  
+   * ``start/stop``: Abilita o disabilita il servizio ``pironman5.service``.  
+   * ``status``: Controlla lo stato operativo del programma ``pironman5`` utilizzando lo strumento ``systemctl``.
 
 .. note::
 
-   À ce stade, vous avez correctement configuré le Pironman 5 MAX, et il est prêt à être utilisé.
-
-   Pour un contrôle avancé de ses composants, veuillez vous référer à :ref:`control_commands_dashboard_max`.
+   A questo punto hai configurato con successo il Pironman 5 MAX ed è pronto per l’uso.  
+   Per il controllo avanzato dei suoi componenti, consulta :ref:`control_commands_dashboard_max`.

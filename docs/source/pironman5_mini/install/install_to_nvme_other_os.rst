@@ -30,7 +30,6 @@ Si vous utilisez un SSD NVMe et que vous disposez d’un adaptateur pour le conn
 * Un adaptateur NVMe vers USB
 * Une carte Micro SD et un lecteur
 
-.. _update_bootloader_mini:
 
 1. Mettre à jour le bootloader
 ----------------------------------

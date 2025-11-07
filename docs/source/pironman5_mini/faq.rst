@@ -35,9 +35,9 @@ Le bouton d'alimentation reprend les fonctions du bouton physique du Raspberry P
 
 * **Arrêt**
 
-  * Si vous utilisez le système **Bookworm Desktop**, appuyez deux fois rapidement sur le bouton pour éteindre.
-  * Si vous utilisez le système **Bookworm Lite**, une seule pression suffit pour lancer l’arrêt.
-  * Pour forcer l'arrêt complet, maintenez le bouton enfoncé.
+   * Si vous utilisez le système **Raspberry Pi OS Desktop**, vous pouvez appuyer deux fois rapidement sur le bouton d’alimentation pour éteindre.
+   * Si vous utilisez le système **Raspberry Pi OS Lite** sans interface graphique, appuyez une seule fois sur le bouton d’alimentation pour lancer l’arrêt.
+   * Pour forcer un arrêt brutal, maintenez le bouton d’alimentation enfoncé.
 
 * **Allumage**
 
