@@ -39,6 +39,6 @@ In questo capitolo imparerai a installare i sistemi operativi. Tutte le operazio
 
         install_raspberry_os
         install_the_other_os
+        install_umbrel
 
-.. install_batocera
 

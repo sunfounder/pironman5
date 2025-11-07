@@ -32,35 +32,35 @@ regolare la luminosità, cambiare le modalità di visualizzazione e impostare la
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * Per modificarne il colore, inserisci un valore esadecimale come ``fe1a1a``.
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * Per regolare la luminosità (intervallo: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * Per cambiare modalità di visualizzazione, scegli tra: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
 .. note::
 
-  Se imposti la modalità su ``rainbow``, ``rainbow_reverse`` o ``hue_cycle``, non potrai cambiare il colore tramite ``pironman5 -rc``.
+  Se imposti la modalità su ``rainbow``, ``rainbow_reverse`` o ``hue_cycle``, non potrai cambiare il colore tramite ``sudo pironman5 -rc``.
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * Per regolare la velocità degli effetti (intervallo: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 Pin di Controllo RGB
 -------------------------
@@ -81,7 +81,7 @@ La configurazione predefinita prevede 4 LED RGB. Per aggiungerne altri, aggiorna
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  sudo pironman5 -rl 12
 
 
 
@@ -104,7 +104,7 @@ Puoi configurare la modalità operativa della ventola RGB tramite comando. Le mo
 
   .. code-block:: shell
 
-    pironman5 -gm 3
+    sudo pironman5 -gm 3
 
   * **4: Quiet**: la ventola si attiva a 70°C.
   * **3: Balanced**: la ventola si attiva a 67,5°C.
@@ -148,8 +148,8 @@ Se è in esecuzione il Raspberry Pi Desktop, una breve pressione sul pulsante av
 
 **Spegnimento**
 
-  * Se utilizzi il sistema **Raspberry Pi Bookworm Desktop**, premi il pulsante due volte velocemente per spegnere.
-  * Se utilizzi **Raspberry Pi Bookworm Lite** (senza desktop), premi il pulsante una sola volta per avviare lo spegnimento.
+  * Se utilizzi il sistema **Raspberry Pi OS Desktop**, premi il pulsante due volte velocemente per spegnere.
+  * Se utilizzi **Raspberry Pi OS Lite** (senza desktop), premi il pulsante una sola volta per avviare lo spegnimento.
   * Per forzare lo spegnimento, tieni premuto il pulsante.
 
 

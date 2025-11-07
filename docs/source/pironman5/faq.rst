@@ -35,8 +35,8 @@ Il pulsante di accensione estende il pulsante di alimentazione del Raspberry Pi 
 
 * **Spegnimento**
 
-  * Se utilizzi il sistema **Raspberry Pi Bookworm Desktop**, premi due volte rapidamente il pulsante di alimentazione per spegnere il dispositivo.
-  * Se utilizzi il sistema **Raspberry Pi Bookworm Lite**, premi una sola volta il pulsante per avviare lo spegnimento.
+  * Se utilizzi il sistema **Raspberry Pi OS Desktop**, premi due volte rapidamente il pulsante di alimentazione per spegnere il dispositivo.
+  * Se utilizzi il sistema **Raspberry Pi OS Lite**, premi una sola volta il pulsante per avviare lo spegnimento.
   * Per un arresto forzato, tieni premuto il pulsante di alimentazione.
 
 * **Accensione**

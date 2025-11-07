@@ -43,8 +43,8 @@ Se si utilizza il desktop Raspberry Pi, una breve pressione del pulsante di alim
 
 **Spegnimento**
 
-    * Se utilizzi il sistema **Raspberry Pi Bookworm Desktop**, puoi premere due volte rapidamente il pulsante di alimentazione per spegnere.
-    * Se utilizzi il sistema **Raspberry Pi Bookworm Lite** senza desktop, premi una volta il pulsante di alimentazione per avviare lo spegnimento.
+    * Se utilizzi il sistema **Raspberry Pi OS Desktop**, puoi premere due volte rapidamente il pulsante di alimentazione per spegnere.
+    * Se utilizzi il sistema **Raspberry Pi OS Lite** senza desktop, premi una volta il pulsante di alimentazione per avviare lo spegnimento.
     * Per forzare uno spegnimento forzato, tieni premuto il pulsante di alimentazione.
 
 **Accensione**

@@ -43,8 +43,8 @@ Se utilizzi il sistema Raspberry Pi Desktop, una breve pressione del pulsante di
 
 **Spegnimento**
 
-    * Se utilizzi il sistema **Raspberry Pi Bookworm Desktop**, puoi premere due volte rapidamente il pulsante per spegnere.
-    * Se utilizzi il sistema **Raspberry Pi Bookworm Lite** senza interfaccia grafica, una singola pressione avvierà lo spegnimento.
+    * Se utilizzi il sistema **Raspberry Pi OS Desktop**, puoi premere due volte rapidamente il pulsante per spegnere.
+    * Se utilizzi il sistema **Raspberry Pi OS Lite** senza interfaccia grafica, una singola pressione avvierà lo spegnimento.
     * Per forzare lo spegnimento immediato, tieni premuto il pulsante di accensione.
 
 

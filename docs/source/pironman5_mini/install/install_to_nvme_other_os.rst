@@ -30,7 +30,6 @@ Se stai utilizzando un SSD NVMe e disponi di un adattatore per collegarlo al com
 * Un adattatore da NVMe a USB
 * Una scheda Micro SD e lettore
 
-.. _update_bootloader_mini:
 
 1. Aggiornare il Bootloader
 ----------------------------------

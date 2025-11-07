@@ -199,7 +199,7 @@ La scheda è dotata di 4 LED RGB WS2812 con controllo personalizzabile. Puoi acc
 
   sudo pironman5 -rl 12
 
-.. _max_cc_control_fan:
+.. _cc_control_fan_max:
 
 Controllo delle Ventole RGB 
 -------------------------------

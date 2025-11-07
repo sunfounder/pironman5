@@ -30,8 +30,9 @@ Puoi quindi procedere selezionando il tutorial di configurazione in base al tuo 
 
     set_up_rpi_os 
     set_up_home_assistant
+    set_up_umbrel
 
-.. set_up_batocera
+
 
 
 **Informazioni sul pulsante di accensione**
@@ -40,13 +41,13 @@ Il pulsante di accensione riproduce la funzione del pulsante di accensione del R
 
 * **Spegnimento**
 
-    * Se utilizzi il sistema **Bookworm Desktop** di Raspberry Pi, puoi premere due volte rapidamente il pulsante di accensione per spegnere.
-    * Se utilizzi il sistema **Bookworm Lite** di Raspberry Pi, premi una sola volta il pulsante di accensione per avviare lo spegnimento.
-    * Per forzare uno spegnimento immediato, tieni premuto il pulsante di accensione.
+  * Se utilizzi il sistema **Raspberry Pi OS Desktop**, puoi premere il pulsante di accensione due volte in rapida successione per spegnere.  
+  * Se utilizzi il sistema **Raspberry Pi OS Lite**, premi il pulsante di accensione una sola volta per avviare lo spegnimento.
+  * Per forzare uno spegnimento immediato, tieni premuto il pulsante di accensione.
 
 * **Accensione**
 
-    * Se la scheda Raspberry Pi è spenta ma ancora alimentata, premi una sola volta per riaccendere da uno stato di spegnimento.
+  * Se la scheda Raspberry Pi è spenta ma ancora alimentata, premi una sola volta per riaccendere da uno stato di spegnimento.
 
 * Se utilizzi un sistema che non supporta il pulsante di spegnimento, puoi tenerlo premuto per 5 secondi per forzare uno spegnimento immediato e poi premerlo una volta per riaccendere da uno stato di spegnimento.
 

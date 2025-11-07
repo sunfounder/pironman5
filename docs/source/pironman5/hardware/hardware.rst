@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-.. _advanced:
+.. _hardware:
 
 6. Panoramica dell'hardware
 ================================

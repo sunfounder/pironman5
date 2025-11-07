@@ -36,8 +36,8 @@ Il pulsante di accensione estende il pulsante Power del Raspberry Pi 5 e funzion
 
 * **Spegnimento**
 
-  * Se utilizzi il sistema **Raspberry Pi Bookworm Desktop**, premi due volte rapidamente il pulsante di accensione per spegnere.
-  * Se utilizzi il sistema **Raspberry Pi Bookworm Lite**, premi una volta il pulsante per iniziare lo spegnimento.
+  * Se utilizzi il sistema **Raspberry Pi OS Desktop**, premi due volte rapidamente il pulsante di accensione per spegnere.
+  * Se utilizzi il sistema **Raspberry Pi OS Lite**, premi una volta il pulsante per iniziare lo spegnimento.
   * Per uno spegnimento forzato, tieni premuto il pulsante di accensione.
 
 * **Accensione**
@@ -199,7 +199,7 @@ Se il problema persiste dopo questi passaggi, invia un’e-mail a service@sunfou
 
 #. I due pin sull’IO Expander sopra J9 vengono utilizzati per collegare i LED RGB a GPIO10. Assicurati che il jumper sia correttamente inserito su questi due pin.
 
-   .. image:: advanced/img/io_board_rgb_pin.png
+   .. image:: hardware/img/io_board_rgb_pin.png
       :width: 300
       :align: center
 

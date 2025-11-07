@@ -55,10 +55,7 @@ Se hai installato il sistema operativo Batocera.linux, puoi accedere a questo si
 
    * Lo schermo OLED mostrerà CPU, RAM, utilizzo del disco, temperatura della CPU e l'indirizzo IP del Raspberry Pi.
    * Quattro LED RGB WS2812 si illumineranno di blu con una modalità di respirazione.
-   
-   .. note::
-    
-     I ventilatori RGB non funzioneranno a meno che la temperatura non raggiunga i 60°C. Per temperature di attivazione diverse, consulta :ref:`cc_control_fan`.
+   * Le ventole RGB sono impostate di default sulla modalità **Always On**. Per temperature di attivazione diverse, consulta :ref:`cc_control_fan`.
 
 
 Ora puoi collegare il Pironman 5 a uno schermo, controller di gioco, cuffie e molto altro per immergerti nel tuo mondo di gioco.

@@ -31,7 +31,7 @@ Successivamente, scegli il tutorial di configurazione in base al sistema operati
 
     set_up_rpi_os 
     set_up_home_assistant
-    set_up_batocera
+    set_up_umbrel
 
 
 **Informazioni sul Pulsante di Accensione**
@@ -40,8 +40,8 @@ Il pulsante di accensione corrisponde al pulsante fisico del Raspberry Pi 5 e ne
 
 * **Spegnimento**
 
-    * Se utilizzi il sistema **Raspberry Pi Bookworm Desktop**, premi due volte in rapida successione il pulsante per spegnere il dispositivo.
-    * Se utilizzi il sistema **Raspberry Pi Bookworm Lite**, premi una sola volta per avviare lo spegnimento.
+    * Se utilizzi il sistema **Raspberry Pi OS Desktop**, premi due volte in rapida successione il pulsante per spegnere il dispositivo.
+    * Se utilizzi il sistema **Raspberry Pi OS Lite**, premi una sola volta per avviare lo spegnimento.
     * Per forzare lo spegnimento, tieni premuto il pulsante.
 
 * **Accensione**

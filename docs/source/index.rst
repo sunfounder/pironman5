@@ -51,12 +51,12 @@ Di seguito una tabella comparativa delle specifiche tra Pironman 5, Pironman 5 M
 
 .. list-table:: 
    :widths: 25 25 25 25
-   :header-rows: 1
-
+   :header-rows: 1  
+   
    * - Specifiche
      - :ref:`intro_pironman5`
-     - :ref:`intro_pironman5_mini`
      - :ref:`intro_pironman5_max`
+     - :ref:`intro_pironman5_mini`
    * - Dispositivi compatibili 
      - Raspberry Pi 5
      - Raspberry Pi 5
@@ -71,48 +71,48 @@ Di seguito una tabella comparativa delle specifiche tra Pironman 5, Pironman 5 M
      - ✔
    * - Materiale esterno 1
      - Lega di alluminio argento
-     - Lega di alluminio argento
      - Lega di alluminio nero
+     - Lega di alluminio argento
    * - Materiale esterno 2
      - Acrilico trasparente
      - Acrilico nero
      - Acrilico nero
    * - Sistema di raffreddamento
      - Dissipatore a torre
-     - Dissipatore attivo
      - Dissipatore a torre
+     - Dissipatore attivo
    * - Ricevitore IR
      - ✔
-     - X
      - ✔
+     - X
    * - Numero ventole RGB
      - 2
-     - 1
      - 2
+     - 1
    * - Modalità ventola RGB
      - Sincronizzazione con ventola
      - Controllo indipendente
      - Controllo indipendente
    * - Porte HDMI
      - 2 porte HDMI standard
-     - 2 porte Micro HDMI
      - 2 porte HDMI standard
+     - 2 porte Micro HDMI
    * - Schermo OLED
      - ✔
-     - X
      - ✔
+     - X
    * - Attivazione OLED
      - Sempre attivo
-     - 
      - Attivo al tocco
+     - 
    * - Supporto NVMe SSD
      - 1
-     - 1   
      - 2
+     - 1   
    * - Dimensioni
      - 111.9x78.5x117 mm
-     - 67.8x98.6x101.5 mm  
      - 111.9x78.5x117 mm
+     - 67.8x98.6x101.5 mm  
 
 .. note::
 
@@ -129,10 +129,11 @@ Per qualsiasi domanda, inviaci un'e-mail all'indirizzo service@sunfounder.com: t
 .. toctree::
     :maxdepth: 1
 
-    About Pironman 5 Series <self>
+    Informazioni sulla serie Pironman 5 <self>
     pironman5/intro_pironman5
-    pironman5_mini/intro_pironman5_mini
     pironman5_max/intro_pironman5_max
+    pironman5_mini/intro_pironman5_mini
+
 
 **Avviso sul copyright**
 

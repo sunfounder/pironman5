@@ -26,35 +26,35 @@ La scheda è dotata di 4 LED RGB WS2812, che offrono un controllo personalizzabi
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * Per cambiare il colore, inserisci i valori esadecimali del colore desiderato, ad esempio ``fe1a1a``.
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * Per modificare la luminosità dei LED RGB (intervallo: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * Per cambiare le modalità di visualizzazione dei LED RGB, scegli tra le opzioni: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
 .. note::
 
-  Se imposti la modalità di visualizzazione dei LED RGB su ``rainbow``, ``rainbow_reverse`` o ``hue_cycle``, non sarà possibile impostare il colore tramite ``pironman5 -rc``.
+  Se imposti la modalità di visualizzazione dei LED RGB su ``rainbow``, ``rainbow_reverse`` o ``hue_cycle``, non sarà possibile impostare il colore tramite ``sudo pironman5 -rc``.
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * Per modificare la velocità delle transizioni (intervallo: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 Pin di Controllo RGB
 -------------------------
@@ -74,7 +74,7 @@ Il setup predefinito include 4 LED RGB. Collega ulteriori LED e aggiorna il cont
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  sudo pironman5 -rl 12
 
 
 Connettore dello Schermo OLED
@@ -163,7 +163,7 @@ Ad esempio, se impostato su **1: Performance**, le ventole RGB si attiveranno a 
 
 .. code-block:: shell
 
-  pironman5 -gm 3
+  sudo pironman5 -gm 3
 
 * **4: Quiet**: Le ventole RGB si attiveranno a 70°C.
 * **3: Balanced**: Le ventole RGB si attiveranno a 67,5°C.

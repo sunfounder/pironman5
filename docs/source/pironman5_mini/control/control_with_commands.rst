@@ -152,7 +152,7 @@ La scheda è dotata di 4 LED RGB WS2812, che possono essere controllati in modo 
 
 .. note::
 
-  Se imposti la modalità di visualizzazione su ``rainbow``, ``rainbow_reverse`` o ``hue_cycle``, non potrai modificare il colore con ``pironman5 -rc``.
+  Se imposti la modalità di visualizzazione su ``rainbow``, ``rainbow_reverse`` o ``hue_cycle``, non potrai modificare il colore con ``sudo pironman5 -rc``.
 
 .. code-block:: shell
 

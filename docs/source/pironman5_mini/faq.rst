@@ -35,8 +35,8 @@ Il pulsante esterno replica il pulsante di accensione del Raspberry Pi 5 e ne ma
 
 * **Spegnimento**
 
-  * Su **Raspberry Pi Bookworm Desktop**, premi due volte rapidamente per spegnere.
-  * Su **Raspberry Pi Bookworm Lite**, premi una volta per iniziare lo spegnimento.
+  * Su **Raspberry Pi OS Desktop**, premi due volte rapidamente per spegnere.
+  * Su **Raspberry Pi OS Lite**, premi una volta per iniziare lo spegnimento.
   * Tieni premuto per un arresto forzato.
 
 * **Accensione**
