@@ -69,7 +69,6 @@ Kali Linux | 2025-09-18 | &#x2705;
 Home Assistant OS 16.3 | 2025-11-04 | &#x2705;
 Homebridge bookworm (64 bit) | 2025-07-16 | &#x2705;
 Homebridge bookworm (64 bit) | 2025-07-16 | &#x2705;
-Batocera Linux | 2024-07-31 | &#x2705;
 Umbrel OS 1.5 | 2025-11-5 | &#x2705;
 
 ### Debug
