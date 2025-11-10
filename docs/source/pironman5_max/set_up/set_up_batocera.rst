@@ -55,10 +55,7 @@ Si ya has instalado el sistema operativo Batocera.linux, puedes iniciar sesión 
 
    * La pantalla OLED mostrará el uso de CPU, RAM, disco, temperatura de la CPU y la dirección IP de la Raspberry Pi.
    * Cuatro LEDs RGB WS2812 se encenderán en color azul con efecto de respiración.
-
-   .. note::
-
-     Los ventiladores RGB no girarán hasta que la temperatura alcance los 60°C. Para cambiar la temperatura de activación, consulta :ref:`max_cc_control_fan`.
+   * Los ventiladores RGB están configurados por defecto en el modo **Always On**. Para cambiar la temperatura de activación, consulta :ref:`cc_control_fan_max`.
 
 Ahora puedes conectar el Pironman 5 MAX a una pantalla, controles de juego, auriculares y más, y sumergirte en tu mundo de juegos.
 

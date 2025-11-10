@@ -31,7 +31,7 @@ Luego, puedes proceder a seleccionar el tutorial de configuración según tu sis
 
     set_up_rpi_os 
     set_up_home_assistant
-
+    set_up_umbrel
 .. set_up_batocera
 
 
@@ -41,13 +41,13 @@ El botón de encendido replica la función del botón de encendido del Raspberry
 
 * **Apagado**
 
-    * Si ejecutas el sistema Raspberry Pi **Bookworm Desktop**, puedes presionar el botón de encendido dos veces en rápida sucesión para apagarlo.
-    * Si ejecutas el sistema Raspberry Pi **Bookworm Lite**, presiona el botón de encendido una sola vez para iniciar el apagado.
-    * Para forzar un apagado forzoso, mantén presionado el botón de encendido.
+  * Si utilizas el sistema **Raspberry Pi OS Desktop**, puedes presionar dos veces rápidamente el botón de encendido para apagarlo.
+  * Si utilizas el sistema **Raspberry Pi OS Lite** sin escritorio, presiona una vez el botón de encendido para iniciar el apagado.
+  * Para forzar un apagado, mantén presionado el botón de encendido.
 
 * **Encendido**
 
-    * Si la placa Raspberry Pi está apagada pero sigue recibiendo energía, presiona el botón una sola vez para encenderla desde un estado de apagado.
+  * Si la placa Raspberry Pi está apagada pero sigue recibiendo energía, presiona el botón una sola vez para encenderla desde un estado de apagado.
 
 * Si estás ejecutando un sistema que no admite un botón de apagado, puedes mantener presionado el botón durante 5 segundos para forzar un apagado forzoso y presionar una vez para encender desde un estado de apagado.
 

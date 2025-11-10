@@ -43,14 +43,14 @@ Si estás usando Raspberry Pi Desktop, una breve pulsación del botón de encend
 
 **Apagado**
 
-    * Si estás usando el sistema **Bookworm Desktop** de Raspberry Pi, puedes presionar dos veces el botón de encendido en rápida sucesión para apagarlo.
-    * Si estás usando el sistema **Bookworm Lite** sin entorno de escritorio, basta con una sola pulsación para iniciar el apagado.
-    * Para forzar un apagado completo, mantén presionado el botón de encendido.
+  * Si utilizas el sistema **Raspberry Pi OS Desktop**, puedes presionar dos veces rápidamente el botón de encendido para apagarlo.
+  * Si utilizas el sistema **Raspberry Pi OS Lite** sin escritorio, presiona una vez el botón de encendido para iniciar el apagado.
+  * Para forzar un apagado, mantén presionado el botón de encendido.
 
 
 **Encendido**
 
-    * Si la placa Raspberry Pi está apagada pero aún recibe energía, basta con una sola pulsación para encenderla desde el estado de apagado.
+  * Si la placa Raspberry Pi está apagada pero aún recibe energía, basta con una sola pulsación para encenderla desde el estado de apagado.
 
 .. note::
 

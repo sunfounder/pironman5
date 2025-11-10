@@ -26,7 +26,6 @@ Si estás utilizando un SSD NVMe y tienes un adaptador para conectarlo a tu comp
 * Un adaptador NVMe a USB
 * Tarjeta Micro SD y lector
 
-.. _update_bootloader_mini:
 
 1. Actualizar el gestor de arranque
 --------------------------------------

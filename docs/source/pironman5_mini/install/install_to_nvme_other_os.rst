@@ -30,8 +30,6 @@ Si cuentas con un SSD NVMe y un adaptador para conectarlo a tu computadora, pued
 * Un adaptador NVMe a USB
 * Tarjeta Micro SD y lector
 
-.. _update_bootloader_mini:
-
 1. Actualizar el gestor de arranque
 ------------------------------------
 

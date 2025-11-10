@@ -63,7 +63,7 @@ Para evitar conflictos y asegurar un funcionamiento adecuado:
 
    .. code-block:: bash
 
-      pironman5 -re false
+      sudo pironman5 -re false
       sudo systemctl restart pironman5.service
 
 Esto libera la interfaz SPI para la pantalla táctil de 3.5 pulgadas y evita problemas de visualización.

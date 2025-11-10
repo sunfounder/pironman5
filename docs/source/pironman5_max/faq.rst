@@ -36,9 +36,9 @@ El botón de encendido expone el botón de encendido de la Raspberry Pi 5 y func
 
 * **Apagar**
 
-  * Si utiliza el sistema **Bookworm Desktop** de Raspberry Pi, puede presionar el botón de encendido dos veces rápidamente para apagar.
-  * Si utiliza el sistema **Bookworm Lite** de Raspberry Pi, presione el botón una vez para iniciar el apagado.
-  * Para forzar un apagado, mantenga presionado el botón de encendido.
+  * Si utilizas el sistema **Raspberry Pi OS Desktop**, puedes presionar dos veces rápidamente el botón de encendido para apagarlo.
+  * Si utilizas el sistema **Raspberry Pi OS Lite** sin escritorio, presiona una vez el botón de encendido para iniciar el apagado.
+  * Para forzar un apagado, mantén presionado el botón de encendido.
 
 * **Encender**
 
@@ -199,7 +199,7 @@ Si el problema persiste después de los pasos anteriores, envíe un correo elect
 
 #. Los dos pines del expansor IO situados encima de J9 se utilizan para conectar los LED RGB al GPIO10. Asegúrese de que el jumper esté correctamente colocado sobre estos dos pines.
 
-   .. image:: advanced/img/io_board_rgb_pin.png
+   .. image:: hardware/img/io_board_rgb_pin.png
       :width: 300
       :align: center
 

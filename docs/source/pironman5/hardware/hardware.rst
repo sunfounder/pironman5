@@ -12,7 +12,7 @@
 
     👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-.. _advanced:
+.. _hardware:
 
 6. Descripción general del hardware
 =========================================

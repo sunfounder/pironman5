@@ -32,35 +32,35 @@ Puedes encenderlos o apagarlos, cambiar su color, ajustar el brillo, seleccionar
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * Para cambiar el color, introduce un valor hexadecimal, como ``fe1a1a``.
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * Para modificar el brillo (rango: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * Para cambiar el modo de visualización, selecciona entre: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
 .. note::
 
-  Si eliges los modos ``rainbow``, ``rainbow_reverse`` o ``hue_cycle``, no podrás cambiar el color con ``pironman5 -rc``.
+  Si eliges los modos ``rainbow``, ``rainbow_reverse`` o ``hue_cycle``, no podrás cambiar el color con ``sudo pironman5 -rc``.
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * Para ajustar la velocidad del efecto (rango: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 Pin de control RGB
 -------------------------
@@ -81,7 +81,7 @@ La configuración por defecto incluye 4 LEDs RGB. Para añadir más y actualizar
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  sudo pironman5 -rl 12
 
 
 
@@ -148,14 +148,14 @@ En el escritorio de Raspberry Pi, una pulsación breve abre un menú para apagar
 
 **Apagado**
 
-* En **Bookworm Desktop**, pulsa dos veces rápidamente para apagar.
-* En **Bookworm Lite**, basta una sola pulsación.
-* Para forzar un apagado, mantén el botón presionado.
 
+  * Si utilizas el sistema **Raspberry Pi OS Desktop**, puedes presionar dos veces rápidamente el botón de encendido para apagarlo.
+  * Si utilizas el sistema **Raspberry Pi OS Lite** sin escritorio, presiona una vez el botón de encendido para iniciar el apagado.
+  * Para forzar un apagado, mantén presionado el botón de encendido.
 
 **Encendido**
 
-* Si la Raspberry Pi está apagada pero con energía, una pulsación la encenderá.
+  * Si la Raspberry Pi está apagada pero con energía, una pulsación la encenderá.
 
 .. note::
 

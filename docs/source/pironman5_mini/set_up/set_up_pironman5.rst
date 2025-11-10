@@ -31,7 +31,7 @@ A continuación, selecciona el tutorial de configuración según el sistema oper
 
     set_up_rpi_os 
     set_up_home_assistant
-
+    set_up_umbrel
 
 **Sobre el Botón de Encendido**
 
@@ -39,8 +39,8 @@ El botón de encendido corresponde al botón físico de la Raspberry Pi 5 y tien
 
 * **Apagar**
 
-    * Si estás utilizando el sistema **Raspberry Pi Bookworm Desktop**, puedes presionar dos veces seguidas el botón de encendido para apagar.
-    * Si usas **Raspberry Pi Bookworm Lite**, presiona una sola vez para iniciar el apagado.
+    * Si estás utilizando el sistema **Raspberry Pi OS Desktop**, puedes presionar dos veces seguidas el botón de encendido para apagar.
+    * Si usas **Raspberry Pi OS Lite**, presiona una sola vez para iniciar el apagado.
     * Para un apagado forzado, mantén presionado el botón de encendido.
 
 * **Encender**

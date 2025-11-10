@@ -149,7 +149,7 @@ La placa incluye 4 LEDs RGB WS2812 que pueden personalizarse completamente. Pued
 
 .. note::
 
-  Si eliges ``rainbow``, ``rainbow_reverse`` o ``hue_cycle``, no podrás definir un color específico con ``pironman5 -rc``.
+  Si eliges ``rainbow``, ``rainbow_reverse`` o ``hue_cycle``, no podrás definir un color específico con ``sudo pironman5 -rc``.
 
 .. code-block:: shell
 

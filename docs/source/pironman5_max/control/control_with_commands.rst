@@ -197,7 +197,7 @@ La placa incluye 4 LEDs RGB WS2812 con control personalizable. Puedes encenderlo
 
   sudo pironman5 -rl 12
 
-.. _max_cc_control_fan:
+.. _cc_control_fan_max:
 
 Control de ventiladores RGB
 --------------------------------

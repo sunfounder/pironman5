@@ -35,9 +35,9 @@ El botón de encendido expone la función del botón de encendido del Raspberry 
 
 * **Apagado**
 
-  * Si estás usando el sistema Raspberry Pi **Bookworm Desktop**, presiona el botón de encendido dos veces rápidamente para apagar.
-  * Si estás usando el sistema Raspberry Pi **Bookworm Lite**, presiona una vez para iniciar el apagado.
-  * Para un apagado forzado, mantén presionado el botón.
+  * Si utilizas el sistema **Raspberry Pi OS Desktop**, puedes presionar dos veces rápidamente el botón de encendido para apagarlo.
+  * Si utilizas el sistema **Raspberry Pi OS Lite** sin escritorio, presiona una vez el botón de encendido para iniciar el apagado.
+  * Para forzar un apagado, mantén presionado el botón de encendido.
 
 * **Encendido**
 

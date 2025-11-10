@@ -54,10 +54,7 @@ Si ya has instalado el sistema operativo Batocera.linux, puedes iniciar sesión 
 #. Al reiniciar, el servicio ``pironman5.service`` se iniciará automáticamente. Aquí están las configuraciones principales para Pironman 5:
    
    * Los cuatro LED RGB WS2812 se encenderán en azul con efecto de respiración.
-   
-   .. note::
-
-     El ventilador RGB no girará a menos que la temperatura alcance los 60°C. Para conocer otras temperaturas de activación, consulta :ref:`cc_control_fan_mini`.
+   * Los ventiladores RGB están configurados por defecto en el modo **Always On**. Para diferentes temperaturas de activación, consulta :ref:`cc_control_fan_mini`.
 
 Ahora puedes conectar el Pironman 5 a una pantalla, mandos de juego, auriculares y más para sumergirte en tu mundo de juegos.
 
