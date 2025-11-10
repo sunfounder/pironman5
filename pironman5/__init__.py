@@ -68,7 +68,7 @@ def main():
     if is_included(PERIPHERALS, "vibration_switch"):
         parser.add_argument("-vp", "--vibration-switch-pin", nargs='?', default='', help="Vibration switch pin")
         parser.add_argument("-vu", "--vibration-switch-pull-up", nargs='?', default='', help="Vibration switch pull up True/False")
-        parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds")
+        parser.add_argument("-os", "--oled-sleep-timeout", nargs='?', default='', help="OLED sleep timeout in seconds (set to 0 to disable timeout)")
 
     # parse args
     # ========================================
@@ -410,7 +410,10 @@ def main():
                     print(f"Invalid value for OLED sleep timeout, it should be greater than or equal to 0")
                     quit()
                 new_sys_config['oled_sleep_timeout'] = args.oled_sleep_timeout
-                print(f"Set OLED sleep timeout: {args.oled_sleep_timeout}")
+                if args.oled_sleep_timeout == 0:
+                    print(f"Set OLED sleep timeout: disabled")
+                else:
+                    print(f"Set OLED sleep timeout: {args.oled_sleep_timeout} seconds")
 
     # update config
     # =========================================
