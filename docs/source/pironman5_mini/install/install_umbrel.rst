@@ -10,8 +10,6 @@ Umbrel is an open-source, self-hosted home-server platform/OS that lets you run 
 * A NVMe to USB Adapter
 * Micro SD Card and Reader
 
-.. _update_bootloader_5:
-
 1. Update the Bootloader
 --------------------------------
 

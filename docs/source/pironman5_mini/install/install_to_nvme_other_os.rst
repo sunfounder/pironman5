@@ -30,7 +30,6 @@ If you are using an NVMe SSD and have an adapter to connect the NVMe SSD to your
 * A NVMe to USB Adapter
 * Micro SD Card and Reader
 
-.. _update_bootloader_mini:
 
 1. Update the Bootloader
 ----------------------------------

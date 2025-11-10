@@ -12,8 +12,6 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _set_up_pironman5_mini:
-
 Setting Up on Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge
 ======================================================================
 
@@ -69,13 +67,10 @@ Downloading and Installing the ``pironman5`` Module
 
    After successful installation, a system reboot is required to activate the installation. Follow the on-screen reboot prompt.
 
-   Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5:
+   Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5 Mini:
    
    * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
-     
-   .. note::
-    
-     * The RGB fans are set to **Always On** mode by default. For different activation temperatures, see :ref:`cc_control_fan_mini`.
+   * The RGB fans are set to **Always On** mode by default. For different activation temperatures, see :ref:`cc_control_fan_mini`.
 
 #. You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5.service``.
 

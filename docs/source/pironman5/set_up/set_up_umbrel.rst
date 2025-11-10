@@ -64,10 +64,7 @@ If you have installed Umbrel OS on your Raspberry Pi 5, you will need to configu
    
    * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
    * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
-     
-   .. note::
-    
-     The RGB fans are set to **Always On** mode by default. For information on adjusting activation temperatures, see :ref:`cc_control_fan`.
+   * The RGB fans are set to **Always On** mode by default. For information on adjusting activation temperatures, see :ref:`cc_control_fan`.
 
 #. You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5.service``.
 

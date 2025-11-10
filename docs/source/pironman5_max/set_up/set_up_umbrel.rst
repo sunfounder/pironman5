@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _set_up_umbrel:
+.. _set_up_umbrel_max:
 
 Setting Up on Umbrel OS
 ======================================================================
@@ -50,7 +50,7 @@ If you have installed Umbrel OS on your Raspberry Pi 5, you will need to configu
    .. code-block:: shell
 
       cd ~
-      git clone -b base https://github.com/sunfounder/pironman5.git --depth 1
+      git clone -b max https://github.com/sunfounder/pironman5.git --depth 1
       cd ~/pironman5
       sudo python3 install.py
 
@@ -63,11 +63,11 @@ If you have installed Umbrel OS on your Raspberry Pi 5, you will need to configu
 #. Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5 MAX:
    
    * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
+
+   .. note:: The OLED screen may turn off automatically after a period of inactivity to save power. You can gently tap the case to trigger the vibration sensor and wake the screen.
+
    * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
-     
-   .. note::
-    
-     The RGB fans are set to **Always On** mode by default. For information on adjusting activation temperatures, see :ref:`cc_control_fan`.
+   * The RGB fans are set to **Always On** mode by default. For information on adjusting activation temperatures, see :ref:`cc_control_fan_max`.
 
 #. You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5.service``.
 
@@ -83,7 +83,7 @@ If you have installed Umbrel OS on your Raspberry Pi 5, you will need to configu
 
    At this point, you have successfully set up the Pironman 5 MAX, and it is ready to use.
    
-   For advanced control of its components, please refer to :ref:`control_commands_dashboard_5`.
+   For advanced control of its components, please refer to :ref:`control_commands_dashboard_max`.
 
 
 
