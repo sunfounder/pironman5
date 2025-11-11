@@ -132,6 +132,9 @@ rst_epilog = """
 
 rst_epilog += """
 
+.. |link_3.5_screen| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/35-ips-screen/en/latest/quick_user_guide.html#driver-installation" target="_blank">3.5 Inch IPS Screen Driver Installation</a>
 
 .. |link_sf_27w_supply| raw:: html
 
