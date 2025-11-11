@@ -12,35 +12,35 @@ RGB 灯
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * 更改颜色，输入目标的十六进制色值，例如 ``fe1a1a``：
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * 调整亮度（范围：0 ~ 100%）：
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * 切换显示模式，可选项包括： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``：
 
 .. note::
 
-  如果 RGB 模式设置为 ``rainbow`` 、 ``rainbow_reverse`` 或 ``hue_cycle`` ，将无法使用 ``pironman5 -rc`` 设置颜色。
+  如果 RGB 模式设置为 ``rainbow`` 、 ``rainbow_reverse`` 或 ``hue_cycle``，将无法使用 ``sudo pironman5 -rc`` 设置颜色。
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * 设置变化速度（范围：0 ~ 100%）：
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 RGB 控制引脚  
 -------------------------
@@ -163,7 +163,7 @@ IO 扩展板支持最多连接两颗 5V 非 PWM 风扇，两者统一控制。
 
 .. code-block:: shell
 
-  pironman5 -gm 3
+ sudo pironman5 -gm 3
 
 * **4: 安静模式**：风扇在 70°C 启动  
 * **3: 平衡模式**：风扇在 67.5°C 启动  

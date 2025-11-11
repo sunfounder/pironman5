@@ -31,7 +31,7 @@
    .. note::
 
       * 若选择 **Ubuntu** 系统，请点击 **Other general-purpose OS** -> **Ubuntu**，然后选择 **Ubuntu Desktop 24.04 LTS (64 bit)** 或 **Ubuntu Server 24.04 LTS (64 bit)**。
-      * 若选择 **Kali Linux**、**Home Assistant** 或 **Homebridge** 系统，请点击 **Other specific-purpose OS**，然后选择对应系统。
+      * 若选择 **Kali Linux**、 **Home Assistant** 或 **Homebridge** 系统，请点击 **Other specific-purpose OS**，然后选择对应系统。
 
    .. image:: img/os_other_os.png
       :width: 90%
@@ -47,7 +47,7 @@
    .. note::
 
       * 对于无法预先配置的系统，点击 **NEXT** 后将提示是否保留设备中的数据。若已完成备份，请选择 **Yes**。
-      * 对于支持预设主机名、WiFi 和 SSH 配置的系统，会弹出提示是否应用这些设置，您可以选择 **Yes**、**No**，或返回进一步编辑。
+      * 对于支持预设主机名、WiFi 和 SSH 配置的系统，会弹出提示是否应用这些设置，您可以选择 **Yes**、 **No**，或返回进一步编辑。
 
    .. image:: img/os_enter_setting.png
       :width: 90%

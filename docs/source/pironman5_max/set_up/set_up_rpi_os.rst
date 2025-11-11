@@ -1,48 +1,50 @@
 .. _max_set_up_pi_os:
 
-在 Raspberry Pi/Ubuntu/Kali/Homebridge 系统中配置
-=====================================================
+在 Raspberry Pi / Ubuntu / Kali / Homebridge OS 上的配置
+===================================================================
 
-如果你在树莓派上安装了 Raspberry Pi OS、Ubuntu、Kali Linux 或 Homebridge 系统，则需要通过命令行来配置 Pironman 5 MAX。请参考以下详细教程：
+如果你在 Raspberry Pi 上安装了 Raspberry Pi OS、Ubuntu、Kali Linux 或 Homebridge，则需要使用命令行来配置 Pironman 5 MAX。以下是详细教程。
 
 .. note::
 
-  在开始配置前，请确保你已经启动并登录至树莓派系统。如果你不确定如何登录，可以访问树莓派官网：|link_rpi_get_start|。
+  在进行配置之前，请先启动并登录到你的 Raspberry Pi。  
+  如果不确定如何登录，可以访问 Raspberry Pi 官方网站：|link_rpi_get_start|。
 
 
-配置关机后关闭 GPIO 电源
-------------------------------------------------------------
-为了避免关机后 OLED 屏幕和 RGB 风扇（通过 GPIO 供电）继续运行，需要配置树莓派在关机时自动关闭 GPIO 电源。
+配置关机时关闭 GPIO 电源
+-------------------------------------------------------------------------------
 
-#. 使用以下命令手动编辑 ``EEPROM`` 配置文件：
+为防止 Raspberry Pi 关机后由 GPIO 供电的 OLED 屏幕和 RGB 风扇仍保持运行，必须配置 Raspberry Pi 以在关机时关闭 GPIO 电源。
 
-   .. code-block:: shell
-   
-     sudo rpi-eeprom-config -e
+#. 打开 EEPROM 配置工具：
 
-#. 将配置文件中的 ``POWER_OFF_ON_HALT`` 选项设置为 ``1``，例如：
+   .. code-block::
 
-   .. code-block:: shell
-   
-     BOOT_UART=1
-     POWER_OFF_ON_HALT=1
-     BOOT_ORDER=0xf41
+      sudo raspi-config
 
-#. 按 ``Ctrl + X``，然后 ``Y`` 和 ``Enter`` 保存更改。
+#. 进入 **Advanced Options → A12 Shutdown Behaviour**。
 
+   .. image:: img/shutdown_behaviour.png
+
+#. 选择 **B1 Full Power Off**。
+
+   .. image:: img/run_power_off.png
+
+#. 保存更改。系统会提示你重启以使新设置生效。
 
 下载并安装 ``pironman5`` 模块
 -----------------------------------------------------------
 
-#. 对于 Lite 系统，需先安装 ``git``、 ``python3``、 ``pip3``、 ``setuptools`` 等依赖工具。
+.. note::
 
+   对于 “lite” 系统，请先安装以下工具：``git``、 ``python3``、 ``pip3``、 ``setuptools`` 等。
+   
    .. code-block:: shell
-  
-     sudo apt-get update
-     sudo apt-get install git -y
-     sudo apt-get install python3 python3-pip python3-setuptools -y
+   
+      sudo apt-get install git -y
+      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. 接着，从 GitHub 下载并安装 ``pironman5`` 模块。
+#. 从 GitHub 下载代码并安装 ``pironman5`` 模块。
 
    .. code-block:: shell
 
@@ -51,34 +53,30 @@
       cd ~/pironman5
       sudo python3 install.py
 
-   安装完成后，系统会提示重启，请根据提示完成重启。
+   安装成功后，需要重启系统以激活安装。请根据屏幕提示重启。
 
-   重启后， ``pironman5.service`` 服务将自动启动。以下是 Pironman 5 MAX 的主要功能：
-
-   * OLED 屏幕将显示 CPU、内存、磁盘使用率、CPU 温度及树莓派的 IP 地址。
+   重启后，``pironman5.service`` 服务会自动启动。  
+   以下是 Pironman 5 MAX 的主要功能配置：
    
-   .. note:: OLED 屏幕可能会在一段时间不操作后自动关闭以节省电源。您可以轻轻敲击机箱，触发振动传感器来唤醒屏幕。
+   * OLED 屏幕显示 CPU、RAM、磁盘使用率、CPU 温度及 Raspberry Pi 的 IP 地址。  
 
-   
-   * 四颗 WS2812 RGB 灯珠将以蓝色呼吸灯形式亮起。
-     
-   .. note::
+   .. note:: OLED 屏幕在一段时间无操作后会自动关闭以节省电能。  
+      你可以轻触机壳，触发震动传感器以重新点亮屏幕。
 
-     RGB 风扇默认在温度达到 60°C 时才会启动。如需自定义启动温度，请参考 :ref:`max_cc_control_fan`。
+   * 四个 WS2812 RGB 灯会以蓝色呼吸灯效果亮起。  
+   * RGB 风扇默认设置为 **Always On（始终开启）** 模式。若需设置不同的启用温度，请参阅 :ref:`cc_control_fan_max`。
 
-#. 你可以使用 ``systemctl`` 工具对 ``pironman5.service`` 进行 ``start``、 ``stop``、 ``restart`` 或查询 ``status`` 状态：
+#. 你可以使用 ``systemctl`` 工具来 ``start``、 ``stop``、 ``restart`` 或检查 ``pironman5.service`` 服务的 ``status``。
 
    .. code-block:: shell
      
       sudo systemctl restart pironman5.service
-
-   * ``restart``：用于使 pironman5 的配置更改生效。
-   * ``start/stop``：启动或停止 ``pironman5.service`` 服务。
-   * ``status``：使用 ``systemctl`` 工具查看 pironman5 服务的运行状态。
-
+   
+   * ``restart``：使用此命令以应用 Pironman 5 MAX 设置的更改。  
+   * ``start/stop``：启用或禁用 ``pironman5.service`` 服务。  
+   * ``status``：使用 ``systemctl`` 工具检查 ``pironman5`` 程序的运行状态。
 
 .. note::
 
-   此时，您已成功完成 Pironman 5 MAX 的安装，可以开始使用了。
-   
-   如需对其组件进行高级控制，请参考 :ref:`control_commands_dashboard_max`。
+   至此，你已成功配置 Pironman 5 MAX 并可以开始使用。  
+   若需对其组件进行高级控制，请参阅 :ref:`control_commands_dashboard_max`。

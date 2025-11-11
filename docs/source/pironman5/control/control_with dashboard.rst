@@ -7,7 +7,7 @@
 
 此时，您可以在浏览器中打开监控页面，查看有关 Raspberry Pi 的各项信息，配置 RGB 灯效，控制风扇等。页面地址为： ``http://<ip>:34001`` 。
 
-该页面包含 **Dashboard** 、 **History** 、 **Log** 和 **Settings** 四个子页面。
+该页面包含 **Dashboard**、 **History**、 **Log** 和 **Settings** 四个子页面。
 
 .. image:: img/dashboard_tab_new.jpg
 
@@ -22,19 +22,19 @@
     :width: 90%
 
 
-* **Storage** ：显示 Raspberry Pi 的存储信息，包括各个磁盘分区的已用空间与可用空间。
+* **Storage**：显示 Raspberry Pi 的存储信息，包括各个磁盘分区的已用空间与可用空间。
 
   .. image:: img/dashboard_storage.png
     :width: 90%
 
 
-* **Memory** ：展示 Raspberry Pi 的内存使用情况及使用比例。
+* **Memory**：展示 Raspberry Pi 的内存使用情况及使用比例。
 
   .. image:: img/dashboard_memory.png
     :width: 90%
 
 
-* **Network** ：显示当前网络连接类型，以及上传与下载速率。
+* **Network**：显示当前网络连接类型，以及上传与下载速率。
 
   .. image:: img/dashboard_network.png
     :width: 90%
@@ -64,7 +64,7 @@
 
 * 每份日志大小固定为 10MB，超过后将自动创建新日志文件。
 * 同一服务的日志文件最多保留 10 个，超过后最旧的日志将被自动删除。您也可以手动删除日志。
-* 日志区域上方提供筛选工具，可按日志级别、关键词进行过滤，支持 **自动换行** 、 **自动滚动** 和 **自动刷新** 等功能。
+* 日志区域上方提供筛选工具，可按日志级别、关键词进行过滤，支持 **自动换行**、 **自动滚动** 和 **自动刷新** 等功能。
 * 支持将日志下载到本地保存。
 
 .. image:: img/dashboard_log1.png
@@ -89,9 +89,9 @@
 .. image:: img/OLED_Sreens.jpg
   :width: 600
 
-* **OLED Enable** ：是否启用 OLED 显示屏。
-* **OLED Disk** ：设置 OLED 显示的磁盘信息。
-* **OLED Network Interface** ：
+* **OLED Enable**：是否启用 OLED 显示屏。
+* **OLED Disk**：设置 OLED 显示的磁盘信息。
+* **OLED Network Interface**：
 
   * **all**：循环显示以太网和 Wi-Fi 的 IP 地址。
   * **eth0**：仅显示以太网 IP。
@@ -107,11 +107,11 @@
 * **RGB Enable**：是否启用 RGB 灯效。
 * **RGB Color**：设置 RGB 灯的颜色。
 * **RGB Brightness**：通过滑动条调整 RGB 灯的亮度。
-* **RGB Style**：选择 RGB 灯的显示模式。可选项包括 **Solid** 、 **Breathing** 、 **Flow** 、 **Flow_reverse** 、 **Rainbow** 、 **Rainbow Reverse** 和 **Hue Cycle** 。
+* **RGB Style**：选择 RGB 灯的显示模式。可选项包括 **Solid**、 **Breathing**、 **Flow**、 **Flow_reverse**、 **Rainbow**、 **Rainbow Reverse** 和 **Hue Cycle** 。
 
   .. note::
 
-     当 RGB 模式设置为 **Rainbow** 、 **Rainbow Reverse** 或 **Hue Cycle** 时，RGB 颜色设置将不可用。
+     当 RGB 模式设置为 **Rainbow**、 **Rainbow Reverse** 或 **Hue Cycle** 时，RGB 颜色设置将不可用。
 
 * **RGB Speed**：设置 RGB 灯效的切换速度。
 
@@ -122,11 +122,11 @@
 
 * **GPIO Fan Mode**：设置两颗 RGB 风扇的工作模式。不同模式对应不同的启动温度阈值。
 
-    * **Quiet** ：风扇在温度达到 70°C 时启动。
-    * **Balanced** ：风扇在温度达到 67.5°C 时启动。
-    * **Cool** ：风扇在温度达到 60°C 时启动。
-    * **Performance** ：风扇在温度达到 50°C 时启动。
-    * **Always On** ：风扇始终开启。
+    * **Quiet**：风扇在温度达到 70°C 时启动。
+    * **Balanced**：风扇在温度达到 67.5°C 时启动。
+    * **Cool**：风扇在温度达到 60°C 时启动。
+    * **Performance**：风扇在温度达到 50°C 时启动。
+    * **Always On**：风扇始终开启。
 
 例如，将模式设置为 **Performance** 后，当 CPU 温度超过 50°C，您将在控制面板中看到 **GPIO Fan State** 状态切换为 ON，两颗侧面 RGB 风扇开始运转。
 

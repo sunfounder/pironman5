@@ -47,7 +47,7 @@ Pironman 5 的功能以插件形式集成在 Home Assistant 中。首先，需�
    .. image:: img/home_add_res.png
       :width: 90%
 
-#. 输入 **SunFounder** 插件源地址： ``https://github.com/sunfounder/home-assistant-addon`` ，点击 **ADD**。
+#. 输入 **SunFounder** 插件源地址： ``https://github.com/sunfounder/home-assistant-addon``，点击 **ADD**。
 
    .. image:: img/home_res_add.png
       :width: 90%

@@ -21,8 +21,8 @@
 
 * **关机操作**
 
-  * 若运行的是 Raspberry Pi **Bookworm Desktop** 系统，快速按下电源按钮两次即可关机；
-  * 若运行的是 Raspberry Pi **Bookworm Lite** 系统，按下一次电源按钮即可触发关机；
+  * 若运行的是 **Raspberry Pi OS Desktop** 系统，快速按下电源按钮两次即可关机；
+  * 若运行的是 **Raspberry Pi OS Lite** 系统，按下一次电源按钮即可触发关机；
   * 若需强制关机，请长按电源按钮。
 
 * **开机操作**
@@ -363,7 +363,7 @@ PWM 风扇根据树莓派 5 的温度自动调节转速：
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. 若输出如下内容 ``OpenSSH.Client`` ，即表示 OpenSSH 安装成功：
+#. 若输出如下内容 ``OpenSSH.Client``，即表示 OpenSSH 安装成功：
 
    .. code-block::
 

@@ -21,8 +21,8 @@
 
 * **关机**
 
-  * 使用 Raspberry Pi **Bookworm Desktop** 系统时，快速连续按下电源按钮两次即可关机。
-  * 使用 Raspberry Pi **Bookworm Lite** 系统时，单击电源按钮即可关机。
+  * 使用 **Raspberry Pi OS Desktop** 系统时，快速连续按下电源按钮两次即可关机。
+  * 使用 **Raspberry Pi OS Lite** 系统时，单击电源按钮即可关机。
   * 长按电源按钮可强制关机。
 
 * **开机**

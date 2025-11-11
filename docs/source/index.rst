@@ -27,12 +27,13 @@ Pironman 5 系列 - 适用于 Raspberry Pi 5 的 NVMe M.2 SSD PCIe 迷你电脑�
    :widths: 25 25 25
    :header-rows: 1
 
+
    * - :ref:`intro_pironman5`
-     - :ref:`intro_pironman5_mini`
      - :ref:`intro_pironman5_max`
+     - :ref:`intro_pironman5_mini`
    * - |pic_pironman5| 
-     - |pic_pironman5_mini| 
      - |pic_pironman5_max|
+     - |pic_pironman5_mini| 
 
 以下是 Pironman 5, Pironman 5 Mini 与Pironman 5 MAX的规格对比表，可帮助您了解各型号之间的差异。
 
@@ -40,10 +41,11 @@ Pironman 5 系列 - 适用于 Raspberry Pi 5 的 NVMe M.2 SSD PCIe 迷你电脑�
    :widths: 25 25 25 25
    :header-rows: 1
 
+
    * - 规格参数
      - :ref:`intro_pironman5`
-     - :ref:`intro_pironman5_mini`
      - :ref:`intro_pironman5_max`
+     - :ref:`intro_pironman5_mini`
    * - 兼容设备 
      - Raspberry Pi 5
      - Raspberry Pi 5
@@ -58,49 +60,49 @@ Pironman 5 系列 - 适用于 Raspberry Pi 5 的 NVMe M.2 SSD PCIe 迷你电脑�
      - ✔
    * - 外壳材质 1
      - 银色铝合金
-     - 银色铝合金
      - 黑色铝合金
+     - 银色铝合金
    * - 外壳材质 2
      - 透明亚克力
      - 黑色亚克力
      - 黑色亚克力
    * - 散热器类型
      - 塔式散热器
-     - 主动式散热器
      - 塔式散热器
+     - 主动式散热器
    * - 红外接收器
      - ✔
-     - X
      - ✔
+     - X
    * - RGB 风扇数量
      - 2
-     - 1
      - 2
+     - 1
    * - RGB 风扇模式
      - 与风扇同步
      - 独立控制
      - 独立控制
    * - HDMI 接口
      - 2 个标准 HDMI 接口
-     - 2 个 Micro HDMI 接口
      - 2 个标准 HDMI 接口
+     - 2 个 Micro HDMI 接口
    * - OLED 显示屏
      - ✔
-     - X
      - ✔
+     - X
    * - OLED 启动方式
      - 始终开启
-     - 
      - 触控唤醒
+     - 
    * - 支持 NVMe SSD 数量
      - 1
-     - 1   
      - 2
+     - 1   
    * - 尺寸
      - 111.9×78.5×117mm
-     - 67.8×98.6×101.5mm  
      - 111.9×78.5×117mm
-
+     - 67.8×98.6×101.5mm  
+     
 .. note::
 
   推荐在 Pironman 5 系列产品中使用官方 27W 电源适配器或 |link_sf_27w_supply|，以避免因供电不足导致树莓派 5 重启。

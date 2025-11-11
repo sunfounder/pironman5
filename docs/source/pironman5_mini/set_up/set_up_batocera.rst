@@ -40,10 +40,7 @@
 #. 重启后， ``pironman5.service`` 将会自动启动。以下是 Pironman 5 的主要配置：
 
    * 四颗 WS2812 RGB 灯珠将以蓝色呼吸灯模式点亮。
-
-   .. note::
-
-     RGB 风扇在温度达到 60°C 前不会启动。若需设置其他温度触发值，请参考 :ref:`cc_control_fan_mini`。
+   * RGB 风扇默认设置为 **Always On（始终开启）** 模式。若需设置其他温度触发值，请参考 :ref:`cc_control_fan_mini`。
 
 现在，你可以将 Pironman 5 连接到显示器、游戏手柄、耳机等设备，尽情畅玩属于你的游戏世界。
 

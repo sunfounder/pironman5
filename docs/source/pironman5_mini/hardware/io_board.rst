@@ -15,35 +15,35 @@ RGB 灯效
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * 更改颜色，输入十六进制颜色值，例如 ``fe1a1a``：
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * 设置亮度（范围：0 ~ 100%）：
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * 切换显示模式，可选项包括： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``：
 
 .. note::
 
-  如果设置为 ``rainbow``、 ``rainbow_reverse`` 或 ``hue_cycle`` 模式，则无法再使用 ``pironman5 -rc`` 命令设置颜色。
+  如果设置为 ``rainbow``、 ``rainbow_reverse`` 或 ``hue_cycle`` 模式，则无法再使用 ``sudo pironman5 -rc`` 命令设置颜色。
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * 设置灯效变化速度（范围：0 ~ 100%）：
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 RGB 控制引脚
 -------------------------
@@ -64,7 +64,7 @@ WS2812 RGB 支持串联扩展，可外接 RGB 灯带。请将 **SIG** 引脚连�
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  sudo pironman5 -rl 12
 
 
 
@@ -87,7 +87,7 @@ J9 下方的两组针脚分别控制风扇与风扇灯光的启用。默认跳�
 
   .. code-block:: shell
 
-    pironman5 -gm 3
+    sudo pironman5 -gm 3
 
   * **4: Quiet**：70°C 启动风扇
   * **3: Balanced**：67.5°C 启动风扇

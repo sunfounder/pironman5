@@ -49,7 +49,7 @@
 
    .. code-block:: bash
 
-      pironman5 -re false
+      sudo pironman5 -re false
       sudo systemctl restart pironman5.service
 
 这样可以释放 SPI 接口供 3.5 英寸触摸屏使用，从而避免显示问题。
@@ -57,82 +57,4 @@
 
 **驱动安装**
 
-在使用 3.5 英寸触摸屏之前，你需要先安装驱动。
-
-通用提示：
-
-* 确保已安装 git (``sudo apt install git``)。  
-* 驱动安装大约需要 1–3 分钟。  
-* 系统会自动重启。  
-
-根据你所使用的操作系统，选择对应的安装步骤：  
-
-* **Raspberry Pi OS**:
-
-  .. code-block:: bash
-  
-     sudo rm -rf LCD-show 
-     git clone https://github.com/sunfounder/LCD-show.git 
-     chmod -R 755 LCD-show 
-     cd LCD-show/ 
-     sudo ./LCD35-show
-  
-  安装完成后，树莓派桌面会显示在 3.5 英寸触摸屏上。  
-  
-  如果需要旋转屏幕：
-  
-  .. code-block:: bash
-  
-     cd LCD-show/
-     sudo ./rotate.sh 90   
-  
-  系统会自动重启，屏幕将旋转 90°。  
-  你可以将 ``90`` 替换为 ``0``、 ``180`` 或 ``270`` 来设置角度。
-
-
-
-* **Ubuntu**:
-
-  .. code-block:: bash
-  
-     sudo rm -rf LCD-show-ubuntu 
-     git clone https://github.com/sunfounder/LCD-show-ubuntu.git 
-     chmod -R 755 LCD-show-ubuntu 
-     cd LCD-show-ubuntu/ 
-     sudo ./LCD35-show
-  
-  安装完成后，树莓派桌面会显示在 3.5 英寸触摸屏上。  
-  
-  如果需要旋转屏幕：
-  
-  .. code-block:: bash
-  
-     cd LCD-show-ubuntu/
-     sudo ./rotate.sh 90   
-  
-  系统会自动重启。  
-  你可以将 ``90`` 替换为 ``0``、 ``180`` 或 ``270`` 来设置角度。
-
-
-
-* **Kali Linux**:
-
-  .. code-block:: bash
-  
-     sudo rm -rf LCD-show-kali 
-     git clone https://github.com/sunfounder/LCD-show-kali.git 
-     chmod -R 755 LCD-show-kali 
-     cd LCD-show-kali/ 
-     sudo ./LCD35-show
-  
-  安装完成后，树莓派桌面会显示在 3.5 英寸触摸屏上。  
-  
-  如果需要旋转屏幕：
-  
-  .. code-block:: bash
-  
-     cd LCD-show-kali/
-     sudo ./rotate.sh 90   
-  
-  系统会自动重启，并应用新的旋转角度。  
-  你可以将 ``90`` 替换为 ``0``、 ``180`` 或 ``270`` 来设置角度。
+有关详细说明，请参阅 |link_3.5_screen|，其中描述了针对不同系统的驱动程序安装。

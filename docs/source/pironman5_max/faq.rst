@@ -22,8 +22,8 @@ FAQ
 
 * **关机**
 
-  * 如果运行 Raspberry Pi **Bookworm Desktop** 系统，可以快速按两次电源按钮来关机。 
-  * 如果运行 Raspberry Pi **Bookworm Lite** 系统，单击一次电源按钮即可关机。
+  * 如果运行 **Raspberry Pi OS Desktop** 系统，可以快速按两次电源按钮来关机。 
+  * 如果运行 **Raspberry Pi OS Lite** 系统，单击一次电源按钮即可关机。
   * 长按电源键可强制关机。
 
 * **开机**
@@ -185,7 +185,7 @@ Raspberry Pi AI Kit 由 Raspberry Pi M.2 HAT+ 和 Hailo AI 加速模块组成。
 
 #. IO 扩展板上 J9 之上的两个引脚用于将 RGB LED 连接到 GPIO10，请确保跳帽正确插好。  
 
-   .. image:: advanced/img/io_board_rgb_pin.png
+   .. image:: hardware/img/io_board_rgb_pin.png
       :width: 300
       :align: center
 

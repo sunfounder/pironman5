@@ -16,7 +16,7 @@
 
 .. code-block:: shell
 
-  pironman5 -c
+  sudo pironman5 -c
 
 标准配置如下所示：
 
@@ -124,41 +124,41 @@
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * 更改 RGB 颜色，输入对应的十六进制值，例如 ``fe1a1a``：
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * 设置 RGB 灯亮度（范围：0 ~ 100%）：
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * 切换 RGB 灯效模式，可选： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``：
 
 .. note::
 
-  若设置为 ``rainbow``、 ``rainbow_reverse`` 或 ``hue_cycle`` 模式，将无法再通过 ``pironman5 -rc`` 命令设置颜色。
+  若设置为 ``rainbow``、 ``rainbow_reverse`` 或 ``hue_cycle`` 模式，将无法再通过 ``sudo pironman5 -rc`` 命令设置颜色。
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * 调节 RGB 灯变化速度（范围：0 ~ 100%）：
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 * 默认配置为 4 颗 RGB 灯，如有扩展请使用以下命令更新灯数：
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  sudo pironman5 -rl 12
 
 .. _cc_control_fan_mini:
 

@@ -16,6 +16,7 @@
 
     set_up_rpi_os 
     set_up_home_assistant
+    set_up_umbrel
 
 **关于电源按钮**
 
@@ -23,8 +24,8 @@
 
 * **关机操作**
 
-    * 如果你运行的是 Raspberry Pi **Bookworm Desktop** 系统，可快速连续按下电源按钮两次实现关机。
-    * 如果你运行的是 Raspberry Pi **Bookworm Lite** 系统，单击一次电源按钮即可触发关机。
+    * 如果你运行的是 **Raspberry Pi OS Desktop** 系统，可快速连续按下电源按钮两次实现关机。
+    * 如果你运行的是 **Raspberry Pi OS Lite** 系统，单击一次电源按钮即可触发关机。
     * 长按电源按钮可强制关机。
 
 * **开机操作**

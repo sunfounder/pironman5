@@ -16,8 +16,6 @@
 * 一个 NVMe 转 USB 适配器
 * 一张 Micro SD 卡及读卡器
 
-.. _update_bootloader_mini:
-
 1. 更新启动引导程序
 ----------------------------------
 
@@ -110,7 +108,7 @@
    .. note::
 
       * 对于 **Ubuntu** 系统，请点击 **Other general-purpose OS** -> **Ubuntu**，并选择 **Ubuntu Desktop 24.04 LTS (64 bit)** 或 **Ubuntu Server 24.04 LTS (64 bit)**。
-      * 对于 **Kali Linux**、**Home Assistant** 或 **Homebridge**，请点击 **Other specific-purpose OS**，然后选择相应系统。
+      * 对于 **Kali Linux**、 **Home Assistant** 或 **Homebridge**，请点击 **Other specific-purpose OS**，然后选择相应系统。
 
    .. image:: img/os_other_os.png
       :width: 90%

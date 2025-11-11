@@ -17,7 +17,7 @@
 
     set_up_rpi_os 
     set_up_home_assistant
-
+    set_up_umbrel
 
 .. set_up_batocera
 
@@ -28,8 +28,8 @@
 
 * **关机操作**
 
-    * 若你运行的是树莓派 **Bookworm Desktop** 系统，快速连续按下电源键两次即可关机。
-    * 若你运行的是树莓派 **Bookworm Lite** 系统，单次按下电源键即可关机。
+    * 若你运行的是 **树莓派 OS Desktop** 系统，快速连续按下电源键两次即可关机。
+    * 若你运行的是 **树莓派 OS Lite** 系统，单次按下电源键即可关机。
     * 若需强制关机，请长按电源按钮。
 
 * **开机操作**

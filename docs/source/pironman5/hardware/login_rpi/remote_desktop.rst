@@ -21,7 +21,7 @@ Raspberry Pi OS 系统已预装 VNC 服务，但默认处于禁用状态。请�
 
         sudo raspi-config
 
-#. 使用方向键选择 **Interfacing Options（接口选项）** ，然后按 **Enter** 键。
+#. 使用方向键选择 **Interfacing Options（接口选项）**，然后按 **Enter** 键。
 
    .. image:: img/bookwarm_config_interface.png
       :width: 90%
