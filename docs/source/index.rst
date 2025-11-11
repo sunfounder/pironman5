@@ -42,11 +42,11 @@ Utilisez les images ci-dessous pour identifier le produit que vous avez acheté.
    :header-rows: 1
 
    * - :ref:`intro_pironman5`
-     - :ref:`intro_pironman5_mini`
      - :ref:`intro_pironman5_max`
+     - :ref:`intro_pironman5_mini`
    * - |pic_pironman5| 
-     - |pic_pironman5_mini| 
      - |pic_pironman5_max|
+     - |pic_pironman5_mini| 
 
 Vous trouverez ci-dessous une comparaison des spécifications des modèles **Pironman 5**, **Pironman 5 Mini** et **Pironman 5 MAX**.  
 Utilisez ce tableau pour comprendre les différences entre ces produits.  
