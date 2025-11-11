@@ -33,35 +33,35 @@ den Anzeigeeffekt wechseln und die Änderungsrate einstellen.
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * Um die Farbe zu ändern, gib den gewünschten Hexadezimalwert ein, z. B. ``fe1a1a``:
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * Um die Helligkeit anzupassen (0–100 %):
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * Zum Wechseln des Anzeigeeffekts stehen folgende Optionen zur Verfügung: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``
 
 .. note::
 
-  Wenn du den Anzeigeeffekt auf ``rainbow``, ``rainbow_reverse`` oder ``hue_cycle`` stellst, lässt sich die Farbe nicht mehr über ``pironman5 -rc`` ändern.
+  Wenn du den Anzeigeeffekt auf ``rainbow``, ``rainbow_reverse`` oder ``hue_cycle`` stellst, lässt sich die Farbe nicht mehr über ``sudo pironman5 -rc`` ändern.
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * Um die Geschwindigkeit des Effekts zu ändern (0–100 %):
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 RGB-Steuerpin
 -------------------------
@@ -82,7 +82,7 @@ Standardmäßig sind 4 RGB-LEDs vorkonfiguriert. Um weitere LEDs zu nutzen, erh�
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  sudo pironman5 -rl 12
 
 
 
@@ -105,7 +105,7 @@ Du kannst den Betriebsmodus des RGB-Lüfters per Befehl festlegen. Die Modi best
 
   .. code-block:: shell
 
-    pironman5 -gm 3
+    sudo pironman5 -gm 3
 
   * **4: Quiet** – Aktiv ab 70 °C  
   * **3: Balanced** – Aktiv ab 67,5 °C  
@@ -149,8 +149,8 @@ Wenn das Raspberry Pi Desktop-System läuft, führt ein kurzer Druck auf den Pow
 
 **Herunterfahren**
 
-    * Bei Nutzung des Raspberry Pi **Bookworm Desktop** kannst du den Power-Button zweimal kurz drücken, um das System herunterzufahren.
-    * Bei Nutzung des Raspberry Pi **Bookworm Lite** (ohne Desktop) genügt ein einmaliger Druck auf den Power-Button.
+    * Bei Nutzung des **Raspberry Pi OS Desktop** kannst du den Power-Button zweimal kurz drücken, um das System herunterzufahren.
+    * Bei Nutzung des **Raspberry Pi OS Lite** (ohne Desktop) genügt ein einmaliger Druck auf den Power-Button.
     * Für ein erzwungenes Abschalten halte den Power-Button gedrückt.
 
 

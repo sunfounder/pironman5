@@ -31,8 +31,8 @@ Wähle anschließend das passende Konfigurations-Tutorial entsprechend deinem Be
 
     set_up_rpi_os 
     set_up_home_assistant
-    
-    
+    set_up_umbrel
+
 .. set_up_batocera
 
 
@@ -42,13 +42,13 @@ Der Power-Button ist direkt mit dem des Raspberry Pi 5 verbunden und übernimmt 
 
 * **Herunterfahren**
 
-    * Wenn du das System **Bookworm Desktop** verwendest, drücke zweimal kurz hintereinander den Power-Button, um das System herunterzufahren.
-    * Wenn du das System **Bookworm Lite** ohne grafische Oberfläche nutzt, reicht ein einzelner Tastendruck zum Herunterfahren.
-    * Für ein erzwungenes Herunterfahren halte den Power-Button gedrückt.
+  * Wenn du das System **Raspberry Pi OS Desktop** verwendest, kannst du den Netzschalter zweimal schnell hintereinander drücken, um das Gerät auszuschalten.  
+  * Wenn du das System **Raspberry Pi OS Lite** verwendest, drücke den Netzschalter einmal, um den Herunterfahrvorgang zu starten.  
+  * Um ein sofortiges Ausschalten zu erzwingen, halte den Netzschalter gedrückt.
 
 * **Einschalten**
 
-    * Wenn der Raspberry Pi heruntergefahren, aber weiterhin mit Strom versorgt ist, genügt ein kurzer Tastendruck zum Einschalten.
+  * Wenn der Raspberry Pi heruntergefahren, aber weiterhin mit Strom versorgt ist, genügt ein kurzer Tastendruck zum Einschalten.
 
 * Falls du ein System verwendest, das den Shutdown-Button nicht unterstützt, kannst du den Button für 5 Sekunden gedrückt halten, um ein erzwungenes Herunterfahren durchzuführen. Ein kurzer Druck startet das System anschließend wieder.
 

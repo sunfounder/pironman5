@@ -26,35 +26,35 @@ Das Board verfügt über 4 WS2812 RGB-LEDs, die individuell steuerbar sind. Benu
 
 .. code-block:: shell
 
-  pironman5 -re true
+  sudo pironman5 -re true
 
 * Um die Farbe zu ändern, geben Sie den gewünschten Hexadezimal-Farbwert ein, z. B. ``fe1a1a``.
 
 .. code-block:: shell
 
-  pironman5 -rc fe1a1a
+  sudo pironman5 -rc fe1a1a
 
 * Um die Helligkeit der RGB-LED zu ändern (Bereich: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rb 100
+  sudo pironman5 -rb 100
 
 * Um den Anzeigemodus der RGB-LED zu ändern, wählen Sie eine der Optionen: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
 
 .. note::
 
-  Wenn Sie den RGB-LED-Anzeigemodus auf ``rainbow``, ``rainbow_reverse`` oder ``hue_cycle`` einstellen, können Sie die Farbe nicht mit ``pironman5 -rc`` ändern.
+  Wenn Sie den RGB-LED-Anzeigemodus auf ``rainbow``, ``rainbow_reverse`` oder ``hue_cycle`` einstellen, können Sie die Farbe nicht mit ``sudo pironman5 -rc`` ändern.
 
 .. code-block:: shell
 
-  pironman5 -rs breathing
+  sudo pironman5 -rs breathing
 
 * Um die Geschwindigkeit der Übergänge anzupassen (Bereich: 0 ~ 100%):
 
 .. code-block:: shell
 
-  pironman5 -rp 80
+  sudo pironman5 -rp 80
 
 RGB-Steuerungs-Pin
 -------------------------
@@ -73,7 +73,7 @@ Das Standard-Setup umfasst 4 RGB-LEDs. Schließen Sie zusätzliche LEDs an und a
 
 .. code-block:: shell
 
-  pironman5 -rl 12
+  sudo pironman5 -rl 12
 
 
 OLED-Bildschirmanschluss
@@ -162,7 +162,7 @@ Zum Beispiel werden im Modus **1: Leistung** die RGB-Lüfter bei 50°C aktiviert
 
 .. code-block:: shell
 
-  pironman5 -gm 3
+  sudo pironman5 -gm 3
 
 * **4: Leise**: Die RGB-Lüfter werden bei 70°C aktiviert.
 * **3: Ausgewogen**: Die RGB-Lüfter werden bei 67,5°C aktiviert.

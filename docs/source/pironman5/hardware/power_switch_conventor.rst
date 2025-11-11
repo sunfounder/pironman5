@@ -43,8 +43,8 @@ Wenn der Raspberry Pi Desktop ausgeführt wird, führt ein kurzes Drücken des N
 
 **Herunterfahren**
 
-    * Wenn Sie das Raspberry Pi **Bookworm Desktop**-System ausführen, können Sie den Netzschalter zweimal schnell hintereinander drücken, um herunterzufahren.
-    * Wenn Sie das Raspberry Pi **Bookworm Lite**-System ohne Desktop ausführen, drücken Sie den Netzschalter einmal, um das Herunterfahren einzuleiten.
+    * Wenn Sie das **Raspberry Pi OS Desktop**-System ausführen, können Sie den Netzschalter zweimal schnell hintereinander drücken, um herunterzufahren.
+    * Wenn Sie das **Raspberry Pi OS Lite**-System ohne Desktop ausführen, drücken Sie den Netzschalter einmal, um das Herunterfahren einzuleiten.
     * Um ein hartes Herunterfahren zu erzwingen, halten Sie den Netzschalter gedrückt.
 
 **Einschalten**

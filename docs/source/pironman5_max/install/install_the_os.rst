@@ -37,6 +37,7 @@ In diesem Kapitel erfährst du, wie du Betriebssysteme installierst. Alle Instal
 
         install_raspberry_os
         install_the_other_os
-        
-.. install_batocera
+        install_umbrel
+
+
 

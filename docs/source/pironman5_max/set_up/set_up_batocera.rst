@@ -55,10 +55,7 @@ Wenn du das Betriebssystem Batocera.linux installiert hast, kannst du dich über
 
    * Das OLED-Display zeigt CPU-, RAM- und Festplattenauslastung, CPU-Temperatur sowie die IP-Adresse des Raspberry Pi an.
    * Vier WS2812-RGB-LEDs leuchten blau im Atemmodus.
-
-   .. note::
-
-     Die RGB-Lüfter drehen sich erst, wenn die Temperatur 60 °C erreicht. Für andere Temperaturgrenzwerte siehe :ref:`max_cc_control_fan`.
+   * Die RGB-Lüfter sind standardmäßig auf den Modus **Always On** eingestellt. Für andere Temperaturgrenzwerte siehe :ref:`cc_control_fan_max`.
 
 Jetzt kannst du den Pironman 5 MAX mit einem Bildschirm, Gamecontrollern, Kopfhörern und mehr verbinden und voll in deine Gamingwelt eintauchen.
 

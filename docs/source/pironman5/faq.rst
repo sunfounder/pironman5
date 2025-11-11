@@ -35,8 +35,8 @@ Die Einschalttaste des Pironman 5 entspricht der Einschalttaste des Raspberry Pi
 
 * **Herunterfahren**
 
-  * Bei Verwendung des Raspberry Pi **Bookworm Desktop**-Systems können Sie die Einschalttaste zweimal schnell hintereinander drücken, um das Gerät herunterzufahren.
-  * Bei Verwendung des Raspberry Pi **Bookworm Lite**-Systems reicht ein einmaliges Drücken der Einschalttaste aus, um das Herunterfahren zu starten.
+  * Bei Verwendung des **Raspberry Pi OS Desktop**-Systems können Sie die Einschalttaste zweimal schnell hintereinander drücken, um das Gerät herunterzufahren.
+  * Bei Verwendung des **Raspberry Pi OS Lite**-Systems reicht ein einmaliges Drücken der Einschalttaste aus, um das Herunterfahren zu starten.
   * Für ein erzwungenes Herunterfahren halten Sie die Einschalttaste gedrückt.
 
 * **Einschalten**

@@ -175,7 +175,7 @@ Das Board verfügt über 4 WS2812 RGB-LEDs, die eine anpassbare Steuerung bieten
 
 .. note::
 
-  Wenn du den RGB-LED-Anzeigemodus auf ``rainbow``, ``rainbow_reverse`` oder ``hue_cycle`` einstellst, kannst du die Farbe nicht mit ``pironman5 -rc`` festlegen.
+  Wenn du den RGB-LED-Anzeigemodus auf ``rainbow``, ``rainbow_reverse`` oder ``hue_cycle`` einstellst, kannst du die Farbe nicht mit ``sudo pironman5 -rc`` festlegen.
 
 .. code-block:: shell
 
@@ -193,7 +193,7 @@ Das Board verfügt über 4 WS2812 RGB-LEDs, die eine anpassbare Steuerung bieten
 
   sudo pironman5 -rl 12
 
-.. _max_cc_control_fan:
+.. _cc_control_fan_max:
 
 Steuerung der RGB-Lüfter
 ---------------------------

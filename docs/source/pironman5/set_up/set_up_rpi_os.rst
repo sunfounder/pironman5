@@ -12,82 +12,79 @@
 
     👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
+Konfiguration unter Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge
+==================================================================
 
-Einrichtung auf Raspberry Pi/Ubuntu/Kali/Homebridge OS
-=============================================================
-
-Wenn Sie Raspberry Pi OS, Ubuntu, Kali Linux oder Homebridge auf Ihrem Raspberry Pi installiert haben, müssen Sie den Pironman 5 über die Kommandozeile konfigurieren. Detaillierte Tutorials finden Sie unten:
+Wenn du Raspberry Pi OS, Ubuntu, Kali Linux oder Homebridge auf deinem Raspberry Pi installiert hast, musst du den Pironman 5 über die Befehlszeile konfigurieren. Nachfolgend findest du detaillierte Anleitungen.
 
 .. note::
 
-  Bevor Sie mit der Konfiguration beginnen, müssen Sie Ihren Raspberry Pi starten und sich anmelden. Falls Sie nicht wissen, wie Sie sich anmelden können, besuchen Sie die offizielle Raspberry Pi-Website: |link_rpi_get_start|.
+  Bevor du mit der Konfiguration fortfährst, musst du deinen Raspberry Pi starten und dich anmelden.  
+  Wenn du dir nicht sicher bist, wie du dich anmeldest, kannst du die offizielle Website von Raspberry Pi besuchen: |link_rpi_get_start|.
 
 
-Konfiguration zum Ausschalten der GPIO-Stromversorgung
----------------------------------------------------------------
-Um zu verhindern, dass der OLED-Bildschirm und die RGB-Lüfter, die über die GPIO-Pins des Raspberry Pi mit Strom versorgt werden, nach dem Herunterfahren aktiv bleiben, ist es wichtig, den Raspberry Pi so zu konfigurieren, dass die GPIO-Stromversorgung deaktiviert wird.
+Konfiguration des Herunterfahrens zur Deaktivierung der GPIO-Stromversorgung
+--------------------------------------------------------------------------------------
 
-#. Bearbeiten Sie die ``EEPROM``-Konfigurationsdatei manuell mit diesem Befehl:
+Um zu verhindern, dass das vom GPIO des Raspberry Pi gespeiste OLED-Display und die RGB-Lüfter nach dem Herunterfahren eingeschaltet bleiben, ist es wichtig, den Raspberry Pi so zu konfigurieren, dass die GPIO-Stromversorgung deaktiviert wird.
 
-   .. code-block:: shell
-   
-     sudo rpi-eeprom-config -e
+#. Öffne das EEPROM-Konfigurationstool:
 
-#. Ändern Sie die Einstellung ``POWER_OFF_ON_HALT`` in der Datei auf ``1``. Zum Beispiel:
+   .. code-block::
 
-   .. code-block:: shell
-   
-     BOOT_UART=1
-     POWER_OFF_ON_HALT=1
-     BOOT_ORDER=0xf41
+      sudo raspi-config
 
-#. Drücken Sie ``Ctrl + X``, ``Y`` und ``Enter``, um die Änderungen zu speichern.
+#. Gehe zu **Advanced Options → A12 Shutdown Behaviour**.
 
+   .. image:: img/shutdown_behaviour.png
 
-Herunterladen und Installieren des ``pironman5`` Moduls
+#. Wähle **B1 Full Power Off**.
+
+   .. image:: img/run_power_off.png
+
+#. Speichere die Änderungen. Du wirst aufgefordert, einen Neustart durchzuführen, damit die neuen Einstellungen wirksam werden.
+
+Download und Installation des Moduls ``pironman5``
 -----------------------------------------------------------
 
-#. Für Lite-Systeme installieren Sie zunächst Tools wie ``git``, ``python3``, ``pip3``, ``setuptools`` usw.
-  
-   .. code-block:: shell
-  
-     sudo apt-get update
-     sudo apt-get install git -y
-     sudo apt-get install python3 python3-pip python3-setuptools -y
+.. note::
 
-#. Laden Sie anschließend den Code von GitHub herunter und installieren Sie das ``pironman5``-Modul.
+   Für „Lite“-Systeme installiere zunächst Werkzeuge wie ``git``, ``python3``, ``pip3``, ``setuptools`` usw.
+   
+   .. code-block:: shell
+   
+      sudo apt-get install git -y
+      sudo apt-get install python3 python3-pip python3-setuptools -y
+
+#. Lade den Code von GitHub herunter und installiere das Modul ``pironman5``.
 
    .. code-block:: shell
 
       cd ~
-      git clone -b 1.2.15 https://github.com/sunfounder/pironman5.git --depth 1
+      git clone -b base https://github.com/sunfounder/pironman5.git --depth 1
       cd ~/pironman5
       sudo python3 install.py
 
-   Nach erfolgreicher Installation ist ein Systemneustart erforderlich, um die Installation zu aktivieren. Befolgen Sie die Bildschirmanweisungen zum Neustart.
-   
-   Nach dem Neustart wird der ``pironman5.service`` automatisch gestartet. Hier sind die Hauptkonfigurationen für den Pironman 5:
-   
-   * Der OLED-Bildschirm zeigt CPU, RAM, Festplattennutzung, CPU-Temperatur und die IP-Adresse des Raspberry Pi an.
-   * Vier WS2812 RGB-LEDs leuchten in Blau im Atmungsmodus auf.
-   
-   .. note::
-    
-     RGB-Lüfter drehen sich nicht, bevor die Temperatur 60°C erreicht. Für andere Aktivierungstemperaturen siehe :ref:`cc_control_fan`.
+   Nach einer erfolgreichen Installation muss das System neu gestartet werden, um die Installation zu aktivieren. Folge der Aufforderung auf dem Bildschirm, um den Neustart durchzuführen.
 
-#. Sie können das ``systemctl``-Tool verwenden, um den ``pironman5.service`` zu ``starten``, ``stoppen``, ``neustarten`` oder den ``Status`` zu überprüfen.
+   Nach dem Neustart wird der Dienst ``pironman5.service`` automatisch gestartet.  
+   Hier sind die Hauptfunktionen der Pironman-5-Konfiguration:
+   
+   * Das OLED-Display zeigt CPU-, RAM- und Festplattennutzung, CPU-Temperatur und die IP-Adresse des Raspberry Pi an.  
+   * Vier WS2812-RGB-LEDs leuchten blau mit einem Atemeffekt.  
+   * Die RGB-Lüfter sind standardmäßig auf **Always On** eingestellt. Informationen zur Einstellung der Einschalttemperaturen findest du unter :ref:`cc_control_fan`.
 
-  .. code-block:: shell
+#. Du kannst das Tool ``systemctl`` verwenden, um den Dienst ``pironman5.service`` zu ``starten``, ``stoppen``, ``neustarten`` oder seinen ``Status`` zu überprüfen.
 
+   .. code-block:: shell
+     
       sudo systemctl restart pironman5.service
-
-  * ``restart``: Verwenden Sie diesen Befehl, um Änderungen an den Einstellungen von Pironman 5 anzuwenden.
-  * ``start/stop``: Aktivieren oder deaktivieren Sie den ``pironman5.service``.
-  * ``status``: Überprüfen Sie den Betriebsstatus des ``pironman5``-Programms mit dem ``systemctl``-Tool.
-
+   
+   * ``restart``: Verwende diesen Befehl, um Änderungen an den Pironman-5-Einstellungen zu übernehmen.  
+   * ``start/stop``: Aktiviert oder deaktiviert den Dienst ``pironman5.service``.  
+   * ``status``: Überprüft den Betriebsstatus des Programms ``pironman5`` mithilfe des Tools ``systemctl``.
 
 .. note::
 
-   Zu diesem Zeitpunkt haben Sie den Pironman 5 erfolgreich eingerichtet, und er ist einsatzbereit.
-   
-   Für die erweiterte Steuerung seiner Komponenten siehe bitte :ref:`control_commands_dashboard_5`.
+   An diesem Punkt hast du den Pironman 5 erfolgreich konfiguriert, und er ist einsatzbereit.  
+   Für die erweiterte Steuerung seiner Komponenten siehe :ref:`control_commands_dashboard_5`.

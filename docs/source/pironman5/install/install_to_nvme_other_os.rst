@@ -30,7 +30,6 @@ Wenn Sie eine NVMe-SSD verwenden und über einen Adapter verfügen, um die NVMe-
 * Ein NVMe-zu-USB-Adapter
 * Micro-SD-Karte und Kartenleser
 
-.. _update_bootloader_5:
 
 1. Aktualisierung des Bootloaders
 ---------------------------------------

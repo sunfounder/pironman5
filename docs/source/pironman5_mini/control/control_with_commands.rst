@@ -153,7 +153,7 @@ Das Board verfügt über vier WS2812-RGB-LEDs, die sich flexibel anpassen lassen
 
 .. note::
 
-  Bei Auswahl von ``rainbow``, ``rainbow_reverse`` oder ``hue_cycle`` kann die Farbe nicht manuell gesetzt werden.
+    Wenn du den Anzeigemodus auf ``rainbow``, ``rainbow_reverse`` oder ``hue_cycle`` einstellst, kannst du die Farbe nicht mit ``sudo pironman5 -rc`` ändern.
 
 .. code-block:: shell
 

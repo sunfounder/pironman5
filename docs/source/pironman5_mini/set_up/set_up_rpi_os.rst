@@ -12,82 +12,84 @@
 
     👉 Bereit, gemeinsam mit uns Neues zu entdecken und zu erschaffen? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
-.. _set_up_pironman5_mini:
 
-Einrichtung unter Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge
+Konfiguration unter Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge
 ======================================================================
 
-Wenn du Raspberry Pi OS, Ubuntu, Kali Linux oder Homebridge auf deinem Raspberry Pi installiert hast, musst du den Pironman 5 Mini über die Kommandozeile konfigurieren. Ausführliche Anleitungen findest du unten:
+Wenn du Raspberry Pi OS, Ubuntu, Kali Linux oder Homebridge auf deinem Raspberry Pi installiert hast, musst du den Pironman 5 Mini über die Befehlszeile konfigurieren. Nachfolgend findest du detaillierte Anleitungen.
 
 .. note::
 
-  Vor der Konfiguration musst du dein Raspberry Pi starten und dich anmelden. Wenn du dir unsicher bist, wie das funktioniert, besuche bitte die offizielle Raspberry Pi Website: |link_rpi_get_start|.
+  Bevor du mit der Konfiguration fortfährst, musst du deinen Raspberry Pi starten und dich anmelden.  
+  Wenn du dir nicht sicher bist, wie du dich anmeldest, kannst du die offizielle Website von Raspberry Pi besuchen: |link_rpi_get_start|.
 
 
-Konfiguration zum Deaktivieren der GPIO-Stromversorgung beim Herunterfahren
---------------------------------------------------------------------------------------
-Um zu verhindern, dass der über GPIO mit Strom versorgte RGB-Lüfter nach dem Herunterfahren weiterhin läuft, sollte der Raspberry Pi entsprechend konfiguriert werden.
+Konfiguration des Herunterfahrens zur Deaktivierung der GPIO-Stromversorgung
+------------------------------------------------------------------------------
 
-#. Bearbeite die ``EEPROM``-Konfigurationsdatei manuell mit folgendem Befehl:
+Um zu verhindern, dass der über den GPIO des Raspberry Pi gespeiste RGB-Lüfter nach dem Herunterfahren weiterläuft, ist es wichtig, den Raspberry Pi so zu konfigurieren, dass die GPIO-Stromversorgung deaktiviert wird.
 
-   .. code-block:: shell
-   
-     sudo rpi-eeprom-config -e
+#. Öffne das EEPROM-Konfigurationstool:
 
-#. Ändere in der Datei den Wert von ``POWER_OFF_ON_HALT`` auf ``1``. Beispiel:
+   .. code-block::
 
-   .. code-block:: shell
-   
-     BOOT_UART=1
-     POWER_OFF_ON_HALT=1
-     BOOT_ORDER=0xf41
+      sudo raspi-config
 
-#. Drücke ``Ctrl + X``, ``Y`` und ``Enter``, um die Änderungen zu speichern.
+#. Gehe zu **Advanced Options → A12 Shutdown Behaviour**.
+
+   .. image:: img/shutdown_behaviour.png
+
+#. Wähle **B1 Full Power Off**.
+
+   .. image:: img/run_power_off.png
+
+#. Speichere die Änderungen. Du wirst aufgefordert, einen Neustart durchzuführen, damit die neuen Einstellungen wirksam werden.
 
 
-Herunterladen und Installieren des ``pironman5``-Moduls
+Download und Installation des Moduls ``pironman5``
 -----------------------------------------------------------
 
-#. Installiere bei Lite-Systemen zunächst die erforderlichen Tools wie ``git``, ``python3``, ``pip3``, ``setuptools`` usw.
+.. note::
 
+   Für „Lite“-Systeme installiere zunächst Werkzeuge wie ``git``, ``python3``, ``pip3``, ``setuptools`` usw.
+   
    .. code-block:: shell
+   
+      sudo apt-get install git -y
+      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-     sudo apt-get update
-     sudo apt-get install git -y
-     sudo apt-get install python3 python3-pip python3-setuptools -y
-
-#. Lade anschließend den Code von GitHub herunter und installiere das ``pironman5``-Modul.
+#. Lade den Code von GitHub herunter und installiere das Modul ``pironman5``.
 
    .. code-block:: shell
 
       cd ~
-      git clone -b 1.2.15 https://github.com/sunfounder/pironman5.git --depth 1
+      git clone -b mini https://github.com/sunfounder/pironman5.git --depth 1
       cd ~/pironman5
       sudo python3 install.py
 
-   Nach erfolgreicher Installation ist ein Systemneustart erforderlich, um die Installation zu aktivieren. Folge der Aufforderung zum Reboot auf dem Bildschirm.
+   Nach einer erfolgreichen Installation muss das System neu gestartet werden, um die Installation zu aktivieren. Folge der Aufforderung auf dem Bildschirm, um den Neustart durchzuführen.
 
-   Nach dem Neustart wird der Dienst ``pironman5.service`` automatisch gestartet. Die wichtigsten Konfigurationen des Pironman 5 sind:
-
-   * Vier WS2812-RGB-LEDs leuchten blau im Atemmodus.
-
+   Nach dem Neustart wird der Dienst ``pironman5.service`` automatisch gestartet.  
+   Hier sind die Hauptkonfigurationen des Pironman 5 Mini:
+   
+   * Vier WS2812-RGB-LEDs leuchten blau mit einem Atemeffekt.
+     
    .. note::
+    
+     * Die RGB-Lüfter sind standardmäßig auf **Always On** eingestellt.  
+       Um unterschiedliche Einschalttemperaturen festzulegen, siehe :ref:`cc_control_fan_mini`.
 
-     Der RGB-Lüfter dreht sich erst, wenn die Temperatur 60 °C erreicht. Für andere Aktivierungstemperaturen siehe :ref:`cc_control_fan_mini`.
-
-#. Du kannst das Tool ``systemctl`` verwenden, um ``pironman5.service`` zu ``starten``, ``stoppen``, ``neuzustarten`` oder den ``Status`` zu überprüfen.
+#. Du kannst das Tool ``systemctl`` verwenden, um den Dienst ``pironman5.service`` zu ``starten``, ``stoppen``, ``neustarten`` oder seinen ``Status`` zu überprüfen.
 
    .. code-block:: shell
-
+     
       sudo systemctl restart pironman5.service
-
-   * ``restart``: Mit diesem Befehl werden Änderungen an den Einstellungen des Pironman 5 Mini übernommen.
-   * ``start/stop``: Aktiviert oder deaktiviert den Dienst ``pironman5.service``.
-   * ``status``: Zeigt mit ``systemctl`` den aktuellen Status des ``pironman5``-Programms an.
-
+   
+   * ``restart``: Verwende diesen Befehl, um Änderungen an den Pironman-5-Mini-Einstellungen zu übernehmen.  
+   * ``start/stop``: Aktiviert oder deaktiviert den Dienst ``pironman5.service``.  
+   * ``status``: Überprüft den Betriebsstatus des Programms ``pironman5`` mithilfe des Tools ``systemctl``.
 
 .. note::
 
-   An diesem Punkt haben Sie den Pironman 5 Mini erfolgreich eingerichtet, und er ist einsatzbereit.
-   
-   Für die erweiterte Steuerung seiner Komponenten verweisen wir auf :ref:`control_commands_dashboard_mini`.
+   An diesem Punkt hast du den Pironman 5 Mini erfolgreich konfiguriert, und er ist einsatzbereit.  
+   Für die erweiterte Steuerung seiner Komponenten siehe :ref:`control_commands_dashboard_mini`.

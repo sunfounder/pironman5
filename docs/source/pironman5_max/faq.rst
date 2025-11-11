@@ -35,8 +35,8 @@ Die Einschalttaste führt die Power-Taste des Raspberry Pi 5 heraus und funktion
 
 * **Herunterfahren**
 
-  * Wenn Sie das Raspberry Pi **Bookworm Desktop**-System verwenden, können Sie die Einschalttaste zweimal schnell hintereinander drücken, um herunterzufahren.
-  * Wenn Sie das Raspberry Pi **Bookworm Lite**-System verwenden, drücken Sie die Einschalttaste einmal, um ein Herunterfahren einzuleiten.
+  * Wenn Sie das **Raspberry Pi OS Desktop**-System verwenden, können Sie die Einschalttaste zweimal schnell hintereinander drücken, um herunterzufahren.
+  * Wenn Sie das **Raspberry Pi OS Lite**-System verwenden, drücken Sie die Einschalttaste einmal, um ein Herunterfahren einzuleiten.
   * Um ein erzwungenes Herunterfahren durchzuführen, halten Sie die Einschalttaste gedrückt.
 
 * **Einschalten**
@@ -198,7 +198,7 @@ Wenn das Problem nach den obigen Schritten weiterhin besteht, senden Sie bitte e
 
 #. Die beiden Pins am IO-Expander oberhalb von J9 werden verwendet, um die RGB-LEDs mit GPIO10 zu verbinden. Stellen Sie sicher, dass die Jumperkappe korrekt auf diesen beiden Pins sitzt.
 
-   .. image:: advanced/img/io_board_rgb_pin.png
+   .. image:: hardware/img/io_board_rgb_pin.png
       :width: 300
       :align: center
 

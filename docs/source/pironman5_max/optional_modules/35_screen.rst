@@ -64,7 +64,7 @@ Um Konflikte zu vermeiden und einen ordnungsgemäßen Betrieb sicherzustellen:
 
    .. code-block:: bash
 
-      pironman5 -re false
+      sudo pironman5 -re false
       sudo systemctl restart pironman5.service
 
 Dies gibt die SPI-Schnittstelle für den 3,5-Zoll-Touchscreen frei und verhindert Anzeigefehler.
@@ -72,80 +72,4 @@ Dies gibt die SPI-Schnittstelle für den 3,5-Zoll-Touchscreen frei und verhinder
 
 **Treiberinstallation**
 
-Vor der Verwendung des 3,5-Zoll-Touchscreens musst du die Treiber installieren.
-
-Allgemeine Tipps:
-
-* Stelle sicher, dass git installiert ist (``sudo apt install git``).  
-* Die Treiberinstallation dauert 1–3 Minuten.  
-* Das System startet automatisch neu.
-
-Folge den Anweisungen für dein Betriebssystem unten:
-
-* **Für Raspberry Pi OS**:
-
-  .. code-block:: bash
-  
-     sudo rm -rf LCD-show 
-     git clone https://github.com/sunfounder/LCD-show.git 
-     chmod -R 755 LCD-show 
-     cd LCD-show/ 
-     sudo ./LCD35-show
-  
-  Nach der Installation wird der Desktop auf dem 3,5-Zoll-Touchscreen angezeigt.
-  
-  Um die Anzeige zu drehen:
-  
-  .. code-block:: bash
-  
-     cd LCD-show/
-     sudo ./rotate.sh 90   
-  
-  Das System startet neu, und der Bildschirm wird um 90° gedreht.  
-  Du kannst ``90`` durch ``0``, ``180`` oder ``270`` ersetzen.
-
-
-* **Für Ubuntu**:
-
-  .. code-block:: bash
-  
-     sudo rm -rf LCD-show-ubuntu 
-     git clone https://github.com/sunfounder/LCD-show-ubuntu.git 
-     chmod -R 755 LCD-show-ubuntu 
-     cd LCD-show-ubuntu/ 
-     sudo ./LCD35-show
-  
-  Nach der Installation wird der Desktop auf dem 3,5-Zoll-Touchscreen angezeigt.
-  
-  Um zu drehen:
-  
-  .. code-block:: bash
-  
-     cd LCD-show-ubuntu/
-     sudo ./rotate.sh 90   
-  
-  Der Neustart erfolgt automatisch.  
-  Ersetze ``90`` durch ``0``, ``180`` oder ``270`` nach Bedarf.
-
-
-* **Für Kali Linux**:
-
-  .. code-block:: bash
-  
-     sudo rm -rf LCD-show-kali 
-     git clone https://github.com/sunfounder/LCD-show-kali.git 
-     chmod -R 755 LCD-show-kali 
-     cd LCD-show-kali/ 
-     sudo ./LCD35-show
-  
-  Nach der Installation wird der Desktop auf dem 3,5-Zoll-Touchscreen angezeigt.
-  
-  Um zu drehen:
-  
-  .. code-block:: bash
-  
-     cd LCD-show-kali/
-     sudo ./rotate.sh 90   
-  
-  Das System wird mit der neuen Ausrichtung neu gestartet.  
-  Ersetze ``90`` durch ``0``, ``180`` oder ``270`` nach Bedarf.
+Für detaillierte Anweisungen siehe |link_3.5_screen|, das die Installation des Treibers für verschiedene Systeme beschreibt.

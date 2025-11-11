@@ -32,7 +32,7 @@ Wähle dann das passende Konfigurations-Tutorial entsprechend deinem verwendeten
 
     set_up_rpi_os 
     set_up_home_assistant
-
+    set_up_umbrel
 
 **Zum Netzschalter**
 
@@ -40,7 +40,7 @@ Der Netzschalter entspricht dem physischen Power-Button des Raspberry Pi 5 und v
 
 * **Herunterfahren**
 
-    * Wenn du das Raspberry Pi **Bookworm Desktop**-System verwendest, kannst du durch zweimaliges kurzes Drücken des Netzschalters den Shutdown-Vorgang auslösen.
+    * Wenn du das **Raspberry Pi OS Desktop**-System verwendest, kannst du durch zweimaliges kurzes Drücken des Netzschalters den Shutdown-Vorgang auslösen.
     * Beim **Bookworm Lite**-System reicht ein einfaches Drücken zum Einleiten des Herunterfahrens.
     * Für ein erzwungenes Herunterfahren halte den Knopf gedrückt.
 

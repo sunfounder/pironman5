@@ -30,7 +30,7 @@ Sie können dann das entsprechende Konfigurations-Tutorial basierend auf Ihrem S
 
     set_up_rpi_os 
     set_up_home_assistant
-
+    set_up_umbrel
 .. set_up_batocera
 
 
@@ -40,12 +40,12 @@ Der Einschaltknopf entspricht dem des Raspberry Pi 5 und erfüllt die gleiche Fu
 
 * **Herunterfahren**
 
-    * Wenn Sie das System Raspberry Pi **Bookworm Desktop** verwenden, können Sie zweimal schnell hintereinander die Einschalttaste drücken, um das Gerät herunterzufahren. 
-    * Wenn Sie das System Raspberry Pi **Bookworm Lite** verwenden, drücken Sie die Einschalttaste einmal, um das Herunterfahren zu starten.
-    * Halten Sie die Einschalttaste gedrückt, um einen erzwungenen Hard-Shutdown durchzuführen.
+  * Wenn Sie das System **Raspberry Pi OS Desktop** verwenden, können Sie zweimal schnell hintereinander die Einschalttaste drücken, um das Gerät herunterzufahren. 
+  * Wenn Sie das System **Raspberry Pi OS Lite** verwenden, drücken Sie die Einschalttaste einmal, um das Herunterfahren zu starten.
+  * Halten Sie die Einschalttaste gedrückt, um einen erzwungenen Hard-Shutdown durchzuführen.
 
 * **Einschalten**
 
-    * Wenn das Raspberry Pi-Board heruntergefahren, aber noch mit Strom versorgt ist, drücken Sie einmal kurz die Einschalttaste, um es wieder einzuschalten.
+  * Wenn das Raspberry Pi-Board heruntergefahren, aber noch mit Strom versorgt ist, drücken Sie einmal kurz die Einschalttaste, um es wieder einzuschalten.
 
 * Wenn Sie ein System verwenden, das die Herunterfahren-Taste nicht unterstützt, können Sie diese 5 Sekunden lang gedrückt halten, um einen Hard-Shutdown zu erzwingen, und durch einmaliges Drücken aus dem ausgeschalteten Zustand wieder einschalten.

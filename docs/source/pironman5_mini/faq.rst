@@ -35,7 +35,7 @@ Der Power-Button entspricht dem Ein-/Aus-Schalter des Raspberry Pi 5 und funktio
 
 * **Herunterfahren**
 
-  * Beim Raspberry Pi **Bookworm Desktop** zweimal kurz drücken zum Herunterfahren.
+  * Beim **Raspberry Pi OS Desktop** zweimal kurz drücken zum Herunterfahren.
   * Beim **Bookworm Lite** einmal drücken zum Herunterfahren.
   * Zum Erzwingen eines Hard-Shutdown: Taste gedrückt halten.
 

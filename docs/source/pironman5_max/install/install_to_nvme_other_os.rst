@@ -26,7 +26,6 @@ Wenn du eine NVMe-SSD verwendest und einen Adapter hast, um sie zur Systeminstal
 * Ein NVMe-zu-USB-Adapter
 * Micro SD-Karte und Kartenleser
 
-.. _update_bootloader_max:
 
 1. Bootloader aktualisieren
 ----------------------------------

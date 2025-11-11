@@ -33,4 +33,6 @@ In diesem Kapitel erfährst du, wie du die Betriebssysteme installierst. Alle In
 
         install_raspberry_os
         install_the_other_os
+        install_umbrel
+
 
