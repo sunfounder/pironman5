@@ -41,13 +41,14 @@ Pironman 5シリーズ - Raspberry Pi 5用 NVMe M.2 SSD対応PCIeミニPCケー�
    :widths: 25 25 25
    :header-rows: 1
 
-   * - :ref:`intro_pironman5`
-     - :ref:`intro_pironman5_mini`
-     - :ref:`intro_pironman5_max`
-   * - |pic_pironman5| 
-     - |pic_pironman5_mini| 
-     - |pic_pironman5_max|
 
+   * - :ref:`intro_pironman5`
+     - :ref:`intro_pironman5_max`
+     - :ref:`intro_pironman5_mini`
+   * - |pic_pironman5| 
+     - |pic_pironman5_max|
+     - |pic_pironman5_mini| 
+     
 以下は、Pironman 5、Pironman 5 Mini、Pironman 5 MAX の仕様比較です。  
 この表を参考に、それぞれの製品の違いを理解してください。  
 
