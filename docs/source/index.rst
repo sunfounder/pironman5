@@ -41,12 +41,13 @@ Según las imágenes que se muestran a continuación, selecciona el producto que
    :widths: 25 25 25
    :header-rows: 1
 
+
    * - :ref:`intro_pironman5`
-     - :ref:`intro_pironman5_mini`
      - :ref:`intro_pironman5_max`
+     - :ref:`intro_pironman5_mini`
    * - |pic_pironman5| 
-     - |pic_pironman5_mini| 
      - |pic_pironman5_max|
+     - |pic_pironman5_mini| 
 
 A continuación se muestra una comparación de especificaciones para el Pironman 5, Pironman 5 Mini y Pironman 5 MAX. Usa esta tabla para comprender las diferencias entre estos productos.
 
