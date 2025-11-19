@@ -304,6 +304,10 @@ class SF_Installer():
                 f'{self.venv_pip} install {url}')
 
     # Install Steps:
+
+    def wait_for_dpkg(self):
+        os.system('bash scripts/wait_for_dpkg.sh')
+
     def install_build_dep(self):
         print("Install build dependencies...")
         self.do('Update package list', 'apt-get update')
@@ -314,7 +318,7 @@ class SF_Installer():
 
         deps = " ".join(deps)
         self.do(f'Install build dependencies: {deps}',
-                f'apt-get install -y {deps}')
+                f'DEBIAN_FRONTEND=noninteractive apt-get install -y {deps}')
 
     def run_commands_before_install(self):
         if len(self.before_install_commands) == 0:
@@ -491,6 +495,7 @@ class SF_Installer():
         print(f"Installing for {self.friendly_name}")
         print(f"Version: {self.version}")
         print(" ")
+        self.wait_for_dpkg()
         self.install_build_dep()
         self.run_commands_before_install()
         self.install_apt_dep()
