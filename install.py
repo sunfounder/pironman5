@@ -155,6 +155,11 @@ dashboard_settings = {
     },
 }
 
+# Check if is umbrel os, skip dtoverlay
+if os.path.exists('/umbrelOS'):
+    print('Detected umbrel os, skip dtoverlay')
+    settings['dtoverlays'] = []
+
 installer.update_settings(settings)
 if not args.disable_dashboard:
     installer.update_settings(dashboard_settings)

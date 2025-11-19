@@ -286,6 +286,23 @@ class SF_Installer():
                     f"{msg} error:\n  Command: {cmd}\n  Status: {status}\n  Result: {result}\n  Error: {error}"
                 )
 
+    def get_overlay_path(self):
+        
+        POSSIBLE_OVERLAY_PATHS = [
+            '/boot/overlays',
+            '/boot/firmware/overlays',
+            '/boot/firmware/current/overlays',
+        ]
+        overlays_path = None
+        for path in POSSIBLE_OVERLAY_PATHS:
+            if os.path.exists(path):
+                overlays_path = path
+                break
+        if overlays_path is None:
+            self.errors.append(f"Device tree overlay directory {POSSIBLE_OVERLAY_PATHS} not found")
+        
+        return overlays_path
+
     def check_admin(self):
         if os.geteuid() != 0:
             print('This script must be run as root')
@@ -410,14 +427,9 @@ class SF_Installer():
             len(self.dtoverlays) == 0:
             return
         print("Copy device tree overlay...")
-        OVERLAY_PATH_DEFAULT = '/boot/overlays'
-        OVERLAY_PATH_BACKUP = '/boot/firmware/overlays'
-        overlays_path = OVERLAY_PATH_DEFAULT
-        if not os.path.exists(overlays_path):
-            overlays_path = OVERLAY_PATH_BACKUP
-            if not os.path.exists(overlays_path):
-                self.errors.append(f"Device tree overlay directory {OVERLAY_PATH_DEFAULT} or {OVERLAY_PATH_BACKUP} not found")
-                return
+        overlays_path = self.get_overlay_path()
+        if overlays_path is None:
+            return
         
         for overlay in self.dtoverlays:
             if not os.path.exists(overlay):
@@ -454,15 +466,9 @@ class SF_Installer():
         if len(self.dtoverlays) == 0:
             return
         print("Remove device tree overlay...")
-        OVERLAY_PATH_DEFAULT = '/boot/overlays'
-        OVERLAY_PATH_BACKUP = '/boot/firmware/overlays'
-        overlays_path = OVERLAY_PATH_DEFAULT
-        if not os.path.exists(overlays_path):
-            overlays_path = OVERLAY_PATH_BACKUP
-            if not os.path.exists(overlays_path):
-                self.errors.append(f"Device tree overlay directory {OVERLAY_PATH_DEFAULT} or {OVERLAY_PATH_BACKUP} not found")
-                return
-        
+        overlays_path = self.get_overlay_path()
+        if overlays_path is None:
+            return
         for overlay in self.dtoverlays:
             if not os.path.exists(f'{overlays_path}/{overlay}'):
                 print(f" - Device tree overlay {overlay} not found Skip")
