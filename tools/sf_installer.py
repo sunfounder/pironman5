@@ -287,7 +287,7 @@ class SF_Installer():
                 )
 
     def get_overlay_path(self):
-        
+
         POSSIBLE_OVERLAY_PATHS = [
             '/boot/overlays',
             '/boot/firmware/overlays',
@@ -300,7 +300,7 @@ class SF_Installer():
                 break
         if overlays_path is None:
             self.errors.append(f"Device tree overlay directory {POSSIBLE_OVERLAY_PATHS} not found")
-        
+
         return overlays_path
 
     def check_admin(self):
@@ -327,7 +327,7 @@ class SF_Installer():
 
     def install_build_dep(self):
         print("Install build dependencies...")
-        self.do('Update package list', 'apt-get update')
+        self.do('Update package list', 'DEBIAN_FRONTEND=noninteractive apt-get update')
         deps = [ *self.APT_DEPENDENCIES ]
 
         if self.build_dependencies is not None:
@@ -351,10 +351,10 @@ class SF_Installer():
             return
         print("Install APT dependencies...")
         # for dep in self.custom_apt_dependencies:
-        #     self.do(f'Install {dep}', f'apt-get install -y {dep}')
+        #     self.do(f'Install {dep}', f'DEBIAN_FRONTEND=noninteractive apt-get install -y {dep}')
         deps = " ".join(self.custom_apt_dependencies)
         self.do(f'Install APT dependencies: {deps}',
-                f'apt-get install -y {deps}')
+                f'DEBIAN_FRONTEND=noninteractive apt-get install -y {deps}')
 
     def create_working_dir(self):
         print("Create working directory...")
