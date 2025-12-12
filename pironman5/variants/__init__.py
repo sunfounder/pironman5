@@ -3,6 +3,8 @@ from .pironman5_max import Pironman5Max
 from .pironman5_mini import Pironman5Mini
 from .pironman5_nas import Pironman5NAS
 from .pironman5_ups import Pironman5UPS
+from .pironman5_pro_max import Pironman5ProMax
+
 
 def get_device_tree_path():
     """
@@ -91,6 +93,8 @@ def get_variant(variant_id, version=None):
         return Pironman5NAS
     elif variant_id == "2602":
         return Pironman5UPS
+    elif variant_id == "0316":
+        return Pironman5ProMax
     else:
         return None
     
