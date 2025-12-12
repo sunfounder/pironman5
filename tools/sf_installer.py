@@ -337,9 +337,13 @@ class SF_Installer():
                 f'{self.venv_pip} install {url}')
         
     # Install Steps:
+
+    def wait_for_dpkg(self):
+        os.system('bash scripts/wait_for_dpkg.sh')
+
     def install_build_dep(self):
         self.print_title("Install build dependencies...")
-        self.do('Update package list', 'apt-get update')
+        self.do('Update package list', 'DEBIAN_FRONTEND=noninteractive apt-get update')
         deps = [ *self.APT_DEPENDENCIES ]
 
         if self.build_dependencies is not None:
@@ -350,7 +354,7 @@ class SF_Installer():
         width = int(os.environ.get('COLUMNS', 80))
         if len(msg) > width - 3:
             msg = msg[:width-3] + '...'
-        self.do(msg, f'apt-get install -y {deps}')
+        self.do(msg, f'DEBIAN_FRONTEND=noninteractive apt-get install -y {deps}')
 
     def run_scripts_before_install(self):
         if len(self.before_install_scripts) == 0:
@@ -484,6 +488,7 @@ class SF_Installer():
         self.do('Change work directory owner', f'chown -R {self.user}:{self.user} {self.work_dir}')
 
     # Uninstall Steps:
+
     def remove_symlinks(self):
         if len(self.symlinks) == 0:
             return
@@ -560,6 +565,7 @@ class SF_Installer():
 
     def install(self):
         self.print_title(f"Installing {self.friendly_name} {self.version}")
+        self.wait_for_dpkg()
         self.install_build_dep()
         self.run_scripts_before_install()
         self.install_apt_dep()
