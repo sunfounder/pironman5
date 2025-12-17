@@ -479,7 +479,7 @@ class SF_Installer():
                 if not os.path.exists(overlay):
                     self.errors.append(f"Device tree overlay file {overlay} not found")
                     continue
-                self.do(f'Copy dtoverlay {overlay}', f'cp {overlay} {overlays_path}/')
+                self.do(f'Copy dtoverlay {overlay}', f'cp overlays/{overlay} {overlays_path}/')
 
         self.need_reboot = True
 
