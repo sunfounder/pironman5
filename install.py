@@ -26,9 +26,9 @@ settings = {
     ],
 
     # - Install from pip
-    # 'pip_dependencies': [
-    #     'gpiozero',
-    # ],
+    'pip_dependencies': [
+        'psutil',
+    ],
 
     # - Install python source code from git
     'python_source': {

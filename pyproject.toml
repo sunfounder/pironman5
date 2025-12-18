@@ -17,16 +17,10 @@ classifiers = [
 ]
 dynamic = ["version"]
 
-dependencies = [
-  'smbus2',
-  'psutil',
-  'adafruit-circuitpython-neopixel-spi',
-  'Adafruit-Blinka==8.59.0',
-  'RPi.GPIO',
-]
+dependencies = []
 
 [project.scripts]
-pironman5 = "pironman5:main"
+pironman5 = "pironman5:_cli.main"
 
 [tool.setuptools]
 packages = ["pironman5", "pironman5.variants"]
