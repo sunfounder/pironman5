@@ -368,6 +368,11 @@ class SF_Installer():
         current_user = self.get_current_username()
         self.add_user_to_group(current_user, self.user)
 
+        # Add shutdown permission to user
+        self.do(f'Add shutdown permission to user {self.user}', f'echo "{self.user} ALL=(ALL) NOPASSWD: /usr/sbin/shutdown, /usr/sbin/reboot, /usr/sbin/poweroff, /usr/sbin/halt" | sudo tee /etc/sudoers.d/{self.user}-shutdown > /dev/null')
+        self.do(f'Change sudoers file permission', f'sudo chmod 0440 /etc/sudoers.d/{self.user}-shutdown')
+        self.do(f'Check sudoers file', f'sudo visudo -c -f /etc/sudoers.d/{self.user}-shutdown')
+
         # Add gpio group to user
         for group in self.add_groups:
             self.add_user_to_group(self.user, group)
