@@ -8,7 +8,7 @@ Quick Links:
   - [About Pironman5](#about-pironman5)
   - [Links](#links)
   - [Installation](#installation)
-  - [Usage](#usage)
+  - [Auto launch dashboard on browser](#auto-launch-dashboard-on-browser)
   - [Update](#update)
   - [Compatible Systems](#compatible-systems)
     - [Ubuntu 24.04 server eth0 and wifi not work](#ubuntu-2404-server-eth0-and-wifi-not-work)
@@ -41,9 +41,14 @@ cd ~/pironman5
 sudo python3 install.py
 ```
 
-## Usage
+## Auto launch dashboard on browser
 
--
+You also want to change touchscreen event to touch instead of mouse. **RPI Icon** >> **Preferences** >> **Setting Center** >> **Screen**. long press/right click on the screen, and select **Touchscreen** >> **Touch**.
+
+```bash
+cp ~/pironman5/bin/pironman5-dashboard.desktop ~/.config/autostart/
+```
+
 
 ## Update
 

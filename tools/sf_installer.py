@@ -374,7 +374,7 @@ class SF_Installer():
         width = int(os.environ.get('COLUMNS', 80))
         if len(msg) > width-3:
             msg = msg[:width-3] + '...'
-        self.do(msg, f'apt-get install -y {deps}')
+        self.do(msg, f'DEBIAN_FRONTEND=noninteractive apt-get install -y {deps}')
 
     def create_working_dir(self):
         self.print_title("Create working directory...")
