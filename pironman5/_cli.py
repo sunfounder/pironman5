@@ -108,6 +108,7 @@ def main():
     start_parser = subparsers.add_parser("start", help="Start Pironman5")
     stop_parser = subparsers.add_parser("stop", help="Stop Pironman5")
     launch_browser_parser = subparsers.add_parser("launch-browser", help="Launch browser")
+    launch_browser_parser.add_argument("-a", "--auto-start", type=bool, help="Auto start browser on boot")
 
     # parse args
     # -----------------------------------------------------------
@@ -621,4 +622,11 @@ def main():
     elif args.subcommand == 'stop':
         os.system('pkill -f pironman5')
     elif args.subcommand == 'launch-browser':
-        launch_browser()
+        sub_args = launch_browser_parser.parse_args(remaining_args)
+        if "auto_start" in sub_args:
+            if sub_args.auto_start:
+                os.system(f'cp ~/pironman5/bin/pironman5-dashboard.desktop ~/.config/autostart/')
+            else:
+                os.system(f'rm -f ~/.config/autostart/pironman5-dashboard.desktop')
+        else:
+            launch_browser()
