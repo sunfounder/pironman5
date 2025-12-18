@@ -476,7 +476,7 @@ class SF_Installer():
                 overlay = overlay.split('/')[-1]
                 self.do(f'Move dtoverlay {overlay}', f'mv {overlay} {overlays_path}/')
             else:
-                if not os.path.exists(overlay):
+                if not os.path.exists(f'overlays/{overlay}'):
                     self.errors.append(f"Device tree overlay file {overlay} not found")
                     continue
                 self.do(f'Copy dtoverlay {overlay}', f'cp overlays/{overlay} {overlays_path}/')
@@ -484,8 +484,9 @@ class SF_Installer():
         self.need_reboot = True
 
     def change_work_dir_owner(self):
-        self.print_title("Change work directory owner...")
-        self.do('Change work directory owner', f'chown -R {self.user}:{self.user} {self.work_dir}')
+        self.print_title("Fix work directory permission...")
+        self.do('Add excution permission to directory', f'chmod +x {self.work_dir}')
+        self.do(f'Change work directory owner to {self.user}', f'chown -R {self.user}:{self.user} {self.work_dir}')
 
     # Uninstall Steps:
 
