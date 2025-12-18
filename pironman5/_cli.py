@@ -34,7 +34,7 @@ def main():
     FALSE_LIST = ['false', 'False', 'FALSE', '0', 'off', 'Off', 'OFF']
 
     __package_name__ = __name__.split('.')[0]
-    CONFIG_PATH = str(resource_files(__package_name__).joinpath('config.json'))
+    CONFIG_PATH = "/opt/pironman5/config.json"
     PIP_PATH = "/opt/pironman5/venv/bin/pip"
     DEBUG_LEVELS = ['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL',\
         'debug', 'info', 'warning', 'error', 'critical']
@@ -108,7 +108,7 @@ def main():
     start_parser = subparsers.add_parser("start", help="Start Pironman5")
     stop_parser = subparsers.add_parser("stop", help="Stop Pironman5")
     launch_browser_parser = subparsers.add_parser("launch-browser", help="Launch browser")
-    launch_browser_parser.add_argument("-a", "--auto-start", type=bool, help="Auto start browser on boot")
+    launch_browser_parser.add_argument("-a", "--auto-start", nargs='?', default='', help="Auto start browser on boot")
 
     # parse args
     # -----------------------------------------------------------
@@ -622,11 +622,30 @@ def main():
     elif args.subcommand == 'stop':
         os.system('pkill -f pironman5')
     elif args.subcommand == 'launch-browser':
-        sub_args = launch_browser_parser.parse_args(remaining_args)
-        if "auto_start" in sub_args:
-            if sub_args.auto_start:
-                os.system(f'cp ~/pironman5/bin/pironman5-dashboard.desktop ~/.config/autostart/')
-            else:
+        if args.auto_start != '':
+            if args.auto_start in TRUE_LIST:
+                print(f"Set dashboard auto start") 
+                if not os.path.exists(os.path.expanduser("~/.config/autostart")):
+                    os.makedirs(os.path.expanduser("~/.config/autostart"))
+                with open(os.path.expanduser("~/.config/autostart/pironman5-dashboard.desktop"), "w") as f:
+                    f.write("""[Desktop Entry]
+Type=Application
+Name=Pironman5 Launch Dashboard on Browser
+Comment=Auto launch Dashboard on browser for pironman5 on startup
+Exec=pironman5 launch-browser
+Terminal=false
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+X-KDE-autostart-enabled=true
+X-MATE-Autostart-enabled=true
+Categories=Utility;Network;Browser;
+Keywords=pironman5;browser;autostart;""")
+            elif args.auto_start in FALSE_LIST:
+                print(f"Remove dashboard auto start") 
                 os.system(f'rm -f ~/.config/autostart/pironman5-dashboard.desktop')
+            else:
+                print(f"Invalid value for auto start, it should be true/on/1 or false/off/0")
+                quit()
         else:
             launch_browser()

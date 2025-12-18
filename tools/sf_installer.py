@@ -124,7 +124,9 @@ class SF_Installer():
             self.log_dir = f'/var/log/{self.name}'
         else:
             self.log_dir = log_dir
+        self.log_file = f'{self.log_dir}/{self.name}.log'
 
+        self.add_groups = set()
         self.build_dependencies = set()
         self.before_install_scripts = set()
         self.custom_apt_dependencies = set()
@@ -163,7 +165,7 @@ class SF_Installer():
                                     action='store_true',
                                     help='Skip probe modules')
         self.config_txt_handler = ConfigTxt()
-        self.user = self.get_username()
+        self.user = self.name
         self.errors = []
         self.is_running = False
         self.need_reboot = False
@@ -185,6 +187,8 @@ class SF_Installer():
                         return line.split('=')[1].strip().strip("'")
 
     def update_settings(self, settings):
+        if 'add_groups' in settings:
+            self.add_groups.update(settings['add_groups'])
         if 'build_dependencies' in settings:
             self.build_dependencies.update(settings['build_dependencies'])
         if 'run_scripts_before_install' in settings:
@@ -224,7 +228,7 @@ class SF_Installer():
             print('\033[1;35mError\033[0m')
             self.errors.append("%s error:\n Error:%s" % (msg, e))
 
-    def get_username(self):
+    def get_current_username(self):
         try:
             user = os.getlogin()  # can run at boot
         except:
@@ -335,8 +339,38 @@ class SF_Installer():
                 f'{self.venv_pip} uninstall -y {name}')
         self.do(f'Install {name} from source',
                 f'{self.venv_pip} install {url}')
-        
+
+    def add_user_to_group(self, user, group):
+        if self.run_command(f'getent group {group} | grep -q {user}')[0] == 0:
+            print(f"{self.SKIPPED} User {user} already in group {group} Skip")
+        else:
+            self.do(f'Add user {user} to group {group}', f'usermod -aG {group} {user}')
+
     # Install Steps:
+
+    def setup_user(self):
+        # Create group if not exist
+        if self.run_command(f'getent group {self.user}')[0] == 0:
+            print(f"{self.SKIPPED} Group {self.user} already exist Skip")
+        else:
+            self.do(f'Create group {self.user}', f'groupadd -r {self.user}')
+
+        # Create user if not exist
+        if self.run_command(f'getent passwd {self.user}')[0] == 0:
+            print(f"{self.SKIPPED} User {self.user} already exist Skip")
+        else:
+            self.do(f'Create user {self.user}', f'useradd -r -g {self.user} -s /sbin/nologin -d /opt/{self.user} -m {self.user}')
+
+        # Add user to group
+        self.add_user_to_group(self.user, self.user)
+    
+        # Add current user to group
+        current_user = self.get_current_username()
+        self.add_user_to_group(current_user, self.user)
+
+        # Add gpio group to user
+        for group in self.add_groups:
+            self.add_user_to_group(self.user, group)
 
     def wait_for_dpkg(self):
         os.system('bash scripts/wait_for_dpkg.sh')
@@ -379,11 +413,14 @@ class SF_Installer():
     def create_working_dir(self):
         self.print_title("Create working directory...")
         self.do('Create work directory', f'mkdir -p {self.work_dir}')
-        self.do('Change work directory mode', f'chmod 644 {self.work_dir}')
+        self.do('Change work directory mode', f'chmod 775 {self.work_dir}')
         self.do('Change work directory owner', f'chown -R {self.user}:{self.user} {self.work_dir}')
         self.do('Create log directory', f'mkdir -p {self.log_dir}')
-        self.do('Change log directory mode', f'chmod 644 {self.log_dir}')
+        self.do('Change log directory mode', f'chmod 775 {self.log_dir}')
         self.do('Change log directory owner', f'chown -R {self.user}:{self.user} {self.log_dir}')
+        self.do('Create log file', f'touch log_file')
+        self.do('Change log file mode', f'chmod 664 log_file')
+        self.do('Change log file owner', f'chown {self.user}:{self.user} log_file')
         if os.path.exists(self.venv_path):
             self.do('Remove old virtual environment', f'rm -r {self.venv_path}')
         self.do('Create virtual environment', f'python3 -m venv {self.venv_path} {" ".join(self.venv_options)}')
@@ -567,6 +604,7 @@ class SF_Installer():
     def install(self):
         self.print_title(f"Installing {self.friendly_name} {self.version}")
         self.wait_for_dpkg()
+        self.setup_user()
         self.install_build_dep()
         self.run_scripts_before_install()
         self.install_apt_dep()

@@ -25,15 +25,7 @@ class Logger(logging.Logger):
     def __init__(self, appname, level=0, maxBytes=100*1024*1024, backupCount=5):
         super().__init__(appname, level=level)
         self.log_folder = f"/var/log/{appname}"
-        if not os.path.isdir(self.log_folder):
-            os.makedirs(self.log_folder, exist_ok=True)
-            os.chown(self.log_folder, 1000, 1000)
-            os.chmod(self.log_folder, 0o777)
         self.log_path = os.path.join(self.log_folder, f"{appname.lower()}.log")
-        if not os.path.isfile(self.log_path):
-            # create log file
-            open(self.log_path, 'a').close()
-            os.chmod(self.log_path, 0o666)
 
         # Create a handler, used for output to a file
         file_handler = RotatingFileHandler(self.log_path, maxBytes=maxBytes, backupCount=backupCount)

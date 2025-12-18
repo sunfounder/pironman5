@@ -46,7 +46,7 @@ sudo python3 install.py
 You also want to change touchscreen event to touch instead of mouse. **RPI Icon** >> **Preferences** >> **Setting Center** >> **Screen**. long press/right click on the screen, and select **Touchscreen** >> **Touch**.
 
 ```bash
-cp ~/pironman5/bin/pironman5-dashboard.desktop ~/.config/autostart/
+pironman5 launch-browser --auto-start=on
 ```
 
 
@@ -96,16 +96,16 @@ Make adjustments, and manually install the package
 
 ```bash
 # install from folder
-sudo /opt/pironman5/venv/bin/pip3 uninstall pironman5 -y && sudo /opt/pironman5/venv/bin/pip3 install ~/pironman5 --no-build-isolation
-sudo /opt/pironman5/venv/bin/pip3 uninstall pm_dashboard -y && sudo /opt/pironman5/venv/bin/pip3 install ~/pm_dashboard --no-build-isolation
-sudo /opt/pironman5/venv/bin/pip3 uninstall pm_auto -y && sudo /opt/pironman5/venv/bin/pip3 install ~/pm_auto --no-build-isolation
-sudo /opt/pironman5/venv/bin/pip3 uninstall sf_rpi_status -y && sudo /opt/pironman5/venv/bin/pip3 install ~/sf_rpi_status --no-build-isolation
-sudo /opt/pironman5/venv/bin/pip3 uninstall pipower5 -y && sudo /opt/pironman5/venv/bin/pip3 install ~/pipower5 --no-build-isolation
+sudo /opt/pironman5/venv/bin/pip3 uninstall pironman5 -y && sudo /opt/pironman5/venv/bin/pip3 install ~/pironman5 --no-build-isolation && sudo chown -R pironman5:pironman5 /opt/pironman5
+sudo /opt/pironman5/venv/bin/pip3 uninstall pm_dashboard -y && sudo /opt/pironman5/venv/bin/pip3 install ~/pm_dashboard --no-build-isolation && sudo chown -R pironman5:pironman5 /opt/pironman5
+sudo /opt/pironman5/venv/bin/pip3 uninstall pm_auto -y && sudo /opt/pironman5/venv/bin/pip3 install ~/pm_auto --no-build-isolation && sudo chown -R pironman5:pironman5 /opt/pironman5
+sudo /opt/pironman5/venv/bin/pip3 uninstall sf_rpi_status -y && sudo /opt/pironman5/venv/bin/pip3 install ~/sf_rpi_status --no-build-isolation && sudo chown -R pironman5:pironman5 /opt/pironman5
+sudo /opt/pironman5/venv/bin/pip3 uninstall pipower5 -y && sudo /opt/pironman5/venv/bin/pip3 install ~/pipower5 --no-build-isolation && sudo chown -R pironman5:pironman5 /opt/pironman5
 
 # install from github repo
-sudo /opt/pironman5/venv/bin/pip3 uninstall sf_rpi_status -y && sudo /opt/pironman5/venv/bin/pip3 install git+https://github.com/sunfounder/sf_rpi_status.git --no-build-isolation
-sudo /opt/pironman5/venv/bin/pip3 uninstall pipower5 -y && sudo /opt/pironman5/venv/bin/pip3 install git+https://github.com/sunfounder/pipower5.git --no-build-isolation
-sudo /opt/pironman5/venv/bin/pip3 uninstall pm_auto -y && sudo /opt/pironman5/venv/bin/pip3 install git+https://github.com/sunfounder/pm_auto.git@1.4.x --no-build-isolation
+sudo /opt/pironman5/venv/bin/pip3 uninstall sf_rpi_status -y && sudo /opt/pironman5/venv/bin/pip3 install git+https://github.com/sunfounder/sf_rpi_status.git --no-build-isolation && sudo chown -R pironman5:pironman5 /opt/pironman5
+sudo /opt/pironman5/venv/bin/pip3 uninstall pipower5 -y && sudo /opt/pironman5/venv/bin/pip3 install git+https://github.com/sunfounder/pipower5.git --no-build-isolation && sudo chown -R pironman5:pironman5 /opt/pironman5
+sudo /opt/pironman5/venv/bin/pip3 uninstall pm_auto -y && sudo /opt/pironman5/venv/bin/pip3 install git+https://github.com/sunfounder/pm_auto.git@1.4.x --no-build-isolation && sudo chown -R pironman5:pironman5 /opt/pironman5
 
 ```
 
@@ -116,9 +116,8 @@ Start/stop the service for debug
 sudo systemctl stop pironman5.service
 sudo systemctl start pironman5.service
 sudo systemctl restart pironman5.service
-sudo pironman5 start
+sudo -u pironman5 /opt/pironman5/venv/bin/python3
 
-sudo /opt/pironman5/venv/bin/python3
 journalctl -xefu pironman5.service
 sudo systemctl restart pironman5.service && journalctl -xefu pironman5.service
 ```

@@ -6,6 +6,9 @@ After=multi-user.target
 
 [Service]
 Type=simple
+User=pironman5
+Group=pironman5
+WorkingDirectory=/opt/pironman5
 ExecStart=/usr/local/bin/pironman5 start
 # PrivateTmp=False
 

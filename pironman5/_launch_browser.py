@@ -67,9 +67,10 @@ def get_browser_fullscreen_args(browser: str) -> List[str]:
     if "chrome" in browser or "chromium" in browser:
         return [
             browser,
-            "--start-fullscreen",  # Launch in fullscreen mode
-            "--kiosk",             # Kiosk mode (no address bar/menus)
-            "--no-first-run",      # Skip first-run setup
+            "--start-fullscreen",      # Launch in fullscreen mode
+            "--password-store=basic",  # Use basic password store
+            # "--kiosk",                 # Kiosk mode (no address bar/menus)
+            "--no-first-run",          # Skip first-run setup
             "--no-default-browser-check",  # Skip default browser check
             target_url
         ]
@@ -77,8 +78,9 @@ def get_browser_fullscreen_args(browser: str) -> List[str]:
     elif "firefox" in browser:
         return [
             browser,
-            "-kiosk",              # Kiosk fullscreen mode
-            "-new-window",         # Open in a new window
+            # "-kiosk",                       # Kiosk fullscreen mode
+            "--password-manager=disabled",  # Disable password manager
+            "-new-window",                  # Open in a new window
             target_url
         ]
     else:

@@ -18,7 +18,7 @@ DEFAULT_DEBUG_LEVEL = 'INFO' # 'DEBUG' | 'INFO' | 'WARNING' | 'ERROR' | 'CRITICA
 
 log = Logger(APP_NAME)
 __package_name__ = __name__.split('.')[0]
-CONFIG_PATH = str(resource_files(__package_name__).joinpath('config.json'))
+CONFIG_PATH = "/opt/pironman5/config.json"
 
 PMDashboard = None
 try:
