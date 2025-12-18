@@ -4,6 +4,23 @@ from tools.sf_installer import SF_Installer
 from pironman5.version import __version__
 from pironman5.variants import NAME, DT_OVERLAYS, PERIPHERALS
 
+GITHUB_URL = 'https://github.com/sunfounder/'
+GITEE_URL = 'https://gitee.com/sunfounder/'
+
+# Test if github url reachable
+import requests
+try:
+    requests.get(GITHUB_URL)
+    GIT_URL = GITHUB_URL
+except requests.exceptions.RequestException:
+    print(f"Error: {GITHUB_URL} is not reachable")
+    try:
+        requests.get(GITEE_URL)
+        GIT_URL = GITEE_URL
+    except requests.exceptions.RequestException:
+        print(f"Error: {GITEE_URL} is not reachable")
+        exit(1)
+
 settings = {
     # - Setup venv options if needed, default to []
     'venv_options': [
@@ -33,8 +50,8 @@ settings = {
     # - Install python source code from git
     'python_source': {
         'pironman5': './',
-        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.4.x',
-        'sf_rpi_status': 'git+https://github.com/sunfounder/sf_rpi_status.git@1.1.5',
+        'pm_auto': f'git+{GIT_URL}pm_auto.git@1.4.x',
+        'sf_rpi_status': f'git+{GIT_URL}sf_rpi_status.git@1.1.5',
     },
 
     # create symbolic links from venv/bin/ to /usr/local/bin/
@@ -145,15 +162,15 @@ dashboard_settings = {
         'lsof', # for pm_dashboard
     ],
     'python_source': {
-        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.3.x',
+        'pm_dashboard': f'git+{GIT_URL}pm_dashboard.git@1.3.x',
     },
 }
 
 pipower5_settings = {
     # Install python packages from source
     'python_source': {
-        'pipower5': 'git+https://github.com/sunfounder/pipower5.git@main',
-        'spc': 'git+https://github.com/sunfounder/spc.git',
+        'pipower5': f'git+{GIT_URL}pipower5.git@main',
+        'spc': f'git+{GIT_URL}spc.git',
     },
     # Add symbolic links
     'symlinks': [
@@ -165,7 +182,7 @@ pipower5_settings = {
     ],
     # - Copy device tree overlay to /boot/overlays
     'dtoverlays': [
-        'https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo'
+        f'{GIT_URL}raw/refs/heads/main/sunfounder-pipower5.dtbo'
     ],
 }
 
