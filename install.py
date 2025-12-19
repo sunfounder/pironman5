@@ -52,8 +52,8 @@ settings = {
     # - Install python source code from git
     'python_source': {
         'pironman5': './',
-        'pm_auto': f'git+{GIT_URL}pm_auto.git@1.4.x',
-        'sf_rpi_status': f'git+{GIT_URL}sf_rpi_status.git@1.1.5',
+        'pm_auto': f'git+{GIT_URL}pm_auto.git@1.4.4',
+        'sf_rpi_status': f'git+{GIT_URL}sf_rpi_status.git@1.1.6',
     },
 
     # create symbolic links from venv/bin/ to /usr/local/bin/

@@ -341,7 +341,9 @@ class SF_Installer():
                 f'{self.venv_pip} install {url}')
 
     def add_user_to_group(self, user, group):
-        if self.run_command(f'getent group {group} | grep -q {user}')[0] == 0:
+        _, users, _ = self.run_command(f'getent group {group}')
+        users = users.strip().split(':')
+        if user in users:
             print(f"{self.SKIPPED} User {user} already in group {group} Skip")
         else:
             self.do(f'Add user {user} to group {group}', f'usermod -aG {group} {user}')
@@ -361,9 +363,6 @@ class SF_Installer():
         else:
             self.do(f'Create user {self.user}', f'useradd -r -g {self.user} -s /sbin/nologin -d /opt/{self.user} -m {self.user}')
 
-        # Add user to group
-        self.add_user_to_group(self.user, self.user)
-    
         # Add current user to group
         current_user = self.get_current_username()
         self.add_user_to_group(current_user, self.user)
@@ -423,9 +422,9 @@ class SF_Installer():
         self.do('Create log directory', f'mkdir -p {self.log_dir}')
         self.do('Change log directory mode', f'chmod 775 {self.log_dir}')
         self.do('Change log directory owner', f'chown -R {self.user}:{self.user} {self.log_dir}')
-        self.do('Create log file', f'touch log_file')
-        self.do('Change log file mode', f'chmod 664 log_file')
-        self.do('Change log file owner', f'chown {self.user}:{self.user} log_file')
+        self.do(f'Create log file: {self.log_file}', f'touch {self.log_file}')
+        self.do(f'Change log file mode to 664', f'chmod 664 {self.log_file}')
+        self.do(f'Change log file owner to {self.user}', f'chown {self.user}:{self.user} {self.log_file}')
         if os.path.exists(self.venv_path):
             self.do('Remove old virtual environment', f'rm -r {self.venv_path}')
         self.do('Create virtual environment', f'python3 -m venv {self.venv_path} {" ".join(self.venv_options)}')
