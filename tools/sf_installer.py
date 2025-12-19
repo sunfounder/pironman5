@@ -97,6 +97,14 @@ class SF_Installer():
         'build',
     ]
 
+    SUDOER_PERMISSION = [
+        "/usr/sbin/shutdown",
+        "/usr/sbin/reboot",
+        "/usr/sbin/poweroff",
+        "/usr/sbin/halt",
+        "/usr/bin/systemctl",
+    ]
+
     def __init__(self,
                 name=None,
                 friendly_name=None,
@@ -368,7 +376,7 @@ class SF_Installer():
         self.add_user_to_group(current_user, self.user)
 
         # Add shutdown permission to user
-        self.do(f'Add shutdown permission to user {self.user}', f'echo "{self.user} ALL=(ALL) NOPASSWD: /usr/sbin/shutdown, /usr/sbin/reboot, /usr/sbin/poweroff, /usr/sbin/halt" | sudo tee /etc/sudoers.d/{self.user}-shutdown > /dev/null')
+        self.do(f'Add shutdown permission to user {self.user}', f'echo "{self.user} ALL=(ALL) NOPASSWD: {", ".join(self.SUDOER_PERMISSION)}" | sudo tee /etc/sudoers.d/{self.user}-shutdown > /dev/null')
         self.do(f'Change sudoers file permission', f'sudo chmod 0440 /etc/sudoers.d/{self.user}-shutdown')
         self.do(f'Check sudoers file', f'sudo visudo -c -f /etc/sudoers.d/{self.user}-shutdown')
 
