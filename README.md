@@ -43,12 +43,16 @@ sudo python3 install.py
 
 ## Auto launch dashboard on browser
 
-You also want to change touchscreen event to touch instead of mouse. **RPI Icon** >> **Preferences** >> **Setting Center** >> **Screen**. long press/right click on the screen, and select **Touchscreen** >> **Touch**.
-
 ```bash
 pironman5 launch-browser --auto-start=on
 ```
 
+You also want to change touchscreen mode to Multitouch instead of Mouse Emulation.
+
+1. **Raspberry Pi Icon** >> **Preferences** >> **Control Centre**.
+2. Select **Screen** tab.
+3. Long press/right click on **DSI-2**, 
+4. Select **Touchscreen** >> **Mode** >> **Multitouch**.
 
 ## Update
 
@@ -106,7 +110,7 @@ sudo /opt/pironman5/venv/bin/pip3 uninstall pipower5 -y && sudo /opt/pironman5/v
 sudo /opt/pironman5/venv/bin/pip3 uninstall sf_rpi_status -y && sudo /opt/pironman5/venv/bin/pip3 install git+https://github.com/sunfounder/sf_rpi_status.git --no-build-isolation && sudo chown -R pironman5:pironman5 /opt/pironman5
 sudo /opt/pironman5/venv/bin/pip3 uninstall pipower5 -y && sudo /opt/pironman5/venv/bin/pip3 install git+https://github.com/sunfounder/pipower5.git --no-build-isolation && sudo chown -R pironman5:pironman5 /opt/pironman5
 sudo /opt/pironman5/venv/bin/pip3 uninstall pm_auto -y && sudo /opt/pironman5/venv/bin/pip3 install git+https://github.com/sunfounder/pm_auto.git@1.4.x --no-build-isolation && sudo chown -R pironman5:pironman5 /opt/pironman5
-
+sudo /opt/pironman5/venv/bin/pip3 uninstall pm_dashboard -y && sudo /opt/pironman5/venv/bin/pip3 install git+https://github.com/sunfounder/pm_dashboard.git@1.3.x --no-build-isolation && sudo chown -R pironman5:pironman5 /opt/pironman5
 ```
 
 
