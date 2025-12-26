@@ -10,15 +10,12 @@ from .logger import Logger
 from .utils import merge_dict, log_error
 from .version import __version__ as pironman5_version
 from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, SYSTEM_DEFAULT_CONFIG, EVENT_MAP
+from ._constants import CONFIG_PATH, APP_NAME, DEFAULT_DEBUG_LEVEL
 
 from sf_rpi_status import restart_service
 
-APP_NAME = 'pironman5'
-DEFAULT_DEBUG_LEVEL = 'INFO' # 'DEBUG' | 'INFO' | 'WARNING' | 'ERROR' | 'CRITICAL'
-
 log = Logger(APP_NAME)
 __package_name__ = __name__.split('.')[0]
-CONFIG_PATH = "/opt/pironman5/config.json"
 
 PMDashboard = None
 try:

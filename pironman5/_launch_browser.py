@@ -3,6 +3,9 @@ import subprocess
 import sys
 import os
 from typing import List
+import json
+
+from ._constants import CONFIG_PATH
 
 def check_desktop_environment() -> bool:
     """
@@ -61,7 +64,11 @@ def get_browser_fullscreen_args(browser: str) -> List[str]:
     """
     Return fullscreen arguments corresponding to different browsers
     """
-    target_url = "http://127.0.0.1:34001"
+    config = None
+    with open(CONFIG_PATH, 'r') as f:
+        config = json.load(f)
+    dashboard_page = config['system']['default_dashboard_page']
+    target_url = f"http://127.0.0.1:34001/{dashboard_page}"
     
     # Chrome/Chromium fullscreen arguments
     if "chrome" in browser or "chromium" in browser:
