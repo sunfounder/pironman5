@@ -103,6 +103,7 @@ class SF_Installer():
         "/usr/sbin/poweroff",
         "/usr/sbin/halt",
         "/usr/bin/systemctl",
+        "/usr/bin/vcgencmd",
     ]
 
     def __init__(self,

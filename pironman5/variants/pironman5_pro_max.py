@@ -22,6 +22,10 @@ class Pironman5ProMax:
         "delete_log_file",
         "oled_sleep",
         "pi5_power_button",
+
+        "restart_service",
+        "reboot",
+        "shutdown",
     ]
     SYSTEM_DEFAULT_CONFIG = {
         'data_interval': 1,
@@ -35,6 +39,7 @@ class Pironman5ProMax:
         "oled_enable": True,
         "oled_rotation": 0,
         'oled_sleep_timeout': 10,
+        "default_dashboard_page": "small",
         'oled_pages': [
             'mix',
             'performance',
