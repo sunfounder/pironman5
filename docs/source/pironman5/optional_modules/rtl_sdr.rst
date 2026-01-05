@@ -12,7 +12,6 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-
 RTL-SDR Blog V4
 ==============================================
 

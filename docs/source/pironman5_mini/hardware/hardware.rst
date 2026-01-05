@@ -29,4 +29,3 @@ This chapter is a detailed description of all the components in Pironman, as wel
     
     io_board
     fans
-    login_rpi/login_rpi

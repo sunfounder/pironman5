@@ -27,7 +27,7 @@ Setting Up OpenMediaVault
    ⚠️ **Only Raspberry Pi OS Lite versions 11 (Bullseye) and 12 (Bookworm) are supported.** 
 
    Please make sure you have installed the correct operating system and configured the network.
-   The procedure here is consistent with :ref:`max_install_os_sd_rpi`, but when selecting an image, please choose Raspberry Pi OS Lite from Raspberry Pi OS (other).
+   The procedure here is consistent with :ref:`install_os_sd_rpi`, but when selecting an image, please choose Raspberry Pi OS Lite from Raspberry Pi OS (other).
 
    .. image:: img/omv/omv-install-1.png
 

@@ -46,13 +46,13 @@ Thanks for choosing our |link_pironman5|.
     About this Kit <self>
     what_do_we_need    
     assembly_instructions
-    install/install_the_os
+    ../_shared/pironman5/install_the_os_5mini
     set_up/set_up_pironman5
     control/control_pironman5
     hardware/hardware
     optional_modules/optional_modules
     home_server/home_server
-    compitable_nvme_ssd
+    ../_shared/pironman5/compitable_nvme_ssd
     faq
 
 

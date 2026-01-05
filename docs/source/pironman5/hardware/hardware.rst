@@ -32,4 +32,3 @@ This chapter is a detailed description of all the components in Pironman, as wel
     tower_cooler
     oled_screen
     fans
-    login_rpi/login_rpi
