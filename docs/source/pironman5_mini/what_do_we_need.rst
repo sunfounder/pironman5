@@ -15,38 +15,71 @@
 1. What Else Should You Prepare?
 ===================================
 
-To get started with your Pironman 5 Mini, you'll need to gather a few essential components and some optional extras depending on your project requirements.
+Before assembling and using your Pironman 5 Mini, please make sure you have the following components ready. Some items are required for basic operation, while others are optional and depend on how you plan to use your Raspberry Pi.
 
-**Essential Components**
+Required Components
+------------------------------
 
-* Raspberry Pi 5 
+* **Raspberry Pi 5**
 
-    The Pironman 5 Mini is fully compatible with the Raspberry Pi 5.
+  The Pironman 5 Mini is fully compatible with the Raspberry Pi 5.
 
-* 27W Power Supply
+  .. image:: img/need_pi5.jpg
+     :width: 500
 
-    It is recommended to use the official 27W power supply or |link_sf_27w_supply| for the Pironman 5 series products to avoid insufficient power supply, which may cause the Raspberry Pi 5 to reboot.
+* **27W Power Supply**
 
-* Micro SD Card
+  It is recommended to use the official 27W power supply or |link_sf_27w_supply| for the Pironman 5 series products to avoid insufficient power supply, which may cause the Raspberry Pi 5 to reboot.
+
+  .. image:: img/need_power.png
+     :width: 600
+
+* **Micro SD Card**
+
+  The Raspberry Pi does not have a built-in hard drive. It boots and stores all files on a **Micro SD card**.  
+  
+  .. image:: img/need_sd.jpg
+    :width: 200
+
+  * Minimum: **16GB**  
+  * Recommended: **32GB** for better stability  
+  * Brand: Use reliable options such as **SanDisk** or **Samsung** to avoid read/write errors  
+  
+Optional Components
+------------------------
+
+* **M.2 NVMe SSD**
+
+  The Pironman 5 Mini features an NVMe PIP with an M.2 SSD connector, accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec).
+
+  .. image:: img/need_nvme.png
+    :width: 500
+
+* **Monitor (HDMI or TV)** 
+
+  For beginners, we strongly recommend a display with an HDMI input, so you can easily configure Raspberry Pi OS and run graphical programs.  
+
+  .. image:: img/need_screen.png
+    :width: 400
+
+* **Micro HDMI Cable**
+
+  A Micro HDMI to HDMI cable is required.
+
+  We recommend using the official Raspberry Pi Micro HDMI cable. Some third-party cables with a connector length shorter than 65 mm may cause poor contact and display issues.
+
+  .. image:: img/need_mini_hdmi.png
+     :width: 400
+
+* **Keyboard & Mouse**
+
+  Very useful during the initial setup of Raspberry Pi OS. Later, you may switch to remote access (SSH/VNC), but for beginners we recommend preparing a basic USB or wireless set.  
+
+  .. image:: img/need_keyboard_mouse.png
+    :width: 500
  
-    It is recommended to use an SD card with a minimum of 16GB of storage for Raspberry Pi OS. For Raspberry Pi OS Lite, a minimum of 4GB is advised.
 
-**Optional Components**
+**Tips for Preparation**
 
-* M.2 NVMe SSD
-
-    The Pironman 5 Mini features an NVMe PIP with an M.2 SSD connector, accommodating four NVMe M.2 SSD sizes: 2230, 2242, 2260, and 2280. The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec).
-
-* Screen
-
-    To access the Raspberry Pi's desktop environment, a screen such as a TV or a computer monitor is required.
-    
-* Micro HDMI Cable
-
-  The Pironman 5 Mini utilizes all the native ports of the Raspberry Pi 5. Therefore, for the HDMI connection, you will need a Micro HDMI cable to connect the Pironman 5 Mini to a display.
-
-* Mouse & Keyboard
-
-    Any USB port on the Pironman 5 Mini can be used to connect a wired keyboard and mouse, or a USB Bluetooth receiver for wireless peripherals.
-
-By ensuring you have these components ready, you'll be fully equipped to set up and enjoy your Pironman 5 Mini with your Raspberry Pi 5!
+* If you purchased this kit, most accessories are included, but you still need to prepare the Raspberry Pi board, Micro SD card, and power adapter separately.  
+* Not sure what to buy? The most stable and universal choice is: **Raspberry Pi 5 (2GB) + Official Power Supply + 32GB Micro SD card**.  

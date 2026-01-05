@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _install_to_sd_home_bridge_mini:
+.. _install_to_sd_other_mini:
 
 Installing the OS on a Micro SD Card
 =============================================
@@ -25,86 +25,51 @@ If you are using a Micro SD card, you can follow the tutorial below to install t
 * A Personal Computer
 * A Micro SD card and Reader
 
-**Steps**
+.. include:: install_to_sd_rpi.rst
+   :start-after: start_install_imager
+   :end-before: end_install_imager
 
-#. Insert your SD card into your computer or laptop using a Reader.
+2. Install the OS to the microSD Card
+------------------------------------------------
 
-#. Within the |link_rpi_imager|, click **Raspberry Pi Device** and select the **Raspberry Pi 5** model from the dropdown list.
+1. Insert your microSD card into your computer using a card reader.  
+   Before proceeding, back up any important data on the card, as it will be erased.
 
-   .. image:: img/os_choose_device_pi5.png
-      :width: 90%
-      
-
-#. Click on the **Operating System** tab.
-
-   .. image:: img/os_choose_os.png
+   .. image:: img/insert_sd.png
       :width: 90%
 
-#. Scroll down to the bottom of the page and select the your operating system.
+2. When **Raspberry Pi Imager** opens, you will see the **Device** page.  
+   Select your **Raspberry Pi 5** model from the list.
+
+   .. image:: img/imager_device.png
+      :width: 90%
+
+3. Go to the **OS** section, scroll down to the bottom of the page, and select your operating system.
 
    .. note::
 
-      * For **Ubuntu** system, you need to click **Other general-purpose OS** -> **Ubuntu**, and select either **Ubuntu Desktop 24.04 LTS (64 bit)** or **Ubuntu Server 24.04 LTS (64 bit)**.
-      * For **Kali Linux**, **Home Assistant** and **Homebridge** systems, you need to click **Other specific-purpose OS** and then select the corresponding system.
+      * For **Ubuntu**, click **Other general-purpose OS** → **Ubuntu**, then select  
+        **Ubuntu Desktop 24.04 LTS (64-bit)** or **Ubuntu Server 24.04 LTS (64-bit)**.
+      * For **Kali Linux**, **Home Assistant**, and **Homebridge**, click  
+        **Other specific-purpose OS**, then select the corresponding system.
 
-   .. image:: img/os_other_os.png
+   .. image:: img/imager_other_os.png
       :width: 90%
 
-#. In the **Storage** option, select the appropriate storage device for the installation.
+4. In the **Storage** section, select your microSD card.  
+   For safety, it is recommended to unplug other USB storage devices so that only the microSD card appears in the list.
 
-   .. image:: img/nvme_ssd_storage.png
+   .. image:: img/imager_storage.png
       :width: 90%
-      
 
 #. Click **NEXT**.
 
    .. note::
 
-      * For systems that cannot be configured in advance, after clicking **NEXT**, you will be prompted whether to save the data within the device. If you have confirmed that a backup has been made, select **Yes**.
+      * For systems that **cannot be configured in advance**, clicking **NEXT** will skip the **Customisation** step and go directly to **Writing**, where the OS is written to the microSD card.
+      * For systems that **support pre-configuration**, follow the **Customisation** steps to configure options such as **Hostname**, **WiFi**, and **Enable SSH**.
 
-      * For systems where the Hostname, WiFi, and Enable SSH can be configured in advance, a pop-up will appear prompting whether to apply the OS's custom settings. You can choose **Yes** or **No**, or go back to edit further.
-
-   .. image:: img/os_enter_setting.png
+   .. image:: img/imager_write_other_os.png
       :width: 90%
-      
 
-   * Define a **hostname** for your Raspberry Pi. The hostname is your Raspberry Pi's network identifier. You can access your Pi using ``<hostname>.local`` or ``<hostname>.lan``.
-
-     .. image:: img/os_set_hostname.png  
-
-   * Create a **Username** and **Password** for the Raspberry Pi's administrator account. Establishing a unique username and password is vital for securing your Raspberry Pi, which lacks a default password.
-
-     .. image:: img/os_set_username.png
-         
-   * Configure the wireless LAN by providing your network's **SSID** and **Password**.
-
-     .. note::
-
-       Set the ``Wireless LAN country`` to the two-letter `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ corresponding to your location.
-
-     .. image:: img/os_set_wifi.png
-         
-   * To remotely connect to your Raspberry Pi, enable SSH in the Services tab.
-
-     * For **password authentication**, use the username and password from the General tab.
-     * For public-key authentication, choose "Allow public-key authentication only". If you have an RSA key, it will be used. If not, click "Run SSH-keygen" to generate a new key pair.
-
-     .. image:: img/os_enable_ssh.png
-         
-   * The **Options** menu lets you configure Imager's behavior during a write, including playing sound when finished, ejecting media when finished, and enabling telemetry.
-
-     .. image:: img/os_options.png
-           
-#. When you've finished entering OS customisation settings, click **Save** to save your customisation. Then, click **Yes** to apply them when writing the image.
-
-   .. image:: img/os_click_yes.png
-      :width: 90%
-      
-
-#. If the SD card contains existing data, ensure you back it up to prevent data loss. Proceed by clicking **Yes** if no backup is needed.
-
-   .. image:: img/os_continue.png
-      :width: 90%
-      
-
-#. When you see the "Write Successful" popup, your image has been completely written and verified. You're now ready to boot a Raspberry Pi from the Micro SD Card!
+#. When the **“Write Successful”** popup appears, the image has been fully written and verified. You can now safely remove the microSD card and use it to boot your Raspberry Pi.

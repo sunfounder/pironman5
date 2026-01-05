@@ -171,7 +171,7 @@ It is recommended to use a spare card for this step.
 If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
 
 
-* :ref:`copy_sd_to_nvme_rpi_mini`
+* :ref:`copy_sd_to_nvme_mini`
 
 12. How to Remove the Protective Film from the Acrylic Plates
 -----------------------------------------------------------------

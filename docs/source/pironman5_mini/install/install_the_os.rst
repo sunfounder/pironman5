@@ -21,10 +21,9 @@
 
     You need to install an OS that supports Raspberry Pi 5. Please use the latest Raspberry Pi Imager tool for system installation. The currently tested systems are:
 
-   .. image:: ../img/compitable_os.png
-        :width: 600
+   .. image:: img/compitable_os.png
+        :width: 500
         :align: center
-
 
 In this chapter, you will learn how to install the operating systems. All the installation steps depend on the |link_rpi_imager|, which you need to install first.
 
@@ -34,3 +33,6 @@ In this chapter, you will learn how to install the operating systems. All the in
         install_raspberry_os
         install_the_other_os
         install_umbrel
+
+.. install_batocera
+

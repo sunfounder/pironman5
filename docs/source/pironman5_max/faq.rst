@@ -189,9 +189,9 @@ If the OLED screen is not displaying or is displaying incorrectly, follow these 
    .. image:: img/dual_nvme_pip_j4.png  
 
      
-4. Confirm that your NVMe SSD has a properly installed operating system. Refer to: :ref:`max_install_the_os`.
+4. Confirm that your NVMe SSD has a properly installed operating system. Refer to: :ref:`install_the_os_max`.
 
-5. If the wiring is correct and the OS is installed, but the NVMe SSD still fails to boot, try booting from a Micro SD card to verify the functionality of other components. Once confirmed, proceed to: :ref:`max_configure_boot_ssd`.
+5. If the wiring is correct and the OS is installed, but the NVMe SSD still fails to boot, try booting from a Micro SD card to verify the functionality of other components. Once confirmed, proceed to: :ref:`configure_boot_ssd_max`.
 
 If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
 
@@ -210,7 +210,7 @@ If the problem persists after performing the above steps, please send an email t
       :width: 600
       :align: center
 
-   If you have installed an unsupported OS, follow the guide to install a compatible operating system: :ref:`install_the_os`.
+   If you have installed an unsupported OS, follow the guide to install a compatible operating system: :ref:`install_the_os_max`.
 
 #. Run the command ``sudo raspi-config`` to open the configuration menu. Navigate to **3 Interfacing Options** -> **I3 SPI** -> **YES**, then click **OK** and **Finish** to enable SPI. After enabling SPI, restart the Pironman 5.
 
@@ -287,7 +287,7 @@ You can refer to the following tutorial to control the components of the Pironma
 
 If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
 
-* :ref:`max_configure_boot_ssd`
+* :ref:`configure_boot_ssd_max`
 
 
 14. How to Modify the Boot Order with Raspberry Pi Imager?
@@ -305,7 +305,7 @@ It is recommended to use a spare card for this step.
 If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 MAX boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
 
 
-* :ref:`max_copy_sd_to_nvme_rpi`
+* :ref:`copy_sd_to_nvme_max`
 
 16. How to Remove the Protective Film from the Acrylic Plates
 -----------------------------------------------------------------

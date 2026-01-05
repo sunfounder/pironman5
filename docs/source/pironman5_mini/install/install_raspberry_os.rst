@@ -14,6 +14,7 @@
 
 Installing Raspberry Pi OS
 ================================================================================
+
 You can choose an installation method based on whether you have a Micro SD card or an NVMe SSD available.
 
 **Using a Micro SD Card Only**
@@ -29,7 +30,6 @@ You can choose an installation method based on whether you have a Micro SD card 
         :align: center
   
   * If you do not have the adapter shown above, you can first install the OS on a Micro SD card using the first method, then use the third method to copy the system from the Micro SD card to your M.2 NVMe SSD.  
-
 
 .. toctree::
     :maxdepth: 1
