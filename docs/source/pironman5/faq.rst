@@ -107,7 +107,7 @@ This issue may be caused by a system update, changes to the boot order, or a cor
 
 #. Restore the Bootloader
 
-   * If the PI5 still cannot boot, the bootloader may be corrupted. You can follow this guide: :ref:`update_bootloader` and choose whether to boot from SD card or NVMe/USB.
+   * If the PI5 still cannot boot, the bootloader may be corrupted. You can follow this guide: :ref:`update_bootloader_5` and choose whether to boot from SD card or NVMe/USB.
    * Insert the prepared SD card into the PI5, power it on, and wait at least 10 seconds. Once the recovery is complete, remove and reformat the SD card. 
    * Then, use Raspberry Pi Imager to flash the latest Raspberry Pi OS, insert the card back, and try booting again.
 
@@ -145,7 +145,7 @@ If the OLED screen is not displaying or displaying incorrectly, follow these tro
       :width: 600  
       :align: center  
 
-   If you have installed an unsupported system, follow the guide to install a compatible OS: :ref:`install_the_os_5mini`.
+   If you have installed an unsupported system, follow the guide to install a compatible OS: :ref:`install_the_os`.
 
 #. When the OLED screen is powered on for the first time, it may only display pixel blocks. You need to follow the instructions in :ref:`set_up_pironman5` to complete the configuration before it can display proper information.
 
@@ -229,9 +229,9 @@ If the problem persists after performing the above steps, please send an email t
      .. image:: img/nvme_pip_j4.png  
 
      
-4. Confirm that your NVMe SSD has a properly installed operating system. Refer to: :ref:`install_the_os_5mini`.
+4. Confirm that your NVMe SSD has a properly installed operating system. Refer to: :ref:`install_the_os`.
 
-5. If the wiring is correct and the OS is installed, but the NVMe SSD still fails to boot, try booting from a Micro SD card to verify the functionality of other components. Once confirmed, proceed to: :ref:`configure_boot_ssd_5mini`.
+5. If the wiring is correct and the OS is installed, but the NVMe SSD still fails to boot, try booting from a Micro SD card to verify the functionality of other components. Once confirmed, proceed to: :ref:`configure_boot_ssd`.
 
 If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
 
@@ -250,7 +250,7 @@ If the problem persists after performing the above steps, please send an email t
       :width: 600
       :align: center
 
-   If you have installed an unsupported OS, follow the guide to install a compatible operating system: :ref:`install_the_os_5mini`.
+   If you have installed an unsupported OS, follow the guide to install a compatible operating system: :ref:`install_the_os`.
 
 #. Run the command ``sudo raspi-config`` to open the configuration menu. Navigate to **3 Interfacing Options** -> **I3 SPI** -> **YES**, then click **OK** and **Finish** to enable SPI. After enabling SPI, restart the Pironman 5.
 
@@ -304,7 +304,7 @@ You can refer to the following tutorial to control the components of the Pironma
 
 If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
 
-* :ref:`configure_boot_ssd_5mini`
+* :ref:`configure_boot_ssd`
 
 
 14. How to Modify the Boot Order with Raspberry Pi Imager?
@@ -314,7 +314,7 @@ In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can
 
 It is recommended to use a spare card for this step.
 
-* :ref:`update_bootloader`
+* :ref:`update_bootloader_5`
 
 15. How to Copy the System from the SD Card to an NVMe SSD?
 -------------------------------------------------------------
@@ -322,7 +322,7 @@ It is recommended to use a spare card for this step.
 If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
 
 
-* :ref:`copy_sd_to_nvme_rpi_5mini`
+* :ref:`copy_sd_to_nvme_rpi`
 
 16. How to Remove the Protective Film from the Acrylic Plates
 -----------------------------------------------------------------

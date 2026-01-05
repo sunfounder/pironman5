@@ -51,13 +51,13 @@ Take your Raspberry Pi 5 to the next level with |link_pironman5_max|, a high-end
     About this Kit <self>
     what_do_we_need    
     assembly_instructions
-    ../_shared/pironman5/install_the_os_max
+    install/install_the_os
     set_up/set_up_pironman5
     control/control_pironman5
     hardware/hardware
     optional_modules/optional_modules
     home_server/home_server
-    ../_shared/pironman5/compitable_nvme_ssd
+    compitable_nvme_ssd
     faq
 
 **Parameters**

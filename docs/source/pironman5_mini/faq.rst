@@ -63,15 +63,8 @@ You can detach the Hailo AI accelerator module from the Raspberry Pi AI Kit and 
    .. .. image::  img/output4.png
    ..      :width: 800
 
-4. About Micro HDMI Cable
------------------------------
 
-We recommend using the official Raspberry Pi Micro HDMI cable. Some third-party cables with a connector length shorter than 65 mm may cause poor contact and display issues.
-
-  .. image:: img/need_mini_hdmi.png
-     :width: 400
-
-5. PI5 Fails to Boot (Red LED)?
+4. PI5 Fails to Boot (Red LED)?
 -------------------------------------------
 
 This issue may be caused by a system update, changes to the boot order, or a corrupted bootloader. You can try the following steps to resolve the problem:
@@ -80,11 +73,18 @@ This issue may be caused by a system update, changes to the boot order, or a cor
 
 #. Restore the Bootloader
 
-   * If the PI5 still cannot boot, the bootloader may be corrupted. You can follow this guide: :ref:`update_bootloader` and choose whether to boot from SD card or NVMe/USB.
+   * If the PI5 still cannot boot, the bootloader may be corrupted. You can follow this guide: :ref:`update_bootloader_mini` and choose whether to boot from SD card or NVMe/USB.
    * Insert the prepared SD card into the PI5, power it on, and wait at least 10 seconds. Once the recovery is complete, remove and reformat the SD card. 
    * Then, use Raspberry Pi Imager to flash the latest Raspberry Pi OS, insert the card back, and try booting again.
 
-6. RGB LEDs Not Working?
+
+.. Does the Pironman 5 Mini support retro gaming systems?
+.. --------------------------------------------------------------
+
+.. Yes, it is compatible. However, most retro gaming systems are streamlined versions that cannot install and run additional software. This limitation may cause some components on the Pironman 5 Mini, such as the RGB fan, and the 4 RGB LEDs, to not function properly because these components require the installation of Pironman 5's software packages.
+
+
+5. RGB LEDs Not Working?
 --------------------------
 
 #. The two pins on the Mini HAT are used to connect the RGB LEDs to GPIO10. Ensure that the jumper cap on these two pins are properly in place.
@@ -99,13 +99,13 @@ This issue may be caused by a system update, changes to the boot order, or a cor
       :width: 600
       :align: center
 
-   If you have installed an unsupported OS, follow the guide to install a compatible operating system: :ref:`install_the_os_5mini`.
+   If you have installed an unsupported OS, follow the guide to install a compatible operating system: :ref:`install_the_os_mini`.
 
 #. Run the command ``sudo raspi-config`` to open the configuration menu. Navigate to **3 Interfacing Options** -> **I3 SPI** -> **YES**, then click **OK** and **Finish** to enable SPI. After enabling SPI, restart the Pironman 5.
 
 If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
 
-7. CPU fan not working?
+6. CPU fan not working?
 ----------------------------------------------
 
 When the CPU temperature has not reached the set threshold, the CPU fan will not working.
@@ -122,7 +122,7 @@ The PWM fan operates dynamically, adjusting its speed according to the Raspberry
 
 For more detail please refer to : :ref:`fan_mini`
 
-8. How to disable web dashboard?
+7. How to disable web dashboard?
 ------------------------------------------------------
 
 Once you have completed the installation of the ``pironman5`` module, you will be able to access the :ref:`view_control_dashboard_mini`.
@@ -142,38 +142,38 @@ If you have already installed ``pironman 5``, you can remove the ``dashboard`` m
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-9. How to Control Components Using the ``pironman5`` Command
+8. How to Control Components Using the ``pironman5`` Command
 ----------------------------------------------------------------------
 You can refer to the following tutorial to control the components of the Pironman 5 using the ``pironman5`` command.
 
 * :ref:`view_control_commands_mini`
 
-10. How to Change the Raspberry Pi Boot Order Using Commands
+9. How to Change the Raspberry Pi Boot Order Using Commands
 -------------------------------------------------------------
 
 If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
 
-* :ref:`configure_boot_ssd_5mini`
+* :ref:`configure_boot_ssd_mini`
 
 
-11. How to Modify the Boot Order with Raspberry Pi Imager?
+10. How to Modify the Boot Order with Raspberry Pi Imager?
 ---------------------------------------------------------------
 
 In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can also use the **Raspberry Pi Imager** to change the boot order of your Raspberry Pi.
 
 It is recommended to use a spare card for this step.
 
-* :ref:`update_bootloader`
+* :ref:`update_bootloader_mini`
 
-12. How to Copy the System from the SD Card to an NVMe SSD?
+11. How to Copy the System from the SD Card to an NVMe SSD?
 -------------------------------------------------------------
 
 If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
 
 
-* :ref:`copy_sd_to_nvme_rpi_5mini`
+* :ref:`copy_sd_to_nvme_rpi_mini`
 
-13. How to Remove the Protective Film from the Acrylic Plates
+12. How to Remove the Protective Film from the Acrylic Plates
 -----------------------------------------------------------------
 
 Two acrylic panels are included in the package, both covered with yellow/transparent protective film on both sides to prevent scratches. The protective film may be a bit difficult to remove. Use a screwdriver to gently scrape at the corners, then carefully peel off the entire film.
@@ -186,7 +186,7 @@ Two acrylic panels are included in the package, both covered with yellow/transpa
 
 .. _openssh_powershell_mini:
 
-14. How to Install OpenSSH via Powershell?
+13. How to Install OpenSSH via Powershell?
 ----------------------------------------------
 
 When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``) to connect to your Raspberry Pi, but the following error message appears.

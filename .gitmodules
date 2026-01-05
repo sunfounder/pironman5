@@ -1,4 +1,0 @@
-[submodule "docs/source/_shared"]
-	path = docs/source/_shared
-	url = https://github.com/sunfounder/sf-shared.git
-	branch = main
