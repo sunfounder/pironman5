@@ -30,9 +30,8 @@ Dual NVMe
 In this section, you will learn how to:
 
 * Disassemble the Pironman 5.  
-* Install the dual nvme module onto the Raspberry Pi 5.  
+* Install the dual nvme module onto the Pironman 5.  
 * Reassemble the case.  
-* Test the dual nvme module.
 
 .. raw:: html
 

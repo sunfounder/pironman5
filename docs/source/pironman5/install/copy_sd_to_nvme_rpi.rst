@@ -19,7 +19,7 @@ Copying the OS from a Micro SD Card to an NVMe SSD
 
 If you do not have an NVMe adapter, you can first install the OS on a **Micro SD card**, then copy it to the **NVMe SSD** after the Pironman 5 boots successfully.
 
-* First, complete :ref:`install_os_sd_rpi`.
+* First, complete :ref:`install_os_sd_rpi_5`.
 * Then, boot and log in to your Raspberry Pi. For login help, see: |link_rpi_get_start|.
 
 Complete the steps above before continuing.
