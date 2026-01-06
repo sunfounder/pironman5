@@ -1,9 +1,9 @@
-.. _install_to_sd_home_bridge_mini:
+.. _install_to_sd_other_mini:
 
-将操作系统安装到 Micro SD 卡
+在 Micro SD 卡上安装操作系统
 =============================================
 
-如果您打算使用 Micro SD 卡安装系统，可参考以下教程将操作系统写入 Micro SD 卡。
+如果你使用的是 Micro SD 卡，可以按照下面的教程将系统安装到 Micro SD 卡中。
 
 
 **所需组件**
@@ -11,86 +11,51 @@
 * 一台个人电脑
 * 一张 Micro SD 卡及读卡器
 
-**操作步骤**
+.. include:: install_to_sd_rpi.rst
+   :start-after: start_install_imager
+   :end-before: end_install_imager
 
-#. 使用读卡器将 SD 卡插入您的电脑或笔记本。
+2. 将操作系统安装到 microSD 卡
+------------------------------------------------
 
-#. 打开 |link_rpi_imager|，点击 **Raspberry Pi Device**，并从下拉列表中选择 **Raspberry Pi 5** 机型。
+1. 使用读卡器将 microSD 卡插入电脑。  
+   在继续之前，请备份卡中的所有重要数据，因为该卡将被清空。
 
-   .. image:: img/os_choose_device_pi5.png
+   .. image:: img/insert_sd.png
       :width: 90%
 
+2. 打开 **Raspberry Pi Imager** 后，你将看到 **Device** 页面。  
+   从列表中选择你的 **Raspberry Pi 5** 型号。
 
-#. 点击 **Operating System** 选项卡。
-
-   .. image:: img/os_choose_os.png
+   .. image:: img/imager_device.png
       :width: 90%
 
-#. 滚动至页面底部，选择您所需的操作系统。
+3. 进入 **OS** 部分，向下滚动到页面底部并选择你的操作系统。
 
    .. note::
 
-      * 若选择 **Ubuntu** 系统，请点击 **Other general-purpose OS** -> **Ubuntu**，然后选择 **Ubuntu Desktop 24.04 LTS (64 bit)** 或 **Ubuntu Server 24.04 LTS (64 bit)**。
-      * 若选择 **Kali Linux**、 **Home Assistant** 或 **Homebridge** 系统，请点击 **Other specific-purpose OS**，然后选择相应系统。
+      * 对于 **Ubuntu**，点击 **Other general-purpose OS** → **Ubuntu**，然后选择  
+        **Ubuntu Desktop 24.04 LTS (64-bit)** 或 **Ubuntu Server 24.04 LTS (64-bit)**。
+      * 对于 **Kali Linux**、**Home Assistant** 和 **Homebridge**，点击  
+        **Other specific-purpose OS**，然后选择对应的系统。
 
-   .. image:: img/os_other_os.png
+   .. image:: img/imager_other_os.png
       :width: 90%
 
-#. 在 **Storage** 选项中，选择正确的安装设备。
+4. 在 **Storage** 部分，选择你的 microSD 卡。  
+   为了安全起见，建议拔掉其他 USB 存储设备，确保列表中只显示 microSD 卡。
 
-   .. image:: img/nvme_ssd_storage.png
+   .. image:: img/imager_storage.png
       :width: 90%
-
 
 #. 点击 **NEXT**。
 
    .. note::
 
-      * 若所选系统不支持提前配置，点击 **NEXT** 后会提示是否擦除设备数据。确认已完成备份后点击 **Yes**。
+      * 对于 **不支持提前配置** 的系统，点击 **NEXT** 将跳过 **Customisation** 步骤，并直接进入 **Writing**，系统镜像将被写入 microSD 卡。
+      * 对于 **支持预配置** 的系统，请按照 **Customisation** 步骤设置 **Hostname**、**WiFi** 以及 **启用 SSH** 等选项。
 
-      * 若系统支持预设主机名、WiFi 和 SSH 配置，将弹出窗口询问是否应用自定义设置。您可选择 **Yes**、 **No** 或返回继续编辑。
-
-   .. image:: img/os_enter_setting.png
+   .. image:: img/imager_write_other_os.png
       :width: 90%
 
-
-   * 设置您的树莓派 **hostname**，作为设备在网络中的标识。您可通过 ``<hostname>.local`` 或 ``<hostname>.lan`` 访问设备。
-
-     .. image:: img/os_set_hostname.png
-
-   * 创建树莓派的 **用户名** 和 **密码**。建议设定专属账户信息，以提高系统安全性（树莓派默认无密码）。
-
-     .. image:: img/os_set_username.png
-
-   * 配置无线网络，填写 WiFi 的 **SSID** 和 **密码**。
-
-     .. note::
-
-        请将 ``Wireless LAN country`` 设置为您所在国家的 `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_。
-
-     .. image:: img/os_set_wifi.png
-
-   * 若需远程连接树莓派，请在 Services 标签页中启用 SSH 服务。
-
-     * 使用 **密码验证** 时，请输入您在 General 标签中设定的用户名和密码。
-     * 使用 **公钥验证** 时，选择 “Allow public-key authentication only”。若已有 RSA 密钥，将直接使用；否则点击 “Run SSH-keygen” 生成新密钥对。
-
-     .. image:: img/os_enable_ssh.png
-
-   * 在 **Options** 菜单中，您可设置写入完成后的行为，如播放提示音、自动弹出设备、启用遥测等。
-
-     .. image:: img/os_options.png
-
-#. 设置完成后，点击 **Save** 保存设置，再点击 **Yes** 以在写入镜像时应用这些设置。
-
-   .. image:: img/os_click_yes.png
-      :width: 90%
-
-
-#. 如果 SD 卡中已有数据，请确认是否备份。若无备份需求，可点击 **Yes** 继续写入。
-
-   .. image:: img/os_continue.png
-      :width: 90%
-
-
-#. 当看到 “Write Successful” 的提示窗口时，说明系统镜像已成功写入并验证完毕。现在您可以使用这张 Micro SD 卡启动树莓派了！
+#. 当出现 **“Write Successful”** 弹窗时，表示镜像已经完整写入并通过校验。此时你可以安全地移除 microSD 卡，并使用它来启动你的 Raspberry Pi。

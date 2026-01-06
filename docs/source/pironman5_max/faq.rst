@@ -174,9 +174,9 @@ Raspberry Pi AI Kit 由 Raspberry Pi M.2 HAT+ 和 Hailo AI 加速模块组成。
 
    .. image:: img/dual_nvme_pip_j4.png  
 
-4. 确认 NVMe SSD 已安装可启动的操作系统，参考：:ref:`max_install_the_os`。  
+4. 确认 NVMe SSD 已安装可启动的操作系统，参考：:ref:`install_the_os_max`。  
 
-5. 如果接线和系统都正确，但 NVMe SSD 仍无法启动，可先用 Micro SD 卡启动验证其他组件，再参考 :ref:`max_configure_boot_ssd` 配置 NVMe 启动。  
+5. 如果接线和系统都正确，但 NVMe SSD 仍无法启动，可先用 Micro SD 卡启动验证其他组件，再参考 :ref:`configure_boot_ssd_max` 配置 NVMe 启动。  
 
 如果完成以上操作后问题依旧，请发送邮件至 service@sunfounder.com，我们会尽快回复。  
 
@@ -195,7 +195,7 @@ Raspberry Pi AI Kit 由 Raspberry Pi M.2 HAT+ 和 Hailo AI 加速模块组成。
       :width: 600
       :align: center
 
-   如果已安装不兼容系统，请参考教程安装兼容系统：:ref:`install_the_os`。  
+   如果已安装不兼容系统，请参考教程安装兼容系统：:ref:`install_the_os_max`。  
 
 #. 运行命令 ``sudo raspi-config`` 打开配置菜单。进入 **3 Interfacing Options** -> **I3 SPI** -> **YES**，然后选择 **OK** 和 **Finish** 启用 SPI。启用后重启 Pironman 5。  
 
@@ -270,7 +270,7 @@ OLED 屏幕会在一段时间无操作后自动关闭以节能并延长寿命，
 
 如果你已经登录到树莓派，可以通过命令修改启动顺序。详细步骤如下：
 
-* :ref:`max_configure_boot_ssd`
+* :ref:`configure_boot_ssd_max`
 
 14. 如何用 Raspberry Pi Imager 修改启动顺序？
 ---------------------------------------------------------------
@@ -286,7 +286,7 @@ OLED 屏幕会在一段时间无操作后自动关闭以节能并延长寿命，
 
 如果你有 NVMe SSD，但没有转接器把 NVMe 连接到电脑，你可以先把系统安装在 Micro SD 卡上。待 Pironman 5 MAX 成功启动后，再将系统从 Micro SD 卡复制到 NVMe SSD。详细步骤如下：
 
-* :ref:`max_copy_sd_to_nvme_rpi`
+* :ref:`copy_sd_to_nvme_max`
 
 16. 如何撕下亚克力板的保护膜
 -----------------------------------------------------------------

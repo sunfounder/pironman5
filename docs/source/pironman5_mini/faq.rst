@@ -49,12 +49,15 @@ Raspberry Pi AI 套件由 Raspberry Pi M.2 HAT+ 与 Hailo AI 加速模块组合�
    .. .. image::  img/output4.png
    ..      :width: 800
 
-.. 4. Pironman 5 Mini 是否支持复古游戏系统？
-.. -------------------------------------------
+4. 关于 Micro HDMI线
+-------------------------------------
 
-.. 支持。但请注意，大多数复古游戏系统为精简版系统，无法安装和运行额外的软件。这将导致 Pironman 5 Mini 的部分组件（如 RGB 风扇与 4 个 RGB 灯）无法正常运行，因为这些组件依赖 Pironman 5 的软件支持。
+我们建议使用官方的 Raspberry Pi Micro HDMI 线缆。部分第三方线缆的接口长度小于 65 mm，可能会导致接触不良和显示问题。
 
-4. PI5 无法启动（红灯常亮）？
+  .. image:: img/need_mini_hdmi.png
+     :width: 400
+
+5. PI5 无法启动（红灯常亮）？
 -------------------------------------------
 
 此问题可能是由于系统更新、启动顺序更改或引导程序损坏导致的。您可以尝试以下步骤来解决该问题：
@@ -67,7 +70,7 @@ Raspberry Pi AI 套件由 Raspberry Pi M.2 HAT+ 与 Hailo AI 加速模块组合�
    * 将准备好的 SD 卡插入 PI5，上电后至少等待 10 秒。恢复完成后，取出并重新格式化 SD 卡。 
    * 然后使用 Raspberry Pi Imager 烧录最新的 Raspberry Pi OS，将卡插回，再尝试启动。
 
-5. RGB 灯不亮？
+6. RGB 灯不亮？
 ------------------
 
 #. IO 扩展板上的两个引脚用于通过 GPIO10 驱动 RGB 灯，确保这两个引脚正确插上跳线帽。
@@ -88,7 +91,7 @@ Raspberry Pi AI 套件由 Raspberry Pi M.2 HAT+ 与 Hailo AI 加速模块组合�
 
 如果以上方法无效，请发送邮件至 service@sunfounder.com，我们会尽快回复。
 
-6. CPU 风扇不转？
+7. CPU 风扇不转？
 --------------------
 
 当 CPU 温度未达到设定阈值时，风扇不会运行。
@@ -105,7 +108,7 @@ PWM 风扇会根据 Raspberry Pi 5 的温度动态调整转速：
 
 更多详情请参考：:ref:`fan_mini`
 
-7. 如何关闭 Web 控制面板？
+8. 如何关闭 Web 控制面板？
 ----------------------------
 
 安装 ``pironman5`` 模块后，你将能够访问 :ref:`view_control_dashboard_mini`。
@@ -125,14 +128,14 @@ PWM 风扇会根据 Raspberry Pi 5 的温度动态调整转速：
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
-8. 如何使用 ``pironman5`` 命令控制组件？
+9. 如何使用 ``pironman5`` 命令控制组件？
 --------------------------------------------
 
 可参考以下教程使用 ``pironman5`` 命令控制 Pironman 5 的各组件：
 
 * :ref:`view_control_commands_mini`
 
-9. 如何通过命令修改 Raspberry Pi 的启动顺序？
+10. 如何通过命令修改 Raspberry Pi 的启动顺序？
 ------------------------------------------------
 
 如果你已登录 Raspberry Pi，可通过命令修改启动顺序。详细说明请见：
@@ -140,7 +143,7 @@ PWM 风扇会根据 Raspberry Pi 5 的温度动态调整转速：
 * :ref:`configure_boot_ssd_mini`
 
 
-10. 如何使用 Raspberry Pi Imager 修改启动顺序？
+11. 如何使用 Raspberry Pi Imager 修改启动顺序？
 ---------------------------------------------------
 
 除了在 EEPROM 中修改 ``BOOT_ORDER``，你也可以使用 **Raspberry Pi Imager** 工具更改启动顺序。
@@ -149,14 +152,14 @@ PWM 风扇会根据 Raspberry Pi 5 的温度动态调整转速：
 
 * :ref:`update_bootloader_mini`
 
-11. 如何将系统从 SD 卡复制到 NVMe SSD？
+12. 如何将系统从 SD 卡复制到 NVMe SSD？
 ----------------------------------------
 
 如果你有 NVMe SSD，但没有适配器将其连接到电脑，你可以先将系统安装到 Micro SD 卡中。Pironman 5 启动成功后，再将系统从 SD 卡复制到 NVMe SSD。详见：
 
-* :ref:`copy_sd_to_nvme_rpi_mini`
+* :ref:`copy_sd_to_nvme_mini`
 
-12. 如何撕除亚克力板保护膜？
+13. 如何撕除亚克力板保护膜？
 ------------------------------
 
 包装中包含的两块亚克力板，正反两面均贴有黄色或透明保护膜，用于防止运输过程中的刮花。保护膜可能较难撕开，可使用螺丝刀轻轻从边角刮起，再慢慢撕除整块膜。
@@ -169,7 +172,7 @@ PWM 风扇会根据 Raspberry Pi 5 的温度动态调整转速：
 
 .. _openssh_powershell_mini:
 
-13. 如何通过 PowerShell 安装 OpenSSH？
+14. 如何通过 PowerShell 安装 OpenSSH？
 ---------------------------------------
 
 当你使用 ``ssh <用户名>@<主机名>.local``（或 ``ssh <用户名>@<IP地址>``）连接 Raspberry Pi 时，出现如下错误提示：

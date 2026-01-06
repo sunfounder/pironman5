@@ -20,3 +20,4 @@
     camera_module
     35_screen
     rtl_sdr
+    dual_nvme

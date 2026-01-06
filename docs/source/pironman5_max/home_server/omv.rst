@@ -10,7 +10,7 @@
    ⚠️ **仅支持 Raspberry Pi OS Lite 版本 11（Bullseye）和 12（Bookworm）。**
 
    请确保您已安装正确的操作系统并完成网络配置。
-   此处的操作流程与 :ref:`max_install_os_sd_rpi` 一致，但在选择镜像时，请从 Raspberry Pi OS（其他）中选择 Raspberry Pi OS Lite。
+   此处的操作流程与 :ref:`install_os_sd_max` 一致，但在选择镜像时，请从 Raspberry Pi OS（其他）中选择 Raspberry Pi OS Lite。
 
    .. image:: img/omv/omv-install-1.png
 

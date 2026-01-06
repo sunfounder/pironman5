@@ -131,7 +131,7 @@ Raspberry Pi AI 套件由 Raspberry Pi M.2 HAT+ 与 Hailo AI 加速模块组成�
       :width: 600  
       :align: center  
 
-   如使用了不兼容系统，请参考 :ref:`install_the_os` 更换为支持的操作系统。
+   如使用了不兼容系统，请参考 :ref:`install_the_os_5` 更换为支持的操作系统。
 
 #. OLED 屏幕首次通电可能只显示方块图像，请根据 :ref:`set_up_pironman5` 的说明完成配置，之后即可正常显示信息。
 
@@ -215,9 +215,9 @@ Raspberry Pi AI 套件由 Raspberry Pi M.2 HAT+ 与 Hailo AI 加速模块组成�
      .. image:: img/nvme_pip_j4.png
 
 
-4. 确保您的 NVMe SSD 上已正确安装操作系统。参考：:ref:`install_the_os`。
+4. 确保您的 NVMe SSD 上已正确安装操作系统。参考：:ref:`install_the_os_5`。
 
-5. 若接线无误且系统已安装，但仍无法从 NVMe SSD 启动，请尝试使用 Micro SD 卡启动，确认其他硬件功能是否正常。如一切正常，请继续参考：:ref:`configure_boot_ssd`。
+5. 若接线无误且系统已安装，但仍无法从 NVMe SSD 启动，请尝试使用 Micro SD 卡启动，确认其他硬件功能是否正常。如一切正常，请继续参考：:ref:`configure_boot_ssd_5`。
 
 如以上步骤仍无法解决问题，请发送邮件至 service@sunfounder.com，我们将尽快协助您处理。
 
@@ -236,7 +236,7 @@ Raspberry Pi AI 套件由 Raspberry Pi M.2 HAT+ 与 Hailo AI 加速模块组成�
       :width: 600
       :align: center
 
-   如果您安装了不受支持的系统，请参考：:ref:`install_the_os` 进行更换。
+   如果您安装了不受支持的系统，请参考：:ref:`install_the_os_5` 进行更换。
 
 #. 执行命令 ``sudo raspi-config`` 打开配置菜单，进入 **3 Interfacing Options** -> **I3 SPI** -> **YES**，然后点击 **OK** 和 **Finish** 启用 SPI。启用后重启 Pironman 5。
 
@@ -291,7 +291,7 @@ PWM 风扇根据树莓派 5 的温度自动调节转速：
 
 如果您已登录树莓派系统，可以通过命令修改启动顺序。详细操作请参考：
 
-* :ref:`configure_boot_ssd`
+* :ref:`configure_boot_ssd_5`
 
 
 14. 如何通过 Raspberry Pi Imager 修改启动顺序？
@@ -309,7 +309,7 @@ PWM 风扇根据树莓派 5 的温度自动调节转速：
 如果您有 NVMe SSD，但没有适配器可连接到电脑，您可以先将系统安装到 Micro SD 卡上。在成功启动 Pironman 5 后，再将系统从 Micro SD 卡复制到 NVMe SSD。详细操作请参考：
 
 
-* :ref:`copy_sd_to_nvme_rpi`
+* :ref:`copy_sd_to_nvme_5`
 
 16. 如何撕除亚克力板保护膜
 -------------------------------------------------------------
