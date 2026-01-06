@@ -169,7 +169,7 @@ Wir empfehlen, hierfür eine Ersatzkarte zu verwenden.
 Wenn du eine NVMe-SSD besitzt, aber keinen Adapter zur Verbindung mit deinem Computer hast, kannst du das System zunächst auf eine Micro-SD-Karte installieren. Nach erfolgreichem Start des Pironman 5 kannst du das System auf die NVMe-SSD übertragen.
 
 
-* :ref:`copy_sd_to_nvme_rpi_mini`
+* :ref:`copy_sd_to_nvme_mini`
 
 12. Wie entfernt man die Schutzfolie von den Acrylplatten?
 ----------------------------------------------------------------

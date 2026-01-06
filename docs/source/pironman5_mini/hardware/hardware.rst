@@ -29,4 +29,4 @@ In diesem Kapitel findest du eine detaillierte Beschreibung aller Komponenten de
     
     io_board
     fans
-    login_rpi/login_rpi
+

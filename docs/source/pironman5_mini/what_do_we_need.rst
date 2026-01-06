@@ -12,42 +12,74 @@
 
     👉 Bereit, mit uns zu entdecken und zu bauen? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
-1. Was solltest du noch vorbereiten?
-========================================
+1. Was sollten Sie außerdem vorbereiten?
+================================================
 
-Um mit deinem Pironman 5 Mini loszulegen, brauchst du einige grundlegende Komponenten sowie optionales Zubehör – je nach deinem Projekt.
+Bevor Sie Ihren Pironman 5 Mini zusammenbauen und verwenden, stellen Sie bitte sicher, dass Sie die folgenden Komponenten bereit haben. Einige davon sind für den grundlegenden Betrieb erforderlich, andere sind optional und hängen davon ab, wie Sie Ihren Raspberry Pi nutzen möchten.
 
-**Notwendige Komponenten**
+Erforderliche Komponenten
+------------------------------
 
-* Raspberry Pi 5  
+* **Raspberry Pi 5**
 
-    Der Pironman 5 Mini ist vollständig kompatibel mit dem Raspberry Pi 5.
+  Der Pironman 5 Mini ist vollständig kompatibel mit dem Raspberry Pi 5.
 
-* 27W Netzteil  
+  .. image:: img/need_pi5.jpg
+     :width: 500
 
-  Es wird empfohlen, das offizielle 27W-Netzteil oder |link_sf_27w_supply| für die Pironman-5-Serie zu verwenden,  
-  um eine unzureichende Stromversorgung zu vermeiden, die dazu führen könnte, dass der Raspberry Pi 5 neu startet.  
+* **27-W-Netzteil**
 
-* MicroSD-Karte  
+  Es wird empfohlen, das offizielle 27-W-Netzteil oder |link_sf_27w_supply| für Produkte der Pironman-5-Serie zu verwenden, um eine unzureichende Stromversorgung zu vermeiden, die dazu führen kann, dass der Raspberry Pi 5 neu startet.
 
-    Für Raspberry Pi OS wird mindestens eine 16 GB große MicroSD-Karte empfohlen. Bei Verwendung von Raspberry Pi OS Lite reichen auch 4 GB aus.
+  .. image:: img/need_power.png
+     :width: 600
 
-**Optionale Komponenten**
+* **Micro-SD-Karte**
 
-* M.2 NVMe SSD  
+  Der Raspberry Pi verfügt über keine eingebaute Festplatte. Er startet und speichert alle Dateien auf einer **Micro-SD-Karte**.  
+  
+  .. image:: img/need_sd.jpg
+    :width: 200
 
-    Der Pironman 5 Mini verfügt über ein NVMe-PIP mit einem M.2-SSD-Steckplatz und unterstützt vier SSD-Formate: 2230, 2242, 2260 und 2280. Die Verbindung ist für Gen-2.0-Geschwindigkeiten (5 GT/s) zertifiziert, kann jedoch auf Gen 3.0 (10 GT/s) forciert werden.
+  * Minimum: **16 GB**  
+  * Empfohlen: **32 GB** für bessere Stabilität  
+  * Marke: Verwenden Sie zuverlässige Optionen wie **SanDisk** oder **Samsung**, um Lese-/Schreibfehler zu vermeiden  
+  
+Optionale Komponenten
+------------------------
 
-* Bildschirm  
+* **M.2 NVMe SSD**
 
-    Für den Zugriff auf die Desktop-Oberfläche des Raspberry Pi wird ein Bildschirm benötigt – etwa ein Fernseher oder Monitor.
+  Der Pironman 5 Mini verfügt über ein NVMe-PIP mit einem M.2-SSD-Anschluss und unterstützt vier NVMe-M.2-SSD-Größen: 2230, 2242, 2260 und 2280. Die Verbindung ist für Gen-2.0-Geschwindigkeiten (5 GT/s) zertifiziert, kann jedoch auf Gen 3.0 (10 GT/s) erzwungen werden.
 
-* Micro-HDMI-Kabel  
+  .. image:: img/need_nvme.png
+    :width: 500
 
-    Der Pironman 5 Mini nutzt alle nativen Anschlüsse des Raspberry Pi 5. Für den HDMI-Anschluss benötigst du daher ein Micro-HDMI-Kabel zur Verbindung mit einem Bildschirm.
+* **Monitor (HDMI oder TV)** 
 
-* Maus & Tastatur  
+  Für Einsteiger empfehlen wir dringend ein Display mit HDMI-Eingang, damit Sie Raspberry Pi OS einfach konfigurieren und grafische Programme ausführen können.  
 
-    Du kannst jede USB-Buchse am Pironman 5 Mini nutzen, um eine kabelgebundene Tastatur und Maus oder einen USB-Bluetooth-Empfänger für kabellose Geräte anzuschließen.
+  .. image:: img/need_screen.png
+    :width: 400
 
-Mit diesen Komponenten bist du bestens gerüstet, um deinen Pironman 5 Mini zusammen mit deinem Raspberry Pi 5 vollständig einzurichten und zu nutzen!
+* **Micro-HDMI-Kabel**
+
+  Ein Micro-HDMI-zu-HDMI-Kabel ist erforderlich.
+
+  Wir empfehlen die Verwendung des offiziellen Raspberry-Pi-Micro-HDMI-Kabels. Einige Kabel von Drittanbietern mit einer Steckerlänge von weniger als 65 mm können zu schlechtem Kontakt und Anzeigeproblemen führen.
+
+  .. image:: img/need_mini_hdmi.png
+     :width: 400
+
+* **Tastatur & Maus**
+
+  Sehr hilfreich während der Ersteinrichtung von Raspberry Pi OS. Später können Sie auf den Fernzugriff (SSH/VNC) umsteigen, für Einsteiger empfehlen wir jedoch die Vorbereitung eines einfachen USB- oder kabellosen Sets.  
+
+  .. image:: img/need_keyboard_mouse.png
+    :width: 500
+ 
+
+**Tipps zur Vorbereitung**
+
+* Wenn Sie dieses Kit gekauft haben, sind die meisten Zubehörteile enthalten, Sie müssen jedoch das Raspberry-Pi-Board, die Micro-SD-Karte und das Netzteil separat vorbereiten.  
+* Sie sind sich nicht sicher, was Sie kaufen sollen? Die stabilste und universellste Wahl ist: **Raspberry Pi 5 (2 GB) + offizielles Netzteil + 32-GB-Micro-SD-Karte**.  

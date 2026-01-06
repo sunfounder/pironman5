@@ -1,140 +1,88 @@
-.. note:: 
+.. note::
 
-    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Technikbegeisterten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Enthusiasten tiefer in Raspberry Pi, Arduino und ESP32 ein.
 
     **Warum beitreten?**
 
-    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Unterstützung unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu erweitern.
-    - **Exklusive Einblicke**: Erhalte frühzeitig Informationen über neue Produkte und exklusive Vorschauen.
-    - **Sonderrabatte**: Profitiere von exklusiven Angeboten für unsere neuesten Produkte.
-    - **Aktionen und Gewinnspiele**: Nimm an saisonalen Aktionen und Verlosungen teil.
+    - **Expertenunterstützung**: Löse Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Previews.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Bereit für spannende Projekte? Klicke auf [|link_sf_facebook|] und mach noch heute mit!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 
 Installation von Umbrel OS
 ============================================
 
-Umbrel ist eine Open-Source-Plattform bzw. ein Betriebssystem für Heimserver, mit dem du deinen eigenen Bitcoin-Node betreiben, eine Vielzahl selbstgehosteter Apps mit einem Klick installieren und deine Hardware in deine persönliche Cloud verwandeln kannst. Es ist ein hervorragender Weg, um mit Selbstverwahrung und Datenschutz zu beginnen.
+Umbrel ist eine Open-Source-, selbstgehostete Home-Server-Plattform bzw. ein Betriebssystem, mit dem Sie Ihren eigenen Bitcoin-Node betreiben, eine Vielzahl von selbstgehosteten Apps mit nur einem Klick installieren und Ihre Hardware in Ihre persönliche Home-Cloud verwandeln können. Es ist ein hervorragender Einstieg in Selbstverwahrung und Datenschutz.
 
 **Erforderliche Komponenten**
 
-* Ein Personal Computer  
-* Eine NVMe-SSD  
-* Ein NVMe-zu-USB-Adapter  
-* Eine Micro-SD-Karte und ein Kartenleser
+* Ein Personal Computer
+* Eine NVMe-SSD
+* Ein NVMe-zu-USB-Adapter
+* Micro-SD-Karte und Kartenleser
 
-1. Bootloader aktualisieren
---------------------------------
-
-Zuerst muss der Bootloader des Raspberry Pi 5 aktualisiert werden, damit er zuerst von NVMe startet, bevor er versucht, von USB oder der SD-Karte zu booten.
-
-.. note::
-
-    * In diesem Schritt wird empfohlen, eine Ersatz-Micro-SD-Karte zu verwenden. Schreibe den Bootloader zunächst auf diese Micro-SD-Karte und stecke sie dann sofort in den Raspberry Pi, um das Booten von einem NVMe-Gerät zu aktivieren.  
-    * Alternativ kannst du den Bootloader direkt auf dein NVMe-Gerät schreiben, es dann in den Raspberry Pi einsetzen, um die Bootmethode zu ändern. Anschließend schließe die NVMe-SSD an einen Computer an, um das Betriebssystem zu installieren, und stecke sie nach Abschluss der Installation wieder in den Raspberry Pi.
-
-#. Stecke deine Micro-SD-Karte oder NVMe-SSD mithilfe eines Kartenlesers in den Computer oder Laptop.
-
-#. In |link_rpi_imager| klicke auf **Raspberry Pi Device** und wähle das Modell **Raspberry Pi 5** aus dem Dropdown-Menü.
-
-   .. image:: img/os_choose_device_pi5.png
-      :width: 90%
-
-#. Im Reiter **Operating System** scrolle nach unten und wähle **Misc utility images**.
-
-   .. image:: img/nvme_misc.png
-      :width: 90%
-
-#. Wähle **Bootloader (Pi 5 family)**.
-
-   .. image:: img/nvme_bootloader.png
-      :width: 90%
-      
-
-#. Wähle **NVMe/USB Boot**, um dem Raspberry Pi 5 zu erlauben, zuerst von NVMe, dann von USB und schließlich von der SD-Karte zu starten.
-
-   .. image:: img/nvme_nvme_boot.png
-      :width: 90%
-      
-#. Unter **Storage** wähle das passende Speichermedium für die Installation aus.
-
-   .. note::
-
-      Stelle sicher, dass du das richtige Speichermedium auswählst. Um Verwechslungen zu vermeiden, trenne zusätzliche Speichermedien, falls mehrere angeschlossen sind.
-
-   .. image:: img/os_choose_sd.png
-      :width: 90%
-      
-
-#. Nun kannst du auf **NEXT** klicken. Wenn das Speichermedium bereits Daten enthält, sichere diese, um Datenverlust zu vermeiden. Klicke auf **Yes**, wenn kein Backup erforderlich ist.
-
-   .. image:: img/os_continue.png
-      :width: 90%
-      
-
-#. Nach kurzer Zeit wird dir mitgeteilt, dass **NVMe/USB Boot** auf dein Speichermedium geschrieben wurde.
-
-   .. image:: img/nvme_boot_finish.png
-      :width: 90%
-      
-
-#. Stecke deine Micro-SD-Karte oder NVMe-SSD in den Raspberry Pi. Sobald das USB-C-Netzteil angeschlossen ist, wird der Bootloader von der Micro-SD-Karte oder NVMe-SSD in den EEPROM des Raspberry Pi geschrieben.
-
-   .. note::
-
-      * Nach der Aktualisierung startet der Raspberry Pi zuerst von der NVMe-SSD, dann von USB und zuletzt von der Micro-SD-Karte.  
-      * Warte ein bis zwei Minuten, schalte dann den Raspberry Pi aus und entferne die Micro-SD-Karte oder die NVMe-SSD.
+.. include:: install_to_sd_rpi.rst
+   :start-after: start_install_imager
+   :end-before: end_install_imager
 
 2. Installation des Betriebssystems auf der NVMe-SSD
--------------------------------------------------------------
+--------------------------------------------------------
 
-**Schritte**
+Nun sind Sie bereit, das Betriebssystem auf Ihrer **NVMe-SSD** zu installieren.  
+Befolgen Sie einfach die folgenden Schritte sorgfältig — diese Anleitung ist einsteigerfreundlich und leicht nachzuvollziehen.
 
-1. Lade das neueste Umbrel-OS-Image herunter und entpacke es. Du kannst auch die `Umbrel-Release-Seite <https://github.com/getumbrel/umbrel/releases>`_ besuchen, um eine bestimmte Version auszuwählen.
+.. |link_umbrel_release| raw:: html
 
-   * :download:`Neueste Umbrel-OS-Image-Datei <https://download.umbrel.com/release/latest/umbrelos-pi5.img.zip>`
+    <a href="https://github.com/getumbrel/umbrel/releases" target="_blank">Umbrel-OS-Releases</a>
 
-2. Öffne |link_rpi_imager|, klicke auf **Raspberry Pi Device** und wähle **Raspberry Pi 5** aus dem Dropdown-Menü.
+#. Laden Sie das neueste **Umbrel OS**-Image herunter und entpacken Sie die Datei. Wenn Sie eine bestimmte Version verwenden möchten, können Sie auch die Seite |link_umbrel_release| besuchen.
 
-   .. image:: img/os_choose_device_pi5.png
+   * :download:`Neuestes Umbrel-OS-Image <https://download.umbrel.com/release/latest/umbrelos-pi5.img.zip>`
+
+#. Setzen Sie die **NVMe-SSD** mithilfe eines **NVMe-zu-USB-Adapters** in Ihren Computer ein.
+
+#. Öffnen Sie den **Raspberry Pi Imager**. Wählen Sie auf dem Bildschirm **Device** Ihr **Raspberry Pi 5**-Modell aus der Liste aus.
+
+   .. image:: img/imager_device.png
       :width: 90%
 
-3. Starte den **Raspberry Pi Imager** und klicke auf **CHOOSE OS**.
+#. Wechseln Sie zum Abschnitt **OS**, scrollen Sie nach unten und wählen Sie **Use custom**.
 
-   .. image:: img/umbrel_choose_os.png
-       :width: 600
-       :align: center
+   .. image:: img/imager_use_custom.png
+      :width: 90%
 
-4. Scrolle bis zum Ende und wähle **Use custom**.
-
-   .. image:: img/umbrel_use_custom.png
-       :width: 600
-       :align: center
-
-5. Wähle die zuvor heruntergeladene Umbrel-OS-Image-Datei aus und klicke auf **Open**.
+#. Wählen Sie die zuvor heruntergeladene und entpackte **Umbrel-OS-Image-Datei** aus und klicken Sie anschließend auf **Open**.
 
    .. image:: img/umbrel_choose_umbrel.png
        :width: 600
        :align: center
 
-6. Wähle unter **Storage** die NVMe-SSD als Ziel für die Installation aus.
+#. Klicken Sie auf **Next**, um fortzufahren.
 
-   .. image:: img/nvme_ssd_storage.png
+   .. image:: img/imager_custom_next.png
       :width: 90%
 
-7. Klicke auf **NEXT** und dann auf **NO**. Umbrel OS initialisiert automatisch sein eigenes System und die Benutzereinrichtung beim ersten Start und verwendet keine im Raspberry Pi Imager gesetzten Benutzer- oder Passwortdaten.
+#. Wählen Sie im Abschnitt **Storage** Ihre **NVMe-SSD** aus. Stellen Sie sicher, dass Sie die NVMe-SSD auswählen und kein anderes Laufwerk Ihres Computers.
 
-   .. image:: img/umbrel_clear_setting.png
+   .. image:: img/nvme_storage.png
       :width: 90%
 
-8. Wenn sich auf der NVMe-SSD bereits Daten befinden, erstelle vor dem Fortfahren ein Backup, um Datenverlust zu vermeiden. Klicke auf **Yes**, um fortzufahren, wenn kein Backup erforderlich ist.
+#. Überprüfen Sie alle Einstellungen sorgfältig und klicken Sie anschließend auf **WRITE**.
 
-   .. image:: img/nvme_erase.png
+   .. image:: img/imager_write_umbrel.png
       :width: 90%
 
-9. Wenn die Meldung „Write Successful“ erscheint, bedeutet das, dass das Image vollständig geschrieben und überprüft wurde. Deine NVMe-SSD ist nun bereit, den Raspberry Pi zu starten!
+#. Falls die NVMe-SSD bereits Daten enthält, warnt der Raspberry Pi Imager, dass alle Daten gelöscht werden. Vergewissern Sie sich, dass das richtige Laufwerk ausgewählt ist, und klicken Sie dann auf **I UNDERSTAND, ERASE AND WRITE**.
 
-   .. image:: img/umbrel_finish.png
+   .. image:: img/imager_erase.png
       :width: 90%
+
+#. Wenn die Meldung **„Write Complete“** erscheint, wurde das Image erfolgreich geschrieben und verifiziert.
+
+   .. image:: img/imager_umbrel_finish.png
+      :width: 90%
+

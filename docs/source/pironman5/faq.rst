@@ -169,7 +169,7 @@ Wenn der OLED-Bildschirm nichts anzeigt oder fehlerhaft angezeigt wird, führen 
       :width: 600  
       :align: center  
 
-   Wenn Sie ein nicht unterstütztes System installiert haben, folgen Sie der Anleitung zur Installation eines kompatiblen Betriebssystems: :ref:`install_the_os`.
+   Wenn Sie ein nicht unterstütztes System installiert haben, folgen Sie der Anleitung zur Installation eines kompatiblen Betriebssystems: :ref:`install_the_os_5`.
 
 #. Beim ersten Einschalten des OLED-Bildschirms werden möglicherweise nur Pixelblöcke angezeigt. Folgen Sie den Anweisungen in :ref:`set_up_pironman5`, um die Konfiguration abzuschließen, damit der Bildschirm die korrekten Informationen anzeigt.
 
@@ -251,9 +251,9 @@ Falls das Problem nach Durchführung der oben genannten Schritte weiterhin beste
 
      .. image:: img/nvme_pip_j4.png  
 
-4. Stellen Sie sicher, dass Ihr NVMe-SSD ein korrekt installiertes Betriebssystem hat. Siehe: :ref:`install_the_os`.
+4. Stellen Sie sicher, dass Ihr NVMe-SSD ein korrekt installiertes Betriebssystem hat. Siehe: :ref:`install_the_os_5`.
 
-5. Wenn die Verkabelung korrekt ist und das Betriebssystem installiert wurde, die NVMe-SSD jedoch weiterhin nicht bootet, versuchen Sie, von einer Micro-SD-Karte zu booten, um die Funktionalität anderer Komponenten zu überprüfen. Sobald bestätigt, fahren Sie fort mit: :ref:`configure_boot_ssd`.
+5. Wenn die Verkabelung korrekt ist und das Betriebssystem installiert wurde, die NVMe-SSD jedoch weiterhin nicht bootet, versuchen Sie, von einer Micro-SD-Karte zu booten, um die Funktionalität anderer Komponenten zu überprüfen. Sobald bestätigt, fahren Sie fort mit: :ref:`configure_boot_ssd_5`.
 
 Falls das Problem nach Durchführung der oben genannten Schritte weiterhin besteht, senden Sie bitte eine E-Mail an service@sunfounder.com. Wir werden so schnell wie möglich antworten.
 
@@ -272,7 +272,7 @@ Falls das Problem nach Durchführung der oben genannten Schritte weiterhin beste
       :width: 600
       :align: center
 
-   Falls ein nicht unterstütztes Betriebssystem installiert ist, folgen Sie der Anleitung zur Installation eines kompatiblen Betriebssystems: :ref:`install_the_os`.
+   Falls ein nicht unterstütztes Betriebssystem installiert ist, folgen Sie der Anleitung zur Installation eines kompatiblen Betriebssystems: :ref:`install_the_os_5`.
 
 #. Führen Sie den Befehl ``sudo raspi-config`` aus, um das Konfigurationsmenü zu öffnen. Navigieren Sie zu **3 Interfacing Options** -> **I3 SPI** -> **YES**, klicken Sie dann auf **OK** und **Finish**, um SPI zu aktivieren. Starten Sie anschließend den Pironman 5 neu.
 
@@ -327,7 +327,7 @@ Sie können die folgende Anleitung verwenden, um die Komponenten des Pironman 5 
 
 Wenn Sie bereits beim Raspberry Pi angemeldet sind, können Sie die Boot-Reihenfolge mit Befehlen ändern. Detaillierte Anweisungen finden Sie unter:
 
-* :ref:`configure_boot_ssd`
+* :ref:`configure_boot_ssd_5`
 
 14. Wie ändert man die Boot-Reihenfolge mit dem Raspberry Pi Imager?
 ---------------------------------------------------------------------------
@@ -343,7 +343,7 @@ Es wird empfohlen, für diesen Schritt eine Ersatzkarte zu verwenden.
 
 Wenn Sie eine NVMe-SSD besitzen, jedoch keinen Adapter haben, um die NVMe mit Ihrem Computer zu verbinden, können Sie das System zunächst auf Ihrer Micro-SD-Karte installieren. Sobald der Pironman 5 erfolgreich gestartet ist, können Sie das System von der Micro-SD-Karte auf die NVMe-SSD kopieren. Detaillierte Anweisungen finden Sie hier:
 
-* :ref:`copy_sd_to_nvme_rpi`
+* :ref:`copy_sd_to_nvme_5`
 
 16. Wie entfernt man die Schutzfolie von den Acrylplatten?
 ------------------------------------------------------------------

@@ -187,9 +187,9 @@ Wenn der OLED-Bildschirm nichts anzeigt oder falsch anzeigt, folgen Sie diesen S
 
    .. image:: img/dual_nvme_pip_j4.png  
 
-4. Stellen Sie sicher, dass auf Ihrer NVMe SSD ein korrekt installiertes Betriebssystem vorhanden ist. Siehe: :ref:`max_install_the_os`.
+4. Stellen Sie sicher, dass auf Ihrer NVMe SSD ein korrekt installiertes Betriebssystem vorhanden ist. Siehe: :ref:`install_the_os_max`.
 
-5. Wenn die Verkabelung korrekt ist und das OS installiert wurde, die NVMe SSD aber immer noch nicht bootet, versuchen Sie, von einer Micro-SD-Karte zu booten, um die Funktionalität anderer Komponenten zu überprüfen. Sobald bestätigt, fahren Sie fort mit: :ref:`max_configure_boot_ssd`.
+5. Wenn die Verkabelung korrekt ist und das OS installiert wurde, die NVMe SSD aber immer noch nicht bootet, versuchen Sie, von einer Micro-SD-Karte zu booten, um die Funktionalität anderer Komponenten zu überprüfen. Sobald bestätigt, fahren Sie fort mit: :ref:`configure_boot_ssd_max`.
 
 Wenn das Problem nach den obigen Schritten weiterhin besteht, senden Sie bitte eine E-Mail an service@sunfounder.com. Wir werden so schnell wie möglich antworten.
 
@@ -208,7 +208,7 @@ Wenn das Problem nach den obigen Schritten weiterhin besteht, senden Sie bitte e
       :width: 600
       :align: center
 
-   Wenn Sie ein nicht unterstütztes OS installiert haben, folgen Sie der Anleitung zur Installation eines kompatiblen Betriebssystems: :ref:`install_the_os`.
+   Wenn Sie ein nicht unterstütztes OS installiert haben, folgen Sie der Anleitung zur Installation eines kompatiblen Betriebssystems: :ref:`install_the_os_max`.
 
 #. Führen Sie den Befehl ``sudo raspi-config`` aus, um das Konfigurationsmenü zu öffnen. Navigieren Sie zu **3 Interfacing Options** -> **I3 SPI** -> **YES**, klicken Sie dann auf **OK** und **Finish**, um SPI zu aktivieren. Starten Sie nach dem Aktivieren von SPI den Pironman 5 neu.
 
@@ -276,7 +276,7 @@ Sie können das folgende Tutorial verwenden, um die Komponenten des Pironman 5 M
 
 Wenn Sie bereits in Ihrem Raspberry Pi eingeloggt sind, können Sie die Boot-Reihenfolge mit Befehlen ändern. Detaillierte Anweisungen finden Sie hier:
 
-* :ref:`max_configure_boot_ssd`
+* :ref:`configure_boot_ssd_max`
 
 
 14. Wie ändere ich die Boot-Reihenfolge mit Raspberry Pi Imager?
@@ -294,7 +294,7 @@ Es wird empfohlen, für diesen Schritt eine Ersatzkarte zu verwenden.
 
 Wenn Sie eine NVMe-SSD haben, aber keinen Adapter, um Ihre NVMe mit Ihrem Computer zu verbinden, können Sie das System zunächst auf Ihrer Micro-SD-Karte installieren. Sobald der Pironman 5 MAX erfolgreich gestartet ist, können Sie das System von Ihrer Micro-SD-Karte auf Ihre NVMe-SSD kopieren. Detaillierte Anweisungen finden Sie hier:
 
-* :ref:`max_copy_sd_to_nvme_rpi`
+* :ref:`copy_sd_to_nvme_max`
 
 
 16. Wie entfernt man die Schutzfolie von den Acrylplatten?

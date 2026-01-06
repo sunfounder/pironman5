@@ -1,29 +1,29 @@
-.. note:: 
+.. note::
 
-    Hallo und willkommen in der SunFounder Facebook-Community für Raspberry Pi-, Arduino- und ESP32-Enthusiasten! Tauche gemeinsam mit Gleichgesinnten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Enthusiasten tiefer in Raspberry Pi, Arduino und ESP32 ein.
 
     **Warum beitreten?**
 
-    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Unterstützung unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu erweitern.
-    - **Exklusive Einblicke**: Erhalte vorab Informationen zu neuen Produktankündigungen und Vorschauen.
-    - **Exklusive Rabatte**: Profitiere von Sonderangeboten für unsere neuesten Produkte.
-    - **Aktionen & Verlosungen**: Nimm an festlichen Aktionen und Gewinnspielen teil.
+    - **Expertenunterstützung**: Löse Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Previews.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Bereit, gemeinsam mit uns zu entdecken und zu gestalten? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
-Installation von Ubuntu, Kali Linux, Homebridge oder Home Assistant
-=======================================================================
+Installation von Ubuntu/Kali Linux/Homebridge/Home Assistant
+=========================================================================
 
-Wähle die Installationsmethode entsprechend deiner verfügbaren Hardware – ob Micro-SD-Karte oder NVMe-SSD.
+Sie können die Installationsmethode je nachdem auswählen, ob Ihnen eine Micro-SD-Karte oder eine NVMe-SSD zur Verfügung steht.
 
-**Nur Verwendung einer Micro-SD-Karte**
+**Verwendung nur einer Micro-SD-Karte**
 
-  Wenn du eine Micro-SD-Karte verwendest, folge einfach der ersten Methode unten.
+  Wenn Sie eine Micro-SD-Karte verwenden, können Sie einfach der unten beschriebenen ersten Methode folgen.
 
 **Verwendung einer M.2 NVMe SSD**
 
-  * Wenn du eine M.2 NVMe SSD nutzt, benötigst du zusätzlich einen **M.2 NVMe SSD Enclosure Adapter**, um deine SSD mit dem Computer zu verbinden und der zweiten Methode zur Installation des Betriebssystems zu folgen.
+  * Wenn Sie eine M.2 NVMe SSD verwenden, benötigen Sie zusätzlich einen **M.2 NVMe SSD Enclosure Adapter**, um die SSD mit Ihrem Computer zu verbinden und der zweiten Methode zur Installation des Betriebssystems zu folgen.
   
     .. image:: img/m2_nvme_adapter.png
         :width: 300

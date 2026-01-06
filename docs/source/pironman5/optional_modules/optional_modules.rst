@@ -28,12 +28,10 @@
 In diesem Abschnitt wird erklärt, wie du die Funktionen der Pironman-5-Serie durch die Integration optionaler Hardwaremodule erweitern kannst, darunter ein Kameramodul, ein 3,5-Zoll-Touchscreen-Display und ein RTL-SDR-Radioempfänger.  
 Durch die Kombination dieser Erweiterungen kannst du die Interaktivität erhöhen, Echtzeit-Bilddaten einbinden und erweiterte drahtlose Signalempfangsfunktionen freischalten.
 
-
-
-
 .. toctree::
     :maxdepth: 1
     
     camera_module
     35_screen
     rtl_sdr
+    dual_nvme

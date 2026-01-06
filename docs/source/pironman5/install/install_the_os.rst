@@ -1,31 +1,31 @@
 .. note::
 
-    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Enthusiasten tiefer in Raspberry Pi, Arduino und ESP32 ein.
 
-    **Warum mitmachen?**
+    **Warum beitreten?**
 
-    - **Fachkundige Unterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
-    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
-    - **Sonderrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
-    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und Feiertagsaktionen teil.
+    - **Expertenunterstützung**: Löse Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Previews.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
-.. _install_the_os:
+.. _install_the_os_5:
 
 3. Installation des Betriebssystems
 =======================================
 
 .. note::
 
-    Sie müssen ein Betriebssystem installieren, das den Raspberry Pi 5 unterstützt. Bitte verwenden Sie das neueste Raspberry Pi Imager-Tool zur Systeminstallation. Die aktuell getesteten Systeme sind:
+    Sie müssen ein Betriebssystem installieren, das den Raspberry Pi 5 unterstützt. Bitte verwenden Sie für die Systeminstallation das neueste Raspberry Pi Imager Tool. Die derzeit getesteten Systeme sind:
 
-   .. image:: ../img/compitable_os.png
-        :width: 600
+   .. image:: img/compitable_os.png
+        :width: 500
         :align: center
 
-In diesem Kapitel lernen Sie, wie Sie das Betriebssystem installieren. Alle Installationsschritte hängen von |link_rpi_imager| ab, das Sie zuerst installieren müssen.
+In diesem Kapitel erfahren Sie, wie Sie die Betriebssysteme installieren. Alle Installationsschritte basieren auf dem |link_rpi_imager|, den Sie zuerst installieren müssen.
 
     .. toctree::
         :maxdepth: 1
@@ -34,5 +34,5 @@ In diesem Kapitel lernen Sie, wie Sie das Betriebssystem installieren. Alle Inst
         install_the_other_os
         install_umbrel
 
-
+.. install_batocera
 
