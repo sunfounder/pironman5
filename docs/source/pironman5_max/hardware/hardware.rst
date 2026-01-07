@@ -24,7 +24,6 @@ Ce chapitre propose une description détaillée de tous les composants du Pironm
 .. toctree::
     :maxdepth: 2
 
-    features
     io_board
     hdmi_adapter
     nvme_pip
@@ -33,4 +32,3 @@ Ce chapitre propose une description détaillée de tous les composants du Pironm
     tower_cooler
     oled_screen
     fans
-    login_rpi/login_rpi

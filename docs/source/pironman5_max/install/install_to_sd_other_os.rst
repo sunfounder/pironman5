@@ -1,110 +1,75 @@
 .. note::
 
-    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Rejoignez d’autres passionnés pour approfondir vos connaissances et vos projets autour de Raspberry Pi, Arduino et ESP32.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Résolvez vos problèmes techniques et après-vente grâce à l’aide de notre équipe et de notre communauté.
-    - **Apprendre & Partager** : Échangez des astuces et tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives** : Soyez parmi les premiers à découvrir nos nouveaux produits et leurs démonstrations.
-    - **Réductions spéciales** : Bénéficiez d’offres exclusives sur nos dernières nouveautés.
-    - **Promotions festives et cadeaux** : Participez à des concours et animations spéciales pendant les fêtes.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-goûts.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et à des promotions spéciales pour les fêtes.
 
-    👉 Prêt(e) à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-.. _max_install_to_sd_home_bridge:
+.. _install_to_sd_other_max:
 
 Installation du système d’exploitation sur une carte Micro SD
-=================================================================
+==================================================================
 
-Si vous utilisez une carte Micro SD, vous pouvez suivre le tutoriel ci-dessous pour y installer le système.
+Si vous utilisez une carte Micro SD, vous pouvez suivre le tutoriel ci-dessous pour installer le système sur votre carte Micro SD.
 
 
 **Composants requis**
 
 * Un ordinateur personnel
-* Une carte Micro SD et un lecteur
+* Une carte Micro SD et un lecteur de cartes
 
-**Étapes**
+.. include:: install_to_sd_rpi.rst
+   :start-after: start_install_imager
+   :end-before: end_install_imager
 
-#. Insérez la carte SD dans votre ordinateur ou ordinateur portable à l’aide d’un lecteur.
+2. Installer le système d’exploitation sur la carte microSD
+-------------------------------------------------------------------
 
-#. Dans le |link_rpi_imager|, cliquez sur **Raspberry Pi Device** et sélectionnez le modèle **Raspberry Pi 5** dans la liste déroulante.
+1. Insérez votre carte microSD dans votre ordinateur à l’aide d’un lecteur de cartes.  
+   Avant de continuer, sauvegardez toutes les données importantes présentes sur la carte, car elles seront effacées.
 
-   .. image:: img/os_choose_device_pi5.png
+   .. image:: img/insert_sd.png
       :width: 90%
 
+2. Lorsque **Raspberry Pi Imager** s’ouvre, vous verrez la page **Device**.  
+   Sélectionnez votre modèle de **Raspberry Pi 5** dans la liste.
 
-#. Cliquez sur l’onglet **Operating System**.
-
-   .. image:: img/os_choose_os.png
+   .. image:: img/imager_device.png
       :width: 90%
 
-#. Faites défiler jusqu’en bas de la page et sélectionnez votre système d’exploitation.
+3. Allez dans la section **OS**, faites défiler jusqu’en bas de la page et sélectionnez votre système d’exploitation.
 
    .. note::
 
-      * Pour le système **Ubuntu**, cliquez sur **Other general-purpose OS** → **Ubuntu**, puis sélectionnez **Ubuntu Desktop 24.04 LTS (64 bit)** ou **Ubuntu Server 24.04 LTS (64 bit)**.
-      * Pour les systèmes **Kali Linux**, **Home Assistant** et **Homebridge**, cliquez sur **Other specific-purpose OS**, puis choisissez le système correspondant.
+      * Pour **Ubuntu**, cliquez sur **Other general-purpose OS** → **Ubuntu**, puis sélectionnez  
+        **Ubuntu Desktop 24.04 LTS (64-bit)** ou **Ubuntu Server 24.04 LTS (64-bit)**.
+      * Pour **Kali Linux**, **Home Assistant** et **Homebridge**, cliquez sur  
+        **Other specific-purpose OS**, puis sélectionnez le système correspondant.
 
-   .. image:: img/os_other_os.png
+   .. image:: img/imager_other_os.png
       :width: 90%
 
-#. Dans l’option **Storage**, sélectionnez le périphérique de stockage adéquat pour l’installation.
+4. Dans la section **Storage**, sélectionnez votre carte microSD.  
+   Pour plus de sécurité, il est recommandé de débrancher les autres périphériques de stockage USB afin que seule la carte microSD apparaisse dans la liste.
 
-   .. image:: img/nvme_ssd_storage.png
+   .. image:: img/imager_storage.png
       :width: 90%
-
 
 #. Cliquez sur **NEXT**.
 
    .. note::
 
-      * Pour les systèmes ne permettant pas de configuration préalable, un message vous invitera à confirmer l'effacement des données. Si une sauvegarde a été effectuée, cliquez sur **Yes**.
-      
-      * Pour les systèmes permettant la configuration du nom d’hôte, du Wi-Fi et de l’accès SSH, une fenêtre s’ouvrira pour vous demander si vous souhaitez appliquer ces paramètres. Vous pouvez cliquer sur **Yes**, **No** ou revenir pour modifier les réglages.
+      * Pour les systèmes qui **ne peuvent pas être préconfigurés**, cliquer sur **NEXT** ignorera l’étape **Customisation** et passera directement à **Writing**, où le système d’exploitation est écrit sur la carte microSD.
+      * Pour les systèmes qui **prennent en charge la préconfiguration**, suivez les étapes de **Customisation** afin de configurer des options telles que le **Hostname**, le **WiFi** et l’**activation de SSH**.
 
-   .. image:: img/os_enter_setting.png
+   .. image:: img/imager_write_other_os.png
       :width: 90%
 
-
-   * Définissez un **hostname** pour votre Raspberry Pi. Il s’agit de son identifiant réseau. Vous pouvez y accéder via ``<hostname>.local`` ou ``<hostname>.lan``.
-
-     .. image:: img/os_set_hostname.png  
-
-   * Créez un **Username** et un **Password** pour le compte administrateur. Un identifiant personnalisé est essentiel pour sécuriser votre Raspberry Pi, qui n’a pas de mot de passe par défaut.
-
-     .. image:: img/os_set_username.png
-
-   * Configurez le réseau sans fil en renseignant le **SSID** de votre Wi-Fi et son **Password**.
-
-     .. note::
-
-       Définissez le ``Wireless LAN country`` à l’aide du code alpha-2 à deux lettres défini par la norme `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ correspondant à votre pays.
-
-     .. image:: img/os_set_wifi.png
-
-   * Pour accéder à distance à votre Raspberry Pi, activez le SSH dans l’onglet Services.
-
-     * Pour **password authentication**, utilisez le nom d’utilisateur et le mot de passe définis dans l’onglet General.
-     * Pour l’authentification par clé publique, sélectionnez « Autoriser uniquement l’authentification par clé publique ». Si une clé RSA est présente, elle sera utilisée. Sinon, cliquez sur « Exécuter SSH-keygen » pour générer une nouvelle paire de clés.
-
-     .. image:: img/os_enable_ssh.png
-
-   * Le menu **Options** permet de configurer le comportement d’Imager lors de l’écriture, notamment l’émission d’un son en fin de tâche, l’éjection automatique du support et l’activation de la télémétrie.
-
-     .. image:: img/os_options.png
-
-#. Une fois la configuration terminée, cliquez sur **Save** pour enregistrer vos réglages, puis sur **Yes** pour les appliquer lors de l’écriture de l’image.
-
-   .. image:: img/os_click_yes.png
-      :width: 90%
-
-
-#. Si la carte SD contient déjà des données, assurez-vous d’en effectuer une sauvegarde. Cliquez sur **Yes** si aucune sauvegarde n’est nécessaire.
-
-   .. image:: img/os_continue.png
-      :width: 90%
-
-
-#. Lorsque la fenêtre « Write Successful » s’affiche, cela signifie que l’image a été correctement écrite et vérifiée. Vous êtes maintenant prêt(e) à démarrer votre Raspberry Pi depuis la carte Micro SD !
+#. Lorsque la fenêtre contextuelle **« Write Successful »** apparaît, l’image a été entièrement écrite et vérifiée. Vous pouvez maintenant retirer la carte microSD en toute sécurité et l’utiliser pour démarrer votre Raspberry Pi.

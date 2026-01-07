@@ -12,37 +12,72 @@
 
     👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
-1. Que devons-nous préparer d’autre ?  
-==================================================
+1. Que devons-nous préparer d’autre ?
+==============================================
 
-**Composants essentiels**
+Avant d’assembler et d’utiliser votre Pironman 5 MAX, veuillez vous assurer que vous disposez des composants suivants. Certains éléments sont requis pour un fonctionnement de base, tandis que d’autres sont optionnels et dépendent de l’utilisation que vous prévoyez pour votre Raspberry Pi.
 
-* Raspberry Pi 5  
+Composants requis
+------------------------------
+
+* **Raspberry Pi 5**
 
   Le Pironman 5 MAX est entièrement compatible avec le Raspberry Pi 5.
 
-* Alimentation 27W  
+  .. image:: img/need_pi5.jpg
+     :width: 500
 
-  Il est recommandé d’utiliser l’alimentation officielle 27W ou |link_sf_27w_supply| pour les produits de la série Pironman 5 afin d’éviter une alimentation insuffisante, ce qui pourrait entraîner un redémarrage du Raspberry Pi 5.
+* **Alimentation 27 W**
 
-* Carte Micro SD  
+  Il est recommandé d’utiliser l’alimentation officielle 27 W ou |link_sf_27w_supply| pour les produits de la série Pironman 5 afin d’éviter une alimentation insuffisante, susceptible de provoquer des redémarrages du Raspberry Pi 5.
 
-  Il est recommandé d’utiliser une carte SD d’au moins 16 Go pour Raspberry Pi OS. Pour Raspberry Pi OS Lite, un minimum de 4 Go est conseillé.
+  .. image:: img/need_power.png
+     :width: 600
 
-**Composants optionnels**
+* **Carte Micro SD**
 
-* SSD NVMe M.2  
-
-  Le Pironman 5 MAX est équipé d’un module NVMe PIP qui fournit deux connecteurs SSD M.2, prenant en charge quatre formats de SSD NVMe M.2 : 2230, 2242, 2260 et 2280. L’interface fonctionne à des vitesses PCIe Gen2.0 (Gen3 n’est pas pris en charge).
-
-* Écran  
-
-  Pour accéder à l’environnement de bureau du Raspberry Pi, un écran tel qu’une TV ou un moniteur d’ordinateur est nécessaire.
+  Le Raspberry Pi ne dispose pas de disque dur intégré. Il démarre et stocke tous les fichiers sur une **carte Micro SD**.  
   
-* Câble HDMI  
+  .. image:: img/need_sd.jpg
+    :width: 200
 
-  Les ports HDMI du Raspberry Pi 5 ont été adaptés aux interfaces HDMI Type A standard via un adaptateur USB HDMI. Par conséquent, un câble HDMI vers HDMI standard est nécessaire pour connecter le Pironman 5 MAX à un écran.
+  * Minimum : **16 Go**  
+  * Recommandé : **32 Go** pour une meilleure stabilité  
+  * Marque : utilisez des options fiables telles que **SanDisk** ou **Samsung** afin d’éviter les erreurs de lecture/écriture  
+  
+Composants optionnels
+------------------------
 
-* Souris & Clavier  
+* **SSD M.2 NVMe**
 
-  N’importe quel port USB du Pironman 5 MAX peut être utilisé pour connecter un clavier et une souris filaires, ou un récepteur USB Bluetooth pour des périphériques sans fil.
+  Le Pironman 5 MAX est équipé d’un module NVMe PIP offrant deux connecteurs SSD M.2, compatibles avec quatre formats de SSD NVMe M.2 : 2230, 2242, 2260 et 2280. L’interface fonctionne à des vitesses PCIe Gen 2.0 (Gen 3 non pris en charge).
+
+  .. image:: img/need_nvme.png
+    :width: 500
+
+* **Moniteur (HDMI ou TV)** 
+
+  Pour les débutants, nous recommandons vivement un écran doté d’une entrée HDMI, afin de pouvoir configurer facilement Raspberry Pi OS et exécuter des programmes graphiques.  
+
+  .. image:: img/need_screen.png
+    :width: 400
+    
+* **Câble HDMI**
+
+  Les ports HDMI du Raspberry Pi 5 ont été adaptés à des interfaces HDMI Type A standard via un adaptateur USB HDMI. Par conséquent, un câble HDMI vers HDMI standard est nécessaire pour connecter le Pironman 5 MAX à un écran.
+
+  .. image:: img/need_hdmi.png
+    :width: 400
+    
+* **Clavier et souris**
+
+  Très utiles lors de la configuration initiale de Raspberry Pi OS. Par la suite, vous pourrez passer à un accès à distance (SSH/VNC), mais pour les débutants, nous recommandons de préparer un ensemble USB ou sans fil de base.  
+
+  .. image:: img/need_keyboard_mouse.png
+    :width: 500
+ 
+
+**Conseils de préparation**
+
+* Si vous avez acheté ce kit, la plupart des accessoires sont inclus, mais vous devez tout de même préparer séparément la carte Raspberry Pi, la carte Micro SD et l’adaptateur d’alimentation.  
+* Vous ne savez pas quoi acheter ? Le choix le plus stable et universel est : **Raspberry Pi 5 (2 Go) + alimentation officielle + carte Micro SD de 32 Go**.  

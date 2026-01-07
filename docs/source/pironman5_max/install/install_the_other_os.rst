@@ -1,24 +1,33 @@
 .. note::
 
-    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Rejoignez d'autres passionnés pour approfondir vos connaissances et vos projets autour de Raspberry Pi, Arduino et ESP32.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
     **Pourquoi nous rejoindre ?**
 
-    - **Support d'experts** : Obtenez l’aide de notre équipe et de la communauté pour résoudre vos problèmes techniques ou après-vente.
-    - **Apprendre & Partager** : Échangez des conseils et tutoriels pour développer vos compétences.
-    - **Avant-premières exclusives** : Soyez parmi les premiers informés des nouveaux produits et de leurs démonstrations.
-    - **Réductions spéciales** : Profitez d’offres exclusives sur nos derniers produits.
-    - **Promotions festives et cadeaux** : Participez à des tirages au sort et événements promotionnels durant les fêtes.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-goûts.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et à des promotions spéciales pour les fêtes.
 
-    👉 Prêt(e) à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès maintenant !
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Installer Ubuntu/Kali Linux/Homebridge/Home Assistant
-=========================================================
+Installation d’Ubuntu / Kali Linux / Homebridge / Home Assistant
+=========================================================================
 
-La méthode d’installation dépend du support que vous utilisez : carte Micro SD ou SSD NVMe.
+Vous pouvez choisir la méthode d’installation en fonction de la disponibilité d’une carte Micro SD ou d’un SSD NVMe.
 
-L’installation directe sur un SSD NVMe nécessite une étape supplémentaire par rapport à la carte Micro SD : vous devez mettre à jour le bootloader du Raspberry Pi, qui démarre par défaut sur la carte Micro SD. Mettez-le à jour pour qu’il privilégie le démarrage depuis le SSD NVMe.
+**Utiliser uniquement une carte Micro SD**
 
+  Si vous utilisez une carte Micro SD, vous pouvez simplement suivre la première méthode ci-dessous.
+
+**Utiliser un SSD M.2 NVMe**
+
+  * Si vous utilisez un SSD M.2 NVMe, vous aurez également besoin d’un **boîtier adaptateur M.2 NVMe** pour connecter votre SSD à votre ordinateur et suivre la deuxième méthode afin d’installer le système d’exploitation.
+  
+    .. image:: img/m2_nvme_adapter.png
+        :width: 300
+        :align: center
 
 .. toctree::
     :maxdepth: 1

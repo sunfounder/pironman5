@@ -37,3 +37,4 @@ En combinant ces modules supplémentaires, vous pouvez améliorer l’interactiv
     camera_module
     35_screen
     rtl_sdr
+    dual_nvme

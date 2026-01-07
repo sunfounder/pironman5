@@ -171,7 +171,7 @@ Si l'écran OLED ne s'affiche pas ou affiche incorrectement, suivez ces étapes 
       :width: 600  
       :align: center  
 
-   Si vous avez installé un système non compatible, suivez le guide pour installer un système compatible : :ref:`install_the_os`.
+   Si vous avez installé un système non compatible, suivez le guide pour installer un système compatible : :ref:`install_the_os_5`.
 
 #. Lors de la première activation de l'écran OLED, il peut afficher uniquement des blocs de pixels. Suivez les instructions dans :ref:`set_up_pironman5` pour compléter la configuration et permettre un affichage correct.
 
@@ -253,9 +253,9 @@ Si le problème persiste après avoir effectué ces étapes, veuillez envoyer un
 
      .. image:: img/nvme_pip_j4.png  
 
-4. Vérifiez que votre NVMe SSD dispose d'un système d'exploitation correctement installé. Consultez : :ref:`install_the_os`.
+4. Vérifiez que votre NVMe SSD dispose d'un système d'exploitation correctement installé. Consultez : :ref:`install_the_os_5`.
 
-5. Si le câblage est correct et que le système d'exploitation est installé, mais que le NVMe SSD ne démarre toujours pas, essayez de démarrer à partir d'une carte Micro SD pour vérifier la fonctionnalité des autres composants. Une fois confirmé, procédez à : :ref:`configure_boot_ssd`.
+5. Si le câblage est correct et que le système d'exploitation est installé, mais que le NVMe SSD ne démarre toujours pas, essayez de démarrer à partir d'une carte Micro SD pour vérifier la fonctionnalité des autres composants. Une fois confirmé, procédez à : :ref:`configure_boot_ssd_5`.
 
 Si le problème persiste après avoir suivi ces étapes, veuillez envoyer un e-mail à service@sunfounder.com. Nous vous répondrons dans les plus brefs délais.
 
@@ -274,7 +274,7 @@ Si le problème persiste après avoir suivi ces étapes, veuillez envoyer un e-m
       :width: 600
       :align: center
 
-   Si vous avez installé un système non compatible, suivez le guide pour installer un système compatible : :ref:`install_the_os`.
+   Si vous avez installé un système non compatible, suivez le guide pour installer un système compatible : :ref:`install_the_os_5`.
 
 #. Exécutez la commande ``sudo raspi-config`` pour ouvrir le menu de configuration. Allez dans **3 Interfacing Options** -> **I3 SPI** -> **YES**, puis cliquez sur **OK** et **Finish** pour activer SPI. Après avoir activé SPI, redémarrez le Pironman 5.
 
@@ -329,7 +329,7 @@ Vous pouvez consulter le tutoriel suivant pour contrôler les composants du Piro
 
 Si vous êtes déjà connecté à votre Raspberry Pi, vous pouvez modifier l'ordre de démarrage en utilisant des commandes. Les instructions détaillées sont les suivantes :
 
-* :ref:`configure_boot_ssd`
+* :ref:`configure_boot_ssd_5`
 
 14. Comment modifier l'ordre de démarrage avec Raspberry Pi Imager ?
 -----------------------------------------------------------------------
@@ -345,7 +345,7 @@ Il est recommandé d'utiliser une carte de secours pour cette étape.
 
 Si vous avez un NVMe SSD mais pas d'adaptateur pour connecter votre NVMe à votre ordinateur, vous pouvez d'abord installer le système sur votre carte Micro SD. Une fois que le Pironman 5 a démarré avec succès, vous pouvez copier le système de votre carte Micro SD vers votre NVMe SSD. Les instructions détaillées sont les suivantes :
 
-* :ref:`copy_sd_to_nvme_rpi`
+* :ref:`copy_sd_to_nvme_5`
 
 16. Comment retirer le film protecteur des plaques en acrylique ?
 --------------------------------------------------------------------

@@ -165,7 +165,7 @@ Il est recommandé d’utiliser une carte SD secondaire pour cette étape.
 Si vous avez un SSD NVMe mais aucun adaptateur pour le connecter à votre PC, vous pouvez d’abord installer le système sur une carte Micro SD. Une fois le Pironman 5 démarré, vous pourrez cloner le système vers le SSD NVMe. Suivez le guide ici :
 
 
-* :ref:`copy_sd_to_nvme_rpi_mini`
+* :ref:`copy_sd_to_nvme_mini`
 
 12. Comment retirer le film protecteur des plaques acryliques ?
 -------------------------------------------------------------------

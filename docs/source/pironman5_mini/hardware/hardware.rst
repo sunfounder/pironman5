@@ -29,4 +29,4 @@ Ce chapitre présente en détail tous les composants du Pironman ainsi que leur 
     
     io_board
     fans
-    login_rpi/login_rpi
+
