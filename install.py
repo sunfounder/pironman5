@@ -157,11 +157,7 @@ dashboard_settings = {
         'curl', # for influxdb key download
     ],
     'run_commands_before_install': {
-        # download influxdb key and add to trusted key list https://docs.influxdata.com/influxdb/v2/install/?t=Linux
-        'Download influxdb key': 'curl --silent --location -O https://repos.influxdata.com/influxdata-archive.key',
-        'Verify influxdb key fingerprint': 'gpg --show-keys --with-fingerprint --with-colons ./influxdata-archive.key 2>&1 | grep -q \'^fpr:\+24C975CBA61A024EE1B631787C3D57159FC2F927:$\' && cat influxdata-archive.key | gpg --dearmor | sudo tee /etc/apt/keyrings/influxdata-archive.gpg > /dev/null',
-        'Setup influxdb install source': "echo 'deb [signed-by=/etc/apt/keyrings/influxdata-archive.gpg] https://repos.influxdata.com/debian stable main' | sudo tee /etc/apt/sources.list.d/influxdata.list",
-        'Cleanup influxdata-achive.key': 'rm influxdata-archive.key',
+        'Setup InfluxDB': 'bash scripts/setup_influxdb.sh',
     },
     'apt_dependencies': [
         'influxdb', # for pm_dashboard
