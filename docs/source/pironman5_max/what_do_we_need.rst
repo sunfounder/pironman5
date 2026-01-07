@@ -13,41 +13,80 @@
 
     👉 一緒に探求し、創造する準備はできましたか？ [|link_sf_facebook|] をクリックして今すぐ参加しましょう！
 
-1. 他に準備すべきものは？
+1. そのほかに準備するもの
 ===================================
 
-**必須コンポーネント**
+Pironman 5 MAX を組み立てて使用する前に、以下のコンポーネントが揃っていることを確認してください。  
+基本的な動作に必須のものと、Raspberry Pi の使用方法に応じて必要となるオプション品があります。
 
-* Raspberry Pi 5  
+必須コンポーネント
+------------------------------
 
-  Pironman 5 MAX は Raspberry Pi 5 と完全互換です。  
+* **Raspberry Pi 5**
 
-* 27W 電源アダプター  
+  Pironman 5 MAX は Raspberry Pi 5 に完全対応しています。
 
-  Pironman 5 シリーズ製品では、電力不足による Raspberry Pi 5 の再起動を防ぐため、公式の 27W 電源アダプターまたは |link_sf_27w_supply| の使用を推奨します。  
+  .. image:: img/need_pi5.jpg
+     :width: 500
 
-* Micro SD カード  
+* **27W 電源アダプター**
 
-  Raspberry Pi OS を使用する場合、最低 16GB の SD カードを推奨します。  
-  Raspberry Pi OS Lite の場合は最低 4GB が必要です。  
+  電力不足による Raspberry Pi 5 の再起動を防ぐため、Pironman 5 シリーズ製品では、公式の 27W 電源アダプターまたは |link_sf_27w_supply| の使用を推奨します。
 
-**オプションコンポーネント**
+  .. image:: img/need_power.png
+     :width: 600
 
-* M.2 NVMe SSD  
+* **Micro SD カード**
 
-  Pironman 5 MAX には NVMe PIP が搭載されており、2つの M.2 SSD コネクタを備えています。  
-  2230、2242、2260、2280 の4種類の NVMe M.2 SSD フォームファクタをサポートし、インターフェースは PCIe Gen2.0 で動作します（Gen3 は非対応）。  
+  Raspberry Pi には内蔵ハードドライブがありません。  
+  起動およびすべてのファイルの保存は **Micro SD カード** 上で行われます。  
+  
+  .. image:: img/need_sd.jpg
+    :width: 200
 
-* スクリーン  
+  * 最小容量：**16GB**  
+  * 推奨容量：**32GB** （安定性向上のため）  
+  * ブランド：読み書きエラーを防ぐため、 **SanDisk** や **Samsung** などの信頼できる製品を使用してください  
+  
+オプションコンポーネント
+------------------------
 
-  Raspberry Pi のデスクトップ環境にアクセスするには、テレビやコンピューターモニターなどのスクリーンが必要です。  
+* **M.2 NVMe SSD**
 
-* HDMI ケーブル  
+  Pironman 5 MAX には NVMe PIP が搭載されており、2 つの M.2 SSD コネクタを備えています。  
+  対応する NVMe M.2 SSD フォームファクターは、2230、2242、2260、2280 の 4 種類です。  
+  インターフェースは PCIe Gen2.0 速度で動作し、Gen3 はサポートされていません。
 
-  Raspberry Pi 5 の HDMI ポートは USB HDMI アダプターを介して標準 HDMI Type A インターフェースに変換されています。  
-  そのため、Pironman 5 MAX をディスプレイに接続するには標準の HDMI ⇔ HDMI ケーブルが必要です。  
+  .. image:: img/need_nvme.png
+    :width: 500
 
-* マウス & キーボード  
+* **モニター（HDMI または TV）** 
 
-  Pironman 5 MAX の任意の USB ポートに有線のキーボードとマウスを接続できます。  
-  または USB Bluetooth レシーバーを利用してワイヤレス周辺機器を使用することも可能です。  
+  初心者の方には、HDMI 入力を備えたディスプレイを強くおすすめします。  
+  Raspberry Pi OS の設定やグラフィカルなプログラムの実行が容易になります。  
+
+  .. image:: img/need_screen.png
+    :width: 400
+    
+* **HDMI ケーブル**
+
+  Raspberry Pi 5 の HDMI ポートは、USB HDMI アダプターを介して標準の HDMI Type-A インターフェースに変換されています。  
+  そのため、Pironman 5 MAX をディスプレイに接続するには、標準的な HDMI–HDMI ケーブルが必要です。
+
+  .. image:: img/need_hdmi.png
+    :width: 400
+    
+* **キーボード & マウス**
+
+  Raspberry Pi OS の初期セットアップ時に非常に便利です。  
+  その後はリモート接続（SSH / VNC）に切り替えることもできますが、初心者の方には USB またはワイヤレスの基本セットを用意することをおすすめします。  
+
+  .. image:: img/need_keyboard_mouse.png
+    :width: 500
+ 
+
+**準備に関するヒント**
+
+* このキットを購入した場合、多くのアクセサリーは同梱されていますが、Raspberry Pi 本体、Micro SD カード、電源アダプターは別途用意する必要があります。  
+* 何を購入すればよいか迷った場合、最も安定して汎用性の高い構成は  
+  **Raspberry Pi 5（2GB）＋公式電源アダプター＋32GB Micro SD カード** です。  

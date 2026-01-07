@@ -12,38 +12,80 @@
 
     👉 私たちと一緒に探求し、創造しましょう！今すぐ [|link_sf_facebook|] をクリックして参加してください！
 
-1. 他に何を準備すべきですか？
+1. そのほかに準備するもの
 ===================================
 
-**必須コンポーネント**
+Pironman 5 を組み立てて使用する前に、以下のコンポーネントが揃っていることを確認してください。  
+基本的な動作に必須のものと、Raspberry Pi の使用方法に応じて必要となるオプション品があります。
 
-* Raspberry Pi 5 
+必須コンポーネント
+------------------------------
 
-    Pironman 5はRaspberry Pi 5 に完全対応しています。
+* **Raspberry Pi 5**
 
+  Pironman 5 は Raspberry Pi 5 に完全対応しています。
 
-* 27W 電源アダプター
+  .. image:: img/need_pi5.jpg
+     :width: 500
 
-    Pironman 5 シリーズ製品では、電力不足による Raspberry Pi 5 の再起動を防ぐため、公式の 27W 電源アダプター または |link_sf_27w_supply| の使用を推奨します。
+* **27W 電源アダプター**
 
-* Micro SDカード
+  電力不足による Raspberry Pi 5 の再起動を防ぐため、Pironman 5 シリーズ製品では、公式の 27W 電源アダプターまたは |link_sf_27w_supply| の使用を推奨します。
+
+  .. image:: img/need_power.png
+     :width: 600
+
+* **Micro SD カード**
+
+  Raspberry Pi には内蔵ハードドライブがありません。  
+  起動およびすべてのファイルの保存は **Micro SD カード** 上で行われます。  
+  
+  .. image:: img/need_sd.jpg
+    :width: 200
+
+  * 最小容量：**16GB**  
+  * 推奨容量：**32GB** （安定性向上のため）  
+  * ブランド：読み書きエラーを防ぐため、 **SanDisk** や **Samsung** などの信頼できる製品を使用してください  
+  
+オプションコンポーネント
+------------------------
+
+* **M.2 NVMe SSD**
+
+  Pironman 5 には NVMe PIP が搭載されており、M.2 SSD コネクタを備えています。  
+  対応する NVMe M.2 SSD サイズは、2230、2242、2260、2280 の 4 種類です。  
+  接続は Gen 2.0（5 GT/秒）で認証されていますが、Gen 3.0（10 GT/秒）に強制設定することも可能です。
+
+  .. image:: img/need_nvme.png
+    :width: 500
+
+* **モニター（HDMI または TV）** 
+
+  初心者の方には、HDMI 入力を備えたディスプレイを強くおすすめします。  
+  Raspberry Pi OS の設定やグラフィカルなプログラムの実行が容易になります。  
+
+  .. image:: img/need_screen.png
+    :width: 400
+
+* **HDMI ケーブル**
+
+  Raspberry Pi 5 の HDMI ポートは、USB HDMI アダプターを介して標準の HDMI Type-A インターフェースに変換されています。  
+  そのため、Pironman 5 MAX をディスプレイに接続するには、標準的な HDMI–HDMI ケーブルが必要です。
+
+  .. image:: img/need_hdmi.png
+    :width: 400
+
+* **キーボード & マウス**
+
+  Raspberry Pi OS の初期セットアップ時に非常に便利です。  
+  その後はリモート接続（SSH / VNC）に切り替えることもできますが、初心者の方には USB またはワイヤレスの基本セットを用意することをおすすめします。  
+
+  .. image:: img/need_keyboard_mouse.png
+    :width: 500
  
-    Raspberry Pi OSを使用する場合、最低でも16GBのSDカードを推奨します。Raspberry Pi OS Liteには、最低4GBが推奨されます。
 
-**オプションコンポーネント**
+**準備に関するヒント**
 
-* M.2 NVMe SSD
-
-    Pironman 5は、M.2 SSDコネクターを備えたNVMe PIPを特徴としており、2230、2242、2260、2280の4種類のNVMe M.2 SSDサイズに対応しています。接続はGen 2.0速度（5 GT/sec）に対応していますが、Gen 3.0（10 GT/sec）に強制的に変更することも可能です。
-
-* スクリーン
-
-    Raspberry Piのデスクトップ環境にアクセスするには、テレビやコンピュータモニターなどの画面が必要です。
-    
-* HDMIケーブル
-
-    Raspberry Pi 5のHDMIポートはUSB HDMIアダプターを介して標準のHDMI Type Aインターフェイスに対応しています。そのため、Pironman 5とディスプレイを接続するためには、標準的なHDMI to HDMIケーブルが必要です。
-
-* マウス & キーボード
-
-    Pironman 5のUSBポートに、有線のキーボードやマウス、またはワイヤレス周辺機器のためのUSB Bluetoothレシーバーを接続できます。
+* このキットを購入した場合、多くのアクセサリーは同梱されていますが、Raspberry Pi 本体、Micro SD カード、電源アダプターは別途用意する必要があります。  
+* 何を購入すればよいか迷った場合、最も安定して汎用性の高い構成は  
+  **Raspberry Pi 5（2GB）＋公式電源アダプター＋32GB Micro SD カード** です。  

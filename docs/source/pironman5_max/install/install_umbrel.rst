@@ -1,142 +1,89 @@
 .. note::
 
-    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32愛好家向けFacebookコミュニティへようこそ！ラズパイ、Arduino、ESP32をより深く探求し、情熱を共有しましょう。
+    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと共に、Raspberry Pi、Arduino、ESP32の世界をさらに深く探求しましょう。
 
-    **なぜ参加するのか？**
+    **参加する理由**
 
-    - **エキスパートサポート**：購入後のトラブルや技術的課題を、コミュニティとチームがサポートします。
-    - **学びと共有**：チュートリアルやヒントを交換しながらスキルを高めましょう。
-    - **新製品の先行公開**：製品発表やプレビューをいち早くチェックできます。
-    - **特別割引**：最新製品に適用される特別割引が利用可能です。
-    - **季節のキャンペーンやプレゼント企画**：抽選や特別イベントに参加しましょう。
+    - **専門サポート**: コミュニティやチームの支援を受けて、アフターサポートや技術的な課題を解決します。
+    - **学びと共有**: スキル向上のためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベントやプレゼント企画**: プレゼント企画や季節のプロモーションに参加できます。
 
-    👉 一緒に探求・創造したい方は、今すぐ [|link_sf_facebook|] をクリックしてご参加ください！
+    👉 探索と創造の旅に出る準備はできましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 
-Umbrel OSのインストール
+Umbrel OS のインストール
 ============================================
 
-Umbrelは、オープンソースのセルフホスト型ホームサーバープラットフォーム／OSであり、自分のBitcoinノードを実行したり、ワンクリックでさまざまなセルフホストアプリをインストールしたりして、ハードウェアを自分専用のホームクラウドに変えることができます。自己管理とプライバシーを始めるのに最適な方法です。
+Umbrel は、Bitcoin ノードの運用や、ワンクリックでさまざまなセルフホスト型アプリをインストールできる、オープンソースのセルフホスト型ホームサーバープラットフォーム／OS です。  
+ハードウェアを個人用のホームクラウドに変えることができ、セルフカストディやプライバシー重視の運用を始めるのに最適な選択肢です。
 
-**必要なコンポーネント**
+**必要なもの**
 
-* パーソナルコンピュータ
+* パーソナルコンピューター
 * NVMe SSD
-* NVMe–USBアダプター
-* microSDカードおよびカードリーダー
+* NVMe → USB アダプター
+* Micro SD カードおよびカードリーダー
 
-1. ブートローダーの更新
---------------------------------
+.. include:: install_to_sd_rpi.rst
+   :start-after: start_install_imager
+   :end-before: end_install_imager
 
-まず、Raspberry Pi 5のブートローダーを更新し、NVMeからの起動を優先して、次にUSB、その後にSDカードから起動するように設定する必要があります。
+2. NVMe SSD に OS をインストールする
+------------------------------------------
 
-.. note::
+これで **NVMe SSD** にオペレーティングシステムをインストールする準備が整いました。  
+以下の手順に注意して進めてください。本ガイドは初心者向けに分かりやすく書かれています。
 
-    * この手順では、予備のmicroSDカードを使用することを推奨します。まずこのmicroSDカードにブートローダーを書き込み、それをRaspberry Piに挿入して、NVMeデバイスからの起動を有効にします。
-    * あるいは、最初にブートローダーをNVMeデバイスに直接書き込み、その後Raspberry Piに挿入して起動方法を変更することもできます。その後、NVMe SSDをパソコンに接続してOSをインストールし、インストール完了後に再びRaspberry Piに挿し直します。
+.. |link_umbrel_release| raw:: html
 
-#. 予備のmicroSDカードまたはNVMe SSDをカードリーダーを使ってパソコンに挿入します。
+    <a href="https://github.com/getumbrel/umbrel/releases" target="_blank">Umbrel OS Releases</a>
 
-#. |link_rpi_imager| 内で **Raspberry Pi Device** をクリックし、ドロップダウンリストから **Raspberry Pi 5** モデルを選択します。
-
-   .. image:: img/os_choose_device_pi5.png
-      :width: 90%
-
-#. **Operating System** タブで下にスクロールし、 **Misc utility images** を選択します。
-
-   .. image:: img/nvme_misc.png
-      :width: 90%
-
-#. **Bootloader (Pi 5 family)** を選択します。
-
-   .. image:: img/nvme_bootloader.png
-      :width: 90%
-      
-
-#. **NVMe/USB Boot** を選択し、Raspberry Pi 5がNVMeから起動し、次にUSB、その後にSDカードから起動するように設定します。
-
-   .. image:: img/nvme_nvme_boot.png
-      :width: 90%
-      
-#. **Storage** オプションで、インストールに使用する適切なストレージデバイスを選択します。
-
-   .. note::
-
-      正しいストレージデバイスを選択してください。複数のストレージデバイスが接続されている場合は、混乱を避けるために不要なデバイスを取り外すことを推奨します。
-
-   .. image:: img/os_choose_sd.png
-      :width: 90%
-      
-
-#. **NEXT** をクリックします。ストレージデバイスに既存のデータがある場合は、データ損失を防ぐためにバックアップを取ってください。バックアップが不要であれば **Yes** をクリックして続行します。
-
-   .. image:: img/os_continue.png
-      :width: 90%
-      
-
-#. まもなく、 **NVMe/USB Boot** がストレージデバイスに書き込まれたことが通知されます。
-
-   .. image:: img/nvme_boot_finish.png
-      :width: 90%
-      
-
-#. microSDカードまたはNVMe SSDをRaspberry Piに挿入します。Type-C電源アダプターを接続すると、microSDカードまたはNVMe SSDからブートローダーがRaspberry PiのEEPROMに書き込まれます。
-
-   .. note::
-
-      * 更新後、Raspberry PiはまずNVMeドライブから起動し、次にUSB、最後にmicroSDカードから起動します。
-      * 1〜2分待ってから、Raspberry Piの電源を切り、microSDカードまたはNVMe SSDを取り外してください。
-
-2. NVMe SSDへの OS インストール
------------------------------------
-
-**手順**
-
-1. 最新の Umbrel OS イメージをダウンロードして解凍します。特定のバージョンを選択したい場合は、 `Umbrel リリースページ <https://github.com/getumbrel/umbrel/releases>`_ にアクセスしてください。
+#. 最新の **Umbrel OS** イメージをダウンロードし、ファイルを展開します。特定のバージョンを使用したい場合は、|link_umbrel_release| ページにアクセスしてください。
 
    * :download:`最新の Umbrel OS イメージ <https://download.umbrel.com/release/latest/umbrelos-pi5.img.zip>`
 
-2. |link_rpi_imager| 内で **Raspberry Pi Device** をクリックし、ドロップダウンリストから **Raspberry Pi 5** を選択します。
+#. **NVMe → USB アダプター** を使用して、**NVMe SSD** をコンピューターに接続します。
 
-   .. image:: img/os_choose_device_pi5.png
+#. **Raspberry Pi Imager** を起動します。**Device** 画面で、リストから **Raspberry Pi 5** のモデルを選択します。
+
+   .. image:: img/imager_device.png
       :width: 90%
 
-3. **Raspberry Pi Imager** を起動し、 **CHOOSE OS** をクリックします。
+#. **OS** セクションに移動し、下までスクロールして **Use custom** を選択します。
 
-   .. image:: img/umbrel_choose_os.png
-       :width: 600
-       :align: center
+   .. image:: img/imager_use_custom.png
+      :width: 90%
 
-4. 一番下までスクロールして **Use custom** を選択します。
-
-   .. image:: img/umbrel_use_custom.png
-       :width: 600
-       :align: center
-
-5. 先ほどダウンロードした Umbrel OS イメージファイルを選択し、 **Open** をクリックします。
+#. 先ほどダウンロードして展開した **Umbrel OS のイメージファイル** を選択し、**Open** をクリックします。
 
    .. image:: img/umbrel_choose_umbrel.png
        :width: 600
        :align: center
 
-6. **Storage** オプションで、インストール先として NVMe SSD を選択します。
+#. **Next** をクリックして続行します。
 
-   .. image:: img/nvme_ssd_storage.png
+   .. image:: img/imager_custom_next.png
       :width: 90%
 
-7. **NEXT** をクリックし、次に **NO** を選択します。Umbrel OS は初回起動時に独自のシステムおよびユーザー設定を自動的に初期化するため、Raspberry Pi Imager で設定したユーザー名やパスワードは使用されません。
+#. **Storage** セクションで **NVMe SSD** を選択します。コンピューター内の別のドライブではなく、必ず NVMe SSD を選択してください。
 
-   .. image:: img/umbrel_clear_setting.png
+   .. image:: img/nvme_storage.png
       :width: 90%
 
-8. NVMe SSD に既存のデータがある場合は、データ損失を防ぐためにバックアップを取ってください。バックアップが不要であれば **Yes** をクリックして続行します。
+#. すべての設定をよく確認し、**WRITE** をクリックします。
 
-   .. image:: img/nvme_erase.png
+   .. image:: img/imager_write_umbrel.png
       :width: 90%
 
-9. 「Write Successful」と表示されたら、イメージの書き込みと検証が完了しています。これで NVMe SSD は Raspberry Pi の起動準備が整いました！
+#. NVMe SSD に既存のデータがある場合、Raspberry Pi Imager はすべてのデータが消去されるという警告を表示します。正しいドライブが選択されていることを再確認し、**I UNDERSTAND, ERASE AND WRITE** をクリックします。
 
-   .. image:: img/umbrel_finish.png
+   .. image:: img/imager_erase.png
       :width: 90%
 
+#. **「Write Complete」** と表示されたら、イメージの書き込みと検証は正常に完了しています。
+
+   .. image:: img/imager_umbrel_finish.png
+      :width: 90%
 

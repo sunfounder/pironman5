@@ -29,7 +29,7 @@ OpenMediaVaultの設定
 
 
    必ず対応するOSがインストールされており、ネットワーク設定が完了していることを確認してください。
-   本手順は :ref:`install_os_sd_rpi` と同様ですが、OSイメージ選択時は Raspberry Pi OS (other) の中から Raspberry Pi OS Lite を選択してください。
+   本手順は :ref:`install_os_sd_rpi_5` と同様ですが、OSイメージ選択時は Raspberry Pi OS (other) の中から Raspberry Pi OS Lite を選択してください。
 
    .. image:: img/omv/omv-install-1.png
 

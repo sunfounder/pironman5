@@ -24,7 +24,6 @@
 .. toctree::
     :maxdepth: 2
     
-    features
     io_board
     hdmi_adapter
     nvme_pip
@@ -33,4 +32,3 @@
     tower_cooler
     oled_screen
     fans
-    login_rpi/login_rpi

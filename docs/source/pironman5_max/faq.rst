@@ -184,9 +184,9 @@ OLED 画面が何も表示しない、または誤表示する場合は、以下
 
    .. image:: img/dual_nvme_pip_j4.png  
 
-4. NVMe SSD に OS が正しくインストールされていることを確認してください。:ref:`max_install_the_os` を参照。
+4. NVMe SSD に OS が正しくインストールされていることを確認してください。:ref:`install_the_os_max` を参照。
 
-5. 配線や OS に問題がないのに起動しない場合は、一度 Micro SD カードから起動して他のコンポーネントが正常に動作するか確認し、その後 :ref:`max_configure_boot_ssd` に進んでください。
+5. 配線や OS に問題がないのに起動しない場合は、一度 Micro SD カードから起動して他のコンポーネントが正常に動作するか確認し、その後 :ref:`configure_boot_ssd_max` に進んでください。
 
 それでも解決しない場合は、service@sunfounder.com までご連絡ください。
 
@@ -205,7 +205,7 @@ OLED 画面が何も表示しない、または誤表示する場合は、以下
       :width: 600
       :align: center
 
-   非対応の OS を使用している場合は、:ref:`install_the_os` に従い、対応 OS をインストールしてください。
+   非対応の OS を使用している場合は、:ref:`install_the_os_max` に従い、対応 OS をインストールしてください。
 
 #. ``sudo raspi-config`` コマンドを実行し、 **3 Interfacing Options** -> **I3 SPI** -> **YES** を選択して SPI を有効にし、OK および Finish をクリックします。SPI 有効化後、Pironman 5 を再起動してください。
 
@@ -274,7 +274,7 @@ PWM ファンは Raspberry Pi 5 の温度に応じて自動で速度を調整し
 
 Raspberry Pi にログイン済みであれば、コマンドを使って起動順序を変更することができます。詳細な手順は以下を参照してください。
 
-* :ref:`max_configure_boot_ssd`
+* :ref:`configure_boot_ssd_max`
 
 
 14. Raspberry Pi Imager で起動順序を変更する方法
@@ -293,7 +293,7 @@ EEPROM 設定で ``BOOT_ORDER`` を変更するだけでなく、 **Raspberry Pi
 NVMe SSD を持っているが、PC に接続するためのアダプターがない場合、まず Micro SD カードにシステムをインストールしてください。  
 Pironman 5 MAX が正常に起動したら、Micro SD カードから NVMe SSD へシステムをコピーできます。詳細な手順は以下を参照してください。
 
-* :ref:`max_copy_sd_to_nvme_rpi`
+* :ref:`copy_sd_to_nvme_max`
 
 
 16. アクリルプレートの保護フィルムを剥がす方法

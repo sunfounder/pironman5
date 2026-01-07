@@ -1,110 +1,78 @@
 .. note::
 
-    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと一緒に、Raspberry Pi、Arduino、ESP32についてさらに深く掘り下げていきましょう。
+    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと共に、Raspberry Pi、Arduino、ESP32の世界をさらに深く探求しましょう。
 
     **参加する理由**
 
-    - **専門サポート**: コミュニティやチームのサポートを受け、購入後の問題や技術的な課題を解決します。
-    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
-    - **限定プレビュー**: 新製品発表や先行情報に早期アクセスできます。
-    - **特別割引**: 最新製品の特別割引を楽しめます。
-    - **フェスティブプロモーションとプレゼント企画**: プレゼント企画やシーズンごとのプロモーションに参加できます。
+    - **専門サポート**: コミュニティやチームの支援を受けて、アフターサポートや技術的な課題を解決します。
+    - **学びと共有**: スキル向上のためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **イベントやプレゼント企画**: プレゼント企画や季節のプロモーションに参加できます。
 
-    👉 探索と創造の準備ができましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
+    👉 探索と創造の旅に出る準備はできましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 .. _install_to_sd_home_bridge:
 
-Micro SDカードにOSをインストールする
+Micro SD カードへの OS インストール
 =============================================
 
-Micro SDカードを使用している場合は、以下のチュートリアルに従ってMicro SDカードにシステムをインストールできます。
+Micro SD カードを使用する場合は、以下のチュートリアルに従ってシステムを Micro SD カードにインストールしてください。
 
 
-**必要なコンポーネント**
+**必要なもの**
 
-* パーソナルコンピュータ
-* Micro SDカードおよびリーダー
+* パーソナルコンピューター
+* Micro SD カードおよびカードリーダー
 
-**手順**
+.. include:: install_to_sd_rpi.rst
+   :start-after: start_install_imager
+   :end-before: end_install_imager
 
-#. リーダーを使用してSDカードをコンピュータまたはノートパソコンに挿入します。
+2. microSD カードに OS をインストールする
+------------------------------------------------
 
-#. |link_rpi_imager| 内で、 **Raspberry Pi デバイス** をクリックし、ドロップダウンリストから **Raspberry Pi 5** モデルを選択します。
+1. カードリーダーを使用して microSD カードをコンピューターに挿入します。  
+   作業を進める前に、カード内の重要なデータは必ずバックアップしてください。インストール中にデータは消去されます。
 
-   .. image:: img/os_choose_device_pi5.png
-      :width: 90%
-      
-
-#. **オペレーティングシステム** タブをクリックします。
-
-   .. image:: img/os_choose_os.png
+   .. image:: img/insert_sd.png
       :width: 90%
 
-#. ページの一番下までスクロールして、使用するオペレーティングシステムを選択します。
+2. **Raspberry Pi Imager** を起動すると、**Device** ページが表示されます。  
+   リストから **Raspberry Pi 5** モデルを選択します。
+
+   .. image:: img/imager_device.png
+      :width: 90%
+
+3. **OS** セクションに移動し、ページの一番下までスクロールして、使用するオペレーティングシステムを選択します。
 
    .. note::
 
-      * **Ubuntu**システムの場合は、 **その他の汎用OS**  -> **Ubuntu**をクリックし、 **Ubuntu Desktop 24.04 LTS (64 bit)** または **Ubuntu Server 24.04 LTS (64 bit)** を選択してください。
-      * **Kali Linux**、 **Home Assistant** 、 **Homebridge** システムの場合は、 **その他の特定用途OS** をクリックして、該当するシステムを選択してください。
+      * **Ubuntu** の場合は、**Other general-purpose OS** → **Ubuntu** をクリックし、  
+        **Ubuntu Desktop 24.04 LTS (64-bit)** または **Ubuntu Server 24.04 LTS (64-bit)** を選択します。
+      * **Kali Linux**、**Home Assistant**、**Homebridge** の場合は、  
+        **Other specific-purpose OS** をクリックし、対応するシステムを選択します。
 
-   .. image:: img/os_other_os.png
+   .. image:: img/imager_other_os.png
       :width: 90%
 
-#. **ストレージ** オプションで、インストールする適切なストレージデバイスを選択します。
+4. **Storage** セクションで microSD カードを選択します。  
+   安全のため、microSD カードのみが一覧に表示されるよう、他の USB ストレージデバイスは取り外すことを推奨します。
 
-   .. image:: img/nvme_ssd_storage.png
+   .. image:: img/imager_storage.png
       :width: 90%
-      
 
-#. **次へ** をクリックします。
+#. **NEXT** をクリックします。
 
    .. note::
 
-      * 事前に設定できないシステムの場合は、 **次へ** をクリックした後、デバイス内のデータを保存するかどうかのプロンプトが表示されます。バックアップが確認されていれば、 **Yes** を選択してください。
+      * **事前設定ができないシステム** の場合、**NEXT** をクリックすると **Customisation** 手順がスキップされ、  
+        直接 **Writing** に進み、OS が microSD カードに書き込まれます。
+      * **事前設定をサポートしているシステム** の場合は、**Customisation** 手順に従って  
+        **Hostname**、**WiFi**、**Enable SSH** などのオプションを設定してください。
 
-      * ホスト名、WiFi、SSHの有効化が事前に設定できるシステムの場合、OSのカスタム設定を適用するかどうかのプロンプトが表示されます。 **Yes** または **No** を選択するか、さらに編集するために戻ることができます。
-
-   .. image:: img/os_enter_setting.png
+   .. image:: img/imager_write_other_os.png
       :width: 90%
-      
 
-   * Raspberry Piの **ホスト名** を定義します。ホスト名は、Raspberry Piのネットワーク識別子です。 ``<hostname>.local`` または ``<hostname>.lan`` を使用してPiにアクセスできます。
-
-     .. image:: img/os_set_hostname.png  
-
-   * Raspberry Piの管理者アカウントの **ユーザー名** と **パスワード** を作成します。ユニークなユーザー名とパスワードを設定することは、デフォルトパスワードのないRaspberry Piを保護するために重要です。
-
-     .. image:: img/os_set_username.png
-         
-   * ワイヤレスLANを設定するために、ネットワークの **SSID** と **パスワード** を入力します。
-
-     .. note::
-
-       ``Wireless LAN country`` には、あなたの所在地に対応する2文字の `ISO/IEC alpha2 code <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ を設定してください。
-
-     .. image:: img/os_set_wifi.png
-         
-   * Raspberry Piにリモート接続するために、サービスタブでSSHを有効にします。
-
-     * **パスワード認証** の場合は、一般タブからユーザー名とパスワードを使用します。
-     * 公開鍵認証の場合は、"公開鍵認証のみを許可"を選択します。RSAキーを持っている場合は、それが使用されます。持っていない場合は、"Run SSH-keygen"をクリックして新しいキーペアを生成してください。
-
-     .. image:: img/os_enable_ssh.png
-         
-   * **オプション** メニューでは、書き込み中のImagerの動作を構成できます。書き込み完了時にサウンドを再生する、メディアを書き込み後に取り出す、テレメトリを有効にするなどのオプションが含まれます。
-
-     .. image:: img/os_options.png
-           
-#. OSカスタマイズ設定の入力が完了したら、 **保存** をクリックしてカスタマイズを保存します。次に、イメージの書き込み時にカスタマイズを適用するために **Yes** をクリックします。
-
-   .. image:: img/os_click_yes.png
-      :width: 90%
-      
-
-#. SDカードに既存のデータが含まれている場合は、データ損失を防ぐためにバックアップを行ってください。バックアップが不要であれば、 **Yes** をクリックして続行します。
-
-   .. image:: img/os_continue.png
-      :width: 90%
-      
-
-#. 「書き込み成功」のポップアップが表示されたら、イメージが完全に書き込まれ、検証されています。これでMicro SDカードからRaspberry Piを起動する準備が整いました！
+#. **「Write Successful」** のポップアップが表示されたら、イメージの書き込みと検証は完了です。  
+   microSD カードを安全に取り外し、Raspberry Pi の起動に使用できます。

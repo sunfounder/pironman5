@@ -29,4 +29,3 @@
 
     io_board
     fans
-    login_rpi/login_rpi
