@@ -5,6 +5,23 @@ from pironman5.version import __version__
 import os
 from pironman5.variants import NAME, DT_OVERLAYS, PERIPHERALS, VARIANTS
 
+GITHUB_URL = 'https://github.com/sunfounder/'
+GITEE_URL = 'https://gitee.com/sunfounder/'
+
+# Test if github url reachable
+import requests
+try:
+    requests.get(GITHUB_URL)
+    GIT_URL = GITHUB_URL
+except requests.exceptions.RequestException:
+    print(f"Error: {GITHUB_URL} is not reachable")
+    try:
+        requests.get(GITEE_URL)
+        GIT_URL = GITEE_URL
+    except requests.exceptions.RequestException:
+        print(f"Error: {GITEE_URL} is not reachable")
+        exit(1)
+
 installer = SF_Installer(
     name='pironman5',
     friendly_name=NAME,
@@ -62,7 +79,7 @@ settings = {
     # - Install python source code from git
     'python_source': {
         'pironman5': './',
-        'pm_auto': 'git+https://github.com/sunfounder/pm_auto.git@1.2.12',
+        'pm_auto': f'git+{GIT_URL}pm_auto.git@1.2.12',
     },
 
     # - Setup config txt
@@ -151,8 +168,8 @@ dashboard_settings = {
         'lsof', # for pm_dashboard
     ],
     'python_source': {
-        'pm_dashboard': 'git+https://github.com/sunfounder/pm_dashboard.git@1.2.10',
-        'sf_rpi_status': 'git+https://github.com/sunfounder/sf_rpi_status.git@1.1.0',
+        'pm_dashboard': f'git+{GIT_URL}pm_dashboard.git@1.2.10',
+        'sf_rpi_status': f'git+{GIT_URL}sf_rpi_status.git@1.1.0',
     },
 }
 
