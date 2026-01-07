@@ -142,7 +142,8 @@ dashboard_settings = {
     'run_commands_before_install': {
         # download influxdb key and add to trusted key list https://docs.influxdata.com/influxdb/v2/install/?t=Linux
         'Download influxdb key': 'curl --silent --location -O https://repos.influxdata.com/influxdata-archive.key',
-        'Setup influxdb install source': 'echo "943666881a1b8d9b849b74caebf02d3465d6beb716510d86a39f6c8e8dac7515  influxdata-archive.key" | sha256sum --check - && cat influxdata-archive.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/influxdata-archive.gpg > /dev/null && echo "deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive.gpg] https://repos.influxdata.com/debian stable main" | tee /etc/apt/sources.list.d/influxdata.list',
+        'Verify influxdb key fingerprint': 'gpg --show-keys --with-fingerprint --with-colons ./influxdata-archive.key 2>&1 | grep -q \'^fpr:\+24C975CBA61A024EE1B631787C3D57159FC2F927:$\' && cat influxdata-archive.key | gpg --dearmor | sudo tee /etc/apt/keyrings/influxdata-archive.gpg > /dev/null',
+        'Setup influxdb install source': "echo 'deb [signed-by=/etc/apt/keyrings/influxdata-archive.gpg] https://repos.influxdata.com/debian stable main' | sudo tee /etc/apt/sources.list.d/influxdata.list",
         'Cleanup influxdata-achive.key': 'rm influxdata-archive.key',
     },
     'apt_dependencies': [
