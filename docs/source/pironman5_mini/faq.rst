@@ -171,7 +171,7 @@ Se recomienda utilizar una tarjeta de repuesto para este paso.
 Si no tienes adaptador NVMe, primero instala el sistema en la SD. Luego, al arrancar correctamente, puedes copiarlo al SSD:
 
 
-* :ref:`copy_sd_to_nvme_rpi_mini`
+* :ref:`copy_sd_to_nvme_mini`
 
 12. ¿Cómo retirar el protector de las placas acrílicas?
 -----------------------------------------------------------------

@@ -1,99 +1,183 @@
-.. note::
+.. note:: 
 
-    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros aficionados.
+    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **¿Por qué unirse?**
+    **¿Por qué unirte?**
 
-    - **Soporte experto**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
     - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
-    - **Avances exclusivos**: Accede anticipadamente a anuncios y adelantos de nuevos productos.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y contenido exclusivo.
     - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
-    - **Promociones y sorteos festivos**: Participa en sorteos y promociones durante las festividades.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _install_os_sd_rpi_mini:
 
-Instalación del sistema operativo en una tarjeta Micro SD
-==============================================================
-.. If you are using a Micro SD card, you can follow the tutorial below to install the system onto your Micro SD card.
+Instalar el sistema operativo
+===================================
 
-.. .. raw:: html
-
-..     <iframe width="700" height="500" src="https://www.youtube.com/embed/-5rTwJ0oMVM?start=343&end=414&si=je5SaLccHzjjEhuD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Antes de usar tu Raspberry Pi, necesitas instalar **Raspberry Pi OS** en una tarjeta microSD.  
+Esta guía explica cómo hacerlo usando **Raspberry Pi Imager** de una forma sencilla y adecuada para principiantes.
 
 **Componentes necesarios**
 
-* Una computadora personal
-* Una tarjeta Micro SD y un lector
+* Un ordenador (Windows, macOS o Linux)
+* Una tarjeta microSD (16GB o más; marcas recomendadas: SanDisk, Samsung)
+* Un lector de tarjetas microSD
 
-**Pasos**
+-------------------
 
-#. Inserta tu tarjeta SD en la computadora o portátil usando un lector.
+.. start_install_imager
 
-#. En |link_rpi_imager|, haz clic en **Raspberry Pi Device** y selecciona el modelo **Raspberry Pi 5** del menú desplegable.
+1. Instalar Raspberry Pi Imager
+-------------------------------------------
 
-   .. image:: img/os_choose_device_pi5.png
+.. |shared_link_rpi_imager| raw:: html
+
+    <a href="https://www.raspberrypi.com/software/" target="_blank">Raspberry Pi Imager</a>   
+
+#. Visita la página oficial de descarga de Raspberry Pi Imager: |shared_link_rpi_imager|. Descarga el instalador adecuado para tu sistema operativo.
+
+   .. image:: img/imager_download.png
+      :width: 70%
+
+#. Sigue las indicaciones de instalación (idioma, ruta de instalación, confirmación). Después de la instalación, abre **Raspberry Pi Imager** desde el escritorio o el menú de aplicaciones.
+
+   .. image:: img/imager_install.png
       :width: 90%
 
-#. Selecciona **Operating System** y elige la versión recomendada del sistema operativo.
+.. end_install_imager
 
-   .. image:: img/os_choose_os.png
+-------------------
+
+2. Instalar el sistema operativo en la tarjeta microSD
+-------------------------------------------------------------
+
+1. Inserta tu tarjeta microSD en el ordenador usando un lector de tarjetas. Haz una copia de seguridad de cualquier dato importante antes de continuar.
+
+   .. image:: img/insert_sd.png
       :width: 90%
 
-#. Haz clic en **Choose Storage** y selecciona el dispositivo de almacenamiento adecuado para la instalación.
+2. Cuando se abra Raspberry Pi Imager, verás la página **Device**. Selecciona tu modelo de **Raspberry Pi 5** de la lista.
 
-   .. image:: img/os_choose_sd.png
+   .. image:: img/imager_device.png
       :width: 90%
 
-#. Haz clic en **NEXT** y luego en **EDIT SETTINGS** para personalizar la configuración del sistema operativo.
+3. Ve a la sección **OS** y elige la opción recomendada **Raspberry Pi OS (64-bit)**.
 
-   .. image:: img/os_enter_setting.png
+   .. image:: img/imager_os.png
       :width: 90%
 
+4. En la sección **Storage**, selecciona tu tarjeta microSD. 
 
-   * Define un **hostname** para tu Raspberry Pi. Este nombre es el identificador de red del dispositivo. Puedes acceder a tu Raspberry Pi usando ``<hostname>.local`` o ``<hostname>.lan``.
-
-     .. image:: img/os_set_hostname.png
-
-
-   * Crea un **Username** y una **Password** para la cuenta de administrador. Establecer un nombre de usuario y contraseña únicos es fundamental para proteger tu Raspberry Pi, que no tiene contraseña predeterminada.
-
-     .. image:: img/os_set_username.png
-
-   * Configura la red inalámbrica introduciendo el **SSID** y la **Password** de tu red.
-
-     .. note::
-
-       Establece el valor de ``Wireless LAN country`` con el código de dos letras según la norma `ISO/IEC alpha2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ correspondiente a tu ubicación.
-
-     .. image:: img/os_set_wifi.png
-
-
-   * Para conectarte remotamente a tu Raspberry Pi, activa SSH en la pestaña de Servicios.
-
-     * Para **autenticación con contraseña**, usa el nombre de usuario y la contraseña definidos en la pestaña General.
-     * Para autenticación con clave pública, selecciona "Allow public-key authentication only". Si ya tienes una clave RSA, se usará. Si no, haz clic en "Run SSH-keygen" para generar un nuevo par de claves.
-
-     .. image:: img/os_enable_ssh.png
-
-   * El menú **Options** te permite configurar el comportamiento de Imager durante la escritura, como reproducir sonido al finalizar, expulsar el medio automáticamente y activar la telemetría.
-
-     .. image:: img/os_options.png
-
-#. Cuando termines de personalizar la configuración del sistema operativo, haz clic en **Save** para guardar los ajustes. Luego haz clic en **Yes** para aplicarlos al escribir la imagen.
-
-   .. image:: img/os_click_yes.png
+   .. image:: img/imager_storage.png
       :width: 90%
 
+   .. start_install_os
 
-#. Si la tarjeta SD contiene datos anteriores, asegúrate de hacer una copia de seguridad. Haz clic en **Yes** si no necesitas conservar los datos.
+5. Haz clic en **Next** para continuar al paso de personalización.
 
-   .. image:: img/os_continue.png
+   .. note::
+
+      * Si vas a conectar un monitor, teclado y ratón directamente a tu Raspberry Pi, puedes hacer clic en **SKIP CUSTOMISATION**.  
+      * Si planeas configurar la Raspberry Pi en modo *headless* (acceso remoto por Wi-Fi), debes completar los ajustes de personalización.
+
+   .. image:: img/imager_custom_skip.png
       :width: 90%
 
+#. **Configurar el nombre de host**
 
-#. Cuando veas el mensaje "Write Successful", la imagen habrá sido escrita y verificada con éxito. ¡Ya puedes arrancar tu Raspberry Pi desde la tarjeta Micro SD!
+   * Asigna un nombre de host único a tu Raspberry Pi.  
+   * Más adelante podrás conectarte usando ``hostname.local``.
 
-   .. image:: img/os_finish.png
+   .. image:: img/imager_custom_hostname.png
       :width: 90%
+
+#. **Configurar la localización**
+
+   * Elige tu ciudad capital.
+   * Imager completará automáticamente la zona horaria y la distribución del teclado según tu selección, aunque puedes ajustarlas si es necesario. Selecciona Next.
+   
+   .. image:: img/imager_custom_local.png
+      :width: 90%
+
+#. **Configurar usuario y contraseña**
+
+   Crea una cuenta de usuario para tu Raspberry Pi.
+   
+   .. image:: img/imager_custom_user.png
+      :width: 90%
+
+#. **Configurar Wi-Fi**
+
+   * Introduce el **SSID** (nombre de la red) y la **contraseña** de tu Wi-Fi.  
+   * Tu Raspberry Pi se conectará automáticamente en el primer arranque.
+   
+   .. image:: img/imager_custom_wifi.png
+      :width: 90%
+
+#. **Habilitar SSH (opcional pero recomendado)**
+
+   * Habilitar SSH te permite iniciar sesión de forma remota desde tu ordenador.  
+   * Puedes iniciar sesión usando tu nombre de usuario/contraseña o configurar claves SSH.
+   
+   .. image:: img/imager_custom_ssh.png
+      :width: 90%
+
+#. **Habilitar Raspberry Pi Connect (opcional)**
+
+
+   Raspberry Pi Connect te permite acceder al escritorio de tu Raspberry Pi desde un navegador web.
+   
+   * Activa **Raspberry Pi Connect** y luego haz clic en **OPEN RASPBERRY PI CONNECT**.
+   
+     .. image:: img/imager_custom_connect.png
+        :width: 90%
+
+   * El sitio web de Raspberry Pi Connect se abrirá en tu navegador predeterminado. Inicia sesión con tu cuenta de Raspberry Pi ID o regístrate si aún no tienes una.
+
+     .. image:: img/imager_custom_open.png
+        :width: 90%
+
+   * En la página **New auth key**, crea tu clave de autenticación de un solo uso. 
+      
+      * Si tu cuenta de Raspberry Pi ID no pertenece a ninguna organización, selecciona **Create auth key and launch Raspberry Pi Imager**.
+      * Si perteneces a una o más organizaciones, elige una, luego crea la clave y abre Imager.
+      * Asegúrate de encender tu Raspberry Pi y conectarlo a Internet antes de que la clave caduque.
+   
+     .. image:: img/imager_custom_authkey.png
+        :width: 90%
+   
+   * Tu navegador puede pedirte permiso para abrir Raspberry Pi Imager; acéptalo.
+
+     * Imager se abrirá en la pestaña de Raspberry Pi Connect, mostrando el token de autenticación.
+     * Si el token no se transfiere automáticamente, abre la sección **Having trouble?** en la página de Raspberry Pi Connect, copia el token y pégalo manualmente en Imager.
+
+     .. image:: img/imager_custom_connect_token.png
+        :width: 90%
+
+#. Revisa todos los ajustes y haz clic en **WRITE**.
+
+   .. image:: img/imager_writing.png
+      :width: 90%
+
+#. Si la tarjeta ya contiene datos, Raspberry Pi Imager mostrará una advertencia indicando que todos los datos del dispositivo se borrarán. Verifica que has seleccionado la unidad correcta y luego haz clic en **I UNDERSTAND, ERASE AND WRITE** para continuar.
+
+   .. image:: img/imager_erase.png
+      :width: 90%
+
+#. Espera a que finalicen la escritura y la verificación. Cuando termine, Raspberry Pi Imager mostrará **Write complete!** y un resumen de tus elecciones. El dispositivo de almacenamiento se expulsará automáticamente para que puedas retirarlo de forma segura.
+
+
+   .. image:: img/imager_finish.png
+        :width: 90%
+
+   .. end_install_os
+
+#. Retira la tarjeta microSD e insértala en la ranura situada en la parte inferior de tu Raspberry Pi. ¡Tu Raspberry Pi ya está lista para arrancar con el nuevo sistema operativo!
+
+   .. image:: img/os_sd_to_pi.jpg
+        :width: 70%
+
+   

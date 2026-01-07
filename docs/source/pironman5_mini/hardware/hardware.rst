@@ -29,4 +29,3 @@ Este capítulo ofrece una descripción detallada de todos los componentes del Pi
 
     io_board
     fans
-    login_rpi/login_rpi

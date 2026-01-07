@@ -33,4 +33,3 @@ Este capítulo ofrece una descripción detallada de todos los componentes de Pir
     tower_cooler
     oled_screen
     fans
-    login_rpi/login_rpi

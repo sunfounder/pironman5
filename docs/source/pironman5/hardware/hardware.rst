@@ -30,4 +30,3 @@ Este capítulo proporciona una descripción detallada de todos los componentes i
     tower_cooler
     oled_screen
     fans
-    login_rpi/login_rpi

@@ -28,12 +28,10 @@
 Esta sección explica cómo ampliar las capacidades de la serie Pironman 5 integrando módulos de hardware opcionales, incluyendo un módulo de cámara, una pantalla táctil de 3.5 pulgadas y un receptor de radio RTL-SDR.  
 Al combinar estos complementos, puedes mejorar la interactividad, habilitar entrada visual en tiempo real y desbloquear la recepción avanzada de señales inalámbricas.
 
-
-
-
 .. toctree::
     :maxdepth: 1
     
     camera_module
     35_screen
     rtl_sdr
+    dual_nvme
