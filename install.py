@@ -14,7 +14,7 @@ try:
     requests.get(GITHUB_URL)
     GIT_URL = GITHUB_URL
 except requests.exceptions.RequestException:
-    print(f"Error: {GITHUB_URL} is not reachable")
+    print(f"Warning: {GITHUB_URL} is not reachable")
     try:
         requests.get(GITEE_URL)
         GIT_URL = GITEE_URL
