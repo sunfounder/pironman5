@@ -1,6 +1,6 @@
 .. note::
 
-    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
     **Perché unirsi?**
 
@@ -12,21 +12,20 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-.. _install_the_os:
+.. _install_the_os_5:
 
 3. Installazione del Sistema Operativo
-==========================================
+=======================================
 
 .. note::
 
-    È necessario installare un sistema operativo compatibile con Raspberry Pi 5. Utilizza l'ultima versione dello strumento Raspberry Pi Imager per l'installazione del sistema. I sistemi attualmente testati sono:
+    È necessario installare un sistema operativo che supporti Raspberry Pi 5. Si prega di utilizzare l’ultima versione di Raspberry Pi Imager per l’installazione del sistema. I sistemi attualmente testati sono:
 
-   .. image:: ../img/compitable_os.png
-        :width: 600
+   .. image:: img/compitable_os.png
+        :width: 500
         :align: center
 
-
-In questo capitolo imparerai come installare i sistemi operativi. Tutti i passaggi di installazione dipendono dal |link_rpi_imager|, che devi prima installare.
+In questo capitolo imparerai come installare i sistemi operativi. Tutti i passaggi di installazione si basano su |link_rpi_imager|, che devi installare per prima cosa.
 
     .. toctree::
         :maxdepth: 1
@@ -35,4 +34,5 @@ In questo capitolo imparerai come installare i sistemi operativi. Tutti i passag
         install_the_other_os
         install_umbrel
 
+.. install_batocera
 

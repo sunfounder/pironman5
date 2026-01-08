@@ -29,7 +29,7 @@ Configurazione di OpenMediaVault
 
 
    Assicurati di aver installato il sistema operativo corretto e di aver configurato la rete.
-   La procedura è coerente con :ref:`install_os_sd_rpi_mini`, ma quando selezioni l'immagine, scegli Raspberry Pi OS Lite da Raspberry Pi OS (altri).
+   La procedura è coerente con :ref:`install_os_sd_mini`, ma quando selezioni l'immagine, scegli Raspberry Pi OS Lite da Raspberry Pi OS (altri).
 
    .. image:: img/omv/omv-install-1.png
 

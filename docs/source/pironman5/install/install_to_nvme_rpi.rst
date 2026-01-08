@@ -1,6 +1,6 @@
 .. note::
 
-    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
     **Perché unirsi?**
 
@@ -12,163 +12,126 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-.. _install_to_nvme_rpi:
+.. _install_to_nvme_5:
 
-Installazione del Sistema Operativo su un SSD NVMe
-=======================================================
+Installazione del sistema operativo su un SSD NVMe
+==============================================================
 
-Se stai utilizzando un SSD NVMe e hai un adattatore per collegarlo al tuo computer per l'installazione del sistema operativo, puoi seguire il tutorial seguente per un'installazione rapida.
+Se utilizzi un SSD NVMe e disponi di un adattatore per collegare l’SSD NVMe al computer per l’installazione del sistema, puoi seguire il tutorial seguente per un’installazione rapida.
 
-**Componenti necessari**
+**Componenti richiesti**
 
-* Un computer
+* Un computer personale
 * Un SSD NVMe
 * Un adattatore NVMe a USB
 * Scheda Micro SD e lettore
 
+
+.. include:: install_to_sd_rpi.rst
+   :start-after: start_install_imager
+   :end-before: end_install_imager
+
+.. start_update_bootloader
+
 .. _update_bootloader_5:
 
-1. Aggiornare il Bootloader
-----------------------------------
 
-Prima di tutto, è necessario aggiornare il bootloader del Raspberry Pi 5 per avviarsi da NVMe, prima di provare USB e poi la scheda SD.
+2. Aggiornare il bootloader
+--------------------------------
 
-.. raw:: html
-
-    <iframe width="700" height="500" src="https://www.youtube.com/embed/tCKTgAeWIjc?start=47&end=95&si=xbmsWGBvCWefX01T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+Per prima cosa, aggiorna il bootloader del Raspberry Pi 5 in modo che tenti l’avvio prima da **NVMe**, poi da **USB** e infine dalla **scheda SD**.
 
 .. note::
 
-    In questo passaggio, si consiglia di utilizzare una scheda Micro SD di riserva. Prima scrivi il bootloader su questa scheda Micro SD e poi inseriscila immediatamente nel Raspberry Pi per abilitare l'avvio da un dispositivo NVMe.
+    Si consiglia di utilizzare una **scheda Micro SD di riserva** per questo passaggio.
     
-    In alternativa, puoi scrivere prima il bootloader direttamente sul tuo dispositivo NVMe, quindi inserirlo nel Raspberry Pi per modificare il metodo di avvio. Successivamente, collega l'SSD NVMe a un computer per installare il sistema operativo e, una volta completata l'installazione, reinseriscilo nel Raspberry Pi.
+    - Metodo 1 (consigliato): scrivi il bootloader su una scheda Micro SD, inseriscila nel Raspberry Pi ed esegui un avvio per applicare l’impostazione.
+    - Metodo 2: scrivi il bootloader direttamente sull’SSD NVMe. Successivamente, collega l’NVMe a un computer per installare il sistema operativo, quindi reinseriscilo nel Raspberry Pi.
 
-#. Inserisci la tua scheda Micro SD di riserva o SSD NVMe nel computer o nel laptop utilizzando un lettore.
+#. Inserisci la **scheda Micro SD di riserva o l’SSD NVMe** nel computer utilizzando un lettore di schede o un adattatore.
 
-#. All'interno del |link_rpi_imager|, fai clic su **Dispositivo Raspberry Pi** e seleziona il modello **Raspberry Pi 5** dall'elenco a discesa.
+#. Quando si apre Raspberry Pi Imager, vedrai la pagina **Device**. Seleziona il tuo modello di **Raspberry Pi 5** dall’elenco.
 
-   .. image:: img/os_choose_device_pi5.png
+   .. image:: img/imager_device.png
       :width: 90%
 
-#. Nella scheda **Sistema Operativo**, scorri verso il basso e seleziona **Misc utility images**.
+#. Fai clic su **OS**.
 
-   .. image:: img/nvme_misc.png
-      :width: 90%
+   * Scorri verso il basso e seleziona **Misc utility images**.
 
-#. Seleziona **Bootloader (Pi 5 family)**.
+     .. image:: img/nvme_misc.png
+        :width: 90%
 
-   .. image:: img/nvme_bootloader.png
-      :width: 90%
-      
+   * Seleziona **Bootloader (Pi 5 family)**.
 
-#. Seleziona **NVMe/USB Boot** per consentire al Raspberry Pi 5 di avviarsi da NVMe, prima di provare USB e poi la scheda SD.
+     .. image:: img/nvme_bootloader.png
+        :width: 90%
 
-   .. image:: img/nvme_nvme_boot.png
-      :width: 90%
-      
+   * Scegli **NVMe/USB Boot** per impostare l’ordine di avvio, quindi fai clic su **NEXT**.
+
+     .. image:: img/nvme_boot.png
+        :width: 90%
 
 
-#. Nella sezione **Storage**, seleziona il dispositivo di archiviazione appropriato per l'installazione.
+#. In **Storage**, seleziona la scheda Micro SD o l’SSD NVMe corretto, quindi fai clic su **NEXT**.
 
    .. note::
 
-      Assicurati di selezionare il dispositivo di archiviazione corretto. Per evitare confusione, disconnetti eventuali dispositivi di archiviazione aggiuntivi se ne sono collegati più di uno.
+      Assicurati che sia selezionato il dispositivo corretto. Se necessario, scollega altri dispositivi di archiviazione.
 
-   .. image:: img/os_choose_sd.png
+   .. image:: img/imager_storage.png
       :width: 90%
-      
 
-#. Ora puoi fare clic su **NEXT**. Se il dispositivo di archiviazione contiene dati esistenti, assicurati di eseguire un backup per prevenire la perdita di dati. Procedi facendo clic su **Yes** se non è necessario alcun backup.
 
-   .. image:: img/os_continue.png
+#. Rivedi le impostazioni e fai clic su **WRITE** per avviare il processo.
+
+   .. image:: img/nvme_write.png
       :width: 90%
-      
 
-#. Presto, ti verrà comunicato che **NVMe/USB Boot** è stato scritto sul tuo dispositivo di archiviazione.
+#. Conferma l’avviso e consenti a Raspberry Pi Imager di cancellare e scrivere il bootloader.
 
-   .. image:: img/nvme_boot_finish.png
+   .. image:: img/imager_erase.png
       :width: 90%
-      
 
-#. Ora puoi inserire la tua scheda Micro SD o SSD NVMe nel Raspberry Pi. Dopo aver alimentato il Raspberry Pi con un adattatore di tipo C, il bootloader dalla scheda Micro SD o dall'SSD NVMe verrà scritto sull'EEPROM del Raspberry Pi.
+#. Attendi la comparsa di **Write complete!**, quindi rimuovi in sicurezza il dispositivo di archiviazione.
 
-.. note::
+   .. image:: img/nvme_finish.png
+      :width: 90%
 
-    Successivamente, il Raspberry Pi si avvierà da NVMe prima di provare USB e poi la scheda SD. 
-    
-    Spegni il Raspberry Pi e rimuovi la scheda Micro SD o l'SSD NVMe.
+#. Inserisci la scheda Micro SD nel Raspberry Pi e accendilo una volta per applicare l’aggiornamento del bootloader.
 
+   .. image:: img/os_sd_to_pi.jpg
+      :width: 70%
 
-2. Installare il Sistema Operativo su SSD NVMe
------------------------------------------------
+#. Attendi almeno **10 secondi** dopo che il Raspberry Pi ha completato l’avvio, quindi spegnilo e rimuovi la scheda Micro SD o l’SSD NVMe.
+
+Il Raspberry Pi 5 è ora pronto per l’avvio da **NVMe**.
+
+.. end_update_bootloader
+
+3. Installare il sistema operativo sull’SSD NVMe
+----------------------------------------------------------
 
 Ora puoi installare il sistema operativo sul tuo SSD NVMe.
 
-#. All'interno del |link_rpi_imager|, fai clic su **Dispositivo Raspberry Pi** e seleziona il modello **Raspberry Pi 5** dall'elenco a discesa.
+#. Inserisci l’**SSD NVMe** nel computer utilizzando un adattatore.
 
-   .. image:: img/os_choose_device_pi5.png
+2. Quando si apre Raspberry Pi Imager, vedrai la pagina **Device**. Seleziona il tuo modello di **Raspberry Pi 5** dall’elenco.
+
+   .. image:: img/imager_device.png
       :width: 90%
 
-#. Seleziona **Sistema Operativo** e scegli la versione del sistema operativo consigliata.
+3. Vai alla sezione **OS** e scegli l’opzione consigliata **Raspberry Pi OS (64-bit)**.
 
-   .. image:: img/os_choose_os.png
+   .. image:: img/imager_os.png
       :width: 90%
-      
 
-#. Nella sezione **Storage**, seleziona il dispositivo di archiviazione appropriato per l'installazione.
+4. Nella sezione **Storage**, seleziona il tuo **SSD NVMe**.
 
-   .. image:: img/nvme_ssd_storage.png
+   .. image:: img/nvme_storage.png
       :width: 90%
-      
 
-#. Fai clic su **NEXT** e poi su **EDIT SETTINGS** per personalizzare le impostazioni del sistema operativo. 
+.. include:: install_to_sd_rpi.rst
+   :start-after: start_install_os
+   :end-before: end_install_os
 
-   .. image:: img/os_enter_setting.png
-      :width: 90%
-      
-
-   * Definisci un **hostname** per il tuo Raspberry Pi. L'hostname è l'identificativo di rete del tuo Raspberry Pi. Puoi accedere al tuo Pi utilizzando ``<hostname>.local`` o ``<hostname>.lan``.
-  
-     .. image:: img/os_set_hostname.png
-         
-   * Crea un **Nome Utente** e una **Password** per l'account amministratore del Raspberry Pi. Stabilire un nome utente e una password univoci è fondamentale per proteggere il tuo Raspberry Pi, che non dispone di una password predefinita.
-
-     .. image:: img/os_set_username.png
-         
-   * Configura la rete wireless fornendo il **SSID** e la **Password** della tua rete.
-
-     .. note::
-
-       Imposta il ``Paese della LAN wireless`` sul codice `ISO/IEC alpha2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>`_ a due lettere corrispondente alla tua posizione.
-
-     .. image:: img/os_set_wifi.png
-         
-   * Per connetterti in remoto al tuo Raspberry Pi, abilita SSH nella scheda Servizi.
-
-     * Per l'**autenticazione tramite password**, utilizza il nome utente e la password dalla scheda Generale.
-     * Per l'autenticazione con chiave pubblica, scegli "Consenti solo autenticazione con chiave pubblica". Se disponi di una chiave RSA, verrà utilizzata. In caso contrario, fai clic su "Esegui SSH-keygen" per generare una nuova coppia di chiavi.
-
-     .. image:: img/os_enable_ssh.png
-         
-   * Il menu **Opzioni** ti consente di configurare il comportamento di Imager durante la scrittura, inclusa la riproduzione di un suono al termine, l'espulsione del supporto al termine e l'abilitazione della telemetria.
-
-     .. image:: img/os_options.png
-
-#. Quando hai terminato di inserire le impostazioni di personalizzazione del sistema operativo, fai clic su **Salva** per salvare la tua personalizzazione. Quindi, fai clic su **Yes** per applicarle durante la scrittura dell'immagine.
-
-   .. image:: img/os_click_yes.png
-      :width: 90%
-      
-
-#. Se l'SSD NVMe contiene dati esistenti, assicurati di eseguire un backup per prevenire la perdita di dati. Procedi facendo clic su **Yes** se non è necessario alcun backup.
-
-   .. image:: img/nvme_erase.png
-      :width: 90%
-      
-
-#. Quando visualizzi il popup "Scrittura riuscita", l'immagine è stata completamente scritta e verificata. Ora sei pronto per avviare un Raspberry Pi dall'SSD NVMe!
-
-   .. image:: img/nvme_install_finish.png
-      :width: 90%
-      

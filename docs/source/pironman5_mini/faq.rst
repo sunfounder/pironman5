@@ -171,7 +171,7 @@ Si consiglia di utilizzare una scheda di riserva per eseguire questo passaggio.
 Se non hai un adattatore NVMe, installa il sistema su microSD. Dopo l’avvio, copia tutto su SSD.
 
 
-* :ref:`copy_sd_to_nvme_rpi_mini`
+* :ref:`copy_sd_to_nvme_mini`
 
 12. Come rimuovere la pellicola protettiva dai pannelli acrilici?
 ----------------------------------------------------------------------

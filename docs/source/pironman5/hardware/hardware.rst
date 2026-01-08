@@ -30,4 +30,4 @@ Questo capitolo offre una descrizione dettagliata di tutti i componenti di Piron
     tower_cooler
     oled_screen
     fans
-    login_rpi/login_rpi
+

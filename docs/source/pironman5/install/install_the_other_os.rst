@@ -1,6 +1,6 @@
 .. note::
 
-    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
     **Perché unirsi?**
 
@@ -12,19 +12,19 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-Installa Ubuntu/Kali Linux/Homebridge/Home Assistant
-=========================================================
+Installazione di Ubuntu/Kali Linux/Homebridge/Home Assistant
+=========================================================================
 
-Puoi scegliere il metodo di installazione in base alla disponibilità di una scheda Micro SD o di un SSD NVMe.
+Puoi scegliere il metodo di installazione in base al fatto che tu disponga di una scheda Micro SD o di un SSD NVMe.
 
-**Utilizzo di una Scheda Micro SD**
+**Utilizzando solo una scheda Micro SD**
 
-  Se stai utilizzando una scheda Micro SD, puoi semplicemente seguire il primo metodo riportato di seguito.
+  Se utilizzi una scheda Micro SD, puoi semplicemente seguire il primo metodo riportato di seguito.
 
-**Utilizzo di un SSD M.2 NVMe**
+**Utilizzando un SSD M.2 NVMe**
 
-  * Se stai utilizzando un SSD M.2 NVMe, avrai bisogno di un **Adattatore per Enclosure SSD M.2 NVMe** per collegare il tuo SSD al computer e seguire il secondo metodo per installare il sistema operativo.
-  
+  * Se utilizzi un SSD M.2 NVMe, avrai anche bisogno di un **adattatore box/enclosure per SSD M.2 NVMe** per collegare l’SSD al computer e seguire il secondo metodo per installare il sistema operativo.
+
     .. image:: img/m2_nvme_adapter.png
         :width: 300
         :align: center
