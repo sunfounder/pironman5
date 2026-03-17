@@ -1,12 +1,14 @@
 from .pironman5 import Pironman5
 from .pironman5_max import Pironman5Max
 from .pironman5_mini import Pironman5Mini
+from .pironman5_pro_max import Pironman5ProMax
 import os
 
 VARIANTS = {
     'base': Pironman5,
     'mini': Pironman5Mini,
     'max': Pironman5Max,
+    'pro_max': Pironman5ProMax,
 }
 
 def get_device_tree_path():
@@ -90,6 +92,8 @@ def get_variant(variant_id, version=None):
             return Pironman5
         else:
             return Pironman5Max
+    elif variant_id == "0316":
+        return Pironman5ProMax
     elif variant_id == "0308":
         return Pironman5Mini
     else:

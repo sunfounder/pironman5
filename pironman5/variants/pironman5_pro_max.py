@@ -1,0 +1,54 @@
+class Pironman5ProMax:
+    NAME = "Pironman 5 Pro Max"
+    ID = "pironman5"
+    PRODUCT_VERSION = ""
+    PERIPHERALS = [
+        'storage',
+        "cpu",
+        "network",
+        "memory",
+        "history",
+        "log",
+        "ws2812",
+        "cpu_temperature",
+        "gpu_temperature",
+        "temperature_unit",
+        "oled",
+        "clear_history",
+        "delete_log_file",
+        "pwm_fan_speed",
+        "gpio_fan_state",
+        "gpio_fan_mode",
+        "gpio_fan_led",
+        "vibration_switch",
+        "oled_sleep",
+    ]
+    SYSTEM_DEFAULT_CONFIG = {
+        'data_interval': 1,
+        "rgb_color": "#0a1aff",
+        "rgb_brightness": 50,
+        "rgb_style": "breathing",
+        "rgb_speed": 50,
+        "rgb_enable": True,
+        "rgb_led_count": 18,
+        "temperature_unit": "C",
+        "oled_enable": True,
+        "oled_rotation": 0,
+        "oled_disk": "total",
+        "oled_network_interface": "all",
+        'gpio_fan_pin': 6,
+        'gpio_fan_mode': 0,
+        'gpio_fan_led': 'follow',
+        'gpio_fan_led_pin': 5,
+        'oled_sleep_timeout': 0,
+        'vibration_switch_pin': 26,
+        'vibration_switch_pull_up': False,
+    }
+    DT_OVERLAYS = [
+        'sunfounder-pironman5.dtbo',
+    ]
+    # hat_type1 does not auto-load overlays, so we must set config.txt explicitly
+    CONFIG_TXT = {
+        'dtparam=spi': 'on',
+        'dtparam=i2c_arm': 'on',
+    }

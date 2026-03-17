@@ -3,7 +3,7 @@
 from tools.sf_installer import SF_Installer
 from pironman5.version import __version__
 import os
-from pironman5.variants import NAME, DT_OVERLAYS, PERIPHERALS, VARIANTS
+from pironman5.variants import NAME, DT_OVERLAYS, PERIPHERALS, VARIANTS, VARIENT
 
 installer = SF_Installer(
     name='pironman5',
@@ -156,6 +156,11 @@ dashboard_settings = {
 if os.path.exists('/umbrelOS'):
     print('Detected umbrel os, skip dtoverlay')
     settings['dtoverlays'] = []
+
+# Apply variant-specific config.txt settings (e.g. hat_type1 needs explicit SPI/I2C enable)
+variant_class = VARIANTS[args.variant] if args.variant and args.variant in VARIANTS else VARIENT
+if hasattr(variant_class, 'CONFIG_TXT') and variant_class.CONFIG_TXT:
+    settings['config_txt'] = variant_class.CONFIG_TXT
 
 installer.update_settings(settings)
 if not args.disable_dashboard:
