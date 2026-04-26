@@ -62,7 +62,7 @@ settings = {
     # - Install python source code from git
     'python_source': {
         'pironman5': './',
-        'pm_auto': f'git+https://github.com/sunfounder/pm_auto.git@1.2.12',
+        'pm_auto': f'git+https://github.com/sunfounder/pm_auto.git@1.4.3',
     },
 
     # - Setup config txt
@@ -147,8 +147,8 @@ dashboard_settings = {
         'lsof', # for pm_dashboard
     ],
     'python_source': {
-        'pm_dashboard': f'git+https://github.com/sunfounder/pm_dashboard.git@1.2.10',
-        'sf_rpi_status': f'git+https://github.com/sunfounder/sf_rpi_status.git@1.1.0',
+        'pm_dashboard': f'git+https://github.com/sunfounder/pm_dashboard.git@1.3.13',
+        'sf_rpi_status': f'git+https://github.com/sunfounder/sf_rpi_status.git@1.1.13',
     },
 }
 
