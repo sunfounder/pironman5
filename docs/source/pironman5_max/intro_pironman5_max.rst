@@ -22,7 +22,7 @@ Take your Raspberry Pi 5 to the next level with |link_pironman5_max|, a high-end
 **Key Features**:
 
 * **Dual NVMe & AI Expansion**: PCIe Gen 2 switch with two M.2 M-key slots (2230/2242/2260/2280) for SSDs or AI accelerators. Fully compatible with Hailo-8/8L.
-* **Extreme Cooling**: Tower cooler with PWM fan plus two RGB fans, keeping a 100% load Pi at just 39°C in a 25°C room.
+* **Extreme Cooling**: Tower cooler with CPU Fan plus two GPIO Fans, keeping a 100% load Pi at just 39°C in a 25°C room.
 * **Smart OLED Display**: Real-time CPU, memory, temperature, disk usage, IP address, and more. 
 * **Customizable RGB Lighting**: Four WS2812 addressable LEDs light up your setup with vibrant effects.
 * **Enhanced Connectivity**: Dual standard HDMI ports, IR receiver for media apps, safe retro-style power button, and labeled external GPIO extender.
@@ -70,8 +70,8 @@ Take your Raspberry Pi 5 to the next level with |link_pironman5_max|, a high-end
     * Gigabit LAN port
     * 2 x Standard HDMI Ports
 * Cooling System
-    * 1 x Tower Cooler with PWM Fan (system controlled)
-    * 2 x RGB Fans (GPIO controlled)
+    * 1 x Tower Cooler with CPU Fan (system controlled)
+    * 2 x GPIO Fans (GPIO controlled)
 * Display
     * 0.96" OLED Display (CPU, RAM, temperature, disk usage, IP address)
 * Storage & Expansion

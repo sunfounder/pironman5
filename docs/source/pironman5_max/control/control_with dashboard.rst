@@ -3,9 +3,7 @@
    :start-after: start_hello_message
    :end-before: end_hello_message
 
-
-
-.. _max_view_control_dashboard:
+.. _view_control_dashboard:
 
 View and Control from Dashboard
 =========================================
@@ -16,27 +14,24 @@ Now you can open the monitoring page in your browser to see the information abou
 
 This page has **Dashboard**, **History**, **Log**, and a **Settings** page.
 
-.. image:: img/dashboard_tab.png
-  :width: 90%
-  
-  
+.. image:: img/dashboard_home.png
+
+
 Dashboard
 -----------------------
 
 There are multiple cards to view the relevant status of the Raspberry Pi, including:
 
-* **Temperature**: View the Raspberry Pi's CPU & GPU temperature and the PWM fan speed. **GPIO Fan State** indicates the status of the two side RGB fans. At the current temperature, the two RGB fans are off.
-
-  .. image:: img/dashboard_temp.png
+* **Temperature**: View the Raspberry Pi's CPU/GPU temperature and CPU fan speed. **GPIO Fan State** shows the status of the two side GPIO Fans.
+  
+  .. image:: img/dashboard_tem.png
     :width: 90%
     
-
 * **Storage**: Displays the storage capacity of a Raspberry Pi, showing various disk partitions with their used and available space.
 
   .. image:: img/dashboard_storage.png
     :width: 90%
     
-
 * **Memory**: Shows the Raspberry Pi's RAM usage and percentage.
 
   .. image:: img/dashboard_memory.png
@@ -69,89 +64,110 @@ The History page allows you to view historical data. Check the data you want to 
 Log
 ------------
 
-The Log page is used to view the logs of the currently running Pironman5 service. The Pironman5 service includes multiple sub-services, each with its own log. Select the log you want to view, and you can see the log data on the right. If it is blank, it may mean there is no log content.
+The Log page displays the runtime log of the Pironman5 service.
 
-* Each log has a fixed size of 10MB. When it exceeds this size, a second log will be created.
-* The number of logs for the same service is limited to 10. If the number exceeds this limit, the oldest log will be automatically deleted.
-* There are filter tools above the log area on the right. You can select the log level, filter by keywords, and use several convenient tools, including **Line Wrap**, **Auto Scroll** and **Auto Update**.
-* Logs can also be downloaded locally.
+* Log entries can be filtered by level (Debug, Info, Warning, Error, or Critical).
+* The log file can also be downloaded locally.
 
-.. image:: img/dashboard_log1.png
+.. image:: img/dashboard_log.png
   :width: 90%
-  
-.. image:: img/dashboard_log2.png
-  :width: 90%
-
 
 Settings
------------------
+------------
 
-There is a settings menu in the upper right corner of the page where you can customize the settings according to your preferences. After making modifications, the changes will be saved automatically. If needed, you can click the CLEAR button at the bottom to clear the historical data.
+The Settings page allows you to customize the Dashboard display, system preferences, OLED screen, RGB lighting, and fan behavior. It also shows basic network information such as the MAC address and IP address.
 
-.. image:: img/dashboard_setting_darkmode.png
-  :width: 600
-
-* **Dark Mode**: Toggle between light and dark mode themes. The theme option is saved in the browser cache. Changing the browser or clearing the cache will revert to the default light theme.
-* **Show Unmounted Disk**: Whether to show unmounted disks in the dashboard.
-* **Show All Cores**: Whether to show all cores in the dashboard.
-* **Temperature Unit**: Set the temperature unit displayed by the system.
-
-**About OLED Screen**
-
-.. image:: img/dashboard_setting_oled.png
-  :width: 600
-
-* **OLED Enable**: Whether to enable OLED.
-* **OLED Disk**: Set OLED disk.
-* **OLED Network Interface**: 
-
-  * **all**: Toggle the display between the Ethernet IP and Wi-Fi IP in sequence.
-  * **eth0**: Display only the Ethernet IP
-  * **wlan0**: Display only the Wi-Fi IP
-
-* **OLED Rotation**: Set OLED rotation.
-* **OLED Sleep Timeout**: Set OLED sleep timeout.
-
-**About RGB LEDs**
-
-.. image:: img/RGB_LEDS.jpg
-  :width: 600
-
-* **RGB Enable**: Whether to enable RGB LEDS
-* **RGB Color**: Set the color of the RGB LEDs.
-* **RGB Brightness**: You can adjust the brightness of the RGB LEDs with a slider.
-* **RGB Style**: Choose the RGB LEDs display mode. Options include **Solid**, **Breathing**, **Flow**, **Flow_reverse**, **Rainbow**, **Rainbow Reverse**, and **Hue Cycle**.
-
-  .. note::
-
-     If you set the **RGB Style** to **Rainbow**, **Rainbow Reverse**, and **Hue Cycle**, you will not be able to set the color.
-
-* **RGB Speed**: Set the speed of the RGB LED changes.
-
-**About RGB Fans**
-
-.. image:: img/dashboard_setting_fan.png
-  :width: 600
+.. image:: img/dashboard_setting.png
+    :width: 600
 
 
-* **Fan LED**: Set the mode of the RGB fans.
+* **Interface**
 
-    * **Off**: Turn off the RGB.
-    * **On**: Turn on the RGB.
-    * **Follow**: Turn on the RGB automatically based on the fan's work state. 
+  Configure the Dashboard appearance and display behavior.
 
-* **GPIO Fan Mode**: You can set the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate.
+  .. image:: img/dashboard_setting_interface.png
+      :width: 600
 
-    * **Quiet**: The RGB fans will activate at 70°C.
-    * **Balanced**: The RGB fans will activate at 67.5°C.
-    * **Cool**: The RGB fans will activate at 60°C.
-    * **Performance**: The RGB fans will activate at 50°C.
-    * **Always On**: The RGB fans will always be on.
+  * **Dark mode**: Enable or disable the dark theme.
+  * **Show unmounted disk**: Display unmounted storage devices on the Storage card.
+  * **Show all cores**: Display all CPU cores on the Processor card.
+  * **Card layout**: Customize the Dashboard card layout.
+  * **Temperature Unit**: Switch between Celsius and Fahrenheit.
+  * **Web UI Version**: Displays the current Dashboard version.
 
-For instance, if set to **Performance** mode, the RGB fans will activate at 50°C.
 
-After saving, if the CPU temperature exceeds 50°C, you will see the side RGB fans will start spinning.
+* **OLED**
 
-**About Core Fan**
+  Configure the OLED screen display and behavior.
 
-The core fan connects to a dedicated 4-pin PWM fan port on the Raspberry Pi 5. Its default control strategy is a firmware-managed, multi-level intelligent speed adjustment scheme based on CPU temperature. This means that when you use an official or compatible PWM fan and connect it correctly, the system will automatically adjust the fan speed according to changes in CPU temperature (starting to operate above 50°C) without any manual intervention from you.
+  .. image:: img/dashboard_setting_oled.png
+      :width: 600
+
+  * **OLED Enable**: Enable or disable the OLED screen.
+  * **OLED Rotation**: Rotate the OLED display between ``0°`` and ``180°``.
+  * **OLED Sleep Timeout**: Set how long the OLED screen stays on before turning off automatically.
+  * **OLED Pages**: Configure which pages are displayed on the OLED screen and adjust their display order.
+
+    Available pages include:
+
+    * **IP Addresses**: Displays IP addresses for all physical network interfaces.
+    * **Disk Usage**: Displays disk usage information for all disks.
+    * **Performance Metrics**: Displays CPU usage, CPU temperature, RAM usage, and fan speed.
+    * **System Mix**: Displays CPU usage, CPU temperature, and IP address.
+
+
+* **RGB**
+
+  Configure the RGB LED lighting effects and behavior.
+
+  .. image:: img/dashboard_setting_rgb.png
+      :width: 600
+
+  * **RGB Enable**: Enable or disable the RGB LEDs.
+  * **RGB Color**: Set the RGB LED color.
+  * **RGB Brightness**: Adjust the RGB LED brightness.
+  * **RGB Style**: Select the RGB lighting effect, including ``None``, ``Solid``, ``Breathing``, ``Flow``, ``Flow Reverse``, ``Rainbow``, ``Rainbow Reverse``, and ``Hue Cycle``.
+  * **RGB Speed**: Adjust the animation speed of the selected RGB effect.
+  * **RGB Led**: Set the number of active RGB LEDs.
+
+
+* **GPIO Fans**
+
+  Configure the operating mode and LED behavior of the two GPIO Fans.
+
+  .. image:: img/dashboard_setting_fan.png
+      :width: 600
+
+  * **Fan LED**
+
+    Control the RGB lighting behavior of the GPIO Fans.
+
+    * **ON**: Fan LEDs always stay on.
+    * **OFF**: Fan LEDs remain off.
+    * **FOLLOW**: Fan LEDs follow the system RGB lighting effects.
+
+  * **GPIO Fan Mode**
+
+    The selected mode determines when the GPIO Fans will activate.
+
+    * **Quiet**: The GPIO Fans activate at 70°C.
+    * **Balanced**: The GPIO Fans activate at 67.5°C.
+    * **Cool**: The GPIO Fans activate at 60°C.
+    * **Performance**: The GPIO Fans activate at 50°C.
+    * **Always On**: The GPIO Fans always remain active.
+
+
+* **System**
+
+  Configure system behavior and view device information.
+
+  .. image:: img/dashboard_setting_system.png
+      :width: 600
+
+  * **Debug Level**: Set the logging level of the Pironman 5 service.
+  * **Mac Address**: Displays the MAC addresses of the Raspberry Pi network interfaces.
+  * **IP Address**: Displays the IP addresses of the Raspberry Pi network interfaces.
+  * **History Retention**: Set how many days historical data will be stored.
+  * **Clear All Data**: Clear all recorded history data.
+  * **Reboot**: Reboot the Raspberry Pi remotely from the Dashboard.
+  * **Shutdown**: Safely shut down the Raspberry Pi remotely from the Dashboard.

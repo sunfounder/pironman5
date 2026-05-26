@@ -21,7 +21,7 @@ Thanks for choosing our |link_pironman5|.
 
 **Key Features**
 
-* **Advanced Cooling**: Tower cooler with dual RGB fans for efficient temperature control.
+* **Advanced Cooling**: Tower cooler with dual GPIO Fans for efficient temperature control.
 * **High-Speed Storage & AI Support**: Supports NVMe M.2 SSDs (**2230**, **2242**, **2260**, **2280**) and is fully compatible with the **Hailo-8L AI accelerator** for powerful edge AI capabilities.
 * **Smart Display**: Built-in 0.96” OLED screen showing CPU usage, memory, temperature, and IP address in real time.
 * **Enhanced Connectivity**: Dual HDMI ports, customizable RGB LEDs, secure power switch, IR receiver, and external GPIO extender.
@@ -74,8 +74,8 @@ Thanks for choosing our |link_pironman5|.
     * 2 x 4Kp60 Standard HDMI Output
 * 1 x Metal Power Button
 * 1 x 0.96'' 128x64 OLED Screen
-* 1 x PWM Fan (40x40x10mm)
-* 2 x RGB Fans (40x40x10mm)
+* 1 x CPU Fan (40x40x10mm)
+* 2 x GPIO Fans (40x40x10mm)
 * 4 x WS2812-5050 RGB LEDs
 * 1 x 38KHz IR Receiver
 * 1 x Tower Cooler

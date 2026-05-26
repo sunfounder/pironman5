@@ -9,10 +9,10 @@
 Fans
 ============
 
-PWM Fan
+CPU Fan
 -----------------
 
-The PWM fan in the Pironman 5 is managed by the Raspberry Pi system and forms the cornerstone of its smart cooling solution, especially under heavy loads. This system combines a primary PWM fan with two supplementary RGB fans for enhanced cooling performance, closely integrated with the Raspberry Pi 5's thermal management system.  
+The CPU Fan in the Pironman 5 is managed by the Raspberry Pi system and forms the cornerstone of its smart cooling solution, especially under heavy loads. This system combines a primary CPU Fan with two supplementary GPIO Fans for enhanced cooling performance, closely integrated with the Raspberry Pi 5's thermal management system.  
 
 .. image:: img/fan_tower_cooler.png  
   :width: 600  
@@ -47,7 +47,7 @@ The PWM fan in the Pironman 5 is managed by the Raspberry Pi system and forms th
 
 **Fan Speed Control Based on Temperature**  
 
-The PWM fan operates dynamically, adjusting its speed according to the Raspberry Pi 5's temperature:  
+The CPU Fan operates dynamically, adjusting its speed according to the Raspberry Pi 5's temperature:  
 
 * **Below 50°C**: Fan remains off (0% speed).  
 * **At 50°C**: Fan operates at low speed (30% speed).  
@@ -57,7 +57,7 @@ The PWM fan operates dynamically, adjusting its speed according to the Raspberry
 
 This temperature-to-speed control includes a 5°C hysteresis to prevent frequent speed changes. For instance, the fan will reduce its speed only after the temperature drops 5°C below each threshold.  
 
-The following commands allow users to monitor the PWM fan's operation:  
+The following commands allow users to monitor the CPU Fan's operation:  
 
 To check the fan's current state:  
 
@@ -65,7 +65,7 @@ To check the fan's current state:
 
   cat /sys/class/thermal/cooling_device0/cur_state
 
-RGB Fans
+GPIO Fans
 -------------------
 
 .. image:: img/size_fan.png

@@ -50,7 +50,7 @@ If you have installed the Batocera.linux OS, you can remotely log in to this sys
    
    .. note::
     
-      The RGB fans are set to **Balanced** mode by default. For information on adjusting activation temperatures, see :ref:`cc_control_fan`.
+      The GPIO Fans are set to **Balanced** mode by default. For information on adjusting activation temperatures, see :ref:`cc_control_fan`.
 
 Now, you can connect the Pironman 5 to a screen, game controllers, headphones, and more to immerse yourself in your gaming world.
 
@@ -58,7 +58,7 @@ Now, you can connect the Pironman 5 to a screen, game controllers, headphones, a
 
    At this point, you have successfully set up the Pironman 5, and it is ready to use.
    
-   For advanced control of its components, please refer to :ref:`view_control_commands`.
+   For advanced control of its components, please refer to :ref:`view_control_commands_5`.
 
 
 

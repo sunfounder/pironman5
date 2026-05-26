@@ -25,7 +25,7 @@ Features
     * 2 x 4Kp60 HDMI Type A
 * Metal Power button
 * OLED screen: 0.96'' 128x64 resolution
-* 1 x PWM Fan, 2 x RGB Fans: 40x40x10mm
+* 1 x CPU Fan, 2 x GPIO Fans: 40x40x10mm
 * 4 x WS2812-5050 RGB LED
 * 38KHz IR Receiver
 * Tower Cooler

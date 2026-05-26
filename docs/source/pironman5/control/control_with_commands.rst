@@ -2,9 +2,7 @@
    :start-after: start_hello_message
    :end-before: end_hello_message
 
-
-
-.. _view_control_commands:
+.. _view_control_commands_5:
 
 Control with Commands
 ========================================
@@ -30,16 +28,30 @@ The standard configurations appear as follows:
 .. code-block:: 
 
   {
-      "auto": {
+      "system": {
+          "data_interval": 1,
+          "database_retention_days": 30,
+          "temperature_unit": "C",
+          "enable_history": true,
+          "oled_enable": true,
+          "oled_rotation": 0,
+          "oled_sleep_timeout": 10,
+          "oled_pages": [
+              "mix",
+              "performance",
+              "ips",
+              "disk"
+          ],
+          "rgb_enable": true,
           "rgb_color": "#0a1aff",
-          "rgb_brightness": 50,
+          "rgb_brightness": 100,
           "rgb_style": "breathing",
           "rgb_speed": 50,
-          "rgb_enable": true,
           "rgb_led_count": 4,
-          "temperature_unit": "C",
-          "gpio_fan_mode": 2,
-          "gpio_fan_pin": 6
+          "rgb_led_count_min": 4,
+          "gpio_fan_pin": 6,
+          "gpio_fan_mode": 0,
+          "debug_level": "INFO"
       }
   }
 
@@ -64,24 +76,26 @@ Use ``pironman5`` or ``pironman5 -h`` for instructions.
     -h, --help            show this help message and exit
     -v, --version         Show version
     -c, --config          Show config
-    -dl, --debug-level [{debug,info,warning,error,critical}]
+    -drd, --database-retention-days [DATABASE_RETENTION_DAYS]
+                          Database retention days
+    -dl, --debug-level [{DEBUG,INFO,WARNING,ERROR,CRITICAL,debug,info,warning,error,critical}]
                           Debug level
-    --background [BACKGROUND]
-                          Run in background
     -rd, --remove-dashboard
                           Remove dashboard
     -cp, --config-path [CONFIG_PATH]
                           Config path
+    -eh, --enable-history [ENABLE_HISTORY]
+                          Enable history, True/true/on/On/1 or False/false/off/Off/0
+    -re, --rgb-enable [RGB_ENABLE]
+                          RGB enable True/False
+    -rs, --rgb-style [RGB_STYLE]
+                          RGB style: ['solid', 'breathing', 'flow', 'flow_reverse', 'rainbow', 'rainbow_reverse', 'hue_cycle']
     -rc, --rgb-color [RGB_COLOR]
                           RGB color in hex format without # (e.g. 00aabb)
     -rb, --rgb-brightness [RGB_BRIGHTNESS]
                           RGB brightness 0-100
-    -rs, --rgb-style [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]
-                          RGB style
     -rp, --rgb-speed [RGB_SPEED]
                           RGB speed 0-100
-    -re, --rgb-enable [RGB_ENABLE]
-                          RGB enable True/False
     -rl, --rgb-led-count [RGB_LED_COUNT]
                           RGB LED count int
     -u, --temperature-unit [{C,F}]
@@ -92,164 +106,173 @@ Use ``pironman5`` or ``pironman5 -h`` for instructions.
                           GPIO fan pin
     -oe, --oled-enable [OLED_ENABLE]
                           OLED enable True/true/on/On/1 or False/false/off/Off/0
-    -od, --oled-disk [OLED_DISK]
-                          Set to display which disk on OLED. 'total' or the name of the disk, like mmbclk or nvme
-    -oi, --oled-network-interface [OLED_NETWORK_INTERFACE]
-                          Set to display which ip of network interface on OLED, 'all' or the interface name, like eth0 or wlan0
     -or, --oled-rotation [{0,180}]
                           Set to rotate OLED display, 0, 180
+    -op, --oled-pages [OLED_PAGES]
+                          OLED pages, split by ',': mix,performance,ips,disk
+    -os, --oled-sleep-timeout [OLED_SLEEP_TIMEOUT]
+                          OLED sleep timeout in seconds
 
-
+  Subcommands:
+    {start,stop,launch-browser}
+      start               Start Pironman5
+      stop                Stop Pironman5
+      launch-browser      Launch browser
 
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+   Each time you modify the status of ``pironman5.service``, you need to restart the service to make the configuration changes take effect.
 
-  .. code-block:: shell
+   .. code-block:: shell
 
-    sudo systemctl restart pironman5.service
-
+      sudo systemctl restart pironman5.service
 
 * Verify the ``pironman5`` program status using the ``systemctl`` tool.
 
   .. code-block:: shell
 
-    sudo systemctl status pironman5.service
+     sudo systemctl status pironman5.service
 
 * Alternatively, inspect the program-generated log files.
 
   .. code-block:: shell
 
-    cat /opt/pironman5/log
+     cat /var/log/pironman5/pironman5.log
 
 
 Control RGB LEDs
 ----------------------
+
 The board features 4 WS2812 RGB LEDs, offering customizable control. Users can turn them on or off, change the color, adjust the brightness, switch RGB LED display modes, and set the speed of changes.
 
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+   Each time you modify the status of ``pironman5.service``, you need to restart the service to make the configuration changes take effect.
+
+   .. code-block:: shell
+
+      sudo systemctl restart pironman5.service
+
+* To modify the on and off state of the RGB LEDs, use ``true`` to turn the RGB LEDs on, or ``false`` to turn them off.
 
   .. code-block:: shell
 
-    sudo systemctl restart pironman5.service
+     sudo pironman5 -re true
 
-* To modify the on and off state of the RGB LEDs, ``true`` to turn on the RGB LEDs, ``false`` to turn them off.
+* To change the RGB LED color, input the desired hexadecimal color value, such as ``fe1a1a``.
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  sudo pironman5 -re true
+     sudo pironman5 -rc fe1a1a
 
-* To change their color, input the desired hexadecimal color values, such as ``fe1a1a``.
+* To change the RGB LED brightness (range: ``0 ~ 100``):
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  sudo pironman5 -rc fe1a1a
+     sudo pironman5 -rb 100
 
-* To change the brightness of the RGB LED (range: 0 ~ 100%):
+* To switch RGB LED display modes, choose from:
 
-.. code-block:: shell
+  ``solid`` / ``breathing`` / ``flow`` / ``flow_reverse`` / ``rainbow`` / ``rainbow_reverse`` / ``hue_cycle``
 
-  sudo pironman5 -rb 100
+  .. note::
 
-* To switch RGB LED display modes, choose from options: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
+     If the RGB LED display mode is set to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, the color setting using ``pironman5 -rc`` will not take effect.
 
-.. note::
+  .. code-block:: shell
 
-  If you set the RGB LED display mode to ``rainbow``, ``rainbow_reverse``, or ``hue_cycle``, you will not be able to set the color using ``pironman5 -rc``.
+     sudo pironman5 -rs breathing
 
-.. code-block:: shell
+* To modify the RGB LED animation speed (range: ``0 ~ 100``):
 
-  sudo pironman5 -rs breathing
+  .. code-block:: shell
 
-* To modify the speed of change (range: 0 ~ 100%):
+     sudo pironman5 -rp 80
 
-.. code-block:: shell
+* The default setup includes 4 RGB LEDs. If you connect additional LEDs, update the LED count using:
 
-  sudo pironman5 -rp 80
+  .. code-block:: shell
 
-* The default setup includes 4 RGB LEDs. Connect additional LEDs and update the count using:
+     sudo pironman5 -rl 12
 
-.. code-block:: shell
-
-  sudo pironman5 -rl 12
 
 .. _cc_control_fan:
 
-Control RGB Fans
+Control GPIO Fans
 ---------------------
-The IO expansion board supports up to two 5V non-PWM fans. Both fans are controlled together. 
+
+The IO expansion board supports up to two 5V non-CPU Fans. Both fans are controlled together.
 
 .. note::
 
-  Each time you modify the status of ``pironman5.service``, you need to use the following command to make the configuration changes take effect.
+   Each time you modify the status of ``pironman5.service``, you need to restart the service to make the configuration changes take effect.
+
+   .. code-block:: shell
+
+      sudo systemctl restart pironman5.service
+
+* You can configure the operating mode of the two GPIO Fans using commands. These modes determine the temperature threshold at which the GPIO Fans will activate.
+
+  For example, if set to **1: Performance** mode, the GPIO Fans will activate at ``50°C``.
 
   .. code-block:: shell
 
-    sudo systemctl restart pironman5.service
+     sudo pironman5 -gm 3
 
-* You can use command to configure the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate. 
+* **4: Quiet**: The GPIO Fans will activate at ``70°C``.
+* **3: Balanced**: The GPIO Fans will activate at ``67.5°C``.
+* **2: Cool**: The GPIO Fans will activate at ``60°C``.
+* **1: Performance**: The GPIO Fans will activate at ``50°C``.
+* **0: Always On**: The GPIO Fans will always stay on.
 
-For instance, if set to **1: Performance** mode, the RGB fans will activate at 50°C.
+* If you connect the control pin of the RGB fan to a different GPIO pin on the Raspberry Pi, you can change the pin number using:
+
+  .. code-block:: shell
+
+     sudo pironman5 -gp 18
 
 
-.. code-block:: shell
+About CPU Fan
+------------------------
 
-  sudo pironman5 -gm 3
+The CPU fan connects to a dedicated 4-pin CPU Fan port on the Raspberry Pi 5.
 
-* **4: Quiet**: The RGB fans will activate at 70°C.
-* **3: Balanced**: The RGB fans will activate at 67.5°C.
-* **2: Cool**: The RGB fans will activate at 60°C.
-* **1: Performance**: The RGB fans will activate at 50°C.
-* **0: Always On**: The RGB fans will always on.
-
-* If you connect the control pin of the RGB fan to different pins on the Raspberry Pi, you can use the following command to change the pin number.
-
-.. code-block:: shell
-
-  sudo pironman5 -gp 18
-
-**About Core Fan**
-
-The core fan connects to a dedicated 4-pin PWM fan port on the Raspberry Pi 5. Its default control strategy is a firmware-managed, multi-level intelligent speed adjustment scheme based on CPU temperature. This means that when you use an official or compatible PWM fan and connect it correctly, the system will automatically adjust the fan speed according to changes in CPU temperature (starting to operate above 50°C) without any manual intervention from you.
-
+Its default control strategy is a firmware-managed, multi-level intelligent speed adjustment scheme based on CPU temperature. When you use an official or compatible CPU Fan and connect it correctly, the system will automatically adjust the fan speed according to changes in CPU temperature (starting above ``50°C``) without requiring manual intervention.
 
 
 Check the OLED Screen
 -----------------------------------
 
-When you have installed the ``pironman5`` library, the OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address, and it shows this every time you reboot.
+When the ``pironman5`` library is installed, the OLED screen displays CPU usage, RAM usage, disk usage, CPU temperature, and the Raspberry Pi IP address automatically after each reboot.
 
-If your OLED screen does not display any content, you need to first check if the OLED's FPC cable is connected properly.
+If the OLED screen does not display any content, first check whether the OLED FPC cable is connected properly.
 
-Then you can check the program log to see what might be the problem through the following command.
-
-.. code-block:: shell
-
-  cat /var/log/pironman5/
-
-Or check if the OLED's i2c address 0x3C is recognized:
+Then inspect the program log using the following command:
 
 .. code-block:: shell
 
-  i2cdetect -y 1
+   cat /var/log/pironman5/pironman5.log
+
+You can also check whether the OLED I2C address ``0x3C`` is detected:
+
+.. code-block:: shell
+
+   i2cdetect -y 1
+
 
 Checkout the Infrared Receiver
 ---------------------------------------
-
 
 * Install the ``lirc`` module:
 
   .. code-block:: shell
 
-    sudo apt-get install lirc -y
+     sudo apt-get install lirc -y
 
-* Now, test the IR Receiver by running the following command. 
+* Test the IR receiver using the following command:
 
   .. code-block:: shell
 
-    mode2 -d /dev/lirc0
+     mode2 -d /dev/lirc0
 
-* After running the command, press a button on the remote control, and the code of that button will be printed.
-
+* After running the command, press a button on the remote control. The corresponding IR code will be printed in the terminal.

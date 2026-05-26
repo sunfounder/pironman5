@@ -15,7 +15,7 @@ Making OpenClaw Operate the Pironman5 Max
 
 To enable OpenClaw to operate the Pironman5 Max, we need to install the Pironman5 Max skill.
 
-1.  Ensure you have already installed the Pironman5 Max. If not, please refer to :ref:`max_download_pironman5_module`.
+1.  Ensure you have already installed the Pironman5 Max. If not, please refer to :ref:`install_pironman5_module_max`.
 
 2.  Run the following command in the terminal:
 

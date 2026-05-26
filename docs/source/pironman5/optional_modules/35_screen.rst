@@ -20,7 +20,7 @@ providing both display and touch control for the Pironman 5.
 Please follow the steps carefully to ensure correct installation and avoid hardware damage.
 
 More details can be found here:  
-`3.5-inch touch screen Documentation <http://wiki.sunfounder.cc/index.php?title=3.5_Inch_LCD_Touch_Screen_Monitor_for_Raspberry_Pi>`_.
+`3.5-inch touch screen Documentation <https://docs.sunfounder.com/projects/35-ips-screen/en/latest/get_started/get_started.html>`_.
 
 
 **Assemble**

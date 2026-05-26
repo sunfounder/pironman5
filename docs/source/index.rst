@@ -2,17 +2,14 @@
 
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+   Welcome to the SunFounder Raspberry Pi, Arduino & ESP32 Community on Facebook!
 
-    **Why Join?**
+   * Get technical support and troubleshooting help.
+   * Learn and share projects, tips, and tutorials.
+   * Access early product previews and updates.
+   * Enjoy exclusive discounts and giveaways.
 
-    * **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    * **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    * **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    * **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    * **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+   👉 Join us here: [|link_sf_facebook|]
 
 .. end_hello_message 
 
@@ -67,7 +64,7 @@ Below is a comparison of specifications for the Pironman 5, Pironman 5 Mini and 
    "Exterior Material 2", "Transparent Acrylic", "Black Acrylic", "Black Acrylic", "Black Acrylic"
    "Cooler", "Tower Cooler", "Tower Cooler", "Tower Cooler", "Active Cooler"
    "IR Receiver", "✔", "✔", "✔", "X"
-   "RGB Fans Number", "2", "2", "2", "1"
+   "GPIO Fans Number", "2", "2", "2", "1"
    "Fan RGB Mode", "Sync with Fan", "Sync with Fan", "Independent Control", "Independent Control"
    "HDMI Ports", "2 Standard HDMI Ports", "2 Standard HDMI Ports", "2 Standard HDMI Ports", "2 Micro HDMI Ports"
    "OLED Display", "✔", "✔", "✔", "X"

@@ -95,7 +95,7 @@ Check if the FPC cable of the OLED Screen is properly connected.
 
     .. code-block:: shell
 
-        cat /var/log/pironman5/pm_auto.oled.log
+        cat /var/log/pironman5/pironman5.log
 
 #. Alternatively, use the following command to check if the OLED's i2c address 0x3C is recognized:
     
@@ -164,13 +164,13 @@ To utilize the IR receiver, verify its connection and install the necessary modu
 RGB Fan Pins
 ---------------
 
-The IO expansion board supports up to two 5V non-PWM fans. Both fans are controlled together. 
+The IO expansion board supports up to two 5V non-CPU Fans. Both fans are controlled together. 
 
 **J4** and **J5** are two sets of fan ports. You need to connect the fans here.
 
 .. image:: img/io_board_fan.png
 
-There are two sets of 2-pin connectors and two jumpers used to control the RGB fans and their LEDs. 
+There are two sets of 2-pin connectors and two jumpers used to control the GPIO Fans and their LEDs. 
 By default, the jumpers are connected to these pins, allowing control of the fans and LEDs via GPIO6 and GPIO5. 
 If fan operation is not required, these jumpers can be removed to free up GPIO5 and GPIO6.
 
@@ -188,19 +188,19 @@ but cannot be controlled via the IO port.
 
 .. .. image:: img/io_board_fan_d2.png
 
-.. You can use command to configure the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate.
+.. You can use command to configure the operating mode of the two GPIO Fans. These modes determine the conditions under which the GPIO Fans will activate.
 
-For instance, if set to **1: Performance** mode, the RGB fans will activate at 50°C.
+For instance, if set to **1: Performance** mode, the GPIO Fans will activate at 50°C.
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4: Quiet**: The RGB fans will activate at 70°C.
-* **3: Balanced**: The RGB fans will activate at 67.5°C.
-* **2: Cool**: The RGB fans will activate at 60°C.
-* **1: Performance**: The RGB fans will activate at 50°C.
-* **0: Always On**: The RGB fans will always on.
+* **4: Quiet**: The GPIO Fans will activate at 70°C.
+* **3: Balanced**: The GPIO Fans will activate at 67.5°C.
+* **2: Cool**: The GPIO Fans will activate at 60°C.
+* **1: Performance**: The GPIO Fans will activate at 50°C.
+* **0: Always On**: The GPIO Fans will always on.
 
 If you connect the control pin of the RGB fan to different pins on the Raspberry Pi, you can use the following command to change the pin number.
 

@@ -13,8 +13,6 @@ In addition to viewing data from the Pironman 5 MAX and controlling various devi
 .. note::
 
   * For the **Home Assistant** system, you can only monitor and control the Pironman 5 MAX through the dashboard by opening the webpage at ``http://<ip>:34001``.
- 
-.. * For the **Batocera.linux** system, you can only monitor and control the Pironman 5 MAX via commands. It is important to note that any changes to the configuration require a restart of the service using ``pironman5 restart`` to take effect.
 
 View the Basic Configurations
 -----------------------------------
@@ -30,16 +28,32 @@ The standard configurations appear as follows:
 .. code-block:: 
 
   {
-      "auto": {
+      "system": {
+          "data_interval": 1,
+          "database_retention_days": 30,
+          "temperature_unit": "C",
+          "enable_history": true,
+          "oled_enable": true,
+          "oled_rotation": 0,
+          "oled_sleep_timeout": 10,
+          "oled_pages": [
+              "mix",
+              "performance",
+              "ips",
+              "disk"
+          ],
+          "rgb_enable": true,
           "rgb_color": "#0a1aff",
-          "rgb_brightness": 50,
+          "rgb_brightness": 100,
           "rgb_style": "breathing",
           "rgb_speed": 50,
-          "rgb_enable": true,
           "rgb_led_count": 4,
-          "temperature_unit": "C",
-          "gpio_fan_mode": 2,
-          "gpio_fan_pin": 6
+          "rgb_led_count_min": 4,
+          "gpio_fan_pin": 6,
+          "gpio_fan_mode": 0,
+          "gpio_fan_led": "on",
+          "gpio_fan_led_pin": 5,
+          "debug_level": "INFO"
       }
   }
 
@@ -49,71 +63,63 @@ Use ``pironman5`` or ``pironman5 -h`` for instructions.
 
 .. code-block::
 
-  usage: pironman5-service [-h] [-v] [-c] [-dl {debug,info,warning,error,critical}] [--background [BACKGROUND]] [-rd]
-                          [-cp [CONFIG_PATH]] [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]]
-                          [-rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]] [-rp [RGB_SPEED]]     
-                          [-re [RGB_ENABLE]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]]    
-                          [-fl [GPIO_FAN_LED]] [-fp [GPIO_FAN_LED_PIN]] [-oe [OLED_ENABLE]] [-od [OLED_DISK]]
-                          [-oi [OLED_NETWORK_INTERFACE]] [-or [{0,180}]] [-vp [VIBRATION_SWITCH_PIN]]
-                          [-vu [VIBRATION_SWITCH_PULL_UP]] [-os [OLED_SLEEP_TIMEOUT]]
-                          [{start,restart,stop}]
+    usage: pironman5 [-h] [-v] [-c] [-drd [DATABASE_RETENTION_DAYS]] [-dl [{DEBUG,INFO,WARNING,ERROR,CRITICAL,debug,info,warning,error,critical}]] [-rd] [-cp [CONFIG_PATH]] [-eh [ENABLE_HISTORY]] [-re [RGB_ENABLE]] [-rs [RGB_STYLE]]
+                    [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]] [-rp [RGB_SPEED]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]] [-fl [GPIO_FAN_LED]] [-fp [GPIO_FAN_LED_PIN]] [-oe [OLED_ENABLE]] [-or [{0,180}]]
+                    [-op [OLED_PAGES]] [-os [OLED_SLEEP_TIMEOUT]]
+                    {start,stop,launch-browser} ...
 
-  Pironman 5 MAX command line interface
+    Pironman 5 Max command line interface
 
-  positional arguments:
-    {start,restart,stop}  Command
+    options:
+      -h, --help            show this help message and exit
+      -v, --version         Show version
+      -c, --config          Show config
+      -drd, --database-retention-days [DATABASE_RETENTION_DAYS]
+                            Database retention days
+      -dl, --debug-level [{DEBUG,INFO,WARNING,ERROR,CRITICAL,debug,info,warning,error,critical}]
+                            Debug level
+      -rd, --remove-dashboard
+                            Remove dashboard
+      -cp, --config-path [CONFIG_PATH]
+                            Config path
+      -eh, --enable-history [ENABLE_HISTORY]
+                            Enable history, True/true/on/On/1 or False/false/off/Off/0
+      -re, --rgb-enable [RGB_ENABLE]
+                            RGB enable True/False
+      -rs, --rgb-style [RGB_STYLE]
+                            RGB style: ['solid', 'breathing', 'flow', 'flow_reverse', 'rainbow', 'rainbow_reverse', 'hue_cycle']
+      -rc, --rgb-color [RGB_COLOR]
+                            RGB color in hex format without # (e.g. 00aabb)
+      -rb, --rgb-brightness [RGB_BRIGHTNESS]
+                            RGB brightness 0-100
+      -rp, --rgb-speed [RGB_SPEED]
+                            RGB speed 0-100
+      -rl, --rgb-led-count [RGB_LED_COUNT]
+                            RGB LED count int
+      -u, --temperature-unit [{C,F}]
+                            Temperature unit
+      -gm, --gpio-fan-mode [GPIO_FAN_MODE]
+                            GPIO fan mode, 0: Always On, 1: Performance, 2: Cool, 3: Balanced, 4: Quiet
+      -gp, --gpio-fan-pin [GPIO_FAN_PIN]
+                            GPIO fan pin
+      -fl, --gpio-fan-led [GPIO_FAN_LED]
+                            GPIO fan LED state on/off/follow
+      -fp, --gpio-fan-led-pin [GPIO_FAN_LED_PIN]
+                            GPIO fan LED pin
+      -oe, --oled-enable [OLED_ENABLE]
+                            OLED enable True/true/on/On/1 or False/false/off/Off/0
+      -or, --oled-rotation [{0,180}]
+                            Set to rotate OLED display, 0, 180
+      -op, --oled-pages [OLED_PAGES]
+                            OLED pages, split by ',': mix,performance,ips,disk
+      -os, --oled-sleep-timeout [OLED_SLEEP_TIMEOUT]
+                            OLED sleep timeout in seconds
 
-  options:
-    -h, --help            show this help message and exit
-    -v, --version         Show version
-    -c, --config          Show config
-    -dl {debug,info,warning,error,critical}, --debug-level {debug,info,warning,error,critical}
-                          Debug level
-    --background [BACKGROUND]
-                          Run in background
-    -rd, --remove-dashboard
-                          Remove dashboard
-    -cp [CONFIG_PATH], --config-path [CONFIG_PATH]
-                          Config path
-    -rc [RGB_COLOR], --rgb-color [RGB_COLOR]
-                          RGB color in hex format without # (e.g. 00aabb)
-    -rb [RGB_BRIGHTNESS], --rgb-brightness [RGB_BRIGHTNESS]
-                          RGB brightness 0-100
-    -rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}], --rgb-style [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]
-                          RGB style
-    -rp [RGB_SPEED], --rgb-speed [RGB_SPEED]
-                          RGB speed 0-100
-    -re [RGB_ENABLE], --rgb-enable [RGB_ENABLE]
-                          RGB enable True/False
-    -rl [RGB_LED_COUNT], --rgb-led-count [RGB_LED_COUNT]
-                          RGB LED count int
-    -u [{C,F}], --temperature-unit [{C,F}]
-                          Temperature unit
-    -gm [GPIO_FAN_MODE], --gpio-fan-mode [GPIO_FAN_MODE]
-                          GPIO fan mode, 0: Always On, 1: Performance, 2: Cool, 3: Balanced, 4: Quiet
-    -gp [GPIO_FAN_PIN], --gpio-fan-pin [GPIO_FAN_PIN]
-                          GPIO fan pin
-    -fl [GPIO_FAN_LED], --gpio-fan-led [GPIO_FAN_LED]
-                          GPIO fan LED state on/off/follow
-    -fp [GPIO_FAN_LED_PIN], --gpio-fan-led-pin [GPIO_FAN_LED_PIN]
-                          GPIO fan LED pin
-    -oe [OLED_ENABLE], --oled-enable [OLED_ENABLE]
-                          OLED enable True/true/on/On/1 or False/false/off/Off/0
-    -od [OLED_DISK], --oled-disk [OLED_DISK]
-                          Set to display which disk on OLED. 'total' or the name of the disk, like mmbclk or nvme
-    -oi [OLED_NETWORK_INTERFACE], --oled-network-interface [OLED_NETWORK_INTERFACE]
-                          Set to display which ip of network interface on OLED, 'all' or the interface name, like eth0 or      
-                          wlan0
-    -or [{0,180}], --oled-rotation [{0,180}]
-                          Set to rotate OLED display, 0, 180
-    -vp [VIBRATION_SWITCH_PIN], --vibration-switch-pin [VIBRATION_SWITCH_PIN]
-                          Vibration switch pin
-    -vu [VIBRATION_SWITCH_PULL_UP], --vibration-switch-pull-up [VIBRATION_SWITCH_PULL_UP]
-                          Vibration switch pull up True/False
-    -os [OLED_SLEEP_TIMEOUT], --oled-sleep-timeout [OLED_SLEEP_TIMEOUT]
-                          OLED sleep timeout in seconds
-
-
+    Subcommands:
+      {start,stop,launch-browser}
+        start               Start Pironman5
+        stop                Stop Pironman5
+        launch-browser      Launch browser
 
 .. note::
 
@@ -130,11 +136,11 @@ Use ``pironman5`` or ``pironman5 -h`` for instructions.
 
     sudo systemctl status pironman5.service
 
-* Alternatively, inspect the program-generated log files.
+* Alternatively, inspect the program-generated log.
 
   .. code-block:: shell
 
-    ls /var/log/pironman5/
+      cat /var/log/pironman5/pironman5.log
 
 
 Control RGB LEDs
@@ -191,9 +197,9 @@ The board features 4 WS2812 RGB LEDs, offering customizable control. Users can t
 
 .. _cc_control_fan_max:
 
-Control RGB Fans
+Control GPIO Fans
 ---------------------
-The IO expansion board supports up to two 5V non-PWM fans. Both fans are controlled together. 
+The IO expansion board supports up to two 5V non-CPU Fans. Both fans are controlled together. 
 
 .. note::
 
@@ -203,20 +209,20 @@ The IO expansion board supports up to two 5V non-PWM fans. Both fans are control
 
     sudo systemctl restart pironman5.service
 
-* You can use command to configure the operating mode of the two RGB fans. These modes determine the conditions under which the RGB fans will activate. 
+* You can use command to configure the operating mode of the two GPIO Fans. These modes determine the conditions under which the GPIO Fans will activate. 
 
-For instance, if set to **1: Performance** mode, the RGB fans will activate at 50°C.
+For instance, if set to **1: Performance** mode, the GPIO Fans will activate at 50°C.
 
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4: Quiet**: The RGB fans will activate at 70°C.
-* **3: Balanced**: The RGB fans will activate at 67.5°C.
-* **2: Cool**: The RGB fans will activate at 60°C.
-* **1: Performance**: The RGB fans will activate at 50°C.
-* **0: Always On**: The RGB fans will always on.
+* **4: Quiet**: The GPIO Fans will activate at 70°C.
+* **3: Balanced**: The GPIO Fans will activate at 67.5°C.
+* **2: Cool**: The GPIO Fans will activate at 60°C.
+* **1: Performance**: The GPIO Fans will activate at 50°C.
+* **0: Always On**: The GPIO Fans will always on.
 
 * If you connect the control pin of the RGB fan to different pins on the Raspberry Pi, you can use the following command to change the pin number.
 
@@ -227,7 +233,7 @@ For instance, if set to **1: Performance** mode, the RGB fans will activate at 5
 
 **About Core Fan**
 
-The core fan connects to a dedicated 4-pin PWM fan port on the Raspberry Pi 5. Its default control strategy is a firmware-managed, multi-level intelligent speed adjustment scheme based on CPU temperature. This means that when you use an official or compatible PWM fan and connect it correctly, the system will automatically adjust the fan speed according to changes in CPU temperature (starting to operate above 50°C) without any manual intervention from you.
+The core fan connects to a dedicated 4-pin CPU Fan port on the Raspberry Pi 5. Its default control strategy is a firmware-managed, multi-level intelligent speed adjustment scheme based on CPU temperature. This means that when you use an official or compatible CPU Fan and connect it correctly, the system will automatically adjust the fan speed according to changes in CPU temperature (starting to operate above 50°C) without any manual intervention from you.
 
 
 Check the OLED Screen
@@ -241,7 +247,7 @@ Then you can check the program log to see what might be the problem through the 
 
 .. code-block:: shell
 
-  cat /var/log/pironman5/pm_auto.oled.log
+  cat /var/log/pironman5/pironman5.log
 
 Or check if the OLED's i2c address 0x3C is recognized:
 
@@ -251,8 +257,6 @@ Or check if the OLED's i2c address 0x3C is recognized:
 
 Checkout the Infrared Receiver
 ---------------------------------------
-
-
 
 * Install the ``lirc`` module:
 
