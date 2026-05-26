@@ -136,7 +136,7 @@ Faire en sorte qu'OpenClaw pilote le Pironman5
 
 Pour permettre à OpenClaw de piloter le Pironman5, nous devons installer le skill Pironman5.
 
-1.  Assurez-vous d'avoir déjà installé le Pironman5. Si ce n'est pas le cas, veuillez vous référer à :ref:`standard_download_pironman5_module`.
+1.  Assurez-vous d'avoir déjà installé le Pironman5. Si ce n'est pas le cas, veuillez vous référer à :ref:`install_pironman5_module_5`.
 
 2.  Exécutez la commande suivante dans le terminal :
 

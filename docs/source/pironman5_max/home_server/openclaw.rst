@@ -16,7 +16,7 @@ Faire en sorte qu'OpenClaw pilote le Pironman5 MAX
 
 Pour permettre à OpenClaw de piloter le Pironman5 MAX, nous devons installer le skill Pironman5 MAX.
 
-1.  Assurez-vous d'avoir déjà installé le Pironman5 MAX. Si ce n'est pas le cas, veuillez vous référer à :ref:`max_download_pironman5_module`.
+1.  Assurez-vous d'avoir déjà installé le Pironman5 MAX. Si ce n'est pas le cas, veuillez vous référer à :ref:`install_pironman5_module_max`.
 
 2.  Exécutez la commande suivante dans le terminal :
 

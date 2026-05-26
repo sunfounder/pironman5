@@ -1,56 +1,70 @@
-.. note::
-
-    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
-
-    **Pourquoi nous rejoindre ?**
-
-    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
-    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-goûts.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
-    - **Promotions festives et cadeaux** : Participez à des tirages au sort et à des promotions spéciales pour les fêtes.
-
-    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
 FAQ
-=====
+============
 
-1. À propos des systèmes compatibles
----------------------------------------
 
-Systèmes validés pour Raspberry Pi 5 :
+Dépannage rapide
+-------------------------------
+
+* L'écran OLED ne fonctionne pas → :ref:`faq_oled_5`
+* Les LED RGB ne fonctionnent pas → :ref:`faq_rgb_5`
+* Les ventilateurs GPIO ne fonctionnent pas → :ref:`faq_gpio_fans_5`
+* Le ventilateur CPU ne tourne pas → :ref:`faq_pwm_fan_5`
+* Le tableau de bord n'affiche aucune donnée → :ref:`faq_dashboard_5`
+* Le SSD NVMe n'est pas détecté → :ref:`faq_nvme_5`
+
+
+
+1. Matériel
+-------------------------------
+
+
+.. _compatible_systems_5:
+
+Systèmes compatibles
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_com_os
+
+Systèmes validés pour le Raspberry Pi 5 :
 
 .. image:: img/compitable_os.png
    :width: 600
    :align: center
 
-2. À propos du bouton d'alimentation
---------------------------------------
+.. end_faq_com_os
 
-Le bouton d'alimentation agit comme celui du Raspberry Pi 5 et offre les mêmes fonctions.
+Bouton d'alimentation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. |link_safe_shutdown| replace:: :ref:`safe_shutdown_5`
+
+.. start_faq_power_button
+
+Le bouton d'alimentation étend le bouton d'alimentation d'origine du Raspberry Pi 5 et se comporte de manière similaire.
+
+* Appui bref : Allumer / réveiller l'OLED / changer de page OLED.
+* Maintenir 2 secondes : Arrêt sécurisé (nécessite |link_safe_shutdown|).
+* Maintenir 5 secondes : Arrêt forcé.
 
 .. image:: img/power_button.jpg
     :width: 400
     :align: center
 
-* **Arrêt**
+.. end_faq_power_button
 
-  * Si vous utilisez le système **Raspberry Pi OS Desktop**, vous pouvez appuyer deux fois rapidement sur le bouton d’alimentation pour éteindre.
-  * Si vous utilisez le système **Raspberry Pi OS Lite** sans interface graphique, appuyez une seule fois sur le bouton d’alimentation pour lancer l’arrêt.
-  * Pour forcer un arrêt brutal, maintenez le bouton d’alimentation enfoncé.
 
-* **Mise sous tension**
+Direction du flux d'air
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  * Si la carte Raspberry Pi est éteinte mais toujours alimentée, appuyez une fois pour la rallumer.
+.. start_faq_airflow_direction
 
-* Si vous utilisez un système qui ne prend pas en charge un bouton d'arrêt, maintenez le bouton enfoncé pendant 5 secondes pour forcer un arrêt brutal, puis appuyez une fois pour rallumer.
+Le flux d'air à l'intérieur du Pironman 5 est conçu pour maximiser l'efficacité du refroidissement. L'air frais entre par l'ouverture GPIO et d'autres évents, traverse le refroidisseur tour et est évacué par les deux ventilateurs GPIO latéraux.
 
-3. À propos de la direction du flux d'air
---------------------------------------------
-
-Le flux d'air dans le châssis Pironman 5 est conçu pour maximiser l'efficacité du refroidissement. L'air frais entre principalement par l'interface GPIO et d'autres petites ouvertures. Il passe ensuite par le Tool Cooler, équipé d'un ventilateur haute performance pour réguler la température interne, et est finalement expulsé par les deux ventilateurs RGB situés sur les panneaux latéraux.
-
-Pour une démonstration détaillée, veuillez consulter la vidéo :
+Pour une démonstration détaillée, consultez la vidéo suivante :
 
 .. raw:: html
 
@@ -61,100 +75,148 @@ Pour une démonstration détaillée, veuillez consulter la vidéo :
         </video>
     </div>
 
-
-4. À propos du refroidisseur tour
-----------------------------------------------------------
-
-#. Les caloducs en forme de U situés en haut du refroidisseur tour sont comprimés pour faciliter le passage des tubes en cuivre à travers les ailettes en aluminium. Il s'agit d'une étape normale du processus de fabrication des tubes en cuivre.
-
-   .. image::  img/tower_cooler1.png
-
-#. Précautions à prendre lors de l’installation d’un refroidisseur tour :
-
-**Fixation des tampons** : Avant d’installer le refroidisseur tour, assurez-vous de fixer des tampons sur le Raspberry Pi afin d’éviter tout dommage ou rayure.
-
- .. image::  img/tower_cooler_thermal.png
-
-**Orientation correcte** : Faites attention au sens de placement du refroidisseur tour. Alignez-le avec les trous de positionnement du Raspberry Pi avant d’appuyer sur les vis à ressort pour le fixer.
-
- .. image::  img/tower_cooler_place.jpg
-
-**Retrait précautionneux** : Si le refroidisseur tour a été installé dans le mauvais sens ou si les tampons n’ont pas été appliqués, ne forcez pas son retrait.
-
-- Pour retirer le refroidisseur tour en toute sécurité, suivez ces étapes :
-
-  Utilisez une pince fine ou une pince à épiler pour saisir l’extrémité de l’écrou à ressort et poussez-le doucement vers le haut pour le détacher.
-
-     .. raw:: html
-
-       <div style="text-align: center;">
-           <video center loop autoplay muted style="max-width:90%">
-               <source src="../_static/video/remove_tower_cooler.mp4" type="video/mp4">
-               Your browser does not support the video tag.
-           </video>
-       </div>
+.. end_faq_airflow_direction
 
 
-5. À propos du Raspberry Pi AI HAT+
----------------------------------------
+Extrémités des caloducs en cuivre du refroidisseur tour
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_copper_pipe_ends
+
+Les extrémités aplaties des caloducs en cuivre en forme de U font partie du processus de fabrication normal et sont conçues pour permettre aux caloducs de traverser les ailettes en aluminium.
+
+.. image:: img/tower_cooler1.png
+
+.. end_faq_copper_pipe_ends
+
+
+Raspberry Pi AI HAT+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_ai_hat
 
 Le Raspberry Pi AI HAT+ n'est pas compatible avec le Pironman 5.
 
-   .. image:: img/output3.png
-        :width: 400
+.. image:: img/output3.png
+    :width: 400
 
-Le kit Raspberry Pi AI combine le Raspberry Pi M.2 HAT+ et le module accélérateur AI Hailo.
+Le kit Raspberry Pi AI combine le Raspberry Pi M.2 HAT+ et le module accélérateur IA Hailo.
 
-   .. image:: img/output2.jpg
-        :width: 400
+.. image:: img/output2.jpg
+    :width: 400
 
-Vous pouvez détacher le module accélérateur AI Hailo du kit Raspberry Pi AI et l'insérer directement dans le module NVMe PIP du Pironman 5.
+Vous pouvez détacher le module accélérateur IA Hailo du kit Raspberry Pi AI et l'insérer directement dans le module NVMe PIP du Pironman 5.
 
-   .. image:: img/output4.png
-        :width: 800
+.. image:: img/output4.png
+    :width: 800
 
-6. Le PI5 ne démarre pas (LED rouge) ?  
--------------------------------------------
+.. end_faq_ai_hat
 
-Ce problème peut être causé par une mise à jour du système, des modifications de l’ordre de démarrage ou un chargeur de démarrage corrompu. Vous pouvez essayer les étapes suivantes pour résoudre le problème :
 
-#. Vérifier la connexion de l’adaptateur USB-HDMI
 
-   * Veuillez vérifier soigneusement si l’adaptateur USB-HDMI est correctement connecté au PI5.  
-   * Essayez de débrancher puis de rebrancher l’adaptateur USB-HDMI.  
-   * Reconnectez ensuite l’alimentation et vérifiez si le PI5 démarre correctement.
+2. Refroidissement et ventilateurs
+------------------------------------------------
 
-#. Tester le PI5 en dehors du boîtier
 
-   * Si le fait de reconnecter l’adaptateur ne résout pas le problème :  
-   * Retirez le PI5 du boîtier Pironman 5.  
-   * Alimentez directement le PI5 avec l’adaptateur secteur (sans le boîtier).  
-   * Vérifiez s’il peut démarrer normalement.
+.. _faq_pwm_fan_5:
 
-#. Restaurer le chargeur de démarrage
+Le ventilateur CPU ne tourne pas ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   * Si le PI5 ne démarre toujours pas, il se peut que le chargeur de démarrage soit corrompu. Vous pouvez suivre ce guide : :ref:`update_bootloader_5` et choisir de démarrer depuis la carte SD ou NVMe/USB.  
-   * Insérez la carte SD préparée dans le PI5, mettez-le sous tension et attendez au moins 10 secondes. Une fois la récupération terminée, retirez et reformatez la carte SD.  
-   * Ensuite, utilisez Raspberry Pi Imager pour flasher la dernière version de Raspberry Pi OS, réinsérez la carte et essayez de démarrer à nouveau.
+.. start_faq_pwm_fan
 
-.. 6. Le Pironman 5 est-il compatible avec les systèmes de rétro-gaming ?
-.. -------------------------------------------------------------------------
+Le ventilateur CPU du Pironman 5 est contrôlé par le système Raspberry Pi. La vitesse du ventilateur CPU dépend de la température du CPU du Raspberry Pi 5.
 
-.. Oui, il est compatible. Cependant, la plupart des systèmes de rétro-gaming sont des versions simplifiées qui ne peuvent pas installer et exécuter de logiciels supplémentaires. Cette limitation peut empêcher certains composants du Pironman 5, comme l'écran OLED, les deux ventilateurs RGB et les 4 LEDs RGB, de fonctionner correctement, car ils nécessitent l'installation des paquets logiciels de Pironman 5.
+Courbe par défaut du ventilateur CPU :
 
-.. .. note::
+* < 50°C : Arrêt (0 %)
+* 50°C+ : Vitesse basse (30 %)
+* 60°C+ : Vitesse moyenne (50 %)
+* 67,5°C+ : Vitesse élevée (70 %)
+* 75°C+ : Pleine vitesse (100 %)
 
-..    Le système Batocera.linux est désormais entièrement compatible avec le Pironman 5. Batocera.linux est une distribution open-source et entièrement gratuite dédiée au rétro-gaming.
+Vérifiez la température actuelle du CPU (exemple de sortie : ``temp=48.7'C``) :
 
-..    * :ref:`install_batocera`
-..    * :ref:`set_up_batocera`
+.. code-block:: shell
 
-7. Écran OLED ne fonctionne pas ?
-------------------------------------
+   vcgencmd measure_temp
 
-Si l'écran OLED ne s'affiche pas ou affiche incorrectement, suivez ces étapes de dépannage :
+Vous pouvez contrôler manuellement le ventilateur CPU avec les commandes suivantes :
 
-#. Vérifiez que le câble FPC de l'écran OLED est correctement connecté. Il est recommandé de reconnecter l'écran OLED, puis d'allumer l'appareil.
+.. code-block:: shell
+
+   pinctrl FAN_PWM op dl   # Activer le ventilateur (actif bas)
+   pinctrl FAN_PWM op dh   # Désactiver le ventilateur (actif haut)
+   pinctrl FAN_PWM a0      # Mode automatique
+
+Vous pouvez également ajuster les seuils de température du ventilateur CPU en modifiant :
+
+.. code-block:: shell
+
+   nano /boot/firmware/config.txt
+
+Ajoutez :
+
+.. code-block:: text
+
+   dtparam=cooling_fan=on
+   dtparam=fan_temp0=40000
+   dtparam=fan_temp0_hyst=10000
+   dtparam=fan_temp0_speed=125
+
+Cette configuration démarre le ventilateur CPU à 40°C avec un niveau de vitesse PWM de 125.
+
+Après avoir enregistré le fichier, redémarrez le Raspberry Pi pour appliquer les modifications.
+
+.. end_faq_pwm_fan
+
+
+.. _faq_gpio_fans_5:
+
+Les ventilateurs GPIO ne tournent pas ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_gpio_fans
+
+Tout d'abord, vérifiez si le cavalier FAN sur la carte IO Expander est correctement installé.
+
+.. image:: hardware/img/io_board_fan_j9.png
+
+Ensuite, réglez les ventilateurs GPIO en mode ``Toujours activé`` et vérifiez s'ils commencent à tourner.
+
+.. code-block:: shell
+
+   sudo pironman5 -gm 0
+
+Vous pouvez également connecter les ventilateurs GPIO directement aux broches ``5V`` et ``GND`` du Raspberry Pi pour les tester.
+
+Si les ventilateurs tournent normalement lorsqu'ils sont connectés directement, le problème peut provenir de la carte IO Expander. Veuillez nous contacter pour une assistance supplémentaire.
+
+Si le problème persiste, ouvrez la page **Log** du tableau de bord et vérifiez les messages d'erreur. Vous pouvez également nous envoyer le fichier journal suivant :
+
+.. code-block:: shell
+
+   cat /var/log/pironman5/pironman5.log
+
+.. end_faq_gpio_fans
+
+3. OLED et RGB
+-------------------------------
+
+
+.. _faq_oled_5:
+
+L'écran OLED ne fonctionne pas ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. |link_set_up_pironman5| replace:: :ref:`set_up_pironman5_5`
+.. |link_compatible_systems| replace:: :ref:`compatible_systems_5`
+
+.. start_faq_oled
+
+Si l'écran OLED ne s'affiche pas ou s'affiche incorrectement, suivez ces étapes de dépannage :
+
+#. Assurez-vous que le câble FPC de l'écran OLED est bien connecté. Il est recommandé de reconnecter l'écran OLED, puis de mettre l'appareil sous tension.
 
    .. raw:: html
 
@@ -165,15 +227,11 @@ Si l'écran OLED ne s'affiche pas ou affiche incorrectement, suivez ces étapes 
            </video>
        </div>
 
-#. Confirmez que le Raspberry Pi utilise un système d'exploitation compatible. Le Pironman 5 ne prend en charge que les systèmes suivants :
+#. Vérifiez que le Raspberry Pi exécute un système d'exploitation compatible.
 
-   .. image:: img/compitable_os.png  
-      :width: 600  
-      :align: center  
+   Voir |link_compatible_systems|.
 
-   Si vous avez installé un système non compatible, suivez le guide pour installer un système compatible : :ref:`install_the_os_5`.
-
-#. Lors de la première activation de l'écran OLED, il peut afficher uniquement des blocs de pixels. Suivez les instructions dans :ref:`set_up_pironman5` pour compléter la configuration et permettre un affichage correct.
+#. Lors de la première mise sous tension, l'écran OLED peut n'afficher que des blocs de pixels. Vous devez suivre les instructions de |link_set_up_pironman5| pour terminer la configuration avant qu'il puisse afficher des informations correctes.
 
 #. Utilisez la commande suivante pour vérifier si l'adresse I2C ``0x3C`` de l'OLED est détectée :
 
@@ -181,34 +239,328 @@ Si l'écran OLED ne s'affiche pas ou affiche incorrectement, suivez ces étapes 
 
       sudo i2cdetect -y 1
 
-   * Si l'adresse I2C ``0x3C`` est détectée, redémarrez le service Pironman 5 avec cette commande :
+   * Si l'adresse I2C ``0x3C`` est détectée, redémarrez le service Pironman 5 :
 
      .. code-block:: shell
 
         sudo systemctl restart pironman5.service
 
-   * Si l'adresse n'est pas détectée, activez l'I2C :
+   * Si l'adresse n'est pas détectée, activez I2C :
 
-     * Modifiez le fichier de configuration avec cette commande :
+     .. code-block:: shell
 
-       .. code-block:: shell
+        sudo nano /boot/firmware/config.txt
 
-         sudo nano /boot/firmware/config.txt
+     Ajoutez :
 
-     * Ajoutez la ligne suivante à la fin du fichier :
+     .. code-block:: shell
 
-       .. code-block:: shell
+        dtparam=i2c_arm=on
 
-         dtparam=i2c_arm=on
+     Enregistrez le fichier et redémarrez le Raspberry Pi.
 
-     * Enregistrez le fichier en appuyant sur ``Ctrl+X``, puis ``Y``, et quittez. Redémarrez le Pironman 5 et vérifiez si le problème est résolu.
+#. Si le problème persiste, veuillez nous envoyer le fichier journal suivant :
 
-Si le problème persiste après avoir effectué ces étapes, veuillez envoyer un e-mail à service@sunfounder.com. Nous vous répondrons dans les plus brefs délais.
+   .. code-block:: shell
 
-8. Module NVMe PIP ne fonctionne pas ?
---------------------------------------------
+      cat /var/log/pironman5/pironman5.log
 
-1. Assurez-vous que le câble FPC reliant le module NVMe PIP au Raspberry Pi 5 est bien connecté.  
+.. end_faq_oled
+
+
+.. _faq_rgb_5:
+
+Les LED RGB ne fonctionnent pas ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. start_faq_rgb
+
+#. Les deux broches sur l'IO Expander au-dessus de J9 sont utilisées pour connecter les LED RGB à GPIO10. Vérifiez que le cavalier sur ces deux broches est correctement installé.
+
+   .. image:: hardware/img/io_board_rgb_pin.png
+      :width: 300
+      :align: center
+
+#. Vérifiez que le Raspberry Pi exécute un système d'exploitation compatible.
+
+   Voir |link_compatible_systems|.
+
+#. Exécutez la commande suivante pour activer SPI :
+
+   .. code-block:: shell
+
+      sudo raspi-config
+
+   Naviguez vers :
+
+   ``3 Options d'interface`` → ``I3 SPI`` → ``OUI``
+
+   Puis redémarrez le Raspberry Pi.
+
+#. Si le problème persiste, veuillez nous envoyer le fichier journal suivant :
+
+   .. code-block:: shell
+
+      cat /var/log/pironman5/pironman5.log
+
+.. end_faq_rgb
+
+.. _faq_customize_oled_5:
+
+Comment personnaliser l'affichage OLED ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_customize_oled
+
+Si vous souhaitez personnaliser l'affichage OLED, par exemple en ajoutant des affichages d'images personnalisés de 2 à 4 chiffres, vous pouvez modifier les fichiers de page OLED de l'une des manières suivantes.
+
+* **Méthode 1 : Modifier directement les fichiers installés**
+
+  #. Listez les fichiers de page OLED :
+
+     .. code-block:: shell
+
+        ls /opt/pironman5/venv/lib/python3.13/site-packages/pm_auto/addons/oled/pages/
+
+  #. Modifiez les fichiers Python souhaités.
+
+  #. Redémarrez le service pour appliquer les modifications :
+
+     .. code-block:: shell
+
+        sudo systemctl restart pironman5.service
+
+
+* **Méthode 2 : Cloner et réinstaller ``pm_auto``**
+
+  #. Clonez le dépôt ``pm_auto`` :
+
+     .. code-block:: shell
+
+        git clone -b 1.4.x https://github.com/sunfounder/pm_auto/
+
+  #. Après avoir apporté des modifications, réinstallez le paquet modifié :
+
+     .. code-block:: shell
+
+        sudo /opt/pironman5/venv/bin/pip3 uninstall pm_auto -y && \
+        sudo /opt/pironman5/venv/bin/pip3 install ~/pm_auto --no-build-isolation && \
+        sudo chown -R pironman5:pironman5 /opt/pironman5
+
+  #. Redémarrez le service :
+
+     .. code-block:: shell
+
+        sudo systemctl restart pironman5.service
+
+* **Test et débogage**
+
+  Pour afficher les journaux d'exécution :
+
+  .. code-block:: shell
+
+     journalctl -xefu pironman5.service
+
+  Vous pouvez également arrêter le service et l'exécuter manuellement pour des tests plus rapides :
+
+  .. code-block:: shell
+
+     sudo systemctl stop pironman5.service
+     sudo systemctl restart pironman5.service
+
+.. end_faq_customize_oled
+
+4. Tableau de bord et logiciel
+-------------------------------
+
+
+.. _faq_dashboard_5:
+
+Le tableau de bord n'affiche aucune donnée
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_dashboard
+
+Si le tableau de bord n'affiche aucune donnée, ouvrez d'abord la page **Log** du tableau de bord et vérifiez s'il y a des messages d'erreur liés à ``influxdb``.
+
+Les erreurs courantes incluent :
+
+* ``database not found``
+* ``failed to connect to influxdb``
+* ``connection refused``
+* ``timeout``
+
+Vous pouvez essayer les étapes suivantes pour résoudre le problème.
+
+#. Videz le cache de votre navigateur ou rouvrez la page du tableau de bord en mode **Navigation privée**.
+
+#. Vérifiez si les services suivants fonctionnent correctement :
+
+   .. code-block:: shell
+
+      sudo systemctl status pironman5 --no-pager
+      sudo systemctl status influxdb --no-pager
+
+   Les deux services doivent afficher :
+
+   .. code-block:: text
+
+      active (running)
+
+#. Si l'un des services ne fonctionne pas correctement, redémarrez-les :
+
+   .. code-block:: shell
+
+      sudo systemctl restart influxdb
+      sudo systemctl restart pironman5
+
+   Attendez ensuite environ 30 secondes et actualisez la page du tableau de bord.
+
+#. Vérifiez si la base de données ``pironman5`` existe :
+
+   .. code-block:: shell
+
+      influx
+
+   Puis exécutez :
+
+   .. code-block:: text
+
+      SHOW DATABASES;
+
+   Vous devriez voir :
+
+   .. code-block:: text
+
+      pironman5
+      _internal
+
+#. Si la base de données est manquante ou corrompue, essayez d'effacer les données historiques du tableau de bord via :
+
+   ``Paramètres → Effacer toutes les données``
+
+#. Si le problème persiste après avoir essayé toutes les étapes ci-dessus, nous vous recommandons de réinstaller le Raspberry Pi OS et le logiciel Pironman 5.
+
+.. end_faq_dashboard
+
+
+Comment désactiver le tableau de bord web
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. |link_view_control_dashboard| replace:: :ref:`view_control_dashboard_5`
+
+.. start_faq_disable_dashboard
+
+Une fois l'installation du module ``pironman5`` terminée, vous pourrez accéder au |link_view_control_dashboard|.
+
+Si vous n'avez pas besoin de cette fonctionnalité et souhaitez réduire l'utilisation du CPU et de la RAM, vous pouvez désactiver le tableau de bord lors de l'installation en ajoutant l'option ``--disable-dashboard``.
+
+.. code-block:: shell
+
+   cd ~/pironman5
+   sudo python3 install.py --disable-dashboard
+
+Si vous avez déjà installé ``pironman5``, vous pouvez supprimer le module Dashboard et ``influxdb`` :
+
+.. code-block:: shell
+
+   /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
+   sudo apt purge influxdb
+   sudo systemctl restart pironman5
+
+.. end_faq_disable_dashboard
+
+
+Comment désinstaller et réinstaller le logiciel Pironman 5
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_reinstall_pironman5
+
+#. Désinstallez le logiciel ``pironman5`` actuel :
+
+   .. code-block:: shell
+
+      cd ~/pironman5
+      sudo python3 install.py --uninstall
+
+#. Redémarrez le Raspberry Pi comme demandé, puis supprimez le répertoire ``pironman5`` :
+
+   .. code-block:: shell
+
+      cd ~/
+      sudo rm -rf pironman5
+
+#. Exécutez la commande suivante pour réinstaller le logiciel pour votre modèle Pironman 5 :
+
+   .. code-block:: shell
+
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
+
+.. end_faq_reinstall_pironman5
+
+
+Comment contrôler les composants avec la commande ``pironman5``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. |link_view_control_commands| replace:: :ref:`view_control_commands_5`
+
+.. start_faq_pironman5_command
+
+Vous pouvez vous référer au tutoriel suivant pour contrôler les composants de la série Pironman 5 à l'aide de la commande ``pironman5``.
+
+* |link_view_control_commands|
+
+.. end_faq_pironman5_command
+
+
+
+5. Démarrage et stockage
+-------------------------------
+
+
+Le PI5 ne démarre pas (LED rouge) ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. |link_update_bootloader| replace:: :ref:`update_bootloader_5`
+
+.. start_faq_pi5_boot_fail
+
+Ce problème peut être causé par une mise à jour système, des modifications de l'ordre de démarrage ou un bootloader corrompu. Vous pouvez essayer les étapes suivantes pour résoudre le problème :
+
+#. Vérifiez la connexion de l'adaptateur USB-HDMI
+
+   * Vérifiez soigneusement si l'adaptateur USB-HDMI est bien connecté au PI5.
+   * Essayez de débrancher et de rebrancher l'adaptateur USB-HDMI.
+   * Reconnectez ensuite l'alimentation et vérifiez si le PI5 démarre correctement.
+
+#. Testez le PI5 hors du boîtier
+
+   * Si reconnecter l'adaptateur ne résout pas le problème :
+   * Retirez le PI5 du boîtier de la série Pironman 5.
+   * Alimentez le PI5 directement avec l'adaptateur secteur (sans le boîtier).
+   * Vérifiez s'il peut démarrer normalement.
+
+#. Restaurez le bootloader
+
+   * Si le PI5 ne démarre toujours pas, le bootloader est peut-être corrompu. Suivez ce guide : |link_update_bootloader| et choisissez de démarrer depuis la carte SD ou NVMe/USB.
+   * Insérez la carte SD préparée dans le PI5, mettez-le sous tension et attendez au moins 10 secondes. Une fois la récupération terminée, retirez et reformatez la carte SD.
+   * Utilisez ensuite Raspberry Pi Imager pour flasher le dernier Raspberry Pi OS et essayez de démarrer à nouveau.
+
+.. end_faq_pi5_boot_fail
+
+
+.. _faq_nvme_5:
+
+Le module NVMe PIP ne fonctionne pas ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. |link_install_the_os| replace:: :ref:`install_the_os_5`
+.. |link_configure_boot_ssd| replace:: :ref:`configure_boot_ssd_5`
+
+.. start_faq_nvme_pip
+
+#. Assurez-vous que le câble FPC reliant le module NVMe PIP au Raspberry Pi 5 est bien fixé.
 
    .. raw:: html
 
@@ -228,7 +580,7 @@ Si le problème persiste après avoir effectué ces étapes, veuillez envoyer un
            </video>
        </div>
 
-2. Vérifiez que votre SSD est correctement fixé au module NVMe PIP.  
+#. Vérifiez que votre SSD est correctement fixé au module NVMe PIP.
 
    .. raw:: html
 
@@ -239,187 +591,89 @@ Si le problème persiste après avoir effectué ces étapes, veuillez envoyer un
            </video>
        </div>
 
-3. Vérifiez l'état des voyants LED du module NVMe PIP :
+#. Vérifiez l'état des LED du module NVMe PIP :
 
-   Une fois toutes les connexions vérifiées, allumez le Pironman 5 et observez les deux indicateurs sur le module NVMe PIP :  
+   * **LED PWR** : Doit être allumée.
+   * **LED STA** : Doit clignoter pendant le fonctionnement normal.
 
-   * **PWR LED** : Doit être allumé.  
-   * **STA LED** : Doit clignoter pour indiquer un fonctionnement normal.  
+   .. image:: img/nvme_pip_leds.png
 
-   .. image:: img/nvme_pip_leds.png  
+   * Si la **LED PWR** est allumée mais que la **LED STA** ne clignote pas, le SSD NVMe n'est pas reconnu.
+   * Si la **LED PWR** est éteinte, court-circuitez les broches ``Force Enable`` (J4).
 
-   * Si le **PWR LED** est allumé mais que le **STA LED** ne clignote pas, cela signifie que le NVMe SSD n'est pas reconnu par le Raspberry Pi.  
-   * Si le **PWR LED** est éteint, reliez les broches "Force Enable" (J4) sur le module. Si le **PWR LED** s'allume, cela peut indiquer un câble FPC mal connecté ou une configuration système non prise en charge pour le NVMe.
+     .. image:: img/nvme_pip_j4.png
 
-     .. image:: img/nvme_pip_j4.png  
+#. Vérifiez que votre SSD NVMe contient un système d'exploitation valide.
 
-4. Vérifiez que votre NVMe SSD dispose d'un système d'exploitation correctement installé. Consultez : :ref:`install_the_os_5`.
+   Voir |link_install_the_os|.
 
-5. Si le câblage est correct et que le système d'exploitation est installé, mais que le NVMe SSD ne démarre toujours pas, essayez de démarrer à partir d'une carte Micro SD pour vérifier la fonctionnalité des autres composants. Une fois confirmé, procédez à : :ref:`configure_boot_ssd_5`.
+#. Si le SSD ne démarre toujours pas, essayez de démarrer d'abord depuis une carte Micro SD, puis configurez le démarrage NVMe :
 
-Si le problème persiste après avoir suivi ces étapes, veuillez envoyer un e-mail à service@sunfounder.com. Nous vous répondrons dans les plus brefs délais.
+   * |link_configure_boot_ssd|
 
-9. Les LEDs RGB ne fonctionnent pas ?
-----------------------------------------
+#. Si le problème persiste, veuillez nous envoyer le fichier journal suivant :
 
-#. Les deux broches sur l'IO Expander au-dessus de J9 sont utilisées pour connecter les LEDs RGB à GPIO10. Assurez-vous que le cavalier sur ces deux broches est correctement en place.
+   .. code-block:: shell
 
-   .. image:: img/io_board_rgb_pin.png
-      :width: 300
-      :align: center
+      cat /var/log/pironman5/pironman5.log
 
-#. Vérifiez que le Raspberry Pi utilise un système d'exploitation compatible. Le Pironman 5 prend uniquement en charge les versions suivantes :
+.. end_faq_nvme_pip
 
-   .. image:: img/compitable_os.png
-      :width: 600
-      :align: center
 
-   Si vous avez installé un système non compatible, suivez le guide pour installer un système compatible : :ref:`install_the_os_5`.
+Comment modifier l'ordre de démarrage du Raspberry Pi avec des commandes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Exécutez la commande ``sudo raspi-config`` pour ouvrir le menu de configuration. Allez dans **3 Interfacing Options** -> **I3 SPI** -> **YES**, puis cliquez sur **OK** et **Finish** pour activer SPI. Après avoir activé SPI, redémarrez le Pironman 5.
+.. start_faq_boot_order_command
 
-Si le problème persiste après avoir suivi ces étapes, veuillez envoyer un e-mail à service@sunfounder.com. Nous vous répondrons dans les plus brefs délais.
+Si vous êtes déjà connecté à votre Raspberry Pi, vous pouvez modifier l'ordre de démarrage à l'aide de commandes.
 
-10. Le ventilateur CPU ne fonctionne pas ?
----------------------------------------------
+* |link_configure_boot_ssd|
 
-Lorsque la température du CPU n'a pas atteint le seuil défini, le ventilateur CPU ne fonctionne pas.
+.. end_faq_boot_order_command
 
-**Contrôle de la vitesse du ventilateur basé sur la température**  
 
-Le ventilateur PWM fonctionne de manière dynamique, ajustant sa vitesse en fonction de la température du Raspberry Pi 5 :  
+Comment modifier l'ordre de démarrage avec Raspberry Pi Imager
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* **En dessous de 50°C** : Le ventilateur reste éteint (0% de vitesse).  
-* **À 50°C** : Le ventilateur fonctionne à faible vitesse (30% de vitesse).  
-* **À 60°C** : Le ventilateur passe à une vitesse moyenne (50% de vitesse).  
-* **À 67,5°C** : Le ventilateur accélère à une vitesse élevée (70% de vitesse).  
-* **À 75°C et au-delà** : Le ventilateur fonctionne à pleine vitesse (100% de vitesse).  
+.. start_faq_boot_order_imager
 
-Pour plus de détails, consultez : :ref:`Fans`.
+En plus de modifier ``BOOT_ORDER`` dans la configuration EEPROM, vous pouvez également utiliser Raspberry Pi Imager pour changer l'ordre de démarrage.
 
-11. Comment désactiver le tableau de bord web ?
---------------------------------------------------
+* |link_update_bootloader|
 
-Une fois l'installation du module ``pironman5`` terminée, vous pouvez accéder au :ref:`view_control_dashboard`.
-      
-Si vous n'avez pas besoin de cette fonctionnalité et souhaitez réduire l'utilisation du CPU et de la RAM, vous pouvez désactiver le tableau de bord lors de l'installation de ``pironman5`` en ajoutant l'option ``--disable-dashboard``.
-      
-.. code-block:: shell
-      
-   cd ~/pironman5
-   sudo python3 install.py --disable-dashboard
-      
-Si vous avez déjà installé ``pironman 5``, vous pouvez supprimer le module ``dashboard`` et ``influxdb``, puis redémarrer pironman5 pour appliquer les changements :
-      
-.. code-block:: shell
-      
-   /opt/pironman5/venv/bin/pip3 uninstall pm-dashboard influxdb
-   sudo apt purge influxdb
-   sudo systemctl restart pironman5
+.. end_faq_boot_order_imager
 
-12. Comment contrôler les composants avec la commande ``pironman5`` ?
-------------------------------------------------------------------------
 
-Vous pouvez consulter le tutoriel suivant pour contrôler les composants du Pironman 5 en utilisant la commande ``pironman5`` :
+Comment copier le système de la carte SD vers un SSD NVMe
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* :ref:`view_control_commands`
+.. |link_copy_sd_to_nvme| replace:: :ref:`copy_sd_to_nvme_5`
 
-13. Comment modifier l'ordre de démarrage du Raspberry Pi en utilisant des commandes ?
------------------------------------------------------------------------------------------
+.. start_faq_copy_sd_to_nvme
 
-Si vous êtes déjà connecté à votre Raspberry Pi, vous pouvez modifier l'ordre de démarrage en utilisant des commandes. Les instructions détaillées sont les suivantes :
+Si vous ne disposez pas d'un adaptateur NVMe vers USB, vous pouvez d'abord installer le système sur une carte Micro SD, puis copier le système sur le SSD NVMe après avoir démarré avec succès.
 
-* :ref:`configure_boot_ssd_5`
+* |link_copy_sd_to_nvme|
 
-14. Comment modifier l'ordre de démarrage avec Raspberry Pi Imager ?
------------------------------------------------------------------------
+.. end_faq_copy_sd_to_nvme
 
-En plus de modifier le ``BOOT_ORDER`` dans la configuration EEPROM, vous pouvez également utiliser **Raspberry Pi Imager** pour changer l'ordre de démarrage de votre Raspberry Pi.
 
-Il est recommandé d'utiliser une carte de secours pour cette étape.
 
-* :ref:`update_bootloader_5`
+6. Utilisation avancée
+-------------------------------
 
-15. Comment copier le système de la carte SD vers un NVMe SSD ?
------------------------------------------------------------------
 
-Si vous avez un NVMe SSD mais pas d'adaptateur pour connecter votre NVMe à votre ordinateur, vous pouvez d'abord installer le système sur votre carte Micro SD. Une fois que le Pironman 5 a démarré avec succès, vous pouvez copier le système de votre carte Micro SD vers votre NVMe SSD. Les instructions détaillées sont les suivantes :
+Comment retirer le film protecteur
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* :ref:`copy_sd_to_nvme_5`
+.. start_faq_remove_film
 
-16. Comment retirer le film protecteur des plaques en acrylique ?
---------------------------------------------------------------------
+Deux panneaux en acrylique sont inclus dans l'emballage, tous deux recouverts d'un film protecteur jaune/transparent des deux côtés pour éviter les rayures.
 
-Deux panneaux en acrylique sont inclus dans le paquet, chacun étant recouvert d'un film protecteur jaune ou transparent des deux côtés pour éviter les rayures. Ce film protecteur peut être un peu difficile à retirer. Utilisez un tournevis pour gratter doucement les coins, puis décollez soigneusement l'intégralité du film.
+Le film protecteur peut être difficile à retirer. Utilisez un tournevis pour soulever délicatement un coin, puis décollez soigneusement l'intégralité du film.
 
 .. image:: img/peel_off_film.jpg
     :width: 500
     :align: center
 
-.. _openssh_powershell:
-
-17. Comment installer OpenSSH via PowerShell ?
--------------------------------------------------
-
-Lorsque vous utilisez la commande ``ssh <username>@<hostname>.local`` (ou ``ssh <username>@<IP address>``) pour vous connecter à votre Raspberry Pi, mais que le message d'erreur suivant apparaît :
-
-    .. code-block::
-
-        ssh: The term 'ssh' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
-        spelling of the name, or if a path was included, verify that the path is correct and try again.
-
-Cela signifie que votre système d’exploitation est trop ancien et n’a pas `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ préinstallé. Suivez le tutoriel ci-dessous pour l’installer manuellement.
-
-#. Tapez ``powershell`` dans la barre de recherche de votre bureau Windows, cliquez avec le bouton droit sur ``Windows PowerShell`` et sélectionnez ``Exécuter en tant qu'administrateur``.
-
-   .. image:: img/powershell_ssh.png
-      :width: 90%
-
-#. Utilisez la commande suivante pour installer ``OpenSSH.Client`` :
-
-   .. code-block::
-
-        Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
-
-#. Après l'installation, la sortie suivante devrait apparaître :
-
-   .. code-block::
-
-        Path          :
-        Online        : True
-        RestartNeeded : False
-
-#. Vérifiez l'installation avec la commande suivante :
-
-   .. code-block::
-
-        Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
-
-#. Cela vous indique que ``OpenSSH.Client`` a été installé avec succès :
-
-   .. code-block::
-
-        Name  : OpenSSH.Client~~~~0.0.1.0
-        State : Installed
-
-        Name  : OpenSSH.Server~~~~0.0.1.0
-        State : NotPresent
-
-  .. warning:: 
-        Si ce message n'apparaît pas, cela signifie que votre système Windows est encore trop ancien. Il est conseillé d'utiliser un outil SSH tiers comme |link_putty|.
-
-#. Redémarrez PowerShell et exécutez-le de nouveau en tant qu'administrateur. Vous pourrez alors vous connecter à votre Raspberry Pi en utilisant la commande ``ssh``, et il vous sera demandé de saisir le mot de passe que vous avez configuré.
-
-   .. image:: img/powershell_login.png
-
-.. 18. Pourquoi l’écran OLED s’éteint-il automatiquement ?
-.. ---------------------------------------------------------------------------------
-
-.. Pour économiser de l’énergie et prolonger la durée de vie de l’écran, l’écran OLED s’éteint automatiquement après une période d’inactivité.  
-.. Cela fait partie de la conception normale et n’affecte pas la fonctionnalité du produit.
-
-.. Il suffit d’appuyer une fois sur le bouton de l’appareil pour rallumer l’écran OLED et reprendre l’affichage.
-
-.. .. note::
-
-..    Pour la configuration de l’écran OLED (comme activer/désactiver, temps de veille, rotation, etc.), veuillez vous référer à : :ref:`view_control_dashboard` ou :ref:`view_control_commands`.
+.. end_faq_remove_film

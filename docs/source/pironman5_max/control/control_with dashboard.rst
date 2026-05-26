@@ -1,62 +1,47 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Bonjour et bienvenue dans la communauté Facebook des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 ! Rejoignez d'autres passionnés pour approfondir vos connaissances sur le Raspberry Pi, l’Arduino et l’ESP32.
+.. _view_control_dashboard:
 
-    **Pourquoi nous rejoindre ?**
+Afficher et contrôler depuis le tableau de bord
+=================================================
 
-    - **Support d’experts** : Résolvez les problèmes après-vente et relevez les défis techniques grâce à l’aide de notre équipe et de notre communauté.
-    - **Apprendre & partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
-    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des démonstrations exclusives.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos dernières nouveautés.
-    - **Promotions festives et cadeaux** : Participez à des tirages au sort et à des offres spéciales pendant les fêtes.
+Une fois que vous avez installé le module ``pironman5`` avec succès, le service ``pironman5.service`` démarrera automatiquement au redémarrage.
 
-    👉 Prêt(e) à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
+Vous pouvez maintenant ouvrir la page de surveillance dans votre navigateur pour consulter les informations sur votre Raspberry Pi, configurer les LED RGB et contrôler le ventilateur. Le lien de la page est : ``http://<ip>:34001``.
 
-.. _max_view_control_dashboard:
+Cette page comprend les pages **Tableau de bord**, **Historique**, **Journal** et **Paramètres**.
 
-Vue et contrôle depuis le tableau de bord
-===============================================
-
-Une fois le module ``pironman5`` installé avec succès, le service ``pironman5.service`` démarrera automatiquement au redémarrage.
-
-Vous pouvez désormais ouvrir la page de surveillance dans votre navigateur pour consulter les informations du Raspberry Pi, configurer les LED RGB, contrôler les ventilateurs, etc. Lien de la page : ``http://<ip>:34001``.
-
-Cette interface comporte les onglets **Dashboard**, **Historique**, **Log** et **Settings**.
-
-.. image:: img/dashboard_tab.png
-  :width: 90%
+.. image:: img/dashboard_home.png
 
 
 Tableau de bord
 -----------------------
 
-Plusieurs cartes permettent de visualiser l’état du Raspberry Pi, dont :
+Plusieurs cartes permettent de consulter l'état du Raspberry Pi, notamment :
 
-* **Température** : Affiche la température du CPU et la vitesse du ventilateur PWM. **GPIO Fan State** indique l’état des deux ventilateurs RGB latéraux. À la température actuelle, ils sont éteints.
+* **Température** : Affiche la température CPU/GPU du Raspberry Pi et la vitesse du ventilateur CPU. L'**État des ventilateurs GPIO** indique l'état des deux ventilateurs GPIO latéraux.
 
-  .. image:: img/dashboard_temp.png
+  .. image:: img/dashboard_tem.png
     :width: 90%
 
-
-* **Stockage** : Montre la capacité de stockage du Raspberry Pi, les différentes partitions, l’espace utilisé et disponible.
+* **Stockage** : Affiche la capacité de stockage du Raspberry Pi, avec les différentes partitions de disque, leur espace utilisé et disponible.
 
   .. image:: img/dashboard_storage.png
     :width: 90%
 
-
-* **Mémoire** : Affiche l’utilisation de la RAM du Raspberry Pi en valeur absolue et en pourcentage.
+* **Mémoire** : Affiche l'utilisation de la RAM du Raspberry Pi et son pourcentage.
 
   .. image:: img/dashboard_memory.png
     :width: 90%
 
-
-* **Réseau** : Affiche le type de connexion réseau actuel, ainsi que les vitesses de téléchargement et d’envoi.
+* **Réseau** : Affiche le type de connexion réseau actuel, les vitesses de téléchargement et d'envoi.
 
   .. image:: img/dashboard_network.png
     :width: 90%
 
-
-* **Processeur** : Affiche les performances du CPU, y compris l’état des 4 cœurs, les fréquences et l’utilisation du processeur.
+* **Processeur** : Illustre les performances du CPU du Raspberry Pi, y compris l'état de ses quatre cœurs, les fréquences de fonctionnement et le pourcentage d'utilisation du CPU.
 
   .. image:: img/dashboard_processor.png
     :width: 90%
@@ -65,7 +50,7 @@ Plusieurs cartes permettent de visualiser l’état du Raspberry Pi, dont :
 Historique
 --------------
 
-L’onglet Historique permet de consulter les données enregistrées. Cochez les données souhaitées dans la barre latérale gauche, sélectionnez la plage temporelle, et vous pouvez également télécharger les résultats.
+La page Historique vous permet de consulter les données historiques. Cochez les données que vous souhaitez afficher dans la barre latérale gauche, puis sélectionnez la plage de temps pour voir les données correspondantes. Vous pouvez également les télécharger.
 
 .. image:: img/dashboard_history1.png
   :width: 90%
@@ -76,91 +61,100 @@ L’onglet Historique permet de consulter les données enregistrées. Cochez les
 Journal
 ------------
 
-L’onglet Journal permet de consulter les logs du service Pironman5 en cours d’exécution. Chaque sous-service a son propre journal. Sélectionnez celui que vous voulez consulter : s’il est vide, cela signifie qu’aucune donnée n’a encore été enregistrée.
+La page Journal affiche le journal d'exécution du service Pironman5.
 
-* Chaque journal a une taille maximale de 10 Mo. Lorsqu’il est dépassé, un nouveau fichier est créé.
-* Le nombre de journaux par service est limité à 10. Les plus anciens sont automatiquement supprimés.
-* Des outils de filtrage sont disponibles : filtre par niveau de log, par mot-clé, **retour à la ligne automatique**, **défilement automatique**, et **mise à jour automatique**.
-* Les journaux peuvent être téléchargés localement.
+* Les entrées du journal peuvent être filtrées par niveau (Debug, Info, Warning, Error ou Critical).
+* Le fichier journal peut également être téléchargé localement.
 
-.. image:: img/dashboard_log1.png
+.. image:: img/dashboard_log.png
   :width: 90%
-
-.. image:: img/dashboard_log2.png
-  :width: 90%
-
 
 Paramètres
------------------
+------------
 
-Un menu Paramètres est disponible en haut à droite de la page pour personnaliser votre interface. Les modifications sont enregistrées automatiquement. Vous pouvez aussi cliquer sur le bouton CLEAR pour réinitialiser les données historiques.
+La page Paramètres vous permet de personnaliser l'affichage du tableau de bord, les préférences système, l'écran OLED, l'éclairage RGB et le comportement des ventilateurs. Elle affiche également des informations réseau de base telles que l'adresse MAC et l'adresse IP.
 
-.. image:: img/dashboard_setting_darkmode.png
-  :width: 600
-
-* **Dark Mode** : Basculez entre les thèmes clair et sombre. Le choix est enregistré dans le cache du navigateur. Changer de navigateur ou vider le cache revient au thème par défaut.
-* **Afficher le disque non monté** : indique si les disques non montés doivent être affichés dans le tableau de bord.
-* **Afficher tous les cœurs** : indique si tous les cœurs doivent être affichés dans le tableau de bord.
-* **Temperature Unit** : Définissez l’unité de température affichée.
-
-**À propos de l’écran OLED**
-
-.. image:: img/dashboard_setting_oled.png
-  :width: 600
-
-* **OLED Enable** : Activer ou désactiver l’écran OLED.
-* **OLED Disk** : Choisir la partition à afficher sur l’OLED.
-* **OLED Interface Réseau** :
-
-  * **all** : Affiche en alternance l’IP Ethernet et Wi-Fi.
-  * **eth0** : Affiche uniquement l’IP Ethernet.
-  * **wlan0** : Affiche uniquement l’IP Wi-Fi.
-
-* **OLED Rotation** : Définir l’orientation de l’écran OLED.
-* **Délai de veille OLED** : définissez le délai de veille OLED.
+.. image:: img/dashboard_setting.png
+    :width: 600
 
 
-**À propos des LED RGB**
+* **Interface**
 
-.. image:: img/RGB_LEDS.jpg
-  :width: 600
+  Configurez l'apparence du tableau de bord et le comportement d'affichage.
 
-* **RGB Enable** : Activer ou désactiver les LED RGB.
-* **RGB Color** : Définir la couleur des LED RGB.
-* **RGB Brightness** : Régler la luminosité via un curseur.
-* **RGB Style** : Choisir un mode d’affichage parmi : **Solid**, **Breathing**, **Flow**, **Flow_reverse**, **Rainbow**, **Rainbow Reverse**, **Hue Cycle**.
+  .. image:: img/dashboard_setting_interface.png
+      :width: 600
 
-  .. note::
-
-     Si vous choisissez **Rainbow**, **Rainbow Reverse** ou **Hue Cycle**, la couleur ne pourra pas être personnalisée.
-
-* **RGB Speed** : Définir la vitesse d’animation des LED RGB.
-
-**À propos des ventilateurs RGB**
-
-.. image:: img/dashboard_setting_fan.png
-  :width: 600
-
-**LED du ventilateur** : permet de définir le mode des ventilateurs RVB.
-Ajouter un commentaire Plus d'actions
-
-  * **Désactivé** : désactive le RVB.
-  * **Activé** : active le RVB.
-  * **Suivi** : active automatiquement le RVB en fonction de l'état de fonctionnement du ventilateur.
+  * **Mode sombre** : Activer ou désactiver le thème sombre.
+  * **Afficher les disques non montés** : Afficher les périphériques de stockage non montés sur la carte Stockage.
+  * **Afficher tous les cœurs** : Afficher tous les cœurs du CPU sur la carte Processeur.
+  * **Disposition des cartes** : Personnaliser la disposition des cartes du tableau de bord.
+  * **Unité de température** : Basculer entre Celsius et Fahrenheit.
+  * **Version de l'interface web** : Affiche la version actuelle du tableau de bord.
 
 
-* **GPIO Fan Mode** : Choisir le mode de fonctionnement des ventilateurs RGB latéraux, qui détermine à quelle température ils se déclenchent.
+* **OLED**
 
-    * **Quiet** : Activation à 70°C.
-    * **Balanced** : Activation à 67.5°C.
-    * **Cool** : Activation à 60°C.
-    * **Performance** : Activation à 50°C.
-    * **Always On** : Toujours allumés.
+  Configurez l'affichage et le comportement de l'écran OLED.
 
-Par exemple, en mode **Performance**, les ventilateurs se déclenchent à 50°C.
+  .. image:: img/dashboard_setting_oled.png
+      :width: 600
 
-Après avoir enregistré, si la température du processeur dépasse 50°C, vous verrez que les ventilateurs RVB latéraux commenceront à tourner.
+  * **Activer OLED** : Activer ou désactiver l'écran OLED.
+  * **Rotation OLED** : Faire pivoter l'affichage OLED entre ``0°`` et ``180°``.
+  * **Délai de veille OLED** : Définir la durée pendant laquelle l'écran OLED reste allumé avant de s'éteindre automatiquement.
+  * **Pages OLED** : Configurer les pages affichées sur l'écran OLED et ajuster leur ordre d'affichage.
 
-**À propos du ventilateur principal**
+    Pages disponibles :
 
-Le ventilateur principal se connecte à un port dédié pour ventilateur PWM à 4 broches sur le Raspberry Pi 5. Sa stratégie de contrôle par défaut est un système de régulation intelligent à plusieurs niveaux, géré par le firmware, qui ajuste la vitesse en fonction de la température du CPU. Cela signifie que lorsque vous utilisez un ventilateur PWM officiel ou compatible et que vous le connectez correctement, le système ajustera automatiquement la vitesse du ventilateur en fonction des changements de température du CPU (il commence à fonctionner au-dessus de 50°C), sans aucune intervention manuelle de votre part.
+    * **Adresses IP** : Affiche les adresses IP de toutes les interfaces réseau physiques.
+    * **Utilisation du disque** : Affiche les informations d'utilisation du disque pour tous les disques.
+    * **Mesures de performance** : Affiche l'utilisation du CPU, la température du CPU, l'utilisation de la RAM et la vitesse du ventilateur.
+    * **Mix système** : Affiche l'utilisation du CPU, la température du CPU et l'adresse IP.
+
+
+* **RGB**
+
+  Configurez les effets d'éclairage et le comportement des LED RGB.
+
+  .. image:: img/dashboard_setting_rgb.png
+      :width: 600
+
+  * **Activer RGB** : Activer ou désactiver les LED RGB.
+  * **Couleur RGB** : Définir la couleur des LED RGB.
+  * **Luminosité RGB** : Régler la luminosité des LED RGB.
+  * **Style RGB** : Sélectionner l'effet d'éclairage RGB, parmi ``Aucun``, ``Fixe``, ``Respiration``, ``Défilement``, ``Défilement inversé``, ``Arc-en-ciel``, ``Arc-en-ciel inversé`` et ``Cycle de teinte``.
+  * **Vitesse RGB** : Ajuster la vitesse d'animation de l'effet RGB sélectionné.
+  * **LED RGB** : Définir le nombre de LED RGB actives.
+
+
+* **Ventilateurs GPIO**
+
+  Configurez le mode de fonctionnement des deux ventilateurs GPIO.
+
+  .. image:: img/dashboard_setting_fan.png
+      :width: 600
+
+  Le mode sélectionné détermine quand les ventilateurs GPIO s'activeront.
+
+  * **Silencieux** : Les ventilateurs GPIO s'activeront à 70°C.
+  * **Équilibré** : Les ventilateurs GPIO s'activeront à 67,5°C.
+  * **Frais** : Les ventilateurs GPIO s'activeront à 60°C.
+  * **Performance** : Les ventilateurs GPIO s'activeront à 50°C.
+  * **Toujours activé** : Les ventilateurs GPIO resteront toujours actifs.
+
+
+* **Système**
+
+  Configurez le comportement du système et consultez les informations de l'appareil.
+
+  .. image:: img/dashboard_setting_system.png
+      :width: 600
+
+  * **Niveau de débogage** : Définir le niveau de journalisation du service Pironman 5.
+  * **Adresse MAC** : Affiche les adresses MAC des interfaces réseau du Raspberry Pi.
+  * **Adresse IP** : Affiche les adresses IP des interfaces réseau du Raspberry Pi.
+  * **Rétention de l'historique** : Définir le nombre de jours de conservation des données historiques.
+  * **Effacer toutes les données** : Effacer toutes les données d'historique enregistrées.
+  * **Redémarrer** : Redémarrer le Raspberry Pi à distance depuis le tableau de bord.
+  * **Éteindre** : Éteindre le Raspberry Pi en toute sécurité à distance depuis le tableau de bord.

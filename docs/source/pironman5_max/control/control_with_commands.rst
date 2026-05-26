@@ -1,198 +1,194 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Plongez au cœur de l’univers Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Pourquoi nous rejoindre ?**
-
-    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l’aide de notre équipe et de la communauté.
-    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
-    - **Avant-premières exclusives** : Soyez parmi les premiers informés des nouveaux produits et aperçus.
-    - **Réductions spéciales** : Bénéficiez d’offres exclusives sur nos dernières nouveautés.
-    - **Promotions festives et cadeaux** : Participez à des jeux-concours et événements promotionnels pendant les fêtes.
-
-    👉 Prêt(e) à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
 .. _max_view_control_commands:
 
-Contrôle via Commandes
+Contrôler avec des commandes
 ========================================
-En plus d’afficher les données du Pironman 5 MAX et de contrôler divers appareils via le tableau de bord, vous pouvez également utiliser des commandes pour les piloter.
+En plus de pouvoir consulter les données du Pironman 5 MAX et de contrôler divers appareils via le tableau de bord, vous pouvez également utiliser des commandes pour les gérer.
 
 .. note::
 
-  * Pour le système **Home Assistant**, vous ne pouvez surveiller et contrôler le Pironman 5 MAX qu’à travers le tableau de bord, accessible à l’adresse ``http://<ip>:34001``.
-  * Pour le système **Batocera.linux**, le contrôle du Pironman 5 MAX s’effectue uniquement via des commandes. Notez que toute modification de la configuration nécessite un redémarrage du service via la commande ``pironman5 restart`` pour être prise en compte.
+  * Pour le système **Home Assistant**, vous pouvez uniquement surveiller et contrôler le Pironman 5 MAX via le tableau de bord en ouvrant la page web à l'adresse ``http://<ip>:34001``.
 
-Afficher les configurations de base
----------------------------------------
+Consulter les configurations de base
+----------------------------------------
 
-Le module ``pironman5`` propose des configurations de base pour le Pironman, que vous pouvez consulter à l’aide de la commande suivante :
+Le module ``pironman5`` propose des configurations de base pour Pironman, que vous pouvez consulter avec la commande suivante.
 
 .. code-block:: shell
 
   sudo pironman5 -c
 
-Les configurations par défaut s’affichent ainsi :
+Les configurations standard apparaissent comme suit :
 
 .. code-block::
 
   {
-      "auto": {
+      "system": {
+          "data_interval": 1,
+          "database_retention_days": 30,
+          "temperature_unit": "C",
+          "enable_history": true,
+          "oled_enable": true,
+          "oled_rotation": 0,
+          "oled_sleep_timeout": 10,
+          "oled_pages": [
+              "mix",
+              "performance",
+              "ips",
+              "disk"
+          ],
+          "rgb_enable": true,
           "rgb_color": "#0a1aff",
-          "rgb_brightness": 50,
+          "rgb_brightness": 100,
           "rgb_style": "breathing",
           "rgb_speed": 50,
-          "rgb_enable": true,
           "rgb_led_count": 4,
-          "temperature_unit": "C",
-          "gpio_fan_mode": 2,
-          "gpio_fan_pin": 6
+          "rgb_led_count_min": 4,
+          "gpio_fan_pin": 6,
+          "gpio_fan_mode": 0,
+          "gpio_fan_led": "on",
+          "gpio_fan_led_pin": 5,
+          "debug_level": "INFO"
       }
   }
 
-Personnalisez ces paramètres selon vos besoins.
+Personnalisez ces configurations selon vos besoins.
 
-Utilisez ``pironman5`` ou ``pironman5 -h`` pour obtenir de l’aide.
+Utilisez ``pironman5`` ou ``pironman5 -h`` pour les instructions.
 
 .. code-block::
 
-  usage: pironman5-service [-h] [-v] [-c] [-dl {debug,info,warning,error,critical}] [--background [BACKGROUND]] [-rd]
-                          [-cp [CONFIG_PATH]] [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]]
-                          [-rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]] [-rp [RGB_SPEED]]     
-                          [-re [RGB_ENABLE]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]]    
-                          [-fl [GPIO_FAN_LED]] [-fp [GPIO_FAN_LED_PIN]] [-oe [OLED_ENABLE]] [-od [OLED_DISK]]
-                          [-oi [OLED_NETWORK_INTERFACE]] [-or [{0,180}]] [-vp [VIBRATION_SWITCH_PIN]]
-                          [-vu [VIBRATION_SWITCH_PULL_UP]] [-os [OLED_SLEEP_TIMEOUT]]
+
+  usage: pironman5-service [-h] [-v] [-c] [-dl [{debug,info,warning,error,critical}]] [--background [BACKGROUND]] [-rd] [-cp [CONFIG_PATH]] [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]]
+                          [-rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]] [-rp [RGB_SPEED]] [-re [RGB_ENABLE]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]] [-oe [OLED_ENABLE]]
+                          [-od [OLED_DISK]] [-oi [OLED_NETWORK_INTERFACE]] [-or [{0,180}]]
                           [{start,restart,stop}]
 
-  Pironman 5 MAX command line interface
+  Pironman 5 - Interface en ligne de commande
 
-  positional arguments:
-    {start,restart,stop}  Command
+  arguments positionnels :
+    {start,restart,stop}  Commande
 
-  options:
-    -h, --help            show this help message and exit
-    -v, --version         Show version
-    -c, --config          Show config
-    -dl {debug,info,warning,error,critical}, --debug-level {debug,info,warning,error,critical}
-                          Debug level
-    --background [BACKGROUND]
-                          Run in background
+  options :
+    -h, --help            Afficher ce message d'aide et quitter
+    -v, --version         Afficher la version
+    -c, --config          Afficher la configuration
+    -drd, --database-retention-days [DATABASE_RETENTION_DAYS]
+                          Jours de rétention de la base de données
+    -dl, --debug-level [{DEBUG,INFO,WARNING,ERROR,CRITICAL,debug,info,warning,error,critical}]
+                          Niveau de débogage
     -rd, --remove-dashboard
-                          Remove dashboard
-    -cp [CONFIG_PATH], --config-path [CONFIG_PATH]
-                          Config path
-    -rc [RGB_COLOR], --rgb-color [RGB_COLOR]
-                          RGB color in hex format without # (e.g. 00aabb)
-    -rb [RGB_BRIGHTNESS], --rgb-brightness [RGB_BRIGHTNESS]
-                          RGB brightness 0-100
-    -rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}], --rgb-style [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]
-                          RGB style
-    -rp [RGB_SPEED], --rgb-speed [RGB_SPEED]
-                          RGB speed 0-100
-    -re [RGB_ENABLE], --rgb-enable [RGB_ENABLE]
-                          RGB enable True/False
-    -rl [RGB_LED_COUNT], --rgb-led-count [RGB_LED_COUNT]
-                          RGB LED count int
-    -u [{C,F}], --temperature-unit [{C,F}]
-                          Temperature unit
-    -gm [GPIO_FAN_MODE], --gpio-fan-mode [GPIO_FAN_MODE]
-                          GPIO fan mode, 0: Always On, 1: Performance, 2: Cool, 3: Balanced, 4: Quiet
-    -gp [GPIO_FAN_PIN], --gpio-fan-pin [GPIO_FAN_PIN]
-                          GPIO fan pin
-    -fl [GPIO_FAN_LED], --gpio-fan-led [GPIO_FAN_LED]
-                          GPIO fan LED state on/off/follow
-    -fp [GPIO_FAN_LED_PIN], --gpio-fan-led-pin [GPIO_FAN_LED_PIN]
-                          GPIO fan LED pin
-    -oe [OLED_ENABLE], --oled-enable [OLED_ENABLE]
-                          OLED enable True/true/on/On/1 or False/false/off/Off/0
-    -od [OLED_DISK], --oled-disk [OLED_DISK]
-                          Set to display which disk on OLED. 'total' or the name of the disk, like mmbclk or nvme
-    -oi [OLED_NETWORK_INTERFACE], --oled-network-interface [OLED_NETWORK_INTERFACE]
-                          Set to display which ip of network interface on OLED, 'all' or the interface name, like eth0 or      
-                          wlan0
-    -or [{0,180}], --oled-rotation [{0,180}]
-                          Set to rotate OLED display, 0, 180
-    -vp [VIBRATION_SWITCH_PIN], --vibration-switch-pin [VIBRATION_SWITCH_PIN]
-                          Vibration switch pin
-    -vu [VIBRATION_SWITCH_PULL_UP], --vibration-switch-pull-up [VIBRATION_SWITCH_PULL_UP]
-                          Vibration switch pull up True/False
-    -os [OLED_SLEEP_TIMEOUT], --oled-sleep-timeout [OLED_SLEEP_TIMEOUT]
-                          OLED sleep timeout in seconds
+                          Supprimer le tableau de bord
+    -cp, --config-path [CONFIG_PATH]
+                          Chemin de configuration
+    -eh, --enable-history [ENABLE_HISTORY]
+                          Activer l'historique, True/true/on/On/1 ou False/false/off/Off/0
+    -re, --rgb-enable [RGB_ENABLE]
+                          Activer RGB True/False
+    -rs, --rgb-style [RGB_STYLE]
+                          Style RGB : ['solid', 'breathing', 'flow', 'flow_reverse', 'rainbow', 'rainbow_reverse', 'hue_cycle']
+    -rc, --rgb-color [RGB_COLOR]
+                          Couleur RGB en format hexadécimal sans # (ex. 00aabb)
+    -rb, --rgb-brightness [RGB_BRIGHTNESS]
+                          Luminosité RGB 0-100
+    -rp, --rgb-speed [RGB_SPEED]
+                          Vitesse RGB 0-100
+    -rl, --rgb-led-count [RGB_LED_COUNT]
+                          Nombre de LED RGB (entier)
+    -u, --temperature-unit [{C,F}]
+                          Unité de température
+    -gm, --gpio-fan-mode [GPIO_FAN_MODE]
+                          Mode ventilateur GPIO, 0: Toujours activé, 1: Performance, 2: Frais, 3: Équilibré, 4: Silencieux
+    -gp, --gpio-fan-pin [GPIO_FAN_PIN]
+                          Broche du ventilateur GPIO
+    -oe, --oled-enable [OLED_ENABLE]
+                          Activer OLED True/true/on/On/1 ou False/false/off/Off/0
+    -or, --oled-rotation [{0,180}]
+                          Rotation de l'écran OLED, 0, 180
+    -op, --oled-pages [OLED_PAGES]
+                          Pages OLED, séparées par ',': mix,performance,ips,disk
+    -os, --oled-sleep-timeout [OLED_SLEEP_TIMEOUT]
+                          Délai de veille OLED en secondes
 
-
-
-
+  Sous-commandes :
+    {start,stop,launch-browser}
+      start               Démarrer Pironman5
+      stop                Arrêter Pironman5
+      launch-browser      Lancer le navigateur
 
 .. note::
 
-  À chaque modification de l’état du service ``pironman5.service``, vous devez exécuter la commande suivante pour appliquer les changements :
+   Chaque fois que vous modifiez l'état de ``pironman5.service``, vous devez utiliser la commande suivante pour que les modifications de configuration prennent effet.
+
+   .. code-block:: shell
+
+      sudo systemctl restart pironman5.service
+
+* Vérifiez l'état du programme ``pironman5`` à l'aide de l'outil ``systemctl``.
 
   .. code-block:: shell
 
-    sudo systemctl restart pironman5.service
+     sudo systemctl status pironman5.service
 
-
-* Vérifiez l’état du programme ``pironman5`` à l’aide de l’outil ``systemctl`` :
-
-  .. code-block:: shell
-
-    sudo systemctl status pironman5.service
-
-* Vous pouvez également consulter les fichiers journaux générés par le programme :
+* Vous pouvez également consulter les fichiers journaux générés par le programme.
 
   .. code-block:: shell
 
-    ls /var/log/pironman5/
+     cat /var/log/pironman5/pironman5.log
 
 
-Contrôle des LEDs RGB
+Contrôler les LED RGB
 ----------------------
-La carte dispose de 4 LEDs RGB WS2812 entièrement personnalisables. Vous pouvez les allumer ou les éteindre, changer leur couleur, ajuster leur luminosité, modifier le mode d'affichage, et régler la vitesse des effets.
+La carte dispose de 4 LED RGB WS2812, offrant un contrôle personnalisable. Les utilisateurs peuvent les allumer ou les éteindre, changer la couleur, régler la luminosité, changer les modes d'affichage des LED RGB et définir la vitesse des changements.
 
 .. note::
 
-  Chaque modification de l’état de ``pironman5.service`` nécessite l'exécution de la commande suivante pour appliquer les changements :
+  Chaque fois que vous modifiez l'état de ``pironman5.service``, vous devez utiliser la commande suivante pour que les modifications de configuration prennent effet.
 
   .. code-block:: shell
 
     sudo systemctl restart pironman5.service
 
-* Pour allumer ou éteindre les LEDs RGB, utilisez ``true`` pour allumer et ``false`` pour éteindre :
+* Pour modifier l'état d'activation des LED RGB, utilisez ``true`` pour les allumer ou ``false`` pour les éteindre.
 
 .. code-block:: shell
 
   sudo pironman5 -re true
 
-* Pour changer leur couleur, indiquez une valeur hexadécimale, par exemple ``fe1a1a`` :
+* Pour changer leur couleur, saisissez la valeur hexadécimale souhaitée, telle que ``fe1a1a``.
 
 .. code-block:: shell
 
   sudo pironman5 -rc fe1a1a
 
-* Pour ajuster la luminosité (plage : 0 ~ 100%) :
+* Pour modifier la luminosité des LED RGB (plage : 0 ~ 100 %) :
 
 .. code-block:: shell
 
   sudo pironman5 -rb 100
 
-* Pour modifier le mode d’affichage RGB, choisissez parmi : ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` :
+* Pour changer les modes d'affichage des LED RGB, choisissez parmi : ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` :
 
 .. note::
 
-  Si vous sélectionnez ``rainbow``, ``rainbow_reverse`` ou ``hue_cycle``, vous ne pourrez pas définir la couleur via ``pironman5 -rc``.
+  Si vous réglez le mode d'affichage des LED RGB sur ``rainbow``, ``rainbow_reverse`` ou ``hue_cycle``, vous ne pourrez pas définir la couleur avec ``pironman5 -rc``.
 
 .. code-block:: shell
 
   sudo pironman5 -rs breathing
 
-* Pour ajuster la vitesse des effets (plage : 0 ~ 100%) :
+* Pour modifier la vitesse de changement (plage : 0 ~ 100 %) :
 
 .. code-block:: shell
 
   sudo pironman5 -rp 80
 
-* Par défaut, 4 LEDs RGB sont utilisées. Pour en connecter davantage, indiquez le nombre :
+* La configuration par défaut comprend 4 LED RGB. Connectez des LED supplémentaires et mettez à jour le nombre avec :
 
 .. code-block:: shell
 
@@ -200,79 +196,81 @@ La carte dispose de 4 LEDs RGB WS2812 entièrement personnalisables. Vous pouvez
 
 .. _cc_control_fan_max:
 
-Contrôle des ventilateurs RGB
----------------------------------
-La carte d’extension IO prend en charge jusqu’à deux ventilateurs 5V non-PWM, contrôlés simultanément.
+Contrôler les ventilateurs GPIO
+-----------------------------------
+La carte d'extension IO prend en charge jusqu'à deux ventilateurs 5V non-CPU. Les deux ventilateurs sont contrôlés ensemble.
 
 .. note::
 
-  Chaque modification de l’état de ``pironman5.service`` nécessite l'exécution de la commande suivante pour appliquer les changements :
+  Chaque fois que vous modifiez l'état de ``pironman5.service``, vous devez utiliser la commande suivante pour que les modifications de configuration prennent effet.
 
   .. code-block:: shell
 
     sudo systemctl restart pironman5.service
 
-* Utilisez la commande suivante pour configurer le mode de fonctionnement des ventilateurs RGB, selon la température de déclenchement souhaitée.
+* Vous pouvez configurer le mode de fonctionnement des deux ventilateurs GPIO à l'aide de commandes. Ces modes déterminent les conditions dans lesquelles les ventilateurs GPIO s'activeront.
 
-Par exemple, le mode **1 : Performance** active les ventilateurs à partir de 50°C.
+Par exemple, si réglé sur le mode **1: Performance**, les ventilateurs GPIO s'activeront à 50°C.
 
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4: Quiet** : activation à 70°C  
-* **3: Balanced** : activation à 67,5°C  
-* **2: Cool** : activation à 60°C  
-* **1: Performance** : activation à 50°C  
-* **0: Always On** : les ventilateurs restent toujours allumés  
+* **4: Silencieux** : Les ventilateurs GPIO s'activeront à 70°C.
+* **3: Équilibré** : Les ventilateurs GPIO s'activeront à 67,5°C.
+* **2: Frais** : Les ventilateurs GPIO s'activeront à 60°C.
+* **1: Performance** : Les ventilateurs GPIO s'activeront à 50°C.
+* **0: Toujours activé** : Les ventilateurs GPIO resteront toujours allumés.
 
-* Si la broche de contrôle des ventilateurs est connectée à une autre broche du Raspberry Pi, vous pouvez la modifier ainsi :
+* Si vous connectez la broche de contrôle du ventilateur RGB à une autre broche GPIO du Raspberry Pi, vous pouvez changer le numéro de broche avec :
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  sudo pironman5 -gp 18
+     sudo pironman5 -gp 18
 
 
-**À propos du ventilateur principal**
+À propos du ventilateur CPU
+------------------------------
 
-Le ventilateur principal se connecte à un port dédié pour ventilateur PWM à 4 broches sur le Raspberry Pi 5. Sa stratégie de contrôle par défaut est un système de régulation intelligent à plusieurs niveaux, géré par le firmware, qui ajuste la vitesse en fonction de la température du CPU. Cela signifie que lorsque vous utilisez un ventilateur PWM officiel ou compatible et que vous le connectez correctement, le système ajustera automatiquement la vitesse du ventilateur en fonction des changements de température du CPU (il commence à fonctionner au-dessus de 50°C), sans aucune intervention manuelle de votre part.
+Le ventilateur CPU se connecte à un port dédié 4 broches pour ventilateur CPU sur le Raspberry Pi 5.
 
-Vérification de l’écran OLED
------------------------------------
+Sa stratégie de contrôle par défaut est un schéma intelligent de réglage de vitesse à plusieurs niveaux géré par le firmware, basé sur la température du CPU. Lorsque vous utilisez un ventilateur CPU officiel ou compatible et que vous le connectez correctement, le système ajustera automatiquement la vitesse du ventilateur en fonction des changements de température du CPU (à partir de ``50°C``) sans nécessiter d'intervention manuelle.
 
-Une fois la bibliothèque ``pironman5`` installée, l’écran OLED affiche les informations CPU, RAM, utilisation du disque, température CPU et l’adresse IP du Raspberry Pi à chaque redémarrage.
 
-Si l’écran OLED ne montre rien, vérifiez d’abord la connexion du câble FPC.
+Vérifier l'écran OLED
+---------------------------
 
-Vous pouvez ensuite consulter le journal du programme pour diagnostiquer le problème :
+Lorsque la bibliothèque ``pironman5`` est installée, l'écran OLED affiche automatiquement l'utilisation du CPU, de la RAM, du disque, la température du CPU et l'adresse IP du Raspberry Pi après chaque redémarrage.
 
-.. code-block:: shell
+Si l'écran OLED n'affiche aucun contenu, vérifiez d'abord si le câble FPC de l'OLED est correctement connecté.
 
-  cat /var/log/pironman5/pm_auto.oled.log
-
-Ou vérifiez si l’adresse i2c 0x3C de l’écran OLED est détectée :
+Inspectez ensuite le journal du programme à l'aide de la commande suivante :
 
 .. code-block:: shell
 
-  i2cdetect -y 1
+   cat /var/log/pironman5/pironman5.log
 
-Vérification du récepteur infrarouge
+Vous pouvez également vérifier si l'adresse I2C ``0x3C`` de l'OLED est détectée :
+
+.. code-block:: shell
+
+   i2cdetect -y 1
+
+
+Vérifier le récepteur infrarouge
 ---------------------------------------
-
-
 
 * Installez le module ``lirc`` :
 
   .. code-block:: shell
 
-    sudo apt-get install lirc -y
+     sudo apt-get install lirc -y
 
-* Testez maintenant le récepteur IR en exécutant la commande suivante :
+* Testez le récepteur IR à l'aide de la commande suivante :
 
   .. code-block:: shell
 
-    mode2 -d /dev/lirc0
+     mode2 -d /dev/lirc0
 
-* Une fois la commande lancée, appuyez sur un bouton de la télécommande, et son code s'affichera à l'écran.
-
+* Après avoir exécuté la commande, appuyez sur un bouton de la télécommande. Le code IR correspondant s'affichera dans le terminal.

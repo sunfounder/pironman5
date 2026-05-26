@@ -1,16 +1,7 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Bonjour et bienvenue dans la communauté Facebook des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 ! Rejoignez d'autres passionnés pour approfondir vos connaissances sur le Raspberry Pi, l’Arduino et l’ESP32.
-
-    **Pourquoi nous rejoindre ?**
-
-    - **Support d’experts** : Bénéficiez de l’aide de notre équipe et de notre communauté pour résoudre les problèmes après-vente et relever les défis techniques.
-    - **Apprendre & partager** : Échangez des astuces et tutoriels pour renforcer vos compétences.
-    - **Aperçus exclusifs** : Accédez en avant-première aux annonces et aperçus de nouveaux produits.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos nouveautés.
-    - **Promotions festives et cadeaux** : Participez à des concours et événements spéciaux.
-
-    👉 Prêt(e) à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
 Extension IO
 ================

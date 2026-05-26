@@ -1,16 +1,7 @@
-.. note:: 
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Rejoignez d'autres passionnés pour approfondir vos connaissances sur Raspberry Pi, Arduino et ESP32.
-
-    **Pourquoi nous rejoindre ?**
-
-    - **Support d’experts** : Bénéficiez d’une assistance pour les problèmes techniques et après-vente grâce à notre communauté et notre équipe.
-    - **Apprendre et partager** : Échangez des conseils et des tutoriels pour développer vos compétences.
-    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des démonstrations exclusives.
-    - **Réductions spéciales** : Profitez de remises exclusives sur nos dernières nouveautés.
-    - **Promotions festives et cadeaux** : Participez à nos jeux-concours et campagnes promotionnelles pendant les fêtes.
-
-    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
 Pironman 5 Mini HAT
 ===========================================

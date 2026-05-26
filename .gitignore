@@ -1,1 +1,6 @@
+.vscode
+*.ai
+*.indd
+docs/build/*
 build*
+.claude/
