@@ -135,7 +135,7 @@ Making OpenClaw Operate the Pironman5
 
 To enable OpenClaw to operate the Pironman5, we need to install the Pironman5 skill.
 
-1.  Ensure you have already installed the Pironman5. If not, please refer to :ref:`install_pironman5_module`.
+1.  Ensure you have already installed the Pironman5. If not, please refer to :ref:`install_pironman5_module_5`.
 
 2.  Run the following command in the terminal:
 

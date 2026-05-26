@@ -137,5 +137,5 @@ To prevent the OLED screen and GPIO Fans, powered by the Raspberry Pi GPIO, from
 
    Pironman 5 is now ready to use.
 
-   For advanced controls and dashboard features, see :ref:`control_commands_dashboard_5`.
+   For advanced controls and dashboard features, see :ref:`control_commands_dashboard_max`.
 
