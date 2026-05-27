@@ -45,15 +45,24 @@ AFTER:
 ### 2. pm_auto — OLED addon (`addons/oled/__init__.py`)
 
 **On page switch to `ips` or `mix`:**
-- Publish `request_ips` event
-- Receive result via event subscription
-- Update page data and trigger refresh
+1. Publish `request_ips` event
+2. SystemAddon handles it → calls `fetch_ip_data()` → publishes `ip_data` event with result
+3. OLED addon subscribes to `ip_data` event → updates page data → triggers refresh
 
 ### 3. pm_auto — PMAuto (`pm_auto.py`)
 
 **Add public method:**
 ```python
 def get_ip_data(self):
+    return self.system_addon.fetch_ip_data()
+```
+Delegates to SystemAddon — no direct import of `sf_rpi_status` at this level.
+
+### 3b. pm_auto — SystemAddon (`addons/system.py`)
+
+**Add method (contains the actual sf_rpi_status import):**
+```python
+def fetch_ip_data(self):
     from sf_rpi_status import get_ips, get_macs, get_network_connection_type
     ips = get_ips()
     result = {'ips': ips}
