@@ -41,7 +41,7 @@
 
    * OLED 屏幕将显示 CPU、内存、磁盘使用率、CPU 温度和树莓派的 IP 地址；
    * 四颗 WS2812 RGB 灯将以蓝色呼吸模式点亮。
-   * RGB 风扇默认设置为 **Balanced（平衡）** 模式。如需设置不同的启动温度，请参见 :ref:`cc_control_fan_max`。
+   * GPIO 风扇默认设置为 **Balanced（平衡）** 模式。如需设置不同的启动温度，请参见 :ref:`cc_control_fan_max`。
 
 现在，您可以将 Pironman 5 MAX 连接显示器、游戏手柄、耳机等设备，畅享沉浸式游戏体验。
 

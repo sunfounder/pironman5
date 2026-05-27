@@ -14,7 +14,7 @@
 
 为了让 OpenClaw 能够操作 Pironman5 Max，我们需要安装 Pironman5 Max 技能。
 
-1.  确保你已经安装了 Pironman5 Max。如果没有，请参考 :ref:`max_download_pironman5_module`.
+1.  确保你已经安装了 Pironman5 Max。如果没有，请参考 :ref:`install_pironman5_module_max`。
 
 2.  在终端中运行以下命令：
 

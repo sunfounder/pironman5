@@ -13,7 +13,7 @@
 请严格按照步骤操作，以确保正确安装并避免硬件损坏。
 
 更多详情请参考：  
-`3.5英寸触摸屏文档 <http://wiki.sunfounder.cc/index.php?title=3.5_Inch_LCD_Touch_Screen_Monitor_for_Raspberry_Pi>`_.
+`3.5英寸触摸屏文档 <https://docs.sunfounder.com/projects/35-ips-screen/en/latest/get_started/get_started.html>`_.
 
 
 **组装**

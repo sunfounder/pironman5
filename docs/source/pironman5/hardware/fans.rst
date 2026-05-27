@@ -3,10 +3,10 @@
 风扇
 ============
 
-PWM 风扇
+CPU 风扇
 -----------------
 
-Pironman 5 所搭载的 PWM 风扇由 Raspberry Pi 系统控制，是其智能散热解决方案的核心，特别适用于高负载运行场景。该系统将主 PWM 风扇与两颗辅助 RGB 风扇协同工作，提升整体散热性能，并与 Raspberry Pi 5 的热管理系统深度集成。
+Pironman 5 所搭载的 CPU 风扇由 Raspberry Pi 系统控制，是其智能散热解决方案的核心，特别适用于高负载运行场景。该系统将主 CPU 风扇与两颗辅助 GPIO 风扇协同工作，提升整体散热性能，并与 Raspberry Pi 5 的热管理系统深度集成。
 
 .. image:: img/fan_tower_cooler.png  
   :width: 600  
@@ -41,7 +41,7 @@ Pironman 5 所搭载的 PWM 风扇由 Raspberry Pi 系统控制，是其智能�
 
 **基于温度的风扇转速控制**
 
-PWM 风扇会根据 Raspberry Pi 5 的实时温度自动调节转速：
+CPU 风扇会根据 Raspberry Pi 5 的实时温度自动调节转速：
 
 * **低于 50°C**：风扇关闭（0% 转速）  
 * **达到 50°C**：风扇低速运行（30% 转速）  
@@ -51,7 +51,7 @@ PWM 风扇会根据 Raspberry Pi 5 的实时温度自动调节转速：
 
 该温控策略设有 5°C 的滞后阈值，以避免风扇频繁启停。例如，风扇仅在温度低于相应阈值 5°C 后才会降低转速。
 
-您可以通过以下命令查看 PWM 风扇的当前状态：
+您可以通过以下命令查看 CPU 风扇的当前状态：
 
 
 
@@ -59,7 +59,7 @@ PWM 风扇会根据 Raspberry Pi 5 的实时温度自动调节转速：
 
   cat /sys/class/thermal/cooling_device0/cur_state
 
-RGB 风扇
+GPIO 风扇
 -------------------
 
 .. image:: img/size_fan.png

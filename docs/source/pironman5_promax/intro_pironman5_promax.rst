@@ -120,7 +120,3 @@ Pironman 5 Pro MAX
 
 
 
-**尺寸图**
-
-.. image:: img/pironman5_promax_dimension.png
-    :width: 800

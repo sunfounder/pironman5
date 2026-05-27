@@ -41,7 +41,7 @@
 
    * OLED 屏幕将显示 CPU、内存、磁盘使用率、CPU 温度及树莓派的 IP 地址；
    * 四颗 WS2812 RGB 灯将以蓝色呼吸模式点亮。
-   * RGB 风扇默认设置为 **Balanced（平衡）** 模式。如需自定义启用温度，请参阅 :ref:`cc_control_fan`。
+   * GPIO 风扇默认设置为 **Balanced（平衡）** 模式。如需自定义启用温度，请参阅 :ref:`cc_control_fan`。
 
 现在，您可以将 Pironman 5 连接到显示器、游戏手柄、耳机等设备，尽情享受沉浸式的游戏体验。
 
@@ -50,4 +50,4 @@
 
    此时，您已成功完成 Pironman 5 的安装，可以开始使用了。
    
-   如需对其组件进行高级控制，请参考 :ref:`view_control_commands`。
+   如需对其组件进行高级控制，请参考 :ref:`view_control_commands_5`。

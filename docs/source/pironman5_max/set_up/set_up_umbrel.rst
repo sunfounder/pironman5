@@ -1,20 +1,21 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
 .. _set_up_umbrel_max:
 
 在 Umbrel OS 上的配置
 ======================================================================
 
-如果你在 Raspberry Pi 5 上安装了 Umbrel OS，则需要使用命令行来配置 Pironman 5 MAX。以下是详细步骤说明：
+如果你在 Raspberry Pi 5 上安装了 Umbrel OS，你可以通过命令行配置 Pironman 5 MAX。请按照以下步骤完成设置：
 
 #. 使用以太网线将 Raspberry Pi 5 连接到网络。此步骤非常重要，以确保设备能够访问互联网。
 
-#. 在浏览器中访问： ``http://umbrel.local``。  
-   如果页面无法打开，请在路由器中查找 Umbrel 设备的 IP 地址，例如： ``http://192.168.1.50``
+#. 打开浏览器并访问： ``http://umbrel.local``。如果页面无法打开，请在路由器中查找 Umbrel 设备的 IP 地址，例如： ``http://192.168.1.50``
 
    .. image:: img/umbrel_local.png
 
-#. 创建你的 Umbrel 账户，设置用户名和密码。  
-   该密码将用于今后远程登录 Umbrel，请务必记住。
+#. 创建你的 Umbrel 账户，设置用户名和密码。该密码将用于今后远程登录，请务必妥善保管。
 
    .. image:: img/umbrel_account.png
 
@@ -22,53 +23,30 @@
 
    .. image:: img/umbrel_desktop.png
 
-#. 打开终端。  
-   在桌面中，点击 **Settings** 图标，然后选择 **Advanced Settings** 并点击 **Open**。
+#. 点击 **App Store** 图标打开应用商店。
 
-   .. image:: img/umbrel_setting.png
+   .. image:: img/umbrel_app_store.png
 
-#. 点击 **Open Terminal**。
+#. 在 Umbrel 应用商店中，点击右上角的 **Community App Store** 按钮。
 
-   .. image:: img/umbrel_open_terminal.png
+   .. image:: img/umbrel_community_app.png
 
-#. 你可以选择在 Umbrel OS 内或在特定应用中打开终端。无论哪种方式，都会进入命令行界面。
+#. 输入我们的自定义仓库 URL： ``https://github.com/sunfounder/umbrel-community-app-store/``
 
-   .. image:: img/umbrel_terminal.png
+   .. image:: img/umbrel_url.png
 
-#. 从 GitHub 下载代码并安装 ``pironman5`` 模块。
+#. 添加仓库后，点击 **Open** 打开 **SunFounder Store**。
 
-   .. code-block:: shell
+   .. image:: img/umbrel_open.png
 
-      cd ~
-      git clone -b max https://github.com/sunfounder/pironman5.git --depth 1
-      cd ~/pironman5
-      sudo python3 install.py
+#. 在 **SunFounder 应用商店** 中，你会看到两个可用的应用。选择 **Pironman 5** 或 **Pironman 5 Max**。
 
-#. 安装完成后，输入以下命令以重启 Raspberry Pi：
+   .. image:: img/umbrel_sf_app.png
 
-   .. code-block:: shell
+#. 点击 **Install** 开始安装。
 
-      sudo reboot
+   .. image:: img/umbrel_app_install.png
 
-#. 重启后， ``pironman5.service`` 服务会自动启动。  
-   以下是 Pironman 5 MAX 的主要配置：
+#. 安装完成后，点击 **Open** 启动仪表盘。
 
-   * OLED 屏幕显示 CPU、RAM、磁盘使用率、CPU 温度和 Raspberry Pi 的 IP 地址。  
-   * 四个 WS2812 RGB 灯将以蓝色呼吸效果亮起。  
-   * RGB 风扇默认设置为 **Always On（始终开启）** 模式。若需调整温度触发设置，请参阅 :ref:`cc_control_fan_max`。
-
-#. 你可以使用 ``systemctl`` 工具来 ``start``、 ``stop``、 ``restart`` 或检查 ``pironman5.service`` 服务的 ``status``。
-
-   .. code-block:: shell
-     
-      sudo systemctl restart pironman5.service
-   
-   * ``restart``：使用此命令以应用 Pironman 5 MAX 设置的更改。  
-   * ``start/stop``：启用或禁用 ``pironman5.service`` 服务。  
-   * ``status``：使用 ``systemctl`` 工具检查 ``pironman5`` 程序的运行状态。
-
-.. note::
-
-   至此，你已成功配置 Pironman 5 MAX 并可以开始使用。  
-   若需对其组件进行高级控制，请参阅 :ref:`control_commands_dashboard_max`。
-
+   .. image:: img/umbrel_dashboard.png

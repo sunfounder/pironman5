@@ -160,7 +160,7 @@ Pironman 5 MAX 的功能通过插件的形式集成在 Home Assistant 中。首�
 
 .. note::
 
-    有关 Pironman 5 MAX 网页界面的更多功能说明，请参考：:ref:`max_view_control_dashboard`。
+    有关 Pironman 5 MAX 网页界面的更多功能说明，请参考：:ref:`view_control_dashboard`。
 
 
 .. note::
