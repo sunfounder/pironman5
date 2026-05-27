@@ -133,6 +133,7 @@ class Pironman5:
                                             config=self.config,
                                             log=log)
             self.pm_dashboard.set_read_data(self.pm_auto.read)
+            self.pm_dashboard.set_get_ip_data(self.pm_auto.get_ip_data)
             self.pm_dashboard.set_read_config(self.read_config)
             if 'send_email' in self.peripherals:
                 self.pm_dashboard.set_test_smtp(self.pm_auto.test_smtp)
