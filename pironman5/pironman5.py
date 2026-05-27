@@ -133,7 +133,7 @@ class Pironman5:
                                             config=self.config,
                                             log=log)
             self.pm_dashboard.set_read_data(self.pm_auto.read)
-            if hasattr(self.pm_auto, 'get_ip_data'):
+            if hasattr(self.pm_auto, 'get_ip_data') and hasattr(self.pm_dashboard, 'set_get_ip_data'):
                 self.pm_dashboard.set_get_ip_data(self.pm_auto.get_ip_data)
             self.pm_dashboard.set_read_config(self.read_config)
             if 'send_email' in self.peripherals:
