@@ -1,26 +1,17 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Sumérgete más profundamente en Raspberry Pi, Arduino y ESP32 con otros entusiastas.
-
-    **¿Por qué unirte?**
-
-    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
-    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
-    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
-    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
-    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
-
-    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _fans:
 
 Ventiladores
 ===============
 
-Ventilador PWM
------------------
+Ventilador de la CPU
+---------------------
 
-El ventilador PWM en el Pironman 5 es gestionado por el sistema Raspberry Pi y constituye la base de su solución de enfriamiento inteligente, especialmente bajo cargas pesadas. Este sistema combina un ventilador PWM principal con dos ventiladores RGB suplementarios para un rendimiento de enfriamiento mejorado, integrados estrechamente con el sistema de gestión térmica del Raspberry Pi 5.
+El ventilador de la CPU en el Pironman 5 es gestionado por el sistema Raspberry Pi y constituye la base de su solución de enfriamiento inteligente, especialmente bajo cargas pesadas. Este sistema combina un ventilador de la CPU principal con dos ventiladores GPIO suplementarios para un rendimiento de enfriamiento mejorado, integrados estrechamente con el sistema de gestión térmica del Raspberry Pi 5.
 
 .. image:: img/fan_tower_cooler.png  
   :width: 600  
@@ -55,7 +46,7 @@ El ventilador PWM en el Pironman 5 es gestionado por el sistema Raspberry Pi y c
 
 **Control de Velocidad del Ventilador Según la Temperatura**  
 
-El ventilador PWM opera de manera dinámica, ajustando su velocidad de acuerdo con la temperatura del Raspberry Pi 5:
+El ventilador de la CPU opera de manera dinámica, ajustando su velocidad de acuerdo con la temperatura del Raspberry Pi 5:
 
 * **Por debajo de 50°C**: El ventilador permanece apagado (0% de velocidad).  
 * **A 50°C**: El ventilador opera a baja velocidad (30% de velocidad).  
@@ -65,7 +56,7 @@ El ventilador PWM opera de manera dinámica, ajustando su velocidad de acuerdo c
 
 Este control de temperatura a velocidad incluye una histéresis de 5°C para evitar cambios frecuentes en la velocidad. Por ejemplo, el ventilador reducirá su velocidad solo después de que la temperatura baje 5°C por debajo de cada umbral.  
 
-Los siguientes comandos permiten a los usuarios monitorear la operación del ventilador PWM:  
+Los siguientes comandos permiten a los usuarios monitorear la operación del ventilador de la CPU:  
 
 Para verificar el estado actual del ventilador:  
 
@@ -73,7 +64,7 @@ Para verificar el estado actual del ventilador:
 
   cat /sys/class/thermal/cooling_device0/cur_state
 
-Ventiladores RGB
+Ventiladores GPIO
 ----------------------
 
 .. image:: img/size_fan.png

@@ -51,7 +51,7 @@ A continuación se muestra una comparación de especificaciones para el Pironman
    "Material Exterior 2", "Acrílico Transparente", "Acrílico Negro", "Acrílico Negro", "Acrílico Negro"
    "Enfriador", "Enfriador de Torre", "Enfriador de Torre", "Enfriador de Torre", "Enfriador Activo"
    "Receptor IR", "✔", "✔", "✔", "X"
-   "Número de Ventiladores RGB", "2", "2", "2", "1"
+   "Número de Ventiladores GPIO", "2", "2", "2", "1"
    "Modo RGB del Ventilador", "Sincronizado con Ventilador", "Sincronizado con Ventilador", "Control Independiente", "Control Independiente"
    "Puertos HDMI", "2 Puertos HDMI Estándar", "2 Puertos HDMI Estándar", "2 Puertos HDMI Estándar", "2 Puertos Micro HDMI"
    "Pantalla OLED", "✔", "✔", "✔", "X"

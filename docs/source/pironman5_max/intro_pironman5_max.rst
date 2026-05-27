@@ -1,16 +1,6 @@
-.. note:: 
-
-    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete más a fondo en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados como tú.
-
-    **¿Por qué unirte?**
-
-    - **Soporte experto**: Resuelve problemas técnicos y postventa con la ayuda de nuestra comunidad y equipo.
-    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
-    - **Avances exclusivos**: Accede anticipadamente a anuncios y adelantos de nuevos productos.
-    - **Descuentos especiales**: Disfruta de ofertas exclusivas en nuestros productos más recientes.
-    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales durante las festividades.
-
-    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
 
 .. _intro_pironman5_max:
@@ -29,7 +19,7 @@ Lleva tu Raspberry Pi 5 al siguiente nivel con |link_pironman5_max|, una carcasa
 **Características Clave**:
 
 * **Expansión Dual NVMe & AI**: Conmutador PCIe Gen 2 con dos ranuras M.2 M-key (2230/2242/2260/2280) para SSDs o aceleradores de IA. Totalmente compatible con Hailo-8/8L.  
-* **Refrigeración Extrema**: Disipador tipo torre con ventilador PWM más dos ventiladores RGB, manteniendo una Pi al 100% de carga a solo 39°C en una habitación a 25°C.  
+* **Refrigeración Extrema**: Disipador tipo torre con ventilador de la CPU más dos ventiladores GPIO, manteniendo una Pi al 100% de carga a solo 39°C en una habitación a 25°C.  
 * **Pantalla OLED Inteligente**: CPU, memoria, temperatura, uso de disco, dirección IP y más en tiempo real. 
 * **Iluminación RGB Personalizable**: Cuatro LEDs direccionables WS2812 iluminan tu configuración con efectos vibrantes.  
 * **Conectividad Mejorada**: Dos puertos HDMI estándar, receptor IR para aplicaciones multimedia, botón de encendido seguro estilo retro y expansor GPIO externo con etiquetas.  
@@ -78,8 +68,8 @@ Lleva tu Raspberry Pi 5 al siguiente nivel con |link_pironman5_max|, una carcasa
     * Puerto LAN Gigabit  
     * 2 x Puertos HDMI Estándar  
 * Sistema de Refrigeración  
-    * 1 x Disipador tipo torre con ventilador PWM (controlado por el sistema)  
-    * 2 x Ventiladores RGB (controlados por GPIO)  
+    * 1 x Disipador tipo torre con ventilador de la CPU (controlado por el sistema)  
+    * 2 x Ventiladores GPIO (controlados por GPIO)  
 * Pantalla  
     * Pantalla OLED de 0.96" (CPU, RAM, temperatura, uso de disco, dirección IP)  
 * Almacenamiento y Expansión  

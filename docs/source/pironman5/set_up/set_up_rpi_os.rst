@@ -1,37 +1,31 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 con otros entusiastas.
 
-    **¿Por qué unirte?**
 
-    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
-    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
-    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
-    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
-    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
-
-    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 Configuración en Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge
 ==================================================================
-
 
 .. image:: ../img/pironman5_pic.jpg
     :width: 400
     :align: center
 
-Si has instalado Raspberry Pi OS, Ubuntu, Kali Linux o Homebridge en tu Raspberry Pi, deberás configurar el Pironman 5 utilizando la línea de comandos. A continuación puedes encontrar tutoriales detallados.
+
+Si has instalado Raspberry Pi OS, Ubuntu, Kali Linux o Homebridge en tu Raspberry Pi, deberás configurar el Pironman 5 utilizando la línea de comandos.
 
 .. note::
 
-  Antes de proceder con la configuración, debes iniciar y acceder a tu Raspberry Pi.  
-  Si no estás seguro de cómo iniciar sesión, puedes visitar el sitio oficial de Raspberry Pi: |link_rpi_get_start|.
+  Antes de proceder con la configuración, debes iniciar y acceder a tu Raspberry Pi. Si no estás seguro de cómo iniciar sesión, puedes visitar el sitio oficial de Raspberry Pi: |link_rpi_get_start|.
 
 
-Configuración del apagado para desactivar la alimentación GPIO
---------------------------------------------------------------------------------------
+.. _safe_shutdown_5:
 
-Para evitar que la pantalla OLED y los ventiladores RGB, alimentados por el GPIO de la Raspberry Pi, permanezcan activos después del apagado, es fundamental configurar la Raspberry Pi para desactivar la alimentación GPIO.
+1. Configurar el apagado para desactivar la alimentación GPIO
+---------------------------------------------------------------
+
+Para evitar que la pantalla OLED y los ventiladores GPIO, alimentados por el GPIO de la Raspberry Pi, permanezcan activos después del apagado, es fundamental configurar la Raspberry Pi para desactivar la alimentación GPIO.
 
 #. Abre la herramienta de configuración EEPROM:
 
@@ -39,59 +33,107 @@ Para evitar que la pantalla OLED y los ventiladores RGB, alimentados por el GPIO
 
       sudo raspi-config
 
-#. Ve a **Advanced Options → A12 Shutdown Behaviour**.
+#. Navega a **Advanced Options → A12 Shutdown Behaviour**.
 
    .. image:: img/shutdown_behaviour.png
 
-#. Selecciona **B1 Full Power Off**.
+#. Selecciona **B1 Full Power Off...**.
 
    .. image:: img/run_power_off.png
 
 #. Guarda los cambios. Se te pedirá reiniciar para que la nueva configuración surta efecto.
 
-.. _standard_download_pironman5_module:
 
-Descarga e instalación del módulo ``pironman5``
+.. _install_pironman5_module_5:
+
+2. Instalando el módulo ``pironman5``
 -----------------------------------------------------------
 
 .. note::
 
-   Para los sistemas “lite”, instala primero herramientas como ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
-   
+   Para sistemas Raspberry Pi OS Lite, primero instala las herramientas necesarias como ``git`` y ``python3``.
+
    .. code-block:: shell
-   
+
       sudo apt-get install git -y
       sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. Procede a descargar el código desde GitHub e instalar el módulo ``pironman5``.
+#. Descarga e instala el módulo ``pironman5`` desde GitHub.
 
    .. code-block:: shell
 
-      cd ~
-      git clone -b base https://github.com/sunfounder/pironman5.git --depth 1
-      cd ~/pironman5
-      sudo python3 install.py
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
-   Después de una instalación exitosa, es necesario reiniciar el sistema para activar la instalación. Sigue las indicaciones en pantalla para reiniciar.
+   .. note::
 
-   Al reiniciar, el servicio ``pironman5.service`` se iniciará automáticamente.  
-   Estas son las configuraciones principales de Pironman 5:
-   
-   * La pantalla OLED muestra CPU, RAM, uso de disco, temperatura de la CPU y dirección IP de la Raspberry Pi.  
-   * Cuatro LED WS2812 RGB se iluminarán de color azul con un efecto de respiración.  
-   * Los ventiladores RGB están configurados por defecto en **Always On**. Para obtener información sobre cómo configurar las temperaturas de activación, consulta :ref:`cc_control_fan`.
+      Si usas la serie Pironman 5 junto con PiPower 5, ejecuta el siguiente comando en su lugar:
 
-#. Puedes usar la herramienta ``systemctl`` para ``start``, ``stop``, ``restart`` o verificar el ``status`` del servicio ``pironman5.service``.
+      .. code-block:: shell
+
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+
+#. Después de ejecutar el instalador, selecciona tu modelo de Pironman 5 (1~4).
 
    .. code-block:: shell
-     
+
+      Pironman 5 Installer v1.0.1
+      Supports: 5 | 5 Mini | 5 Max | 5 Pro Max
+
+      Please select your product model:
+      1) Pironman 5
+      2) Pironman 5 Mini
+      3) Pironman 5 Max
+      4) Pironman 5 Pro Max
+
+      Enter number [1-4]:
+
+#. Una vez completada la instalación, reinicia la Raspberry Pi cuando se te solicite. El primer inicio puede tardar hasta 30 segundos mientras se inicializan los servicios.
+
+#. Después de que el Pironman 5 se inicie correctamente, verifica que los siguientes componentes funcionen correctamente.
+
+   * **Pantalla OLED**
+
+     * Muestra el uso de CPU, uso de RAM, temperatura de CPU y dirección IP.
+     * Se apaga automáticamente después de 10 segundos.
+     * Presiona brevemente el botón de encendido para activar la pantalla o cambiar de página.
+
+   * **Botón de encendido**
+
+     * Pulsación breve: Encender / activar OLED / cambiar página OLED.
+     * Mantener 2 segundos: Apagado seguro (requiere :ref:`safe_shutdown_5`).
+     * Mantener 5 segundos: Apagado forzado.
+
+   * **LEDs RGB WS2812**
+
+     * Se iluminan en azul con efecto de respiración.
+
+   * **Dos ventiladores GPIO**
+
+     * Configurados en modo **Always On** de forma predeterminada.
+     * El modo de funcionamiento se puede cambiar mediante comandos o el Panel de Control.
+
+
+   * **Ventilador de la CPU (Ventilador del disipador en torre)**
+
+     * Ajusta automáticamente la velocidad según la temperatura de la CPU.
+     * Curva de ventilación predeterminada:
+
+       * < 50°C: Apagado (0%)
+       * 50°C+: Baja (30%)
+       * 60°C+: Media (50%)
+       * 67.5°C+: Alta (70%)
+       * 75°C+: Máxima velocidad (100%)
+
+#. Usa ``systemctl`` para gestionar el servicio ``pironman5.service``.
+
+   .. code-block:: shell
+
       sudo systemctl restart pironman5.service
-   
-   * ``restart``: Usa este comando para aplicar cualquier cambio en la configuración de Pironman 5.  
-   * ``start/stop``: Habilita o deshabilita el servicio ``pironman5.service``.  
-   * ``status``: Verifica el estado operativo del programa ``pironman5`` utilizando la herramienta ``systemctl``.
+
+   Reemplaza ``restart`` con ``start``, ``stop`` o ``status`` según sea necesario para gestionar el servicio.
 
 .. note::
 
-   En este punto, has configurado correctamente el Pironman 5 y está listo para su uso.  
-   Para el control avanzado de sus componentes, consulta :ref:`control_commands_dashboard_5`.
+   El Pironman 5 está listo para usar.
+
+   Para controles avanzados y funciones del panel, consulta :ref:`control_commands_dashboard_5`.

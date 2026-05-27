@@ -1,16 +1,7 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Sumérgete más profundamente en Raspberry Pi, Arduino y ESP32 con otros entusiastas.
-
-    **¿Por qué unirte?**
-
-    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
-    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
-    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
-    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
-    - **Promociones festivas y sorteos**: Participa en sorteos y promociones durante las festividades.
-
-    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 Expansor IO
 ================
@@ -92,7 +83,7 @@ Verifica si el cable FPC de la pantalla OLED está correctamente conectado.
 
     .. code-block:: shell
 
-        cat /opt/pironman5/log
+        cat /var/log/pironman5/pironman5.log
 
 #. Alternativamente, utiliza el siguiente comando para verificar si la dirección i2c de la OLED, 0x3C, es reconocida:
     
@@ -141,16 +132,16 @@ Para utilizar el receptor IR, verifica su conexión e instala el módulo necesar
 * Después de ejecutar el comando, presiona un botón en el control remoto y se imprimirá el código de ese botón.
 
 
-Pines del ventilador RGB
+Pines del ventilador GPIO
 -----------------------------
 
-La placa de expansión IO admite hasta dos ventiladores de 5V sin PWM. Ambos ventiladores son controlados juntos.
+La placa de expansión IO admite hasta dos ventiladores de 5V sin CPU. Ambos ventiladores son controlados juntos.
 
 **FAN1** y **FAN2** son dos conjuntos de pines para ventiladores. Debes conectar el cable rojo del ventilador a "+", y el cable negro a "-".
 
 .. image:: img/io_board_fan.png
 
-Los dos pines debajo de J9 son los pines de habilitación para los ventiladores RGB. Por defecto, un jumper está insertado en estos pines, lo que permite controlar el estado de encendido y apagado de los ventiladores mediante GPIO6. Si no se desea que funcionen los ventiladores, se puede retirar el jumper para liberar GPIO6.
+Los dos pines debajo de J9 son los pines de habilitación para los ventiladores GPIO. Por defecto, un jumper está insertado en estos pines, lo que permite controlar el estado de encendido y apagado de los ventiladores mediante GPIO6. Si no se desea que funcionen los ventiladores, se puede retirar el jumper para liberar GPIO6.
 
 .. image:: img/io_board_fan_j9.png
 
@@ -158,21 +149,21 @@ Los dos pines debajo de J9 son los pines de habilitación para los ventiladores 
 
 .. image:: img/io_board_fan_d2.png
 
-Puedes utilizar un comando para configurar el modo de funcionamiento de los dos ventiladores RGB. Estos modos determinan las condiciones bajo las cuales se activarán los ventiladores RGB.
+Puedes utilizar un comando para configurar el modo de funcionamiento de los dos ventiladores GPIO. Estos modos determinan las condiciones bajo las cuales se activarán los ventiladores GPIO.
 
-Por ejemplo, si se configura en **1: Rendimiento**, los ventiladores RGB se activarán a 50°C.
+Por ejemplo, si se configura en **1: Rendimiento**, los ventiladores GPIO se activarán a 50°C.
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4: Silencioso**: Los ventiladores RGB se activarán a 70°C.
-* **3: Equilibrado**: Los ventiladores RGB se activarán a 67.5°C.
-* **2: Enfriamiento**: Los ventiladores RGB se activarán a 60°C.
-* **1: Rendimiento**: Los ventiladores RGB se activarán a 50°C.
-* **0: Siempre encendido**: Los ventiladores RGB estarán siempre encendidos.
+* **4: Silencioso**: Los ventiladores GPIO se activarán a 70°C.
+* **3: Equilibrado**: Los ventiladores GPIO se activarán a 67.5°C.
+* **2: Enfriamiento**: Los ventiladores GPIO se activarán a 60°C.
+* **1: Rendimiento**: Los ventiladores GPIO se activarán a 50°C.
+* **0: Siempre encendido**: Los ventiladores GPIO estarán siempre encendidos.
 
-Si conectas el pin de control del ventilador RGB a diferentes pines en la Raspberry Pi, puedes utilizar el siguiente comando para cambiar el número de pin.
+Si conectas el pin de control del ventilador GPIO a diferentes pines en la Raspberry Pi, puedes utilizar el siguiente comando para cambiar el número de pin.
 
 .. code-block:: shell
 

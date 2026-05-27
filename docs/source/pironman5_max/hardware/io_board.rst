@@ -1,16 +1,7 @@
-.. note:: 
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    ¡Hola! Bienvenido a la comunidad de entusiastas de Raspberry Pi, Arduino y ESP32 de SunFounder en Facebook. Sumérgete en el apasionante mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas como tú.
-
-    **¿Por qué unirte?**
-
-    - **Expert Support**: Resuelve problemas postventa y desafíos técnicos con el apoyo de nuestra comunidad y equipo.
-    - **Learn & Share**: Intercambia consejos y tutoriales para mejorar tus habilidades.
-    - **Exclusive Previews**: Sé el primero en enterarte de nuevos lanzamientos y obtén adelantos exclusivos.
-    - **Special Discounts**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
-    - **Festive Promotions and Giveaways**: Participa en sorteos y promociones especiales durante las festividades.
-
-    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 IO Expander
 ================
@@ -99,7 +90,7 @@ Verifica que el cable FPC de la pantalla esté correctamente conectado.
 
     .. code-block:: shell
 
-        cat /var/log/pironman5/pm_auto.oled.log
+        cat /var/log/pironman5/pironman5.log
 
 #. Alternativamente, verifica si la dirección I2C 0x3C de la OLED es reconocida:
 
@@ -167,13 +158,13 @@ Para utilizar el receptor IR, asegúrate de su conexión e instala el módulo ne
 RGB Fan Pins
 ---------------
 
-La placa de expansión IO admite hasta dos ventiladores de 5V sin control PWM, que se controlan de forma conjunta.
+La placa de expansión IO admite hasta dos ventiladores de 5V sin control CPU, que se controlan de forma conjunta.
 
 **J4** y **J5** son dos conjuntos de puertos para ventiladores. Debe conectar los ventiladores aquí.
 
 .. image:: img/io_board_fan.png
 
-Hay dos juegos de conectores de 2 pines y dos jumpers que controlan los ventiladores RGB y sus LED. 
+Hay dos juegos de conectores de 2 pines y dos jumpers que controlan los ventiladores GPIO y sus LED. 
 Por defecto, los jumpers permiten el control a través de **GPIO6** y **GPIO5**. Si no se requieren, retira los jumpers para liberar los GPIO.
 
 .. image:: img/io_board_fan_j9.png
@@ -189,7 +180,7 @@ De esta forma, se encenderán con el sistema, pero no se podrán controlar desde
 
 .. .. image:: img/io_board_fan_d2.png
 
-.. Puedes usar comandos para configurar el modo de funcionamiento de los ventiladores RGB, determinando la temperatura de activación.
+.. Puedes usar comandos para configurar el modo de funcionamiento de los ventiladores GPIO, determinando la temperatura de activación.
 
 Por ejemplo, en modo **1: Performance**, los ventiladores se activan a 50 °C:
 
@@ -203,7 +194,7 @@ Por ejemplo, en modo **1: Performance**, los ventiladores se activan a 50 °C:
 * **1: Rendimiento**: Activación a 50 °C.
 * **0: Siempre encendidos**: Funcionan continuamente.
 
-Si cambias el pin de control del ventilador RGB a otro en la Raspberry Pi, usa este comando para actualizar el número de pin:
+Si cambias el pin de control del ventilador GPIO a otro en la Raspberry Pi, usa este comando para actualizar el número de pin:
 
 .. code-block:: shell
 

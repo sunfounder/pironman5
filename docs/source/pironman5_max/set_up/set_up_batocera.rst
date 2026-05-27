@@ -1,16 +1,7 @@
-.. note:: 
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Explora a fondo el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
-
-    **¿Por qué unirte?**
-
-    - **Soporte experto**: Resuelve problemas técnicos y postventa con la ayuda de nuestra comunidad y equipo.
-    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus conocimientos.
-    - **Avances exclusivos**: Sé el primero en conocer los nuevos productos y obtener adelantos exclusivos.
-    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
-    - **Promociones y sorteos festivos**: Participa en sorteos y promociones durante las festividades.
-
-    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _max_set_up_batocera:
 
@@ -55,7 +46,7 @@ Si ya has instalado el sistema operativo Batocera.linux, puedes iniciar sesión 
 
    * La pantalla OLED mostrará el uso de CPU, RAM, disco, temperatura de la CPU y la dirección IP de la Raspberry Pi.
    * Cuatro LEDs RGB WS2812 se encenderán en color azul con efecto de respiración.
-   * Los ventiladores RGB están configurados por defecto en el modo **Balanced**. Para cambiar la temperatura de activación, consulta :ref:`cc_control_fan_max`.
+   * Los ventiladores GPIO están configurados por defecto en el modo **Balanced**. Para cambiar la temperatura de activación, consulta :ref:`cc_control_fan_max`.
 
 Ahora puedes conectar el Pironman 5 MAX a una pantalla, controles de juego, auriculares y más, y sumergirte en tu mundo de juegos.
 

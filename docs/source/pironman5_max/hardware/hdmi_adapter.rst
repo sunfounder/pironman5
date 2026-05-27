@@ -1,16 +1,7 @@
-.. note:: 
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    ¡Hola! Bienvenido a la comunidad de entusiastas de Raspberry Pi, Arduino y ESP32 de SunFounder en Facebook. Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados como tú.
-
-    **¿Por qué unirte?**
-
-    - **Expert Support**: Resuelve problemas postventa y retos técnicos con la ayuda de nuestra comunidad y equipo.
-    - **Learn & Share**: Comparte y aprende consejos y tutoriales para potenciar tus habilidades.
-    - **Exclusive Previews**: Accede con antelación a anuncios de nuevos productos y adelantos exclusivos.
-    - **Special Discounts**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
-    - **Festive Promotions and Giveaways**: Participa en sorteos y promociones especiales durante las festividades.
-
-    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 USB HDMI Adapter
 ==========================================

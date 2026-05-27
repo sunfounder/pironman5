@@ -1,16 +1,7 @@
-.. note:: 
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza tus conocimientos sobre Raspberry Pi, Arduino y ESP32 junto a otros apasionados como tú.
-
-    **¿Por qué unirte?**
-
-    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con el respaldo de nuestra comunidad y equipo.
-    - **Aprende y comparte**: Intercambia consejos y tutoriales para desarrollar tus habilidades.
-    - **Avances exclusivos**: Obtén acceso anticipado a anuncios y adelantos de nuevos productos.
-    - **Descuentos especiales**: Disfruta de ofertas exclusivas en nuestros productos más recientes.
-    - **Promociones y sorteos festivos**: Participa en sorteos y promociones durante las festividades.
-
-    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _control_commands_dashboard_max:
 
@@ -31,5 +22,5 @@ Puedes monitorear y controlar el Pironman 5 mediante comandos o accediendo al pa
 .. toctree::
     :maxdepth: 1
 
-    control_with dashboard 
+    control_with_dashboard
     control_with_commands

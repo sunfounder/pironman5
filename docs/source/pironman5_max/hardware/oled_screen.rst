@@ -1,16 +1,7 @@
-.. note:: 
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    ¡Hola! Bienvenido a la comunidad de entusiastas de Raspberry Pi, Arduino y ESP32 de SunFounder en Facebook. Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados como tú.
-
-    **¿Por qué unirte?**
-
-    - **Expert Support**: Resuelve problemas postventa y desafíos técnicos con el respaldo de nuestra comunidad y equipo.
-    - **Learn & Share**: Intercambia consejos y tutoriales para mejorar tus habilidades.
-    - **Exclusive Previews**: Sé el primero en enterarte de los nuevos lanzamientos y obtén adelantos exclusivos.
-    - **Special Discounts**: Aprovecha descuentos especiales en nuestros productos más recientes.
-    - **Festive Promotions and Giveaways**: Participa en sorteos y promociones durante celebraciones y festividades.
-
-    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 OLED Screen
 ===================

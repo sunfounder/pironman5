@@ -1,16 +1,7 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    ¡Hola, bienvenido a la comunidad de entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook! Sumérgete aún más en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
-
-    **¿Por qué unirte?**
-
-    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
-    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
-    - **Avances Exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
-    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
-    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones de temporada.
-
-    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
 .. _set_up_batocera:
 
@@ -55,7 +46,7 @@ Si has instalado el sistema operativo Batocera.linux, puedes iniciar sesión rem
 
    * La pantalla OLED muestra el uso de CPU, RAM, disco, la temperatura de la CPU y la dirección IP de la Raspberry Pi.
    * Cuatro LED RGB WS2812 se encenderán en azul en modo respiración.
-   * Los ventiladores RGB están configurados por defecto en el modo **Balanced**. Para diferentes temperaturas de activación, consulta :ref:`cc_control_fan`.
+   * Los ventiladores GPIO están configurados por defecto en el modo **Balanced**. Para diferentes temperaturas de activación, consulta :ref:`cc_control_fan`.
 
 Ahora, puedes conectar el Pironman 5 a una pantalla, controladores de juego, auriculares y más para sumergirte en tu mundo de videojuegos.
 
@@ -63,4 +54,4 @@ Ahora, puedes conectar el Pironman 5 a una pantalla, controladores de juego, aur
 
    En este punto, ha configurado correctamente el Pironman 5 y está listo para usar.
    
-   Para un control avanzado de sus componentes, consulte :ref:`view_control_commands`.
+   Para un control avanzado de sus componentes, consulte :ref:`view_control_commands_5`.

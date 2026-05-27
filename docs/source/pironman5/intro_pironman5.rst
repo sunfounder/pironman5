@@ -1,16 +1,6 @@
-.. note:: 
-
-    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
-
-    **¿Por qué unirte?**
-
-    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
-    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
-    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y contenido exclusivo.
-    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
-    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
-
-    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
 
 .. _intro_pironman5: 
@@ -28,7 +18,7 @@ Gracias por elegir nuestro |link_pironman5|.
 
 **Características Clave**
 
-* **Refrigeración Avanzada**: Disipador tipo torre con ventiladores RGB duales para un control eficiente de la temperatura.  
+* **Refrigeración Avanzada**: Disipador tipo torre con ventiladores GPIO duales para un control eficiente de la temperatura.  
 * **Almacenamiento de Alta Velocidad y Soporte de IA**: Compatible con SSD NVMe M.2 (**2230**, **2242**, **2260**, **2280**) y totalmente compatible con el **acelerador de IA Hailo-8L** para potentes capacidades de IA en el borde.  
 * **Pantalla Inteligente**: Pantalla OLED integrada de 0.96” que muestra en tiempo real el uso de CPU, memoria, temperatura y dirección IP.  
 * **Conectividad Mejorada**: Puertos HDMI duales, LEDs RGB personalizables, interruptor de encendido seguro, receptor IR y expansor GPIO externo.  
@@ -81,8 +71,8 @@ Gracias por elegir nuestro |link_pironman5|.
     * 2 x Salidas HDMI estándar 4Kp60
 * 1 x Botón de encendido metálico
 * 1 x Pantalla OLED de 0.96'' 128x64
-* 1 x Ventilador PWM (40x40x10 mm)
-* 2 x Ventiladores RGB (40x40x10 mm)
+* 1 x Ventilador de la CPU (40x40x10 mm)
+* 2 x Ventiladores GPIO (40x40x10 mm)
 * 4 x LEDs RGB WS2812-5050
 * 1 x Receptor IR de 38KHz
 * 1 x Disipador tipo torre
