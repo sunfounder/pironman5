@@ -2,26 +2,23 @@
 
 .. note::
 
-    Ciao, benvenuto nella community di appassionati di Raspberry Pi & Arduino & ESP32 di SunFounder su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 con altri appassionati.
+   Benvenuto nella community Facebook SunFounder Raspberry Pi, Arduino ed ESP32!
 
-    **Perché Unirti?**
+   * Ottieni supporto tecnico e aiuto nella risoluzione dei problemi.
+   * Impara e condividi progetti, suggerimenti e tutorial.
+   * Accedi in anteprima a nuovi prodotti e aggiornamenti.
+   * Goditi sconti esclusivi e omaggi.
 
-    * **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
-    * **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
-    * **Anteprime Esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime.
-    * **Sconti Speciali**: Goditi sconti esclusivi sui nostri nuovi prodotti.
-    * **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
-
-    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
+   👉 Unisciti a noi qui: [|link_sf_facebook|]
 
 .. end_hello_message
 
 Serie Pironman 5 - Case Mini PC PCIe con NVMe M.2 SSD per Raspberry Pi 5
 ================================================================================
 
-Benvenuto nella guida ufficiale per i prodotti della Serie Pironman 5. Questa guida ti aiuterà a identificare il tuo prodotto specifico all'interno della serie e fornirà istruzioni passo passo per la configurazione e l'installazione.
+Benvenuto nella guida ufficiale per i prodotti della Serie Pironman 5. Questa guida ti aiuterà a identificare il tuo prodotto specifico nella serie e fornirà istruzioni dettagliate per la configurazione e l'installazione.
 
-Usa le immagini qui sotto per identificare il prodotto che hai acquistato. Una volta identificato, clicca sul link corrispondente per accedere all'introduzione dettagliata del prodotto e alle specifiche. Dopo aver letto l'introduzione, puoi procedere con l'installazione del sistema e la configurazione del software ``pironman5``.
+Usa le immagini qui sotto per identificare il prodotto acquistato. Una volta identificato, clicca sul link corrispondente per accedere all'introduzione dettagliata e alle specifiche del prodotto. Dopo aver letto l'introduzione, puoi procedere con l'installazione del sistema e la configurazione del software ``pironman5``.
 
 .. .. note::
 
@@ -35,11 +32,12 @@ Usa le immagini qui sotto per identificare il prodotto che hai acquistato. Una v
 ..     * |link_it_tutorials|
 ..     * |link_zh_tutorials|
 
-    .. Clicca sui rispettivi link per accedere al documento nella lingua preferita.
 
-Basandoti sulle immagini qui sotto, seleziona il prodotto che possiedi per saperne di più. Ogni link ti porterà alla pagina di introduzione del rispettivo prodotto.
+    .. Clicca sui rispettivi link per accedere al documento nella lingua desiderata.
 
-.. list-table:: 
+In base alle immagini qui sotto, seleziona il prodotto che possiedi per saperne di più. Ogni link ti porterà alla pagina di introduzione del rispettivo prodotto.
+
+.. list-table::
    :widths: 25 25 25 25
    :header-rows: 1
 
@@ -47,33 +45,35 @@ Basandoti sulle immagini qui sotto, seleziona il prodotto che possiedi per saper
      - :ref:`intro_pironman5_promax`
      - :ref:`intro_pironman5_max`
      - :ref:`intro_pironman5_mini`
-   * - |pic_pironman5| 
+   * - |pic_pironman5|
      - |pic_pironman5_promax|
      - |pic_pironman5_max|
      - |pic_pironman5_mini|
 
-Di seguito è riportato un confronto delle specifiche per Pironman 5, Pironman 5 Mini e Pironman 5 MAX. Usa questa tabella per comprendere le differenze tra questi prodotti.
+
+Di seguito un confronto delle specifiche per Pironman 5, Pironman 5 Mini e Pironman 5 MAX. Usa questa tabella per capire le differenze tra i prodotti.
 
 .. csv-table:: Confronto Serie Pironman 5
    :header: "Specifiche", ":ref:`intro_pironman5`", ":ref:`intro_pironman5_promax`", ":ref:`intro_pironman5_max`", ":ref:`intro_pironman5_mini`"
    :widths: 20, 15, 15, 15, 35
 
-   "Dispositivi Compatibili", "Raspberry Pi 5", "Raspberry Pi 5", "Raspberry Pi 5", "Raspberry Pi 5"
-   "Ingresso", "USB Type C, 5V/5A", "USB Type C, 5V/5A", "USB Type C, 5V/5A", "USB Type C, 5V/5A"
-   "Pulsante di Accensione", "✔", "✔", "✔", "✔"
-   "Materiale Esterno 1", "Lega di Alluminio Argento", "Lega di Alluminio Nero", "Lega di Alluminio Nero", "Lega di Alluminio Argento"
-   "Materiale Esterno 2", "Acrilico Trasparente", "Acrilico Nero", "Acrilico Nero", "Acrilico Nero"
-   "Dissipatore", "Dissipatore a Torre", "Dissipatore a Torre", "Dissipatore a Torre", "Dissipatore Attivo"
+   "Dispositivi compatibili", "Raspberry Pi 5", "Raspberry Pi 5", "Raspberry Pi 5", "Raspberry Pi 5"
+   "Alimentazione", "USB Type C, 5V/5A", "USB Type C, 5V/5A", "USB Type C, 5V/5A", "USB Type C, 5V/5A"
+   "Pulsante di accensione", "✔", "✔", "✔", "✔"
+   "Materiale esterno 1", "Lega di alluminio argento", "Lega di alluminio nero", "Lega di alluminio nero", "Lega di alluminio argento"
+   "Materiale esterno 2", "Acrilico trasparente", "Acrilico nero", "Acrilico nero", "Acrilico nero"
+   "Dissipatore", "Dissipatore a torre", "Dissipatore a torre", "Dissipatore a torre", "Dissipatore attivo"
    "Ricevitore IR", "✔", "✔", "✔", "X"
-   "Numero Ventole RGB", "2", "2", "2", "1"
-   "Modalità RGB Ventola", "Sincronizzata con Ventola", "Sincronizzata con Ventola", "Controllo Indipendente", "Controllo Indipendente"
-   "Porte HDMI", "2 Porte HDMI Standard", "2 Porte HDMI Standard", "2 Porte HDMI Standard", "2 Porte Micro HDMI"
+   "Numero ventole GPIO", "2", "2", "2", "1"
+   "Modalità RGB ventole", "Sincronizzato con ventola", "Sincronizzato con ventola", "Controllo indipendente", "Controllo indipendente"
+   "Porte HDMI", "2 porte HDMI standard", "2 porte HDMI standard", "2 porte HDMI standard", "2 porte Micro HDMI"
    "Display OLED", "✔", "✔", "✔", "X"
-   "Attivazione OLED", "Sveglia con Pulsante", "Sveglia con Pulsante", "Sveglia con Pulsante", ""
+   "Attivazione OLED", "Riattivazione con pulsante", "Riattivazione con pulsante", "Riattivazione con pulsante", ""
    "Supporto SSD NVMe", "1", "2", "2", "1"
-   "Dimensioni", "111.9x78.5x117mm", "140.9x77.0x138.7mm", "111.9x78.5x117mm", "67.8x98.6x101.5mm"
+   "Dimensioni", "111,9x78,5x117 mm", "140,9x77,0x138,7 mm", "111,9x78,5x117 mm", "67,8x98,6x101,5 mm"
 
-Se hai domande, invia un'email a service@sunfounder.com e ti risponderemo il prima possibile.
+
+Se hai domande, invia un'email a service@sunfounder.com e ti risponderemo al più presto.
 
 .. note::
 

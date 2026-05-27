@@ -1,16 +1,7 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme agli altri appassionati.
-
-    **Perché unirti a noi?**
-
-    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
-    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
-    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime.
-    - **Sconti speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
-    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni speciali per le festività.
-
-    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _set_up_batocera:
 
@@ -64,4 +55,4 @@ Ora puoi collegare il Pironman 5 a uno schermo, controller di gioco, cuffie e mo
 
    A questo punto, hai completato con successo la configurazione del Pironman 5 ed è pronto per l’uso.
    
-   Per un controllo avanzato dei suoi componenti, fai riferimento a :ref:`view_control_commands`.
+   Per un controllo avanzato dei suoi componenti, fai riferimento a :ref:`view_control_commands_5`.

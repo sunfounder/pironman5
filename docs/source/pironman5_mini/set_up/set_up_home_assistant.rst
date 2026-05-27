@@ -1,16 +1,7 @@
-.. note:: 
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Ciao, benvenuto nella community SunFounder di appassionati di Raspberry Pi, Arduino ed ESP32 su Facebook! Esplora più a fondo il mondo di Raspberry Pi, Arduino ed ESP32 insieme ad altri entusiasti.
-
-    **Perché unirsi?**
-
-    - **Supporto Esperto**: Risolvi problemi post-vendita e difficoltà tecniche con l'aiuto della nostra community e del nostro team.
-    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
-    - **Anteprime Esclusive**: Ottieni accesso anticipato ai nuovi annunci di prodotto e alle anteprime.
-    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
-    - **Promozioni Festive e Giveaway**: Partecipa a promozioni speciali e concorsi a premi.
-
-    👉 Pronto per esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti subito!
 
 Configurazione con Home Assistant
 ============================================

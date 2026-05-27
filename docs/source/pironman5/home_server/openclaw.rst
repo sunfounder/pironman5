@@ -69,10 +69,6 @@ Se vuoi sperimentare la potenza di OpenClaw il più rapidamente possibile, usa q
 
     .. image:: /pironman5/home_server/img/openclaw/paste_api_key_open_claw.png
 
-.. |link_openai_platform| raw:: html
-
-    <a href="https://platform.openai.com/settings/organization/api-keys" target="_blank">OpenAI Platform</a>
-
 8.  Vai su |link_openai_platform| e accedi. Nella pagina **API keys**, clicca su **Create new secret key**.
 
     .. image:: /pironman5/home_server/img/openclaw/llm_openai_create.png
@@ -138,7 +134,7 @@ Abilitare OpenClaw a Operare il Pironman5
 
 Per consentire a OpenClaw di operare il Pironman5, dobbiamo installare l'abilità (skill) Pironman5.
 
-1.  Assicurati di aver già installato Pironman5. In caso contrario, consulta :ref:`standard_download_pironman5_module`.
+1.  Assicurati di aver già installato Pironman5. In caso contrario, consulta :ref:`install_pironman5_module_5`.
 
 2.  Esegui il seguente comando nel terminale:
 

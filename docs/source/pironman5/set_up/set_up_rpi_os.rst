@@ -3,25 +3,29 @@
    :end-before: end_hello_message
 
 
+
+
 Configurazione su Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge
 ==================================================================
 
 .. image:: ../img/pironman5_pic.jpg
     :width: 400
     :align: center
-    
-Se hai installato Raspberry Pi OS, Ubuntu, Kali Linux o Homebridge sul tuo Raspberry Pi, dovrai configurare il Pironman 5 utilizzando la riga di comando. Di seguito puoi trovare tutorial dettagliati.
+
+
+Se hai installato Raspberry Pi OS, Ubuntu, Kali Linux o Homebridge sul tuo Raspberry Pi, dovrai configurare il Pironman 5 usando la riga di comando.
 
 .. note::
 
-  Prima di procedere con la configurazione, devi avviare e accedere al tuo Raspberry Pi.  
-  Se non sei sicuro di come effettuare l’accesso, puoi visitare il sito ufficiale di Raspberry Pi: |link_rpi_get_start|.
+  Prima della configurazione, devi avviare e accedere al tuo Raspberry Pi. Se non sei sicuro di come accedere, visita il sito ufficiale di Raspberry Pi: |link_rpi_get_start|.
 
 
-Configurazione dello spegnimento per disattivare l’alimentazione GPIO
---------------------------------------------------------------------------------------
+.. _safe_shutdown_5:
 
-Per evitare che lo schermo OLED e le ventole RGB, alimentati dal GPIO del Raspberry Pi, rimangano attivi dopo lo spegnimento, è fondamentale configurare il Raspberry Pi per disattivare l’alimentazione GPIO.
+1. Configurazione dell'arresto per disattivare l'alimentazione GPIO
+-------------------------------------------------------------------
+
+Per evitare che lo schermo OLED e le ventole GPIO, alimentate dal GPIO del Raspberry Pi, rimangano attive dopo l'arresto, è essenziale configurare il Raspberry Pi per disattivare l'alimentazione GPIO.
 
 #. Apri lo strumento di configurazione EEPROM:
 
@@ -29,59 +33,107 @@ Per evitare che lo schermo OLED e le ventole RGB, alimentati dal GPIO del Raspbe
 
       sudo raspi-config
 
-#. Vai su **Advanced Options → A12 Shutdown Behaviour**.
+#. Vai a **Opzioni avanzate → A12 Comportamento all'arresto**.
 
    .. image:: img/shutdown_behaviour.png
 
-#. Seleziona **B1 Full Power Off**.
+#. Seleziona **B1 Spegnimento completo...**.
 
    .. image:: img/run_power_off.png
 
-#. Salva le modifiche. Ti verrà chiesto di riavviare affinché le nuove impostazioni abbiano effetto.
+#. Salva le modifiche. Ti verrà chiesto di riavviare per applicare le nuove impostazioni.
 
-.. _standard_download_pironman5_module:
 
-Download e installazione del modulo ``pironman5``
+.. _install_pironman5_module_5:
+
+2. Installazione del modulo ``pironman5``
 -----------------------------------------------------------
 
 .. note::
 
-   Per i sistemi “lite”, installa inizialmente strumenti come ``git``, ``python3``, ``pip3``, ``setuptools``, ecc.
-   
+   Per i sistemi Raspberry Pi OS Lite, installa prima gli strumenti necessari come ``git`` e ``python3``.
+
    .. code-block:: shell
-   
+
       sudo apt-get install git -y
       sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. Procedi a scaricare il codice da GitHub e installare il modulo ``pironman5``.
+#. Scarica e installa il modulo ``pironman5`` da GitHub.
 
    .. code-block:: shell
 
-      cd ~
-      git clone -b base https://github.com/sunfounder/pironman5.git --depth 1
-      cd ~/pironman5
-      sudo python3 install.py
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
-   Dopo un’installazione riuscita, è necessario riavviare il sistema per attivare l’installazione. Segui il prompt a schermo per riavviare.
+   .. note::
 
-   Al riavvio, il servizio ``pironman5.service`` verrà avviato automaticamente.  
-   Ecco le configurazioni principali di Pironman 5:
-   
-   * Lo schermo OLED mostra CPU, RAM, utilizzo del disco, temperatura della CPU e indirizzo IP del Raspberry Pi.  
-   * Quattro LED WS2812 RGB si illumineranno di blu con un effetto di respirazione.  
-   * Le ventole RGB sono impostate di default su **Always On**. Per informazioni sull’impostazione delle temperature di attivazione, consulta :ref:`cc_control_fan`.
+      Se usi la serie Pironman 5 insieme a PiPower 5, esegui invece il seguente comando:
 
-#. Puoi utilizzare lo strumento ``systemctl`` per ``start``, ``stop``, ``restart`` o controllare lo ``status`` del servizio ``pironman5.service``.
+      .. code-block:: shell
+
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+
+#. Dopo aver eseguito il programma di installazione, seleziona il tuo modello Pironman 5 (1~4).
 
    .. code-block:: shell
-     
+
+      Pironman 5 Installer v1.0.1
+      Supports: 5 | 5 Mini | 5 Max | 5 Pro Max
+
+      Please select your product model:
+      1) Pironman 5
+      2) Pironman 5 Mini
+      3) Pironman 5 Max
+      4) Pironman 5 Pro Max
+
+      Enter number [1-4]:
+
+#. Una volta completata l'installazione, riavvia il Raspberry Pi come richiesto. Il primo avvio potrebbe richiedere fino a 30 secondi mentre i servizi si inizializzano.
+
+#. Dopo che il Pironman 5 si è avviato correttamente, verifica che i seguenti componenti funzionino correttamente.
+
+   * **Schermo OLED**
+
+     * Visualizza l'utilizzo della CPU, della RAM, la temperatura della CPU e l'indirizzo IP.
+     * Si spegne automaticamente dopo 10 secondi.
+     * Premi brevemente il pulsante di accensione per riattivare lo schermo o cambiare pagina.
+
+   * **Pulsante di accensione**
+
+     * Pressione breve: Accensione / riattivazione OLED / cambio pagina OLED.
+     * Tieni premuto 2 secondi: Arresto sicuro (richiede :ref:`safe_shutdown_5`).
+     * Tieni premuto 5 secondi: Arresto forzato.
+
+   * **LED RGB WS2812**
+
+     * Si illuminano in blu con un effetto di respirazione.
+
+   * **Due ventole GPIO**
+
+     * Impostate in modalità **Sempre attive** per impostazione predefinita.
+     * La modalità di funzionamento può essere modificata tramite comandi o la Dashboard.
+
+
+   * **Ventola CPU (ventola del dissipatore a torre)**
+
+     * Regola automaticamente la velocità in base alla temperatura della CPU.
+     * Curva predefinita della ventola:
+
+       * < 50°C: Spenta (0%)
+       * 50°C+: Bassa (30%)
+       * 60°C+: Media (50%)
+       * 67,5°C+: Alta (70%)
+       * 75°C+: Massima velocità (100%)
+
+#. Usa ``systemctl`` per gestire ``pironman5.service``.
+
+   .. code-block:: shell
+
       sudo systemctl restart pironman5.service
-   
-   * ``restart``: Usa questo comando per applicare eventuali modifiche alle impostazioni di Pironman 5.  
-   * ``start/stop``: Abilita o disabilita il servizio ``pironman5.service``.  
-   * ``status``: Controlla lo stato operativo del programma ``pironman5`` utilizzando lo strumento ``systemctl``.
+
+   Sostituisci ``restart`` con ``start``, ``stop`` o ``status`` secondo necessità per gestire il servizio.
 
 .. note::
 
-   A questo punto hai configurato con successo il Pironman 5 ed è pronto per l’uso.  
-   Per il controllo avanzato dei suoi componenti, consulta :ref:`control_commands_dashboard_5`.
+   Pironman 5 è ora pronto all'uso.
+
+   Per controlli avanzati e funzionalità della dashboard, vedi :ref:`control_commands_dashboard_5`.

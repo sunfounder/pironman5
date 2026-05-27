@@ -1,16 +1,7 @@
-.. note:: 
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Ciao, benvenuto nella community di appassionati di Raspberry Pi, Arduino ed ESP32 di SunFounder su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri membri della community.
-
-    **Perché unirsi?**
-
-    - **Supporto esperto**: Risolvi problemi post-vendita e difficoltà tecniche grazie al supporto del nostro team e della community.
-    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
-    - **Anteprime esclusive**: Ottieni l’accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
-    - **Sconti esclusivi**: Approfitta di offerte speciali sui nostri prodotti più recenti.
-    - **Promozioni festive e giveaway**: Partecipa a concorsi ed eventi promozionali durante le festività.
-
-    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 FAQ
 ============
@@ -64,7 +55,15 @@ Puoi staccare il modulo acceleratore AI Hailo dal Raspberry Pi AI Kit e inserirl
    ..      :width: 800
 
 
-4. PI5 non si avvia (LED rosso)?
+4. Informazioni sul cavo Micro HDMI
+-------------------------------------
+
+  Si consiglia di utilizzare il cavo Micro HDMI ufficiale Raspberry Pi. Alcuni cavi di terze parti con una lunghezza del connettore inferiore a 65 mm potrebbero causare scarso contatto e problemi di visualizzazione.
+
+  .. image:: img/need_mini_hdmi.png
+     :width: 400
+
+5. PI5 non si avvia (LED rosso)?
 -------------------------------------------
 
 Questo problema può essere causato da un aggiornamento del sistema, da modifiche all’ordine di avvio o da un bootloader danneggiato. Puoi provare i seguenti passaggi per risolvere il problema:

@@ -1,16 +1,7 @@
-.. note:: 
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Ciao, benvenuto nella community SunFounder dedicata agli appassionati di Raspberry Pi, Arduino ed ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
-
-    **Perché unirsi?**
-
-    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche grazie al supporto della nostra community e del nostro team.
-    - **Impara e Condividi**: Scambia consigli e tutorial per accrescere le tue competenze.
-    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
-    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri ultimi prodotti.
-    - **Promozioni Festive e Giveaway**: Partecipa a promozioni festive e giveaway.
-
-    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti subito!
 
 .. _set_up_batocera_mini:
 
@@ -54,7 +45,7 @@ Se hai installato il sistema operativo Batocera.linux, puoi accedere da remoto a
 #. Dopo il riavvio, il servizio ``pironman5.service`` verrà avviato automaticamente. Ecco le principali configurazioni per Pironman 5:
    
    * Quattro LED RGB WS2812 si illumineranno di blu in modalità "breathing".
-   * * Le ventole RGB sono impostate di default sulla modalità **Bilanciata**. Per temperature di attivazione differenti, vedi :ref:`cc_control_fan_mini`.
+   * Le ventole RGB sono impostate di default sulla modalità **Bilanciata**. Per temperature di attivazione differenti, vedi :ref:`cc_control_fan_mini`.
 
 Ora puoi collegare il tuo Pironman 5 a uno schermo, a dei controller di gioco, a cuffie e molto altro, per immergerti completamente nel tuo mondo videoludico.
 

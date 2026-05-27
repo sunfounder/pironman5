@@ -1,16 +1,6 @@
-.. note::
-
-    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
-
-    **Perché unirsi?**
-
-    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
-    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
-    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
-    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
-    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
-
-    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
 
 Schermo Touch da 3,5 pollici
@@ -28,7 +18,7 @@ fornendo sia la visualizzazione che il controllo touch per il Pironman 5.
 Segui attentamente i passaggi per garantire una corretta installazione ed evitare danni hardware.
 
 Maggiori dettagli sono disponibili qui:  
-`Documentazione Schermo Touch da 3,5 pollici <http://wiki.sunfounder.cc/index.php?title=3.5_Inch_LCD_Touch_Screen_Monitor_for_Raspberry_Pi>`_.
+`Documentazione Schermo Touch da 3,5 pollici <https://docs.sunfounder.com/projects/35-ips-screen/en/latest/get_started/get_started.html>`_.
 
 
 **Assemblaggio**

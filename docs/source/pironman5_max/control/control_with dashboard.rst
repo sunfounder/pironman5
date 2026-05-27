@@ -1,165 +1,160 @@
-.. note:: 
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Ciao, benvenuto nella community Facebook degli appassionati di Raspberry Pi, Arduino ed ESP32 targata SunFounder! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati come te.
-
-    **Perché unirsi?**
-
-    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con il supporto della nostra community e del nostro team.
-    - **Impara e condividi**: Scambia consigli e tutorial per sviluppare le tue competenze.
-    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotto e anteprime esclusive.
-    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
-    - **Promozioni festive e giveaway**: Partecipa a promozioni festive e concorsi a premi.
-
-    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] ed entra nella community oggi stesso!
-
-.. _max_view_control_dashboard:
+.. _view_control_dashboard:
 
 Visualizzazione e Controllo dalla Dashboard
-===============================================
+=============================================
 
-Una volta installato correttamente il modulo ``pironman5``, il servizio ``pironman5.service`` si avvierà automaticamente al riavvio del sistema.
+Una volta installato correttamente il modulo ``pironman5``, il servizio ``pironman5.service`` si avvierà automaticamente al riavvio.
 
-Ora puoi aprire la pagina di monitoraggio nel browser per visualizzare le informazioni sul tuo Raspberry Pi, configurare gli RGB, controllare la ventola e molto altro. Il link alla pagina è: ``http://<ip>:34001``.
+Ora puoi aprire la pagina di monitoraggio nel browser per vedere le informazioni sul tuo Raspberry Pi, configurare gli RGB e controllare la ventola. Il link della pagina è: ``http://<ip>:34001``.
 
-Questa pagina include **Dashboard**, **Storico**, **Log** e una pagina delle **Impostazioni**.
+Questa pagina include le sezioni **Dashboard**, **Cronologia**, **Log** e **Impostazioni**.
 
-.. image:: img/dashboard_tab.png
-  :width: 90%
+.. image:: img/dashboard_home.png
 
 
 Dashboard
 -----------------------
 
-Sono disponibili diverse schede per monitorare lo stato del Raspberry Pi, tra cui:
+Sono disponibili diverse schede per visualizzare lo stato del Raspberry Pi, tra cui:
 
-* **temperatura**: Mostra la temperatura della CPU del Raspberry Pi e la velocità della ventola PWM. **GPIO Fan State** indica lo stato delle due ventole RGB laterali. Alla temperatura attuale, le due ventole RGB sono spente.
+* **Temperatura**: Visualizza la temperatura CPU/GPU del Raspberry Pi e la velocità della ventola CPU. Lo **Stato ventole GPIO** mostra lo stato delle due ventole GPIO laterali.
 
-  .. image:: img/dashboard_temp.png
+  .. image:: img/dashboard_tem.png
     :width: 90%
 
-
-* **Archiviazione**: Visualizza la capacità di archiviazione del Raspberry Pi, mostrando le partizioni del disco con lo spazio utilizzato e disponibile.
+* **Archiviazione**: Mostra la capacità di archiviazione del Raspberry Pi, visualizzando le partizioni del disco con lo spazio utilizzato e disponibile.
 
   .. image:: img/dashboard_storage.png
     :width: 90%
 
-
-* **Memoria**: Mostra l’utilizzo e la percentuale della RAM del Raspberry Pi.
+* **Memoria**: Mostra l'utilizzo della RAM del Raspberry Pi e la sua percentuale.
 
   .. image:: img/dashboard_memory.png
     :width: 90%
 
-
-* **Rete**: Visualizza il tipo di connessione attiva, e la velocità di upload e download.
+* **Rete**: Visualizza il tipo di connessione di rete attuale, velocità di upload e download.
 
   .. image:: img/dashboard_network.png
     :width: 90%
 
-
-* **Processore**: Mostra le prestazioni della CPU, inclusi lo stato dei quattro core, la frequenza operativa e la percentuale di utilizzo.
+* **Processore**: Illustra le prestazioni della CPU del Raspberry Pi, incluso lo stato dei quattro core, le frequenze operative e la percentuale di utilizzo della CPU.
 
   .. image:: img/dashboard_processor.png
     :width: 90%
 
 
-Storico
+Cronologia
 --------------
 
-La pagina Storico consente di visualizzare dati storici. Seleziona nel menu a sinistra i dati da monitorare, imposta l’intervallo di tempo e potrai anche scaricare le informazioni.
+La pagina Cronologia ti permette di visualizzare i dati storici. Seleziona i dati che vuoi vedere nella barra laterale sinistra, poi scegli l'intervallo di tempo per visualizzare i dati di quel periodo. Puoi anche scaricarli.
 
 .. image:: img/dashboard_history1.png
   :width: 90%
-  
+
 .. image:: img/dashboard_history2.png
   :width: 90%
 
 Log
 ------------
 
-La pagina Log permette di consultare i log del servizio Pironman5 in esecuzione. Il servizio comprende diversi sottoservizi, ognuno con il proprio log. Seleziona quello desiderato per visualizzarne i contenuti. Se la finestra è vuota, potrebbe significare che non ci sono log registrati.
+La pagina Log mostra il log di esecuzione del servizio Pironman5.
 
-* Ogni log ha una dimensione massima di 10MB. Una volta superata, viene creato un nuovo file.
-* Il numero massimo di log per ogni servizio è 10. I log più vecchi vengono eliminati automaticamente.
-* Nella parte superiore dell’area log ci sono strumenti di filtro per selezionare il livello del log, filtrare per parole chiave e utilizzare opzioni come **Line Wrap**, **Auto Scroll** e **Auto Update**.
-* I log possono essere anche scaricati in locale.
+* Le voci di log possono essere filtrate per livello (Debug, Info, Warning, Error o Critical).
+* Il file di log può anche essere scaricato localmente.
 
-.. image:: img/dashboard_log1.png
+.. image:: img/dashboard_log.png
   :width: 90%
-  
-.. image:: img/dashboard_log2.png
-  :width: 90%
-
 
 Impostazioni
------------------
+------------
 
-Nel menu in alto a destra trovi le impostazioni personalizzabili. Le modifiche vengono salvate automaticamente. Se necessario, puoi cliccare sul pulsante CLEAR in basso per cancellare i dati storici.
+La pagina Impostazioni ti permette di personalizzare l'aspetto della Dashboard, le preferenze di sistema, lo schermo OLED, l'illuminazione RGB e il comportamento delle ventole. Mostra anche informazioni di rete di base come l'indirizzo MAC e l'indirizzo IP.
 
-.. image:: img/dashboard_setting_darkmode.png
-  :width: 600
-
-* **Modalità Scura**: Passa tra tema chiaro e scuro. La preferenza viene salvata nella cache del browser.
-* **Mostra disco non montato**: Indica se mostrare i dischi non montati nella dashboard.
-* **Mostra tutti i core**: Indica se mostrare tutti i core nella dashboard.
-* **Unità di Temperatura**: Imposta l’unità di temperatura visualizzata dal sistema.
-
-**Informazioni sullo schermo OLED**
-
-.. image:: img/dashboard_setting_oled.png
-  :width: 600
-
-* **OLED Enable**: Attiva/disattiva l'OLED.
-* **OLED Disk**: Imposta il disco da visualizzare su OLED.
-* **Interfaccia di rete OLED**: 
-
-  * **all**: Alterna tra IP Ethernet e Wi-Fi.
-  * **eth0**: Mostra solo l’IP Ethernet.
-  * **wlan0**: Mostra solo l’IP Wi-Fi.
-
-* **Rotazione OLED**: Imposta la rotazione dello schermo OLED.
-* **Timeout sospensione OLED**: Imposta il timeout di sospensione dell'OLED.
+.. image:: img/dashboard_setting.png
+    :width: 600
 
 
-**Informazioni sui LED RGB**
+* **Interfaccia**
 
-.. image:: img/RGB_LEDS.jpg
-  :width: 600
+  Configura l'aspetto della Dashboard e il comportamento di visualizzazione.
 
-* **RGB Enable**: Attiva/disattiva i LED RGB.
-* **Colore RGB**: Imposta il colore dei LED RGB.
-* **Luminosità RGB**: Regola la luminosità tramite un cursore.
-* **Stile RGB**: Scegli la modalità di visualizzazione: **Solid**, **Breathing**, **Flow**, **Flow_reverse**, **Rainbow**, **Rainbow Reverse**, **Hue Cycle**.
+  .. image:: img/dashboard_setting_interface.png
+      :width: 600
 
-  .. note::
-
-     Se imposti lo **RGB Style** su **Rainbow**, **Rainbow Reverse** o **Hue Cycle**, non potrai modificare il colore.
-
-* **Velocità RGB**: Imposta la velocità degli effetti RGB.
-
-**Informazioni sulle Ventole RGB**
-
-.. image:: img/dashboard_setting_fan.png
-  :width: 600
-
-* **LED ventola**: Imposta la modalità delle ventole RGB.
-
-    * **Off**: Disattiva l'RGB.
-    * **On**: Attiva l'RGB.
-    * **Follow**: Attiva automaticamente l'RGB in base allo stato di funzionamento della ventola.
+  * **Modalità scura**: Attiva o disattiva il tema scuro.
+  * **Mostra dischi non montati**: Visualizza i dispositivi di archiviazione non montati nella scheda Archiviazione.
+  * **Mostra tutti i core**: Visualizza tutti i core della CPU nella scheda Processore.
+  * **Layout schede**: Personalizza il layout delle schede della Dashboard.
+  * **Unità di temperatura**: Passa tra Celsius e Fahrenheit.
+  * **Versione interfaccia web**: Mostra la versione attuale della Dashboard.
 
 
-* **Modalità Ventola GPIO**: Imposta la modalità operativa delle due ventole RGB. Queste modalità determinano la soglia di attivazione in base alla temperatura.
+* **OLED**
 
-    * **Quiet**: Le ventole si attivano a 70°C.
-    * **Balanced**: Le ventole si attivano a 67.5°C.
-    * **Cool**: Le ventole si attivano a 60°C.
-    * **Performance**: Le ventole si attivano a 50°C.
-    * **Always On**: Le ventole restano sempre accese.
+  Configura la visualizzazione e il comportamento dello schermo OLED.
 
-Ad esempio, impostando la modalità **Prestazioni**, le ventole RGB si attiveranno a 50°C.
+  .. image:: img/dashboard_setting_oled.png
+      :width: 600
 
-Dopo aver salvato, se la temperatura della CPU supera i 50°C, vedrai le ventole RGB laterali iniziare a girare.
+  * **Abilita OLED**: Attiva o disattiva lo schermo OLED.
+  * **Rotazione OLED**: Ruota il display OLED tra ``0°`` e ``180°``.
+  * **Timeout sospensione OLED**: Imposta per quanto tempo lo schermo OLED rimane acceso prima di spegnersi automaticamente.
+  * **Pagine OLED**: Configura quali pagine vengono visualizzate sullo schermo OLED e regola il loro ordine.
 
-**Informazioni sulla ventola principale**
+    Pagine disponibili:
 
-La ventola principale si collega a una porta PWM a 4 pin dedicata sul Raspberry Pi 5. La sua strategia di controllo predefinita è uno schema di regolazione intelligente della velocità multilivello gestito dal firmware, basato sulla temperatura della CPU. Ciò significa che quando si utilizza una ventola PWM ufficiale o compatibile e la si collega correttamente, il sistema regolerà automaticamente la velocità della ventola in base alle variazioni di temperatura della CPU (iniziando a funzionare oltre i 50 °C) senza alcun intervento manuale da parte dell'utente.
+    * **Indirizzi IP**: Mostra gli indirizzi IP di tutte le interfacce di rete fisiche.
+    * **Utilizzo disco**: Mostra le informazioni di utilizzo del disco per tutti i dischi.
+    * **Metriche di prestazione**: Mostra l'utilizzo della CPU, la temperatura della CPU, l'utilizzo della RAM e la velocità della ventola.
+    * **Mix di sistema**: Mostra l'utilizzo della CPU, la temperatura della CPU e l'indirizzo IP.
+
+
+* **RGB**
+
+  Configura gli effetti di illuminazione e il comportamento dei LED RGB.
+
+  .. image:: img/dashboard_setting_rgb.png
+      :width: 600
+
+  * **Abilita RGB**: Attiva o disattiva i LED RGB.
+  * **Colore RGB**: Imposta il colore dei LED RGB.
+  * **Luminosità RGB**: Regola la luminosità dei LED RGB.
+  * **Stile RGB**: Seleziona l'effetto di illuminazione RGB, tra ``Nessuno``, ``Fisso``, ``Respirazione``, ``Flusso``, ``Flusso inverso``, ``Arcobaleno``, ``Arcobaleno inverso`` e ``Ciclo tonalità``.
+  * **Velocità RGB**: Regola la velocità di animazione dell'effetto RGB selezionato.
+  * **LED RGB**: Imposta il numero di LED RGB attivi.
+
+
+* **Ventole GPIO**
+
+  Configura la modalità operativa delle due ventole GPIO.
+
+  .. image:: img/dashboard_setting_fan.png
+      :width: 600
+
+  La modalità selezionata determina quando le ventole GPIO si attiveranno.
+
+  * **Silenzioso**: Le ventole GPIO si attiveranno a 70°C.
+  * **Bilanciato**: Le ventole GPIO si attiveranno a 67,5°C.
+  * **Fresco**: Le ventole GPIO si attiveranno a 60°C.
+  * **Prestazioni**: Le ventole GPIO si attiveranno a 50°C.
+  * **Sempre attive**: Le ventole GPIO rimarranno sempre attive.
+
+
+* **Sistema**
+
+  Configura il comportamento del sistema e visualizza le informazioni del dispositivo.
+
+  .. image:: img/dashboard_setting_system.png
+      :width: 600
+
+  * **Livello di debug**: Imposta il livello di registrazione del servizio Pironman 5.
+  * **Indirizzo MAC**: Mostra gli indirizzi MAC delle interfacce di rete del Raspberry Pi.
+  * **Indirizzo IP**: Mostra gli indirizzi IP delle interfacce di rete del Raspberry Pi.
+  * **Conservazione cronologia**: Imposta per quanti giorni i dati storici saranno conservati.
+  * **Cancella tutti i dati**: Cancella tutti i dati storici registrati.
+  * **Riavvia**: Riavvia il Raspberry Pi da remoto dalla Dashboard.
+  * **Spegni**: Spegni in sicurezza il Raspberry Pi da remoto dalla Dashboard.
