@@ -95,7 +95,7 @@ OLED Screen Not Working?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. |link_compatible_systems| replace:: :ref:`com_os_max`
-.. |link_set_up_pironman5| replace:: :ref:`max_set_up_pironman5`
+.. |link_set_up_pironman5| replace:: :ref:`set_up_pironman5_max`
 
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_oled

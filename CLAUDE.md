@@ -1,74 +1,162 @@
 # Pironman 5 - Documentation
 
-## Repository Overview
+## Important Rules
 
-This is the **English source** for the Pironman 5 documentation.
+1. **Do NOT switch branches** — the user will manually switch to the target branch before asking you to work.
+2. **Do NOT build** — the user will run `sphinx-build` themselves to check for errors.
+3. **Do NOT push or upload** — never run `git push` or `gh pr` unless explicitly asked.
+4. **Do NOT wholesale copy files** — this overwrites translations with English.
+
+## Repository Overview
 
 - **This repo**: branch `docs` (English source)
 - **Remote**: `github.com:sunfounder/pironman5`
 - **Translation branches**: `docs-fr` (French), `docs-cn` (Chinese), `docs-de` (German), `docs-es` (Spanish), `docs-it` (Italian), `docs-ja` (Japanese)
 
-Local working copies for French translation: `../pironman5` (branch `docs-fr`).
+Local working copies:
+- `../pironman5` — used for whichever translation branch is currently checked out
+- `../pironman5 - Copy` — this repo, `docs` branch (English source)
 
 ## Translation Sync Workflow
 
-When English `docs` is updated, changes must be synced to `docs-fr` (and other translation branches). **Do NOT wholesale copy files** — this overwrites translations with English.
+When English `docs` is updated, changes must be synced to the active translation branch. The user will have already switched `../pironman5` to the correct branch.
 
-### Step 1: Fetch and compare
+### Step 1: Understand what changed
+Check recent commits on `docs` to see what actually changed:
 ```bash
-cd ../pironman5
-git fetch origin docs
-git diff --name-status docs-fr origin/docs
-# A = new files, D = deleted files, M = modified files
+git log origin/docs --oneline --since="<recent-date>"
 ```
+Then for each commit, list changed files:
+```bash
+git diff <commit>^..<commit> --name-only
+```
+This is more reliable than `git diff --name-status <translation-branch> origin/docs` because the latter shows ALL differences including pre-existing translation text.
 
 ### Step 2: Sync non-RST files (images, assets, configs)
-These don't need translation, just copy:
+These don't need translation, just copy from `origin/docs`. Replace `<branch>` with the current translation branch name:
 ```bash
+cd ../pironman5
 # Add new non-RST files
-git diff --name-only --diff-filter=A docs-fr origin/docs | grep -v "\.rst$" | tr '\n' '\0' | xargs -0 -r git checkout origin/docs --
+git diff --name-only --diff-filter=A origin/<branch> origin/docs | grep -v "\.rst$" | tr '\n' '\0' | xargs -0 -r git checkout origin/docs --
 
 # Remove files deleted in English
-git diff --name-only --diff-filter=D docs-fr origin/docs | tr '\n' '\0' | xargs -0 -r git rm --
+git diff --name-only --diff-filter=D origin/<branch> origin/docs | grep -v "\.rst$" | tr '\n' '\0' | xargs -0 -r git rm --
 
 # Update modified non-RST files
-git diff --name-only --diff-filter=M docs-fr origin/docs | grep -v "\.rst$" | tr '\n' '\0' | xargs -0 -r git checkout origin/docs --
+git diff --name-only --diff-filter=M origin/<branch> origin/docs | grep -v "\.rst$" | tr '\n' '\0' | xargs -0 -r git checkout origin/docs --
 ```
 
-### Step 3: Replace old hello message blocks
-English docs replaced `.. note::` hello blocks with `.. include:: /index.rst`. Apply the same to French files that still have inline `Bonjour...` hello notes. Use Perl for multiline replacement:
+### Step 3: Ensure index.rst has hello message markers
+If the translation's `index.rst` doesn't have `.. start_hello_message` / `.. end_hello_message` markers, add empty ones at the very top:
+```rst
+.. start_hello_message
+
+..
+
+.. end_hello_message
+```
+The `..` (Sphinx empty comment) ensures `.. include::` directives in other files pull in non-empty content, preventing "Unexpected section title" errors.
+
+### Step 4: Replace old hello message blocks
+English docs use `.. include:: /index.rst` for the hello message. Replace old `.. note::` hello blocks in translation files:
 ```perl
-perl -i -0777 -pe 's/^\.\. note::\s*\n\s*\n\s{4}Bonjour.*?link_sf_facebook.*?\n\s*\n/.. include:: \/index.rst\n   :start-after: start_hello_message\n   :end-before: end_hello_message\n\n\n/s' "$file"
+perl -i -0777 -pe 's/^\.\. note::\s*\n\s*\n\s{4}.*?link_sf_facebook.*?\n\s*\n/.. include:: \/index.rst\n   :start-after: start_hello_message\n   :end-before: end_hello_message\n\n\n/s' "$file"
 ```
-Skip key files that need full translation (handle manually in Step 4).
+Skip `index.rst` and `conf.py`. Use `while IFS= read -r f` to handle filenames with spaces.
 
-### Step 4: Translate RST files with content changes
-For RST files where English content actually changed (beyond the hello block):
-1. Read English version: `git show origin/docs:<path>`
-2. Read current French version
-3. Translate English text to French, preserving ALL RST directives, anchors, images, code blocks
-4. Write back
+### Step 5: Apply mechanical term replacements
+The `bf6d86f` commit renamed several terms. Apply the same changes in translation files using Perl:
 
-**Files that frequently change** (check these first):
-- `docs/source/index.rst`
-- `docs/source/pironman5/faq.rst`
-- `docs/source/pironman5_max/faq.rst`
-- `docs/source/pironman5/set_up/set_up_rpi_os.rst`
-- `docs/source/pironman5_max/set_up/set_up_rpi_os.rst`
-- `docs/source/pironman5/set_up/set_up_umbrel.rst`
-- `docs/source/pironman5_max/set_up/set_up_umbrel.rst`
-- `docs/source/pironman5/control/control_with dashboard.rst`
-- `docs/source/pironman5/control/control_with_commands.rst`
-- `docs/source/pironman5_max/control/control_pironman5.rst`
-- `docs/source/pironman5_max/control/control_with dashboard.rst`
-- `docs/source/pironman5_max/control/control_with_commands.rst`
+**English → Target language term mapping:**
 
-### Step 5: Verify
+| English old | English new | Spanish | Chinese | Japanese | German | French |
+|---|---|---|---|---|---|---|
+| PWM Fan | CPU Fan | Ventilador PWM → Ventilador de la CPU | PWM 风扇 → CPU 风扇 | PWMファン → CPUファン | PWM-Lüfter → CPU-Lüfter | Ventilateur PWM → Ventilateur du CPU |
+| RGB Fans | GPIO Fans | Ventiladores RGB → Ventiladores GPIO | RGB 风扇 → GPIO 风扇 | RGBファン → GPIOファン | RGB-Lüfter → GPIO-Lüfter | Ventilateurs RGB → Ventilateurs GPIO |
+
+Also update the spec table in `index.rst`:
+- `RGB Fans Number` / `Número de Ventiladores RGB` / `RGB 风扇数量` / `RGBファン数` / `Anzahl RGB-Lüfter` → GPIO equivalent
+
+### Step 6: Apply small fixes (URLs, log paths, refs)
+
+**Log paths** — replace old log paths in `hardware/io_board.rst` (both variants):
+- `/opt/pironman5/log` → `/var/log/pironman5/pironman5.log`
+- `/var/log/pironman5/pm_auto.oled.log` → `/var/log/pironman5/pironman5.log`
+
+**35_screen URL** — in `optional_modules/35_screen.rst` (both variants):
+- `http://wiki.sunfounder.cc/index.php?title=3.5_Inch_LCD_Touch_Screen_Monitor_for_Raspberry_Pi` → `https://docs.sunfounder.com/projects/35-ips-screen/en/latest/get_started/get_started.html`
+
+**Duplicate link_openai_platform** — if `openclaw.rst` has a local `.. |link_openai_platform| raw:: html` definition, remove it. `conf.py` already defines it in `rst_epilog`.
+
+**Anchor/Ref fixes** (must match English exactly):
+- `pironman5` (base): `_set_up_pironman5` → `_set_up_pironman5_5`, `_view_control_commands` → `_view_control_commands_5`, `_view_control_dashboard` → `_view_control_dashboard_5`, `:ref:`standard_download_pironman5_module` → `:ref:`install_pironman5_module_5`
+- `pironman5_max`: `_set_up_umbrel` → `_set_up_umbrel_max`, `.. include:: /pironman5_max/important_notice.rst` → remove it, `:ref:`max_download_pironman5_module` → `:ref:`install_pironman5_module_max`, `:ref:`max_view_control_dashboard` → `:ref:`view_control_dashboard`
+- Remove commented Batocera line (`.. * For the **Batocera.linux**...`) in `control_pironman5.rst`
+
+### Step 7: Translate RST files with content changes
+For each RST file that actually changed in the commits, use background agents for efficiency. Give each agent a clear list of files and these rules:
+
+**Translation rules:**
+- Preserve ALL RST directives, anchors, images, code blocks exactly
+- Keep technical terms as-is: GPIO, RGB, OLED, CPU, GPU, RAM, NVMe, SSD, I2C, PWM, PCIe
+- Keep English anchors matching English exactly
+- Adjust `===`/`---`/`^^^` underline to match translated title length (each CJK char ≈ 2 ASCII for underline width)
+- No local `|link_xxx|` definitions — all links live in `conf.py`'s `rst_epilog`
+- `conf.py`: keep translated link text (e.g., `aquí` not `here` in Spanish)
+
+**For Chinese (docs-cn):** Use full-width punctuation: `，` `。` `、` `：` `（）`
+**For Japanese (docs-ja):** Use full-width punctuation: `、` `。` `「」`
+**For other languages:** Use standard punctuation for that language
+
+**Files that always need checking** (from `bf6d86f` and `f3125f3` commits):
+
+*pironman5 (base):*
+- `set_up/set_up_rpi_os.rst` — curl installer, PiPower 5, model selection, component checklist, CPU fan curve
+- `set_up/set_up_umbrel.rst` — Umbrel Community App Store (11 steps with screenshots)
+- `set_up/set_up_pironman5.rst` — anchor fix only
+- `control/control_with_dashboard.rst` — new Dashboard structure (Temperature/Storage/Memory/Network/Processor + Interface/OLED/RGB/GPIO Fans/System)
+- `control/control_with_commands.rst` — JSON config with "system" wrapper, expanded help text
+- `compitable_nvme_ssd.rst` — table format with 4 categories (Verified/Stable/Compatible/Not Recommended)
+- `faq.rst` — add `.. start_faq_xxx`/`.. end_faq_xxx` markers around all sections
+- `home_server/openclaw.rst` — ref fix
+
+*pironman5_max:*
+- `set_up/set_up_rpi_os.rst` — same as base but MAX-specific anchors
+- `set_up/set_up_umbrel.rst` — same App Store method
+- `control/control_with_dashboard.rst` — same as base + Fan LED (ON/OFF/FOLLOW)
+- `control/control_with_commands.rst` — MAX-specific: `gpio_fan_led`, `-fl`/`-fp` options
+- `faq.rst` — use `.. include:: ../pironman5/faq.rst` for shared sections
+- `home_server/openclaw.rst` — ref fix
+
+### Step 8: Fix title underlines
+After translation, use this Perl script to auto-fix all title underlines that are too short:
+```perl
+perl -i -0777 -pe '
+sub fix { my($t,$u)=@_; my $c=substr($u,0,1); my $n=length($t)+2; $c x $n }
+s{^(.+)\n([\-]{3,}|[\^]{3,}|[\=]{3,})\n}{
+  my $t=$1; my $u=$2;
+  if(length($u)<length($t)){"$t\n".fix($t,$u)."\n"}
+  else{"$t\n$u\n"}
+}gem;
+' <files>
+```
+This preserves the underline character (`---`, `===`, or `^^^`) and extends it to match the title width.
+
+### Step 9: Verify
 ```bash
 git status
-git diff --name-status docs-fr origin/docs
 ```
-Files showing as "M" are mostly expected — French text naturally differs from English text. Verify structural consistency: same anchors, same section count, same image references.
+After all changes, the user will compile and report errors. Fix any remaining WARNINGs or ERRORs.
+
+**Common build errors after sync:**
+
+| Error | Cause | Fix |
+|---|---|---|
+| `Problem with "start-after" option of "include" directive: Text not found.` | `index.rst` missing `start_hello_message` marker | Add markers (Step 3) |
+| `Unexpected section title.` | `.. include::` pulls empty content (promax files) | Add `..` between index.rst markers, or remove include from promax files that start with anchor→title |
+| `Duplicate substitution definition name: "link_openai_platform"` | Local `\|link_openai_platform\|` in `openclaw.rst` | Remove local definition, keep conf.py global one |
+| `undefined label: 'xxx'` | Anchor name mismatch between translation and English | Sync anchor to match English exactly |
+| `Title underline too short.` | Translated title is longer than its underline | Run Step 8 auto-fix |
 
 ## Key Design
 
@@ -79,14 +167,14 @@ Files showing as "M" are mostly expected — French text naturally differs from 
    :start-after: start_hello_message
    :end-before: end_hello_message
 ```
-When updating the hello message, **only modify `index.rst`** — all other files inherit it automatically. Translation branches must keep these markers in place with translated text.
+When updating the hello message, **only modify `index.rst`** — all other files inherit it automatically. Translation branches must keep these markers in place with translated text. For languages that don't use a hello message (e.g., Chinese), add empty markers with `..` between them.
 
 ### Include-based FAQ structure
 `pironman5/faq.rst` contains `.. start_faq_xxx` / `.. end_faq_xxx` markers around each section. `pironman5_max/faq.rst` uses `.. include:: ../pironman5/faq.rst` to pull in shared sections. Translation branches inherit this structure — translating the base FAQ automatically propagates to variants.
 
 ### Anchor naming conventions
 - `pironman5` (base): anchors use `_5` suffix, e.g., `.. _view_control_dashboard_5:`
-- `pironman5_max`: anchors use `max_` prefix or no suffix, e.g., `.. _max_view_control_commands:`
+- `pironman5_max`: anchors use `max_` prefix or no suffix, e.g., `.. _max_view_control_commands:`, `.. _view_control_dashboard:`
 - `pironman5_mini`: anchors use `_mini` suffix
 - `pironman5_promax`: anchors use `_promax` suffix
 
@@ -102,19 +190,21 @@ docs/source/
 ```
 
 ### Files identical across all 4 variants
-When updating these in English, changes apply to all variants:
 - `home_server/nextcloud.rst`, `home_server/plex.rst`
 - `install/install_batocera.rst`, `install/install_raspberry_os.rst`, `install/install_umbrel.rst`
 - `hardware/oled_screen.rst`, `hardware/power_switch_convertor.rst`, `hardware/tower_cooler.rst`
 
 ## Common Pitfalls
 
-1. **Do NOT `git checkout origin/docs -- *.rst`** — this overwrites French translations with English.
-2. **Do NOT `git merge -X theirs`** — same problem, all French content replaced by English.
-3. **Do NOT `git merge -X ours`** — keeps old French but blocks English structural updates.
-4. **"Modified" RST files in diff are expected** — French text differs from English text. Don't assume all diffs need fixing.
-5. **File names with spaces** (e.g., `run_power_off copy.png`) — use null-delimited xargs: `tr '\n' '\0' | xargs -0`
-6. **Windows environment**: No `make`, use `sphinx-build -b html source build/html`. Python may be blocked by Windows App Execution Aliases — use full path or Perl.
+1. **Do NOT `git checkout origin/docs -- *.rst`** — this overwrites translations with English.
+2. **Do NOT `git merge -X theirs`** — same problem.
+3. **Do NOT `git merge -X ours`** — keeps old translation but blocks English structural updates.
+4. **"Modified" RST files in diff are expected** — translated text differs from English. Focus on what COMMITS changed.
+5. **File names with spaces** — use null-delimited xargs or `while IFS= read -r f`. Some branches use `control_with dashboard.rst` (space) while English uses `control_with_dashboard.rst` (underscore).
+6. **Stash + branch switch = data loss** — avoid this pattern. Ask user to switch branches.
+7. **Verify after batch edits** — spot-check files after Perl replacements.
+8. **Promax files** — Chinese/Japanese promax files may start with `.. _anchor:` directly (no include). This is OK — don't force-add `.. include::` to these files.
+9. **UTF-8 in titles** — Perl's `length()` counts bytes. For German `ü`/`ö`/`ä`, add +2 margin in underline auto-fix.
 
 ## Build
 
@@ -123,3 +213,4 @@ cd docs
 pip install -r requirements.txt
 sphinx-build -b html source build/html
 ```
+Use `sphinx-build -E` for a clean build (clears cache).

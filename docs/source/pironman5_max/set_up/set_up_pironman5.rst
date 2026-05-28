@@ -4,7 +4,7 @@
 
 
 
-.. _max_set_up_pironman5:
+.. _set_up_pironman5_max:
 
 4. Set up or Install Software
 ================================================
