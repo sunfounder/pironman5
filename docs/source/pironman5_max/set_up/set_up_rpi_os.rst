@@ -2,34 +2,30 @@
    :start-after: start_hello_message
    :end-before: end_hello_message
 
-.. _max_set_up_pi_os:
 
-Raspberry Pi／Ubuntu／Kali／Homebridge OSでのセットアップ
-==========================================================
+.. _set_up_os_max:
 
+Raspberry Pi OS/Ubuntu/Kali Linux/Homebridgeでのセットアップ
+==================================================================
 
 .. image:: ../img/pironman5_max.jpg
     :width: 400
     :align: center
-    
 
-Raspberry PiにRaspberry Pi OS、Ubuntu、Kali Linux、またはHomebridgeをインストールしている場合は、コマンドラインを使用してPironman 5 MAXを設定する必要があります。詳細なチュートリアルは以下を参照してください。
+
+Raspberry PiにRaspberry Pi OS、Ubuntu、Kali Linux、またはHomebridgeをインストールしている場合は、コマンドラインを使用してPironman 5 MAXを設定する必要があります。
 
 .. note::
 
   設定を行う前に、Raspberry Piを起動してログインする必要があります。ログイン方法がわからない場合は、Raspberry Pi公式サイト（|link_rpi_get_start|）を参照してください。
 
-.. include:: /pironman5_max/important_notice.rst
-   :start-after: start_max_important_notice
-   :end-before: end_max_important_notice
 
+.. _safe_shutdown_max:
 
-
-
-2. GPIO電源を停止時に無効化する設定
+1. GPIO電源を停止時に無効化する設定
 ------------------------------------------------------------
 
-Raspberry PiのGPIOによって電力供給されているOLEDディスプレイやRGBファンがシャットダウン後も動作し続けるのを防ぐために、GPIO電源を停止時に無効化する設定を行う必要があります。
+Raspberry PiのGPIOによって電力供給されているOLEDディスプレイやGPIOファンがシャットダウン後も動作し続けるのを防ぐために、GPIO電源を停止時に無効化する設定を行う必要があります。
 
 #. EEPROM設定ツールを開きます：
 
@@ -41,56 +37,104 @@ Raspberry PiのGPIOによって電力供給されているOLEDディスプレイ
 
    .. image:: img/shutdown_behaviour.png
 
-#. **B1 Full Power Off** を選択します。
+#. **B1 Full Power Off...** を選択します。
 
    .. image:: img/run_power_off.png
 
 #. 変更を保存します。設定を有効にするために再起動を求められます。
 
 
-.. _max_download_pironman5_module:
+.. _install_pironman5_module_max:
 
-3. ``pironman5`` モジュールのダウンロードとインストール
+2. ``pironman5`` モジュールのインストール
 -----------------------------------------------------------
 
 .. note::
 
-   Lite版システムの場合、まず ``git``、 ``python3``、 ``pip3``、 ``setuptools`` などのツールをインストールしてください。
-   
+   Raspberry Pi OS Lite版システムの場合は、まず ``git`` や ``python3`` などの必要なツールをインストールしてください。
+
    .. code-block:: shell
-   
+
       sudo apt-get install git -y
       sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. GitHubからコードをダウンロードし、 ``pironman5`` モジュールをインストールします。
+#. GitHubから ``pironman5`` モジュールをダウンロードしてインストールします。
 
    .. code-block:: shell
 
-      cd ~
-      git clone -b max https://github.com/sunfounder/pironman5.git --depth 1
-      cd ~/pironman5
-      sudo python3 install.py
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
-   インストールが完了すると、システムの再起動が必要です。画面の指示に従って再起動を行ってください。
+   .. note::
 
-   再起動後、 ``pironman5.service`` が自動的に起動します。Pironman 5 MAXの主な初期設定は以下の通りです：
-   
-   * OLEDディスプレイには、CPU、RAM、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示されます。
-   * 4つのWS2812 RGB LEDが青色の呼吸モードで点灯します。
-   * RGBファンはデフォルトで **常時オン** モードに設定されています。作動温度の調整に関する情報は、:ref:`cc_control_fan_max` を参照してください。
+      Pironman 5シリーズをPiPower 5と併用する場合は、代わりに次のコマンドを実行してください：
 
-#. ``systemctl`` ツールを使用して、 ``pironman5.service`` を ``start``、 ``stop``、 ``restart``、または ``status`` で操作できます。
+      .. code-block:: shell
+
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+
+#. インストーラー実行後、Pironman 5のモデル（1〜4）を選択します。
 
    .. code-block:: shell
-     
+
+      Pironman 5 Installer v1.0.1
+      Supports: 5 | 5 Mini | 5 Max | 5 Pro Max
+
+      Please select your product model:
+      1) Pironman 5
+      2) Pironman 5 Mini
+      3) Pironman 5 Max
+      4) Pironman 5 Pro Max
+
+      Enter number [1-4]:
+
+#. インストールが完了したら、画面の指示に従ってRaspberry Piを再起動します。初回起動時は、サービスの初期化に最大30秒かかる場合があります。
+
+#. Pironman 5 MAXが正常に起動したら、次の各コンポーネントが正しく動作していることを確認してください。
+
+   * **OLEDスクリーン**
+
+     * CPU使用率、RAM使用率、CPU温度、IPアドレスを表示します。
+     * 10秒後に自動的に消灯します。
+     * 電源ボタンを短く押すと、画面を起動またはページを切り替えます。
+
+   * **電源ボタン**
+
+     * 短く押す：電源オン / OLED画面を起動 / OLEDページを切り替え。
+     * 2秒間長押し：安全なシャットダウン（:ref:`safe_shutdown_max` が必要です）。
+     * 5秒間長押し：強制シャットダウン。
+
+   * **WS2812 RGB LED**
+
+     * 青色の呼吸モードで点灯します。
+
+   * **2つのGPIOファン**
+
+     * デフォルトでは **常時オン** モードに設定されています。
+     * 動作モードはコマンドまたはダッシュボードから変更できます。
+
+   * **CPUファン（タワークーラーファン）**
+
+     * CPU温度に基づいて自動的に速度を調整します。
+     * デフォルトのファンカーブ：
+
+       * < 50°C：オフ（0%）
+       * 50°C以上：低速（30%）
+       * 60°C以上：中速（50%）
+       * 67.5°C以上：高速（70%）
+       * 75°C以上：最大速度（100%）
+
+      * :ref:`faq_pwm_fan_max`
+
+#. ``systemctl`` を使用して、``pironman5.service`` を管理します。
+
+   .. code-block:: shell
+
       sudo systemctl restart pironman5.service
-   
-   * ``restart``： Pironman 5 MAXの設定変更を適用する際に使用します。
-   * ``start/stop``： ``pironman5.service`` を有効または無効にします。
-   * ``status``： ``systemctl`` ツールを使用して ``pironman5`` プログラムの動作状態を確認します。
+
+   必要に応じて ``restart`` を ``start``、``stop``、または ``status`` に置き換えて、サービスを管理します。
 
 .. note::
 
-   これでPironman 5 MAXのセットアップは完了です。すぐに使用を開始できます。
-   
-   各コンポーネントの詳細な制御方法については、:ref:`control_commands_dashboard_max` を参照してください。
+   Pironman 5のセットアップは完了しました。すぐに使用を開始できます。
+
+   詳細な制御方法やダッシュボード機能については、:ref:`control_commands_dashboard_max` を参照してください。

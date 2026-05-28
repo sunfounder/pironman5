@@ -1,31 +1,21 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと一緒に、Raspberry Pi、Arduino、ESP32についてさらに深く掘り下げていきましょう。
-
-    **参加する理由**
-
-    - **専門サポート**: コミュニティやチームのサポートを受け、購入後の問題や技術的な課題を解決します。
-    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
-    - **限定プレビュー**: 新製品発表や先行情報に早期アクセスできます。
-    - **特別割引**: 最新製品の特別割引を楽しめます。
-    - **フェスティブプロモーションとプレゼント企画**: プレゼント企画や季節ごとのプロモーションに参加できます。
-
-    👉 探索と創造の準備ができましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
-
-.. _set_up_umbrel:
+.. _set_up_umbrel_5:
 
 Umbrel OSでのセットアップ
 ======================================================================
 
-Raspberry Pi 5にUmbrel OSをインストールしている場合は、コマンドラインを使用してPironman 5を設定する必要があります。以下に詳細な手順を示します。
+Raspberry Pi 5にUmbrel OSをインストールしている場合は、コマンドラインを使用してPironman 5を設定できます。以下の手順に従ってセットアップを完了してください：
 
-#. Raspberry Pi 5をEthernetケーブルでネットワークに接続します。この手順は、Raspberry Piにインターネット接続を確保するために重要です。
+#. Raspberry Pi 5をEthernetケーブルでネットワークに接続します。これはRaspberry Piがインターネットにアクセスできるようにするために必要です。
 
-#. ブラウザで次のURLにアクセスします： ``http://umbrel.local``。ページが開かない場合は、ルーターでUmbrelデバイスのIPアドレスを確認し、例： ``http://192.168.1.50`` にアクセスしてください。
+#. ブラウザを開き、次のURLにアクセスします： ``http://umbrel.local``。ページが開かない場合は、ルーターでUmbrelデバイスのIPアドレスを確認し、例： ``http://192.168.1.50`` にアクセスしてください。
 
    .. image:: img/umbrel_local.png
 
-#. ユーザー名とパスワードを設定してUmbrelアカウントを作成します。このパスワードは今後Umbrelへのリモートアクセスに使用されるため、忘れないようにしてください。
+#. ユーザー名とパスワードを設定してUmbrelアカウントを作成します。このパスワードは今後リモートアクセスに必要となるため、安全に保管してください。
 
    .. image:: img/umbrel_account.png
 
@@ -33,54 +23,30 @@ Raspberry Pi 5にUmbrel OSをインストールしている場合は、コマン
 
    .. image:: img/umbrel_desktop.png
 
-#. ターミナルを開きます。デスクトップから **Settings** アイコンをクリックし、 **Advanced Settings** を選択して **Open** をクリックします。
+#. **App Store** アイコンをクリックして開きます。
 
-   .. image:: img/umbrel_setting.png
+   .. image:: img/umbrel_app_store.png
 
-#. **Open Terminal** をクリックします。
+#. Umbrel App Storeで、右上隅の **Community App Store** ボタンをクリックします。
 
-   .. image:: img/umbrel_open_terminal.png
+   .. image:: img/umbrel_community_app.png
 
-#. Umbrel OS内または特定のアプリ内でターミナルを開くことができます。どちらの方法でもターミナルインターフェースにアクセスできます。
+#. カスタムリポジトリURLを入力します： ``https://github.com/sunfounder/umbrel-community-app-store/``
 
-   .. image:: img/umbrel_terminal.png
+   .. image:: img/umbrel_url.png
 
-#. GitHubからコードをダウンロードし、 ``pironman5`` モジュールをインストールします。
+#. リポジトリを追加したら、 **Open** をクリックして **SunFounder Store** にアクセスします。
 
-   .. code-block:: shell
+   .. image:: img/umbrel_open.png
 
-      cd ~
-      git clone -b base https://github.com/sunfounder/pironman5.git --depth 1
-      cd ~/pironman5
-      sudo python3 install.py
+#. **SunFounder App Store** には2つのアプリが表示されます。 **Pironman 5** または **Pironman 5 Max** のいずれかを選択します。
 
-#. インストールが完了したら、次のコマンドを入力してRaspberry Piを再起動します。
+   .. image:: img/umbrel_sf_app.png
 
-   .. code-block:: shell
+#. **Install** をクリックしてインストールを開始します。
 
-      sudo reboot
+   .. image:: img/umbrel_app_install.png
 
-#. 再起動後、 ``pironman5.service`` が自動的に起動します。Pironman 5の主な初期設定は以下の通りです：
-   
-   * OLEDディスプレイには、CPU、RAM、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示されます。
-   * 4つのWS2812 RGB LEDが青色の呼吸モードで点灯します。
-   * RGBファンはデフォルトで **常時オン** モードに設定されています。作動温度の調整に関する情報は、:ref:`cc_control_fan` を参照してください。
+#. インストールが完了したら、 **Open** をクリックしてダッシュボードを起動します。
 
-#. ``systemctl`` ツールを使用して、 ``pironman5.service`` を ``start``、 ``stop``、 ``restart``、または ``status`` で操作できます。
-
-   .. code-block:: shell
-     
-      sudo systemctl restart pironman5.service
-   
-   * ``restart``：Pironman 5の設定変更を適用する際に使用します。
-   * ``start/stop``： ``pironman5.service`` を有効または無効にします。
-   * ``status``： ``systemctl`` ツールを使用して ``pironman5`` プログラムの動作状態を確認します。
-
-.. note::
-
-   これでPironman 5のセットアップは完了です。すぐに使用を開始できます。
-   
-   各コンポーネントの詳細な制御方法については、:ref:`control_commands_dashboard_5` を参照してください。
-
-
-
+   .. image:: img/umbrel_dashboard.png

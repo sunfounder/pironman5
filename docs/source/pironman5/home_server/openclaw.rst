@@ -69,11 +69,7 @@ OpenClaw のパワーをできるだけ早く体験したい場合は、この�
 
     .. image:: /pironman5/home_server/img/openclaw/paste_api_key_open_claw.png
 
-.. |link_openai_platform| raw:: html
-
-    <a href="https://platform.openai.com/settings/organization/api-keys" target="_blank">OpenAI Platform</a>
-
-8.  |link_openai_platform| にアクセスしてログインします。**API keys** ページで、**Create new secret key** をクリックします。
+8.|link_openai_platform| にアクセスしてログインします。**API keys** ページで、**Create new secret key** をクリックします。
 
     .. image:: /pironman5/home_server/img/openclaw/llm_openai_create.png
 
@@ -138,7 +134,7 @@ OpenClaw に Pironman5 を操作させる
 
 OpenClaw に Pironman5 を操作させるには、Pironman5 スキルをインストールする必要があります。
 
-1.  Pironman5 がすでにインストールされていることを確認してください。インストールされていない場合は、:ref:`standard_download_pironman5_module` を参照してください。
+1.  Pironman5 がすでにインストールされていることを確認してください。インストールされていない場合は、:ref:`install_pironman5_module_5` を参照してください。
 
 2.  ターミナルで次のコマンドを実行します：
 

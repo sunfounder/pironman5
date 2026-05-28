@@ -1,18 +1,8 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと共に、Raspberry Pi、Arduino、ESP32の世界をさらに深く探求しましょう。
-
-    **参加する理由**
-
-    - **専門サポート**: コミュニティやチームの支援を受けて、アフターサポートや技術的な課題を解決します。
-    - **学びと共有**: スキル向上のためのヒントやチュートリアルを交換しましょう。
-    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
-    - **特別割引**: 最新製品の特別割引をお楽しみください。
-    - **イベントやプレゼント企画**: プレゼント企画や季節のプロモーションに参加できます。
-
-    👉 探索と創造の旅に出る準備はできましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
-
-.. _view_control_commands:
+.. _view_control_commands_5:
 
 コマンドによる制御
 ========================================
@@ -21,9 +11,6 @@ Pironman 5のデータを確認し、さまざまなデバイスをダッシュ�
 .. note::
 
   * **Home Assistant** システムの場合、 ``http://<ip>:34001`` を開いてダッシュボードを通じてのみPironman 5を監視および制御することができます。
-
-.. * **Batocera.linux** システムの場合、コマンドを使用してのみPironman 5を監視および制御できます。設定の変更を反映させるには、 ``pironman5 restart`` コマンドを使用してサービスを再起動する必要があることに注意してください。
-
 
 基本設定の確認
 -----------------------------------
@@ -36,19 +23,33 @@ Pironman 5のデータを確認し、さまざまなデバイスをダッシュ�
 
 標準の設定は次のように表示されます：
 
-.. code-block:: 
+.. code-block::
 
   {
-      "auto": {
+      "system": {
+          "data_interval": 1,
+          "database_retention_days": 30,
+          "temperature_unit": "C",
+          "enable_history": true,
+          "oled_enable": true,
+          "oled_rotation": 0,
+          "oled_sleep_timeout": 10,
+          "oled_pages": [
+              "mix",
+              "performance",
+              "ips",
+              "disk"
+          ],
+          "rgb_enable": true,
           "rgb_color": "#0a1aff",
-          "rgb_brightness": 50,
+          "rgb_brightness": 100,
           "rgb_style": "breathing",
           "rgb_speed": 50,
-          "rgb_enable": true,
           "rgb_led_count": 4,
-          "temperature_unit": "C",
-          "gpio_fan_mode": 2,
-          "gpio_fan_pin": 6
+          "rgb_led_count_min": 4,
+          "gpio_fan_pin": 6,
+          "gpio_fan_mode": 0,
+          "debug_level": "INFO"
       }
   }
 
@@ -73,24 +74,26 @@ Pironman 5のデータを確認し、さまざまなデバイスをダッシュ�
     -h, --help            show this help message and exit
     -v, --version         Show version
     -c, --config          Show config
-    -dl, --debug-level [{debug,info,warning,error,critical}]
+    -drd, --database-retention-days [DATABASE_RETENTION_DAYS]
+                          Database retention days
+    -dl, --debug-level [{DEBUG,INFO,WARNING,ERROR,CRITICAL,debug,info,warning,error,critical}]
                           Debug level
-    --background [BACKGROUND]
-                          Run in background
     -rd, --remove-dashboard
                           Remove dashboard
     -cp, --config-path [CONFIG_PATH]
                           Config path
+    -eh, --enable-history [ENABLE_HISTORY]
+                          Enable history, True/true/on/On/1 or False/false/off/Off/0
+    -re, --rgb-enable [RGB_ENABLE]
+                          RGB enable True/False
+    -rs, --rgb-style [RGB_STYLE]
+                          RGB style: ['solid', 'breathing', 'flow', 'flow_reverse', 'rainbow', 'rainbow_reverse', 'hue_cycle']
     -rc, --rgb-color [RGB_COLOR]
                           RGB color in hex format without # (e.g. 00aabb)
     -rb, --rgb-brightness [RGB_BRIGHTNESS]
                           RGB brightness 0-100
-    -rs, --rgb-style [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]
-                          RGB style
     -rp, --rgb-speed [RGB_SPEED]
                           RGB speed 0-100
-    -re, --rgb-enable [RGB_ENABLE]
-                          RGB enable True/False
     -rl, --rgb-led-count [RGB_LED_COUNT]
                           RGB LED count int
     -u, --temperature-unit [{C,F}]
@@ -101,14 +104,18 @@ Pironman 5のデータを確認し、さまざまなデバイスをダッシュ�
                           GPIO fan pin
     -oe, --oled-enable [OLED_ENABLE]
                           OLED enable True/true/on/On/1 or False/false/off/Off/0
-    -od, --oled-disk [OLED_DISK]
-                          Set to display which disk on OLED. 'total' or the name of the disk, like mmbclk or nvme
-    -oi, --oled-network-interface [OLED_NETWORK_INTERFACE]
-                          Set to display which ip of network interface on OLED, 'all' or the interface name, like eth0 or wlan0
     -or, --oled-rotation [{0,180}]
                           Set to rotate OLED display, 0, 180
+    -op, --oled-pages [OLED_PAGES]
+                          OLED pages, split by ',': mix,performance,ips,disk
+    -os, --oled-sleep-timeout [OLED_SLEEP_TIMEOUT]
+                          OLED sleep timeout in seconds
 
-
+  Subcommands:
+    {start,stop,launch-browser}
+      start               Start Pironman5
+      stop                Stop Pironman5
+      launch-browser      Launch browser
 
 .. note::
 
@@ -129,7 +136,7 @@ Pironman 5のデータを確認し、さまざまなデバイスをダッシュ�
 
   .. code-block:: shell
 
-    cat /opt/pironman5/log
+    cat /var/log/pironman5/pironman5.log
 
 
 RGB LEDの制御
@@ -150,7 +157,7 @@ RGB LEDの制御
 
   sudo pironman5 -re true
 
-* 色を変更するには、目的の16進数の色値を入力します。例： ``fe1a1a`` 
+* 色を変更するには、目的の16進数の色値を入力します。例： ``fe1a1a``
 
 .. code-block:: shell
 
@@ -162,11 +169,11 @@ RGB LEDの制御
 
   sudo pironman5 -rb 100
 
-* RGB LEDの表示モードを切り替えるには、次のオプションから選択します： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle`` 
+* RGB LEDの表示モードを切り替えるには、次のオプションから選択します： ``solid`` / ``breathing`` / ``flow`` / ``flow_reverse`` / ``rainbow`` / ``rainbow_reverse`` / ``hue_cycle``
 
 .. note::
 
-  RGB LEDの表示モードを ``rainbow`` , ``rainbow_reverse`` , ``hue_cycle`` に設定した場合、 ``pironman5 -rc`` で色を設定することはできません。
+  RGB LEDの表示モードを ``rainbow``、 ``rainbow_reverse``、または ``hue_cycle`` に設定した場合、 ``pironman5 -rc`` で色を設定することはできません。
 
 .. code-block:: shell
 
@@ -184,11 +191,12 @@ RGB LEDの制御
 
   sudo pironman5 -rl 12
 
+
 .. _cc_control_fan:
 
-RGBファンの制御
+GPIOファンの制御
 ---------------------
-IO拡張ボードは最大2つの5V非PWMファンをサポートしています。両方のファンは一緒に制御されます。
+IO拡張ボードは最大2つの5V非CPUファンをサポートしています。両方のファンは一緒に制御されます。
 
 .. note::
 
@@ -198,53 +206,54 @@ IO拡張ボードは最大2つの5V非PWMファンをサポートしています
 
     sudo systemctl restart pironman5.service
 
-* 2つのRGBファンの動作モードを設定するためのコマンドを使用できます。これらのモードは、RGBファンが作動する条件を決定します。
+* 2つのGPIOファンの動作モードを設定するためのコマンドを使用できます。これらのモードは、GPIOファンが作動する温度しきい値を決定します。
 
-例えば、 **1: パフォーマンス** モードに設定すると、RGBファンは50°Cで作動します。
+例えば、 **1: パフォーマンス** モードに設定すると、GPIOファンは ``50°C`` で作動します。
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4: 静音**: RGBファンは70°Cで作動します。
-* **3: バランス**: RGBファンは67.5°Cで作動します。
-* **2: 冷却**: RGBファンは60°Cで作動します。
-* **1: パフォーマンス**: RGBファンは50°Cで作動します。
-* **0: 常時オン**: RGBファンは常に作動します。
+* **4: 静音**: GPIOファンは ``70°C`` で作動します。
+* **3: バランス**: GPIOファンは ``67.5°C`` で作動します。
+* **2: 冷却**: GPIOファンは ``60°C`` で作動します。
+* **1: パフォーマンス**: GPIOファンは ``50°C`` で作動します。
+* **0: 常時オン**: GPIOファンは常に作動します。
 
-* RGBファンの制御ピンをRaspberry Piの他のピンに接続した場合、次のコマンドでピン番号を変更できます。
+* GPIOファンの制御ピンをRaspberry Piの他のピンに接続した場合、次のコマンドでピン番号を変更できます。
 
 .. code-block:: shell
 
   sudo pironman5 -gp 18
 
 
-**コアファンについて**
+**CPUファンについて**
 
-コアファンは、ラズベリーパイ5の専用4ピンPWMファン端子に接続します。その標準の制御方式は、ファームウェアによって管理され、CPU温度に基づく多段階の知的回転数調整機構です。つまり、公式または互換性のあるPWMファンを正しく接続して使用する場合、システムはCPU温度の変化に応じてファン回転数を自動的に調整し（50℃以上で作動を開始）、利用者の手動介入は一切不要です。
+CPUファンは、Raspberry Pi 5の専用4ピンPWMファン端子に接続します。その標準の制御方式は、ファームウェアによって管理され、CPU温度に基づく多段階の知的回転数調整機構です。つまり、公式または互換性のあるCPUファンを正しく接続して使用する場合、システムはCPU温度の変化に応じてファン回転数を自動的に調整し（50°C以上で作動を開始）、利用者の手動介入は一切不要です。
+
 
 OLEDスクリーンの確認
 -----------------------------------
 
-``pironman5`` ライブラリをインストールすると、OLEDスクリーンにCPU、RAM、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示され、再起動するたびにこれが表示されます。
+``pironman5`` ライブラリをインストールすると、OLEDスクリーンにCPU使用率、RAM使用量、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示され、再起動するたびに自動的に表示されます。
 
 OLEDスクリーンにコンテンツが表示されない場合は、まずOLEDのFPCケーブルが正しく接続されているか確認してください。
 
-次に、以下のコマンドを使用して、プログラムのログを確認し、問題が何であるかを確認できます。
+次に、以下のコマンドを使用して、プログラムのログを確認し、問題を特定できます：
 
 .. code-block:: shell
 
-  cat /var/log/pironman5/
+  cat /var/log/pironman5/pironman5.log
 
-また、OLEDのi2cアドレス0x3Cが認識されているか確認してください：
+また、OLEDのI2Cアドレス ``0x3C`` が認識されているか確認してください：
 
 .. code-block:: shell
 
   i2cdetect -y 1
 
+
 赤外線受信機の確認
 ---------------------------------------
-
 
 * ``lirc`` モジュールをインストールします：
 
@@ -252,7 +261,7 @@ OLEDスクリーンにコンテンツが表示されない場合は、まずOLED
 
     sudo apt-get install lirc -y
 
-* 次のコマンドを実行して赤外線受信機をテストします。
+* 次のコマンドを実行して赤外線受信機をテストします：
 
   .. code-block:: shell
 

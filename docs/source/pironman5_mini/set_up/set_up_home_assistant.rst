@@ -1,16 +1,7 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、同じ興味を持つ仲間たちと一緒に深く探究しましょう。
-
-    **なぜ参加するのか？**
-
-    - **エキスパートサポート**：購入後の問題や技術的な課題を、コミュニティやSunFounderチームと一緒に解決できます。
-    - **学びと共有**：ヒントやチュートリアルを共有し合い、スキルを高めましょう。
-    - **新製品の先行公開**：新製品情報をいち早く入手できます。
-    - **特別割引**：最新製品を対象とした特別割引が受けられます。
-    - **季節イベントとプレゼント企画**：季節イベントやプレゼントキャンペーンにも参加可能！
-
-    👉 一緒に創造と探究の旅に出かけましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
 Seting Up on Home Assistant
 ============================================

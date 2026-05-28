@@ -1,16 +1,7 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    こんにちは！SunFounderのRaspberry Pi・Arduino・ESP32 愛好者向けFacebookコミュニティへようこそ！同じ情熱を持つ仲間たちと共に、Raspberry Pi・Arduino・ESP32の世界をさらに深く探求しましょう。
-
-    **なぜ参加するのか？**
-
-    - **エキスパートサポート**：購入後のトラブルや技術的課題を、コミュニティおよびサポートチームがサポートします。
-    - **学びと共有**：ヒントやチュートリアルを共有し、スキルの向上を目指しましょう。
-    - **新製品の先行公開**：新製品の先行情報や発表をいち早く入手可能。
-    - **特別割引**：最新製品の限定割引をご提供します。
-    - **季節イベントとプレゼント企画**：プレゼント企画や季節限定キャンペーンに参加できます。
-
-    👉 一緒に創造と学びの旅を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
 
 .. _view_control_commands_mini:
 

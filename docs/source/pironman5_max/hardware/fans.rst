@@ -1,23 +1,14 @@
-.. note:: 
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    こんにちは！SunFounder の Facebook コミュニティ「Raspberry Pi & Arduino & ESP32 愛好者グループ」へようこそ！同じ情熱を持つ仲間たちと共に、Raspberry Pi、Arduino、ESP32 の世界をより深く探求しましょう。
-
-    **参加する理由**
-
-    - **専門サポート**：購入後のトラブルや技術的課題を、コミュニティと弊社チームが連携して解決します。
-    - **学びと共有**：役立つヒントやチュートリアルを交換して、スキルアップを目指しましょう。
-    - **新製品の先行プレビュー**：新たな製品発表や内部情報をいち早く入手可能。
-    - **限定割引**：最新製品を対象としたメンバー限定の特別割引を提供。
-    - **イベント＆プレゼント企画**：お得なキャンペーンや季節イベントに参加できます。
-
-    👉 一緒に創造し、学びを深めていきましょう！[|link_sf_facebook|] をクリックして、今すぐ参加！
 
 .. _fan_max:
 
 ファン
 ============
 
-PWMファン
+CPUファン
 -----------
 
 Pironman 5 MAX に搭載された PWM ファンは、Raspberry Pi システムによって制御されています。
@@ -34,13 +25,13 @@ PWM ファンは Raspberry Pi 5 の温度に応じて動作します：
 
 この温度制御は下降時にも適用され、各閾値から5℃低下すると次の速度段階に切り替わります（ヒステリシス制御）。
 
-* PWMファンの状態を確認するコマンド：
+* CPUファンの状態を確認するコマンド：
 
   .. code-block:: shell
   
     cat /sys/class/thermal/cooling_device0/cur_state
 
-* PWMファンの回転数を確認するには：
+* CPUファンの回転数を確認するには：
 
   .. code-block:: shell
 
@@ -48,7 +39,7 @@ PWM ファンは Raspberry Pi 5 の温度に応じて動作します：
 
 Pironman 5 MAX において PWM ファンは、特に高負荷時の安定した動作を確保する上で重要な冷却コンポーネントです。Raspberry Pi 5 のパフォーマンスを最大限に引き出すための信頼性ある設計です。
 
-RGBファン
+GPIOファン
 -------------------
 
 .. image:: img/size_fan.png

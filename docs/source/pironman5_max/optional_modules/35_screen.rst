@@ -1,16 +1,7 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで他のエンスージアストたちと共に、Raspberry Pi、Arduino、ESP32の世界をさらに深く探求しましょう。
-
-    **参加する理由**
-
-    - **専門サポート**: コミュニティやチームの支援を受けて、アフターサポートや技術的な課題を解決します。
-    - **学びと共有**: スキル向上のためのヒントやチュートリアルを交換しましょう。
-    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
-    - **特別割引**: 最新製品の特別割引をお楽しみください。
-    - **イベントやプレゼント企画**: プレゼント企画や季節のプロモーションに参加できます。
-
-    👉 探索と創造の旅に出る準備はできましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 3.5インチ タッチスクリーン
 =============================
@@ -27,7 +18,7 @@ Pironman 5 にディスプレイとタッチ制御を提供します。
 正しく取り付け、ハードウェアの損傷を避けるために手順を慎重に従ってください。
 
 詳細はこちらをご覧ください:  
-`3.5インチ タッチスクリーン ドキュメント <http://wiki.sunfounder.cc/index.php?title=3.5_Inch_LCD_Touch_Screen_Monitor_for_Raspberry_Pi>`_.
+`3.5インチ タッチスクリーン ドキュメント <https://docs.sunfounder.com/projects/35-ips-screen/en/latest/get_started/get_started.html>`_.
 
 
 **組み立て**

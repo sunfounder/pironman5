@@ -1,16 +1,6 @@
-.. note:: 
-
-    こんにちは！FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Raspberry Pi、Arduino、ESP32の世界を、同じ興味を持つ仲間たちと一緒により深く探究しましょう。
-
-    **なぜ参加するのか？**
-
-    - **エキスパートサポート**：購入後の問題や技術的な課題も、コミュニティやSunFounderチームのサポートで安心。
-    - **学びと共有**：役立つヒントやチュートリアルを共有して、スキルをさらにレベルアップ。
-    - **新製品の先行公開**：新製品の発表やプレビューにいち早くアクセス可能。
-    - **特別割引**：最新製品を対象とした特別割引が受けられます。
-    - **季節イベントとプレゼント企画**：プレゼント企画や季節限定キャンペーンにも参加可能！
-
-    👉 一緒に創造と発見の旅を始めましょう！[|link_sf_facebook|] をクリックして今すぐ参加！
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
 
 Raspberry Pi OS／Ubuntu／Kali Linux／Homebridgeでのセットアップ
