@@ -1,16 +1,7 @@
-.. note:: 
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Technikbegeisterten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
-
-    **Warum solltest du beitreten?**
-
-    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu verbessern.
-    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu Produktankündigungen und Einblicken hinter die Kulissen.
-    - **Sonderrabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
-    - **Festliche Aktionen und Verlosungen**: Nimm an Gewinnspielen und saisonalen Aktionen teil.
-
-    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und werde noch heute Mitglied!
 
 Set-up unter Home Assistant
 ============================================
@@ -173,7 +164,7 @@ Nun kannst du das Add-on **Pironman 5 MAX** installieren.
 
 .. note::
 
-    Weitere Informationen zur Nutzung der Pironman 5 MAX-Weboberfläche findest du unter: :ref:`max_view_control_dashboard`.
+    Weitere Informationen zur Nutzung der Pironman 5 MAX-Weboberfläche findest du unter: :ref:`view_control_dashboard`.
 
 
 .. note::

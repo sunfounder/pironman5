@@ -1,16 +1,6 @@
-.. note:: 
-
-    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Technikbegeisterten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
-
-    **Warum der Community beitreten?**
-
-    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Unterstützung unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu verbessern.
-    - **Exklusive Einblicke**: Erhalte frühzeitig Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
-    - **Sonderrabatte**: Genieße exklusive Preisnachlässe auf unsere neuesten Produkte.
-    - **Aktionen und Gewinnspiele**: Nimm an festlichen Aktionen und Verlosungen teil.
-
-    👉 Bereit, gemeinsam mit uns Neues zu entdecken und zu erschaffen? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
 
 Konfiguration unter Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge

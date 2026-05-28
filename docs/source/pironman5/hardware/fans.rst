@@ -1,26 +1,17 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
-
-    **Warum mitmachen?**
-
-    - **Fachkundige Unterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
-    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
-    - **Sonderrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
-    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und Feiertagsaktionen teil.
-
-    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _fans:
 
 Lüfter
 ===============
 
-PWM-Lüfter
+CPU-Lüfter
 -----------------
 
-Der PWM-Lüfter im Pironman 5 wird vom Raspberry Pi-System gesteuert und bildet das Herzstück der intelligenten Kühlungslösung, insbesondere unter hoher Belastung. Dieses System kombiniert einen primären PWM-Lüfter mit zwei zusätzlichen RGB-Lüftern für eine verbesserte Kühlleistung und ist eng in das Wärmemanagementsystem des Raspberry Pi 5 integriert.
+Der CPU-Lüfter im Pironman 5 wird vom Raspberry Pi-System gesteuert und bildet das Herzstück der intelligenten Kühlungslösung, insbesondere unter hoher Belastung. Dieses System kombiniert einen primären CPU-Lüfter mit zwei zusätzlichen GPIO-Lüftern für eine verbesserte Kühlleistung und ist eng in das Wärmemanagementsystem des Raspberry Pi 5 integriert.
 
 .. image:: img/fan_tower_cooler.png  
   :width: 600  
@@ -55,7 +46,7 @@ Der PWM-Lüfter im Pironman 5 wird vom Raspberry Pi-System gesteuert und bildet 
 
 **Lüfterdrehzahlsteuerung basierend auf der Temperatur**  
 
-Der PWM-Lüfter arbeitet dynamisch und passt seine Geschwindigkeit an die Temperatur des Raspberry Pi 5 an:  
+Der CPU-Lüfter arbeitet dynamisch und passt seine Geschwindigkeit an die Temperatur des Raspberry Pi 5 an:  
 
 * **Unter 50°C**: Lüfter bleibt aus (0% Geschwindigkeit).  
 * **Bei 50°C**: Lüfter läuft mit niedriger Geschwindigkeit (30% Geschwindigkeit).  
@@ -65,7 +56,7 @@ Der PWM-Lüfter arbeitet dynamisch und passt seine Geschwindigkeit an die Temper
 
 Diese Temperatur-Geschwindigkeits-Steuerung umfasst eine Hysterese von 5°C, um häufige Geschwindigkeitsänderungen zu vermeiden. Beispielsweise reduziert der Lüfter seine Geschwindigkeit erst, wenn die Temperatur 5°C unter den jeweiligen Schwellenwert fällt.  
 
-Die folgenden Befehle ermöglichen es Benutzern, den Betrieb des PWM-Lüfters zu überwachen:  
+Die folgenden Befehle ermöglichen es Benutzern, den Betrieb des CPU-Lüfters zu überwachen:  
 
 Um den aktuellen Zustand des Lüfters zu überprüfen:  
 
@@ -73,7 +64,7 @@ Um den aktuellen Zustand des Lüfters zu überprüfen:
 
   cat /sys/class/thermal/cooling_device0/cur_state
 
-RGB-Lüfter
+GPIO-Lüfter
 -------------------
 
 .. image:: img/size_fan.png

@@ -15,7 +15,7 @@ OpenClaw zur Bedienung des Pironman5 Max befähigen
 
 Um OpenClaw zu ermöglichen, den Pironman5 Max zu bedienen, müssen wir die Pironman5 Max-Fähigkeit (Skill) installieren.
 
-1.  Stellen Sie sicher, dass Sie Pironman5 Max bereits installiert haben. Falls nicht, lesen Sie bitte :ref:`max_download_pironman5_module`.
+1.  Stellen Sie sicher, dass Sie Pironman5 Max bereits installiert haben. Falls nicht, lesen Sie bitte :ref:`install_pironman5_module_max`.
 
 2.  Führen Sie den folgenden Befehl im Terminal aus:
 

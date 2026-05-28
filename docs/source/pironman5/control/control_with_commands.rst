@@ -1,34 +1,24 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
-
-    **Warum mitmachen?**
-
-    - **Fachkundige Unterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
-    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
-    - **Sonderrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
-    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und Feiertagsaktionen teil.
-
-    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
-
-.. _view_control_commands:
+.. _view_control_commands_5:
 
 Steuerung mit Befehlen
 ========================================
-Zusätzlich zur Anzeige von Daten des Pironman 5 und der Steuerung verschiedener Geräte über das Dashboard können Sie diese auch über Befehle steuern.
+Zusätzlich zur Anzeige von Daten des Pironman 5 und der Steuerung verschiedener Geräte über das Dashboard kannst du auch Befehle zur Steuerung verwenden.
 
 .. note::
 
-  * Für das **Home Assistant**-System können Sie den Pironman 5 nur über das Dashboard überwachen und steuern, indem Sie die Webseite unter ``http://<ip>:34001`` öffnen.
+  * Für das **Home Assistant**-System kannst du den Pironman 5 nur über das Dashboard überwachen und steuern, indem du die Webseite unter ``http://<ip>:34001`` öffnest.
 
-.. * Für das **Batocera.linux**-System können Sie den Pironman 5 nur über Befehle überwachen und steuern. Es ist wichtig zu beachten, dass alle Änderungen an der Konfiguration einen Neustart des Dienstes mit ``pironman5 restart`` erfordern, damit sie wirksam werden.
+.. * Für das **Batocera.linux**-System kannst du den Pironman 5 nur über Befehle überwachen und steuern. Es ist wichtig zu beachten, dass alle Änderungen an der Konfiguration einen Neustart des Dienstes mit ``pironman5 restart`` erfordern, damit sie wirksam werden.
 
 
 Anzeige der Grundkonfigurationen
 -----------------------------------
 
-Das ``pironman5``-Modul bietet Grundkonfigurationen für den Pironman, die Sie mit folgendem Befehl überprüfen können.
+Das ``pironman5``-Modul bietet Grundkonfigurationen für den Pironman, die du mit folgendem Befehl überprüfen kannst.
 
 .. code-block:: shell
 
@@ -36,27 +26,42 @@ Das ``pironman5``-Modul bietet Grundkonfigurationen für den Pironman, die Sie m
 
 Die Standardkonfigurationen werden wie folgt angezeigt:
 
-.. code-block:: 
+.. code-block::
 
   {
-      "auto": {
+      "system": {
+          "data_interval": 1,
+          "database_retention_days": 30,
+          "temperature_unit": "C",
+          "enable_history": true,
+          "oled_enable": true,
+          "oled_rotation": 0,
+          "oled_sleep_timeout": 10,
+          "oled_pages": [
+              "mix",
+              "performance",
+              "ips",
+              "disk"
+          ],
+          "rgb_enable": true,
           "rgb_color": "#0a1aff",
-          "rgb_brightness": 50,
+          "rgb_brightness": 100,
           "rgb_style": "breathing",
           "rgb_speed": 50,
-          "rgb_enable": true,
           "rgb_led_count": 4,
-          "temperature_unit": "C",
-          "gpio_fan_mode": 2,
-          "gpio_fan_pin": 6
+          "rgb_led_count_min": 4,
+          "gpio_fan_pin": 6,
+          "gpio_fan_mode": 0,
+          "debug_level": "INFO"
       }
   }
 
-Passen Sie diese Konfigurationen nach Ihren Bedürfnissen an.
+Passe diese Konfigurationen nach deinen Bedürfnissen an.
 
-Verwenden Sie ``pironman5`` oder ``pironman5 -h`` für Anweisungen.
+Verwende ``pironman5`` oder ``pironman5 -h`` für Anweisungen.
 
 .. code-block::
+
 
   usage: pironman5-service [-h] [-v] [-c] [-dl [{debug,info,warning,error,critical}]] [--background [BACKGROUND]] [-rd] [-cp [CONFIG_PATH]] [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]]
                           [-rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]] [-rp [RGB_SPEED]] [-re [RGB_ENABLE]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]] [-oe [OLED_ENABLE]]
@@ -72,24 +77,26 @@ Verwenden Sie ``pironman5`` oder ``pironman5 -h`` für Anweisungen.
     -h, --help            show this help message and exit
     -v, --version         Show version
     -c, --config          Show config
-    -dl, --debug-level [{debug,info,warning,error,critical}]
+    -drd, --database-retention-days [DATABASE_RETENTION_DAYS]
+                          Database retention days
+    -dl, --debug-level [{DEBUG,INFO,WARNING,ERROR,CRITICAL,debug,info,warning,error,critical}]
                           Debug level
-    --background [BACKGROUND]
-                          Run in background
     -rd, --remove-dashboard
                           Remove dashboard
     -cp, --config-path [CONFIG_PATH]
                           Config path
+    -eh, --enable-history [ENABLE_HISTORY]
+                          Enable history, True/true/on/On/1 or False/false/off/Off/0
+    -re, --rgb-enable [RGB_ENABLE]
+                          RGB enable True/False
+    -rs, --rgb-style [RGB_STYLE]
+                          RGB style: ['solid', 'breathing', 'flow', 'flow_reverse', 'rainbow', 'rainbow_reverse', 'hue_cycle']
     -rc, --rgb-color [RGB_COLOR]
                           RGB color in hex format without # (e.g. 00aabb)
     -rb, --rgb-brightness [RGB_BRIGHTNESS]
                           RGB brightness 0-100
-    -rs, --rgb-style [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]
-                          RGB style
     -rp, --rgb-speed [RGB_SPEED]
                           RGB speed 0-100
-    -re, --rgb-enable [RGB_ENABLE]
-                          RGB enable True/False
     -rl, --rgb-led-count [RGB_LED_COUNT]
                           RGB LED count int
     -u, --temperature-unit [{C,F}]
@@ -100,161 +107,173 @@ Verwenden Sie ``pironman5`` oder ``pironman5 -h`` für Anweisungen.
                           GPIO fan pin
     -oe, --oled-enable [OLED_ENABLE]
                           OLED enable True/true/on/On/1 or False/false/off/Off/0
-    -od, --oled-disk [OLED_DISK]
-                          Set to display which disk on OLED. 'total' or the name of the disk, like mmbclk or nvme
-    -oi, --oled-network-interface [OLED_NETWORK_INTERFACE]
-                          Set to display which ip of network interface on OLED, 'all' or the interface name, like eth0 or wlan0
     -or, --oled-rotation [{0,180}]
                           Set to rotate OLED display, 0, 180
+    -op, --oled-pages [OLED_PAGES]
+                          OLED pages, split by ',': mix,performance,ips,disk
+    -os, --oled-sleep-timeout [OLED_SLEEP_TIMEOUT]
+                          OLED sleep timeout in seconds
 
+  Subcommands:
+    {start,stop,launch-browser}
+      start               Start Pironman5
+      stop                Stop Pironman5
+      launch-browser      Launch browser
 
 .. note::
 
-  Jedes Mal, wenn Sie den Status von ``pironman5.service`` ändern, müssen Sie den folgenden Befehl verwenden, damit die Konfigurationsänderungen wirksam werden.
+   Jedes Mal, wenn du den Status von ``pironman5.service`` änderst, musst du den Dienst neu starten, damit die Konfigurationsänderungen wirksam werden.
+
+   .. code-block:: shell
+
+      sudo systemctl restart pironman5.service
+
+* Überprüfe den Status des ``pironman5``-Programms mit dem Tool ``systemctl``.
 
   .. code-block:: shell
 
-    sudo systemctl restart pironman5.service
+     sudo systemctl status pironman5.service
 
-
-* Überprüfen Sie den Status des ``pironman5``-Programms mit dem Tool ``systemctl``.
-
-  .. code-block:: shell
-
-    sudo systemctl status pironman5.service
-
-* Alternativ können Sie die von dem Programm generierten Protokolldateien inspizieren.
+* Alternativ kannst du die vom Programm generierten Protokolldateien einsehen.
 
   .. code-block:: shell
 
-    cat /opt/pironman5/log
+     cat /var/log/pironman5/pironman5.log
 
 
 Steuerung der RGB-LEDs
----------------------------
-Das Board verfügt über 4 WS2812 RGB-LEDs, die individuell gesteuert werden können. Benutzer können sie ein- oder ausschalten, die Farbe ändern, die Helligkeit anpassen, die Anzeigemodi wechseln und die Geschwindigkeit der Änderungen festlegen.
+-----------------------
+
+Das Board verfügt über 4 WS2812 RGB-LEDs, die individuell gesteuert werden können. Du kannst sie ein- oder ausschalten, die Farbe ändern, die Helligkeit anpassen, die Anzeigemodi wechseln und die Geschwindigkeit der Änderungen festlegen.
+
 .. note::
 
+   Jedes Mal, wenn du den Status von ``pironman5.service`` änderst, musst du den Dienst neu starten, damit die Konfigurationsänderungen wirksam werden.
 
-  Jedes Mal, wenn Sie den Status von ``pironman5.service`` ändern, müssen Sie den folgenden Befehl verwenden, damit die Konfigurationsänderungen wirksam werden.
+   .. code-block:: shell
+
+      sudo systemctl restart pironman5.service
+
+* Um den Ein- und Ausschaltzustand der RGB-LEDs zu ändern, verwende ``true`` zum Einschalten oder ``false`` zum Ausschalten.
 
   .. code-block:: shell
 
-    sudo systemctl restart pironman5.service
+     sudo pironman5 -re true
 
-* Um den Ein- und Ausschaltzustand der RGB-LEDs zu ändern, verwenden Sie ``true`` zum Einschalten und ``false`` zum Ausschalten.
+* Um die Farbe der RGB-LEDs zu ändern, gib den gewünschten Hexadezimalfarbwert ein, z. B. ``fe1a1a``.
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  sudo pironman5 -re true
+     sudo pironman5 -rc fe1a1a
 
-* Um die Farbe zu ändern, geben Sie die gewünschte Hexadezimalfarbe ein, z.B. ``fe1a1a``.
+* Um die Helligkeit der RGB-LEDs zu ändern (Bereich: ``0 ~ 100``):
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  sudo pironman5 -rc fe1a1a
+     sudo pironman5 -rb 100
 
-* Um die Helligkeit der RGB-LEDs zu ändern (Bereich: 0 ~ 100%):
+* Um die RGB-LED-Anzeigemodi zu wechseln, wähle aus:
 
-.. code-block:: shell
+  ``solid`` / ``breathing`` / ``flow`` / ``flow_reverse`` / ``rainbow`` / ``rainbow_reverse`` / ``hue_cycle``
 
-  sudo pironman5 -rb 100
+  .. note::
 
-* Um die RGB-LED-Anzeigemodi zu wechseln, wählen Sie aus den Optionen: ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``:
+     Wenn der RGB-LED-Anzeigemodus auf ``rainbow``, ``rainbow_reverse`` oder ``hue_cycle`` eingestellt ist, wird die Farbeinstellung mit ``pironman5 -rc`` nicht wirksam.
 
-.. note::
+  .. code-block:: shell
 
-  Wenn Sie den RGB-LED-Anzeigemodus auf ``rainbow``, ``rainbow_reverse`` oder ``hue_cycle`` setzen, können Sie die Farbe nicht mit ``pironman5 -rc`` einstellen.
+     sudo pironman5 -rs breathing
 
-.. code-block:: shell
+* Um die Animationsgeschwindigkeit der RGB-LEDs zu ändern (Bereich: ``0 ~ 100``):
 
-  sudo pironman5 -rs breathing
+  .. code-block:: shell
 
-* Um die Geschwindigkeit der Änderungen anzupassen (Bereich: 0 ~ 100%):
+     sudo pironman5 -rp 80
 
-.. code-block:: shell
+* Die Standardkonfiguration umfasst 4 RGB-LEDs. Wenn du zusätzliche LEDs anschließt, aktualisiere die Anzahl mit:
 
-  sudo pironman5 -rp 80
+  .. code-block:: shell
 
-* Die Standardkonfiguration umfasst 4 RGB-LEDs. Schließen Sie zusätzliche LEDs an und aktualisieren Sie die Anzahl mit:
+     sudo pironman5 -rl 12
 
-.. code-block:: shell
-
-  sudo pironman5 -rl 12
 
 .. _cc_control_fan:
 
-Steuerung der RGB-Lüfter
-------------------------------
-Das IO-Erweiterungsboard unterstützt bis zu zwei 5V Nicht-PWM-Lüfter. Beide Lüfter werden zusammen gesteuert. 
+Steuerung der GPIO-Lüfter
+-------------------------
+
+Das IO-Erweiterungsboard unterstützt bis zu zwei 5V Nicht-CPU-Lüfter. Beide Lüfter werden zusammen gesteuert.
 
 .. note::
 
-  Jedes Mal, wenn Sie den Status von ``pironman5.service`` ändern, müssen Sie den folgenden Befehl verwenden, damit die Konfigurationsänderungen wirksam werden.
+   Jedes Mal, wenn du den Status von ``pironman5.service`` änderst, musst du den Dienst neu starten, damit die Konfigurationsänderungen wirksam werden.
+
+   .. code-block:: shell
+
+      sudo systemctl restart pironman5.service
+
+* Du kannst Befehle verwenden, um den Betriebsmodus der beiden GPIO-Lüfter zu konfigurieren. Diese Modi bestimmen die Temperaturschwelle, bei der die GPIO-Lüfter aktiviert werden.
+
+  Wenn der Modus auf **1: Performance** eingestellt ist, werden die GPIO-Lüfter bei ``50 °C`` aktiviert.
 
   .. code-block:: shell
 
-    sudo systemctl restart pironman5.service
+     sudo pironman5 -gm 3
 
-* Sie können Befehle verwenden, um den Betriebsmodus der beiden RGB-Lüfter zu konfigurieren. Diese Modi bestimmen, unter welchen Bedingungen die RGB-Lüfter aktiviert werden. 
+* **4: Quiet**: Die GPIO-Lüfter werden bei ``70 °C`` aktiviert.
+* **3: Balanced**: Die GPIO-Lüfter werden bei ``67,5 °C`` aktiviert.
+* **2: Cool**: Die GPIO-Lüfter werden bei ``60 °C`` aktiviert.
+* **1: Performance**: Die GPIO-Lüfter werden bei ``50 °C`` aktiviert.
+* **0: Always On**: Die GPIO-Lüfter sind immer eingeschaltet.
 
-Wenn der Modus auf **1: Leistung** eingestellt ist, werden die RGB-Lüfter bei 50°C aktiviert.
+* Wenn du den Steuerpin des RGB-Lüfters an einen anderen GPIO-Pin des Raspberry Pi anschließt, kannst du die Pinnummer wie folgt ändern:
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  sudo pironman5 -gm 3
+     sudo pironman5 -gp 18
 
-* **4: Leise**: Die RGB-Lüfter werden bei 70°C aktiviert.
-* **3: Ausgewogen**: Die RGB-Lüfter werden bei 67,5°C aktiviert.
-* **2: Kühl**: Die RGB-Lüfter werden bei 60°C aktiviert.
-* **1: Leistung**: Die RGB-Lüfter werden bei 50°C aktiviert.
-* **0: Immer An**: Die RGB-Lüfter sind immer eingeschaltet.
 
-* Wenn Sie den Steuerungspin des RGB-Lüfters auf verschiedene Pins des Raspberry Pi anschließen, können Sie den folgenden Befehl verwenden, um die Pinnummer zu ändern.
+Über den CPU-Lüfter
+------------------------
 
-.. code-block:: shell
+Der CPU-Lüfter wird an einen dedizierten 4-Pin-CPU-Lüfteranschluss auf dem Raspberry Pi 5 angeschlossen.
 
-  sudo pironman5 -gp 18
-
-**Über den Hauptlüfter**
-
-Der Hauptlüfter wird an einen dedizierten 4-Pin-PWM-Lüfteranschluss auf dem Raspberry Pi 5 angeschlossen. Seine Standard-Steuerungsstrategie ist ein firmwaregesteuertes, mehrstufiges intelligentes Drehzahlanpassungssystem, das auf der CPU-Temperatur basiert. Das bedeutet, dass das System bei Verwendung eines offiziellen oder kompatiblen PWM-Lüfters und korrektem Anschluss die Lüftergeschwindigkeit automatisch an die Änderungen der CPU-Temperatur anpasst (er beginnt oberhalb von 50°C zu arbeiten), ohne dass ein manueller Eingriff Ihrerseits erforderlich ist.
+Die standardmäßige Steuerungsstrategie ist ein firmwaregesteuertes, mehrstufiges intelligentes Drehzahlanpassungssystem, das auf der CPU-Temperatur basiert. Wenn du einen offiziellen oder kompatiblen CPU-Lüfter verwendest und ihn korrekt anschließt, passt das System die Lüftergeschwindigkeit automatisch an die Änderungen der CPU-Temperatur an (ab ``50 °C``), ohne dass ein manueller Eingriff erforderlich ist.
 
 
 Überprüfung des OLED-Bildschirms
 -----------------------------------
 
-Nachdem Sie die Bibliothek ``pironman5`` installiert haben, zeigt der OLED-Bildschirm die CPU-, RAM-, Festplattenauslastung, die CPU-Temperatur und die IP-Adresse des Raspberry Pi an und zeigt diese jedes Mal beim Neustart an.
+Wenn die Bibliothek ``pironman5`` installiert ist, zeigt der OLED-Bildschirm nach jedem Neustart automatisch CPU-Auslastung, RAM-Auslastung, Festplattenauslastung, CPU-Temperatur und die IP-Adresse des Raspberry Pi an.
 
-Wenn Ihr OLED-Bildschirm keine Inhalte anzeigt, überprüfen Sie zunächst, ob das FPC-Kabel des OLED ordnungsgemäß angeschlossen ist.
+Wenn der OLED-Bildschirm keine Inhalte anzeigt, überprüfe zunächst, ob das OLED-FPC-Kabel ordnungsgemäß angeschlossen ist.
 
-Anschließend können Sie das Protokoll des Programms überprüfen, um zu sehen, was das Problem sein könnte, indem Sie den folgenden Befehl ausführen.
-
-.. code-block:: shell
-
-  cat /var/log/pironman5/
-
-Oder überprüfen Sie, ob die i2c-Adresse des OLED 0x3C erkannt wird:
+Überprüfe dann das Programmprotokoll mit dem folgenden Befehl:
 
 .. code-block:: shell
 
-  i2cdetect -y 1
+   cat /var/log/pironman5/pironman5.log
+
+Du kannst auch überprüfen, ob die OLED-I2C-Adresse ``0x3C`` erkannt wird:
+
+.. code-block:: shell
+
+   i2cdetect -y 1
+
 
 Überprüfung des Infrarot-Empfängers
 ---------------------------------------
 
-
-* Installieren Sie das Modul ``lirc``:
-
-  .. code-block:: shell
-
-    sudo apt-get install lirc -y
-
-* Testen Sie nun den IR-Empfänger, indem Sie den folgenden Befehl ausführen. 
+* Installiere das Modul ``lirc``:
 
   .. code-block:: shell
 
-    mode2 -d /dev/lirc0
+     sudo apt-get install lirc -y
 
-* Nach Ausführung des Befehls drücken Sie eine Taste auf der Fernbedienung und der Code dieser Taste wird angezeigt.
+* Teste den IR-Empfänger mit dem folgenden Befehl:
 
+  .. code-block:: shell
+
+     mode2 -d /dev/lirc0
+
+* Nachdem du den Befehl ausgeführt hast, drücke eine Taste auf der Fernbedienung. Der entsprechende IR-Code wird im Terminal angezeigt.

@@ -1,16 +1,6 @@
-.. note::
-
-    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Enthusiasten tiefer in Raspberry Pi, Arduino und ESP32 ein.
-
-    **Warum beitreten?**
-
-    - **Expertenunterstützung**: Löse Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
-    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Previews.
-    - **Spezielle Rabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
-    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
-
-    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
 
 .. _intro_pironman5:
@@ -29,7 +19,7 @@ Vielen Dank, dass du dich für unser |link_pironman5| entschieden hast.
 
 **Hauptmerkmale**
 
-* **Fortschrittliche Kühlung**: Tower-Kühler mit zwei RGB-Lüftern für effiziente Temperaturkontrolle.
+* **Fortschrittliche Kühlung**: Tower-Kühler mit zwei GPIO-Lüftern für effiziente Temperaturkontrolle.
 * **Hochgeschwindigkeitsspeicher & KI-Unterstützung**: Unterstützt NVMe-M.2-SSDs (**2230**, **2242**, **2260**, **2280**) und ist vollständig kompatibel mit dem **Hailo-8L KI-Beschleuniger** für leistungsstarke Edge-KI-Funktionen.
 * **Intelligentes Display**: Eingebautes 0,96”-OLED-Display zeigt CPU-Auslastung, Speicher, Temperatur und IP-Adresse in Echtzeit an.
 * **Erweiterte Konnektivität**: Dual-HDMI-Ports, anpassbare RGB-LEDs, sicherer Netzschalter, IR-Empfänger und externer GPIO-Expander.
@@ -82,8 +72,8 @@ Vielen Dank, dass du dich für unser |link_pironman5| entschieden hast.
     * 2 x 4Kp60 Standard-HDMI-Ausgänge
 * 1 x Metall-Netzschalter
 * 1 x 0,96'' 128x64 OLED-Bildschirm
-* 1 x PWM-Lüfter (40x40x10mm)
-* 2 x RGB-Lüfter (40x40x10mm)
+* 1 x CPU-Lüfter (40x40x10mm)
+* 2 x GPIO-Lüfter (40x40x10mm)
 * 4 x WS2812-5050 RGB-LEDs
 * 1 x 38KHz IR-Empfänger
 * 1 x Tower-Kühler

@@ -373,7 +373,7 @@ Ja, OpenMediaVault wird auf dem Raspberry-Pi-System eingerichtet. Bitte folgen S
 
 
 19. Raspberry Pi Kamera funktioniert nicht?
-----------------------------------------
+-----------------------------------------------------------
 
 Wenn die Kamera nicht funktioniert, hängen 90 % der Probleme mit dem Flachbandkabel-Anschluss oder der Kamera-Hardware selbst zusammen.
 

@@ -1,16 +1,7 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
-
-    **Warum mitmachen?**
-
-    - **Fachkundige Unterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
-    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
-    - **Sonderrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
-    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und Feiertagsaktionen teil.
-
-    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 IO-Expander
 ================
@@ -91,7 +82,7 @@ Wenn der OLED-Bildschirm nichts anzeigt oder falsch anzeigt, können Sie diese S
 
     .. code-block:: shell
 
-        cat /opt/pironman5/log
+        cat /var/log/pironman5/pironman5.log
 
 #. Alternativ können Sie den folgenden Befehl verwenden, um zu überprüfen, ob die i2c-Adresse 0x3C des OLED erkannt wird:
     
@@ -139,7 +130,7 @@ Um den IR-Empfänger zu nutzen, überprüfen Sie die Verbindung und installieren
 * Nachdem Sie den Befehl ausgeführt haben, drücken Sie eine Taste auf der Fernbedienung, und der Code dieser Taste wird angezeigt.
 
 
-RGB-Lüfter-Pins
+GPIO-Lüfter-Pins
 ------------------
 
 Das IO-Erweiterungsboard unterstützt bis zu zwei 5V-Lüfter ohne PWM-Steuerung. Beide Lüfter werden gemeinsam gesteuert.
@@ -148,7 +139,7 @@ Das IO-Erweiterungsboard unterstützt bis zu zwei 5V-Lüfter ohne PWM-Steuerung.
 
 .. image:: img/io_board_fan.png
 
-Die beiden Pins unterhalb von J9 sind die Aktivierungspins für die RGB-Lüfter. Standardmäßig ist ein Jumper auf diesen Pins eingesetzt, der die Steuerung des Lüfterzustands über GPIO6 ermöglicht. Wenn der Lüfterbetrieb nicht gewünscht ist, kann der Jumper entfernt werden, um GPIO6 freizugeben.
+Die beiden Pins unterhalb von J9 sind die Aktivierungspins für die GPIO-Lüfter. Standardmäßig ist ein Jumper auf diesen Pins eingesetzt, der die Steuerung des Lüfterzustands über GPIO6 ermöglicht. Wenn der Lüfterbetrieb nicht gewünscht ist, kann der Jumper entfernt werden, um GPIO6 freizugeben.
 
 .. image:: img/io_board_fan_j9.png
 
@@ -156,21 +147,21 @@ Die beiden Pins unterhalb von J9 sind die Aktivierungspins für die RGB-Lüfter.
 
 .. image:: img/io_board_fan_d2.png
 
-Sie können einen Befehl verwenden, um den Betriebsmodus der beiden RGB-Lüfter zu konfigurieren. Diese Modi bestimmen, unter welchen Bedingungen die RGB-Lüfter aktiviert werden.
+Sie können einen Befehl verwenden, um den Betriebsmodus der beiden GPIO-Lüfter zu konfigurieren. Diese Modi bestimmen, unter welchen Bedingungen die GPIO-Lüfter aktiviert werden.
 
-Zum Beispiel werden im Modus **1: Leistung** die RGB-Lüfter bei 50°C aktiviert.
+Zum Beispiel werden im Modus **1: Leistung** die GPIO-Lüfter bei 50°C aktiviert.
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4: Leise**: Die RGB-Lüfter werden bei 70°C aktiviert.
-* **3: Ausgewogen**: Die RGB-Lüfter werden bei 67,5°C aktiviert.
-* **2: Kühl**: Die RGB-Lüfter werden bei 60°C aktiviert.
-* **1: Leistung**: Die RGB-Lüfter werden bei 50°C aktiviert.
-* **0: Immer an**: Die RGB-Lüfter sind immer eingeschaltet.
+* **4: Leise**: Die GPIO-Lüfter werden bei 70°C aktiviert.
+* **3: Ausgewogen**: Die GPIO-Lüfter werden bei 67,5°C aktiviert.
+* **2: Kühl**: Die GPIO-Lüfter werden bei 60°C aktiviert.
+* **1: Leistung**: Die GPIO-Lüfter werden bei 50°C aktiviert.
+* **0: Immer an**: Die GPIO-Lüfter sind immer eingeschaltet.
 
-Wenn Sie den Steuerungs-Pin des RGB-Lüfters mit anderen Pins des Raspberry Pi verbinden, können Sie den folgenden Befehl verwenden, um die Pinnummer zu ändern.
+Wenn Sie den Steuerungs-Pin des GPIO-Lüfters mit anderen Pins des Raspberry Pi verbinden, können Sie den folgenden Befehl verwenden, um die Pinnummer zu ändern.
 
 .. code-block:: shell
 

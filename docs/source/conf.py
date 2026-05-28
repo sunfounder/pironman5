@@ -92,10 +92,15 @@ locale_dirs = ['locale/'] # .po files for other languages are placed in the loca
 
 gettext_compact = False # Support for generating the contents of the folders inside source/ into other languages.
 
-
 # language links
 
 rst_epilog = """
+
+.. |link_sf_27w_supply| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-27w-pd-power-supply-for-raspberry-pi" target="_blank">SunFounder 27W PD Power Supply</a>
+
+
 
 .. |link_german_tutorials| raw:: html
 
@@ -137,11 +142,6 @@ rst_epilog += """
 
     <a href="https://docs.sunfounder.com/projects/35-ips-screen/en/latest/quick_user_guide.html#driver-installation" target="_blank">3.5 Inch IPS Screen Driver Installation</a>
 
-.. |link_sf_27w_supply| raw:: html
-
-    <a href="https://www.sunfounder.com/products/sunfounder-27w-pd-power-supply-for-raspberry-pi" target="_blank">SunFounder 27W PD Power Supply</a>
-
-
 .. |link_rpi_get_start| raw:: html
 
     <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" target="_blank">Getting Started with Raspberry Pi</a>
@@ -161,7 +161,7 @@ rst_epilog += """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">hier</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
 
 .. |link_kodi| raw:: html
 
@@ -193,12 +193,10 @@ rst_epilog += """
 
     <a href="https://www.sunfounder.com/products/pironman-5-max" target="_blank">Pironman 5 Max</a>
 
+
 .. |link_pironman5_promax| raw:: html
 
     <a href="https://www.sunfounder.com/products/pironman-5-pro-max-mini-pc-case-with-touch-screen-for-raspberry-pi-5" target="_blank">Pironman 5 Pro Max</a>
-
-
-    
 
 
 .. |link_raspberry_pi_imager| raw:: html

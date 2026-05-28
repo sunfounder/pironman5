@@ -1,151 +1,162 @@
-.. note:: 
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein, zusammen mit anderen Enthusiasten.
-
-    **Warum beitreten?**
-
-    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
-    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu Produktankündigungen und exklusiven Einblicken.
-    - **Sonderrabatte**: Profitieren Sie von exklusiven Rabatten auf unsere neuesten Produkte.
-    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und Sonderaktionen zu Feiertagen teil.
-
-    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
-
-.. _view_control_dashboard:
+.. _view_control_dashboard_5:
 
 Anzeigen und Steuern über das Dashboard
 =========================================
 
 Nach erfolgreicher Installation des Moduls ``pironman5`` startet der Dienst ``pironman5.service`` automatisch beim Neustart.
 
-Jetzt können Sie die Überwachungsseite in Ihrem Browser öffnen, um Informationen zu Ihrem Raspberry Pi anzuzeigen, RGB-LEDs zu konfigurieren, den Lüfter zu steuern und vieles mehr. Der Link zur Seite lautet: ``http://<ip>:34001``.
+Jetzt kannst du die Überwachungsseite in deinem Browser öffnen, um Informationen zu deinem Raspberry Pi anzuzeigen, die RGB-LEDs zu konfigurieren und den Lüfter zu steuern. Der Link zur Seite lautet: ``http://<ip>:34001``.
 
 Diese Seite umfasst **Dashboard**, **Verlauf**, **Protokoll** und eine **Einstellungen**-Seite.
 
-.. image:: img/dashboard_tab_new.jpg
+.. image:: img/dashboard_home.png
+
 
 Dashboard
 -----------------------
 
-Das Dashboard enthält mehrere Karten zur Anzeige des Status Ihres Raspberry Pi, darunter:
+Es gibt mehrere Karten zur Anzeige des relevanten Status des Raspberry Pi, darunter:
 
-* **Lüfter**: Zeigt die CPU-Temperatur des Raspberry Pi und die PWM-Lüftergeschwindigkeit an. **GPIO Fan State** zeigt den Status der seitlichen RGB-Lüfter an. Bei der aktuellen Temperatur sind die beiden RGB-Lüfter ausgeschaltet.
+* **Temperatur**: Zeigt die CPU/GPU-Temperatur des Raspberry Pi und die CPU-Lüftergeschwindigkeit an. **GPIO Fan State** zeigt den Status der beiden seitlichen GPIO-Lüfter.
 
-  .. image:: img/dashboard_pwm_fan.png
+  .. image:: img/dashboard_tem.png
     :width: 90%
 
-* **Speicher**: Zeigt die Speicherkapazität des Raspberry Pi, einschließlich der belegten und verfügbaren Bereiche der verschiedenen Partitionen.
+* **Speicher**: Zeigt die Speicherkapazität des Raspberry Pi an, einschließlich der verschiedenen Datenträgerpartitionen mit ihrem belegten und verfügbaren Speicherplatz.
 
   .. image:: img/dashboard_storage.png
     :width: 90%
 
-* **Arbeitsspeicher**: Zeigt die RAM-Auslastung des Raspberry Pi in Prozent an.
+* **Arbeitsspeicher**: Zeigt die RAM-Auslastung des Raspberry Pi und den Prozentsatz an.
 
   .. image:: img/dashboard_memory.png
     :width: 90%
+
 
 * **Netzwerk**: Zeigt den aktuellen Netzwerkverbindungstyp sowie Upload- und Download-Geschwindigkeiten an.
 
   .. image:: img/dashboard_network.png
     :width: 90%
 
+
 * **Prozessor**: Veranschaulicht die CPU-Leistung des Raspberry Pi, einschließlich des Status seiner vier Kerne, der Betriebsfrequenzen und der CPU-Auslastung in Prozent.
 
   .. image:: img/dashboard_processor.png
     :width: 90%
 
+
 Verlauf
 --------------
 
-Auf der Seite „Verlauf“ können Sie historische Daten anzeigen. Wählen Sie im linken Seitenmenü die gewünschten Daten aus, legen Sie den Zeitraum fest, um die Daten für diesen Zeitraum anzuzeigen, und klicken Sie optional auf „Herunterladen“.
+Auf der Seite „Verlauf“ kannst du historische Daten anzeigen. Wähle im linken Seitenmenü die gewünschten Daten aus, lege den Zeitraum fest, um die Daten für diesen Zeitraum anzuzeigen. Du kannst die Daten auch herunterladen.
 
 .. image:: img/dashboard_history1.png
   :width: 90%
-  
+
 .. image:: img/dashboard_history2.png
   :width: 90%
 
 Protokoll
 ------------
 
-Die Seite „Protokoll“ dient zur Anzeige der Protokolle des aktuell laufenden Pironman5-Dienstes. Der Pironman5-Dienst umfasst mehrere Unterdienste, die jeweils ein eigenes Protokoll haben. Wählen Sie das Protokoll aus, das Sie anzeigen möchten, und die Daten werden rechts angezeigt. Wenn keine Inhalte erscheinen, bedeutet dies möglicherweise, dass keine Protokollinhalte vorhanden sind.
+Die Seite „Protokoll“ zeigt das Laufzeitprotokoll des Pironman5-Dienstes an.
 
-* Jedes Protokoll hat eine feste Größe von 10 MB. Wird diese Größe überschritten, wird ein zweites Protokoll erstellt.
-* Die Anzahl der Protokolle für denselben Dienst ist auf 10 begrenzt. Wenn diese Grenze überschritten wird, wird das älteste Protokoll automatisch gelöscht. Sie können Protokolle auch manuell löschen.
-* Über den Protokollbereich auf der rechten Seite stehen Filtertools zur Verfügung. Sie können die Protokollebene auswählen, nach Schlüsselwörtern filtern und Tools wie **Zeilenumbruch**, **Automatisches Scrollen** und **Automatisches Aktualisieren** verwenden.
-* Protokolle können auch lokal heruntergeladen werden.
+* Protokolleinträge können nach Ebene gefiltert werden (Debug, Info, Warnung, Fehler oder Kritisch).
+* Die Protokolldatei kann auch lokal heruntergeladen werden.
 
-.. image:: img/dashboard_log1.png
-  :width: 90%
-  
-.. image:: img/dashboard_log2.png
+.. image:: img/dashboard_log.png
   :width: 90%
 
 Einstellungen
------------------
+-------------
 
-Im oberen rechten Bereich der Seite befindet sich ein Einstellungsmenü, in dem Sie die Einstellungen nach Ihren Vorlieben anpassen können. Nach Änderungen werden diese automatisch gespeichert. Falls erforderlich, können Sie mit der Schaltfläche „CLEAR“ am unteren Rand die historischen Daten löschen.
+Auf der Seite „Einstellungen“ kannst du die Dashboard-Anzeige, Systemeinstellungen, den OLED-Bildschirm, die RGB-Beleuchtung und das Lüfterverhalten anpassen. Sie zeigt auch grundlegende Netzwerkinformationen wie die MAC-Adresse und die IP-Adresse an.
 
-.. image:: img/Dark_mode_and_Temperature.jpg
-  :width: 600
+.. image:: img/dashboard_setting.png
+    :width: 600
 
-* **Dunkelmodus**: Wechseln Sie zwischen den Themen „Hell“ und „Dunkel“. Diese Einstellung wird im Browser-Cache gespeichert. Ein Wechsel des Browsers oder das Leeren des Caches setzt das Thema auf das Standard-Hellthema zurück.
-* **Temperatureinheit**: Legen Sie die vom System angezeigte Temperatureinheit fest.
 
-**Über den OLED-Bildschirm**
+* **Oberfläche**
 
-.. image:: img/OLED_Sreens.jpg
-  :width: 600
+  Konfiguriere das Erscheinungsbild des Dashboards und das Anzeigeverhalten.
 
-* **OLED Aktivieren**: Aktivieren oder deaktivieren Sie das OLED.
-* **OLED Disk**: Legen Sie die OLED-Disk fest.
-* **OLED Netzwerkschnittstelle**: 
+  .. image:: img/dashboard_setting_interface.png
+      :width: 600
 
-  * **all**: Schaltet zwischen der Anzeige der Ethernet-IP und der Wi-Fi-IP um.
-  * **eth0**: Zeigt nur die Ethernet-IP an.
-  * **wlan0**: Zeigt nur die Wi-Fi-IP an.
+  * **Dark Mode**: Aktiviere oder deaktiviere das dunkle Design.
+  * **Show unmounted disk**: Zeige nicht eingehängte Speichergeräte auf der Speicherkarte an.
+  * **Show all cores**: Zeige alle CPU-Kerne auf der Prozessorkarte an.
+  * **Card layout**: Passe das Layout der Dashboard-Karten an.
+  * **Temperature Unit**: Wechsle zwischen Celsius und Fahrenheit.
+  * **Web UI Version**: Zeigt die aktuelle Dashboard-Version an.
 
-* **OLED Rotation**: Legen Sie die Rotation des OLED fest.
 
-**Über RGB-LEDs**
+* **OLED**
 
-.. image:: img/RGB_LEDS.jpg
-  :width: 600
+  Konfiguriere die Anzeige und das Verhalten des OLED-Bildschirms.
 
-* **RGB Aktivieren**: Aktivieren oder deaktivieren Sie die RGB-LEDs.
-* **RGB Farbe**: Legen Sie die Farbe der RGB-LEDs fest.
-* **RGB Helligkeit**: Passen Sie die Helligkeit der RGB-LEDs mit einem Schieberegler an.
-* **RGB Stil**: Wählen Sie den Anzeigemodus der RGB-LEDs. Optionen sind **Solid**, **Breathing**, **Flow**, **Flow_reverse**, **Rainbow**, **Rainbow Reverse** und **Hue Cycle**.
+  .. image:: img/dashboard_setting_oled.png
+      :width: 600
 
-  .. note::
+  * **OLED Enable**: Aktiviere oder deaktiviere den OLED-Bildschirm.
+  * **OLED Rotation**: Drehe die OLED-Anzeige zwischen ``0°`` und ``180°``.
+  * **OLED Sleep Timeout**: Lege fest, wie lange der OLED-Bildschirm eingeschaltet bleibt, bevor er sich automatisch ausschaltet.
+  * **OLED Pages**: Konfiguriere, welche Seiten auf dem OLED-Bildschirm angezeigt werden, und passe ihre Anzeigereihenfolge an.
 
-     Wenn Sie den **RGB Stil** auf **Rainbow**, **Rainbow Reverse** oder **Hue Cycle** einstellen, können Sie die Farbe nicht ändern.
+    Verfügbare Seiten:
 
-* **RGB Geschwindigkeit**: Legen Sie die Geschwindigkeit der Farbwechsel der RGB-LEDs fest.
+    * **IP Addresses**: Zeigt IP-Adressen für alle physischen Netzwerkschnittstellen an.
+    * **Disk Usage**: Zeigt Speicherplatznutzungsinformationen für alle Datenträger an.
+    * **Performance Metrics**: Zeigt CPU-Auslastung, CPU-Temperatur, RAM-Auslastung und Lüftergeschwindigkeit an.
+    * **System Mix**: Zeigt CPU-Auslastung, CPU-Temperatur und IP-Adresse an.
 
-**Über RGB-Lüfter**
 
-.. image:: img/RGB_FAN2.jpg
-  :width: 600
+* **RGB**
 
-.. * **Lüfter-LED**: Sie können die Lüfter-LED auf EIN, AUS oder FOLGEN-Modus einstellen.
+  Konfiguriere die RGB-LED-Beleuchtungseffekte und das Verhalten.
 
-* **Lüftermodus**: Legen Sie den Betriebsmodus der beiden RGB-Lüfter fest. Diese Modi bestimmen die Bedingungen, unter denen die RGB-Lüfter aktiviert werden.
+  .. image:: img/dashboard_setting_rgb.png
+      :width: 600
 
-    * **Leise**: Die RGB-Lüfter werden bei 70°C aktiviert.
-    * **Ausgewogen**: Die RGB-Lüfter werden bei 67,5°C aktiviert.
-    * **Kühl**: Die RGB-Lüfter werden bei 60°C aktiviert.
-    * **Leistung**: Die RGB-Lüfter werden bei 50°C aktiviert.
-    * **Immer an**: Die RGB-Lüfter sind immer eingeschaltet.
+  * **RGB Enable**: Aktiviere oder deaktiviere die RGB-LEDs.
+  * **RGB Color**: Lege die Farbe der RGB-LEDs fest.
+  * **RGB Brightness**: Passe die Helligkeit der RGB-LEDs an.
+  * **RGB Style**: Wähle den RGB-Beleuchtungseffekt aus, einschließlich ``None``, ``Solid``, ``Breathing``, ``Flow``, ``Flow Reverse``, ``Rainbow``, ``Rainbow Reverse`` und ``Hue Cycle``.
+  * **RGB Speed**: Passe die Animationsgeschwindigkeit des ausgewählten RGB-Effekts an.
+  * **RGB Led**: Lege die Anzahl der aktiven RGB-LEDs fest.
 
-Zum Beispiel: Wenn der Modus auf **Leistung** eingestellt ist, werden die RGB-Lüfter bei 50°C aktiviert.
 
-Nach dem Speichern, wenn die CPU-Temperatur 50°C überschreitet, sehen Sie, wie sich der **GPIO Fan State** im Dashboard auf EIN ändert, und die seitlichen RGB-Lüfter beginnen zu drehen.
+* **GPIO-Lüfter**
 
-.. image:: img/dashboard_rgbfan_on.png
-  :width: 300
+  Konfiguriere den Betriebsmodus der beiden GPIO-Lüfter.
 
-**Über den Hauptlüfter**
+  .. image:: img/dashboard_setting_fan.png
+      :width: 600
 
-Der Hauptlüfter wird an einen dedizierten 4-Pin-PWM-Lüfteranschluss auf dem Raspberry Pi 5 angeschlossen. Seine Standard-Steuerungsstrategie ist ein firmwaregesteuertes, mehrstufiges intelligentes Drehzahlanpassungssystem, das auf der CPU-Temperatur basiert. Das bedeutet, dass das System bei Verwendung eines offiziellen oder kompatiblen PWM-Lüfters und korrektem Anschluss die Lüftergeschwindigkeit automatisch an die Änderungen der CPU-Temperatur anpasst (er beginnt oberhalb von 50°C zu arbeiten), ohne dass ein manueller Eingriff Ihrerseits erforderlich ist.
+  Der ausgewählte Modus bestimmt, wann die GPIO-Lüfter aktiviert werden.
+
+  * **Quiet**: Die GPIO-Lüfter werden bei 70 °C aktiviert.
+  * **Balanced**: Die GPIO-Lüfter werden bei 67,5 °C aktiviert.
+  * **Cool**: Die GPIO-Lüfter werden bei 60 °C aktiviert.
+  * **Performance**: Die GPIO-Lüfter werden bei 50 °C aktiviert.
+  * **Always On**: Die GPIO-Lüfter sind immer eingeschaltet.
+
+
+* **System**
+
+  Konfiguriere das Systemverhalten und zeige Geräteinformationen an.
+
+  .. image:: img/dashboard_setting_system.png
+      :width: 600
+
+  * **Debug Level**: Lege die Protokollebene des Pironman-5-Dienstes fest.
+  * **Mac Address**: Zeigt die MAC-Adressen der Raspberry-Pi-Netzwerkschnittstellen an.
+  * **IP Address**: Zeigt die IP-Adressen der Raspberry-Pi-Netzwerkschnittstellen an.
+  * **History Retention**: Lege fest, wie viele Tage historische Daten gespeichert werden.
+  * **Clear All Data**: Lösche alle aufgezeichneten Verlaufsdaten.
+  * **Reboot**: Starte den Raspberry Pi aus der Ferne über das Dashboard neu.
+  * **Shutdown**: Fahre den Raspberry Pi aus der Ferne über das Dashboard sicher herunter.

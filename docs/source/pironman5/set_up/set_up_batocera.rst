@@ -1,16 +1,7 @@
-.. note::
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
-
-    **Warum beitreten?**
-
-    - **Fachkundige Unterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
-    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
-    - **Sonderrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
-    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und Feiertagsaktionen teil.
-
-    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _set_up_batocera:
 
@@ -55,7 +46,7 @@ Wenn Sie das Batocera.linux Betriebssystem installiert haben, können Sie sich p
 
    * Das OLED-Display zeigt CPU, RAM, Festplattennutzung, CPU-Temperatur und die IP-Adresse des Raspberry Pi an.
    * Vier WS2812 RGB-LEDs leuchten in einem blauen Atemmodus.
-   * Die RGB-Lüfter sind standardmäßig auf den Modus **ausgewogen** eingestellt. Für andere Temperaturgrenzwerte siehe :ref:`cc_control_fan_max`.
+   * Die GPIO-Lüfter sind standardmäßig auf den Modus **ausgewogen** eingestellt. Für andere Temperaturgrenzwerte siehe :ref:`cc_control_fan_max`.
 
 
 Nun können Sie den Pironman 5 mit einem Bildschirm, Gamecontrollern, Kopfhörern und vielem mehr verbinden, um in Ihre Gaming-Welt einzutauchen.
@@ -64,4 +55,4 @@ Nun können Sie den Pironman 5 mit einem Bildschirm, Gamecontrollern, Kopfhörer
 
    Zu diesem Zeitpunkt haben Sie den Pironman 5 erfolgreich eingerichtet, und er ist einsatzbereit.
    
-   Für die erweiterte Steuerung seiner Komponenten siehe bitte :ref:`view_control_commands`.
+   Für die erweiterte Steuerung seiner Komponenten siehe bitte :ref:`view_control_commands_5`.

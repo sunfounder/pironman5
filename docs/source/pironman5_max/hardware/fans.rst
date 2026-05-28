@@ -1,32 +1,23 @@
-.. note:: 
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
-    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Enthusiasten aus.
-
-    **Warum beitreten?**
-
-    - **Expertensupport**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
-    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
-    - **Exklusive Einblicke**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Vorschauen.
-    - **Sonderrabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
-    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und saisonalen Sonderaktionen teil.
-
-    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und werde noch heute Mitglied!
 
 .. _fan_max:
 
 Lüfter
 ============
 
-PWM-Lüfter
+CPU-Lüfter
 -------------
 
-Der PWM-Lüfter im Pironman 5 MAX wird vom Raspberry Pi System gesteuert.
+Der CPU-Lüfter im Pironman 5 MAX wird vom Raspberry Pi System gesteuert.
 
-Im Hinblick auf Kühlungslösungen für den Raspberry Pi 5, insbesondere unter hoher Last, ist das Design des Pironman 5 MAX mit einem intelligenten Kühlsystem ausgestattet. Es umfasst einen Haupt-PWM-Lüfter und zwei ergänzende RGB-Lüfter. Die Kühlstrategie ist eng mit dem thermischen Managementsystem des Raspberry Pi 5 integriert.
+Im Hinblick auf Kühlungslösungen für den Raspberry Pi 5, insbesondere unter hoher Last, ist das Design des Pironman 5 MAX mit einem intelligenten Kühlsystem ausgestattet. Es umfasst einen Haupt-CPU-Lüfter und zwei ergänzende GPIO-Lüfter. Die Kühlstrategie ist eng mit dem thermischen Managementsystem des Raspberry Pi 5 integriert.
 
-Der Betrieb des PWM-Lüfters basiert auf der Temperatur des Raspberry Pi 5:
+Der Betrieb des CPU-Lüfters basiert auf der Temperatur des Raspberry Pi 5:
 
-* Unter 50°C bleibt der PWM-Lüfter aus (0 % Geschwindigkeit).
+* Unter 50°C bleibt der CPU-Lüfter aus (0 % Geschwindigkeit).
 * Bei 50°C startet der Lüfter mit niedriger Geschwindigkeit (30 % Geschwindigkeit).
 * Bei 60°C erhöht der Lüfter die Geschwindigkeit auf mittlere Stufe (50 % Geschwindigkeit).
 * Bei 67,5°C steigert sich die Lüftergeschwindigkeit auf hohe Stufe (70 % Geschwindigkeit).
@@ -34,21 +25,21 @@ Der Betrieb des PWM-Lüfters basiert auf der Temperatur des Raspberry Pi 5:
 
 Diese Temperatur-Geschwindigkeits-Beziehung gilt auch, wenn die Temperatur sinkt, mit einer Hysterese von 5°C. Die Lüftergeschwindigkeit reduziert sich, wenn die Temperatur 5°C unterhalb eines dieser Schwellenwerte fällt.
 
-* Befehle zur Überwachung des PWM-Lüfters. Um den Status des PWM-Lüfters zu prüfen:
+* Befehle zur Überwachung des CPU-Lüfters. Um den Status des CPU-Lüfters zu prüfen:
 
   .. code-block:: shell
   
     cat /sys/class/thermal/cooling_device0/cur_state
 
-* Um die Lüftergeschwindigkeit des PWM-Lüfters anzuzeigen:
+* Um die Lüftergeschwindigkeit des CPU-Lüfters anzuzeigen:
 
   .. code-block:: shell
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-Im Pironman 5 MAX ist der PWM-Lüfter eine kritische Komponente, um optimale Betriebstemperaturen aufrechtzuerhalten, insbesondere bei intensiven Aufgaben, und sorgt dafür, dass der Raspberry Pi 5 effizient und zuverlässig läuft.
+Im Pironman 5 MAX ist der CPU-Lüfter eine kritische Komponente, um optimale Betriebstemperaturen aufrechtzuerhalten, insbesondere bei intensiven Aufgaben, und sorgt dafür, dass der Raspberry Pi 5 effizient und zuverlässig läuft.
 
-RGB-Lüfter
+GPIO-Lüfter
 -------------------
 
 .. image:: img/size_fan.png

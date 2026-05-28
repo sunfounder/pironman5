@@ -1,17 +1,6 @@
-.. note::
-
-    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook!  
-    Tauche tiefer in Raspberry Pi, Arduino und ESP32 ein – gemeinsam mit anderen Enthusiasten.
-
-    **Warum beitreten?**
-
-    - **Experten-Support**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.  
-    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.  
-    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Previews.  
-    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.  
-    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und saisonalen Aktionen teil.  
-
-    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicke [|link_sf_facebook|] und tritt noch heute bei!
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
 
 .. _intro_pironman5_max:
@@ -33,7 +22,7 @@ Perfekt für NAS, KI, Media-Center und fortgeschrittene Projekte.
 **Wichtige Merkmale**:
 
 * **Dual NVMe & KI-Erweiterung**: PCIe Gen 2 Switch mit zwei M.2 M-Key-Slots (2230/2242/2260/2280) für SSDs oder KI-Beschleuniger. Vollständig kompatibel mit Hailo-8/8L.  
-* **Extreme Kühlung**: Tower-Kühler mit PWM-Lüfter plus zwei RGB-Lüfter, hält einen Pi bei 100 % Last in einem 25 °C Raum bei nur 39 °C.  
+* **Extreme Kühlung**: Tower-Kühler mit CPU-Lüfter plus zwei GPIO-Lüfter, hält einen Pi bei 100 % Last in einem 25 °C Raum bei nur 39 °C.  
 * **Intelligentes OLED-Display**: Echtzeit-Anzeige von CPU, Speicher, Temperatur, Speichernutzung, IP-Adresse und mehr. 
 * **Anpassbare RGB-Beleuchtung**: Vier WS2812-Adressierbare LEDs erhellen dein Setup mit lebendigen Effekten.  
 * **Erweiterte Konnektivität**: Zwei Standard-HDMI-Ports, IR-Empfänger für Media-Apps, sicherer Retro-Power-Button und beschrifteter externer GPIO-Extender.  
@@ -83,8 +72,8 @@ Perfekt für NAS, KI, Media-Center und fortgeschrittene Projekte.
     * Gigabit-LAN-Port  
     * 2 x Standard-HDMI-Ports  
 * Kühlsystem  
-    * 1 x Tower-Kühler mit PWM-Lüfter (systemgesteuert)  
-    * 2 x RGB-Lüfter (GPIO-gesteuert)  
+    * 1 x Tower-Kühler mit CPU-Lüfter (systemgesteuert)  
+    * 2 x GPIO-Lüfter (GPIO-gesteuert)  
 * Anzeige  
     * 0,96" OLED-Display (CPU, RAM, Temperatur, Speichernutzung, IP-Adresse)  
     * Eingebauter Vibrationsschalter zum Aufwecken des Displays durch Antippen des Gehäuses  

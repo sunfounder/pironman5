@@ -68,7 +68,7 @@ Unten finden Sie einen Vergleich der Spezifikationen für Pironman 5, Pironman 5
    "Außenmaterial 2", "Transparentes Acryl", "Schwarzes Acryl", "Schwarzes Acryl", "Schwarzes Acryl"
    "Kühler", "Tower-Kühler", "Tower-Kühler", "Tower-Kühler", "Aktivkühler"
    "IR-Empfänger", "✔", "✔", "✔", "X"
-   "Anzahl RGB-Lüfter", "2", "2", "2", "1"
+   "Anzahl GPIO-Lüfter", "2", "2", "2", "1"
    "RGB-Modus Lüfter", "Synchron mit Lüfter", "Synchron mit Lüfter", "Unabhängige Steuerung", "Unabhängige Steuerung"
    "HDMI-Anschlüsse", "2 Standard-HDMI-Anschlüsse", "2 Standard-HDMI-Anschlüsse", "2 Standard-HDMI-Anschlüsse", "2 Micro-HDMI-Anschlüsse"
    "OLED-Display", "✔", "✔", "✔", "X"
