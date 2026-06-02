@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
-"""
-Voice Chat for PiCar-x
-======================
-Uses picarx.stt for wake word detection and speech recognition.
-Integrates with OpenClaw for LLM responses and TTS.
 
-Usage:
-    python3 voice_chat.py
-
-Wake words: "Nova"
-"""
 
 import time
 import subprocess
