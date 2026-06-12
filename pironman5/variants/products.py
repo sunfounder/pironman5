@@ -72,7 +72,7 @@ PRODUCT_DEFINITIONS = {
         "product_version": "",
         "modules": [
             "core", "network_info", "history", "oled", "ws2812",
-            "pwm_fan", "gpio_fan",
+            "gpio_fan",
             "pi5_power_button",
         ],
         "config_overrides": {
