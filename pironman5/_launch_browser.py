@@ -28,7 +28,9 @@ def check_desktop_environment() -> bool:
     
     # Core check 2: Session type (distinguish desktop/console)
     session_type = os.getenv("XDG_SESSION_TYPE", "")
-    if session_type not in ["x11", "wayland"]:
+    if not session_type:
+        print("Warning: XDG_SESSION_TYPE not set. DISPLAY is present, attempting launch anyway.", file=sys.stderr)
+    elif session_type not in ["x11", "wayland"]:
         print(f"Error: Current session type is {session_type}. Only x11/wayland desktop sessions are supported.", file=sys.stderr)
         return False
     
