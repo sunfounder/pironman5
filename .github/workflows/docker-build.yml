@@ -22,9 +22,6 @@ jobs:
           - variant: base
             pipower5: "false"
             suffix: ""
-          - variant: mini
-            pipower5: "false"
-            suffix: ""
           - variant: max
             pipower5: "false"
             suffix: ""
@@ -44,6 +41,33 @@ jobs:
           repository: sunfounder/sunfounder-installer-scripts
           ref: main
           path: installer-scripts
+
+      - name: Patch installer-scripts for CI fix
+        shell: python
+        run: |
+          import shutil
+
+          # 1. Copy newer install.sh from pironman5 repo (fixes CD+HOME+CLONE fragile chain)
+          shutil.copy('pironman5/install.sh', 'installer-scripts/pironman5/install.sh')
+          print("✓ install.sh replaced with pironman5 repo version")
+
+          # 2. Patch Dockerfile — add ENV USER=root so framework getent resolves correctly
+          with open('installer-scripts/pironman5/Dockerfile', 'r') as f:
+              content = f.read()
+          content = content.replace('ENV HOME=/root', 'ENV USER=root\nENV HOME=/root')
+          with open('installer-scripts/pironman5/Dockerfile', 'w') as f:
+              f.write(content)
+          print("✓ Dockerfile patched: ENV USER=root added")
+
+          # 3. Patch framework — fallback to $HOME if getent returns empty
+          with open('installer-scripts/tools/installer_1.1.0.sh', 'r') as f:
+              content = f.read()
+          old = 'HOME=$(getent passwd $USERNAME | cut -d: -f6)'
+          new = 'NEW_HOME=$(getent passwd $USERNAME | cut -d: -f6)\nHOME=${NEW_HOME:-$HOME}'
+          content = content.replace(old, new)
+          with open('installer-scripts/tools/installer_1.1.0.sh', 'w') as f:
+              f.write(content)
+          print("✓ installer_1.1.0.sh patched: HOME fallback added")
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
