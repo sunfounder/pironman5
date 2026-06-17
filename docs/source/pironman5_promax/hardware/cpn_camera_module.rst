@@ -47,6 +47,17 @@ On the camera module or Raspberry Pi, you will find a flat plastic connector. Ca
 
 If the FFC wire is installed correctly, it will be straight and will not pull out when you gently pull on it. If not, reinstall it again.
 
+.. raw:: html
+
+    <div style="text-align: center; margin: 16px 0;">
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/riUNPxS7sHs"
+            title="Pironman 5 Pro MAX Camera Module Assembly"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
 
 .. image:: img/connect_ffc.png
 

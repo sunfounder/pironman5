@@ -214,3 +214,59 @@ pip install -r requirements.txt
 sphinx-build -b html source build/html
 ```
 Use `sphinx-build -E` for a clean build (clears cache).
+
+## FAQ Editing Rules
+
+### Where to write
+
+| Content type | Where to put it | Pattern |
+|---|---|---|
+| Shared across ≥2 products | `pironman5/faq.rst` (base) with `start_xxx` / `end_xxx` markers | Other products `.. include::` it |
+| Pro MAX only | `pironman5_promax/faq.rst` directly | No markers, no include |
+| Mini only | `pironman5_mini/faq.rst` directly | No markers, no include |
+
+**Decision flow**: Does this FAQ apply to more than one product? → Yes: base + markers + include. No: write directly.
+
+### Which products have which features
+
+| Feature | Base | MAX | Pro MAX | Mini |
+|---|---|---|---|---|
+| NVMe SSD | ✅ | ✅ dual | ✅ dual | ❌ |
+| OLED screen | ✅ | ✅ | ✅ | ❌ |
+| 4.3-inch DSI screen | ❌ | ❌ | ✅ | ❌ |
+| Voice assistant | ❌ | ❌ | ✅ | ❌ |
+| GPIO/RGB fans | ✅ | ✅ | ❌ (PWM only) | ✅ |
+| 5-pin custom fans | ❌ | ❌ | ✅ | ❌ |
+
+### Quick Troubleshooting: when to add
+
+Add a Quick Troubleshooting entry when the issue is:
+- A common hardware problem (power, screen, fan, NVMe, boot)
+- Something a user would encounter during first setup
+
+Skip Quick Troubleshooting for:
+- Niche software/compatibility questions (piper-tts, Home Assistant OS)
+- Advanced customization (custom OLED, HDMI screen arrangement)
+
+### Anchor naming
+
+- Base: `_xxx_5` suffix — `.. _faq_nvme_link_down_5:`
+- MAX: `_xxx_max` suffix — `.. _faq_nvme_link_down_max:`
+- Pro MAX: `_xxx_promax` suffix — `.. _faq_nvme_link_down_promax:`
+- Mini: `_xxx_mini` suffix
+
+### Common Sphinx errors when editing FAQ
+
+| Error | Likely cause |
+|---|---|
+| `undefined label` | Missing anchor in target file (e.g., `safe_shutdown_promax` not defined in `set_up_rpi_os.rst`) |
+| `duplicate label` | Anchor name reused across files without unique suffix |
+| Include pulls nothing | `start-after` / `end-before` markers don't exist or are misspelled |
+
+### Install command unification
+
+All 4 products now use the same curl-based installer:
+```shell
+curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
+```
+With a `.. tip::` for Ubuntu users to `sudo apt install curl -y` first. Model selection (1-4) happens interactively. Do NOT revert to `git clone -b <branch>`.

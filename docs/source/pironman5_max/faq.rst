@@ -9,12 +9,14 @@ FAQ
 Quick Troubleshooting
 -------------------------------
 
+* Power button not working → :ref:`faq_power_button_not_work_max`
 * OLED screen not working → :ref:`faq_oled_max`
 * RGB LEDs not working → :ref:`faq_rgb_max`
-* GPIO GPIO Fans not working → :ref:`faq_gpio_fans_max`
+* GPIO Fans not working → :ref:`faq_gpio_fans_max`
 * CPU fan not spinning → :ref:`faq_pwm_fan_max`
 * Dashboard shows no data → :ref:`faq_dashboard_max`
 * NVMe SSD not detected → :ref:`faq_nvme_max`
+* NVMe SSD detected but causes system restart → :ref:`faq_nvme_link_down_max`
 
 
 
@@ -40,6 +42,17 @@ Power Button
    :start-after: start_faq_power_button
    :end-before: end_faq_power_button
 
+
+.. _faq_power_button_not_work_max:
+
+Power Button Not Working?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_power_button_not_work
+   :end-before: end_faq_power_button_not_work
+
+
 Copper Pipe Ends on the Tower Cooler
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -51,9 +64,17 @@ Copper Pipe Ends on the Tower Cooler
 Raspberry Pi AI HAT+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../pironman5/faq.rst
-   :start-after: start_faq_ai_hat
-   :end-before: end_faq_ai_hat
+The Raspberry Pi AI HAT+ is not compatible with the Pironman 5 MAX.
+
+.. image:: img/output3.png
+    :width: 400
+
+The Raspberry Pi AI Kit combines the Raspberry Pi M.2 HAT+ and the Hailo AI accelerator module.
+
+.. image:: img/output2.jpg
+    :width: 400
+
+You can detach the Hailo AI accelerator module from the Raspberry Pi AI Kit and insert it directly into the NVMe PIP module of the Pironman 5 MAX.
 
 Can I use the Pironman5 Max's vibration switch function?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -77,7 +98,7 @@ CPU Fan Not Working?
 
 .. _faq_gpio_fans_max:
 
-GPIO GPIO Fans Not Working?
+GPIO Fans Not Working?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../pironman5/faq.rst
@@ -185,7 +206,13 @@ PI5 Fails to Boot (Red LED)?
 NVMe PIP Module Not Working?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Ensure the FPC cable connecting the NVMe PIP module to the Raspberry Pi 5 is securely attached.  
+.. |link_install_the_os_dual| replace:: :ref:`install_the_os_max`
+
+.. start_faq_nvme_pip_dual
+
+#. Confirm that your NVMe SSD is compatible. Refer to the :ref:`compatible NVMe SSD list <compitable_nvme_ssd_5>` for verified, stable, and compatible drives.
+
+#. Ensure the FPC cable connecting the NVMe PIP module to the Raspberry Pi 5 is securely attached.
 
    .. raw:: html
 
@@ -205,31 +232,44 @@ NVMe PIP Module Not Working?
            </video>
        </div>
 
-#. Confirm that your SSD is properly secured to the NVMe PIP module.  
+#. Confirm that your SSD is properly secured to the NVMe PIP module.
 
 #. Check the status of the NVMe PIP Module's LEDs:
 
-   After confirming all connections, power on the Pironman 5 MAX and observe the two indicators on the NVMe PIP Module:  
+   After confirming all connections, power on the device and observe the two indicators on the NVMe PIP Module:
 
-   * **PWR LED**: Should be lit.  
-   * **STA LED**: Should blink to indicate normal operation.  
+   * **PWR LED**: Should be lit.
+   * **STA LED**: Should blink to indicate normal operation.
 
-   .. image:: img/dual_nvme_pip_leds.png  
+   .. image:: img/dual_nvme_pip_leds.png
 
-   * If the **PWR LED** is on but the **STA LED** is not blinking, it indicates the NVMe SSD is not recognized by the Raspberry Pi.  
+   * If the **PWR LED** is on but the **STA LED** is not blinking, it indicates the NVMe SSD is not recognized by the Raspberry Pi.
    * If the **PWR LED** is off, short the "Force Enable" pins on the module. If the **PWR LED** lights up, it could indicate a loose FPC cable or unsupported system configuration for NVMe.
 
-   .. image:: img/dual_nvme_pip_j4.png  
+   .. image:: img/dual_nvme_pip_j4.png
 
-     
-#. Confirm that your NVMe SSD has a properly installed operating system. Refer to: :ref:`install_the_os_max`.
+
+#. Confirm that your NVMe SSD has a properly installed operating system. Refer to |link_install_the_os_dual|.
+
+.. end_faq_nvme_pip_dual
 
 #. If the issue still persists, please send us the following log file:
 
    .. code-block:: shell
 
       cat /var/log/pironman5/pironman5.log
-   
+
+
+.. _faq_nvme_link_down_max:
+
+NVMe SSD Detected but Causes System Restart on Read/Write?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_nvme_link_down
+   :end-before: end_faq_nvme_link_down
+
+
 How to Change the Raspberry Pi Boot Order Using Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

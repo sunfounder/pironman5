@@ -9,12 +9,14 @@ FAQ
 Quick Troubleshooting
 -------------------------------
 
+* Power button not working → :ref:`faq_power_button_not_work_5`
 * OLED screen not working → :ref:`faq_oled_5`
 * RGB LEDs not working → :ref:`faq_rgb_5`
-* GPIO GPIO Fans not working → :ref:`faq_gpio_fans_5`
+* GPIO Fans not working → :ref:`faq_gpio_fans_5`
 * CPU fan not spinning → :ref:`faq_pwm_fan_5`
 * Dashboard shows no data → :ref:`faq_dashboard_5`
 * NVMe SSD not detected → :ref:`faq_nvme_5`
+* NVMe SSD detected but causes system restart → :ref:`faq_nvme_link_down_5`
 
 
 
@@ -55,6 +57,27 @@ The power button extends the original Raspberry Pi 5 power button and behaves si
     :align: center
 
 .. end_faq_power_button
+
+
+.. _faq_power_button_not_work_5:
+
+Power Button Not Working?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_power_button_not_work
+
+#. First, confirm the expected power button behavior:
+
+   * **Raspberry Pi OS Desktop**: Press the power button twice in quick succession to shut down. Hold for 5 seconds to force a hard shutdown. Press once to power on from a shutdown state.
+   * **Raspberry Pi OS Lite**: Press the power button once to shut down. Hold for 5 seconds to force a hard shutdown. Press once to power on.
+
+#. Check whether the power converter pins are correctly aligned with the Raspberry Pi 5's J2 pads (between the RTC battery connector and the board edge).
+
+#. Check whether the pins inside the power converter socket are properly aligned with the power button connector. Reconnect the power button cable if necessary.
+
+#. Use a screwdriver to briefly short the two pins on the power converter socket where the button connects. If the Pi powers on, the button itself may be faulty; otherwise, the issue is likely with the converter board or Pi 5 connection.
+
+.. end_faq_power_button_not_work
 
 
 Airflow Direction
@@ -173,7 +196,7 @@ After saving the file, reboot the Raspberry Pi for the changes to take effect.
 
 .. _faq_gpio_fans_5:
 
-GPIO GPIO Fans Not Working?
+GPIO Fans Not Working?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. start_faq_gpio_fans
@@ -188,7 +211,7 @@ Then set the GPIO Fans to ``Always On`` mode and check whether the fans start sp
 
    sudo pironman5 -gm 0
 
-You can also connect the GPIO GPIO Fans directly to the Raspberry Pi ``5V`` and ``GND`` pins for testing.
+You can also connect the GPIO Fans directly to the Raspberry Pi ``5V`` and ``GND`` pins for testing.
 
 If the fans spin normally when connected directly, the issue may be related to the IO Expander board. Please contact us for further support.
 
@@ -276,7 +299,7 @@ RGB LEDs Not Working?
 
 .. start_faq_rgb
 
-#. The two pins on the IO Expander above J9 are used to connect the RGB LEDs to GPIO10. Ensure that the jumper cap on these two pins is properly installed.
+#. The two pins on the expansion board are used to connect the RGB LEDs to GPIO10. Ensure that the jumper cap on these two pins is properly installed.
 
    .. image:: hardware/img/io_board_rgb_pin.png
       :width: 300
@@ -367,7 +390,7 @@ If you want to customize the OLED display, such as adding custom 2–4 digit ima
   .. code-block:: shell
 
      sudo systemctl stop pironman5.service
-     sudo systemctl restart pironman5.service
+     sudo pironman5 start
 
 .. end_faq_customize_oled
 
@@ -465,7 +488,7 @@ If you have already installed ``pironman5``, you can remove the Dashboard module
 
 .. code-block:: shell
 
-   /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
+   /opt/pironman5/venv/bin/pip3 uninstall pm-dashboard influxdb
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
@@ -560,6 +583,8 @@ NVMe PIP Module Not Working?
 
 .. start_faq_nvme_pip
 
+#. Confirm that your NVMe SSD is compatible. Refer to the :ref:`compatible NVMe SSD list <compitable_nvme_ssd_5>` for verified, stable, and compatible drives.
+
 #. Ensure the FPC cable connecting the NVMe PIP module to the Raspberry Pi 5 is securely attached.
 
    .. raw:: html
@@ -598,8 +623,8 @@ NVMe PIP Module Not Working?
 
    .. image:: img/nvme_pip_leds.png
 
-   * If the **PWR LED** is on but the **STA LED** is not blinking, the NVMe SSD is not recognized.
-   * If the **PWR LED** is off, short the ``Force Enable`` pins (J4).
+   * If the **PWR LED** is on but the **STA LED** is not blinking, the NVMe SSD is not recognized by the Raspberry Pi.
+   * If the **PWR LED** is off, short the ``Force Enable`` pins (J4). If the **PWR LED** lights up after shorting, the issue may be a loose FPC cable or an unsupported system configuration for NVMe.
 
      .. image:: img/nvme_pip_j4.png
 
@@ -618,6 +643,51 @@ NVMe PIP Module Not Working?
       cat /var/log/pironman5/pironman5.log
 
 .. end_faq_nvme_pip
+
+
+.. _faq_nvme_link_down_5:
+
+NVMe SSD Detected but Causes System Restart on Read/Write?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_nvme_link_down
+
+In some cases (especially with the WD Blue SN5000), the NVMe SSD may be detected by the Raspberry Pi 5 but cause the system to restart during read/write operations. This is a PCIe compatibility/stability issue between the SSD and the Raspberry Pi 5, **not** a Pironman 5 hardware fault.
+
+Try the following steps to resolve the issue:
+
+#. Update the Raspberry Pi 5 bootloader to the latest version:
+
+   .. code-block:: shell
+
+      sudo rpi-eeprom-update -a
+      sudo reboot
+
+#. Force PCIe Gen3 speed by adding the following line to ``/boot/firmware/config.txt``:
+
+   .. code-block:: text
+
+      dtparam=pciex1_gen=3
+
+#. Disable ASPM (Active State Power Management) by adding ``pcie_aspm=off`` to the kernel command line. Edit ``/boot/firmware/cmdline.txt`` and append it to the existing line (do **not** create a new line):
+
+   .. code-block:: text
+
+      pcie_aspm=off
+
+   .. note::
+
+      ``pcie_aspm=off`` is often the critical fix — PCIe ASPM issues are very common on the Raspberry Pi 5 and can cause NVMe drives to randomly disconnect or restart the system during heavy I/O.
+
+#. After applying the above changes, reboot the Raspberry Pi:
+
+   .. code-block:: shell
+
+      sudo reboot
+
+#. If the issue persists, repartition and reformat the NVMe SSD, then reinstall the operating system.
+
+.. end_faq_nvme_link_down
 
 
 How to Change the Raspberry Pi Boot Order Using Commands

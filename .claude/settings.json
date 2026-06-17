@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(perl -i -pe 's/PWM 风扇/CPU 风扇/g; s/PWM风扇/CPU风扇/g; s/RGB 风扇/GPIO 风扇/g; s/RGB风扇/GPIO风扇/g' docs/source/pironman5/hardware/fans.rst docs/source/pironman5/hardware/io_board.rst docs/source/pironman5/intro_pironman5.rst docs/source/pironman5/set_up/set_up_batocera.rst docs/source/pironman5_max/hardware/fans.rst docs/source/pironman5_max/hardware/features.rst docs/source/pironman5_max/hardware/io_board.rst docs/source/pironman5_max/intro_pironman5_max.rst docs/source/pironman5_max/set_up/set_up_batocera.rst)",
-      "Bash(grep -n \"view_control_commands\\\\`\" docs/source/pironman5/set_up/set_up_batocera.rst)"
-    ]
-  }
-}

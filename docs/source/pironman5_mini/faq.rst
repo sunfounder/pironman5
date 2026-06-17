@@ -7,17 +7,34 @@
 FAQ
 ============
 
-1. About Compatible Systems
+
+Quick Troubleshooting
 -------------------------------
 
-Systems that passed the test on the Raspberry Pi 5:
+* Power button not working → :ref:`faq_power_button_not_work_mini`
+* RGB LEDs not working → :ref:`faq_rgb_mini`
+* CPU fan not spinning → :ref:`faq_pwm_fan_mini`
+* Dashboard shows no data → :ref:`faq_dashboard_mini`
+* PI5 fails to boot → :ref:`faq_pi5_boot_fail_mini`
 
-.. image:: img/compitable_os.png
-   :width: 600
-   :align: center
 
-2. About Power Button
---------------------------
+
+1. Hardware
+-------------------------------
+
+
+.. _com_os_mini:
+
+Compatible Systems
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_com_os
+   :end-before: end_faq_com_os
+
+
+Power Button
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The power button brings out the power button of the Raspberry Pi 5, and it functions just like the power button of the Raspberry Pi 5.
 
@@ -27,7 +44,7 @@ The power button brings out the power button of the Raspberry Pi 5, and it funct
 
 * **Shutdown**
 
-  * If you run **Raspberry Pi OS Desktop** system, you can press the power button twice in quick succession to shutdown. 
+  * If you run **Raspberry Pi OS Desktop** system, you can press the power button twice in quick succession to shutdown.
   * If you run **Raspberry Pi OS Lite** system, press the power button a single time to initiate a shutdown.
   * To force a hard shutdown, press and hold the power button.
 
@@ -37,8 +54,19 @@ The power button brings out the power button of the Raspberry Pi 5, and it funct
 
 * If you are running a system that does not support a shutdown button, you can hold it for 5 seconds to force a hard shutdown, and single-press to power on from a shutdown state.
 
-3. About the Raspberry Pi AI HAT+
-----------------------------------------------------------
+
+.. _faq_power_button_not_work_mini:
+
+Power Button Not Working?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_power_button_not_work
+   :end-before: end_faq_power_button_not_work
+
+
+Raspberry Pi AI HAT+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Raspberry Pi AI HAT+ is not compatible with the Pironman 5.
 
@@ -52,133 +80,165 @@ The Raspberry Pi AI Kit combines the Raspberry Pi M.2 HAT+ and the Hailo AI acce
 
 You can detach the Hailo AI accelerator module from the Raspberry Pi AI Kit and directly insert it into the HAT of the Pironman 5 Mini.
 
-   .. .. image::  img/output4.png
-   ..      :width: 800
 
-4. About Micro HDMI Cable
--------------------------------------
+Micro HDMI Cable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  We recommend using the official Raspberry Pi Micro HDMI cable. Some third-party cables with a connector length shorter than 65 mm may cause poor contact and display issues.
+We recommend using the official Raspberry Pi Micro HDMI cable. Some third-party cables with a connector length shorter than 65 mm may cause poor contact and display issues.
 
-  .. image:: img/need_mini_hdmi.png
-     :width: 400
+.. image:: img/need_mini_hdmi.png
+   :width: 400
 
-5. PI5 Fails to Boot (Red LED)?
--------------------------------------------
+
+
+2. Cooling and Fans
+-------------------------------
+
+
+.. _faq_pwm_fan_mini:
+
+CPU Fan Not Working?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_pwm_fan
+   :end-before: end_faq_pwm_fan
+
+
+
+3. RGB
+-------------------------------
+
+
+.. |link_compatible_systems| replace:: :ref:`com_os_mini`
+
+.. _faq_rgb_mini:
+
+RGB LEDs Not Working?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_rgb
+   :end-before: end_faq_rgb
+
+
+
+4. Dashboard and Software
+-------------------------------
+
+
+.. _faq_dashboard_mini:
+
+The Dashboard Shows No Data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_dashboard
+   :end-before: end_faq_dashboard
+
+
+.. |link_view_control_dashboard| replace:: :ref:`view_control_dashboard_mini`
+
+How to Disable the Web Dashboard
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_disable_dashboard
+   :end-before: end_faq_disable_dashboard
+
+
+How to Uninstall and Reinstall the Pironman 5 Software
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_reinstall_pironman5
+   :end-before: end_faq_reinstall_pironman5
+
+
+.. |link_view_control_commands| replace:: :ref:`view_control_commands_mini`
+
+How to Control Components Using the ``pironman5`` Command
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_pironman5_command
+   :end-before: end_faq_pironman5_command
+
+
+
+5. Boot and Storage
+-------------------------------
+
+
+.. |link_update_bootloader| replace:: :ref:`update_bootloader_mini`
+
+.. _faq_pi5_boot_fail_mini:
+
+PI5 Fails to Boot (Red LED)?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This issue may be caused by a system update, changes to the boot order, or a corrupted bootloader. You can try the following steps to resolve the problem:
 
 #. Reconnect the power supply and check if the PI5 boots successfully.
 
+#. Test PI5 Outside the Case
+
+   * Remove the PI5 from the Pironman 5 Mini case.
+   * Power the PI5 directly with the power adapter (without the case).
+   * Check if it can boot normally.
+
 #. Restore the Bootloader
 
-   * If the PI5 still cannot boot, the bootloader may be corrupted. You can follow this guide: :ref:`update_bootloader_mini` and choose whether to boot from SD card or NVMe/USB.
-   * Insert the prepared SD card into the PI5, power it on, and wait at least 10 seconds. Once the recovery is complete, remove and reformat the SD card. 
-   * Then, use Raspberry Pi Imager to flash the latest Raspberry Pi OS, insert the card back, and try booting again.
+   * If the PI5 still cannot boot, the bootloader may be corrupted. You can follow this guide: |link_update_bootloader| and choose whether to boot from SD card or NVMe/USB.
+   * Insert the prepared SD card into the PI5, power it on, and wait at least 10 seconds. Once the recovery is complete, remove and reformat the SD card.
+   * Then use Raspberry Pi Imager to flash the latest Raspberry Pi OS and try booting again.
 
 
-6. RGB LEDs Not Working?
---------------------------
+.. |link_configure_boot_ssd| replace:: :ref:`configure_boot_ssd_mini`
 
-#. The two pins on the Mini HAT are used to connect the RGB LEDs to GPIO10. Ensure that the jumper cap on these two pins are properly in place.
+How to Change the Raspberry Pi Boot Order Using Commands
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   .. image:: hardware/img/io_board_rgb_pin.png
-      :width: 300
-      :align: center
-
-#. Verify that the Raspberry Pi is running a compatible operating system. The Pironman 5 only supports the following OS versions:
-
-   .. image:: img/compitable_os.png
-      :width: 600
-      :align: center
-
-   If you have installed an unsupported OS, follow the guide to install a compatible operating system: :ref:`install_the_os_mini`.
-
-#. Run the command ``sudo raspi-config`` to open the configuration menu. Navigate to **3 Interfacing Options** -> **I3 SPI** -> **YES**, then click **OK** and **Finish** to enable SPI. After enabling SPI, restart the Pironman 5.
-
-If the problem persists after performing the above steps, please send an email to service@sunfounder.com. We will respond as soon as possible.
-
-7. CPU fan not working?
-----------------------------------------------
-
-When the CPU temperature has not reached the set threshold, the CPU fan will not working.
-
-**Fan Speed Control Based on Temperature**  
-
-The PWM fan operates dynamically, adjusting its speed according to the Raspberry Pi 5's temperature:  
-
-* **Below 50°C**: Fan remains off (0% speed).  
-* **At 50°C**: Fan operates at low speed (30% speed).  
-* **At 60°C**: Fan increases to medium speed (50% speed).  
-* **At 67.5°C**: Fan ramps up to high speed (70% speed).  
-* **At 75°C and above**: Fan operates at full speed (100% speed).  
-
-For more detail please refer to : :ref:`fan_mini`
-
-8. How to disable web dashboard?
-------------------------------------------------------
-
-Once you have completed the installation of the ``pironman5`` module, you will be able to access the :ref:`view_control_dashboard_mini`.
-      
-If you do not need this feature and want to reduce CPU and RAM usage, you can disable the dashboard during the installation of ``pironman5`` by adding the ``--disable-dashboard`` flag.
-      
-.. code-block:: shell
-      
-   cd ~/pironman5
-   sudo python3 install.py --disable-dashboard
-      
-If you have already installed ``pironman 5``, you can remove the ``dashboard`` module and ``influxdb``, then restart pironman5 to apply the changes:
-      
-.. code-block:: shell
-      
-   /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
-   sudo apt purge influxdb
-   sudo systemctl restart pironman5
-
-9. How to Control Components Using the ``pironman5`` Command
-----------------------------------------------------------------------
-You can refer to the following tutorial to control the components of the Pironman 5 using the ``pironman5`` command.
-
-* :ref:`view_control_commands_mini`
-
-10. How to Change the Raspberry Pi Boot Order Using Commands
--------------------------------------------------------------
-
-If you are already logged into your Raspberry Pi, you can change the boot order using commands. Detailed instructions are as follows:
-
-* :ref:`configure_boot_ssd_mini`
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_boot_order_command
+   :end-before: end_faq_boot_order_command
 
 
-11. How to Modify the Boot Order with Raspberry Pi Imager?
----------------------------------------------------------------
+How to Modify the Boot Order with Raspberry Pi Imager
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In addition to modifying the ``BOOT_ORDER`` in the EEPROM configuration, you can also use the **Raspberry Pi Imager** to change the boot order of your Raspberry Pi.
-
-It is recommended to use a spare card for this step.
-
-* :ref:`update_bootloader_mini`
-
-12. How to Copy the System from the SD Card to an NVMe SSD?
--------------------------------------------------------------
-
-If you have an NVMe SSD but do not have an adapter to connect your NVMe to your computer, you can first install the system on your Micro SD card. Once the Pironman 5 boots up successfully, you can copy the system from your Micro SD card to your NVMe SSD. Detailed instructions are as follows:
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_boot_order_imager
+   :end-before: end_faq_boot_order_imager
 
 
-* :ref:`copy_sd_to_nvme_mini`
+.. |link_copy_sd_to_nvme| replace:: :ref:`copy_sd_to_nvme_mini`
 
-13. How to Remove the Protective Film from the Acrylic Plates
------------------------------------------------------------------
+How to Copy the System from the SD Card to an NVMe SSD
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Two acrylic panels are included in the package, both covered with yellow/transparent protective film on both sides to prevent scratches. The protective film may be a bit difficult to remove. Use a screwdriver to gently scrape at the corners, then carefully peel off the entire film.
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_copy_sd_to_nvme
+   :end-before: end_faq_copy_sd_to_nvme
 
-.. image:: img/peel_off_film.jpg
-    :width: 500
-    :align: center
+
+
+6. Advanced Usage
+-------------------------------
+
+
+How to Remove the Protective Film
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_remove_film
+   :end-before: end_faq_remove_film
+
 
 .. _openssh_powershell_mini:
 
-14. How to Install OpenSSH via Powershell?
-----------------------------------------------
+How to Install OpenSSH via Powershell?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``) to connect to your Raspberry Pi, but the following error message appears.
 
@@ -194,7 +254,7 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
 
    .. image:: img/powershell_ssh.png
       :width: 90%
-      
+
 
 #. Use the following command to install ``OpenSSH.Client``.
 
@@ -226,13 +286,10 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
         Name  : OpenSSH.Server~~~~0.0.1.0
         State : NotPresent
 
-   .. warning:: 
+   .. warning::
 
         If the above prompt does not appear, it means that your Windows system is still too old, and you are advised to install a third-party SSH tool, like |link_putty|.
 
 #. Now restart PowerShell and continue to run it as administrator. At this point you will be able to log in to your Raspberry Pi using the ``ssh`` command, where you will be prompted to enter the password you set up earlier.
 
    .. image:: img/powershell_login.png
-
-
-

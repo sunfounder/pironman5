@@ -60,6 +60,14 @@ To prevent the OLED screen and GPIO Fans, powered by the Raspberry Pi GPIO, from
 
 #. Download and install the ``pironman5`` module from GitHub.
 
+   .. tip::
+
+      If you are using **Ubuntu**, install ``curl`` first:
+
+      .. code-block:: shell
+
+         sudo apt install curl -y
+
    .. code-block:: shell
 
       curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
