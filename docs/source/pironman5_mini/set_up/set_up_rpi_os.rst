@@ -22,7 +22,7 @@ Si vous avez installé Raspberry Pi OS, Ubuntu, Kali Linux ou Homebridge sur vot
 .. _safe_shutdown_mini:
 
 1. Configuration de l'arrêt pour désactiver l'alimentation GPIO
-------------------------------------------------------------
+-----------------------------------------------------------------
 
 Pour éviter que le ventilateur RGB, alimenté par le GPIO du Raspberry Pi, ne reste actif après l'arrêt, il est essentiel de configurer le Raspberry Pi pour désactiver l'alimentation GPIO.
 

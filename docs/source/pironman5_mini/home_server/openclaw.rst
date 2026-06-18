@@ -15,7 +15,7 @@ Faire en sorte qu'OpenClaw pilote le Pironman5 Mini
 
 Pour permettre à OpenClaw de piloter le Pironman5 Mini, nous devons installer le skill Pironman5 Mini.
 
-1.  Assurez-vous d'avoir déjà installé le Pironman5 Mini. Si ce n'est pas le cas, veuillez vous référer à :ref:`mini_download_pironman5_module`.
+1.  Assurez-vous d'avoir déjà installé le Pironman5 Mini. Si ce n'est pas le cas, veuillez vous référer à :ref:`install_pironman5_module_mini`.
 
 2.  Exécutez la commande suivante dans le terminal :
 

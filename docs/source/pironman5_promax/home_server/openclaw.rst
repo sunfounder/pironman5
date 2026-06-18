@@ -15,7 +15,7 @@ Permettre à OpenClaw de faire fonctionner le Pironman5 Pro MAX
 
 Pour permettre à OpenClaw de faire fonctionner le Pironman5 Pro MAX, nous devons installer la compétence Pironman5 Pro MAX.
 
-1.  Assurez-vous d'avoir déjà installé le Pironman5 Pro MAX. Sinon, veuillez vous référer à :ref:`promax_download_pironman5_module`.
+1.  Assurez-vous d'avoir déjà installé le Pironman5 Pro MAX. Sinon, veuillez vous référer à :ref:`install_pironman5_module_promax`.
 
 2.  Exécutez la commande suivante dans le terminal :
 
