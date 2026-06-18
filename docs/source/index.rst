@@ -1,4 +1,4 @@
-.. start_hello_message
+﻿.. start_hello_message
 
 .. note::
 
@@ -65,7 +65,7 @@ Di seguito un confronto delle specifiche per Pironman 5, Pironman 5 Mini e Piron
    "Dissipatore", "Dissipatore a torre", "Dissipatore a torre", "Dissipatore a torre", "Dissipatore attivo"
    "Ricevitore IR", "✔", "✔", "✔", "X"
    "Numero ventole GPIO", "2", "2", "2", "1"
-   "Modalità RGB ventole", "Sincronizzato con ventola", "Sincronizzato con ventola", "Controllo indipendente", "Controllo indipendente"
+   "Modalità GPIO ventole", "Sincronizzato con ventola", "Sincronizzato con ventola", "Controllo indipendente", "Controllo indipendente"
    "Porte HDMI", "2 porte HDMI standard", "2 porte HDMI standard", "2 porte HDMI standard", "2 porte Micro HDMI"
    "Display OLED", "✔", "✔", "✔", "X"
    "Attivazione OLED", "Riattivazione con pulsante", "Riattivazione con pulsante", "Riattivazione con pulsante", ""

@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -80,7 +80,7 @@ Questo problema può essere causato da un aggiornamento del sistema, da modifich
 .. Il Pironman 5 Mini supporta i sistemi di retrogaming?
 .. --------------------------------------------------------------
 
-.. Sì, è compatibile. Tuttavia, la maggior parte dei sistemi di retrogaming sono versioni ottimizzate che non consentono l’installazione e l’esecuzione di software aggiuntivo. Questa limitazione può causare il malfunzionamento di alcuni componenti del Pironman 5 Mini, come la ventola RGB e i 4 LED RGB, poiché questi richiedono l’installazione dei pacchetti software del Pironman 5.
+.. Sì, è compatibile. Tuttavia, la maggior parte dei sistemi di retrogaming sono versioni ottimizzate che non consentono l’installazione e l’esecuzione di software aggiuntivo. Questa limitazione può causare il malfunzionamento di alcuni componenti del Pironman 5 Mini, come la ventola GPIO e i 4 LED RGB, poiché questi richiedono l’installazione dei pacchetti software del Pironman 5.
 
 
 5. I LED RGB non funzionano?

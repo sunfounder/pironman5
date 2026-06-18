@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -15,7 +15,7 @@ Abilitare OpenClaw a Operare il Pironman5
 
 Per consentire a OpenClaw di operare il Pironman5, dobbiamo installare l'abilità (skill) Pironman5.
 
-1.  Assicurati di aver già installato Pironman5. In caso contrario, consulta :ref:`mini_download_pironman5_module`.
+1.  Assicurati di aver già installato Pironman5. In caso contrario, consulta :ref:`install_pironman5_module_mini`.
 
 2.  Esegui il seguente comando nel terminale:
 

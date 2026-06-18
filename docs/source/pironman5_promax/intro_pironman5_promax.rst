@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -18,7 +18,7 @@ Porta la tua esperienza con Raspberry Pi 5 a un livello superiore con |link_piro
 **Caratteristiche Chiave**:
 
 * **Hub di Espansione Dual NVMe e AI**: Switch PCIe Gen 2 integrato con due slot M.2 M-key (2230/2242/2260/2280) per SSD o acceleratori AI (pienamente compatibile con Hailo-8/8L). Configura per NAS RAID 0/1, SSD+AI o configurazioni dual AI.
-* **Sistema di Raffreddamento Completo**: Dissipatore a torre massiccio con ventola PWM, più **tre** ventole PWM RGB indirizzabili, mantenendo prestazioni termiche eccellenti anche a pieno carico.
+* **Sistema di Raffreddamento Completo**: Dissipatore a torre massiccio con ventola CPU, più **tre** Ventole CPU GPIO indirizzabili, mantenendo prestazioni termiche eccellenti anche a pieno carico.
 * **Dual Display e Multimediali**:
 
     * **Touchscreen DSI da 4.3"** (800x480): Usalo come display informativo secondario, dashboard di stato o persino come monitor desktop principale.
@@ -27,7 +27,7 @@ Porta la tua esperienza con Raspberry Pi 5 a un livello superiore con |link_piro
 
 * **Interfaccia Utente e Controllo Migliorati**:
 
-    * **Ecosistema RGB Personalizzabile**: Sei LED WS2812B indirizzabili e tre ventole RGB sincronizzate per effetti di illuminazione dinamici.
+    * **Ecosistema RGB Personalizzabile**: Sei LED WS2812B indirizzabili e tre ventole GPIO sincronizzate per effetti di illuminazione dinamici.
     * **Ricevitore IR** per il controllo del media center (es., Kodi, Volumio).
     * **Pulsante di Alimentazione Sicuro in Metallo in Stile Retro** per spegnimento e avvio sicuri.
     * **Comparto Batteria RTC** (per CR1220) per il mantenimento dell'ora.
@@ -94,8 +94,8 @@ Porta la tua esperienza con Raspberry Pi 5 a un livello superiore con |link_piro
 
 * **Sistema di Raffreddamento**:
 
-    * 1 x Grande Dissipatore a Torre con Ventola Controllata da PWM
-    * 3 x Ventole PWM RGB Indirizzabili (controllate da GPIO, sincronizzabili)
+    * 1 x Grande Dissipatore a Torre con ventola CPU
+    * 3 x ventole CPU GPIO Indirizzabili (controllate da GPIO, sincronizzabili)
 
 * **Display e Multimediali**:
 
@@ -112,7 +112,7 @@ Porta la tua esperienza con Raspberry Pi 5 a un livello superiore con |link_piro
 
 * **Controlli, Illuminazione e Funzionalità**:
 
-    * 18 LED RGB Indirizzabili WS2812B: 6 sulla scheda e 12 integrati nelle ventole RGB.
+    * 18 LED RGB Indirizzabili WS2812B: 6 sulla scheda e 12 integrati nelle ventole GPIO.
     * Ricevitore IR (38kHz)
     * Pulsante di Accensione in Metallo (funzione di spegnimento sicuro)
     * Supporto per Batteria RTC (Real-Time Clock) (per cella CR1220)

@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -17,7 +17,7 @@ Il sistema di raffreddamento attivo del Pironman 5 Mini è gestito direttamente 
 
 Per quanto riguarda le soluzioni di raffreddamento per Raspberry Pi 5, 
 specialmente durante carichi di lavoro intensi, il design del Pironman 5 Mini integra un sistema di raffreddamento intelligente. 
-Include una ventola principale Active Cooler e una ventola RGB supplementare. 
+Include una ventola principale Active Cooler e una ventola GPIO supplementare. 
 La strategia di raffreddamento è strettamente collegata al sistema di gestione termica del Raspberry Pi 5.
 
 Il funzionamento dell’Active Cooler è basato sulla temperatura rilevata dal Raspberry Pi 5:
@@ -44,7 +44,7 @@ Questo rapporto tra temperatura e velocità viene mantenuto anche durante il raf
 
 Nel Pironman 5 Mini, l’Active Cooler è un componente essenziale per mantenere temperature operative ottimali, soprattutto durante attività intensive, garantendo prestazioni stabili ed efficienti al Raspberry Pi 5.
 
-Ventola RGB
+Ventola GPIO
 -------------------
 
 .. image:: img/size_fan.png

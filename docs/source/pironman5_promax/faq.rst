@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -211,7 +211,7 @@ Se il problema persiste dopo aver eseguito i passaggi sopra, invia un'email a se
 9. La ventola non funziona / non può essere controllata?
 -------------------------------------------------------------------------
 
-Il Pro / MAX adotta la soluzione ufficiale di controllo della ventola PWM del Raspberry Pi. Tutte e tre le ventole di raffreddamento sono controllate direttamente dal sistema Raspberry Pi e non dipendono dal servizio pironman5 (pertanto, non vedrai opzioni di controllo della ventola nello strumento a riga di comando o nella Dashboard).
+Il Pro / MAX adotta la soluzione ufficiale di controllo della ventola CPU del Raspberry Pi. Tutte e tre le ventole di raffreddamento sono controllate direttamente dal sistema Raspberry Pi e non dipendono dal servizio pironman5 (pertanto, non vedrai opzioni di controllo della ventola nello strumento a riga di comando o nella Dashboard).
 
 **Testare se la ventola funziona correttamente**
 
@@ -223,9 +223,9 @@ Puoi controllare manualmente la ventola usando i seguenti comandi:
    pinctrl FAN_PWM op dh   # disabilita ventola (attivo alto)
    pinctrl FAN_PWM a0      # modalità automatica (controllo temperatura di sistema)
 
-**Controllo della Velocità della Ventola in Base alla Temperatura**
+**Controllo della Velocità della ventola in Base alla Temperatura**
 
-La ventola PWM funziona dinamicamente, regolando la sua velocità in base alla temperatura del Raspberry Pi 5:
+La ventola CPU funziona dinamicamente, regolando la sua velocità in base alla temperatura del Raspberry Pi 5:
 
 * **Sotto i 50°C**: Ventola spenta (velocità 0%).
 * **A 50°C**: Ventola a bassa velocità (velocità 30%).
@@ -264,7 +264,7 @@ Se hai già installato ``pironman5``, puoi rimuovere il modulo ``dashboard`` e `
 
 .. Pironman 5 MAX supporta i sistemi di retro gaming?
 .. ------------------------------------------------------------------------------------------------------------
-.. Sì, è compatibile. Tuttavia, la maggior parte dei sistemi di retro gaming sono versioni ridotte che non possono installare ed eseguire software aggiuntivo. Questa limitazione può causare il malfunzionamento di alcuni componenti su Pironman 5 MAX, come il display OLED, le due ventole RGB e i 4 LED RGB, poiché questi componenti richiedono l'installazione dei pacchetti software di Pironman 5 MAX.
+.. Sì, è compatibile. Tuttavia, la maggior parte dei sistemi di retro gaming sono versioni ridotte che non possono installare ed eseguire software aggiuntivo. Questa limitazione può causare il malfunzionamento di alcuni componenti su Pironman 5 MAX, come il display OLED, le due ventole GPIO e i 4 LED RGB, poiché questi componenti richiedono l'installazione dei pacchetti software di Pironman 5 MAX.
 
 .. .. note::
 

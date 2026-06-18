@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -156,7 +156,7 @@ Per utilizzare il ricevitore IR, assicurati che sia collegato e installa il modu
 * Dopo aver lanciato il comando, premi un tasto sul telecomando: verrà stampato il codice corrispondente.
 
 
-Pin ventole RGB
+Pin ventole GPIO
 ------------------
 
 La scheda di espansione IO supporta fino a due ventole non-PWM a 5V, controllate simultaneamente.
@@ -165,7 +165,7 @@ La scheda di espansione IO supporta fino a due ventole non-PWM a 5V, controllate
 
 .. image:: img/io_board_fan.png
 
-Ci sono due connettori a 2 pin e due jumper per il controllo delle ventole RGB e dei relativi LED. 
+Ci sono due connettori a 2 pin e due jumper per il controllo delle ventole GPIO e dei relativi LED. 
 I jumper sono connessi ai pin GPIO6 e GPIO5 per il controllo da software. 
 Se non è necessario controllare le ventole, rimuovi i jumper per liberare questi pin GPIO.
 
@@ -183,7 +183,7 @@ ma non saranno più controllabili via GPIO.
 
 .. .. image:: img/io_board_fan_d2.png
 
-.. Puoi usare un comando per impostare la modalità di funzionamento delle ventole RGB. Ogni modalità corrisponde a una soglia di attivazione termica.
+.. Puoi usare un comando per impostare la modalità di funzionamento delle ventole GPIO. Ogni modalità corrisponde a una soglia di attivazione termica.
 
 Ad esempio, la modalità **1: Performance** attiva le ventole a 50°C.
 
@@ -197,7 +197,7 @@ Ad esempio, la modalità **1: Performance** attiva le ventole a 50°C.
 * **1: Performance**: le ventole si attivano a 50°C.
 * **0: Always On**: le ventole sono sempre accese.
 
-Se colleghi il pin di controllo delle ventole RGB a un GPIO diverso, usa questo comando per aggiornarlo:
+Se colleghi il pin di controllo delle ventole GPIO a un GPIO diverso, usa questo comando per aggiornarlo:
 
 .. code-block:: shell
 
@@ -224,7 +224,7 @@ Due header angolati estendono i GPIO del Raspberry Pi. Nota che ricevitore IR, L
     - SCL
   * - Ventola (Opzionale)
     - GPIO6
-  * - LED Ventola (Opzionale)
+  * - LED ventola (Opzionale)
     - GPIO5  
   * - RGB (Opzionale)
     - GPIO10

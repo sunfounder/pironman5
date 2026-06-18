@@ -1,4 +1,4 @@
-.. _intro_pironman5_mini: 
+﻿.. _intro_pironman5_mini: 
 
 Pironman 5 Mini
 =========================================
@@ -14,7 +14,7 @@ Grazie per aver scelto il nostro |link_pironman5_mini|.
 **Caratteristiche Principali**
 
 * **Controlli Dedicati**: Pulsante di accensione integrato per un utilizzo comodo.
-* **Raffreddamento Efficiente**: Sistema di raffreddamento attivo simile al dissipatore ufficiale del Raspberry Pi, più una ventola RGB laterale aggiuntiva per migliorare il flusso d’aria.
+* **Raffreddamento Efficiente**: Sistema di raffreddamento attivo simile al dissipatore ufficiale del Raspberry Pi, più una ventola GPIO laterale aggiuntiva per migliorare il flusso d’aria.
 * **Funzionalità Extra**: Batteria RTC integrata e 4 LED RGB WS2812-5050.
 * **Espansione Facile**: Estensore GPIO per connessioni hardware flessibili.
 * **Archiviazione ad Alta Velocità**: Slot PCIe 2.0 M.2 M-key che supporta SSD NVMe nei formati **2230**, **2242**, **2260**, **2280**.
@@ -58,7 +58,7 @@ Ideale per progetti che richiedono **archiviazione veloce, prestazioni stabili e
     * Porta LAN Gigabit
     * 2 x Porte Micro HDMI 4Kp60
 * 1 x Pulsante di Accensione in Metallo
-* 1 x Ventola RGB (40x40x10 mm)
+* 1 x ventola GPIO (40x40x10 mm)
 * 4 x LED RGB WS2812-5050
 * 1 x Raffreddatore Attivo
 * 1 x PCIe 2.0 M.2 con chiave M (2230, 2242, 2260, 2280) per SSD NVMe

@@ -1,8 +1,8 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
-.. _view_control_dashboard:
+.. _view_control_dashboard_5:
 
 Visualizzazione e Controllo dalla Dashboard
 =============================================

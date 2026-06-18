@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -8,10 +8,10 @@
 Ventole
 ============
 
-Ventola PWM
+Ventola CPU
 -----------------
 
-La ventola PWM nel Pironman 5 è gestita dal sistema Raspberry Pi e rappresenta il fulcro della soluzione di raffreddamento intelligente, soprattutto sotto carichi pesanti. Questo sistema combina una ventola PWM principale con due ventole RGB supplementari per migliorare le prestazioni di raffreddamento, strettamente integrate con il sistema di gestione termica del Raspberry Pi 5.
+La ventola CPU nel Pironman 5 è gestita dal sistema Raspberry Pi e rappresenta il fulcro della soluzione di raffreddamento intelligente, soprattutto sotto carichi pesanti. Questo sistema combina una ventola CPU principale con due ventole GPIO supplementari per migliorare le prestazioni di raffreddamento, strettamente integrate con il sistema di gestione termica del Raspberry Pi 5.
 
 .. image:: img/fan_tower_cooler.png  
   :width: 600  
@@ -44,9 +44,9 @@ La ventola PWM nel Pironman 5 è gestita dal sistema Raspberry Pi e rappresenta 
 * **Umidità Operativa**: 5% ~ 90% RH  
 * **Umidità di Conservazione**: 5% ~ 95% RH  
 
-**Controllo della Velocità della Ventola in Base alla Temperatura**  
+**Controllo della Velocità della ventola in Base alla Temperatura**  
 
-La ventola PWM opera dinamicamente, regolando la velocità in base alla temperatura del Raspberry Pi 5:  
+La ventola CPU opera dinamicamente, regolando la velocità in base alla temperatura del Raspberry Pi 5:  
 
 * **Sotto i 50°C**: La ventola rimane spenta (velocità 0%).  
 * **A 50°C**: La ventola opera a bassa velocità (velocità 30%).  
@@ -56,7 +56,7 @@ La ventola PWM opera dinamicamente, regolando la velocità in base alla temperat
 
 Questo controllo temperatura-velocità include una isteresi di 5°C per evitare cambiamenti di velocità frequenti. Ad esempio, la ventola ridurrà la sua velocità solo dopo che la temperatura scende di 5°C sotto ogni soglia.
 
-I seguenti comandi consentono agli utenti di monitorare il funzionamento della ventola PWM:
+I seguenti comandi consentono agli utenti di monitorare il funzionamento della ventola CPU:
 
 Per controllare lo stato corrente della ventola:
 
@@ -64,7 +64,7 @@ Per controllare lo stato corrente della ventola:
 
   cat /sys/class/thermal/cooling_device0/cur_state
 
-Ventole RGB
+Ventole GPIO
 -------------------
 
 .. image:: img/size_fan.png

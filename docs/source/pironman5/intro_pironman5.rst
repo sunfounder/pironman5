@@ -1,4 +1,4 @@
-.. _intro_pironman5:
+﻿.. _intro_pironman5:
 
 Pironman 5
 =================================
@@ -13,7 +13,7 @@ Thanks for choosing our |link_pironman5|.
 
 **Caratteristiche Principali**
 
-* **Raffreddamento Avanzato**: Dissipatore a torre con doppie ventole RGB per un controllo efficiente della temperatura.
+* **Raffreddamento Avanzato**: Dissipatore a torre con doppie ventole GPIO per un controllo efficiente della temperatura.
 * **Archiviazione ad Alta Velocità e Supporto AI**: Supporta SSD NVMe M.2 (**2230**, **2242**, **2260**, **2280**) ed è pienamente compatibile con l’**acceleratore AI Hailo-8L** per potenti capacità edge AI.
 * **Display Intelligente**: Schermo OLED integrato da 0,96” che mostra in tempo reale utilizzo della CPU, memoria, temperatura e indirizzo IP.
 * **Connettività Avanzata**: Doppie porte HDMI, LED RGB personalizzabili, interruttore di alimentazione sicuro, ricevitore IR ed estensore GPIO esterno.

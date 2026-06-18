@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -83,7 +83,7 @@ Verifica che il cavo FPC dello schermo OLED sia correttamente collegato.
 
     .. code-block:: shell
 
-        cat /opt/pironman5/log
+        cat /var/log/pironman5/pironman5.log
 
 #. In alternativa, usa il seguente comando per verificare se l'indirizzo i2c dello schermo OLED (0x3C) viene riconosciuto:
     
@@ -131,7 +131,7 @@ Per utilizzare il ricevitore IR, verifica la connessione e installa il modulo ne
 * Dopo aver eseguito il comando, premi un pulsante sul telecomando e il codice di quel pulsante verrà stampato.
 
 
-Pin Ventola RGB
+Pin ventola GPIO
 ------------------
 
 La scheda di espansione IO supporta fino a due ventole non-PWM da 5V. Entrambe le ventole sono controllate insieme.
@@ -140,7 +140,7 @@ La scheda di espansione IO supporta fino a due ventole non-PWM da 5V. Entrambe l
 
 .. image:: img/io_board_fan.png
 
-I due pin sotto J9 sono i pin di abilitazione per le ventole RGB. Di default, un ponticello è inserito su questi pin, consentendo il controllo dello stato di accensione e spegnimento delle ventole tramite GPIO6. Se non è desiderata l'operazione delle ventole, il ponticello può essere rimosso per liberare GPIO6.
+I due pin sotto J9 sono i pin di abilitazione per le ventole GPIO. Di default, un ponticello è inserito su questi pin, consentendo il controllo dello stato di accensione e spegnimento delle ventole tramite GPIO6. Se non è desiderata l'operazione delle ventole, il ponticello può essere rimosso per liberare GPIO6.
 
 .. image:: img/io_board_fan_j9.png
 
@@ -148,21 +148,21 @@ I due pin sotto J9 sono i pin di abilitazione per le ventole RGB. Di default, un
 
 .. image:: img/io_board_fan_d2.png
 
-Puoi usare un comando per configurare la modalità operativa delle due ventole RGB. Queste modalità determinano le condizioni in cui le ventole RGB si attiveranno.
+Puoi usare un comando per configurare la modalità operativa delle due ventole GPIO. Queste modalità determinano le condizioni in cui le ventole GPIO si attiveranno.
 
-Ad esempio, se impostato su **1: Performance**, le ventole RGB si attiveranno a 50°C.
+Ad esempio, se impostato su **1: Performance**, le ventole GPIO si attiveranno a 50°C.
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4: Quiet**: Le ventole RGB si attiveranno a 70°C.
-* **3: Balanced**: Le ventole RGB si attiveranno a 67,5°C.
-* **2: Cool**: Le ventole RGB si attiveranno a 60°C.
-* **1: Performance**: Le ventole RGB si attiveranno a 50°C.
-* **0: Sempre Accese**: Le ventole RGB saranno sempre accese.
+* **4: Quiet**: Le ventole GPIO si attiveranno a 70°C.
+* **3: Balanced**: Le ventole GPIO si attiveranno a 67,5°C.
+* **2: Cool**: Le ventole GPIO si attiveranno a 60°C.
+* **1: Performance**: Le ventole GPIO si attiveranno a 50°C.
+* **0: Sempre Accese**: Le ventole GPIO saranno sempre accese.
 
-Se colleghi il pin di controllo della ventola RGB a diversi pin sul Raspberry Pi, puoi usare il seguente comando per cambiare il numero di pin.
+Se colleghi il pin di controllo della ventola GPIO a diversi pin sul Raspberry Pi, puoi usare il seguente comando per cambiare il numero di pin.
 
 .. code-block:: shell
 

@@ -1,4 +1,4 @@
-
+﻿
 .. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
@@ -125,7 +125,7 @@ Usa ``pironman5`` o ``pironman5 -h`` per le istruzioni.
 
 **Controllo LED RGB**
 ----------------------
-La scheda dispone di 18 LED RGB indirizzabili WS2812B: 6 sulla scheda e 12 integrati nelle ventole RGB. Gli utenti possono controllare alimentazione, colore, luminosità, modalità di visualizzazione, velocità dell'animazione e il numero di LED attivi.
+La scheda dispone di 18 LED RGB indirizzabili WS2812B: 6 sulla scheda e 12 integrati nelle ventole GPIO. Gli utenti possono controllare alimentazione, colore, luminosità, modalità di visualizzazione, velocità dell'animazione e il numero di LED attivi.
 
 .. note::
 
@@ -184,7 +184,7 @@ La scheda dispone di 18 LED RGB indirizzabili WS2812B: 6 sulla scheda e 12 integ
 **Ventola**
 --------------------------------
 
-Queste ventole si collegano a una porta dedicata per ventole PWM a 4 pin sul Raspberry Pi 5. La sua strategia di controllo predefinita è uno schema di regolazione della velocità intelligente a più livelli gestito dal firmware, basato sulla temperatura della CPU. Ciò significa che quando usi una ventola PWM ufficiale o compatibile e la colleghi correttamente, il sistema regolerà automaticamente la velocità della ventola in base alle variazioni della temperatura della CPU (iniziando a funzionare sopra i 50°C) senza alcun intervento manuale da parte tua.
+Queste ventole si collegano a una porta dedicata per ventole CPU a 4 pin sul Raspberry Pi 5. La sua strategia di controllo predefinita è uno schema di regolazione della velocità intelligente a più livelli gestito dal firmware, basato sulla temperatura della CPU. Ciò significa che quando usi una ventola CPU ufficiale o compatibile e la colleghi correttamente, il sistema regolerà automaticamente la velocità della ventola in base alle variazioni della temperatura della CPU (iniziando a funzionare sopra i 50°C) senza alcun intervento manuale da parte tua.
 
 **Controllare lo Schermo OLED**
 -----------------------------------

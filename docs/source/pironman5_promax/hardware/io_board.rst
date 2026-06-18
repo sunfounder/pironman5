@@ -1,4 +1,4 @@
-
+﻿
 .. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
@@ -13,7 +13,7 @@ LED RGB
 
 .. image:: img/io_board_rgb.png
 
-La scheda dispone di 18 LED RGB indirizzabili WS2812B: 6 sulla scheda e 12 integrati nelle ventole RGB, offrendo un controllo personalizzabile. Gli utenti possono accenderli o spegnerli, cambiare il colore, regolare la luminosità, cambiare le modalità di visualizzazione e impostare la velocità delle variazioni.
+La scheda dispone di 18 LED RGB indirizzabili WS2812B: 6 sulla scheda e 12 integrati nelle ventole GPIO, offrendo un controllo personalizzabile. Gli utenti possono accenderli o spegnerli, cambiare il colore, regolare la luminosità, cambiare le modalità di visualizzazione e impostare la velocità delle variazioni.
 
 Pin di Controllo RGB
 -------------------------
@@ -29,7 +29,7 @@ Pin RGB OUT
 
 I LED RGB WS2812 supportano la connessione in serie, permettendo il collegamento di una striscia LED RGB esterna. Collega il pin **SIG** al pin **DIN** della striscia esterna per l'espansione.
 
-La scheda dispone di 18 LED RGB indirizzabili WS2812B: 6 sulla scheda e 12 integrati nelle ventole RGB. Collega LED aggiuntivi e aggiorna il conteggio utilizzando:
+La scheda dispone di 18 LED RGB indirizzabili WS2812B: 6 sulla scheda e 12 integrati nelle ventole GPIO. Collega LED aggiuntivi e aggiorna il conteggio utilizzando:
 
 .. code-block:: shell
 
@@ -102,12 +102,12 @@ Per utilizzare il ricevitore IR, verifica la sua connessione e installa il modul
 
 * Dopo aver eseguito il comando, premi un pulsante sul telecomando e il codice di quel pulsante verrà stampato.
 
-Pin Ventole RGB
+Pin ventole GPIO
 --------------------
 
 .. image:: img/io_board_pin_fan.png
 
-La scheda di espansione IO supporta fino a tre ventole PWM da 5V. Tutte le ventole sono controllate insieme.
+La scheda di espansione IO supporta fino a tre ventole CPU da 5V. Tutte le ventole sono controllate insieme.
 
 Il segnale di controllo della ventola è collegato alla porta **FAN IN** sulla scheda di espansione IO, e quindi emesso dalle tre porte dedicate per ventole. Queste porte sono numerate dall'alto verso il basso come **REAR UPPER**, **REAR LOWER** e **CPU FAN**. Collegale secondo la serigrafia, altrimenti influenzerà il controllo RGB sulla ventola.
 

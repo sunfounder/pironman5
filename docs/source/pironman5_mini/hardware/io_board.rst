@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -76,7 +76,7 @@ La configurazione predefinita prevede 4 LED RGB. Per aggiungerne altri, aggiorna
 
 
 
-Pin della Ventola RGB
+Pin della ventola GPIO
 ----------------------------
 
 La scheda di espansione IO supporta una ventola da 5V non-PWM. 
@@ -89,9 +89,9 @@ I due gruppi di pin sotto J9 abilitano il controllo della ventola e dei suoi LED
 
 .. image:: img/io_board_fan_j9.png
 
-Puoi configurare la modalità operativa della ventola RGB tramite comando. Le modalità determinano le condizioni di attivazione della ventola.
+Puoi configurare la modalità operativa della ventola GPIO tramite comando. Le modalità determinano le condizioni di attivazione della ventola.
 
-  Ad esempio, impostando la modalità **1: Performance**, la ventola RGB si attiverà a 50°C.
+  Ad esempio, impostando la modalità **1: Performance**, la ventola GPIO si attiverà a 50°C.
 
   .. code-block:: shell
 
@@ -103,7 +103,7 @@ Puoi configurare la modalità operativa della ventola RGB tramite comando. Le mo
   * **1: Performance**: la ventola si attiva a 50°C.
   * **0: Always On**: la ventola resta sempre accesa.
 
-Se colleghi il pin di controllo della ventola RGB a un altro pin del Raspberry Pi, puoi modificarlo con:
+Se colleghi il pin di controllo della ventola GPIO a un altro pin del Raspberry Pi, puoi modificarlo con:
 
 .. code-block:: shell
 

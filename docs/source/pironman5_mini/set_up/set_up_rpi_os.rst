@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -23,7 +23,7 @@ Se hai installato Raspberry Pi OS, Ubuntu, Kali Linux o Homebridge sul tuo Raspb
 Configurazione dello spegnimento per disattivare l’alimentazione GPIO
 ------------------------------------------------------------------------------
 
-Per evitare che la ventola RGB, alimentata dal GPIO del Raspberry Pi, rimanga attiva dopo lo spegnimento, è fondamentale configurare il Raspberry Pi per disattivare l’alimentazione GPIO.
+Per evitare che la ventola GPIO, alimentata dal GPIO del Raspberry Pi, rimanga attiva dopo lo spegnimento, è fondamentale configurare il Raspberry Pi per disattivare l’alimentazione GPIO.
 
 #. Apri lo strumento di configurazione EEPROM:
 
@@ -42,7 +42,7 @@ Per evitare che la ventola RGB, alimentata dal GPIO del Raspberry Pi, rimanga at
 #. Salva le modifiche. Ti verrà chiesto di riavviare affinché le nuove impostazioni abbiano effetto.
 
 
-.. _mini_download_pironman5_module:
+.. _install_pironman5_module_mini:
 
 Download e installazione del modulo ``pironman5``
 -----------------------------------------------------------
@@ -74,7 +74,7 @@ Download e installazione del modulo ``pironman5``
      
    .. note::
     
-     * Le ventole RGB sono impostate di default su **Always On**.  
+     * Le ventole GPIO sono impostate di default su **Always On**.  
        Per impostare temperature di attivazione differenti, consulta :ref:`cc_control_fan_mini`.
 
 #. Puoi utilizzare lo strumento ``systemctl`` per ``start``, ``stop``, ``restart`` o controllare lo ``status`` del servizio ``pironman5.service``.

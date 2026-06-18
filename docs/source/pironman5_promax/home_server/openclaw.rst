@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -13,7 +13,7 @@ Abilitare OpenClaw per Operare il Pironman5 Pro MAX
 
 Per consentire a OpenClaw di operare il Pironman5 Pro MAX, dobbiamo installare la skill per Pironman5 Pro MAX.
 
-1. Assicurati di aver già installato il Pironman5 Pro MAX. In caso contrario, fare riferimento a :ref:`promax_download_pironman5_module`.
+1. Assicurati di aver già installato il Pironman5 Pro MAX. In caso contrario, fare riferimento a :ref:`install_pironman5_module_promax`.
 
 2. Esegui il seguente comando nel terminale:
 

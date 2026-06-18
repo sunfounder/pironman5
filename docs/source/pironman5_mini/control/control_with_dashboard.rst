@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -22,7 +22,7 @@ Dashboard
 
 Sono presenti diverse schede che mostrano lo stato attuale del Raspberry Pi, tra cui:
 
-* **Ventola**: Visualizza la temperatura della CPU del Raspberry Pi e la velocità della ventola PWM. **Stato Ventola GPIO** indica lo stato della ventola RGB. Alla temperatura attuale, la ventola RGB è spenta.
+* **Ventola**: Visualizza la temperatura della CPU del Raspberry Pi e la velocità della ventola CPU. **Stato ventola GPIO** indica lo stato della ventola GPIO. Alla temperatura attuale, la ventola GPIO è spenta.
 
   .. image:: img/dashboard_pwm_fan.png
     :width: 90%
@@ -90,17 +90,17 @@ In alto a destra nella pagina è presente un menu delle impostazioni.
 
 * **Dark Mode**: Passa tra il tema chiaro e quello scuro. L’impostazione viene salvata nella cache del browser. Cambiando browser o cancellando la cache si torna al tema chiaro predefinito.
 * **Temperature Unit**: Imposta l’unità di misura della temperatura visualizzata dal sistema.
-* **Fan Mode**: Imposta la modalità operativa della ventola RGB. Ogni modalità determina la temperatura a cui la ventola si attiverà.
+* **Fan Mode**: Imposta la modalità operativa della ventola GPIO. Ogni modalità determina la temperatura a cui la ventola si attiverà.
 
-    * **Quiet**: La ventola RGB si attiva a 70°C.
-    * **Balanced**: La ventola RGB si attiva a 67,5°C.
-    * **Cool**: La ventola RGB si attiva a 60°C.
-    * **Performance**: La ventola RGB si attiva a 50°C.
-    * **Always On**: La ventola RGB rimane sempre accesa.
+    * **Quiet**: La ventola GPIO si attiva a 70°C.
+    * **Balanced**: La ventola GPIO si attiva a 67,5°C.
+    * **Cool**: La ventola GPIO si attiva a 60°C.
+    * **Performance**: La ventola GPIO si attiva a 50°C.
+    * **Always On**: La ventola GPIO rimane sempre accesa.
 
-    Ad esempio, impostando la modalità **Performance**, la ventola RGB si attiverà a 50°C.
+    Ad esempio, impostando la modalità **Performance**, la ventola GPIO si attiverà a 50°C.
 
-    Dopo il salvataggio, se la temperatura della CPU supera i 50°C, vedrai lo stato della **Ventola GPIO** passare a ON nel Dashboard e la ventola RGB inizierà a girare.
+    Dopo il salvataggio, se la temperatura della CPU supera i 50°C, vedrai lo stato della **Ventola GPIO** passare a ON nel Dashboard e la ventola GPIO inizierà a girare.
 
   .. image:: img/dashboard_rgbfan_on.png
     :width: 300
@@ -120,4 +120,4 @@ In alto a destra nella pagina è presente un menu delle impostazioni.
 
 **Informazioni sulla ventola principale**
 
-La ventola principale si collega a una porta PWM a 4 pin dedicata sul Raspberry Pi 5. La sua strategia di controllo predefinita è uno schema di regolazione intelligente della velocità multilivello gestito dal firmware, basato sulla temperatura della CPU. Ciò significa che quando si utilizza una ventola PWM ufficiale o compatibile e la si collega correttamente, il sistema regolerà automaticamente la velocità della ventola in base alle variazioni di temperatura della CPU (iniziando a funzionare oltre i 50 °C) senza alcun intervento manuale da parte dell'utente.
+La ventola principale si collega a una porta PWM a 4 pin dedicata sul Raspberry Pi 5. La sua strategia di controllo predefinita è uno schema di regolazione intelligente della velocità multilivello gestito dal firmware, basato sulla temperatura della CPU. Ciò significa che quando si utilizza una ventola CPU ufficiale o compatibile e la si collega correttamente, il sistema regolerà automaticamente la velocità della ventola in base alle variazioni di temperatura della CPU (iniziando a funzionare oltre i 50 °C) senza alcun intervento manuale da parte dell'utente.

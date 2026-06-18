@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -10,7 +10,7 @@
 
 Ora che il sistema è stato scritto sulla Micro SD o sull'SSD NVMe, puoi inserirli nello slot del Raspberry Pi. Premi quindi il pulsante di accensione per avviare il dispositivo.
 
-Dopo l'accensione, vedrai accendersi i vari LED di alimentazione, ma i LED RGB e la ventola RGB non saranno ancora attivi, poiché necessitano di una configurazione. Se compare un problema di disturbo video sullo schermo, ignoralo per ora: si risolverà dopo la configurazione.
+Dopo l'accensione, vedrai accendersi i vari LED di alimentazione, ma i LED RGB e la ventola GPIO non saranno ancora attivi, poiché necessitano di una configurazione. Se compare un problema di disturbo video sullo schermo, ignoralo per ora: si risolverà dopo la configurazione.
 
 Prima di procedere alla configurazione, avvia e accedi al tuo Raspberry Pi. Se non sai come effettuare l'accesso, puoi visitare il sito ufficiale di Raspberry Pi: |link_rpi_get_start|.
 

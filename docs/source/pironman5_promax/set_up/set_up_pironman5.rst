@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -9,7 +9,7 @@
 
 Ora che il sistema è stato scritto sulla Micro SD o sull'SSD NVMe, puoi inserirli nello slot del Pironman 5 Pro MAX. Quindi premi il pulsante di accensione per accendere il dispositivo.
 
-Dopo l'accensione, vedrai i vari LED di alimentazione accendersi, ma lo schermo OLED, i LED RGB e le ventole RGB (le due ventole laterali) non saranno ancora operativi, poiché necessitano di configurazione. Se c'è un problema di distorsione dello schermo, ignorarlo per ora; verrà risolto dopo la configurazione.
+Dopo l'accensione, vedrai i vari LED di alimentazione accendersi, ma lo schermo OLED, i LED RGB e le ventole GPIO (le due ventole laterali) non saranno ancora operativi, poiché necessitano di configurazione. Se c'è un problema di distorsione dello schermo, ignorarlo per ora; verrà risolto dopo la configurazione.
 
 Prima di configurare, devi avviare e accedere al tuo Raspberry Pi. Se non sei sicuro di come accedere, puoi visitare il sito web ufficiale di Raspberry Pi: |link_rpi_get_start|.
 

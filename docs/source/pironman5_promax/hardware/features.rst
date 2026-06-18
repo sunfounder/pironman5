@@ -1,4 +1,4 @@
-
+﻿
 .. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
@@ -30,8 +30,8 @@ Caratteristiche
 
 * **Sistema di Raffreddamento**:
 
-    * 1 x Grande Dissipatore a Torre con Ventola Controllata da PWM
-    * 3 x Ventole PWM RGB Indirizzabili (controllate da GPIO, sincronizzabili)
+    * 1 x Grande Dissipatore a Torre con ventola CPU
+    * 3 x ventole CPU GPIO Indirizzabili (controllate da GPIO, sincronizzabili)
 
 * **Display e Multimediali**:
 
@@ -48,7 +48,7 @@ Caratteristiche
 
 * **Controlli, Illuminazione e Funzionalità**:
 
-    * 18 LED RGB Indirizzabili WS2812B: 6 sulla scheda e 12 integrati nelle ventole RGB.
+    * 18 LED RGB Indirizzabili WS2812B: 6 sulla scheda e 12 integrati nelle ventole GPIO.
     * Ricevitore IR (38kHz)
     * Pulsante di Accensione in Metallo (funzione di spegnimento sicuro)
     * Supporto per Batteria RTC (Real-Time Clock) (per cella CR1220)

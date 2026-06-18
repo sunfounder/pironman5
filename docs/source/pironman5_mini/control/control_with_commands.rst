@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -163,7 +163,7 @@ La scheda è dotata di 4 LED RGB WS2812, che possono essere controllati in modo 
 
 .. _cc_control_fan_mini:
 
-Controllo della Ventola RGB
+Controllo della ventola GPIO
 -----------------------------------
 
 La scheda di espansione IO supporta una ventola da 5V non-PWM.
@@ -176,22 +176,22 @@ La scheda di espansione IO supporta una ventola da 5V non-PWM.
 
     sudo systemctl restart pironman5.service
 
-* Puoi utilizzare i comandi per configurare la modalità operativa della ventola RGB. Ogni modalità determina la soglia di temperatura a cui la ventola si attiva.
+* Puoi utilizzare i comandi per configurare la modalità operativa della ventola GPIO. Ogni modalità determina la soglia di temperatura a cui la ventola si attiva.
 
-Ad esempio, se imposti la modalità **1: Performance**, la ventola RGB si attiverà a 50°C.
+Ad esempio, se imposti la modalità **1: Performance**, la ventola GPIO si attiverà a 50°C.
 
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4: Quiet**: la ventola RGB si attiva a 70°C.
-* **3: Balanced**: la ventola RGB si attiva a 67,5°C.
-* **2: Cool**: la ventola RGB si attiva a 60°C.
-* **1: Performance**: la ventola RGB si attiva a 50°C.
-* **0: Always On**: la ventola RGB rimane sempre accesa.
+* **4: Quiet**: la ventola GPIO si attiva a 70°C.
+* **3: Balanced**: la ventola GPIO si attiva a 67,5°C.
+* **2: Cool**: la ventola GPIO si attiva a 60°C.
+* **1: Performance**: la ventola GPIO si attiva a 50°C.
+* **0: Always On**: la ventola GPIO rimane sempre accesa.
 
-* Se colleghi il pin di controllo della ventola RGB a un altro pin del Raspberry Pi, puoi usare il seguente comando per modificarne il numero.
+* Se colleghi il pin di controllo della ventola GPIO a un altro pin del Raspberry Pi, puoi usare il seguente comando per modificarne il numero.
 
 .. code-block:: shell
 
@@ -199,4 +199,4 @@ Ad esempio, se imposti la modalità **1: Performance**, la ventola RGB si attive
 
 **Informazioni sulla ventola principale**
 
-La ventola principale si collega a una porta PWM a 4 pin dedicata sul Raspberry Pi 5. La sua strategia di controllo predefinita è uno schema di regolazione intelligente della velocità multilivello gestito dal firmware, basato sulla temperatura della CPU. Ciò significa che quando si utilizza una ventola PWM ufficiale o compatibile e la si collega correttamente, il sistema regolerà automaticamente la velocità della ventola in base alle variazioni di temperatura della CPU (iniziando a funzionare oltre i 50 °C) senza alcun intervento manuale da parte dell'utente.
+La ventola principale si collega a una porta PWM a 4 pin dedicata sul Raspberry Pi 5. La sua strategia di controllo predefinita è uno schema di regolazione intelligente della velocità multilivello gestito dal firmware, basato sulla temperatura della CPU. Ciò significa che quando si utilizza una ventola CPU ufficiale o compatibile e la si collega correttamente, il sistema regolerà automaticamente la velocità della ventola in base alle variazioni di temperatura della CPU (iniziando a funzionare oltre i 50 °C) senza alcun intervento manuale da parte dell'utente.

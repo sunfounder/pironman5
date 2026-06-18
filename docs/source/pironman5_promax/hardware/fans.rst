@@ -1,4 +1,4 @@
-
+﻿
 .. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
@@ -6,18 +6,18 @@
 Ventole
 ============
 
-Ventola PWM
+Ventola CPU
 ------------------------------
 
-Ci sono 3 ventole PWM sul Pironman 5 Pro MAX.
+Ci sono 3 Ventole CPU sul Pironman 5 Pro MAX.
 
-La ventola PWM sul Pironman 5 Pro MAX è controllata dal sistema Raspberry Pi.
+La ventola CPU sul Pironman 5 Pro MAX è controllata dal sistema Raspberry Pi.
 
-Per quanto riguarda le soluzioni di raffreddamento per il Raspberry Pi 5, specialmente sotto carico elevato, il design del Pironman 5 Pro MAX incorpora un sistema di raffreddamento intelligente. Dispone di una ventola PWM principale e due ventole RGB supplementari. La strategia di raffreddamento è strettamente integrata con il sistema di gestione termica del Raspberry Pi 5.
+Per quanto riguarda le soluzioni di raffreddamento per il Raspberry Pi 5, specialmente sotto carico elevato, il design del Pironman 5 Pro MAX incorpora un sistema di raffreddamento intelligente. Dispone di una ventola CPU principale e due ventole GPIO supplementari. La strategia di raffreddamento è strettamente integrata con il sistema di gestione termica del Raspberry Pi 5.
 
-Il funzionamento della ventola PWM si basa sulla temperatura del Raspberry Pi 5:
+Il funzionamento della ventola CPU si basa sulla temperatura del Raspberry Pi 5:
 
-* Sotto i 50°C, la ventola PWM rimane spenta (velocità 0%).
+* Sotto i 50°C, la ventola CPU rimane spenta (velocità 0%).
 * A 50°C, la ventola si avvia a bassa velocità (velocità 30%).
 * Raggiungendo i 60°C, la ventola aumenta a velocità media (velocità 50%).
 * A 67,5°C, la ventola accelera ad alta velocità (velocità 70%).
@@ -25,19 +25,19 @@ Il funzionamento della ventola PWM si basa sulla temperatura del Raspberry Pi 5:
 
 Questa relazione temperatura-velocità si applica anche quando la temperatura diminuisce, con un'isteresi di 5°C. La velocità della ventola si riduce quando la temperatura scende di 5°C al di sotto di ciascuna di queste soglie.
 
-* Comandi per monitorare la ventola PWM. Per controllare lo stato della ventola PWM:
+* Comandi per monitorare la ventola CPU. Per controllare lo stato della ventola CPU:
 
   .. code-block:: shell
 
     cat /sys/class/thermal/cooling_device0/cur_state
 
-* Per visualizzare la velocità della ventola PWM:
+* Per visualizzare la velocità della ventola CPU:
 
   .. code-block:: shell
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-Nel Pironman 5 Pro MAX, la ventola PWM è un componente critico per mantenere temperature operative ottimali, specialmente durante attività intensive, garantendo che il Raspberry Pi 5 funzioni in modo efficiente e affidabile.
+Nel Pironman 5 Pro MAX, la ventola CPU è un componente critico per mantenere temperature operative ottimali, specialmente durante attività intensive, garantendo che il Raspberry Pi 5 funzioni in modo efficiente e affidabile.
 
 **Specifiche della Ventola**
 

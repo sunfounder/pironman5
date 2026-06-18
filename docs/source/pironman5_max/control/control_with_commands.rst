@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -196,7 +196,7 @@ La scheda dispone di 4 LED RGB WS2812, con controllo personalizzabile. Puoi acce
 
 .. _cc_control_fan_max:
 
-Controllo delle Ventole GPIO
+Controllo delle ventole GPIO
 -----------------------------------
 La scheda di espansione IO supporta fino a due ventole 5V non-CPU. Entrambe le ventole sono controllate insieme.
 
@@ -223,14 +223,14 @@ Ad esempio, se impostata sulla modalità **1: Prestazioni**, le ventole GPIO si 
 * **1: Prestazioni**: Le ventole GPIO si attiveranno a 50°C.
 * **0: Sempre attive**: Le ventole GPIO rimarranno sempre accese.
 
-* Se colleghi il pin di controllo della ventola RGB a un pin GPIO diverso del Raspberry Pi, puoi cambiare il numero del pin con:
+* Se colleghi il pin di controllo della ventola GPIO a un pin GPIO diverso del Raspberry Pi, puoi cambiare il numero del pin con:
 
   .. code-block:: shell
 
      sudo pironman5 -gp 18
 
 
-Informazioni sulla Ventola CPU
+Informazioni sulla ventola CPU
 --------------------------------
 
 La ventola CPU si collega a una porta dedicata a 4 pin per ventola CPU sul Raspberry Pi 5.

@@ -1,4 +1,4 @@
-
+﻿
 .. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
@@ -127,4 +127,4 @@ C'è un menu delle impostazioni nell'**angolo in alto a destra** della pagina do
 
 **Ventola**
 
-Queste ventole si collegano a una porta dedicata per ventole PWM a 4 pin sul Raspberry Pi 5. La sua strategia di controllo predefinita è uno schema di regolazione della velocità intelligente a più livelli gestito dal firmware, basato sulla temperatura della CPU. Ciò significa che quando usi una ventola PWM ufficiale o compatibile e la colleghi correttamente, il sistema regolerà automaticamente la velocità della ventola in base alle variazioni della temperatura della CPU (iniziando a funzionare sopra i 50°C) senza alcun intervento manuale da parte tua.
+Queste ventole si collegano a una porta dedicata per ventole CPU a 4 pin sul Raspberry Pi 5. La sua strategia di controllo predefinita è uno schema di regolazione della velocità intelligente a più livelli gestito dal firmware, basato sulla temperatura della CPU. Ciò significa che quando usi una ventola CPU ufficiale o compatibile e la colleghi correttamente, il sistema regolerà automaticamente la velocità della ventola in base alle variazioni della temperatura della CPU (iniziando a funzionare sopra i 50°C) senza alcun intervento manuale da parte tua.
