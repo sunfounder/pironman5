@@ -22,7 +22,7 @@ If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your 
 
 .. _safe_shutdown_promax:
 
-Configuring Shutdown to Deactivate GPIO Power
+1. Configuring Shutdown to Deactivate GPIO Power
 ------------------------------------------------------------
 
 To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from remaining active post-shutdown, it's essential to configure the Raspberry Pi for GPIO power deactivation.
@@ -44,37 +44,33 @@ To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from 
 #. Save the changes. You will be prompted to reboot for the new settings to take effect.
 
 
-.. _promax_download_pironman5_module:
+.. _install_pironman5_module_promax:
 
-Downloading and Installing the ``pironman5`` Module
+2. Installing the ``pironman5`` Module
 -----------------------------------------------------------
 
-.. note::
+.. .. note::
 
-   For lite systems, initially install tools like ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
-   
-   .. code-block:: shell
-   
-      sudo apt-get install git -y
-      sudo apt-get install python3 python3-pip python3-setuptools -y
+..    For lite systems, initially install tools like ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
+
+..    .. code-block:: shell
+
+..       sudo apt-get install git -y
+..       sudo apt-get install python3 python3-pip python3-setuptools -y
 
 #. Download and install the ``pironman5`` module from GitHub.
-
-   .. tip::
-
-      If you are using **Ubuntu**, install ``curl`` first:
-
-      .. code-block:: shell
-
-         sudo apt install curl -y
 
    .. code-block:: shell
 
       curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
+
+
    .. note::
 
-      If you are using Pironman 5 series together with PiPower 5, run the following command instead:
+      1. If you are using **Ubuntu**, install ``curl`` first: ``sudo apt install curl -y``
+
+      2. If you are using Pironman 5 series together with **PiPower 5**, run the following command instead:
 
       .. code-block:: shell
 
@@ -97,23 +93,50 @@ Downloading and Installing the ``pironman5`` Module
 
 #. Once the installation is complete, reboot the Raspberry Pi as prompted. The first startup may take up to 30 seconds while the services initialize.
 
-   Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5 Pro MAX:
+   #. After Pironman 5 Pro MAX starts successfully, check whether the following components are working properly.
 
-   * The OLED screen displays CPU, RAM, Disk Usage, CPU Temperature, and the Raspberry Pi's IP Address.
-   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
+   * **OLED Screen**
 
-#. You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5.service``.
+     * Displays CPU usage, RAM usage, CPU temperature, and IP address.
+     * Turns off automatically after 10 seconds.
+     * Briefly press the power button to wake the screen or switch pages.
+
+   * **Power Button**
+
+     * Briefly press: Power on / wake up OLED / switch OLED page.
+     * Hold for 2 seconds: Safe shutdown (requires :ref:`safe_shutdown_promax`).
+     * Hold for 5 seconds: Force shutdown.
+
+   * **WS2812 RGB LEDs**
+
+     * Light up in blue with a breathing effect.
+
+   * **PWM Fans**
+
+     * Set to **Always On** mode by default.
+     * The working mode can be configured via commands or the Dashboard.
+
+   * **CPU Fan (Tower Cooler Fan)**
+
+     * Automatically adjusts speed based on CPU temperature.
+     * Default fan curve:
+
+       * < 50°C: Off (0%)
+       * 50°C+: Low (30%)
+       * 60°C+: Medium (50%)
+       * 67.5°C+: High (70%)
+       * 75°C+: Full speed (100%)
+
+#. Use ``systemctl`` to manage the ``pironman5.service``.
 
    .. code-block:: shell
 
       sudo systemctl restart pironman5.service
 
-   * ``restart``: Use this command to apply any changes made to the settings of Pironman 5 Pro MAX.
-   * ``start/stop``: Enable or disable the ``pironman5.service``.
-   * ``status``: Check the operational status of the ``pironman5`` program using the ``systemctl`` tool.
+   Replace ``restart`` with ``start``, ``stop``, or ``status`` as needed to manage the service.
 
 .. note::
 
-   At this point, you have successfully set up the Pironman 5 Pro MAX, and it is ready to use.
-   
-   For advanced control of its components, please refer to :ref:`control_commands_dashboard_promax`.
+   Pironman 5 Pro MAX is now ready to use.
+
+   For advanced controls and dashboard features, see :ref:`control_commands_dashboard_promax`.

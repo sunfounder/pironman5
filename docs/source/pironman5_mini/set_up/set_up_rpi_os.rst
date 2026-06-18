@@ -18,7 +18,9 @@ If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your 
   Before configuring, you need to boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
 
 
-Configuring Shutdown to Deactivate GPIO Power
+.. _safe_shutdown_mini:
+
+1. Configuring Shutdown to Deactivate GPIO Power
 ------------------------------------------------------------
 To prevent the RGB fan, powered by the Raspberry Pi GPIO, from remaining active post-shutdown, it's essential to configure the Raspberry Pi for GPIO power deactivation.
 
@@ -39,37 +41,33 @@ To prevent the RGB fan, powered by the Raspberry Pi GPIO, from remaining active 
 #. Save the changes. You will be prompted to reboot for the new settings to take effect.
 
 
-.. _mini_download_pironman5_module:
+.. _install_pironman5_module_mini:
 
-Downloading and Installing the ``pironman5`` Module
+2. Installing the ``pironman5`` Module
 -----------------------------------------------------------
 
-.. note::
+.. .. note::
 
-   For lite systems, initially install tools like ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
-   
-   .. code-block:: shell
-   
-      sudo apt-get install git -y
-      sudo apt-get install python3 python3-pip python3-setuptools -y
+..    For lite systems, initially install tools like ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
+
+..    .. code-block:: shell
+
+..       sudo apt-get install git -y
+..       sudo apt-get install python3 python3-pip python3-setuptools -y
 
 #. Download and install the ``pironman5`` module from GitHub.
-
-   .. tip::
-
-      If you are using **Ubuntu**, install ``curl`` first:
-
-      .. code-block:: shell
-
-         sudo apt install curl -y
 
    .. code-block:: shell
 
       curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
+
+
    .. note::
 
-      If you are using Pironman 5 series together with PiPower 5, run the following command instead:
+      1. If you are using **Ubuntu**, install ``curl`` first: ``sudo apt install curl -y``
+
+      2. If you are using Pironman 5 series together with **PiPower 5**, run the following command instead:
 
       .. code-block:: shell
 
@@ -92,24 +90,45 @@ Downloading and Installing the ``pironman5`` Module
 
 #. Once the installation is complete, reboot the Raspberry Pi as prompted. The first startup may take up to 30 seconds while the services initialize.
 
-   Upon reboot, the ``pironman5.service`` will start automatically. Here are the primary configurations for Pironman 5 Mini:
+   #. After Pironman 5 Mini starts successfully, check whether the following components are working properly.
 
-   * Four WS2812 RGB LEDs will light up in blue with a breathing mode.
-   * The RGB fans are set to **Always On** mode by default. For different activation temperatures, see :ref:`cc_control_fan_mini`.
+   * **Power Button**
 
-#. You can use the ``systemctl`` tool to ``start``, ``stop``, ``restart``, or check the ``status`` of ``pironman5.service``.
+     * Briefly press: Power on.
+     * Hold for 2 seconds: Safe shutdown (requires :ref:`safe_shutdown_mini`).
+     * Hold for 5 seconds: Force shutdown.
+
+   * **WS2812 RGB LEDs**
+
+     * Light up in blue with a breathing effect.
+
+   * **RGB Fan**
+
+     * Set to **Always On** mode by default.
+     * The working mode can be changed via commands or the Dashboard. See :ref:`cc_control_fan_mini`.
+
+   * **CPU Fan (Active Cooler Fan)**
+
+     * Automatically adjusts speed based on CPU temperature.
+     * Default fan curve:
+
+       * < 50°C: Off (0%)
+       * 50°C+: Low (30%)
+       * 60°C+: Medium (50%)
+       * 67.5°C+: High (70%)
+       * 75°C+: Full speed (100%)
+
+#. Use ``systemctl`` to manage the ``pironman5.service``.
 
    .. code-block:: shell
 
       sudo systemctl restart pironman5.service
 
-   * ``restart``: Use this command to apply any changes made to the settings of pironman 5 Mini.
-   * ``start/stop``: Enable or disable the ``pironman5.service``.
-   * ``status``: Check the operational status of the ``pironman5`` program using the ``systemctl`` tool.
+   Replace ``restart`` with ``start``, ``stop``, or ``status`` as needed to manage the service.
 
 .. note::
 
-   At this point, you have successfully set up the Pironman 5 Mini, and it is ready to use.
-   
-   For advanced control of its components, please refer to :ref:`control_commands_dashboard_mini`.
+   Pironman 5 Mini is now ready to use.
+
+   For advanced controls and dashboard features, see :ref:`control_commands_dashboard_mini`.
 
