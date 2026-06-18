@@ -24,7 +24,7 @@ Si vous avez installé Raspberry Pi OS, Ubuntu, Kali Linux ou Homebridge sur vot
 .. _safe_shutdown_promax:
 
 1. Configuration de l'arrêt pour désactiver l'alimentation GPIO
-------------------------------------------------------------
+-----------------------------------------------------------------
 
 Pour éviter que l'écran OLED et les ventilateurs RGB, alimentés par le GPIO du Raspberry Pi, ne restent actifs après l'arrêt, il est essentiel de configurer le Raspberry Pi pour désactiver l'alimentation GPIO.
 
