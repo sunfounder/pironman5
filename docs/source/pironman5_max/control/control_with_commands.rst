@@ -63,63 +63,63 @@ Usa ``pironman5`` o ``pironman5 -h`` per le istruzioni.
 
 .. code-block::
 
+    usage: pironman5 [-h] [-v] [-c] [-drd [DATABASE_RETENTION_DAYS]] [-dl [{DEBUG,INFO,WARNING,ERROR,CRITICAL,debug,info,warning,error,critical}]] [-rd] [-cp [CONFIG_PATH]] [-eh [ENABLE_HISTORY]] [-re [RGB_ENABLE]] [-rs [RGB_STYLE]]
+                    [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]] [-rp [RGB_SPEED]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]] [-fl [GPIO_FAN_LED]] [-fp [GPIO_FAN_LED_PIN]] [-oe [OLED_ENABLE]] [-or [{0,180}]]
+                    [-op [OLED_PAGES]] [-os [OLED_SLEEP_TIMEOUT]]
+                    {start,stop,launch-browser} ...
 
-  usage: pironman5-service [-h] [-v] [-c] [-dl [{debug,info,warning,error,critical}]] [--background [BACKGROUND]] [-rd] [-cp [CONFIG_PATH]] [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]]
-                          [-rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]] [-rp [RGB_SPEED]] [-re [RGB_ENABLE]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]] [-oe [OLED_ENABLE]]
-                          [-od [OLED_DISK]] [-oi [OLED_NETWORK_INTERFACE]] [-or [{0,180}]]
-                          [{start,restart,stop}]
+    Interfaccia a riga di comando Pironman 5 Max
 
-  Interfaccia a riga di comando Pironman 5 MAX
+    opzioni:
+      -h, --help            mostra questo messaggio di aiuto ed esci
+      -v, --version         Mostra la versione
+      -c, --config          Mostra la configurazione
+      -drd, --database-retention-days [DATABASE_RETENTION_DAYS]
+                            Giorni di conservazione del database
+      -dl, --debug-level [{DEBUG,INFO,WARNING,ERROR,CRITICAL,debug,info,warning,error,critical}]
+                            Livello di debug
+      -rd, --remove-dashboard
+                            Rimuovi dashboard
+      -cp, --config-path [CONFIG_PATH]
+                            Percorso configurazione
+      -eh, --enable-history [ENABLE_HISTORY]
+                            Abilita cronologia, True/true/on/On/1 o False/false/off/Off/0
+      -re, --rgb-enable [RGB_ENABLE]
+                            Abilita RGB True/False
+      -rs, --rgb-style [RGB_STYLE]
+                            Stile RGB: ['solid', 'breathing', 'flow', 'flow_reverse', 'rainbow', 'rainbow_reverse', 'hue_cycle']
+      -rc, --rgb-color [RGB_COLOR]
+                            Colore RGB in formato esadecimale senza # (es. 00aabb)
+      -rb, --rgb-brightness [RGB_BRIGHTNESS]
+                            Luminosità RGB 0-100
+      -rp, --rgb-speed [RGB_SPEED]
+                            Velocità RGB 0-100
+      -rl, --rgb-led-count [RGB_LED_COUNT]
+                            Numero LED RGB (intero)
+      -u, --temperature-unit [{C,F}]
+                            Unità di temperatura
+      -gm, --gpio-fan-mode [GPIO_FAN_MODE]
+                            Modalità ventola GPIO, 0: Sempre attiva, 1: Prestazioni, 2: Fresco, 3: Bilanciato, 4: Silenzioso
+      -gp, --gpio-fan-pin [GPIO_FAN_PIN]
+                            Pin ventola GPIO
+      -fl, --gpio-fan-led [GPIO_FAN_LED]
+                            Stato LED ventola GPIO on/off/follow
+      -fp, --gpio-fan-led-pin [GPIO_FAN_LED_PIN]
+                            Pin LED ventola GPIO
+      -oe, --oled-enable [OLED_ENABLE]
+                            Abilita OLED True/true/on/On/1 o False/false/off/Off/0
+      -or, --oled-rotation [{0,180}]
+                            Ruota display OLED, 0, 180
+      -op, --oled-pages [OLED_PAGES]
+                            Pagine OLED, separate da ',': mix,performance,ips,disk
+      -os, --oled-sleep-timeout [OLED_SLEEP_TIMEOUT]
+                            Timeout sospensione OLED in secondi
 
-  argomenti posizionali:
-    {start,restart,stop}  Comando
-
-  opzioni:
-    -h, --help            Mostra questo messaggio di aiuto ed esci
-    -v, --version         Mostra la versione
-    -c, --config          Mostra la configurazione
-    -drd, --database-retention-days [DATABASE_RETENTION_DAYS]
-                          Giorni di conservazione del database
-    -dl, --debug-level [{DEBUG,INFO,WARNING,ERROR,CRITICAL,debug,info,warning,error,critical}]
-                          Livello di debug
-    -rd, --remove-dashboard
-                          Rimuovi dashboard
-    -cp, --config-path [CONFIG_PATH]
-                          Percorso configurazione
-    -eh, --enable-history [ENABLE_HISTORY]
-                          Abilita cronologia, True/true/on/On/1 o False/false/off/Off/0
-    -re, --rgb-enable [RGB_ENABLE]
-                          Abilita RGB True/False
-    -rs, --rgb-style [RGB_STYLE]
-                          Stile RGB: ['solid', 'breathing', 'flow', 'flow_reverse', 'rainbow', 'rainbow_reverse', 'hue_cycle']
-    -rc, --rgb-color [RGB_COLOR]
-                          Colore RGB in formato esadecimale senza # (es. 00aabb)
-    -rb, --rgb-brightness [RGB_BRIGHTNESS]
-                          Luminosità RGB 0-100
-    -rp, --rgb-speed [RGB_SPEED]
-                          Velocità RGB 0-100
-    -rl, --rgb-led-count [RGB_LED_COUNT]
-                          Numero LED RGB (intero)
-    -u, --temperature-unit [{C,F}]
-                          Unità di temperatura
-    -gm, --gpio-fan-mode [GPIO_FAN_MODE]
-                          Modalità ventola GPIO, 0: Sempre attiva, 1: Prestazioni, 2: Fresco, 3: Bilanciato, 4: Silenzioso
-    -gp, --gpio-fan-pin [GPIO_FAN_PIN]
-                          Pin ventola GPIO
-    -oe, --oled-enable [OLED_ENABLE]
-                          Abilita OLED True/true/on/On/1 o False/false/off/Off/0
-    -or, --oled-rotation [{0,180}]
-                          Ruota display OLED, 0, 180
-    -op, --oled-pages [OLED_PAGES]
-                          Pagine OLED, separate da ',': mix,performance,ips,disk
-    -os, --oled-sleep-timeout [OLED_SLEEP_TIMEOUT]
-                          Timeout sospensione OLED in secondi
-
-  Sottocomandi:
-    {start,stop,launch-browser}
-      start               Avvia Pironman5
-      stop                Ferma Pironman5
-      launch-browser      Avvia browser
+    Sottocomandi:
+      {start,stop,launch-browser}
+        start               Avvia Pironman5
+        stop                Ferma Pironman5
+        launch-browser      Avvia browser
 
 .. note::
 

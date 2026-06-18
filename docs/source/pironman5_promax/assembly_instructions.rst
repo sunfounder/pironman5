@@ -15,4 +15,4 @@ Prima di assemblare il Pironman, verifica innanzitutto che tutte le parti e i co
 * Prima dell'installazione, ordina e impila i componenti per trovarli più rapidamente.
 * Controlla ripetutamente i collegamenti dei cavi FPC per evitare contatti scadenti.
 
-* :download:`[PDF]Elenco Componenti e Assemblaggio di Pironman 5 Pro MAX <Pironman5ProMAX.pdf>`
+* :download:`[PDF]Elenco Componenti e Assemblaggio di Pironman 5 Pro MAX <Pironman5ProMAXV12.pdf>`

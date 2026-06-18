@@ -9,12 +9,14 @@ FAQ
 Risoluzione rapida dei problemi
 -------------------------------
 
+* Pulsante di accensione non funziona → :ref:`faq_power_button_not_work_5`
 * Schermo OLED non funziona → :ref:`faq_oled_5`
 * LED RGB non funzionano → :ref:`faq_rgb_5`
 * Ventole GPIO non funzionano → :ref:`faq_gpio_fans_5`
 * Ventola CPU non gira → :ref:`faq_pwm_fan_5`
 * Dashboard non mostra dati → :ref:`faq_dashboard_5`
 * SSD NVMe non rilevato → :ref:`faq_nvme_5`
+* SSD NVMe rilevato ma causa riavvio del sistema → :ref:`faq_nvme_link_down_5`
 
 
 
@@ -55,6 +57,27 @@ Il pulsante di accensione estende il pulsante originale del Raspberry Pi 5 e si 
     :align: center
 
 .. end_faq_power_button
+
+
+.. _faq_power_button_not_work_5:
+
+Il pulsante di accensione non funziona?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_power_button_not_work
+
+#. Per prima cosa, conferma il comportamento previsto del pulsante di accensione:
+
+   * **Raspberry Pi OS Desktop**: Premi il pulsante di accensione due volte rapidamente per spegnere. Tieni premuto 5 secondi per forzare lo spegnimento. Premi una volta per accendere dallo stato di spegnimento.
+   * **Raspberry Pi OS Lite**: Premi il pulsante di accensione una volta per spegnere. Tieni premuto 5 secondi per forzare lo spegnimento. Premi una volta per accendere.
+
+#. Verifica che i pin del convertitore di alimentazione siano correttamente allineati con i pad J2 del Raspberry Pi 5 (tra il connettore della batteria RTC e il bordo della scheda).
+
+#. Verifica che i pin all'interno della presa del convertitore di alimentazione siano correttamente allineati con il connettore del pulsante di accensione. Ricollega il cavo del pulsante di accensione se necessario.
+
+#. Usa un cacciavite per cortocircuitare brevemente i due pin sulla presa del convertitore di alimentazione dove si collega il pulsante. Se il Pi si accende, il pulsante stesso potrebbe essere difettoso; in caso contrario, il problema probabilmente riguarda la scheda del convertitore o la connessione al Pi 5.
+
+.. end_faq_power_button_not_work
 
 
 Direzione del flusso d'aria
@@ -560,6 +583,8 @@ Il modulo NVMe PIP non funziona?
 
 .. start_faq_nvme_pip
 
+#. Assicurati che il tuo SSD NVMe sia compatibile. Fai riferimento all'elenco degli :ref:`SSD NVMe compatibili <compitable_nvme_ssd_5>` per verificare unita stabili e compatibili. degli :ref:`SSD NVMe compatibili <compitable_nvme_ssd_5>` per unit� verificate, stabili e compatibili.
+
 #. Assicurati che il cavo FPC che collega il modulo NVMe PIP al Raspberry Pi 5 sia fissato saldamente.
 
    .. raw:: html
@@ -599,7 +624,7 @@ Il modulo NVMe PIP non funziona?
    .. image:: img/nvme_pip_leds.png
 
    * Se il **LED PWR** è acceso ma il **LED STA** non lampeggia, l'SSD NVMe non è riconosciuto.
-   * Se il **LED PWR** è spento, cortocircuita i pin ``Force Enable`` (J4).
+   * Se il **LED PWR** è spento, cortocircuita i pin ``Force Enable`` (J4). Se il **LED PWR** si accende dopo il cortocircuito, il problema potrebbe essere un cavo FPC allentato o una configurazione di sistema non supportata per NVMe.
 
      .. image:: img/nvme_pip_j4.png
 
@@ -618,6 +643,51 @@ Il modulo NVMe PIP non funziona?
       cat /var/log/pironman5/pironman5.log
 
 .. end_faq_nvme_pip
+
+
+.. _faq_nvme_link_down_5:
+
+SSD NVMe rilevato ma causa riavvio del sistema in lettura/scrittura?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_nvme_link_down
+
+In alcuni casi (specialmente con WD Blue SN5000), l'SSD NVMe pu�essere rilevato dal Raspberry Pi 5 ma causare il riavvio del sistema durante le operazioni di lettura/scrittura. Si tratta di un problema di compatibilit�/stabilit� PCIe tra l'SSD e il Raspberry Pi 5, **non** un difetto hardware del Pironman 5.
+
+Prova i seguenti passaggi per risolvere il problema:
+
+#. Aggiorna il bootloader del Raspberry Pi 5 all'ultima versione:
+
+   .. code-block:: shell
+
+      sudo rpi-eeprom-update -a
+      sudo reboot
+
+#. Forza la velocit� PCIe Gen3 aggiungendo la seguente riga a ``/boot/firmware/config.txt``:
+
+   .. code-block:: text
+
+      dtparam=pciex1_gen=3
+
+#. Disabilita ASPM (Active State Power Management) aggiungendo ``pcie_aspm=off`` alla riga di comando del kernel. Modifica ``/boot/firmware/cmdline.txt`` e aggiungilo alla riga esistente (**non** creare una nuova riga):
+
+   .. code-block:: text
+
+      pcie_aspm=off
+
+   .. note::
+
+      ``pcie_aspm=off`` spesso rappresenta la soluzione critica — i problemi ASPM PCIe sono molto comuni sul Raspberry Pi 5 e possono causare la disconnessione casuale degli NVMe o il riavvio del sistema durante I/O intensivi.
+
+#. Dopo aver applicato le modifiche sopra, riavvia il Raspberry Pi:
+
+   .. code-block:: shell
+
+      sudo reboot
+
+#. Se il problema persiste, ripartiziona e riformatta l'SSD NVMe, poi reinstalla il sistema operativo.
+
+.. end_faq_nvme_link_down
 
 
 Come cambiare l'ordine di avvio del Raspberry Pi usando i comandi

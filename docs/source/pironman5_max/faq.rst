@@ -9,12 +9,14 @@ FAQ
 Risoluzione rapida dei problemi
 -------------------------------
 
+* Pulsante di accensione non funziona → :ref:`faq_power_button_not_work_max`
 * Schermo OLED non funziona → :ref:`faq_oled_max`
 * LED RGB non funzionano → :ref:`faq_rgb_max`
 * Ventole GPIO non funzionano → :ref:`faq_gpio_fans_max`
 * Ventola CPU non gira → :ref:`faq_pwm_fan_max`
 * Dashboard non mostra dati → :ref:`faq_dashboard_max`
 * SSD NVMe non rilevato → :ref:`faq_nvme_max`
+* SSD NVMe rilevato ma causa riavvio del sistema → :ref:`faq_nvme_link_down_max`
 
 
 
@@ -40,6 +42,17 @@ Pulsante di accensione
    :start-after: start_faq_power_button
    :end-before: end_faq_power_button
 
+
+.. _faq_power_button_not_work_max:
+
+Pulsante di accensione non funziona?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_power_button_not_work
+   :end-before: end_faq_power_button_not_work
+
+
 Estremità dei tubi di rame sul dissipatore a torre
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -51,9 +64,17 @@ Estremità dei tubi di rame sul dissipatore a torre
 Raspberry Pi AI HAT+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../pironman5/faq.rst
-   :start-after: start_faq_ai_hat
-   :end-before: end_faq_ai_hat
+Il Raspberry Pi AI HAT+ non è compatibile con il Pironman 5 MAX.
+
+.. image:: img/output3.png
+    :width: 400
+
+Il Raspberry Pi AI Kit combina il Raspberry Pi M.2 HAT+ con il modulo acceleratore AI Hailo.
+
+.. image:: img/output2.jpg
+    :width: 400
+
+Puoi staccare il modulo acceleratore AI Hailo dal Raspberry Pi AI Kit e inserirlo direttamente nel modulo NVMe PIP del Pironman 5 MAX.
 
 Posso usare la funzione di interruttore a vibrazione del Pironman5 Max?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -95,7 +116,7 @@ Lo schermo OLED non funziona?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. |link_compatible_systems| replace:: :ref:`com_os_max`
-.. |link_set_up_pironman5| replace:: :ref:`max_set_up_pironman5`
+.. |link_set_up_pironman5| replace:: :ref:`set_up_pironman5_max`
 
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_oled
@@ -185,6 +206,12 @@ Il PI5 non si avvia (LED rosso)?
 Il modulo NVMe PIP non funziona?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. |link_install_the_os_dual| replace:: :ref:`install_the_os_max`
+
+.. start_faq_nvme_pip_dual
+
+#. Conferma che il tuo SSD NVMe sia compatibile. Fai riferimento alla :ref:`lista degli SSD NVMe compatibili <compitable_nvme_ssd_5>` per unità verificate, stabili e compatibili.
+
 #. Assicurati che il cavo FPC che collega il modulo NVMe PIP al Raspberry Pi 5 sia fissato saldamente.
 
    .. raw:: html
@@ -209,7 +236,7 @@ Il modulo NVMe PIP non funziona?
 
 #. Controlla lo stato dei LED del modulo NVMe PIP:
 
-   Dopo aver verificato tutti i collegamenti, accendi il Pironman 5 MAX e osserva i due indicatori sul modulo NVMe PIP:
+   Dopo aver verificato tutti i collegamenti, accendi il dispositivo e osserva i due indicatori sul modulo NVMe PIP:
 
    * **LED PWR**: Dovrebbe essere acceso.
    * **LED STA**: Dovrebbe lampeggiare per indicare il normale funzionamento.
@@ -222,13 +249,26 @@ Il modulo NVMe PIP non funziona?
    .. image:: img/dual_nvme_pip_j4.png
 
 
-#. Verifica che il tuo SSD NVMe abbia un sistema operativo correttamente installato. Vedi: :ref:`install_the_os_max`.
+#. Verifica che il tuo SSD NVMe abbia un sistema operativo correttamente installato. Vedi |link_install_the_os_dual|.
+
+.. end_faq_nvme_pip_dual
 
 #. Se il problema persiste, inviaci il seguente file di log:
 
    .. code-block:: shell
 
       cat /var/log/pironman5/pironman5.log
+
+
+.. _faq_nvme_link_down_max:
+
+SSD NVMe rilevato ma causa riavvio del sistema in lettura/scrittura?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_nvme_link_down
+   :end-before: end_faq_nvme_link_down
+
 
 Come cambiare l'ordine di avvio del Raspberry Pi usando i comandi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

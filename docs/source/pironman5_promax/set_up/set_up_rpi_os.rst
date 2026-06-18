@@ -1,11 +1,13 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
+
+
 
 .. _promax_set_up_pi_os:
 
 Configurazione su Raspberry Pi/Ubuntu/Kali/Homebridge OS
-==============================================================================
+==========================================================
 
 .. image:: ../img/Pironman-5-Pro-Max.png
     :width: 400
@@ -17,10 +19,13 @@ Se hai installato Raspberry Pi OS, Ubuntu, Kali Linux o Homebridge sul tuo Raspb
 
   Prima di configurare, devi avviare e accedere al tuo Raspberry Pi. Se non sei sicuro di come accedere, puoi visitare il sito web ufficiale di Raspberry Pi: |link_rpi_get_start|.
 
-Configurazione dello Spegnimento per Disattivare l'Alimentazione GPIO
-------------------------------------------------------------------------------------
 
-Per evitare che lo schermo OLED e le ventole GPIO, alimentati dal GPIO del Raspberry Pi, rimangano attivi dopo lo spegnimento, è essenziale configurare il Raspberry Pi per la disattivazione dell'alimentazione GPIO.
+.. _safe_shutdown_promax:
+
+Configurazione dello Spegnimento per Disattivare l'Alimentazione GPIO
+-----------------------------------------------------------------------------
+
+Per evitare che lo schermo OLED e le ventole RGB, alimentati dal GPIO del Raspberry Pi, rimangano attivi dopo lo spegnimento, è essenziale configurare il Raspberry Pi per la disattivazione dell'alimentazione GPIO.
 
 #. Apri lo strumento di configurazione EEPROM:
 
@@ -38,30 +43,59 @@ Per evitare che lo schermo OLED e le ventole GPIO, alimentati dal GPIO del Raspb
 
 #. Salva le modifiche. Ti verrà chiesto di riavviare per rendere effettive le nuove impostazioni.
 
-.. _install_pironman5_module_promax:
+
+.. _promax_download_pironman5_module:
 
 Scaricare e Installare il Modulo ``pironman5``
 -----------------------------------------------------------
 
 .. note::
 
-   Per i sistemi lite, installa inizialmente strumenti come ``git``, ``python3``, ``pip3``, ``setuptools``, ecc.
+   Per i sistemi Lite, installa inizialmente strumenti come ``git``, ``python3``, ``pip3``, ``setuptools``, ecc.
 
    .. code-block:: shell
 
       sudo apt-get install git -y
       sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. Procedi a scaricare il codice da GitHub e installare il modulo ``pironman5``.
+#. Scarica e installa il modulo ``pironman5`` da GitHub.
+
+   .. tip::
+
+      Se stai usando **Ubuntu**, installa ``curl`` prima:
+
+      .. code-block:: shell
+
+         sudo apt install curl -y
 
    .. code-block:: shell
 
-      cd ~
-      git clone -b pro-max https://github.com/sunfounder/pironman5.git --depth 1
-      cd ~/pironman5
-      sudo python3 install.py
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
-   Dopo l'installazione riuscita, è necessario un riavvio del sistema per attivare l'installazione. Segui il prompt di riavvio sullo schermo.
+   .. note::
+
+      Se stai usando la serie Pironman 5 insieme a PiPower 5, esegui invece il seguente comando:
+
+      .. code-block:: shell
+
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+
+#. Dopo aver eseguito l'installer, seleziona il tuo modello di Pironman 5 (1~4).
+
+   .. code-block:: shell
+
+      Pironman 5 Installer v1.0.1
+      Supporta: 5 | 5 Mini | 5 Max | 5 Pro Max
+
+      Seleziona il modello del tuo prodotto:
+      1) Pironman 5
+      2) Pironman 5 Mini
+      3) Pironman 5 Max
+      4) Pironman 5 Pro Max
+
+      Inserisci il numero [1-4]:
+
+#. Una volta completata l'installazione, riavvia il Raspberry Pi come richiesto. Il primo avvio potrebbe richiedere fino a 30 secondi mentre i servizi si inizializzano.
 
    Al riavvio, il ``pironman5.service`` si avvierà automaticamente. Ecco le configurazioni principali per Pironman 5 Pro MAX:
 

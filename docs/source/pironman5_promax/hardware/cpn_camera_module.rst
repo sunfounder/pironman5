@@ -1,7 +1,8 @@
-
 .. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
+
+
 
 .. _cpn_camera_module:
 
@@ -39,6 +40,18 @@ La scheda è piccola, circa 25mm x 23mm x 9mm, e pesa 3g, rendendola ideale per 
 Sul modulo fotocamera o sul Raspberry Pi, troverai un connettore di plastica piatto. Tira fuori con cura l'interruttore di fissaggio nero finché non è parzialmente estratto. Inserisci il cavo FFC nel connettore di plastica nella direzione mostrata e spingi l'interruttore di fissaggio di nuovo in posizione.
 
 Se il cavo FFC è installato correttamente, sarà dritto e non si sfilerà quando lo tiri delicatamente. In caso contrario, reinstalla di nuovo.
+
+.. raw:: html
+
+    <div style="text-align: center; margin: 16px 0;">
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/riUNPxS7sHs"
+            title="Pironman 5 Pro MAX Camera Module Assembly"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
 
 .. image:: img/connect_ffc.png
 

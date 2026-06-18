@@ -130,18 +130,28 @@ La pagina Impostazioni ti permette di personalizzare l'aspetto della Dashboard, 
 
 * **Ventole GPIO**
 
-  Configura la modalità operativa delle due ventole GPIO.
+  Configura la modalità operativa e il comportamento dei LED delle due ventole GPIO.
 
   .. image:: img/dashboard_setting_fan.png
       :width: 600
 
-  La modalità selezionata determina quando le ventole GPIO si attiveranno.
+  * **LED ventola**
 
-  * **Silenzioso**: Le ventole GPIO si attiveranno a 70°C.
-  * **Bilanciato**: Le ventole GPIO si attiveranno a 67,5°C.
-  * **Fresco**: Le ventole GPIO si attiveranno a 60°C.
-  * **Prestazioni**: Le ventole GPIO si attiveranno a 50°C.
-  * **Sempre attive**: Le ventole GPIO rimarranno sempre attive.
+    Controlla il comportamento dell'illuminazione RGB delle ventole GPIO.
+
+    * **ON**: I LED della ventola rimangono sempre accesi.
+    * **OFF**: I LED della ventola rimangono spenti.
+    * **FOLLOW**: I LED della ventola seguono gli effetti di illuminazione RGB del sistema.
+
+  * **Modalità ventole GPIO**
+
+    La modalità selezionata determina quando le ventole GPIO si attiveranno.
+
+    * **Silenzioso**: Le ventole GPIO si attiveranno a 70°C.
+    * **Bilanciato**: Le ventole GPIO si attiveranno a 67,5°C.
+    * **Fresco**: Le ventole GPIO si attiveranno a 60°C.
+    * **Prestazioni**: Le ventole GPIO si attiveranno a 50°C.
+    * **Sempre attive**: Le ventole GPIO rimarranno sempre attive.
 
 
 * **Sistema**

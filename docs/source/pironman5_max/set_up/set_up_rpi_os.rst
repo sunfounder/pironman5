@@ -60,6 +60,14 @@ Per evitare che lo schermo OLED e le ventole GPIO, alimentate dal GPIO del Raspb
 
 #. Scarica e installa il modulo ``pironman5`` da GitHub.
 
+   .. tip::
+
+      Se stai usando **Ubuntu**, installa prima ``curl``:
+
+      .. code-block:: shell
+
+         sudo apt install curl -y
+
    .. code-block:: shell
 
       curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
