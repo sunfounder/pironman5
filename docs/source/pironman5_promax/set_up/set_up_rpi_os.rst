@@ -21,7 +21,7 @@ Wenn Sie Raspberry Pi OS, Ubuntu, Kali Linux oder Homebridge auf Ihrem Raspberry
 .. _safe_shutdown_promax:
 
 1. Konfiguration des Herunterfahrens zur Deaktivierung der GPIO-Stromversorgung
-------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 Um zu verhindern, dass der OLED-Bildschirm und die RGB-Lüfter, die über die GPIOs des Raspberry Pi mit Strom versorgt werden, nach dem Herunterfahren aktiv bleiben, ist es wichtig, den Raspberry Pi für die Deaktivierung der GPIO-Stromversorgung zu konfigurieren.
 

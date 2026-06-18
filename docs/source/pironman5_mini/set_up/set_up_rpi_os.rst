@@ -21,7 +21,7 @@ Wenn du Raspberry Pi OS, Ubuntu, Kali Linux oder Homebridge auf deinem Raspberry
 .. _safe_shutdown_mini:
 
 1. Konfiguration des Herunterfahrens zur Deaktivierung der GPIO-Stromversorgung
-------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 Um zu verhindern, dass der über den GPIO des Raspberry Pi gespeiste RGB-Lüfter nach dem Herunterfahren weiterläuft, ist es wichtig, den Raspberry Pi so zu konfigurieren, dass die GPIO-Stromversorgung deaktiviert wird.
 
