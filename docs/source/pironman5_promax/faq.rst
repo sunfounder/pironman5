@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -159,7 +159,7 @@ Se desideri impostare il monitor HDMI come schermo principale all'avvio:
 Ventola Non Funzionante / Non Può Essere Controllata?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Il Pro MAX adotta la soluzione ufficiale di controllo ventola PWM del Raspberry Pi. Tutte e tre le ventole di raffreddamento sono controllate direttamente dal sistema Raspberry Pi e non dipendono dal servizio pironman5 (pertanto, non vedrai opzioni di controllo della ventola nello strumento a riga di comando o nella Dashboard).
+Il Pro MAX adotta la soluzione ufficiale di controllo Ventola CPU del Raspberry Pi. Tutte e tre le ventole di raffreddamento sono controllate direttamente dal sistema Raspberry Pi e non dipendono dal servizio pironman5 (pertanto, non vedrai opzioni di controllo della ventola nello strumento a riga di comando o nella Dashboard).
 
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_pwm_fan
