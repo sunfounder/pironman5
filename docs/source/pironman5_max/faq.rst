@@ -25,6 +25,8 @@ Schnelle Fehlerbehebung
    :start-after: start_faq_com_os
    :end-before: end_faq_com_os
 
+.. |link_safe_shutdown| replace:: :ref:`safe_shutdown_max`
+
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_power_button
    :end-before: end_faq_power_button
