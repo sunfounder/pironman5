@@ -17,4 +17,4 @@ Pironmanを組み立てる前に、まずすべての部品とコンポーネン
 * 組み立て前に、コンポーネントを分類して積み重ねておくと、より素早く見つけることができます。
 * FPCケーブルの接続は、接触不良を避けるために繰り返し確認してください。
 
-* :download:`[PDF]Pironman 5 Pro MAXの部品リストと組み立て <Pironman5ProMAX.pdf>`
+* :download:`[PDF]Pironman 5 Pro MAXの部品リストと組み立て <Pironman5ProMAXV12.pdf>`

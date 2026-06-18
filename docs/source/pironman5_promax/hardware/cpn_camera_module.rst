@@ -47,6 +47,17 @@
 
 FFC ケーブルが正しく取り付けられている場合、ケーブルはまっすぐになり、軽く引っ張っても抜けません。そうでない場合は、再度取り付け直してください。
 
+.. raw:: html
+
+    <div style="text-align: center; margin: 16px 0;">
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/riUNPxS7sHs"
+            title="Pironman 5 Pro MAX Camera Module Assembly"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
 
 .. image:: img/connect_ffc.png
 

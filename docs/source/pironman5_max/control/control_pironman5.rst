@@ -20,5 +20,5 @@ Pironman 5 の状態監視や制御は、コマンドラインまたはウェブ
 .. toctree::
     :maxdepth: 1
 
-    control_with dashboard 
+    control_with_dashboard
     control_with_commands

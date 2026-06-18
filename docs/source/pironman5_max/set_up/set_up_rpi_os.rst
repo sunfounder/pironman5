@@ -60,6 +60,14 @@ Raspberry PiのGPIOによって電力供給されているOLEDディスプレイ
 
 #. GitHubから ``pironman5`` モジュールをダウンロードしてインストールします。
 
+   .. tip::
+
+      **Ubuntu** を使用している場合は、先に ``curl`` をインストールしてください：
+
+      .. code-block:: shell
+
+         sudo apt install curl -y
+
    .. code-block:: shell
 
       curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash

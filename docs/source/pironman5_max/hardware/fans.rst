@@ -13,7 +13,7 @@ CPUファン
 
 Pironman 5 MAX に搭載された PWM ファンは、Raspberry Pi システムによって制御されています。
 
-Raspberry Pi 5 を高負荷で運用する際の冷却対策として、Pironman 5 MAX にはスマートな冷却システムが採用されています。メインの PWM ファンに加え、補助として2基の RGB ファンを搭載。冷却設計は Raspberry Pi 5 の熱管理機構と密接に連携しています。
+Raspberry Pi 5 を高負荷で運用する際の冷却対策として、Pironman 5 MAX にはスマートな冷却システムが採用されています。メインの PWM ファンに加え、補助として2基の GPIO ファンを搭載。冷却設計は Raspberry Pi 5 の熱管理機構と密接に連携しています。
 
 PWM ファンは Raspberry Pi 5 の温度に応じて動作します：
 

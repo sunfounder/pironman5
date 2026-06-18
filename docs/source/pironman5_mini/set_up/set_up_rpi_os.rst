@@ -19,7 +19,7 @@ Raspberry PiにRaspberry Pi OS、Ubuntu、Kali Linux、またはHomebridgeをイ
 
 GPIO電源を停止時に無効化する設定
 ------------------------------------------------------------
-Raspberry PiのGPIOによって電力供給されているRGBファンがシャットダウン後も動作し続けるのを防ぐために、GPIO電源を停止時に無効化する設定を行う必要があります。
+Raspberry PiのGPIOによって電力供給されているGPIOファンがシャットダウン後も動作し続けるのを防ぐために、GPIO電源を停止時に無効化する設定を行う必要があります。
 
 #. EEPROM設定ツールを開きます：
 
@@ -51,21 +51,49 @@ Raspberry PiのGPIOによって電力供給されているRGBファンがシャ�
       sudo apt-get install git -y
       sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. GitHubからコードをダウンロードし、 ``pironman5`` モジュールをインストールします。
+#. GitHub から ``pironman5`` モジュールをダウンロードしてインストールします。
+
+   .. tip::
+
+      **Ubuntu** を使用している場合は、最初に ``curl`` をインストールしてください：
+
+      .. code-block:: shell
+
+         sudo apt install curl -y
 
    .. code-block:: shell
 
-      cd ~
-      git clone -b mini https://github.com/sunfounder/pironman5.git --depth 1
-      cd ~/pironman5
-      sudo python3 install.py
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
-   インストールが完了すると、システムの再起動が必要です。画面の指示に従って再起動を行ってください。
+   .. note::
 
-   再起動後、 ``pironman5.service`` が自動的に起動します。Pironman 5 Miniの主な初期設定は以下の通りです：
-   
+      Pironman 5 シリーズを PiPower 5 と併用している場合は、代わりに以下のコマンドを実行してください：
+
+      .. code-block:: shell
+
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+
+#. インストーラーを実行した後、Pironman 5 モデル（1〜4）を選択します。
+
+   .. code-block:: shell
+
+      Pironman 5 Installer v1.0.1
+      Supports: 5 | 5 Mini | 5 Max | 5 Pro Max
+
+      Please select your product model:
+      1) Pironman 5
+      2) Pironman 5 Mini
+      3) Pironman 5 Max
+      4) Pironman 5 Pro Max
+
+      Enter number [1-4]:
+
+#. インストールが完了したら、画面の指示に従って Raspberry Pi を再起動します。最初の起動時は、サービスが初期化されるまで最大30秒かかる場合があります。
+
+   再起動後、 ``pironman5.service`` が自動的に起動します。Pironman 5 Mini の主な初期設定は以下の通りです：
+
    * 4つのWS2812 RGB LEDが青色の呼吸モードで点灯します。
-   * RGBファンはデフォルトで **常時オン** モードに設定されています。異なる作動温度の設定については、:ref:`cc_control_fan_mini` を参照してください。
+   * GPIOファンはデフォルトで **常時オン** モードに設定されています。異なる作動温度の設定については、:ref:`cc_control_fan_mini` を参照してください。
 
 #. ``systemctl`` ツールを使用して、 ``pironman5.service`` を ``start``、 ``stop``、 ``restart``、または ``status`` で操作できます。
 

@@ -22,5 +22,5 @@ Pironman 5 Mini の状態監視や操作は、コマンドまたはWebブラウ�
 .. toctree::
     :maxdepth: 1
 
-    control_with dashboard 
+    control_with_dashboard
     control_with_commands

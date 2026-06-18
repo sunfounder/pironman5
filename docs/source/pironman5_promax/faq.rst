@@ -7,325 +7,391 @@
 FAQ
 ============
 
-1. 対応システムについて
+
+Quick Troubleshooting
 -------------------------------
 
-Raspberry Pi 5でテストに合格したシステム：
+* 電源ボタンが動作しない → :ref:`faq_power_button_not_work_promax`
+* OLED 画面が動作しない → :ref:`faq_oled_promax`
+* RGB LED が点灯しない → :ref:`faq_rgb_promax`
+* ファンが動作しない → :ref:`promax_fan_faq`
+* ダッシュボードにデータが表示されない → :ref:`faq_dashboard_promax`
+* NVMe SSD が認識されない → :ref:`faq_nvme_promax`
+* NVMe SSD が認識されるがシステムが再起動する → :ref:`faq_nvme_link_down_promax`
+* PI5 が起動しない → :ref:`faq_pi5_boot_fail_promax`
 
-.. image:: img/compitable_os.png
-   :width: 600
-   :align: center
 
-2. 電源ボタンについて
---------------------------
 
-電源ボタンはRaspberry Pi 5の電源ボタンを引き出したもので、Raspberry Pi 5の電源ボタンと同様に機能します。
+1. Hardware
+-------------------------------
 
-.. image:: img/power_button.jpg
+
+.. _com_os_promax:
+
+Compatible Systems
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_com_os
+   :end-before: end_faq_com_os
+
+
+.. |link_safe_shutdown| replace:: :ref:`safe_shutdown_promax`
+
+Power Button
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_power_button
+   :end-before: end_faq_power_button
+
+
+.. _faq_power_button_not_work_promax:
+
+Power Button Not Working?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_power_button_not_work
+   :end-before: end_faq_power_button_not_work
+
+
+Copper Pipe Ends on the Tower Cooler
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_copper_pipe_ends
+   :end-before: end_faq_copper_pipe_ends
+
+
+Raspberry Pi AI HAT+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Raspberry Pi AI HAT+ は Pironman 5 Pro MAX と互換性がありません。
+
+.. image:: img/output3.png
     :width: 400
-    :align: center
 
-* **シャットダウン**
+Raspberry Pi AI Kit は、Raspberry Pi M.2 HAT+ と Hailo AI アクセラレータモジュールを組み合わせたものです。
 
-  * **Raspberry Pi OS Desktop** システムを実行している場合は、電源ボタンを素早く2回押すとシャットダウンします。
-  * **Raspberry Pi OS Lite** システムを実行している場合は、電源ボタンを1回押すとシャットダウンが開始されます。
-  * 強制的なハードシャットダウンを行うには、電源ボタンを長押しします。
+.. image:: img/output2.jpg
+    :width: 400
 
-* **電源オン**
+Raspberry Pi AI Kit から Hailo AI アクセラレータモジュールを取り外し、Pironman 5 Pro MAX の NVMe PIP モジュールに直接挿入できます。
 
-  * Raspberry Piボードがシャットダウンしているが、電源が供給されている状態の場合、シャットダウン状態から電源を入れるには1回押します。
 
-* シャットダウンボタンをサポートしていないシステムを実行している場合は、5秒間長押しすると強制的にハードシャットダウンし、シャットダウン状態から1回押すと電源が入ります。
+4.3-Inch Screen Is Black / Not Displaying?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3. Raspberry Pi AI HAT+について
-----------------------------------------------------------
-
-Raspberry Pi AI HAT+はPironman 5と互換性がありません。
-
-   .. image::  img/output3.png
-        :width: 400
-
-Raspberry Pi AI Kitは、Raspberry Pi M.2 HAT+とHailo AIアクセラレーターモジュールを組み合わせたものです。
-
-   .. image::  img/output2.jpg
-        :width: 400
-
-Raspberry Pi AI KitからHailo AIアクセラレーターモジュールを取り外し、Pironman 5 MAXのNVMe PIPモジュールに直接挿入できます。
-
-   .. .. image::  img/output4.png
-   ..      :width: 800
-
-4. タワークーラーの銅管の端について
-----------------------------------------------------------
-
-タワークーラーの上部にあるU字型ヒートパイプは、銅管がアルミフィンを通過しやすくするために圧縮されています。これは銅管の通常の製造工程の一部です。
-
-   .. image::  img/tower_cooler1.png
-
-5. PI5が起動しない（赤色LED）？
--------------------------------------------
-
-この問題は、システムアップデート、起動順序の変更、またはブートローダーの破損によって発生する可能性があります。以下の手順を試して問題を解決してください：
-
-#. USB-HDMIアダプターの接続を確認
-
-   * USB-HDMIアダプターがPI5にしっかりと接続されているかを慎重に確認してください。
-   * USB-HDMIアダプターを抜き差ししてみてください。
-   * その後、電源を再接続し、PI5が正常に起動するか確認してください。
-
-#. ケースの外でPI5をテスト
-
-   * アダプターの再接続で問題が解決しない場合：
-   * PI5をPironman 5ケースから取り外します。
-   * 電源アダプターをPI5に直接接続します（ケースを介さずに）。
-   * 正常に起動できるか確認してください。
-
-#. ブートローダーの復元
-
-   * PI5がまだ起動できない場合、ブートローダーが破損している可能性があります。こちらのガイドに従ってください： :ref:`update_bootloader_promax` で、SDカードまたはNVMe/USBから起動するかを選択します。
-   * 準備したSDカードをPI5に挿入し、電源を入れて少なくとも10秒間待ちます。リカバリが完了したら、SDカードを取り外してフォーマットします。
-   * その後、Raspberry Pi Imagerを使用して最新のRaspberry Pi OSを書き込み、カードを再挿入して起動を試みます。
-
-6. OLED画面が動作しない？
-------------------------------
-
-
-OLED画面が表示されない、または正しく表示されない場合は、以下のトラブルシューティング手順に従ってください：
-
-1. **OLED画面の接続を確認**
-
-   OLED画面のFPCケーブルが正しく接続されていることを確認します。
-
-   .. .. raw:: html
-
-   ..     <div style="text-align: center;">
-   ..         <video center loop autoplay muted style="max-width:90%">
-   ..             <source src="../_static/video/Oled-11.mp4" type="video/mp4">
-   ..             Your browser does not support the video tag.
-   ..         </video>
-   ..     </div>
-
-   .. todo 更新MP4
-
-2. **OSの互換性を確認**
-
-   Raspberry Piで互換性のあるオペレーティングシステムを実行していることを確認してください。
-
-3. **I2Cアドレスを確認**
-
-   以下のコマンドを実行して、OLEDのI2Cアドレス（0x3C）が認識されているか確認します：
-
-   .. code-block:: shell
-
-      sudo i2cdetect -y 1
-
-   アドレスが検出されない場合は、以下のコマンドでI2Cを有効にします：
-
-   .. code-block:: shell
-
-      sudo raspi-config
-
-4. **pironman5サービスを再起動**
-
-   `pironman5` サービスを再起動して問題が解決するか確認します：
-
-   .. code-block:: shell
-
-      sudo systemctl restart pironman5.service
-
-5. **ログファイルを確認**
-
-   問題が続く場合は、ログファイルでエラーメッセージを確認し、情報をカスタマーサポートに提供してさらなる分析を依頼してください：
-
-   .. code-block:: shell
-
-      cat /var/log/pironman5/pironman5.log
-
-7. NVMe PIPモジュールが動作しない？
----------------------------------------
-
-1. NVMe PIPモジュールとRaspberry Pi 5を接続するFPCケーブルがしっかりと取り付けられていることを確認します。
-
-   .. .. raw:: html
-
-   ..     <div style="text-align: center;">
-   ..         <video center loop autoplay muted style="max-width:90%">
-   ..             <source src="../_static/video/Nvme(1)-11.mp4" type="video/mp4">
-   ..             Your browser does not support the video tag.
-   ..         </video>
-   ..     </div>
-
-   .. .. raw:: html
-
-   ..     <div style="text-align: center;">
-   ..         <video center loop autoplay muted style="max-width:90%">
-   ..             <source src="../_static/video/Nvme(2)-11.mp4" type="video/mp4">
-   ..             Your browser does not support the video tag.
-   ..         </video>
-   ..     </div>
-
-.. todo 更新MP4
-
-2. SSDがNVMe PIPモジュールに正しく固定されていることを確認します。
-
-3. NVMe PIPモジュールのLEDの状態を確認します：
-
-   すべての接続を確認した後、Pironman 5 MAXの電源を入れ、NVMe PIPモジュールの2つのインジケーターを観察します：
-
-   * **PWR LED**: 点灯している必要があります。
-   * **STA LED**: 正常動作を示すために点滅する必要があります。
-
-   .. image:: img/dual_nvme_pip_leds.png  
-
-   * **PWR LED** が点灯しているが **STA LED** が点滅していない場合、NVMe SSDがRaspberry Piに認識されていないことを示します。
-   * **PWR LED** が消灯している場合は、モジュールの「Force Enable」ピンを短絡します。**PWR LED** が点灯した場合、FPCケーブルの緩みまたはNVMeに対応していないシステム構成の可能性があります。
-
-   .. image:: img/dual_nvme_pip_j4.png  
-
-     
-4. NVMe SSDにオペレーティングシステムが正しくインストールされていることを確認します。参照： :ref:`install_the_os_promax`.
-
-5. 配線が正しく、OSがインストールされているにもかかわらずNVMe SSDが起動しない場合は、Micro SDカードから起動して他のコンポーネントの機能を確認します。確認後、 :ref:`configure_boot_ssd_promax` に進みます。
-
-上記の手順を実行しても問題が解決しない場合は、service@sunfounder.com までメールをお送りください。できるだけ早く対応いたします。
-
-8. RGB LEDが動作しない？
---------------------------
-
-#. IO ExpanderのJ9上の2つのピンは、RGB LEDをGPIO10に接続するために使用されます。これらの2つのピンのジャンパーキャップが正しく装着されていることを確認します。
-
-   .. image:: hardware/img/io_board_rgb_pin.png
-      :width: 300
-      :align: center
-
-#. Raspberry Piが互換性のあるオペレーティングシステムを実行していることを確認します。Pironman 5は以下のOSバージョンのみをサポートしています：
-
-   .. image:: img/compitable_os.png
-      :width: 600
-      :align: center
-
-   サポートされていないOSをインストールしている場合は、ガイドに従って互換性のあるオペレーティングシステムをインストールしてください： :ref:`install_the_os_promax`.
-
-#. コマンド ``sudo raspi-config`` を実行して設定メニューを開きます。**3 Interfacing Options** -> **I3 SPI** -> **YES** に移動し、 **OK** と **Finish** をクリックしてSPIを有効にします。SPIを有効にした後、Pironman 5を再起動します。
-
-上記の手順を実行しても問題が解決しない場合は、service@sunfounder.com までメールをお送りください。できるだけ早く対応いたします。
-
-.. _promax_fan_faq:
-
-9. ファンが動作しない／制御できない場合
-----------------------------------------------
-
-Pro / MAX は、公式の Raspberry Pi PWM ファン制御ソリューションを採用しています。3 つの冷却ファンはすべて Raspberry Pi システムによって直接制御されており、pironman5 サービスに依存していません（そのため、コマンドラインツールやダッシュボードにはファン制御オプションは表示されません）。
-
-**ファンが正常に動作するかどうかのテスト**
-
-以下のコマンドを使用して、ファンを手動で制御できます。
-
-.. code-block:: bash
-
-   pinctrl FAN_PWM op dl   # ファン有効（ローアクティブ）
-   pinctrl FAN_PWM op dh   # ファン無効（ハイアクティブ）
-   pinctrl FAN_PWM a0      # 自動モード（システム温度制御）
-
-**温度に基づくファン速度制御**
-
-PWMファンは、Raspberry Pi 5の温度に応じて動的に速度を調整します：
-
-* **50°C未満**: ファンはオフ（速度0%）。
-* **50°C**: ファンは低速で動作（速度30%）。
-* **60°C**: ファンは中速に増加（速度50%）。
-* **67.5°C**: ファンは高速に増加（速度70%）。
-* **75°C以上**: ファンは全速で動作（速度100%）。
-
-
-10. OLED画面を起動するには？
----------------------------------------------------------------------------------
-
-省電力と画面の寿命を延ばすため、OLED画面は一定時間操作がないと自動的にオフになります。これは通常の設計であり、製品の機能に影響を与えるものではありません。
-
+4.3インチ DSI スクリーンはプラグアンドプレイで、追加のドライバーインストールは必要ありません。
 
 .. note::
 
-   OLED画面の設定（オン/オフ、スリープ時間、回転など）については、以下を参照してください： :ref:`promax_view_control_dashboard` または :ref:`promax_view_control_commands`.
+   HDMI/USB ボードの **ON/AUTO** ジャンパーは、スピーカーのオーディオ出力のみを制御します。画面表示には **影響しません**。
 
-11. Webダッシュボードを無効にするには？
-------------------------------------------------------
+画面が黒いまま、または表示されない場合は、以下を確認してください：
 
-``pironman5`` モジュールのインストールが完了すると、 :ref:`promax_view_control_dashboard` にアクセスできるようになります。
+#. DSI リボンケーブルが Raspberry Pi 5 の正しい DSI ポートに接続されていることを確認します。
 
-この機能が不要で、CPUとRAMの使用量を削減したい場合は、 ``pironman5`` のインストール時に ``--disable-dashboard`` フラグを追加してダッシュボードを無効にできます。
+#. リボンケーブルが完全に挿入されているか、クランプがしっかりと押さえられているか、接点が正しい方向を向いているかを確認します。
 
-.. code-block:: shell
-      
-   cd ~/pironman5
-   sudo python3 install.py --disable-dashboard
-      
-既に ``pironman5`` をインストールしている場合は、 ``dashboard`` モジュールと ``influxdb`` を削除し、pironman5を再起動して変更を適用できます：
-      
-.. code-block:: shell
-      
-   /opt/pironman5/venv/bin/pip3 uninstall pm-dashboard influxdb
-   sudo apt purge influxdb
-   sudo systemctl restart pironman5
+#. 以下のコマンドを実行して、システムが DSI スクリーンを認識しているか確認します：
 
-.. Pironman 5 MAXはレトロゲーミングシステムをサポートしていますか？
-.. ------------------------------------------------------
-.. はい、互換性があります。ただし、ほとんどのレトロゲーミングシステムは、追加ソフトウェアをインストールして実行できない簡素化されたバージョンです。この制限により、OLEDディスプレイ、2つのRGBファン、4つのRGB LEDなど、Pironman 5 MAXの一部のコンポーネントが正しく機能しない場合があります。これらのコンポーネントはPironman 5 MAXのソフトウェアパッケージのインストールを必要とするためです。
+   .. code-block:: shell
+
+      sudo dmesg | grep -i dsi
+
+   スクリーンが認識されている場合、``DSI display found`` のような出力が表示されます。出力がない場合は、スクリーンが認識されていません — 物理的な接続を再確認してください。
 
 
-.. .. note::
+External HDMI Screen — Taskbar Only Appears on the 4.3-Inch Screen?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-..     Batocera.linuxシステムは現在、Pironman 5 MAXと完全に互換性があります。Batocera.linuxはオープンソースで完全に無料のレトロゲーミングディストリビューションです。
+Pironman 5 Pro MAX に外部 HDMI モニターを接続すると、デスクトップのタスクバーが外部ディスプレイではなく、内蔵の 4.3インチ DSI スクリーンに表示される場合があります。これは、システムがデフォルトで DSI スクリーンをプライマリディスプレイとして設定しているためです。
 
-..     * :ref:`promax_install_batocera`
-..     * :ref:`promax_set_up_batocera`
+起動時に HDMI モニターをプライマリ画面として設定するには：
 
-12. ``pironman5`` コマンドを使用してコンポーネントを制御する方法
-----------------------------------------------------------------------
-以下のチュートリアルを参照して、 ``pironman5`` コマンドを使用してPironman 5 MAXのコンポーネントを制御できます。
+#. 起動スクリプトを作成します：
 
-* :ref:`promax_view_control_commands`
+   .. code-block:: shell
 
-13. コマンドを使用してRaspberry Piの起動順序を変更する方法
--------------------------------------------------------------
+      sudo nano /usr/local/bin/fix-primary-screen.sh
 
-既にRaspberry Piにログインしている場合は、コマンドを使用して起動順序を変更できます。詳細な手順は以下の通りです：
+#. スクリプトに以下の内容を追加します：
 
-* :ref:`configure_boot_ssd_promax`
+   .. code-block:: bash
+
+      #!/bin/bash
+      # Check if an external HDMI monitor is connected
+      if wlr-randr | grep -q "HDMI-A-1"; then
+          # Turn off the DSI screen first
+          wlr-randr --output DSI-1 --off
+          sleep 2
+          # Re-enable DSI and place it to the right of HDMI
+          wlr-randr --output DSI-1 --on --right-of HDMI-A-1
+      fi
+
+#. スクリプトを実行可能にします：
+
+   .. code-block:: shell
+
+      sudo chmod +x /usr/local/bin/fix-primary-screen.sh
+
+#. スクリプトを自動起動に追加します。labwc の自動起動ファイルを編集します：
+
+   .. code-block:: shell
+
+      nano ~/.config/labwc/autostart
+
+   以下の行を追加します（ ``&`` でバックグラウンド実行）：
+
+   .. code-block:: text
+
+      /usr/local/bin/fix-primary-screen.sh &
 
 
-14. Raspberry Pi Imagerで起動順序を変更する方法
----------------------------------------------------------------
-
-EEPROM設定で ``BOOT_ORDER`` を変更するだけでなく、 **Raspberry Pi Imager** を使用してRaspberry Piの起動順序を変更することもできます。
-
-この手順では予備のカードを使用することをお勧めします。
-
-* :ref:`update_bootloader_promax`
-
-15. SDカードからNVMe SSDにシステムをコピーする方法
--------------------------------------------------------------
-
-NVMe SSDはあるが、NVMeをコンピューターに接続するアダプターがない場合は、最初にMicro SDカードにシステムをインストールします。Pironman 5 MAXが正常に起動した後、Micro SDカードからNVMe SSDにシステムをコピーできます。詳細な手順は以下の通りです：
+2. Cooling and Fans
+-------------------------------
 
 
-* :ref:`copy_sd_to_nvme_promax`
+.. _promax_fan_faq:
 
-16. アクリル板の保護フィルムの剥がし方
------------------------------------------------------------------
+Fan Not Working / Cannot Be Controlled?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-パッケージには2枚のアクリルパネルが含まれており、どちらも傷を防ぐために両面に黄色/透明の保護フィルムが貼られています。保護フィルムは少し剥がしにくい場合があります。ドライバーを使用して角をそっとこすり、全体のフィルムを慎重に剥がしてください。
+Pro MAX は公式の Raspberry Pi PWM ファン制御ソリューションを採用しています。3 つの冷却ファンはすべて Raspberry Pi システムによって直接制御されており、pironman5 サービスに依存していません（そのため、コマンドラインツールやダッシュボードにはファン制御オプションは表示されません）。
 
-.. image:: img/peel_off_film.jpg
-    :width: 500
-    :align: center
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_pwm_fan
+   :end-before: end_faq_pwm_fan
+
+
+Dashboard Does Not Show Fan Speed?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pro MAX はカスタムの **5ピン** ファンを使用しており、ピン配置は以下の通りです：**PWM / 5V / GND / RGB Data In / RGB Data Out**
+
+これらのファンには **タコメーター（速度フィードバック）ピンがありません** ので、システムは実際の RPM を読み取ることができません。ダッシュボードにファン速度が表示されないのは正常であり、仕様です。
+
+ファン速度は Raspberry Pi のネイティブ PWM 温度カーブによって制御されます：
+
+* < 50°C: オフ（0%）
+* 50°C 以上: 低速（30%）
+* 60°C 以上: 中速（50%）
+* 67.5°C 以上: 高速（70%）
+* 75°C 以上: 全速（100%）
+
+
+
+3. OLED and RGB
+-------------------------------
+
+
+.. _faq_oled_promax:
+
+OLED Screen Not Working?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. |link_set_up_pironman5| replace:: :ref:`promax_set_up_pi_os`
+.. |link_compatible_systems| replace:: :ref:`com_os_promax`
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_oled
+   :end-before: end_faq_oled
+
+
+.. _faq_customize_oled_promax:
+
+How to Customize the OLED Display?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_customize_oled
+   :end-before: end_faq_customize_oled
+
+
+.. _faq_rgb_promax:
+
+RGB LEDs Not Working?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_rgb
+   :end-before: end_faq_rgb
+
+
+How to Wake Up the OLED Screen
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+省電力と画面の寿命を延ばすため、OLED 画面は一定時間操作がないと自動的にオフになります。これは通常の設計であり、製品の機能に影響を与えるものではありません。
+
+.. note::
+
+   OLED 画面の設定（オン/オフ、スリープ時間、回転など）については、:ref:`promax_view_control_dashboard` または :ref:`promax_view_control_commands` を参照してください。
+
+
+
+4. Dashboard and Software
+-------------------------------
+
+
+.. _faq_dashboard_promax:
+
+The Dashboard Shows No Data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_dashboard
+   :end-before: end_faq_dashboard
+
+
+.. |link_view_control_dashboard| replace:: :ref:`promax_view_control_dashboard`
+
+How to Disable the Web Dashboard
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_disable_dashboard
+   :end-before: end_faq_disable_dashboard
+
+
+How to Uninstall and Reinstall the Pironman 5 Software
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_reinstall_pironman5
+   :end-before: end_faq_reinstall_pironman5
+
+
+.. |link_view_control_commands| replace:: :ref:`promax_view_control_commands`
+
+How to Control Components Using the ``pironman5`` Command
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_pironman5_command
+   :end-before: end_faq_pironman5_command
+
+
+.. _faq_piper_tts_32bit_promax:
+
+``pip install piper-tts`` Fails with "Could Not Find a Version"?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pironman 5 Pro MAX に ``sunfounder-voice-assistant`` をインストールする際、以下のエラーが発生する場合があります：
+
+.. code-block:: text
+
+   ERROR: Could not find a version that satisfies the requirement piper-tts==1.3.0
+   ERROR: No matching distribution found for piper-tts==1.3.0
+
+このエラーは、``piper-tts`` 1.3.0 が **64ビット**（``aarch64``）のホイールのみを提供しているために発生します。Raspberry Pi が **32ビット** のオペレーティングシステムを実行している場合、pip は互換性のあるパッケージを見つけることができません。
+
+**解決策：** 64ビット版の Raspberry Pi OS をインストールしてください。
+
+#. 現在のシステムアーキテクチャを確認します：
+
+   .. code-block:: shell
+
+      uname -m
+
+   * ``aarch64`` → 64ビット（問題なし）
+   * ``armv7l`` → 32ビット（アップグレードが必要）
+
+#. `Raspberry Pi Imager <https://www.raspberrypi.com/software/>`_ を使用して、ストレージデバイスに **64ビット** の Raspberry Pi OS イメージを書き込みます。
+
+#. 64ビット OS をインストールした後、``pironman5`` ソフトウェアと ``sunfounder-voice-assistant`` を再インストールします。
+
+
+5. Boot and Storage
+-------------------------------
+
+
+.. |link_update_bootloader| replace:: :ref:`update_bootloader_promax`
+
+.. _faq_pi5_boot_fail_promax:
+
+PI5 Fails to Boot (Red LED)?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_pi5_boot_fail
+   :end-before: end_faq_pi5_boot_fail
+
+
+.. _faq_nvme_promax:
+
+NVMe PIP Module Not Working?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. |link_install_the_os_dual| replace:: :ref:`install_the_os_promax`
+
+.. include:: ../pironman5_max/faq.rst
+   :start-after: start_faq_nvme_pip_dual
+   :end-before: end_faq_nvme_pip_dual
+
+#. 配線が正しく、OS がインストールされているにもかかわらず NVMe SSD が起動しない場合は、Micro SD カードから起動して他のコンポーネントの機能を確認します。確認後、:ref:`configure_boot_ssd_promax` に進みます。
+
+#. 上記の手順を実行しても問題が解決しない場合は、service@sunfounder.com までメールをお送りください。できるだけ早く対応いたします。
+
+
+.. _faq_nvme_link_down_promax:
+
+NVMe SSD Detected but Causes System Restart on Read/Write?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_nvme_link_down
+   :end-before: end_faq_nvme_link_down
+
+
+.. |link_configure_boot_ssd| replace:: :ref:`configure_boot_ssd_promax`
+
+How to Change the Raspberry Pi Boot Order Using Commands
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_boot_order_command
+   :end-before: end_faq_boot_order_command
+
+
+How to Modify the Boot Order with Raspberry Pi Imager
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_boot_order_imager
+   :end-before: end_faq_boot_order_imager
+
+
+.. |link_copy_sd_to_nvme| replace:: :ref:`copy_sd_to_nvme_promax`
+
+How to Copy the System from the SD Card to an NVMe SSD
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_copy_sd_to_nvme
+   :end-before: end_faq_copy_sd_to_nvme
+
+
+
+6. Advanced Usage
+-------------------------------
+
+
+How to Remove the Protective Film
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_remove_film
+   :end-before: end_faq_remove_film
+
 
 .. _promax_openssh_powershell:
 
-17. Powershell経由でOpenSSHをインストールする方法
---------------------------------------------------
+How to Install OpenSSH via Powershell?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-``ssh <username>@<hostname>.local`` （または ``ssh <username>@<IP address>`` ）を使用してRaspberry Piに接続しようとすると、以下のエラーメッセージが表示される場合があります。
+``ssh <username>@<hostname>.local`` （または ``ssh <username>@<IP address>``）を使用して Raspberry Pi に接続しようとすると、以下のエラーメッセージが表示される場合があります。
 
     .. code-block::
 
@@ -333,21 +399,21 @@ NVMe SSDはあるが、NVMeをコンピューターに接続するアダプタ�
         spelling of the name, or if a path was included, verify that the path is correct and try again.
 
 
-これは、お使いのコンピューターシステムが古く、`OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ がプリインストールされていないことを意味します。以下のチュートリアルに従って手動でインストールする必要があります。
+これは、お使いのコンピューターシステムが古く、`OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ がプリインストールされていないことを意味します。以下の手順で手動インストールを行ってください。
 
-#. Windowsデスクトップの検索ボックスに ``powershell`` と入力し、 ``Windows PowerShell`` を右クリックして、表示されるメニューから ``管理者として実行`` を選択します。
+#. Windows の検索ボックスに 「 ``powershell`` 」と入力し、 ``Windows PowerShell`` を右クリックして「 ``Run as administrator`` 」を選択します。
 
    .. image:: img/powershell_ssh.png
       :width: 90%
-      
 
-#. 以下のコマンドを使用して ``OpenSSH.Client`` をインストールします。
+
+#. 以下のコマンドで ``OpenSSH.Client`` をインストールします。
 
    .. code-block::
 
         Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
-#. インストール後、以下の出力が返されます。
+#. インストール後、以下のような出力が返ってきます。
 
    .. code-block::
 
@@ -355,13 +421,13 @@ NVMe SSDはあるが、NVMeをコンピューターに接続するアダプタ�
         Online        : True
         RestartNeeded : False
 
-#. 以下のコマンドを使用してインストールを確認します。
+#. 以下のコマンドでインストール状況を確認します。
 
    .. code-block::
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. これで ``OpenSSH.Client`` が正常にインストールされたことが表示されます。
+#. これで ``OpenSSH.Client`` のインストールが正常に完了したことが確認できます。
 
    .. code-block::
 
@@ -371,16 +437,57 @@ NVMe SSDはあるが、NVMeをコンピューターに接続するアダプタ�
         Name  : OpenSSH.Server~~~~0.0.1.0
         State : NotPresent
 
-   .. warning:: 
+   .. warning::
 
-        上記のプロンプトが表示されない場合は、Windowsシステムがまだ古すぎることを意味します。その場合は、|link_putty| などのサードパーティ製SSHツールをインストールすることをお勧めします。
+        上記の表示がされない場合は、Windows がさらに古いバージョンである可能性があります。|link_putty| などのサードパーティ製 SSH ツールの使用をご検討ください。
 
-#. PowerShellを再起動し、引き続き管理者として実行します。この時点で、 ``ssh`` コマンドを使用してRaspberry Piにログインできるようになります。ここで、以前に設定したパスワードの入力を求められます。
+#. PowerShell を再起動し、再度管理者権限で起動してください。これで ``ssh`` コマンドによる接続が可能になり、設定したパスワードの入力が求められます。
 
    .. image:: img/powershell_login.png
 
 
-18. OMVを設定した場合、Pironman5の機能は引き続き使用できますか？
---------------------------------------------------------------------------------------------------------
+If I Set Up OMV, Can I Still Use the Pironman5's Function?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-はい、OpenMediaVaultはRaspberry Piシステム上で設定されます。 :ref:`promax_set_up_pi_os` の手順に従って設定を続行してください。
+はい、OpenMediaVault は Raspberry Pi システム上で設定されます。:ref:`promax_set_up_pi_os` の手順に従って設定を続行してください。
+
+
+Raspberry Pi Camera Not Working?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+カメラが動作しない場合、90% の原因はリボンケーブルの接続またはカメラハードウェア自体に関連しています。
+
+まず、``rpicam-hello --list-cameras`` を使用してカメラが認識されているか確認します。正常に認識されている場合、以下のようなメッセージが表示されます：
+
+.. code-block:: bash
+
+   Available cameras
+   -----------------
+   0 : ov5647 [2592x1944] (/base/axi/pcie@1000120000/rp1/i2c@88000/ov5647@36)
+
+カメラが認識されない場合は、リボンケーブルが逆になっていないか、完全に挿入されていないかを確認します。問題が解決しない場合は、リボンケーブルまたはカメラモジュールを交換してクロステストを試みてください。
+
+
+Can I Install Home Assistant OS on the Pironman 5 Pro MAX?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pironman 5 Pro MAX には専用の Home Assistant アドオンはありません。ただし、**Pironman 5 MAX** アドオンを代わりに使用できます。`SunFounder アドオンリポジトリガイド <https://docs.sunfounder.com/projects/pironman5/en/latest/pironman5_max/set_up/set_up_home_assistant.html#add-the-sunfounder-add-ons-repository>`_ に従ってください。
+
+以下の制限事項に注意してください：
+
+* **4.3インチ画面**：Home Assistant OS はデスクトップ環境のない **Lite** システムです。Pro MAX に内蔵された 4.3インチ画面は何も表示しません。
+
+* **NVMe PIP デュアル SSD**：Home Assistant OS は Pro MAX のデュアル NVMe PIP モジュール上の両方の NVMe SSD を読み取ることができません。
+
+* **OLED 画面と RGB LED**：アドオンをインストールした後、これらのコンポーネントは追加設定なしで正常に動作します。
+
+* **CPU ファン**：Home Assistant OS で CPU ファンを動作させるには手動設定が必要です。以下を ``/boot/firmware/config.txt`` に追加します：
+
+  .. code-block:: text
+
+     dtparam=cooling_fan=on
+     dtparam=fan_temp0=40000
+     dtparam=fan_temp0_hyst=10000
+     dtparam=fan_temp0_speed=125
+
+  保存して再起動すると、CPU ファンは CPU 温度に基づいて Raspberry Pi システムによって制御されます。``pinctrl`` コマンドで手動制御することもできます。:ref:`promax_fan_faq` を参照してください。

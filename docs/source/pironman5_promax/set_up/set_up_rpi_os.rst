@@ -20,10 +20,12 @@ Raspberry Pi OS、Ubuntu、Kali Linux、またはHomebridgeをRaspberry Piにイ
   設定を行う前に、Raspberry Piを起動してログインする必要があります。ログイン方法がわからない場合は、Raspberry Pi公式ウェブサイト |link_rpi_get_start| にアクセスしてください。
 
 
+.. _safe_shutdown_promax:
+
 シャットダウン時のGPIO電源無効化設定
 ------------------------------------------------------------
 
-Raspberry Pi GPIOから電源供給を受けるOLED画面やRGBファンがシャットダウン後も動作し続けるのを防ぐために、GPIO電源を無効化するようにRaspberry Piを設定することが重要です。
+Raspberry Pi GPIOから電源供給を受けるOLED画面やGPIOファンがシャットダウン後も動作し続けるのを防ぐために、GPIO電源を無効化するようにRaspberry Piを設定することが重要です。
 
 #. EEPROM設定ツールを開きます：
 
@@ -56,21 +58,49 @@ Raspberry Pi GPIOから電源供給を受けるOLED画面やRGBファンがシ�
       sudo apt-get install git -y
       sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. GitHubからコードをダウンロードし、 ``pironman5`` モジュールをインストールします。
+#. GitHub から ``pironman5`` モジュールをダウンロードしてインストールします。
+
+   .. tip::
+
+      **Ubuntu** を使用している場合は、最初に ``curl`` をインストールしてください：
+
+      .. code-block:: shell
+
+         sudo apt install curl -y
 
    .. code-block:: shell
 
-      cd ~
-      git clone -b pro-max https://github.com/sunfounder/pironman5.git --depth 1
-      cd ~/pironman5
-      sudo python3 install.py
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
-   インストールが成功したら、インストールを有効化するためにシステムの再起動が必要です。画面の再起動プロンプトに従ってください。
+   .. note::
 
-   再起動すると、 ``pironman5.service`` が自動的に起動します。Pironman 5 Pro MAXの主な設定は以下の通りです：
-   
-   * OLED画面には、CPU、RAM、ディスク使用量、CPU温度、Raspberry PiのIPアドレスが表示されます。
-   * 4つのWS2812 RGB LEDが青色でブリージングモードに点灯します。
+      Pironman 5 シリーズを PiPower 5 と併用している場合は、代わりに以下のコマンドを実行してください：
+
+      .. code-block:: shell
+
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+
+#. インストーラーを実行した後、Pironman 5 モデル（1〜4）を選択します。
+
+   .. code-block:: shell
+
+      Pironman 5 Installer v1.0.1
+      Supports: 5 | 5 Mini | 5 Max | 5 Pro Max
+
+      Please select your product model:
+      1) Pironman 5
+      2) Pironman 5 Mini
+      3) Pironman 5 Max
+      4) Pironman 5 Pro Max
+
+      Enter number [1-4]:
+
+#. インストールが完了したら、画面の指示に従って Raspberry Pi を再起動します。最初の起動時は、サービスが初期化されるまで最大30秒かかる場合があります。
+
+   再起動後、 ``pironman5.service`` が自動的に起動します。Pironman 5 Pro MAX の主な初期設定は以下の通りです：
+
+   * OLED 画面に CPU、RAM、ディスク使用量、CPU温度、Raspberry Pi の IP アドレスが表示されます。
+   * 4つのWS2812 RGB LEDが青色の呼吸モードで点灯します。
 
 #. ``systemctl`` ツールを使用して、 ``pironman5.service`` の ``start``、 ``stop``、 ``restart``、または ``status`` の確認ができます。
 

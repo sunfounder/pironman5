@@ -9,12 +9,14 @@ FAQ
 クイックトラブルシューティング
 -------------------------------
 
+* 電源ボタンが動作しない → :ref:`faq_power_button_not_work_5`
 * OLEDスクリーンが動作しない → :ref:`faq_oled_5`
 * RGB LEDが動作しない → :ref:`faq_rgb_5`
 * GPIOファンが動作しない → :ref:`faq_gpio_fans_5`
 * CPUファンが回らない → :ref:`faq_pwm_fan_5`
 * ダッシュボードにデータが表示されない → :ref:`faq_dashboard_5`
 * NVMe SSDが認識されない → :ref:`faq_nvme_5`
+* NVMe SSDが認識されるがシステムが再起動する → :ref:`faq_nvme_link_down_5`
 
 
 
@@ -55,6 +57,27 @@ Raspberry Pi 5でテスト済みの対応システム：
     :align: center
 
 .. end_faq_power_button
+
+
+.. _faq_power_button_not_work_5:
+
+電源ボタンが動作しない？
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_power_button_not_work
+
+#. まず、電源ボタンの正常な動作を確認してください：
+
+   * **Raspberry Pi OS Desktop**：電源ボタンをすばやく2回押してシャットダウンします。5秒間長押しすると強制シャットダウンします。シャットダウン状態から1回押して電源を入れます。
+   * **Raspberry Pi OS Lite**：電源ボタンを1回押してシャットダウンします。5秒間長押しすると強制シャットダウンします。1回押して電源を入れます。
+
+#. 電源コンバーターのピンがRaspberry Pi 5のJ2パッド（RTCバッテリーコネクターと基板エッジの間）に正しく位置合わせされているか確認してください。
+
+#. 電源コンバーターソケット内のピンが電源ボタンコネクターに正しく位置合わせされているか確認してください。必要に応じて、電源ボタンケーブルを再接続してください。
+
+#. ドライバーを使用して、ボタンが接続されている電源コンバーターソケットの2つのピンを短絡してください。Piの電源が入る場合は、ボタン自体に問題がある可能性があります。入らない場合は、コンバーターボードまたはPi 5の接続に問題がある可能性があります。
+
+.. end_faq_power_button_not_work
 
 
 エアフローの方向
@@ -365,7 +388,7 @@ OLED表示をカスタマイズしたい場合（カスタム2〜4桁の画像�
   .. code-block:: shell
 
      sudo systemctl stop pironman5.service
-     sudo systemctl restart pironman5.service
+     sudo pironman5 start
 
 .. end_faq_customize_oled
 
@@ -463,7 +486,7 @@ Webダッシュボードを無効化する方法
 
 .. code-block:: shell
 
-   /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
+   /opt/pironman5/venv/bin/pip3 uninstall pm-dashboard influxdb
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
@@ -558,6 +581,8 @@ NVMe PIPモジュールが動作しない
 
 .. start_faq_nvme_pip
 
+#. NVMe SSDの互換性を確認してください。検証済み、安定、互換性のあるドライブについては、:ref:`互換性のあるNVMe SSDリスト <compitable_nvme_ssd_5>` を参照してください。
+
 #. NVMe PIPモジュールとRaspberry Pi 5を接続しているFPCケーブルがしっかりと取り付けられていることを確認してください。
 
    .. raw:: html
@@ -597,7 +622,7 @@ NVMe PIPモジュールが動作しない
    .. image:: img/nvme_pip_leds.png
 
    * **PWR LED** が点灯していても **STA LED** が点滅しない場合、NVMe SSDが認識されていません。
-   * **PWR LED** が消灯している場合、 ``Force Enable`` ピン（J4）をショートしてください。
+   * **PWR LED** が消灯している場合、 ``Force Enable`` ピン（J4）をショートしてください。ショート後に **PWR LED** が点灯した場合、FPCケーブルの緩みや、NVMeに対応していないシステム構成が原因である可能性があります。
 
      .. image:: img/nvme_pip_j4.png
 
@@ -616,6 +641,51 @@ NVMe PIPモジュールが動作しない
       cat /var/log/pironman5/pironman5.log
 
 .. end_faq_nvme_pip
+
+
+.. _faq_nvme_link_down_5:
+
+NVMe SSDが認識されるが読み取り/書き込み時にシステムが再起動する？
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_nvme_link_down
+
+一部のケース（特にWD Blue SN5000）では、NVMe SSDがRaspberry Pi 5に認識されても、読み取り/書き込み操作中にシステムが再起動する場合があります。これはSSDとRaspberry Pi 5の間のPCIe互換性/安定性の問題であり、Pironman 5のハードウェア障害 **ではありません**。
+
+以下の手順で問題を解決してみてください：
+
+#. Raspberry Pi 5のブートローダーを最新バージョンに更新します：
+
+   .. code-block:: shell
+
+      sudo rpi-eeprom-update -a
+      sudo reboot
+
+#. 以下の行を ``/boot/firmware/config.txt`` に追加して、PCIe Gen3速度を強制します：
+
+   .. code-block:: text
+
+      dtparam=pciex1_gen=3
+
+#. ``pcie_aspm=off`` をカーネルコマンドラインに追加してASPM（アクティブ状態電力管理）を無効にします。 ``/boot/firmware/cmdline.txt`` を編集し、既存の行に追加します（新しい行を作成 **しない** でください）：
+
+   .. code-block:: text
+
+      pcie_aspm=off
+
+   .. note::
+
+      ``pcie_aspm=off`` が重要な修正となることがよくあります。PCIe ASPMの問題はRaspberry Pi 5で非常に一般的であり、NVMeドライブがランダムに切断されたり、大量I/O中にシステムが再起動したりする原因となります。
+
+#. 上記の変更を適用した後、Raspberry Piを再起動します：
+
+   .. code-block:: shell
+
+      sudo reboot
+
+#. 問題が解決しない場合は、NVMe SSDを再パーティションおよび再フォーマットし、オペレーティングシステムを再インストールしてください。
+
+.. end_faq_nvme_link_down
 
 
 コマンドを使用してRaspberry Piのブート順序を変更する方法

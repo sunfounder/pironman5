@@ -9,12 +9,14 @@ FAQ
 クイックトラブルシューティング
 -------------------------------
 
+* 電源ボタンが動作しない → :ref:`faq_power_button_not_work_max`
 * OLEDスクリーンが動作しない → :ref:`faq_oled_max`
 * RGB LEDが動作しない → :ref:`faq_rgb_max`
 * GPIOファンが動作しない → :ref:`faq_gpio_fans_max`
 * CPUファンが回らない → :ref:`faq_pwm_fan_max`
 * ダッシュボードにデータが表示されない → :ref:`faq_dashboard_max`
 * NVMe SSDが認識されない → :ref:`faq_nvme_max`
+* NVMe SSDが認識されるがシステムが再起動する → :ref:`faq_nvme_link_down_max`
 
 
 
@@ -40,6 +42,17 @@ FAQ
    :start-after: start_faq_power_button
    :end-before: end_faq_power_button
 
+
+.. _faq_power_button_not_work_max:
+
+電源ボタンが動作しない？
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_power_button_not_work
+   :end-before: end_faq_power_button_not_work
+
+
 タワークーラーの銅管端部
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -51,9 +64,17 @@ FAQ
 Raspberry Pi AI HAT+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../pironman5/faq.rst
-   :start-after: start_faq_ai_hat
-   :end-before: end_faq_ai_hat
+Raspberry Pi AI HAT+はPironman 5 MAXに対応していません。
+
+.. image:: img/output3.png
+    :width: 400
+
+Raspberry Pi AI Kitは、Raspberry Pi M.2 HAT+とHailo AIアクセラレータモジュールを組み合わせたものです。
+
+.. image:: img/output2.jpg
+    :width: 400
+
+Hailo AIアクセラレータモジュールをRaspberry Pi AI Kitから取り外し、Pironman 5 MAXのNVMe PIPモジュールに直接挿入することができます。
 
 Pironman5 Maxの振動スイッチ機能は使用できますか？
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -185,6 +206,12 @@ PI5が起動しない（赤色LED）
 NVMe PIPモジュールが動作しない
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. |link_install_the_os_dual| replace:: :ref:`install_the_os_max`
+
+.. start_faq_nvme_pip_dual
+
+#. NVMe SSDの互換性を確認してください。検証済み、安定、互換性のあるドライブについては、:ref:`互換性のあるNVMe SSDリスト <compitable_nvme_ssd_5>` を参照してください。
+
 #. NVMe PIPモジュールとRaspberry Pi 5を接続しているFPCケーブルがしっかりと取り付けられていることを確認してください。
 
    .. raw:: html
@@ -221,13 +248,26 @@ NVMe PIPモジュールが動作しない
 
    .. image:: img/dual_nvme_pip_j4.png
 
-#. NVMe SSDに適切なオペレーティングシステムがインストールされていることを確認してください。:ref:`install_the_os_max` を参照してください。
+#. NVMe SSDに適切なオペレーティングシステムがインストールされていることを確認してください。|link_install_the_os_dual| を参照してください。
+
+.. end_faq_nvme_pip_dual
 
 #. 問題が解決しない場合は、以下のログファイルを送信してください：
 
    .. code-block:: shell
 
       cat /var/log/pironman5/pironman5.log
+
+
+.. _faq_nvme_link_down_max:
+
+NVMe SSDが認識されるが読み取り/書き込み時にシステムが再起動する？
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_nvme_link_down
+   :end-before: end_faq_nvme_link_down
+
 
 コマンドを使用してRaspberry Piのブート順序を変更する方法
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -54,7 +54,7 @@ Raspberry Pi 5にUmbrel OSをインストールしている場合は、コマン
 #. 再起動後、 ``pironman5.service`` が自動的に起動します。Pironman 5 Miniの主な初期設定は以下の通りです：
    
    * 4つのWS2812 RGB LEDが青色の呼吸モードで点灯します。
-   * RGBファンはデフォルトで **常時オン** モードに設定されています。作動温度の調整に関する情報は、:ref:`cc_control_fan_mini` を参照してください。
+   * GPIOファンはデフォルトで **常時オン** モードに設定されています。作動温度の調整に関する情報は、:ref:`cc_control_fan_mini` を参照してください。
 
 #. ``systemctl`` ツールを使用して、 ``pironman5.service`` を ``start``、 ``stop``、 ``restart``、または ``status`` で操作できます。
 

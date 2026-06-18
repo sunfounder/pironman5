@@ -20,5 +20,5 @@ Pironman 5はコマンドを使用して監視および制御することがで�
 .. toctree::
     :maxdepth: 1
 
-    control_with dashboard 
+    control_with_dashboard
     control_with_commands

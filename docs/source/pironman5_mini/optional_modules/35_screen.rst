@@ -18,7 +18,7 @@ Pironman 5 にディスプレイとタッチ制御を提供します。
 正しく取り付け、ハードウェアの損傷を避けるために手順を慎重に従ってください。
 
 詳細はこちらをご覧ください:  
-`3.5インチ タッチスクリーン ドキュメント <http://wiki.sunfounder.cc/index.php?title=3.5_Inch_LCD_Touch_Screen_Monitor_for_Raspberry_Pi>`_.
+`3.5インチ タッチスクリーン ドキュメント <https://docs.sunfounder.com/projects/35-ips-screen/en/latest/get_started/get_started.html>`_.
 
 
 **組み立て**

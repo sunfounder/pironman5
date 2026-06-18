@@ -16,7 +16,7 @@ Pironman 5 Mini に搭載されたアクティブクーラーは、Raspberry Pi 
 .. image:: img/active_cooler.png
 
 Raspberry Pi 5 の冷却対策として、特に高負荷時において、Pironman 5 Mini はスマートな冷却システムを採用しています。  
-本体にはメインのアクティブクーラーと補助的なRGBファンが搭載されており、Raspberry Pi 5 の熱管理システムと密接に連携した冷却戦略が組み込まれています。
+本体にはメインのアクティブクーラーと補助的なGPIOファンが搭載されており、Raspberry Pi 5 の熱管理システムと密接に連携した冷却戦略が組み込まれています。
 
 アクティブクーラーは、Raspberry Pi 5 の温度に応じて次のように動作します：
 
@@ -42,7 +42,7 @@ Raspberry Pi 5 の冷却対策として、特に高負荷時において、Piron
 
 Pironman 5 Mini において、アクティブクーラーは高負荷時でも安定した動作温度を維持するために不可欠な構成要素であり、Raspberry Pi 5 のパフォーマンスと信頼性を確保します。
 
-RGBファン
+GPIOファン
 -------------------
 
 .. image:: img/size_fan.png

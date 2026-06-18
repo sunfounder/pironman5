@@ -7,14 +7,14 @@
 ファン
 ============
 
-PWMファン
+CPUファン
 -----------
 
 Pironman 5 Pro MAX には 3基の PWM ファンが搭載されています。
 
 Pironman 5 Pro MAX の PWM ファンは、Raspberry Pi システムによって制御されます。
 
-Raspberry Pi 5 の冷却ソリューション、特に高負荷時において、Pironman 5 Pro MAX の設計にはスマート冷却システムが組み込まれています。主 PWM ファン 1基と補助 RGB ファン 2基を特徴とし、冷却戦略は Raspberry Pi 5 の温度管理システムと緊密に統合されています。
+Raspberry Pi 5 の冷却ソリューション、特に高負荷時において、Pironman 5 Pro MAX の設計にはスマート冷却システムが組み込まれています。主 PWM ファン 1基と補助 GPIO ファン 2基を特徴とし、冷却戦略は Raspberry Pi 5 の温度管理システムと緊密に統合されています。
 
 PWM ファンの動作は Raspberry Pi 5 の温度に基づいています：
 
