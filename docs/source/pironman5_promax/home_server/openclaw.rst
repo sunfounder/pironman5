@@ -15,7 +15,7 @@ OpenClawによるPironman5 Pro MAXの操作
 
 OpenClawがPironman5 Pro MAXを操作できるようにするには、Pironman5 Pro MAXスキルをインストールする必要があります。
 
-1.  Pironman5 Pro MAXが既にインストールされていることを確認します。インストールされていない場合は、:ref:`promax_download_pironman5_module` を参照してください。
+1.  Pironman5 Pro MAXが既にインストールされていることを確認します。インストールされていない場合は、:ref:`install_pironman5_module_promax` を参照してください。
 
 2.  ターミナルで以下のコマンドを実行します：
 

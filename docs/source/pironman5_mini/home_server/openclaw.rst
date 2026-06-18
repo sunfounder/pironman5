@@ -15,7 +15,7 @@ OpenClaw に Pironman5 Mini を操作させる
 
 OpenClaw に Pironman5 Mini を操作させるには、Pironman5 Mini スキルをインストールする必要があります。
 
-1.  Pironman5 Mini がすでにインストールされていることを確認してください。インストールされていない場合は、 :ref:`mini_download_pironman5_module`. を参照してください。
+1.  Pironman5 Mini がすでにインストールされていることを確認してください。インストールされていない場合は、 :ref:`install_pironman5_module_mini`. を参照してください。
 
 2.  ターミナルで次のコマンドを実行します：
 
