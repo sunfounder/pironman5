@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -7,16 +7,16 @@ FAQ
 
 
 Risoluzione rapida dei problemi
--------------------------------
+---------------------------------
 
-* Pulsante di accensione non funziona → :ref:`faq_power_button_not_work_5`
-* Schermo OLED non funziona → :ref:`faq_oled_5`
-* LED RGB non funzionano → :ref:`faq_rgb_5`
-* Ventole GPIO non funzionano → :ref:`faq_gpio_fans_5`
-* Ventola CPU non gira → :ref:`faq_pwm_fan_5`
-* Dashboard non mostra dati → :ref:`faq_dashboard_5`
-* SSD NVMe non rilevato → :ref:`faq_nvme_5`
-* SSD NVMe rilevato ma causa riavvio del sistema → :ref:`faq_nvme_link_down_5`
+* Pulsante di accensione non funziona -> :ref:`faq_power_button_not_work_5`
+* Schermo OLED non funziona -> :ref:`faq_oled_5`
+* LED RGB non funzionano -> :ref:`faq_rgb_5`
+* Ventole GPIO non funzionano -> :ref:`faq_gpio_fans_5`
+* Ventola CPU non gira -> :ref:`faq_pwm_fan_5`
+* Dashboard non mostra dati -> :ref:`faq_dashboard_5`
+* SSD NVMe non rilevato -> :ref:`faq_nvme_5`
+* SSD NVMe rilevato ma causa riavvio del sistema -> :ref:`faq_nvme_link_down_5`
 
 
 
@@ -81,7 +81,7 @@ Il pulsante di accensione non funziona?
 
 
 Direzione del flusso d'aria
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. start_faq_airflow_direction
 
@@ -102,7 +102,7 @@ Per una dimostrazione dettagliata, guarda il seguente video:
 
 
 Estremità dei tubi di rame sul dissipatore a torre
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. start_faq_copper_pipe_ends
 
@@ -317,7 +317,7 @@ I LED RGB non funzionano?
 
    Vai a:
 
-   ``3 Opzioni di interfaccia`` → ``I3 SPI`` → ``SÌ``
+   ``3 Opzioni di interfaccia`` -> ``I3 SPI`` -> ``SÌ``
 
    Quindi riavvia il Raspberry Pi.
 
@@ -461,7 +461,7 @@ Puoi provare i seguenti passaggi per risolvere il problema.
 
 #. Se il database è mancante o corrotto, prova a cancellare i dati storici dalla Dashboard usando:
 
-   ``Impostazioni → Cancella tutti i dati``
+   ``Impostazioni -> Cancella tutti i dati``
 
 #. Se il problema persiste dopo aver provato tutti i passaggi precedenti, consigliamo di reinstallare Raspberry Pi OS e il software Pironman 5.
 
@@ -583,7 +583,7 @@ Il modulo NVMe PIP non funziona?
 
 .. start_faq_nvme_pip
 
-#. Assicurati che il tuo SSD NVMe sia compatibile. Fai riferimento all'elenco degli :ref:`SSD NVMe compatibili <compitable_nvme_ssd_5>` per verificare unita stabili e compatibili. degli :ref:`SSD NVMe compatibili <compitable_nvme_ssd_5>` per unit� verificate, stabili e compatibili.
+#. Assicurati che il tuo SSD NVMe sia compatibile. Fai riferimento all'elenco degli :ref:`SSD NVMe compatibili <compitable_nvme_ssd_5>` per unità verificate, stabili e compatibili.
 
 #. Assicurati che il cavo FPC che collega il modulo NVMe PIP al Raspberry Pi 5 sia fissato saldamente.
 
@@ -652,7 +652,7 @@ SSD NVMe rilevato ma causa riavvio del sistema in lettura/scrittura?
 
 .. start_faq_nvme_link_down
 
-In alcuni casi (specialmente con WD Blue SN5000), l'SSD NVMe pu�essere rilevato dal Raspberry Pi 5 ma causare il riavvio del sistema durante le operazioni di lettura/scrittura. Si tratta di un problema di compatibilit�/stabilit� PCIe tra l'SSD e il Raspberry Pi 5, **non** un difetto hardware del Pironman 5.
+In alcuni casi (specialmente con WD Blue SN5000), l'SSD NVMe può essere rilevato dal Raspberry Pi 5 ma causare il riavvio del sistema durante le operazioni di lettura/scrittura. Si tratta di un problema di compatibilità/stabilità PCIe tra l'SSD e il Raspberry Pi 5, **non** un difetto hardware del Pironman 5.
 
 Prova i seguenti passaggi per risolvere il problema:
 
@@ -663,7 +663,7 @@ Prova i seguenti passaggi per risolvere il problema:
       sudo rpi-eeprom-update -a
       sudo reboot
 
-#. Forza la velocit� PCIe Gen3 aggiungendo la seguente riga a ``/boot/firmware/config.txt``:
+#. Forza la velocità PCIe Gen3 aggiungendo la seguente riga a ``/boot/firmware/config.txt``:
 
    .. code-block:: text
 

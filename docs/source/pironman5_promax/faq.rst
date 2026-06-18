@@ -9,7 +9,7 @@ FAQ
 
 
 Risoluzione Rapida dei Problemi
--------------------------------
+---------------------------------
 
 * Pulsante di accensione non funzionante → :ref:`faq_power_button_not_work_promax`
 * Schermo OLED non funzionante → :ref:`faq_oled_promax`
@@ -312,7 +312,7 @@ Questo errore si verifica perché ``piper-tts`` 1.3.0 fornisce solo pacchetti **
 .. _faq_pi5_boot_fail_promax:
 
 Il PI5 Non Si Avvia (LED Rosso)?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_pi5_boot_fail

@@ -12,11 +12,11 @@ NVMe SSD compatibili
 ========================
 
 SSD verificati funzionanti
----------------------------
+----------------------------
 
 I seguenti modelli di SSD NVMe sono stati segnalati dagli utenti come funzionanti con Raspberry Pi 5 e la serie Pironman5. Questi risultati si basano su test della community e segnalazioni di utilizzo reale.
 
-La compatibilit�pu� comunque variare in base alla versione di Raspberry Pi OS, alla versione del kernel, al firmware EEPROM, al firmware dell'SSD, alla qualit�dell'alimentazione e alle condizioni di carico di lavoro.
+La compatibilità può comunque variare in base alla versione di Raspberry Pi OS, alla versione del kernel, al firmware EEPROM, al firmware dell'SSD, alla qualità dell'alimentazione e alle condizioni di carico di lavoro.
 
 .. list-table:: SSD NVMe compatibili verificati
    :widths: 20 50 20
@@ -24,7 +24,7 @@ La compatibilit�pu� comunque variare in base alla versione di Raspberry Pi O
 
    * - Marca
      - Modello
-     - Capacit�
+     - Capacità
    * - ADATA
      - XPG SPECTRIX S40G RGB
      - 256GB / 512GB
@@ -194,9 +194,9 @@ Questi modelli di SSD sono stati ampiamente testati e sono generalmente stabili 
 
 
 Compatibili (possono variare)
------------------------------
+-------------------------------
 
-Questi modelli di SSD potrebbero funzionare correttamente in molte configurazioni, ma la compatibilit�o la stabilit�possono variare in base al carico di lavoro, alla versione del firmware, alla versione EEPROM del Raspberry Pi, alla qualit�dell'alimentazione o alla configurazione PCIe.
+Questi modelli di SSD potrebbero funzionare correttamente in molte configurazioni, ma la compatibilità o la stabilità possono variare in base al carico di lavoro, alla versione del firmware, alla versione EEPROM del Raspberry Pi, alla qualità dell'alimentazione o alla configurazione PCIe.
 
 * Crucial P2 M.2
 * Crucial P3 M.2
@@ -212,10 +212,10 @@ Questi modelli di SSD potrebbero funzionare correttamente in molte configurazion
   (Rilevato con successo, ma alcuni utenti hanno segnalato errori di lettura/scrittura a meno che PCIe non sia forzato a Gen3 e ASPM sia disabilitato usando ``pcie_aspm=off``.)
 
 
-Non consigliati (potenziale instabilit�)
+Non consigliati (potenziale instabilità)
 -------------------------------------------------
 
-I seguenti SSD o controller possono causare reset PCIe, errori di I/O, disconnessioni o instabilit�di avvio sulle interfacce PCIe del Raspberry Pi 5.
+I seguenti SSD o controller possono causare reset PCIe, errori di I/O, disconnessioni o instabilità di avvio sulle interfacce PCIe del Raspberry Pi 5.
 
 * SSD che utilizzano controller Phison E27T / E21
 * Western Digital SN740
@@ -226,11 +226,11 @@ I seguenti SSD o controller possono causare reset PCIe, errori di I/O, disconnes
 * Altri SSD NVMe che utilizzano le stesse famiglie di controller Phison
 
 
-**Note sulla compatibilit�**
+**Note sulla compatibilità**
 
-* La compatibilit�NVMe pu�variare in base alla versione di Raspberry Pi OS, alla versione del kernel, al firmware EEPROM, al firmware dell'SSD e alla qualit�dell'alimentazione.
-* Si consiglia vivamente un alimentatore USB-C di alta qualit�da 5V/5A, specialmente per SSD di alta capacit�o prestazioni elevate.
-* Alcuni SSD potrebbero funzionare correttamente come archiviazione secondaria ma mostrare instabilit�se utilizzati come disco di avvio.
-* Il funzionamento riuscito segnalato dagli utenti non garantisce sempre la stabilit�a lungo termine sotto carichi di lavoro sostenuti.
+* La compatibilità NVMe può variare in base alla versione di Raspberry Pi OS, alla versione del kernel, al firmware EEPROM, al firmware dell'SSD e alla qualità dell'alimentazione.
+* Si consiglia vivamente un alimentatore USB-C di alta qualità da 5V/5A, specialmente per SSD di alta capacità o prestazioni elevate.
+* Alcuni SSD potrebbero funzionare correttamente come archiviazione secondaria ma mostrare instabilità se utilizzati come disco di avvio.
+* Il funzionamento riuscito segnalato dagli utenti non garantisce sempre la stabilità a lungo termine sotto carichi di lavoro sostenuti.
 
 .. end_compatible_nvme_ssd
