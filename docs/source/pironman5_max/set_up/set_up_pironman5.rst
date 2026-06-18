@@ -1,9 +1,9 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
 
-.. _max_set_up_pironman5:
+.. _set_up_pironman5_max:
 
 4. Configurazione o Installazione del Software
 ================================================
