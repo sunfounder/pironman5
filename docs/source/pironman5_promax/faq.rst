@@ -80,7 +80,7 @@ Vous pouvez détacher le module accélérateur AI Hailo du Raspberry Pi AI Kit e
 
 
 2. Refroidissement et ventilateurs
--------------------------------
+-----------------------------------
 
 
 .. _promax_fan_faq:
@@ -186,7 +186,7 @@ Ce problème peut être causé par une mise à jour du système, une modificatio
 
 #. Restaurez le chargeur d'amorçage
 
-   * Si le PI5 ne démarre toujours pas, le chargeur d'amorçage peut être corrompu. Vous pouvez suivre ce guide : :ref:`promax_update_bootloader` et choisir de démarrer depuis la carte SD ou NVMe/USB.
+   * Si le PI5 ne démarre toujours pas, le chargeur d'amorçage peut être corrompu. Vous pouvez suivre ce guide : :ref:`update_bootloader_promax` et choisir de démarrer depuis la carte SD ou NVMe/USB.
    * Insérez la carte SD préparée dans le PI5, allumez-le et attendez au moins 10 secondes. Une fois la restauration terminée, retirez et reformatez la carte SD.
    * Ensuite, utilisez Raspberry Pi Imager pour flasher la dernière version de Raspberry Pi OS et essayez de démarrer à nouveau.
 
@@ -196,7 +196,7 @@ Ce problème peut être causé par une mise à jour du système, une modificatio
 Le module NVMe PIP ne fonctionne pas ?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. |link_install_the_os_promax| replace:: :ref:`promax_install_the_os`
+.. |link_install_the_os_promax| replace:: :ref:`install_the_os_promax`
 
 #. Confirmez que votre SSD NVMe est compatible. Référez-vous à la :ref:`liste des SSD NVMe compatibles <compitable_nvme_ssd_5>` pour les disques vérifiés, stables et compatibles.
 
@@ -266,7 +266,7 @@ Comment modifier l'ordre de démarrage du Raspberry Pi en utilisant des commande
 Comment modifier l'ordre de démarrage avec Raspberry Pi Imager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. |link_update_bootloader| replace:: :ref:`promax_update_bootloader`
+.. |link_update_bootloader| replace:: :ref:`update_bootloader_promax`
 
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_boot_order_imager
