@@ -20,12 +20,13 @@ Si vous avez installé Raspberry Pi OS, Ubuntu, Kali Linux ou Homebridge sur vot
 
   Avant de configurer, vous devez démarrer et vous connecter à votre Raspberry Pi. Si vous ne savez pas comment vous connecter, vous pouvez visiter le site officiel de Raspberry Pi : |link_rpi_get_start|.
 
+
 .. _safe_shutdown_promax:
 
-Configuration de l'arrêt pour désactiver l'alimentation GPIO
+1. Configuration de l'arrêt pour désactiver l'alimentation GPIO
 ------------------------------------------------------------
 
-Pour éviter que l'écran OLED et les Ventilateurs GPIO, alimentés par le GPIO du Raspberry Pi, ne restent actifs après l'arrêt, il est essentiel de configurer le Raspberry Pi pour désactiver l'alimentation GPIO.
+Pour éviter que l'écran OLED et les ventilateurs RGB, alimentés par le GPIO du Raspberry Pi, ne restent actifs après l'arrêt, il est essentiel de configurer le Raspberry Pi pour désactiver l'alimentation GPIO.
 
 #. Ouvrez l'outil de configuration EEPROM :
 
@@ -43,9 +44,10 @@ Pour éviter que l'écran OLED et les Ventilateurs GPIO, alimentés par le GPIO 
 
 #. Enregistrez les modifications. Un redémarrage vous sera demandé pour que les nouveaux paramètres prennent effet.
 
-.. _promax_download_pironman5_module:
 
-Téléchargement et installation du module ``pironman5``
+.. _install_pironman5_module_promax:
+
+2. Installation du module ``pironman5``
 -----------------------------------------------------------
 
 .. .. note::
@@ -92,23 +94,50 @@ Téléchargement et installation du module ``pironman5``
 
 #. Une fois l'installation terminée, redémarrez le Raspberry Pi comme demandé. Le premier démarrage peut prendre jusqu'à 30 secondes le temps que les services s'initialisent.
 
-   Au redémarrage, le ``pironman5.service`` démarrera automatiquement. Voici les principales configurations du Pironman 5 Pro MAX :
+   #. Après le démarrage réussi du Pironman 5 Pro MAX, vérifiez que les composants suivants fonctionnent correctement.
 
-   * L'écran OLED affiche le CPU, la RAM, l'utilisation du disque, la température du CPU et l'adresse IP du Raspberry Pi.
-   * Quatre LEDs RGB WS2812 s'allumeront en bleu avec un mode de respiration.
+   * **Écran OLED**
 
-#. Vous pouvez utiliser l'outil ``systemctl`` pour ``démarrer``, ``arrêter``, ``redémarrer`` ou vérifier le ``statut`` de ``pironman5.service``.
+     * Affiche l'utilisation du CPU, l'utilisation de la RAM, la température du CPU et l'adresse IP.
+     * S'éteint automatiquement après 10 secondes.
+     * Appuyez brièvement sur le bouton d'alimentation pour réveiller l'écran ou changer de page.
+
+   * **Bouton d'alimentation**
+
+     * Appui bref : Allumer / réveiller l'OLED / changer de page OLED.
+     * Maintenir pendant 2 secondes : Arrêt sécurisé (nécessite :ref:`safe_shutdown_promax`).
+     * Maintenir pendant 5 secondes : Arrêt forcé.
+
+   * **LEDs RGB WS2812**
+
+     * S'allument en bleu avec un effet de respiration.
+
+   * **Ventilateurs PWM**
+
+     * Réglés sur le mode **Toujours activé** par défaut.
+     * Le mode de fonctionnement peut être configuré via des commandes ou le Tableau de bord.
+
+   * **Ventilateur du CPU (ventilateur de tour de refroidissement)**
+
+     * Ajuste automatiquement la vitesse en fonction de la température du CPU.
+     * Courbe du ventilateur par défaut :
+
+       * < 50°C : Arrêt (0 %)
+       * 50°C+ : Faible (30 %)
+       * 60°C+ : Moyen (50 %)
+       * 67,5°C+ : Élevé (70 %)
+       * 75°C+ : Pleine vitesse (100 %)
+
+#. Utilisez ``systemctl`` pour gérer le ``pironman5.service``.
 
    .. code-block:: shell
 
       sudo systemctl restart pironman5.service
 
-   * ``restart`` : Utilisez cette commande pour appliquer les modifications apportées aux paramètres du Pironman 5 Pro MAX.
-   * ``start/stop`` : Activez ou désactivez le ``pironman5.service``.
-   * ``status`` : Vérifiez l'état de fonctionnement du programme ``pironman5`` en utilisant l'outil ``systemctl``.
+   Remplacez ``restart`` par ``start``, ``stop`` ou ``status`` selon vos besoins pour gérer le service.
 
 .. note::
 
-   À ce stade, vous avez configuré avec succès le Pironman 5 Pro MAX, et il est prêt à être utilisé.
+   Le Pironman 5 Pro MAX est maintenant prêt à être utilisé.
 
-   Pour un contrôle avancé de ses composants, veuillez vous référer à :ref:`control_commands_dashboard_promax`.
+   Pour les contrôles avancés et les fonctionnalités du tableau de bord, consultez :ref:`control_commands_dashboard_promax`.
