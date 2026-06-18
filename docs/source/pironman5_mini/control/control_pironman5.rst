@@ -22,5 +22,5 @@ Du kannst den Pironman 5 Mini entweder über die Kommandozeile steuern oder übe
 .. toctree::
     :maxdepth: 1
 
-    control_with dashboard 
+    control_with_dashboard 
     control_with_commands
