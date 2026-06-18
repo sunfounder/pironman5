@@ -148,6 +148,28 @@ git status
 ```
 After all changes, the user will compile and report errors. Fix any remaining WARNINGs or ERRORs.
 
+### Step 10: Post-sync image verification (if image warnings appear)
+If `sphinx-build` reports "image file not readable" warnings, the images likely exist in the git history of both branches but are missing from the working tree. This happens when images were added in English commits that predate the translation branch's fork point — `git diff` won't show them as different.
+
+Quick fix — copy all missing images from the English source workspace:
+```powershell
+# From the translation workspace (e.g., pironman5-rtd-20260319-sync/pironman5)
+# Copy images from English source (e.g., pironman5-rtd-20260319/pironman5)
+$en = "../pironman5-rtd-20260319/pironman5/docs/source"
+$de = "."
+
+# Dashboard images (base)
+Copy-Item "$en/pironman5/control/img/dashboard_*.png" "$de/docs/source/pironman5/control/img/" -Force
+Copy-Item "$en/pironman5/control/img/dashboard_*.jpg" "$de/docs/source/pironman5/control/img/" -Force
+# Dashboard images (MAX)
+Copy-Item "$en/pironman5_max/control/img/dashboard_*.png" "$de/docs/source/pironman5_max/control/img/" -Force
+Copy-Item "$en/pironman5_max/control/img/dashboard_*.jpg" "$de/docs/source/pironman5_max/control/img/" -Force
+# Umbrel images
+Copy-Item "$en/pironman5/set_up/img/umbrel_*" "$de/docs/source/pironman5/set_up/img/" -Force
+Copy-Item "$en/pironman5_max/set_up/img/umbrel_*" "$de/docs/source/pironman5_max/set_up/img/" -Force
+```
+Or copy only the specific missing files listed in the warnings.
+
 **Common build errors after sync:**
 
 | Error | Cause | Fix |
@@ -157,6 +179,8 @@ After all changes, the user will compile and report errors. Fix any remaining WA
 | `Duplicate substitution definition name: "link_openai_platform"` | Local `\|link_openai_platform\|` in `openclaw.rst` | Remove local definition, keep conf.py global one |
 | `undefined label: 'xxx'` | Anchor name mismatch between translation and English | Sync anchor to match English exactly |
 | `Title underline too short.` | Translated title is longer than its underline | Run Step 8 auto-fix |
+| `Failed to create a cross reference. A title or caption not found: 'xxx'` | Anchor exists but the section title following it is missing its underline (`---`/`===`/`^^^`). Translation agent may have omitted the underline when translating the title. | Add the missing underline after the translated section title. Example: `.. _install_sdrpp_5:` followed by `SDR++ (SDRpp)` with NO underline → add `^^^^^^^^^^^^^` |
+| `image file not readable: path/to/image.png` | Image referenced in RST was added in a new English commit and committed to `origin/docs-de` via git checkout, but the working tree doesn't actually have the file. The `git diff origin/docs-de origin/docs` approach in Step 2 only catches files that DIFFER between branches — if the image already exists identically in both branches' git history, it won't appear in the diff. | Copy missing images manually from the English source workspace using `Copy-Item`. Run a post-sync check: `git status --short` should show the image files if they were properly checked out. |
 
 ## Key Design
 
@@ -205,6 +229,10 @@ docs/source/
 7. **Verify after batch edits** — spot-check files after Perl replacements.
 8. **Promax files** — Chinese/Japanese promax files may start with `.. _anchor:` directly (no include). This is OK — don't force-add `.. include::` to these files.
 9. **UTF-8 in titles** — Perl's `length()` counts bytes. For German `ü`/`ö`/`ä`, add +2 margin in underline auto-fix.
+10. **Missing title underlines after translation** — Translation agents may produce section titles without their required RST underline (especially titles that immediately follow `.. _anchor:` directives). After translation, run Step 8 AND visually spot-check files with new anchors. Sphinx silently skips un-underlined titles and reports "title or caption not found" for any `:ref:` pointing to them.
+11. **Images missing from working tree** — After Step 2 (sync non-RST files), images added in new English commits may still be absent from the translation working tree. This happens because images committed to both branches identically won't appear in `git diff`. After sync, verify with: `git status` — all new images should appear as staged changes (from `git checkout origin/docs --`). If the working tree is clean after Step 2 but images are missing, manually copy from the English source workspace.
+12. **Step 8 must run AFTER all manual edits** — The title underline auto-fix must be the last step before verification. Any manual underline additions (e.g., fixing "title or caption not found" warnings) should be followed by another run of Step 8 to catch length mismatches.
+13. **Cross-reference suffixes** — When translating, agents may use the wrong anchor suffix (e.g., `_max` in a base file, or `_5` in a MAX file). Step 6 catches known patterns, but new patterns may appear in fresh content. Always verify `:ref:` targets match the variant's anchor naming convention.
 
 ## Build
 

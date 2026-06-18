@@ -49,36 +49,35 @@ To prevent the OLED screen and GPIO Fans, powered by the Raspberry Pi GPIO, from
 2. Installing the ``pironman5`` Module
 -----------------------------------------------------------
 
-.. note::
+.. .. note::
 
-   For Raspberry Pi OS Lite systems, first install the required tools such as ``git`` and ``python3``.
+..    For Raspberry Pi OS Lite systems, first install the required tools such as ``git`` and ``python3``.
 
-   .. code-block:: shell
+..    .. code-block:: shell
 
-      sudo apt-get install git -y
-      sudo apt-get install python3 python3-pip python3-setuptools -y
+..       sudo apt-get install git -y
+..       sudo apt-get install python3 python3-pip python3-setuptools -y
 
 #. Download and install the ``pironman5`` module from GitHub.
 
-   .. tip::
-
-      If you are using **Ubuntu**, install ``curl`` first:
-
-      .. code-block:: shell
-
-         sudo apt install curl -y
 
    .. code-block:: shell
 
       curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
+
+
    .. note::
 
-      If you are using Pironman 5 series together with PiPower 5, run the following command instead:
+      1. If you are using **Ubuntu**, install ``curl`` first: ``sudo apt install curl -y``
+
+      2. If you are using Pironman 5 series together with **PiPower 5**, run the following command instead:
 
       .. code-block:: shell
 
          curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+
+
 
 #. After running the installer, select your Pironman 5 model (1~4).
 
