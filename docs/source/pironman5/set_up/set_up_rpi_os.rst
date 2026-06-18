@@ -50,14 +50,14 @@ Um zu verhindern, dass der OLED-Bildschirm und die GPIO-Lüfter, die vom GPIO de
 2. Installation des Moduls ``pironman5``
 ----------------------------------------
 
-.. note::
+.. .. note::
 
-   Für Raspberry Pi OS Lite-Systeme installiere zunächst die erforderlichen Werkzeuge wie ``git`` und ``python3``.
+..    Für Raspberry Pi OS Lite-Systeme installiere zunächst die erforderlichen Werkzeuge wie ``git`` und ``python3``.
 
-   .. code-block:: shell
+..    .. code-block:: shell
 
-      sudo apt-get install git -y
-      sudo apt-get install python3 python3-pip python3-setuptools -y
+..       sudo apt-get install git -y
+..       sudo apt-get install python3 python3-pip python3-setuptools -y
 
 #. Lade das Modul ``pironman5`` von GitHub herunter und installiere es.
 
@@ -65,9 +65,13 @@ Um zu verhindern, dass der OLED-Bildschirm und die GPIO-Lüfter, die vom GPIO de
 
       curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
+
+
    .. note::
 
-      Wenn du die Pironman-5-Serie zusammen mit PiPower 5 verwendest, führe stattdessen den folgenden Befehl aus:
+      1. Wenn du **Ubuntu** verwendest, installiere ``curl`` zuerst: ``sudo apt install curl -y``
+
+      2. Wenn du die Pironman-5-Serie zusammen mit **PiPower 5** verwendest, führe stattdessen den folgenden Befehl aus:
 
       .. code-block:: shell
 
