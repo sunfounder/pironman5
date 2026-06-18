@@ -46,14 +46,14 @@ Um zu verhindern, dass der über den GPIO des Raspberry Pi gespeiste RGB-Lüfter
 Download und Installation des Moduls ``pironman5``
 -----------------------------------------------------------
 
-.. note::
+.. .. note::
 
-   Für „Lite“-Systeme installiere zunächst Werkzeuge wie ``git``, ``python3``, ``pip3``, ``setuptools`` usw.
-   
-   .. code-block:: shell
-   
-      sudo apt-get install git -y
-      sudo apt-get install python3 python3-pip python3-setuptools -y
+..    Für „Lite“-Systeme installiere zunächst Werkzeuge wie ``git``, ``python3``, ``pip3``, ``setuptools`` usw.
+
+..    .. code-block:: shell
+
+..       sudo apt-get install git -y
+..       sudo apt-get install python3 python3-pip python3-setuptools -y
 
 #. Lade den Code von GitHub herunter und installiere das Modul ``pironman5``.
 

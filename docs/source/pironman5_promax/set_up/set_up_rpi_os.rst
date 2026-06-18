@@ -45,14 +45,14 @@ Um zu verhindern, dass der OLED-Bildschirm und die RGB-Lüfter, die über die GP
 Herunterladen und Installieren des Moduls ``pironman5``
 -----------------------------------------------------------
 
-.. note::
+.. .. note::
 
-   Installieren Sie für Lite-Systeme zunächst Tools wie ``git``, ``python3``, ``pip3``, ``setuptools`` usw.
+..    Installieren Sie für Lite-Systeme zunächst Tools wie ``git``, ``python3``, ``pip3``, ``setuptools`` usw.
 
-   .. code-block:: shell
+..    .. code-block:: shell
 
-      sudo apt-get install git -y
-      sudo apt-get install python3 python3-pip python3-setuptools -y
+..       sudo apt-get install git -y
+..       sudo apt-get install python3 python3-pip python3-setuptools -y
 
 #. Laden Sie den Code von GitHub herunter und installieren Sie das Modul ``pironman5``.
 
