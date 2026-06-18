@@ -19,7 +19,7 @@ Merci d’avoir choisi notre |link_pironman5_mini|.
 **Caractéristiques principales**
 
 * **Commandes dédiées** : Bouton d’alimentation intégré pour une utilisation pratique.  
-* **Refroidissement efficace** : Système de refroidissement actif similaire à celui du ventilateur officiel Raspberry Pi, avec en plus un ventilateur RGB latéral pour un meilleur flux d’air.  
+* **Refroidissement efficace** : Système de refroidissement actif similaire à celui du ventilateur officiel Raspberry Pi, avec en plus un Ventilateur GPIO latéral pour un meilleur flux d’air.  
 * **Fonctionnalités supplémentaires** : Batterie RTC intégrée et 4 LED RGB WS2812-5050.  
 * **Extension facile** : Extension GPIO pour des connexions matérielles flexibles.  
 * **Stockage haute vitesse** : Emplacement PCIe 2.0 M.2 M-key prenant en charge les SSD NVMe aux formats **2230**, **2242**, **2260**, **2280**.  
@@ -63,7 +63,7 @@ Idéal pour les projets nécessitant **un stockage rapide, des performances stab
     * Port LAN Gigabit  
     * 2 x Ports Micro HDMI 4Kp60  
 * 1 x Bouton d’alimentation métallique  
-* 1 x Ventilateur RGB (40x40x10mm)  
+* 1 x Ventilateur GPIO (40x40x10mm)  
 * 4 x LED RGB WS2812-5050  
 * 1 x Refroidisseur actif  
 * 1 x PCIe 2.0 M.2 M-key (2230, 2242, 2260, 2280) pour SSD NVMe  

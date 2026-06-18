@@ -10,7 +10,7 @@
 
 Maintenant que le système a été écrit sur la Micro SD ou le NVMe SSD, vous pouvez les insérer dans l'emplacement prévu du Pironman 5. Ensuite, appuyez sur le bouton d'alimentation pour allumer l'appareil.
 
-Après avoir allumé l'appareil, vous verrez que les différentes LED d'alimentation sont allumées, mais l'écran OLED, les LED RGB et les ventilateurs RGB (les deux ventilateurs latéraux) ne fonctionneront pas encore, car ils doivent être configurés. Si vous constatez des problèmes d'affichage à l'écran, veuillez les ignorer pour l'instant ; ils seront résolus après la configuration.
+Après avoir allumé l'appareil, vous verrez que les différentes LED d'alimentation sont allumées, mais l'écran OLED, les LED RGB et les Ventilateurs GPIO (les deux ventilateurs latéraux) ne fonctionneront pas encore, car ils doivent être configurés. Si vous constatez des problèmes d'affichage à l'écran, veuillez les ignorer pour l'instant ; ils seront résolus après la configuration.
 
 Avant de procéder à la configuration, vous devez démarrer et vous connecter à votre Raspberry Pi. Si vous ne savez pas comment vous connecter, vous pouvez consulter le site officiel de Raspberry Pi: |link_rpi_get_start|.
 

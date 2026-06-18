@@ -130,18 +130,28 @@ La page Paramètres vous permet de personnaliser l'affichage du tableau de bord,
 
 * **Ventilateurs GPIO**
 
-  Configurez le mode de fonctionnement des deux ventilateurs GPIO.
+  Configurez le mode de fonctionnement et le comportement des LED des deux ventilateurs GPIO.
 
   .. image:: img/dashboard_setting_fan.png
       :width: 600
 
-  Le mode sélectionné détermine quand les ventilateurs GPIO s'activeront.
+  * **LED du ventilateur**
 
-  * **Silencieux** : Les ventilateurs GPIO s'activeront à 70°C.
-  * **Équilibré** : Les ventilateurs GPIO s'activeront à 67,5°C.
-  * **Frais** : Les ventilateurs GPIO s'activeront à 60°C.
-  * **Performance** : Les ventilateurs GPIO s'activeront à 50°C.
-  * **Toujours activé** : Les ventilateurs GPIO resteront toujours actifs.
+    Contrôle le comportement d'éclairage RGB des ventilateurs GPIO.
+
+    * **ON** : Les LED du ventilateur restent toujours allumées.
+    * **OFF** : Les LED du ventilateur restent éteintes.
+    * **FOLLOW** : Les LED du ventilateur suivent les effets d'éclairage RGB du système.
+
+  * **Mode des ventilateurs GPIO**
+
+    Le mode sélectionné détermine quand les ventilateurs GPIO s'activeront.
+
+    * **Silencieux** : Les ventilateurs GPIO s'activent à 70°C.
+    * **Équilibré** : Les ventilateurs GPIO s'activent à 67,5°C.
+    * **Frais** : Les ventilateurs GPIO s'activent à 60°C.
+    * **Performance** : Les ventilateurs GPIO s'activent à 50°C.
+    * **Toujours activé** : Les ventilateurs GPIO restent toujours actifs.
 
 
 * **Système**

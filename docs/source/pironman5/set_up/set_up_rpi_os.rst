@@ -60,6 +60,14 @@ Pour éviter que l'écran OLED et les ventilateurs GPIO, alimentés par le GPIO 
 
 #. Téléchargez et installez le module ``pironman5`` depuis GitHub.
 
+   .. tip::
+
+      Si vous utilisez **Ubuntu**, installez ``curl`` d'abord :
+
+      .. code-block:: shell
+
+         sudo apt install curl -y
+
    .. code-block:: shell
 
       curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash

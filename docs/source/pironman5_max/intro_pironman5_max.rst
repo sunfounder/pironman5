@@ -20,7 +20,7 @@ Faites passer votre Raspberry Pi 5 au niveau supérieur avec |link_pironman5_max
 **Caractéristiques principales** :
 
 * **Double NVMe & expansion IA** : Commutateur PCIe Gen 2 avec deux emplacements M.2 M-key (2230/2242/2260/2280) pour SSD ou accélérateurs IA. Entièrement compatible avec Hailo-8/8L.  
-* **Refroidissement extrême** : Ventirad tour avec ventilateur PWM plus deux ventilateurs RGB, maintenant un Raspberry Pi à 100 % de charge à seulement 39 °C dans une pièce à 25 °C.  
+* **Refroidissement extrême** : Ventirad tour avec Ventilateur du CPU plus deux Ventilateurs GPIO, maintenant un Raspberry Pi à 100 % de charge à seulement 39 °C dans une pièce à 25 °C.  
 * **Écran OLED intelligent** : Affichage en temps réel du CPU, de la mémoire, de la température, de l’utilisation du disque, de l’adresse IP et plus encore.
 * **Éclairage RGB personnalisable** : Quatre LED adressables WS2812 illuminent votre installation avec des effets vibrants.  
 * **Connectivité améliorée** : Deux ports HDMI standards, récepteur IR pour les applications multimédia, bouton d’alimentation sécurisé au style rétro, et extension GPIO externe étiquetée.  
@@ -69,8 +69,8 @@ Faites passer votre Raspberry Pi 5 au niveau supérieur avec |link_pironman5_max
     * Port LAN Gigabit  
     * 2 x Ports HDMI standards  
 * Système de refroidissement  
-    * 1 x Ventirad tour avec ventilateur PWM (contrôlé par le système)  
-    * 2 x Ventilateurs RGB (contrôlés par GPIO)  
+    * 1 x Ventirad tour avec Ventilateur du CPU (contrôlé par le système)  
+    * 2 x Ventilateurs GPIO (contrôlés par GPIO)  
 * Affichage  
     * Écran OLED 0,96" (CPU, RAM, température, utilisation du disque, adresse IP)  
 * Stockage & Expansion  

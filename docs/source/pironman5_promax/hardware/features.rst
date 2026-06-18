@@ -33,7 +33,7 @@ Caractéristiques
 * **Système de refroidissement** :
 
     * 1 x Grand refroidisseur tour avec ventilateur contrôlé par PWM
-    * 3 x Ventilateurs PWM RGB adressables (contrôlés par GPIO, synchronisables)
+    * 3 x Ventilateurs du CPU RGB adressables (contrôlés par GPIO, synchronisables)
 
 * **Affichage et multimédia** :
 
@@ -50,7 +50,7 @@ Caractéristiques
 
 * **Commandes, éclairage et caractéristiques** :
 
-    * 18 LEDs RGB adressables WS2812B : 6 sur la carte et 12 intégrées dans les ventilateurs RGB.
+    * 18 LEDs RGB adressables WS2812B : 6 sur la carte et 12 intégrées dans les Ventilateurs GPIO.
     * Récepteur IR (38 kHz)
     * Bouton d'alimentation métallique (fonction d'arrêt sécurisé)
     * Support de batterie pour horloge temps réel (RTC) (pour pile CR1220)

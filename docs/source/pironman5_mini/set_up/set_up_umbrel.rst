@@ -57,7 +57,7 @@ Si vous avez installé Umbrel OS sur votre Raspberry Pi 5, vous devrez configure
    Voici les principales configurations du Pironman 5 Mini :
    
    * Quatre LED WS2812 RGB s’allumeront en bleu avec un effet de respiration.  
-   * Les ventilateurs RGB sont configurés par défaut sur le mode **Toujours activé**. Pour des températures de déclenchement différentes, consultez :ref:`cc_control_fan_mini`.
+   * Les Ventilateurs GPIO sont configurés par défaut sur le mode **Toujours activé**. Pour des températures de déclenchement différentes, consultez :ref:`cc_control_fan_mini`.
 
 #. Vous pouvez utiliser l’outil ``systemctl`` pour ``start``, ``stop``, ``restart`` ou vérifier le ``status`` du service ``pironman5.service``.
 

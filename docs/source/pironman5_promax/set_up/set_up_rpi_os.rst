@@ -20,10 +20,12 @@ Si vous avez installé Raspberry Pi OS, Ubuntu, Kali Linux ou Homebridge sur vot
 
   Avant de configurer, vous devez démarrer et vous connecter à votre Raspberry Pi. Si vous ne savez pas comment vous connecter, vous pouvez visiter le site officiel de Raspberry Pi : |link_rpi_get_start|.
 
+.. _safe_shutdown_promax:
+
 Configuration de l'arrêt pour désactiver l'alimentation GPIO
 ------------------------------------------------------------
 
-Pour éviter que l'écran OLED et les ventilateurs RGB, alimentés par le GPIO du Raspberry Pi, ne restent actifs après l'arrêt, il est essentiel de configurer le Raspberry Pi pour désactiver l'alimentation GPIO.
+Pour éviter que l'écran OLED et les Ventilateurs GPIO, alimentés par le GPIO du Raspberry Pi, ne restent actifs après l'arrêt, il est essentiel de configurer le Raspberry Pi pour désactiver l'alimentation GPIO.
 
 #. Ouvrez l'outil de configuration EEPROM :
 
@@ -55,16 +57,44 @@ Téléchargement et installation du module ``pironman5``
       sudo apt-get install git -y
       sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. Procédez au téléchargement du code depuis GitHub et à l'installation du module ``pironman5``.
+#. Téléchargez et installez le module ``pironman5`` depuis GitHub.
+
+   .. tip::
+
+      Si vous utilisez **Ubuntu**, installez ``curl`` d'abord :
+
+      .. code-block:: shell
+
+         sudo apt install curl -y
 
    .. code-block:: shell
 
-      cd ~
-      git clone -b pro-max https://github.com/sunfounder/pironman5.git --depth 1
-      cd ~/pironman5
-      sudo python3 install.py
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
-   Après une installation réussie, un redémarrage du système est nécessaire pour activer l'installation. Suivez l'invite de redémarrage à l'écran.
+   .. note::
+
+      Si vous utilisez la série Pironman 5 avec PiPower 5, exécutez plutôt la commande suivante :
+
+      .. code-block:: shell
+
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+
+#. Après avoir lancé l'installateur, sélectionnez votre modèle Pironman 5 (1~4).
+
+   .. code-block:: shell
+
+      Pironman 5 Installer v1.0.1
+      Supports: 5 | 5 Mini | 5 Max | 5 Pro Max
+
+      Please select your product model:
+      1) Pironman 5
+      2) Pironman 5 Mini
+      3) Pironman 5 Max
+      4) Pironman 5 Pro Max
+
+      Enter number [1-4]:
+
+#. Une fois l'installation terminée, redémarrez le Raspberry Pi comme demandé. Le premier démarrage peut prendre jusqu'à 30 secondes le temps que les services s'initialisent.
 
    Au redémarrage, le ``pironman5.service`` démarrera automatiquement. Voici les principales configurations du Pironman 5 Pro MAX :
 

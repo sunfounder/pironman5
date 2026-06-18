@@ -127,7 +127,7 @@ Utilisez ``pironman5`` ou ``pironman5 -h`` pour obtenir des instructions.
 
 Contrôle des LEDs RGB
 ----------------------
-La carte comporte 18 LEDs RGB adressables WS2812B : 6 sur la carte et 12 intégrées dans les ventilateurs RGB. Les utilisateurs peuvent contrôler l'alimentation, la couleur, la luminosité, les modes d'affichage, la vitesse d'animation et le nombre de LEDs actives.
+La carte comporte 18 LEDs RGB adressables WS2812B : 6 sur la carte et 12 intégrées dans les Ventilateurs GPIO. Les utilisateurs peuvent contrôler l'alimentation, la couleur, la luminosité, les modes d'affichage, la vitesse d'animation et le nombre de LEDs actives.
 
 .. note::
 
@@ -186,7 +186,7 @@ La carte comporte 18 LEDs RGB adressables WS2812B : 6 sur la carte et 12 intégr
 Ventilateur
 --------------------------------
 
-Ces ventilateurs se connectent à un port dédié pour ventilateur PWM 4 broches sur le Raspberry Pi 5. Leur stratégie de contrôle par défaut est un schéma d'ajustement de vitesse intelligent à plusieurs niveaux géré par le firmware, basé sur la température du CPU. Cela signifie que lorsque vous utilisez un ventilateur PWM officiel ou compatible et que vous le connectez correctement, le système ajustera automatiquement la vitesse du ventilateur en fonction des changements de température du CPU (commençant à fonctionner au-dessus de 50°C) sans aucune intervention manuelle de votre part.
+Ces ventilateurs se connectent à un port dédié pour Ventilateur du CPU 4 broches sur le Raspberry Pi 5. Leur stratégie de contrôle par défaut est un schéma d'ajustement de vitesse intelligent à plusieurs niveaux géré par le firmware, basé sur la température du CPU. Cela signifie que lorsque vous utilisez un Ventilateur du CPU officiel ou compatible et que vous le connectez correctement, le système ajustera automatiquement la vitesse du ventilateur en fonction des changements de température du CPU (commençant à fonctionner au-dessus de 50°C) sans aucune intervention manuelle de votre part.
 
 Vérifier l'écran OLED
 -----------------------------------

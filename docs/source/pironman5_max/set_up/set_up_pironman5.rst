@@ -3,14 +3,14 @@
    :end-before: end_hello_message
 
 
-.. _max_set_up_pironman5:
+.. _set_up_pironman5_max:
 
 4. Configuration ou installation du logiciel
 ================================================
 
 Une fois que le système est écrit sur la carte Micro SD ou le SSD NVMe, insérez-le dans l’emplacement prévu du Pironman 5 MAX. Appuyez ensuite sur le bouton d’alimentation pour allumer l’appareil.
 
-Après la mise sous tension, vous verrez les différentes LED d’alimentation s’allumer. En revanche, l’écran OLED, les LED RGB et les ventilateurs RGB (les deux sur les côtés) ne fonctionneront pas encore, car une configuration est nécessaire. Si l’écran présente un affichage brouillé, ignorez-le pour l’instant ; cela sera corrigé une fois la configuration effectuée.
+Après la mise sous tension, vous verrez les différentes LED d’alimentation s’allumer. En revanche, l’écran OLED, les LED RGB et les Ventilateurs GPIO (les deux sur les côtés) ne fonctionneront pas encore, car une configuration est nécessaire. Si l’écran présente un affichage brouillé, ignorez-le pour l’instant ; cela sera corrigé une fois la configuration effectuée.
 
 Avant de configurer, vous devez démarrer et vous connecter à votre Raspberry Pi. Si vous ne savez pas comment procéder, vous pouvez consulter le site officiel Raspberry Pi : |link_rpi_get_start|.
 

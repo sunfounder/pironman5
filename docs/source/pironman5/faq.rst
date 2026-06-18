@@ -15,6 +15,8 @@ Dépannage rapide
 * Le ventilateur CPU ne tourne pas → :ref:`faq_pwm_fan_5`
 * Le tableau de bord n'affiche aucune donnée → :ref:`faq_dashboard_5`
 * Le SSD NVMe n'est pas détecté → :ref:`faq_nvme_5`
+* Le bouton d'alimentation ne fonctionne pas → :ref:`faq_power_button_not_work_5`
+* Le SSD NVMe est détecté mais provoque un redémarrage système → :ref:`faq_nvme_link_down_5`
 
 
 
@@ -55,6 +57,27 @@ Le bouton d'alimentation étend le bouton d'alimentation d'origine du Raspberry 
     :align: center
 
 .. end_faq_power_button
+
+
+.. _faq_power_button_not_work_5:
+
+Le bouton d'alimentation ne fonctionne pas ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_power_button_not_work
+
+#. Tout d'abord, confirmez le comportement attendu du bouton d'alimentation :
+
+   * **Raspberry Pi OS Desktop** : Appuyez deux fois rapidement sur le bouton d'alimentation pour éteindre. Maintenez enfoncé 5 secondes pour forcer un arrêt brutal. Appuyez une fois pour allumer à partir d'un état éteint.
+   * **Raspberry Pi OS Lite** : Appuyez une fois sur le bouton d'alimentation pour éteindre. Maintenez enfoncé 5 secondes pour forcer un arrêt brutal. Appuyez une fois pour allumer.
+
+#. Vérifiez si les broches du convertisseur d'alimentation sont correctement alignées avec les pads J2 du Raspberry Pi 5 (entre le connecteur de la batterie RTC et le bord de la carte).
+
+#. Vérifiez si les broches à l'intérieur du connecteur du convertisseur d'alimentation sont correctement alignées avec le connecteur du bouton d'alimentation. Rebranchez le câble du bouton d'alimentation si nécessaire.
+
+#. Utilisez un tournevis pour court-circuiter brièvement les deux broches sur le connecteur du convertisseur d'alimentation où le bouton se branche. Si le Pi s'allume, le bouton lui-même est peut-être défectueux ; sinon, le problème vient probablement de la carte convertisseur ou de la connexion au Pi 5.
+
+.. end_faq_power_button_not_work
 
 
 Direction du flux d'air
@@ -276,7 +299,7 @@ Les LED RGB ne fonctionnent pas ?
 
 .. start_faq_rgb
 
-#. Les deux broches sur l'IO Expander au-dessus de J9 sont utilisées pour connecter les LED RGB à GPIO10. Vérifiez que le cavalier sur ces deux broches est correctement installé.
+#. Les deux broches sur la carte d'extension sont utilisées pour connecter les LED RGB à GPIO10. Vérifiez que le cavalier sur ces deux broches est correctement installé.
 
    .. image:: hardware/img/io_board_rgb_pin.png
       :width: 300
@@ -367,7 +390,7 @@ Si vous souhaitez personnaliser l'affichage OLED, par exemple en ajoutant des af
   .. code-block:: shell
 
      sudo systemctl stop pironman5.service
-     sudo systemctl restart pironman5.service
+     sudo pironman5 start
 
 .. end_faq_customize_oled
 
@@ -465,7 +488,7 @@ Si vous avez déjà installé ``pironman5``, vous pouvez supprimer le module Das
 
 .. code-block:: shell
 
-   /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
+   /opt/pironman5/venv/bin/pip3 uninstall pm-dashboard influxdb
    sudo apt purge influxdb
    sudo systemctl restart pironman5
 
@@ -562,6 +585,8 @@ Le module NVMe PIP ne fonctionne pas ?
 
 #. Assurez-vous que le câble FPC reliant le module NVMe PIP au Raspberry Pi 5 est bien fixé.
 
+#. Confirmez que votre SSD NVMe est compatible. Consultez la :ref:`liste des SSD NVMe compatibles <compitable_nvme_ssd_5>` pour des disques vérifiés, stables et compatibles.
+
    .. raw:: html
 
        <div style="text-align: center;">
@@ -598,8 +623,8 @@ Le module NVMe PIP ne fonctionne pas ?
 
    .. image:: img/nvme_pip_leds.png
 
-   * Si la **LED PWR** est allumée mais que la **LED STA** ne clignote pas, le SSD NVMe n'est pas reconnu.
-   * Si la **LED PWR** est éteinte, court-circuitez les broches ``Force Enable`` (J4).
+   * Si la **LED PWR** est allumée mais que la **LED STA** ne clignote pas, le SSD NVMe n'est pas reconnu par le Raspberry Pi.
+   * Si la **LED PWR** est éteinte, court-circuitez les broches ``Force Enable`` (J4). Si la **LED PWR** s'allume après le court-circuit, le problème peut provenir d'un câble FPC mal fixé ou d'une configuration système non prise en charge pour le NVMe.
 
      .. image:: img/nvme_pip_j4.png
 
@@ -618,6 +643,51 @@ Le module NVMe PIP ne fonctionne pas ?
       cat /var/log/pironman5/pironman5.log
 
 .. end_faq_nvme_pip
+
+
+.. _faq_nvme_link_down_5:
+
+Le SSD NVMe est détecté mais provoque un redémarrage du système en lecture/écriture ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_nvme_link_down
+
+Dans certains cas (notamment avec le WD Blue SN5000), le SSD NVMe peut être détecté par le Raspberry Pi 5 mais provoquer un redémarrage du système lors des opérations de lecture/écriture. Il s'agit d'un problème de compatibilité/stabilité PCIe entre le SSD et le Raspberry Pi 5, **pas** d'un défaut matériel du Pironman 5.
+
+Essayez les étapes suivantes pour résoudre le problème :
+
+#. Mettez à jour le bootloader du Raspberry Pi 5 vers la dernière version :
+
+   .. code-block:: shell
+
+      sudo rpi-eeprom-update -a
+      sudo reboot
+
+#. Forcez la vitesse PCIe Gen3 en ajoutant la ligne suivante à ``/boot/firmware/config.txt`` :
+
+   .. code-block:: text
+
+      dtparam=pciex1_gen=3
+
+#. Désactivez l'ASPM (Active State Power Management) en ajoutant ``pcie_aspm=off`` à la ligne de commande du noyau. Modifiez ``/boot/firmware/cmdline.txt`` et ajoutez-le à la ligne existante (ne **créez pas** de nouvelle ligne) :
+
+   .. code-block:: text
+
+      pcie_aspm=off
+
+   .. note::
+
+      ``pcie_aspm=off`` est souvent le correctif critique — les problèmes d'ASPM PCIe sont très courants sur le Raspberry Pi 5 et peuvent provoquer des déconnexions aléatoires des disques NVMe ou des redémarrages du système lors d'E/S intensives.
+
+#. Après avoir appliqué les modifications ci-dessus, redémarrez le Raspberry Pi :
+
+   .. code-block:: shell
+
+      sudo reboot
+
+#. Si le problème persiste, repartitionnez et reformatez le SSD NVMe, puis réinstallez le système d'exploitation.
+
+.. end_faq_nvme_link_down
 
 
 Comment modifier l'ordre de démarrage du Raspberry Pi avec des commandes

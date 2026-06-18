@@ -74,7 +74,7 @@ Par défaut, 4 LED RGB sont installées. Pour en ajouter, mettez à jour le nomb
 
 
 
-Broches du ventilateur RGB
+Broches du Ventilateur GPIO
 -------------------------------------
 
 La carte d’extension prend en charge un ventilateur 5V sans PWM.  
@@ -89,7 +89,7 @@ Si vous ne souhaitez pas les utiliser, vous pouvez retirer les cavaliers pour li
 
  .. image:: img/io_board_fan_j9.png
 
-Vous pouvez configurer le mode de fonctionnement du ventilateur RGB via commande. Ces modes déterminent à quelle température le ventilateur s’active.
+Vous pouvez configurer le mode de fonctionnement du Ventilateur GPIO via commande. Ces modes déterminent à quelle température le ventilateur s’active.
 
 Par exemple, en mode **1: Performance**, le ventilateur s’active à 50 °C.
 

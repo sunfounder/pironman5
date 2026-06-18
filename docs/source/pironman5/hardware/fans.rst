@@ -8,10 +8,10 @@
 Ventilateurs
 ================
 
-Ventilateur PWM
------------------
+Ventilateur du CPU
+------------------
 
-Le ventilateur PWM dans le Pironman 5 est géré par le système Raspberry Pi et constitue la pierre angulaire de sa solution de refroidissement intelligent, notamment sous forte charge. Ce système combine un ventilateur PWM principal avec deux ventilateurs RGB supplémentaires pour améliorer les performances de refroidissement, étroitement intégrés au système de gestion thermique du Raspberry Pi 5.  
+Le Ventilateur du CPU dans le Pironman 5 est géré par le système Raspberry Pi et constitue la pierre angulaire de sa solution de refroidissement intelligent, notamment sous forte charge. Ce système combine un Ventilateur du CPU principal avec deux Ventilateurs GPIO supplémentaires pour améliorer les performances de refroidissement, étroitement intégrés au système de gestion thermique du Raspberry Pi 5.  
 
 .. image:: img/fan_tower_cooler.png  
   :width: 600  
@@ -46,7 +46,7 @@ Le ventilateur PWM dans le Pironman 5 est géré par le système Raspberry Pi et
 
 **Contrôle de la vitesse du ventilateur en fonction de la température**  
 
-Le ventilateur PWM fonctionne de manière dynamique, ajustant sa vitesse en fonction de la température du Raspberry Pi 5 :  
+Le Ventilateur du CPU fonctionne de manière dynamique, ajustant sa vitesse en fonction de la température du Raspberry Pi 5 :  
 
 * **En dessous de 50°C** : Le ventilateur reste éteint (vitesse 0%).  
 * **À 50°C** : Le ventilateur fonctionne à basse vitesse (vitesse 30%).  
@@ -56,7 +56,7 @@ Le ventilateur PWM fonctionne de manière dynamique, ajustant sa vitesse en fonc
 
 Ce contrôle de la vitesse en fonction de la température inclut une hystérésis de 5°C pour éviter des changements fréquents de vitesse. Par exemple, le ventilateur réduit sa vitesse uniquement après une baisse de température de 5°C en dessous de chaque seuil.  
 
-Les commandes suivantes permettent aux utilisateurs de surveiller le fonctionnement du ventilateur PWM :  
+Les commandes suivantes permettent aux utilisateurs de surveiller le fonctionnement du Ventilateur du CPU :  
 
 Pour vérifier l'état actuel du ventilateur :  
 
@@ -64,7 +64,7 @@ Pour vérifier l'état actuel du ventilateur :
 
   cat /sys/class/thermal/cooling_device0/cur_state
 
-Ventilateurs RGB
+Ventilateurs GPIO
 ---------------------
 
 .. image:: img/size_fan.png

@@ -33,7 +33,7 @@ Tableau de bord
 
 Plusieurs cartes vous permettent de consulter les informations essentielles de votre Raspberry Pi, notamment :
 
-* **Ventilateur** : Affiche la température du CPU et la vitesse du ventilateur PWM. **GPIO Fan State** indique l’état du ventilateur RGB. À la température actuelle, le ventilateur RGB est désactivé.
+* **Ventilateur** : Affiche la température du CPU et la vitesse du Ventilateur du CPU. **GPIO Fan State** indique l’état du Ventilateur GPIO. À la température actuelle, le Ventilateur GPIO est désactivé.
 
   .. image:: img/dashboard_pwm_fan.png
     :width: 90%
@@ -101,7 +101,7 @@ Un menu Paramètres est accessible en haut à droite de la page.
 
 * **Dark Mode** : Basculez entre les thèmes clair et sombre. Le choix est mémorisé dans le cache du navigateur. Changer de navigateur ou vider le cache restaurera le thème par défaut (clair).
 * **Temperature Unit** : Choisissez l’unité d’affichage des températures.
-* **Fan Mode** : Définissez le mode de fonctionnement du ventilateur RGB. Chaque mode déclenche le ventilateur à une température différente :
+* **Fan Mode** : Définissez le mode de fonctionnement du Ventilateur GPIO. Chaque mode déclenche le ventilateur à une température différente :
 
     * **Quiet** : le ventilateur démarre à 70°C.
     * **Balanced** : le ventilateur démarre à 67,5°C.
@@ -111,7 +111,7 @@ Un menu Paramètres est accessible en haut à droite de la page.
 
     Par exemple, en mode **Performance**, le ventilateur s’active dès que le CPU atteint 50°C.
 
-    Une fois les paramètres enregistrés, si la température du CPU dépasse 50°C, l’état **GPIO Fan State** passera à ON dans le tableau de bord et le ventilateur RGB commencera à tourner.
+    Une fois les paramètres enregistrés, si la température du CPU dépasse 50°C, l’état **GPIO Fan State** passera à ON dans le tableau de bord et le Ventilateur GPIO commencera à tourner.
 
   .. image:: img/dashboard_rgbfan_on.png
     :width: 300
@@ -130,4 +130,4 @@ Un menu Paramètres est accessible en haut à droite de la page.
 
 **À propos du ventilateur principal**
 
-Le ventilateur principal se connecte à un port dédié pour ventilateur PWM à 4 broches sur le Raspberry Pi 5. Sa stratégie de contrôle par défaut est un système de régulation intelligent à plusieurs niveaux, géré par le firmware, qui ajuste la vitesse en fonction de la température du CPU. Cela signifie que lorsque vous utilisez un ventilateur PWM officiel ou compatible et que vous le connectez correctement, le système ajustera automatiquement la vitesse du ventilateur en fonction des changements de température du CPU (il commence à fonctionner au-dessus de 50°C), sans aucune intervention manuelle de votre part.
+Le ventilateur principal se connecte à un port dédié pour Ventilateur du CPU à 4 broches sur le Raspberry Pi 5. Sa stratégie de contrôle par défaut est un système de régulation intelligent à plusieurs niveaux, géré par le firmware, qui ajuste la vitesse en fonction de la température du CPU. Cela signifie que lorsque vous utilisez un Ventilateur du CPU officiel ou compatible et que vous le connectez correctement, le système ajustera automatiquement la vitesse du ventilateur en fonction des changements de température du CPU (il commence à fonctionner au-dessus de 50°C), sans aucune intervention manuelle de votre part.

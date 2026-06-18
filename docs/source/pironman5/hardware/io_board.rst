@@ -130,7 +130,7 @@ Pour utiliser le récepteur IR, vérifiez sa connexion et installez le module n�
 * Après avoir exécuté la commande, appuyez sur un bouton de la télécommande et le code de ce bouton s'affichera.
 
 
-Broches des ventilateurs RGB
+Broches des Ventilateurs GPIO
 ------------------------------------
 
 La carte d'extension IO prend en charge jusqu'à deux ventilateurs 5V non-PWM. Les deux ventilateurs sont contrôlés ensemble. 
@@ -139,7 +139,7 @@ La carte d'extension IO prend en charge jusqu'à deux ventilateurs 5V non-PWM. L
 
 .. image:: img/io_board_fan.png
 
-Les deux broches situées sous J9 sont les broches d'activation des ventilateurs RGB. Par défaut, un cavalier est inséré sur ces broches, permettant de contrôler l'état des ventilateurs via le GPIO6. Si le fonctionnement des ventilateurs n'est pas souhaité, le cavalier peut être retiré pour libérer GPIO6.
+Les deux broches situées sous J9 sont les broches d'activation des Ventilateurs GPIO. Par défaut, un cavalier est inséré sur ces broches, permettant de contrôler l'état des ventilateurs via le GPIO6. Si le fonctionnement des ventilateurs n'est pas souhaité, le cavalier peut être retiré pour libérer GPIO6.
 
 .. image:: img/io_board_fan_j9.png
 
@@ -147,21 +147,21 @@ Les deux broches situées sous J9 sont les broches d'activation des ventilateurs
 
 .. image:: img/io_board_fan_d2.png
 
-Vous pouvez utiliser une commande pour configurer le mode de fonctionnement des deux ventilateurs RGB. Ces modes déterminent les conditions sous lesquelles les ventilateurs RGB s'activeront.
+Vous pouvez utiliser une commande pour configurer le mode de fonctionnement des deux Ventilateurs GPIO. Ces modes déterminent les conditions sous lesquelles les Ventilateurs GPIO s'activeront.
 
-Par exemple, si le mode est réglé sur **1: Performance**, les ventilateurs RGB s'activeront à 50°C.
+Par exemple, si le mode est réglé sur **1: Performance**, les Ventilateurs GPIO s'activeront à 50°C.
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4: Silencieux**: Les ventilateurs RGB s'activeront à 70°C.
-* **3: Équilibré**: Les ventilateurs RGB s'activeront à 67,5°C.
-* **2: Cool**: Les ventilateurs RGB s'activeront à 60°C.
-* **1: Performance**: Les ventilateurs RGB s'activeront à 50°C.
-* **0: Toujours activés**: Les ventilateurs RGB resteront toujours activés.
+* **4: Silencieux**: Les Ventilateurs GPIO s'activeront à 70°C.
+* **3: Équilibré**: Les Ventilateurs GPIO s'activeront à 67,5°C.
+* **2: Cool**: Les Ventilateurs GPIO s'activeront à 60°C.
+* **1: Performance**: Les Ventilateurs GPIO s'activeront à 50°C.
+* **0: Toujours activés**: Les Ventilateurs GPIO resteront toujours activés.
 
-Si vous connectez la broche de contrôle des ventilateurs RGB à différentes broches du Raspberry Pi, vous pouvez utiliser la commande suivante pour modifier le numéro de la broche.
+Si vous connectez la broche de contrôle des Ventilateurs GPIO à différentes broches du Raspberry Pi, vous pouvez utiliser la commande suivante pour modifier le numéro de la broche.
 
 .. code-block:: shell
 

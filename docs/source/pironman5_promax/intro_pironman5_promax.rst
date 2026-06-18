@@ -22,7 +22,7 @@ Merci d'avoir choisi notre |link_pironman5_promax|.
 **Caractéristiques principales** :
 
 * **Hub d'expansion Dual NVMe & IA** : Commutateur PCIe Gen 2 intégré avec deux fentes M.2 M-key (2230/2242/2260/2280) pour SSD ou accélérateurs IA (entièrement compatible avec Hailo-8/8L). Configurez pour des configurations RAID 0/1 NAS, SSD+IA ou double IA.
-* **Système de refroidissement complet** : Grand refroidisseur tour avec ventilateur PWM, plus **trois** ventilateurs PWM RGB adressables, maintenant d'excellentes performances thermiques même en pleine charge.
+* **Système de refroidissement complet** : Grand refroidisseur tour avec Ventilateur du CPU, plus **trois** Ventilateurs du CPU RGB adressables, maintenant d'excellentes performances thermiques même en pleine charge.
 * **Double affichage et multimédia** :
 
     * **Écran tactile DSI 4,3 pouces** (800x480) : Utilisez-le comme affichage d'informations secondaire, tableau de bord d'état, ou même comme moniteur de bureau principal.
@@ -31,7 +31,7 @@ Merci d'avoir choisi notre |link_pironman5_promax|.
 
 * **Interface utilisateur et contrôle améliorés** :
 
-    * **Écosystème RGB personnalisable** : Six LEDs adressables WS2812B et trois ventilateurs RGB synchronisés pour des effets d'éclairage dynamiques.
+    * **Écosystème RGB personnalisable** : Six LEDs adressables WS2812B et trois Ventilateurs GPIO synchronisés pour des effets d'éclairage dynamiques.
     * **Récepteur IR** pour le contrôle à distance du centre multimédia (par exemple, Kodi, Volumio).
     * **Bouton d'alimentation métallique de style rétro sécurisé** pour un arrêt et un démarrage élégants.
     * **Compartiment pour batterie RTC** (pour CR1220) pour la conservation de l'heure.
@@ -99,7 +99,7 @@ Merci d'avoir choisi notre |link_pironman5_promax|.
 * **Système de refroidissement** :
 
     * 1 x Grand refroidisseur tour avec ventilateur contrôlé par PWM
-    * 3 x Ventilateurs PWM RGB adressables (contrôlés par GPIO, synchronisables)
+    * 3 x Ventilateurs du CPU RGB adressables (contrôlés par GPIO, synchronisables)
 
 * **Affichage et multimédia** :
 
@@ -116,7 +116,7 @@ Merci d'avoir choisi notre |link_pironman5_promax|.
 
 * **Commandes, éclairage et caractéristiques** :
 
-    * 18 LEDs RGB adressables WS2812B : 6 sur la carte et 12 intégrées dans les ventilateurs RGB.
+    * 18 LEDs RGB adressables WS2812B : 6 sur la carte et 12 intégrées dans les Ventilateurs GPIO.
     * Récepteur IR (38 kHz)
     * Bouton d'alimentation métallique (fonction d'arrêt sécurisé)
     * Support de batterie pour horloge temps réel (RTC) (pour pile CR1220)

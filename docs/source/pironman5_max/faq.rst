@@ -9,12 +9,14 @@ FAQ
 Dépannage rapide
 -------------------------------
 
+* Le bouton d'alimentation ne fonctionne pas → :ref:`faq_power_button_not_work_max`
 * L'écran OLED ne fonctionne pas → :ref:`faq_oled_max`
 * Les LED RGB ne fonctionnent pas → :ref:`faq_rgb_max`
 * Les ventilateurs GPIO ne fonctionnent pas → :ref:`faq_gpio_fans_max`
 * Le ventilateur CPU ne tourne pas → :ref:`faq_pwm_fan_max`
 * Le tableau de bord n'affiche aucune donnée → :ref:`faq_dashboard_max`
 * Le SSD NVMe n'est pas détecté → :ref:`faq_nvme_max`
+* Le SSD NVMe est détecté mais provoque un redémarrage système → :ref:`faq_nvme_link_down_max`
 
 
 
@@ -40,6 +42,17 @@ Bouton d'alimentation
    :start-after: start_faq_power_button
    :end-before: end_faq_power_button
 
+
+.. _faq_power_button_not_work_max:
+
+Le bouton d'alimentation ne fonctionne pas ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_power_button_not_work
+   :end-before: end_faq_power_button_not_work
+
+
 Extrémités des caloducs en cuivre du refroidisseur tour
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -51,9 +64,17 @@ Extrémités des caloducs en cuivre du refroidisseur tour
 Raspberry Pi AI HAT+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../pironman5/faq.rst
-   :start-after: start_faq_ai_hat
-   :end-before: end_faq_ai_hat
+Le Raspberry Pi AI HAT+ n'est pas compatible avec le Pironman 5 MAX.
+
+.. image:: img/output3.png
+    :width: 400
+
+Le kit Raspberry Pi AI combine le Raspberry Pi M.2 HAT+ et le module accélérateur IA Hailo.
+
+.. image:: img/output2.jpg
+    :width: 400
+
+Vous pouvez détacher le module accélérateur IA Hailo du kit Raspberry Pi AI et l'insérer directement dans le module NVMe PIP du Pironman 5 MAX.
 
 Puis-je utiliser la fonction d'interrupteur à vibration du Pironman5 Max ?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -95,7 +116,7 @@ L'écran OLED ne fonctionne pas ?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. |link_compatible_systems| replace:: :ref:`com_os_max`
-.. |link_set_up_pironman5| replace:: :ref:`max_set_up_pironman5`
+.. |link_set_up_pironman5| replace:: :ref:`set_up_pironman5_max`
 
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_oled
@@ -185,6 +206,12 @@ Le PI5 ne démarre pas (LED rouge) ?
 Le module NVMe PIP ne fonctionne pas ?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. |link_install_the_os_dual| replace:: :ref:`install_the_os_max`
+
+.. start_faq_nvme_pip_dual
+
+#. Confirmez que votre SSD NVMe est compatible. Consultez la :ref:`liste des SSD NVMe compatibles <compitable_nvme_ssd_5>` pour des disques vérifiés, stables et compatibles.
+
 #. Assurez-vous que le câble FPC reliant le module NVMe PIP au Raspberry Pi 5 est bien fixé.
 
    .. raw:: html
@@ -209,7 +236,7 @@ Le module NVMe PIP ne fonctionne pas ?
 
 #. Vérifiez l'état des LED du module NVMe PIP :
 
-   Après avoir vérifié toutes les connexions, mettez le Pironman 5 MAX sous tension et observez les deux indicateurs sur le module NVMe PIP :
+   Après avoir vérifié toutes les connexions, mettez l'appareil sous tension et observez les deux indicateurs sur le module NVMe PIP :
 
    * **LED PWR** : Doit être allumée.
    * **LED STA** : Doit clignoter pour indiquer un fonctionnement normal.
@@ -222,13 +249,25 @@ Le module NVMe PIP ne fonctionne pas ?
    .. image:: img/dual_nvme_pip_j4.png
 
 
-#. Vérifiez que votre SSD NVMe dispose d'un système d'exploitation correctement installé. Reportez-vous à : :ref:`install_the_os_max`.
+#. Vérifiez que votre SSD NVMe dispose d'un système d'exploitation correctement installé. Reportez-vous à |link_install_the_os_dual|.
+
+.. end_faq_nvme_pip_dual
 
 #. Si le problème persiste, veuillez nous envoyer le fichier journal suivant :
 
    .. code-block:: shell
 
       cat /var/log/pironman5/pironman5.log
+
+
+.. _faq_nvme_link_down_max:
+
+Le SSD NVMe est détecté mais provoque un redémarrage du système en lecture/écriture ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_nvme_link_down
+   :end-before: end_faq_nvme_link_down
 
 Comment modifier l'ordre de démarrage du Raspberry Pi avec des commandes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

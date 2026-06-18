@@ -10,7 +10,7 @@
 
 Une fois le système écrit sur la carte Micro SD ou le SSD NVMe, insérez-le dans l’emplacement prévu du Raspberry Pi. Ensuite, appuyez sur le bouton d’alimentation pour démarrer l’appareil.
 
-Après la mise sous tension, les différentes LED d’alimentation s’allumeront. Toutefois, les LED RGB et le ventilateur RGB ne fonctionneront pas encore, car ils nécessitent une configuration préalable. Si l’écran présente des artefacts ou du brouillage, ne vous en inquiétez pas : cela sera corrigé après configuration.
+Après la mise sous tension, les différentes LED d’alimentation s’allumeront. Toutefois, les LED RGB et le Ventilateur GPIO ne fonctionneront pas encore, car ils nécessitent une configuration préalable. Si l’écran présente des artefacts ou du brouillage, ne vous en inquiétez pas : cela sera corrigé après configuration.
 
 Avant toute configuration, vous devez démarrer et vous connecter à votre Raspberry Pi. Si vous ne savez pas comment procéder, vous pouvez consulter le site officiel du Raspberry Pi : |link_rpi_get_start|.
 

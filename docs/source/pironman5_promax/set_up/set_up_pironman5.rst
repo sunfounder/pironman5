@@ -12,7 +12,7 @@
 
 Maintenant que le système a été écrit sur la carte Micro SD ou le SSD NVMe, vous pouvez les insérer dans l'emplacement du Pironman 5 Pro MAX. Appuyez ensuite sur le bouton d'alimentation pour allumer l'appareil.
 
-Après la mise sous tension, vous verrez les différentes LEDs d'alimentation s'allumer, mais l'écran OLED, les LEDs RGB et les ventilateurs RGB (les deux ventilateurs sur le côté) ne fonctionneront pas encore, car ils doivent être configurés. S'il y a un problème d'affichage avec l'écran, veuillez l'ignorer pour l'instant ; il sera résolu après la configuration.
+Après la mise sous tension, vous verrez les différentes LEDs d'alimentation s'allumer, mais l'écran OLED, les LEDs RGB et les Ventilateurs GPIO (les deux ventilateurs sur le côté) ne fonctionneront pas encore, car ils doivent être configurés. S'il y a un problème d'affichage avec l'écran, veuillez l'ignorer pour l'instant ; il sera résolu après la configuration.
 
 Avant de configurer, vous devez démarrer et vous connecter à votre Raspberry Pi. Si vous ne savez pas comment vous connecter, vous pouvez visiter le site officiel de Raspberry Pi : |link_rpi_get_start|.
 

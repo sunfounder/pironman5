@@ -13,7 +13,7 @@ Merci d’avoir choisi notre |link_pironman5|.
 
 **Caractéristiques principales**
 
-* **Refroidissement avancé** : Ventirad tour avec deux ventilateurs RGB pour un contrôle efficace de la température.  
+* **Refroidissement avancé** : Ventirad tour avec deux Ventilateurs GPIO pour un contrôle efficace de la température.  
 * **Stockage haute vitesse et support IA** : Prend en charge les SSD NVMe M.2 (**2230**, **2242**, **2260**, **2280**) et est entièrement compatible avec l’**accélérateur IA Hailo-8L** pour de puissantes capacités d’IA en périphérie.  
 * **Écran intelligent** : Écran OLED intégré de 0,96” affichant en temps réel l’utilisation CPU, la mémoire, la température et l’adresse IP.  
 * **Connectivité améliorée** : Double port HDMI, LED RGB personnalisables, interrupteur d’alimentation sécurisé, récepteur IR et extension GPIO externe.  
@@ -65,8 +65,8 @@ Merci d’avoir choisi notre |link_pironman5|.
     * 2 x sorties HDMI 4Kp60 standard
 * 1 x Bouton d'alimentation en métal
 * 1 x Écran OLED 0,96'' 128x64
-* 1 x Ventilateur PWM (40x40x10 mm)
-* 2 x Ventilateurs RGB (40x40x10 mm)
+* 1 x Ventilateur du CPU (40x40x10 mm)
+* 2 x Ventilateurs GPIO (40x40x10 mm)
 * 4 x LED RGB WS2812-5050
 * 1 x Récepteur IR 38 kHz
 * 1 x Dissipateur thermique vertical

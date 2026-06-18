@@ -8,14 +8,14 @@
 Ventilateurs
 ==============
 
-Ventilateur PWM
+Ventilateur du CPU
 ---------------------
 
-Le ventilateur PWM du Pironman 5 MAX est contrôlé directement par le système du Raspberry Pi.
+Le Ventilateur du CPU du Pironman 5 MAX est contrôlé directement par le système du Raspberry Pi.
 
-En ce qui concerne le refroidissement du Raspberry Pi 5, notamment en cas de forte charge, le Pironman 5 MAX intègre un système de refroidissement intelligent. Il comprend un ventilateur PWM principal et deux ventilateurs RGB supplémentaires. Cette stratégie de refroidissement est étroitement liée au système de gestion thermique du Raspberry Pi 5.
+En ce qui concerne le refroidissement du Raspberry Pi 5, notamment en cas de forte charge, le Pironman 5 MAX intègre un système de refroidissement intelligent. Il comprend un Ventilateur du CPU principal et deux Ventilateurs GPIO supplémentaires. Cette stratégie de refroidissement est étroitement liée au système de gestion thermique du Raspberry Pi 5.
 
-Le fonctionnement du ventilateur PWM est basé sur la température du Raspberry Pi 5 :
+Le fonctionnement du Ventilateur du CPU est basé sur la température du Raspberry Pi 5 :
 
 * En dessous de 50°C, le ventilateur reste éteint (0 % de vitesse).
 * À 50°C, il démarre à faible vitesse (30 %).
@@ -25,7 +25,7 @@ Le fonctionnement du ventilateur PWM est basé sur la température du Raspberry 
 
 Cette correspondance température/vitesse s’applique également en cas de baisse de température, avec une hystérésis de 5°C. Le ventilateur réduit sa vitesse lorsque la température descend de 5°C en dessous de chaque seuil défini.
 
-* Commandes pour surveiller le ventilateur PWM. Pour vérifier l’état du ventilateur :
+* Commandes pour surveiller le Ventilateur du CPU. Pour vérifier l’état du ventilateur :
 
   .. code-block:: shell
   
@@ -37,9 +37,9 @@ Cette correspondance température/vitesse s’applique également en cas de bais
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-Dans le Pironman 5 MAX, le ventilateur PWM est un élément essentiel pour maintenir une température de fonctionnement optimale, en particulier lors de tâches intensives, garantissant ainsi des performances stables et efficaces du Raspberry Pi 5.
+Dans le Pironman 5 MAX, le Ventilateur du CPU est un élément essentiel pour maintenir une température de fonctionnement optimale, en particulier lors de tâches intensives, garantissant ainsi des performances stables et efficaces du Raspberry Pi 5.
 
-Ventilateurs RGB
+Ventilateurs GPIO
 -------------------
 
 .. image:: img/size_fan.png

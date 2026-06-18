@@ -8,18 +8,18 @@
 Ventilateurs
 ==============
 
-Ventilateur PWM
+Ventilateur du CPU
 ----------------------------
 
-Il y a 3 ventilateurs PWM sur le Pironman 5 Pro MAX.
+Il y a 3 Ventilateurs du CPU sur le Pironman 5 Pro MAX.
 
-Le ventilateur PWM sur le Pironman 5 Pro MAX est contrôlé par le système Raspberry Pi.
+Le Ventilateur du CPU sur le Pironman 5 Pro MAX est contrôlé par le système Raspberry Pi.
 
-En ce qui concerne les solutions de refroidissement pour le Raspberry Pi 5, surtout sous charge élevée, la conception du Pironman 5 Pro MAX intègre un système de refroidissement intelligent. Il comporte un ventilateur PWM principal et deux ventilateurs RGB supplémentaires. La stratégie de refroidissement est étroitement intégrée au système de gestion thermique du Raspberry Pi 5.
+En ce qui concerne les solutions de refroidissement pour le Raspberry Pi 5, surtout sous charge élevée, la conception du Pironman 5 Pro MAX intègre un système de refroidissement intelligent. Il comporte un Ventilateur du CPU principal et deux Ventilateurs GPIO supplémentaires. La stratégie de refroidissement est étroitement intégrée au système de gestion thermique du Raspberry Pi 5.
 
-Le fonctionnement du ventilateur PWM est basé sur la température du Raspberry Pi 5 :
+Le fonctionnement du Ventilateur du CPU est basé sur la température du Raspberry Pi 5 :
 
-* En dessous de 50°C, le ventilateur PWM reste éteint (vitesse 0%).
+* En dessous de 50°C, le Ventilateur du CPU reste éteint (vitesse 0%).
 * À 50°C, le ventilateur démarre à basse vitesse (vitesse 30%).
 * En atteignant 60°C, le ventilateur augmente à vitesse moyenne (vitesse 50%).
 * À 67,5°C, le ventilateur monte à haute vitesse (vitesse 70%).
@@ -27,19 +27,19 @@ Le fonctionnement du ventilateur PWM est basé sur la température du Raspberry 
 
 Cette relation température-vitesse s'applique également lorsque la température diminue, avec un hystérésis de 5°C. La vitesse du ventilateur diminue lorsque la température chute de 5°C en dessous de chacun de ces seuils.
 
-* Commandes pour surveiller le ventilateur PWM. Pour vérifier l'état du ventilateur PWM :
+* Commandes pour surveiller le Ventilateur du CPU. Pour vérifier l'état du Ventilateur du CPU :
 
   .. code-block:: shell
 
     cat /sys/class/thermal/cooling_device0/cur_state
 
-* Pour voir la vitesse du ventilateur PWM :
+* Pour voir la vitesse du Ventilateur du CPU :
 
   .. code-block:: shell
 
     cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
 
-Dans le Pironman 5 Pro MAX, le ventilateur PWM est un composant critique pour maintenir des températures de fonctionnement optimales, particulièrement pendant les tâches intensives, garantissant que le Raspberry Pi 5 fonctionne efficacement et de manière fiable.
+Dans le Pironman 5 Pro MAX, le Ventilateur du CPU est un composant critique pour maintenir des températures de fonctionnement optimales, particulièrement pendant les tâches intensives, garantissant que le Raspberry Pi 5 fonctionne efficacement et de manière fiable.
 
 **Spécifications du ventilateur**
 

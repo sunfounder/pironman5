@@ -161,7 +161,7 @@ La carte dispose de 4 LED RGB WS2812 contrôlables. Vous pouvez les activer ou d
 
 .. _cc_control_fan_mini:
 
-Contrôler le ventilateur RGB
+Contrôler le Ventilateur GPIO
 ---------------------------------
 La carte d’extension prend en charge un ventilateur 5V non-PWM.
 
@@ -173,7 +173,7 @@ La carte d’extension prend en charge un ventilateur 5V non-PWM.
 
     sudo systemctl restart pironman5.service
 
-* Vous pouvez configurer le mode de fonctionnement du ventilateur RGB selon les conditions de déclenchement souhaitées.
+* Vous pouvez configurer le mode de fonctionnement du Ventilateur GPIO selon les conditions de déclenchement souhaitées.
 
 Par exemple, en mode **1: Performance**, le ventilateur s’active à 50°C :
 
@@ -188,7 +188,7 @@ Par exemple, en mode **1: Performance**, le ventilateur s’active à 50°C :
 * **1: Performance** : activation à 50°C  
 * **0: Toujours actif** : le ventilateur reste en marche
 
-* Si la broche de commande du ventilateur RGB est connectée à une autre broche GPIO, utilisez cette commande pour la modifier :
+* Si la broche de commande du Ventilateur GPIO est connectée à une autre broche GPIO, utilisez cette commande pour la modifier :
 
 .. code-block:: shell
 
@@ -196,4 +196,4 @@ Par exemple, en mode **1: Performance**, le ventilateur s’active à 50°C :
 
 **À propos du ventilateur principal**
 
-Le ventilateur principal se connecte à un port dédié pour ventilateur PWM à 4 broches sur le Raspberry Pi 5. Sa stratégie de contrôle par défaut est un système de régulation intelligent à plusieurs niveaux, géré par le firmware, qui ajuste la vitesse en fonction de la température du CPU. Cela signifie que lorsque vous utilisez un ventilateur PWM officiel ou compatible et que vous le connectez correctement, le système ajustera automatiquement la vitesse du ventilateur en fonction des changements de température du CPU (il commence à fonctionner au-dessus de 50°C), sans aucune intervention manuelle de votre part.
+Le ventilateur principal se connecte à un port dédié pour Ventilateur du CPU à 4 broches sur le Raspberry Pi 5. Sa stratégie de contrôle par défaut est un système de régulation intelligent à plusieurs niveaux, géré par le firmware, qui ajuste la vitesse en fonction de la température du CPU. Cela signifie que lorsque vous utilisez un Ventilateur du CPU officiel ou compatible et que vous le connectez correctement, le système ajustera automatiquement la vitesse du ventilateur en fonction des changements de température du CPU (il commence à fonctionner au-dessus de 50°C), sans aucune intervention manuelle de votre part.

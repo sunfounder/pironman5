@@ -21,7 +21,7 @@ Si vous avez installé Raspberry Pi OS, Ubuntu, Kali Linux ou Homebridge sur vot
 Configuration de l’arrêt pour couper l’alimentation GPIO
 ------------------------------------------------------------------------------
 
-Pour éviter que le ventilateur RGB, alimenté par le GPIO du Raspberry Pi, reste actif après l’arrêt, il est essentiel de configurer le Raspberry Pi afin de désactiver l’alimentation GPIO.
+Pour éviter que le Ventilateur GPIO, alimenté par le GPIO du Raspberry Pi, reste actif après l’arrêt, il est essentiel de configurer le Raspberry Pi afin de désactiver l’alimentation GPIO.
 
 #. Ouvrez l’outil de configuration EEPROM :
 
@@ -53,16 +53,44 @@ Téléchargement et installation du module ``pironman5``
       sudo apt-get install git -y
       sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. Procédez au téléchargement du code depuis GitHub et à l’installation du module ``pironman5``.
+#. Téléchargez et installez le module ``pironman5`` depuis GitHub.
+
+   .. tip::
+
+      Si vous utilisez **Ubuntu**, installez ``curl`` d’abord :
+
+      .. code-block:: shell
+
+         sudo apt install curl -y
 
    .. code-block:: shell
 
-      cd ~
-      git clone -b mini https://github.com/sunfounder/pironman5.git --depth 1
-      cd ~/pironman5
-      sudo python3 install.py
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
-   Après une installation réussie, il est nécessaire de redémarrer le système pour activer l’installation. Suivez les instructions à l’écran pour redémarrer.
+   .. note::
+
+      Si vous utilisez la série Pironman 5 avec PiPower 5, exécutez plutôt la commande suivante :
+
+      .. code-block:: shell
+
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+
+#. Après avoir lancé l’installateur, sélectionnez votre modèle Pironman 5 (1~4).
+
+   .. code-block:: shell
+
+      Pironman 5 Installer v1.0.1
+      Supports: 5 | 5 Mini | 5 Max | 5 Pro Max
+
+      Please select your product model:
+      1) Pironman 5
+      2) Pironman 5 Mini
+      3) Pironman 5 Max
+      4) Pironman 5 Pro Max
+
+      Enter number [1-4]:
+
+#. Une fois l’installation terminée, redémarrez le Raspberry Pi comme demandé. Le premier démarrage peut prendre jusqu’à 30 secondes le temps que les services s’initialisent.
 
    Au redémarrage, le service ``pironman5.service`` sera lancé automatiquement.  
    Voici les principales configurations du Pironman 5 Mini :
@@ -71,7 +99,7 @@ Téléchargement et installation du module ``pironman5``
      
    .. note::
     
-     * Les ventilateurs RGB sont configurés par défaut sur **Toujours activé**.  
+     * Les Ventilateurs GPIO sont configurés par défaut sur **Toujours activé**.  
        Pour définir des températures de déclenchement différentes, consultez :ref:`cc_control_fan_mini`.
 
 #. Vous pouvez utiliser l’outil ``systemctl`` pour ``start``, ``stop``, ``restart`` ou vérifier le ``status`` du service ``pironman5.service``.

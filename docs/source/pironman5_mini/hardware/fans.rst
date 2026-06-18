@@ -16,7 +16,7 @@ Le refroidisseur actif du Pironman 5 Mini est piloté directement par le systèm
 .. image:: img/active_cooler.png
 
 En matière de dissipation thermique pour le Raspberry Pi 5, notamment en situation de forte sollicitation, le Pironman 5 Mini intègre un système de refroidissement intelligent.  
-Il se compose d’un refroidisseur actif principal (Active Cooler) et d’un ventilateur RGB complémentaire.  
+Il se compose d’un refroidisseur actif principal (Active Cooler) et d’un Ventilateur GPIO complémentaire.  
 La stratégie de refroidissement est étroitement liée au système de gestion thermique intégré du Raspberry Pi 5.
 
 Le fonctionnement du refroidisseur actif est basé sur la température du Raspberry Pi 5 :
@@ -43,7 +43,7 @@ Cette relation entre température et vitesse s’applique également à la baiss
 
 Dans le Pironman 5 Mini, le refroidisseur actif joue un rôle essentiel pour maintenir une température de fonctionnement optimale, en particulier lors de tâches intensives, garantissant ainsi un fonctionnement efficace et stable du Raspberry Pi 5.
 
-Ventilateur RGB
+Ventilateur GPIO
 -------------------
 
 .. image:: img/size_fan.png

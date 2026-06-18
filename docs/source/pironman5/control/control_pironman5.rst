@@ -22,5 +22,5 @@ Vous pouvez surveiller et contr√¥ler le Pironman 5 via des commandes, ou en acc√
 .. toctree::
     :maxdepth: 1
 
-    control_with dashboard 
+    control_with_dashboard 
     control_with_commands

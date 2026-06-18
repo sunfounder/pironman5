@@ -223,7 +223,7 @@ Par exemple, si réglé sur le mode **1: Performance**, les ventilateurs GPIO s'
 * **1: Performance** : Les ventilateurs GPIO s'activeront à 50°C.
 * **0: Toujours activé** : Les ventilateurs GPIO resteront toujours allumés.
 
-* Si vous connectez la broche de contrôle du ventilateur RGB à une autre broche GPIO du Raspberry Pi, vous pouvez changer le numéro de broche avec :
+* Si vous connectez la broche de contrôle du Ventilateur GPIO à une autre broche GPIO du Raspberry Pi, vous pouvez changer le numéro de broche avec :
 
   .. code-block:: shell
 

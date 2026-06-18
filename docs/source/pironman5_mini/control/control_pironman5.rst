@@ -22,5 +22,5 @@ Vous pouvez surveiller et contrôler le Pironman 5 Mini à l’aide de commandes
 .. toctree::
     :maxdepth: 1
 
-    control_with dashboard 
+    control_with_dashboard 
     control_with_commands

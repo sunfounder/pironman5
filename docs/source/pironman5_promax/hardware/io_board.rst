@@ -16,7 +16,7 @@ LEDs RGB
 
 .. image:: img/io_board_rgb.png
 
-La carte comporte 18 LEDs RGB adressables WS2812B : 6 sur la carte et 12 intégrées dans les ventilateurs RGB, offrant un contrôle personnalisable. Les utilisateurs peuvent les allumer ou les éteindre, changer la couleur, ajuster la luminosité, changer les modes d'affichage et régler la vitesse des changements.
+La carte comporte 18 LEDs RGB adressables WS2812B : 6 sur la carte et 12 intégrées dans les Ventilateurs GPIO, offrant un contrôle personnalisable. Les utilisateurs peuvent les allumer ou les éteindre, changer la couleur, ajuster la luminosité, changer les modes d'affichage et régler la vitesse des changements.
 
 Broche de contrôle RGB
 -------------------------
@@ -32,7 +32,7 @@ Broches RGB OUT
 
 Les LEDs RGB WS2812 prennent en charge la connexion en série, permettant l'ajout d'une bande LED RGB externe. Connectez la broche **SIG** à la broche **DIN** de la bande externe pour l'extension.
 
-La carte comporte 18 LEDs RGB adressables WS2812B : 6 sur la carte et 12 intégrées dans les ventilateurs RGB. Connectez des LEDs supplémentaires et mettez à jour le nombre en utilisant :
+La carte comporte 18 LEDs RGB adressables WS2812B : 6 sur la carte et 12 intégrées dans les Ventilateurs GPIO. Connectez des LEDs supplémentaires et mettez à jour le nombre en utilisant :
 
 .. code-block:: shell
 
@@ -105,12 +105,12 @@ Pour utiliser le récepteur IR, vérifiez sa connexion et installez le module n�
 
 * Après avoir exécuté la commande, appuyez sur un bouton de la télécommande, et le code de ce bouton sera affiché.
 
-Broches des ventilateurs RGB
+Broches des Ventilateurs GPIO
 ------------------------------------------------
 
 .. image:: img/io_board_pin_fan.png
 
-La carte d'expansion E/S prend en charge jusqu'à trois ventilateurs PWM 5V. Tous les ventilateurs sont contrôlés ensemble.
+La carte d'expansion E/S prend en charge jusqu'à trois Ventilateurs du CPU 5V. Tous les ventilateurs sont contrôlés ensemble.
 
 Le signal de commande des ventilateurs est connecté au port **FAN IN** sur la carte d'expansion E/S, puis sorti par les trois ports de ventilateur dédiés. Ces ports sont numérotés de haut en bas comme **REAR UPPER**, **REAR LOWER** et **CPU FAN**. Veuillez les connecter conformément à la sérigraphie, sinon cela affectera le contrôle RGB sur le ventilateur.
 

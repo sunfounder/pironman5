@@ -157,7 +157,7 @@ Pour utiliser le récepteur IR, vérifiez la connexion et installez le module re
 * Appuyez sur une touche de la télécommande : le code correspondant s’affichera.
 
 
-Connecteurs ventilateurs RGB
+Connecteurs Ventilateurs GPIO
 ---------------------------------
 
 La carte d’extension IO prend en charge jusqu’à deux ventilateurs 5V non-PWM. Les deux ventilateurs sont contrôlés simultanément.
@@ -166,7 +166,7 @@ La carte d’extension IO prend en charge jusqu’à deux ventilateurs 5V non-PW
 
 .. image:: img/io_board_fan.png
 
-Il existe deux ensembles de connecteurs à 2 broches et deux cavaliers utilisés pour contrôler les ventilateurs RGB et leurs LED.  
+Il existe deux ensembles de connecteurs à 2 broches et deux cavaliers utilisés pour contrôler les Ventilateurs GPIO et leurs LED.  
 Par défaut, les cavaliers sont placés sur ces broches, ce qui permet de piloter les ventilateurs et les LED via les GPIO6 et GPIO5.  
 Si le fonctionnement des ventilateurs n’est pas nécessaire, ces cavaliers peuvent être retirés pour libérer les GPIO5 et GPIO6.
 
@@ -198,7 +198,7 @@ Par exemple, en mode **1: Performance**, les ventilateurs s’activent à 50°C.
 * **1: Performance** : activation à 50°C  
 * **0: Always On** : toujours allumés
 
-Si vous utilisez une autre broche de contrôle pour les ventilateurs RGB, vous pouvez la modifier via cette commande :
+Si vous utilisez une autre broche de contrôle pour les Ventilateurs GPIO, vous pouvez la modifier via cette commande :
 
 .. code-block:: shell
 
