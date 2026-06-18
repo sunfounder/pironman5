@@ -22,10 +22,10 @@ Raspberry Pi OS、Ubuntu、Kali Linux、またはHomebridgeをRaspberry Piにイ
 
 .. _safe_shutdown_promax:
 
-シャットダウン時のGPIO電源無効化設定
+1. シャットダウン時のGPIO電源無効化設定
 ------------------------------------------------------------
 
-Raspberry Pi GPIOから電源供給を受けるOLED画面やGPIOファンがシャットダウン後も動作し続けるのを防ぐために、GPIO電源を無効化するようにRaspberry Piを設定することが重要です。
+Raspberry Pi GPIOから電源供給を受けるOLED画面とRGBファンがシャットダウン後も動作し続けるのを防ぐために、GPIO電源を無効化するようにRaspberry Piを設定することが重要です。
 
 #. EEPROM設定ツールを開きます：
 
@@ -44,9 +44,9 @@ Raspberry Pi GPIOから電源供給を受けるOLED画面やGPIOファンがシ�
 #. 変更を保存します。新しい設定を有効にするために再起動を促すプロンプトが表示されます。
 
 
-.. _promax_download_pironman5_module:
+.. _install_pironman5_module_promax:
 
-``pironman5`` モジュールのダウンロードとインストール
+2. ``pironman5`` モジュールのインストール
 -----------------------------------------------------------
 
 .. .. note::
@@ -93,23 +93,50 @@ Raspberry Pi GPIOから電源供給を受けるOLED画面やGPIOファンがシ�
 
 #. インストールが完了したら、画面の指示に従って Raspberry Pi を再起動します。最初の起動時は、サービスが初期化されるまで最大30秒かかる場合があります。
 
-   再起動後、 ``pironman5.service`` が自動的に起動します。Pironman 5 Pro MAX の主な初期設定は以下の通りです：
+   #. Pironman 5 Pro MAX が正常に起動したら、以下のコンポーネントが正しく動作しているか確認してください。
 
-   * OLED 画面に CPU、RAM、ディスク使用量、CPU温度、Raspberry Pi の IP アドレスが表示されます。
-   * 4つのWS2812 RGB LEDが青色の呼吸モードで点灯します。
+   * **OLED画面**
 
-#. ``systemctl`` ツールを使用して、 ``pironman5.service`` の ``start``、 ``stop``、 ``restart``、または ``status`` の確認ができます。
+     * CPU使用率、RAM使用率、CPU温度、IPアドレスを表示します。
+     * 10秒後に自動的にオフになります。
+     * 電源ボタンを短く押して画面を起動するか、ページを切り替えます。
+
+   * **電源ボタン**
+
+     * 短く押す：電源オン / OLED起動 / OLEDページ切り替え。
+     * 2秒間長押し：安全なシャットダウン（:ref:`safe_shutdown_promax` が必要です）。
+     * 5秒間長押し：強制シャットダウン。
+
+   * **WS2812 RGB LED**
+
+     * 青色の呼吸エフェクトで点灯します。
+
+   * **PWMファン**
+
+     * デフォルトで **常時オン** モードに設定されています。
+     * 動作モードはコマンドまたはダッシュボードで設定できます。
+
+   * **CPUファン（タワークーラーファン）**
+
+     * CPU温度に応じて自動的に速度を調整します。
+     * デフォルトのファンカーブ：
+
+       * 50°C未満：オフ（0%）
+       * 50°C以上：低速（30%）
+       * 60°C以上：中速（50%）
+       * 67.5°C以上：高速（70%）
+       * 75°C以上：最大速度（100%）
+
+#. ``systemctl`` を使用して ``pironman5.service`` を管理します。
 
    .. code-block:: shell
-     
+
       sudo systemctl restart pironman5.service
-   
-   * ``restart``： Pironman 5 Pro MAXの設定に変更を加えた場合に、このコマンドを使用して適用します。
-   * ``start/stop``： ``pironman5.service`` を有効化または無効化します。
-   * ``status``： ``systemctl`` ツールを使用して ``pironman5`` プログラムの動作状態を確認します。
+
+   必要に応じて ``restart`` を ``start``、``stop``、または ``status`` に置き換えてサービスを管理します。
 
 .. note::
 
-   この時点で、Pironman 5 Pro MAXのセットアップは正常に完了し、使用可能な状態になりました。
-   
-   コンポーネントの高度な制御については、 :ref:`control_commands_dashboard_promax` を参照してください。
+   Pironman 5 Pro MAX のセットアップは正常に完了し、使用可能な状態になりました。
+
+   高度な制御とダッシュボード機能については、:ref:`control_commands_dashboard_promax` を参照してください。
