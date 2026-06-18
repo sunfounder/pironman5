@@ -49,32 +49,28 @@ Raspberry Pi GPIOから電源供給を受けるOLED画面やGPIOファンがシ�
 ``pironman5`` モジュールのダウンロードとインストール
 -----------------------------------------------------------
 
-.. note::
+.. .. note::
 
-   Liteシステムの場合、最初に ``git``、 ``python3``、 ``pip3``、 ``setuptools`` などのツールをインストールします。
-   
-   .. code-block:: shell
-   
-      sudo apt-get install git -y
-      sudo apt-get install python3 python3-pip python3-setuptools -y
+..    Liteシステムの場合、最初に ``git``、 ``python3``、 ``pip3``、 ``setuptools`` などのツールをインストールします。
+
+..    .. code-block:: shell
+
+..       sudo apt-get install git -y
+..       sudo apt-get install python3 python3-pip python3-setuptools -y
 
 #. GitHub から ``pironman5`` モジュールをダウンロードしてインストールします。
-
-   .. tip::
-
-      **Ubuntu** を使用している場合は、最初に ``curl`` をインストールしてください：
-
-      .. code-block:: shell
-
-         sudo apt install curl -y
 
    .. code-block:: shell
 
       curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
+
+
    .. note::
 
-      Pironman 5 シリーズを PiPower 5 と併用している場合は、代わりに以下のコマンドを実行してください：
+      1. **Ubuntu** を使用している場合は、最初に ``curl`` をインストールしてください： ``sudo apt install curl -y``
+
+      2. Pironman 5 シリーズを**PiPower 5**と併用している場合は、代わりに以下のコマンドを実行してください：
 
       .. code-block:: shell
 
