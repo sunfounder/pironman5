@@ -15,7 +15,7 @@ OpenClaw zur Bedienung des Pironman5 Mini befähigen
 
 Um OpenClaw zu ermöglichen, den Pironman5 Mini zu bedienen, müssen wir die Pironman5 Mini-Fähigkeit (Skill) installieren.
 
-1.  Stellen Sie sicher, dass Sie Pironman5 Mini bereits installiert haben. Falls nicht, lesen Sie bitte :ref:`mini_download_pironman5_module`.
+1.  Stellen Sie sicher, dass Sie Pironman5 Mini bereits installiert haben. Falls nicht, lesen Sie bitte :ref:`install_pironman5_module_mini`.
 
 2.  Führen Sie den folgenden Befehl im Terminal aus:
 

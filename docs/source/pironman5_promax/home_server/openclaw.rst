@@ -15,7 +15,7 @@ OpenClaw zur Steuerung des Pironman5 Pro MAX einrichten
 
 Damit OpenClaw den Pironman5 Pro MAX steuern kann, müssen wir das Pironman5 Pro MAX-Skill installieren.
 
-1.  Stellen Sie sicher, dass Sie den Pironman5 Pro MAX bereits installiert haben. Falls nicht, lesen Sie bitte :ref:`promax_download_pironman5_module`.
+1.  Stellen Sie sicher, dass Sie den Pironman5 Pro MAX bereits installiert haben. Falls nicht, lesen Sie bitte :ref:`install_pironman5_module_promax`.
 
 2.  Führen Sie den folgenden Befehl im Terminal aus:
 
