@@ -3,13 +3,11 @@
    :end-before: end_hello_message
 
 
-.. _fan_max:
-
 Fans
 ============
 
 Ventilador de la CPU
----------------------
+-----------------------
 
 El ventilador de la CPU del Pironman 5 MAX es controlado por el sistema del Raspberry Pi.
 

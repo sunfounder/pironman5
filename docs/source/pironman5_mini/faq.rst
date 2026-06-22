@@ -1,22 +1,40 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
+
 
 
 FAQ
 ============
 
-1. Sobre los sistemas compatibles
-------------------------------------
 
-Sistemas que han pasado la prueba en Raspberry Pi 5:
+Solucion rapida de problemas
+--------------------------------
 
-.. image:: img/compitable_os.png
-   :width: 600
-   :align: center
+* El botón de encendido no funciona → :ref:`faq_power_button_not_work_mini`
+* Los LED RGB no funcionan → :ref:`faq_rgb_mini`
+* El ventilador de la CPU no gira → :ref:`faq_pwm_fan_mini`
+* El panel de control no muestra datos → :ref:`faq_dashboard_mini`
+* La PI5 no arranca → :ref:`faq_pi5_boot_fail_mini`
 
-2. Sobre el botón de encendido
----------------------------------------
+
+
+1. Hardware
+-------------------------------
+
+
+.. _com_os_mini:
+
+Sistemas compatibles
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_com_os
+   :end-before: end_faq_com_os
+
+
+Botón de encendido
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 El botón de encendido expone la función del botón de encendido del Raspberry Pi 5 y actúa de la misma manera.
 
@@ -27,7 +45,7 @@ El botón de encendido expone la función del botón de encendido del Raspberry 
 * **Apagado**
 
   * Si utilizas el sistema **Raspberry Pi OS Desktop**, puedes presionar dos veces rápidamente el botón de encendido para apagarlo.
-  * Si utilizas el sistema **Raspberry Pi OS Lite** sin escritorio, presiona una vez el botón de encendido para iniciar el apagado.
+  * Si utilizas el sistema **Raspberry Pi OS Lite**, presiona una vez el botón de encendido para iniciar el apagado.
   * Para forzar un apagado, mantén presionado el botón de encendido.
 
 * **Encendido**
@@ -36,151 +54,200 @@ El botón de encendido expone la función del botón de encendido del Raspberry 
 
 * Si tu sistema no admite el botón de apagado, mantén presionado por 5 segundos para forzar el apagado, y presiona una vez para encenderla.
 
-3. Sobre el Raspberry Pi AI HAT+
-----------------------------------------------------------
+
+.. _faq_power_button_not_work_mini:
+
+El botón de encendido no funciona
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Primero, confirma el comportamiento esperado del botón de encendido:
+
+   * **Raspberry Pi OS Desktop**: Presiona el botón de encendido dos veces rápidamente para apagar. Mantén presionado 5 segundos para forzar un apagado completo. Presiona una vez para encender desde el estado de apagado.
+   * **Raspberry Pi OS Lite**: Presiona el botón de encendido una vez para apagar. Mantén presionado 5 segundos para forzar un apagado completo. Presiona una vez para encender.
+
+#. Verifica que los pines del convertidor de alimentación estén correctamente alineados con los pads J2 del Raspberry Pi 5 (entre el conector de la batería RTC y el borde de la placa).
+
+#. Verifica que los pines dentro del conector del convertidor de alimentación estén correctamente alineados con el conector del botón de encendido. Vuelve a conectar el cable del botón si es necesario.
+
+#. Usa un destornillador para puentear brevemente los dos pines del conector del convertidor de alimentación donde se conecta el botón. Si la Pi se enciende, es posible que el botón esté defectuoso; de lo contrario, el problema probablemente esté en la placa convertidora o en la conexión con la Pi 5.
+
+
+Raspberry Pi AI HAT+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 El Raspberry Pi AI HAT+ no es compatible con el Pironman 5.
 
-.. image::  img/output3.png
-   :width: 400
+   .. image::  img/output3.png
+        :width: 400
 
 El kit Raspberry Pi AI combina el M.2 HAT+ con el módulo acelerador de IA Hailo.
 
-.. image::  img/output2.jpg
+   .. image::  img/output2.jpg
+        :width: 400
+
+Puedes separar el módulo acelerador Hailo AI del Raspberry Pi AI Kit e insertarlo directamente en el HAT del Pironman 5 Mini.
+
+
+Cable Micro HDMI
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Recomendamos usar el cable Micro HDMI oficial de Raspberry Pi. Algunos cables de terceros con una longitud de conector inferior a 65 mm pueden causar mal contacto y problemas de visualización.
+
+.. image:: img/need_mini_hdmi.png
    :width: 400
 
-Puede separar el módulo acelerador Hailo AI del Raspberry Pi AI Kit e insertarlo directamente en el HAT del Pironman 5 Mini.
-
-   .. .. image::  img/output4.png
-   ..      :width: 800
 
 
-4. ¿El PI5 no arranca (LED rojo)?
--------------------------------------------
-
-Este problema puede deberse a una actualización del sistema, cambios en el orden de arranque o un cargador de arranque dañado. Puede intentar los siguientes pasos para resolver el problema:
-
-#. Vuelva a conectar la fuente de alimentación y verifique si el PI5 inicia correctamente.
-
-#. Restaurar el cargador de arranque
-
-   * Si el PI5 aún no puede arrancar, es posible que el cargador de arranque esté dañado. Puede seguir esta guía: :ref:`update_bootloader_mini` y elegir si desea arrancar desde la tarjeta SD o NVMe/USB.
-   * Inserte la tarjeta SD preparada en el PI5, enciéndalo y espere al menos 10 segundos. Una vez completada la recuperación, retire y reformatee la tarjeta SD. 
-   * Luego, use Raspberry Pi Imager para grabar la última versión del sistema operativo Raspberry Pi OS, inserte nuevamente la tarjeta y pruebe iniciar otra vez.
+2. Cooling and Fans
+-------------------------------
 
 
-.. ¿El Pironman 5 Mini es compatible con sistemas de retro gaming?
-.. --------------------------------------------------------------
+.. _faq_pwm_fan_mini:
 
-.. Sí, es compatible. Sin embargo, la mayoría de los sistemas de retro gaming son versiones simplificadas que no pueden instalar ni ejecutar software adicional. Esta limitación puede hacer que algunos componentes del Pironman 5 Mini, como el ventilador RGB y los 4 LED RGB, no funcionen correctamente, ya que estos componentes requieren la instalación de los paquetes de software del Pironman 5.
+El ventilador de la CPU no funciona
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
-5. ¿Los LED RGB no funcionan?
----------------------------------
-
-#. Los dos pines del Mini HAT se utilizan para conectar los LED RGB al GPIO10. Asegúrese de que el puente (jumper) esté correctamente colocado sobre estos dos pines.
-
-   .. image:: hardware/img/io_board_rgb_pin.png
-      :width: 300
-      :align: center
-
-#. Verifica que tu Raspberry Pi esté ejecutando un sistema operativo compatible:
-
-   .. image:: img/compitable_os.png
-      :width: 600
-      :align: center
-
-   Si tu sistema no es compatible, sigue esta guía para instalar uno que sí lo sea: :ref:`install_the_os_mini`.
-
-#. Ejecuta ``sudo raspi-config``, navega a **3 Interfacing Options** -> **I3 SPI** -> **YES**, selecciona **OK** y **Finish** para habilitar SPI. Luego reinicia.
-
-Si el problema persiste, escríbenos a service@sunfounder.com.
-
-6. ¿El ventilador del CPU no funciona?
-----------------------------------------------
-
-Cuando la temperatura de la CPU no ha alcanzado el umbral establecido, el ventilador de la CPU no funcionará.
-
-**Fan Speed Control Based on Temperature**
-
-El ventilador PWM funciona de manera dinámica, ajustando su velocidad según la temperatura de la Raspberry Pi 5:
-
-* **Por debajo de 50 °C**: El ventilador permanece apagado (0 % de velocidad).  
-* **A 50 °C**: El ventilador funciona a baja velocidad (30 %).  
-* **A 60 °C**: El ventilador aumenta a velocidad media (50 %).  
-* **A 67,5 °C**: El ventilador sube a velocidad alta (70 %).  
-* **A 75 °C o más**: El ventilador funciona a máxima velocidad (100 %).
-
-Más detalles en : :ref:`fan_mini`
-
-7. ¿Cómo desactivar el panel web?
-------------------------------------------------------
-
-Después de instalar el módulo ``pironman5``, se habilita el :ref:`view_control_dashboard_mini`.
-
-Si no necesitas esta función, puedes desactivarla con el parámetro ``--disable-dashboard`` durante la instalación:
-
-.. code-block:: shell
-
-   cd ~/pironman5
-   sudo python3 install.py --disable-dashboard
-
-Si ya has instalado ``pironman 5``, puedes eliminar el módulo ``dashboard`` y ``influxdb``, y luego reiniciar pironman5 para aplicar los cambios:
-
-.. code-block:: shell
-
-   /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
-   sudo apt purge influxdb
-   sudo systemctl restart pironman5
-
-8. ¿Cómo controlar los componentes con el comando ``pironman5``?
-----------------------------------------------------------------------
-Consulta este tutorial para controlar los componentes del Pironman 5 con el comando ``pironman5``:
-
-* :ref:`view_control_commands_mini`
-
-9. ¿Cómo cambiar el orden de arranque de la Raspberry Pi mediante comandos?
-------------------------------------------------------------------------------
-
-Puedes cambiar el orden de arranque si ya estás conectado a la Raspberry Pi:
-
-* :ref:`configure_boot_ssd_mini`
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_pwm_fan
+   :end-before: end_faq_pwm_fan
 
 
-10. ¿Cómo modificar el orden de arranque con Raspberry Pi Imager?
----------------------------------------------------------------------
 
-Además de modificar el ``BOOT_ORDER`` en la configuración de la EEPROM, también puedes utilizar el **Raspberry Pi Imager** para cambiar el orden de arranque de tu Raspberry Pi.
-
-Se recomienda utilizar una tarjeta de repuesto para este paso.
-
-* :ref:`update_bootloader_mini`
-
-11. ¿Cómo copiar el sistema desde la SD al NVMe SSD?
--------------------------------------------------------------
-
-Si no tienes adaptador NVMe, primero instala el sistema en la SD. Luego, al arrancar correctamente, puedes copiarlo al SSD:
+3. RGB
+-------------------------------
 
 
-* :ref:`copy_sd_to_nvme_mini`
+.. |link_compatible_systems| replace:: :ref:`com_os_mini`
 
-12. ¿Cómo retirar el protector de las placas acrílicas?
------------------------------------------------------------------
+.. _faq_rgb_mini:
 
-Ambas placas tienen película protectora amarilla o transparente por ambos lados. Usa un destornillador para levantar una esquina y despegarla con cuidado.
+Los LED RGB no funcionan
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: img/peel_off_film.jpg
-    :width: 500
-    :align: center
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_rgb
+   :end-before: end_faq_rgb
 
+
+
+4. Dashboard and Software
+-------------------------------
+
+
+.. _faq_dashboard_mini:
+
+El panel de control no muestra datos
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_dashboard
+   :end-before: end_faq_dashboard
+
+
+.. |link_view_control_dashboard| replace:: :ref:`view_control_dashboard_mini`
+
+Cómo desactivar el panel web
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_disable_dashboard
+   :end-before: end_faq_disable_dashboard
+
+
+Cómo desinstalar y reinstalar el software Pironman 5
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_reinstall_pironman5
+   :end-before: end_faq_reinstall_pironman5
+
+
+.. |link_view_control_commands| replace:: :ref:`view_control_commands_mini`
+
+Cómo controlar los componentes usando el comando ``pironman5``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_pironman5_command
+   :end-before: end_faq_pironman5_command
+
+
+
+5. Boot and Storage
+-------------------------------
+
+
+.. |link_update_bootloader| replace:: :ref:`update_bootloader_mini`
+
+.. _faq_pi5_boot_fail_mini:
+
+La PI5 no arranca (LED rojo)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Este problema puede deberse a una actualización del sistema, cambios en el orden de arranque o un cargador de arranque dañado. Puedes intentar los siguientes pasos para resolver el problema:
+
+#. Vuelve a conectar la fuente de alimentación y verifica si la PI5 arranca correctamente.
+
+#. Prueba la PI5 fuera de la carcasa
+
+   * Retira la PI5 de la carcasa del Pironman 5 Mini.
+   * Alimenta la PI5 directamente con el adaptador de corriente (sin la carcasa).
+   * Verifica si puede arrancar normalmente.
+
+#. Restaura el cargador de arranque
+
+   * Si la PI5 aún no puede arrancar, es posible que el cargador de arranque esté dañado. Puedes seguir esta guía: |link_update_bootloader| y elegir si deseas arrancar desde la tarjeta SD o NVMe/USB.
+   * Inserta la tarjeta SD preparada en la PI5, enciéndela y espera al menos 10 segundos. Una vez completada la recuperación, retira y formatea la tarjeta SD.
+   * Luego, usa Raspberry Pi Imager para grabar la última versión de Raspberry Pi OS e intenta arrancar de nuevo.
+
+
+.. |link_configure_boot_ssd| replace:: :ref:`configure_boot_ssd_mini`
+
+Cómo cambiar el orden de arranque de la Raspberry Pi usando comandos
+
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_boot_order_command
+   :end-before: end_faq_boot_order_command
+
+
+Cómo modificar el orden de arranque con Raspberry Pi Imager
+
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_boot_order_imager
+   :end-before: end_faq_boot_order_imager
+
+
+.. |link_copy_sd_to_nvme| replace:: :ref:`copy_sd_to_nvme_mini`
+
+Cómo copiar el sistema desde la tarjeta SD a un SSD NVMe
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_copy_sd_to_nvme
+   :end-before: end_faq_copy_sd_to_nvme
+
+
+
+6. Advanced Usage
+-------------------------------
+
+
+Cómo retirar la película protectora
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_remove_film
+   :end-before: end_faq_remove_film
 
 
 .. _openssh_powershell_mini:
 
-13. ¿Cómo instalar OpenSSH mediante PowerShell?
---------------------------------------------------------
+Cómo instalar OpenSSH mediante PowerShell
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Cuando intentas conectarte a tu Raspberry Pi usando ``ssh <username>@<hostname>.local`` (o ``ssh <username>@<IP address>``) y aparece el siguiente mensaje de error:
+Cuando usas ``ssh <username>@<hostname>.local`` (o ``ssh <username>@<IP address>``) para conectarte a tu Raspberry Pi, pero aparece el siguiente mensaje de error:
 
     .. code-block::
 
@@ -194,9 +261,9 @@ Significa que tu sistema operativo es demasiado antiguo y no tiene `OpenSSH <htt
 
    .. image:: img/powershell_ssh.png
       :width: 90%
-      
 
-#. Utiliza el siguiente comando para instalar ``OpenSSH.Client``.
+
+#. Usa el siguiente comando para instalar ``OpenSSH.Client``.
 
    .. code-block::
 
@@ -210,26 +277,26 @@ Significa que tu sistema operativo es demasiado antiguo y no tiene `OpenSSH <htt
         Online        : True
         RestartNeeded : False
 
-#. Verifica que la instalación se haya realizado correctamente con el siguiente comando:
+#. Verifica la instalación con el siguiente comando:
 
    .. code-block::
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. Esto confirmará que ``OpenSSH.Client`` se ha instalado exitosamente.
+#. Esto confirmará que ``OpenSSH.Client`` se ha instalado correctamente.
 
-.. code-block::
+   .. code-block::
 
-    Name  : OpenSSH.Client~~~~0.0.1.0
-    State : Installed
+        Name  : OpenSSH.Client~~~~0.0.1.0
+        State : Installed
 
-    Name  : OpenSSH.Server~~~~0.0.1.0
-    State : NotPresent
+        Name  : OpenSSH.Server~~~~0.0.1.0
+        State : NotPresent
 
-.. warning:: 
+   .. warning::
 
-    Si no ves ese mensaje, tu sistema es demasiado antiguo. Usa una herramienta externa como |link_putty|.
+        Si el mensaje anterior no aparece, significa que tu sistema Windows sigue siendo demasiado antiguo. Te recomendamos instalar una herramienta SSH de terceros, como |link_putty|.
 
-#. Reinicia PowerShell como administrador. Ahora podrás usar el comando ``ssh`` para conectarte a tu Raspberry Pi.
+#. Ahora reinicia PowerShell y continúa ejecutándolo como administrador. En este punto podrás iniciar sesión en tu Raspberry Pi usando el comando ``ssh``, donde se te pedirá que ingreses la contraseña que configuraste anteriormente.
 
    .. image:: img/powershell_login.png

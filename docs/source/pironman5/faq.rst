@@ -1,4 +1,4 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -9,12 +9,14 @@ FAQ
 Solucion rapida de problemas
 -------------------------------
 
+* El boton de encendido no funciona → :ref:`faq_power_button_not_work_5`
 * La pantalla OLED no funciona → :ref:`faq_oled_5`
 * Los LED RGB no funcionan → :ref:`faq_rgb_5`
 * Los ventiladores GPIO no funcionan → :ref:`faq_gpio_fans_5`
 * El ventilador de la CPU no gira → :ref:`faq_pwm_fan_5`
 * El panel web no muestra datos → :ref:`faq_dashboard_5`
 * El SSD NVMe no se detecta → :ref:`faq_nvme_5`
+* El SSD NVMe detectado pero causa reinicio del sistema → :ref:`faq_nvme_link_down_5`
 
 
 
@@ -55,6 +57,27 @@ El boton de encendido extiende el boton de encendido original de la Raspberry Pi
     :align: center
 
 .. end_faq_power_button
+
+
+.. _faq_power_button_not_work_5:
+
+El boton de encendido no funciona
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_power_button_not_work
+
+#. Primero, confirma el comportamiento esperado del boton de encendido:
+
+   * **Raspberry Pi OS Desktop**: Presiona el boton de encendido dos veces rapidamente para apagar. Mantenlo presionado durante 5 segundos para forzar un apagado completo. Presiona una vez para encender desde un estado de apagado.
+   * **Raspberry Pi OS Lite**: Presiona el boton de encendido una vez para apagar. Mantenlo presionado durante 5 segundos para forzar un apagado completo. Presiona una vez para encender.
+
+#. Verifica que los pines del convertidor de alimentacion esten correctamente alineados con los pads J2 de la Raspberry Pi 5 (entre el conector de la bateria RTC y el borde de la placa).
+
+#. Verifica que los pines dentro del conector del convertidor de alimentacion esten correctamente alineados con el conector del boton de encendido. Vuelve a conectar el cable del boton de encendido si es necesario.
+
+#. Usa un destornillador para hacer cortocircuito brevemente en los dos pines del conector del convertidor de alimentacion donde se conecta el boton. Si la Raspberry Pi se enciende, el boton mismo puede estar defectuoso; de lo contrario, el problema probablemente sea la placa convertidora o la conexion de la Pi 5.
+
+.. end_faq_power_button_not_work
 
 
 Direccion del flujo de aire
@@ -114,8 +137,8 @@ Puedes separar el modulo acelerador Hailo AI del Raspberry Pi AI Kit e insertarl
 
 
 
-2. Refrigeracion y ventiladores
--------------------------------
+2. Refrigeracion y ventiladores
+
 
 
 .. _faq_pwm_fan_5:
@@ -618,6 +641,51 @@ El modulo NVMe PIP no funciona
       cat /var/log/pironman5/pironman5.log
 
 .. end_faq_nvme_pip
+
+
+.. _faq_nvme_link_down_5:
+
+SSD NVMe detectado pero causa reinicio del sistema al leer/escribir
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_nvme_link_down
+
+En algunos casos (especialmente con el WD Blue SN5000), el SSD NVMe puede ser detectado por la Raspberry Pi 5 pero causar un reinicio del sistema durante operaciones de lectura/escritura. Este es un problema de compatibilidad/estabilidad PCIe entre el SSD y la Raspberry Pi 5, **no** un fallo de hardware del Pironman 5.
+
+Intenta los siguientes pasos para resolver el problema:
+
+#. Actualiza el cargador de arranque de la Raspberry Pi 5 a la ultima version:
+
+   .. code-block:: shell
+
+      sudo rpi-eeprom-update -a
+      sudo reboot
+
+#. Fuerza la velocidad PCIe Gen3 agregando la siguiente linea a ``/boot/firmware/config.txt``:
+
+   .. code-block:: text
+
+      dtparam=pciex1_gen=3
+
+#. Desactiva ASPM (Administracion de Energia del Estado Activo) agregando ``pcie_aspm=off`` a la linea de comandos del kernel. Edita ``/boot/firmware/cmdline.txt`` y agregalo a la linea existente (no crees una nueva linea):
+
+   .. code-block:: text
+
+      pcie_aspm=off
+
+   .. note::
+
+      ``pcie_aspm=off`` suele ser la solucion critica: los problemas de ASPM PCIe son muy comunes en la Raspberry Pi 5 y pueden causar que las unidades NVMe se desconecten aleatoriamente o reinicien el sistema durante E/S intensiva.
+
+#. Despues de aplicar los cambios anteriores, reinicia la Raspberry Pi:
+
+   .. code-block:: shell
+
+      sudo reboot
+
+#. Si el problema persiste, particiona y formatea nuevamente el SSD NVMe, luego reinstala el sistema operativo.
+
+.. end_faq_nvme_link_down
 
 
 Como cambiar el orden de arranque de la Raspberry Pi usando comandos

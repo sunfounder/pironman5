@@ -31,7 +31,7 @@ Gracias por elegir nuestro |link_pironman5|.
 .. toctree::
     :maxdepth: 1
 
-    About this Kit <self>
+    Sobre este Kit <self>
     what_do_we_need    
     assembly_instructions
     install/install_the_os

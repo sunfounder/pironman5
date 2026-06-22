@@ -55,7 +55,7 @@ Eleve su experiencia con la Raspberry Pi 5 mediante el |link_pironman5_promax|, 
 .. toctree::
     :maxdepth: 1
 
-    About this Kit <self>
+    Sobre este Kit <self>
     what_do_we_need
     assembly_instructions
     install/install_the_os

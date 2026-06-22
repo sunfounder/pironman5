@@ -198,7 +198,7 @@ La placa cuenta con 4 LEDs RGB WS2812, que ofrecen un control personalizable. Lo
 .. _cc_control_fan_max:
 
 Control de Ventiladores GPIO
-----------------------------
+------------------------------
 La placa de expansión IO admite hasta dos ventiladores de 5V (no CPU). Ambos ventiladores se controlan conjuntamente.
 
 .. note::

@@ -9,12 +9,14 @@ FAQ
 Solucion rapida de problemas
 -------------------------------
 
+* El boton de encendido no funciona → :ref:`faq_power_button_not_work_max`
 * La pantalla OLED no funciona → :ref:`faq_oled_max`
 * Los LED RGB no funcionan → :ref:`faq_rgb_max`
 * Los ventiladores GPIO no funcionan → :ref:`faq_gpio_fans_max`
 * El ventilador de la CPU no gira → :ref:`faq_pwm_fan_max`
 * El panel web no muestra datos → :ref:`faq_dashboard_max`
 * El SSD NVMe no se detecta → :ref:`faq_nvme_max`
+* El SSD NVMe se detecta pero provoca un reinicio del sistema → :ref:`faq_nvme_link_down_max`
 
 
 
@@ -40,8 +42,19 @@ Boton de encendido
    :start-after: start_faq_power_button
    :end-before: end_faq_power_button
 
+
+.. _faq_power_button_not_work_max:
+
+El boton de encendido no funciona
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_power_button_not_work
+   :end-before: end_faq_power_button_not_work
+
+
 Extremos de los tubos de cobre del disipador tipo torre
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_copper_pipe_ends
@@ -51,9 +64,17 @@ Extremos de los tubos de cobre del disipador tipo torre
 Raspberry Pi AI HAT+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../pironman5/faq.rst
-   :start-after: start_faq_ai_hat
-   :end-before: end_faq_ai_hat
+La Raspberry Pi AI HAT+ no es compatible con el Pironman 5 MAX.
+
+.. image:: img/output3.png
+    :width: 400
+
+El Raspberry Pi AI Kit combina la Raspberry Pi M.2 HAT+ y el modulo acelerador Hailo AI.
+
+.. image:: img/output2.jpg
+    :width: 400
+
+Puedes separar el modulo acelerador Hailo AI del Raspberry Pi AI Kit e insertarlo directamente en el modulo NVMe PIP del Pironman 5 MAX.
 
 Puedo usar la funcion del interruptor de vibracion del Pironman5 Max?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -63,13 +84,13 @@ A partir de la version v1.3.6, la activacion de la pantalla OLED utiliza el boto
 .. image:: /pironman5_max/img/remove_vib_jumper.jpg
 
 2. Refrigeracion y ventiladores
--------------------------------
+---------------------------------
 
 
 .. _faq_pwm_fan_max:
 
 El ventilador de la CPU no funciona
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_pwm_fan
@@ -79,7 +100,7 @@ El ventilador de la CPU no funciona
 .. _faq_gpio_fans_max:
 
 Los ventiladores GPIO no funcionan
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_gpio_fans
@@ -93,10 +114,10 @@ Los ventiladores GPIO no funcionan
 .. _faq_oled_max:
 
 La pantalla OLED no funciona
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. |link_compatible_systems| replace:: :ref:`com_os_max`
-.. |link_set_up_pironman5| replace:: :ref:`max_set_up_pironman5`
+.. |link_set_up_pironman5| replace:: :ref:`set_up_pironman5_max`
 
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_oled
@@ -115,7 +136,7 @@ Los LED RGB no funcionan
 .. _faq_customize_oled_max:
 
 Como personalizar la pantalla OLED
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_customize_oled
@@ -129,14 +150,14 @@ Como personalizar la pantalla OLED
 .. _faq_dashboard_max:
 
 El panel web no muestra datos
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_dashboard
    :end-before: end_faq_dashboard
 
 Como deshabilitar el panel web
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. |link_view_control_dashboard| replace:: :ref:`view_control_dashboard`
 
@@ -146,7 +167,7 @@ Como deshabilitar el panel web
 
 
 Como desinstalar y reinstalar el software de Pironman 5
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_reinstall_pironman5
@@ -186,6 +207,12 @@ El PI5 no arranca (LED rojo)
 El modulo NVMe PIP no funciona
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. |link_install_the_os_dual| replace:: :ref:`install_the_os_max`
+
+.. start_faq_nvme_pip_dual
+
+#. Confirma que tu SSD NVMe sea compatible. Consulta la :ref:`lista de SSD NVMe compatibles <compitable_nvme_ssd_5>` para obtener unidades verificadas, estables y compatibles.
+
 #. Asegurate de que el cable FPC que conecta el modulo NVMe PIP a la Raspberry Pi 5 este firmemente sujeto.
 
    .. raw:: html
@@ -223,13 +250,26 @@ El modulo NVMe PIP no funciona
    .. image:: img/dual_nvme_pip_j4.png
 
 
-#. Confirma que tu SSD NVMe tenga un sistema operativo correctamente instalado. Consulta: :ref:`install_the_os_max`.
+#. Confirma que tu SSD NVMe tenga un sistema operativo correctamente instalado. Consulta |link_install_the_os_dual|.
+
+.. end_faq_nvme_pip_dual
 
 #. Si el problema persiste, envianos el siguiente archivo de registro:
 
    .. code-block:: shell
 
       cat /var/log/pironman5/pironman5.log
+
+
+.. _faq_nvme_link_down_max:
+
+El SSD NVMe se detecta pero provoca un reinicio del sistema al leer/escribir?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_nvme_link_down
+   :end-before: end_faq_nvme_link_down
+
 
 Como cambiar el orden de arranque de la Raspberry Pi usando comandos
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -261,7 +301,7 @@ Como copiar el sistema de la tarjeta SD a un NVMe SSD
 -------------------------------
 
 Como retirar la pelicula protectora
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../pironman5/faq.rst
    :start-after: start_faq_remove_film

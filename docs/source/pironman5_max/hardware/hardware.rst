@@ -20,7 +20,7 @@ Este capítulo ofrece una descripción detallada de todos los componentes de Pir
     hdmi_adapter
     nvme_pip
     microsd_extender
-    power_switch_conventor
+    power_switch_convertor
     tower_cooler
     oled_screen
     fans

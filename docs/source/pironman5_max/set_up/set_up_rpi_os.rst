@@ -60,6 +60,14 @@ Para evitar que la pantalla OLED y los ventiladores GPIO, alimentados por el GPI
 
 #. Descarga e instala el módulo ``pironman5`` desde GitHub.
 
+   .. tip::
+
+      Si estás usando **Ubuntu**, instala ``curl`` primero:
+
+      .. code-block:: shell
+
+         sudo apt install curl -y
+
    .. code-block:: shell
 
       curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
@@ -122,6 +130,8 @@ Para evitar que la pantalla OLED y los ventiladores GPIO, alimentados por el GPI
        * 60°C+: Media (50%)
        * 67.5°C+: Alta (70%)
        * 75°C+: Máxima velocidad (100%)
+
+      * :ref:`faq_pwm_fan_max`
 
 #. Usa ``systemctl`` para gestionar el servicio ``pironman5.service``.
 

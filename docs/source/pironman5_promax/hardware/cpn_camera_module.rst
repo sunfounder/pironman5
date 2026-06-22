@@ -39,7 +39,20 @@ En el módulo de cámara o en la Raspberry Pi, encontrará un conector de plást
 
 Si el cable FFC está instalado correctamente, quedará recto y no se saldrá cuando tire suavemente de él. Si no es así, vuelva a instalarlo.
 
+.. raw:: html
+
+    <div style="text-align: center; margin: 16px 0;">
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/riUNPxS7sHs"
+            title="Pironman 5 Pro MAX Camera Module Assembly"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
 .. image:: img/connect_ffc.png
+
 
 .. image:: img/1.10_camera.png
    :width: 700

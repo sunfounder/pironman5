@@ -72,7 +72,7 @@ Si tienes alguna pregunta, envía un correo electrónico a service@sunfounder.co
 .. toctree::
     :maxdepth: 1
 
-    About Pironman 5 Series <self>
+    Acerca de la Serie Pironman 5 <self>
     pironman5/intro_pironman5
     pironman5_promax/intro_pironman5_promax
     pironman5_max/intro_pironman5_max

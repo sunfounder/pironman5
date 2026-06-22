@@ -1,292 +1,420 @@
-.. include:: /index.rst
+﻿.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
+
+
 
 FAQ
 ============
 
-1. Acerca de los Sistemas Compatibles
---------------------------------------------------------
 
-Sistemas que pasaron la prueba en la Raspberry Pi 5:
+Solucion rapida de problemas
+--------------------------------
 
-.. image:: img/compitable_os.png
-   :width: 600
-   :align: center
+* El botón de encendido no funciona → :ref:`faq_power_button_not_work_promax`
+* La pantalla OLED no funciona → :ref:`faq_oled_promax`
+* Los LED RGB no funcionan → :ref:`faq_rgb_promax`
+* El ventilador no funciona → :ref:`promax_fan_faq`
+* El panel de control no muestra datos → :ref:`faq_dashboard_promax`
+* SSD NVMe no detectado → :ref:`faq_nvme_promax`
+* SSD NVMe detectado pero causa reinicio del sistema → :ref:`faq_nvme_link_down_promax`
+* La PI5 no arranca → :ref:`faq_pi5_boot_fail_promax`
 
-2. Acerca del Botón de Encendido
----------------------------------------------
 
-El botón de encendido expone el botón de encendido de la Raspberry Pi 5, y funciona igual que el botón de encendido de la Raspberry Pi 5.
 
-.. image:: img/power_button.jpg
+1. Hardware
+-------------------------------
+
+
+.. _com_os_promax:
+
+Sistemas compatibles
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_com_os
+   :end-before: end_faq_com_os
+
+
+.. |link_safe_shutdown| replace:: :ref:`safe_shutdown_promax`
+
+Botón de encendido
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_power_button
+   :end-before: end_faq_power_button
+
+
+.. _faq_power_button_not_work_promax:
+
+El botón de encendido no funciona
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Primero, confirma el comportamiento esperado del botón de encendido:
+
+   * **Raspberry Pi OS Desktop**: Presiona el botón de encendido dos veces rápidamente para apagar. Mantén presionado 5 segundos para forzar un apagado completo. Presiona una vez para encender desde el estado de apagado.
+   * **Raspberry Pi OS Lite**: Presiona el botón de encendido una vez para apagar. Mantén presionado 5 segundos para forzar un apagado completo. Presiona una vez para encender.
+
+#. Verifica que los pines del convertidor de alimentación estén correctamente alineados con los pads J2 del Raspberry Pi 5 (entre el conector de la batería RTC y el borde de la placa).
+
+#. Verifica que los pines dentro del conector del convertidor de alimentación estén correctamente alineados con el conector del botón de encendido. Vuelve a conectar el cable del botón si es necesario.
+
+#. Usa un destornillador para puentear brevemente los dos pines del conector del convertidor de alimentación donde se conecta el botón. Si la Pi se enciende, es posible que el botón esté defectuoso; de lo contrario, el problema probablemente esté en la placa convertidora o en la conexión con la Pi 5.
+
+
+Extremos de los tubos de cobre del cooler de torre
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_copper_pipe_ends
+   :end-before: end_faq_copper_pipe_ends
+
+
+Raspberry Pi AI HAT+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+El Raspberry Pi AI HAT+ no es compatible con el Pironman 5 Pro MAX.
+
+.. image:: img/output3.png
     :width: 400
-    :align: center
 
-* **Apagado**
+El kit Raspberry Pi AI combina el Raspberry Pi M.2 HAT+ y el módulo acelerador de IA Hailo.
 
-  * Si ejecuta el sistema **Raspberry Pi OS Desktop**, puede presionar el botón de encendido dos veces rápidamente para apagar.
-  * Si ejecuta el sistema **Raspberry Pi OS Lite**, presione el botón de encendido una sola vez para iniciar un apagado.
-  * Para forzar un apagado completo, mantenga presionado el botón de encendido.
+.. image:: img/output2.jpg
+    :width: 400
 
-* **Encendido**
+Puedes separar el módulo acelerador Hailo AI del Raspberry Pi AI Kit e insertarlo directamente en el módulo NVMe PIP del Pironman 5 Pro MAX.
 
-  * Si la placa Raspberry Pi está apagada, pero aún tiene alimentación, presione una vez para encender desde el estado de apagado.
 
-* Si está ejecutando un sistema que no soporta un botón de apagado, puede mantenerlo presionado durante 5 segundos para forzar un apagado completo, y presionar una vez para encender desde el estado de apagado.
+La pantalla de 4.3 pulgadas está en negro / no muestra imagen
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3. Acerca del Raspberry Pi AI HAT+
-----------------------------------------------------------
+La pantalla DSI de 4.3 pulgadas es plug-and-play — no requiere instalación de controladores adicionales.
 
-El Raspberry Pi AI HAT+ no es compatible con el Pironman 5.
+.. note::
 
-   .. image::  img/output3.png
-        :width: 400
+   El puente **ON/AUTO** en la placa HDMI/USB solo controla la salida de audio del altavoz. **No tiene ningún efecto** en la pantalla.
 
-El Raspberry Pi AI Kit combina el Raspberry Pi M.2 HAT+ y el módulo acelerador AI Hailo.
+Si la pantalla está en negro o no muestra imagen, verifica lo siguiente:
 
-   .. image::  img/output2.jpg
-        :width: 400
+#. Asegúrate de que el cable plano DSI esté conectado al puerto DSI correcto del Raspberry Pi 5.
 
-Puede separar el módulo acelerador AI Hailo del Raspberry Pi AI Kit e insertarlo directamente en el módulo NVMe PIP del Pironman 5 MAX.
+#. Verifica que el cable plano esté completamente insertado, la abrazadera esté presionada firmemente y los contactos estén orientados en la dirección correcta.
 
-4. Acerca de los Extremos de los Tubos de Cobre del Enfriador de Torre
----------------------------------------------------------------------------------------
-
-Los tubos de calor en forma de U en la parte superior del enfriador de torre están comprimidos para facilitar que los tubos de cobre pasen a través de las aletas de aluminio, lo cual es parte del proceso normal de producción de los tubos de cobre.
-
-   .. image::  img/tower_cooler1.png
-
-5. ¿La PI5 no arranca (LED rojo)?
--------------------------------------------
-
-Este problema puede ser causado por una actualización del sistema, cambios en el orden de arranque o un bootloader corrupto. Puede intentar los siguientes pasos para resolver el problema:
-
-#. Verifique la Conexión del Adaptador USB-HDMI
-
-   * Verifique cuidadosamente si el adaptador USB-HDMI está firmemente conectado a la PI5.
-   * Intente desconectar y volver a conectar el adaptador USB-HDMI.
-   * Luego reconecte la fuente de alimentación y verifique si la PI5 arranca correctamente.
-
-#. Pruebe la PI5 Fuera de la Carcasa
-
-   * Si reconectar el adaptador no resuelve el problema:
-   * Retire la PI5 de la carcasa Pironman 5.
-   * Alimente la PI5 directamente con el adaptador de corriente (sin la carcasa).
-   * Verifique si puede arrancar normalmente.
-
-#. Restaure el Bootloader
-
-   * Si la PI5 aún no puede arrancar, el bootloader puede estar corrupto. Puede seguir esta guía: :ref:`update_bootloader_promax` y elegir si arrancar desde la tarjeta SD o desde NVMe/USB.
-   * Inserte la tarjeta SD preparada en la PI5, enciéndala y espere al menos 10 segundos. Una vez completada la recuperación, retire y formatee la tarjeta SD.
-   * Luego, use Raspberry Pi Imager para grabar la última versión de Raspberry Pi OS, vuelva a insertar la tarjeta e intente arrancar de nuevo.
-
-6. ¿La Pantalla OLED no Funciona?
------------------------------------------------
-
-Si la pantalla OLED no muestra o muestra incorrectamente, siga estos pasos de solución de problemas:
-
-1. **Verifique la Conexión de la Pantalla OLED**
-
-   Asegúrese de que el cable FPC de la pantalla OLED esté correctamente conectado.
-
-2. **Verifique la Compatibilidad del SO**
-
-   Asegúrese de que está ejecutando un sistema operativo compatible en su Raspberry Pi.
-
-3. **Verifique la Dirección I2C**
-
-   Ejecute el siguiente comando para verificar si la dirección I2C del OLED (0x3C) es reconocida:
+#. Ejecuta el siguiente comando para confirmar si el sistema detecta la pantalla DSI:
 
    .. code-block:: shell
 
-      sudo i2cdetect -y 1
+      sudo dmesg | grep -i dsi
 
-   Si la dirección no es detectada, habilite I2C usando el siguiente comando:
+   Si la pantalla es detectada, deberías ver una salida similar a ``DSI display found``. Si no hay salida, la pantalla no está siendo reconocida — vuelve a verificar la conexión física.
 
-   .. code-block:: shell
 
-      sudo raspi-config
+Pantalla HDMI externa — la barra de tareas solo aparece en la pantalla de 4.3 pulgadas
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-4. **Reinicie el Servicio pironman5**
+Al conectar un monitor HDMI externo al Pironman 5 Pro MAX, es posible que la barra de tareas del escritorio permanezca en la pantalla DSI de 4.3 pulgadas integrada en lugar de moverse a la pantalla externa. Esto se debe a que el sistema utiliza la pantalla DSI como pantalla principal de forma predeterminada.
 
-   Reinicie el servicio `pironman5` para ver si resuelve el problema:
+Si deseas configurar el monitor HDMI como pantalla principal al iniciar:
 
-   .. code-block:: shell
-
-      sudo systemctl restart pironman5.service
-
-5. **Verifique el Archivo de Registro**
-
-   Si el problema persiste, verifique el archivo de registro en busca de mensajes de error y proporcione la información al soporte al cliente para un análisis más detallado:
+#. Crea un script de inicio:
 
    .. code-block:: shell
 
-      cat /var/log/pironman5/pironman5.log
+      sudo nano /usr/local/bin/fix-primary-screen.sh
 
-7. ¿El Módulo NVMe PIP no Funciona?
----------------------------------------
+#. Añade el siguiente contenido al script:
 
-1. Asegúrese de que el cable FPC que conecta el módulo NVMe PIP a la Raspberry Pi 5 esté firmemente conectado.
+   .. code-block:: bash
 
-2. Confirme que su SSD esté correctamente asegurado al módulo NVMe PIP.
+      #!/bin/bash
+      # Check if an external HDMI monitor is connected
+      if wlr-randr | grep -q "HDMI-A-1"; then
+          # Turn off the DSI screen first
+          wlr-randr --output DSI-1 --off
+          sleep 2
+          # Re-enable DSI and place it to the right of HDMI
+          wlr-randr --output DSI-1 --on --right-of HDMI-A-1
+      fi
 
-3. Verifique el estado de los LEDs del Módulo NVMe PIP:
+#. Haz que el script sea ejecutable:
 
-   Después de confirmar todas las conexiones, encienda el Pironman 5 MAX y observe los dos indicadores en el Módulo NVMe PIP:
+   .. code-block:: shell
 
-   * **PWR LED**: Debería estar encendido.
-   * **STA LED**: Debería parpadear para indicar funcionamiento normal.
+      sudo chmod +x /usr/local/bin/fix-primary-screen.sh
 
-   .. image:: img/dual_nvme_pip_leds.png
+#. Añade el script al inicio automático. Edita el archivo de inicio de labwc:
 
-   * Si el **PWR LED** está encendido pero el **STA LED** no parpadea, indica que el SSD NVMe no es reconocido por la Raspberry Pi.
-   * Si el **PWR LED** está apagado, puentee los pines "Force Enable" en el módulo. Si el **PWR LED** se enciende, podría indicar un cable FPC suelto o una configuración del sistema no compatible con NVMe.
+   .. code-block:: shell
 
-   .. image:: img/dual_nvme_pip_j4.png
+      nano ~/.config/labwc/autostart
 
-4. Confirme que su SSD NVMe tenga un sistema operativo correctamente instalado. Consulte: :ref:`install_the_os_promax`.
+   Añade la siguiente línea (el ``&`` lo ejecuta en segundo plano):
 
-5. Si el cableado es correcto y el SO está instalado, pero el SSD NVMe aún no arranca, intente arrancar desde una tarjeta Micro SD para verificar la funcionalidad de otros componentes. Una vez confirmado, proceda a: :ref:`configure_boot_ssd_promax`.
+   .. code-block:: text
 
-Si el problema persiste después de realizar los pasos anteriores, envíe un correo electrónico a service@sunfounder.com. Responderemos lo antes posible.
+      /usr/local/bin/fix-primary-screen.sh &
 
-8. ¿Los LEDs RGB no Funcionan?
-------------------------------------------
 
-#. Los dos pines en el Expansor de E/S encima de J9 se utilizan para conectar los LEDs RGB a GPIO10. Asegúrese de que el puente en estos dos pines esté correctamente colocado.
 
-   .. image:: hardware/img/io_board_rgb_pin.png
-      :width: 300
-      :align: center
+2. Cooling and Fans
+-------------------------------
 
-#. Verifique que la Raspberry Pi esté ejecutando un sistema operativo compatible. El Pironman 5 solo soporta las siguientes versiones de SO:
-
-   .. image:: img/compitable_os.png
-      :width: 600
-      :align: center
-
-   Si ha instalado un SO no compatible, siga la guía para instalar un sistema operativo compatible: :ref:`install_the_os_promax`.
-
-#. Ejecute el comando ``sudo raspi-config`` para abrir el menú de configuración. Navegue a **3 Interfacing Options** -> **I3 SPI** -> **YES**, luego haga clic en **OK** y **Finish** para habilitar SPI. Después de habilitar SPI, reinicie el Pironman 5.
-
-Si el problema persiste después de realizar los pasos anteriores, envíe un correo electrónico a service@sunfounder.com. Responderemos lo antes posible.
 
 .. _promax_fan_faq:
 
-9. ¿El ventilador no funciona / no se puede controlar?
-----------------------------------------------------------------
+El ventilador no funciona / no se puede controlar
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-El Pro / MAX adopta la solución oficial de control de ventilador PWM de Raspberry Pi. Los tres ventiladores de refrigeración son controlados directamente por el sistema Raspberry Pi y no dependen del servicio pironman5 (por lo tanto, no verá opciones de control de ventiladores en la herramienta de línea de comandos o en el Panel).
+El Pro MAX adopta la solución oficial de control de ventilador PWM de Raspberry Pi. Los tres ventiladores de refrigeración son controlados directamente por el sistema Raspberry Pi y no dependen del servicio pironman5 (por lo tanto, no verás opciones de control de ventiladores en la herramienta de línea de comandos ni en el panel de control).
 
-**Pruebe si el ventilador funciona correctamente**
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_pwm_fan
+   :end-before: end_faq_pwm_fan
 
-Puede controlar manualmente el ventilador usando los siguientes comandos:
 
-.. code-block:: bash
+El panel de control no muestra la velocidad del ventilador
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   pinctrl FAN_PWM op dl   # habilitar ventilador (activo bajo)
-   pinctrl FAN_PWM op dh   # deshabilitar ventilador (activo alto)
-   pinctrl FAN_PWM a0      # modo automático (control por temperatura del sistema)
+El Pro MAX utiliza ventiladores personalizados de **5 pines** con la siguiente asignación: **PWM / 5V / GND / RGB Data In / RGB Data Out**.
 
-**Control de Velocidad del Ventilador Basado en la Temperatura**
+Estos ventiladores **no** tienen un pin de tacómetro (retroalimentación de velocidad), por lo que el sistema no puede leer las RPM reales. Es normal y esperado que el panel de control no muestre la velocidad del ventilador.
 
-El ventilador PWM funciona dinámicamente, ajustando su velocidad según la temperatura de la Raspberry Pi 5:
+La velocidad del ventilador es controlada por la curva de temperatura PWM nativa de la Raspberry Pi:
 
-* **Por debajo de 50°C**: El ventilador permanece apagado (0% de velocidad).
-* **A 50°C**: El ventilador funciona a baja velocidad (30% de velocidad).
-* **A 60°C**: El ventilador aumenta a velocidad media (50% de velocidad).
-* **A 67.5°C**: El ventilador acelera a alta velocidad (70% de velocidad).
-* **A 75°C o más**: El ventilador funciona a máxima velocidad (100% de velocidad).
+* < 50 °C: Apagado (0 %)
+* 50 °C+: Bajo (30 %)
+* 60 °C+: Medio (50 %)
+* 67.5 °C+: Alto (70 %)
+* 75 °C+: Velocidad máxima (100 %)
 
-10. ¿Cómo activar la pantalla OLED?
----------------------------------------------------------------------------------
+
+
+3. OLED and RGB
+-------------------------------
+
+
+.. _faq_oled_promax:
+
+La pantalla OLED no funciona
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. |link_set_up_pironman5| replace:: :ref:`promax_set_up_pi_os`
+.. |link_compatible_systems| replace:: :ref:`com_os_promax`
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_oled
+   :end-before: end_faq_oled
+
+
+.. _faq_customize_oled_promax:
+
+Cómo personalizar la pantalla OLED
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_customize_oled
+   :end-before: end_faq_customize_oled
+
+
+.. _faq_rgb_promax:
+
+Los LED RGB no funcionan
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_rgb
+   :end-before: end_faq_rgb
+
+
+Cómo activar la pantalla OLED
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Para ahorrar energía y extender la vida útil de la pantalla, la pantalla OLED se apagará automáticamente después de un período de inactividad. Esto es parte del diseño normal y no afecta la funcionalidad del producto.
 
 .. note::
 
-   Para la configuración de la pantalla OLED (como encender/apagar, tiempo de reposo, rotación, etc.), consulte: :ref:`promax_view_control_dashboard` o :ref:`promax_view_control_commands`.
+   Para la configuración de la pantalla OLED (como encender/apagar, tiempo de reposo, rotación, etc.), consulta :ref:`promax_view_control_dashboard` o :ref:`promax_view_control_commands`.
 
-11. ¿Cómo deshabilitar el panel web?
-------------------------------------------------------
 
-Una vez que haya completado la instalación del módulo ``pironman5``, podrá acceder al :ref:`promax_view_control_dashboard`.
 
-Si no necesita esta función y desea reducir el uso de CPU y RAM, puede deshabilitar el panel durante la instalación de ``pironman5`` agregando la bandera ``--disable-dashboard``.
+4. Dashboard and Software
+-------------------------------
 
-.. code-block:: shell
 
-   cd ~/pironman5
-   sudo python3 install.py --disable-dashboard
+.. _faq_dashboard_promax:
 
-Si ya ha instalado ``pironman5``, puede eliminar el módulo ``dashboard`` e ``influxdb``, luego reiniciar pironman5 para aplicar los cambios:
+El panel de control no muestra datos
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: shell
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_dashboard
+   :end-before: end_faq_dashboard
 
-   /opt/pironman5/venv/bin/pip3 uninstall pm-dashboard influxdb
-   sudo apt purge influxdb
-   sudo systemctl restart pironman5
 
-12. ¿Cómo controlar los componentes usando el comando ``pironman5``?
-------------------------------------------------------------------------
+.. |link_view_control_dashboard| replace:: :ref:`promax_view_control_dashboard`
 
-Puede consultar el siguiente tutorial para controlar los componentes del Pironman 5 MAX usando el comando ``pironman5``.
+Cómo desactivar el panel web
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* :ref:`promax_view_control_commands`
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_disable_dashboard
+   :end-before: end_faq_disable_dashboard
 
-13. ¿Cómo cambiar el orden de arranque de la Raspberry Pi usando comandos?
-----------------------------------------------------------------------------------------
 
-Si ya ha iniciado sesión en su Raspberry Pi, puede cambiar el orden de arranque usando comandos. Las instrucciones detalladas son las siguientes:
+Cómo desinstalar y reinstalar el software Pironman 5
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* :ref:`configure_boot_ssd_promax`
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_reinstall_pironman5
+   :end-before: end_faq_reinstall_pironman5
 
-14. ¿Cómo modificar el orden de arranque con Raspberry Pi Imager?
--------------------------------------------------------------------
 
-Además de modificar el ``BOOT_ORDER`` en la configuración EEPROM, también puede usar **Raspberry Pi Imager** para cambiar el orden de arranque de su Raspberry Pi.
+.. |link_view_control_commands| replace:: :ref:`promax_view_control_commands`
 
-Se recomienda usar una tarjeta de repuesto para este paso.
+Cómo controlar los componentes usando el comando ``pironman5``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* :ref:`update_bootloader_promax`
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_pironman5_command
+   :end-before: end_faq_pironman5_command
 
-15. ¿Cómo copiar el sistema de la tarjeta SD a un SSD NVMe?
---------------------------------------------------------------
 
-Si tiene un SSD NVMe pero no tiene un adaptador para conectar su NVMe a su computadora, puede instalar primero el sistema en su tarjeta Micro SD. Una vez que el Pironman 5 MAX arranque correctamente, puede copiar el sistema de su tarjeta Micro SD a su SSD NVMe. Las instrucciones detalladas son las siguientes:
+.. _faq_piper_tts_32bit_promax:
 
-* :ref:`copy_sd_to_nvme_promax`
+``pip install piper-tts`` falla con "Could Not Find a Version"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-16. ¿Cómo quitar la película protectora de las placas acrílicas?
---------------------------------------------------------------------
+Al instalar ``sunfounder-voice-assistant`` en el Pironman 5 Pro MAX, es posible que encuentres el siguiente error:
 
-Se incluyen dos paneles acrílicos en el paquete, ambos cubiertos con una película protectora amarilla/transparente en ambos lados para prevenir rayones. La película protectora puede ser un poco difícil de quitar. Use un destornillador para raspar suavemente las esquinas, luego retire con cuidado toda la película.
+.. code-block:: text
 
-.. image:: img/peel_off_film.jpg
-    :width: 500
-    :align: center
+   ERROR: Could not find a version that satisfies the requirement piper-tts==1.3.0
+   ERROR: No matching distribution found for piper-tts==1.3.0
+
+Este error ocurre porque ``piper-tts`` 1.3.0 solo proporciona paquetes **de 64 bits** (``aarch64``). Si tu Raspberry Pi ejecuta un sistema operativo **de 32 bits**, pip no puede encontrar un paquete compatible.
+
+**Solución:** Instala una versión de 64 bits de Raspberry Pi OS.
+
+#. Verifica la arquitectura de tu sistema actual:
+
+   .. code-block:: shell
+
+      uname -m
+
+   * ``aarch64`` → 64 bits (sin problema)
+   * ``armv7l`` → 32 bits (necesita actualización)
+
+#. Usa `Raspberry Pi Imager <https://www.raspberrypi.com/software/>`_ para grabar una imagen **de 64 bits** de Raspberry Pi OS en tu dispositivo de almacenamiento.
+
+#. Después de instalar el sistema operativo de 64 bits, reinstala el software ``pironman5`` y ``sunfounder-voice-assistant``.
+
+
+
+5. Boot and Storage
+-------------------------------
+
+
+.. |link_update_bootloader| replace:: :ref:`update_bootloader_promax`
+
+.. _faq_pi5_boot_fail_promax:
+
+La PI5 no arranca (LED rojo)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_pi5_boot_fail
+   :end-before: end_faq_pi5_boot_fail
+
+
+.. _faq_nvme_promax:
+
+El módulo NVMe PIP no funciona
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. |link_install_the_os_dual| replace:: :ref:`install_the_os_promax`
+
+.. include:: ../pironman5_max/faq.rst
+   :start-after: start_faq_nvme_pip_dual
+   :end-before: end_faq_nvme_pip_dual
+
+#. Si el cableado es correcto y el SO está instalado, pero el SSD NVMe aún no arranca, intenta arrancar desde una tarjeta Micro SD para verificar la funcionalidad de otros componentes. Una vez confirmado, procede a :ref:`configure_boot_ssd_promax`.
+
+#. Si el problema persiste después de realizar los pasos anteriores, envía un correo electrónico a service@sunfounder.com. Responderemos lo antes posible.
+
+
+.. _faq_nvme_link_down_promax:
+
+SSD NVMe detectado pero causa reinicio del sistema al leer/escribir
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_nvme_link_down
+   :end-before: end_faq_nvme_link_down
+
+
+.. |link_configure_boot_ssd| replace:: :ref:`configure_boot_ssd_promax`
+
+Cómo cambiar el orden de arranque de la Raspberry Pi usando comandos
+
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_boot_order_command
+   :end-before: end_faq_boot_order_command
+
+
+Cómo modificar el orden de arranque con Raspberry Pi Imager
+
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_boot_order_imager
+   :end-before: end_faq_boot_order_imager
+
+
+.. |link_copy_sd_to_nvme| replace:: :ref:`copy_sd_to_nvme_promax`
+
+Cómo copiar el sistema desde la tarjeta SD a un SSD NVMe
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_copy_sd_to_nvme
+   :end-before: end_faq_copy_sd_to_nvme
+
+
+
+6. Advanced Usage
+-------------------------------
+
+
+Cómo retirar la película protectora
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_remove_film
+   :end-before: end_faq_remove_film
+
 
 .. _promax_openssh_powershell:
 
-17. ¿Cómo instalar OpenSSH a través de Powershell?
--------------------------------------------------------
+Cómo instalar OpenSSH mediante PowerShell
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Cuando usa ``ssh <username>@<hostname>.local`` (o ``ssh <username>@<IP address>``) para conectarse a su Raspberry Pi, pero aparece el siguiente mensaje de error.
+Cuando usas ``ssh <username>@<hostname>.local`` (o ``ssh <username>@<IP address>``) para conectarte a tu Raspberry Pi, pero aparece el siguiente mensaje de error:
 
     .. code-block::
 
         ssh: The term 'ssh' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
         spelling of the name, or if a path was included, verify that the path is correct and try again.
 
-Significa que su sistema informático es demasiado antiguo y no tiene `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ preinstalado, necesita seguir el tutorial a continuación para instalarlo manualmente.
+Significa que tu sistema operativo es demasiado antiguo y no tiene `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ preinstalado. Debes seguir el siguiente tutorial para instalarlo manualmente.
 
-#. Escriba ``powershell`` en el cuadro de búsqueda de su escritorio Windows, haga clic derecho en ``Windows PowerShell`` y seleccione ``Run as administrator`` en el menú que aparece.
+#. Escribe ``powershell`` en el cuadro de búsqueda del escritorio de Windows, haz clic derecho sobre ``Windows PowerShell`` y selecciona ``Run as administrator`` en el menú que aparece.
 
    .. image:: img/powershell_ssh.png
       :width: 90%
 
-#. Use el siguiente comando para instalar ``OpenSSH.Client``.
+#. Usa el siguiente comando para instalar ``OpenSSH.Client``.
 
    .. code-block::
 
@@ -300,13 +428,13 @@ Significa que su sistema informático es demasiado antiguo y no tiene `OpenSSH <
         Online        : True
         RestartNeeded : False
 
-#. Verifique la instalación usando el siguiente comando.
+#. Verifica la instalación con el siguiente comando.
 
    .. code-block::
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. Ahora le indica que ``OpenSSH.Client`` se ha instalado correctamente.
+#. Ahora te indica que ``OpenSSH.Client`` se ha instalado correctamente.
 
    .. code-block::
 
@@ -318,23 +446,25 @@ Significa que su sistema informático es demasiado antiguo y no tiene `OpenSSH <
 
    .. warning::
 
-        Si el mensaje anterior no aparece, significa que su sistema Windows sigue siendo demasiado antiguo, y se recomienda instalar una herramienta SSH de terceros, como |link_putty|.
+        Si el mensaje anterior no aparece, significa que tu sistema Windows sigue siendo demasiado antiguo. Te recomendamos instalar una herramienta SSH de terceros, como |link_putty|.
 
-#. Ahora reinicie PowerShell y continúe ejecutándolo como administrador. En este punto podrá iniciar sesión en su Raspberry Pi usando el comando ``ssh``, donde se le pedirá que ingrese la contraseña que configuró anteriormente.
+#. Ahora reinicia PowerShell y continúa ejecutándolo como administrador. En este punto podrás iniciar sesión en tu Raspberry Pi usando el comando ``ssh``, donde se te pedirá que ingreses la contraseña que configuraste anteriormente.
 
    .. image:: img/powershell_login.png
 
-18. Si configuro OMV, ¿puedo seguir usando las funciones del Pironman5?
---------------------------------------------------------------------------------------------------------
 
-Sí, OpenMediaVault se configura en el sistema Raspberry Pi. Siga los pasos de :ref:`promax_set_up_pi_os` para continuar con la configuración.
+Si configuro OMV, puedo seguir usando las funciones del Pironman5
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-19. ¿La cámara de la Raspberry Pi no funciona?
-------------------------------------------------------------
+Sí, OpenMediaVault se configura en el sistema Raspberry Pi. Sigue los pasos de :ref:`promax_set_up_pi_os` para continuar con la configuración.
 
-Cuando la cámara no funciona, el 90% de los problemas están relacionados con la conexión del cable plano o con el hardware de la cámara.
 
-Primero, use ``rpicam-hello --list-cameras`` para confirmar si la cámara es detectada. Si se detecta correctamente, debería ver un mensaje similar al siguiente:
+La cámara de la Raspberry Pi no funciona
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Cuando la cámara no funciona, el 90 % de los problemas están relacionados con la conexión del cable plano o con el hardware de la cámara.
+
+Primero, usa ``rpicam-hello --list-cameras`` para confirmar si la cámara es detectada. Si se detecta correctamente, deberías ver un mensaje similar al siguiente:
 
 .. code-block:: bash
 
@@ -342,4 +472,29 @@ Primero, use ``rpicam-hello --list-cameras`` para confirmar si la cámara es det
    -----------------
    0 : ov5647 [2592x1944] (/base/axi/pcie@1000120000/rp1/i2c@88000/ov5647@36)
 
-Si la cámara no es detectada, verifique si el cable plano está invertido o no está completamente insertado. Si el problema persiste, intente reemplazar el cable plano o el módulo de la cámara para hacer una prueba cruzada.
+Si la cámara no es detectada, verifica si el cable plano está invertido o no está completamente insertado. Si el problema persiste, intenta reemplazar el cable plano o el módulo de la cámara para hacer una prueba cruzada.
+
+
+Puedo instalar Home Assistant OS en el Pironman 5 Pro MAX
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+El Pironman 5 Pro MAX no tiene su propio add-on dedicado de Home Assistant. Sin embargo, puedes usar el add-on de **Pironman 5 MAX** como alternativa — sigue la `guía del repositorio de add-ons de SunFounder <https://docs.sunfounder.com/projects/pironman5/en/latest/pironman5_max/set_up/set_up_home_assistant.html#add-the-sunfounder-add-ons-repository>`_.
+
+Ten en cuenta las siguientes limitaciones:
+
+* **Pantalla de 4.3 pulgadas**: Home Assistant OS es un sistema **lite** sin entorno de escritorio. La pantalla de 4.3 pulgadas integrada en el Pro MAX no mostrará nada.
+
+* **NVMe PIP de doble SSD**: Home Assistant OS no puede leer ambos SSD NVMe en el módulo NVMe PIP dual del Pro MAX.
+
+* **Pantalla OLED y LED RGB**: Estos componentes funcionan normalmente después de instalar el add-on — no se requiere configuración adicional.
+
+* **Ventilador de la CPU**: El ventilador de la CPU requiere configuración manual para funcionar bajo Home Assistant OS. Añade lo siguiente a ``/boot/firmware/config.txt``:
+
+  .. code-block:: text
+
+     dtparam=cooling_fan=on
+     dtparam=fan_temp0=40000
+     dtparam=fan_temp0_hyst=10000
+     dtparam=fan_temp0_speed=125
+
+  Después de guardar y reiniciar, el ventilador de la CPU será controlado por el sistema Raspberry Pi según la temperatura de la CPU. También puedes controlarlo manualmente mediante comandos ``pinctrl`` — consulta :ref:`promax_fan_faq`.

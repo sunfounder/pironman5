@@ -9,7 +9,7 @@ Ventiladores
 ===============
 
 Ventilador de la CPU
----------------------
+------------------------
 
 El ventilador de la CPU en el Pironman 5 es gestionado por el sistema Raspberry Pi y constituye la base de su solución de enfriamiento inteligente, especialmente bajo cargas pesadas. Este sistema combina un ventilador de la CPU principal con dos ventiladores GPIO suplementarios para un rendimiento de enfriamiento mejorado, integrados estrechamente con el sistema de gestión térmica del Raspberry Pi 5.
 
