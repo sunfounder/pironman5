@@ -10,7 +10,7 @@
 # (Safe to run directly — interactive prompts read from /dev/tty)
 # ============================================================
 
-VERSION="2.1.8"
+VERSION="2.1.9"
 
 # Source Installer framework — use local path when available (e.g. Docker build),
 # otherwise curl from GitHub.
@@ -327,8 +327,8 @@ if [ "$_PLUGIN_ONLY" = true ]; then
         fi
 
         TITLE "Build and install kernel driver"
-        RUN "apt-get install -y dkms 2>/dev/null || { printf 'Types: deb\nURIs: http://deb.debian.org/debian/\nSuites: trixie trixie-updates\nComponents: main contrib non-free non-free-firmware\nSigned-By: /usr/share/keyrings/debian-archive-keyring.pgp\n' > /etc/apt/sources.list.d/debian-trixie.sources && apt-get update && apt-get install -y dkms; }" "Install DKMS"
-        RUN "apt-get install -y linux-headers-\$(uname -r)" "Install kernel headers"
+        RUN "apt-get install -y dkms 2>&1 || { printf 'Types: deb\nURIs: http://deb.debian.org/debian/\nSuites: trixie trixie-updates\nComponents: main contrib non-free non-free-firmware\nSigned-By: /usr/share/keyrings/debian-archive-keyring.pgp\n' > /etc/apt/sources.list.d/debian-trixie.sources && apt-get update && apt-get install -y dkms 2>&1; }" "Install DKMS"
+        RUN "apt-get install -y linux-headers-\$(uname -r) 2>&1 || { _f=\$(uname -r | sed 's/^[0-9.]*//' | sed 's/^[+-]//'); apt-get install -y \"linux-headers-\${_f}\" 2>&1; } || apt-get install -y raspberrypi-kernel-headers 2>&1 || true" "Install kernel headers"
         RUN "cd ${PIPOWER5_SRC}/driver && make clean && make module && make dkms_install && make dtbo" "Build and install pipower5.ko"
 
         if [ -f "${VENV_PIP}" ]; then
@@ -484,8 +484,8 @@ if [ "$INSTALL_PIPOWER5" = true ]; then
     fi
 
     TITLE "Install PiPower5 build dependencies"
-    RUN "apt-get install -y dkms 2>/dev/null || { printf 'Types: deb\nURIs: http://deb.debian.org/debian/\nSuites: trixie trixie-updates\nComponents: main contrib non-free non-free-firmware\nSigned-By: /usr/share/keyrings/debian-archive-keyring.pgp\n' > /etc/apt/sources.list.d/debian-trixie.sources && apt-get update && apt-get install -y dkms; }" "Install DKMS"
-    RUN "apt-get install -y linux-headers-\$(uname -r)" "Install kernel headers"
+    RUN "apt-get install -y dkms 2>&1 || { printf 'Types: deb\nURIs: http://deb.debian.org/debian/\nSuites: trixie trixie-updates\nComponents: main contrib non-free non-free-firmware\nSigned-By: /usr/share/keyrings/debian-archive-keyring.pgp\n' > /etc/apt/sources.list.d/debian-trixie.sources && apt-get update && apt-get install -y dkms 2>&1; }" "Install DKMS"
+    RUN "apt-get install -y linux-headers-\$(uname -r) 2>&1 || { _f=\$(uname -r | sed 's/^[0-9.]*//' | sed 's/^[+-]//'); apt-get install -y \"linux-headers-\${_f}\" 2>&1; } || apt-get install -y raspberrypi-kernel-headers 2>&1 || true" "Install kernel headers"
 
     TITLE "Build and install PiPower5 kernel driver"
     RUN "cd ${PIPOWER5_SRC}/driver && make clean && make module && make dkms_install && make dtbo && make install-overlay" "Build and install pipower5.ko"
