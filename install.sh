@@ -327,7 +327,7 @@ if [ "$_PLUGIN_ONLY" = true ]; then
         fi
 
         TITLE "Build and install kernel driver"
-        RUN "apt-get install -y dkms 2>/dev/null || { printf 'Types: deb\nURIs: http://deb.debian.org/debian/\nSuites: trixie trixie-updates\nComponents: main contrib non-free non-free-firmware\nSigned-By: /usr/share/keyrings/debian-archive-keyring.pgp\n' > /etc/apt/sources.list.d/debian-trixie.sources && apt-get update && apt-get install -y dkms; }" "Install DKMS"
+        RUN "apt-get install -y dkms 2>&1 || { printf 'Types: deb\nURIs: http://deb.debian.org/debian/\nSuites: trixie trixie-updates\nComponents: main contrib non-free non-free-firmware\nSigned-By: /usr/share/keyrings/debian-archive-keyring.pgp\n' > /etc/apt/sources.list.d/debian-trixie.sources && apt-get update && apt-get install -y dkms 2>&1; }" "Install DKMS"
         RUN "apt-get install -y linux-headers-\$(uname -r)" "Install kernel headers"
         RUN "cd ${PIPOWER5_SRC}/driver && make clean && make module && make dkms_install && make dtbo" "Build and install pipower5.ko"
 
@@ -484,7 +484,7 @@ if [ "$INSTALL_PIPOWER5" = true ]; then
     fi
 
     TITLE "Install PiPower5 build dependencies"
-    RUN "apt-get install -y dkms 2>/dev/null || { printf 'Types: deb\nURIs: http://deb.debian.org/debian/\nSuites: trixie trixie-updates\nComponents: main contrib non-free non-free-firmware\nSigned-By: /usr/share/keyrings/debian-archive-keyring.pgp\n' > /etc/apt/sources.list.d/debian-trixie.sources && apt-get update && apt-get install -y dkms; }" "Install DKMS"
+    RUN "apt-get install -y dkms 2>&1 || { printf 'Types: deb\nURIs: http://deb.debian.org/debian/\nSuites: trixie trixie-updates\nComponents: main contrib non-free non-free-firmware\nSigned-By: /usr/share/keyrings/debian-archive-keyring.pgp\n' > /etc/apt/sources.list.d/debian-trixie.sources && apt-get update && apt-get install -y dkms 2>&1; }" "Install DKMS"
     RUN "apt-get install -y linux-headers-\$(uname -r)" "Install kernel headers"
 
     TITLE "Build and install PiPower5 kernel driver"
