@@ -46,6 +46,58 @@ git diff --name-only --diff-filter=D origin/<branch> origin/docs | grep -v "\.rs
 git diff --name-only --diff-filter=M origin/<branch> origin/docs | grep -v "\.rst$" | tr '\n' '\0' | xargs -0 -r git checkout origin/docs --
 ```
 
+**After any file rename or deletion in Step 2, grep for old paths in ALL RST files.** File renames (R) and deletions (D) break `.. image::` and `:download:` references in RST files that still use the old filename. Run after Step 2:
+
+```bash
+# For each renamed/deleted file, grep the old basename across all RST files
+git diff --name-status origin/<branch> origin/docs | grep "^R\|^D" | while read status old new; do
+  old_base=$(basename "$old")
+  matches=$(grep -rl "$old_base" docs/source/ 2>/dev/null)
+  if [ -n "$matches" ]; then
+    echo "REFERENCES TO OLD FILE: $old_base"
+    echo "$matches"
+  fi
+done
+```
+
+### Step 2b: Clean up orphaned non-RST files (rename leftovers)
+
+`git diff --diff-filter=D` only catches files deleted in commits within the diff range. Files that were **renamed or replaced** in English (e.g., `nvme_pip_j4.png` → `dual_nvme_pip_j4.png`, `Pironman5ProMAX.pdf` → `Pironman5ProMAXV12.pdf`) can leave orphaned copies in the translation branch — the new file was added during sync, but the old file was never explicitly deleted because it predates the translation branch's fork point.
+
+After Step 2, verify no orphaned files remain by comparing file inventories per variant:
+
+```powershell
+# Compare English source vs translation branch for all 4 variants
+$variants = @("pironman5", "pironman5_max", "pironman5_mini", "pironman5_promax")
+$enBase = "../pironman5-rtd-20260319/pironman5/docs/source"
+$trBase = "../pironman5-rtd-20260319-sync/pironman5/docs/source"
+
+foreach ($v in $variants) {
+    $enDir = Join-Path $enBase $v
+    $trDir = Join-Path $trBase $v
+    if (-not (Test-Path $enDir)) { continue }
+
+    $enFiles = (Get-ChildItem -Path $enDir -Recurse -File | ForEach-Object {
+        $_.FullName.Substring($enDir.Length).TrimStart("\").Replace("\", "/")
+    } | Sort-Object)
+
+    $trFiles = (Get-ChildItem -Path $trDir -Recurse -File | ForEach-Object {
+        $_.FullName.Substring($trDir.Length).TrimStart("\").Replace("\", "/")
+    } | Sort-Object)
+
+    $orphaned = $trFiles | Where-Object { $_ -notin $enFiles }
+    if ($orphaned) {
+        Write-Host "=== Orphaned in $v ==="
+        $orphaned | ForEach-Object {
+            Write-Host "  DELETE: $_"
+            Remove-Item (Join-Path $trDir $_) -Force
+        }
+    }
+}
+```
+
+This ensures the translation branch mirrors the English file inventory exactly for non-RST assets.
+
 ### Step 3: Ensure index.rst has hello message markers
 If the translation's `index.rst` doesn't have `.. start_hello_message` / `.. end_hello_message` markers, add empty ones at the very top:
 ```rst
@@ -242,10 +294,60 @@ docs/source/
 12. **Step 8 must run AFTER all manual edits** — The title underline auto-fix must be the last step before verification. Any manual underline additions (e.g., fixing "title or caption not found" warnings) should be followed by another run of Step 8 to catch length mismatches.
 13. **Cross-reference suffixes** — When translating, agents may use the wrong anchor suffix (e.g., `_max` in a base file, or `_5` in a MAX file). Step 6 catches known patterns, but new patterns may appear in fresh content. Always verify `:ref:` targets match the variant's anchor naming convention.
 14. **Anchor rename cascade** — When renaming an anchor (e.g., `mini_download_pironman5_module` → `install_pironman5_module_mini`), the reference may exist in UNEXPECTED files. `openclaw.rst` in each variant references the install anchor. After any anchor rename, run: `grep -r "old_anchor_name" docs/source/` to find ALL references across all variants.
-15. **Substitution scope with `.. include::` boundaries** — In FAQ files, `.. |link_xxx| replace::` definitions placed BEFORE a `.. start_faq_xxx` marker are NOT included when another file uses `:start-after: start_faq_xxx`. The including file must provide its own override. Example: base FAQ defines `\|link_safe_shutdown\|` before `start_faq_power_button`; MAX FAQ must redefine `\|link_safe_shutdown\|` with `safe_shutdown_max` before its own include.
-16. **Duplicate files after rename (space vs underscore)** — On Windows, renaming `control_with dashboard.rst` to `control_with_dashboard.rst` via `git mv` may leave both files. Always verify with `git status` and `Test-Path`. The toctree in `control_pironman5.rst` must also be updated to reference the new filename.
-17. **Variant content drift** — When the base `pironman5/set_up/set_up_rpi_os.rst` gets a major content update (e.g., detailed component checklist), check whether the MAX/Mini/ProMAX variants need the same update adapted for their hardware. Mini and ProMAX had much simpler checklists that fell out of sync with the base format.
-18. **Images in wrong variant folder** — When a variant FAQ references images from the base FAQ (e.g., `nvme_pip_leds.png`), the relative path is `../pironman5/img/...`, not `img/...`. If the image is copied to the variant's `img/` folder, verify the source exists in the English workspace.
+15. **File rename reference cascade** — When Step 2 renames/deletes a non-RST file (e.g., `home_pironman5_addon.png` → `home_pironman5_mini_addon.png`), RST files may still reference the old filename in `.. image::` or `:download:` directives. `git diff` on the RST file won't flag this because the file was already translated. After Step 2, grep for basenames of renamed/deleted files across all RST files and update stale references.
+16. **Substitution scope with `.. include::` boundaries** — In FAQ files, `.. |link_xxx| replace::` definitions placed BEFORE a `.. start_faq_xxx` marker are NOT included when another file uses `:start-after: start_faq_xxx`. The including file must provide its own override. Example: base FAQ defines `\|link_safe_shutdown\|` before `start_faq_power_button`; MAX FAQ must redefine `\|link_safe_shutdown\|` with `safe_shutdown_max` before its own include.
+17. **Duplicate files after rename (space vs underscore)** — On Windows, renaming `control_with dashboard.rst` to `control_with_dashboard.rst` via `git mv` may leave both files. Always verify with `git status` and `Test-Path`. The toctree in `control_pironman5.rst` must also be updated to reference the new filename.
+18. **Variant content drift** — When the base `pironman5/set_up/set_up_rpi_os.rst` gets a major content update (e.g., detailed component checklist), check whether the MAX/Mini/ProMAX variants need the same update adapted for their hardware. Mini and ProMAX had much simpler checklists that fell out of sync with the base format.
+19. **Images in wrong variant folder** — When a variant FAQ references images from the base FAQ (e.g., `nvme_pip_leds.png`), the relative path is `../pironman5/img/...`, not `img/...`. If the image is copied to the variant's `img/` folder, verify the source exists in the English workspace.
+20. **Orphaned files after rename/replacement** — When English renames or replaces a file (e.g., `nvme_pip_j4.png` → `dual_nvme_pip_j4.png`, `Pironman5ProMAX.pdf` → `Pironman5ProMAXV12.pdf`), `git diff --diff-filter=D` won't catch the old file because the deletion predates the translation branch's fork point. The old file persists as an orphan. After every sync, run Step 2b to compare file inventories and delete files that exist only in the translation branch.
+21. **CJK inline markup: `\ ` must go OUTSIDE markers, never inside** — RST requires whitespace/ASCII-punct adjacent to `**`/` `` ` delimiters; CJK characters don't qualify. Insert `\ ` (escaped space) BETWEEN the CJK char and the marker. Correct: `包含\ **控制面板**\ 、`. Wrong: `**\ 控制面板\ **`.
+
+    After translation, run the fix script below. First time: save it to `.claude/fix_cjk.py` (copy from the code block below), then:
+    ```bash
+    cd ../pironman5-rtd-20260319-sync/pironman5
+    python ../.claude/fix_cjk.py docs/source
+    ```
+    ```python
+    import re, os, sys
+    base = sys.argv[1] if len(sys.argv) > 1 else 'docs/source'
+    cjk_re = re.compile(r'[一-鿿　-〿＀-￯]')
+    def fix_inline(content):
+        def fix_bold(m):
+            val = m.group(0); start, end = m.start(), m.end()
+            pre = '\\ ' if start > 0 and cjk_re.match(content[start-1]) else ''
+            post = '\\ ' if end < len(content) and cjk_re.match(content[end]) else ''
+            return pre + val + post
+        content = re.sub(r'\*\*[^*]+\*\*', fix_bold, content)
+        def fix_lit(m):
+            val = m.group(0); start, end = m.start(), m.end()
+            pre = '\\ ' if start > 0 and cjk_re.match(content[start-1]) else ''
+            post = '\\ ' if end < len(content) and cjk_re.match(content[end]) else ''
+            return pre + val + post
+        content = re.sub(r'\x60\x60[^\x60]+\x60\x60', fix_lit, content)
+        return content
+    fixed = 0
+    for dirpath, dirnames, filenames in os.walk(base):
+        for fn in filenames:
+            if not fn.endswith('.rst'): continue
+            path = os.path.join(dirpath, fn)
+            with open(path, 'r', encoding='utf-8') as f: content = f.read()
+            orig = content; content = fix_inline(content)
+            if content != orig:
+                with open(path, 'w', encoding='utf-8', newline='') as f: f.write(content)
+                fixed += 1
+    print(f'Fixed {fixed} files')
+    ```
+    Then re-run Step 8 (CJK title underline fix).
+
+22. **CJK: `\ ` only on ONE side of each marker** — Each `**` boundary needs at most one `\ `: before the opening `**` (if preceded by CJK) OR after the closing `**` (if followed by CJK). Never both sides of the same `**`. A standalone line like `**所需组件**` at the start of a line has NO CJK adjacent to either marker and needs zero `\ `.
+
+23. **CJK: title-underline gaps** — Chinese translations often leave a blank line between a section title and its `---`/`===`/`^^^` underline. After translation, fix these gaps. For `===` and `^^^`, always remove the gap (these are always section underlines). For `---`, distinguish section underlines (short title, number prefix like `1. `, CJK title text) from horizontal rules (preceded by paragraph text with sentence-ending punctuation). A Python script approach: match `text\n\n---\n` patterns, keep the gap when preceding line is a paragraph (has `。！？」` CJK punctuation or length ≥ 40 chars), remove the gap when it's a section title.
+
+24. **CJK: Chinese/Japanese hello message placeholder** — Chinese and Japanese `index.rst` should use `\ ` (escaped space) between `start_hello_message` and `end_hello_message`. Do NOT use `..` (bare dots without trailing space) — `..` is invalid RST and causes `Unexpected section title` CRITICAL errors when the include is processed recursively (e.g., `install_to_sd_rpi.rst` is both in a toctree AND `.. include::`d by 6 other files). The `\ ` produces an invisible paragraph node that works as a valid preamble in all contexts.
+
+25. **Do NOT add `.. include:: /index.rst` to shared include files** — Files that are `.. include::`d by other RST files (e.g., `install_to_sd_rpi.rst`) get their hello message from the parent document. Adding `.. include:: /index.rst` to such files causes duplicate content and potential parsing errors when the file is processed recursively.
+
+26. **Agent task scope: check systemic changes** — After translation agents finish, run a completeness check across ALL files, not just the ones agents touched. Systemic English changes like adding `.. include:: /index.rst` to every file affect 150+ files that agents might skip because "the content is already translated".
 
 ## Build
 
