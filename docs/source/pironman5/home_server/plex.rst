@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 Plex 配置
 =======================================
 
@@ -40,35 +45,35 @@ Raspberry Pi 的紧凑尺寸、低功耗和灵活性使其成为托管 Plex 的�
 
    .. image:: img/home_server_app/ptn_new_admin.png
 
-#. 创建管理员账户后，你将进入 Portainer 界面。在左侧导航栏中，点击 **Settings（设置） -> General（常规）**，找到 **App Templates（应用模板）**，并在字段中输入以下 URL： ``https://raw.githubusercontent.com/novaspirit/pi-hosted/refs/heads/master/template/portainer-v3-arm64.json``
+#. 创建管理员账户后，你将进入 Portainer 界面。在左侧导航栏中，点击 **Settings（设置） -> General（常规）**\ ，找到 **App Templates（应用模板）**\ ，并在字段中输入以下 URL： ``https://raw.githubusercontent.com/novaspirit/pi-hosted/refs/heads/master/template/portainer-v3-arm64.json``
 
    .. image:: img/home_server_app/ptn_app_url.png
 
-#. 点击 **Save Application Settings（保存应用设置）**。配置大约需要 10 秒钟。
+#. 点击 **Save Application Settings（保存应用设置）**\ 。配置大约需要 10 秒钟。
 
 **安装 Plex**
 
-1. 在左侧导航栏中，点击 **Home（主页） -> local**。
+1. 在左侧导航栏中，点击 **Home（主页） -> local**\ 。
 
    .. image:: img/home_server_app/ptn_home_local.png
 
-2. 进入 **Templates（模板） -> Application（应用）**。在右上角的搜索栏中，输入 *plex* 并点击它。
+2. 进入 **Templates（模板） -> Application（应用）**\ 。在右上角的搜索栏中，输入 *plex* 并点击它。
 
    .. image:: img/home_server_app/ptn_temp_plex.png
 
-#. 将网络模式设置为 **host（主机）**。
+#. 将网络模式设置为 **host（主机）**\ 。
 
    .. image:: img/home_server_app/ptn_plex_network_host.png
 
-#. 展开 **Show advanced options（显示高级选项）**。
+#. 展开 **Show advanced options（显示高级选项）**\ 。
 
    .. image:: img/home_server_app/ptn_plex_ad_option1.png
 
-#. 在 **volume mapping（卷映射）** 部分，配置媒体文件的存储路径并授予 Plex 读写权限。默认路径是 ``/portainer/TV`` 和 ``/portainer/Movies``，两者都启用了读写访问。
+#. 在 **volume mapping（卷映射）** 部分，配置媒体文件的存储路径并授予 Plex 读写权限。默认路径是 ``/portainer/TV`` 和 ``/portainer/Movies``\ ，两者都启用了读写访问。
 
    .. image:: img/home_server_app/ptn_plex_ad_option2.png
 
-#. 点击 **Deploy（部署）**，然后等待 Plex 安装完成。
+#. 点击 **Deploy（部署）**\ ，然后等待 Plex 安装完成。
 
 **配置 Plex 服务器**
 
@@ -90,11 +95,11 @@ Raspberry Pi 的紧凑尺寸、低功耗和灵活性使其成为托管 Plex 的�
 
    .. image:: img/home_server_app/plex_server_setup2_add_lib1.png
 
-6. 添加文件夹。找到你之前定义的媒体存储路径，然后点击 **添加库**。
+6. 添加文件夹。找到你之前定义的媒体存储路径，然后点击 **添加库**\ 。
 
    .. image:: img/home_server_app/plex_server_setup2_add_lib2.png
 
-7. 点击 **完成**。你的 Raspberry Pi 上的 Plex 服务器现已完全配置好。
+7. 点击 **完成**\ 。你的 Raspberry Pi 上的 Plex 服务器现已完全配置好。
 
    .. image:: img/home_server_app/plex_server_setup3.png
 

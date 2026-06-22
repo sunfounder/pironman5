@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 设置 Plex
 =======================================
 
@@ -47,42 +52,42 @@ Raspberry Pi 体积小、功耗低、灵活性强，非常适合作为 Plex 服�
    .. image:: img/home_server_app/ptn_new_admin.png
 
 
-#. 创建管理员账户后，会进入 Portainer 界面。从左侧导航栏进入 **Setting -> General**，找到 **App Templates**，并在输入框中填写以下 URL：
+#. 创建管理员账户后，会进入 Portainer 界面。从左侧导航栏进入 **Setting -> General**\ ，找到 **App Templates**\ ，并在输入框中填写以下 URL：
 
    ``https://raw.githubusercontent.com/novaspirit/pi-hosted/refs/heads/master/template/portainer-v3-arm64.json``
 
    .. image:: img/home_server_app/ptn_app_url.png
 
 
-#. 点击 **Save Application Settings**。该设置过程大约需要 10 秒完成。
+#. 点击 **Save Application Settings**\ 。该设置过程大约需要 10 秒完成。
 
 **安装 Plex**
 
-1. 在左侧导航栏中点击 **Home -> local**。
+1. 在左侧导航栏中点击 **Home -> local**\ 。
 
    .. image:: img/home_server_app/ptn_home_local.png
 
-2. 进入 **Templates -> Application**。在右上角搜索框中输入 *plex* 并点击。
+2. 进入 **Templates -> Application**\ 。在右上角搜索框中输入 *plex* 并点击。
 
    .. image:: img/home_server_app/ptn_temp_nextcloud.png
 
 
-#. 将网络模式设置为 **host**。
+#. 将网络模式设置为 **host**\ 。
 
    .. image:: img/home_server_app/ptn_plex_network_host.png
 
 
-#. 展开 **Show advanced options**。
+#. 展开 **Show advanced options**\ 。
 
    .. image:: img/home_server_app/ptn_plex_ad_option1.png
 
 
-#. 在 **volume mapping** （卷映射）部分，配置媒体文件的存储路径，并为 Plex 授予读写权限。默认路径为 ``/portainer/TV`` 和 ``/portainer/Movies``，两者都启用了读写权限。
+#. 在 **volume mapping** （卷映射）部分，配置媒体文件的存储路径，并为 Plex 授予读写权限。默认路径为 ``/portainer/TV`` 和 ``/portainer/Movies``\ ，两者都启用了读写权限。
 
    .. image:: img/home_server_app/ptn_plex_ad_option2.png
 
 
-#. 点击 **Deploy**，等待 Plex 安装完成。
+#. 点击 **Deploy**\ ，等待 Plex 安装完成。
 
 
 **配置 Plex 服务器**
@@ -110,12 +115,12 @@ Raspberry Pi 体积小、功耗低、灵活性强，非常适合作为 Plex 服�
    .. image:: img/home_server_app/plex_server_setup2_add_lib1.png
 
 
-6. 添加文件夹。找到之前设置的媒体存储路径，然后点击 **Add Library**。
+6. 添加文件夹。找到之前设置的媒体存储路径，然后点击 **Add Library**\ 。
 
    .. image:: img/home_server_app/plex_server_setup2_add_lib2.png
 
 
-7. 点击 **Finish**。此时你的 Raspberry Pi Plex 服务器已经完成配置。
+7. 点击 **Finish**\ 。此时你的 Raspberry Pi Plex 服务器已经完成配置。
 
    .. image:: img/home_server_app/plex_server_setup3.png
 

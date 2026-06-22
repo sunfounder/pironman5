@@ -1,24 +1,31 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
+
 .. _promax_set_up_pi_os:
 
-在 Raspberry Pi / Ubuntu / Kali / Homebridge 上设置
-===============================================================
+Set Up on Raspberry Pi/Ubuntu/Kali/Homebridge OS
+==================================================
 
 .. image:: ../img/Pironman-5-Pro-Max.png
     :width: 400
     :align: center
 
-如果你在 Raspberry Pi 上安装了 Raspberry Pi OS、Ubuntu、Kali Linux 或 Homebridge，则需要通过命令行来配置 Pironman 5 Pro MAX。详细步骤如下：
+如果你在 Raspberry Pi 上安装了 Raspberry Pi OS、Ubuntu、Kali Linux 或 Homebridge，则需要通过命令行来配置 Pironman 5 Pro MAX。以下是详细教程。
 
 .. note::
 
-   在开始配置之前，请先启动并登录 Raspberry Pi。  
-   如果不确定如何登录，可以访问官方指南：|link_rpi_get_start|。
+  在开始配置之前，请先启动并登录你的 Raspberry Pi。如果不确定如何登录，可以访问 Raspberry Pi 官方网站：|link_rpi_get_start|。
 
 
-配置关机后关闭 GPIO 供电
+.. _safe_shutdown_promax:
+
+1. Configuring Shutdown to Deactivate GPIO Power
 ------------------------------------------------------------
 
-为了防止关机后由 GPIO 供电的 **OLED 屏幕和 RGB 风扇仍然工作**，需要设置 Raspberry Pi 在关机时关闭 GPIO 电源。
+为防止关机后由 GPIO 供电的 OLED 屏幕和 RGB 风扇仍然工作，需要设置 Raspberry Pi 在关机时关闭 GPIO 电源。
 
 #. 打开 EEPROM 配置工具：
 
@@ -26,59 +33,100 @@
 
       sudo raspi-config
 
-#. 进入 **Advanced Options → A12 Shutdown Behaviour**
+#. 进入 **Advanced Options → A12 Shutdown Behaviour**\ 。
 
    .. image:: img/shutdown_behaviour.png
 
-#. 选择 **B1 Full Power Off**
+#. 选择 **B1 Full Power Off**\ 。
 
    .. image:: img/run_power_off.png
 
-#. 保存设置，并根据提示重启系统以生效。
+#. 保存更改。系统会提示你重启以使新设置生效。
 
 
-.. _promax_download_pironman5_module:
+.. _install_pironman5_module_promax:
 
-下载并安装 ``pironman5`` 模块
+2. Installing the ``pironman5`` Module
 -----------------------------------------------------------
 
-.. note::
-
-   如果你使用的是 Lite 系统，需要先安装基础工具（如 ``git``、 ``python3``、 ``pip3`` 等）：
+#. 从 GitHub 下载并安装 ``pironman5`` 模块。
 
    .. code-block:: shell
 
-      sudo apt-get install git -y
-      sudo apt-get install python3 python3-pip python3-setuptools -y
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
-#. 从 GitHub 下载代码并安装 ``pironman5`` 模块：
+
+   .. note::
+
+      1. 如果你使用的是 **Ubuntu**\ ，请先安装 ``curl``\ ：\ ``sudo apt install curl -y``
+
+      2. 如果你同时使用 Pironman 5 系列和 **PiPower 5**\ ，请运行以下命令：
+
+      .. code-block:: shell
+
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+
+#. 运行安装程序后，选择你的 Pironman 5 型号（1~4）。
 
    .. code-block:: shell
 
-      cd ~
-      git clone -b pro-max https://github.com/sunfounder/pironman5.git --depth 1
-      cd ~/pironman5
-      sudo python3 install.py
+      Pironman 5 Installer v1.0.1
+      Supports: 5 | 5 Mini | 5 Max | 5 Pro Max
 
-   安装完成后需要 **重启系统** 才能生效，请按照提示执行重启。
+      Please select your product model:
+      1) Pironman 5
+      2) Pironman 5 Mini
+      3) Pironman 5 Max
+      4) Pironman 5 Pro Max
 
-   重启后，``pironman5.service`` 会自动启动，默认行为如下：
+      Enter number [1-4]:
 
-   * OLED 屏幕显示 CPU、内存、磁盘使用率、CPU 温度和 IP 地址  
-   * 4 个 WS2812 RGB LED 以蓝色呼吸模式亮起  
+#. 安装完成后，按照提示重启 Raspberry Pi。首次启动可能需要最多 30 秒，服务将在此过程中初始化。
 
-#. 你可以使用 ``systemctl`` 管理 ``pironman5.service``：
+   #. Pironman 5 Pro MAX 成功启动后，检查以下组件是否正常工作。
+
+   * **OLED Screen**
+
+     * 显示 CPU 使用率、RAM 使用率、CPU 温度和 IP 地址。
+     * 10 秒后自动关闭。
+     * 短按电源按钮可唤醒屏幕或切换页面。
+
+   * **Power Button**
+
+     * 短按：开机 / 唤醒 OLED / 切换 OLED 页面。
+     * 长按 2 秒：安全关机（需配置 :ref:`safe_shutdown_promax`）。
+     * 长按 5 秒：强制关机。
+
+   * **WS2812 RGB LEDs**
+
+     * 蓝色呼吸效果亮起。
+
+   * **PWM Fans**
+
+     * 默认设置为 **Always On（始终开启）** 模式。
+     * 可通过命令或仪表盘配置工作模式。
+
+   * **CPU Fan（Tower Cooler Fan）**
+
+     * 根据 CPU 温度自动调整转速。
+     * 默认风扇曲线：
+
+       * < 50°C：关闭（0%）
+       * 50°C+：低速（30%）
+       * 60°C+：中速（50%）
+       * 67.5°C+：高速（70%）
+       * 75°C+：全速（100%）
+
+#. 使用 ``systemctl`` 管理 ``pironman5.service``\ 。
 
    .. code-block:: shell
 
       sudo systemctl restart pironman5.service
 
-   * ``restart``：应用配置更改  
-   * ``start/stop``：启动或停止服务  
-   * ``status``：查看服务运行状态  
+   根据需要将 ``restart`` 替换为 ``start``\ 、\ ``stop`` 或 ``status`` 以管理服务。
 
 .. note::
 
-   至此，你已经成功完成 Pironman 5 Pro MAX 的设置，可以开始使用。
+   Pironman 5 Pro MAX 现已配置完成，可以开始使用。
 
-   如需更高级的控制功能，请参考 :ref:`control_commands_dashboard_promax`。
+   如需更高级的控制和仪表盘功能，请参阅 :ref:`control_commands_dashboard_promax`。

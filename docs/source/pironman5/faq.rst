@@ -9,12 +9,14 @@
 快速故障排除
 -------------------------------
 
+* 电源按钮不工作 → :ref:`faq_power_button_not_work_5`
 * OLED 屏幕不工作 → :ref:`faq_oled_5`
 * RGB 灯不工作 → :ref:`faq_rgb_5`
 * GPIO 风扇不工作 → :ref:`faq_gpio_fans_5`
 * CPU 风扇不转 → :ref:`faq_pwm_fan_5`
 * 仪表盘不显示数据 → :ref:`faq_dashboard_5`
 * NVMe SSD 无法识别 → :ref:`faq_nvme_5`
+* NVMe SSD 被识别但导致系统重启 → :ref:`faq_nvme_link_down_5`
 
 
 
@@ -56,6 +58,27 @@
     :align: center
 
 .. end_faq_power_button
+
+
+.. _faq_power_button_not_work_5:
+
+电源按钮不工作？
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_power_button_not_work
+
+#. 首先，确认预期的电源按钮行为：
+
+   * **Raspberry Pi OS Desktop**\ ：快速按两次电源按钮即可关机。长按 5 秒强制硬关机。关机状态下按一次开机。
+   * **Raspberry Pi OS Lite**\ ：按一次电源按钮关机。长按 5 秒强制硬关机。关机状态下按一次开机。
+
+#. 检查电源转换器引脚是否与 Raspberry Pi 5 的 J2 焊盘正确对齐（位于 RTC 电池连接器和板边之间）。
+
+#. 检查电源转换器插座内的引脚是否与电源按钮连接器正确对齐。如有必要，重新连接电源按钮线缆。
+
+#. 使用螺丝刀短暂短接电源转换器插座上连接按钮的两个引脚。如果 Pi 启动，则按钮本身可能有故障；否则，问题可能出在转换器板或 Pi 5 连接上。
+
+.. end_faq_power_button_not_work
 
 
 风道设计
@@ -136,7 +159,7 @@ Pironman 5 上的 CPU 风扇由树莓派系统控制。CPU 风扇转速取决于
 * 67.5°C+：高速（70%）
 * 75°C+：全速（100%）
 
-检查当前 CPU 温度（示例输出：``temp=48.7'C``）：
+检查当前 CPU 温度（示例输出：\ ``temp=48.7'C``\ ）：
 
 .. code-block:: shell
 
@@ -240,7 +263,7 @@ OLED 屏幕无法正常显示？
 
       sudo i2cdetect -y 1
 
-   * 若检测到 I2C 地址 ``0x3C``，请重启 Pironman 5 服务：
+   * 若检测到 I2C 地址 ``0x3C``\ ，请重启 Pironman 5 服务：
 
      .. code-block:: shell
 
@@ -461,7 +484,7 @@ RGB 灯无法点亮？
    cd ~/pironman5
    sudo python3 install.py --disable-dashboard
 
-如果您已经安装了 ``pironman5``，可以卸载仪表盘模块和 ``influxdb``：
+如果您已经安装了 ``pironman5``\ ，可以卸载仪表盘模块和 ``influxdb``\ ：
 
 .. code-block:: shell
 
@@ -553,7 +576,7 @@ PI5 无法启动（红灯常亮）？
 .. _faq_nvme_5:
 
 NVMe PIP 模块无法正常工作？
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. |link_install_the_os| replace:: :ref:`install_the_os_5`
 .. |link_configure_boot_ssd| replace:: :ref:`configure_boot_ssd_5`
@@ -593,8 +616,8 @@ NVMe PIP 模块无法正常工作？
 
 #. 检查 NVMe PIP 模块上的指示灯状态：
 
-   * **PWR LED**：应常亮。
-   * **STA LED**：应闪烁，表示运行正常。
+   * **PWR LED**\ ：应常亮。
+   * **STA LED**\ ：应闪烁，表示运行正常。
 
    .. image:: img/nvme_pip_leds.png
 
@@ -620,6 +643,51 @@ NVMe PIP 模块无法正常工作？
 .. end_faq_nvme_pip
 
 
+.. _faq_nvme_link_down_5:
+
+NVMe SSD 被识别但在读写时导致系统重启？
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_nvme_link_down
+
+在某些情况下（尤其是 WD Blue SN5000），NVMe SSD 可能被 Raspberry Pi 5 识别，但在读写操作时导致系统重启。这是 SSD 与 Raspberry Pi 5 之间的 PCIe 兼容性/稳定性问题，\ **不是** Pironman 5 的硬件故障。
+
+请尝试以下步骤解决问题：
+
+#. 将 Raspberry Pi 5 引导程序更新到最新版本：
+
+   .. code-block:: shell
+
+      sudo rpi-eeprom-update -a
+      sudo reboot
+
+#. 在 ``/boot/firmware/config.txt`` 中添加以下行以强制使用 PCIe Gen3 速度：
+
+   .. code-block:: text
+
+      dtparam=pciex1_gen=3
+
+#. 在内核命令行中添加 ``pcie_aspm=off`` 以禁用 ASPM（主动状态电源管理）。编辑 ``/boot/firmware/cmdline.txt`` 并将其附加到现有行末尾（\ **不要**\ 创建新行）：
+
+   .. code-block:: text
+
+      pcie_aspm=off
+
+   .. note::
+
+      ``pcie_aspm=off`` 通常是关键修复方法——PCIe ASPM 问题在 Raspberry Pi 5 上非常常见，可能导致 NVMe 驱动器在大量 I/O 操作时随机断开或重启系统。
+
+#. 应用以上更改后，重新启动 Raspberry Pi：
+
+   .. code-block:: shell
+
+      sudo reboot
+
+#. 如果问题仍然存在，请重新分区并格式化 NVMe SSD，然后重新安装操作系统。
+
+.. end_faq_nvme_link_down
+
+
 如何通过命令更改树莓派启动顺序？
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -637,7 +705,7 @@ NVMe PIP 模块无法正常工作？
 
 .. start_faq_boot_order_imager
 
-除了在 EEPROM 配置中修改 ``BOOT_ORDER``，您还可以使用 Raspberry Pi Imager 更改启动顺序。
+除了在 EEPROM 配置中修改 ``BOOT_ORDER``\ ，您还可以使用 Raspberry Pi Imager 更改启动顺序。
 
 * |link_update_bootloader|
 

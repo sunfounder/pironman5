@@ -160,7 +160,7 @@
 
      sudo pironman5 -re true
 
-* 更改颜色：输入十六进制颜色值，例如 ``fe1a1a``：
+* 更改颜色：输入十六进制颜色值，例如 ``fe1a1a``\ ：
 
   .. code-block:: shell
 
@@ -178,7 +178,7 @@
 
   .. note::
 
-     若设置为 ``rainbow``、 ``rainbow_reverse`` 或 ``hue_cycle`` 模式，将无法再使用 ``pironman5 -rc`` 指定颜色。
+     若设置为 ``rainbow``\ 、 ``rainbow_reverse`` 或 ``hue_cycle`` 模式，将无法再使用 ``pironman5 -rc`` 指定颜色。
 
   .. code-block:: shell
 
@@ -219,11 +219,11 @@ IO 扩展板支持连接两颗 5V 非 CPU 风扇，两个风扇同步控制。
 
      sudo pironman5 -gm 3
 
-* **4: Quiet（静音）**：温度达 70°C 启动风扇
-* **3: Balanced（均衡）**：温度达 67.5°C 启动
-* **2: Cool（凉爽）**：温度达 60°C 启动
-* **1: Performance（性能）**：温度达 50°C 启动
-* **0: Always On（始终开启）**：风扇始终运行
+* **4: Quiet（静音）**\ ：温度达 70°C 启动风扇
+* **3: Balanced（均衡）**\ ：温度达 67.5°C 启动
+* **2: Cool（凉爽）**\ ：温度达 60°C 启动
+* **1: Performance（性能）**\ ：温度达 50°C 启动
+* **0: Always On（始终开启）**\ ：风扇始终运行
 
 * 若您将风扇控制引脚连接至其他 GPIO 引脚，可使用以下命令修改：
 

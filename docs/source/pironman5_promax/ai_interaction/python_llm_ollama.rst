@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 4. 使用 Ollama 实现文本 + 视觉对话
 ============================================
 
@@ -78,7 +83,7 @@
 
    .. image:: img/llm_ollama_download.png
 
-2. 打开 Ollama 应用，进入 **Model Selector**，在搜索栏中查找模型。例如输入 ``llama3.2:3b`` （一个适合入门的轻量级模型）。  
+2. 打开 Ollama 应用，进入 **Model Selector**\ ，在搜索栏中查找模型。例如输入 ``llama3.2:3b`` （一个适合入门的轻量级模型）。  
 
    .. image:: img/llm_ollama_choose.png
 
@@ -86,7 +91,7 @@
 
    .. image:: img/llm_olama_llama_download.png
 
-4. 进入 **Settings** → 启用 **Expose Ollama to the network**。这样 Raspberry Pi 就可以通过局域网连接到该服务。
+4. 进入 **Settings** → 启用 **Expose Ollama to the network**\ 。这样 Raspberry Pi 就可以通过局域网连接到该服务。
 
    .. image:: img/llm_olama_windows_enable.png
 
@@ -97,10 +102,10 @@
    ``Error: model requires more system memory ...``
 
    说明模型规模超过了设备的内存容量。  
-   请使用 **更小的模型**，或切换到拥有更大 RAM 的计算机。
+   请使用 **更小的模型**\ ，或切换到拥有更大 RAM 的计算机。
 
 2. 测试 Ollama
---------------
+----------------
 
 当 Ollama 安装完成并且模型准备就绪后，您可以通过一个简单的聊天程序快速测试。
 
@@ -113,7 +118,7 @@
 
 现在您可以在终端中直接与 Pironman 5 Pro MAX 进行对话。
 
-   * 您可以选择 |link_ollama_hub| 中的 **任意模型**，但如果设备只有 8–16GB RAM，建议使用较小的模型（例如 ``moondream:1.8b``、 ``phi3:mini``）。  
+   * 您可以选择 |link_ollama_hub| 中的 **任意模型**\ ，但如果设备只有 8–16GB RAM，建议使用较小的模型（例如 ``moondream:1.8b``\ 、 ``phi3:mini``\ ）。  
    * 确保代码中指定的模型名称与您在 Ollama 中已下载的模型一致。  
    * 输入 ``exit`` 或 ``quit`` 可退出程序。  
    * 如果无法连接，请确认 Ollama 正在运行；若使用远程主机，请确保两台设备位于同一局域网。
@@ -160,18 +165,18 @@
 3. 使用 Ollama 进行视觉对话
 --------------------------------
 
-在此示例中，每当您输入一个问题时，Pi 摄像头都会 **拍摄一张新的照片**。  
+在此示例中，每当您输入一个问题时，Pi 摄像头都会 **拍摄一张新的照片**\ 。  
 程序会通过 Ollama 将 **您输入的文本 + 新拍摄的照片** 发送给本地视觉模型，  
-然后以普通英文 **实时输出模型的回复**。  
+然后以普通英文 **实时输出模型的回复**\ 。  
 
 这是一个最基础的 “see & tell（看图描述）” 示例，您可以在此基础上进一步扩展，例如添加颜色识别、人脸检测或 QR 码识别等功能。
 
 **开始之前**
 
-#. 打开 **Ollama** 应用（或运行 Ollama 服务），并确保已下载 **支持视觉的模型**。
+#. 打开 **Ollama** 应用（或运行 Ollama 服务），并确保已下载 **支持视觉的模型**\ 。
 
-   * 如果您的设备拥有足够内存（≥16GB RAM），可以尝试 ``llava:7b``。
-   * 如果只有 **8GB RAM**，建议使用更小的模型，例如 ``moondream:1.8b`` 或 ``granite3.2-vision:2b``。
+   * 如果您的设备拥有足够内存（≥16GB RAM），可以尝试 ``llava:7b``\ 。
+   * 如果只有 **8GB RAM**\ ，建议使用更小的模型，例如 ``moondream:1.8b`` 或 ``granite3.2-vision:2b``\ 。
 
    .. image:: img/llm_ollama_image_model.png
 
@@ -186,10 +191,10 @@
 
 #. 程序运行后的流程：
 
-   * 程序会打印欢迎信息，并等待您的输入（``>>>``）。
+   * 程序会打印欢迎信息，并等待您的输入（\ ``>>>``\ ）。
    * **每当您输入任何内容** （例如 “hello”、“Is there yellow?”、“Any faces?”、“What is on the desk?”）时，程序将会：
 
-     * **从 Pi 摄像头拍摄一张照片** （保存到 ``/tmp/llm-img.jpg``），  
+     * **从 Pi 摄像头拍摄一张照片** （保存到 ``/tmp/llm-img.jpg``\ ），  
      * **将您的文本 + 该照片** 发送给 Ollama 中的视觉模型，  
      * **实时输出** 模型生成的回答到终端。
 
@@ -261,15 +266,15 @@
 * **我遇到了类似这样的错误：`model requires more system memory ...`。**
 
   * 这表示当前模型对设备内存的要求超出了您的设备能力。  
-  * 请改用更小的模型，例如 ``moondream:1.8b`` 或 ``granite3.2-vision:2b``。  
+  * 请改用更小的模型，例如 ``moondream:1.8b`` 或 ``granite3.2-vision:2b``\ 。  
   * 或者切换到拥有更大 RAM 的设备，并将 Ollama 暴露到局域网中供 Raspberry Pi 访问。
 
 * **代码无法连接到 Ollama（connection refused）。** 
 
   请检查以下内容：
   
-  * 确保 Ollama 正在运行（``ollama serve`` 或桌面应用已打开）。  
-  * 如果使用的是另一台远程计算机，请在 Ollama 设置中启用 **Expose to network**。  
+  * 确保 Ollama 正在运行（\ ``ollama serve`` 或桌面应用已打开）。  
+  * 如果使用的是另一台远程计算机，请在 Ollama 设置中启用 **Expose to network**\ 。  
   * 再次确认代码中的 ``ip="..."`` 是否填写为正确的局域网 IP 地址。  
   * 确保两台设备位于同一局域网内。
 
@@ -277,7 +282,7 @@
 
   * 请确认 ``Picamera2`` 已正确安装，并可通过简单测试脚本正常工作。  
   * 检查摄像头排线是否连接正确，并确认已在 ``raspi-config`` 中启用摄像头。  
-  * 确保脚本有权限写入目标路径（``/tmp/llm-img.jpg``）。
+  * 确保脚本有权限写入目标路径（\ ``/tmp/llm-img.jpg``\ ）。
 
 * **输出速度太慢。**  
 

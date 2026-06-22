@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _install_os_sd_5:
 
 安装操作系统
@@ -24,7 +29,7 @@
    .. image:: img/imager_download.png
       :width: 70%
 
-#. 按照安装提示完成安装（语言、安装路径、确认等）。安装完成后，从桌面或应用程序菜单启动 **Raspberry Pi Imager**。
+#. 按照安装提示完成安装（语言、安装路径、确认等）。安装完成后，从桌面或应用程序菜单启动 **Raspberry Pi Imager**\ 。
 
    .. image:: img/imager_install.png
       :width: 90%
@@ -46,7 +51,7 @@
    .. image:: img/imager_device.png
       :width: 90%
 
-3. 进入 **OS** 部分，选择推荐的 **Raspberry Pi OS (64-bit)**。
+3. 进入 **OS** 部分，选择推荐的 **Raspberry Pi OS (64-bit)**\ 。
 
    .. image:: img/imager_os.png
       :width: 90%
@@ -58,11 +63,11 @@
 
    .. start_install_os
 
-5. 点击 **Next**，进入自定义设置步骤。
+5. 点击 **Next**\ ，进入自定义设置步骤。
 
    .. note::
 
-      * 如果你打算直接为 Raspberry Pi 连接显示器、键盘和鼠标，可以点击 **SKIP CUSTOMISATION**。  
+      * 如果你打算直接为 Raspberry Pi 连接显示器、键盘和鼠标，可以点击 **SKIP CUSTOMISATION**\ 。  
       * 如果你计划以 *无屏（Headless）* 方式设置 Raspberry Pi（通过 Wi-Fi 远程访问），则必须完成自定义设置。
 
    .. image:: img/imager_custom_skip.png
@@ -93,7 +98,7 @@
 
 #. **配置 Wi-Fi**
 
-   * 输入你的 Wi-Fi **SSID** （网络名称）和 **密码**。  
+   * 输入你的 Wi-Fi **SSID** （网络名称）和 **密码**\ 。  
    * Raspberry Pi 在首次启动时将自动连接该网络。
    
    .. image:: img/imager_custom_wifi.png
@@ -111,7 +116,7 @@
 
    Raspberry Pi Connect 允许你通过网页浏览器访问 Raspberry Pi 的桌面。
    
-   * 打开 **Raspberry Pi Connect**，然后点击 **OPEN RASPBERRY PI CONNECT**。
+   * 打开 **Raspberry Pi Connect**\ ，然后点击 **OPEN RASPBERRY PI CONNECT**\ 。
    
      .. image:: img/imager_custom_connect.png
         :width: 90%
@@ -123,7 +128,7 @@
 
    * 在 **New auth key** 页面，创建一次性认证密钥。
       
-      * 如果你的 Raspberry Pi ID 账号不属于任何组织，选择 **Create auth key and launch Raspberry Pi Imager**。
+      * 如果你的 Raspberry Pi ID 账号不属于任何组织，选择 **Create auth key and launch Raspberry Pi Imager**\ 。
       * 如果你属于一个或多个组织，请选择对应的组织，然后创建密钥并启动 Imager。
       * 请确保在密钥过期前为 Raspberry Pi 上电并连接到互联网。
    
@@ -133,12 +138,12 @@
    * 浏览器可能会询问是否打开 Raspberry Pi Imager —— 请允许。
 
      * Imager 会在 Raspberry Pi Connect 标签页中打开，并显示认证令牌。
-     * 如果令牌没有自动传输，请在 Raspberry Pi Connect 页面中打开 **Having trouble?**，复制令牌并手动粘贴到 Imager 中。
+     * 如果令牌没有自动传输，请在 Raspberry Pi Connect 页面中打开 **Having trouble?**\ ，复制令牌并手动粘贴到 Imager 中。
 
      .. image:: img/imager_custom_connect_token.png
         :width: 90%
 
-#. 检查所有设置无误后，点击 **WRITE**。
+#. 检查所有设置无误后，点击 **WRITE**\ 。
 
    .. image:: img/imager_writing.png
       :width: 90%

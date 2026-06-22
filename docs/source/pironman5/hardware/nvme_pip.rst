@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 Pi5 NVMe PIP
 =================
 
@@ -6,18 +11,18 @@ Pi5 NVMe PIP（PCIe 外设板）是 Raspberry Pi 基金会定义的一款专为 
 .. image:: img/nvme_pip.png
 
 * 该板通过 16P 0.5mm 反向 FFC（柔性扁平线缆）或定制阻抗匹配的 FPC（柔性电路板）进行连接。
-* **STA**：状态指示灯。
-* **PWR**：电源指示灯。
+* **STA**\ ：状态指示灯。
+* **PWR**\ ：电源指示灯。
 * 板载 3.3V 电源模块可提供最高 3A 电流输出。但由于 Raspberry Pi 的 PCIe 接口仅能提供 5V/1A（相当于 5W）输出，因此若需为 NVMe 提供 3.3V/3A 电力，可通过 J3 接口外接 5V 电源补充。
-* **FORCE ENABLE**：板载电源默认由 PCIe 接口的控制信号触发，在 Raspberry Pi 上电后，系统会发出信号以开启 3.3V 电源。如某些系统不支持该控制信号，或出于其他考虑，可通过将 J4 的两个焊盘短接（焊接导线）强制开启板载 3.3V 电源，供电给 NVMe 使用。
+* **FORCE ENABLE**\ ：板载电源默认由 PCIe 接口的控制信号触发，在 Raspberry Pi 上电后，系统会发出信号以开启 3.3V 电源。如某些系统不支持该控制信号，或出于其他考虑，可通过将 J4 的两个焊盘短接（焊接导线）强制开启板载 3.3V 电源，供电给 NVMe 使用。
 
 关于接口型号
 ---------------------------
 
 M.2 SSD 以其紧凑的体积广泛应用，其主要区别在于接口类型（Key 类型）和所使用的通信协议。以下是常见的几种类型：
 
-* **M.2 SATA SSD**：采用 SATA 接口，尽管外形为 M.2，但传输速率受限于 SATA III，最高约为 600 MB/s。此类 SSD 通常兼容 B-Key 与 M-Key 插槽。
-* **M.2 NVMe SSD**：采用 PCIe 通道并使用 NVMe 协议，相比 M.2 SATA SSD 拥有更高的读写速度，非常适合游戏、多媒体编辑或数据密集型应用。此类 SSD 通常为 M-Key 设计，并依赖 PCIe 接口，支持 3.0、4.0、5.0 等不同版本。每一代 PCIe 接口的带宽约为上一代的两倍。Raspberry Pi 5 使用 PCIe 3.0 接口，理论最大传输速度可达 3500 MB/s。
+* **M.2 SATA SSD**\ ：采用 SATA 接口，尽管外形为 M.2，但传输速率受限于 SATA III，最高约为 600 MB/s。此类 SSD 通常兼容 B-Key 与 M-Key 插槽。
+* **M.2 NVMe SSD**\ ：采用 PCIe 通道并使用 NVMe 协议，相比 M.2 SATA SSD 拥有更高的读写速度，非常适合游戏、多媒体编辑或数据密集型应用。此类 SSD 通常为 M-Key 设计，并依赖 PCIe 接口，支持 3.0、4.0、5.0 等不同版本。每一代 PCIe 接口的带宽约为上一代的两倍。Raspberry Pi 5 使用 PCIe 3.0 接口，理论最大传输速度可达 3500 MB/s。
 
 M.2 接口按金手指缺口分为三种类型：B-Key、M-Key 和 B+M-Key。后期推出的 B+M-Key 兼容性更强，逐渐取代了单一的 B-Key 接口。详见下图所示：
 

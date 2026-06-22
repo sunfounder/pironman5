@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _control_commands_dashboard_mini:
 
 5. 通过命令或仪表盘进行控制
@@ -17,5 +22,5 @@
 .. toctree::
     :maxdepth: 1
 
-    control_with dashboard 
+    control_with_dashboard
     control_with_commands

@@ -1,9 +1,14 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 RTL-SDR Blog V4
 ==============================================
 
 .. note::
 
-   Pironman 5 系列产品 **不包含以下模块**。  
+   Pironman 5 系列产品 **不包含以下模块**\ 。  
    需要用户自行准备，或从我们的官方网站购买：
 
    * `RTL-SDR Blog V4 <https://www.sunfounder.com/products/rtl-sdr-blog-v4>`_
@@ -84,7 +89,7 @@ V4 版本采用改进的 R828D 调谐器，支持直接采样模式，具有更�
 
 预期结果：
 
-   输出中应包含 ``RTL-SDR Blog V4 Detected``，且不应出现 ``[R82XX] PLL not locked!``。  
+   输出中应包含 ``RTL-SDR Blog V4 Detected``\ ，且不应出现 ``[R82XX] PLL not locked!``\ 。  
    出现 ``Using device 0: Generic RTL2832U OEM`` 属正常现象，仅为 USB 设备名称。
 
 
@@ -96,9 +101,9 @@ V4 版本采用改进的 R828D 调谐器，支持直接采样模式，具有更�
 
 提示：
 
-   * ``-g``：建议在 25–35 dB 之间调整，增益并非越大越好。
+   * ``-g``\ ：建议在 25–35 dB 之间调整，增益并非越大越好。
    * 将 ``-s`` 调低到约 170k–180k 可降低噪声。
-   * 可微调频率（例如 ``97.1005M``）进行精确调谐。
+   * 可微调频率（例如 ``97.1005M``\ ）进行精确调谐。
    * 关闭其他可能占用 SDR 设备的软件。
 
 ----
@@ -154,14 +159,14 @@ GQRX 是一款简单易用的 SDR 接收软件，提供图形界面，支持多�
 
 **防止驱动被覆盖**
 
-在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装旧版本 ``librtlsdr``。  
+在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装旧版本 ``librtlsdr``\ 。  
 安装完成后请检查：
 
 .. code-block:: shell
 
    ldd "$(which rtl_test)" | grep rtlsdr
 
-如果路径不再指向 ``/usr/local/lib/librtlsdr.so``，请执行：
+如果路径不再指向 ``/usr/local/lib/librtlsdr.so``\ ，请执行：
 
 .. code-block:: shell
 
@@ -182,16 +187,16 @@ GQRX 是一款简单易用的 SDR 接收软件，提供图形界面，支持多�
 
 **首次运行设置**
 
-* **I/O Devices（输入设备）**：
+* **I/O Devices（输入设备）**\ ：
 
   * Device： ``RTL-SDR (V4)``
   * Input Rate： ``1.8 MSPS`` （1800000）
 
-* **输入控制（Input Controls）**：
+* **输入控制（Input Controls）**\ ：
 
-  * **LNA 增益**：建议从 25–35 dB 开始，根据需要调整
+  * **LNA 增益**\ ：建议从 25–35 dB 开始，根据需要调整
 
-* **接收器设置（Receiver Options）**：
+* **接收器设置（Receiver Options）**\ ：
 
   * 设置频率校准（PPM）
   * 模式选择： ``WFM (mono 或 stereo)`` 用于 FM 广播
@@ -201,7 +206,7 @@ GQRX 是一款简单易用的 SDR 接收软件，提供图形界面，支持多�
 .. _install_sdrpp_promax:
 
 SDR++ (SDRpp)
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 SDR++ 是一款现代化、高性能、跨平台的软件定义无线电（SDR）接收软件，支持包括 RTL-SDR Blog V4 在内的多种设备。  
 它提供简洁直观的界面、广泛的调制方式支持、先进的 DSP 滤波能力，以及录制功能。 :contentReference[oaicite:0]{index=0}
@@ -227,14 +232,14 @@ SDR++ 是一款现代化、高性能、跨平台的软件定义无线电（SDR�
 
 **防止驱动被覆盖**
 
-在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装旧版本 ``librtlsdr``。  
+在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装旧版本 ``librtlsdr``\ 。  
 安装完成后请检查：
 
 .. code-block:: shell
 
    ldd "$(which rtl_test)" | grep rtlsdr
 
-如果路径不再指向 ``/usr/local/lib/librtlsdr.so``，请执行：
+如果路径不再指向 ``/usr/local/lib/librtlsdr.so``\ ，请执行：
 
 .. code-block:: shell
 
@@ -329,7 +334,7 @@ rtl_433
 
      rtl_433 -G
      
-----
+-------
 
 .. _install_dump1090_promax:
 
@@ -347,14 +352,14 @@ dump1090-mutability 是一个用于接收和解码 ADS-B（Automatic Dependent S
 
 **防止驱动被覆盖**
 
-在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装旧版本 ``librtlsdr``。  
+在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装旧版本 ``librtlsdr``\ 。  
 安装完成后请检查：
 
 .. code-block:: shell
 
    ldd "$(which rtl_test)" | grep rtlsdr
 
-如果路径不再指向 ``/usr/local/lib/librtlsdr.so``，请执行：
+如果路径不再指向 ``/usr/local/lib/librtlsdr.so``\ ，请执行：
 
 .. code-block:: shell
 

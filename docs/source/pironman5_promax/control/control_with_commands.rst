@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _promax_view_control_commands:
 
 Control with Commands
@@ -140,31 +145,31 @@ Control with Commands
 
     sudo systemctl restart pironman5.service
 
-* **启用/禁用 RGB 灯**：使用 ``true`` 开启，``false`` 关闭。
+* **启用/禁用 RGB 灯**\ ：使用 ``true`` 开启，\ ``false`` 关闭。
 
   .. code-block:: shell
 
     sudo pironman5 -re true
 
-* **更改颜色**：使用十六进制颜色值（不带 `#`），例如 ``fe1a1a`` 表示红色。
+* **更改颜色**\ ：使用十六进制颜色值（不带 `#`），例如 ``fe1a1a`` 表示红色。
 
   .. code-block:: shell
 
     sudo pironman5 -rc fe1a1a
 
-* **调整亮度**：设置范围为 0% 到 100%。
+* **调整亮度**\ ：设置范围为 0% 到 100%。
 
   .. code-block:: shell
 
     sudo pironman5 -rb 75
 
-* **更改显示模式**：可选多种动画模式：
+* **更改显示模式**\ ：可选多种动画模式：
 
-  * ``solid``：静态颜色  
-  * ``breathing``：呼吸效果（渐亮渐暗）  
-  * ``flow`` / ``flow_reverse``：颜色流动效果  
-  * ``rainbow`` / ``rainbow_reverse``：彩虹循环效果  
-  * ``hue_cycle``：色相平滑循环  
+  * ``solid``\ ：静态颜色  
+  * ``breathing``\ ：呼吸效果（渐亮渐暗）  
+  * ``flow`` / ``flow_reverse``\ ：颜色流动效果  
+  * ``rainbow`` / ``rainbow_reverse``\ ：彩虹循环效果  
+  * ``hue_cycle``\ ：色相平滑循环  
 
   .. code-block:: shell
 
@@ -172,15 +177,15 @@ Control with Commands
 
   .. note::
 
-    当使用 ``rainbow``、 ``rainbow_reverse`` 或 ``hue_cycle`` 模式时，通过 ``pironman5 -rc`` 设置的颜色将被自动循环效果覆盖。
+    当使用 ``rainbow``\ 、 ``rainbow_reverse`` 或 ``hue_cycle`` 模式时，通过 ``pironman5 -rc`` 设置的颜色将被自动循环效果覆盖。
 
-* **调整动画速度**：设置效果速度，范围为 0%（最慢）到 100%（最快）。
+* **调整动画速度**\ ：设置效果速度，范围为 0%（最慢）到 100%（最快）。
 
   .. code-block:: shell
 
     sudo pironman5 -rp 50
 
-* **设置 LED 数量**：系统默认控制 18 个 LED。如果您扩展了额外的 WS2812B 灯带，请相应修改总数量。
+* **设置 LED 数量**\ ：系统默认控制 18 个 LED。如果您扩展了额外的 WS2812B 灯带，请相应修改总数量。
 
   .. code-block:: shell
 
@@ -222,25 +227,25 @@ Control with Commands
 
 **OLED 配置命令**
 
-* **启用/禁用 OLED**：打开或关闭 OLED 显示。
+* **启用/禁用 OLED**\ ：打开或关闭 OLED 显示。
 
   .. code-block:: shell
   
     sudo pironman5 -oe false
 
-* **旋转屏幕**：设置显示方向为 ``0`` （默认）或 ``180`` 度。
+* **旋转屏幕**\ ：设置显示方向为 ``0`` （默认）或 ``180`` 度。
 
   .. code-block:: shell
   
     sudo pironman5 -or 180
 
-* **配置显示页面**：选择循环显示的信息页面。可选页面包括： ``mix`` （总览）、 ``performance`` （CPU/内存详情）、 ``ips`` （网络 IP）、 ``disk`` （存储）。多个页面用逗号分隔。
+* **配置显示页面**\ ：选择循环显示的信息页面。可选页面包括： ``mix`` （总览）、 ``performance`` （CPU/内存详情）、 ``ips`` （网络 IP）、 ``disk`` （存储）。多个页面用逗号分隔。
 
   .. code-block:: shell
   
     sudo pironman5 -op mix,ips,disk
   
-* **设置休眠时间**：设置 OLED 在无操作时自动关闭的时间（单位：秒，0 表示不休眠）。
+* **设置休眠时间**\ ：设置 OLED 在无操作时自动关闭的时间（单位：秒，0 表示不休眠）。
 
   .. code-block:: shell
   
@@ -270,51 +275,51 @@ Control with Commands
 **通用系统命令**
 ----------------------------
 
-* **显示版本**：显示已安装的 ``pironman5`` 软件包版本。
+* **显示版本**\ ：显示已安装的 ``pironman5`` 软件包版本。
 
   .. code-block:: shell
   
     sudo pironman5 -v
 
-* **显示当前配置**：显示所有当前配置设置。
+* **显示当前配置**\ ：显示所有当前配置设置。
 
   .. code-block:: shell
   
     sudo pironman5 -c
 
-* **设置温度单位**：在摄氏度（``C``）和华氏度（``F``）之间切换温度显示单位。
+* **设置温度单位**\ ：在摄氏度（\ ``C``\ ）和华氏度（\ ``F``\ ）之间切换温度显示单位。
 
   .. code-block:: shell
   
     sudo pironman5 -u F
 
-* **配置数据记录**：
+* **配置数据记录**\ ：
 
-  * **设置数据库保留天数**：控制历史数据（例如温度记录）保留的天数。
+  * **设置数据库保留天数**\ ：控制历史数据（例如温度记录）保留的天数。
 
     .. code-block:: shell
 
       sudo pironman5 -drd 30
 
-  * **启用/禁用历史记录**：开启或关闭数据采集。
+  * **启用/禁用历史记录**\ ：开启或关闭数据采集。
 
     .. code-block:: shell
 
       sudo pironman5 -eh false
 
-* **设置日志详细级别**：调整系统日志的详细程度。可选项： ``DEBUG``、 ``INFO``、 ``WARNING``、 ``ERROR``、 ``CRITICAL``。
+* **设置日志详细级别**\ ：调整系统日志的详细程度。可选项： ``DEBUG``\ 、 ``INFO``\ 、 ``WARNING``\ 、 ``ERROR``\ 、 ``CRITICAL``\ 。
 
   .. code-block:: shell
   
     sudo pironman5 -dl DEBUG
 
-* **移除 Web 仪表板**：卸载可选的基于网页的管理界面。
+* **移除 Web 仪表板**\ ：卸载可选的基于网页的管理界面。
 
   .. code-block:: shell
   
     sudo pironman5 -rd
 
-* **指定自定义配置路径**：使用位于非默认路径的配置文件。
+* **指定自定义配置路径**\ ：使用位于非默认路径的配置文件。
 
   .. code-block:: shell
   
@@ -323,19 +328,19 @@ Control with Commands
 **服务管理子命令**
 -----------------------------------
 
-* **启动 Pironman5 服务**：手动启动后台服务，该服务负责管理 LED、风扇、OLED 等设备。
+* **启动 Pironman5 服务**\ ：手动启动后台服务，该服务负责管理 LED、风扇、OLED 等设备。
 
   .. code-block:: shell
   
     sudo pironman5 start
 
-* **停止 Pironman5 服务**：安全停止后台服务。
+* **停止 Pironman5 服务**\ ：安全停止后台服务。
 
   .. code-block:: shell
   
     sudo pironman5 stop
 
-* **在浏览器中打开 Web 仪表板**：如果已安装 Web 仪表板，该命令会在默认浏览器中打开它。
+* **在浏览器中打开 Web 仪表板**\ ：如果已安装 Web 仪表板，该命令会在默认浏览器中打开它。
 
   .. code-block:: shell
   

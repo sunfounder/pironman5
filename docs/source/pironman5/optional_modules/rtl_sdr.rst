@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 
 RTL-SDR Blog V4
 ==============================================
@@ -87,7 +92,7 @@ V4 版本配备了改进的 R828D 调谐器、直采模式、更高的灵敏度�
    rtl_test -t
 
 预期结果:  
-    输出应包含 ``RTL-SDR Blog V4 Detected``，并且不出现 ``[R82XX] PLL not locked!`` 错误。  
+    输出应包含 ``RTL-SDR Blog V4 Detected``\ ，并且不出现 ``[R82XX] PLL not locked!`` 错误。  
     出现 ``Using device 0: Generic RTL2832U OEM`` 是正常的 —— 这只是 USB 名称。
 
 **6. 命令行测试 FM 接收**
@@ -100,7 +105,7 @@ V4 版本配备了改进的 R828D 调谐器、直采模式、更高的灵敏度�
 
     * ``-g``: 建议尝试 25–35 dB；数值越高不一定越好。  
     * 将 ``-s`` 降低到 ~170k–180k 可以减少噪声。  
-    * 可以微调频率（如 ``97.1005M``）以获得更好的效果。  
+    * 可以微调频率（如 ``97.1005M``\ ）以获得更好的效果。  
     * 确保关闭可能占用设备的其他 SDR 软件。
 
 ----
@@ -157,14 +162,14 @@ GQRX 是一个简单易用的 SDR 接收器应用，带有图形化界面。它�
 
 **防止驱动被覆盖**
 
-在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装过时的 ``librtlsdr``。  
+在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装过时的 ``librtlsdr``\ 。  
 在每次安装后，请检查：
 
 .. code-block:: shell
 
     ldd "$(which rtl_test)" | grep rtlsdr
 
-如果它不再指向 ``/usr/local/lib/librtlsdr.so``，请运行：
+如果它不再指向 ``/usr/local/lib/librtlsdr.so``\ ，请运行：
 
 .. code-block:: shell
 
@@ -198,14 +203,14 @@ GQRX 是一个简单易用的 SDR 接收器应用，带有图形化界面。它�
 * **接收器选项**:
 
   * 设置频率校正 (PPM)，根据你的校准值输入。  
-  * 模式: 广播 FM 使用 ``WFM (mono or stereo)``。
+  * 模式: 广播 FM 使用 ``WFM (mono or stereo)``\ 。
 
 ----
 
 .. _install_sdrpp_5:
 
 SDR++ (SDRpp)
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 SDR++ 是一款现代、快速、跨平台的软件无线电（SDR）接收器，支持包括 RTL-SDR Blog V4 在内的多种设备。它提供简洁友好的界面、广泛的调制支持、先进的 DSP 滤波，以及录音功能。
 
@@ -229,14 +234,14 @@ SDR++ 是一款现代、快速、跨平台的软件无线电（SDR）接收器�
 
 **防止驱动被覆盖**
 
-在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装过时的 ``librtlsdr``。  
+在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装过时的 ``librtlsdr``\ 。  
 在每次安装后，请检查：
 
 .. code-block:: shell
 
     ldd "$(which rtl_test)" | grep rtlsdr
 
-如果它不再指向 ``/usr/local/lib/librtlsdr.so``，请运行：
+如果它不再指向 ``/usr/local/lib/librtlsdr.so``\ ，请运行：
 
 .. code-block:: shell
 
@@ -264,7 +269,7 @@ SDR++ 是一款现代、快速、跨平台的软件无线电（SDR）接收器�
 
       sdrpp
 
-* **Device:** 在 **Source** 菜单中选择 **RTL-SDR (V4)**。  
+* **Device:** 在 **Source** 菜单中选择 **RTL-SDR (V4)**\ 。  
 * **Sample Rate:** 通常使用 1.8 MSPS；如果 CPU 负载过高可以降低。  
 * **Gain:** 关闭 AGC，设置手动增益（推荐起始值 ~35 dB）。  
 * **PPM Correction:** 输入通过 ``rtl_test -p`` 获得的校准值。  
@@ -287,14 +292,14 @@ rtl_433 是一个命令行工具，用于解码在 433 MHz ISM 波段工作的�
 
 **防止驱动被覆盖**
 
-在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装过时的 ``librtlsdr``。  
+在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装过时的 ``librtlsdr``\ 。  
 在每次安装后，请检查：
 
 .. code-block:: shell
 
     ldd "$(which rtl_test)" | grep rtlsdr
 
-如果它不再指向 ``/usr/local/lib/librtlsdr.so``，请运行：
+如果它不再指向 ``/usr/local/lib/librtlsdr.so``\ ，请运行：
 
 .. code-block:: shell
 
@@ -316,7 +321,7 @@ rtl_433 是一个命令行工具，用于解码在 433 MHz ISM 波段工作的�
 
 **基本用法：**
 
-* 运行 ``rtl_433``，自动检测并解码常见的 433 MHz 设备。  
+* 运行 ``rtl_433``\ ，自动检测并解码常见的 433 MHz 设备。  
 * 使用 ``rtl_433 -G`` 列出所有支持的协议。
 
 ----
@@ -336,14 +341,14 @@ dump1090-mutability 是一款 Mode S 解码器，用于 ADS-B 飞机应答机数
 
 **防止驱动被覆盖**
 
-在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装过时的 ``librtlsdr``。  
+在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装过时的 ``librtlsdr``\ 。  
 在每次安装后，请检查：
 
 .. code-block:: shell
 
     ldd "$(which rtl_test)" | grep rtlsdr
 
-如果它不再指向 ``/usr/local/lib/librtlsdr.so``，请运行：
+如果它不再指向 ``/usr/local/lib/librtlsdr.so``\ ，请运行：
 
 .. code-block:: shell
 

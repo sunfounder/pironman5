@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 1. 还需要准备什么？
 ===================================
 
@@ -27,8 +32,8 @@
   .. image:: img/need_sd.jpg
     :width: 200
 
-  * 最小容量：**16GB**  
-  * 推荐容量：**32GB** （稳定性更好）  
+  * 最小容量：\ **16GB**  
+  * 推荐容量：\ **32GB** （稳定性更好）  
   * 品牌建议：选择 **SanDisk** 或 **Samsung** 等可靠品牌，以避免读写错误  
 
 可选组件
@@ -68,4 +73,4 @@
 **准备小提示**
 
 * 如果你购买的是整套套件，大多数配件都已包含，但仍需要单独准备 Raspberry Pi 主板、Micro SD 卡和电源适配器。  
-* 不确定该买什么？最稳定、最通用的组合是：**Raspberry Pi 5（2GB）+ 官方电源适配器 + 32GB Micro SD 卡**。  
+* 不确定该买什么？最稳定、最通用的组合是：\ **Raspberry Pi 5（2GB）+ 官方电源适配器 + 32GB Micro SD 卡**\ 。  

@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _promax_assembly_instructions:
 
 2. 组装说明
@@ -12,4 +17,4 @@
 * 在安装前先将所有零件分类整理，方便快速查找  
 * 多次检查 FPC 排线连接是否牢固，避免接触不良问题  
 
-* :download:`[PDF] Pironman 5 Pro MAX 零件清单与组装说明 <Pironman5ProMAX.pdf>`
+* :download:`[PDF] Pironman 5 Pro MAX 零件清单与组装说明 <Pironman5ProMAXV12.pdf>`

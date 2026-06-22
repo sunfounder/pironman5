@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 IO 扩展板
 ================
 
@@ -14,7 +19,7 @@ RGB LED 灯
 
   sudo pironman5 -re true
 
-* 更改颜色：输入所需的十六进制颜色值，如 ``fe1a1a``：
+* 更改颜色：输入所需的十六进制颜色值，如 ``fe1a1a``\ ：
 
 .. code-block:: shell
 
@@ -26,7 +31,7 @@ RGB LED 灯
 
   sudo pironman5 -rb 100
 
-* 切换显示模式，可选项包括： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``：
+* 切换显示模式，可选项包括： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``\ ：
 
 .. note::
 
@@ -99,10 +104,10 @@ OLED 屏幕接口的 I2C 地址为 0x3C，是扩展板的重要功能之一。
 
 .. image:: img/io_board_receiver.png
 
-* **型号**：IRM-56384，工作频率 38KHz  
-* **连接方式**：接收器连接至 **GPIO13**  
-* **D1**：红外接收指示灯，接收到信号时闪烁  
-* **J8**：红外功能使能引脚，默认插有跳帽可立即使用。如不使用红外接收器，可移除跳帽释放 GPIO13
+* **型号**\ ：IRM-56384，工作频率 38KHz  
+* **连接方式**\ ：接收器连接至 **GPIO13**  
+* **D1**\ ：红外接收指示灯，接收到信号时闪烁  
+* **J8**\ ：红外功能使能引脚，默认插有跳帽可立即使用。如不使用红外接收器，可移除跳帽释放 GPIO13
 
 使用红外接收器前，请确认连接正确并安装必要模块：
 
@@ -146,17 +151,17 @@ J9 下方的两个引脚为 GPIO 风扇控制引脚。默认插有跳帽，可�
 
 可使用命令设置两颗 GPIO 风扇的运行模式，不同模式对应不同的温度启动阈值。
 
-例如，将风扇模式设置为 **1: Performance**，风扇将在温度达到 50°C 时启动。
+例如，将风扇模式设置为 **1: Performance**\ ，风扇将在温度达到 50°C 时启动。
 
 .. code-block:: shell
 
   sudo pironman5 -gm 3
 
-* **4: Quiet**：70°C 启动  
-* **3: Balanced**：67.5°C 启动  
-* **2: Cool**：60°C 启动  
-* **1: Performance**：50°C 启动  
-* **0: Always On**：风扇始终开启
+* **4: Quiet**\ ：70°C 启动  
+* **3: Balanced**\ ：67.5°C 启动  
+* **2: Cool**\ ：60°C 启动  
+* **1: Performance**\ ：50°C 启动  
+* **0: Always On**\ ：风扇始终开启
 
 如将风扇控制引脚连接至其他 GPIO 引脚，可使用以下命令修改：
 

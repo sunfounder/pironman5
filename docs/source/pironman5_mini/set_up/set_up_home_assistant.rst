@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 在 Home Assistant 中进行设置
 ============================================
 
@@ -16,7 +21,7 @@
    :width: 90%
 
 
-* 点击 **CREATE MY SMART HOME**，创建你的账户。
+* 点击 **CREATE MY SMART HOME**\ ，创建你的账户。
 
   .. image:: img/home_account.png
    :width: 90%
@@ -32,7 +37,7 @@
 
 Pironman 5 Mini 的功能以附加组件形式集成在 Home Assistant 中。首先需要添加 **SunFounder** 插件源。
 
-#. 打开 **Settings** -> **Add-ons**。
+#. 打开 **Settings** -> **Add-ons**\ 。
 
    .. image:: img/home_setting_addon.png
       :width: 90%
@@ -42,12 +47,12 @@ Pironman 5 Mini 的功能以附加组件形式集成在 Home Assistant 中。首
    .. image:: img/home_addon.png
       :width: 90%
 
-#. 在插件商店右上角点击菜单按钮，选择 **Repositories**。
+#. 在插件商店右上角点击菜单按钮，选择 **Repositories**\ 。
 
    .. image:: img/home_add_res.png
       :width: 90%
 
-#. 输入 SunFounder 插件源地址： ``https://github.com/sunfounder/home-assistant-addon``，然后点击 **ADD**。
+#. 输入 SunFounder 插件源地址： ``https://github.com/sunfounder/home-assistant-addon``\ ，然后点击 **ADD**\ 。
 
    .. image:: img/home_res_add.png
       :width: 90%
@@ -67,7 +72,7 @@ Pironman 5 Mini 的功能以附加组件形式集成在 Home Assistant 中。首
    .. image:: img/home_pi_config.png
       :width: 90%
 
-#. 在插件页面点击 **INSTALL**，等待安装完成。
+#. 在插件页面点击 **INSTALL**\ ，等待安装完成。
 
    .. image:: img/home_config_install.png
       :width: 90%
@@ -115,8 +120,8 @@ Pironman 5 Mini 的功能以附加组件形式集成在 Home Assistant 中。首
 .. note::
 
     * 如果刷新页面后未进入挂载分区界面，可通过 **Settings** -> **Add-ons** -> **Pi Config Wizard** 重新进入。
-    * 检查插件是否已启动，若未启动请点击 **START**。
-    * 启动后点击 **OPEN WEB UI**，再点击 **MOUNT** 检查 I2C 和 SPI 是否启用。
+    * 检查插件是否已启动，若未启动请点击 **START**\ 。
+    * 启动后点击 **OPEN WEB UI**\ ，再点击 **MOUNT** 检查 I2C 和 SPI 是否启用。
 
 
    
@@ -128,7 +133,7 @@ Pironman 5 Mini 的功能以附加组件形式集成在 Home Assistant 中。首
 
 现在开始正式安装 **Pironman 5 Mini** 插件。
 
-#. 打开 **Settings** -> **Add-ons**。
+#. 打开 **Settings** -> **Add-ons**\ 。
 
    .. image:: img/home_setting_addon.png
       :width: 90%
@@ -140,7 +145,7 @@ Pironman 5 Mini 的功能以附加组件形式集成在 Home Assistant 中。首
 
 #. 在 **SunFounder** 插件列表中找到 **Pironman 5 Mini** 并点击进入。
 
-   .. image:: img/home_pironman5_addon.png
+   .. image:: img/home_pironman5_mini_addon.png
       :width: 90%
 
 #. 安装 Pironman 5 插件。

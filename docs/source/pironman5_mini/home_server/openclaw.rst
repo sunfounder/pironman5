@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 
 
 
@@ -13,7 +18,7 @@
 
 为了让 OpenClaw 能够操作 Pironman5 Mini，我们需要安装 Pironman5 Mini 技能。
 
-1.  确保你已经安装了 Pironman5 Mini。如果没有，请参考 :ref:`mini_download_pironman5_module`.
+1.  确保你已经安装了 Pironman5 Mini。如果没有，请参考 :ref:`install_pironman5_module_mini`.
 
 2.  在终端中运行以下命令：
 

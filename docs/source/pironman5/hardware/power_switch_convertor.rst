@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 电源开关转换器
 ==============================
 
@@ -11,7 +16,7 @@
 
    .. image:: img/pi5_j2.jpg
 
-* 在 Pironman 5 中，配备了一个 **电源开关转换器**，通过两个 Pogo 弹簧针将 **J2** 引脚扩展至外部电源按钮。
+* 在 Pironman 5 中，配备了一个 **电源开关转换器**\ ，通过两个 Pogo 弹簧针将 **J2** 引脚扩展至外部电源按钮。
 
    .. image:: img/power_switch_convertor.png
 

@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 安装 Raspberry Pi OS
 ================================================================================
 
@@ -9,7 +14,7 @@
 
 **使用 M.2 NVMe SSD**
 
-  * 如果您拥有 **M.2 NVMe SSD 外接盒（Enclosure Adapter）**，可以通过该适配器将 SSD 连接到电脑，并按照第二种方法安装操作系统。  
+  * 如果您拥有 **M.2 NVMe SSD 外接盒（Enclosure Adapter）**\ ，可以通过该适配器将 SSD 连接到电脑，并按照第二种方法安装操作系统。  
 
     .. image:: img/m2_nvme_adapter.png  
         :width: 300

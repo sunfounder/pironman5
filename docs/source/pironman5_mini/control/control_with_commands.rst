@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _view_control_commands_mini:
 
 通过命令进行控制
@@ -44,46 +49,38 @@
 
 .. code-block::
 
-  usage: pironman5-service [-h] [-v] [-c] [-dl {debug,info,warning,error,critical}] [-rc [RGB_COLOR]] [-rb [RGB_BRIGHTNESS]] [-rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}]]
-                                [-rp [RGB_SPEED]] [-re [RGB_ENABLE]] [-rl [RGB_LED_COUNT]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]] [-fl [GPIO_FAN_LED]] [-fp [GPIO_FAN_LED_PIN]]
-                                [--background [BACKGROUND]]
-                                [{start,restart,stop}]
+  usage: pironman5-service [-h] [-v] [-c] [-dl {debug,info,warning,error,critical}] [--background [BACKGROUND]] [-rd]
+                          [-cp [CONFIG_PATH]] [-u [{C,F}]] [-gm [GPIO_FAN_MODE]] [-gp [GPIO_FAN_PIN]]
+                          [-fl [GPIO_FAN_LED]] [-fp [GPIO_FAN_LED_PIN]]
+                          [{start,restart,stop}]
 
-  Pironman5 Mini
+  Pironman 5 command line interface
 
-  位置参数:
-   {start,restart,stop}  命令
+  positional arguments:
+    {start,restart,stop}  Command
 
-  可选参数:
-   -h, --help            显示帮助信息并退出
-   -v, --version         显示版本号
-   -c, --config          显示当前配置
-   -dl {debug,info,warning,error,critical}, --debug-level {debug,info,warning,error,critical}
-                         设置调试等级
-   -rc [RGB_COLOR], --rgb-color [RGB_COLOR]
-                         设置 RGB 颜色，16 进制格式（不含 #），如 00aabb
-   -rb [RGB_BRIGHTNESS], --rgb-brightness [RGB_BRIGHTNESS]
-                         设置 RGB 亮度，范围 0-100
-   -rs [{solid,breathing,flow,flow_reverse,rainbow,rainbow_reverse,hue_cycle}], --rgb-style [{...}]
-                         设置 RGB 显示模式
-   -rp [RGB_SPEED], --rgb-speed [RGB_SPEED]
-                         设置 RGB 变化速度，范围 0-100
-   -re [RGB_ENABLE], --rgb-enable [RGB_ENABLE]
-                         启用/禁用 RGB，取值 True/False
-   -rl [RGB_LED_COUNT], --rgb-led-count [RGB_LED_COUNT]
-                         设置 RGB LED 数量
-   -u [{C,F}], --temperature-unit [{C,F}]
-                         设置温度单位
-   -gm [GPIO_FAN_MODE], --gpio-fan-mode [GPIO_FAN_MODE]
-                         设置 GPIO 风扇模式，0: 始终开启，1: 性能，2: 清凉，3: 平衡，4: 安静
-   -gp [GPIO_FAN_PIN], --gpio-fan-pin [GPIO_FAN_PIN]
-                         设置 GPIO 风扇引脚
-   -fl [GPIO_FAN_LED], --gpio-fan-led [GPIO_FAN_LED]
-                         设置风扇灯光状态 on/off/follow
-   -fp [GPIO_FAN_LED_PIN], --gpio-fan-led-pin [GPIO_FAN_LED_PIN]
-                         设置风扇灯光控制引脚
-   --background [BACKGROUND]
-                         后台运行
+  options:
+    -h, --help            show this help message and exit
+    -v, --version         Show version
+    -c, --config          Show config
+    -dl {debug,info,warning,error,critical}, --debug-level {debug,info,warning,error,critical}
+                          Debug level
+    --background [BACKGROUND]
+                          Run in background
+    -rd, --remove-dashboard
+                          Remove dashboard
+    -cp [CONFIG_PATH], --config-path [CONFIG_PATH]
+                          Config path
+    -u [{C,F}], --temperature-unit [{C,F}]
+                          Temperature unit
+    -gm [GPIO_FAN_MODE], --gpio-fan-mode [GPIO_FAN_MODE]
+                          GPIO fan mode, 0: Always On, 1: Performance, 2: Cool, 3: Balanced, 4: Quiet
+    -gp [GPIO_FAN_PIN], --gpio-fan-pin [GPIO_FAN_PIN]
+                          GPIO fan pin
+    -fl [GPIO_FAN_LED], --gpio-fan-led [GPIO_FAN_LED]
+                          GPIO fan LED state on/off/follow
+    -fp [GPIO_FAN_LED_PIN], --gpio-fan-led-pin [GPIO_FAN_LED_PIN]
+                          GPIO fan LED pin
 
 .. note::
 
@@ -126,7 +123,7 @@
 
   sudo pironman5 -re true
 
-* 更改 RGB 颜色，输入对应的十六进制值，例如 ``fe1a1a``：
+* 更改 RGB 颜色，输入对应的十六进制值，例如 ``fe1a1a``\ ：
 
 .. code-block:: shell
 
@@ -138,11 +135,11 @@
 
   sudo pironman5 -rb 100
 
-* 切换 RGB 灯效模式，可选： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``：
+* 切换 RGB 灯效模式，可选： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``\ ：
 
 .. note::
 
-  若设置为 ``rainbow``、 ``rainbow_reverse`` 或 ``hue_cycle`` 模式，将无法再通过 ``sudo pironman5 -rc`` 命令设置颜色。
+  若设置为 ``rainbow``\ 、 ``rainbow_reverse`` 或 ``hue_cycle`` 模式，将无法再通过 ``sudo pironman5 -rc`` 命令设置颜色。
 
 .. code-block:: shell
 
@@ -184,11 +181,11 @@
 
   sudo pironman5 -gm 3
 
-* **4: Quiet**：70°C 启动风扇
-* **3: Balanced**：67.5°C 启动风扇
-* **2: Cool**：60°C 启动风扇
-* **1: Performance**：50°C 启动风扇
-* **0: Always On**：风扇始终运行
+* **4: Quiet**\ ：70°C 启动风扇
+* **3: Balanced**\ ：67.5°C 启动风扇
+* **2: Cool**\ ：60°C 启动风扇
+* **1: Performance**\ ：50°C 启动风扇
+* **0: Always On**\ ：风扇始终运行
 
 * 若将风扇控制引脚连接至 Raspberry Pi 的其他引脚，可通过以下命令修改控制引脚号：
 

@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _promax_omv_5_promax:
 
 设置 OpenMediaVault
@@ -40,7 +45,7 @@ OpenMediaVault（简称 OMV）是一款基于 Debian Linux 的开源网络附加
       chmod +x install  
       sudo ./install -n
 
-   该命令将下载并运行 OpenMediaVault 的安装脚本。安装完成后 **不要重启 Raspberry Pi**。
+   该命令将下载并运行 OpenMediaVault 的安装脚本。安装完成后 **不要重启 Raspberry Pi**\ 。
 
 3. 访问 OpenMediaVault
 -----------------------------
@@ -53,7 +58,7 @@ OpenMediaVault（简称 OMV）是一款基于 Debian Linux 的开源网络附加
 
    .. note:: 如果无法访问上述地址，请尝试使用 IP 地址，例如：http://192.168.1.100。
 
-   您将看到登录页面，请使用默认用户名和密码登录。默认用户名为 ``admin``，密码为 ``openmediavault``。
+   您将看到登录页面，请使用默认用户名和密码登录。默认用户名为 ``admin``\ ，密码为 ``openmediavault``\ 。
 
    .. image:: img/omv/omv-login.png
 
@@ -74,11 +79,11 @@ OpenMediaVault（简称 OMV）是一款基于 Debian Linux 的开源网络附加
 
    .. note:: RAID 0 或 RAID 1 至少需要挂载 2 块硬盘。在 RAID 0 中，阵列容量为所有硬盘容量之和；在 RAID 1 中，阵列容量等于最小容量硬盘的容量。
 
-   1. 在 ``System`` 菜单中点击 ``Plugins``，搜索 ``openmediavault-md`` 插件并安装。
+   1. 在 ``System`` 菜单中点击 ``Plugins``\ ，搜索 ``openmediavault-md`` 插件并安装。
 
    .. image:: img/omv/omv-raid-1.png
 
-   2. 在 ``Storage`` 菜单中点击 ``Disks``，清除两块 SSD。
+   2. 在 ``Storage`` 菜单中点击 ``Disks``\ ，清除两块 SSD。
 
    .. image:: img/omv/omv-raid-2.png
 
@@ -90,7 +95,7 @@ OpenMediaVault（简称 OMV）是一款基于 Debian Linux 的开源网络附加
 
    .. image:: img/omv/omv-raid-4.png
 
-   5. 进入 ``Multiple Device`` 标签页，点击 ``Create``。
+   5. 进入 ``Multiple Device`` 标签页，点击 ``Create``\ 。
 
    .. image:: img/omv/omv-raid-5.png
 
@@ -104,7 +109,7 @@ OpenMediaVault（简称 OMV）是一款基于 Debian Linux 的开源网络附加
 
    .. image:: img/omv/omv-raid-7.png
 
-   8. RAID 配置完成后，需要等待状态达到 ``100%``。
+   8. RAID 配置完成后，需要等待状态达到 ``100%``\ 。
 
    .. image:: img/omv/omv-raid-8.png
 
@@ -113,11 +118,11 @@ OpenMediaVault（简称 OMV）是一款基于 Debian Linux 的开源网络附加
 5. 配置存储
 -----------------------
 
-   在 OpenMediaVault 主界面中，点击左侧菜单的 ``Storage``。在 ``Storage`` 页面中，点击 ``Disks`` 标签页。在该页面中，您可以看到 Raspberry Pi 上的所有磁盘。请确认 NVMe PIP 已连接硬盘。
+   在 OpenMediaVault 主界面中，点击左侧菜单的 ``Storage``\ 。在 ``Storage`` 页面中，点击 ``Disks`` 标签页。在该页面中，您可以看到 Raspberry Pi 上的所有磁盘。请确认 NVMe PIP 已连接硬盘。
 
    .. image:: img/omv/omv-disk.png
 
-   1. 在侧边栏中点击 ``File System``，然后创建并挂载文件系统。文件系统类型选择 ``ext4``。
+   1. 在侧边栏中点击 ``File System``\ ，然后创建并挂载文件系统。文件系统类型选择 ``ext4``\ 。
 
    .. image:: img/omv/omv-mount.png
 
@@ -137,7 +142,7 @@ OpenMediaVault（简称 OMV）是一款基于 Debian Linux 的开源网络附加
 
    .. note:: 如果使用双硬盘（未配置 RAID），请重复上述步骤，将第二块硬盘同样挂载。
 
-   5. 挂载完成后，点击 ``Apply``，即可在文件系统中查看硬盘数据。
+   5. 挂载完成后，点击 ``Apply``\ ，即可在文件系统中查看硬盘数据。
 
    .. image:: img/omv/omv-mount-5.png
 
@@ -198,7 +203,7 @@ OpenMediaVault（简称 OMV）是一款基于 Debian Linux 的开源网络附加
 9. 配置 SMB 服务
 ---------------------------------------
 
-1. 在 ``Services`` 页面中，找到 ``SMB/CIFS`` → ``Setting`` 选项卡，勾选 ``Enable``，然后点击 ``Save``。
+1. 在 ``Services`` 页面中，找到 ``SMB/CIFS`` → ``Setting`` 选项卡，勾选 ``Enable``\ ，然后点击 ``Save``\ 。
 
 .. image:: img/omv/omv-smb-1.png
 
@@ -210,11 +215,11 @@ OpenMediaVault（简称 OMV）是一款基于 Debian Linux 的开源网络附加
 
 .. image:: img/omv/omv-smb-3.png
 
-4. 在 ``Create Share`` 页面中，选择共享文件夹路径，然后点击 ``Save``。该页面还有许多其他选项，可根据需要进行配置。
+4. 在 ``Create Share`` 页面中，选择共享文件夹路径，然后点击 ``Save``\ 。该页面还有许多其他选项，可根据需要进行配置。
 
 .. image:: img/omv/omv-smb-4.png
 
-5. 点击 ``Apply``。
+5. 点击 ``Apply``\ 。
 
 .. image:: img/omv/omv-smb-5.png
 
@@ -224,11 +229,11 @@ OpenMediaVault（简称 OMV）是一款基于 Debian Linux 的开源网络附加
 10. 在 Windows 上访问共享文件夹
 ---------------------------------------
 
-1. 打开 ``此电脑（This PC）``，然后点击 ``映射网络驱动器（Map network drive）``。
+1. 打开 ``此电脑（This PC）``\ ，然后点击 ``映射网络驱动器（Map network drive）``\ 。
 
 .. image:: img/omv/omv-network-location-1.png
 
-2. 在弹出的对话框中，在 ``Folder`` 字段中输入 Raspberry Pi 的 IP 地址，例如 ``\\192.168.1.100\``，或输入主机名，例如 ``\\pi.local\``。
+2. 在弹出的对话框中，在 ``Folder`` 字段中输入 Raspberry Pi 的 IP 地址，例如 ``\\192.168.1.100\``\ ，或输入主机名，例如 ``\\pi.local\``\ 。
 
 .. image:: img/omv/omv-network-location-2.png
 
@@ -248,11 +253,11 @@ OpenMediaVault（简称 OMV）是一款基于 Debian Linux 的开源网络附加
 10. 在 Mac 上访问共享文件夹
 -------------------------------------
 
-1. 在 ``Go`` 菜单中，点击 ``Connect to Server``。
+1. 在 ``Go`` 菜单中，点击 ``Connect to Server``\ 。
 
 .. image:: img/omv/omv-mac-1.png
 
-2. 在弹出的对话框中，输入 Raspberry Pi 的 IP 地址，例如 ``smb://192.168.1.100``，或输入主机名，例如 ``smb://pi.local``。
+2. 在弹出的对话框中，输入 Raspberry Pi 的 IP 地址，例如 ``smb://192.168.1.100``\ ，或输入主机名，例如 ``smb://pi.local``\ 。
 
 .. image:: img/omv/omv-mac-2.png
 

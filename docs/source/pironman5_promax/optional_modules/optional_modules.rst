@@ -1,9 +1,14 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 7. 可选模块
 ==============================================================
 
 .. note::
 
-   Pironman 5 系列产品 **不包含以下模块**。  
+   Pironman 5 系列产品 **不包含以下模块**\ 。  
    需要用户自行准备，或从我们的官方网站购买：
 
    * `RTL-SDR Blog V4 <https://www.sunfounder.com/products/rtl-sdr-blog-v4>`_

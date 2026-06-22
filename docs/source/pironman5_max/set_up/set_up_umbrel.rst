@@ -11,7 +11,7 @@
 
 #. 使用以太网线将 Raspberry Pi 5 连接到网络。此步骤非常重要，以确保设备能够访问互联网。
 
-#. 打开浏览器并访问： ``http://umbrel.local``。如果页面无法打开，请在路由器中查找 Umbrel 设备的 IP 地址，例如： ``http://192.168.1.50``
+#. 打开浏览器并访问： ``http://umbrel.local``\ 。如果页面无法打开，请在路由器中查找 Umbrel 设备的 IP 地址，例如： ``http://192.168.1.50``
 
    .. image:: img/umbrel_local.png
 
@@ -35,11 +35,11 @@
 
    .. image:: img/umbrel_url.png
 
-#. 添加仓库后，点击 **Open** 打开 **SunFounder Store**。
+#. 添加仓库后，点击 **Open** 打开 **SunFounder Store**\ 。
 
    .. image:: img/umbrel_open.png
 
-#. 在 **SunFounder 应用商店** 中，你会看到两个可用的应用。选择 **Pironman 5** 或 **Pironman 5 Max**。
+#. 在 **SunFounder 应用商店** 中，你会看到两个可用的应用。选择 **Pironman 5** 或 **Pironman 5 Max**\ 。
 
    .. image:: img/umbrel_sf_app.png
 

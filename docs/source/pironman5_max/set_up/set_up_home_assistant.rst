@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 在 Home Assistant 上设置
 ============================================
 
@@ -16,7 +21,7 @@
    :width: 90%
 
 
-* 选择 **CREATE MY SMART HOME**，然后创建你的账户。
+* 选择 **CREATE MY SMART HOME**\ ，然后创建你的账户。
 
   .. image:: img/home_account.png
    :width: 90%
@@ -32,7 +37,7 @@
 
 Pironman 5 MAX 的功能通过插件的形式集成在 Home Assistant 中。首先需要添加 **SunFounder** 插件仓库。
 
-#. 打开 **Settings** -> **Add-ons**。
+#. 打开 **Settings** -> **Add-ons**\ 。
 
    .. image:: img/home_setting_addon.png
       :width: 90%
@@ -42,12 +47,12 @@ Pironman 5 MAX 的功能通过插件的形式集成在 Home Assistant 中。首�
    .. image:: img/home_addon.png
       :width: 90%
 
-#. 在插件商店中，点击右上角菜单，选择 **Repositories**。
+#. 在插件商店中，点击右上角菜单，选择 **Repositories**\ 。
 
    .. image:: img/home_add_res.png
       :width: 90%
 
-#. 输入 **SunFounder** 插件仓库地址： ``https://github.com/sunfounder/home-assistant-addon``，点击 **ADD**。
+#. 输入 **SunFounder** 插件仓库地址： ``https://github.com/sunfounder/home-assistant-addon``\ ，点击 **ADD**\ 。
 
    .. image:: img/home_res_add.png
       :width: 90%
@@ -67,7 +72,7 @@ Pironman 5 MAX 的功能通过插件的形式集成在 Home Assistant 中。首�
    .. image:: img/home_pi_config.png
       :width: 90%
 
-#. 在插件页面点击 **INSTALL**，等待安装完成。
+#. 在插件页面点击 **INSTALL**\ ，等待安装完成。
 
    .. image:: img/home_config_install.png
       :width: 90%
@@ -87,7 +92,7 @@ Pironman 5 MAX 的功能通过插件的形式集成在 Home Assistant 中。首�
    .. image:: img/home_open_web_ui.png
       :width: 90%
 
-#. 在网页界面中会出现挂载 Boot 分区的选项，点击 **MOUNT**。
+#. 在网页界面中会出现挂载 Boot 分区的选项，点击 **MOUNT**\ 。
 
    .. image:: img/home_mount_boot.png
       :width: 90%
@@ -97,7 +102,7 @@ Pironman 5 MAX 的功能通过插件的形式集成在 Home Assistant 中。首�
    .. image:: img/home_i2c_spi.png
       :width: 90%
 
-#. 重启后刷新页面，回到挂载 Boot 分区界面，再次点击 **MOUNT**。
+#. 重启后刷新页面，回到挂载 Boot 分区界面，再次点击 **MOUNT**\ 。
 
    .. image:: img/home_mount_boot.png
       :width: 90%
@@ -114,16 +119,16 @@ Pironman 5 MAX 的功能通过插件的形式集成在 Home Assistant 中。首�
 
 .. note::
 
-    * 如果刷新页面后没有进入挂载分区页面，可前往 **Settings** -> **Add-ons** -> **Pi Config Wizard**。
-    * 确认该插件是否已启动，若未启动请点击 **START**。
-    * 启动后点击 **OPEN WEB UI**，再点击 **MOUNT** 检查 I2C 和 SPI 是否已启用。
+    * 如果刷新页面后没有进入挂载分区页面，可前往 **Settings** -> **Add-ons** -> **Pi Config Wizard**\ 。
+    * 确认该插件是否已启动，若未启动请点击 **START**\ 。
+    * 启动后点击 **OPEN WEB UI**\ ，再点击 **MOUNT** 检查 I2C 和 SPI 是否已启用。
 
 4. 安装 **Pironman 5 MAX** 插件
 -------------------------------------------
 
 现在正式安装 **Pironman 5 MAX** 插件。
 
-#. 打开 **Settings** -> **Add-ons**。
+#. 打开 **Settings** -> **Add-ons**\ 。
 
    .. image:: img/home_setting_addon.png
       :width: 90%
@@ -135,7 +140,7 @@ Pironman 5 MAX 的功能通过插件的形式集成在 Home Assistant 中。首�
 
 #. 在 **SunFounder** 插件列表中找到 **Pironman 5 MAX** 并点击进入。
 
-   .. image:: img/home_pironman5_addon.png
+   .. image:: img/home_pironman5_max_addon.png
       :width: 90%
 
 #. 安装 Pironman 5 MAX 插件。

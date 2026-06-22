@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _cpn_camera_module:
 
 摄像头模块
@@ -22,14 +27,14 @@
 
 **规格参数**
 
-* **静态图像分辨率**：2592×1944 
-* **支持的视频分辨率**：1080p/30 fps、720p/60 fps、640×480p 60/90 视频录制
-* **光圈（F 值）**：1.8 
-* **视角**：65° 
-* **尺寸**：24mm × 23.5mm × 8mm 
-* **重量**：3g 
-* **接口**：CSI 接口 
-* **支持系统**：Raspberry Pi OS（建议使用最新版本）
+* **静态图像分辨率**\ ：2592×1944 
+* **支持的视频分辨率**\ ：1080p/30 fps、720p/60 fps、640×480p 60/90 视频录制
+* **光圈（F 值）**\ ：1.8 
+* **视角**\ ：65° 
+* **尺寸**\ ：24mm × 23.5mm × 8mm 
+* **重量**\ ：3g 
+* **接口**\ ：CSI 接口 
+* **支持系统**\ ：Raspberry Pi OS（建议使用最新版本）
 
 
 
@@ -39,6 +44,18 @@
 在摄像头模块或 Raspberry Pi 上可以找到一个扁平的塑料接口。先轻轻向外拉出黑色固定卡扣，使其处于半弹出状态。然后按照图示方向将 FFC 排线插入塑料接口中，再将固定卡扣压回原位。
 
 如果 FFC 排线安装正确，它会保持平直，并且在轻轻拉动时不会松脱。如果没有安装正确，请重新安装。
+
+.. raw:: html
+
+    <div style="text-align: center; margin: 16px 0;">
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/riUNPxS7sHs"
+            title="Pironman 5 Pro MAX Camera Module Assembly"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
 
 .. image:: img/connect_ffc.png
 

@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 1. 还需要准备什么？
 ===================================
 
@@ -27,8 +32,8 @@
   .. image:: img/need_sd.jpg
     :width: 200
 
-  * 最低容量：**16GB**
-  * 推荐容量：**32GB** （更稳定）
+  * 最低容量：\ **16GB**
+  * 推荐容量：\ **32GB** （更稳定）
   * 品牌建议：使用 **SanDisk** 或 **Samsung** 等可靠品牌，以避免读写错误
 
 
@@ -52,7 +57,7 @@
 
 * **HDMI 线**
 
-  Raspberry Pi 5 的 HDMI 接口通过 USB HDMI 转接板转换为 **标准 HDMI Type-A 接口**，因此需要使用 **标准 HDMI-HDMI 线** 连接 Pironman 5 Pro MAX 与显示器。
+  Raspberry Pi 5 的 HDMI 接口通过 USB HDMI 转接板转换为 **标准 HDMI Type-A 接口**\ ，因此需要使用 **标准 HDMI-HDMI 线** 连接 Pironman 5 Pro MAX 与显示器。
 
   .. image:: img/need_hdmi.png
     :width: 400
@@ -60,7 +65,7 @@
 * **键盘与鼠标**
 
   在 Raspberry Pi OS 的初始设置阶段非常有用。  
-  之后你可以使用 **SSH 或 VNC 远程连接**，但对于初学者来说，建议准备一套基础的 USB 或无线键鼠。
+  之后你可以使用 **SSH 或 VNC 远程连接**\ ，但对于初学者来说，建议准备一套基础的 USB 或无线键鼠。
 
   .. image:: img/need_keyboard_mouse.png
     :width: 500
@@ -68,7 +73,7 @@
 
 **准备建议**
 
-* 如果你购买的是套件，大部分配件已经包含，但仍需要单独准备 **Raspberry Pi 主板、Micro SD 卡以及电源适配器**。
+* 如果你购买的是套件，大部分配件已经包含，但仍需要单独准备 **Raspberry Pi 主板、Micro SD 卡以及电源适配器**\ 。
 * 如果不确定如何选择，最稳定、通用的配置是：
 
 ::

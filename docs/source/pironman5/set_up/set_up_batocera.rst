@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _set_up_batocera:
 
 在 Batocera.linux 上进行设置
@@ -5,13 +10,13 @@
 
 如果您已经安装了 Batocera.linux 操作系统，可以通过 SSH 远程登录该系统，并按照以下步骤完成配置。
 
-#. 系统启动后，使用 ssh 远程连接到 Pironman5。Windows 用户可打开 **Powershell**，Mac OS X 和 Linux 用户可直接打开 **Terminal**。
+#. 系统启动后，使用 ssh 远程连接到 Pironman5。Windows 用户可打开 **Powershell**\ ，Mac OS X 和 Linux 用户可直接打开 **Terminal**\ 。
 
    .. image:: img/batocera_powershell.png
       :width: 90%
 
 
-#. Batocera 系统的默认主机名为 ``batocera``，默认用户名为 ``root``，密码为 ``linux``。因此，您可以通过输入 ``ssh root@batocera.local`` 并输入密码 ``linux`` 进行登录。
+#. Batocera 系统的默认主机名为 ``batocera``\ ，默认用户名为 ``root``\ ，密码为 ``linux``\ 。因此，您可以通过输入 ``ssh root@batocera.local`` 并输入密码 ``linux`` 进行登录。
 
    .. image:: img/batocera_login.png
       :width: 90%
@@ -26,12 +31,12 @@
    .. image:: img/batocera_configure_pironman5.png
       :width: 90%
 
-#. 启用 pironman5 服务后，选择 **OK**。
+#. 启用 pironman5 服务后，选择 **OK**\ 。
 
    .. image:: img/batocera_configure_pironman5_ok.png
       :width: 90%
 
-#. 执行命令 ``reboot``，重启 Pironman5。
+#. 执行命令 ``reboot``\ ，重启 Pironman5。
 
    .. code-block:: shell
 

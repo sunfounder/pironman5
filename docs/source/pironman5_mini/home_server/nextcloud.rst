@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 NextCloudPi 配置
 =======================================
 
@@ -42,11 +47,11 @@ NextCloud 是一个开源私有云存储解决方案，类似于 Google Drive �
 
    .. image:: img/home_server_app/ptn_new_admin.png
 
-#. 注册管理员账户后，你将进入 Portainer 界面。在左侧导航栏中，点击 **Settings（设置） -> General（常规）**，找到 **App Templates（应用模板）**，并在字段中输入以下 URL： ``https://raw.githubusercontent.com/novaspirit/pi-hosted/refs/heads/master/template/portainer-v3-arm64.json``
+#. 注册管理员账户后，你将进入 Portainer 界面。在左侧导航栏中，点击 **Settings（设置） -> General（常规）**\ ，找到 **App Templates（应用模板）**\ ，并在字段中输入以下 URL： ``https://raw.githubusercontent.com/novaspirit/pi-hosted/refs/heads/master/template/portainer-v3-arm64.json``
 
    .. image:: img/home_server_app/ptn_app_url.png
 
-#. 点击 **Save Application Settings（保存应用设置）**。配置大约需要 10 秒钟。
+#. 点击 **Save Application Settings（保存应用设置）**\ 。配置大约需要 10 秒钟。
 
 **安装 NextCloud**
 
@@ -54,11 +59,11 @@ NextCloud 是一个开源私有云存储解决方案，类似于 Google Drive �
 
    .. image:: img/home_server_app/ptn_home_local.png
 
-2. 进入 **Templates（模板） -> Application（应用）**。在右上角的搜索栏中，输入 *nextcloud* 并点击它。
+2. 进入 **Templates（模板） -> Application（应用）**\ 。在右上角的搜索栏中，输入 *nextcloud* 并点击它。
 
    .. image:: img/home_server_app/ptn_temp_nextcloud.png
 
-3. 点击 **Deploy the stack（部署堆栈）**，然后等待部署完成。这通常需要大约两分钟。
+3. 点击 **Deploy the stack（部署堆栈）**\ ，然后等待部署完成。这通常需要大约两分钟。
 
    .. image:: img/home_server_app/ptn_temp_deploy.png
 

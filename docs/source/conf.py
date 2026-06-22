@@ -98,7 +98,7 @@ rst_epilog = """
 
 .. |link_sf_27w_supply| raw:: html
 
-    <a href="https://www.sunfounder.com/products/sunfounder-27w-pd-power-supply-for-raspberry-pi" target="_blank">SunFounder 27W PD Power Supply</a>
+    <a href="https://www.sunfounder.com/products/sunfounder-27w-pd-power-supply-for-raspberry-pi" target="_blank">SunFounder 27W PD 电源适配器</a>
 
 
 
@@ -140,11 +140,11 @@ rst_epilog += """
 
 .. |link_3.5_screen| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/35-ips-screen/en/latest/quick_user_guide.html#driver-installation" target="_blank">3.5 Inch IPS Screen Driver Installation</a>
+    <a href="https://docs.sunfounder.com/projects/35-ips-screen/en/latest/quick_user_guide.html#driver-installation" target="_blank">3.5 英寸 IPS 屏幕驱动安装</a>
 
 .. |link_rpi_get_start| raw:: html
 
-    <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" target="_blank">Getting Started with Raspberry Pi</a>
+    <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" target="_blank">Raspberry Pi 入门指南</a>
 
 .. |link_rpi_imager| raw:: html
 
@@ -157,11 +157,11 @@ rst_epilog += """
 
 .. |link_batocera_download| raw:: html
 
-    <a href="https://batocera.org/download" target="_blank">Batocera.linux download</a>
+    <a href="https://batocera.org/download" target="_blank">Batocera.linux 下载</a>
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">这里</a>
 
 .. |link_kodi| raw:: html
 
@@ -226,7 +226,7 @@ rst_epilog += """
 
 .. |link_aliyun| raw:: html
 
-    <a href="https://bailian.console.aliyun.com/?spm=5176.29597918.J_SEsSjsNv72yRuRFS2VknO.2.40a37b08ic1XHy&tab=model#/api-key" target="_blank">Bailian console</a>
+    <a href="https://bailian.console.aliyun.com/?spm=5176.29597918.J_SEsSjsNv72yRuRFS2VknO.2.40a37b08ic1XHy&tab=model#/api-key" target="_blank">百炼控制台</a>
 
 .. |link_rpi_connect| raw:: html
 
@@ -235,7 +235,7 @@ rst_epilog += """
 
 .. |link_qwen_inter| raw:: html
 
-    <a href="https://www.alibabacloud.com/help/en/model-studio/get-api-key" target="_blank">Get API Key</a>
+    <a href="https://www.alibabacloud.com/help/en/model-studio/get-api-key" target="_blank">获取 API 密钥</a>
 
 .. |link_ollama_hub| raw:: html
 
@@ -243,31 +243,31 @@ rst_epilog += """
 
 .. |link_ollama| raw:: html
 
-    <a href="https://ollama.com/download" target="_blank">Ollama Download Page</a>
+    <a href="https://ollama.com/download" target="_blank">Ollama 下载页面</a>
 
 .. |link_piper_voice| raw:: html
 
-    <a href="https://github.com/rhasspy/piper/blob/master/VOICES.md" target="_blank">Piper Voices</a>
+    <a href="https://github.com/rhasspy/piper/blob/master/VOICES.md" target="_blank">Piper 语音</a>
     
 .. |link_grok_ai| raw:: html
 
-    <a href="https://console.x.ai/team/f424aae2-94c8-4602-91bf-af8452fda9a2/models" target="_blank">xAI Cloud Console</a>
+    <a href="https://console.x.ai/team/f424aae2-94c8-4602-91bf-af8452fda9a2/models" target="_blank">xAI 云控制台</a>
     
 .. |link_deepseek| raw:: html
 
-    <a href="https://platform.deepseek.com/sign_in" target="_blank">Deepseek Platform</a>
+    <a href="https://platform.deepseek.com/sign_in" target="_blank">Deepseek 平台</a>
 
 .. |link_doubao| raw:: html
 
-    <a href="https://console.volcengine.com/auth/login" target="_blank">Volcengine</a>
+    <a href="https://console.volcengine.com/auth/login" target="_blank">火山引擎</a>
 
 .. |link_openai_platform| raw:: html
 
-    <a href="https://platform.openai.com/settings/organization/api-keys" target="_blank">OpenAI Platform</a>
+    <a href="https://platform.openai.com/settings/organization/api-keys" target="_blank">OpenAI 平台</a>
 
 .. |link_gemini_model| raw:: html
 
-    <a href="https://ai.google.dev/gemini-api/docs/models#model-variations" target="_blank">Gemini Models</a>
+    <a href="https://ai.google.dev/gemini-api/docs/models#model-variations" target="_blank">Gemini 模型</a>
 
 .. |link_google_ai| raw:: html
 
@@ -275,6 +275,6 @@ rst_epilog += """
 
 .. |link_voice_options| raw:: html
 
-    <a href="https://platform.openai.com/docs/guides/text-to-speech/voice-options" target="_blank">Voice options</a>
+    <a href="https://platform.openai.com/docs/guides/text-to-speech/voice-options" target="_blank">语音选项</a>
 
 """

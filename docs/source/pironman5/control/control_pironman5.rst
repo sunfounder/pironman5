@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _control_commands_dashboard_5:
 
 5. 使用命令或控制面板进行管理
@@ -15,5 +20,5 @@
 .. toctree::
     :maxdepth: 1
 
-    control_with dashboard 
+    control_with_dashboard 
     control_with_commands

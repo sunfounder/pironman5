@@ -1,11 +1,16 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 2. 使用 Piper 和 OpenAI 进行文本转语音（TTS）
 ========================================================
 
-在上一节中，我们介绍了 Raspberry Pi 上的两种简单离线 TTS 引擎：**Espeak** 和 **Pico2Wave**。  
-现在，我们将进一步体验两种 **更高级的 TTS 方案**，它们具有 **更高的语音质量** 和更强的灵活性：
+在上一节中，我们介绍了 Raspberry Pi 上的两种简单离线 TTS 引擎：\ **Espeak** 和 **Pico2Wave**\ 。  
+现在，我们将进一步体验两种 **更高级的 TTS 方案**\ ，它们具有 **更高的语音质量** 和更强的灵活性：
 
-* **Piper** —— 基于神经网络的高速 TTS 引擎，可在 Raspberry Pi 上 **完全离线运行**。  
-* **OpenAI TTS** —— 在线语音服务，提供 **非常自然、接近真人的语音效果**，非常适合表达丰富的语音内容。
+* **Piper** —— 基于神经网络的高速 TTS 引擎，可在 Raspberry Pi 上 **完全离线运行**\ 。  
+* **OpenAI TTS** —— 在线语音服务，提供 **非常自然、接近真人的语音效果**\ ，非常适合表达丰富的语音内容。
 
 这些引擎可以让您的 Pironman 5 Pro MAX 发出的声音更加真实、生动。 🚀
 
@@ -16,8 +21,8 @@
 1. 测试 Piper
 ------------------
 
-Piper 是一个 **离线神经网络 TTS 引擎**，也就是说在模型安装完成后无需互联网连接即可使用。  
-它支持多种 **语言** 和 **语音模型**，因此非常适合嵌入式语音应用。
+Piper 是一个 **离线神经网络 TTS 引擎**\ ，也就是说在模型安装完成后无需互联网连接即可使用。  
+它支持多种 **语言** 和 **语音模型**\ ，因此非常适合嵌入式语音应用。
 
 **运行程序**
 
@@ -26,7 +31,7 @@ Piper 是一个 **离线神经网络 TTS 引擎**，也就是说在模型安装�
       cd ~/sunfounder-voice-assistant/examples
       sudo python3 tts_piper.py
 
-* 第一次运行时，会自动下载所选择的 **语音模型**。  
+* 第一次运行时，会自动下载所选择的 **语音模型**\ 。  
 * 随后您将听到 Pironman 5 Pro MAX 说： ``Hello! I'm Piper TTS.``  
 * 您可以通过调用 ``set_model()`` 并指定不同的模型名称来切换语音或语言。
 
@@ -67,11 +72,11 @@ Piper 是一个 **离线神经网络 TTS 引擎**，也就是说在模型安装�
 
 **获取并保存 API Key**
 
-#. 访问 |link_openai_platform| 并登录。在 **API keys** 页面点击 **Create new secret key**。
+#. 访问 |link_openai_platform| 并登录。在 **API keys** 页面点击 **Create new secret key**\ 。
 
    .. image:: img/llm_openai_create.png
 
-#. 填写相关信息（Owner、Name、Project，以及必要时设置权限），然后点击 **Create secret key**。
+#. 填写相关信息（Owner、Name、Project，以及必要时设置权限），然后点击 **Create secret key**\ 。
 
    .. image:: img/llm_openai_create_confirm.png
 
@@ -79,7 +84,7 @@ Piper 是一个 **离线神经网络 TTS 引擎**，也就是说在模型安装�
 
    .. image:: img/llm_openai_copy.png
 
-#. 在您的项目目录中（例如： ``~/sunfounder-voice-assistant/examples``）创建一个名为 ``secret.py`` 的文件：
+#. 在您的项目目录中（例如： ``~/sunfounder-voice-assistant/examples``\ ）创建一个名为 ``secret.py`` 的文件：
 
    .. code-block:: bash
 
@@ -102,7 +107,7 @@ Piper 是一个 **离线神经网络 TTS 引擎**，也就是说在模型安装�
   sudo python3 tts_openai.py
 
 * 程序将连接到 OpenAI 的 TTS 服务，Pironman 5 Pro MAX 会使用 **自然、富有表现力的语音** 进行播报。  
-* 您可以更改 **语音风格**，并通过添加 **instructions** 来控制语气和情绪（例如：悲伤、戏剧化或活泼）。  
+* 您可以更改 **语音风格**\ ，并通过添加 **instructions** 来控制语气和情绪（例如：悲伤、戏剧化或活泼）。  
 * 这使得 OpenAI TTS 非常适用于交互式机器人、讲故事应用或教育助手。
 
 **代码**
@@ -138,10 +143,10 @@ Piper 是一个 **离线神经网络 TTS 引擎**，也就是说在模型安装�
 **代码说明：**
 
 * ``OpenAI_TTS()`` — 使用您的 API key 初始化 OpenAI TTS 引擎。  
-* ``set_model()`` — 选择 TTS 模型（例如 ``gpt-4o-mini-tts``）。  
-* ``set_voice()`` — 选择具体的语音（例如 ``alloy``）。  
+* ``set_model()`` — 选择 TTS 模型（例如 ``gpt-4o-mini-tts``\ ）。  
+* ``set_voice()`` — 选择具体的语音（例如 ``alloy``\ ）。  
 * ``say(text)`` — 将文本转换为语音并播放。  
-* ``say(text, instructions=...)`` — 添加 **语气控制指令**，可动态调整语音表达风格。
+* ``say(text, instructions=...)`` — 添加 **语气控制指令**\ ，可动态调整语音表达风格。
 
 **示例：**
 
@@ -173,7 +178,7 @@ Piper 是一个 **离线神经网络 TTS 引擎**，也就是说在模型安装�
 
        from secret import OPENAI_API_KEY
 
-  * 确认 Raspberry Pi 可以访问网络（可尝试 ``ping api.openai.com``）。  
+  * 确认 Raspberry Pi 可以访问网络（可尝试 ``ping api.openai.com``\ ）。  
 
 * **OpenAI: Quota exceeded / billing error**
 
@@ -194,7 +199,7 @@ Piper 是一个 **离线神经网络 TTS 引擎**，也就是说在模型安装�
 
        tts.set_model("en_US-amy-low")
 
-  * 检查 Raspberry Pi 的音频输出设备和音量（``alsamixer``），并确认扬声器已连接且已供电。
+  * 检查 Raspberry Pi 的音频输出设备和音量（\ ``alsamixer``\ ），并确认扬声器已连接且已供电。
 
 * **ALSA / 声音设备错误（例如 “Audio device busy” 或 “No such file or directory”）**
 
@@ -204,7 +209,7 @@ Piper 是一个 **离线神经网络 TTS 引擎**，也就是说在模型安装�
 
 * **运行 Python 时出现 Permission denied**
 
-  * 如果环境需要权限，可尝试使用 ``sudo``：
+  * 如果环境需要权限，可尝试使用 ``sudo``\ ：
 
     .. code-block:: bash
 

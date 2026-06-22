@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 Pironman 5 Mini HAT
 ===========================================
 
@@ -17,7 +22,7 @@ RGB 灯效
 
   sudo pironman5 -re true
 
-* 更改颜色，输入十六进制颜色值，例如 ``fe1a1a``：
+* 更改颜色，输入十六进制颜色值，例如 ``fe1a1a``\ ：
 
 .. code-block:: shell
 
@@ -29,11 +34,11 @@ RGB 灯效
 
   sudo pironman5 -rb 100
 
-* 切换显示模式，可选项包括： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``：
+* 切换显示模式，可选项包括： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``\ ：
 
 .. note::
 
-  如果设置为 ``rainbow``、 ``rainbow_reverse`` 或 ``hue_cycle`` 模式，则无法再使用 ``sudo pironman5 -rc`` 命令设置颜色。
+  如果设置为 ``rainbow``\ 、 ``rainbow_reverse`` 或 ``hue_cycle`` 模式，则无法再使用 ``sudo pironman5 -rc`` 命令设置颜色。
 
 .. code-block:: shell
 
@@ -48,7 +53,7 @@ RGB 灯效
 RGB 控制引脚
 -------------------------
 
-RGB 灯通过 SPI 驱动，连接至 **GPIO10**，该引脚也是 SPI 的 MOSI 引脚。RGB 与 GPIO10 的连接通过两根引脚实现，如无需此功能，可移除跳线帽。
+RGB 灯通过 SPI 驱动，连接至 **GPIO10**\ ，该引脚也是 SPI 的 MOSI 引脚。RGB 与 GPIO10 的连接通过两根引脚实现，如无需此功能，可移除跳线帽。
 
 
  .. image:: img/io_board_rgb_pin.png
@@ -89,11 +94,11 @@ J9 下方的两组针脚分别控制风扇与风扇灯光的启用。默认跳�
 
     sudo pironman5 -gm 3
 
-  * **4: Quiet**：70°C 启动风扇
-  * **3: Balanced**：67.5°C 启动风扇
-  * **2: Cool**：60°C 启动风扇
-  * **1: Performance**：50°C 启动风扇
-  * **0: Always On**：风扇始终运行
+  * **4: Quiet**\ ：70°C 启动风扇
+  * **3: Balanced**\ ：67.5°C 启动风扇
+  * **2: Cool**\ ：60°C 启动风扇
+  * **1: Performance**\ ：50°C 启动风扇
+  * **0: Always On**\ ：风扇始终运行
 
 若将风扇控制引脚连接至 Raspberry Pi 的其他 GPIO 引脚，可使用以下命令修改引脚编号：
 
@@ -155,8 +160,8 @@ Pironman 5 Mini 集成了用于 NVMe SSD 的 PCIe 适配模块，支持 2230、2
 .. image:: img/nvme_p.png
 
 
-* **STA**：状态指示灯  
-* **PWR**：电源指示灯
+* **STA**\ ：状态指示灯  
+* **PWR**\ ：电源指示灯
 
   .. image:: img/nvme_led.png
 
@@ -164,7 +169,7 @@ Pironman 5 Mini 集成了用于 NVMe SSD 的 PCIe 适配模块，支持 2230、2
 
   .. image:: img/nvme_pcie.png
 
-* **FORCE ENABLE**：模块上电依赖于来自 PCIe 接口的开关信号。若某些系统不支持该信号，可通过将 J2 的两个焊盘短接，使 NVMe 强制上电。
+* **FORCE ENABLE**\ ：模块上电依赖于来自 PCIe 接口的开关信号。若某些系统不支持该信号，可通过将 J2 的两个焊盘短接，使 NVMe 强制上电。
 
   .. image:: img/nvme_j2.png
 
@@ -172,8 +177,8 @@ Pironman 5 Mini 集成了用于 NVMe SSD 的 PCIe 适配模块，支持 2230、2
 
 M.2 SSD 根据接口与金手指凹槽的不同，主要分为以下几种：
 
-* **M.2 SATA SSD**：使用 SATA 接口，传输速率约 600 MB/s，兼容 B key 与 M key 插槽。
-* **M.2 NVMe SSD**：使用 NVMe 协议，基于 PCIe 通道，读写速度显著优于 SATA SSD，适合游戏、视频编辑、大数据处理等场景。一般需插入 M-key 插槽，常见版本有 PCIe 3.0、4.0、5.0，传输速率逐代翻倍。Raspberry Pi 5 支持 PCIe 3.0，最高传输速度可达 3500 MB/s。
+* **M.2 SATA SSD**\ ：使用 SATA 接口，传输速率约 600 MB/s，兼容 B key 与 M key 插槽。
+* **M.2 NVMe SSD**\ ：使用 NVMe 协议，基于 PCIe 通道，读写速度显著优于 SATA SSD，适合游戏、视频编辑、大数据处理等场景。一般需插入 M-key 插槽，常见版本有 PCIe 3.0、4.0、5.0，传输速率逐代翻倍。Raspberry Pi 5 支持 PCIe 3.0，最高传输速度可达 3500 MB/s。
 
 M.2 SSD 的接口类型包括 B key、M key 和 B+M key。目前大多数 SATA 型 SSD 为 B+M key，NVMe 型 SSD 多为 M key。请参考下图：
 

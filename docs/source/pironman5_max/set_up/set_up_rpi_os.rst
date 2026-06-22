@@ -34,11 +34,11 @@
 
       sudo raspi-config
 
-#. 进入 **Advanced Options → A12 Shutdown Behaviour**。
+#. 进入 **Advanced Options → A12 Shutdown Behaviour**\ 。
 
    .. image:: img/shutdown_behaviour.png
 
-#. 选择 **B1 Full Power Off...**。
+#. 选择 **B1 Full Power Off...**\ 。
 
    .. image:: img/run_power_off.png
 
@@ -50,16 +50,24 @@
 2. 下载并安装 ``pironman5`` 模块
 -----------------------------------------------------------
 
-.. note::
+.. .. note::
 
-   对于 Raspberry Pi OS Lite 系统，请先安装所需工具，如 ``git`` 和 ``python3``。
+..    对于 Raspberry Pi OS Lite 系统，请先安装所需工具，如 ``git`` 和 ``python3``\ 。
 
-   .. code-block:: shell
+..    .. code-block:: shell
 
-      sudo apt-get install git -y
-      sudo apt-get install python3 python3-pip python3-setuptools -y
+..       sudo apt-get install git -y
+..       sudo apt-get install python3 python3-pip python3-setuptools -y
 
 #. 从 GitHub 下载并安装 ``pironman5`` 模块。
+
+   .. tip::
+
+      如果您使用的是 **Ubuntu**\ ，请先安装 ``curl``\ ：
+
+      .. code-block:: shell
+
+         sudo apt install curl -y
 
    .. code-block:: shell
 
@@ -126,13 +134,13 @@
 
       * :ref:`faq_pwm_fan_max`
 
-#. 使用 ``systemctl`` 管理 ``pironman5.service``。
+#. 使用 ``systemctl`` 管理 ``pironman5.service``\ 。
 
    .. code-block:: shell
 
       sudo systemctl restart pironman5.service
 
-   根据需要将 ``restart`` 替换为 ``start``、 ``stop`` 或 ``status`` 来管理服务。
+   根据需要将 ``restart`` 替换为 ``start``\ 、 ``stop`` 或 ``status`` 来管理服务。
 
 .. note::
 

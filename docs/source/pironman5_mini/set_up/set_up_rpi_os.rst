@@ -1,6 +1,11 @@
-在 Raspberry Pi OS / Ubuntu / Kali Linux / Homebridge 上的配置
-======================================================================
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
 
+
+
+Setting Up on Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge
+======================================================================
 
 .. image:: ../img/pironman5_mini_pic.jpg
     :width: 400
@@ -10,12 +15,13 @@
 
 .. note::
 
-  在进行配置之前，请先启动并登录到你的 Raspberry Pi。  
-  如果不确定如何登录，可以访问 Raspberry Pi 官方网站：|link_rpi_get_start|。
+  在进行配置之前，请先启动并登录到你的 Raspberry Pi。如果不确定如何登录，可以访问 Raspberry Pi 官方网站：|link_rpi_get_start|。
 
 
-配置关机时关闭 GPIO 电源
-------------------------------------------------------------------------------
+.. _safe_shutdown_mini:
+
+1. Configuring Shutdown to Deactivate GPIO Power
+------------------------------------------------------------
 
 为防止由 Raspberry Pi 的 GPIO 供电的 RGB 风扇在关机后仍保持运行，必须配置 Raspberry Pi 以在关机时关闭 GPIO 电源。
 
@@ -25,63 +31,94 @@
 
       sudo raspi-config
 
-#. 进入 **Advanced Options → A12 Shutdown Behaviour**。
+#. 进入 **Advanced Options → A12 Shutdown Behaviour**\ 。
 
    .. image:: img/shutdown_behaviour.png
 
-#. 选择 **B1 Full Power Off**。
+#. 选择 **B1 Full Power Off**\ 。
 
    .. image:: img/run_power_off.png
 
 #. 保存更改。系统会提示你重启以使新设置生效。
 
 
-.. _mini_download_pironman5_module:
+.. _install_pironman5_module_mini:
 
-下载并安装 ``pironman5`` 模块
+2. Installing the ``pironman5`` Module
 -----------------------------------------------------------
 
-.. note::
-
-   对于 “lite” 系统，请先安装以下工具： ``git``、 ``python3``、 ``pip3``、 ``setuptools`` 等。
-   
-   .. code-block:: shell
-   
-      sudo apt-get install git -y
-      sudo apt-get install python3 python3-pip python3-setuptools -y
-
-#. 从 GitHub 下载代码并安装 ``pironman5`` 模块。
+#. 从 GitHub 下载并安装 ``pironman5`` 模块。
 
    .. code-block:: shell
 
-      cd ~
-      git clone -b mini https://github.com/sunfounder/pironman5.git --depth 1
-      cd ~/pironman5
-      sudo python3 install.py
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
-   安装成功后，需要重启系统以激活安装。请根据屏幕提示重启。
 
-   重启后，``pironman5.service`` 服务会自动启动。  
-   以下是 Pironman 5 Mini 的主要功能配置：
-   
-   * 四个 WS2812 RGB 灯会以蓝色呼吸效果亮起。
-     
    .. note::
-    
-     * RGB 风扇默认设置为 **Always On（始终开启）** 模式。  
-       若需设置不同的启用温度，请参阅 :ref:`cc_control_fan_mini`。
 
-#. 你可以使用 ``systemctl`` 工具来 ``start``、 ``stop``、 ``restart`` 或检查 ``pironman5.service`` 服务的 ``status``。
+      1. 如果你使用的是 **Ubuntu**\ ，请先安装 ``curl``\ ：\ ``sudo apt install curl -y``
+
+      2. 如果你同时使用 Pironman 5 系列和 **PiPower 5**\ ，请运行以下命令：
+
+      .. code-block:: shell
+
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+
+#. 运行安装程序后，选择你的 Pironman 5 型号（1~4）。
 
    .. code-block:: shell
-     
+
+      Pironman 5 Installer v1.0.1
+      Supports: 5 | 5 Mini | 5 Max | 5 Pro Max
+
+      Please select your product model:
+      1) Pironman 5
+      2) Pironman 5 Mini
+      3) Pironman 5 Max
+      4) Pironman 5 Pro Max
+
+      Enter number [1-4]:
+
+#. 安装完成后，按照提示重启 Raspberry Pi。首次启动可能需要最多 30 秒，服务将在此过程中初始化。
+
+   #. Pironman 5 Mini 成功启动后，检查以下组件是否正常工作。
+
+   * **Power Button**
+
+     * 短按：开机。
+     * 长按 2 秒：安全关机（需配置 :ref:`safe_shutdown_mini`）。
+     * 长按 5 秒：强制关机。
+
+   * **WS2812 RGB LEDs**
+
+     * 蓝色呼吸效果亮起。
+
+   * **RGB Fan**
+
+     * 默认设置为 **Always On（始终开启）** 模式。
+     * 可通过命令或仪表盘更改工作模式。详见 :ref:`cc_control_fan_mini`。
+
+   * **CPU Fan（Active Cooler Fan）**
+
+     * 根据 CPU 温度自动调整转速。
+     * 默认风扇曲线：
+
+       * < 50°C：关闭（0%）
+       * 50°C+：低速（30%）
+       * 60°C+：中速（50%）
+       * 67.5°C+：高速（70%）
+       * 75°C+：全速（100%）
+
+#. 使用 ``systemctl`` 管理 ``pironman5.service``\ 。
+
+   .. code-block:: shell
+
       sudo systemctl restart pironman5.service
-   
-   * ``restart``：使用此命令以应用 Pironman 5 Mini 设置的更改。  
-   * ``start/stop``：启用或禁用 ``pironman5.service`` 服务。  
-   * ``status``：使用 ``systemctl`` 工具检查 ``pironman5`` 程序的运行状态。
+
+   根据需要将 ``restart`` 替换为 ``start``\ 、\ ``stop`` 或 ``status`` 以管理服务。
 
 .. note::
 
-   至此，你已成功配置 Pironman 5 Mini 并可以开始使用。  
-   若需对其组件进行高级控制，请参阅 :ref:`control_commands_dashboard_mini`。
+   Pironman 5 Mini 现已配置完成，可以开始使用。
+
+   如需更高级的控制和仪表盘功能，请参阅 :ref:`control_commands_dashboard_mini`。

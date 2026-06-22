@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _install_to_nvme_other_mini:
 
 在 NVMe SSD 上安装操作系统
@@ -35,25 +40,25 @@
 
    .. note::
 
-      * 对于 **Ubuntu**，点击 **Other general-purpose OS** → **Ubuntu**，然后选择  
-        **Ubuntu Desktop 24.04 LTS (64-bit)** 或 **Ubuntu Server 24.04 LTS (64-bit)**。
-      * 对于 **Kali Linux**、**Home Assistant** 和 **Homebridge**，点击  
-        **Other specific-purpose OS**，然后选择对应的系统。
+      * 对于 **Ubuntu**\ ，点击 **Other general-purpose OS** → **Ubuntu**\ ，然后选择  
+        **Ubuntu Desktop 24.04 LTS (64-bit)** 或 **Ubuntu Server 24.04 LTS (64-bit)**\ 。
+      * 对于 **Kali Linux**\ 、\ **Home Assistant** 和 **Homebridge**\ ，点击  
+        **Other specific-purpose OS**\ ，然后选择对应的系统。
 
    .. image:: img/imager_other_os.png
       :width: 90%
 
-4. 在 **Storage** 部分，选择你的 **NVMe SSD**。
+4. 在 **Storage** 部分，选择你的 **NVMe SSD**\ 。
 
    .. image:: img/nvme_storage.png
       :width: 90%
 
-#. 点击 **NEXT**。
+#. 点击 **NEXT**\ 。
 
    .. note::
 
-      * 对于 **不支持提前配置** 的系统，点击 **NEXT** 将跳过 **Customisation** 步骤，并直接进入 **Writing**，系统镜像将被写入 microSD 卡。
-      * 对于 **支持预配置** 的系统，请按照 **Customisation** 步骤设置 **Hostname**、**WiFi** 以及 **启用 SSH** 等选项。
+      * 对于 **不支持提前配置** 的系统，点击 **NEXT** 将跳过 **Customisation** 步骤，并直接进入 **Writing**\ ，系统镜像将被写入 microSD 卡。
+      * 对于 **支持预配置** 的系统，请按照 **Customisation** 步骤设置 **Hostname**\ 、\ **WiFi** 以及 **启用 SSH** 等选项。
 
    .. image:: img/imager_write_other_os.png
       :width: 90%

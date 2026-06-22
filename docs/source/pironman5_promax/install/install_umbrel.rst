@@ -30,17 +30,17 @@ Umbrel 是一个开源的自托管家庭服务器平台/操作系统，可用于
 
 #. 使用 **NVMe 转 USB 适配器** 将 **NVMe SSD** 插入电脑。
 
-#. 打开 **Raspberry Pi Imager**。在 **Device** 页面中，从列表中选择 **Raspberry Pi 5**。
+#. 打开 **Raspberry Pi Imager**\ 。在 **Device** 页面中，从列表中选择 **Raspberry Pi 5**\ 。
 
    .. image:: img/imager_device.png
       :width: 90%
 
-#. 进入 **OS** 选项，向下滚动到页面底部，选择 **Use custom**。
+#. 进入 **OS** 选项，向下滚动到页面底部，选择 **Use custom**\ 。
 
    .. image:: img/imager_use_custom.png
       :width: 90%
 
-#. 选择之前下载并解压的 **Umbrel OS 镜像文件**，然后点击 **Open**。
+#. 选择之前下载并解压的 **Umbrel OS 镜像文件**\ ，然后点击 **Open**\ 。
 
    .. image:: img/umbrel_choose_umbrel.png
        :width: 600
@@ -51,17 +51,17 @@ Umbrel 是一个开源的自托管家庭服务器平台/操作系统，可用于
    .. image:: img/imager_custom_next.png
       :width: 90%
 
-#. 在 **Storage** 选项中选择你的 **NVMe SSD**。请确认选择的是 NVMe SSD，而不是电脑中的其他硬盘。
+#. 在 **Storage** 选项中选择你的 **NVMe SSD**\ 。请确认选择的是 NVMe SSD，而不是电脑中的其他硬盘。
 
    .. image:: img/nvme_storage.png
       :width: 90%
 
-#. 仔细检查所有设置，然后点击 **WRITE**。
+#. 仔细检查所有设置，然后点击 **WRITE**\ 。
 
    .. image:: img/imager_write_umbrel.png
       :width: 90%
 
-#. 如果 NVMe SSD 中已有数据，Raspberry Pi Imager 会提示所有数据将被删除。请再次确认选择的是正确设备，然后点击 **I UNDERSTAND, ERASE AND WRITE**。
+#. 如果 NVMe SSD 中已有数据，Raspberry Pi Imager 会提示所有数据将被删除。请再次确认选择的是正确设备，然后点击 **I UNDERSTAND, ERASE AND WRITE**\ 。
 
    .. image:: img/imager_erase.png
       :width: 90%

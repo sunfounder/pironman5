@@ -1,17 +1,22 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 6. 本地语音聊天机器人
 ===========================
 
-在本课程中，您将把之前学习的所有内容整合起来 —— **语音识别（STT）**、  
-**文本转语音（TTS）** 以及 **本地 LLM（Ollama）** —— 构建一个完全离线运行的 **语音聊天机器人**，  
+在本课程中，您将把之前学习的所有内容整合起来 —— **语音识别（STT）**\ 、  
+**文本转语音（TTS）** 以及 **本地 LLM（Ollama）** —— 构建一个完全离线运行的 **语音聊天机器人**\ ，  
 使其能够在您的 Pironman 5 Pro MAX 上运行。
 
 其工作流程非常简单：
 
 #. **Listen** — 麦克风采集您的语音，并通过 **Vosk** 将其转写为文本。  
-#. **Think** — 文本被发送到运行在 Ollama 上的本地 **LLM** （例如 ``llama3.2:3b``）。  
+#. **Think** — 文本被发送到运行在 Ollama 上的本地 **LLM** （例如 ``llama3.2:3b``\ ）。  
 #. **Speak** — 聊天机器人通过 **Piper TTS** 以语音形式进行回答。  
 
-这样，您就可以打造一个 **免手动操作的对话机器人**，能够实时理解并回应您的语音指令。
+这样，您就可以打造一个 **免手动操作的对话机器人**\ ，能够实时理解并回应您的语音指令。
 
 ----
 
@@ -21,8 +26,8 @@
 请确保您已完成以下准备：
 
 * 已测试 **Piper TTS** （:ref:`test_piper`），并选择了可用的语音模型。  
-* 已测试 **Vosk STT** （:ref:`test_vosk`），并选择了正确的语言包（例如 ``en-us``）。  
-* 已在您的 Pi 或另一台计算机上安装 **Ollama** （:ref:`download_ollama`），并下载了一个模型，例如 ``llama3.2:3b`` （如果内存有限，也可以使用更小的模型，例如 ``moondream:1.8b``）。
+* 已测试 **Vosk STT** （:ref:`test_vosk`），并选择了正确的语言包（例如 ``en-us``\ ）。  
+* 已在您的 Pi 或另一台计算机上安装 **Ollama** （:ref:`download_ollama`），并下载了一个模型，例如 ``llama3.2:3b`` （如果内存有限，也可以使用更小的模型，例如 ``moondream:1.8b``\ ）。
 
 ----
 
@@ -38,12 +43,12 @@
 
 #. 根据需要修改参数：
 
-   * ``stt = Vosk(language="en-us")``：将其修改为与您的口音或语言包相匹配的设置（例如 ``en-us``、 ``zh-cn``、 ``es``）。  
-   * ``tts.set_model("en_US-amy-low")``：将其替换为您在 :ref:`test_piper` 中已验证可用的 Piper 语音模型。  
-   * ``llm = Ollama(ip="localhost", model="llama3.2:3b")``：请根据您的实际环境修改 ``ip`` 和 ``model``。  
+   * ``stt = Vosk(language="en-us")``\ ：将其修改为与您的口音或语言包相匹配的设置（例如 ``en-us``\ 、 ``zh-cn``\ 、 ``es``\ ）。  
+   * ``tts.set_model("en_US-amy-low")``\ ：将其替换为您在 :ref:`test_piper` 中已验证可用的 Piper 语音模型。  
+   * ``llm = Ollama(ip="localhost", model="llama3.2:3b")``\ ：请根据您的实际环境修改 ``ip`` 和 ``model``\ 。  
 
-     * ``ip``：如果 Ollama 运行在 **同一台 Pi** 上，请使用 ``localhost``。如果 Ollama 运行在局域网中的另一台计算机上，请在 Ollama 中启用 **Expose to network**，并将 ``ip`` 设置为该计算机的局域网 IP 地址。  
-     * ``model``：必须与您在 Ollama 中已下载并启用的模型名称完全一致。  
+     * ``ip``\ ：如果 Ollama 运行在 **同一台 Pi** 上，请使用 ``localhost``\ 。如果 Ollama 运行在局域网中的另一台计算机上，请在 Ollama 中启用 **Expose to network**\ ，并将 ``ip`` 设置为该计算机的局域网 IP 地址。  
+     * ``model``\ ：必须与您在 Ollama 中已下载并启用的模型名称完全一致。  
 
 #. 运行脚本：
 
@@ -64,7 +69,7 @@
 ----
 
 代码
-----
+------
 
 .. code-block:: python
 
@@ -168,7 +173,7 @@
    from sunfounder_voice_assistant.tts import Piper
 
 导入之前构建的三个核心子系统：  
-**Vosk** 用于语音转文本（STT），**Ollama** 用于本地大语言模型（LLM），**Piper** 用于文本转语音（TTS）。 :contentReference[oaicite:0]{index=0}
+**Vosk** 用于语音转文本（STT），\ **Ollama** 用于本地大语言模型（LLM），\ **Piper** 用于文本转语音（TTS）。 :contentReference[oaicite:0]{index=0}
 
 
 
@@ -179,7 +184,7 @@
    stt = Vosk(language="en-us")
 
 加载 Vosk 的美式英语语音识别模型。  
-可以根据需要修改语言代码（例如 ``zh-cn``、 ``es``），以匹配对应的语音包并提高识别准确率。 :contentReference[oaicite:1]{index=1}
+可以根据需要修改语言代码（例如 ``zh-cn``\ 、 ``es``\ ），以匹配对应的语音包并提高识别准确率。 :contentReference[oaicite:1]{index=1}
 
 
 
@@ -220,7 +225,7 @@
    llm.set_max_messages(20)
    llm.set_instructions(INSTRUCTIONS)
 
-* ``ip="localhost"`` 表示 Ollama 服务器运行在同一台 Raspberry Pi 上。如果 Ollama 运行在局域网中的另一台设备，请填写该设备的 **LAN IP**，并在 Ollama 中启用 *Expose to network*。
+* ``ip="localhost"`` 表示 Ollama 服务器运行在同一台 Raspberry Pi 上。如果 Ollama 运行在局域网中的另一台设备，请填写该设备的 **LAN IP**\ ，并在 Ollama 中启用 *Expose to network*。
 * ``set_max_messages(20)`` 用于限制对话历史长度。如果设备内存或响应速度受限，可以适当降低该值。 :contentReference[oaicite:4]{index=4}
 
 **在语音播报前清理隐藏推理或标签**
@@ -236,11 +241,11 @@
        text = re.sub(r"\[/?thinking\]", "", text, flags=re.IGNORECASE)
        return re.sub(r"\s+\n", "\n", text).strip()
 
-有些模型可能会输出内部推理标签（例如 ``<think>…``）。  
-该函数会移除这些内容，从而确保 TTS **只朗读最终回答**。 :contentReference[oaicite:5]{index=5}
+有些模型可能会输出内部推理标签（例如 ``<think>…``\ ）。  
+该函数会移除这些内容，从而确保 TTS **只朗读最终回答**\ 。 :contentReference[oaicite:5]{index=5}
 
 **提示：**  
-如果终端中仍然看到部分原始 token（因为启用了流式输出），该函数仍能确保 **语音播报内容保持干净**。 :contentReference[oaicite:6]{index=6}
+如果终端中仍然看到部分原始 token（因为启用了流式输出），该函数仍能确保 **语音播报内容保持干净**\ 。 :contentReference[oaicite:6]{index=6}
 
 
 
@@ -269,7 +274,7 @@
        else:
            print(f"[YOU] {result['partial']}", end="\r", flush=True)
 
-* ``stream=True`` 会持续输出 **部分识别结果** （partial transcript），并在语音结束时给出 **最终识别结果**。
+* ``stream=True`` 会持续输出 **部分识别结果** （partial transcript），并在语音结束时给出 **最终识别结果**\ 。
 * 最终识别文本会存储在 ``text`` 中，并在终端打印一次。 :contentReference[oaicite:8]{index=8}
 
 
@@ -299,11 +304,11 @@
            reply_accum += next_word
    print("")
 
-* 将识别到的文本发送到本地 LLM，并 **实时打印生成的 token**，以降低响应延迟。
+* 将识别到的文本发送到本地 LLM，并 **实时打印生成的 token**\ ，以降低响应延迟。
 * 同时将完整回复累积到 ``reply_accum`` 中，以便后续处理。 :contentReference[oaicite:10]{index=10}
 
 **说明：**  
-如果您不希望显示原始 token，可以将 ``stream=False``，只输出最终结果。 :contentReference[oaicite:11]{index=11}
+如果您不希望显示原始 token，可以将 ``stream=False``\ ，只输出最终结果。 :contentReference[oaicite:11]{index=11}
 
 
 
@@ -317,7 +322,7 @@
    else:
        tts.say("Sorry, I didn't catch that.")
 
-* 在语音播放之前先清理文本中的隐藏标签，然后 **只播放一次完整回答**。
+* 在语音播放之前先清理文本中的隐藏标签，然后 **只播放一次完整回答**\ 。
 * 保持单次 TTS 输出可以避免重复提示，例如 “[LLM] / [SAY]”。 :contentReference[oaicite:12]{index=12}
 
 
@@ -343,7 +348,7 @@
 
 * **模型过大（内存错误）**
 
-  请使用更小的模型，例如 ``moondream:1.8b``，或在性能更强的计算机上运行 Ollama。  
+  请使用更小的模型，例如 ``moondream:1.8b``\ ，或在性能更强的计算机上运行 Ollama。  
 
 * **Ollama 没有返回响应**
 
@@ -351,7 +356,7 @@
 
 * **Vosk 无法识别语音** 
 
-  请确认麦克风工作正常。如有需要，可尝试使用其他语言包（例如 ``zh-cn``、 ``es`` 等）。  
+  请确认麦克风工作正常。如有需要，可尝试使用其他语言包（例如 ``zh-cn``\ 、 ``es`` 等）。  
 
 * **Piper 没有声音或出现错误**  
 
@@ -359,6 +364,6 @@
 
 * **回答过长或偏离主题**
 
-  可以修改 ``INSTRUCTIONS``，添加：**“Keep answers short and to the point.”**  
+  可以修改 ``INSTRUCTIONS``\ ，添加：\ **“Keep answers short and to the point.”**  
 
 

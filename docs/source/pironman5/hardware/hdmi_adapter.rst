@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 USB HDMI 转接板
 ==========================================
 
@@ -36,7 +41,7 @@ USB HDMI 转接板
 
 如需启用涓流充电，请将 ``rtc_bbat_vchg`` 添加至 ``/boot/firmware/config.txt`` 文件中：
 
-  * 打开 ``/boot/firmware/config.txt``：
+  * 打开 ``/boot/firmware/config.txt``\ ：
 
     .. code-block:: shell
     

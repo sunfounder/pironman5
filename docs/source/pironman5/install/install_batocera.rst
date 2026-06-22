@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 安装 Batocera 操作系统
 ==========================================================
 
@@ -31,10 +36,10 @@
 
    .. note::
 
-      * 对于 **Ubuntu**，请点击 **Other general-purpose OS（其他通用操作系统）** → **Ubuntu**，然后选择
-        **Ubuntu Desktop 24.04 LTS (64-bit)** 或 **Ubuntu Server 24.04 LTS (64-bit)**。
-      * 对于 **Kali Linux**、 **Home Assistant** 和 **Homebridge**，请点击
-        **Other specific-purpose OS（其他专用操作系统）**，然后选择相应的系统。
+      * 对于 **Ubuntu**\ ，请点击 **Other general-purpose OS（其他通用操作系统）** → **Ubuntu**\ ，然后选择
+        **Ubuntu Desktop 24.04 LTS (64-bit)** 或 **Ubuntu Server 24.04 LTS (64-bit)**\ 。
+      * 对于 **Kali Linux**\ 、 **Home Assistant** 和 **Homebridge**\ ，请点击
+        **Other specific-purpose OS（其他专用操作系统）**\ ，然后选择相应的系统。
 
    .. image:: img/imager_other_os.png
       :width: 90%
@@ -45,12 +50,12 @@
    .. image:: img/imager_storage.png
       :width: 90%
 
-#. 点击 **NEXT（下一步）**。
+#. 点击 **NEXT（下一步）**\ 。
 
    .. note::
 
-      * 对于 **无法进行预配置**的系统，点击 **NEXT（下一步）** 将跳过 **Customisation（自定义）** 步骤，直接进入 **Writing（写入）**，即操作系统被写入 microSD 卡。
-      * 对于 **支持预配置** 的系统，请按照 **Customisation（自定义）** 步骤来配置诸如 **Hostname（主机名）**、 **WiFi** 和 **SSH 启用** 等选项。
+      * 对于 **无法进行预配置**\ 的系统，点击 **NEXT（下一步）** 将跳过 **Customisation（自定义）** 步骤，直接进入 **Writing（写入）**\ ，即操作系统被写入 microSD 卡。
+      * 对于 **支持预配置** 的系统，请按照 **Customisation（自定义）** 步骤来配置诸如 **Hostname（主机名）**\ 、 **WiFi** 和 **SSH 启用** 等选项。
 
    .. image:: img/imager_write_other_os.png
       :width: 90%

@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _set_up_batocera_mini:
 
 在 Batocera.linux 上进行设置
@@ -5,18 +10,18 @@
 
 如果你已经安装了 Batocera.linux 系统，可以通过 SSH 远程登录该系统，并按照以下步骤完成配置。
 
-#. 系统启动后，通过 SSH 远程连接到 Pironman5。Windows 用户可以打开 **Powershell**，Mac OS X 和 Linux 用户可直接打开 **Terminal**。
+#. 系统启动后，通过 SSH 远程连接到 Pironman5。Windows 用户可以打开 **Powershell**\ ，Mac OS X 和 Linux 用户可直接打开 **Terminal**\ 。
 
    .. image:: img/batocera_powershell.png
       :width: 90%
 
 
-#. Batocera 系统的默认主机名为 ``batocera``，默认用户名为 ``root``，密码为 ``linux``。因此，可以通过输入 ``ssh root@batocera.local`` 并输入密码 ``linux`` 登录系统。
+#. Batocera 系统的默认主机名为 ``batocera``\ ，默认用户名为 ``root``\ ，密码为 ``linux``\ 。因此，可以通过输入 ``ssh root@batocera.local`` 并输入密码 ``linux`` 登录系统。
 
    .. image:: img/batocera_login.png
       :width: 90%
 
-#. 执行命令： ``/etc/init.d/S92switch setup``，进入菜单设置界面。
+#. 执行命令： ``/etc/init.d/S92switch setup``\ ，进入菜单设置界面。
 
    .. image:: img/batocera_configure.png  
       :width: 90%
@@ -26,7 +31,7 @@
    .. image:: img/batocera_configure_pironman5.png
       :width: 90%
 
-#. 启用 pironman5 服务后，选择 **OK**。
+#. 启用 pironman5 服务后，选择 **OK**\ 。
 
    .. image:: img/batocera_configure_pironman5_ok.png
       :width: 90%

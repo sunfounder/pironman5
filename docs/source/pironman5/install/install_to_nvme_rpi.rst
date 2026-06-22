@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _install_to_nvme_rpi:
 
 在 NVMe SSD 上安装操作系统
@@ -25,11 +30,11 @@
 2. 更新引导程序（Bootloader）
 --------------------------------
 
-首先，需要更新 Raspberry Pi 5 的引导程序，使其启动顺序优先为 **NVMe**，然后是 **USB**，最后才是 **SD 卡**。
+首先，需要更新 Raspberry Pi 5 的引导程序，使其启动顺序优先为 **NVMe**\ ，然后是 **USB**\ ，最后才是 **SD 卡**\ 。
 
 .. note::
 
-    建议在此步骤中使用一张 **备用的 Micro SD 卡**。
+    建议在此步骤中使用一张 **备用的 Micro SD 卡**\ 。
     
     - 方法一（推荐）：将引导程序写入一张 Micro SD 卡，插入 Raspberry Pi 并启动一次以应用设置。
     - 方法二：直接将引导程序写入 NVMe SSD。随后将 NVMe SSD 连接到电脑安装操作系统，最后再将其装回 Raspberry Pi。
@@ -41,25 +46,25 @@
    .. image:: img/imager_device.png
       :width: 90%
 
-#. 点击 **OS**。
+#. 点击 **OS**\ 。
 
-   * 向下滚动并选择 **Misc utility images**。
+   * 向下滚动并选择 **Misc utility images**\ 。
 
      .. image:: img/nvme_misc.png
         :width: 90%
 
-   * 选择 **Bootloader (Pi 5 family)**。
+   * 选择 **Bootloader (Pi 5 family)**\ 。
 
      .. image:: img/nvme_bootloader.png
         :width: 90%
 
-   * 选择 **NVMe/USB Boot** 以设置启动顺序，然后点击 **NEXT**。
+   * 选择 **NVMe/USB Boot** 以设置启动顺序，然后点击 **NEXT**\ 。
 
      .. image:: img/nvme_boot.png
         :width: 90%
 
 
-#. 在 **Storage** 中，选择正确的 Micro SD 卡或 NVMe SSD，然后点击 **NEXT**。
+#. 在 **Storage** 中，选择正确的 Micro SD 卡或 NVMe SSD，然后点击 **NEXT**\ 。
 
    .. note::
 
@@ -79,7 +84,7 @@
    .. image:: img/imager_erase.png
       :width: 90%
 
-#. 等待直到显示 **Write complete!**，然后安全移除存储设备。
+#. 等待直到显示 **Write complete!**\ ，然后安全移除存储设备。
 
    .. image:: img/nvme_finish.png
       :width: 90%
@@ -89,7 +94,7 @@
    .. image:: img/os_sd_to_pi.jpg
       :width: 70%
 
-#. 当 Raspberry Pi 启动完成后，请至少等待 **10 秒**，然后关机并移除 Micro SD 卡或 NVMe SSD。
+#. 当 Raspberry Pi 启动完成后，请至少等待 **10 秒**\ ，然后关机并移除 Micro SD 卡或 NVMe SSD。
 
 此时，Raspberry Pi 5 已准备好从 **NVMe** 启动。
 
@@ -107,12 +112,12 @@
    .. image:: img/imager_device.png
       :width: 90%
 
-3. 进入 **OS** 部分，选择推荐的 **Raspberry Pi OS (64-bit)**。
+3. 进入 **OS** 部分，选择推荐的 **Raspberry Pi OS (64-bit)**\ 。
 
    .. image:: img/imager_os.png
       :width: 90%
 
-4. 在 **Storage** 部分，选择你的 **NVMe SSD**。
+4. 在 **Storage** 部分，选择你的 **NVMe SSD**\ 。
 
    .. image:: img/nvme_storage.png
       :width: 90%

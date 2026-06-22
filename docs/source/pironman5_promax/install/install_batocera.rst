@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 安装 Batocera OS
 =============================================
 
@@ -32,17 +37,17 @@
       :width: 90%
 
 3. 打开 **Raspberry Pi Imager** 后，你会看到 **Device** 页面。  
-   在列表中选择你的 **Raspberry Pi 5**。
+   在列表中选择你的 **Raspberry Pi 5**\ 。
 
    .. image:: img/imager_device.png
       :width: 90%
 
-4. 进入 **OS** 选项，滚动到页面底部，选择 **Username custom**。
+4. 进入 **OS** 选项，滚动到页面底部，选择 **Username custom**\ 。
 
    .. image:: img/imager_use_custom.png
       :width: 90%
 
-5. 选择刚刚下载的 **batocera-bcmxxxxxxx.img.gz** 文件，然后点击 **Open**。
+5. 选择刚刚下载的 **batocera-bcmxxxxxxx.img.gz** 文件，然后点击 **Open**\ 。
 
    .. image:: img/imager_choose_batocera.png
       :width: 90%
@@ -53,7 +58,7 @@
    .. image:: img/imager_storage.png
       :width: 90%
 
-#. 点击 **NEXT**，进入 **Writing** 步骤，系统镜像将被写入 microSD 卡。
+#. 点击 **NEXT**\ ，进入 **Writing** 步骤，系统镜像将被写入 microSD 卡。
 
    .. image:: img/imager_betocera_write.png
       :width: 90%

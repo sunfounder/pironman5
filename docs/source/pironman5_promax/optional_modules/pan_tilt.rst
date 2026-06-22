@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 Pan-Tilt 摄像头模块
 ===========================================
 
@@ -8,7 +13,7 @@ Pan-Tilt 摄像头模块
 
 .. note::
 
-   Pironman 5 系列 **不包含摄像头模块**。  
+   Pironman 5 系列 **不包含摄像头模块**\ 。  
    你需要自行准备，或从我们的官方网站购买：
 
    * `AI Funsion Lab Kit <https://www.sunfounder.com/products/sunfounder-ai-fusion-lab-kit>`_
@@ -81,7 +86,7 @@ Pan-Tilt 摄像头模块
 
 **2. 简单的舵机测试脚本：**
 
-创建测试文件 ``servo_test.py``：
+创建测试文件 ``servo_test.py``\ ：
 
 .. code-block:: python
 
@@ -165,7 +170,7 @@ Pan-Tilt 示例
 -------------------------------------------
 
 现在我们将舵机控制与摄像头功能结合，创建一个完整的云台控制程序。  
-该示例支持使用 **WSAD 键控制方向**，并通过 **T 键拍照**。
+该示例支持使用 **WSAD 键控制方向**\ ，并通过 **T 键拍照**\ 。
 
 **1. 创建控制脚本：**
 
@@ -291,7 +296,7 @@ Pan-Tilt 示例
 
 - 按 **W/S** 控制俯仰向上/向下
 - 按 **A/D** 控制水平向左/向右
-- 按 **T** 拍照（照片将保存到 ``/home/pi/Pictures/ptz/``）
+- 按 **T** 拍照（照片将保存到 ``/home/pi/Pictures/ptz/``\ ）
 - 按 **C** 将摄像头恢复到居中位置
 - 按 **Q** 退出程序
 

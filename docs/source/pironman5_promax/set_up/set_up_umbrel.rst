@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _set_up_umbrel_promax:
 
 在 Umbrel OS 上设置
@@ -22,11 +27,11 @@
 
    .. image:: img/umbrel_desktop.png
 
-#. 打开终端：在桌面点击 **Settings（设置）** → **Advanced Settings（高级设置）** → **Open（打开）**。
+#. 打开终端：在桌面点击 **Settings（设置）** → **Advanced Settings（高级设置）** → **Open（打开）**\ 。
 
    .. image:: img/umbrel_setting.png
 
-#. 点击 **Open Terminal（打开终端）**。
+#. 点击 **Open Terminal（打开终端）**\ 。
 
    .. image:: img/umbrel_open_terminal.png
 
@@ -49,20 +54,20 @@
 
       sudo reboot
 
-#. 重启后，``pironman5.service`` 会自动启动，默认配置如下：
+#. 重启后，\ ``pironman5.service`` 会自动启动，默认配置如下：
 
    * OLED 屏幕显示 CPU、内存、磁盘使用率、CPU 温度以及 IP 地址  
    * 4 个 WS2812 RGB LED 以蓝色呼吸模式亮起  
 
-#. 你可以使用 ``systemctl`` 管理 ``pironman5.service``：
+#. 你可以使用 ``systemctl`` 管理 ``pironman5.service``\ ：
 
    .. code-block:: shell
 
       sudo systemctl restart pironman5.service
 
-   * ``restart``：应用配置更改  
-   * ``start/stop``：启动或停止服务  
-   * ``status``：查看服务运行状态  
+   * ``restart``\ ：应用配置更改  
+   * ``start/stop``\ ：启动或停止服务  
+   * ``status``\ ：查看服务运行状态  
 
 .. note::
 

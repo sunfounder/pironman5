@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 
 .. _openclaw_5_standard:
 
@@ -64,11 +69,11 @@ OpenClaw 快速入门
     .. image:: /pironman5/home_server/img/openclaw/paste_api_key_open_claw.png
 
 
-8.  访问 |link_openai_platform| 并登录。在 **API keys** 页面上，点击 **Create new secret key**。
+8.  访问 |link_openai_platform| 并登录。在 **API keys** 页面上，点击 **Create new secret key**\ 。
 
     .. image:: /pironman5/home_server/img/openclaw/llm_openai_create.png
 
-9.  填写详细信息（所有者、名称、项目以及必要的权限），然后点击 **Create secret key**。
+9.  填写详细信息（所有者、名称、项目以及必要的权限），然后点击 **Create secret key**\ 。
 
     .. image:: /pironman5/home_server/img/openclaw/llm_openai_create_confirm.png
 
@@ -80,7 +85,7 @@ OpenClaw 快速入门
 
     .. image:: /pironman5/home_server/img/openclaw/paste_api_key_enter_open_claw.png
 
-12. 选择你想要使用的模型。在此示例中，我们将使用 **Keep current**。
+12. 选择你想要使用的模型。在此示例中，我们将使用 **Keep current**\ 。
 
     .. image:: /pironman5/home_server/img/openclaw/model_config_open_claw.png
 
@@ -161,11 +166,11 @@ OpenClaw 快速入门
 **步骤 1：创建一个 Telegram 机器人**
 
 1.  在 Telegram 上找到 **@BotFather** （官方机器人创建工具）
-2.  **创建一个新机器人**：发送 ``/newbot`` 命令
-3.  **按照提示操作**：
-    *   为你的机器人起一个名字（例如： ``我的 OpenClaw 助手``）
-    *   为你的机器人设置一个用户名（必须以 ``bot`` 结尾，例如： ``my_openclaw_bot``）
-4.  **成功后，你会收到一条消息**，其中包含你的 **机器人令牌**，类似于：
+2.  **创建一个新机器人**\ ：发送 ``/newbot`` 命令
+3.  **按照提示操作**\ ：
+    *   为你的机器人起一个名字（例如： ``我的 OpenClaw 助手``\ ）
+    *   为你的机器人设置一个用户名（必须以 ``bot`` 结尾，例如： ``my_openclaw_bot``\ ）
+4.  **成功后，你会收到一条消息**\ ，其中包含你的 **机器人令牌**\ ，类似于：
 
     .. code-block:: text
 
@@ -181,7 +186,7 @@ OpenClaw 快速入门
 
 OpenClaw 将自动：
 
-*   安装必要的依赖项（如 ``node-telegram-bot-api``）
+*   安装必要的依赖项（如 ``node-telegram-bot-api``\ ）
 *   创建 Telegram 网关配置文件
 *   测试连接是否成功
 
@@ -189,7 +194,7 @@ OpenClaw 将自动：
 
 1.  在 Telegram 上找到你新创建的机器人
 2.  发送 ``/start`` 命令
-3.  机器人应该会回复一个配对码，将此代码发送到 OpenClaw TUI（例如： ``配对码：ZAN4XI34``）
+3.  机器人应该会回复一个配对码，将此代码发送到 OpenClaw TUI（例如： ``配对码：ZAN4XI34``\ ）
 4.  等待配置正确完成
 5.  尝试发送简单的命令，如“你好”
 6.  如果一切配置正确，你应该会看到来自你机器人的响应
@@ -238,11 +243,11 @@ OpenClaw 将自动：
 OpenClaw 故障排除
 -------------------------------------
 
-问：安装过程中，出现错误 ``Error: systemctl is-enabled unavailable: Command failed: systemctl --user is-enabled openclaw-gateway.service``。我该怎么办？
+问：安装过程中，出现错误 ``Error: systemctl is-enabled unavailable: Command failed: systemctl --user is-enabled openclaw-gateway.service``\ 。我该怎么办？
 
     目前可以忽略，但后续步骤中可能会遇到问题。届时请逐一处理。
 
-问：当我运行 ``openclaw tui`` 时，出现错误 ``-bash: openclaw: command not found``。我该怎么办？
+问：当我运行 ``openclaw tui`` 时，出现错误 ``-bash: openclaw: command not found``\ 。我该怎么办？
 
     执行以下命令：
 
@@ -261,7 +266,7 @@ OpenClaw 故障排除
 
        openclaw gateway
 
-    然后重新启动 ``openclaw tui``，就可以直接使用了。
+    然后重新启动 ``openclaw tui``\ ，就可以直接使用了。
 
 问：我想设置 OpenClaw Gateway 服务在后台运行/开机自启。怎么做？
 
@@ -306,7 +311,7 @@ OpenClaw 故障排除
 
        systemctl --user start openclaw-gateway
 
-    此时，重新启动 ``openclaw tui``，就可以直接使用了。
+    此时，重新启动 ``openclaw tui``\ ，就可以直接使用了。
 
     5. 启用开机自启：
 

@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _install_to_nvme_rpi_promax:
 
 在 NVMe SSD 上安装操作系统
@@ -26,7 +31,7 @@
 2. 更新 Bootloader
 --------------------------------
 
-首先更新 Raspberry Pi 5 的 bootloader，使其启动顺序为：**NVMe → USB → SD 卡**。
+首先更新 Raspberry Pi 5 的 bootloader，使其启动顺序为：\ **NVMe → USB → SD 卡**\ 。
 
 .. note::
 
@@ -42,25 +47,25 @@
    .. image:: img/imager_device.png
       :width: 90%
 
-#. 点击 **OS**。
+#. 点击 **OS**\ 。
 
-   * 向下滚动并选择 **Misc utility images**。
+   * 向下滚动并选择 **Misc utility images**\ 。
 
      .. image:: img/nvme_misc.png
         :width: 90%
 
-   * 选择 **Bootloader (Pi 5 family)**。
+   * 选择 **Bootloader (Pi 5 family)**\ 。
 
      .. image:: img/nvme_bootloader.png
         :width: 90%
 
-   * 选择 **NVMe/USB Boot** 作为启动顺序，然后点击 **NEXT**。
+   * 选择 **NVMe/USB Boot** 作为启动顺序，然后点击 **NEXT**\ 。
 
      .. image:: img/nvme_boot.png
         :width: 90%
 
 
-#. 在 **Storage** 中选择正确的 Micro SD 卡或 NVMe SSD，然后点击 **NEXT**。
+#. 在 **Storage** 中选择正确的 Micro SD 卡或 NVMe SSD，然后点击 **NEXT**\ 。
 
    .. note::
    
@@ -89,7 +94,7 @@
    .. image:: img/os_sd_to_pi.jpg
       :width: 70%
 
-#. 在 Raspberry Pi 完成启动后至少等待 **10 秒**，然后关闭电源并取出 Micro SD 卡或 NVMe SSD。
+#. 在 Raspberry Pi 完成启动后至少等待 **10 秒**\ ，然后关闭电源并取出 Micro SD 卡或 NVMe SSD。
 
 此时 Raspberry Pi 5 已准备好从 **NVMe** 启动。
 
@@ -108,12 +113,12 @@
    .. image:: img/imager_device.png
       :width: 90%
 
-3. 进入 **OS** 选项，选择推荐的 **Raspberry Pi OS (64-bit)**。
+3. 进入 **OS** 选项，选择推荐的 **Raspberry Pi OS (64-bit)**\ 。
 
    .. image:: img/imager_os.png
       :width: 90%
 
-4. 在 **Storage** 选项中选择你的 **NVMe SSD**。
+4. 在 **Storage** 选项中选择你的 **NVMe SSD**\ 。
 
    .. image:: img/nvme_storage.png
       :width: 90%

@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _install_os_sd_rpi_promax:
 
 安装操作系统
@@ -23,7 +28,7 @@
    .. image:: img/imager_download.png
       :width: 70%
 
-#. 按照安装提示完成安装（语言、安装路径、确认等）。安装完成后，从桌面或应用程序菜单启动 **Raspberry Pi Imager**。
+#. 按照安装提示完成安装（语言、安装路径、确认等）。安装完成后，从桌面或应用程序菜单启动 **Raspberry Pi Imager**\ 。
 
    .. image:: img/imager_install.png
       :width: 90%
@@ -40,12 +45,12 @@
    .. image:: img/insert_sd.png
       :width: 90%
 
-2. 打开 Raspberry Pi Imager 后，你会看到 **Device** 页面。从列表中选择 **Raspberry Pi 5**。
+2. 打开 Raspberry Pi Imager 后，你会看到 **Device** 页面。从列表中选择 **Raspberry Pi 5**\ 。
 
    .. image:: img/imager_device.png
       :width: 90%
 
-3. 进入 **OS** 选项，选择推荐的 **Raspberry Pi OS (64-bit)**。
+3. 进入 **OS** 选项，选择推荐的 **Raspberry Pi OS (64-bit)**\ 。
 
    .. image:: img/imager_os.png
       :width: 90%
@@ -61,7 +66,7 @@
 
 .. note::
 
-   * 如果你会直接连接显示器、键盘和鼠标到 Raspberry Pi，可以点击 **SKIP CUSTOMISATION**。  
+   * 如果你会直接连接显示器、键盘和鼠标到 Raspberry Pi，可以点击 **SKIP CUSTOMISATION**\ 。  
    * 如果你计划进行 **无显示器安装（Headless）** 并通过 Wi-Fi 远程连接，则必须完成以下配置。
 
    .. image:: img/imager_custom_skip.png
@@ -92,7 +97,7 @@
 
 #. **配置 Wi-Fi**
 
-   * 输入 Wi-Fi **SSID（网络名称）** 和 **密码**。
+   * 输入 Wi-Fi **SSID（网络名称）** 和 **密码**\ 。
    * Raspberry Pi 在首次启动时会自动连接该网络。
 
    .. image:: img/imager_custom_wifi.png
@@ -110,7 +115,7 @@
 
    Raspberry Pi Connect 允许你通过浏览器访问 Raspberry Pi 桌面。
 
-   * 打开 **Raspberry Pi Connect**，然后点击 **OPEN RASPBERRY PI CONNECT**。
+   * 打开 **Raspberry Pi Connect**\ ，然后点击 **OPEN RASPBERRY PI CONNECT**\ 。
 
      .. image:: img/imager_custom_connect.png
         :width: 90%
@@ -122,7 +127,7 @@
 
    * 在 **New auth key** 页面创建一次性认证密钥。
 
-      * 如果你的 Raspberry Pi ID 没有加入任何组织，选择 **Create auth key and launch Raspberry Pi Imager**。
+      * 如果你的 Raspberry Pi ID 没有加入任何组织，选择 **Create auth key and launch Raspberry Pi Imager**\ 。
       * 如果属于某个组织，先选择组织，然后创建密钥并启动 Imager。
       * 请确保在密钥过期前开启 Raspberry Pi 并连接互联网。
 
@@ -137,12 +142,12 @@
      .. image:: img/imager_custom_connect_token.png
         :width: 90%
 
-#. 检查所有设置后点击 **WRITE**。
+#. 检查所有设置后点击 **WRITE**\ 。
 
    .. image:: img/imager_writing.png
       :width: 90%
 
-#. 如果存储卡已有数据，Imager 会提示所有数据将被删除。请确认选择的是正确设备，然后点击 **I UNDERSTAND, ERASE AND WRITE**。
+#. 如果存储卡已有数据，Imager 会提示所有数据将被删除。请确认选择的是正确设备，然后点击 **I UNDERSTAND, ERASE AND WRITE**\ 。
 
    .. image:: img/imager_erase.png
       :width: 90%

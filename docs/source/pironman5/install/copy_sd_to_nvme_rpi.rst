@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _copy_sd_to_nvme_5:
 
 将系统从 Micro SD 卡复制到 NVMe SSD
@@ -29,7 +34,7 @@
     # 启用 PCIe 外部接口
     dtparam=pciex1
   
-* ``pciex1`` 还有一个更容易记忆的别名，因此你也可以在 ``/boot/firmware/config.txt`` 文件中添加 ``dtparam=nvme``。
+* ``pciex1`` 还有一个更容易记忆的别名，因此你也可以在 ``/boot/firmware/config.txt`` 文件中添加 ``dtparam=nvme``\ 。
 
   .. code-block:: shell
   
@@ -53,13 +58,13 @@
       dtparam=pciex1_no_10s=on
 
 
-* 按下 ``Ctrl + X``，然后按 ``Y`` 和 ``Enter`` 保存更改。
+* 按下 ``Ctrl + X``\ ，然后按 ``Y`` 和 ``Enter`` 保存更改。
 
 
 **BOOT_ORDER**
 
 如果你安装了两块 NVMe 系统盘，并需要选择其中一块作为启动盘，
-可以修改 ``/boot/firmware/cmdline.txt`` 文件中的 ``ROOT=PARTUUID=xxxxxxxxx``，将其替换为你希望启动的磁盘对应的 UUID。你可以使用以下命令查看磁盘的 UUID：
+可以修改 ``/boot/firmware/cmdline.txt`` 文件中的 ``ROOT=PARTUUID=xxxxxxxxx``\ ，将其替换为你希望启动的磁盘对应的 UUID。你可以使用以下命令查看磁盘的 UUID：
 
 .. code-block:: shell
 
@@ -74,7 +79,7 @@
 
 **将系统从 Micro SD 卡复制到 SSD**
 
-#. 连接显示器，或通过 VNC Viewer 访问 Raspberry Pi 桌面。然后点击 **Raspberry Pi 图标** -> **Accessories（附件）** -> **SD Card Copier**。
+#. 连接显示器，或通过 VNC Viewer 访问 Raspberry Pi 桌面。然后点击 **Raspberry Pi 图标** -> **Accessories（附件）** -> **SD Card Copier**\ 。
 
    .. image:: img/ssd_copy.png
       
@@ -87,7 +92,7 @@
 
    .. image:: img/ssd_copy_uuid.png
     
-#. 完成选择后，点击 **Start**。
+#. 完成选择后，点击 **Start**\ 。
 
    .. image:: img/ssd_copy_click_start.png
 
@@ -97,7 +102,7 @@
 
 如果你的 Micro SD 卡中安装的是桌面版系统，可以使用镜像工具（如 Raspberry Pi Imager）将系统写入 SSD。本示例使用的是 Raspberry Pi OS bookworm，其他系统可能需要先安装该镜像工具。
 
-#. 连接显示器，或通过 VNC Viewer 访问 Raspberry Pi 桌面。然后点击 **Raspberry Pi 图标** -> **Accessories（附件）** -> **Raspberry Pi Imager**。
+#. 连接显示器，或通过 VNC Viewer 访问 Raspberry Pi 桌面。然后点击 **Raspberry Pi 图标** -> **Accessories（附件）** -> **Raspberry Pi Imager**\ 。
 
    .. image:: img/ssd_imager.png
 
@@ -111,12 +116,12 @@
    .. image:: img/imager_device.png
       :width: 90%
 
-#. 进入 **OS** 部分，选择推荐的 **Raspberry Pi OS (64-bit)**。
+#. 进入 **OS** 部分，选择推荐的 **Raspberry Pi OS (64-bit)**\ 。
 
    .. image:: img/imager_os.png
       :width: 90%
 
-#. 在 **Storage** 部分，选择你的 **NVMe SSD**。
+#. 在 **Storage** 部分，选择你的 **NVMe SSD**\ 。
 
    .. image:: img/nvme_storage.png
       :width: 90%
@@ -138,15 +143,15 @@
 
       sudo raspi-config
 
-#. 在 ``raspi-config`` 菜单中，使用方向键选择 **Advanced Options**，然后按 ``Enter`` 进入高级设置。
+#. 在 ``raspi-config`` 菜单中，使用方向键选择 **Advanced Options**\ ，然后按 ``Enter`` 进入高级设置。
 
    .. image:: img/nvme_open_config.png
 
-#. 在 **Advanced Options** 中，选择 **Boot Order**。该选项用于指定 Raspberry Pi 查找可启动设备的顺序。
+#. 在 **Advanced Options** 中，选择 **Boot Order**\ 。该选项用于指定 Raspberry Pi 查找可启动设备的顺序。
 
    .. image:: img/nvme_boot_order.png
 
-#. 接着，选择 **NVMe/USB boot**。这将告诉 Raspberry Pi 优先从 USB 连接的 SSD 或 NVMe 设备启动，而不是 SD 卡等其他选项。
+#. 接着，选择 **NVMe/USB boot**\ 。这将告诉 Raspberry Pi 优先从 USB 连接的 SSD 或 NVMe 设备启动，而不是 SD 卡等其他选项。
 
    .. image:: img/nvme_boot_nvme.png
 

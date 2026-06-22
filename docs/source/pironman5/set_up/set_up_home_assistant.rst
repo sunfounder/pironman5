@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 在 Home Assistant 上进行设置
 ============================================
 
@@ -16,7 +21,7 @@
    :width: 90%
 
 
-* 选择 **CREATE MY SMART HOME**，并创建您的账户。
+* 选择 **CREATE MY SMART HOME**\ ，并创建您的账户。
 
   .. image:: img/home_account.png
    :width: 90%
@@ -32,7 +37,7 @@
 
 Pironman 5 的功能以插件形式集成在 Home Assistant 中。首先，需要添加 **SunFounder** 插件源。
 
-#. 打开 **Settings** -> **Add-ons**。
+#. 打开 **Settings** -> **Add-ons**\ 。
 
    .. image:: img/home_setting_addon.png
       :width: 90%
@@ -42,12 +47,12 @@ Pironman 5 的功能以插件形式集成在 Home Assistant 中。首先，需�
    .. image:: img/home_addon.png
       :width: 90%
 
-#. 在插件商店页面，点击右上角菜单并选择 **Repositories**。
+#. 在插件商店页面，点击右上角菜单并选择 **Repositories**\ 。
 
    .. image:: img/home_add_res.png
       :width: 90%
 
-#. 输入 **SunFounder** 插件源地址： ``https://github.com/sunfounder/home-assistant-addon``，点击 **ADD**。
+#. 输入 **SunFounder** 插件源地址： ``https://github.com/sunfounder/home-assistant-addon``\ ，点击 **ADD**\ 。
 
    .. image:: img/home_res_add.png
       :width: 90%
@@ -115,15 +120,15 @@ Pironman 5 的功能以插件形式集成在 Home Assistant 中。首先，需�
 .. note::
 
     * 若刷新页面后未跳转至挂载分区页面，请点击 **Settings** -> **Add-ons** -> **Pi Config Wizard** 再次进入。
-    * 检查插件是否已启动，若未启动请点击 **START**。
-    * 启动后点击 **OPEN WEB UI**，再点击 **MOUNT**，确认 I2C 与 SPI 状态。
+    * 检查插件是否已启动，若未启动请点击 **START**\ 。
+    * 启动后点击 **OPEN WEB UI**\ ，再点击 **MOUNT**\ ，确认 I2C 与 SPI 状态。
 
 4. 安装 **Pironman 5** 插件
 ---------------------------------------------
 
 现在，正式开始安装 **Pironman 5** 插件。
 
-#. 打开 **Settings** -> **Add-ons**。
+#. 打开 **Settings** -> **Add-ons**\ 。
 
    .. image:: img/home_setting_addon.png
       :width: 90%

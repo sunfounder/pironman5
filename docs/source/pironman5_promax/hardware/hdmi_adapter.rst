@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 USB HDMI 适配器
 ==========================================
 
@@ -34,15 +39,15 @@ USB HDMI 适配器
     pi@raspberrypi:~ $ cat /sys/devices/platform/soc/soc:rpi_rtc/rtc/rtc0/charging_voltage_min
     1300000
 
-要启用涓流充电，需要在 ``/boot/firmware/config.txt`` 中添加 ``rtc_bbat_vchg``：
+要启用涓流充电，需要在 ``/boot/firmware/config.txt`` 中添加 ``rtc_bbat_vchg``\ ：
 
-  * 打开 ``/boot/firmware/config.txt``。
+  * 打开 ``/boot/firmware/config.txt``\ 。
   
     .. code-block:: shell
     
       sudo nano /boot/firmware/config.txt
       
-  * 在 ``/boot/firmware/config.txt`` 中添加 ``rtc_bbat_vchg``。
+  * 在 ``/boot/firmware/config.txt`` 中添加 ``rtc_bbat_vchg``\ 。
   
     .. code-block:: shell
     
@@ -76,10 +81,10 @@ USB HDMI 适配器
 
 **扬声器开关**
 
-扬声器音频信号来源于 HDMI0。如果 HDMI0 连接了带内置扬声器的显示器，则 Pironman 5 Pro Max 的扬声器和显示器扬声器可能会同时播放声音。**SPEAKER** 跳线可以控制此行为。
+扬声器音频信号来源于 HDMI0。如果 HDMI0 连接了带内置扬声器的显示器，则 Pironman 5 Pro Max 的扬声器和显示器扬声器可能会同时播放声音。\ **SPEAKER** 跳线可以控制此行为。
 
-* 将跳线连接到左侧两个引脚（**ON**），扬声器将 **始终启用**。
-* 将跳线连接到右侧两个引脚（**AUTO**），当插入耳机或 HDMI0 连接设备时，扬声器将 **自动关闭**。
+* 将跳线连接到左侧两个引脚（\ **ON**\ ），扬声器将 **始终启用**\ 。
+* 将跳线连接到右侧两个引脚（\ **AUTO**\ ），当插入耳机或 HDMI0 连接设备时，扬声器将 **自动关闭**\ 。
 
 因此，如果在连接 HDMI 显示器时仍希望使用板载扬声器，可以：
 
@@ -88,9 +93,9 @@ USB HDMI 适配器
 
 **3.5mm 音频接口**
 
-耳机接口与扬声器使用相同的音频源，但输出的是 **未放大的音频信号**。该接口为带开关的插孔，当插入耳机时会自动 **关闭扬声器功放**，避免同时播放声音。
+耳机接口与扬声器使用相同的音频源，但输出的是 **未放大的音频信号**\ 。该接口为带开关的插孔，当插入耳机时会自动 **关闭扬声器功放**\ ，避免同时播放声音。
 
-该接口为 4 针 TRRS 连接器，但仅支持 **标准立体声输出**：
+该接口为 4 针 TRRS 连接器，但仅支持 **标准立体声输出**\ ：
 
 * **Tip (T)：** 左声道  
 * **Ring 1 (R1)：** 右声道  

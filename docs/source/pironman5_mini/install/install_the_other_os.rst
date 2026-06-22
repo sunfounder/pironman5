@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 Installing Ubuntu/Kali Linux/Homebridge/Home Assistant
 =========================================================================
 
@@ -9,7 +14,7 @@ Installing Ubuntu/Kali Linux/Homebridge/Home Assistant
 
 **使用 M.2 NVMe SSD**
 
-  * 如果你使用的是 M.2 NVMe SSD，则还需要一个 **M.2 NVMe SSD 硬盘盒转接器**，用于将 SSD 连接到电脑，然后按照第二种方法安装操作系统。
+  * 如果你使用的是 M.2 NVMe SSD，则还需要一个 **M.2 NVMe SSD 硬盘盒转接器**\ ，用于将 SSD 连接到电脑，然后按照第二种方法安装操作系统。
   
     .. image:: img/m2_nvme_adapter.png
         :width: 300

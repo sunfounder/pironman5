@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 7. 可选模块：摄像头、3.5英寸屏幕、RTL-SDR
 ==============================================================
 

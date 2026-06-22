@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 摄像头模块
 ===========================================
 
@@ -30,7 +35,7 @@ Raspberry Pi OS（Bookworm 及以后版本）使用 **libcamera** 驱动。
 
     libcamera-jpeg -o test.jpg
 
-此命令会拍摄一张照片，并保存为 ``test.jpg``。
+此命令会拍摄一张照片，并保存为 ``test.jpg``\ 。
 
 **录像**
 
@@ -75,7 +80,7 @@ Raspberry Pi OS（Bookworm 及以后版本）使用 **libcamera** 驱动。
     time.sleep(2)
     picam2.capture_file("image.jpg")
 
-在 nano 中保存并退出，按 ``CTRL+O`` → ``ENTER`` → ``CTRL+X``。
+在 nano 中保存并退出，按 ``CTRL+O`` → ``ENTER`` → ``CTRL+X``\ 。
 
 运行脚本：
 

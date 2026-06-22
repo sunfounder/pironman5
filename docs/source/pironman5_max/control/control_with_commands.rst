@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 
 .. _max_view_control_commands:
 
@@ -157,7 +162,7 @@
 
   sudo pironman5 -re true
 
-* 设置 RGB 灯颜色，输入所需的十六进制颜色值，如 ``fe1a1a``：
+* 设置 RGB 灯颜色，输入所需的十六进制颜色值，如 ``fe1a1a``\ ：
 
 .. code-block:: shell
 
@@ -169,11 +174,11 @@
 
   sudo pironman5 -rb 100
 
-* 设置 RGB 显示模式，支持的模式包括： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``：
+* 设置 RGB 显示模式，支持的模式包括： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``\ ：
 
 .. note::
 
-  如果设置为 ``rainbow``、 ``rainbow_reverse`` 或 ``hue_cycle``，将无法再设置自定义颜色。
+  如果设置为 ``rainbow``\ 、 ``rainbow_reverse`` 或 ``hue_cycle``\ ，将无法再设置自定义颜色。
 
 .. code-block:: shell
 
@@ -214,11 +219,11 @@ IO 扩展板支持最多两个 5V 非 CPU 风扇，风扇统一控制。
 
   sudo pironman5 -gm 3
 
-* **4: Quiet（静音）**：70°C 启动
-* **3: Balanced（均衡）**：67.5°C 启动
-* **2: Cool（凉爽）**：60°C 启动
-* **1: Performance（性能）**：50°C 启动
-* **0: Always On（始终开启）**：始终运行
+* **4: Quiet（静音）**\ ：70°C 启动
+* **3: Balanced（均衡）**\ ：67.5°C 启动
+* **2: Cool（凉爽）**\ ：60°C 启动
+* **1: Performance（性能）**\ ：50°C 启动
+* **0: Always On（始终开启）**\ ：始终运行
 
 * 如更换风扇控制引脚，可使用如下命令：
 

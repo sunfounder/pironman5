@@ -1,9 +1,14 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _py_online_llm:
 
 5. 连接在线 LLM
 ================================
 
-在本课程中，我们将学习如何将 Pironman 5 Pro MAX（或 Raspberry Pi）连接到不同的 **在线大语言模型（LLMs）**。  
+在本课程中，我们将学习如何将 Pironman 5 Pro MAX（或 Raspberry Pi）连接到不同的 **在线大语言模型（LLMs）**\ 。  
 每个服务提供商都需要 API key，并提供不同的模型供您选择。
 
 我们将介绍如何：
@@ -19,17 +24,17 @@
 OpenAI
 ----------
 
-OpenAI 提供了强大的模型，例如 **GPT-4o** 和 **GPT-4.1**，可用于文本和视觉任务。
+OpenAI 提供了强大的模型，例如 **GPT-4o** 和 **GPT-4.1**\ ，可用于文本和视觉任务。
 
 以下是配置步骤：
 
 **获取并保存 API Key**
 
-#. 访问 |link_openai_platform| 并登录。在 **API keys** 页面点击 **Create new secret key**。
+#. 访问 |link_openai_platform| 并登录。在 **API keys** 页面点击 **Create new secret key**\ 。
 
    .. image:: /pironman5_promax/ai_interaction/img/llm_openai_create.png
 
-#. 填写相关信息（Owner、Name、Project，以及必要时设置权限），然后点击 **Create secret key**。
+#. 填写相关信息（Owner、Name、Project，以及必要时设置权限），然后点击 **Create secret key**\ 。
 
    .. image:: /pironman5_promax/ai_interaction/img/llm_openai_create_confirm.png
 
@@ -37,7 +42,7 @@ OpenAI 提供了强大的模型，例如 **GPT-4o** 和 **GPT-4.1**，可用于�
 
    .. image:: /pironman5_promax/ai_interaction/img/llm_openai_copy.png
 
-#. 在您的项目目录中（例如： ``~/sunfounder-voice-assistant/examples``），创建一个名为 ``secret.py`` 的文件：
+#. 在您的项目目录中（例如： ``~/sunfounder-voice-assistant/examples``\ ），创建一个名为 ``secret.py`` 的文件：
 
    .. code-block:: bash
    
@@ -71,7 +76,7 @@ OpenAI 提供了强大的模型，例如 **GPT-4o** 和 **GPT-4.1**，可用于�
        cd ~/sunfounder-voice-assistant/examples
        sudo nano llm_openai.py
 
-#. 将内容替换为以下代码，并将 ``model="xxx"`` 修改为您要使用的模型（例如 ``gpt-4o``）：
+#. 将内容替换为以下代码，并将 ``model="xxx"`` 修改为您要使用的模型（例如 ``gpt-4o``\ ）：
 
    .. code-block:: python
    
@@ -86,7 +91,7 @@ OpenAI 提供了强大的模型，例如 **GPT-4o** 和 **GPT-4.1**，可用于�
          model="gpt-4o",
       )
   
-   保存并退出（``Ctrl+X``，然后 ``Y``，最后按 ``Enter``）。
+   保存并退出（\ ``Ctrl+X``\ ，然后 ``Y``\ ，最后按 ``Enter``\ ）。
 
 #. 最后，运行测试：
 
@@ -150,7 +155,7 @@ Gemini 是 Google 的一系列 AI 模型，速度快，适用于各种通用任�
        cd ~/sunfounder-voice-assistant/examples
        sudo nano llm_gemini.py
 
-#. 将内容替换为以下代码，并将 ``model="xxx"`` 修改为您要使用的模型（例如 ``gemini-2.5-flash``）：
+#. 将内容替换为以下代码，并将 ``model="xxx"`` 修改为您要使用的模型（例如 ``gemini-2.5-flash``\ ）：
 
    .. code-block:: python
 
@@ -180,7 +185,7 @@ Qwen 是阿里云提供的一系列大语言模型和多模态模型，支持文
 
 **获取 API Key**
 
-调用 Qwen 模型需要 **API Key**。  
+调用 Qwen 模型需要 **API Key**\ 。  
 大多数国际用户应使用 **DashScope International（Model Studio）** 控制台；中国大陆用户则可使用 **百炼（Bailian）** 控制台。 :contentReference[oaicite:1]{index=1}
 
 * **国际用户**
@@ -193,25 +198,25 @@ Qwen 是阿里云提供的一系列大语言模型和多模态模型，支持文
       * 激活是免费的，只有在免费额度用完后才会开始收费。  
       * 如果没有看到激活提示，则说明服务已启用。 
   
-  #. 进入 **Key Management** 页面，在 **API Key** 标签页点击 **Create API Key**。  
+  #. 进入 **Key Management** 页面，在 **API Key** 标签页点击 **Create API Key**\ 。  
   #. 创建完成后，复制 API Key 并妥善保存。  
   
     .. image:: /pironman5_promax/ai_interaction/img/llm_qwen_api_key.png
         :width: 800
   
   .. note::
-     港澳台地区用户同样建议选择 **International（Model Studio）**。
+     港澳台地区用户同样建议选择 **International（Model Studio）**\ 。
   
 * **中国大陆用户**
 
   如果您位于中国大陆，可使用 **阿里云百炼（Bailian）** 控制台：
   
   #. 登录 |link_aliyun| （百炼控制台）并完成账号认证。  
-  #. 点击 **Create API Key**。如果提示模型服务未激活，请先点击 **Activate**，同意相关条款并领取免费额度。激活后即可创建 API Key。  
+  #. 点击 **Create API Key**\ 。如果提示模型服务未激活，请先点击 **Activate**\ ，同意相关条款并领取免费额度。激活后即可创建 API Key。  
   
      .. image:: /pironman5_promax/ai_interaction/img/llm_qwen_aliyun_create.png
   
-  #. 再次点击 **Create API Key**，确认账号信息后点击 **Confirm**。  
+  #. 再次点击 **Create API Key**\ ，确认账号信息后点击 **Confirm**\ 。  
   
      .. image:: /pironman5_promax/ai_interaction/img/llm_qwen_aliyun_confirm.png
   
@@ -246,7 +251,7 @@ Qwen 是阿里云提供的一系列大语言模型和多模态模型，支持文
        cd ~/sunfounder-voice-assistant/examples
        sudo nano llm_qwen.py
 
-#. 将内容替换为以下代码，并将 ``model="xxx"`` 修改为您需要的模型（例如 ``qwen-plus``）：
+#. 将内容替换为以下代码，并将 ``model="xxx"`` 修改为您需要的模型（例如 ``qwen-plus``\ ）：
 
    .. code-block:: python
    
@@ -276,11 +281,11 @@ Grok 是由 Elon Musk 团队（xAI）开发的对话式 AI，可通过 xAI API �
 
 #. 在 |link_grok_ai| 注册账号，并先充值一定额度，否则 API 无法使用。  
 
-#. 进入 API Keys 页面，点击 **Create API key**。  
+#. 进入 API Keys 页面，点击 **Create API key**\ 。  
 
    .. image:: /pironman5_promax/ai_interaction/img/llm_grok_create.png
 
-#. 输入 key 名称，然后点击 **Create API key**。 
+#. 输入 key 名称，然后点击 **Create API key**\ 。 
 
    .. image:: /pironman5_promax/ai_interaction/img/llm_grok_name.png
 
@@ -319,7 +324,7 @@ Grok 是由 Elon Musk 团队（xAI）开发的对话式 AI，可通过 xAI API �
        cd ~/sunfounder-voice-assistant/examples
        sudo nano llm_grok.py
 
-#. 将内容替换为以下代码，并将 ``model="xxx"`` 修改为您需要的模型（例如 ``grok-4-latest``）：
+#. 将内容替换为以下代码，并将 ``model="xxx"`` 修改为您需要的模型（例如 ``grok-4-latest``\ ）：
 
    .. code-block:: python
    
@@ -340,7 +345,7 @@ Grok 是由 Elon Musk 团队（xAI）开发的对话式 AI，可通过 xAI API �
    
        sudo python3 llm_grok.py
    
-----
+-----
 
 DeepSeek
 ------------------
@@ -351,11 +356,11 @@ DeepSeek 是一家中国的大语言模型提供商，提供价格相对低廉�
 
 #. 登录 |link_deepseek|。
 
-#. 在右上角菜单中选择 **API Keys → Create API Key**。
+#. 在右上角菜单中选择 **API Keys → Create API Key**\ 。
 
    .. image:: /pironman5_promax/ai_interaction/img/llm_deepseek_create.png
 
-#. 输入名称，点击 **Create**，然后复制生成的 key。
+#. 输入名称，点击 **Create**\ ，然后复制生成的 key。
 
    .. image:: /pironman5_promax/ai_interaction/img/llm_deepseek_copy.png
 
@@ -395,7 +400,7 @@ DeepSeek 是一家中国的大语言模型提供商，提供价格相对低廉�
        cd ~/sunfounder-voice-assistant/examples
        sudo nano llm_deepseek.py
 
-#. 将内容替换为以下代码，并将 ``model="xxx"`` 修改为您需要的模型（例如 ``deepseek-chat``）：
+#. 将内容替换为以下代码，并将 ``model="xxx"`` 修改为您需要的模型（例如 ``deepseek-chat``\ ）：
 
    .. code-block:: python
    
@@ -427,11 +432,11 @@ Doubao 是字节跳动推出的 AI 模型平台（Volcengine Ark）。
 
 #. 登录 |link_doubao|。
 
-#. 在左侧菜单中向下滚动到 **API Key Management → Create API Key**。
+#. 在左侧菜单中向下滚动到 **API Key Management → Create API Key**\ 。
 
    .. image:: /pironman5_promax/ai_interaction/img/llm_doubao_create.png
 
-#. 输入名称并点击 **Create**。
+#. 输入名称并点击 **Create**\ 。
 
    .. image:: /pironman5_promax/ai_interaction/img/llm_doubao_name.png
 
@@ -459,15 +464,15 @@ Doubao 是字节跳动推出的 AI 模型平台（Volcengine Ark）。
 
    .. image:: /pironman5_promax/ai_interaction/img/llm_doubao_model_select.png
 
-#. 例如选择 **Doubao-seed-1.6**，然后点击 **API 接入**。
+#. 例如选择 **Doubao-seed-1.6**\ ，然后点击 **API 接入**\ 。
 
    .. image:: /pironman5_promax/ai_interaction/img/llm_doubao_model.png
 
-#. 选择您的 API Key 并点击 **Use API**。
+#. 选择您的 API Key 并点击 **Use API**\ 。
 
    .. image:: /pironman5_promax/ai_interaction/img/llm_doubao_use_api.png
 
-#. 点击 **Enable Model**。
+#. 点击 **Enable Model**\ 。
 
    .. image:: /pironman5_promax/ai_interaction/img/llm_doubao_kaitong.png
 
@@ -484,7 +489,7 @@ Doubao 是字节跳动推出的 AI 模型平台（Volcengine Ark）。
        cd ~/sunfounder-voice-assistant/examples
        sudo nano llm_doubao.py
 
-#. 将内容替换为以下代码，并将 ``model="xxx"`` 修改为您需要的模型（例如 ``doubao-seed-1-6-250615``）：
+#. 将内容替换为以下代码，并将 ``model="xxx"`` 修改为您需要的模型（例如 ``doubao-seed-1-6-250615``\ ）：
 
    .. code-block:: python
    
@@ -519,8 +524,8 @@ General
 * **Qwen（通义千问）**  
 * **Doubao（豆包）**  
 
-此外，您还可以连接 **任何兼容 OpenAI API 格式的 LLM 服务**。  
-对于这些平台，您需要自行获取 **API Key** 和对应的 **base_url**。
+此外，您还可以连接 **任何兼容 OpenAI API 格式的 LLM 服务**\ 。  
+对于这些平台，您需要自行获取 **API Key** 和对应的 **base_url**\ 。
 
 **获取并保存 API Key**
 
@@ -553,13 +558,13 @@ General
       cd ~/sunfounder-voice-assistant/examples/
       sudo nano llm_others.py
 
-#. 将 Python 文件内容替换为以下示例代码，并填写正确的 ``base_url`` 和 ``model``：
+#. 将 Python 文件内容替换为以下示例代码，并填写正确的 ``base_url`` 和 ``model``\ ：
 
    .. note::
 
-      关于 ``base_url``：  
-      本项目支持 **OpenAI API 格式** 以及 **与其兼容的 API**。  
-      不同服务提供商会使用不同的 ``base_url``，请参考其官方文档。
+      关于 ``base_url``\ ：  
+      本项目支持 **OpenAI API 格式** 以及 **与其兼容的 API**\ 。  
+      不同服务提供商会使用不同的 ``base_url``\ ，请参考其官方文档。
 
    .. code-block:: python
 

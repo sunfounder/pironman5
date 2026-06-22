@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _promax_openclaw_5_promax:
 
 
@@ -10,7 +15,7 @@
 
 要让 OpenClaw 能够操作 Pironman5 Pro MAX，需要安装 Pironman5 Pro MAX 的技能（skill）。
 
-1. 确保你已经安装了 Pironman5 Pro MAX。如果尚未安装，请参考 :ref:`promax_download_pironman5_module`。
+1. 确保你已经安装了 Pironman5 Pro MAX。如果尚未安装，请参考 :ref:`install_pironman5_module_promax`。
 
 2. 在终端中运行以下命令：
 

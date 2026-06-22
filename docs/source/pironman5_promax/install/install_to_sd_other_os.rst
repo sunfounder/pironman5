@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 .. _install_to_sd_other_promax:
 
 在 Micro SD 卡上安装操作系统
@@ -25,7 +30,7 @@
       :width: 90%
 
 2. 打开 **Raspberry Pi Imager** 后，你会看到 **Device** 页面。  
-   从列表中选择你的 **Raspberry Pi 5**。
+   从列表中选择你的 **Raspberry Pi 5**\ 。
 
    .. image:: img/imager_device.png
       :width: 90%
@@ -34,8 +39,8 @@
 
    .. note::
 
-      * 对于 **Ubuntu**，点击 **Other general-purpose OS** → **Ubuntu**，然后选择 **Ubuntu Desktop 24.04 LTS (64-bit)** 或 **Ubuntu Server 24.04 LTS (64-bit)**。
-      * 对于 **Kali Linux** 和 **Homebridge**，点击 **Other specific-purpose OS**，然后选择对应的系统。
+      * 对于 **Ubuntu**\ ，点击 **Other general-purpose OS** → **Ubuntu**\ ，然后选择 **Ubuntu Desktop 24.04 LTS (64-bit)** 或 **Ubuntu Server 24.04 LTS (64-bit)**\ 。
+      * 对于 **Kali Linux** 和 **Homebridge**\ ，点击 **Other specific-purpose OS**\ ，然后选择对应的系统。
 
    .. image:: img/imager_other_os.png
       :width: 90%
@@ -46,12 +51,12 @@
    .. image:: img/imager_storage.png
       :width: 90%
 
-#. 点击 **NEXT**。
+#. 点击 **NEXT**\ 。
 
    .. note::
 
-      * 对于 **无法提前配置** 的系统，点击 **NEXT** 后会跳过 **Customisation** 步骤，直接进入 **Writing**，系统将被写入 microSD 卡。
-      * 对于 **支持预配置** 的系统，可以在 **Customisation** 步骤中设置 **Hostname**、**WiFi**、**Enable SSH** 等选项。
+      * 对于 **无法提前配置** 的系统，点击 **NEXT** 后会跳过 **Customisation** 步骤，直接进入 **Writing**\ ，系统将被写入 microSD 卡。
+      * 对于 **支持预配置** 的系统，可以在 **Customisation** 步骤中设置 **Hostname**\ 、\ **WiFi**\ 、\ **Enable SSH** 等选项。
 
    .. image:: img/imager_write_other_os.png
       :width: 90%

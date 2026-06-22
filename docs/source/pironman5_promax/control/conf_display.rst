@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 配置显示
 ===================================================================
 
@@ -13,7 +18,7 @@
 
 请按照以下步骤进行配置：
 
-1. 点击屏幕左下角的 **Menu -> Preferences**，然后找到并打开 **Control Centre**。
+1. 点击屏幕左下角的 **Menu -> Preferences**\ ，然后找到并打开 **Control Centre**\ 。
 
    .. image:: img/sleep_screen1.png
 
@@ -47,15 +52,15 @@ Pironman 5 Pro MAX 支持翻转安装。在这种安装方式下，触摸屏将�
 
 2. 设置触摸屏方向
 
-   启动设备。在触摸屏桌面上长按以打开菜单，然后选择 **Desktop Preferences**。
+   启动设备。在触摸屏桌面上长按以打开菜单，然后选择 **Desktop Preferences**\ 。
 
    .. image:: img/inverted_screen1.png
 
-   向下滚动找到 **Screens** 选项，然后在显示界面中长按屏幕图标，选择 **Orientation → Inverted**。
+   向下滚动找到 **Screens** 选项，然后在显示界面中长按屏幕图标，选择 **Orientation → Inverted**\ 。
 
    .. image:: img/inverted_screen2.png
 
-   点击 **Apply**，更新窗口会显示新的屏幕方向，您需要点击 **OK** 进行确认。
+   点击 **Apply**\ ，更新窗口会显示新的屏幕方向，您需要点击 **OK** 进行确认。
 
    .. image:: img/inverted_screen3.png
 

@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 设置 NextCloudPi
 =======================================
 
@@ -47,12 +52,12 @@ NextCloud 是一个开源的私有云存储解决方案，类似于 Google Drive
 
    .. image:: img/home_server_app/ptn_new_admin.png
 
-#. 注册管理员账户后，将进入 Portainer 界面。在左侧导航栏中点击 **Setting -> General**，找到 **App Templates**，并在输入框中填入以下 URL：  
+#. 注册管理员账户后，将进入 Portainer 界面。在左侧导航栏中点击 **Setting -> General**\ ，找到 **App Templates**\ ，并在输入框中填入以下 URL：  
    ``https://raw.githubusercontent.com/novaspirit/pi-hosted/refs/heads/master/template/portainer-v3-arm64.json``
 
    .. image:: img/home_server_app/ptn_app_url.png
 
-#. 点击 **Save Application Settings**。配置过程大约需要 10 秒完成。
+#. 点击 **Save Application Settings**\ 。配置过程大约需要 10 秒完成。
 
 
 **安装 NextCloud**
@@ -62,11 +67,11 @@ NextCloud 是一个开源的私有云存储解决方案，类似于 Google Drive
 
    .. image:: img/home_server_app/ptn_home_local.png
 
-2. 进入 **Templates -> Application**。在右上角搜索框中输入 *nextcloud*，然后点击它。
+2. 进入 **Templates -> Application**\ 。在右上角搜索框中输入 *nextcloud*，然后点击它。
 
    .. image:: img/home_server_app/ptn_temp_nextcloud.png
 
-3. 点击 **Deploy the stack**，并等待部署完成。通常需要大约两分钟。
+3. 点击 **Deploy the stack**\ ，并等待部署完成。通常需要大约两分钟。
 
    .. image:: img/home_server_app/ptn_temp_deploy.png
 

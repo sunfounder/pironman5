@@ -1,4 +1,9 @@
-.. _max_set_up_pironman5:
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
+.. _set_up_pironman5_max:
 
 4. 设置或安装软件
 ================================================

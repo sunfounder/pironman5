@@ -1,3 +1,8 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 IO 扩展板  
 ================
 
@@ -14,7 +19,7 @@ RGB 灯
 
   sudo pironman5 -re true
 
-* 更改颜色，输入目标的十六进制色值，例如 ``fe1a1a``：
+* 更改颜色，输入目标的十六进制色值，例如 ``fe1a1a``\ ：
 
 .. code-block:: shell
 
@@ -26,11 +31,11 @@ RGB 灯
 
   sudo pironman5 -rb 100
 
-* 切换显示模式，可选项包括： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``：
+* 切换显示模式，可选项包括： ``solid/breathing/flow/flow_reverse/rainbow/rainbow_reverse/hue_cycle``\ ：
 
 .. note::
 
-  如果 RGB 模式设置为 ``rainbow`` 、 ``rainbow_reverse`` 或 ``hue_cycle``，将无法使用 ``sudo pironman5 -rc`` 设置颜色。
+  如果 RGB 模式设置为 ``rainbow`` 、 ``rainbow_reverse`` 或 ``hue_cycle``\ ，将无法使用 ``sudo pironman5 -rc`` 设置颜色。
 
 .. code-block:: shell
 
@@ -101,15 +106,31 @@ OLED 显示屏地址为 0x3C。
   sudo systemctl restart pironman5.service
 
 
+唤醒触发器
+-------------------------
+
+.. image:: img/io_board_vib.png
+
+板载振动开关用于在 OLED 显示屏处于休眠模式时将其唤醒。检测到振动时，它会发送信号重新激活 OLED，使显示屏在空闲时保持关闭，并在检测到运动时自动唤醒。
+
+如果移除振动开关的跳线帽，唤醒功能将被禁用。一旦 OLED 进入休眠模式，将无法再被唤醒。此选项适用于希望将相应 GPIO 引脚用于其他用途的高级用户。
+
+.. note::
+
+  跳线帽安装：振动唤醒已启用。
+
+  跳线帽移除：OLED 关闭后无法唤醒，引脚可释放用于其他用途。
+
+
 红外接收器  
 ---------------------------
 
 .. image:: img/io_board_receiver.png
 
-* **型号**：IRM-56384，工作频率 38KHz  
-* **连接**：接入 **GPIO13**  
-* **D1**：接收到红外信号时闪烁  
-* **J8**：用于启用红外功能，默认已插跳线帽。如无需使用 IR，可移除跳线帽释放 GPIO13
+* **型号**\ ：IRM-56384，工作频率 38KHz  
+* **连接**\ ：接入 **GPIO13**  
+* **D1**\ ：接收到红外信号时闪烁  
+* **J8**\ ：用于启用红外功能，默认已插跳线帽。如无需使用 IR，可移除跳线帽释放 GPIO13
 
 要启用红外接收器，请确认连接无误并安装所需模块：
 
@@ -135,7 +156,7 @@ OLED 显示屏地址为 0x3C。
 
 
 GPIO 风扇引脚  
----------------
+-----------------
 
 IO 扩展板支持最多连接两颗 5V 非 CPU 风扇，两者统一控制。
 
@@ -159,17 +180,17 @@ IO 扩展板支持最多连接两颗 5V 非 CPU 风扇，两者统一控制。
 
 .. 使用以下命令配置 GPIO 风扇运行模式，不同模式下的启动温度如下：
 
-例如，若设置为 **1: 性能模式**，GPIO 风扇将在温度达到 50°C 时启动。
+例如，若设置为 **1: 性能模式**\ ，GPIO 风扇将在温度达到 50°C 时启动。
 
 .. code-block:: shell
 
  sudo pironman5 -gm 3
 
-* **4: 安静模式**：风扇在 70°C 启动  
-* **3: 平衡模式**：风扇在 67.5°C 启动  
-* **2: 冷却模式**：风扇在 60°C 启动  
-* **1: 性能模式**：风扇在 50°C 启动  
-* **0: 始终开启**：风扇始终转动
+* **4: 安静模式**\ ：风扇在 70°C 启动  
+* **3: 平衡模式**\ ：风扇在 67.5°C 启动  
+* **2: 冷却模式**\ ：风扇在 60°C 启动  
+* **1: 性能模式**\ ：风扇在 50°C 启动  
+* **0: 始终开启**\ ：风扇始终转动
 
 如风扇的控制引脚连接至其他 GPIO 引脚，可使用以下命令重新指定：
 

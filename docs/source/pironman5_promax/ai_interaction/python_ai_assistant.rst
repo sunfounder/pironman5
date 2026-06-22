@@ -1,11 +1,16 @@
+.. include:: /index.rst
+   :start-after: start_hello_message
+   :end-before: end_hello_message
+
+
 
 .. _ai_voice_assistant_car:
 
 7. AI 语音助手
 ===========================
 
-本课程将把您的 Pironman 5 Pro MAX 打造成一个 **以语音为核心的 AI 助手**。  
-通过提供的代码，机器人将能够：**等待唤醒词**、使用 Vosk **识别语音并转写为文本**、将内容发送到 **OpenAI LLM**，并通过 **Piper TTS** **语音回复**。
+本课程将把您的 Pironman 5 Pro MAX 打造成一个 **以语音为核心的 AI 助手**\ 。  
+通过提供的代码，机器人将能够：\ **等待唤醒词**\ 、使用 Vosk **识别语音并转写为文本**\ 、将内容发送到 **OpenAI LLM**\ ，并通过 **Piper TTS** **语音回复**\ 。
 
 ----
 
@@ -15,9 +20,9 @@
 请确保您已完成以下准备：
 
 * :ref:`test_piper` — Piper 语音功能正常（例如可以播放 “Hello”）。  
-* :ref:`test_vosk` — Vosk 语音识别在您的语言环境中可正常使用（例如 ``en-us``）。  
-* :ref:`py_online_llm` — 您的 **OpenAI API key** 已保存在 ``secret.py`` 中，变量名为 ``OPENAI_API_KEY``。  
-* Pironman 5 Pro MAX 已连接并可正常使用 **麦克风** 和 **扬声器**。  
+* :ref:`test_vosk` — Vosk 语音识别在您的语言环境中可正常使用（例如 ``en-us``\ ）。  
+* :ref:`py_online_llm` — 您的 **OpenAI API key** 已保存在 ``secret.py`` 中，变量名为 ``OPENAI_API_KEY``\ 。  
+* Pironman 5 Pro MAX 已连接并可正常使用 **麦克风** 和 **扬声器**\ 。  
 * 具备稳定的 **网络连接** （LLM 为在线服务）。
 
 ----
@@ -32,12 +37,12 @@
 
 **代码使用的配置：**
 
-* LLM：**OpenAI** （``gpt-4o-mini``）  
-* TTS：**Piper** （``en_US-ryan-low``）  
-* STT：**Vosk** （``en-us``）  
+* LLM：\ **OpenAI** （\ ``gpt-4o-mini``\ ）  
+* TTS：\ **Piper** （\ ``en_US-ryan-low``\ ）  
+* STT：\ **Vosk** （\ ``en-us``\ ）  
 * 唤醒词： ``"hey buddy"``  
-* 键盘输入：**已启用** （可选的手动输入方式）  
-* 图像模式：**已启用** （``WITH_IMAGE=True``）—— 如果未来需要使用图像功能，需要支持多模态的 LLM
+* 键盘输入：\ **已启用** （可选的手动输入方式）  
+* 图像模式：\ **已启用** （\ ``WITH_IMAGE=True``\ ）—— 如果未来需要使用图像功能，需要支持多模态的 LLM
 
 **运行流程：**
 
@@ -45,7 +50,7 @@
 2. 系统持续监听 **“hey buddy”** 唤醒词。  
 3. 被唤醒后，您的语音将被转写为文本（Vosk → text）。  
 4. 文本被发送到 **OpenAI（gpt-4o-mini）** 生成回复。  
-5. 回复内容通过 **Piper** （``en_US-ryan-low``）转换为语音并播放。
+5. 回复内容通过 **Piper** （\ ``en_US-ryan-low``\ ）转换为语音并播放。
 
 **示例交互**
 
@@ -125,7 +130,7 @@
 * ``STT_LANGUAGE="en-us"`` — 指定 Vosk 语音识别所使用的语言。  
 * ``KEYBOARD_ENABLE=True`` — 允许在调试过程中通过键盘手动输入文本。  
 * ``WELCOME`` / ``INSTRUCTIONS`` — 启动欢迎语以及助手的人设/System Prompt。  
-* ``va.run()`` — 启动主循环：**唤醒 → 监听 → LLM 处理 → 语音播报**。  
+* ``va.run()`` — 启动主循环：\ **唤醒 → 监听 → LLM 处理 → 语音播报**\ 。  
 
 
 切换到其他 LLM 或 TTS
@@ -166,13 +171,13 @@
 * **机器人无法响应唤醒词**
 
   - 检查麦克风是否工作正常。  
-  - 确认 ``WAKE_ENABLE = True``。  
+  - 确认 ``WAKE_ENABLE = True``\ 。  
   - 根据您的发音调整唤醒词。  
   - 尽量减少背景噪音，并清晰发音。
 
 * **扬声器没有声音输出**
 
-  - 检查 TTS 模型名称是否正确（例如 ``en_US-ryan-low``）。  
+  - 检查 TTS 模型名称是否正确（例如 ``en_US-ryan-low``\ ）。  
   - 手动测试 Piper 或 Espeak 是否可正常工作。  
   - 检查扬声器连接和音量设置。
 
@@ -180,7 +185,7 @@
 
   - 检查 ``secret.py`` 中配置的 key 是否正确。  
   - 确保网络连接稳定。  
-  - 确认所使用的 LLM 模型受支持（例如 ``gpt-4o-mini``）。
+  - 确认所使用的 LLM 模型受支持（例如 ``gpt-4o-mini``\ ）。
 
 * **唤醒词可用，但没有回复**
 
