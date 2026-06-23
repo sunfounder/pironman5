@@ -162,6 +162,9 @@ class Pironman5:
     @log_error
     def update_config(self, config):
         patch = {}
+        if 'temperature_unit' in config['system']:
+            unit = config['system']['temperature_unit'].upper()
+            patch['temperature_unit'] = unit
         if 'debug_level' in config['system']:
             level = config['system']['debug_level'].upper()
             self.set_debug_level(level)
