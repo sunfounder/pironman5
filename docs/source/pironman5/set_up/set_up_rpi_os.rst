@@ -49,32 +49,30 @@ Per evitare che lo schermo OLED e le ventole GPIO, alimentate dal GPIO del Raspb
 2. Installazione del modulo ``pironman5``
 -----------------------------------------------------------
 
-.. note::
+.. .. note::
 
-   Per i sistemi Raspberry Pi OS Lite, installa prima gli strumenti necessari come ``git`` e ``python3``.
+..    Per i sistemi Raspberry Pi OS Lite, installa prima gli strumenti necessari come ``git`` e ``python3``.
 
-   .. code-block:: shell
+..    .. code-block:: shell
 
-      sudo apt-get install git -y
-      sudo apt-get install python3 python3-pip python3-setuptools -y
+..       sudo apt-get install git -y
+..       sudo apt-get install python3 python3-pip python3-setuptools -y
 
 #. Scarica e installa il modulo ``pironman5`` da GitHub.
 
-   .. tip::
 
-      Se stai usando **Ubuntu**, installa prima ``curl``:
-
-      .. code-block:: shell
-
-         sudo apt install curl -y
 
    .. code-block:: shell
 
       curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
+
+
    .. note::
 
-      Se usi la serie Pironman 5 insieme a PiPower 5, esegui invece il seguente comando:
+      1. Se stai usando **Ubuntu**, installa ``curl`` prima: ``sudo apt install curl -y``
+
+      2. Se stai usando la serie Pironman 5 insieme a **PiPower 5**, esegui invece il seguente comando:
 
       .. code-block:: shell
 

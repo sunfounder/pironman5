@@ -47,35 +47,79 @@ Per evitare che la ventola GPIO, alimentata dal GPIO del Raspberry Pi, rimanga a
 Download e installazione del modulo ``pironman5``
 -----------------------------------------------------------
 
-.. note::
+.. .. note::
 
-   Per i sistemi “lite”, installa inizialmente strumenti come ``git``, ``python3``, ``pip3``, ``setuptools``, ecc.
-   
+..    Per i sistemi Raspberry Pi OS Lite, installa prima gli strumenti necessari come ``git`` e ``python3``.
+
+..    .. code-block:: shell
+
+..       sudo apt-get install git -y
+..       sudo apt-get install python3 python3-pip python3-setuptools -y
+
+#. Scarica e installa il modulo ``pironman5`` da GitHub.
+
+
+
    .. code-block:: shell
-   
-      sudo apt-get install git -y
-      sudo apt-get install python3 python3-pip python3-setuptools -y
 
-#. Procedi a scaricare il codice da GitHub e installare il modulo ``pironman5``.
+      curl -sSL “https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh” | sudo bash
 
-   .. code-block:: shell
 
-      cd ~
-      git clone -b mini https://github.com/sunfounder/pironman5.git --depth 1
-      cd ~/pironman5
-      sudo python3 install.py
 
-   Dopo un’installazione riuscita, è necessario riavviare il sistema per attivare l’installazione. Segui il prompt a schermo per riavviare.
-
-   Al riavvio, il servizio ``pironman5.service`` verrà avviato automaticamente.  
-   Ecco le configurazioni principali di Pironman 5 Mini:
-   
-   * Quattro LED WS2812 RGB si illumineranno di blu con un effetto di respirazione.
-     
    .. note::
-    
-     * Le ventole GPIO sono impostate di default su **Always On**.  
-       Per impostare temperature di attivazione differenti, consulta :ref:`cc_control_fan_mini`.
+
+      1. Se stai usando **Ubuntu**, installa ``curl`` prima: ``sudo apt install curl -y``
+
+      2. Se stai usando la serie Pironman 5 insieme a **PiPower 5**, esegui invece il seguente comando:
+
+      .. code-block:: shell
+
+         curl -sSL “https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh” | sudo bash -s -- --pipower5
+
+#. Dopo aver eseguito l’installer, seleziona il tuo modello di Pironman 5 (1~4).
+
+   .. code-block:: shell
+
+      Pironman 5 Installer v1.0.1
+      Supports: 5 | 5 Mini | 5 Max | 5 Pro Max
+
+      Please select your product model:
+      1) Pironman 5
+      2) Pironman 5 Mini
+      3) Pironman 5 Max
+      4) Pironman 5 Pro Max
+
+      Enter number [1-4]:
+
+#. Una volta completata l’installazione, riavvia il Raspberry Pi come richiesto. Il primo avvio potrebbe richiedere fino a 30 secondi mentre i servizi si inizializzano.
+
+   #. Dopo che Pironman 5 Mini si è avviato correttamente, verifica che i seguenti componenti funzionino correttamente.
+
+   * **Pulsante di accensione**
+
+     * Pressione breve: Accensione.
+     * Tieni premuto 2 secondi: Arresto sicuro (richiede :ref:`safe_shutdown_mini`).
+     * Tieni premuto 5 secondi: Arresto forzato.
+
+   * **LED RGB WS2812**
+
+     * Si illuminano in blu con un effetto di respirazione.
+
+   * **Ventola RGB**
+
+     * Impostata in modalità **Always On** per impostazione predefinita.
+     * La modalità di funzionamento può essere modificata tramite comandi o la Dashboard. Vedi :ref:`cc_control_fan_mini`.
+
+   * **Ventola CPU (Ventola del dissipatore attivo)**
+
+     * Regola automaticamente la velocità in base alla temperatura della CPU.
+     * Curva predefinita della ventola:
+
+       * < 50°C: Spenta (0%)
+       * 50°C+: Bassa (30%)
+       * 60°C+: Media (50%)
+       * 67,5°C+: Alta (70%)
+       * 75°C+: Massima velocità (100%)
 
 #. Puoi utilizzare lo strumento ``systemctl`` per ``start``, ``stop``, ``restart`` o controllare lo ``status`` del servizio ``pironman5.service``.
 
