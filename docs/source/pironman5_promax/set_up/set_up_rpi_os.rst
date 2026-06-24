@@ -51,7 +51,7 @@ To prevent the OLED screen and RGB fans, powered by the Raspberry Pi GPIO, from 
 
 .. .. note::
 
-..    For lite systems, initially install tools like ``git``, ``python3``, ``pip3``, ``setuptools``, etc.
+..    For Raspberry Pi OS Lite systems, first install the required tools such as ``git`` and ``python3``.
 
 ..    .. code-block:: shell
 
