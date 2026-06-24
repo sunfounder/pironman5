@@ -61,21 +61,19 @@
 
 #. 从 GitHub 下载并安装 ``pironman5`` 模块。
 
-   .. tip::
 
-      如果您使用的是 **Ubuntu**\ ，请先安装 ``curl``\ ：
-
-      .. code-block:: shell
-
-         sudo apt install curl -y
 
    .. code-block:: shell
 
       curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
 
+
+
    .. note::
 
-      如果你将 Pironman 5 系列与 PiPower 5 一起使用，请改为运行以下命令：
+      1. 如果您使用的是 **Ubuntu**\ ，请先安装 ``curl``\ ：\ ``sudo apt install curl -y``
+
+      2. 如果你将 Pironman 5 系列与 PiPower 5 一起使用，请改为运行以下命令：
 
       .. code-block:: shell
 
