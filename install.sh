@@ -362,6 +362,12 @@ if [ "$_PLUGIN_ONLY" = true ]; then
             DTOVERLAY_ADD "sunfounder-pipower5.dtbo"
         fi
 
+        TITLE "Persist device tree overlay"
+        RUN "mkdir -p /usr/local/share/sunfounder/overlays" "Create persistent overlay directory"
+        RUN "if [ -f ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; elif [ -f ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; else curl -fsSL https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo -o /usr/local/share/sunfounder/overlays/sunfounder-pipower5.dtbo; fi" "Persist PiPower5 device tree overlay"
+        RUN "mkdir -p /etc/kernel/postinst.d" "Create postinst.d directory"
+        RUN "printf '%s\n' '#!/bin/bash' '# SunFounder: persist DT overlays across kernel updates' 'for dtbo in /usr/local/share/sunfounder/overlays/*.dtbo; do' '    [ -f "\$dtbo" ] || continue' '    for d in /boot/firmware/*/overlays/ /boot/overlays/; do' '        [ -d "\$d" ] && cp "\$dtbo" "\$d/"' '    done' 'done' > /etc/kernel/postinst.d/sunfounder-dtbos && chmod +x /etc/kernel/postinst.d/sunfounder-dtbos" "Install kernel postinst hook"
+
         TITLE "Enable PiPower5 plugin"
         RUN "echo pipower5 >> /opt/pironman5/.custom_module" "Write custom module"
         echo "========================================="
@@ -553,6 +559,23 @@ if [ "$IS_CONTAINER" = false ]; then
         fi
     fi
 fi
+
+# --- Persist device tree overlays ---
+# On Ubuntu, flash-kernel rotates overlay directories (current/ <-> old/)
+# on kernel updates, stranding custom dtbos. Store dtbos in a persistent
+# location + install a kernel postinst.d hook to re-copy after updates.
+TITLE "Persist device tree overlays"
+RUN "mkdir -p /usr/local/share/sunfounder/overlays" "Create persistent overlay directory"
+if [ -n "${PM5_OVERLAYS[$variant]}" ] && [ "${PM5_OVERLAYS[$variant]}" != "" ]; then
+    RUN "cp ${HOME}/pironman5/overlays/${PM5_OVERLAYS[$variant]} /usr/local/share/sunfounder/overlays/" "Persist ${PM5_OVERLAYS[$variant]}"
+fi
+if [ "$INSTALL_PIPOWER5" = true ]; then
+    RUN "if [ -f ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; elif [ -f ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; else curl -fsSL https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo -o /usr/local/share/sunfounder/overlays/sunfounder-pipower5.dtbo; fi" "Persist PiPower5 device tree overlay"
+fi
+
+TITLE "Install kernel postinst hook"
+RUN "mkdir -p /etc/kernel/postinst.d" "Create postinst.d directory"
+RUN "printf '%s\n' '#!/bin/bash' '# SunFounder: persist DT overlays across kernel updates' 'for dtbo in /usr/local/share/sunfounder/overlays/*.dtbo; do' '    [ -f "\$dtbo" ] || continue' '    for d in /boot/firmware/*/overlays/ /boot/overlays/; do' '        [ -d "\$d" ] && cp "\$dtbo" "\$d/"' '    done' 'done' > /etc/kernel/postinst.d/sunfounder-dtbos && chmod +x /etc/kernel/postinst.d/sunfounder-dtbos" "Install kernel postinst hook"
 
 # --- Post-install scripts ---
 if [ "$IS_CONTAINER" = false ]; then
