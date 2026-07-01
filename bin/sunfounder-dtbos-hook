@@ -7,6 +7,8 @@
 for dtbo in /usr/local/share/sunfounder/overlays/*.dtbo; do
     [ -f "$dtbo" ] || continue
     for d in /boot/firmware/*/overlays/ /boot/overlays/; do
-        [ -d "$d" ] && cp "$dtbo" "$d/"
+        if [ -d "$d" ]; then
+            cp "$dtbo" "$d/"
+        fi
     done
 done
