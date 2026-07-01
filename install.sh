@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# Pironman 5 Installer v2.1.0
+# Pironman 5 Installer
 # Supports: Pironman 5, Pironman 5 Mini, Pironman 5 Max, Pironman 5 Pro Max, Pironman 5 NAS, Pironman 5 UPS
 #
 # Usage:
@@ -163,7 +163,7 @@ PIRONMAN5_VERSION="unknown"
 _fetch_version() {
     local _vurl="https://raw.githubusercontent.com/sunfounder/pironman5/${1}/pironman5/version.py"
     local _vraw=$(curl -fsSL "$_vurl" 2>/dev/null) || return 1
-    PIRONMAN5_VERSION=$(echo "$_vraw" | awk '''/__version__/ { gsub(/[^0-9.]/, ""); print }''')
+    PIRONMAN5_VERSION=$(echo "$_vraw" | awk '/__version__/ { gsub(/[^0-9.]/, ""); print }')
 }
 _fetch_version "$branch"
 
