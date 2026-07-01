@@ -39,6 +39,7 @@ IS_PLAIN_TEXT=false
 ARG_VARIANT=""
 INSTALL_PLUGIN=""
 NO_AUTOLOGIN=false
+PIPOWER5_BRANCH_ARG=""
 while [ $# -gt 0 ]; do
     case "$1" in
         --pipower5) INSTALL_PIPOWER5=true; INSTALL_PLUGIN="pipower5"; SKIP_MENU=false ;;
@@ -48,6 +49,7 @@ while [ $# -gt 0 ]; do
         --variant=*) ARG_VARIANT="${1#*=}" ;;
         --variant) shift; ARG_VARIANT="$1" ;;
         --plugin) shift; INSTALL_PLUGIN="$1"; INSTALL_PIPOWER5=true; INSTALL_PLUGIN="pipower5" ;;
+        --pipower5-branch) shift; PIPOWER5_BRANCH_ARG="$1" ;;
     esac
     shift
 done
@@ -229,7 +231,7 @@ echo "  pm_auto          ${PM_AUTO_BRANCH}  (v${PM_AUTO_VER})"
 echo "  pm_dashboard     ${DASHBOARD_BRANCH}  (v${DASHBOARD_VER})"
 echo "  sf_rpi_status    ${SF_RPI_STATUS_BRANCH}  (v${SF_RPI_STATUS_VER})"
 if [ "$INSTALL_PIPOWER5" = true ]; then
-    _pipower5_display_branch="${PIPOWER5_BRANCH:-v2}"
+    _pipower5_display_branch="${PIPOWER5_BRANCH:-${PIPOWER5_BRANCH_ARG:-v2}}"
     PIPOWER5_VER=$(_fetch_comp_version "pipower5" "${_pipower5_display_branch}")
     echo "  pipower5         ${_pipower5_display_branch}  (v${PIPOWER5_VER})"
 fi
@@ -319,7 +321,7 @@ if [ "$_PLUGIN_ONLY" = true ]; then
 
     if [ "$INSTALL_PLUGIN" = "pipower5" ]; then
         TITLE "Clone PiPower 5 source"
-        PIPOWER5_BRANCH="${PIPOWER5_BRANCH:-v2}"
+        PIPOWER5_BRANCH="${PIPOWER5_BRANCH:-${PIPOWER5_BRANCH_ARG:-v2}}"
         PIPOWER5_SRC="${HOME}/pipower5"
         if [ -d "${PIPOWER5_SRC}" ]; then
             RUN "cd ${PIPOWER5_SRC} && git fetch origin && git checkout ${PIPOWER5_BRANCH} && git pull origin ${PIPOWER5_BRANCH}" "Update PiPower 5 source"
@@ -480,7 +482,7 @@ RUN "${VENV_PIP} install git+${GIT_REPO}pm_dashboard.git@${DASHBOARD_BRANCH}" "I
 
 # --- Install PiPower5 ---
 if [ "$INSTALL_PIPOWER5" = true ]; then
-    PIPOWER5_BRANCH="${PIPOWER5_BRANCH:-v2}"
+    PIPOWER5_BRANCH="${PIPOWER5_BRANCH:-${PIPOWER5_BRANCH_ARG:-v2}}"
     PIPOWER5_SRC="${HOME}/pipower5"
 
     TITLE "Clone PiPower5 source"
