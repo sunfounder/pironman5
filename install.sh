@@ -232,8 +232,9 @@ echo "  pm_auto          ${PM_AUTO_BRANCH}  (v${PM_AUTO_VER})"
 echo "  pm_dashboard     ${DASHBOARD_BRANCH}  (v${DASHBOARD_VER})"
 echo "  sf_rpi_status    ${SF_RPI_STATUS_BRANCH}  (v${SF_RPI_STATUS_VER})"
 if [ "$INSTALL_PIPOWER5" = true ]; then
-    PIPOWER5_VER=$(_fetch_comp_version "pipower5" "v2")
-    echo "  pipower5         v2  (v${PIPOWER5_VER})"
+    _pipower5_display_branch="${PIPOWER5_BRANCH:-v2}"
+    PIPOWER5_VER=$(_fetch_comp_version "pipower5" "${_pipower5_display_branch}")
+    echo "  pipower5         ${_pipower5_display_branch}  (v${PIPOWER5_VER})"
 fi
 echo "========================================="
 echo ""
