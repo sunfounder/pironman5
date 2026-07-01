@@ -366,7 +366,7 @@ if [ "$_PLUGIN_ONLY" = true ]; then
         RUN "mkdir -p /usr/local/share/sunfounder/overlays" "Create persistent overlay directory"
         RUN "if [ -f ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; elif [ -f ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; else curl -fsSL https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo -o /usr/local/share/sunfounder/overlays/sunfounder-pipower5.dtbo; fi" "Persist PiPower5 device tree overlay"
         RUN "mkdir -p /etc/kernel/postinst.d" "Create postinst.d directory"
-        RUN "printf '%s\n' '#!/bin/bash' '# SunFounder: persist DT overlays across kernel updates' 'for dtbo in /usr/local/share/sunfounder/overlays/*.dtbo; do' '    [ -f "\$dtbo" ] || continue' '    for d in /boot/firmware/*/overlays/ /boot/overlays/; do' '        [ -d "\$d" ] && cp "\$dtbo" "\$d/"' '    done' 'done' > /etc/kernel/postinst.d/sunfounder-dtbos && chmod +x /etc/kernel/postinst.d/sunfounder-dtbos" "Install kernel postinst hook"
+        RUN "cp ${PIPOWER5_SRC}/bin/sunfounder-dtbos-hook /etc/kernel/postinst.d/sunfounder-dtbos && chmod +x /etc/kernel/postinst.d/sunfounder-dtbos" "Install kernel postinst hook"
 
         TITLE "Enable PiPower5 plugin"
         RUN "echo pipower5 >> /opt/pironman5/.custom_module" "Write custom module"
@@ -575,7 +575,7 @@ fi
 
 TITLE "Install kernel postinst hook"
 RUN "mkdir -p /etc/kernel/postinst.d" "Create postinst.d directory"
-RUN "printf '%s\n' '#!/bin/bash' '# SunFounder: persist DT overlays across kernel updates' 'for dtbo in /usr/local/share/sunfounder/overlays/*.dtbo; do' '    [ -f "\$dtbo" ] || continue' '    for d in /boot/firmware/*/overlays/ /boot/overlays/; do' '        [ -d "\$d" ] && cp "\$dtbo" "\$d/"' '    done' 'done' > /etc/kernel/postinst.d/sunfounder-dtbos && chmod +x /etc/kernel/postinst.d/sunfounder-dtbos" "Install kernel postinst hook"
+RUN "cp ${HOME}/pironman5/bin/sunfounder-dtbos-hook /etc/kernel/postinst.d/sunfounder-dtbos && chmod +x /etc/kernel/postinst.d/sunfounder-dtbos" "Install kernel postinst hook"
 
 # --- Post-install scripts ---
 if [ "$IS_CONTAINER" = false ]; then
