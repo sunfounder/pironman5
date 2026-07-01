@@ -40,6 +40,7 @@ ARG_VARIANT=""
 INSTALL_PLUGIN=""
 NO_AUTOLOGIN=false
 PIPOWER5_BRANCH_ARG=""
+BRANCH_OVERRIDE=""
 while [ $# -gt 0 ]; do
     case "$1" in
         --pipower5) INSTALL_PIPOWER5=true; INSTALL_PLUGIN="pipower5"; SKIP_MENU=false ;;
@@ -50,6 +51,7 @@ while [ $# -gt 0 ]; do
         --variant) shift; ARG_VARIANT="$1" ;;
         --plugin) shift; INSTALL_PLUGIN="$1"; INSTALL_PIPOWER5=true; INSTALL_PLUGIN="pipower5" ;;
         --pipower5-branch) shift; PIPOWER5_BRANCH_ARG="$1" ;;
+        --pironman5-branch) shift; BRANCH_OVERRIDE="$1" ;;
     esac
     shift
 done
@@ -80,7 +82,8 @@ fi
 
 # Branch override via environment variable
 # Usage: PIRONMAN5_BRANCH=fix/promax curl ... | bash -s -- --variant pro-max
-BRANCH_OVERRIDE="${PIRONMAN5_BRANCH:-}"
+# BRANCH_OVERRIDE set via --pironman5-branch, or env, or empty
+BRANCH_OVERRIDE="${BRANCH_OVERRIDE:-${PIRONMAN5_BRANCH:-}}"
 
 # ============================================================
 # Banner
