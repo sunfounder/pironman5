@@ -10,8 +10,6 @@
 # (Safe to run directly — interactive prompts read from /dev/tty)
 # ============================================================
 
-VERSION="2.1.9"
-
 # Source Installer framework — use local path when available (e.g. Docker build),
 # otherwise curl from GitHub.
 FRAMEWORK_DIR="/tmp/installer-tools"
@@ -85,23 +83,7 @@ fi
 # BRANCH_OVERRIDE set via --pironman5-branch, or env, or empty
 BRANCH_OVERRIDE="${BRANCH_OVERRIDE:-${PIRONMAN5_BRANCH:-}}"
 
-# ============================================================
-# Banner
-# ============================================================
-echo -e "\033[34m"
-cat <<BANNER
 
-██████╗ ██╗██████╗  ██████╗ ███╗   ██╗███╗   ███╗ █████╗ ███╗   ██╗    ███████╗
-██╔══██╗██║██╔══██╗██╔═══██╗████╗  ██║████╗ ████║██╔══██╗████╗  ██║    ██╔════╝
-██████╔╝██║██████╔╝██║   ██║██╔██╗ ██║██╔████╔██║███████║██╔██╗ ██║    ███████╗
-██╔═══╝ ██║██╔══██╗██║   ██║██║╚██╗██║██║╚██╔╝██║██╔══██║██║╚██╗██║    ╚════██║
-██║     ██║██║  ██║╚██████╔╝██║ ╚████║██║ ╚═╝ ██║██║  ██║██║ ╚████║    ███████║
-╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝    ╚══════╝
-
-Pironman 5 Installer v${VERSION}
-
-BANNER
-echo -e "\033[0m"
 
 # ============================================================
 # Product Configuration
@@ -176,18 +158,12 @@ fi
 # ============================================================
 # Package Versions
 # ============================================================
-PM_AUTO_BRANCH="v2"
-DASHBOARD_BRANCH="v2"
-SF_RPI_STATUS_BRANCH="main"
-
-GIT_REPO="https://github.com/sunfounder/"
-
 # Fetch pironman5 version from GitHub
 PIRONMAN5_VERSION="unknown"
 _fetch_version() {
     local _vurl="https://raw.githubusercontent.com/sunfounder/pironman5/${1}/pironman5/version.py"
     local _vraw=$(curl -fsSL "$_vurl" 2>/dev/null) || return 1
-    PIRONMAN5_VERSION=$(echo "$_vraw" | awk '/__version__/ { gsub(/[^0-9.]/, ""); print }')
+    PIRONMAN5_VERSION=$(echo "$_vraw" | awk '''/__version__/ { gsub(/[^0-9.]/, ""); print }''')
 }
 _fetch_version "$branch"
 
@@ -196,6 +172,32 @@ if [ -n "$BRANCH_OVERRIDE" ]; then
     branch="$BRANCH_OVERRIDE"
     _fetch_version "$branch"
 fi
+
+# ============================================================
+# Banner
+# ============================================================
+echo -e "\033[34m"
+cat <<BANNER
+
+██████╗ ██╗██████╗  ██████╗ ███╗   ██╗███╗   ███╗ █████╗ ███╗   ██╗    ███████╗
+██╔══██╗██║██╔══██╗██╔═══██╗████╗  ██║████╗ ████║██╔══██╗████╗  ██║    ██╔════╝
+██████╔╝██║██████╔╝██║   ██║██╔██╗ ██║██╔████╔██║███████║██╔██╗ ██║    ███████╗
+██╔═══╝ ██║██╔══██╗██║   ██║██║╚██╗██║██║╚██╔╝██║██╔══██║██║╚██╗██║    ╚════██║
+██║     ██║██║  ██║╚██████╔╝██║ ╚████║██║ ╚═╝ ██║██║  ██║██║ ╚████║    ███████║
+╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝    ╚══════╝
+
+Pironman 5 Installer v${PIRONMAN5_VERSION}
+
+BANNER
+echo -e "\033[0m"
+
+PM_AUTO_BRANCH="v2"
+DASHBOARD_BRANCH="v2"
+SF_RPI_STATUS_BRANCH="main"
+
+GIT_REPO="https://github.com/sunfounder/"
+
+
 
 # Unified install: all dependencies pre-installed
 # All overlays copied below
