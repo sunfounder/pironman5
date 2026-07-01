@@ -374,6 +374,7 @@ if [ "$_PLUGIN_ONLY" = true ]; then
         RUN "if [ -f ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; elif [ -f ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; else curl -fsSL https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo -o /usr/local/share/sunfounder/overlays/sunfounder-pipower5.dtbo; fi" "Persist PiPower5 device tree overlay"
         RUN "mkdir -p /etc/kernel/postinst.d" "Create postinst.d directory"
         RUN "cp ${PIPOWER5_SRC}/bin/sunfounder-dtbos-hook /etc/kernel/postinst.d/sunfounder-dtbos && chmod +x /etc/kernel/postinst.d/sunfounder-dtbos" "Install kernel postinst hook"
+        RUN "/etc/kernel/postinst.d/sunfounder-dtbos" "Run postinst hook now for existing overlay dirs"
 
         TITLE "Enable PiPower5 plugin"
         RUN "echo pipower5 >> /opt/pironman5/.custom_module" "Write custom module"
@@ -583,6 +584,7 @@ fi
 TITLE "Install kernel postinst hook"
 RUN "mkdir -p /etc/kernel/postinst.d" "Create postinst.d directory"
 RUN "cp ${HOME}/pironman5/bin/sunfounder-dtbos-hook /etc/kernel/postinst.d/sunfounder-dtbos && chmod +x /etc/kernel/postinst.d/sunfounder-dtbos" "Install kernel postinst hook"
+RUN "/etc/kernel/postinst.d/sunfounder-dtbos" "Run postinst hook now for existing overlay dirs"
 
 # --- Post-install scripts ---
 if [ "$IS_CONTAINER" = false ]; then
