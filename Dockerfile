@@ -10,9 +10,9 @@ RUN mkdir -p /root
 ENV USER=root
 ENV HOME=/root
 
-RUN mkdir -p /root/pironman5/bin
-COPY bin/sunfounder-dtbos-hook /root/pironman5/bin/sunfounder-dtbos-hook
-COPY install.sh /tmp/install.sh
+# Copy entire repo for installer (needs overlays/, bin/, scripts/, etc.)
+COPY . /root/pironman5
+RUN cp /root/pironman5/install.sh /tmp/install.sh
 
 RUN if [ "$PIPOWER5" = "true" ]; then \
         bash /tmp/install.sh --variant "$VARIANT" --container --pipower5; \
