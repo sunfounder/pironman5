@@ -28,6 +28,9 @@ jobs:
           - variant: pro-max
             pipower5: "false"
             suffix: ""
+          - variant: mini
+            pipower5: "false"
+            suffix: ""
 
     steps:
       - name: Checkout pironman5
