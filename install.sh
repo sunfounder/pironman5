@@ -616,6 +616,11 @@ if [ "$INSTALL_PIPOWER5" = true ]; then
     RUN "echo -n 'pipower5' > /opt/pironman5/.custom_module" "Write custom module"
 fi
 
+if [ "$IS_CONTAINER" = false ] && [ "$variant" = "pro_max" ]; then
+    _hdmi_url="${GIT_REPO}pi-hdmi-edid/raw/main/install.sh"
+    RUN "curl -fsSL \"$_hdmi_url\" | bash" "Install HDMI EDID plugin"
+fi
+
 # --- Write dtoverlay to config.txt ---
 if [ "$IS_CONTAINER" = false ]; then
     TITLE "Configure device tree overlays"
