@@ -10,9 +10,12 @@ RUN mkdir -p /root
 ENV USER=root
 ENV HOME=/root
 
-# Copy entire repo for installer (needs overlays/, bin/, scripts/, etc.)
-COPY . /root/pironman5
-RUN cp /root/pironman5/install.sh /tmp/install.sh
+# Copy files that install.sh references at ${HOME}/pironman5/
+RUN mkdir -p /root/pironman5/bin /root/pironman5/overlays /root/pironman5/scripts
+COPY install.sh /tmp/install.sh
+COPY bin/ /root/pironman5/bin/
+COPY overlays/ /root/pironman5/overlays/
+COPY scripts/ /root/pironman5/scripts/
 
 RUN if [ "$PIPOWER5" = "true" ]; then \
         bash /tmp/install.sh --variant "$VARIANT" --container --pipower5; \
