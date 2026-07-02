@@ -1,0 +1,14 @@
+#!/bin/bash
+# SunFounder: persist DT overlays across kernel updates
+# This script runs from /etc/kernel/postinst.d/ after every kernel update.
+# It copies all SunFounder dtbos from the persistent store to all active
+# overlay directories, ensuring they survive Ubuntu flash-kernel rotation.
+
+for dtbo in /usr/local/share/sunfounder/overlays/*.dtbo; do
+    [ -f "$dtbo" ] || continue
+    for d in /boot/firmware/*/overlays/ /boot/overlays/; do
+        if [ -d "$d" ]; then
+            cp "$dtbo" "$d/"
+        fi
+    done
+done

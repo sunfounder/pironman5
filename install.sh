@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# Pironman 5 Installer v2.1.0
+# Pironman 5 Installer
 # Supports: Pironman 5, Pironman 5 Mini, Pironman 5 Max, Pironman 5 Pro Max, Pironman 5 NAS, Pironman 5 UPS
 #
 # Usage:
@@ -9,8 +9,6 @@
 #   curl -sSL https://raw.githubusercontent.com/sunfounder/pironman5/1.3.x/install.sh | sudo bash -s -- --variant base --pipower5 --container
 # (Safe to run directly — interactive prompts read from /dev/tty)
 # ============================================================
-
-VERSION="2.1.8"
 
 # Source Installer framework — use local path when available (e.g. Docker build),
 # otherwise curl from GitHub.
@@ -31,6 +29,23 @@ fi
 installer_check_root_privileges
 
 # ============================================================
+# Banner
+# ============================================================
+echo -e "\033[34m"
+cat <<BANNER
+
+██████╗ ██╗██████╗  ██████╗ ███╗   ██╗███╗   ███╗ █████╗ ███╗   ██╗    ███████╗
+██╔══██╗██║██╔══██╗██╔═══██╗████╗  ██║████╗ ████║██╔══██╗████╗  ██║    ██╔════╝
+██████╔╝██║██████╔╝██║   ██║██╔██╗ ██║██╔████╔██║███████║██╔██╗ ██║    ███████╗
+██╔═══╝ ██║██╔══██╗██║   ██║██║╚██╗██║██║╚██╔╝██║██╔══██║██║╚██╗██║    ╚════██║
+██║     ██║██║  ██║╚██████╔╝██║ ╚████║██║ ╚═╝ ██║██║  ██║██║ ╚████║    ███████║
+╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝    ╚══════╝
+
+Pironman 5 Installer
+BANNER
+echo -e "\033[0m"
+
+# ============================================================
 # Parse CLI Arguments
 # ============================================================
 INSTALL_PIPOWER5=false
@@ -39,6 +54,8 @@ IS_PLAIN_TEXT=false
 ARG_VARIANT=""
 INSTALL_PLUGIN=""
 NO_AUTOLOGIN=false
+PIPOWER5_BRANCH_ARG=""
+BRANCH_OVERRIDE=""
 while [ $# -gt 0 ]; do
     case "$1" in
         --pipower5) INSTALL_PIPOWER5=true; INSTALL_PLUGIN="pipower5"; SKIP_MENU=false ;;
@@ -48,6 +65,8 @@ while [ $# -gt 0 ]; do
         --variant=*) ARG_VARIANT="${1#*=}" ;;
         --variant) shift; ARG_VARIANT="$1" ;;
         --plugin) shift; INSTALL_PLUGIN="$1"; INSTALL_PIPOWER5=true; INSTALL_PLUGIN="pipower5" ;;
+        --pipower5-branch) shift; PIPOWER5_BRANCH_ARG="$1" ;;
+        --pironman5-branch) shift; BRANCH_OVERRIDE="$1" ;;
     esac
     shift
 done
@@ -78,25 +97,10 @@ fi
 
 # Branch override via environment variable
 # Usage: PIRONMAN5_BRANCH=fix/promax curl ... | bash -s -- --variant pro-max
-BRANCH_OVERRIDE="${PIRONMAN5_BRANCH:-}"
+# BRANCH_OVERRIDE set via --pironman5-branch, or env, or empty
+BRANCH_OVERRIDE="${BRANCH_OVERRIDE:-${PIRONMAN5_BRANCH:-}}"
 
-# ============================================================
-# Banner
-# ============================================================
-echo -e "\033[34m"
-cat <<BANNER
 
-██████╗ ██╗██████╗  ██████╗ ███╗   ██╗███╗   ███╗ █████╗ ███╗   ██╗    ███████╗
-██╔══██╗██║██╔══██╗██╔═══██╗████╗  ██║████╗ ████║██╔══██╗████╗  ██║    ██╔════╝
-██████╔╝██║██████╔╝██║   ██║██╔██╗ ██║██╔████╔██║███████║██╔██╗ ██║    ███████╗
-██╔═══╝ ██║██╔══██╗██║   ██║██║╚██╗██║██║╚██╔╝██║██╔══██║██║╚██╗██║    ╚════██║
-██║     ██║██║  ██║╚██████╔╝██║ ╚████║██║ ╚═╝ ██║██║  ██║██║ ╚████║    ███████║
-╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝    ╚══════╝
-
-Pironman 5 Installer v${VERSION}
-
-BANNER
-echo -e "\033[0m"
 
 # ============================================================
 # Product Configuration
@@ -174,12 +178,6 @@ fi
 # ============================================================
 # Package Versions
 # ============================================================
-PM_AUTO_BRANCH="v2"
-DASHBOARD_BRANCH="v2"
-SF_RPI_STATUS_BRANCH="main"
-
-GIT_REPO="https://github.com/sunfounder/"
-
 # Fetch pironman5 version from GitHub
 PIRONMAN5_VERSION="unknown"
 _fetch_version() {
@@ -194,6 +192,14 @@ if [ -n "$BRANCH_OVERRIDE" ]; then
     branch="$BRANCH_OVERRIDE"
     _fetch_version "$branch"
 fi
+
+PM_AUTO_BRANCH="v2"
+DASHBOARD_BRANCH="v2"
+SF_RPI_STATUS_BRANCH="main"
+
+GIT_REPO="https://github.com/sunfounder/"
+
+
 
 # Unified install: all dependencies pre-installed
 # All overlays copied below
@@ -232,8 +238,9 @@ echo "  pm_auto          ${PM_AUTO_BRANCH}  (v${PM_AUTO_VER})"
 echo "  pm_dashboard     ${DASHBOARD_BRANCH}  (v${DASHBOARD_VER})"
 echo "  sf_rpi_status    ${SF_RPI_STATUS_BRANCH}  (v${SF_RPI_STATUS_VER})"
 if [ "$INSTALL_PIPOWER5" = true ]; then
-    PIPOWER5_VER=$(_fetch_comp_version "pipower5" "v2")
-    echo "  pipower5         v2  (v${PIPOWER5_VER})"
+    _pipower5_display_branch="${PIPOWER5_BRANCH:-${PIPOWER5_BRANCH_ARG:-v2}}"
+    PIPOWER5_VER=$(_fetch_comp_version "pipower5" "${_pipower5_display_branch}")
+    echo "  pipower5         ${_pipower5_display_branch}  (v${PIPOWER5_VER})"
 fi
 echo "========================================="
 echo ""
@@ -321,7 +328,7 @@ if [ "$_PLUGIN_ONLY" = true ]; then
 
     if [ "$INSTALL_PLUGIN" = "pipower5" ]; then
         TITLE "Clone PiPower 5 source"
-        PIPOWER5_BRANCH="${PIPOWER5_BRANCH:-v2}"
+        PIPOWER5_BRANCH="${PIPOWER5_BRANCH:-${PIPOWER5_BRANCH_ARG:-v2}}"
         PIPOWER5_SRC="${HOME}/pipower5"
         if [ -d "${PIPOWER5_SRC}" ]; then
             RUN "cd ${PIPOWER5_SRC} && git fetch origin && git checkout ${PIPOWER5_BRANCH} && git pull origin ${PIPOWER5_BRANCH}" "Update PiPower 5 source"
@@ -363,6 +370,15 @@ if [ "$_PLUGIN_ONLY" = true ]; then
         if [ -n "$OVERLAY_PATH" ]; then
             RUN "cp ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ${OVERLAY_PATH}/" "Copy DT overlay"
             DTOVERLAY_ADD "sunfounder-pipower5.dtbo"
+        fi
+
+        TITLE "Persist device tree overlay"
+        RUN "mkdir -p /usr/local/share/sunfounder/overlays" "Create persistent overlay directory"
+        RUN "if [ -f ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; elif [ -f ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; else curl -fsSL https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo -o /usr/local/share/sunfounder/overlays/sunfounder-pipower5.dtbo; fi" "Persist PiPower5 device tree overlay"
+        if [ "$IS_CONTAINER" = false ]; then
+        RUN "mkdir -p /etc/kernel/postinst.d" "Create postinst.d directory"
+        RUN "cp ${PIPOWER5_SRC}/bin/sunfounder-dtbos-hook /etc/kernel/postinst.d/sunfounder-dtbos && chmod +x /etc/kernel/postinst.d/sunfounder-dtbos" "Install kernel postinst hook"
+        RUN "/etc/kernel/postinst.d/sunfounder-dtbos" "Run postinst hook now for existing overlay dirs"
         fi
 
         TITLE "Enable PiPower5 plugin"
@@ -476,7 +492,7 @@ RUN "${VENV_PIP} install git+${GIT_REPO}pm_dashboard.git@${DASHBOARD_BRANCH}" "I
 
 # --- Install PiPower5 ---
 if [ "$INSTALL_PIPOWER5" = true ]; then
-    PIPOWER5_BRANCH="${PIPOWER5_BRANCH:-v2}"
+    PIPOWER5_BRANCH="${PIPOWER5_BRANCH:-${PIPOWER5_BRANCH_ARG:-v2}}"
     PIPOWER5_SRC="${HOME}/pipower5"
 
     TITLE "Clone PiPower5 source"
@@ -555,6 +571,26 @@ if [ "$IS_CONTAINER" = false ]; then
             RUN "if [ -f ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ${OVERLAY_PATH}/; elif [ -f ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ${OVERLAY_PATH}/; else curl -fsSL https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo -o ${OVERLAY_PATH}/sunfounder-pipower5.dtbo; fi" "Copy PiPower5 device tree overlay"
         fi
     fi
+fi
+
+# --- Persist device tree overlays ---
+# On Ubuntu, flash-kernel rotates overlay directories (current/ <-> old/)
+# on kernel updates, stranding custom dtbos. Store dtbos in a persistent
+# location + install a kernel postinst.d hook to re-copy after updates.
+TITLE "Persist device tree overlays"
+RUN "mkdir -p /usr/local/share/sunfounder/overlays" "Create persistent overlay directory"
+if [ -n "${PM5_OVERLAYS[$variant]}" ] && [ "${PM5_OVERLAYS[$variant]}" != "" ]; then
+    RUN "cp ${HOME}/pironman5/overlays/${PM5_OVERLAYS[$variant]} /usr/local/share/sunfounder/overlays/" "Persist ${PM5_OVERLAYS[$variant]}"
+fi
+if [ "$INSTALL_PIPOWER5" = true ]; then
+    RUN "if [ -f ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; elif [ -f ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; else curl -fsSL https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo -o /usr/local/share/sunfounder/overlays/sunfounder-pipower5.dtbo; fi" "Persist PiPower5 device tree overlay"
+fi
+
+if [ "$IS_CONTAINER" = false ]; then
+TITLE "Install kernel postinst hook"
+RUN "mkdir -p /etc/kernel/postinst.d" "Create postinst.d directory"
+RUN "cp ${HOME}/pironman5/bin/sunfounder-dtbos-hook /etc/kernel/postinst.d/sunfounder-dtbos && chmod +x /etc/kernel/postinst.d/sunfounder-dtbos" "Install kernel postinst hook"
+RUN "/etc/kernel/postinst.d/sunfounder-dtbos" "Run postinst hook now for existing overlay dirs"
 fi
 
 # --- Post-install scripts ---
