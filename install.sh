@@ -69,10 +69,10 @@ fi
 # Validate --variant
 if [ -n "$ARG_VARIANT" ]; then
     case "$ARG_VARIANT" in
-        base|max|pro-max|pro_max)
+        base|mini|max|pro-max|pro_max)
             # Normalize pro-max to pro_max for internal key
             [ "$ARG_VARIANT" = "pro-max" ] && ARG_VARIANT="pro_max" ;;
-        *) echo "Invalid variant: $ARG_VARIANT. Valid: base, max, pro-max"; exit 1 ;;
+        *) echo "Invalid variant: $ARG_VARIANT. Valid: base, mini, max, pro-max"; exit 1 ;;
     esac
 fi
 
@@ -108,17 +108,20 @@ PRODUCTS=(
     "Pironman 5|base|1.3.x"
     "Pironman 5 Max|max|1.3.x"
     "Pironman 5 Pro Max|pro_max|1.3.x"
+    "Pironman 5 Mini|mini|1.3.x"
 )
 
 # --- Peripherals per variant ---
 declare -A PM5_PERIPHERALS
 PM5_PERIPHERALS[base]="storage cpu network memory history log cpu_temperature gpu_temperature temperature_unit oled oled_sleep ws2812 pwm_fan_speed gpio_fan_state gpio_fan_mode pi5_power_button"
+PM5_PERIPHERALS[mini]="storage cpu network memory history log cpu_temperature gpu_temperature temperature_unit ws2812 pwm_fan_speed gpio_fan_state gpio_fan_mode gpio_fan_led"
 PM5_PERIPHERALS[max]="storage cpu network memory history log cpu_temperature gpu_temperature temperature_unit oled ws2812 pwm_fan_speed gpio_fan_state gpio_fan_mode gpio_fan_led pi5_power_button oled_sleep"
 PM5_PERIPHERALS[pro_max]="storage cpu network memory history log cpu_temperature gpu_temperature temperature_unit ip_address mac_address oled oled_sleep ws2812 pi5_power_button"
 
 # --- DT overlays per variant ---
 declare -A PM5_OVERLAYS
 PM5_OVERLAYS[base]="sunfounder-pironman5.dtbo"
+PM5_OVERLAYS[mini]="sunfounder-pironman5mini.dtbo"
 PM5_OVERLAYS[max]="sunfounder-pironman5.dtbo"
 PM5_OVERLAYS[pro_max]="sunfounder-pironman5promax.dtbo"
 
