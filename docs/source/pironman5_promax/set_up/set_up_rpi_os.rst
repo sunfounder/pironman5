@@ -53,7 +53,7 @@ Set Up on Raspberry Pi/Ubuntu/Kali/Homebridge OS
 
    .. code-block:: shell
 
-      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash
 
 
    .. note::
@@ -64,7 +64,7 @@ Set Up on Raspberry Pi/Ubuntu/Kali/Homebridge OS
 
       .. code-block:: shell
 
-         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash -s -- --pipower5
 
 #. 运行安装程序后，选择你的 Pironman 5 型号（1~4）。
 
