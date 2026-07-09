@@ -44,6 +44,10 @@
       * 对于 **Kali Linux**\ 、\ **Home Assistant** 和 **Homebridge**\ ，点击  
         **Other specific-purpose OS**\ ，然后选择对应的系统。
 
+   .. warning::
+
+      无论选择哪种系统，都请务必选择 **64 位（64-bit）** 版本。在 **32 位** 系统上，部分软件包仅提供 ``aarch64``\ （64 位）版本，可能导致某些功能无法正常安装或使用。
+
    .. image:: img/imager_other_os.png
       :width: 90%
 
