@@ -101,6 +101,10 @@ Si tu tarjeta Micro SD tiene instalada una versión de escritorio del sistema, p
 
 #. Ve a la sección **OS** y elige la opción recomendada **Raspberry Pi OS (64-bit)**.
 
+   .. warning::
+
+      Asegúrate de elegir una versión de **64 bits**. Si instalas un sistema de **32 bits**, algunos paquetes solo están disponibles para ``aarch64`` (64 bits) y es posible que ciertas funciones no se instalen o no funcionen correctamente.
+
    .. image:: img/imager_os.png
       :width: 90%
 

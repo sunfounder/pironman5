@@ -44,6 +44,10 @@ Si estás utilizando una tarjeta Micro SD, puedes seguir el siguiente tutorial p
       * Para **Kali Linux**, **Home Assistant** y **Homebridge**, haz clic en  
         **Other specific-purpose OS** y luego selecciona el sistema correspondiente.
 
+   .. warning::
+
+      Sea cual sea el sistema que elijas, asegúrate de seleccionar una versión de **64 bits**. En un sistema de **32 bits**, algunos paquetes solo están disponibles para ``aarch64`` (64 bits) y es posible que ciertas funciones no se instalen o no funcionen correctamente.
+
    .. image:: img/imager_other_os.png
       :width: 90%
 
