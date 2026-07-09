@@ -1,4 +1,4 @@
-﻿.. include:: /index.rst
+.. include:: /index.rst
    :start-after: start_hello_message
    :end-before: end_hello_message
 
@@ -62,7 +62,7 @@ Download e installazione del modulo ``pironman5``
 
    .. code-block:: shell
 
-      curl -sSL “https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh” | sudo bash
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash
 
 
 
@@ -74,7 +74,7 @@ Download e installazione del modulo ``pironman5``
 
       .. code-block:: shell
 
-         curl -sSL “https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh” | sudo bash -s -- --pipower5
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash -s -- --pipower5
 
 #. Dopo aver eseguito l’installer, seleziona il tuo modello di Pironman 5 (1~4).
 
