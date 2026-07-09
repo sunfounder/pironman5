@@ -63,7 +63,7 @@ To prevent the OLED screen and GPIO Fans, powered by the Raspberry Pi GPIO, from
 
    .. code-block:: shell
 
-      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash
 
 
 
@@ -75,7 +75,7 @@ To prevent the OLED screen and GPIO Fans, powered by the Raspberry Pi GPIO, from
 
       .. code-block:: shell
 
-         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash -s -- --pipower5
 
 
 

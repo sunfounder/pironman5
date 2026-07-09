@@ -410,6 +410,6 @@ Skip Quick Troubleshooting for:
 
 All 4 products now use the same curl-based installer:
 ```shell
-curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
+curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash
 ```
 With a `.. tip::` for Ubuntu users to `sudo apt install curl -y` first. Model selection (1-4) happens interactively. Do NOT revert to `git clone -b <branch>`.

@@ -44,6 +44,10 @@ If you are using a Micro SD card, you can follow the tutorial below to install t
       * For **Kali Linux** and **Homebridge**, click  
         **Other specific-purpose OS**, then select the corresponding system.
 
+   .. warning::
+
+      Whichever system you choose, be sure to select a **64-bit** version. On a **32-bit** system, some packages are only available for ``aarch64`` (64-bit), and certain features may fail to install or work properly.
+
    .. image:: img/imager_other_os.png
       :width: 90%
 
