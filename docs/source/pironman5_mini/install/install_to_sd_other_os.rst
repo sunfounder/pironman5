@@ -44,6 +44,10 @@ Micro SD カードを使用する場合は、以下のチュートリアルに�
       * **Kali Linux**、**Home Assistant**、**Homebridge** の場合は、  
         **Other specific-purpose OS** をクリックし、対応するシステムを選択します。
 
+   .. warning::
+
+      どのシステムを選ぶ場合でも、必ず **64 ビット** 版を選択してください。**32 ビット** のシステムでは、一部のパッケージは ``aarch64``（64 ビット）版のみの提供となり、特定の機能がインストールできない、または正しく動作しない場合があります。
+
    .. image:: img/imager_other_os.png
       :width: 90%
 

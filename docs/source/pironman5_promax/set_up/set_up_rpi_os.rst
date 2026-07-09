@@ -62,7 +62,7 @@ Raspberry Pi GPIOから電源供給を受けるOLED画面とRGBファンがシ�
 
    .. code-block:: shell
 
-      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash
 
 
 
@@ -74,7 +74,7 @@ Raspberry Pi GPIOから電源供給を受けるOLED画面とRGBファンがシ�
 
       .. code-block:: shell
 
-         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash -s -- --pipower5
 
 #. インストーラーを実行した後、Pironman 5 モデル（1〜4）を選択します。
 
