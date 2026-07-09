@@ -60,7 +60,7 @@ Um zu verhindern, dass der über den GPIO des Raspberry Pi gespeiste RGB-Lüfter
 
    .. code-block:: shell
 
-      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash
 
 
 
@@ -72,7 +72,7 @@ Um zu verhindern, dass der über den GPIO des Raspberry Pi gespeiste RGB-Lüfter
 
       .. code-block:: shell
 
-         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash -s -- --pipower5
 
 #. Wähle nach dem Ausführen des Installationsprogramms dein Pironman-5-Modell aus (1~4).
 

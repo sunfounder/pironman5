@@ -60,7 +60,7 @@ Um zu verhindern, dass der OLED-Bildschirm und die RGB-Lüfter, die über die GP
 
    .. code-block:: shell
 
-      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash
 
 
 
@@ -72,7 +72,7 @@ Um zu verhindern, dass der OLED-Bildschirm und die RGB-Lüfter, die über die GP
 
       .. code-block:: shell
 
-         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash -s -- --pipower5
 
 #. Wählen Sie nach dem Ausführen des Installationsprogramms Ihr Pironman-5-Modell aus (1~4).
 

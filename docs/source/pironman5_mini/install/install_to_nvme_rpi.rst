@@ -115,6 +115,10 @@ Nun können Sie das Betriebssystem auf Ihrer NVMe-SSD installieren.
 
 3. Wechseln Sie zum Abschnitt **OS** und wählen Sie die empfohlene Option **Raspberry Pi OS (64-bit)**.
 
+   .. warning::
+
+      Achten Sie darauf, eine **64-Bit**-Version zu wählen. Wenn Sie ein **32-Bit**-System installieren, sind einige Pakete nur für ``aarch64`` (64 Bit) verfügbar, und bestimmte Funktionen lassen sich möglicherweise nicht installieren oder funktionieren nicht richtig.
+
    .. image:: img/imager_os.png
       :width: 90%
 
