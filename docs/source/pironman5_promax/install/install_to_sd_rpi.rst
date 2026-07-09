@@ -59,6 +59,10 @@ Ce guide explique comment faire cela en utilisant **Raspberry Pi Imager** de man
 
 3. Allez dans la section **Système d'exploitation** et choisissez l'option recommandée **Raspberry Pi OS (64-bit)**.
 
+   .. warning::
+
+      Veillez à choisir une version **64 bits**. Si vous installez un système **32 bits**, certains paquets ne sont disponibles que pour ``aarch64`` (64 bits), et certaines fonctionnalités risquent de ne pas s’installer ou de ne pas fonctionner correctement.
+
    .. image:: img/imager_os.png
       :width: 90%
 

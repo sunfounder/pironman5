@@ -44,6 +44,10 @@ Si vous utilisez une carte Micro SD, vous pouvez suivre le tutoriel ci-dessous p
       * Pour **Kali Linux** et **Homebridge**, cliquez sur
         **Autres systèmes d'exploitation spécifiques**, puis sélectionnez le système correspondant.
 
+   .. warning::
+
+      Quel que soit le système choisi, veillez à sélectionner une version **64 bits**. Sur un système **32 bits**, certains paquets ne sont disponibles que pour ``aarch64`` (64 bits), et certaines fonctionnalités risquent de ne pas s’installer ou de ne pas fonctionner correctement.
+
    .. image:: img/imager_other_os.png
       :width: 90%
 

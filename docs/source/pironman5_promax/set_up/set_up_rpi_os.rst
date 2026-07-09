@@ -63,7 +63,7 @@ Pour éviter que l'écran OLED et les ventilateurs RGB, alimentés par le GPIO d
 
    .. code-block:: shell
 
-      curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash
+      curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash
 
 
 
@@ -75,7 +75,7 @@ Pour éviter que l'écran OLED et les ventilateurs RGB, alimentés par le GPIO d
 
       .. code-block:: shell
 
-         curl -sSL "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh" | sudo bash -s -- --pipower5
+         curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash -s -- --pipower5
 
 #. Après avoir lancé l'installateur, sélectionnez votre modèle Pironman 5 (1~4).
 

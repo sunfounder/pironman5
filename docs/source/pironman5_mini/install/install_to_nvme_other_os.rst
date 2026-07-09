@@ -45,6 +45,10 @@ Si vous utilisez un SSD NVMe et disposez d’un adaptateur pour connecter le SSD
       * Pour **Kali Linux**, **Home Assistant** et **Homebridge**, cliquez sur  
         **Other specific-purpose OS**, puis sélectionnez le système correspondant.
 
+   .. warning::
+
+      Quel que soit le système choisi, veillez à sélectionner une version **64 bits**. Sur un système **32 bits**, certains paquets ne sont disponibles que pour ``aarch64`` (64 bits), et certaines fonctionnalités risquent de ne pas s’installer ou de ne pas fonctionner correctement.
+
    .. image:: img/imager_other_os.png
       :width: 90%
 
