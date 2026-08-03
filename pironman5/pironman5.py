@@ -28,9 +28,9 @@ def _format_json(obj, max_level=2, indent=2, _level=0):
 from pm_auto.pm_auto import PMAuto
 from pm_auto import __version__ as pm_auto_version
 from .logger import Logger
-from .utils import merge_dict, log_error
+from .utils import log_error, build_effective_config
 from .version import __version__ as pironman5_version
-from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, SYSTEM_DEFAULT_CONFIG, EVENT_MAP
+from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, EVENT_MAP
 from ._constants import CONFIG_PATH, APP_NAME, DEFAULT_DEBUG_LEVEL
 
 from sf_rpi_status import restart_service
@@ -53,17 +53,14 @@ class Pironman5:
 
         # Load config
         # -----------------------------------------
-        self.config = {
-            'system': SYSTEM_DEFAULT_CONFIG,
-        }
-        self.config['system']['debug_level'] = DEFAULT_DEBUG_LEVEL
-
         self.config_path = config_path
+        raw_config = None
         if os.path.exists(self.config_path):
             with open(self.config_path, 'r') as f:
-                config = json.load(f)
-            config = self.upgrade_config(config)
-            self.config = merge_dict(self.config, config)
+                raw_config = json.load(f)
+        self.config = build_effective_config(raw_config)
+        with open(self.config_path, 'w') as f:
+            json.dump(self.config, f, indent=4)
 
         # Set debug level
         # -----------------------------------------
@@ -151,13 +148,6 @@ class Pironman5:
     @log_error
     def set_debug_level(self, level):
         self.log.setLevel(level)
-
-    @log_error
-    def upgrade_config(self, config):
-        ''' upgrade old config to new config converting 'auto' to'system' '''
-        if 'auto' in config:
-            return {'system': config['auto']}
-        return config
 
     @log_error
     def update_config(self, config):
