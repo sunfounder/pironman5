@@ -14,6 +14,37 @@ def merge_dict(dict1, dict2):
             new_dict[key] = dict2[key]
     return new_dict
 
+def build_effective_config(raw_config=None):
+    '''
+    Build effective config by merging file overrides onto system defaults.
+
+    Replicates the config assembly logic shared by app startup and CLI.
+    Does NOT write to disk (caller decides whether to persist).
+
+    Args:
+        raw_config: parsed config dict from file (may be None, may have
+                    legacy 'auto' key). Not mutated.
+
+    Returns:
+        dict: effective config {'system': {...}} with defaults + overrides.
+    '''
+    from .variants import SYSTEM_DEFAULT_CONFIG
+    from ._constants import DEFAULT_DEBUG_LEVEL
+
+    config = {
+        'system': SYSTEM_DEFAULT_CONFIG.copy(),
+    }
+    config['system']['debug_level'] = DEFAULT_DEBUG_LEVEL
+
+    if raw_config is not None:
+        # upgrade_config: migrate legacy 'auto' key to 'system'
+        cfg = raw_config
+        if 'auto' in cfg:
+            cfg = {'system': cfg['auto']}
+        config = merge_dict(config, cfg)
+
+    return config
+
 def log_error(func):
     def wrapper(self, *args, **kwargs):
         try:

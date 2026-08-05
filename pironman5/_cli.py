@@ -11,7 +11,7 @@ from ._launch_browser import run as launch_browser
 from .variants import NAME, PERIPHERALS
 from .pironman5 import Pironman5
 from .version import __version__
-from .utils import is_included, constrain
+from .utils import is_included, constrain, build_effective_config
 
 AVAILABLE_PAGES = []
 AVAILABLE_EMAIL_MODES = []
@@ -171,7 +171,8 @@ def main():
                 content = f.read()
                 if content == '':
                     current_config = {'system': {}}
-                current_config = json.loads(content)
+                else:
+                    current_config = json.loads(content)
             except json.JSONDecodeError:
                 print(f"Invalid config file: {config_path}")
                 quit()
@@ -179,7 +180,8 @@ def main():
     # show config
     # ----------------------------------------
     if args.config:
-        print(json.dumps(current_config, indent=4))
+        effective_config = build_effective_config(current_config)
+        print(json.dumps(effective_config, indent=4))
         quit()
 
     # get or set debug level
