@@ -4,12 +4,12 @@
 # Supports: Pironman 5, Pironman 5 Mini, Pironman 5 Max, Pironman 5 Pro Max, Pironman 5 NAS, Pironman 5 UPS
 #
 # Usage:
-#   curl -sSL https://raw.githubusercontent.com/sunfounder/pironman5/1.3.x/install.sh | sudo bash
-#   curl -sSL https://raw.githubusercontent.com/sunfounder/pironman5/1.3.x/install.sh | sudo bash -s -- --pipower5
-#   curl -sSL https://raw.githubusercontent.com/sunfounder/pironman5/1.3.x/install.sh | sudo bash -s -- --variant base --pipower5 --container
+#   curl -sSL https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh | sudo bash
+#   curl -sSL https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh | sudo bash -s -- --pipower5
+#   curl -sSL https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh | sudo bash -s -- --variant base --pipower5 --container
 #   # China mirror (Gitee):
-#   curl -sSL https://gitee.com/sunfounder/pironman5/raw/1.3.x/install.sh | sudo bash -s -- --cn
-#   curl -sSL https://gitee.com/sunfounder/pironman5/raw/1.3.x/install.sh | sudo bash -s -- --cn --variant base
+#   curl -sSL https://gitee.com/sunfounder/pironman5/raw/v1/install.sh | sudo bash -s -- --cn
+#   curl -sSL https://gitee.com/sunfounder/pironman5/raw/v1/install.sh | sudo bash -s -- --cn --variant base
 # (Safe to run directly — interactive prompts read from /dev/tty)
 # ============================================================
 
@@ -128,10 +128,10 @@ BRANCH_OVERRIDE="${BRANCH_OVERRIDE:-${PIRONMAN5_BRANCH:-}}"
 # --- Product list (shown in menu) ---
 # Format: "Display Name|variant|branch"
 PRODUCTS=(
-    "Pironman 5|base|1.3.x"
-    "Pironman 5 Max|max|1.3.x"
-    "Pironman 5 Pro Max|pro_max|1.3.x"
-    "Pironman 5 Mini|mini|1.3.x"
+    "Pironman 5|base|v1"
+    "Pironman 5 Max|max|v1"
+    "Pironman 5 Pro Max|pro_max|v1"
+    "Pironman 5 Mini|mini|v1"
 )
 
 # --- Peripherals per variant ---
@@ -359,7 +359,7 @@ fi
 if [ "$_PLUGIN_ONLY" = true ]; then
     VENV_PIP="/opt/pironman5/venv/bin/pip3"
     # GIT_REPO already set to mirror source above (with --cn)
-    branch="${BRANCH_OVERRIDE:-1.3.x}"
+    branch="${BRANCH_OVERRIDE:-v1}"
 
     if [ "$INSTALL_PLUGIN" = "pipower5" ]; then
         TITLE "Clone PiPower 5 source"

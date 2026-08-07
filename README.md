@@ -25,38 +25,38 @@ Quick Links:
 ## Installation
 
 ```bash
-curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/1.3.x/install.sh" | sudo bash
+curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash
 ```
 
 To install PiPower5 as a plugin alongside Pironman 5, append `--pipower5`:
 
 ```bash
-curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/1.3.x/install.sh" | sudo bash -s -- --pipower5
+curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash -s -- --pipower5
 ```
 
 > **For users in mainland China (Gitee mirror):** append `--cn` to download the installer and all resources from Gitee instead of GitHub:
 >
 > ```bash
-> curl -sSL "https://gitee.com/sunfounder/pironman5/raw/1.3.x/install.sh" | sudo bash -s -- --cn
+> curl -sSL "https://gitee.com/sunfounder/pironman5/raw/v1/install.sh" | sudo bash -s -- --cn
 > ```
 >
 > With PiPower5 plugin:
 >
 > ```bash
-> curl -sSL "https://gitee.com/sunfounder/pironman5/raw/1.3.x/install.sh" | sudo bash -s -- --cn --pipower5
+> curl -sSL "https://gitee.com/sunfounder/pironman5/raw/v1/install.sh" | sudo bash -s -- --cn --pipower5
 > ```
 
 > If your system does not support piping directly into `bash`, download the script first and then run it:
 >
 > ```bash
-> curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/1.3.x/install.sh" -o install.sh
+> curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" -o install.sh
 > sudo bash install.sh
 > ```
 >
 > With PiPower5 plugin:
 >
 > ```bash
-> curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/1.3.x/install.sh" -o install.sh
+> curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" -o install.sh
 > sudo bash install.sh --pipower5
 > ```
 
