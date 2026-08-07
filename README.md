@@ -34,6 +34,18 @@ To install PiPower5 as a plugin alongside Pironman 5, append `--pipower5`:
 curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/1.3.x/install.sh" | sudo bash -s -- --pipower5
 ```
 
+> **For users in mainland China (Gitee mirror):** append `--cn` to download the installer and all resources from Gitee instead of GitHub:
+>
+> ```bash
+> curl -sSL "https://gitee.com/sunfounder/pironman5/raw/1.3.x/install.sh" | sudo bash -s -- --cn
+> ```
+>
+> With PiPower5 plugin:
+>
+> ```bash
+> curl -sSL "https://gitee.com/sunfounder/pironman5/raw/1.3.x/install.sh" | sudo bash -s -- --cn --pipower5
+> ```
+
 > If your system does not support piping directly into `bash`, download the script first and then run it:
 >
 > ```bash
