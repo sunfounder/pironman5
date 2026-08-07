@@ -7,16 +7,33 @@
 #   curl -sSL https://raw.githubusercontent.com/sunfounder/pironman5/1.3.x/install.sh | sudo bash
 #   curl -sSL https://raw.githubusercontent.com/sunfounder/pironman5/1.3.x/install.sh | sudo bash -s -- --pipower5
 #   curl -sSL https://raw.githubusercontent.com/sunfounder/pironman5/1.3.x/install.sh | sudo bash -s -- --variant base --pipower5 --container
+#   # China mirror (Gitee):
+#   curl -sSL https://gitee.com/sunfounder/pironman5/raw/1.3.x/install.sh | sudo bash -s -- --cn
+#   curl -sSL https://gitee.com/sunfounder/pironman5/raw/1.3.x/install.sh | sudo bash -s -- --cn --variant base
 # (Safe to run directly — interactive prompts read from /dev/tty)
 # ============================================================
 
+# Pre-scan args for --cn (mirror) before downloading the framework,
+# since the framework URL itself needs to use the correct source.
+USE_CN_MIRROR=false
+for _arg in "$@"; do
+    if [ "$_arg" = "--cn" ]; then
+        USE_CN_MIRROR=true
+        break
+    fi
+done
+
 # Source Installer framework — use local path when available (e.g. Docker build),
-# otherwise curl from GitHub.
+# otherwise curl from GitHub (or Gitee mirror with --cn).
 FRAMEWORK_DIR="/tmp/installer-tools"
 if [ -d "$FRAMEWORK_DIR" ]; then
     source "$FRAMEWORK_DIR/installer_1.1.0.sh"
 else
-    INSTALLER_URL="https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/refs/heads/main/tools/installer_1.1.0.sh"
+    if [ "$USE_CN_MIRROR" = true ]; then
+        INSTALLER_URL="https://gitee.com/sunfounder/sunfounder-installer-scripts/raw/main/tools/installer_1.1.0.sh"
+    else
+        INSTALLER_URL="https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/refs/heads/main/tools/installer_1.1.0.sh"
+    fi
     curl -fsSL "$INSTALLER_URL?$(date +%s)" -o installer.sh
     if [ $? -ne 0 ]; then
         echo "Network error, please check your internet connection."
@@ -56,12 +73,14 @@ INSTALL_PLUGIN=""
 NO_AUTOLOGIN=false
 PIPOWER5_BRANCH_ARG=""
 BRANCH_OVERRIDE=""
+# USE_CN_MIRROR already pre-scanned above (before framework download)
 while [ $# -gt 0 ]; do
     case "$1" in
         --pipower5) INSTALL_PIPOWER5=true; INSTALL_PLUGIN="pipower5"; SKIP_MENU=false ;;
         --container) IS_CONTAINER=true; IS_PLAIN_TEXT=true ;;
         --plain-text) IS_PLAIN_TEXT=true ;;
         --no-autologin) NO_AUTOLOGIN=true ;;
+        --cn) USE_CN_MIRROR=true ;;
         --variant=*) ARG_VARIANT="${1#*=}" ;;
         --variant) shift; ARG_VARIANT="$1" ;;
         --plugin) shift; INSTALL_PLUGIN="$1"; INSTALL_PIPOWER5=true; INSTALL_PLUGIN="pipower5" ;;
@@ -178,10 +197,10 @@ fi
 # ============================================================
 # Package Versions
 # ============================================================
-# Fetch pironman5 version from GitHub
+# Fetch pironman5 version from GitHub/Gitee
 PIRONMAN5_VERSION="unknown"
 _fetch_version() {
-    local _vurl="https://raw.githubusercontent.com/sunfounder/pironman5/${1}/pironman5/version.py"
+    local _vurl="${GIT_RAW_BASE}pironman5${GIT_RAW_SEP}${1}/pironman5/version.py"
     local _vraw=$(curl -fsSL "$_vurl" 2>/dev/null) || return 1
     PIRONMAN5_VERSION=$(echo "$_vraw" | awk '/__version__/ { gsub(/[^0-9.]/, ""); print }')
 }
@@ -197,7 +216,19 @@ PM_AUTO_BRANCH="v2"
 DASHBOARD_BRANCH="v2"
 SF_RPI_STATUS_BRANCH="main"
 
-GIT_REPO="https://github.com/sunfounder/"
+# Source base URLs — switch to Gitee mirror with --cn
+# Note: Gitee raw URL format differs from GitHub: needs a /raw/ segment.
+if [ "$USE_CN_MIRROR" = true ]; then
+    GIT_REPO="https://gitee.com/sunfounder/"
+    GIT_RAW_BASE="https://gitee.com/sunfounder/"
+    GIT_RAW_SEP="/raw/"
+    PIPOWER5_DTBO_URL="https://gitee.com/sunfounder/pipower5/raw/main/sunfounder-pipower5.dtbo"
+else
+    GIT_REPO="https://github.com/sunfounder/"
+    GIT_RAW_BASE="https://raw.githubusercontent.com/sunfounder/"
+    GIT_RAW_SEP="/"
+    PIPOWER5_DTBO_URL="https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo"
+fi
 
 
 
@@ -218,15 +249,19 @@ has() { return 0; }
 echo ""
 # Detect git source (uses framework function, idempotent)
 installer_detect_git_source
+# With --cn, downloads already forced to Gitee — fix the report label
+if [ "$USE_CN_MIRROR" = true ]; then
+    INSTALLER_GIT_SOURCE="Gitee (--cn)"
+fi
 
 echo "========================================="
 echo "  ${product_name}  v${PIRONMAN5_VERSION}"
 echo "  Branch: ${branch}"
 echo "  Source: ${INSTALLER_GIT_SOURCE}"
 echo "  ---------------------------------------"
-# Fetch component versions from GitHub
+# Fetch component versions from GitHub/Gitee
 _fetch_comp_version() {
-    local _url="https://raw.githubusercontent.com/sunfounder/${1}/${2}/$(echo ${1} | sed 's/-/_/g')/version.py"
+    local _url="${GIT_RAW_BASE}${1}${GIT_RAW_SEP}${2}/$(echo ${1} | sed 's/-/_/g')/version.py"
     local _raw=$(curl -fsSL "$_url" 2>/dev/null) || { echo "unknown"; return; }
     echo "$_raw" | awk '/__version__/ { gsub(/[^0-9.]/, ""); print }'
 }
@@ -323,7 +358,7 @@ fi
 # --- Plugin-only install (incremental, only when no --variant given) ---
 if [ "$_PLUGIN_ONLY" = true ]; then
     VENV_PIP="/opt/pironman5/venv/bin/pip3"
-    GIT_REPO="https://github.com/sunfounder/"
+    # GIT_REPO already set to mirror source above (with --cn)
     branch="${BRANCH_OVERRIDE:-1.3.x}"
 
     if [ "$INSTALL_PLUGIN" = "pipower5" ]; then
@@ -374,7 +409,7 @@ if [ "$_PLUGIN_ONLY" = true ]; then
 
         TITLE "Persist device tree overlay"
         RUN "mkdir -p /usr/local/share/sunfounder/overlays" "Create persistent overlay directory"
-        RUN "if [ -f ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; elif [ -f ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; else curl -fsSL https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo -o /usr/local/share/sunfounder/overlays/sunfounder-pipower5.dtbo; fi" "Persist PiPower5 device tree overlay"
+        RUN "if [ -f ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; elif [ -f ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; else curl -fsSL $PIPOWER5_DTBO_URL -o /usr/local/share/sunfounder/overlays/sunfounder-pipower5.dtbo; fi" "Persist PiPower5 device tree overlay"
         if [ "$IS_CONTAINER" = false ]; then
         RUN "mkdir -p /etc/kernel/postinst.d" "Create postinst.d directory"
         RUN "cp ${PIPOWER5_SRC}/bin/sunfounder-dtbos-hook /etc/kernel/postinst.d/sunfounder-dtbos && chmod +x /etc/kernel/postinst.d/sunfounder-dtbos" "Install kernel postinst hook"
@@ -568,7 +603,7 @@ if [ "$IS_CONTAINER" = false ]; then
         fi
         if [ "$INSTALL_PIPOWER5" = true ]; then
             # Copy pipower5 DT overlay at runtime (after make dtbo has built it)
-            RUN "if [ -f ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ${OVERLAY_PATH}/; elif [ -f ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ${OVERLAY_PATH}/; else curl -fsSL https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo -o ${OVERLAY_PATH}/sunfounder-pipower5.dtbo; fi" "Copy PiPower5 device tree overlay"
+            RUN "if [ -f ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ${OVERLAY_PATH}/; elif [ -f ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ${OVERLAY_PATH}/; else curl -fsSL $PIPOWER5_DTBO_URL -o ${OVERLAY_PATH}/sunfounder-pipower5.dtbo; fi" "Copy PiPower5 device tree overlay"
         fi
     fi
 fi
@@ -583,7 +618,7 @@ if [ -n "${PM5_OVERLAYS[$variant]}" ] && [ "${PM5_OVERLAYS[$variant]}" != "" ]; 
     RUN "cp ${HOME}/pironman5/overlays/${PM5_OVERLAYS[$variant]} /usr/local/share/sunfounder/overlays/" "Persist ${PM5_OVERLAYS[$variant]}"
 fi
 if [ "$INSTALL_PIPOWER5" = true ]; then
-    RUN "if [ -f ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; elif [ -f ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; else curl -fsSL https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo -o /usr/local/share/sunfounder/overlays/sunfounder-pipower5.dtbo; fi" "Persist PiPower5 device tree overlay"
+    RUN "if [ -f ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/driver/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; elif [ -f ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo ]; then cp ${PIPOWER5_SRC}/sunfounder-pipower5.dtbo /usr/local/share/sunfounder/overlays/; else curl -fsSL $PIPOWER5_DTBO_URL -o /usr/local/share/sunfounder/overlays/sunfounder-pipower5.dtbo; fi" "Persist PiPower5 device tree overlay"
 fi
 
 if [ "$IS_CONTAINER" = false ]; then
