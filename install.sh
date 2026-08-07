@@ -107,10 +107,10 @@ fi
 # Validate --variant
 if [ -n "$ARG_VARIANT" ]; then
     case "$ARG_VARIANT" in
-        base|mini|max|pro-max|pro_max)
+        base|mini|max|pro-max|pro_max|ups)
             # Normalize pro-max to pro_max for internal key
             [ "$ARG_VARIANT" = "pro-max" ] && ARG_VARIANT="pro_max" ;;
-        *) echo "Invalid variant: $ARG_VARIANT. Valid: base, mini, max, pro-max"; exit 1 ;;
+        *) echo "Invalid variant: $ARG_VARIANT. Valid: base, mini, max, pro-max, ups"; exit 1 ;;
     esac
 fi
 
@@ -132,6 +132,7 @@ PRODUCTS=(
     "Pironman 5 Max|max|v1"
     "Pironman 5 Pro Max|pro_max|v1"
     "Pironman 5 Mini|mini|v1"
+    "Pironman 5 UPS|ups|v1"
 )
 
 # --- Peripherals per variant ---
