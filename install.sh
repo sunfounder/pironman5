@@ -194,6 +194,19 @@ else
     IFS='|' read -r product_name variant branch <<< "${PRODUCTS[$selected]}"
 fi
 
+# Source base URLs — switch to Gitee mirror with --cn
+# Note: Gitee raw URL format differs from GitHub: needs a /raw/ segment.
+if [ "$USE_CN_MIRROR" = true ]; then
+    GIT_REPO="https://gitee.com/sunfounder/"
+    GIT_RAW_BASE="https://gitee.com/sunfounder/"
+    GIT_RAW_SEP="/raw/"
+    PIPOWER5_DTBO_URL="https://gitee.com/sunfounder/pipower5/raw/main/sunfounder-pipower5.dtbo"
+else
+    GIT_REPO="https://github.com/sunfounder/"
+    GIT_RAW_BASE="https://raw.githubusercontent.com/sunfounder/"
+    GIT_RAW_SEP="/"
+    PIPOWER5_DTBO_URL="https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo"
+fi
 # ============================================================
 # Package Versions
 # ============================================================
@@ -201,7 +214,8 @@ fi
 PIRONMAN5_VERSION="unknown"
 _fetch_version() {
     local _vurl="${GIT_RAW_BASE}pironman5${GIT_RAW_SEP}${1}/pironman5/version.py"
-    local _vraw=$(curl -fsSL "$_vurl" 2>/dev/null) || return 1
+    local _vraw
+    _vraw=$(curl -fsSL "$_vurl" 2>/dev/null) || return 1
     PIRONMAN5_VERSION=$(echo "$_vraw" | awk '/__version__/ { gsub(/[^0-9.]/, ""); print }')
 }
 _fetch_version "$branch"
@@ -216,19 +230,6 @@ PM_AUTO_BRANCH="v2"
 DASHBOARD_BRANCH="v2"
 SF_RPI_STATUS_BRANCH="main"
 
-# Source base URLs — switch to Gitee mirror with --cn
-# Note: Gitee raw URL format differs from GitHub: needs a /raw/ segment.
-if [ "$USE_CN_MIRROR" = true ]; then
-    GIT_REPO="https://gitee.com/sunfounder/"
-    GIT_RAW_BASE="https://gitee.com/sunfounder/"
-    GIT_RAW_SEP="/raw/"
-    PIPOWER5_DTBO_URL="https://gitee.com/sunfounder/pipower5/raw/main/sunfounder-pipower5.dtbo"
-else
-    GIT_REPO="https://github.com/sunfounder/"
-    GIT_RAW_BASE="https://raw.githubusercontent.com/sunfounder/"
-    GIT_RAW_SEP="/"
-    PIPOWER5_DTBO_URL="https://github.com/sunfounder/pipower5/raw/refs/heads/main/sunfounder-pipower5.dtbo"
-fi
 
 
 
