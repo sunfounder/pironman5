@@ -92,6 +92,7 @@ Home Assistant OS 14.0 | 2024-12-03 | &#x2705;
 Homebridge bookworm (64 bit) | 2024-05-03 | &#x2705;
 Homebridge bookworm (64 bit) | 2024-05-03 | &#x2705;
 Batocera Linux | 2024-07-31 | &#x2705;
+Debian Trixie (64 bit) | 2026-09-14 | &#x2705;
 
 ### Ubuntu 24.04 server eth0 and wifi not work
 
