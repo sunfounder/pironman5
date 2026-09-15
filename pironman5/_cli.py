@@ -725,7 +725,7 @@ def main():
             pipower5_installed = True
 
         if pipower5_installed:
-            if _confirm("PiPower5 UPS module detected. Uninstall it as well?"):
+            if _confirm("PiPower5 module detected. Uninstall it as well?"):
                 print("Uninstalling PiPower5...")
                 pipower5_bin = '/opt/pironman5/venv/bin/pipower5'
                 if os.path.exists(pipower5_bin):
@@ -799,7 +799,7 @@ def main():
         CUSTOM_PATH = "/opt/pironman5/.custom_module"
         PLUGIN_SCRIPTS = {
             "pipower5": {
-                "label": "PiPower 5 UPS",
+                "label": "PiPower 5",
                 "installer_args": "--plugin pipower5",
             },
         }

@@ -39,14 +39,14 @@ if [ "$KERNEL_ARCH" = "aarch64" ] && [ "$DPKG_ARCH" = "armhf" ]; then
         # gcc-aarch64-linux-gnu cross-compiler is used instead.
         if ! apt-get download "linux-headers-${KERNEL_VERSION}:arm64" 2>/dev/null; then
             echo "Warning: Could not download kernel headers for PiPower5 driver"
-            echo "UPS hardware may not be detected."
+            echo "PiPower5 hardware may not be detected."
             DRIVER_SKIP=true
         fi
     fi
     if [ "$DRIVER_SKIP" = false ]; then
         if ! dpkg --force-depends -i linux-headers-${KERNEL_VERSION}_*.deb 2>/dev/null; then
             echo "Warning: Could not install kernel headers for PiPower5 driver"
-            echo "UPS hardware may not be detected."
+            echo "PiPower5 hardware may not be detected."
             DRIVER_SKIP=true
         fi
         rm -f linux-headers-${KERNEL_VERSION}_*.deb
