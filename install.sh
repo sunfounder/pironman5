@@ -1,7 +1,7 @@
 #!/bin/bash
 # ============================================================
 # Pironman 5 Installer
-# Supports: Pironman 5, Pironman 5 Mini, Pironman 5 Max, Pironman 5 Pro Max, Pironman 5 NAS, Pironman 5 UPS
+# Supports: Pironman 5, Pironman 5 Mini, Pironman 5 Max, Pironman 5 Pro Max, Pironman 5 NAS, Pironman 5 Ultra
 #
 # Usage:
 #   curl -sSL https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh | sudo bash
@@ -107,10 +107,12 @@ fi
 # Validate --variant
 if [ -n "$ARG_VARIANT" ]; then
     case "$ARG_VARIANT" in
-        base|mini|max|pro-max|pro_max|ups)
+        base|mini|max|pro-max|pro_max|ups|ultra)
             # Normalize pro-max to pro_max for internal key
-            [ "$ARG_VARIANT" = "pro-max" ] && ARG_VARIANT="pro_max" ;;
-        *) echo "Invalid variant: $ARG_VARIANT. Valid: base, mini, max, pro-max, ups"; exit 1 ;;
+            [ "$ARG_VARIANT" = "pro-max" ] && ARG_VARIANT="pro_max"
+            # Legacy alias: ups -> ultra
+            [ "$ARG_VARIANT" = "ups" ] && ARG_VARIANT="ultra" ;;
+        *) echo "Invalid variant: $ARG_VARIANT. Valid: base, mini, max, pro-max, ups, ultra"; exit 1 ;;
     esac
 fi
 
@@ -132,7 +134,7 @@ PRODUCTS=(
     "Pironman 5 Max|max|v1"
     "Pironman 5 Pro Max|pro_max|v1"
     "Pironman 5 Mini|mini|v1"
-    "Pironman 5 UPS|ups|v1"
+    "Pironman 5 Ultra|ultra|v1"
 )
 
 # --- Peripherals per variant ---
@@ -238,7 +240,7 @@ SF_RPI_STATUS_BRANCH="main"
 # All overlays copied below
 
 # UPS and pipower5 variants have pipower5 as a built-in module
-if [ "$variant" = "ups" ]; then
+if [ "$variant" = "ultra" ] || [ "$variant" = "ups" ]; then
     INSTALL_PIPOWER5=true
 fi
 

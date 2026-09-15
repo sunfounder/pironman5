@@ -4,9 +4,9 @@
 
 | Branch | Purpose | Notes |
 |--------|---------|-------|
-| `ups` | Development mainline | All variants: ups, promax, pipower5 |
-| `pipower5` | PiPower5 standalone release | Sync from ups periodically |
-| `promax` | Pironman 5 Pro Max release | Sync from ups periodically |
+| `ultra` | Development mainline | All variants: ultra, promax, pipower5 |
+| `pipower5` | PiPower5 standalone release | Sync from ultra periodically |
+| `promax` | Pironman 5 Pro Max release | Sync from ultra periodically |
 
 ## Architecture
 
@@ -33,7 +33,7 @@ Variants are assembled from modules (variants/modules/*.py). Each module registe
 
 | Variant | Modules |
 |---------|---------|
-| ups | core, network_info, history, oled, oled_ups_pages, pwm_fan, sf_rgb_led, pipower5 |
+| ultra | core, network_info, history, oled, oled_ups_pages, pwm_fan, sf_rgb_led, pipower5 |
 | pipower5 | core, network_info, history, pipower5 |
 | promax | core, network_info, history, oled, ws2812, pi5_power_button |
 
@@ -41,7 +41,7 @@ Variants are assembled from modules (variants/modules/*.py). Each module registe
 
 Uses sunfounder-installer framework. Variants installed via:
 ```bash
-curl .../ups/install.sh | bash -s -- --variant <name>
+curl .../ultra/install.sh | bash -s -- --variant <name>
 ```
 
 PiPower5 standalone reuses pironman5 framework:

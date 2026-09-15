@@ -112,7 +112,7 @@ def main():
     launch_browser_parser = subparsers.add_parser("launch-browser", help="Launch browser")
     launch_browser_parser.add_argument("-a", "--auto-start", nargs='?', default='', help="Auto start browser on boot")
     update_parser = subparsers.add_parser("update", help="Update Pironman5 to latest version")
-    update_parser.add_argument("--variant", nargs='?', default='', help="Override variant (base/mini/max/pro-max/ups/nas)")
+    update_parser.add_argument("--variant", nargs='?', default='', help="Override variant (base/mini/max/pro-max/ultra/nas)")
     update_parser.add_argument("--pipower5", action="store_true", help="Include PiPower5 support")
     uninstall_parser = subparsers.add_parser("uninstall", help="Uninstall Pironman5 completely")
     uninstall_parser.add_argument("--yes", "-y", action="store_true", help="Skip confirmation prompts")
@@ -746,14 +746,15 @@ def main():
     # variant
     # ----------------------------------------
     if args.subcommand == 'variant':
-        VARIANT_CHOICES = ["base", "mini", "max", "pro-max", "nas", "ups"]
+        VARIANT_CHOICES = ["base", "mini", "max", "pro-max", "nas", "ultra", "ups"]
         VARIANT_LABELS = {
             "base": "Pironman 5",
             "mini": "Pironman 5 Mini",
             "max": "Pironman 5 Max",
             "pro-max": "Pironman 5 Pro Max",
             "nas": "Pironman 5 NAS",
-            "ups": "Pironman 5 UPS",
+            "ultra": "Pironman 5 Ultra",
+            "ups": "Pironman 5 Ultra",
         }
         variant_path = "/opt/pironman5/.variant"
         current = None

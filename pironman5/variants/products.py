@@ -51,8 +51,8 @@ PRODUCT_DEFINITIONS = {
         "event_map_overrides": {},
         "dt_overlays": ["sunfounder-pironman5nas.dtbo"],
     },
-    "ups": {
-        "name": "Pironman 5 UPS",
+    "ultra": {
+        "name": "Pironman 5 Ultra",
         "id": "pironman5-ups",
         "product_version": "V1",
         "modules": [
@@ -108,3 +108,6 @@ PRODUCT_DEFINITIONS = {
         "dt_overlays": ["sunfounder-pironman5promax.dtbo"],
     },
 }
+
+# Legacy alias: 'ups' was the former key of the Ultra variant (kept for backward compatibility)
+PRODUCT_DEFINITIONS["ups"] = PRODUCT_DEFINITIONS["ultra"]
