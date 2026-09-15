@@ -239,7 +239,7 @@ SF_RPI_STATUS_BRANCH="main"
 # Unified install: all dependencies pre-installed
 # All overlays copied below
 
-# UPS and pipower5 variants have pipower5 as a built-in module
+# ultra (formerly ups) and pipower5 variants have pipower5 as a built-in module
 if [ "$variant" = "ultra" ] || [ "$variant" = "ups" ]; then
     INSTALL_PIPOWER5=true
 fi

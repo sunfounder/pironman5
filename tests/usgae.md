@@ -7,7 +7,7 @@ usage: pironman5 [-h] [-v] [-c] [-dl {debug,info,warning,error,critical}] [-rd]
                  [-rmp [RGB_MATRIX_SPEED]] [-rme [RGB_MATRIX_ENABLE]]
                  [{start,restart,stop}]
 
-Pironman 5 UPS command line interface
+Pironman 5 Ultra command line interface
 
 positional arguments:
   {start,restart,stop}  Command

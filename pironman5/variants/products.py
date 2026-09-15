@@ -53,7 +53,7 @@ PRODUCT_DEFINITIONS = {
     },
     "ultra": {
         "name": "Pironman 5 Ultra",
-        "id": "pironman5-ups",
+        "id": "pironman5-ultra",
         "product_version": "V1",
         "modules": [
             "core", "network_info", "history", "oled",

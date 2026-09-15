@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Pironman5 UPS dashboard API tests.  Usage: python3 test_dashboard_api.py [--host IP]"""
+"""Pironman5 Ultra dashboard API tests.  Usage: python3 test_dashboard_api.py [--host IP]"""
 import json, sys, time, urllib.request, urllib.error
 
 HOST = "192.168.100.188"; PORT = 34001

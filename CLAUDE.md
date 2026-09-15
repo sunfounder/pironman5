@@ -16,7 +16,7 @@ pironman5
   │   ├── SystemAddon     CPU/RAM/storage/IP
   │   ├── FanAddon        PWM/GPIO fan control
   │   ├── OLEDAddon       Display pages, sleep/wake
-  │   ├── PiPower5Addon   UPS battery, buzzer, events
+  │   ├── PiPower5Addon   battery, buzzer, events
   │   ├── WS2812Addon     RGB LED strip
   │   └── ...
   └── PMDashboard (web UI, port 34001)
