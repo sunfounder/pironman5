@@ -315,7 +315,7 @@ APT_DEPS=$(echo "$APT_DEPS" | tr ' ' '\n' | awk 'NF' | sort -u | tr '\n' ' ')
 # -- Pip dependencies (installed into venv) --
 PIP_DEPS="pip setuptools build requests psutil"
 if has "ws2812"; then
-    PIP_DEPS="$PIP_DEPS adafruit-circuitpython-neopixel-spi adafruit_platformdetect Adafruit-Blinka==8.59.0 rpi.lgpio adafruit-circuitpython-typing 'Adafruit-PureIO>=1.1.7' 'pyftdi>=0.40.0'"
+    PIP_DEPS="$PIP_DEPS adafruit-circuitpython-neopixel-spi adafruit_platformdetect Adafruit-Blinka==9.2.0 rpi.lgpio adafruit-circuitpython-typing 'Adafruit-PureIO>=1.1.7' 'pyftdi>=0.40.0'"
 fi
 if has "oled"; then
     PIP_DEPS="$PIP_DEPS Pillow smbus2"
