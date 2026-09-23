@@ -12,6 +12,7 @@ from .variants import NAME, PERIPHERALS
 from .pironman5 import Pironman5
 from .version import __version__
 from .utils import is_included, constrain, build_effective_config
+from .doctor import run_doctor
 
 AVAILABLE_PAGES = []
 AVAILABLE_EMAIL_MODES = []
@@ -127,6 +128,9 @@ def main():
     plugin_install.add_argument("plugin_name", help="Plugin name (e.g. pipower5)")
     plugin_remove = plugin_sub.add_parser("remove", help="Remove a plugin")
     plugin_remove.add_argument("plugin_name", help="Plugin name (e.g. pipower5)")
+    doctor_parser = subparsers.add_parser("doctor", help="Diagnose and repair common problems (InfluxDB, permissions, services)")
+    doctor_parser.add_argument("--fix", action="store_true", help="Apply the repairs automatically (needs root)")
+    doctor_parser.add_argument("--json", action="store_true", help="Print the result as JSON")
 
     argcomplete.autocomplete(parser)
 
@@ -860,6 +864,15 @@ def main():
             print(f"Plugin '{plugin_name}' removed. Restart pironman5 to apply:")
             print("  sudo systemctl restart pironman5.service")
             quit()
+
+    # doctor
+    # ----------------------------------------
+    if args.subcommand == 'doctor':
+        if args.fix and os.geteuid() != 0:
+            print("Requesting root privileges to apply the fixes...")
+            os.execvp('sudo', ['sudo', 'pironman5'] + sys.argv[1:])
+            sys.exit(0)
+        sys.exit(run_doctor(fix=args.fix, as_json=args.json))
 
     # Update settings
     # ----------------------------------------

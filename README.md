@@ -9,6 +9,7 @@ Quick Links:
   - [Links](#links)
   - [Installation](#installation)
   - [Update](#update)
+  - [Troubleshooting](#troubleshooting)
   - [Compatible Systems](#compatible-systems)
     - [Ubuntu 24.04 server eth0 and wifi not work](#ubuntu-2404-server-eth0-and-wifi-not-work)
     - [Debug](#debug)
@@ -70,6 +71,28 @@ curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh"
 ## Update
 
 <https://github.com/sunfounder/pironman5/blob/main/CHANGELOG.md>
+
+## Troubleshooting
+
+If InfluxDB (history / dashboard data logging) stops working after an update, run the built-in doctor:
+
+```bash
+sudo pironman5 doctor          # report only
+sudo pironman5 doctor --fix    # report and repair
+```
+
+It checks and repairs the problems that are usually left behind by upgrading an old 1.2.x installation:
+
+- duplicate TOML keys in `/etc/influxdb/influxdb.conf` - `influxd` refuses to start with `Key 'http.log-enabled' has already been defined`
+- `/var/lib/influxdb` not owned by the `influxdb` user - `influxdb.service` dies with `permission denied`
+- `influxdb.service` / `pironman5.service` not enabled or not running
+- `/opt/pironman5` and `/var/log/pironman5` ownership
+
+Re-running the installer performs the same repair:
+
+```bash
+curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash
+```
 
 ## Compatible Systems
 
