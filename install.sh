@@ -71,6 +71,7 @@ IS_PLAIN_TEXT=false
 ARG_VARIANT=""
 INSTALL_PLUGIN=""
 NO_AUTOLOGIN=false
+SKIP_HISTORY_MIGRATION=false
 PIPOWER5_BRANCH_ARG=""
 BRANCH_OVERRIDE=""
 # USE_CN_MIRROR already pre-scanned above (before framework download)
@@ -80,6 +81,7 @@ while [ $# -gt 0 ]; do
         --container) IS_CONTAINER=true; IS_PLAIN_TEXT=true ;;
         --plain-text) IS_PLAIN_TEXT=true ;;
         --no-autologin) NO_AUTOLOGIN=true ;;
+        --skip-history-migration) SKIP_HISTORY_MIGRATION=true ;;
         --cn) USE_CN_MIRROR=true ;;
         --variant=*) ARG_VARIANT="${1#*=}" ;;
         --variant) shift; ARG_VARIANT="$1" ;;
@@ -651,6 +653,16 @@ RUN "mkdir -p /opt/pironman5" "Ensure work directory exists"
 RUN "echo -n '${variant}' > /opt/pironman5/.variant" "Write variant identifier"
 if [ "$INSTALL_PIPOWER5" = true ]; then
     RUN "echo -n 'pipower5' > /opt/pironman5/.custom_module" "Write custom module"
+fi
+
+# --- Migrate the history written by an older (1.2.x) installation ---
+# 1.2.x always used the InfluxDB database "pironman5"; this version uses
+# one database per product ("pironman5-max", ...). The command is a no-op
+# when there is nothing to migrate, never deletes anything and keeps the
+# configured retention window. Use --skip-history-migration to skip it.
+if [ "$SKIP_HISTORY_MIGRATION" != true ]; then
+    TITLE "Check for InfluxDB history from 1.2.x"
+    RUN "/opt/pironman5/venv/bin/pironman5 migrate-history --yes 2>&1 || true; chown pironman5:pironman5 /opt/pironman5/.history_migrated 2>/dev/null || true" "Migrate InfluxDB history from 1.2.x"
 fi
 
 if [ "$IS_CONTAINER" = false ] && [ "$variant" = "pro_max" ]; then

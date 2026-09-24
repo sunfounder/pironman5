@@ -94,6 +94,15 @@ Re-running the installer performs the same repair:
 curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash
 ```
 
+Upgrading an old 1.2.x installation also leaves its history behind: 1.2.x stored it in the InfluxDB database `pironman5`, while this version uses one database per product (`pironman5-max`, `pironman5-mini`, ...). Copy it over with:
+
+```bash
+sudo pironman5 migrate-history            # report what can be copied
+sudo pironman5 migrate-history --yes      # copy it
+```
+
+It copies only the points inside the configured retention window and older than the oldest point already in the target database (so newer data is never overwritten), never deletes anything, and runs automatically at the end of the installation (`--skip-history-migration` opts out).
+
 ## Compatible Systems
 
 Operate Systems that passed the test on the Raspberry Pi 5:
