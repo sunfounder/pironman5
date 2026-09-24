@@ -12,6 +12,8 @@ from .variants import NAME, PERIPHERALS
 from .pironman5 import Pironman5
 from .version import __version__
 from .utils import is_included, constrain, build_effective_config
+from .doctor import run_doctor
+from .history_migrate import run_migrate_history
 
 AVAILABLE_PAGES = []
 AVAILABLE_EMAIL_MODES = []
@@ -127,6 +129,17 @@ def main():
     plugin_install.add_argument("plugin_name", help="Plugin name (e.g. pipower5)")
     plugin_remove = plugin_sub.add_parser("remove", help="Remove a plugin")
     plugin_remove.add_argument("plugin_name", help="Plugin name (e.g. pipower5)")
+    doctor_parser = subparsers.add_parser("doctor", help="Diagnose and repair common problems (InfluxDB, permissions, services)")
+    doctor_parser.add_argument("--fix", action="store_true", help="Apply the repairs automatically (needs root)")
+    doctor_parser.add_argument("--json", action="store_true", help="Print the result as JSON")
+    migrate_parser = subparsers.add_parser("migrate-history", help="Copy the history written by Pironman 5 1.2.x into the database this version uses")
+    migrate_parser.add_argument("--from", dest="source_db", default="", help="Source database (default: pironman5)")
+    migrate_parser.add_argument("--to", dest="target_db", default="", help="Target database (default: the database of the installed product)")
+    migrate_parser.add_argument("--days", type=int, default=0, help="Retention window in days (default: read from config.json)")
+    migrate_parser.add_argument("--yes", "-y", action="store_true", help="Do not ask for confirmation")
+    migrate_parser.add_argument("--dry-run", action="store_true", help="Only report what would be migrated")
+    migrate_parser.add_argument("--force", action="store_true", help="Run again even when a previous migration is recorded")
+    migrate_parser.add_argument("--json", action="store_true", help="Print the result as JSON")
 
     argcomplete.autocomplete(parser)
 
@@ -860,6 +873,28 @@ def main():
             print(f"Plugin '{plugin_name}' removed. Restart pironman5 to apply:")
             print("  sudo systemctl restart pironman5.service")
             quit()
+
+    # doctor
+    # ----------------------------------------
+    if args.subcommand == 'doctor':
+        if args.fix and os.geteuid() != 0:
+            print("Requesting root privileges to apply the fixes...")
+            os.execvp('sudo', ['sudo', 'pironman5'] + sys.argv[1:])
+            sys.exit(0)
+        sys.exit(run_doctor(fix=args.fix, as_json=args.json))
+
+    # migrate-history
+    # ----------------------------------------
+    if args.subcommand == 'migrate-history':
+        sys.exit(run_migrate_history(
+            source=args.source_db or None,
+            target=args.target_db or None,
+            days=args.days or None,
+            assume_yes=args.yes,
+            dry_run=args.dry_run,
+            force=args.force,
+            as_json=args.json,
+        ))
 
     # Update settings
     # ----------------------------------------
