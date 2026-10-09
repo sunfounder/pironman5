@@ -21,6 +21,7 @@ problems) and, with --fix, repairs them in place.  It is safe to run
 repeatedly.
 """
 
+import glob
 import json
 import os
 import pwd
@@ -38,6 +39,14 @@ PIRONMAN5_SERVICE = "pironman5.service"
 WORK_DIR = "/opt/pironman5"
 LOG_DIR = "/var/log/pironman5"
 PIRONMAN5_USER = "pironman5"
+VENV_DIR = "/opt/pironman5/venv"
+VENV_PIP = VENV_DIR + "/bin/pip3"
+SYSTEM_SITE_PACKAGES = "/usr/lib/python3/dist-packages"
+
+# pm_auto.libs.pin does "from RPi import GPIO".  rpi-lgpio provides that
+# module on top of lgpio; the original RPi.GPIO does not support the
+# Raspberry Pi 5, so whenever a real RPi.GPIO lands in the venv it
+# shadows the shim and the GPIO fan loses control.
 
 STATUS_OK = "OK"
 STATUS_FIXED = "FIXED"
@@ -93,6 +102,32 @@ def _group_name(gid):
 def _entry_owner(path):
     st = os.stat(path)
     return _user_name(st.st_uid), _group_name(st.st_gid)
+
+
+def venv_site_packages(venv=VENV_DIR):
+    """Return the site-packages directory of the pironman5 venv ('' if absent)."""
+    matches = sorted(glob.glob(os.path.join(venv, "lib", "python3*", "site-packages")))
+    return matches[0] if matches else ""
+
+
+def rpi_gpio_backend(site_packages):
+    """Classify the RPi.GPIO module in *site_packages*.
+
+    Returns 'lgpio' for the rpi-lgpio shim, 'rpi.gpio' for the original
+    library (which cannot drive the RP1 header on a Raspberry Pi 5),
+    'unknown' for an unrecognised implementation and '' when absent.
+    """
+    init = os.path.join(site_packages or "", "RPi", "GPIO", "__init__.py")
+    try:
+        with open(init, "r", errors="replace") as handle:
+            source = handle.read()
+    except OSError:
+        return ""
+    if "lgpio" in source:
+        return "lgpio"
+    if "gpiomem" in source or "SOC peripheral base address" in source:
+        return "rpi.gpio"
+    return "unknown"
 
 
 def find_duplicate_keys(path):
@@ -468,6 +503,49 @@ def run_doctor(fix=False, as_json=False):
         else:
             results.append(Result("%s owner" % path, STATUS_OK, owner))
 
+    # -- 9. GPIO backend (lgpio-backed RPi.GPIO, used by the GPIO fan) ---
+    site = venv_site_packages()
+    if site:
+        venv_kind = rpi_gpio_backend(site)
+        system_kind = rpi_gpio_backend(SYSTEM_SITE_PACKAGES)
+        broken = venv_kind in ("rpi.gpio", "unknown")
+        problem = ""
+        if broken:
+            problem = "RPi.GPIO in the venv shadows rpi-lgpio: the fan runs at full speed"
+        elif venv_kind == "" and system_kind != "lgpio":
+            problem = "no rpi-lgpio found: the fan cannot be driven"
+        if problem:
+            if fix:
+                _run("%s uninstall -y RPi.GPIO" % VENV_PIP)
+                _run("%s install rpi.lgpio" % VENV_PIP)
+                _run("systemctl restart %s" % PIRONMAN5_SERVICE)
+                remaining = rpi_gpio_backend(venv_site_packages())
+                repaired = remaining not in ("rpi.gpio", "unknown")
+                results.append(
+                    Result(
+                        "GPIO backend (rpi-lgpio)",
+                        STATUS_FIXED if repaired else STATUS_FAIL,
+                        "RPi.GPIO removed from the venv, %s restarted"
+                        % PIRONMAN5_SERVICE
+                        if repaired
+                        else problem,
+                        fixable=True,
+                    )
+                )
+            else:
+                results.append(
+                    Result("GPIO backend (rpi-lgpio)", STATUS_FAIL, problem, fixable=True)
+                )
+        else:
+            results.append(
+                Result(
+                    "GPIO backend (rpi-lgpio)",
+                    STATUS_OK,
+                    "rpi-lgpio shim in %s"
+                    % ("the venv" if venv_kind == "lgpio" else SYSTEM_SITE_PACKAGES),
+                )
+            )
+
     # -- Re-verify the runtime checks after the repairs -----------------
     if fix:
         # The first measurement can be stale: the config is only fixed
@@ -477,15 +555,24 @@ def run_doctor(fix=False, as_json=False):
             if result.name == "influxdb.service":
                 active, enabled = _service_state(INFLUXDB_SERVICE)
                 result.status = STATUS_OK if active == "active" else STATUS_FAIL
-                result.detail = "enabled=%s active=%s" % (enabled, active)
+                result.detail = (
+                    "active and enabled"
+                    if active == "active" and enabled == "enabled"
+                    else "active=%s enabled=%s"
+                    % (active or "unknown", enabled or "unknown")
+                )
             elif result.name.startswith("influxdb HTTP API"):
                 ok = _influxdb_reachable(timeout=5.0)
                 result.status = STATUS_OK if ok else STATUS_FAIL
                 result.detail = (
-                    "PONG"
-                    if ok
-                    else "no response - check journalctl -u influxdb",
+                    "PONG" if ok else "no response - check journalctl -u influxdb"
                 )
+            elif result.name == "GPIO backend (rpi-lgpio)":
+                remaining = rpi_gpio_backend(venv_site_packages())
+                repaired = remaining not in ("rpi.gpio", "unknown")
+                result.status = STATUS_OK if repaired else STATUS_FAIL
+                if repaired:
+                    result.detail = "RPi.GPIO removed from the venv"
 
     # -- Output ----------------------------------------------------------
     failed = [r for r in results if r.status == STATUS_FAIL]

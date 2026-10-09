@@ -4,7 +4,12 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from pironman5.doctor import find_duplicate_keys, _comment_out_duplicates
+from pironman5.doctor import (
+    find_duplicate_keys,
+    _comment_out_duplicates,
+    rpi_gpio_backend,
+    venv_site_packages,
+)
 
 
 # A config file mangled by upgrading from 1.2.x: the legacy dashboard
@@ -90,3 +95,49 @@ def test_clean_config_has_no_duplicates(tmp_path):
 
 def test_missing_file_is_not_an_error(tmp_path):
     assert find_duplicate_keys(os.path.join(str(tmp_path), "nope.conf")) == []
+
+
+# --- GPIO backend: rpi-lgpio shim vs a real RPi.GPIO ----------------------
+
+def _write_module(site, source):
+    path = os.path.join(site, "RPi", "GPIO")
+    os.makedirs(path)
+    with open(os.path.join(path, "__init__.py"), "w") as handle:
+        handle.write(source)
+
+
+def test_rpi_gpio_backend_classifies_shim_and_original(tmp_path):
+    shim = os.path.join(str(tmp_path), "shim")
+    _write_module(shim, "import lgpio\n")
+    assert rpi_gpio_backend(shim) == "lgpio"
+
+    real = os.path.join(str(tmp_path), "real")
+    _write_module(real, "GPIO_MEM_DEV = '/dev/gpiomem'\n")
+    assert rpi_gpio_backend(real) == "rpi.gpio"
+
+    other = os.path.join(str(tmp_path), "other")
+    _write_module(other, "# no marker\n")
+    assert rpi_gpio_backend(other) == "unknown"
+
+    assert rpi_gpio_backend(os.path.join(str(tmp_path), "none")) == ""
+
+
+def test_real_rpi_gpio_in_the_venv_is_detected(tmp_path):
+    # "pip install --upgrade adafruit-blinka" pulls RPi.GPIO in (Blinka 9.x
+    # declares it) and it then shadows the rpi-lgpio shim in the venv, so
+    # the fan addon can no longer drive the GPIO.
+    broken = os.path.join(str(tmp_path), "broken")
+    _write_module(broken, "raise RuntimeError('SOC peripheral base address')\n")
+    assert rpi_gpio_backend(broken) == "rpi.gpio"
+
+    healthy = os.path.join(str(tmp_path), "healthy")
+    _write_module(healthy, "import lgpio\n")
+    assert rpi_gpio_backend(healthy) == "lgpio"
+
+
+def test_venv_site_packages(tmp_path):
+    venv = os.path.join(str(tmp_path), "venv")
+    site = os.path.join(venv, "lib", "python3.11", "site-packages")
+    os.makedirs(site)
+    assert venv_site_packages(venv) == site
+    assert venv_site_packages(os.path.join(str(tmp_path), "absent")) == ""
