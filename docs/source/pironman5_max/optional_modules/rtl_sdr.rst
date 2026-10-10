@@ -24,64 +24,63 @@ Linux および Raspberry Pi システムで FM 放送、航空無線、アマ�
 RTL-SDR Blog V4 ドライバーのインストール
 ---------------------------------------------
 
-**0. 準備**
+Linux でも手順は同じように簡単で、既存の RTL-SDR ドライバーを削除し、更新版をインストールするだけです。
+
+**1. 以前のドライバーを削除**
 
 .. code-block:: shell
 
-   sudo apt update
-   sudo apt install -y git cmake build-essential pkg-config libusb-1.0-0-dev sox
+   sudo apt purge ^librtlsdr
+   sudo rm -rvf /usr/lib/librtlsdr* /usr/include/rtl-sdr* /usr/local/lib/librtlsdr* /usr/local/include/rtl-sdr* /usr/local/include/rtl_* /usr/local/bin/rtl_*
 
-注:  
-    ``sox`` （ ``play`` コマンドを提供）は直接オーディオテスト用に含まれています。
-
-**1. 古いライブラリとバイナリの完全削除（重要）**
+確認 A：
 
 .. code-block:: shell
 
-   sudo apt purge -y 'librtlsdr*'
-   sudo rm -rf /usr/lib/librtlsdr* /usr/include/rtl-sdr* \
-               /usr/local/lib/librtlsdr* /usr/local/include/rtl-sdr* \
-               /usr/local/include/rtl_* /usr/local/bin/rtl_*
-   sudo ldconfig
+   ldconfig -p | grep rtlsdr || echo "OK: システムキャッシュに librtlsdr が見つかりません。"
 
-確認 A:
+**2. 最新のドライバーをインストール**
 
 .. code-block:: shell
 
-   ldconfig -p | grep rtlsdr || echo "OK: No librtlsdr found in system cache."
-
-**2. RTL-SDR Blog V4 ドライバーのビルドとインストール**
-
-.. code-block:: shell
-
-   cd ~
-   git clone https://github.com/rtlsdrblog/rtl-sdr-blog.git
-   cd rtl-sdr-blog
-   mkdir build && cd build
-   cmake .. -DINSTALL_UDEV_RULES=ON
+   sudo apt-get install libusb-1.0-0-dev git cmake pkg-config build-essential
+   git clone https://github.com/osmocom/rtl-sdr
+   cd rtl-sdr
+   mkdir build
+   cd build
+   cmake ../ -DINSTALL_UDEV_RULES=ON
    make
    sudo make install
    sudo cp ../rtl-sdr.rules /etc/udev/rules.d/
    sudo ldconfig
 
-確認 B:
+注意：
+    コマンドラインで FM 受信もテストする場合（下記参照）、play コマンドを提供する sox が必要です。
+
+    .. code-block:: shell
+
+       sudo apt install -y sox
+
+確認 B：
 
 .. code-block:: shell
 
    which rtl_test
-   ldd "$(which rtl_test)" | grep rtlsdr   # /usr/local/lib/librtlsdr.so を指しているはずです
+   ldd "$(which rtl_test)" | grep rtlsdr   # /usr/local/lib/librtlsdr.so を指している必要があります
 
-**3. DVB カーネルモジュールを無効化して再起動**
+**3. DVB-T TV ドライバーをブラックリストに登録**
 
 .. code-block:: shell
 
-   echo 'blacklist dvb_usb_rtl28xxu' | sudo tee /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
+   echo 'blacklist dvb_usb_rtl28xxu' | sudo tee --append /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
+
+**4. 再起動**
+
+.. code-block:: shell
+
    sudo reboot
 
-注:  
-    即時リロードコマンド（ ``udevadm control --reload-rules`` および ``udevadm trigger``）は、すぐに再起動する予定がある場合は省略可能です。
-
-**4. 再起動後のドライバー確認**
+**5. 再起動後のドライバー確認**
 
 .. code-block:: shell
 
@@ -172,7 +171,7 @@ GQRX、SDR++、gnuradio-dev、gr-osmosdr のインストール時に、古い ``
 
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
-    cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 すぐにテスト可能です（またはクリーン環境のために再起動後でも可）:
 
@@ -242,7 +241,7 @@ GQRX、SDR++、gnuradio-dev、gr-osmosdr のインストール時に、古い ``
 
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
-    cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 すぐにテスト可能です（またはクリーン環境のために再起動後でも可）:
 
@@ -301,7 +300,7 @@ GQRX、SDR++、gnuradio-dev、gr-osmosdr のインストール時に、古い ``
 
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
-    cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 すぐにテスト可能です（または再起動後にクリーン環境でテスト可）:
 
@@ -350,7 +349,7 @@ GQRX、SDR++、gnuradio-dev、gr-osmosdr のインストール時に、古い ``
 
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
-    cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 すぐにテスト可能です（または再起動後にクリーン環境でテスト可）:
 
