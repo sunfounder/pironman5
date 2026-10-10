@@ -26,26 +26,14 @@ For the original manufacturer’s documentation, see the official RTL-SDR Blog V
 Install Driver for RTL-SDR Blog V4
 -----------------------------------
 
-**0. Preparation**
+On Linux the procedure is also simple and just involves removing any existing RTL-SDR drivers, and installing an updated version.
+
+**1. Purge the Previous Driver**
 
 .. code-block:: shell
 
-   sudo apt update
-   sudo apt install -y git cmake build-essential pkg-config libusb-1.0-0-dev sox
-
-Note:
-    ``sox`` (provides the ``play`` command) is included for direct audio testing.
-
-**1. Full Cleanup of Old Libraries and Binaries (Critical)**
-
-
-.. code-block:: shell
-
-   sudo apt purge -y 'librtlsdr*'
-   sudo rm -rf /usr/lib/librtlsdr* /usr/include/rtl-sdr* \
-               /usr/local/lib/librtlsdr* /usr/local/include/rtl-sdr* \
-               /usr/local/include/rtl_* /usr/local/bin/rtl_*
-   sudo ldconfig
+   sudo apt purge ^librtlsdr
+   sudo rm -rvf /usr/lib/librtlsdr* /usr/include/rtl-sdr* /usr/local/lib/librtlsdr* /usr/local/include/rtl-sdr* /usr/local/include/rtl_* /usr/local/bin/rtl_*
 
 Verification A:
 
@@ -53,19 +41,28 @@ Verification A:
 
    ldconfig -p | grep rtlsdr || echo "OK: No librtlsdr found in system cache."
 
-**2. Build and Install RTL-SDR Blog V4 Driver**
+**2. Install the Latest Drivers**
 
 .. code-block:: shell
 
-   cd ~
-   git clone https://github.com/rtlsdrblog/rtl-sdr-blog.git
-   cd rtl-sdr-blog
-   mkdir build && cd build
-   cmake .. -DINSTALL_UDEV_RULES=ON
+   sudo apt-get install libusb-1.0-0-dev git cmake pkg-config build-essential
+   git clone https://github.com/osmocom/rtl-sdr
+   cd rtl-sdr
+   mkdir build
+   cd build
+   cmake ../ -DINSTALL_UDEV_RULES=ON
    make
    sudo make install
    sudo cp ../rtl-sdr.rules /etc/udev/rules.d/
    sudo ldconfig
+
+Note:
+    If you also want to test FM reception from the command line (see below), install ``sox``,
+    which provides the ``play`` command:
+
+    .. code-block:: shell
+
+       sudo apt install -y sox
 
 Verification B:
 
@@ -74,18 +71,19 @@ Verification B:
    which rtl_test
    ldd "$(which rtl_test)" | grep rtlsdr   # Should point to /usr/local/lib/librtlsdr.so
 
-**3. Disable DVB Kernel Module and Reboot**
+**3. Blacklist the DVB-T TV Drivers**
 
 .. code-block:: shell
 
-   echo 'blacklist dvb_usb_rtl28xxu' | sudo tee /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
+   echo 'blacklist dvb_usb_rtl28xxu' | sudo tee --append /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
+
+**4. Reboot**
+
+.. code-block:: shell
+
    sudo reboot
 
-Note:
-    Immediate reload commands (``udevadm control --reload-rules`` and ``udevadm trigger``)  
-    are optional if you plan to reboot immediately.
-
-**4. Verify Driver After Reboot**
+**5. Verify Driver After Reboot**
 
 .. code-block:: shell
 
@@ -176,7 +174,7 @@ If it no longer points to ``/usr/local/lib/librtlsdr.so``, run:
 
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
-    cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 
 You can test immediately (or after a reboot for a clean environment):
@@ -250,7 +248,7 @@ If it no longer points to ``/usr/local/lib/librtlsdr.so``, run:
 
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
-    cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 
 You can test immediately (or after a reboot for a clean environment):
@@ -310,7 +308,7 @@ If it no longer points to ``/usr/local/lib/librtlsdr.so``, run:
 
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
-    cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 
 You can test immediately (or after a reboot for a clean environment):
@@ -359,7 +357,7 @@ If it no longer points to ``/usr/local/lib/librtlsdr.so``, run:
 
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
-    cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 
 You can test immediately (or after a reboot for a clean environment):
