@@ -24,45 +24,42 @@ V4 版本采用改进的 R828D 调谐器，支持直接采样模式，具有更�
 安装 RTL-SDR Blog V4 驱动
 -----------------------------------
 
-**0. 准备环境**
+在 Linux 上，操作同样简单：移除已有的 RTL-SDR 驱动，然后安装更新版本即可。
+
+**1. 卸载旧驱动**
 
 .. code-block:: shell
 
-   sudo apt update
-   sudo apt install -y git cmake build-essential pkg-config libusb-1.0-0-dev sox
-
-说明：
-   ``sox`` （提供 ``play`` 命令）用于直接音频测试。
-
-**1. 完全清理旧版本库与程序（关键步骤）**
-
-.. code-block:: shell
-
-   sudo apt purge -y 'librtlsdr*'
-   sudo rm -rf /usr/lib/librtlsdr* /usr/include/rtl-sdr* \
-               /usr/local/lib/librtlsdr* /usr/local/include/rtl-sdr* \
-               /usr/local/include/rtl_* /usr/local/bin/rtl_*
-   sudo ldconfig
+   sudo apt purge ^librtlsdr
+   sudo rm -rvf /usr/lib/librtlsdr* /usr/include/rtl-sdr* /usr/local/lib/librtlsdr* /usr/local/include/rtl-sdr* /usr/local/include/rtl_* /usr/local/bin/rtl_*
 
 验证 A：
 
 .. code-block:: shell
 
-   ldconfig -p | grep rtlsdr || echo "OK: No librtlsdr found in system cache."
+   ldconfig -p | grep rtlsdr || echo "OK: 系统缓存中未找到 librtlsdr。"
 
-**2. 编译并安装 RTL-SDR Blog V4 驱动**
+**2. 安装最新驱动**
 
 .. code-block:: shell
 
-   cd ~
-   git clone https://github.com/rtlsdrblog/rtl-sdr-blog.git
-   cd rtl-sdr-blog
-   mkdir build && cd build
-   cmake .. -DINSTALL_UDEV_RULES=ON
+   sudo apt-get install libusb-1.0-0-dev git cmake pkg-config build-essential
+   git clone https://github.com/osmocom/rtl-sdr
+   cd rtl-sdr
+   mkdir build
+   cd build
+   cmake ../ -DINSTALL_UDEV_RULES=ON
    make
    sudo make install
    sudo cp ../rtl-sdr.rules /etc/udev/rules.d/
    sudo ldconfig
+
+注意：
+    如果还需要在命令行测试 FM 收音（见下文），需安装 sox，它提供 play 命令：
+
+    .. code-block:: shell
+
+       sudo apt install -y sox
 
 验证 B：
 
@@ -71,17 +68,19 @@ V4 版本采用改进的 R828D 调谐器，支持直接采样模式，具有更�
    which rtl_test
    ldd "$(which rtl_test)" | grep rtlsdr   # 应指向 /usr/local/lib/librtlsdr.so
 
-**3. 禁用 DVB 内核模块并重启**
+**3. 屏蔽 DVB-T 电视驱动**
 
 .. code-block:: shell
 
-   echo 'blacklist dvb_usb_rtl28xxu' | sudo tee /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
+   echo 'blacklist dvb_usb_rtl28xxu' | sudo tee --append /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
+
+**4. 重启**
+
+.. code-block:: shell
+
    sudo reboot
 
-说明：
-   如果立即重启，则无需执行 ``udevadm control --reload-rules`` 等命令。
-
-**4. 重启后验证驱动**
+**5. 重启后验证驱动**
 
 .. code-block:: shell
 
@@ -172,7 +171,7 @@ GQRX 是一款简单易用的 SDR 接收软件，提供图形界面，支持多�
 
    sudo apt purge -y 'librtlsdr*'
    sudo ldconfig
-   cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+   cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 测试：
 
@@ -245,7 +244,7 @@ SDR++ 是一款现代化、高性能、跨平台的软件定义无线电（SDR�
 
    sudo apt purge -y 'librtlsdr*'
    sudo ldconfig
-   cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+   cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 测试：
 
@@ -305,7 +304,7 @@ rtl_433
 
    sudo apt purge -y 'librtlsdr*'
    sudo ldconfig
-   cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+   cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 测试：
 
@@ -365,7 +364,7 @@ dump1090-mutability 是一个用于接收和解码 ADS-B（Automatic Dependent S
 
    sudo apt purge -y 'librtlsdr*'
    sudo ldconfig
-   cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+   cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 测试：
 
