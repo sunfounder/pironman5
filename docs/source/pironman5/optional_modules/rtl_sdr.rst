@@ -24,45 +24,43 @@ Die Originaldokumentation des Herstellers findest du im offiziellen RTL-SDR Blog
 Treiber für RTL-SDR Blog V4 installieren
 --------------------------------------------------
 
-**0. Vorbereitung**
+Unter Linux ist das Vorgehen ebenfalls einfach: alte RTL-SDR-Treiber entfernen und eine aktualisierte Version installieren.
+
+**1. Alten Treiber entfernen**
 
 .. code-block:: shell
 
-   sudo apt update
-   sudo apt install -y git cmake build-essential pkg-config libusb-1.0-0-dev sox
-
-Hinweis:  
-    ``sox`` (stellt den Befehl ``play`` bereit) ist für direkte Audiotests enthalten.
-
-**1. Vollständige Bereinigung alter Bibliotheken und Binärdateien (kritisch)**
-
-.. code-block:: shell
-
-   sudo apt purge -y 'librtlsdr*'
-   sudo rm -rf /usr/lib/librtlsdr* /usr/include/rtl-sdr* \
-               /usr/local/lib/librtlsdr* /usr/local/include/rtl-sdr* \
-               /usr/local/include/rtl_* /usr/local/bin/rtl_*
-   sudo ldconfig
+   sudo apt purge ^librtlsdr
+   sudo rm -rvf /usr/lib/librtlsdr* /usr/include/rtl-sdr* /usr/local/lib/librtlsdr* /usr/local/include/rtl-sdr* /usr/local/include/rtl_* /usr/local/bin/rtl_*
 
 Verifizierung A:
 
 .. code-block:: shell
 
-   ldconfig -p | grep rtlsdr || echo "OK: No librtlsdr found in system cache."
+   ldconfig -p | grep rtlsdr || echo "OK: Kein librtlsdr im System-Cache gefunden."
 
-**2. RTL-SDR Blog V4 Treiber bauen und installieren**
+**2. Neueste Treiber installieren**
 
 .. code-block:: shell
 
-   cd ~
-   git clone https://github.com/rtlsdrblog/rtl-sdr-blog.git
-   cd rtl-sdr-blog
-   mkdir build && cd build
-   cmake .. -DINSTALL_UDEV_RULES=ON
+   sudo apt-get install libusb-1.0-0-dev git cmake pkg-config build-essential
+   git clone https://github.com/osmocom/rtl-sdr
+   cd rtl-sdr
+   mkdir build
+   cd build
+   cmake ../ -DINSTALL_UDEV_RULES=ON
    make
    sudo make install
    sudo cp ../rtl-sdr.rules /etc/udev/rules.d/
    sudo ldconfig
+
+Hinweis:
+    Wenn zusätzlich der FM-Empfang über die Kommandozeile getestet werden soll (siehe unten),
+    wird ``sox`` benötigt, das den Befehl ``play`` bereitstellt:
+
+    .. code-block:: shell
+
+       sudo apt install -y sox
 
 Verifizierung B:
 
@@ -71,18 +69,19 @@ Verifizierung B:
    which rtl_test
    ldd "$(which rtl_test)" | grep rtlsdr   # Sollte auf /usr/local/lib/librtlsdr.so zeigen
 
-**3. DVB-Kernelmodul deaktivieren und neu starten**
+**3. DVB-T-TV-Treiber blacklisten**
 
 .. code-block:: shell
 
-   echo 'blacklist dvb_usb_rtl28xxu' | sudo tee /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
+   echo 'blacklist dvb_usb_rtl28xxu' | sudo tee --append /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
+
+**4. Neustart**
+
+.. code-block:: shell
+
    sudo reboot
 
-Hinweis:  
-    Sofortige Reload-Befehle (``udevadm control --reload-rules`` und ``udevadm trigger``)  
-    sind optional, wenn du ohnehin sofort neu startest.
-
-**4. Treiber nach dem Neustart überprüfen**
+**5. Treiber nach dem Neustart überprüfen**
 
 .. code-block:: shell
 
@@ -173,7 +172,7 @@ Wenn es nicht mehr auf ``/usr/local/lib/librtlsdr.so`` zeigt, führe aus:
 
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
-    cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 
 Du kannst sofort testen (oder nach einem Neustart für eine saubere Umgebung):
@@ -245,7 +244,7 @@ Wenn es nicht mehr auf ``/usr/local/lib/librtlsdr.so`` zeigt, führe aus:
 
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
-    cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 
 Du kannst sofort testen (oder nach einem Neustart für eine saubere Umgebung):
@@ -303,7 +302,7 @@ Wenn es nicht mehr auf ``/usr/local/lib/librtlsdr.so`` zeigt, führe aus:
 
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
-    cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 
 Du kannst sofort testen (oder nach einem Neustart für eine saubere Umgebung):
@@ -352,7 +351,7 @@ Wenn es nicht mehr auf ``/usr/local/lib/librtlsdr.so`` zeigt, führe aus:
 
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
-    cd ~/rtl-sdr-blog/build && sudo make install && sudo ldconfig
+    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
 
 Du kannst sofort testen (oder nach einem Neustart für eine saubere Umgebung):
