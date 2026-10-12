@@ -199,6 +199,11 @@ rst_epilog += """
     <a href="https://www.sunfounder.com/products/pironman-5-pro-max-mini-pc-case-with-touch-screen-for-raspberry-pi-5" target="_blank">Pironman 5 Pro Max</a>
 
 
+.. |link_pironman5_ultra| raw:: html
+
+    <a href="https://www.sunfounder.com/products/pironman-5-ultra" target="_blank">Pironman 5 Ultra</a>
+
+
 .. |link_raspberry_pi_imager| raw:: html
 
     <a href="https://www.raspberrypi.org/software/" target="_blank">Raspberry Pi Imager</a>
@@ -215,7 +220,8 @@ rst_epilog += """
 .. |pic_pironman5| image:: /img/pic_pironman51.jpg 
 .. |pic_pironman5_mini| image:: /img/pic_pironman5_mini1.jpg 
 .. |pic_pironman5_max| image:: /img/pic_pironman5_max1.jpg 
-.. |pic_pironman5_promax| image:: /img/pic_pironman5_promax1.jpg
+.. |pic_pironman5_promax| image:: /img/pic_pironman5_promax1.jpg 
+.. |pic_pironman5_ultra| image:: /img/pic_pironman5_ultra1.jpg
 """
 
 
