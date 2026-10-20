@@ -81,7 +81,3 @@ It has a built-in **7.4V 2000mAh Power Pack (SFB20003C2S)** battery, supporting 
 * Cooling: CPU aluminum heatsink + turbo fan, 2 x front PWM RGB fans
 * RGB: Top RGB light strip + 2 x front RGB fan lighting (WS2812)
 * Other: Default On jumper cap, power button, RTC 1220 battery holder, Raspberry Pi 40-pin GPIO
-
-**Product Specification**
-
-:download:`[PDF] Pironman 5 Ultra Product Specification <Pironman5Ultra.pdf>`

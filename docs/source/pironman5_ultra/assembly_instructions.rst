@@ -33,7 +33,6 @@ The **Power Pack (SFB20003C2S)** battery is installed on the side acrylic panel.
    The component list PDF and the assembly video for Pironman 5 Ultra will be added here.
 
 .. The official assembly PDF and video will be added here, for example:
-.. :download:`[PDF] Component List and Assembly of Pironman 5 Ultra <Pironman5Ultra.pdf>`
 ..
 .. .. raw:: html
 ..
@@ -46,4 +45,4 @@ The **Power Pack (SFB20003C2S)** battery is installed on the side acrylic panel.
 ..     allowfullscreen>
 ..     </iframe>
 
-In the meantime, you can refer to the :download:`Pironman 5 Ultra Product Specification <Pironman5Ultra.pdf>` for the hardware layout and interface definitions.
+In the meantime, you can refer to the :ref:`intro_pironman5_ultra` page for the hardware layout and interface definitions.
