@@ -8,7 +8,7 @@
 Setting Up on Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge
 ==================================================================
 
-.. image:: ../img/pironman5_pic.jpg
+.. image:: ../img/p5_ultra.jpg
     :width: 400
     :align: center
 

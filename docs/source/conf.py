@@ -221,7 +221,7 @@ rst_epilog += """
 .. |pic_pironman5_mini| image:: /img/pic_pironman5_mini1.jpg 
 .. |pic_pironman5_max| image:: /img/pic_pironman5_max1.jpg 
 .. |pic_pironman5_promax| image:: /img/pic_pironman5_promax1.jpg 
-.. |pic_pironman5_ultra| image:: /img/pic_pironman5_ultra1.jpg
+.. |pic_pironman5_ultra| image:: /pironman5_ultra/img/p5_ultra.jpg
 """
 
 

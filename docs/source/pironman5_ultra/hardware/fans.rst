@@ -18,6 +18,13 @@ Pironman 5 Ultra has **three PWM fans**, all driven by the Raspberry Pi system:
 
    The fans only have a control signal and no tachometer (speed) signal, so the system cannot read the fan speed. This is normal and does not indicate a fault.
 
+**Airflow**
+
+The two front RGB fans draw cool air in through the front panel, and the warm air is exhausted through the top and rear vents. The CPU turbo fan pushes the heat away from the aluminum heatsink into the main airflow.
+
+.. image:: ../img/p5_ultra_air.jpg
+    :width: 600
+
 Front RGB Fan
 -------------------
 

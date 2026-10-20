@@ -41,40 +41,40 @@ Based on the images below, select the product you own to learn more. Each link w
    :widths: 20 20 20 20 20
    :header-rows: 1
 
-   * - :ref:`intro_pironman5`
+   * - :ref:`intro_pironman5_ultra`
+     - :ref:`intro_pironman5`
      - :ref:`intro_pironman5_promax`
      - :ref:`intro_pironman5_max`
      - :ref:`intro_pironman5_mini`
-     - :ref:`intro_pironman5_ultra`
-   * - |pic_pironman5| 
+   * - |pic_pironman5_ultra|
+     - |pic_pironman5| 
      - |pic_pironman5_promax|
      - |pic_pironman5_max|
      - |pic_pironman5_mini| 
-     - |pic_pironman5_ultra|
 
      
 Below is a comparison of specifications for all products in the Pironman 5 series. Use this table to understand the differences between these products.
 
 .. csv-table:: Pironman 5 Series Comparison
-   :header: "Specifications", ":ref:`intro_pironman5`", ":ref:`intro_pironman5_promax`", ":ref:`intro_pironman5_max`", ":ref:`intro_pironman5_mini`", ":ref:`intro_pironman5_ultra`"
-   :widths: 16, 14, 14, 14, 14, 28
+   :header: "Specifications", ":ref:`intro_pironman5_ultra`", ":ref:`intro_pironman5`", ":ref:`intro_pironman5_promax`", ":ref:`intro_pironman5_max`", ":ref:`intro_pironman5_mini`"
+   :widths: 26, 16, 14, 14, 14, 16
 
    "Compatible Devices", "Raspberry Pi 5", "Raspberry Pi 5", "Raspberry Pi 5", "Raspberry Pi 5", "Raspberry Pi 5"
-   "Input", "USB Type C, 5V/5A", "USB Type C, 5V/5A", "USB Type C, 5V/5A", "USB Type C, 5V/5A", "USB Type C PD, 5-15V, 45W Max"
+   "Input", "USB Type C PD, 5-15V, 45W Max", "USB Type C, 5V/5A", "USB Type C, 5V/5A", "USB Type C, 5V/5A", "USB Type C, 5V/5A"
    "Power Button", "✔", "✔", "✔", "✔", "✔"
-   "Battery / UPS", "X", "X", "X", "X", "✔ 7.4V 2000mAh"
-   "Exterior Material 1", "Silver Aluminum Alloy", "Black Aluminum Alloy", "Black Aluminum Alloy", "Silver Aluminum Alloy", "Sheet Metal"
-   "Exterior Material 2", "Transparent Acrylic", "Black Acrylic", "Black Acrylic", "Black Acrylic", "Acrylic"
-   "Cooler", "Tower Cooler", "Tower Cooler", "Tower Cooler", "Active Cooler", "CPU Heatsink + Turbo Fan"
-   "IR Receiver", "✔", "✔", "✔", "X", "X"
-   "GPIO Fans Number", "2", "2", "2", "1", "0"
-   "Fan RGB Mode", "Sync with Fan", "Sync with Fan", "Independent Control", "Independent Control", "Sync with RGB Strip"
-   "HDMI Ports", "2 Standard HDMI Ports", "2 Standard HDMI Ports", "2 Standard HDMI Ports", "2 Micro HDMI Ports", "2 Standard HDMI Ports"
-   "OLED Display", "✔", "✔", "✔", "X", "✔"
-   "OLED Activation", "Wake on Button", "Wake on Button", "Wake on Button", "", "Wake on Button"
-   "Support NVMe SSD", "1", "2", "2", "1", "2"
-   "Speaker Output", "X", "X", "X", "X", "✔ Stereo + 3.5mm"
-   "Dimension", "111.9x78.5x117mm", "140.9x77.0x138.7mm", "111.9x78.5x117mm", "67.8x98.6x101.5mm", "-"
+   "Battery / UPS", "✔ 7.4V 2000mAh", "X", "X", "X", "X"
+   "Exterior Material 1", "Sheet Metal", "Silver Aluminum Alloy", "Black Aluminum Alloy", "Black Aluminum Alloy", "Silver Aluminum Alloy"
+   "Exterior Material 2", "Acrylic", "Transparent Acrylic", "Black Acrylic", "Black Acrylic", "Black Acrylic"
+   "Cooler", "CPU Heatsink + Turbo Fan", "Tower Cooler", "Tower Cooler", "Tower Cooler", "Active Cooler"
+   "IR Receiver", "X", "✔", "✔", "✔", "X"
+   "GPIO Fans Number", "0", "2", "2", "2", "1"
+   "Fan RGB Mode", "Sync with RGB Strip", "Sync with Fan", "Sync with Fan", "Independent Control", "Independent Control"
+   "HDMI Ports", "2 Standard HDMI Ports", "2 Standard HDMI Ports", "2 Standard HDMI Ports", "2 Standard HDMI Ports", "2 Micro HDMI Ports"
+   "OLED Display", "✔", "✔", "✔", "✔", "X"
+   "OLED Activation", "Wake on Button", "Wake on Button", "Wake on Button", "Wake on Button", ""
+   "Support NVMe SSD", "2", "1", "2", "2", "1"
+   "Speaker Output", "✔ Stereo + 3.5mm", "X", "X", "X", "X"
+   "Dimension", "-", "111.9x78.5x117mm", "140.9x77.0x138.7mm", "111.9x78.5x117mm", "67.8x98.6x101.5mm"
 
 
 If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
@@ -92,11 +92,11 @@ If you have any questions, please send an email to service@sunfounder.com and we
     :maxdepth: 1
 
     About Pironman 5 Series <self>
+    pironman5_ultra/intro_pironman5_ultra
     pironman5/intro_pironman5
     pironman5_promax/intro_pironman5_promax
     pironman5_max/intro_pironman5_max
     pironman5_mini/intro_pironman5_mini
-    pironman5_ultra/intro_pironman5_ultra
 
 
 
