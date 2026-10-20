@@ -40,9 +40,20 @@ Quick Troubleshooting
 Compatible Systems
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../pironman5/faq.rst
-   :start-after: start_faq_com_os
-   :end-before: end_faq_com_os
+Systems that passed testing on the Raspberry Pi 5:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 60 30
+
+   * - Operating System
+     - Compatibility
+   * - Raspberry Pi OS (bookworm 64-bit desktop / lite)
+     - Fully compatible
+   * - Ubuntu
+     - Fully compatible
+   * - Kali Linux
+     - Fully compatible
 
 .. note::
 

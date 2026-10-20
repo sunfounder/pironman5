@@ -13,9 +13,18 @@
 
     You need to install an OS that supports Raspberry Pi 5. Pironman 5 Ultra and the PiPower 5 module only support **64-bit** operating systems. Please use the latest Raspberry Pi Imager tool for system installation. The currently tested systems are:
 
-   .. image:: img/compitable_os.png
-        :width: 500
-        :align: center
+.. list-table:: Tested Operating Systems
+   :header-rows: 1
+   :widths: 60 30
+
+   * - Operating System
+     - Compatibility
+   * - Raspberry Pi OS (bookworm 64-bit desktop / lite)
+     - Fully compatible
+   * - Ubuntu
+     - Fully compatible
+   * - Kali Linux
+     - Fully compatible
 
 .. warning::
 
