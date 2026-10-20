@@ -40,8 +40,9 @@ If you are using a Micro SD card, you can follow the tutorial below to install t
 
    .. note::
 
-      * For **Ubuntu**, click **Other general-purpose OS** → **Ubuntu**, then select  
-        **Ubuntu Desktop 24.04 LTS (64-bit)** or **Ubuntu Server 24.04 LTS (64-bit)**.
+      * For **Ubuntu**, click **Other general-purpose OS** → **Ubuntu**, then select the latest
+        **Ubuntu Desktop** or **Ubuntu Server** 64-bit image for Raspberry Pi 5, for example
+        **Ubuntu Desktop 24.04.5 LTS (64-bit)** or **Ubuntu Desktop 26.04.1 (64-bit)**.
       * For **Kali Linux**, click **Other specific-purpose OS** → **Kali Linux**.
 
    .. warning::
