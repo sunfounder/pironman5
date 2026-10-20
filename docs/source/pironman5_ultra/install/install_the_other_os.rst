@@ -21,17 +21,6 @@ You can choose the installation method based on whether you have a Micro SD or a
         :width: 300
         :align: center
 
-.. tip::
-
-   Raspberry Pi Imager does not bundle the Ubuntu or Kali Linux images. It downloads their lists
-   from the official project servers when you open these folders, so an empty folder usually means
-   the list could not be fetched — check the network connection and open the folder again.
-
-   The versions offered also depend on the device selected in **Choose Device**. Ubuntu Desktop is
-   only offered for Raspberry Pi 4 / 400 / 5 with 4 GB or more; on other models only Ubuntu Server
-   or Ubuntu Core is listed. If you cannot find the image you want, download it from ubuntu.com and
-   use **Use custom** in Raspberry Pi Imager.
-
 .. toctree::
     :maxdepth: 1
 
