@@ -5,7 +5,7 @@
 
 
 
-Setting Up on Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge
+Setting Up on Raspberry Pi OS/Ubuntu/Kali Linux
 ==================================================================
 
 .. image:: ../img/p5_ultra.jpg
@@ -13,7 +13,7 @@ Setting Up on Raspberry Pi OS/Ubuntu/Kali Linux/Homebridge
     :align: center
 
 
-If you have installed Raspberry Pi OS, Ubuntu, Kali Linux or Homebridge on your Raspberry Pi, you will need to configure Pironman 5 Ultra using the command line.
+If you have installed Raspberry Pi OS, Ubuntu or Kali Linux on your Raspberry Pi, you will need to configure Pironman 5 Ultra using the command line.
 
 .. note::
 

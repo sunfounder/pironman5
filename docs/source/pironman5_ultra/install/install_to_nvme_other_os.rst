@@ -4,7 +4,7 @@
 
 
 
-.. _install_to_nvme_home_bridge_ultra:
+.. _install_to_nvme_other_ultra:
 
 Installing the OS on an NVMe SSD
 ============================================
@@ -43,8 +43,7 @@ If you are using an NVMe SSD and have an adapter to connect the NVMe SSD to your
 
       * For **Ubuntu**, click **Other general-purpose OS** → **Ubuntu**, then select  
         **Ubuntu Desktop 24.04 LTS (64-bit)** or **Ubuntu Server 24.04 LTS (64-bit)**.
-      * For **Kali Linux**, **Home Assistant**, and **Homebridge**, click  
-        **Other specific-purpose OS**, then select the corresponding system.
+      * For **Kali Linux**, click **Other specific-purpose OS** → **Kali Linux**.
 
    .. warning::
 

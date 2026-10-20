@@ -8,10 +8,6 @@ Control with Commands
 ========================================
 In addition to viewing data from Pironman 5 Ultra and controlling various devices through the Dashboard, you can also use commands to control them.
 
-.. note::
-
-  * For the **Home Assistant** system, you can only monitor and control Pironman 5 Ultra through the dashboard by opening the webpage at ``http://<ip>:34001``.
-
 View the Basic Configurations
 -----------------------------------
 

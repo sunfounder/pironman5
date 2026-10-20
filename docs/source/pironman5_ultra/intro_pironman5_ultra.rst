@@ -28,7 +28,7 @@ It has a built-in **7.4V 2000mAh Power Pack (SFB20003C2S)** battery, supporting 
 * **Smart Cooling**: CPU aluminum heatsink with a turbo fan, plus two front PWM RGB fans for whole-case airflow.
 * **Smart Display**: Built-in 0.96" 128x64 OLED screen showing CPU usage, memory, temperature, battery status and IP address in real time.
 * **Audio Output**: Built-in 4Ω 3W stereo speakers and a 3.5mm headphone jack, with Auto/ON output mode switching.
-* **Versatile Use Cases**: Ideal for NAS, Home Assistant, media centers and AI projects.
+* **Versatile Use Cases**: Ideal for NAS, smart home, media centers and AI projects.
 
 .. note::
 

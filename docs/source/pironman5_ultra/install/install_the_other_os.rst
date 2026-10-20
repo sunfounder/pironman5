@@ -4,7 +4,7 @@
 
 
 
-Installing Ubuntu/Kali Linux/Homebridge/Home Assistant
+Installing Ubuntu/Kali Linux
 =========================================================================
 
 You can choose the installation method based on whether you have a Micro SD or an NVMe SSD at hand.

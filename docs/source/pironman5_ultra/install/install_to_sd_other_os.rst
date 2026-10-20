@@ -4,7 +4,7 @@
 
 
 
-.. _install_to_sd_home_bridge_ultra:
+.. _install_to_sd_other_ultra:
 
 Installing the OS on a Micro SD Card
 =============================================
@@ -42,8 +42,7 @@ If you are using a Micro SD card, you can follow the tutorial below to install t
 
       * For **Ubuntu**, click **Other general-purpose OS** → **Ubuntu**, then select  
         **Ubuntu Desktop 24.04 LTS (64-bit)** or **Ubuntu Server 24.04 LTS (64-bit)**.
-      * For **Kali Linux**, **Home Assistant**, and **Homebridge**, click  
-        **Other specific-purpose OS**, then select the corresponding system.
+      * For **Kali Linux**, click **Other specific-purpose OS** → **Kali Linux**.
 
    .. warning::
 

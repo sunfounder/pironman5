@@ -13,11 +13,6 @@ Once you have successfully installed the ``pironman5`` module, the ``pironman5.s
 
 You can monitor and control Pironman 5 Ultra via commands, or by accessing the dashboard through the webpage at ``http://<ip>:34001``.
 
-.. note::
-
-    * For the **Home Assistant** system, you can only monitor and control Pironman 5 Ultra through the dashboard by opening the webpage at ``http://<ip>:34001``.
-
-
 .. toctree::
     :maxdepth: 1
 
