@@ -22,18 +22,13 @@ It has a built-in **7.4V 2000mAh Power Pack (SFB20003C2S)** battery, supporting 
 
 **Key Features**
 
-* **Power Input**: 5-15V, 45W Max, USB Type-C PD or screw terminal
-* **PCIe**: Dual M.2 M-key (PCIe Gen 2 x1) + Raspberry Pi 5 standard PCIe interface
-* **Power for Raspberry Pi**: 5V/5A
-* **Charge Power**: 5 / 10 / 15 / 20W optional
-* **USB**: 2 x USB 3.0, 2 x USB 2.0 (from the Raspberry Pi)
-* **Video**: Dual 4Kp60 HDMI Type A display output (from the Raspberry Pi)
-* **Audio**: Built-in stereo speakers + 3.5mm headphone jack
-* **Display**: 0.96'' 128x64 OLED display
-* **Heat Dissipation**: CPU aluminum heatsink + turbo fan + 2 x front RGB fans
-* **RGB**: Top RGB light strip + 2 x front RGB fan lighting
-* **Battery**: 7.4V 2000mAh Power Pack (SFB20003C2S), 2-cell Li-ion, VH3.96-2P
-* **Other**: Default On jumper cap, power switch, RTC 1220 battery holder, Raspberry Pi 40-pin GPIO
+* **Uninterruptible Power**: Built-in PiPower 5 module and 7.4V 2000mAh Power Pack. When external power is lost, the battery keeps the Raspberry Pi running, and PiPower 5 can shut it down safely.
+* **Flexible Charging**: Charge power is selectable between 5W, 10W, 15W and 20W. Use a 45W or higher USB Type-C PD power supply for the fastest charging while still delivering 5V/5A to the Raspberry Pi.
+* **Dual PCIe Expansion**: Two M.2 M-key interfaces (PCIe Gen 2 x1) and one Raspberry Pi 5 standard PCIe interface, switched automatically by the Raspberry Pi PCIe DET pin.
+* **Smart Cooling**: CPU aluminum heatsink with a turbo fan, plus two front PWM RGB fans for whole-case airflow.
+* **Smart Display**: Built-in 0.96" 128x64 OLED screen showing CPU usage, memory, temperature, battery status and IP address in real time.
+* **Audio Output**: Built-in 4Ω 3W stereo speakers and a 3.5mm headphone jack, with Auto/ON output mode switching.
+* **Versatile Use Cases**: Ideal for NAS, Home Assistant, media centers and AI projects.
 
 .. note::
 
@@ -61,15 +56,31 @@ It has a built-in **7.4V 2000mAh Power Pack (SFB20003C2S)** battery, supporting 
 
 **Interfaces**
 
-**Rear I/O**
-
 .. image:: img/p5_ultra_port1.jpg
     :width: 600
 
-**Side and Internal Layout**
-
 .. image:: img/p5_ultra_port2.jpg
     :width: 600
+
+**Parameters**
+
+* Support Platform: Raspberry Pi 5
+* Power Input: 5-15V, 45W Max, USB Type-C PD or screw terminal
+* Power Output for Raspberry Pi: 5V/5A
+* Charging Power: 5 / 10 / 15 / 20W (selectable)
+* Battery: 7.4V 2000mAh Power Pack (SFB20003C2S), 2-cell Li-ion, VH3.96-2P connector
+* PCIe
+
+    * 2 x M.2 M-key (PCIe Gen 2 x1)
+    * 1 x Raspberry Pi 5 standard PCIe interface (shared with the second M.2 slot through an onboard MUX)
+
+* Video: 2 x 4Kp60 HDMI Type A output (from the Raspberry Pi)
+* USB: 2 x USB 3.0, 2 x USB 2.0 (from the Raspberry Pi)
+* Audio: Built-in stereo speakers + 3.5mm headphone jack
+* Display: 0.96'' 128x64 OLED screen
+* Cooling: CPU aluminum heatsink + turbo fan, 2 x front PWM RGB fans
+* RGB: Top RGB light strip + 2 x front RGB fan lighting (WS2812)
+* Other: Default On jumper cap, power button, RTC 1220 battery holder, Raspberry Pi 40-pin GPIO
 
 **Product Specification**
 
