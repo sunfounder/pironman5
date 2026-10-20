@@ -41,13 +41,9 @@ PiPower 5 relies on the Raspberry Pi shutdown state to control the power output.
 
 #. Navigate to **Advanced Options → Shutdown Behaviour**.
 
-   .. note::
-
-      Depending on your Raspberry Pi OS version the menu item may be labelled ``A11 Shutdown Behaviour`` or ``A12 Shutdown Behaviour``.
-
    .. image:: img/shutdown_behaviour.png
 
-#. Select **B1 Full Power Off...**.
+#. Select **Full Power Off...**.
 
    .. image:: img/run_power_off.png
 
