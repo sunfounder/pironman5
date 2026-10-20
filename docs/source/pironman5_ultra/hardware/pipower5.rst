@@ -67,7 +67,7 @@ We recommend calculating the power needed by the Raspberry Pi as 20W, or even 25
 Default On
 ---------------
 
-PiPower 5 is set to **Default On** by default, which means the device powers on automatically as soon as external power is connected. If you do not want this behavior, move the **Default On** jumper cap from ON to OFF.
+PiPower 5 is set to **Default On** by default, which means the device powers on automatically as soon as external power is connected. This setting only controls the automatic power-on: because Pironman 5 Ultra has a built-in battery, you can always turn the device on by pressing the power button, with or without an external power supply. If you do not want the automatic power-on behavior, move the **Default On** jumper cap from ON to OFF.
 
 Power Button
 -----------------

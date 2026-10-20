@@ -25,7 +25,7 @@ Required Components
 
 * **Power Supply**
 
-  Use a **45W or higher USB Type-C PD** power supply to get the full 20W charging power while the Raspberry Pi 5 is powered at 5V/5A. The official 27W power supply or |link_sf_27w_supply| also works, but the charging power is then limited to 5W.
+  Pironman 5 Ultra has the PiPower 5 module and a built-in 7.4V 2000mAh battery, so it can be turned on and used **without an external power supply**. Connect a **45W or higher USB Type-C PD** power supply to charge the battery and to run continuous high-load workloads at 5V/5A. The official 27W power supply or |link_sf_27w_supply| also works, but the charging power is then limited to 5W.
 
   .. image:: img/need_power.png
      :width: 600
