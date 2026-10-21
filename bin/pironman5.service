@@ -2,7 +2,8 @@
 [Unit]
 Description=pironman5 service
 # Need to start last to avoid gpio being occupied
-After=multi-user.target
+After=multi-user.target influxdb.service
+Wants=influxdb.service
 
 [Service]
 Type=simple

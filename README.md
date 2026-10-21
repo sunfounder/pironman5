@@ -9,6 +9,7 @@ Quick Links:
   - [Links](#links)
   - [Installation](#installation)
   - [Update](#update)
+  - [Troubleshooting](#troubleshooting)
   - [Compatible Systems](#compatible-systems)
     - [Ubuntu 24.04 server eth0 and wifi not work](#ubuntu-2404-server-eth0-and-wifi-not-work)
     - [Debug](#debug)
@@ -71,6 +72,37 @@ curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh"
 
 <https://github.com/sunfounder/pironman5/blob/main/CHANGELOG.md>
 
+## Troubleshooting
+
+If InfluxDB (history / dashboard data logging) stops working after an update, run the built-in doctor:
+
+```bash
+sudo pironman5 doctor          # report only
+sudo pironman5 doctor --fix    # report and repair
+```
+
+It checks and repairs the problems that are usually left behind by upgrading an old 1.2.x installation:
+
+- duplicate TOML keys in `/etc/influxdb/influxdb.conf` - `influxd` refuses to start with `Key 'http.log-enabled' has already been defined`
+- `/var/lib/influxdb` not owned by the `influxdb` user - `influxdb.service` dies with `permission denied`
+- `influxdb.service` / `pironman5.service` not enabled or not running
+- `/opt/pironman5` and `/var/log/pironman5` ownership
+
+Re-running the installer performs the same repair:
+
+```bash
+curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash
+```
+
+Upgrading an old 1.2.x installation also leaves its history behind: 1.2.x stored it in the InfluxDB database `pironman5`, while this version uses one database per product (`pironman5-max`, `pironman5-mini`, ...). Copy it over with:
+
+```bash
+sudo pironman5 migrate-history            # report what can be copied
+sudo pironman5 migrate-history --yes      # copy it
+```
+
+It copies only the points inside the configured retention window and older than the oldest point already in the target database (so newer data is never overwritten), never deletes anything, and runs automatically at the end of the installation (`--skip-history-migration` opts out).
+
 ## Compatible Systems
 
 Operate Systems that passed the test on the Raspberry Pi 5:
@@ -92,6 +124,7 @@ Home Assistant OS 14.0 | 2024-12-03 | &#x2705;
 Homebridge bookworm (64 bit) | 2024-05-03 | &#x2705;
 Homebridge bookworm (64 bit) | 2024-05-03 | &#x2705;
 Batocera Linux | 2024-07-31 | &#x2705;
+Debian Trixie (64 bit) | 2026-09-14 | &#x2705;
 
 ### Ubuntu 24.04 server eth0 and wifi not work
 
