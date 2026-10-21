@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 """Pironman5 Ultra dashboard API tests.  Usage: python3 test_dashboard_api.py [--host IP]"""
-import json, sys, time, urllib.request, urllib.error
+import json, os, sys, time, urllib.request, urllib.error
 
-HOST = "192.168.100.188"; PORT = 34001
+HOST = os.environ.get("PIHOST", "127.0.0.1")
+PORT = int(os.environ.get("PIPORT", "34001"))
+_a = sys.argv[1:]
+for _i, _x in enumerate(_a):
+    if _x == "--host" and _i + 1 < len(_a): HOST = _a[_i+1]
+    elif _x.startswith("--host="): HOST = _x.split("=", 1)[1]
+    elif _x == "--port" and _i + 1 < len(_a): PORT = int(_a[_i+1])
 BASE = f"http://{HOST}:{PORT}"
 
 def api(path, method="GET", data=None, timeout=5):
