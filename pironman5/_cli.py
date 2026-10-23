@@ -116,6 +116,7 @@ def main():
     update_parser = subparsers.add_parser("update", help="Update Pironman5 to latest version")
     update_parser.add_argument("--variant", nargs='?', default='', help="Override variant (base/mini/max/pro-max/ups/nas)")
     update_parser.add_argument("--pipower5", action="store_true", help="Include PiPower5 support")
+    update_parser.add_argument("--cn", action="store_true", help="Use the Gitee mirror (faster in mainland China)")
     uninstall_parser = subparsers.add_parser("uninstall", help="Uninstall Pironman5 completely")
     uninstall_parser.add_argument("--yes", "-y", action="store_true", help="Skip confirmation prompts")
     variant_parser = subparsers.add_parser("variant", help="Show or switch product variant")
@@ -668,10 +669,19 @@ def main():
             except FileNotFoundError:
                 pass
 
-        installer_url = "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh"
+        # Always use the same installer as the documented install command
+        # (pironman5 repo, v1 branch). The copy under sunfounder-installer-scripts
+        # is stale and has no mirror support.
+        if getattr(args, 'cn', False):
+            installer_url = "https://gitee.com/sunfounder/pironman5/raw/v1/install.sh"
+        else:
+            installer_url = "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh"
         cmd_parts = ["echo n | curl -sSL", installer_url, "| sudo bash -s -- --variant", variant]
         if use_pipower5:
             cmd_parts.append("--pipower5")
+        if getattr(args, 'cn', False):
+            # Let the installer clone from Gitee as well.
+            cmd_parts.append("--cn")
 
         cmd = ' '.join(cmd_parts)
         print(f"Updating Pironman 5 ({variant})...")
