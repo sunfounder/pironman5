@@ -209,9 +209,7 @@ GQRX、SDR++、gnuradio-dev、gr-osmosdr のインストール時に、古い ``
 * **I/O デバイス**:
   * Device: ``RTL-SDR (V4)``
   * Input Rate: ``1.8 MSPS`` (1800000)
-  * Audio Output（音声出力）: USB スピーカーまたはサウンドカードを選択してください。
-    Raspberry Pi 5 では既定の出力が HDMI になっていることがあり、そこに接続した USB
-    スピーカーからは音が出ません。
+  * Audio Output（音声出力）: USB スピーカーまたはサウンドカードを選択してください。Raspberry Pi 5 では既定の出力が HDMI になっていることがあり、そこに接続した USB スピーカーからは音が出ません。
 
 * **入力コントロール**:
   * **LNA Gain**: 25〜35 dB から開始し、必要に応じて調整
