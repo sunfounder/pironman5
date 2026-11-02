@@ -19,6 +19,13 @@ Funziona bene per ricevere FM broadcast, airband, radioamatori, ADS-B e molti al
 
 Per la documentazione originale del produttore, consulta la guida ufficiale RTL-SDR Blog V4: https://www.rtl-sdr.com/V4/
 
+.. note::
+
+    Esistono due varianti: **RTL-SDR Blog V4** e **RTL-SDR Blog V4 Lite**.
+    Le stringhe di prodotto EEPROM sono diverse, quindi ``rtl_test`` mostra
+    ``RTL-SDR Blog V4 Detected`` oppure ``RTL-SDR Blog V4 Lite Detected``. Entrambe sono
+    corrette e tutti i passaggi seguenti valgono per entrambe.
+
 ----
 
 Installazione Driver per RTL-SDR Blog V4
@@ -85,6 +92,7 @@ Verifica B:
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 Atteso:  
@@ -95,7 +103,13 @@ Atteso:
 
 .. code-block:: shell
 
-   rtl_fm -f 97.1M -M wbfm -s 180000 -r 48000 -g 28 | play -t raw -r 48k -e s -b 16 -c 1 -
+   # 1) Scan the FM band and find a frequency that has a station near you
+   rtl_power -f 87.5M:108M:100k -i 3 -e 10 scan.csv
+
+   # 2) Listen to one of the strongest ones (replace 104.9M with your own)
+   #    Note: -M wbfm outputs the 180 kHz MPX, not 48 kHz audio, and -r is ignored.
+   #    The playback rate must match -s, otherwise the audio plays at the wrong speed.
+   rtl_fm -f 104.9M -M wbfm -s 180000 -g 28 | play -t raw -r 180k -e s -b 16 -c 1 -
 
 Suggerimenti:
 
@@ -169,6 +183,11 @@ Se non punta più a ``/usr/local/lib/librtlsdr.so``, esegui:
 
 .. code-block:: shell
 
+    # preferred: make the loader prefer /usr/local/lib (keeps the Debian package intact)
+    echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+    sudo ldconfig
+
+    # fallback: remove the package and reinstall the driver
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
     cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
@@ -178,6 +197,7 @@ Puoi testare immediatamente (o dopo un riavvio per un ambiente pulito):
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 Output atteso:
@@ -191,6 +211,9 @@ Output atteso:
 
   * Dispositivo: ``RTL-SDR (V4)``.
   * Frequenza di Campionamento: ``1.8 MSPS`` (1800000).
+  * Audio Output (uscita audio): seleziona il tuo altoparlante USB o la scheda audio. Su un
+    Raspberry Pi 5 l’uscita predefinita può essere l’HDMI, e un altoparlante USB collegato
+    lì resta muto.
 
 * **Controlli di Input**:
 
@@ -220,7 +243,7 @@ Puoi fare riferimento al manuale utente ufficiale qui: https://www.sdrpp.org/man
 
    sudo apt update
    sudo apt install -y --no-install-recommends build-essential cmake git pkg-config \
-     libfftw3-dev libvolk2-dev libglfw3-dev libglew-dev \
+     libfftw3-dev libvolk-dev libglfw3-dev libglew-dev \
      libzstd-dev librtaudio-dev
 
    git clone https://github.com/AlexandreRouma/SDRPlusPlus
@@ -229,6 +252,12 @@ Puoi fare riferimento al manuale utente ufficiale qui: https://www.sdrpp.org/man
    cmake .. -DOPT_BUILD_RTL_SDR_SOURCE=ON
    make
    sudo make install
+
+.. note::
+
+   A partire da Debian 13 (trixie) il pacchetto si chiama ``libvolk-dev``. Su Debian 12
+   (bookworm) — e quindi sul Raspberry Pi OS che ne deriva — si chiama ``libvolk2-dev``;
+   con il nome sbagliato ``apt`` segnala *Unable to locate package*.
 
 **Prevenire la Sovrascrittura dei Driver**
 
@@ -243,6 +272,11 @@ Se non punta più a ``/usr/local/lib/librtlsdr.so``, esegui:
 
 .. code-block:: shell
 
+    # preferred: make the loader prefer /usr/local/lib (keeps the Debian package intact)
+    echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+    sudo ldconfig
+
+    # fallback: remove the package and reinstall the driver
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
     cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
@@ -252,6 +286,7 @@ Puoi testare immediatamente (o dopo un riavvio per un ambiente pulito):
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 Output atteso:
@@ -302,6 +337,11 @@ Se non punta più a ``/usr/local/lib/librtlsdr.so``, esegui:
 
 .. code-block:: shell
 
+    # preferred: make the loader prefer /usr/local/lib (keeps the Debian package intact)
+    echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+    sudo ldconfig
+
+    # fallback: remove the package and reinstall the driver
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
     cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
@@ -311,6 +351,7 @@ Puoi testare immediatamente (o dopo un riavvio per un ambiente pulito):
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 Output atteso:
@@ -321,7 +362,8 @@ Output atteso:
 **Uso di Base:**
 
 * Esegui ``rtl_433`` per rilevare e decodificare automaticamente i dispositivi a 433 MHz più comuni.
-* Usa ``rtl_433 -G`` per elencare tutti i protocolli supportati.
+* Esegui ``rtl_433 -R`` senza argomenti per elencare tutti i protocolli supportati.
+  La vecchia opzione ``-G`` non li elenca più; è deprecata dalla 25.02.
 
 ----
 
@@ -338,6 +380,17 @@ dump1090-mutability è un decodificatore Mode S per dati transponder ADS-B degli
 
    sudo apt install -y dump1090-mutability
 
+.. note::
+
+   ``dump1090-mutability`` è disponibile in Debian 12 (bookworm), bullseye e precedenti,
+   ma **non in Debian 13 (trixie)**: il pacchetto è stato rimosso dall’archivio e ``apt``
+   segnala *Unable to locate package dump1090-mutability*.
+
+   Su Debian 13 non esiste un sostituto diretto nell’archivio: il pacchetto ``readsb`` è
+   compilato **senza** supporto RTL-SDR (``readsb --device-type rtlsdr`` risponde *SDR type
+   'rtlsdr' not recognized*). Su questi sistemi occorre compilare un decoder dai sorgenti —
+   per esempio ``readsb`` con ``make RTLSDR=yes``, oppure ``dump1090-fa``.
+
 **Prevenire la Sovrascrittura dei Driver**
 
 Quando installi GQRX, SDR++, gnuradio-dev o gr-osmosdr, il sistema potrebbe reinstallare una versione obsoleta di ``librtlsdr``.  
@@ -351,6 +404,11 @@ Se non punta più a ``/usr/local/lib/librtlsdr.so``, esegui:
 
 .. code-block:: shell
 
+    # preferred: make the loader prefer /usr/local/lib (keeps the Debian package intact)
+    echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+    sudo ldconfig
+
+    # fallback: remove the package and reinstall the driver
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
     cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
@@ -360,6 +418,7 @@ Puoi testare immediatamente (o dopo un riavvio per un ambiente pulito):
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 Output atteso:
