@@ -15,9 +15,16 @@ RTL-SDR Blog V4
 
 本指南介绍 RTL-SDR Blog V4 的完整安装流程。这是一款流行且价格实惠的 USB 软件定义无线电（SDR）接收器。  
 V4 版本采用改进的 R828D 调谐器，支持直接采样模式，具有更高的灵敏度，并内置 bias-tee，可为有源天线供电。  
-它适用于在 Linux 和 Raspberry Pi 系统上接收 FM 广播、航空频段、业余无线电、ADS-B 等多种信号。 :contentReference[oaicite:0]{index=0}
+它适用于在 Linux 和 Raspberry Pi 系统上接收 FM 广播、航空频段、业余无线电、ADS-B 等多种信号。
 
 官方文档参考：https://www.rtl-sdr.com/V4/
+
+.. note::
+
+    市面上有 **RTL-SDR Blog V4** 和 **RTL-SDR Blog V4 Lite** 两种型号。
+    两者的 EEPROM 产品字符串不同，因此 ``rtl_test`` 会分别显示
+    ``RTL-SDR Blog V4 Detected`` 或 ``RTL-SDR Blog V4 Lite Detected``\ ，都属于正常情况，
+    下文所有步骤对两种型号均适用。
 
 ----
 
@@ -84,6 +91,7 @@ V4 版本采用改进的 R828D 调谐器，支持直接采样模式，具有更�
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 预期结果：
@@ -96,7 +104,13 @@ V4 版本采用改进的 R828D 调谐器，支持直接采样模式，具有更�
 
 .. code-block:: shell
 
-   rtl_fm -f 97.1M -M wbfm -s 180000 -r 48000 -g 28 | play -t raw -r 48k -e s -b 16 -c 1 -
+   # 1) Scan the FM band and find a frequency that has a station near you
+   rtl_power -f 87.5M:108M:100k -i 3 -e 10 scan.csv
+
+   # 2) Listen to one of the strongest ones (replace 104.9M with your own)
+   #    Note: -M wbfm outputs the 180 kHz MPX, not 48 kHz audio, and -r is ignored.
+   #    The playback rate must match -s, otherwise the audio plays at the wrong speed.
+   rtl_fm -f 104.9M -M wbfm -s 180000 -g 28 | play -t raw -r 180k -e s -b 16 -c 1 -
 
 提示：
 
@@ -169,6 +183,11 @@ GQRX 是一款简单易用的 SDR 接收软件，提供图形界面，支持多�
 
 .. code-block:: shell
 
+   # preferred: make the loader prefer /usr/local/lib (keeps the Debian package intact)
+   echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+   sudo ldconfig
+
+   # fallback: remove the package and reinstall the driver
    sudo apt purge -y 'librtlsdr*'
    sudo ldconfig
    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
@@ -177,6 +196,7 @@ GQRX 是一款简单易用的 SDR 接收软件，提供图形界面，支持多�
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 预期输出：
@@ -190,6 +210,8 @@ GQRX 是一款简单易用的 SDR 接收软件，提供图形界面，支持多�
 
   * Device： ``RTL-SDR (V4)``
   * Input Rate： ``1.8 MSPS`` （1800000）
+  * Audio Output（音频输出）：选择你的 USB 喇叭或声卡。树莓派 5 的默认输出可能是 HDMI，
+    这时接在 USB 上的喇叭不会有声音。
 
 * **输入控制（Input Controls）**\ ：
 
@@ -208,7 +230,7 @@ SDR++ (SDRpp)
 ^^^^^^^^^^^^^^^
 
 SDR++ 是一款现代化、高性能、跨平台的软件定义无线电（SDR）接收软件，支持包括 RTL-SDR Blog V4 在内的多种设备。  
-它提供简洁直观的界面、广泛的调制方式支持、先进的 DSP 滤波能力，以及录制功能。 :contentReference[oaicite:0]{index=0}
+它提供简洁直观的界面、广泛的调制方式支持、先进的 DSP 滤波能力，以及录制功能。
 
 官方手册：https://www.sdrpp.org/manual.pdf
 
@@ -219,7 +241,7 @@ SDR++ 是一款现代化、高性能、跨平台的软件定义无线电（SDR�
 
    sudo apt update
    sudo apt install -y --no-install-recommends build-essential cmake git pkg-config \
-     libfftw3-dev libvolk2-dev libglfw3-dev libglew-dev \
+     libfftw3-dev libvolk-dev libglfw3-dev libglew-dev \
      libzstd-dev librtaudio-dev
 
    git clone https://github.com/AlexandreRouma/SDRPlusPlus
@@ -228,6 +250,11 @@ SDR++ 是一款现代化、高性能、跨平台的软件定义无线电（SDR�
    cmake .. -DOPT_BUILD_RTL_SDR_SOURCE=ON
    make
    sudo make install
+
+.. note::
+
+   Debian 13（trixie）及更高版本中该软件包名为 ``libvolk-dev``\ ；Debian 12（bookworm）
+   及基于它的 Raspberry Pi OS 中名为 ``libvolk2-dev``\ 。用错会提示 *Unable to locate package*。
 
 **防止驱动被覆盖**
 
@@ -242,6 +269,11 @@ SDR++ 是一款现代化、高性能、跨平台的软件定义无线电（SDR�
 
 .. code-block:: shell
 
+   # preferred: make the loader prefer /usr/local/lib (keeps the Debian package intact)
+   echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+   sudo ldconfig
+
+   # fallback: remove the package and reinstall the driver
    sudo apt purge -y 'librtlsdr*'
    sudo ldconfig
    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
@@ -250,6 +282,7 @@ SDR++ 是一款现代化、高性能、跨平台的软件定义无线电（SDR�
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 预期输出：
@@ -282,7 +315,7 @@ SDR++ 是一款现代化、高性能、跨平台的软件定义无线电（SDR�
 rtl_433
 ^^^^^^^^^^^^
 
-``rtl_433`` 是一个命令行工具，用于解码工作在 433 MHz ISM 频段的无线设备信号，例如气象站、胎压传感器和无线温度计。 :contentReference[oaicite:1]{index=1}
+``rtl_433`` 是一个命令行工具，用于解码工作在 433 MHz ISM 频段的无线设备信号，例如气象站、胎压传感器和无线温度计。
 
 **安装：**
 
@@ -302,6 +335,11 @@ rtl_433
 
 .. code-block:: shell
 
+   # preferred: make the loader prefer /usr/local/lib (keeps the Debian package intact)
+   echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+   sudo ldconfig
+
+   # fallback: remove the package and reinstall the driver
    sudo apt purge -y 'librtlsdr*'
    sudo ldconfig
    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
@@ -310,6 +348,7 @@ rtl_433
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 预期输出：
@@ -331,7 +370,7 @@ rtl_433
 
   .. code-block:: shell
 
-     rtl_433 -G
+     rtl_433 -R
      
 -------
 
@@ -349,6 +388,16 @@ dump1090-mutability 是一个用于接收和解码 ADS-B（Automatic Dependent S
 
    sudo apt install -y dump1090-mutability
 
+.. note::
+
+   ``dump1090-mutability`` 在 Debian 12（bookworm）、bullseye 及更早版本中可用，
+   但 **Debian 13（trixie）已从软件源中移除该包**\ ，``apt`` 会提示
+   *Unable to locate package dump1090-mutability*。
+
+   Debian 13 的软件源中没有可直接替代的包：``readsb`` 编译时**未启用 RTL-SDR 支持**
+   （``readsb --device-type rtlsdr`` 会返回 *SDR type 'rtlsdr' not recognized*）。
+   这类系统需要从源码编译，例如用 ``make RTLSDR=yes`` 编译 ``readsb``\ ，或改用 ``dump1090-fa``。
+
 **防止驱动被覆盖**
 
 在安装 GQRX、SDR++、gnuradio-dev 或 gr-osmosdr 时，系统可能会重新安装旧版本 ``librtlsdr``\ 。  
@@ -362,6 +411,11 @@ dump1090-mutability 是一个用于接收和解码 ADS-B（Automatic Dependent S
 
 .. code-block:: shell
 
+   # preferred: make the loader prefer /usr/local/lib (keeps the Debian package intact)
+   echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+   sudo ldconfig
+
+   # fallback: remove the package and reinstall the driver
    sudo apt purge -y 'librtlsdr*'
    sudo ldconfig
    cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
@@ -370,6 +424,7 @@ dump1090-mutability 是一个用于接收和解码 ADS-B（Automatic Dependent S
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 预期输出：
