@@ -21,6 +21,13 @@ LinuxやRaspberry Piシステム上で、放送FM、航空無線、アマチュ�
 
 元の製造元のドキュメントについては、公式RTL-SDR Blog V4ガイドを参照してください： https://www.rtl-sdr.com/V4/
 
+.. note::
+
+    流通しているのは **RTL-SDR Blog V4** と **RTL-SDR Blog V4 Lite** の 2 種類です。
+    EEPROM の製品文字列が異なるため、``rtl_test`` は
+    ``RTL-SDR Blog V4 Detected`` または ``RTL-SDR Blog V4 Lite Detected`` のいずれかを表示します。
+    どちらも正常で、以降の手順は両方に当てはまります。
+
 ----
 
 RTL-SDR Blog V4のドライバーインストール
@@ -86,6 +93,7 @@ Linux でも手順は同じように簡単で、既存の RTL-SDR ドライバ�
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 期待される出力：
@@ -97,7 +105,13 @@ Linux でも手順は同じように簡単で、既存の RTL-SDR ドライバ�
 
 .. code-block:: shell
 
-   rtl_fm -f 97.1M -M wbfm -s 180000 -r 48000 -g 28 | play -t raw -r 48k -e s -b 16 -c 1 -
+   # 1) Scan the FM band and find a frequency that has a station near you
+   rtl_power -f 87.5M:108M:100k -i 3 -e 10 scan.csv
+
+   # 2) Listen to one of the strongest ones (replace 104.9M with your own)
+   #    Note: -M wbfm outputs the 180 kHz MPX, not 48 kHz audio, and -r is ignored.
+   #    The playback rate must match -s, otherwise the audio plays at the wrong speed.
+   rtl_fm -f 104.9M -M wbfm -s 180000 -g 28 | play -t raw -r 180k -e s -b 16 -c 1 -
 
 ヒント：
 
@@ -171,6 +185,11 @@ GQRX、SDR++、gnuradio-dev、またはgr-osmosdrをインストールすると�
 
 .. code-block:: shell
 
+    # preferred: make the loader prefer /usr/local/lib (keeps the Debian package intact)
+    echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+    sudo ldconfig
+
+    # fallback: remove the package and reinstall the driver
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
     cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
@@ -180,6 +199,7 @@ GQRX、SDR++、gnuradio-dev、またはgr-osmosdrをインストールすると�
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 期待される出力：
@@ -193,6 +213,9 @@ GQRX、SDR++、gnuradio-dev、またはgr-osmosdrをインストールすると�
 
   * Device: ``RTL-SDR (V4)`` を選択します。
   * Input Rate: ``1.8 MSPS`` （1800000）。
+  * Audio Output（音声出力）: USB スピーカーまたはサウンドカードを選択してください。
+    Raspberry Pi 5 では既定の出力が HDMI になっていることがあり、そこに接続した USB
+    スピーカーからは音が出ません。
 
 * **Input Controls**:
 
@@ -223,7 +246,7 @@ SDR++は、RTL-SDR Blog V4を含む様々なデバイスをサポートする、
 
    sudo apt update
    sudo apt install -y --no-install-recommends build-essential cmake git pkg-config \
-     libfftw3-dev libvolk2-dev libglfw3-dev libglew-dev \
+     libfftw3-dev libvolk-dev libglfw3-dev libglew-dev \
      libzstd-dev librtaudio-dev
 
    git clone https://github.com/AlexandreRouma/SDRPlusPlus
@@ -232,6 +255,12 @@ SDR++は、RTL-SDR Blog V4を含む様々なデバイスをサポートする、
    cmake .. -DOPT_BUILD_RTL_SDR_SOURCE=ON
    make
    sudo make install
+
+.. note::
+
+   Debian 13（trixie）以降ではパッケージ名は ``libvolk-dev`` です。Debian 12（bookworm）
+   およびそれをベースにした Raspberry Pi OS では ``libvolk2-dev`` です。名前を間違えると
+   ``apt`` が *Unable to locate package* を返します。
 
 **ドライバーの上書き防止**
 
@@ -246,6 +275,11 @@ GQRX、SDR++、gnuradio-dev、またはgr-osmosdrをインストールすると�
 
 .. code-block:: shell
 
+    # preferred: make the loader prefer /usr/local/lib (keeps the Debian package intact)
+    echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+    sudo ldconfig
+
+    # fallback: remove the package and reinstall the driver
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
     cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
@@ -255,6 +289,7 @@ GQRX、SDR++、gnuradio-dev、またはgr-osmosdrをインストールすると�
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 期待される出力：
@@ -306,6 +341,11 @@ GQRX、SDR++、gnuradio-dev、またはgr-osmosdrをインストールすると�
 
 .. code-block:: shell
 
+    # preferred: make the loader prefer /usr/local/lib (keeps the Debian package intact)
+    echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+    sudo ldconfig
+
+    # fallback: remove the package and reinstall the driver
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
     cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
@@ -315,6 +355,7 @@ GQRX、SDR++、gnuradio-dev、またはgr-osmosdrをインストールすると�
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 期待される出力：
@@ -325,7 +366,8 @@ GQRX、SDR++、gnuradio-dev、またはgr-osmosdrをインストールすると�
 **基本的な使い方:**
 
 * ``rtl_433`` を実行すると、一般的な433 MHzデバイスを自動的に検出しデコードします。
-* ``rtl_433 -G`` を使用すると、サポートされているすべてのプロトコルを一覧表示します。
+* ``rtl_433 -R`` を引数なしで実行すると、対応している全プロトコルを一覧表示できます。
+  旧オプション ``-G`` は一覧表示しなくなり、25.02 以降は非推奨です。
 
 ----
 
@@ -342,6 +384,18 @@ dump1090-mutabilityは、ADS-B航空機トランスポンダデータ用のMode 
 
    sudo apt install -y dump1090-mutability
 
+.. note::
+
+   ``dump1090-mutability`` は Debian 12（bookworm）、bullseye 以前で利用できますが、
+   **Debian 13（trixie）にはありません**。アーカイブから削除されたため、``apt`` は
+   *Unable to locate package dump1090-mutability* を返します。
+
+   Debian 13 のアーカイブに直接の代替はありません。``readsb`` パッケージは RTL-SDR 対応を
+   **有効にせず** ビルドされているため（``readsb --device-type rtlsdr`` は *SDR type
+   'rtlsdr' not recognized* を返します）、そのような環境ではデコーダをソースからビルドする
+   必要があります。たとえば ``readsb`` を ``make RTLSDR=yes`` で、または ``dump1090-fa`` を
+   使用します。
+
 **ドライバーの上書き防止**
 
 GQRX、SDR++、gnuradio-dev、またはgr-osmosdrをインストールすると、システムが古い ``librtlsdr`` を再インストールする可能性があります。
@@ -355,6 +409,11 @@ GQRX、SDR++、gnuradio-dev、またはgr-osmosdrをインストールすると�
 
 .. code-block:: shell
 
+    # preferred: make the loader prefer /usr/local/lib (keeps the Debian package intact)
+    echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+    sudo ldconfig
+
+    # fallback: remove the package and reinstall the driver
     sudo apt purge -y 'librtlsdr*'
     sudo ldconfig
     cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
@@ -364,6 +423,7 @@ GQRX、SDR++、gnuradio-dev、またはgr-osmosdrをインストールすると�
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr   # must resolve to /usr/local/lib/librtlsdr.so
    rtl_test -t
 
 期待される出力：
