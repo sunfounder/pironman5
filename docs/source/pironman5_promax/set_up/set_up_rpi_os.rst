@@ -44,7 +44,7 @@ Per evitare che lo schermo OLED e le ventole RGB, alimentati dal GPIO del Raspbe
 #. Salva le modifiche. Ti verrà chiesto di riavviare per rendere effettive le nuove impostazioni.
 
 
-.. _promax_download_pironman5_module:
+.. _install_pironman5_module_promax:
 
 Scaricare e Installare il Modulo ``pironman5``
 -----------------------------------------------------------

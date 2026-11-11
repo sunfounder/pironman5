@@ -20,6 +20,8 @@ Se hai installato Raspberry Pi OS, Ubuntu, Kali Linux o Homebridge sul tuo Raspb
   Se non sei sicuro di come effettuare l’accesso, puoi visitare il sito ufficiale di Raspberry Pi: |link_rpi_get_start|.
 
 
+.. _safe_shutdown_mini:
+
 Configurazione dello spegnimento per disattivare l’alimentazione GPIO
 ------------------------------------------------------------------------------
 
