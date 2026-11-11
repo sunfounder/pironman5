@@ -54,7 +54,7 @@ PRODUCT_DEFINITIONS = {
         "dt_overlays": ["sunfounder-pironman5nas.dtbo"],
     },
     "ups": {
-        "name": "Pironman 5 UPS",
+        "name": "Pironman 5 Ultra",
         "id": "pironman5-ups",
         "product_version": "V1",
         "modules": [

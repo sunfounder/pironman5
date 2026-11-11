@@ -776,7 +776,7 @@ def main():
             "max": "Pironman 5 Max",
             "pro-max": "Pironman 5 Pro Max",
             "nas": "Pironman 5 NAS",
-            "ups": "Pironman 5 UPS",
+            "ups": "Pironman 5 Ultra",
             "ultra": "Pironman 5 Ultra",
         }
         variant_path = "/opt/pironman5/.variant"
