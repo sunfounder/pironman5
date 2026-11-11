@@ -57,6 +57,27 @@ Die Einschalttaste erweitert die ursprungliche Einschalttaste des Raspberry Pi 5
 .. end_faq_power_button
 
 
+.. _faq_power_button_not_work_5:
+
+Einschalttaste funktioniert nicht?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_power_button_not_work
+
+#. Prüfen Sie zunächst das erwartete Verhalten der Einschalttaste:
+
+   * **Raspberry Pi OS Desktop**: Drücken Sie die Einschalttaste zweimal kurz hintereinander, um herunterzufahren. Halten Sie sie 5 Sekunden lang gedrückt, um ein erzwungenes Herunterfahren auszulösen. Drücken Sie sie einmal, um aus dem ausgeschalteten Zustand einzuschalten.
+   * **Raspberry Pi OS Lite**: Drücken Sie die Einschalttaste einmal, um herunterzufahren. Halten Sie sie 5 Sekunden lang gedrückt, um ein erzwungenes Herunterfahren auszulösen. Drücken Sie sie einmal, um einzuschalten.
+
+#. Prüfen Sie, ob die Pins des Power-Button-Konverters korrekt auf die J2-Pads des Raspberry Pi 5 ausgerichtet sind (zwischen dem RTC-Batterieanschluss und der Platinenkante).
+
+#. Prüfen Sie, ob die Pins in der Buchse des Power-Button-Konverters korrekt auf den Stecker der Einschalttaste ausgerichtet sind. Schließen Sie das Kabel der Einschalttaste bei Bedarf erneut an.
+
+#. Überbrücken Sie mit einem Schraubendreher kurz die beiden Pins an der Buchse des Power-Button-Konverters, an der die Taste angeschlossen wird. Wenn der Pi einschaltet, ist möglicherweise die Taste selbst defekt; andernfalls liegt das Problem wahrscheinlich an der Konverterplatine oder an der Verbindung zum Pi 5.
+
+.. end_faq_power_button_not_work
+
+
 Luftstromrichtung
 -----------------
 
@@ -173,8 +194,8 @@ Starten Sie nach dem Speichern der Datei den Raspberry Pi neu, damit die Anderun
 
 .. _faq_gpio_fans_5:
 
-GPIO-Lufter funktionieren nicht?
---------------------------------
+GPIO-Lüfter funktionieren nicht?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. start_faq_gpio_fans
 
@@ -618,6 +639,51 @@ NVMe PIP-Modul funktioniert nicht?
       cat /var/log/pironman5/pironman5.log
 
 .. end_faq_nvme_pip
+
+
+.. _faq_nvme_link_down_5:
+
+NVMe-SSD erkannt, verursacht aber Neustart beim Lesen/Schreiben?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. start_faq_nvme_link_down
+
+In einigen Fällen (insbesondere bei der WD Blue SN5000) wird die NVMe-SSD vom Raspberry Pi 5 erkannt, verursacht jedoch bei Lese-/Schreibvorgängen einen Neustart des Systems. Dies ist ein PCIe-Kompatibilitäts-/Stabilitätsproblem zwischen der SSD und dem Raspberry Pi 5 und **kein** Hardwarefehler des Pironman 5.
+
+Versuchen Sie die folgenden Schritte, um das Problem zu beheben:
+
+#. Aktualisieren Sie den Bootloader des Raspberry Pi 5 auf die neueste Version:
+
+   .. code-block:: shell
+
+      sudo rpi-eeprom-update -a
+      sudo reboot
+
+#. Erzwingen Sie PCIe Gen3, indem Sie die folgende Zeile in ``/boot/firmware/config.txt`` einfügen:
+
+   .. code-block:: text
+
+      dtparam=pciex1_gen=3
+
+#. Deaktivieren Sie ASPM (Active State Power Management), indem Sie ``pcie_aspm=off`` zur Kernel-Befehlszeile hinzufügen. Bearbeiten Sie ``/boot/firmware/cmdline.txt`` und hängen Sie den Parameter an die vorhandene Zeile an (erstellen Sie **keine** neue Zeile):
+
+   .. code-block:: text
+
+      pcie_aspm=off
+
+   .. note::
+
+      ``pcie_aspm=off`` ist oft die entscheidende Korrektur — PCIe-ASPM-Probleme sind beim Raspberry Pi 5 sehr verbreitet und können dazu führen, dass NVMe-Laufwerke bei hoher I/O-Last zufällig getrennt werden oder das System neu starten.
+
+#. Starten Sie nach den oben genannten Änderungen den Raspberry Pi neu:
+
+   .. code-block:: shell
+
+      sudo reboot
+
+#. Wenn das Problem weiterhin besteht, partitionieren und formatieren Sie die NVMe-SSD neu und installieren Sie das Betriebssystem erneut.
+
+.. end_faq_nvme_link_down
 
 
 Wie andert man die Boot-Reihenfolge des Raspberry Pi mit Befehlen?

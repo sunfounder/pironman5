@@ -3,7 +3,7 @@
    :end-before: end_hello_message
 
 
-.. _max_set_up_pironman5:
+.. _set_up_pironman5_max:
 
 4. Software einrichten oder installieren
 ================================================

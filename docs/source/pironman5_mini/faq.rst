@@ -3,20 +3,37 @@
    :end-before: end_hello_message
 
 
+
 FAQ
 ============
 
-1. Zu den kompatiblen Betriebssystemen
-----------------------------------------
 
-Getestete Systeme auf dem Raspberry Pi 5:
+Schnelle Fehlerbehebung
+-------------------------
 
-.. image:: img/compitable_os.png
-   :width: 600
-   :align: center
+* Einschalttaste funktioniert nicht → :ref:`faq_power_button_not_work_mini`
+* RGB-LEDs funktionieren nicht → :ref:`faq_rgb_mini`
+* CPU-Lüfter dreht sich nicht → :ref:`faq_pwm_fan_mini`
+* Dashboard zeigt keine Daten an → :ref:`faq_dashboard_mini`
+* PI5 startet nicht → :ref:`faq_pi5_boot_fail_mini`
 
-2. Zum Power-Button
------------------------
+
+
+1. Hardware
+-------------
+
+
+.. _com_os_mini:
+
+Kompatible Systeme
+^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_com_os
+   :end-before: end_faq_com_os
+
+Power-Button
+^^^^^^^^^^^^^^
 
 Der Power-Button entspricht dem Ein-/Aus-Schalter des Raspberry Pi 5 und funktioniert genauso.
 
@@ -36,147 +53,191 @@ Der Power-Button entspricht dem Ein-/Aus-Schalter des Raspberry Pi 5 und funktio
 
 * Bei Systemen ohne Softwareunterstützung für den Power-Button: Taste 5 Sekunden halten zum Ausschalten, danach kurzer Tastendruck zum Einschalten.
 
-3. Zum Raspberry Pi AI HAT+
-----------------------------------------------------
+
+.. _faq_power_button_not_work_mini:
+
+Power-Button funktioniert nicht?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_power_button_not_work
+   :end-before: end_faq_power_button_not_work
+
+
+Raspberry Pi AI HAT+
+^^^^^^^^^^^^^^^^^^^^^^
 
 Das Raspberry Pi AI HAT+ ist nicht kompatibel mit dem Pironman 5.
 
-   .. image::  img/output3.png
+.. image:: img/output3.png
     :width: 400
 
 Das Raspberry Pi AI Kit kombiniert das Raspberry Pi M.2 HAT+ mit dem Hailo AI-Beschleunigungsmodul.
 
-   .. image::  img/output2.jpg
+.. image:: img/output2.jpg
     :width: 400
 
-Du kannst das Hailo AI-Modul aus dem Kit entfernen und direkt im NVMe-PIP-Modul des Pironman 5 Mini verwenden.
+Du kannst das Hailo AI-Modul aus dem Kit entfernen und direkt im HAT des Pironman 5 Mini verwenden.
 
-   .. .. image::  img/output4.png
-   ..      :width: 800
 
-.. 4. Unterstützt der Pironman 5 Mini Retro-Gaming-Systeme?
-.. --------------------------------------------------------------
+Micro-HDMI-Kabel
+^^^^^^^^^^^^^^^^^^
 
-.. Ja, ist kompatibel. Allerdings können viele Retro-Gaming-Systeme keine zusätzliche Software installieren, was dazu führen kann, dass Funktionen wie der RGB-Lüfter oder die 4 RGB-LEDs nicht funktionieren, da sie auf zusätzliche Software angewiesen sind.
+Wir empfehlen die Verwendung des offiziellen Raspberry Pi Micro-HDMI-Kabels. Bei einigen Kabeln von Drittanbietern mit einer Steckerlänge von weniger als 65 mm kann es zu schlechtem Kontakt und Anzeigeproblemen kommen.
 
-4. PI5 startet nicht (Rote LED)?
--------------------------------------------
+.. image:: img/need_mini_hdmi.png
+   :width: 400
+
+
+
+2. Kühlung und Lüfter
+-----------------------
+
+
+.. _faq_pwm_fan_mini:
+
+CPU-Lüfter funktioniert nicht?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_pwm_fan
+   :end-before: end_faq_pwm_fan
+
+
+
+3. RGB
+--------
+
+
+.. |link_compatible_systems| replace:: :ref:`com_os_mini`
+
+.. _faq_rgb_mini:
+
+RGB-LEDs funktionieren nicht?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_rgb
+   :end-before: end_faq_rgb
+
+
+
+4. Dashboard und Software
+---------------------------
+
+
+.. _faq_dashboard_mini:
+
+Dashboard zeigt keine Daten an
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_dashboard
+   :end-before: end_faq_dashboard
+
+
+.. |link_view_control_dashboard| replace:: :ref:`view_control_dashboard_mini`
+
+Wie deaktiviere ich das Web-Dashboard?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_disable_dashboard
+   :end-before: end_faq_disable_dashboard
+
+
+Wie deinstalliere und reinstalliere ich die Pironman 5 Software?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_reinstall_pironman5
+   :end-before: end_faq_reinstall_pironman5
+
+
+.. |link_view_control_commands| replace:: :ref:`view_control_commands_mini`
+
+Wie steuere ich Komponenten mit dem ``pironman5``-Befehl?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_pironman5_command
+   :end-before: end_faq_pironman5_command
+
+
+
+5. Boot und Speicher
+----------------------
+
+
+.. |link_update_bootloader| replace:: :ref:`update_bootloader_mini`
+
+.. _faq_pi5_boot_fail_mini:
+
+PI5 startet nicht (rote LED)?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Dieses Problem kann durch ein Systemupdate, Änderungen der Bootreihenfolge oder einen beschädigten Bootloader verursacht werden. Sie können die folgenden Schritte ausprobieren, um das Problem zu beheben:
 
 #. Schließen Sie das Netzteil erneut an und überprüfen Sie, ob der PI5 erfolgreich startet.
 
+#. Testen Sie den PI5 außerhalb des Gehäuses
+
+   * Entnehmen Sie den PI5 aus dem Pironman 5 Mini-Gehäuse.
+   * Versorgen Sie den PI5 direkt über das Netzteil (ohne Gehäuse).
+   * Prüfen Sie, ob er normal startet.
+
 #. Bootloader wiederherstellen
 
-   * Wenn der PI5 immer noch nicht startet, ist möglicherweise der Bootloader beschädigt. Sie können dieser Anleitung folgen: :ref:`update_bootloader_mini` und auswählen, ob Sie von SD-Karte oder NVMe/USB booten möchten.
-   * Setzen Sie die vorbereitete SD-Karte in den PI5 ein, schalten Sie ihn ein und warten Sie mindestens 10 Sekunden. Sobald die Wiederherstellung abgeschlossen ist, entfernen und formatieren Sie die SD-Karte neu. 
-   * Verwenden Sie anschließend den Raspberry Pi Imager, um das neueste Raspberry Pi OS zu flashen, setzen Sie die Karte wieder ein und versuchen Sie erneut zu booten.
+   * Wenn der PI5 immer noch nicht startet, ist möglicherweise der Bootloader beschädigt. Sie können dieser Anleitung folgen: |link_update_bootloader| und auswählen, ob Sie von SD-Karte oder NVMe/USB booten möchten.
+   * Setzen Sie die vorbereitete SD-Karte in den PI5 ein, schalten Sie ihn ein und warten Sie mindestens 10 Sekunden. Sobald die Wiederherstellung abgeschlossen ist, entfernen und formatieren Sie die SD-Karte neu.
+   * Verwenden Sie anschließend den Raspberry Pi Imager, um das neueste Raspberry Pi OS zu flashen, und versuchen Sie erneut zu booten.
 
 
-5. RGB-LEDs funktionieren nicht?
---------------------------------------
+.. |link_configure_boot_ssd| replace:: :ref:`configure_boot_ssd_mini`
 
-#. Die zwei Pins auf dem Mini-HAT werden verwendet, um die RGB-LEDs mit GPIO10 zu verbinden. Stellen Sie sicher, dass die Jumperkappe korrekt auf diesen beiden Pins sitzt.
+Wie ändere ich die Boot-Reihenfolge des Raspberry Pi mit Befehlen?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   .. image:: hardware/img/io_board_rgb_pin.png
-      :width: 300
-      :align: center
-
-#. Vergewissere dich, dass ein kompatibles Betriebssystem installiert ist:
-
-   .. image:: img/compitable_os.png
-      :width: 600
-      :align: center
-
-   Bei inkompatiblen Systemen: Siehe :ref:`install_the_os_mini`.
-
-#. Führe den Befehl ``sudo raspi-config`` aus, um das Konfigurationsmenü zu öffnen. Navigiere zu **3 Interfacing Options** -> **I3 SPI** -> **YES**, und klicke dann auf **OK** und **Finish**, um SPI zu aktivieren. Starte anschließend den Pironman 5 neu.
-
-Wenn das Problem weiterhin besteht, sende bitte eine E-Mail an service@sunfounder.com. Wir antworten dir schnellstmöglich.
-
-6. CPU-Lüfter funktioniert nicht?
-----------------------------------------------
-
-Der CPU-Lüfter arbeitet nur, wenn die eingestellte Temperaturschwelle erreicht ist.
-
-**Lüftergeschwindigkeitsregelung basierend auf der Temperatur**
-
-Der PWM-Lüfter passt seine Geschwindigkeit dynamisch an die Temperatur des Raspberry Pi 5 an:
-
-* **Unter 50°C**: Lüfter bleibt aus (0 %).
-* **Bei 50°C**: Niedrige Geschwindigkeit (30 %).
-* **Bei 60°C**: Mittlere Geschwindigkeit (50 %).
-* **Bei 67,5°C**: Hohe Geschwindigkeit (70 %).
-* **Ab 75°C**: Maximale Geschwindigkeit (100 %).
-
-Weitere Details findest du hier: :ref:`fan_mini`
-
-7. Wie kann man das Web-Dashboard deaktivieren?
-------------------------------------------------------
-
-Nach der Installation des Moduls ``pironman5`` kannst du auf das :ref:`view_control_dashboard_mini` zugreifen.
-
-Wenn du diese Funktion nicht benötigst und CPU-/RAM-Auslastung reduzieren möchtest, kannst du das Dashboard während der Installation mit dem Flag ``--disable-dashboard`` deaktivieren:
-
-.. code-block:: shell
-
-   cd ~/pironman5
-   sudo python3 install.py --disable-dashboard
-
-Wenn du ``pironman 5`` bereits installiert hast, kannst du das ``dashboard``-Modul und ``influxdb`` entfernen und anschließend ``pironman5`` neu starten:
-
-.. code-block:: shell
-
-   /opt/pironman5/env/bin/pip3 uninstall pm-dashboard influxdb
-   sudo apt purge influxdb
-   sudo systemctl restart pironman5
-
-8. Wie steuert man Komponenten mit dem Befehl ``pironman5``?
-----------------------------------------------------------------------
-Eine Anleitung zur Steuerung der Komponenten des Pironman 5 mit dem Befehl ``pironman5`` findest du unter:
-
-* :ref:`view_control_commands_mini`
-
-9. Wie ändert man die Boot-Reihenfolge des Raspberry Pi per Kommandozeile?
---------------------------------------------------------------------------------
-
-Wenn du bereits auf deinem Raspberry Pi angemeldet bist, kannst du die Boot-Reihenfolge über Befehle ändern. Anleitung:
-
-* :ref:`configure_boot_ssd_mini`
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_boot_order_command
+   :end-before: end_faq_boot_order_command
 
 
-10. Wie kann man die Boot-Reihenfolge mit dem Raspberry Pi Imager ändern?
--------------------------------------------------------------------------------
+Wie ändere ich die Boot-Reihenfolge mit Raspberry Pi Imager?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Zusätzlich zur Änderung der ``BOOT_ORDER`` in der EEPROM-Konfiguration kannst du auch den **Raspberry Pi Imager** nutzen, um die Boot-Reihenfolge zu ändern.
-
-Wir empfehlen, hierfür eine Ersatzkarte zu verwenden.
-
-* :ref:`update_bootloader_mini`
-
-11. Wie kopiert man das System von der SD-Karte auf eine NVMe-SSD?
---------------------------------------------------------------------
-
-Wenn du eine NVMe-SSD besitzt, aber keinen Adapter zur Verbindung mit deinem Computer hast, kannst du das System zunächst auf eine Micro-SD-Karte installieren. Nach erfolgreichem Start des Pironman 5 kannst du das System auf die NVMe-SSD übertragen.
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_boot_order_imager
+   :end-before: end_faq_boot_order_imager
 
 
-* :ref:`copy_sd_to_nvme_mini`
+.. |link_copy_sd_to_nvme| replace:: :ref:`copy_sd_to_nvme_mini`
 
-12. Wie entfernt man die Schutzfolie von den Acrylplatten?
-----------------------------------------------------------------
+Wie kopiere ich das System von der SD-Karte auf eine NVMe-SSD?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Dem Set liegen zwei Acrylplatten bei, die beidseitig mit einer gelben oder transparenten Schutzfolie versehen sind, um Kratzer zu vermeiden. Die Folie lässt sich unter Umständen schwer abziehen. Verwende einen Schraubendreher, um vorsichtig eine Ecke anzuheben und dann die Folie langsam abzuziehen.
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_copy_sd_to_nvme
+   :end-before: end_faq_copy_sd_to_nvme
 
-.. image:: img/peel_off_film.jpg
-    :width: 500
-    :align: center
 
+
+6. Erweiterte Nutzung
+-----------------------
+
+
+Wie entferne ich die Schutzfolie?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../pironman5/faq.rst
+   :start-after: start_faq_remove_film
+   :end-before: end_faq_remove_film
 
 
 .. _openssh_powershell_mini:
 
-13. Wie installiert man OpenSSH über PowerShell?
-----------------------------------------------------
+Wie installiere ich OpenSSH über PowerShell?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Wenn du den Befehl ``ssh <username>@<hostname>.local`` (oder ``ssh <username>@<IP address>``) ausführst und folgende Fehlermeldung erhältst:
 
