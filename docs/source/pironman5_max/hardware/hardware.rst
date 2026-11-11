@@ -15,6 +15,7 @@
 .. toctree::
     :maxdepth: 2
     
+    features
     io_board
     hdmi_adapter
     nvme_pip
