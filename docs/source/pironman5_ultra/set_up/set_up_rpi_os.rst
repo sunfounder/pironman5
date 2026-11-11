@@ -104,7 +104,7 @@ PiPower 5 relies on the Raspberry Pi shutdown state to control the power output.
      * Turns off automatically after 10 seconds.
      * Briefly press the power button to wake the screen or switch pages.
 
-   * **Power Button (PiPower 5)**
+   * **Power Button**
 
      * Briefly press: Power on / wake up OLED / switch OLED page.
      * Hold for 2 seconds: Safe shutdown (requires :ref:`safe_shutdown_ultra`).
@@ -112,7 +112,9 @@ PiPower 5 relies on the Raspberry Pi shutdown state to control the power output.
 
    * **RGB Light Strip and Front RGB Fans**
 
-     * Light up with a breathing effect.
+     * Light up with a breathing effect as soon as the device is powered on.
+     * The effect is driven by the microcontroller on the RGB module, so it works even before the ``pironman5`` software is installed.
+     * After installation, you can change the style, color, brightness and speed from the Dashboard or with the CLI.
 
    * **CPU Turbo Fan and Front Fans**
 

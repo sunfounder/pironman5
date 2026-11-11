@@ -15,7 +15,7 @@ Now that the system has been written to either the Micro SD or NVMe SSD, you can
 
    PiPower 5 is set to **Default On** by default, so the device also powers on automatically as soon as external power is connected. Whether the **Default On** jumper is at ON or OFF, you can always turn the device on by pressing the power button.
 
-After powering on, you will see the various power LEDs lit up, but the OLED screen and the RGB lighting will not be operational yet, as they need to be configured. If there is a screen garbling issue, please ignore it for now; it will be resolved after configuration.
+After powering on, you will see the various power LEDs lit up. The RGB light strip and the two front RGB fans also light up with a breathing effect — this effect is driven by the microcontroller on the RGB module, so it works as soon as the device is powered on, **even before the** ``pironman5`` **software is installed**. The OLED screen, however, will not show anything yet, as it needs to be configured. If there is a screen garbling issue, please ignore it for now; it will be resolved after configuration.
 
 Before configuring, you need to boot up and log into your Raspberry Pi. If you're unsure how to log in, you can visit the official Raspberry Pi website: |link_rpi_get_start|.
 

@@ -25,6 +25,12 @@ The Raspberry Pi communicates with the microcontroller on the RGB module over I2
 * The RGB light strip and the RGB fans are controlled together for synchronized lighting.
 * The style, color, brightness and animation speed can be set on the Dashboard or with the CLI.
 
+.. note::
+
+   The microcontroller runs a default breathing effect by itself. The RGB light strip and the front RGB fans
+   therefore light up as soon as the device is powered on, **even if the** ``pironman5`` **software is not installed**.
+   The software is only needed to change the style, color, brightness or speed.
+
 RGB LEDs
 -------------
 
