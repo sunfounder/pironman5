@@ -15,6 +15,7 @@ Ce chapitre propose une description détaillée de tous les composants du Pironm
 .. toctree::
     :maxdepth: 2
 
+    features
     io_board
     hdmi_adapter
     nvme_pip
