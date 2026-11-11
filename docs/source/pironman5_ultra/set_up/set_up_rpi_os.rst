@@ -33,6 +33,9 @@ PiPower 5 relies on the Raspberry Pi shutdown state to control the power output.
 
 #. Make sure the ``SDSIG`` jumper on the PiPower 5 module is connected to ``PI3V3``.
 
+   .. image:: img/safe_shutdown_3v3.png
+      :width: 450
+
 #. Open the Raspberry Pi configuration tool:
 
    .. code-block:: shell
