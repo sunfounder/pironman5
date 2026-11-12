@@ -12,7 +12,7 @@
 
    OpenMediaVault **不支持** 在 Raspberry Pi OS 桌面版上安装。
 
-   ⚠️ **仅支持 Raspberry Pi OS Lite 版本 11（Bullseye）和 12（Bookworm）。**
+   ⚠️ **仅支持 64 位 Raspberry Pi OS Lite，当前为 13（Trixie）。** 11（Bullseye）和 12（Bookworm）为旧版 OpenMediaVault 所支持；当前版本已无法在 12（Bookworm）上安装。
 
    请确保您已安装正确的操作系统并完成网络配置。
    此处的操作流程与 :ref:`install_os_sd_5` 一致，但在选择镜像时，请从 Raspberry Pi OS（其他）中选择 Raspberry Pi OS Lite。
@@ -46,6 +46,10 @@ OpenMediaVault（简称 OMV）是一个基于 Debian Linux 的开源网络附加
       sudo ./install -n
 
    上述命令将下载并运行 OpenMediaVault 的安装脚本。安装完成后请勿重启 Raspberry Pi。
+
+   .. tip::
+
+      如果同时安装了 Pironman 5 软件和 OpenMediaVault，两者的服务会互相拖慢启动速度。每次开机后，pironman5 服务和 OpenMediaVault 服务都可能需要几分钟才能启动完成。\ **这是正常现象**\ ，并非安装损坏。请等待几分钟后再打开 OpenMediaVault 网页界面。
 
 3. 访问 OpenMediaVault
 -----------------------------
