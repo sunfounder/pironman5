@@ -57,10 +57,10 @@ It has a built-in **7.4V 2000mAh Power Pack (SFB20003C2S)** battery, supporting 
 **Interfaces**
 
 .. image:: img/p5_ultra_port1.jpg
-    :width: 450
+    :width: 600
 
 .. image:: img/p5_ultra_port2.jpg
-    :width: 450
+    :width: 600
 
 **Parameters**
 

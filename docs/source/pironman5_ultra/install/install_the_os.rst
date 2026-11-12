@@ -9,9 +9,15 @@
 3. Installing the Operating System
 =======================================
 
-.. note::
+.. warning::
 
-    You need to install an OS that supports Raspberry Pi 5. Pironman 5 Ultra and the PiPower 5 module only support **64-bit** operating systems. Please use the latest Raspberry Pi Imager tool for system installation. The currently tested systems are:
+    * OpenMediaVault does not support installation on the Raspberry Pi OS desktop.
+    * ⚠️ Only **Raspberry Pi OS Lite 64-bit** is supported — currently 13 (**Trixie**).
+
+.. warning::
+
+    * You need to install an OS that supports Raspberry Pi 5. Pironman 5 Ultra and the PiPower 5 module only support **64-bit** operating systems. Please use the latest Raspberry Pi Imager tool for system installation. The currently tested systems are:
+
 
 .. list-table:: Tested Operating Systems
    :header-rows: 1
@@ -25,14 +31,6 @@
      - Fully compatible
    * - Kali Linux
      - Fully compatible
-
-.. warning::
-
-    **32-bit systems are not supported.** Please use a 64-bit system, such as Raspberry Pi OS 64-bit or Ubuntu 64-bit.
-
-.. note::
-
-    If you need to use OpenMediaVault as a storage / disk management tool, install a system **without a desktop**. Raspberry Pi OS Lite is recommended.
 
 In this chapter, you will learn how to install the operating systems. All the installation steps depend on the |link_rpi_imager|, which you need to install first.
 

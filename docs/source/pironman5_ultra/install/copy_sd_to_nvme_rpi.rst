@@ -20,7 +20,7 @@ Complete the steps above before continuing.
 1. Enabling PCIe
 --------------------
 
-By default the PCIe connector is not enabled. 
+The PCIe connector on the Raspberry Pi 5 is disabled by default. These steps enable it so that the Raspberry Pi can detect the NVMe SSD connected to the dual NVMe PIP module. Without them the SSD does not appear as a device, so you cannot copy the system to it or boot from it.
 
 * To enable it you should open the ``/boot/firmware/config.txt`` file.
 
@@ -41,18 +41,19 @@ By default the PCIe connector is not enabled.
   
     dtparam=nvme
 
-* The connection is certified for Gen 2.0 speeds (5 GT/sec), but you can force it to Gen 3.0 (10 GT/sec) if you add the following lines to your ``/boot/firmware/config.txt``.
+* Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes, then reboot:
 
   .. code-block:: shell
-  
-    # Force Gen 3.0 speeds
-    dtparam=pciex1_gen=3
-  
-  .. warning::
-  
-    The Raspberry Pi 5 is not certified for Gen 3.0 speeds, and connections to PCIe devices at these speeds may be unstable.
 
-* Press ``Ctrl + X``, ``Y`` and ``Enter`` to save the changes.
+    sudo reboot
+
+* After rebooting, check that the SSD is detected:
+
+  .. code-block:: shell
+
+    lsblk
+
+  The NVMe SSD should appear as ``/dev/nvme0n1``. If it does not, recheck the PCIe ribbon cable and that the module is firmly seated (see :ref:`nvme_pip_ultra`).
 
 .. start_copy_nvme
 
@@ -90,10 +91,7 @@ If your Micro SD card has a desktop version of the system installed, you can use
 
    .. image:: img/ssd_imager.png
 
-#. Insert your microSD card into your computer using a card reader. Back up any important data before proceeding.
 
-   .. image:: img/insert_sd.png
-      :width: 90%
 
 #. When Raspberry Pi Imager opens, you will see the **Device** page. Select your Raspberry Pi 5 model from the list.
 
