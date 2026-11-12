@@ -24,7 +24,8 @@ Wähle dann das passende Konfigurations-Tutorial entsprechend deinem verwendeten
     set_up_rpi_os 
     set_up_home_assistant
     set_up_umbrel
-    set_up_batocera
+
+.. set_up_batocera
 
 **Zum Netzschalter**
 
