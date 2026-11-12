@@ -20,7 +20,7 @@ Complete the steps above before continuing.
 1. Enabling PCIe
 --------------------
 
-On the Raspberry Pi 5 the PCIe connector is enabled automatically when a **HAT+** device, such as the dual NVMe PIP module, is connected. If your NVMe SSD is already listed after booting, you can **skip this step**.
+On the Raspberry Pi 5 the PCIe connector is enabled automatically when a **HAT+** device is connected. Pironman 5 Ultra includes the **PiPower 5 HAT+** board, so in most cases the PCIe connector is already enabled and the NVMe SSDs are detected without any configuration. If your NVMe SSD is already listed after booting, you can **skip this step**.
 
 Check whether the SSD is detected:
 
@@ -78,6 +78,10 @@ There are two ways to install an operating system on the SSD:
       
     
 #. Make sure to select the correct **Copy From** and **Copy To** devices. Be careful not to mix them up.
+
+   .. tip::
+
+      Pironman 5 Ultra has two M.2 slots, so **both NVMe SSDs** appear in the list. In general the SSD in M.2 slot 1 is ``/dev/nvme0n1`` and the SSD in M.2 slot 2 is ``/dev/nvme1n1``. Confirm the model and capacity before you click **Start**.
 
    .. image:: img/ssd_copy_from.png
       
