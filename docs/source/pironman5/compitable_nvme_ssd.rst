@@ -136,6 +136,9 @@ Compatibility may still vary depending on Raspberry Pi OS version, kernel versio
    * - Samsung
      - MZ9LQ256HBJD PM991
      - 256GB
+   * - SanDisk
+     - Optimus GX 7100 (SDSP71500GAN)
+     - 500GB
    * - Silicon Power
      - SP256GBP34A60M28
      - 256GB
