@@ -72,6 +72,12 @@ There are two ways to install an operating system on the SSD:
 
 **Copying the System from the Micro SD Card to the SSD**
 
+.. warning::
+
+   SD Card Copier only supports drives up to **2 TB**, because it creates an MS-DOS (MBR) partition table. On a larger SSD (for example 4 TB) it stops with **Could not create partition**. For those drives, use **Installing the System with Raspberry Pi Imager** instead.
+
+   Note that the Raspberry Pi OS image also uses an MBR partition table, so a drive larger than 2 TB only exposes about 2 TB of usable capacity unless you repartition it with GPT manually.
+
 #. Connect a display or access the Raspberry Pi desktop through VNC Viewer. Then click **Raspberry Pi logo** -> **Accessories** -> **SD Card Copier**.
 
    .. image:: img/ssd_copy.png
