@@ -111,23 +111,6 @@ Check if the FPC cable of the OLED Screen is properly connected.
         sudo systemctl restart pironman5.service
 
 
-Wake-Up Trigger
--------------------------
-
-.. image:: img/io_board_vib.png
-
-The onboard vibration switch is used to wake up the OLED display from sleep mode. When a vibration is detected, it sends a signal to reactivate the OLED, allowing the display to remain off when idle and wake automatically when motion is sensed.
-
-If you remove the jumper cap labeled for the vibration switch, the wake-up function will be disabled. Once the OLED enters sleep mode, it will no longer be able to wake up. This option is intended for advanced users who wish to repurpose the corresponding GPIO pin for other applications.
-
-.. note::
-
-  Jumper installed: Vibration wake-up is enabled.
-
-  Jumper removed: OLED cannot be woken once it turns off. The pin is freed for other uses.
-
-
-
 Infrared Receiver
 ---------------------------
 
