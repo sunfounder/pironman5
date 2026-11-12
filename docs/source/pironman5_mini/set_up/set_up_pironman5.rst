@@ -23,7 +23,8 @@ A continuación, selecciona el tutorial de configuración según el sistema oper
     set_up_rpi_os 
     set_up_home_assistant
     set_up_umbrel
-    set_up_batocera
+
+.. set_up_batocera
 
 **Sobre el Botón de Encendido**
 
