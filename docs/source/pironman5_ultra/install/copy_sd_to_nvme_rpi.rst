@@ -105,6 +105,10 @@ There are two ways to install an operating system on the SSD:
 
 If your Micro SD card has a desktop version of the system installed, you can use an imaging tool (like Raspberry Pi Imager) to burn the system to the SSD. This example uses Raspberry Pi OS bookworm, but other systems might require installing the imaging tool first.
 
+.. tip::
+
+   Raspberry Pi Imager treats internal NVMe drives as **system drives** and hides them while **Exclude system drives** is ticked. If the **Storage** step shows an empty list, clear that checkbox — the NVMe SSD will then appear.
+
 #. Connect a display or access the Raspberry Pi desktop through VNC Viewer. Then click **Raspberry Pi logo** -> **Accessories** -> **Raspberry Pi Imager**.
 
    .. image:: img/ssd_imager.png
