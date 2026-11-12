@@ -108,10 +108,6 @@ If your Micro SD card has a desktop version of the system installed, you can use
 
    .. image:: img/ssd_imager.png
 
-#. Insert your microSD card into your computer using a card reader. Back up any important data before proceeding.
-
-   .. image:: img/insert_sd.png
-      :width: 90%
 
 #. When Raspberry Pi Imager opens, you will see the **Device** page. Select your Raspberry Pi 5 model from the list.
 

@@ -20,7 +20,15 @@ Complete the steps above before continuing.
 1. Enabling PCIe
 --------------------
 
-The PCIe connector on the Raspberry Pi 5 is disabled by default. These steps enable it so that the Raspberry Pi can detect the NVMe SSD connected to the dual NVMe PIP module. Without them the SSD does not appear as a device, so you cannot copy the system to it or boot from it.
+On the Raspberry Pi 5 the PCIe connector is enabled automatically when a **HAT+** device, such as the dual NVMe PIP module, is connected. If your NVMe SSD is already listed after booting, you can **skip this step**.
+
+Check whether the SSD is detected:
+
+.. code-block:: shell
+
+  lsblk
+
+If the NVMe SSD does not appear (for example, when a non-HAT+ PCIe adapter is used), enable the PCIe connector manually:
 
 * To enable it you should open the ``/boot/firmware/config.txt`` file.
 
@@ -47,13 +55,13 @@ The PCIe connector on the Raspberry Pi 5 is disabled by default. These steps ena
 
     sudo reboot
 
-* After rebooting, check that the SSD is detected:
+* After rebooting, check again that the SSD is detected:
 
   .. code-block:: shell
 
     lsblk
 
-  The NVMe SSD should appear as ``/dev/nvme0n1``. If it does not, recheck the PCIe ribbon cable and that the module is firmly seated (see :ref:`nvme_pip_ultra`).
+  The NVMe SSD should appear as ``/dev/nvme0n1`` (with two SSDs installed, the second one appears as ``/dev/nvme1n1``). If it does not, recheck the PCIe ribbon cable and that the module is firmly seated (see :ref:`nvme_pip_ultra`).
 
 .. start_copy_nvme
 
