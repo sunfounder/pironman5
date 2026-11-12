@@ -48,6 +48,7 @@ Ces modèles de SSD ont été testés et sont généralement stables avec les co
 * Samsung 980
 * Samsung 980 Pro
 * Samsung 990 Pro
+* SanDisk Optimus GX 7100 (SDSP71500GAN), 500 GB
 
 * TeamGroup MP33
 
