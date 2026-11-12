@@ -76,13 +76,6 @@ The Raspberry Pi AI Kit combines the Raspberry Pi M.2 HAT+ and the Hailo AI acce
 
 You can detach the Hailo AI accelerator module from the Raspberry Pi AI Kit and insert it directly into the NVMe PIP module of the Pironman 5 MAX.
 
-Can I use the Pironman5 Max's vibration switch function?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-From v1.3.6, OLED wake-up uses the power button. You must remove the vibration switch jumper to avoid occupying Raspberry Pi GPIO pins and prevent potential conflicts. Please check whether this jumper exists; if not, please ignore this notice.
-
-.. image:: /pironman5_max/img/remove_vib_jumper.jpg
-
 2. Cooling and Fans
 -------------------------------
 
