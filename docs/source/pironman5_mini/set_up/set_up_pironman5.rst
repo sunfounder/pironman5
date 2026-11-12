@@ -23,7 +23,8 @@ Successivamente, seleziona il tutorial di configurazione in base al tuo sistema.
     set_up_rpi_os 
     set_up_home_assistant
     set_up_umbrel
-    set_up_batocera
+
+.. set_up_batocera
 
 **Informazioni sul pulsante di accensione**
 
