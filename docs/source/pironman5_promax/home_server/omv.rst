@@ -16,7 +16,7 @@ Setting up OpenMediaVault
 
    OpenMediaVault **does not** support installation on the Raspberry Pi OS desktop.
 
-   ⚠️ **Only Raspberry Pi OS Lite versions 11 (Bullseye) and 12 (Bookworm) are supported.** 
+   ⚠️ **Only Raspberry Pi OS Lite 64-bit is supported — currently 13 (Trixie).** Versions 11 (Bullseye) and 12 (Bookworm) were supported by older OpenMediaVault releases; the current release no longer installs on 12 (Bookworm). 
 
    Please make sure you have installed the correct operating system and configured the network.
    The procedure here is consistent with :ref:`install_os_sd_rpi_promax`, but when selecting an image, please choose Raspberry Pi OS Lite from Raspberry Pi OS (other).
@@ -50,6 +50,10 @@ Please follow these steps to install OpenMediaVault on your Raspberry Pi:
       sudo ./install -n
 
    This will download and run the installation script for OpenMediaVault. Do not restart your Raspberry Pi after installation.
+
+   .. tip::
+
+      If both the Pironman 5 software and OpenMediaVault are installed, their services may slow down each other's startup. After every boot, the ``pironman5`` service and the OpenMediaVault services can take several minutes to finish starting. **This is normal** — it does not mean the installation is broken. Wait a few minutes before opening the OpenMediaVault web interface.
 
 3. Access OpenMediaVault
 -----------------------------

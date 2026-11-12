@@ -25,5 +25,6 @@ In this chapter, you will learn how to install the operating systems. All the in
         install_raspberry_os
         install_the_other_os
         install_umbrel
-        install_batocera
+
+.. install_batocera
 

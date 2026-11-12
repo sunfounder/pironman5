@@ -21,6 +21,13 @@ It works well for receiving broadcast FM, airband, amateur radio, ADS-B, and man
 
 For the original manufacturer’s documentation, see the official RTL-SDR Blog V4 guide: https://www.rtl-sdr.com/V4/
 
+.. note::
+
+    Two variants are in circulation: the **RTL-SDR Blog V4** and the **RTL-SDR Blog V4 Lite**.
+    They carry different EEPROM product strings, so ``rtl_test`` reports either
+    ``RTL-SDR Blog V4 Detected`` or ``RTL-SDR Blog V4 Lite Detected``. Both are correct, and
+    everything below applies to both.
+
 ----
 
 Install Driver for RTL-SDR Blog V4
@@ -87,10 +94,17 @@ Verification B:
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr
    rtl_test -t
 
 Expected:
-    Output should include ``RTL-SDR Blog V4 Detected`` with no ``[R82XX] PLL not locked!`` messages.  
+    The first command must print a path under ``/usr/local/lib/``. If it prints
+    ``/lib/aarch64-linux-gnu/librtlsdr.so.0`` or any other system path, the loader is still
+    picking up the outdated package library — see *Preventing Driver Overwrite* below.
+
+    The second command should include ``RTL-SDR Blog V4 Detected`` — or
+    ``RTL-SDR Blog V4 Lite Detected`` if you have the V4 Lite variant — with no
+    ``[R82XX] PLL not locked!`` messages.
     The line ``Using device 0: Generic RTL2832U OEM`` is normal — it is just the USB name.
 
 
@@ -98,13 +112,29 @@ Expected:
 
 .. code-block:: shell
 
-   rtl_fm -f 97.1M -M wbfm -s 180000 -r 48000 -g 28 | play -t raw -r 48k -e s -b 16 -c 1 -
+   # 1) Scan the FM band and find a frequency that has a station near you
+   rtl_power -f 87.5M:108M:100k -i 3 -e 10 scan.csv
+
+   # 2) Listen to one of the strongest ones (replace 104.9M with your own)
+   rtl_fm -f 104.9M -M wbfm -s 180000 -g 28 | play -t raw -r 180k -e s -b 16 -c 1 -
+
+``scan.csv`` lists the measured power for every 100 kHz step; the highest values are your
+local stations.
+
+.. note::
+
+   ``97.1M`` is only an example used in older versions of this page. Many areas have no
+   station on that frequency, and you will hear nothing but noise even when the driver is
+   working perfectly. Always pick a frequency from the scan above.
+
+   ``-M wbfm`` outputs the 180 kHz MPX composite signal, not 48 kHz audio, and ``-r`` has no
+   effect in that mode. The playback rate must therefore match ``-s`` (``180k`` above);
+   otherwise the audio plays at the wrong speed.
 
 Tips:
 
     * ``-g``: Try between 25–35 dB; higher is not always better.
     * Reduce ``-s`` to ~170k–180k to lower noise.
-    * Adjust frequency slightly (e.g. ``97.1005M``) for fine tuning.
     * Close any other SDR software that might hold the device.
 
 ----
@@ -161,14 +191,23 @@ Ensures the latest version and full customization, but takes longer to compile a
 
 **Preventing Driver Overwrite**
 
-When installing GQRX, SDR++, gnuradio-dev, or gr-osmosdr, the system may reinstall outdated ``librtlsdr``.  
-After each installation, check:
+When installing GQRX, SDR++, gnuradio-dev, or gr-osmosdr, the system may reinstall an outdated
+``librtlsdr``. After each installation, check which library the tools actually load:
 
 .. code-block:: shell
 
     ldd "$(which rtl_test)" | grep rtlsdr
 
-If it no longer points to ``/usr/local/lib/librtlsdr.so``, run:
+If it does not point to ``/usr/local/lib/librtlsdr.so``, make the loader prefer
+``/usr/local/lib`` — the prefix ``make install`` used. This leaves the Debian package
+installed, so packages that depend on it (such as ``gqrx-sdr``) stay intact:
+
+.. code-block:: shell
+
+    echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+    sudo ldconfig
+
+Only if that does not help, remove the package and reinstall the driver:
 
 .. code-block:: shell
 
@@ -176,17 +215,18 @@ If it no longer points to ``/usr/local/lib/librtlsdr.so``, run:
     sudo ldconfig
     cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
-
-You can test immediately (or after a reboot for a clean environment):
+Then verify immediately (or after a reboot for a clean environment):
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr
    rtl_test -t
 
 Expected output:
 
-   * Contains RTL-SDR Blog V4 Detected.
-   * No [R82XX] PLL not locked! messages.
+   * ``ldd`` resolves to ``/usr/local/lib/librtlsdr.so``.
+   * Contains ``RTL-SDR Blog V4 Detected`` (or ``RTL-SDR Blog V4 Lite Detected``).
+   * No ``[R82XX] PLL not locked!`` messages.
 
 **First Run Setup**
 
@@ -194,6 +234,8 @@ Expected output:
 
   * Device: ``RTL-SDR (V4)``.
   * Input Rate: ``1.8 MSPS`` (1800000).
+  * Audio Output: select your USB speaker or sound card. On a Raspberry Pi 5 the default
+    output may be HDMI, and a USB speaker connected through it stays silent.
 
 * **Input Controls**:
 
@@ -223,7 +265,7 @@ You can refer to the official user manual here: https://www.sdrpp.org/manual.pdf
 
    sudo apt update
    sudo apt install -y --no-install-recommends build-essential cmake git pkg-config \
-     libfftw3-dev libvolk2-dev libglfw3-dev libglew-dev \
+     libfftw3-dev libvolk-dev libglfw3-dev libglew-dev \
      libzstd-dev librtaudio-dev
 
    git clone https://github.com/AlexandreRouma/SDRPlusPlus
@@ -233,16 +275,31 @@ You can refer to the official user manual here: https://www.sdrpp.org/manual.pdf
    make
    sudo make install
 
+.. note::
+
+   The package is called ``libvolk-dev`` on Debian 13 (trixie) and later. On Debian 12
+   (bookworm) — and Raspberry Pi OS based on it — the name is ``libvolk2-dev``; using the
+   wrong one makes ``apt`` report *Unable to locate package*.
+
 **Preventing Driver Overwrite**
 
-When installing GQRX, SDR++, gnuradio-dev, or gr-osmosdr, the system may reinstall outdated ``librtlsdr``.  
-After each installation, check:
+When installing GQRX, SDR++, gnuradio-dev, or gr-osmosdr, the system may reinstall an outdated
+``librtlsdr``. After each installation, check which library the tools actually load:
 
 .. code-block:: shell
 
     ldd "$(which rtl_test)" | grep rtlsdr
 
-If it no longer points to ``/usr/local/lib/librtlsdr.so``, run:
+If it does not point to ``/usr/local/lib/librtlsdr.so``, make the loader prefer
+``/usr/local/lib`` — the prefix ``make install`` used. This leaves the Debian package
+installed, so packages that depend on it (such as ``gqrx-sdr``) stay intact:
+
+.. code-block:: shell
+
+    echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+    sudo ldconfig
+
+Only if that does not help, remove the package and reinstall the driver:
 
 .. code-block:: shell
 
@@ -250,17 +307,18 @@ If it no longer points to ``/usr/local/lib/librtlsdr.so``, run:
     sudo ldconfig
     cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
-
-You can test immediately (or after a reboot for a clean environment):
+Then verify immediately (or after a reboot for a clean environment):
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr
    rtl_test -t
 
 Expected output:
 
-   * Contains RTL-SDR Blog V4 Detected.
-   * No [R82XX] PLL not locked! messages.
+   * ``ldd`` resolves to ``/usr/local/lib/librtlsdr.so``.
+   * Contains ``RTL-SDR Blog V4 Detected`` (or ``RTL-SDR Blog V4 Lite Detected``).
+   * No ``[R82XX] PLL not locked!`` messages.
 
 
 **First Run Notes:**
@@ -295,14 +353,23 @@ rtl_433 is a command-line tool to decode radio transmissions from devices operat
 
 **Preventing Driver Overwrite**
 
-When installing GQRX, SDR++, gnuradio-dev, or gr-osmosdr, the system may reinstall outdated ``librtlsdr``.  
-After each installation, check:
+When installing GQRX, SDR++, gnuradio-dev, or gr-osmosdr, the system may reinstall an outdated
+``librtlsdr``. After each installation, check which library the tools actually load:
 
 .. code-block:: shell
 
     ldd "$(which rtl_test)" | grep rtlsdr
 
-If it no longer points to ``/usr/local/lib/librtlsdr.so``, run:
+If it does not point to ``/usr/local/lib/librtlsdr.so``, make the loader prefer
+``/usr/local/lib`` — the prefix ``make install`` used. This leaves the Debian package
+installed, so packages that depend on it (such as ``gqrx-sdr``) stay intact:
+
+.. code-block:: shell
+
+    echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+    sudo ldconfig
+
+Only if that does not help, remove the package and reinstall the driver:
 
 .. code-block:: shell
 
@@ -310,22 +377,24 @@ If it no longer points to ``/usr/local/lib/librtlsdr.so``, run:
     sudo ldconfig
     cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
-
-You can test immediately (or after a reboot for a clean environment):
+Then verify immediately (or after a reboot for a clean environment):
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr
    rtl_test -t
 
 Expected output:
 
-   * Contains RTL-SDR Blog V4 Detected.
-   * No [R82XX] PLL not locked! messages.
+   * ``ldd`` resolves to ``/usr/local/lib/librtlsdr.so``.
+   * Contains ``RTL-SDR Blog V4 Detected`` (or ``RTL-SDR Blog V4 Lite Detected``).
+   * No ``[R82XX] PLL not locked!`` messages.
 
 **Basic Use:**
 
 * Run ``rtl_433`` to automatically detect and decode common 433 MHz devices.
-* Use ``rtl_433 -G`` to list all supported protocols.
+* Run ``rtl_433 -R`` without an argument to list all supported protocols.
+  The older ``-G`` flag no longer lists them; it is deprecated since 25.02.
 
 ----
 
@@ -342,16 +411,36 @@ dump1090-mutability is a Mode S decoder for ADS-B aircraft transponder data. It 
 
    sudo apt install -y dump1090-mutability
 
+.. note::
+
+   ``dump1090-mutability`` is available in Debian 12 (bookworm), bullseye and earlier, but
+   **not in Debian 13 (trixie)** — the package was removed from the archive, so ``apt``
+   reports *Unable to locate package dump1090-mutability*.
+
+   On Debian 13 there is no drop-in replacement in the archive: the ``readsb`` package is
+   built **without** RTL-SDR support (``readsb --device-type rtlsdr`` answers *SDR type
+   'rtlsdr' not recognized*). On those systems, build a decoder from source — for example
+   ``readsb`` with ``make RTLSDR=yes``, or ``dump1090-fa``.
+
 **Preventing Driver Overwrite**
 
-When installing GQRX, SDR++, gnuradio-dev, or gr-osmosdr, the system may reinstall outdated ``librtlsdr``.  
-After each installation, check:
+When installing GQRX, SDR++, gnuradio-dev, or gr-osmosdr, the system may reinstall an outdated
+``librtlsdr``. After each installation, check which library the tools actually load:
 
 .. code-block:: shell
 
     ldd "$(which rtl_test)" | grep rtlsdr
 
-If it no longer points to ``/usr/local/lib/librtlsdr.so``, run:
+If it does not point to ``/usr/local/lib/librtlsdr.so``, make the loader prefer
+``/usr/local/lib`` — the prefix ``make install`` used. This leaves the Debian package
+installed, so packages that depend on it (such as ``gqrx-sdr``) stay intact:
+
+.. code-block:: shell
+
+    echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/00-local-first.conf
+    sudo ldconfig
+
+Only if that does not help, remove the package and reinstall the driver:
 
 .. code-block:: shell
 
@@ -359,17 +448,18 @@ If it no longer points to ``/usr/local/lib/librtlsdr.so``, run:
     sudo ldconfig
     cd ~/rtl-sdr/build && sudo make install && sudo ldconfig
 
-
-You can test immediately (or after a reboot for a clean environment):
+Then verify immediately (or after a reboot for a clean environment):
 
 .. code-block:: shell
 
+   ldd "$(which rtl_test)" | grep rtlsdr
    rtl_test -t
 
 Expected output:
 
-   * Contains RTL-SDR Blog V4 Detected.
-   * No [R82XX] PLL not locked! messages.
+   * ``ldd`` resolves to ``/usr/local/lib/librtlsdr.so``.
+   * Contains ``RTL-SDR Blog V4 Detected`` (or ``RTL-SDR Blog V4 Lite Detected``).
+   * No ``[R82XX] PLL not locked!`` messages.
 
 **Basic Use:**
 

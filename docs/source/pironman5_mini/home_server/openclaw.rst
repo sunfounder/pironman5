@@ -15,7 +15,7 @@ Making OpenClaw Operate the Pironman5 Mini
 
 To enable OpenClaw to operate the Pironman5 Mini, we need to install the Pironman5 Mini skill.
 
-1.  Ensure you have already installed the Pironman5 Mini. If not, please refer to :ref:`mini_download_pironman5_module`.
+1.  Ensure you have already installed the Pironman5 Mini. If not, please refer to :ref:`install_pironman5_module_mini`.
 
 2.  Run the following command in the terminal:
 
