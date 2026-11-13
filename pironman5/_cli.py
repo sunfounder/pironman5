@@ -18,6 +18,36 @@ from .history_migrate import run_migrate_history
 AVAILABLE_PAGES = []
 AVAILABLE_EMAIL_MODES = []
 
+def _dump_config(cfg, max_depth=3, _level=1):
+    """Dump config like json.dumps(indent=4) but stop expanding past max_depth.
+
+    Dicts/lists nested deeper than max_depth collapse to {...} / [...]; short
+    scalar lists stay on one line so a single parameter still reads as one line.
+    max_depth=0 disables the limit (full dump).
+    """
+    def fmt(obj, level):
+        if isinstance(obj, dict):
+            if max_depth and level > max_depth:
+                return "{...}"
+            items = list(obj.items())
+            if not items:
+                return "{}"
+            lines = [
+                "    " * level + json.dumps(k) + ": " + fmt(v, level + 1)
+                for k, v in items
+            ]
+            return "{\n" + ",\n".join(lines) + "\n" + "    " * (level - 1) + "}"
+        if isinstance(obj, (list, tuple)):
+            if max_depth and level > max_depth:
+                return "[...]"
+            if all(not isinstance(i, (dict, list, tuple)) for i in obj):
+                return json.dumps(list(obj), ensure_ascii=False)
+            lines = ["    " * level + fmt(v, level + 1) for v in obj]
+            return "[\n" + ",\n".join(lines) + "\n" + "    " * (level - 1) + "]"
+        return json.dumps(obj, ensure_ascii=False)
+    return fmt(cfg, _level)
+
+
 def update_config_file(config, config_path):
     import json
     current = None
@@ -53,7 +83,7 @@ def main():
     subparsers = parser.add_subparsers(dest="subcommand", title="Subcommands")
 
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
-    parser.add_argument("-c", "--config", action="store_true", help="Show config")
+    parser.add_argument("-c", "--config", nargs="?", const=3, default=None, type=int, help="Show config, optionally limited to N levels (default 3, 0 = full)")
     parser.add_argument("-drd", "--database-retention-days", nargs='?', default='', help="Database retention days")
     parser.add_argument("-dl", "--debug-level", nargs='?', default='', choices=DEBUG_LEVELS, help="Debug level")
     parser.add_argument("-rd", "--remove-dashboard", action="store_true", help="Remove dashboard")
@@ -193,9 +223,9 @@ def main():
 
     # show config
     # ----------------------------------------
-    if args.config:
+    if args.config is not None:
         effective_config = build_effective_config(current_config)
-        print(json.dumps(effective_config, indent=4))
+        print(_dump_config(effective_config, args.config))
         quit()
 
     # get or set debug level
