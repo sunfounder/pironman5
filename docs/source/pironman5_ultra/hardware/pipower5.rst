@@ -123,6 +123,11 @@ Notifications
 
 PiPower 5 can notify you about important events through the **buzzer** and **email**. Configure them on the Dashboard settings page or with the ``pipower5`` command.
 
+.. _pipower5_events_ultra:
+
+Notification Events
+^^^^^^^^^^^^^^^^^^^^^^
+
 Supported events include:
 
 * ``battery_activated``

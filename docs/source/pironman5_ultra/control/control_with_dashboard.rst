@@ -24,19 +24,29 @@ There are multiple cards showing the current status of Pironman 5 Ultra and the 
 
 * **Input**: shows the current external input status, including voltage, current, power, and whether the power supply is plugged in.
 
+  .. image:: img/dashboard_input.png
+     :width: 90%
+
+
 * **Temperature**: shows the current CPU and GPU temperature, and the speed of the Raspberry Pi PWM fan (if a Raspberry Pi PWM fan is connected).
 
   .. image:: img/dashboard_tem.png
-    :width: 90%
+     :width: 90%
 
 * **Battery**: shows the current battery status, including the battery voltage, current, power, remaining percentage, and whether the battery is charging.
 
+  .. image:: img/dashboard_battery.png
+     :width: 90%
+
 * **Raspberry Pi Power**: shows the current Raspberry Pi voltage, current, power, and the power source (``Battery`` or ``External``).
+
+  .. image:: img/dashboard_pipower.png
+     :width: 90%
 
 * **Storage**: displays the storage capacity of the Raspberry Pi, showing the various disk partitions with their used and available space.
 
   .. image:: img/dashboard_storage.png
-    :width: 90%
+   :width: 90%
 
 * **Memory**: shows the Raspberry Pi RAM usage and percentage.
 
@@ -78,7 +88,7 @@ The Log page displays the runtime log of the ``pironman5`` service.
 Settings
 ------------
 
-The Settings page allows you to customize the Dashboard display, system preferences, the OLED screen, the RGB lighting, and the power behavior. It also shows basic network information such as the MAC address and IP address.
+The Settings page allows you to customize the Dashboard display, the OLED screen, the RGB lighting, the notification settings, and the power behavior. It also shows basic network information such as the MAC address and IP address.
 
 .. image:: img/dashboard_setting.png
     :width: 600
@@ -135,6 +145,36 @@ The Settings page allows you to customize the Dashboard display, system preferen
   * **Speed**: adjust the animation speed.
 
 
+* **Send Email**
+
+  PiPower 5 can send an email when a selected event happens, for example when the external power is disconnected or the battery level is low. See :ref:`pipower5_events_ultra` for the available events.
+
+  .. image:: img/dashboard_setting_email.png
+      :width: 600
+
+  * **Send email on**: select which events trigger an email.
+  * **SMTP Server**: the SMTP server address, together with the security type (``None``, ``SSL`` or ``TLS``) and the port. Common ports are ``465`` for SSL and ``587`` for TLS.
+  * **Send email to**: the address that receives the notifications. It can be the same as the SMTP account.
+  * **SMTP Account**: the email account used to send the notifications.
+  * **SMTP Password**: the password or app password of that account.
+  * **Test SMTP**: send a test email to check that the SMTP settings work.
+
+  .. note::
+
+     For Gmail, create an **App Password** instead of using your normal account password.
+
+
+* **Buzzer**
+
+  The PiPower 5 board has a buzzer that can beep when a selected event happens. The same events as for the email notifications are available.
+
+  .. image:: img/dashboard_settings_buzzer.png
+      :width: 600
+
+  * **Buzzer on**: select which events trigger the buzzer.
+  * **Buzzer Volume**: set the volume from ``0`` to ``10``.
+
+
 * **Other Settings**
 
   Configure power behavior and view device information.
@@ -142,9 +182,6 @@ The Settings page allows you to customize the Dashboard display, system preferen
   .. image:: img/dashboard_setting_system.png
       :width: 600
 
-  * **Buzzer (Buzz on)**: select which events trigger the buzzer.
-  * **Buzzer Volume**: set the buzzer volume.
-  * **Speaker Mode**: ``Auto`` (switches automatically) or ``ON`` (the speakers are always on).
   * **Shutdown Strategy**: the battery level at which the Raspberry Pi shuts down.
   * **Power Failure Simulation**: run a power failure test and generate a test report.
   * **Debug Level**: set the logging level of the service.
@@ -152,10 +189,6 @@ The Settings page allows you to customize the Dashboard display, system preferen
   * **IP Address**: displays the IP addresses of the Raspberry Pi network interfaces.
   * **History Retention**: set how many days historical data will be stored.
   * **Clear All Data**: clear all recorded history data.
+  * **Reboot**: reboot the device.
+  * **Shutdown**: shut down the device.
   * **Restart Service**: restart the PiPower5 service.
-
-Left Sidebar
-------------------
-
-* **History**: all historical data.
-* **Log**: the service log.
