@@ -23,6 +23,10 @@ for _arg in "$@"; do
     fi
 done
 
+# Never run from a directory the installer may delete (e.g. /opt/pironman5):
+# a deleted CWD makes getcwd()/git/pip fail later in the run.
+cd / || exit 1
+
 # Source Installer framework — use local path when available (e.g. Docker build),
 # otherwise curl from GitHub (or Gitee mirror with --cn).
 FRAMEWORK_DIR="/tmp/installer-tools"
@@ -34,13 +38,13 @@ else
     else
         INSTALLER_URL="https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/refs/heads/main/tools/installer_1.1.0.sh"
     fi
-    curl -fsSL "$INSTALLER_URL?$(date +%s)" -o installer.sh
+    curl -fsSL "$INSTALLER_URL?$(date +%s)" -o /tmp/pironman5-installer.sh
     if [ $? -ne 0 ]; then
         echo "Network error, please check your internet connection."
         exit 1
     fi
-    source installer.sh
-    rm installer.sh
+    source /tmp/pironman5-installer.sh
+    rm -f /tmp/pironman5-installer.sh
 fi
 
 installer_check_root_privileges
@@ -685,8 +689,10 @@ fi
 if [ ! -t 1 ]; then
     IS_PLAIN_TEXT=true
 fi
-# Suppress tput errors when TERM is unset
-export TERM="${TERM:-xterm-256color}"
+# Suppress tput errors when TERM is unset or unusable (tput: unknown terminal)
+if [ -z "$TERM" ] || [ "$TERM" = "unknown" ] || [ "$TERM" = "dumb" ]; then
+    export TERM=xterm-256color
+fi
 
 # ============================================================
 # Execute Installation
