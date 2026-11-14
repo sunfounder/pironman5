@@ -147,7 +147,7 @@ The Settings page allows you to customize the Dashboard display, the OLED screen
 
 * **Send Email**
 
-  PiPower 5 can send an email when a selected event happens, for example when the external power is disconnected or the battery level is low. See :ref:`notifications_ultra` for the full setup and :ref:`pipower5_events_ultra` for the available events.
+  PiPower 5 can send an email when a selected event happens, for example when the external power is disconnected or the battery level is low. See :ref:`notifications_ultra` for the full setup and :ref:`notification_events_ultra` for the available events.
 
   .. image:: img/dashboard_setting_email.png
       :width: 600

@@ -121,19 +121,6 @@ After the PiPower 5 service is installed and running, it registers itself as a s
 Notifications
 ------------------
 
-PiPower 5 can notify you about important events through the **buzzer** and **email**. Configure them on the Dashboard settings page or with the ``pipower5`` command.
+The PiPower 5 board has a buzzer, and the software can also send email notifications for important power events.
 
-.. _pipower5_events_ultra:
-
-Notification Events
-^^^^^^^^^^^^^^^^^^^^^^
-
-Supported events include:
-
-* ``battery_activated``
-* ``low_battery``
-* ``power_disconnected``
-* ``power_restored``
-* ``power_insufficient``
-* ``battery_critical_shutdown``
-* ``battery_voltage_critical_shutdown``
+See :ref:`notifications_ultra` for the list of events and how to configure the buzzer and the email notifications.

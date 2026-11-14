@@ -13,7 +13,34 @@ Pironman 5 Ultra can notify you when something happens to the power supply, for 
 * **Email**: send a message to a mailbox through your own SMTP server.
 * **Buzzer**: play a short tune on the PiPower 5 board.
 
-Both channels use the same set of events, and each channel can be enabled separately. The events are listed in :ref:`pipower5_events_ultra`.
+Both channels use the same set of events, and each channel can be enabled separately.
+
+
+.. _notification_events_ultra:
+
+Notification Events
+----------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 38 62
+
+   * - Event
+     - Description
+   * - ``battery_activated``
+     - The battery starts supplying power.
+   * - ``low_battery``
+     - The battery level falls below the shutdown percentage.
+   * - ``power_disconnected``
+     - The external power supply is disconnected.
+   * - ``power_restored``
+     - The external power supply is restored.
+   * - ``power_insufficient``
+     - The power supply cannot provide enough power, so the battery helps.
+   * - ``battery_critical_shutdown``
+     - Triggered just before the system shuts down because the battery is critically low.
+   * - ``battery_voltage_critical_shutdown``
+     - The battery voltage drops below a critical level. This is a failsafe shutdown.
 
 
 Email Notifications
