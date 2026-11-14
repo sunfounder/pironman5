@@ -25,6 +25,30 @@ The two front RGB fans draw cool air in through the front panel, and the warm ai
 .. image:: ../img/p5_ultra_air.jpg
     :width: 600
 
+PWM Fan Gears
+--------------------
+
+The Raspberry Pi drives the PWM fans in one of several gears. The gear sets the CPU temperature at which the fans start:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 30
+
+   * - Gear
+     - Fans start at
+   * - Quiet
+     - 70°C
+   * - Balanced
+     - 67.5°C
+   * - Cool
+     - 60°C
+   * - Performance
+     - 50°C
+   * - Always On
+     - Always on
+
+The lower the starting temperature, the earlier the fans spin up, so the system runs cooler but louder.
+
 Front RGB Fan
 -------------------
 
@@ -46,9 +70,7 @@ The RGB lighting of the front fans is controlled together with the top RGB light
 CPU Turbo Fan
 ------------------
 
-The CPU turbo fan is managed by the Raspberry Pi system and follows the standard Raspberry Pi 5 temperature curve.
-
-**Fan Speed Control Based on Temperature**  
+The CPU turbo fan is managed by the Raspberry Pi system. In the default gear its speed ramps as the temperature rises:
 
 * **Below 50°C**: Fan remains off (0% speed).  
 * **At 50°C**: Fan operates at low speed (30% speed).  
