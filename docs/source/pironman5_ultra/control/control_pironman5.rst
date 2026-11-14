@@ -18,3 +18,4 @@ You can monitor and control Pironman 5 Ultra via commands, or by accessing the d
 
     control_with_dashboard
     control_with_commands
+    notifications
