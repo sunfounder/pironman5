@@ -1,3 +1,5 @@
+import copy
+
 PRODUCT_DEFINITIONS = {
     "base": {
         "name": "Pironman 5",
@@ -52,7 +54,7 @@ PRODUCT_DEFINITIONS = {
         "dt_overlays": ["sunfounder-pironman5nas.dtbo"],
     },
     "ups": {
-        "name": "Pironman 5 UPS",
+        "name": "Pironman 5 Ultra",
         "id": "pironman5-ups",
         "product_version": "V1",
         "modules": [
@@ -108,3 +110,14 @@ PRODUCT_DEFINITIONS = {
         "dt_overlays": ["sunfounder-pironman5promax.dtbo"],
     },
 }
+
+
+# Compatibility: the product was renamed from "Pironman 5 UPS" to
+# "Pironman 5 Ultra" (2026-10). Older installations may still have
+# ".variant" set to "ultra" while running this release, and the config
+# wizard/newer installers may write "ultra" as the variant name. Register
+# "ultra" as an alias of the "ups" definition so the correct module set
+# (I2C RGB "sf_rgb_led", OLed UPS pages, pipower5 ...) is loaded instead of
+# silently falling back to "base".
+PRODUCT_DEFINITIONS["ultra"] = copy.deepcopy(PRODUCT_DEFINITIONS["ups"])
+PRODUCT_DEFINITIONS["ultra"]["name"] = "Pironman 5 Ultra"
