@@ -402,6 +402,9 @@ if [ "$_PLUGIN_ONLY" = true ]; then
 
         TITLE "Copy udev rules"
     RUN "cp ${PIPOWER5_SRC}/rules/99-pipower5.rules /etc/udev/rules.d/" "Copy udev rules"
+# /opt/pipower5 holds the buzzer/blackout JSON+lock files; make it group-writable
+# so pipower5 -pfs / -bzt can run without sudo
+RUN "mkdir -p /opt/pipower5 && chgrp -R pipower5 /opt/pipower5 && chmod -R g+rw /opt/pipower5" "Set pipower5 data dir permissions"
     RUN "udevadm control --reload-rules" "Reload udev"
 
     TITLE "Copy device tree overlay"
