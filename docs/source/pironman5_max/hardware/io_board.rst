@@ -106,22 +106,6 @@ Verifica que el cable FPC de la pantalla esté correctamente conectado.
         sudo systemctl restart pironman5.service
 
 
-Disparador de Activación
---------------------------
-
-.. image:: img/io_board_vib.png
-
-El interruptor de vibración incorporado se utiliza para activar la pantalla OLED desde el modo de suspensión. Cuando se detecta una vibración, se envía una señal para reactivar la OLED, lo que permite que la pantalla permanezca apagada cuando está inactiva y se active automáticamente al detectar movimiento.
-
-Si se retira el puente (jumper) etiquetado para el interruptor de vibración, la función de activación se desactivará. Una vez que la OLED entre en modo de suspensión, ya no podrá activarse. Esta opción está pensada para usuarios avanzados que deseen reutilizar el pin GPIO correspondiente para otras aplicaciones.
-
-.. note::
-
-  Puente instalado: Activación por vibración habilitada.
-
-  Puente retirado: La OLED no puede activarse una vez que se apaga. El pin queda libre para otros usos.
-
-
 Infrared Receiver
 ---------------------------
 
