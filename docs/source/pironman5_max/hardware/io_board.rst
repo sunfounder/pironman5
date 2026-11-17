@@ -106,24 +106,6 @@ Assurez-vous que la nappe FPC de l’écran est bien connectée.
         sudo systemctl restart pironman5.service
 
 
-
-Déclencheur de Réveil
--------------------------
-
-.. image:: img/io_board_vib.png
-
-Le commutateur de vibration intégré est utilisé pour réveiller l'écran OLED du mode veille. Lorsqu'une vibration est détectée, un signal est envoyé pour réactiver l'OLED, permettant à l'affichage de rester éteint lorsqu'il est inactif et de se rallumer automatiquement lorsqu'un mouvement est détecté.
-
-Si vous retirez le cavalier identifié pour le commutateur de vibration, la fonction de réveil sera désactivée. Une fois que l'OLED est entré en mode veille, il ne pourra plus se rallumer. Cette option est destinée aux utilisateurs avancés souhaitant réutiliser la broche GPIO correspondante pour d'autres applications.
-
-.. note::
-
-  Cavalier installé : le réveil par vibration est activé.
-
-  Cavalier retiré : l'OLED ne peut pas être rallumé une fois éteint. La broche est libérée pour d'autres utilisations.
-
-
-
 Récepteur infrarouge
 ---------------------------
 
