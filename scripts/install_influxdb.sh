@@ -16,9 +16,10 @@ fi
 
 echo "Setup influxdb install source..."
 
-# The InfluxData repository may already be configured on the machine: newer
-# influxdb / influxdata-archive-keyring packages ship a deb822 entry (e.g.
-# /etc/apt/sources.list.d/influxdata.sources) on Ubuntu 24.04 and later.
+# The InfluxData repository may already be configured on the machine: the
+# influxdata-archive-keyring package installs a deb822 entry
+# (/etc/apt/sources.list.d/influxdata.sources) on Ubuntu 24.04 and later, and
+# its dpkg/ucf backup (influxdata.list.ucf-dist) sits next to it.
 # Adding a second entry for the same repository makes every "apt update" print
 # "Target Packages ... is configured multiple times" for each component, so
 # only add our own list when nothing else provides the repository, and drop the
@@ -33,8 +34,13 @@ INFLUX_DEB_LINE="deb [signed-by=${INFLUX_KEYRING}] https://repos.influxdata.com/
 influx_source_owner() {
     # Print the first apt source file, other than our own list, that already
     # points at the InfluxData repository. Returns 1 when there is none.
+    #
+    # Only files apt actually reads count: /etc/apt/sources.list, *.list and
+    # *.sources under sources.list.d. Backups left by dpkg/ucf such as
+    # influxdata.list.ucf-dist are ignored by apt, and treating one of those as
+    # a live source made this script delete the real influxdata.list.
     local f
-    for f in "$APT_SOURCES_FILE" "${APT_SOURCES_DIR}"/*; do
+    for f in "$APT_SOURCES_FILE" "${APT_SOURCES_DIR}"/*.list "${APT_SOURCES_DIR}"/*.sources; do
         [ -f "$f" ] || continue
         [ "$f" = "$INFLUX_LIST" ] && continue
         if grep -qs 'repos\.influxdata\.com' "$f"; then
