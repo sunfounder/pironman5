@@ -5,7 +5,7 @@
 - **Cooling**: Tower heatsink with PWM fan plus 3x addressable RGB PWM chassis fans (GPIO controlled).
 - **Displays & UI**:
   - 4.3" 800×480 DSI capacitive touchscreen (secondary display or dashboard).
-  - 0.96" 128×64 OLED with vibration tap-to-wake; pages: mix, performance, ips, disk (extendable via software patches).
+  - 0.96" 128×64 OLED; pages: mix, performance, ips, disk (extendable via software patches).
   - Safe retro-style metal power button mapped to wake/page events & graceful shutdown.
   - IR receiver (38 kHz) and external GPIO expansion header.
 - **Multimedia**: Stereo 3 W speakers, 5 MP camera support.
