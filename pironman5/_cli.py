@@ -859,7 +859,9 @@ def main():
             if plugin_name in installed:
                 print(f"Plugin '{plugin_name}' is already installed.")
                 quit()
-            installer_url = "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh"
+            # Use the installer shipped in this repository (see `update`); the
+            # copy under sunfounder-installer-scripts is deprecated.
+            installer_url = "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh"
             installer_args = PLUGIN_SCRIPTS[plugin_name]["installer_args"]
             cmd = f"curl -sSL {installer_url} | sudo bash -s -- {installer_args}"
             print(f"Installing {plugin_name}...")
