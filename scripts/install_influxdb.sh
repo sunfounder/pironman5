@@ -15,9 +15,56 @@ if [ $# -ge 1 ] && [ "$1" == "--uninstall" ]; then
 fi
 
 echo "Setup influxdb install source..."
-curl --silent --location https://repos.influxdata.com/influxdata-archive.key | gpg --dearmor --yes -o /etc/apt/keyrings/influxdata-archive.gpg
-chmod 644 /etc/apt/keyrings/influxdata-archive.gpg
-echo 'deb [signed-by=/etc/apt/keyrings/influxdata-archive.gpg] https://repos.influxdata.com/debian stable main' | tee /etc/apt/sources.list.d/influxdata.list
+
+# The InfluxData repository may already be configured on the machine: newer
+# influxdb / influxdata-archive-keyring packages ship a deb822 entry (e.g.
+# /etc/apt/sources.list.d/influxdata.sources) on Ubuntu 24.04 and later.
+# Adding a second entry for the same repository makes every "apt update" print
+# "Target Packages ... is configured multiple times" for each component, so
+# only add our own list when nothing else provides the repository, and drop the
+# legacy influxdata.list that earlier versions of this script always wrote.
+APT_SOURCES_DIR="/etc/apt/sources.list.d"
+APT_SOURCES_FILE="/etc/apt/sources.list"
+APT_KEYRINGS_DIR="/etc/apt/keyrings"
+INFLUX_LIST="${APT_SOURCES_DIR}/influxdata.list"
+INFLUX_KEYRING="${APT_KEYRINGS_DIR}/influxdata-archive.gpg"
+INFLUX_DEB_LINE="deb [signed-by=${INFLUX_KEYRING}] https://repos.influxdata.com/debian stable main"
+
+influx_source_owner() {
+    # Print the first apt source file, other than our own list, that already
+    # points at the InfluxData repository. Returns 1 when there is none.
+    local f
+    for f in "$APT_SOURCES_FILE" "${APT_SOURCES_DIR}"/*; do
+        [ -f "$f" ] || continue
+        [ "$f" = "$INFLUX_LIST" ] && continue
+        if grep -qs 'repos\.influxdata\.com' "$f"; then
+            printf '%s\n' "$f"
+            return 0
+        fi
+    done
+    return 1
+}
+
+influx_source_owner_found="$(influx_source_owner || true)"
+if [ -n "$influx_source_owner_found" ]; then
+    echo "InfluxData repository already configured by ${influx_source_owner_found}, skipping influxdata.list."
+    # Only remove a list we wrote ourselves; never touch a file the user edited.
+    if [ -f "$INFLUX_LIST" ] && [ "$(cat "$INFLUX_LIST")" = "$INFLUX_DEB_LINE" ]; then
+        rm -f "$INFLUX_LIST"
+        echo "Removed the duplicate ${INFLUX_LIST} left behind by an earlier install."
+    fi
+else
+    mkdir -p "$APT_KEYRINGS_DIR"
+    curl --silent --location https://repos.influxdata.com/influxdata-archive.key | gpg --dearmor --yes -o "$INFLUX_KEYRING"
+    chmod 644 "$INFLUX_KEYRING"
+    if [ ! -f "$INFLUX_LIST" ] || [ "$(cat "$INFLUX_LIST")" != "$INFLUX_DEB_LINE" ]; then
+        printf '%s\n' "$INFLUX_DEB_LINE" > "$INFLUX_LIST"
+        echo "InfluxData repository configured in ${INFLUX_LIST}."
+    else
+        echo "InfluxData repository already configured in ${INFLUX_LIST}."
+    fi
+fi
+
 DEBIAN_FRONTEND=noninteractive apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install -y influxdb
 
