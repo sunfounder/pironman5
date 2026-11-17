@@ -1,5 +1,15 @@
 # Pironman 5
 
+> **This branch (`1.3.x`) is deprecated.** Pironman 5 development continues on
+> `v1`, and installs and updates follow that branch:
+>
+> ```bash
+> curl -sSL "https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh" | sudo bash
+> ```
+>
+> The commands below are kept for reference only. Existing installations move
+> to `v1` on their next `pironman5 update`.
+
 Pironman 5 case
 
 Quick Links:
