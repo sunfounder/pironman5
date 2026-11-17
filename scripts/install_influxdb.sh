@@ -21,6 +21,11 @@ echo 'deb [signed-by=/etc/apt/keyrings/influxdata-archive.gpg] https://repos.inf
 DEBIAN_FRONTEND=noninteractive apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install -y influxdb
 
+if [ -d /var/lib/influxdb ]; then
+    chown -R influxdb:influxdb /var/lib/influxdb
+    find /var/lib/influxdb -type d -exec chmod 755 {} ;
+    find /var/lib/influxdb -type f -exec chmod 644 {} ;
+fi
 
 INFLUXDB_CONFIG="/etc/influxdb/influxdb.conf"
 # Disable InfluxDB logging to avoid cluttering the logs
