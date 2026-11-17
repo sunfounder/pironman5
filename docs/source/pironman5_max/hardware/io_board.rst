@@ -106,23 +106,6 @@ Verifica che il cavo FPC dello schermo OLED sia collegato correttamente.
         sudo systemctl restart pironman5.service
 
 
-Trigger di Riattivazione
--------------------------
-
-.. image:: img/io_board_vib.png
-
-L'interruttore a vibrazione integrato viene utilizzato per riattivare il display OLED dalla modalità di sospensione. Quando viene rilevata una vibrazione, viene inviato un segnale per riattivare l'OLED, consentendo al display di rimanere spento quando inattivo e di riaccendersi automaticamente al rilevamento di un movimento.
-
-Se si rimuove il ponticello etichettato per l'interruttore a vibrazione, la funzione di riattivazione verrà disabilitata. Una volta che l'OLED entra in modalità di sospensione, non sarà più possibile riattivarlo. Questa opzione è pensata per utenti esperti che desiderano riutilizzare il pin GPIO corrispondente per altre applicazioni.
-
-.. note::
-
-  Ponticello installato: la riattivazione tramite vibrazione è abilitata.
-
-  Ponticello rimosso: l’OLED non può essere riattivato una volta spento. Il pin è liberato per altri utilizzi.
-
-
-
 Ricevitore a Infrarossi
 ---------------------------
 
