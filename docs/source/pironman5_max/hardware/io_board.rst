@@ -105,20 +105,6 @@ Wenn der OLED-Bildschirm nicht angezeigt wird oder fehlerhaft ist, kannst du fol
 
         sudo systemctl restart pironman5.service
 
-Wake-Up-Auslöser
--------------------------
-
-.. image:: img/io_board_vib.png
-
-Der integrierte Vibrationsschalter wird verwendet, um das OLED-Display aus dem Energiesparmodus aufzuwecken. Wenn eine Vibration erkannt wird, sendet er ein Signal zur Reaktivierung des OLED-Bildschirms, sodass das Display im Ruhezustand ausgeschaltet bleiben und bei Bewegung automatisch eingeschaltet werden kann.
-
-Wenn Sie die für den Vibrationsschalter vorgesehene Jumperkappe entfernen, wird die Aufweckfunktion deaktiviert. Sobald das OLED in den Ruhezustand übergeht, kann es nicht mehr aufgeweckt werden. Diese Option richtet sich an fortgeschrittene Benutzer, die den entsprechenden GPIO-Pin für andere Anwendungen verwenden möchten.
-
-.. note::
-
-  Jumper installiert: Vibrationserkennung zum Aufwecken ist aktiviert.
-
-  Jumper entfernt: OLED kann nach dem Ausschalten nicht mehr aufgeweckt werden. Der Pin steht für andere Zwecke zur Verfügung.
 
 Infrarot-Empfänger
 ---------------------------
