@@ -16,6 +16,11 @@ from .utils import is_included, constrain, build_effective_config
 AVAILABLE_PAGES = []
 AVAILABLE_EMAIL_MODES = []
 
+# The installer ships with this repository (install.sh on the release branch).
+# The copy under sunfounder-installer-scripts is deprecated and only forwards
+# to this one.
+INSTALLER_URL = "https://raw.githubusercontent.com/sunfounder/pironman5/1.3.x/install.sh"
+
 def update_config_file(config, config_path):
     import json
     current = None
@@ -655,7 +660,7 @@ def main():
             except FileNotFoundError:
                 pass
 
-        installer_url = "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh"
+        installer_url = INSTALLER_URL
         cmd_parts = ["echo n | curl -sSL", installer_url, "| sudo bash -s -- --variant", variant]
         if use_pipower5:
             cmd_parts.append("--pipower5")
@@ -836,7 +841,7 @@ def main():
             if plugin_name in installed:
                 print(f"Plugin '{plugin_name}' is already installed.")
                 quit()
-            installer_url = "https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/main/pironman5/install.sh"
+            installer_url = INSTALLER_URL
             installer_args = PLUGIN_SCRIPTS[plugin_name]["installer_args"]
             cmd = f"curl -sSL {installer_url} | sudo bash -s -- {installer_args}"
             print(f"Installing {plugin_name}...")
