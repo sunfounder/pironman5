@@ -1,7 +1,7 @@
 #!/bin/bash
 # ============================================================
 # Pironman 5 Installer
-# Supports: Pironman 5, Pironman 5 Mini, Pironman 5 Max, Pironman 5 Pro Max, Pironman 5 NAS, Pironman 5 UPS
+# Supports: Pironman 5, Pironman 5 Mini, Pironman 5 Max, Pironman 5 Pro Max, Pironman 5 NAS, Pironman 5 Ultra
 #
 # Usage:
 #   curl -sSL https://raw.githubusercontent.com/sunfounder/pironman5/v1/install.sh | sudo bash
@@ -23,6 +23,10 @@ for _arg in "$@"; do
     fi
 done
 
+# Never run from a directory the installer may delete (e.g. /opt/pironman5):
+# a deleted CWD makes getcwd()/git/pip fail later in the run.
+cd / || exit 1
+
 # Source Installer framework — use local path when available (e.g. Docker build),
 # otherwise curl from GitHub (or Gitee mirror with --cn).
 FRAMEWORK_DIR="/tmp/installer-tools"
@@ -34,13 +38,13 @@ else
     else
         INSTALLER_URL="https://raw.githubusercontent.com/sunfounder/sunfounder-installer-scripts/refs/heads/main/tools/installer_1.1.0.sh"
     fi
-    curl -fsSL "$INSTALLER_URL?$(date +%s)" -o installer.sh
+    curl -fsSL "$INSTALLER_URL?$(date +%s)" -o /tmp/pironman5-installer.sh
     if [ $? -ne 0 ]; then
         echo "Network error, please check your internet connection."
         exit 1
     fi
-    source installer.sh
-    rm installer.sh
+    source /tmp/pironman5-installer.sh
+    rm -f /tmp/pironman5-installer.sh
 fi
 
 installer_check_root_privileges
@@ -134,7 +138,7 @@ PRODUCTS=(
     "Pironman 5 Max|max|v1"
     "Pironman 5 Pro Max|pro_max|v1"
     "Pironman 5 Mini|mini|v1"
-    "Pironman 5 UPS|ups|v1"
+    "Pironman 5 Ultra|ups|v1"
 )
 
 # --- Peripherals per variant ---
@@ -398,6 +402,9 @@ if [ "$_PLUGIN_ONLY" = true ]; then
 
         TITLE "Copy udev rules"
     RUN "cp ${PIPOWER5_SRC}/rules/99-pipower5.rules /etc/udev/rules.d/" "Copy udev rules"
+# /opt/pipower5 holds the buzzer/blackout JSON+lock files; make it group-writable
+# so pipower5 -pfs / -bzt can run without sudo
+RUN "mkdir -p /opt/pipower5 && chgrp -R pipower5 /opt/pipower5 && chmod -R g+rw /opt/pipower5" "Set pipower5 data dir permissions"
     RUN "udevadm control --reload-rules" "Reload udev"
 
     TITLE "Copy device tree overlay"
@@ -685,8 +692,10 @@ fi
 if [ ! -t 1 ]; then
     IS_PLAIN_TEXT=true
 fi
-# Suppress tput errors when TERM is unset
-export TERM="${TERM:-xterm-256color}"
+# Suppress tput errors when TERM is unset or unusable (tput: unknown terminal)
+if [ -z "$TERM" ] || [ "$TERM" = "unknown" ] || [ "$TERM" = "dumb" ]; then
+    export TERM=xterm-256color
+fi
 
 # ============================================================
 # Execute Installation
