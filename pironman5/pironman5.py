@@ -30,6 +30,7 @@ from pm_auto import __version__ as pm_auto_version
 from .logger import Logger
 from .utils import log_error, build_effective_config
 from .version import __version__ as pironman5_version
+from .device_identity import add_device_uid
 from .variants import NAME, ID, PRODUCT_VERSION, PERIPHERALS, EVENT_MAP
 from ._constants import CONFIG_PATH, APP_NAME, DEFAULT_DEBUG_LEVEL
 
@@ -114,6 +115,7 @@ class Pironman5:
         if PMDashboard is not None:
             self.log.info(f"PM_Dashboard version: {pm_dashboard_version}")
 
+        add_device_uid(device_info)
         self.pm_auto = PMAuto(self.config['system'],
                               peripherals=self.peripherals,
                               device_info=device_info,
