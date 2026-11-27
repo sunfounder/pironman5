@@ -183,3 +183,53 @@ website:
 
 E-mail:
     service@sunfounder.com
+
+## Persistent device identity
+
+The local REST API endpoint
+`GET /api/v1.0/get-device-info` may include an optional
+`device_uid` field for third-party integrations.
+
+The existing `id` field continues to identify the product
+model and is not changed.
+
+Example response (identifier abbreviated for illustration):
+
+```json
+{
+  "status": true,
+  "data": {
+    "id": "pironman5-max",
+    "name": "Pironman 5 Max",
+    "device_uid": "pironman-..."
+  }
+}
+```
+
+The device UID is derived from the Raspberry Pi board serial
+number using SHA-256 with a fixed namespace. The original
+serial number is not included in the API response by this
+feature.
+
+Properties:
+
+- Stable across repeated application starts.
+- Independent of IP addresses and hostnames.
+- Independent of Ethernet and Wi-Fi MAC addresses.
+- Independent of the selected Pironman product variant.
+- No additional Python dependencies or persistent files.
+- Omitted when a valid board serial cannot be obtained.
+
+The identifier represents the Raspberry Pi host board,
+not the physical Pironman enclosure. Replacing the board
+changes the identifier.
+
+The UID is a pseudonymous identifier, not an anonymous
+identifier, authentication credential or security token.
+
+API clients should treat the identifier as an opaque string
+and support its absence on older or unsupported systems.
+
+Home Assistant OS and other container environments require
+access to the board serial through the device tree.
+Compatibility in those environments has not yet been validated.
